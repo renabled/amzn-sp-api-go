@@ -1,0 +1,2 @@
+gen:
+	./script/gen.sh

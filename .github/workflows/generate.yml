@@ -1,0 +1,66 @@
+name: Test and generate client
+
+on:
+  push:
+  schedule:
+    - cron: '30 5,17 * * *'
+
+permissions:
+  contents: write
+
+env:
+  GO_VERSION: 1.18
+  GO_SWAGGER_VERSION: v0.29.0
+
+jobs:
+  test:
+    name: test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up go 1.18
+        uses: actions/setup-go@v3
+        with:
+          go-version: ${{ env.GO_VERSION }}
+          check-latest: true
+
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Get deps
+        run: go get -v -t -d ./...
+
+      - name: Test
+        run: go test $(go list ./... | grep -v /api/)
+
+  generate:
+    name: generate
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up go 1.18
+        uses: actions/setup-go@v3
+        with:
+          go-version: ${{ env.GO_VERSION }}
+          check-latest: true
+
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Install Go-Swagger
+        run: |
+          dir=$(mktemp -d)
+          git clone https://github.com/go-swagger/go-swagger "$dir"
+          cd "$dir"
+          git checkout ${{ env.GO_SWAGGER_VERSION }}
+          go install -ldflags "-X github.com/go-swagger/go-swagger/cmd/swagger/commands.Version=$(git describe --tags) -X github.com/go-swagger/go-swagger/cmd/swagger/commands.Commit=$(git rev-parse HEAD)" ./cmd/swagger
+      - name: Genenerate api client
+        run: make gen
+
+      - name: Test
+        run: go test $(go list ./... | grep -v /api/)
+
+      - name: Commit changes
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: '[auto] generate selling partner api client'
+          branch: next
+          create_branch: true
