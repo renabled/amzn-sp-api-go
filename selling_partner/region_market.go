@@ -58,3 +58,21 @@ var Regions = map[string]Region{
 		},
 	},
 }
+
+func MarketplaceToID(m string) string {
+	for _, v := range Regions {
+		if mp, ok := v.Marketplaces[m]; ok {
+			return mp.MarketplaceID
+		}
+	}
+	return ""
+}
+
+func CountryCodeToMarketplace(m string) *Marketplace {
+	for _, v := range Regions {
+		if mp, ok := v.Marketplaces[m]; ok {
+			return &mp
+		}
+	}
+	return nil
+}

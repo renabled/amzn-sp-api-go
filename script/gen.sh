@@ -18,7 +18,7 @@ else
 
     if [ "$(basename -s .json $f)" == "catalogItems_2020-12-01" ] || \
         [ "$(basename -s .json $f)" == "listingsItems_2021-08-01" ]; then \
-      sed 's/"default": "summaries"/"default": ["summaries"]/g' $f > ./selling-partner-api-models/tmp.json; \
+      cat $f | jq '(.paths[].get.parameters[] | select(.name == "includedData").default) |= ["summaries"]' > ./selling-partner-api-models/tmp.json; \
       mkdir -p ./api/"$(basename -s .json $f)"; \
       swagger --quiet generate client -f ./selling-partner-api-models/tmp.json -t ./api/"$(basename -s .json $f)" -c "$(basename -s .json $f)-client" -A "$(basename -s .json $f)" -m "$(basename -s .json $f)-models"; \
       continue; \
