@@ -38,10 +38,12 @@ type Config struct {
 func NewConfig(
 	accessKeyId, secretKey, roleArn, refreshToken, clientID, clientSecret, region string,
 ) *Config {
+	region = strings.ToUpper(region)
+
 	return &Config{
 		accessKeyId:     accessKeyId,
 		secretKey:       secretKey,
-		region:          Regions[strings.ToUpper(region)].Region,
+		region:          regions[region].Region,
 		roleArn:         roleArn,
 		roleSessionName: uuid.New().String(),
 		clientID:        clientID,
@@ -51,6 +53,6 @@ func NewConfig(
 			"sellingpartnerapi::notifications",
 			"sellingpartnerapi::migration",
 		},
-		endpoint: Regions[strings.ToUpper(region)].Endpoint,
+		endpoint: regions[region].Endpoint,
 	}
 }

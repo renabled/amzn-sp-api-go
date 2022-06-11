@@ -12,6 +12,6 @@ type Client struct {
 func New(conf *Config) *Client {
 	return &Client{
 		config:       conf,
-		marketplaces: Regions[strings.ToUpper(conf.region)].Marketplaces,
+		marketplaces: regions[strings.ToUpper(conf.region)].Marketplaces,
 	}
 }

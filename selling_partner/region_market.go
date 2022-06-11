@@ -1,5 +1,9 @@
 package selling_partner
 
+import (
+	"strings"
+)
+
 type Region struct {
 	Name         string
 	Endpoint     string
@@ -14,7 +18,7 @@ type Marketplace struct {
 // Compiled from:
 // https://developer-docs.amazon.com/sp-api/docs/sp-api-endpoints
 // https://developer-docs.amazon.com/sp-api/docs/marketplace-ids
-var Regions = map[string]Region{
+var regions = map[string]Region{
 	"NA": {
 		Name:     "North America",
 		Endpoint: "sellingpartnerapi-na.amazon.com",
@@ -59,20 +63,15 @@ var Regions = map[string]Region{
 	},
 }
 
-func MarketplaceToID(m string) string {
-	for _, v := range Regions {
-		if mp, ok := v.Marketplaces[m]; ok {
-			return mp.MarketplaceID
-		}
-	}
-	return ""
+func MarketplaceID(m string) string {
+	return CountryCodeToMarketplace(m).MarketplaceID
 }
 
-func CountryCodeToMarketplace(m string) *Marketplace {
-	for _, v := range Regions {
-		if mp, ok := v.Marketplaces[m]; ok {
-			return &mp
+func CountryCodeToMarketplace(m string) Marketplace {
+	for _, v := range regions {
+		if mp, ok := v.Marketplaces[strings.ToUpper(m)]; ok {
+			return mp
 		}
 	}
-	return nil
+	return Marketplace{}
 }
