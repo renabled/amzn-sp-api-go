@@ -141,6 +141,14 @@ func (a *Client) GetMyFeesEstimateForSKU(params *GetMyFeesEstimateForSKUParams, 
 
 /*
   GetMyFeesEstimates Returns the estimated fees for a list of products.
+
+**Usage Plan:**
+
+| Rate (requests per second) | Burst |
+| ---- | ---- |
+| 1 | 1 |
+
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
 */
 func (a *Client) GetMyFeesEstimates(params *GetMyFeesEstimatesParams, opts ...ClientOption) (*GetMyFeesEstimatesOK, error) {
 	// TODO: Validate the params before sending
