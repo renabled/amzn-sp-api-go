@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// OrderItems the list of order items and quantities when the seller wants to partially update the shipment status of the order
+// OrderItems For partial shipment status updates, the list of order items and quantities to be updated.
 //
 // swagger:model OrderItems
 type OrderItems []*OrderItemsItems0
@@ -77,10 +77,10 @@ func (m OrderItems) ContextValidate(ctx context.Context, formats strfmt.Registry
 // swagger:model OrderItemsItems0
 type OrderItemsItems0 struct {
 
-	// the unique identifier for the order item
+	// The unique identifier of the order item.
 	OrderItemID string `json:"orderItemId,omitempty"`
 
-	// the quantity of items that needs an update of the shipment status
+	// The quantity for which to update the shipment status.
 	Quantity int64 `json:"quantity,omitempty"`
 }
 

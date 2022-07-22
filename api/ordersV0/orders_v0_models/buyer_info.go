@@ -13,7 +13,7 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// BuyerInfo Buyer information
+// BuyerInfo Buyer information.
 //
 // swagger:model BuyerInfo
 type BuyerInfo struct {

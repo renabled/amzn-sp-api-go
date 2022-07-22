@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// Attachment Represents a file uploaded to a destination that was created by the createUploadDestination operation of the Uploads API.
+// Attachment Represents a file uploaded to a destination that was created by the [createUploadDestinationForResource](doc:uploads-api-reference#post-uploads2020-11-01uploaddestinationsresource) operation of the Selling Partner API for Uploads.
 //
 // swagger:model Attachment
 type Attachment struct {
@@ -23,7 +23,7 @@ type Attachment struct {
 	// Required: true
 	FileName *string `json:"fileName"`
 
-	// The identifier of the upload destination. Get this value by calling the createUploadDestination operation of the Uploads API.
+	// The identifier of the upload destination. Get this value by calling the [createUploadDestinationForResource](doc:uploads-api-reference#post-uploads2020-11-01uploaddestinationsresource) operation of the Uploads API.
 	// Required: true
 	UploadDestinationID *string `json:"uploadDestinationId"`
 }

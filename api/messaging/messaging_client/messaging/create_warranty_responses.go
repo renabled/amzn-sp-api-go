@@ -99,7 +99,7 @@ type CreateWarrantyCreated struct {
 
 	/* Unique request reference identifier.
 	 */
-	XAmznRequestid string
+	XAmznRequestID string
 
 	Payload *messaging_models.CreateWarrantyResponse
 }
@@ -120,11 +120,11 @@ func (o *CreateWarrantyCreated) readResponse(response runtime.ClientResponse, co
 		o.XAmznRateLimitLimit = hdrXAmznRateLimitLimit
 	}
 
-	// hydrates response header x-amzn-requestid
-	hdrXAmznRequestid := response.GetHeader("x-amzn-requestid")
+	// hydrates response header x-amzn-RequestId
+	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")
 
-	if hdrXAmznRequestid != "" {
-		o.XAmznRequestid = hdrXAmznRequestid
+	if hdrXAmznRequestID != "" {
+		o.XAmznRequestID = hdrXAmznRequestID
 	}
 
 	o.Payload = new(messaging_models.CreateWarrantyResponse)
@@ -154,7 +154,7 @@ type CreateWarrantyBadRequest struct {
 
 	/* Unique request reference identifier.
 	 */
-	XAmznRequestid string
+	XAmznRequestID string
 
 	Payload *messaging_models.CreateWarrantyResponse
 }
@@ -175,11 +175,11 @@ func (o *CreateWarrantyBadRequest) readResponse(response runtime.ClientResponse,
 		o.XAmznRateLimitLimit = hdrXAmznRateLimitLimit
 	}
 
-	// hydrates response header x-amzn-requestid
-	hdrXAmznRequestid := response.GetHeader("x-amzn-requestid")
+	// hydrates response header x-amzn-RequestId
+	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")
 
-	if hdrXAmznRequestid != "" {
-		o.XAmznRequestid = hdrXAmznRequestid
+	if hdrXAmznRequestID != "" {
+		o.XAmznRequestID = hdrXAmznRequestID
 	}
 
 	o.Payload = new(messaging_models.CreateWarrantyResponse)
@@ -205,7 +205,7 @@ type CreateWarrantyForbidden struct {
 
 	/* Unique request reference identifier.
 	 */
-	XAmznRequestid string
+	XAmznRequestID string
 
 	Payload *messaging_models.CreateWarrantyResponse
 }
@@ -219,11 +219,11 @@ func (o *CreateWarrantyForbidden) GetPayload() *messaging_models.CreateWarrantyR
 
 func (o *CreateWarrantyForbidden) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	// hydrates response header x-amzn-requestid
-	hdrXAmznRequestid := response.GetHeader("x-amzn-requestid")
+	// hydrates response header x-amzn-RequestId
+	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")
 
-	if hdrXAmznRequestid != "" {
-		o.XAmznRequestid = hdrXAmznRequestid
+	if hdrXAmznRequestID != "" {
+		o.XAmznRequestID = hdrXAmznRequestID
 	}
 
 	o.Payload = new(messaging_models.CreateWarrantyResponse)
@@ -247,9 +247,13 @@ The resource specified does not exist.
 */
 type CreateWarrantyNotFound struct {
 
+	/* Your rate limit (requests per second) for this operation.
+	 */
+	XAmznRateLimitLimit string
+
 	/* Unique request reference identifier.
 	 */
-	XAmznRequestid string
+	XAmznRequestID string
 
 	Payload *messaging_models.CreateWarrantyResponse
 }
@@ -263,11 +267,18 @@ func (o *CreateWarrantyNotFound) GetPayload() *messaging_models.CreateWarrantyRe
 
 func (o *CreateWarrantyNotFound) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	// hydrates response header x-amzn-requestid
-	hdrXAmznRequestid := response.GetHeader("x-amzn-requestid")
+	// hydrates response header x-amzn-RateLimit-Limit
+	hdrXAmznRateLimitLimit := response.GetHeader("x-amzn-RateLimit-Limit")
 
-	if hdrXAmznRequestid != "" {
-		o.XAmznRequestid = hdrXAmznRequestid
+	if hdrXAmznRateLimitLimit != "" {
+		o.XAmznRateLimitLimit = hdrXAmznRateLimitLimit
+	}
+
+	// hydrates response header x-amzn-RequestId
+	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")
+
+	if hdrXAmznRequestID != "" {
+		o.XAmznRequestID = hdrXAmznRequestID
 	}
 
 	o.Payload = new(messaging_models.CreateWarrantyResponse)
@@ -292,12 +303,13 @@ The request size exceeded the maximum accepted size.
 type CreateWarrantyRequestEntityTooLarge struct {
 
 	/* Your rate limit (requests per second) for this operation.
-	 */
+	_Note:_ For this status code, the rate limit header is deprecated and no longer returned.
+	*/
 	XAmznRateLimitLimit string
 
 	/* Unique request reference identifier.
 	 */
-	XAmznRequestid string
+	XAmznRequestID string
 
 	Payload *messaging_models.CreateWarrantyResponse
 }
@@ -318,11 +330,11 @@ func (o *CreateWarrantyRequestEntityTooLarge) readResponse(response runtime.Clie
 		o.XAmznRateLimitLimit = hdrXAmznRateLimitLimit
 	}
 
-	// hydrates response header x-amzn-requestid
-	hdrXAmznRequestid := response.GetHeader("x-amzn-requestid")
+	// hydrates response header x-amzn-RequestId
+	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")
 
-	if hdrXAmznRequestid != "" {
-		o.XAmznRequestid = hdrXAmznRequestid
+	if hdrXAmznRequestID != "" {
+		o.XAmznRequestID = hdrXAmznRequestID
 	}
 
 	o.Payload = new(messaging_models.CreateWarrantyResponse)
@@ -347,12 +359,13 @@ The request payload is in an unsupported format.
 type CreateWarrantyUnsupportedMediaType struct {
 
 	/* Your rate limit (requests per second) for this operation.
-	 */
+	_Note:_ For this status code, the rate limit header is deprecated and no longer returned.
+	*/
 	XAmznRateLimitLimit string
 
 	/* Unique request reference identifier.
 	 */
-	XAmznRequestid string
+	XAmznRequestID string
 
 	Payload *messaging_models.CreateWarrantyResponse
 }
@@ -373,11 +386,11 @@ func (o *CreateWarrantyUnsupportedMediaType) readResponse(response runtime.Clien
 		o.XAmznRateLimitLimit = hdrXAmznRateLimitLimit
 	}
 
-	// hydrates response header x-amzn-requestid
-	hdrXAmznRequestid := response.GetHeader("x-amzn-requestid")
+	// hydrates response header x-amzn-RequestId
+	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")
 
-	if hdrXAmznRequestid != "" {
-		o.XAmznRequestid = hdrXAmznRequestid
+	if hdrXAmznRequestID != "" {
+		o.XAmznRequestID = hdrXAmznRequestID
 	}
 
 	o.Payload = new(messaging_models.CreateWarrantyResponse)
@@ -402,12 +415,13 @@ The frequency of requests was greater than allowed.
 type CreateWarrantyTooManyRequests struct {
 
 	/* Your rate limit (requests per second) for this operation.
-	 */
+	_Note:_ For this status code, the rate limit header is deprecated and no longer returned.
+	*/
 	XAmznRateLimitLimit string
 
 	/* Unique request reference identifier.
 	 */
-	XAmznRequestid string
+	XAmznRequestID string
 
 	Payload *messaging_models.CreateWarrantyResponse
 }
@@ -428,11 +442,11 @@ func (o *CreateWarrantyTooManyRequests) readResponse(response runtime.ClientResp
 		o.XAmznRateLimitLimit = hdrXAmznRateLimitLimit
 	}
 
-	// hydrates response header x-amzn-requestid
-	hdrXAmznRequestid := response.GetHeader("x-amzn-requestid")
+	// hydrates response header x-amzn-RequestId
+	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")
 
-	if hdrXAmznRequestid != "" {
-		o.XAmznRequestid = hdrXAmznRequestid
+	if hdrXAmznRequestID != "" {
+		o.XAmznRequestID = hdrXAmznRequestID
 	}
 
 	o.Payload = new(messaging_models.CreateWarrantyResponse)
@@ -457,12 +471,13 @@ An unexpected condition occurred that prevented the server from fulfilling the r
 type CreateWarrantyInternalServerError struct {
 
 	/* Your rate limit (requests per second) for this operation.
-	 */
+	_Note:_ For this status code, the rate limit header is deprecated and no longer returned.
+	*/
 	XAmznRateLimitLimit string
 
 	/* Unique request reference identifier.
 	 */
-	XAmznRequestid string
+	XAmznRequestID string
 
 	Payload *messaging_models.CreateWarrantyResponse
 }
@@ -483,11 +498,11 @@ func (o *CreateWarrantyInternalServerError) readResponse(response runtime.Client
 		o.XAmznRateLimitLimit = hdrXAmznRateLimitLimit
 	}
 
-	// hydrates response header x-amzn-requestid
-	hdrXAmznRequestid := response.GetHeader("x-amzn-requestid")
+	// hydrates response header x-amzn-RequestId
+	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")
 
-	if hdrXAmznRequestid != "" {
-		o.XAmznRequestid = hdrXAmznRequestid
+	if hdrXAmznRequestID != "" {
+		o.XAmznRequestID = hdrXAmznRequestID
 	}
 
 	o.Payload = new(messaging_models.CreateWarrantyResponse)
@@ -512,12 +527,13 @@ Temporary overloading or maintenance of the server.
 type CreateWarrantyServiceUnavailable struct {
 
 	/* Your rate limit (requests per second) for this operation.
-	 */
+	_Note:_ For this status code, the rate limit header is deprecated and no longer returned.
+	*/
 	XAmznRateLimitLimit string
 
 	/* Unique request reference identifier.
 	 */
-	XAmznRequestid string
+	XAmznRequestID string
 
 	Payload *messaging_models.CreateWarrantyResponse
 }
@@ -538,11 +554,11 @@ func (o *CreateWarrantyServiceUnavailable) readResponse(response runtime.ClientR
 		o.XAmznRateLimitLimit = hdrXAmznRateLimitLimit
 	}
 
-	// hydrates response header x-amzn-requestid
-	hdrXAmznRequestid := response.GetHeader("x-amzn-requestid")
+	// hydrates response header x-amzn-RequestId
+	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")
 
-	if hdrXAmznRequestid != "" {
-		o.XAmznRequestid = hdrXAmznRequestid
+	if hdrXAmznRequestID != "" {
+		o.XAmznRequestID = hdrXAmznRequestID
 	}
 
 	o.Payload = new(messaging_models.CreateWarrantyResponse)

@@ -26,7 +26,7 @@ type RegulatedOrderVerificationStatus struct {
 	// The reason for rejecting the order's regulated information. Not present if the order isn't rejected.
 	RejectionReason *RejectionReason `json:"RejectionReason,omitempty"`
 
-	// Whether the regulated information provided in the order requires a review by the merchant.
+	// When true, the regulated information provided in the order requires a review by the merchant.
 	// Required: true
 	RequiresMerchantAction *bool `json:"RequiresMerchantAction"`
 

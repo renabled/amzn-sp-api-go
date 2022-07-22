@@ -99,7 +99,7 @@ type CreateConfirmDeliveryDetailsCreated struct {
 
 	/* Unique request reference identifier.
 	 */
-	XAmznRequestid string
+	XAmznRequestID string
 
 	Payload *messaging_models.CreateConfirmDeliveryDetailsResponse
 }
@@ -120,11 +120,11 @@ func (o *CreateConfirmDeliveryDetailsCreated) readResponse(response runtime.Clie
 		o.XAmznRateLimitLimit = hdrXAmznRateLimitLimit
 	}
 
-	// hydrates response header x-amzn-requestid
-	hdrXAmznRequestid := response.GetHeader("x-amzn-requestid")
+	// hydrates response header x-amzn-RequestId
+	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")
 
-	if hdrXAmznRequestid != "" {
-		o.XAmznRequestid = hdrXAmznRequestid
+	if hdrXAmznRequestID != "" {
+		o.XAmznRequestID = hdrXAmznRequestID
 	}
 
 	o.Payload = new(messaging_models.CreateConfirmDeliveryDetailsResponse)
@@ -154,7 +154,7 @@ type CreateConfirmDeliveryDetailsBadRequest struct {
 
 	/* Unique request reference identifier.
 	 */
-	XAmznRequestid string
+	XAmznRequestID string
 
 	Payload *messaging_models.CreateConfirmDeliveryDetailsResponse
 }
@@ -175,11 +175,11 @@ func (o *CreateConfirmDeliveryDetailsBadRequest) readResponse(response runtime.C
 		o.XAmznRateLimitLimit = hdrXAmznRateLimitLimit
 	}
 
-	// hydrates response header x-amzn-requestid
-	hdrXAmznRequestid := response.GetHeader("x-amzn-requestid")
+	// hydrates response header x-amzn-RequestId
+	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")
 
-	if hdrXAmznRequestid != "" {
-		o.XAmznRequestid = hdrXAmznRequestid
+	if hdrXAmznRequestID != "" {
+		o.XAmznRequestID = hdrXAmznRequestID
 	}
 
 	o.Payload = new(messaging_models.CreateConfirmDeliveryDetailsResponse)
@@ -205,7 +205,7 @@ type CreateConfirmDeliveryDetailsForbidden struct {
 
 	/* Unique request reference identifier.
 	 */
-	XAmznRequestid string
+	XAmznRequestID string
 
 	Payload *messaging_models.CreateConfirmDeliveryDetailsResponse
 }
@@ -219,11 +219,11 @@ func (o *CreateConfirmDeliveryDetailsForbidden) GetPayload() *messaging_models.C
 
 func (o *CreateConfirmDeliveryDetailsForbidden) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	// hydrates response header x-amzn-requestid
-	hdrXAmznRequestid := response.GetHeader("x-amzn-requestid")
+	// hydrates response header x-amzn-RequestId
+	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")
 
-	if hdrXAmznRequestid != "" {
-		o.XAmznRequestid = hdrXAmznRequestid
+	if hdrXAmznRequestID != "" {
+		o.XAmznRequestID = hdrXAmznRequestID
 	}
 
 	o.Payload = new(messaging_models.CreateConfirmDeliveryDetailsResponse)
@@ -247,9 +247,13 @@ The resource specified does not exist.
 */
 type CreateConfirmDeliveryDetailsNotFound struct {
 
+	/* Your rate limit (requests per second) for this operation.
+	 */
+	XAmznRateLimitLimit string
+
 	/* Unique request reference identifier.
 	 */
-	XAmznRequestid string
+	XAmznRequestID string
 
 	Payload *messaging_models.CreateConfirmDeliveryDetailsResponse
 }
@@ -263,11 +267,18 @@ func (o *CreateConfirmDeliveryDetailsNotFound) GetPayload() *messaging_models.Cr
 
 func (o *CreateConfirmDeliveryDetailsNotFound) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	// hydrates response header x-amzn-requestid
-	hdrXAmznRequestid := response.GetHeader("x-amzn-requestid")
+	// hydrates response header x-amzn-RateLimit-Limit
+	hdrXAmznRateLimitLimit := response.GetHeader("x-amzn-RateLimit-Limit")
 
-	if hdrXAmznRequestid != "" {
-		o.XAmznRequestid = hdrXAmznRequestid
+	if hdrXAmznRateLimitLimit != "" {
+		o.XAmznRateLimitLimit = hdrXAmznRateLimitLimit
+	}
+
+	// hydrates response header x-amzn-RequestId
+	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")
+
+	if hdrXAmznRequestID != "" {
+		o.XAmznRequestID = hdrXAmznRequestID
 	}
 
 	o.Payload = new(messaging_models.CreateConfirmDeliveryDetailsResponse)
@@ -292,12 +303,13 @@ The request size exceeded the maximum accepted size.
 type CreateConfirmDeliveryDetailsRequestEntityTooLarge struct {
 
 	/* Your rate limit (requests per second) for this operation.
-	 */
+	_Note:_ For this status code, the rate limit header is deprecated and no longer returned.
+	*/
 	XAmznRateLimitLimit string
 
 	/* Unique request reference identifier.
 	 */
-	XAmznRequestid string
+	XAmznRequestID string
 
 	Payload *messaging_models.CreateConfirmDeliveryDetailsResponse
 }
@@ -318,11 +330,11 @@ func (o *CreateConfirmDeliveryDetailsRequestEntityTooLarge) readResponse(respons
 		o.XAmznRateLimitLimit = hdrXAmznRateLimitLimit
 	}
 
-	// hydrates response header x-amzn-requestid
-	hdrXAmznRequestid := response.GetHeader("x-amzn-requestid")
+	// hydrates response header x-amzn-RequestId
+	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")
 
-	if hdrXAmznRequestid != "" {
-		o.XAmznRequestid = hdrXAmznRequestid
+	if hdrXAmznRequestID != "" {
+		o.XAmznRequestID = hdrXAmznRequestID
 	}
 
 	o.Payload = new(messaging_models.CreateConfirmDeliveryDetailsResponse)
@@ -347,12 +359,13 @@ The request payload is in an unsupported format.
 type CreateConfirmDeliveryDetailsUnsupportedMediaType struct {
 
 	/* Your rate limit (requests per second) for this operation.
-	 */
+	_Note:_ For this status code, the rate limit header is deprecated and no longer returned.
+	*/
 	XAmznRateLimitLimit string
 
 	/* Unique request reference identifier.
 	 */
-	XAmznRequestid string
+	XAmznRequestID string
 
 	Payload *messaging_models.CreateConfirmDeliveryDetailsResponse
 }
@@ -373,11 +386,11 @@ func (o *CreateConfirmDeliveryDetailsUnsupportedMediaType) readResponse(response
 		o.XAmznRateLimitLimit = hdrXAmznRateLimitLimit
 	}
 
-	// hydrates response header x-amzn-requestid
-	hdrXAmznRequestid := response.GetHeader("x-amzn-requestid")
+	// hydrates response header x-amzn-RequestId
+	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")
 
-	if hdrXAmznRequestid != "" {
-		o.XAmznRequestid = hdrXAmznRequestid
+	if hdrXAmznRequestID != "" {
+		o.XAmznRequestID = hdrXAmznRequestID
 	}
 
 	o.Payload = new(messaging_models.CreateConfirmDeliveryDetailsResponse)
@@ -402,12 +415,13 @@ The frequency of requests was greater than allowed.
 type CreateConfirmDeliveryDetailsTooManyRequests struct {
 
 	/* Your rate limit (requests per second) for this operation.
-	 */
+	_Note:_ For this status code, the rate limit header is deprecated and no longer returned.
+	*/
 	XAmznRateLimitLimit string
 
 	/* Unique request reference identifier.
 	 */
-	XAmznRequestid string
+	XAmznRequestID string
 
 	Payload *messaging_models.CreateConfirmDeliveryDetailsResponse
 }
@@ -428,11 +442,11 @@ func (o *CreateConfirmDeliveryDetailsTooManyRequests) readResponse(response runt
 		o.XAmznRateLimitLimit = hdrXAmznRateLimitLimit
 	}
 
-	// hydrates response header x-amzn-requestid
-	hdrXAmznRequestid := response.GetHeader("x-amzn-requestid")
+	// hydrates response header x-amzn-RequestId
+	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")
 
-	if hdrXAmznRequestid != "" {
-		o.XAmznRequestid = hdrXAmznRequestid
+	if hdrXAmznRequestID != "" {
+		o.XAmznRequestID = hdrXAmznRequestID
 	}
 
 	o.Payload = new(messaging_models.CreateConfirmDeliveryDetailsResponse)
@@ -457,12 +471,13 @@ An unexpected condition occurred that prevented the server from fulfilling the r
 type CreateConfirmDeliveryDetailsInternalServerError struct {
 
 	/* Your rate limit (requests per second) for this operation.
-	 */
+	_Note:_ For this status code, the rate limit header is deprecated and no longer returned.
+	*/
 	XAmznRateLimitLimit string
 
 	/* Unique request reference identifier.
 	 */
-	XAmznRequestid string
+	XAmznRequestID string
 
 	Payload *messaging_models.CreateConfirmDeliveryDetailsResponse
 }
@@ -483,11 +498,11 @@ func (o *CreateConfirmDeliveryDetailsInternalServerError) readResponse(response 
 		o.XAmznRateLimitLimit = hdrXAmznRateLimitLimit
 	}
 
-	// hydrates response header x-amzn-requestid
-	hdrXAmznRequestid := response.GetHeader("x-amzn-requestid")
+	// hydrates response header x-amzn-RequestId
+	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")
 
-	if hdrXAmznRequestid != "" {
-		o.XAmznRequestid = hdrXAmznRequestid
+	if hdrXAmznRequestID != "" {
+		o.XAmznRequestID = hdrXAmznRequestID
 	}
 
 	o.Payload = new(messaging_models.CreateConfirmDeliveryDetailsResponse)
@@ -512,12 +527,13 @@ Temporary overloading or maintenance of the server.
 type CreateConfirmDeliveryDetailsServiceUnavailable struct {
 
 	/* Your rate limit (requests per second) for this operation.
-	 */
+	_Note:_ For this status code, the rate limit header is deprecated and no longer returned.
+	*/
 	XAmznRateLimitLimit string
 
 	/* Unique request reference identifier.
 	 */
-	XAmznRequestid string
+	XAmznRequestID string
 
 	Payload *messaging_models.CreateConfirmDeliveryDetailsResponse
 }
@@ -538,11 +554,11 @@ func (o *CreateConfirmDeliveryDetailsServiceUnavailable) readResponse(response r
 		o.XAmznRateLimitLimit = hdrXAmznRateLimitLimit
 	}
 
-	// hydrates response header x-amzn-requestid
-	hdrXAmznRequestid := response.GetHeader("x-amzn-requestid")
+	// hydrates response header x-amzn-RequestId
+	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")
 
-	if hdrXAmznRequestid != "" {
-		o.XAmznRequestid = hdrXAmznRequestid
+	if hdrXAmznRequestID != "" {
+		o.XAmznRequestID = hdrXAmznRequestID
 	}
 
 	o.Payload = new(messaging_models.CreateConfirmDeliveryDetailsResponse)

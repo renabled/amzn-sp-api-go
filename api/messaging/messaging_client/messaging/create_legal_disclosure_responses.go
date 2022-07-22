@@ -99,7 +99,7 @@ type CreateLegalDisclosureCreated struct {
 
 	/* Unique request reference identifier.
 	 */
-	XAmznRequestid string
+	XAmznRequestID string
 
 	Payload *messaging_models.CreateLegalDisclosureResponse
 }
@@ -120,11 +120,11 @@ func (o *CreateLegalDisclosureCreated) readResponse(response runtime.ClientRespo
 		o.XAmznRateLimitLimit = hdrXAmznRateLimitLimit
 	}
 
-	// hydrates response header x-amzn-requestid
-	hdrXAmznRequestid := response.GetHeader("x-amzn-requestid")
+	// hydrates response header x-amzn-RequestId
+	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")
 
-	if hdrXAmznRequestid != "" {
-		o.XAmznRequestid = hdrXAmznRequestid
+	if hdrXAmznRequestID != "" {
+		o.XAmznRequestID = hdrXAmznRequestID
 	}
 
 	o.Payload = new(messaging_models.CreateLegalDisclosureResponse)
@@ -154,7 +154,7 @@ type CreateLegalDisclosureBadRequest struct {
 
 	/* Unique request reference identifier.
 	 */
-	XAmznRequestid string
+	XAmznRequestID string
 
 	Payload *messaging_models.CreateLegalDisclosureResponse
 }
@@ -175,11 +175,11 @@ func (o *CreateLegalDisclosureBadRequest) readResponse(response runtime.ClientRe
 		o.XAmznRateLimitLimit = hdrXAmznRateLimitLimit
 	}
 
-	// hydrates response header x-amzn-requestid
-	hdrXAmznRequestid := response.GetHeader("x-amzn-requestid")
+	// hydrates response header x-amzn-RequestId
+	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")
 
-	if hdrXAmznRequestid != "" {
-		o.XAmznRequestid = hdrXAmznRequestid
+	if hdrXAmznRequestID != "" {
+		o.XAmznRequestID = hdrXAmznRequestID
 	}
 
 	o.Payload = new(messaging_models.CreateLegalDisclosureResponse)
@@ -205,7 +205,7 @@ type CreateLegalDisclosureForbidden struct {
 
 	/* Unique request reference identifier.
 	 */
-	XAmznRequestid string
+	XAmznRequestID string
 
 	Payload *messaging_models.CreateLegalDisclosureResponse
 }
@@ -219,11 +219,11 @@ func (o *CreateLegalDisclosureForbidden) GetPayload() *messaging_models.CreateLe
 
 func (o *CreateLegalDisclosureForbidden) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	// hydrates response header x-amzn-requestid
-	hdrXAmznRequestid := response.GetHeader("x-amzn-requestid")
+	// hydrates response header x-amzn-RequestId
+	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")
 
-	if hdrXAmznRequestid != "" {
-		o.XAmznRequestid = hdrXAmznRequestid
+	if hdrXAmznRequestID != "" {
+		o.XAmznRequestID = hdrXAmznRequestID
 	}
 
 	o.Payload = new(messaging_models.CreateLegalDisclosureResponse)
@@ -247,9 +247,13 @@ The resource specified does not exist.
 */
 type CreateLegalDisclosureNotFound struct {
 
+	/* Your rate limit (requests per second) for this operation.
+	 */
+	XAmznRateLimitLimit string
+
 	/* Unique request reference identifier.
 	 */
-	XAmznRequestid string
+	XAmznRequestID string
 
 	Payload *messaging_models.CreateLegalDisclosureResponse
 }
@@ -263,11 +267,18 @@ func (o *CreateLegalDisclosureNotFound) GetPayload() *messaging_models.CreateLeg
 
 func (o *CreateLegalDisclosureNotFound) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	// hydrates response header x-amzn-requestid
-	hdrXAmznRequestid := response.GetHeader("x-amzn-requestid")
+	// hydrates response header x-amzn-RateLimit-Limit
+	hdrXAmznRateLimitLimit := response.GetHeader("x-amzn-RateLimit-Limit")
 
-	if hdrXAmznRequestid != "" {
-		o.XAmznRequestid = hdrXAmznRequestid
+	if hdrXAmznRateLimitLimit != "" {
+		o.XAmznRateLimitLimit = hdrXAmznRateLimitLimit
+	}
+
+	// hydrates response header x-amzn-RequestId
+	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")
+
+	if hdrXAmznRequestID != "" {
+		o.XAmznRequestID = hdrXAmznRequestID
 	}
 
 	o.Payload = new(messaging_models.CreateLegalDisclosureResponse)
@@ -292,12 +303,13 @@ The request size exceeded the maximum accepted size.
 type CreateLegalDisclosureRequestEntityTooLarge struct {
 
 	/* Your rate limit (requests per second) for this operation.
-	 */
+	_Note:_ For this status code, the rate limit header is deprecated and no longer returned.
+	*/
 	XAmznRateLimitLimit string
 
 	/* Unique request reference identifier.
 	 */
-	XAmznRequestid string
+	XAmznRequestID string
 
 	Payload *messaging_models.CreateLegalDisclosureResponse
 }
@@ -318,11 +330,11 @@ func (o *CreateLegalDisclosureRequestEntityTooLarge) readResponse(response runti
 		o.XAmznRateLimitLimit = hdrXAmznRateLimitLimit
 	}
 
-	// hydrates response header x-amzn-requestid
-	hdrXAmznRequestid := response.GetHeader("x-amzn-requestid")
+	// hydrates response header x-amzn-RequestId
+	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")
 
-	if hdrXAmznRequestid != "" {
-		o.XAmznRequestid = hdrXAmznRequestid
+	if hdrXAmznRequestID != "" {
+		o.XAmznRequestID = hdrXAmznRequestID
 	}
 
 	o.Payload = new(messaging_models.CreateLegalDisclosureResponse)
@@ -347,12 +359,13 @@ The request payload is in an unsupported format.
 type CreateLegalDisclosureUnsupportedMediaType struct {
 
 	/* Your rate limit (requests per second) for this operation.
-	 */
+	_Note:_ For this status code, the rate limit header is deprecated and no longer returned.
+	*/
 	XAmznRateLimitLimit string
 
 	/* Unique request reference identifier.
 	 */
-	XAmznRequestid string
+	XAmznRequestID string
 
 	Payload *messaging_models.CreateLegalDisclosureResponse
 }
@@ -373,11 +386,11 @@ func (o *CreateLegalDisclosureUnsupportedMediaType) readResponse(response runtim
 		o.XAmznRateLimitLimit = hdrXAmznRateLimitLimit
 	}
 
-	// hydrates response header x-amzn-requestid
-	hdrXAmznRequestid := response.GetHeader("x-amzn-requestid")
+	// hydrates response header x-amzn-RequestId
+	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")
 
-	if hdrXAmznRequestid != "" {
-		o.XAmznRequestid = hdrXAmznRequestid
+	if hdrXAmznRequestID != "" {
+		o.XAmznRequestID = hdrXAmznRequestID
 	}
 
 	o.Payload = new(messaging_models.CreateLegalDisclosureResponse)
@@ -402,12 +415,13 @@ The frequency of requests was greater than allowed.
 type CreateLegalDisclosureTooManyRequests struct {
 
 	/* Your rate limit (requests per second) for this operation.
-	 */
+	_Note:_ For this status code, the rate limit header is deprecated and no longer returned.
+	*/
 	XAmznRateLimitLimit string
 
 	/* Unique request reference identifier.
 	 */
-	XAmznRequestid string
+	XAmznRequestID string
 
 	Payload *messaging_models.CreateLegalDisclosureResponse
 }
@@ -428,11 +442,11 @@ func (o *CreateLegalDisclosureTooManyRequests) readResponse(response runtime.Cli
 		o.XAmznRateLimitLimit = hdrXAmznRateLimitLimit
 	}
 
-	// hydrates response header x-amzn-requestid
-	hdrXAmznRequestid := response.GetHeader("x-amzn-requestid")
+	// hydrates response header x-amzn-RequestId
+	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")
 
-	if hdrXAmznRequestid != "" {
-		o.XAmznRequestid = hdrXAmznRequestid
+	if hdrXAmznRequestID != "" {
+		o.XAmznRequestID = hdrXAmznRequestID
 	}
 
 	o.Payload = new(messaging_models.CreateLegalDisclosureResponse)
@@ -457,12 +471,13 @@ An unexpected condition occurred that prevented the server from fulfilling the r
 type CreateLegalDisclosureInternalServerError struct {
 
 	/* Your rate limit (requests per second) for this operation.
-	 */
+	_Note:_ For this status code, the rate limit header is deprecated and no longer returned.
+	*/
 	XAmznRateLimitLimit string
 
 	/* Unique request reference identifier.
 	 */
-	XAmznRequestid string
+	XAmznRequestID string
 
 	Payload *messaging_models.CreateLegalDisclosureResponse
 }
@@ -483,11 +498,11 @@ func (o *CreateLegalDisclosureInternalServerError) readResponse(response runtime
 		o.XAmznRateLimitLimit = hdrXAmznRateLimitLimit
 	}
 
-	// hydrates response header x-amzn-requestid
-	hdrXAmznRequestid := response.GetHeader("x-amzn-requestid")
+	// hydrates response header x-amzn-RequestId
+	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")
 
-	if hdrXAmznRequestid != "" {
-		o.XAmznRequestid = hdrXAmznRequestid
+	if hdrXAmznRequestID != "" {
+		o.XAmznRequestID = hdrXAmznRequestID
 	}
 
 	o.Payload = new(messaging_models.CreateLegalDisclosureResponse)
@@ -512,12 +527,13 @@ Temporary overloading or maintenance of the server.
 type CreateLegalDisclosureServiceUnavailable struct {
 
 	/* Your rate limit (requests per second) for this operation.
-	 */
+	_Note:_ For this status code, the rate limit header is deprecated and no longer returned.
+	*/
 	XAmznRateLimitLimit string
 
 	/* Unique request reference identifier.
 	 */
-	XAmznRequestid string
+	XAmznRequestID string
 
 	Payload *messaging_models.CreateLegalDisclosureResponse
 }
@@ -538,11 +554,11 @@ func (o *CreateLegalDisclosureServiceUnavailable) readResponse(response runtime.
 		o.XAmznRateLimitLimit = hdrXAmznRateLimitLimit
 	}
 
-	// hydrates response header x-amzn-requestid
-	hdrXAmznRequestid := response.GetHeader("x-amzn-requestid")
+	// hydrates response header x-amzn-RequestId
+	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")
 
-	if hdrXAmznRequestid != "" {
-		o.XAmznRequestid = hdrXAmznRequestid
+	if hdrXAmznRequestID != "" {
+		o.XAmznRequestID = hdrXAmznRequestID
 	}
 
 	o.Payload = new(messaging_models.CreateLegalDisclosureResponse)

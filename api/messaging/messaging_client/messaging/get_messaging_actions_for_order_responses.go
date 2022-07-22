@@ -99,7 +99,7 @@ type GetMessagingActionsForOrderOK struct {
 
 	/* Unique request reference identifier.
 	 */
-	XAmznRequestid string
+	XAmznRequestID string
 
 	Payload *messaging_models.GetMessagingActionsForOrderResponse
 }
@@ -120,11 +120,11 @@ func (o *GetMessagingActionsForOrderOK) readResponse(response runtime.ClientResp
 		o.XAmznRateLimitLimit = hdrXAmznRateLimitLimit
 	}
 
-	// hydrates response header x-amzn-requestid
-	hdrXAmznRequestid := response.GetHeader("x-amzn-requestid")
+	// hydrates response header x-amzn-RequestId
+	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")
 
-	if hdrXAmznRequestid != "" {
-		o.XAmznRequestid = hdrXAmznRequestid
+	if hdrXAmznRequestID != "" {
+		o.XAmznRequestID = hdrXAmznRequestID
 	}
 
 	o.Payload = new(messaging_models.GetMessagingActionsForOrderResponse)
@@ -154,7 +154,7 @@ type GetMessagingActionsForOrderBadRequest struct {
 
 	/* Unique request reference identifier.
 	 */
-	XAmznRequestid string
+	XAmznRequestID string
 
 	Payload *messaging_models.GetMessagingActionsForOrderResponse
 }
@@ -175,11 +175,11 @@ func (o *GetMessagingActionsForOrderBadRequest) readResponse(response runtime.Cl
 		o.XAmznRateLimitLimit = hdrXAmznRateLimitLimit
 	}
 
-	// hydrates response header x-amzn-requestid
-	hdrXAmznRequestid := response.GetHeader("x-amzn-requestid")
+	// hydrates response header x-amzn-RequestId
+	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")
 
-	if hdrXAmznRequestid != "" {
-		o.XAmznRequestid = hdrXAmznRequestid
+	if hdrXAmznRequestID != "" {
+		o.XAmznRequestID = hdrXAmznRequestID
 	}
 
 	o.Payload = new(messaging_models.GetMessagingActionsForOrderResponse)
@@ -205,7 +205,7 @@ type GetMessagingActionsForOrderForbidden struct {
 
 	/* Unique request reference identifier.
 	 */
-	XAmznRequestid string
+	XAmznRequestID string
 
 	Payload *messaging_models.GetMessagingActionsForOrderResponse
 }
@@ -219,11 +219,11 @@ func (o *GetMessagingActionsForOrderForbidden) GetPayload() *messaging_models.Ge
 
 func (o *GetMessagingActionsForOrderForbidden) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	// hydrates response header x-amzn-requestid
-	hdrXAmznRequestid := response.GetHeader("x-amzn-requestid")
+	// hydrates response header x-amzn-RequestId
+	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")
 
-	if hdrXAmznRequestid != "" {
-		o.XAmznRequestid = hdrXAmznRequestid
+	if hdrXAmznRequestID != "" {
+		o.XAmznRequestID = hdrXAmznRequestID
 	}
 
 	o.Payload = new(messaging_models.GetMessagingActionsForOrderResponse)
@@ -247,9 +247,13 @@ The resource specified does not exist.
 */
 type GetMessagingActionsForOrderNotFound struct {
 
+	/* Your rate limit (requests per second) for this operation.
+	 */
+	XAmznRateLimitLimit string
+
 	/* Unique request reference identifier.
 	 */
-	XAmznRequestid string
+	XAmznRequestID string
 
 	Payload *messaging_models.GetMessagingActionsForOrderResponse
 }
@@ -263,11 +267,18 @@ func (o *GetMessagingActionsForOrderNotFound) GetPayload() *messaging_models.Get
 
 func (o *GetMessagingActionsForOrderNotFound) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	// hydrates response header x-amzn-requestid
-	hdrXAmznRequestid := response.GetHeader("x-amzn-requestid")
+	// hydrates response header x-amzn-RateLimit-Limit
+	hdrXAmznRateLimitLimit := response.GetHeader("x-amzn-RateLimit-Limit")
 
-	if hdrXAmznRequestid != "" {
-		o.XAmznRequestid = hdrXAmznRequestid
+	if hdrXAmznRateLimitLimit != "" {
+		o.XAmznRateLimitLimit = hdrXAmznRateLimitLimit
+	}
+
+	// hydrates response header x-amzn-RequestId
+	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")
+
+	if hdrXAmznRequestID != "" {
+		o.XAmznRequestID = hdrXAmznRequestID
 	}
 
 	o.Payload = new(messaging_models.GetMessagingActionsForOrderResponse)
@@ -292,12 +303,13 @@ The request size exceeded the maximum accepted size.
 type GetMessagingActionsForOrderRequestEntityTooLarge struct {
 
 	/* Your rate limit (requests per second) for this operation.
-	 */
+	_Note:_ For this status code, the rate limit header is deprecated and no longer returned.
+	*/
 	XAmznRateLimitLimit string
 
 	/* Unique request reference identifier.
 	 */
-	XAmznRequestid string
+	XAmznRequestID string
 
 	Payload *messaging_models.GetMessagingActionsForOrderResponse
 }
@@ -318,11 +330,11 @@ func (o *GetMessagingActionsForOrderRequestEntityTooLarge) readResponse(response
 		o.XAmznRateLimitLimit = hdrXAmznRateLimitLimit
 	}
 
-	// hydrates response header x-amzn-requestid
-	hdrXAmznRequestid := response.GetHeader("x-amzn-requestid")
+	// hydrates response header x-amzn-RequestId
+	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")
 
-	if hdrXAmznRequestid != "" {
-		o.XAmznRequestid = hdrXAmznRequestid
+	if hdrXAmznRequestID != "" {
+		o.XAmznRequestID = hdrXAmznRequestID
 	}
 
 	o.Payload = new(messaging_models.GetMessagingActionsForOrderResponse)
@@ -347,12 +359,13 @@ The request payload is in an unsupported format.
 type GetMessagingActionsForOrderUnsupportedMediaType struct {
 
 	/* Your rate limit (requests per second) for this operation.
-	 */
+	_Note:_ For this status code, the rate limit header is deprecated and no longer returned.
+	*/
 	XAmznRateLimitLimit string
 
 	/* Unique request reference identifier.
 	 */
-	XAmznRequestid string
+	XAmznRequestID string
 
 	Payload *messaging_models.GetMessagingActionsForOrderResponse
 }
@@ -373,11 +386,11 @@ func (o *GetMessagingActionsForOrderUnsupportedMediaType) readResponse(response 
 		o.XAmznRateLimitLimit = hdrXAmznRateLimitLimit
 	}
 
-	// hydrates response header x-amzn-requestid
-	hdrXAmznRequestid := response.GetHeader("x-amzn-requestid")
+	// hydrates response header x-amzn-RequestId
+	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")
 
-	if hdrXAmznRequestid != "" {
-		o.XAmznRequestid = hdrXAmznRequestid
+	if hdrXAmznRequestID != "" {
+		o.XAmznRequestID = hdrXAmznRequestID
 	}
 
 	o.Payload = new(messaging_models.GetMessagingActionsForOrderResponse)
@@ -402,12 +415,13 @@ The frequency of requests was greater than allowed.
 type GetMessagingActionsForOrderTooManyRequests struct {
 
 	/* Your rate limit (requests per second) for this operation.
-	 */
+	_Note:_ For this status code, the rate limit header is deprecated and no longer returned.
+	*/
 	XAmznRateLimitLimit string
 
 	/* Unique request reference identifier.
 	 */
-	XAmznRequestid string
+	XAmznRequestID string
 
 	Payload *messaging_models.GetMessagingActionsForOrderResponse
 }
@@ -428,11 +442,11 @@ func (o *GetMessagingActionsForOrderTooManyRequests) readResponse(response runti
 		o.XAmznRateLimitLimit = hdrXAmznRateLimitLimit
 	}
 
-	// hydrates response header x-amzn-requestid
-	hdrXAmznRequestid := response.GetHeader("x-amzn-requestid")
+	// hydrates response header x-amzn-RequestId
+	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")
 
-	if hdrXAmznRequestid != "" {
-		o.XAmznRequestid = hdrXAmznRequestid
+	if hdrXAmznRequestID != "" {
+		o.XAmznRequestID = hdrXAmznRequestID
 	}
 
 	o.Payload = new(messaging_models.GetMessagingActionsForOrderResponse)
@@ -457,12 +471,13 @@ An unexpected condition occurred that prevented the server from fulfilling the r
 type GetMessagingActionsForOrderInternalServerError struct {
 
 	/* Your rate limit (requests per second) for this operation.
-	 */
+	_Note:_ For this status code, the rate limit header is deprecated and no longer returned.
+	*/
 	XAmznRateLimitLimit string
 
 	/* Unique request reference identifier.
 	 */
-	XAmznRequestid string
+	XAmznRequestID string
 
 	Payload *messaging_models.GetMessagingActionsForOrderResponse
 }
@@ -483,11 +498,11 @@ func (o *GetMessagingActionsForOrderInternalServerError) readResponse(response r
 		o.XAmznRateLimitLimit = hdrXAmznRateLimitLimit
 	}
 
-	// hydrates response header x-amzn-requestid
-	hdrXAmznRequestid := response.GetHeader("x-amzn-requestid")
+	// hydrates response header x-amzn-RequestId
+	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")
 
-	if hdrXAmznRequestid != "" {
-		o.XAmznRequestid = hdrXAmznRequestid
+	if hdrXAmznRequestID != "" {
+		o.XAmznRequestID = hdrXAmznRequestID
 	}
 
 	o.Payload = new(messaging_models.GetMessagingActionsForOrderResponse)
@@ -512,12 +527,13 @@ Temporary overloading or maintenance of the server.
 type GetMessagingActionsForOrderServiceUnavailable struct {
 
 	/* Your rate limit (requests per second) for this operation.
-	 */
+	_Note:_ For this status code, the rate limit header is deprecated and no longer returned.
+	*/
 	XAmznRateLimitLimit string
 
 	/* Unique request reference identifier.
 	 */
-	XAmznRequestid string
+	XAmznRequestID string
 
 	Payload *messaging_models.GetMessagingActionsForOrderResponse
 }
@@ -538,11 +554,11 @@ func (o *GetMessagingActionsForOrderServiceUnavailable) readResponse(response ru
 		o.XAmznRateLimitLimit = hdrXAmznRateLimitLimit
 	}
 
-	// hydrates response header x-amzn-requestid
-	hdrXAmznRequestid := response.GetHeader("x-amzn-requestid")
+	// hydrates response header x-amzn-RequestId
+	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")
 
-	if hdrXAmznRequestid != "" {
-		o.XAmznRequestid = hdrXAmznRequestid
+	if hdrXAmznRequestID != "" {
+		o.XAmznRequestID = hdrXAmznRequestID
 	}
 
 	o.Payload = new(messaging_models.GetMessagingActionsForOrderResponse)

@@ -85,7 +85,7 @@ type GetOrderRegulatedInfoOK struct {
 	 */
 	XAmznRateLimitLimit string
 
-	/* Unique request reference ID.
+	/* Unique request reference identifier.
 	 */
 	XAmznRequestID string
 
@@ -140,7 +140,7 @@ type GetOrderRegulatedInfoBadRequest struct {
 	 */
 	XAmznRateLimitLimit string
 
-	/* Unique request reference ID.
+	/* Unique request reference identifier.
 	 */
 	XAmznRequestID string
 
@@ -191,7 +191,7 @@ Indicates access to the resource is forbidden. Possible reasons include Access D
 */
 type GetOrderRegulatedInfoForbidden struct {
 
-	/* Unique request reference ID.
+	/* Unique request reference identifier.
 	 */
 	XAmznRequestID string
 
@@ -239,7 +239,7 @@ type GetOrderRegulatedInfoNotFound struct {
 	 */
 	XAmznRateLimitLimit string
 
-	/* Unique request reference ID.
+	/* Unique request reference identifier.
 	 */
 	XAmznRequestID string
 
@@ -290,7 +290,7 @@ The frequency of requests was greater than allowed.
 */
 type GetOrderRegulatedInfoTooManyRequests struct {
 
-	/* Unique request reference ID.
+	/* Unique request reference identifier.
 	 */
 	XAmznRequestID string
 
@@ -334,7 +334,7 @@ An unexpected condition occurred that prevented the server from fulfilling the r
 */
 type GetOrderRegulatedInfoInternalServerError struct {
 
-	/* Unique request reference ID.
+	/* Unique request reference identifier.
 	 */
 	XAmznRequestID string
 
@@ -378,7 +378,7 @@ Temporary overloading or maintenance of the server.
 */
 type GetOrderRegulatedInfoServiceUnavailable struct {
 
-	/* Unique request reference ID.
+	/* Unique request reference identifier.
 	 */
 	XAmznRequestID string
 

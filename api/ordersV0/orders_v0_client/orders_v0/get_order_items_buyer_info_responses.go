@@ -85,7 +85,7 @@ type GetOrderItemsBuyerInfoOK struct {
 	 */
 	XAmznRateLimitLimit string
 
-	/* Unique request reference ID.
+	/* Unique request reference identifier.
 	 */
 	XAmznRequestID string
 
@@ -140,7 +140,7 @@ type GetOrderItemsBuyerInfoBadRequest struct {
 	 */
 	XAmznRateLimitLimit string
 
-	/* Unique request reference ID.
+	/* Unique request reference identifier.
 	 */
 	XAmznRequestID string
 
@@ -191,7 +191,7 @@ Indicates access to the resource is forbidden. Possible reasons include Access D
 */
 type GetOrderItemsBuyerInfoForbidden struct {
 
-	/* Unique request reference ID.
+	/* Unique request reference identifier.
 	 */
 	XAmznRequestID string
 
@@ -239,7 +239,7 @@ type GetOrderItemsBuyerInfoNotFound struct {
 	 */
 	XAmznRateLimitLimit string
 
-	/* Unique request reference ID.
+	/* Unique request reference identifier.
 	 */
 	XAmznRequestID string
 
@@ -295,7 +295,7 @@ type GetOrderItemsBuyerInfoTooManyRequests struct {
 	*/
 	XAmznRateLimitLimit string
 
-	/* Unique request reference ID.
+	/* Unique request reference identifier.
 	 */
 	XAmznRequestID string
 
@@ -351,7 +351,7 @@ type GetOrderItemsBuyerInfoInternalServerError struct {
 	*/
 	XAmznRateLimitLimit string
 
-	/* Unique request reference ID.
+	/* Unique request reference identifier.
 	 */
 	XAmznRequestID string
 
@@ -407,7 +407,7 @@ type GetOrderItemsBuyerInfoServiceUnavailable struct {
 	*/
 	XAmznRateLimitLimit string
 
-	/* Unique request reference ID.
+	/* Unique request reference identifier.
 	 */
 	XAmznRequestID string
 

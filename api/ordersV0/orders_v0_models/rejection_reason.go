@@ -19,7 +19,7 @@ import (
 // swagger:model RejectionReason
 type RejectionReason struct {
 
-	// The human-readable description of this rejection reason.
+	// The description of this rejection reason.
 	// Required: true
 	RejectionReasonDescription *string `json:"RejectionReasonDescription"`
 

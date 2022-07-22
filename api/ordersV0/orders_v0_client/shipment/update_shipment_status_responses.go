@@ -97,7 +97,7 @@ type UpdateShipmentStatusNoContent struct {
 	 */
 	XAmznRateLimitLimit string
 
-	/* Unique request reference ID.
+	/* Unique request reference identifier.
 	 */
 	XAmznRequestID string
 }
@@ -140,7 +140,7 @@ type UpdateShipmentStatusBadRequest struct {
 	 */
 	XAmznRateLimitLimit string
 
-	/* Unique request reference ID.
+	/* Unique request reference identifier.
 	 */
 	XAmznRequestID string
 
@@ -191,7 +191,7 @@ Indicates that access to the resource is forbidden. Possible reasons include Acc
 */
 type UpdateShipmentStatusForbidden struct {
 
-	/* Unique request reference ID.
+	/* Unique request reference identifier.
 	 */
 	XAmznRequestID string
 
@@ -239,7 +239,7 @@ type UpdateShipmentStatusNotFound struct {
 	 */
 	XAmznRateLimitLimit string
 
-	/* Unique request reference ID.
+	/* Unique request reference identifier.
 	 */
 	XAmznRequestID string
 
@@ -290,7 +290,7 @@ The request size exceeded the maximum accepted size.
 */
 type UpdateShipmentStatusRequestEntityTooLarge struct {
 
-	/* Unique request reference ID.
+	/* Unique request reference identifier.
 	 */
 	XAmznRequestID string
 
@@ -334,7 +334,7 @@ The request payload is in an unsupported format.
 */
 type UpdateShipmentStatusUnsupportedMediaType struct {
 
-	/* Unique request reference ID.
+	/* Unique request reference identifier.
 	 */
 	XAmznRequestID string
 
@@ -378,7 +378,7 @@ The frequency of requests was greater than allowed.
 */
 type UpdateShipmentStatusTooManyRequests struct {
 
-	/* Unique request reference ID.
+	/* Unique request reference identifier.
 	 */
 	XAmznRequestID string
 
@@ -422,7 +422,7 @@ An unexpected condition occurred that prevented the server from fulfilling the r
 */
 type UpdateShipmentStatusInternalServerError struct {
 
-	/* Unique request reference ID.
+	/* Unique request reference identifier.
 	 */
 	XAmznRequestID string
 
@@ -466,7 +466,7 @@ Temporary overloading or maintenance of the server.
 */
 type UpdateShipmentStatusServiceUnavailable struct {
 
-	/* Unique request reference ID.
+	/* Unique request reference identifier.
 	 */
 	XAmznRequestID string
 

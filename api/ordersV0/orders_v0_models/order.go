@@ -48,7 +48,7 @@ type Order struct {
 
 	// The start of the time period within which you have committed to ship the order. In ISO 8601 date time format. Returned only for seller-fulfilled orders.
 	//
-	// Note: EarliestShipDate might not be returned for orders placed before February 1, 2013.
+	// __Note__: EarliestShipDate might not be returned for orders placed before February 1, 2013.
 	EarliestShipDate string `json:"EarliestShipDate,omitempty"`
 
 	// The status of the Amazon Easy Ship order. This property is included only for Amazon Easy Ship orders.
@@ -98,7 +98,7 @@ type Order struct {
 
 	// The date when the order was last updated.
 	//
-	// Note: LastUpdateDate is returned with an incorrect date for orders that were last updated before 2009-04-01.
+	// __Note__: LastUpdateDate is returned with an incorrect date for orders that were last updated before 2009-04-01.
 	// Required: true
 	LastUpdateDate *string `json:"LastUpdateDate"`
 
@@ -107,7 +107,7 @@ type Order struct {
 
 	// The end of the time period within which you have committed to ship the order. In ISO 8601 date time format. Returned only for seller-fulfilled orders.
 	//
-	// Note: LatestShipDate might not be returned for orders placed before February 1, 2013.
+	// __Note__: LatestShipDate might not be returned for orders placed before February 1, 2013.
 	LatestShipDate string `json:"LatestShipDate,omitempty"`
 
 	// The identifier for the marketplace where the order was placed.
@@ -139,7 +139,7 @@ type Order struct {
 
 	// Information about sub-payment methods for a Cash On Delivery (COD) order.
 	//
-	// Note: For a COD order that is paid for using one sub-payment method, one PaymentExecutionDetailItem object is returned, with PaymentExecutionDetailItem/PaymentMethod = COD. For a COD order that is paid for using multiple sub-payment methods, two or more PaymentExecutionDetailItem objects are returned.
+	// __Note__: For a COD order that is paid for using one sub-payment method, one PaymentExecutionDetailItem object is returned, with PaymentExecutionDetailItem/PaymentMethod = COD. For a COD order that is paid for using multiple sub-payment methods, two or more PaymentExecutionDetailItem objects are returned.
 	PaymentExecutionDetail PaymentExecutionDetailItemList `json:"PaymentExecutionDetail,omitempty"`
 
 	// The payment method for the order. This property is limited to Cash On Delivery (COD) and Convenience Store (CVS) payment methods. Unless you need the specific COD payment information provided by the PaymentExecutionDetailItem object, we recommend using the PaymentMethodDetails property to get payment method information.
