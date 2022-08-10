@@ -32,9 +32,25 @@ type ClientOption func(*runtime.ClientOperation)
 type ClientService interface {
 	AddAppointmentForServiceJobByServiceJobID(params *AddAppointmentForServiceJobByServiceJobIDParams, opts ...ClientOption) (*AddAppointmentForServiceJobByServiceJobIDOK, error)
 
+	AssignAppointmentResources(params *AssignAppointmentResourcesParams, opts ...ClientOption) (*AssignAppointmentResourcesOK, error)
+
+	CancelReservation(params *CancelReservationParams, opts ...ClientOption) (*CancelReservationNoContent, error)
+
 	CancelServiceJobByServiceJobID(params *CancelServiceJobByServiceJobIDParams, opts ...ClientOption) (*CancelServiceJobByServiceJobIDOK, error)
 
 	CompleteServiceJobByServiceJobID(params *CompleteServiceJobByServiceJobIDParams, opts ...ClientOption) (*CompleteServiceJobByServiceJobIDOK, error)
+
+	CreateReservation(params *CreateReservationParams, opts ...ClientOption) (*CreateReservationOK, error)
+
+	CreateServiceDocumentUploadDestination(params *CreateServiceDocumentUploadDestinationParams, opts ...ClientOption) (*CreateServiceDocumentUploadDestinationOK, error)
+
+	GetAppointmentSlots(params *GetAppointmentSlotsParams, opts ...ClientOption) (*GetAppointmentSlotsOK, error)
+
+	GetAppointmmentSlotsByJobID(params *GetAppointmmentSlotsByJobIDParams, opts ...ClientOption) (*GetAppointmmentSlotsByJobIDOK, error)
+
+	GetFixedSlotCapacity(params *GetFixedSlotCapacityParams, opts ...ClientOption) (*GetFixedSlotCapacityOK, error)
+
+	GetRangeSlotCapacity(params *GetRangeSlotCapacityParams, opts ...ClientOption) (*GetRangeSlotCapacityOK, error)
 
 	GetServiceJobByServiceJobID(params *GetServiceJobByServiceJobIDParams, opts ...ClientOption) (*GetServiceJobByServiceJobIDOK, error)
 
@@ -42,11 +58,17 @@ type ClientService interface {
 
 	RescheduleAppointmentForServiceJobByServiceJobID(params *RescheduleAppointmentForServiceJobByServiceJobIDParams, opts ...ClientOption) (*RescheduleAppointmentForServiceJobByServiceJobIDOK, error)
 
+	SetAppointmentFulfillmentData(params *SetAppointmentFulfillmentDataParams, opts ...ClientOption) (*SetAppointmentFulfillmentDataNoContent, error)
+
+	UpdateReservation(params *UpdateReservationParams, opts ...ClientOption) (*UpdateReservationOK, error)
+
+	UpdateSchedule(params *UpdateScheduleParams, opts ...ClientOption) (*UpdateScheduleOK, error)
+
 	SetTransport(transport runtime.ClientTransport)
 }
 
 /*
-  AddAppointmentForServiceJobByServiceJobID Adds an appointment to the service job indicated by the service job identifier you specify.
+  AddAppointmentForServiceJobByServiceJobID Adds an appointment to the service job indicated by the service job identifier specified.
 
 **Usage Plan:**
 
@@ -54,7 +76,7 @@ type ClientService interface {
 | ---- | ---- |
 | 5 | 20 |
 
-For more information, see "Usage Plans and Rate Limits" in the Selling Partner API documentation.
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
 */
 func (a *Client) AddAppointmentForServiceJobByServiceJobID(params *AddAppointmentForServiceJobByServiceJobIDParams, opts ...ClientOption) (*AddAppointmentForServiceJobByServiceJobIDOK, error) {
 	// TODO: Validate the params before sending
@@ -92,7 +114,53 @@ func (a *Client) AddAppointmentForServiceJobByServiceJobID(params *AddAppointmen
 }
 
 /*
-  CancelServiceJobByServiceJobID Cancels the service job indicated by the service job identifier you specify.
+  AssignAppointmentResources Assigns new resource(s) or overwrite/update the existing one(s) to a service job appointment.
+
+**Usage Plan:**
+
+| Rate (requests per second) | Burst |
+| ---- | ---- |
+| 1 | 2 |
+
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
+*/
+func (a *Client) AssignAppointmentResources(params *AssignAppointmentResourcesParams, opts ...ClientOption) (*AssignAppointmentResourcesOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewAssignAppointmentResourcesParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "assignAppointmentResources",
+		Method:             "PUT",
+		PathPattern:        "/service/v1/serviceJobs/{serviceJobId}/appointments/{appointmentId}/resources",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &AssignAppointmentResourcesReader{formats: a.formats},
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*AssignAppointmentResourcesOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for assignAppointmentResources: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+  CancelReservation Cancel a reservation.
 
 **Usage Plan:**
 
@@ -100,7 +168,53 @@ func (a *Client) AddAppointmentForServiceJobByServiceJobID(params *AddAppointmen
 | ---- | ---- |
 | 5 | 20 |
 
-For more information, see "Usage Plans and Rate Limits" in the Selling Partner API documentation.
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
+*/
+func (a *Client) CancelReservation(params *CancelReservationParams, opts ...ClientOption) (*CancelReservationNoContent, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewCancelReservationParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "cancelReservation",
+		Method:             "DELETE",
+		PathPattern:        "/service/v1/reservation/{reservationId}",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &CancelReservationReader{formats: a.formats},
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*CancelReservationNoContent)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for cancelReservation: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+  CancelServiceJobByServiceJobID Cancels the service job indicated by the service job identifier specified.
+
+**Usage Plan:**
+
+| Rate (requests per second) | Burst |
+| ---- | ---- |
+| 5 | 20 |
+
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
 */
 func (a *Client) CancelServiceJobByServiceJobID(params *CancelServiceJobByServiceJobIDParams, opts ...ClientOption) (*CancelServiceJobByServiceJobIDOK, error) {
 	// TODO: Validate the params before sending
@@ -138,7 +252,7 @@ func (a *Client) CancelServiceJobByServiceJobID(params *CancelServiceJobByServic
 }
 
 /*
-  CompleteServiceJobByServiceJobID Completes the service job indicated by the service job identifier you specify.
+  CompleteServiceJobByServiceJobID Completes the service job indicated by the service job identifier specified.
 
 **Usage Plan:**
 
@@ -146,7 +260,7 @@ func (a *Client) CancelServiceJobByServiceJobID(params *CancelServiceJobByServic
 | ---- | ---- |
 | 5 | 20 |
 
-For more information, see "Usage Plans and Rate Limits" in the Selling Partner API documentation.
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
 */
 func (a *Client) CompleteServiceJobByServiceJobID(params *CompleteServiceJobByServiceJobIDParams, opts ...ClientOption) (*CompleteServiceJobByServiceJobIDOK, error) {
 	// TODO: Validate the params before sending
@@ -184,7 +298,99 @@ func (a *Client) CompleteServiceJobByServiceJobID(params *CompleteServiceJobBySe
 }
 
 /*
-  GetServiceJobByServiceJobID Gets service job details for the service job indicated by the service job identifier you specify.
+  CreateReservation Create a reservation.
+
+**Usage Plan:**
+
+| Rate (requests per second) | Burst |
+| ---- | ---- |
+| 5 | 20 |
+
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
+*/
+func (a *Client) CreateReservation(params *CreateReservationParams, opts ...ClientOption) (*CreateReservationOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewCreateReservationParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "createReservation",
+		Method:             "POST",
+		PathPattern:        "/service/v1/reservation",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &CreateReservationReader{formats: a.formats},
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*CreateReservationOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for createReservation: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+  CreateServiceDocumentUploadDestination Creates an upload destination.
+
+**Usage Plan:**
+
+| Rate (requests per second) | Burst |
+| ---- | ---- |
+| 5 | 20 |
+
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
+*/
+func (a *Client) CreateServiceDocumentUploadDestination(params *CreateServiceDocumentUploadDestinationParams, opts ...ClientOption) (*CreateServiceDocumentUploadDestinationOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewCreateServiceDocumentUploadDestinationParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "createServiceDocumentUploadDestination",
+		Method:             "POST",
+		PathPattern:        "/service/v1/documents",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &CreateServiceDocumentUploadDestinationReader{formats: a.formats},
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*CreateServiceDocumentUploadDestinationOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for createServiceDocumentUploadDestination: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+  GetAppointmentSlots Gets appointment slots as per the service context specified.
 
 **Usage Plan:**
 
@@ -192,7 +398,191 @@ func (a *Client) CompleteServiceJobByServiceJobID(params *CompleteServiceJobBySe
 | ---- | ---- |
 | 20 | 40 |
 
-For more information, see "Usage Plans and Rate Limits" in the Selling Partner API documentation.
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
+*/
+func (a *Client) GetAppointmentSlots(params *GetAppointmentSlotsParams, opts ...ClientOption) (*GetAppointmentSlotsOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewGetAppointmentSlotsParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "getAppointmentSlots",
+		Method:             "GET",
+		PathPattern:        "/service/v1/appointmentSlots",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &GetAppointmentSlotsReader{formats: a.formats},
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*GetAppointmentSlotsOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for getAppointmentSlots: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+  GetAppointmmentSlotsByJobID Gets appointment slots for the service associated with the service job id specified.
+
+**Usage Plan:**
+
+| Rate (requests per second) | Burst |
+| ---- | ---- |
+| 5 | 20 |
+
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
+*/
+func (a *Client) GetAppointmmentSlotsByJobID(params *GetAppointmmentSlotsByJobIDParams, opts ...ClientOption) (*GetAppointmmentSlotsByJobIDOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewGetAppointmmentSlotsByJobIDParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "getAppointmmentSlotsByJobId",
+		Method:             "GET",
+		PathPattern:        "/service/v1/serviceJobs/{serviceJobId}/appointmentSlots",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &GetAppointmmentSlotsByJobIDReader{formats: a.formats},
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*GetAppointmmentSlotsByJobIDOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for getAppointmmentSlotsByJobId: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+  GetFixedSlotCapacity Provides capacity in fixed-size slots.
+
+**Usage Plan:**
+
+| Rate (requests per second) | Burst |
+| ---- | ---- |
+| 5 | 20 |
+
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
+*/
+func (a *Client) GetFixedSlotCapacity(params *GetFixedSlotCapacityParams, opts ...ClientOption) (*GetFixedSlotCapacityOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewGetFixedSlotCapacityParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "getFixedSlotCapacity",
+		Method:             "POST",
+		PathPattern:        "/service/v1/serviceResources/{resourceId}/capacity/fixed",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &GetFixedSlotCapacityReader{formats: a.formats},
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*GetFixedSlotCapacityOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for getFixedSlotCapacity: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+  GetRangeSlotCapacity Provides capacity slots in a format similar to availability records.
+
+**Usage Plan:**
+
+| Rate (requests per second) | Burst |
+| ---- | ---- |
+| 5 | 20 |
+
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
+*/
+func (a *Client) GetRangeSlotCapacity(params *GetRangeSlotCapacityParams, opts ...ClientOption) (*GetRangeSlotCapacityOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewGetRangeSlotCapacityParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "getRangeSlotCapacity",
+		Method:             "POST",
+		PathPattern:        "/service/v1/serviceResources/{resourceId}/capacity/range",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &GetRangeSlotCapacityReader{formats: a.formats},
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*GetRangeSlotCapacityOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for getRangeSlotCapacity: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+  GetServiceJobByServiceJobID Gets details of service job indicated by the provided `serviceJobID`.
+
+**Usage Plan:**
+
+| Rate (requests per second) | Burst |
+| ---- | ---- |
+| 20 | 40 |
+
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
 */
 func (a *Client) GetServiceJobByServiceJobID(params *GetServiceJobByServiceJobIDParams, opts ...ClientOption) (*GetServiceJobByServiceJobIDOK, error) {
 	// TODO: Validate the params before sending
@@ -238,7 +628,7 @@ func (a *Client) GetServiceJobByServiceJobID(params *GetServiceJobByServiceJobID
 | ---- | ---- |
 | 10 | 40 |
 
-For more information, see "Usage Plans and Rate Limits" in the Selling Partner API documentation.
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
 */
 func (a *Client) GetServiceJobs(params *GetServiceJobsParams, opts ...ClientOption) (*GetServiceJobsOK, error) {
 	// TODO: Validate the params before sending
@@ -276,7 +666,7 @@ func (a *Client) GetServiceJobs(params *GetServiceJobsParams, opts ...ClientOpti
 }
 
 /*
-  RescheduleAppointmentForServiceJobByServiceJobID Reschedules an appointment for the service job indicated by the service job identifier you specify.
+  RescheduleAppointmentForServiceJobByServiceJobID Reschedules an appointment for the service job indicated by the service job identifier specified.
 
 **Usage Plan:**
 
@@ -284,7 +674,7 @@ func (a *Client) GetServiceJobs(params *GetServiceJobsParams, opts ...ClientOpti
 | ---- | ---- |
 | 5 | 20 |
 
-For more information, see "Usage Plans and Rate Limits" in the Selling Partner API documentation.
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
 */
 func (a *Client) RescheduleAppointmentForServiceJobByServiceJobID(params *RescheduleAppointmentForServiceJobByServiceJobIDParams, opts ...ClientOption) (*RescheduleAppointmentForServiceJobByServiceJobIDOK, error) {
 	// TODO: Validate the params before sending
@@ -318,6 +708,144 @@ func (a *Client) RescheduleAppointmentForServiceJobByServiceJobID(params *Resche
 	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
 	msg := fmt.Sprintf("unexpected success response for rescheduleAppointmentForServiceJobByServiceJobId: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+  SetAppointmentFulfillmentData Updates the appointment fulfillment data related to a given `jobID` and `appointmentID`.
+
+**Usage Plan:**
+
+| Rate (requests per second) | Burst |
+| ---- | ---- |
+| 5 | 20 |
+
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
+*/
+func (a *Client) SetAppointmentFulfillmentData(params *SetAppointmentFulfillmentDataParams, opts ...ClientOption) (*SetAppointmentFulfillmentDataNoContent, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewSetAppointmentFulfillmentDataParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "setAppointmentFulfillmentData",
+		Method:             "PUT",
+		PathPattern:        "/service/v1/serviceJobs/{serviceJobId}/appointments/{appointmentId}/fulfillment",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &SetAppointmentFulfillmentDataReader{formats: a.formats},
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*SetAppointmentFulfillmentDataNoContent)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for setAppointmentFulfillmentData: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+  UpdateReservation Update a reservation.
+
+**Usage Plan:**
+
+| Rate (requests per second) | Burst |
+| ---- | ---- |
+| 5 | 20 |
+
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
+*/
+func (a *Client) UpdateReservation(params *UpdateReservationParams, opts ...ClientOption) (*UpdateReservationOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewUpdateReservationParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "updateReservation",
+		Method:             "PUT",
+		PathPattern:        "/service/v1/reservation/{reservationId}",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &UpdateReservationReader{formats: a.formats},
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*UpdateReservationOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for updateReservation: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+  UpdateSchedule Update the schedule of the given resource.
+
+**Usage Plan:**
+
+| Rate (requests per second) | Burst |
+| ---- | ---- |
+| 5 | 20 |
+
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
+*/
+func (a *Client) UpdateSchedule(params *UpdateScheduleParams, opts ...ClientOption) (*UpdateScheduleOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewUpdateScheduleParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "updateSchedule",
+		Method:             "PUT",
+		PathPattern:        "/service/v1/serviceResources/{resourceId}/schedules",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &UpdateScheduleReader{formats: a.formats},
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*UpdateScheduleOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for updateSchedule: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 

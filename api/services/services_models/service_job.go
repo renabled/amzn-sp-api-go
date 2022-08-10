@@ -30,7 +30,7 @@ type ServiceJob struct {
 	// Information about the buyer.
 	Buyer *Buyer `json:"buyer,omitempty"`
 
-	// The date and time of the creation of the job, in ISO 8601 format.
+	// The date and time of the creation of the job in ISO 8601 format.
 	// Format: date-time
 	CreateTime strfmt.DateTime `json:"createTime,omitempty"`
 
@@ -60,8 +60,13 @@ type ServiceJob struct {
 	// Information about the location of the service job.
 	ServiceLocation *ServiceLocation `json:"serviceLocation,omitempty"`
 
-	// The Amazon-defined identifier for an order placed by the buyer, in 3-7-7 format.
+	// The Amazon-defined identifier for an order placed by the buyer in 3-7-7 format.
 	ServiceOrderID OrderID `json:"serviceOrderId,omitempty"`
+
+	// The Amazon-defined identifier for the region scope.
+	// Max Length: 100
+	// Min Length: 1
+	StoreID string `json:"storeId,omitempty"`
 }
 
 // Validate validates this service job
@@ -117,6 +122,10 @@ func (m *ServiceJob) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validateServiceOrderID(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateStoreID(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -408,6 +417,22 @@ func (m *ServiceJob) validateServiceOrderID(formats strfmt.Registry) error {
 		} else if ce, ok := err.(*errors.CompositeError); ok {
 			return ce.ValidateName("serviceOrderId")
 		}
+		return err
+	}
+
+	return nil
+}
+
+func (m *ServiceJob) validateStoreID(formats strfmt.Registry) error {
+	if swag.IsZero(m.StoreID) { // not required
+		return nil
+	}
+
+	if err := validate.MinLength("storeId", "body", m.StoreID, 1); err != nil {
+		return err
+	}
+
+	if err := validate.MaxLength("storeId", "body", m.StoreID, 100); err != nil {
 		return err
 	}
 

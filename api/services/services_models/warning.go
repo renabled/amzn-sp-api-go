@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// Warning Warning returned when the request is successful but execution have some important callouts on basis of which API clients should take defined actions.
+// Warning Warning returned when the request is successful, but there are important callouts based on which API clients should take defined actions.
 //
 // swagger:model Warning
 type Warning struct {

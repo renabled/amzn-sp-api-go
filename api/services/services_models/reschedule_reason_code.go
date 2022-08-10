@@ -11,7 +11,7 @@ import (
 	"github.com/go-openapi/strfmt"
 )
 
-// RescheduleReasonCode Appointment reschedule reason code.
+// RescheduleReasonCode The appointment reschedule reason code.
 //
 // swagger:model RescheduleReasonCode
 type RescheduleReasonCode string

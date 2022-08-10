@@ -32,7 +32,7 @@ type Poa struct {
 	// Min Items: 1
 	Technicians []*Technician `json:"technicians"`
 
-	// The date and time when the POA was uploaded, in ISO 8601 format.
+	// The date and time when the POA was uploaded in ISO 8601 format.
 	// Format: date-time
 	UploadTime strfmt.DateTime `json:"uploadTime,omitempty"`
 

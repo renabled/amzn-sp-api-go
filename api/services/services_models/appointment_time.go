@@ -24,7 +24,7 @@ type AppointmentTime struct {
 	// Minimum: 1
 	DurationInMinutes *int64 `json:"durationInMinutes"`
 
-	// The date and time of the start of the appointment window, in ISO 8601 format.
+	// The date and time of the start of the appointment window in ISO 8601 format.
 	// Required: true
 	// Format: date-time
 	StartTime *strfmt.DateTime `json:"startTime"`

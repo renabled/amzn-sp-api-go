@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// JobListing The payload for the GetJobs operation.
+// JobListing The payload for the `getServiceJobs` operation.
 //
 // swagger:model JobListing
 type JobListing struct {
@@ -22,10 +22,10 @@ type JobListing struct {
 	// List of job details for the given input.
 	Jobs []*ServiceJob `json:"jobs"`
 
-	// A generated string used to pass information to your next request.If nextPageToken is returned, pass the value of nextPageToken to the pageToken to get next results.
+	// A generated string used to pass information to your next request. If `nextPageToken` is returned, pass the value of `nextPageToken` to the `pageToken` to get next results.
 	NextPageToken string `json:"nextPageToken,omitempty"`
 
-	// A generated string used to pass information to your next request.If previousPageToken is returned, pass the value of previousPageToken to the pageToken to get previous page results.
+	// A generated string used to pass information to your next request. If `previousPageToken` is returned, pass the value of `previousPageToken` to the `pageToken` to get previous page results.
 	PreviousPageToken string `json:"previousPageToken,omitempty"`
 
 	// Total result size of the query result.

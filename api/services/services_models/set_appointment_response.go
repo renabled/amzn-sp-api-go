@@ -13,18 +13,18 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// SetAppointmentResponse Response schema for add or reschedule appointment operation.
+// SetAppointmentResponse Response schema for the `addAppointmentForServiceJobByServiceJobId` and `rescheduleAppointmentForServiceJobByServiceJobId` operations.
 //
 // swagger:model SetAppointmentResponse
 type SetAppointmentResponse struct {
 
-	// New appointment id generated during add or reschedule appointment operation.
+	// New appointment identifier generated during the `addAppointmentForServiceJobByServiceJobId` or `rescheduleAppointmentForServiceJobByServiceJobId` operations.
 	AppointmentID AppointmentID `json:"appointmentId,omitempty"`
 
-	// Errors occurred during during add or reschedule appointment operation.
+	// Errors occurred during during the `addAppointmentForServiceJobByServiceJobId` or `rescheduleAppointmentForServiceJobByServiceJobId` operations.
 	Errors ErrorList `json:"errors,omitempty"`
 
-	// Warnings generated during add or reschedule appointment operation.
+	// Warnings generated during the `addAppointmentForServiceJobByServiceJobId` or `rescheduleAppointmentForServiceJobByServiceJobId` operations.
 	Warnings WarningList `json:"warnings,omitempty"`
 }
 
