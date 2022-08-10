@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// UpdateVerificationStatusRequest Request to update the verification status of an order containing regulated products.
+// UpdateVerificationStatusRequest The request body for the updateVerificationStatus operation.
 //
 // swagger:model UpdateVerificationStatusRequest
 type UpdateVerificationStatusRequest struct {
