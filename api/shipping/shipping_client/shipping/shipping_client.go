@@ -106,7 +106,7 @@ func (a *Client) CancelShipment(params *CancelShipmentParams, opts ...ClientOpti
 | ---- | ---- |
 | 5 | 15 |
 
-For more information, see "Usage Plans and Rate Limits" in the Selling Partner API documentation.
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
 */
 func (a *Client) CreateShipment(params *CreateShipmentParams, opts ...ClientOption) (*CreateShipmentOK, error) {
 	// TODO: Validate the params before sending
