@@ -26,7 +26,9 @@ type BatchRequest struct {
 	// Required: true
 	Method *HTTPMethod `json:"method"`
 
-	// The full URI corresponding to the API intended for request, including path parameter substitutions.
+	// The `getItemOffers` resource path without any query parameters.
+	//
+	// **Example:** `/products/pricing/v0/items/B000P6Q7MY/offers`
 	// Required: true
 	URI *string `json:"uri"`
 }
