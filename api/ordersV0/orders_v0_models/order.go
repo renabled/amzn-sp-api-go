@@ -51,7 +51,7 @@ type Order struct {
 	// __Note__: EarliestShipDate might not be returned for orders placed before February 1, 2013.
 	EarliestShipDate string `json:"EarliestShipDate,omitempty"`
 
-	// The status of the Amazon Easy-Ship order. This property is included only for Amazon Easy-Ship orders.
+	// The status of the Amazon Easy Ship order. This property is included only for Amazon Easy Ship orders.
 	EasyShipShipmentStatus EasyShipShipmentStatus `json:"EasyShipShipmentStatus,omitempty"`
 
 	// The status of the electronic invoice.

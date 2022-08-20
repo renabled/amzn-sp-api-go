@@ -92,13 +92,38 @@ type GetOrdersParams struct {
 
 	/* EasyShipShipmentStatuses.
 
-	   A list of EasyShipShipmentStatus values. Used to select Easy-Ship orders with statuses that match the specified values. If EasyShipShipmentStatus is specified, only Amazon Easy-Ship orders are returned. Possible values: PendingSchedule (The package is awaiting schedule for pick-up). PendingPickUp (Amazon has not yet picked up the package from the seller). PendingDropOff (The seller will deliver the package to the carrier). LabelCanceled (The seller canceled the pickup). PickedUp (Amazon has picked up the package from the seller). DroppedOff (The package is delivered to the carrier by the seller). AtOriginFC (The packaged is at the origin fulfillment center). AtDestinationFC (The package is at the destination fulfillment center). Delivered (The package has been delivered). RejectedByBuyer (The package has been rejected by the buyer). Undeliverable (The package cannot be delivered). ReturningToSeller (The package was not delivered and is being returned to the seller). ReturnedToSeller (The package was not delivered and was returned to the seller). Lost (The package is lost). OutForDelivery (The package is out for delivery). Damaged (The package was damaged by the carrier).
+	     A list of `EasyShipShipmentStatus` values. Used to select Easy Ship orders with statuses that match the specified values. If `EasyShipShipmentStatus` is specified, only Amazon Easy Ship orders are returned.
+
+	**Possible values:**
+	- `PendingSchedule` (The package is awaiting the schedule for pick-up.)
+	- `PendingPickUp` (Amazon has not yet picked up the package from the seller.)
+	- `PendingDropOff` (The seller will deliver the package to the carrier.)
+	- `LabelCanceled` (The seller canceled the pickup.)
+	- `PickedUp` (Amazon has picked up the package from the seller.)
+	- `DroppedOff` (The package is delivered to the carrier by the seller.)
+	- `AtOriginFC` (The packaged is at the origin fulfillment center.)
+	- `AtDestinationFC` (The package is at the destination fulfillment center.)
+	- `Delivered` (The package has been delivered.)
+	- `RejectedByBuyer` (The package has been rejected by the buyer.)
+	- `Undeliverable` (The package cannot be delivered.)
+	- `ReturningToSeller` (The package was not delivered and is being returned to the seller.)
+	- `ReturnedToSeller` (The package was not delivered and was returned to the seller.)
+	- `Lost` (The package is lost.)
+	- `OutForDelivery` (The package is out for delivery.)
+	- `Damaged` (The package was damaged by the carrier.)
 	*/
 	EasyShipShipmentStatuses []string
 
 	/* ElectronicInvoiceStatuses.
 
-	   A list of ElectronicInvoiceStatus values. Used to select orders with electronic invoice statuses that match the specified  values. Possible values: NotRequired (electronic invoice submission is not required for this order), NotFound (electronic invoice was not submitted for this order), Processing (electronic invoice is being processed for this order), Errored (last submitted electronic invoice was rejected for this order), Accepted (last submitted electronic invoice was submitted and accepted)
+	     A list of `ElectronicInvoiceStatus` values. Used to select orders with electronic invoice statuses that match the specified values.
+
+	**Possible values:**
+	- `NotRequired` (Electronic invoice submission is not required for this order.)
+	- `NotFound` (The electronic invoice was not submitted for this order.)
+	- `Processing` (The electronic invoice is being processed for this order.)
+	- `Errored` (The last submitted electronic invoice was rejected for this order.)
+	- `Accepted` (The last submitted electronic invoice was submitted and accepted.)
 	*/
 	ElectronicInvoiceStatuses []string
 
@@ -148,7 +173,17 @@ type GetOrdersParams struct {
 
 	/* OrderStatuses.
 
-	   A list of OrderStatus values used to filter the results. Possible values: PendingAvailability (This status is available for pre-orders only. The order has been placed, payment has not been authorized, and the release date of the item is in the future.); Pending (The order has been placed but payment has not been authorized); Unshipped (Payment has been authorized and the order is ready for shipment, but no items in the order have been shipped); PartiallyShipped (One or more, but not all, items in the order have been shipped); Shipped (All items in the order have been shipped); InvoiceUnconfirmed (All items in the order have been shipped. The seller has not yet given confirmation to Amazon that the invoice has been shipped to the buyer.); Canceled (The order has been canceled); and Unfulfillable (The order cannot be fulfilled. This state applies only to Multi-Channel Fulfillment orders.).
+	     A list of `OrderStatus` values used to filter the results.
+
+	**Possible values:**
+	- `PendingAvailability` (This status is available for pre-orders only. The order has been placed, payment has not been authorized, and the release date of the item is in the future.)
+	- `Pending` (The order has been placed but payment has not been authorized.)
+	- `Unshipped` (Payment has been authorized and the order is ready for shipment, but no items in the order have been shipped.)
+	- `PartiallyShipped` (One or more, but not all, items in the order have been shipped.)
+	- `Shipped` (All items in the order have been shipped.)
+	- `InvoiceUnconfirmed` (All items in the order have been shipped. The seller has not yet given confirmation to Amazon that the invoice has been shipped to the buyer.)
+	- `Canceled` (The order has been canceled.)
+	- `Unfulfillable` (The order cannot be fulfilled. This state applies only to Multi-Channel Fulfillment orders.)
 	*/
 	OrderStatuses []string
 
