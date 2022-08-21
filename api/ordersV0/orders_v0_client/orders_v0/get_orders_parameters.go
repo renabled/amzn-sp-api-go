@@ -92,9 +92,40 @@ type GetOrdersParams struct {
 
 	/* EasyShipShipmentStatuses.
 
-	   A list of EasyShipShipmentStatus values. Used to select Easy Ship orders with statuses that match the specified  values. If EasyShipShipmentStatus is specified, only Amazon Easy Ship orders are returned.Possible values: PendingPickUp (Amazon has not yet picked up the package from the seller). LabelCanceled (The seller canceled the pickup). PickedUp (Amazon has picked up the package from the seller). AtOriginFC (The packaged is at the origin fulfillment center). AtDestinationFC (The package is at the destination fulfillment center). OutForDelivery (The package is out for delivery). Damaged (The package was damaged by the carrier). Delivered (The package has been delivered to the buyer). RejectedByBuyer (The package has been rejected by the buyer). Undeliverable (The package cannot be delivered). ReturnedToSeller (The package was not delivered to the buyer and was returned to the seller). ReturningToSeller (The package was not delivered to the buyer and is being returned to the seller).
+	     A list of `EasyShipShipmentStatus` values. Used to select Easy Ship orders with statuses that match the specified values. If `EasyShipShipmentStatus` is specified, only Amazon Easy Ship orders are returned.
+
+	**Possible values:**
+	- `PendingSchedule` (The package is awaiting the schedule for pick-up.)
+	- `PendingPickUp` (Amazon has not yet picked up the package from the seller.)
+	- `PendingDropOff` (The seller will deliver the package to the carrier.)
+	- `LabelCanceled` (The seller canceled the pickup.)
+	- `PickedUp` (Amazon has picked up the package from the seller.)
+	- `DroppedOff` (The package is delivered to the carrier by the seller.)
+	- `AtOriginFC` (The packaged is at the origin fulfillment center.)
+	- `AtDestinationFC` (The package is at the destination fulfillment center.)
+	- `Delivered` (The package has been delivered.)
+	- `RejectedByBuyer` (The package has been rejected by the buyer.)
+	- `Undeliverable` (The package cannot be delivered.)
+	- `ReturningToSeller` (The package was not delivered and is being returned to the seller.)
+	- `ReturnedToSeller` (The package was not delivered and was returned to the seller.)
+	- `Lost` (The package is lost.)
+	- `OutForDelivery` (The package is out for delivery.)
+	- `Damaged` (The package was damaged by the carrier.)
 	*/
 	EasyShipShipmentStatuses []string
+
+	/* ElectronicInvoiceStatuses.
+
+	     A list of `ElectronicInvoiceStatus` values. Used to select orders with electronic invoice statuses that match the specified values.
+
+	**Possible values:**
+	- `NotRequired` (Electronic invoice submission is not required for this order.)
+	- `NotFound` (The electronic invoice was not submitted for this order.)
+	- `Processing` (The electronic invoice is being processed for this order.)
+	- `Errored` (The last submitted electronic invoice was rejected for this order.)
+	- `Accepted` (The last submitted electronic invoice was submitted and accepted.)
+	*/
+	ElectronicInvoiceStatuses []string
 
 	/* FulfillmentChannels.
 
@@ -142,7 +173,17 @@ type GetOrdersParams struct {
 
 	/* OrderStatuses.
 
-	   A list of OrderStatus values used to filter the results. Possible values: PendingAvailability (This status is available for pre-orders only. The order has been placed, payment has not been authorized, and the release date of the item is in the future.); Pending (The order has been placed but payment has not been authorized); Unshipped (Payment has been authorized and the order is ready for shipment, but no items in the order have been shipped); PartiallyShipped (One or more, but not all, items in the order have been shipped); Shipped (All items in the order have been shipped); InvoiceUnconfirmed (All items in the order have been shipped. The seller has not yet given confirmation to Amazon that the invoice has been shipped to the buyer.); Canceled (The order has been canceled); and Unfulfillable (The order cannot be fulfilled. This state applies only to Multi-Channel Fulfillment orders.).
+	     A list of `OrderStatus` values used to filter the results.
+
+	**Possible values:**
+	- `PendingAvailability` (This status is available for pre-orders only. The order has been placed, payment has not been authorized, and the release date of the item is in the future.)
+	- `Pending` (The order has been placed but payment has not been authorized.)
+	- `Unshipped` (Payment has been authorized and the order is ready for shipment, but no items in the order have been shipped.)
+	- `PartiallyShipped` (One or more, but not all, items in the order have been shipped.)
+	- `Shipped` (All items in the order have been shipped.)
+	- `InvoiceUnconfirmed` (All items in the order have been shipped. The seller has not yet given confirmation to Amazon that the invoice has been shipped to the buyer.)
+	- `Canceled` (The order has been canceled.)
+	- `Unfulfillable` (The order cannot be fulfilled. This state applies only to Multi-Channel Fulfillment orders.)
 	*/
 	OrderStatuses []string
 
@@ -281,6 +322,17 @@ func (o *GetOrdersParams) WithEasyShipShipmentStatuses(easyShipShipmentStatuses 
 // SetEasyShipShipmentStatuses adds the easyShipShipmentStatuses to the get orders params
 func (o *GetOrdersParams) SetEasyShipShipmentStatuses(easyShipShipmentStatuses []string) {
 	o.EasyShipShipmentStatuses = easyShipShipmentStatuses
+}
+
+// WithElectronicInvoiceStatuses adds the electronicInvoiceStatuses to the get orders params
+func (o *GetOrdersParams) WithElectronicInvoiceStatuses(electronicInvoiceStatuses []string) *GetOrdersParams {
+	o.SetElectronicInvoiceStatuses(electronicInvoiceStatuses)
+	return o
+}
+
+// SetElectronicInvoiceStatuses adds the electronicInvoiceStatuses to the get orders params
+func (o *GetOrdersParams) SetElectronicInvoiceStatuses(electronicInvoiceStatuses []string) {
+	o.ElectronicInvoiceStatuses = electronicInvoiceStatuses
 }
 
 // WithFulfillmentChannels adds the fulfillmentChannels to the get orders params
@@ -502,6 +554,17 @@ func (o *GetOrdersParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Reg
 		}
 	}
 
+	if o.ElectronicInvoiceStatuses != nil {
+
+		// binding items for ElectronicInvoiceStatuses
+		joinedElectronicInvoiceStatuses := o.bindParamElectronicInvoiceStatuses(reg)
+
+		// query array param ElectronicInvoiceStatuses
+		if err := r.SetQueryParam("ElectronicInvoiceStatuses", joinedElectronicInvoiceStatuses...); err != nil {
+			return err
+		}
+	}
+
 	if o.FulfillmentChannels != nil {
 
 		// binding items for FulfillmentChannels
@@ -703,6 +766,23 @@ func (o *GetOrdersParams) bindParamEasyShipShipmentStatuses(formats strfmt.Regis
 	easyShipShipmentStatusesIS := swag.JoinByFormat(easyShipShipmentStatusesIC, "")
 
 	return easyShipShipmentStatusesIS
+}
+
+// bindParamGetOrders binds the parameter ElectronicInvoiceStatuses
+func (o *GetOrdersParams) bindParamElectronicInvoiceStatuses(formats strfmt.Registry) []string {
+	electronicInvoiceStatusesIR := o.ElectronicInvoiceStatuses
+
+	var electronicInvoiceStatusesIC []string
+	for _, electronicInvoiceStatusesIIR := range electronicInvoiceStatusesIR { // explode []string
+
+		electronicInvoiceStatusesIIV := electronicInvoiceStatusesIIR // string as string
+		electronicInvoiceStatusesIC = append(electronicInvoiceStatusesIC, electronicInvoiceStatusesIIV)
+	}
+
+	// items.CollectionFormat: ""
+	electronicInvoiceStatusesIS := swag.JoinByFormat(electronicInvoiceStatusesIC, "")
+
+	return electronicInvoiceStatusesIS
 }
 
 // bindParamGetOrders binds the parameter FulfillmentChannels

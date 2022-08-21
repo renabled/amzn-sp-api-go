@@ -19,11 +19,11 @@ import (
 // swagger:model ItemDeliveryPromise
 type ItemDeliveryPromise struct {
 
-	// The date and time of the end of the promised delivery window, in ISO 8601 format.
+	// The date and time of the end of the promised delivery window in ISO 8601 format.
 	// Format: date-time
 	EndTime strfmt.DateTime `json:"endTime,omitempty"`
 
-	// The date and time of the start of the promised delivery window, in ISO 8601 format.
+	// The date and time of the start of the promised delivery window in ISO 8601 format.
 	// Format: date-time
 	StartTime strfmt.DateTime `json:"startTime,omitempty"`
 }

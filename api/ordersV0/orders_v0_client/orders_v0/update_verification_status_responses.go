@@ -97,7 +97,7 @@ type UpdateVerificationStatusNoContent struct {
 	 */
 	XAmznRateLimitLimit string
 
-	/* Unique request reference ID.
+	/* Unique request reference identifier.
 	 */
 	XAmznRequestID string
 }
@@ -140,7 +140,7 @@ type UpdateVerificationStatusBadRequest struct {
 	 */
 	XAmznRateLimitLimit string
 
-	/* Unique request reference ID.
+	/* Unique request reference identifier.
 	 */
 	XAmznRequestID string
 
@@ -191,7 +191,7 @@ Indicates that access to the resource is forbidden. Possible reasons include Acc
 */
 type UpdateVerificationStatusForbidden struct {
 
-	/* Unique request reference ID.
+	/* Unique request reference identifier.
 	 */
 	XAmznRequestID string
 
@@ -239,7 +239,7 @@ type UpdateVerificationStatusNotFound struct {
 	 */
 	XAmznRateLimitLimit string
 
-	/* Unique request reference ID.
+	/* Unique request reference identifier.
 	 */
 	XAmznRequestID string
 
@@ -290,7 +290,7 @@ The request size exceeded the maximum accepted size.
 */
 type UpdateVerificationStatusRequestEntityTooLarge struct {
 
-	/* Unique request reference ID.
+	/* Unique request reference identifier.
 	 */
 	XAmznRequestID string
 
@@ -334,7 +334,7 @@ The request payload is in an unsupported format.
 */
 type UpdateVerificationStatusUnsupportedMediaType struct {
 
-	/* Unique request reference ID.
+	/* Unique request reference identifier.
 	 */
 	XAmznRequestID string
 
@@ -378,7 +378,7 @@ The frequency of requests was greater than allowed.
 */
 type UpdateVerificationStatusTooManyRequests struct {
 
-	/* Unique request reference ID.
+	/* Unique request reference identifier.
 	 */
 	XAmznRequestID string
 
@@ -422,7 +422,7 @@ An unexpected condition occurred that prevented the server from fulfilling the r
 */
 type UpdateVerificationStatusInternalServerError struct {
 
-	/* Unique request reference ID.
+	/* Unique request reference identifier.
 	 */
 	XAmznRequestID string
 
@@ -466,7 +466,7 @@ Temporary overloading or maintenance of the server.
 */
 type UpdateVerificationStatusServiceUnavailable struct {
 
-	/* Unique request reference ID.
+	/* Unique request reference identifier.
 	 */
 	XAmznRequestID string
 

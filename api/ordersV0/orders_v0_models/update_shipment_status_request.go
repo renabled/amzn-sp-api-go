@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// UpdateShipmentStatusRequest Request to update the status of shipment of an order.
+// UpdateShipmentStatusRequest The request body for the updateShipmentStatus operation.
 //
 // swagger:model UpdateShipmentStatusRequest
 type UpdateShipmentStatusRequest struct {

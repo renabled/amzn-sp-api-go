@@ -24,16 +24,16 @@ type RegulatedInformationField struct {
 	// Required: true
 	FieldID *string `json:"FieldId"`
 
-	// The human-readable name for the field.
+	// The name for the field.
 	// Required: true
 	FieldLabel *string `json:"FieldLabel"`
 
-	// The type of field the field.
+	// The type of field.
 	// Required: true
 	// Enum: [Text FileAttachment]
 	FieldType *string `json:"FieldType"`
 
-	// The content of the field as collected in regulatory form. Note that FileAttachment type fields will contain an URL to download the attachment here.
+	// The content of the field as collected in regulatory form. Note that FileAttachment type fields will contain a URL to download the attachment here.
 	// Required: true
 	FieldValue *string `json:"FieldValue"`
 }

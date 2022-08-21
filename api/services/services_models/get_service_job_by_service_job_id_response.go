@@ -13,15 +13,15 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// GetServiceJobByServiceJobIDResponse The response schema for the GetServiceJobByServiceJobId operation.
+// GetServiceJobByServiceJobIDResponse The response schema for the `getServiceJobByServiceJobId` operation.
 //
 // swagger:model GetServiceJobByServiceJobIdResponse
 type GetServiceJobByServiceJobIDResponse struct {
 
-	// An unexpected condition occurred during the GetServiceJobByServiceJobId operation.
+	// An unexpected condition occurred during the `getServiceJobByServiceJobId` operation.
 	Errors ErrorList `json:"errors,omitempty"`
 
-	// The payload for the GetServiceJobByServiceJobId operation.
+	// The payload for the `getServiceJobByServiceJobId` operation.
 	Payload *ServiceJob `json:"payload,omitempty"`
 }
 

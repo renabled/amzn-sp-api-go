@@ -11,7 +11,7 @@ import (
 	"github.com/go-openapi/strfmt"
 )
 
-// MarketplaceID the unobfuscated marketplace ID
+// MarketplaceID The unobfuscated marketplace identifier.
 //
 // swagger:model MarketplaceId
 type MarketplaceID string

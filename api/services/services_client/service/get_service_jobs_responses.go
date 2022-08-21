@@ -89,9 +89,13 @@ func NewGetServiceJobsOK() *GetServiceJobsOK {
 
 /* GetServiceJobsOK describes a response with status code 200, with default header values.
 
-Success response
+Success response.
 */
 type GetServiceJobsOK struct {
+
+	/* Your rate limit (requests per second) for this operation.
+	 */
+	XAmznRateLimitLimit string
 
 	/* Unique request reference identifier.
 	 */
@@ -108,6 +112,13 @@ func (o *GetServiceJobsOK) GetPayload() *services_models.GetServiceJobsResponse 
 }
 
 func (o *GetServiceJobsOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// hydrates response header x-amzn-RateLimit-Limit
+	hdrXAmznRateLimitLimit := response.GetHeader("x-amzn-RateLimit-Limit")
+
+	if hdrXAmznRateLimitLimit != "" {
+		o.XAmznRateLimitLimit = hdrXAmznRateLimitLimit
+	}
 
 	// hydrates response header x-amzn-RequestId
 	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")
@@ -137,6 +148,10 @@ Request has missing or invalid parameters and cannot be parsed.
 */
 type GetServiceJobsBadRequest struct {
 
+	/* Your rate limit (requests per second) for this operation.
+	 */
+	XAmznRateLimitLimit string
+
 	/* Unique request reference identifier.
 	 */
 	XAmznRequestID string
@@ -152,6 +167,13 @@ func (o *GetServiceJobsBadRequest) GetPayload() *services_models.GetServiceJobsR
 }
 
 func (o *GetServiceJobsBadRequest) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// hydrates response header x-amzn-RateLimit-Limit
+	hdrXAmznRateLimitLimit := response.GetHeader("x-amzn-RateLimit-Limit")
+
+	if hdrXAmznRateLimitLimit != "" {
+		o.XAmznRateLimitLimit = hdrXAmznRateLimitLimit
+	}
 
 	// hydrates response header x-amzn-RequestId
 	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")
@@ -225,6 +247,10 @@ The resource specified does not exist.
 */
 type GetServiceJobsNotFound struct {
 
+	/* Your rate limit (requests per second) for this operation.
+	 */
+	XAmznRateLimitLimit string
+
 	/* Unique request reference identifier.
 	 */
 	XAmznRequestID string
@@ -240,6 +266,13 @@ func (o *GetServiceJobsNotFound) GetPayload() *services_models.GetServiceJobsRes
 }
 
 func (o *GetServiceJobsNotFound) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// hydrates response header x-amzn-RateLimit-Limit
+	hdrXAmznRateLimitLimit := response.GetHeader("x-amzn-RateLimit-Limit")
+
+	if hdrXAmznRateLimitLimit != "" {
+		o.XAmznRateLimitLimit = hdrXAmznRateLimitLimit
+	}
 
 	// hydrates response header x-amzn-RequestId
 	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")
@@ -269,6 +302,11 @@ The request size exceeded the maximum accepted size.
 */
 type GetServiceJobsRequestEntityTooLarge struct {
 
+	/* Your rate limit (requests per second) for this operation.
+	**Note:** For this status code, the rate limit header is deprecated and no longer returned.
+	 */
+	XAmznRateLimitLimit string
+
 	/* Unique request reference identifier.
 	 */
 	XAmznRequestID string
@@ -284,6 +322,13 @@ func (o *GetServiceJobsRequestEntityTooLarge) GetPayload() *services_models.GetS
 }
 
 func (o *GetServiceJobsRequestEntityTooLarge) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// hydrates response header x-amzn-RateLimit-Limit
+	hdrXAmznRateLimitLimit := response.GetHeader("x-amzn-RateLimit-Limit")
+
+	if hdrXAmznRateLimitLimit != "" {
+		o.XAmznRateLimitLimit = hdrXAmznRateLimitLimit
+	}
 
 	// hydrates response header x-amzn-RequestId
 	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")
@@ -313,6 +358,11 @@ The request payload is in an unsupported format.
 */
 type GetServiceJobsUnsupportedMediaType struct {
 
+	/* Your rate limit (requests per second) for this operation.
+	**Note:** For this status code, the rate limit header is deprecated and no longer returned.
+	 */
+	XAmznRateLimitLimit string
+
 	/* Unique request reference identifier.
 	 */
 	XAmznRequestID string
@@ -328,6 +378,13 @@ func (o *GetServiceJobsUnsupportedMediaType) GetPayload() *services_models.GetSe
 }
 
 func (o *GetServiceJobsUnsupportedMediaType) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// hydrates response header x-amzn-RateLimit-Limit
+	hdrXAmznRateLimitLimit := response.GetHeader("x-amzn-RateLimit-Limit")
+
+	if hdrXAmznRateLimitLimit != "" {
+		o.XAmznRateLimitLimit = hdrXAmznRateLimitLimit
+	}
 
 	// hydrates response header x-amzn-RequestId
 	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")
@@ -357,6 +414,11 @@ The frequency of requests was greater than allowed.
 */
 type GetServiceJobsTooManyRequests struct {
 
+	/* Your rate limit (requests per second) for this operation.
+	**Note:** For this status code, the rate limit header is deprecated and no longer returned.
+	 */
+	XAmznRateLimitLimit string
+
 	/* Unique request reference identifier.
 	 */
 	XAmznRequestID string
@@ -372,6 +434,13 @@ func (o *GetServiceJobsTooManyRequests) GetPayload() *services_models.GetService
 }
 
 func (o *GetServiceJobsTooManyRequests) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// hydrates response header x-amzn-RateLimit-Limit
+	hdrXAmznRateLimitLimit := response.GetHeader("x-amzn-RateLimit-Limit")
+
+	if hdrXAmznRateLimitLimit != "" {
+		o.XAmznRateLimitLimit = hdrXAmznRateLimitLimit
+	}
 
 	// hydrates response header x-amzn-RequestId
 	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")
@@ -401,6 +470,11 @@ An unexpected condition occurred that prevented the server from fulfilling the r
 */
 type GetServiceJobsInternalServerError struct {
 
+	/* Your rate limit (requests per second) for this operation.
+	**Note:** For this status code, the rate limit header is deprecated and no longer returned.
+	 */
+	XAmznRateLimitLimit string
+
 	/* Unique request reference identifier.
 	 */
 	XAmznRequestID string
@@ -416,6 +490,13 @@ func (o *GetServiceJobsInternalServerError) GetPayload() *services_models.GetSer
 }
 
 func (o *GetServiceJobsInternalServerError) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// hydrates response header x-amzn-RateLimit-Limit
+	hdrXAmznRateLimitLimit := response.GetHeader("x-amzn-RateLimit-Limit")
+
+	if hdrXAmznRateLimitLimit != "" {
+		o.XAmznRateLimitLimit = hdrXAmznRateLimitLimit
+	}
 
 	// hydrates response header x-amzn-RequestId
 	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")
@@ -445,6 +526,11 @@ Temporary overloading or maintenance of the server.
 */
 type GetServiceJobsServiceUnavailable struct {
 
+	/* Your rate limit (requests per second) for this operation.
+	**Note:** For this status code, the rate limit header is deprecated and no longer returned.
+	 */
+	XAmznRateLimitLimit string
+
 	/* Unique request reference identifier.
 	 */
 	XAmznRequestID string
@@ -460,6 +546,13 @@ func (o *GetServiceJobsServiceUnavailable) GetPayload() *services_models.GetServ
 }
 
 func (o *GetServiceJobsServiceUnavailable) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// hydrates response header x-amzn-RateLimit-Limit
+	hdrXAmznRateLimitLimit := response.GetHeader("x-amzn-RateLimit-Limit")
+
+	if hdrXAmznRateLimitLimit != "" {
+		o.XAmznRateLimitLimit = hdrXAmznRateLimitLimit
+	}
 
 	// hydrates response header x-amzn-RequestId
 	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")

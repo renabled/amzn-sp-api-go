@@ -60,27 +60,33 @@ func NewGetServiceJobsParamsWithHTTPClient(client *http.Client) *GetServiceJobsP
 */
 type GetServiceJobsParams struct {
 
+	/* Asins.
+
+	   List of Amazon Standard Identification Numbers (ASIN) of the items. Max values supported is 20.
+	*/
+	Asins []string
+
 	/* CreatedAfter.
 
-	   A date used for selecting jobs created after (or at) a specified time must be in ISO 8601 format. Required if LastUpdatedAfter is not specified.Specifying both CreatedAfter and LastUpdatedAfter returns an error.
+	   A date used for selecting jobs created at or after a specified time. Must be in ISO 8601 format. Required if `LastUpdatedAfter` is not specified. Specifying both `CreatedAfter` and `LastUpdatedAfter` returns an error.
 	*/
 	CreatedAfter *string
 
 	/* CreatedBefore.
 
-	   A date used for selecting jobs created before (or at) a specified time must be in ISO 8601 format.
+	   A date used for selecting jobs created at or before a specified time. Must be in ISO 8601 format.
 	*/
 	CreatedBefore *string
 
 	/* LastUpdatedAfter.
 
-	   A date used for selecting jobs updated after (or at) a specified time must be in ISO 8601 format. Required if createdAfter is not specified.Specifying both CreatedAfter and LastUpdatedAfter returns an error.
+	   A date used for selecting jobs updated at or after a specified time. Must be in ISO 8601 format. Required if `createdAfter` is not specified. Specifying both `CreatedAfter` and `LastUpdatedAfter` returns an error.
 	*/
 	LastUpdatedAfter *string
 
 	/* LastUpdatedBefore.
 
-	   A date used for selecting jobs updated before (or at) a specified time must be in ISO 8601 format.
+	   A date used for selecting jobs updated at or before a specified time. Must be in ISO 8601 format.
 	*/
 	LastUpdatedBefore *string
 
@@ -104,15 +110,21 @@ type GetServiceJobsParams struct {
 	*/
 	PageToken *string
 
+	/* RequiredSkills.
+
+	   A defined set of related knowledge, skills, experience, tools, materials, and work processes common to service delivery for a set of products and/or service scenarios. Max values supported is 20.
+	*/
+	RequiredSkills []string
+
 	/* ScheduleEndDate.
 
-	   A date used for filtering jobs schedule before (or at) a specified time must be in ISO 8601 format. schedule end date should not be earlier than schedule start date.
+	   A date used for filtering jobs schedules at or before a specified time. Must be in ISO 8601 format. Schedule end date should not be earlier than schedule start date.
 	*/
 	ScheduleEndDate *string
 
 	/* ScheduleStartDate.
 
-	   A date used for filtering jobs schedule after (or at) a specified time must be in ISO 8601 format. schedule end date should not be earlier than schedule start date.
+	   A date used for filtering jobs schedules at or after a specified time. Must be in ISO 8601 format. Schedule end date should not be earlier than schedule start date.
 	*/
 	ScheduleStartDate *string
 
@@ -139,6 +151,12 @@ type GetServiceJobsParams struct {
 	   Sort order for the query you want to perform.
 	*/
 	SortOrder *string
+
+	/* StoreIds.
+
+	   List of Amazon-defined identifiers for the region scope. Max values supported is 50.
+	*/
+	StoreIds []string
 
 	timeout    time.Duration
 	Context    context.Context
@@ -202,6 +220,17 @@ func (o *GetServiceJobsParams) WithHTTPClient(client *http.Client) *GetServiceJo
 // SetHTTPClient adds the HTTPClient to the get service jobs params
 func (o *GetServiceJobsParams) SetHTTPClient(client *http.Client) {
 	o.HTTPClient = client
+}
+
+// WithAsins adds the asins to the get service jobs params
+func (o *GetServiceJobsParams) WithAsins(asins []string) *GetServiceJobsParams {
+	o.SetAsins(asins)
+	return o
+}
+
+// SetAsins adds the asins to the get service jobs params
+func (o *GetServiceJobsParams) SetAsins(asins []string) {
+	o.Asins = asins
 }
 
 // WithCreatedAfter adds the createdAfter to the get service jobs params
@@ -281,6 +310,17 @@ func (o *GetServiceJobsParams) SetPageToken(pageToken *string) {
 	o.PageToken = pageToken
 }
 
+// WithRequiredSkills adds the requiredSkills to the get service jobs params
+func (o *GetServiceJobsParams) WithRequiredSkills(requiredSkills []string) *GetServiceJobsParams {
+	o.SetRequiredSkills(requiredSkills)
+	return o
+}
+
+// SetRequiredSkills adds the requiredSkills to the get service jobs params
+func (o *GetServiceJobsParams) SetRequiredSkills(requiredSkills []string) {
+	o.RequiredSkills = requiredSkills
+}
+
 // WithScheduleEndDate adds the scheduleEndDate to the get service jobs params
 func (o *GetServiceJobsParams) WithScheduleEndDate(scheduleEndDate *string) *GetServiceJobsParams {
 	o.SetScheduleEndDate(scheduleEndDate)
@@ -347,6 +387,17 @@ func (o *GetServiceJobsParams) SetSortOrder(sortOrder *string) {
 	o.SortOrder = sortOrder
 }
 
+// WithStoreIds adds the storeIds to the get service jobs params
+func (o *GetServiceJobsParams) WithStoreIds(storeIds []string) *GetServiceJobsParams {
+	o.SetStoreIds(storeIds)
+	return o
+}
+
+// SetStoreIds adds the storeIds to the get service jobs params
+func (o *GetServiceJobsParams) SetStoreIds(storeIds []string) {
+	o.StoreIds = storeIds
+}
+
 // WriteToRequest writes these params to a swagger request
 func (o *GetServiceJobsParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
 
@@ -354,6 +405,17 @@ func (o *GetServiceJobsParams) WriteToRequest(r runtime.ClientRequest, reg strfm
 		return err
 	}
 	var res []error
+
+	if o.Asins != nil {
+
+		// binding items for asins
+		joinedAsins := o.bindParamAsins(reg)
+
+		// query array param asins
+		if err := r.SetQueryParam("asins", joinedAsins...); err != nil {
+			return err
+		}
+	}
 
 	if o.CreatedAfter != nil {
 
@@ -468,6 +530,17 @@ func (o *GetServiceJobsParams) WriteToRequest(r runtime.ClientRequest, reg strfm
 		}
 	}
 
+	if o.RequiredSkills != nil {
+
+		// binding items for requiredSkills
+		joinedRequiredSkills := o.bindParamRequiredSkills(reg)
+
+		// query array param requiredSkills
+		if err := r.SetQueryParam("requiredSkills", joinedRequiredSkills...); err != nil {
+			return err
+		}
+	}
+
 	if o.ScheduleEndDate != nil {
 
 		// query param scheduleEndDate
@@ -558,10 +631,38 @@ func (o *GetServiceJobsParams) WriteToRequest(r runtime.ClientRequest, reg strfm
 		}
 	}
 
+	if o.StoreIds != nil {
+
+		// binding items for storeIds
+		joinedStoreIds := o.bindParamStoreIds(reg)
+
+		// query array param storeIds
+		if err := r.SetQueryParam("storeIds", joinedStoreIds...); err != nil {
+			return err
+		}
+	}
+
 	if len(res) > 0 {
 		return errors.CompositeValidationError(res...)
 	}
 	return nil
+}
+
+// bindParamGetServiceJobs binds the parameter asins
+func (o *GetServiceJobsParams) bindParamAsins(formats strfmt.Registry) []string {
+	asinsIR := o.Asins
+
+	var asinsIC []string
+	for _, asinsIIR := range asinsIR { // explode []string
+
+		asinsIIV := asinsIIR // string as string
+		asinsIC = append(asinsIC, asinsIIV)
+	}
+
+	// items.CollectionFormat: ""
+	asinsIS := swag.JoinByFormat(asinsIC, "")
+
+	return asinsIS
 }
 
 // bindParamGetServiceJobs binds the parameter marketplaceIds
@@ -579,6 +680,23 @@ func (o *GetServiceJobsParams) bindParamMarketplaceIds(formats strfmt.Registry) 
 	marketplaceIdsIS := swag.JoinByFormat(marketplaceIdsIC, "")
 
 	return marketplaceIdsIS
+}
+
+// bindParamGetServiceJobs binds the parameter requiredSkills
+func (o *GetServiceJobsParams) bindParamRequiredSkills(formats strfmt.Registry) []string {
+	requiredSkillsIR := o.RequiredSkills
+
+	var requiredSkillsIC []string
+	for _, requiredSkillsIIR := range requiredSkillsIR { // explode []string
+
+		requiredSkillsIIV := requiredSkillsIIR // string as string
+		requiredSkillsIC = append(requiredSkillsIC, requiredSkillsIIV)
+	}
+
+	// items.CollectionFormat: ""
+	requiredSkillsIS := swag.JoinByFormat(requiredSkillsIC, "")
+
+	return requiredSkillsIS
 }
 
 // bindParamGetServiceJobs binds the parameter serviceJobStatus
@@ -613,4 +731,21 @@ func (o *GetServiceJobsParams) bindParamServiceOrderIds(formats strfmt.Registry)
 	serviceOrderIdsIS := swag.JoinByFormat(serviceOrderIdsIC, "")
 
 	return serviceOrderIdsIS
+}
+
+// bindParamGetServiceJobs binds the parameter storeIds
+func (o *GetServiceJobsParams) bindParamStoreIds(formats strfmt.Registry) []string {
+	storeIdsIR := o.StoreIds
+
+	var storeIdsIC []string
+	for _, storeIdsIIR := range storeIdsIR { // explode []string
+
+		storeIdsIIV := storeIdsIIR // string as string
+		storeIdsIC = append(storeIdsIC, storeIdsIIV)
+	}
+
+	// items.CollectionFormat: ""
+	storeIdsIS := swag.JoinByFormat(storeIdsIC, "")
+
+	return storeIdsIS
 }

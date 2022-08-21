@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// ShipmentStatus the status of the shipment of the order to be updated
+// ShipmentStatus The shipment status to apply.
 //
 // swagger:model ShipmentStatus
 type ShipmentStatus string

@@ -33,7 +33,7 @@ type AssociatedItem struct {
 	// Enum: [ACTIVE CANCELLED SHIPPED DELIVERED]
 	ItemStatus string `json:"itemStatus,omitempty"`
 
-	// The Amazon-defined identifier for an order placed by the buyer, in 3-7-7 format.
+	// The Amazon-defined identifier for an order placed by the buyer in 3-7-7 format.
 	OrderID OrderID `json:"orderId,omitempty"`
 
 	// The total number of items included in the order.

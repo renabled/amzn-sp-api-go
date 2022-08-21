@@ -13,12 +13,12 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// CancelServiceJobByServiceJobIDResponse Response schema for CancelServiceJobByServiceJobId operation.
+// CancelServiceJobByServiceJobIDResponse Response schema for the `cancelServiceJobByServiceJobId` operation.
 //
 // swagger:model CancelServiceJobByServiceJobIdResponse
 type CancelServiceJobByServiceJobIDResponse struct {
 
-	// Encountered errors for the CancelServiceJobByServiceJobId operation.
+	// Encountered errors for the `cancelServiceJobByServiceJobId` operation.
 	Errors ErrorList `json:"errors,omitempty"`
 }
 

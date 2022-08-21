@@ -21,7 +21,7 @@ type GetOrderBuyerInfoResponse struct {
 	// One or more unexpected errors occurred during the getOrderBuyerInfo operation.
 	Errors ErrorList `json:"errors,omitempty"`
 
-	// The payload for the getOrderBuyerInfo operations.
+	// The payload for the getOrderBuyerInfo operation.
 	Payload *OrderBuyerInfo `json:"payload,omitempty"`
 }
 

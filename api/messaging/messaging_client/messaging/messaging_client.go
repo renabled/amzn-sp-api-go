@@ -54,6 +54,8 @@ type ClientService interface {
 
 	GetMessagingActionsForOrder(params *GetMessagingActionsForOrderParams, opts ...ClientOption) (*GetMessagingActionsForOrderOK, error)
 
+	SendInvoice(params *SendInvoiceParams, opts ...ClientOption) (*SendInvoiceCreated, error)
+
 	SetTransport(transport runtime.ClientTransport)
 }
 
@@ -604,6 +606,44 @@ func (a *Client) GetMessagingActionsForOrder(params *GetMessagingActionsForOrder
 	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
 	msg := fmt.Sprintf("unexpected success response for getMessagingActionsForOrder: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+  SendInvoice Sends a message providing the buyer an invoice
+*/
+func (a *Client) SendInvoice(params *SendInvoiceParams, opts ...ClientOption) (*SendInvoiceCreated, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewSendInvoiceParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "sendInvoice",
+		Method:             "POST",
+		PathPattern:        "/messaging/v1/orders/{amazonOrderId}/messages/invoice",
+		ProducesMediaTypes: []string{"application/hal+json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &SendInvoiceReader{formats: a.formats},
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*SendInvoiceCreated)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for sendInvoice: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 

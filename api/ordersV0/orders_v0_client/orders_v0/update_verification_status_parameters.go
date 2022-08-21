@@ -69,7 +69,7 @@ type UpdateVerificationStatusParams struct {
 
 	/* Payload.
 
-	   Request to update the verification status of an order containing regulated products.
+	   The request body for the updateVerificationStatus operation.
 	*/
 	Payload *orders_v0_models.UpdateVerificationStatusRequest
 

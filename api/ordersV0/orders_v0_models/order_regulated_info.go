@@ -31,7 +31,7 @@ type OrderRegulatedInfo struct {
 	// Required: true
 	RegulatedOrderVerificationStatus *RegulatedOrderVerificationStatus `json:"RegulatedOrderVerificationStatus"`
 
-	// Whether the order requires attaching a dosage information label when shipped.
+	// When true, the order requires attaching a dosage information label when shipped.
 	// Required: true
 	RequiresDosageLabel *bool `json:"RequiresDosageLabel"`
 }

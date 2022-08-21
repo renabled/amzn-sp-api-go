@@ -13,7 +13,7 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// BuyerInfo Buyer information
+// BuyerInfo Buyer information.
 //
 // swagger:model BuyerInfo
 type BuyerInfo struct {
@@ -24,7 +24,7 @@ type BuyerInfo struct {
 	// The anonymized email address of the buyer.
 	BuyerEmail string `json:"BuyerEmail,omitempty"`
 
-	// The name of the buyer.
+	// The buyer name or the recipient name.
 	BuyerName string `json:"BuyerName,omitempty"`
 
 	// Tax information about the buyer.
