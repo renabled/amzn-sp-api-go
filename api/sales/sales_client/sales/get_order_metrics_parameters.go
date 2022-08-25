@@ -108,7 +108,9 @@ type GetOrderMetricsParams struct {
 
 	/* MarketplaceIds.
 
-	   A list of marketplace identifiers. Example: ATVPDKIKX0DER indicates the US marketplace.
+	     A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified.
+
+	For example, ATVPDKIKX0DER indicates the US marketplace.
 	*/
 	MarketplaceIds []string
 
