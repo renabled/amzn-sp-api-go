@@ -58,8 +58,11 @@ type ItemSummaryByMarketplace struct {
 	// Name of the style associated with an Amazon catalog item.
 	Style string `json:"style,omitempty"`
 
-	// Name of the website display group associated with an Amazon catalog item.
+	// Identifier of the website display group associated with an Amazon catalog item.
 	WebsiteDisplayGroup string `json:"websiteDisplayGroup,omitempty"`
+
+	// Display name of the website display group associated with an Amazon catalog item.
+	WebsiteDisplayGroupName string `json:"websiteDisplayGroupName,omitempty"`
 }
 
 // Validate validates this item summary by marketplace
