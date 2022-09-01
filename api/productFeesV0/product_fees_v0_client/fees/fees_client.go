@@ -50,7 +50,7 @@ You can call `getMyFeesEstimateForASIN` for an item on behalf of a selling partn
 
 | Rate (requests per second) | Burst |
 | ---- | ---- |
-| 10 | 20 |
+| 1 | 2 |
 
 The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
 */
@@ -100,7 +100,7 @@ You can call `getMyFeesEstimateForSKU` for an item on behalf of a selling partne
 
 | Rate (requests per second) | Burst |
 | ---- | ---- |
-| 10 | 20 |
+| 1 | 2 |
 
 The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
 */
@@ -146,7 +146,7 @@ func (a *Client) GetMyFeesEstimateForSKU(params *GetMyFeesEstimateForSKUParams, 
 
 | Rate (requests per second) | Burst |
 | ---- | ---- |
-| 1 | 1 |
+| 0.5 | 1 |
 
 The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
 */

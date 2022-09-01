@@ -52,7 +52,7 @@ type ClientService interface {
 
 | Rate (requests per second) | Burst |
 | ---- | ---- |
-| 10 | 20 |
+| 0.5 | 1 |
 
 The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
 */
@@ -98,7 +98,7 @@ func (a *Client) GetCompetitivePricing(params *GetCompetitivePricingParams, opts
 
 | Rate (requests per second) | Burst |
 | ---- | ---- |
-| 5 | 10 |
+| 0.5 | 1 |
 
 The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
 */
@@ -144,7 +144,7 @@ func (a *Client) GetItemOffers(params *GetItemOffersParams, opts ...ClientOption
 
 | Rate (requests per second) | Burst |
 | ---- | ---- |
-| .5 | 1 |
+| 0.5 | 1 |
 
 The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
 */
@@ -190,7 +190,7 @@ func (a *Client) GetItemOffersBatch(params *GetItemOffersBatchParams, opts ...Cl
 
 | Rate (requests per second) | Burst |
 | ---- | ---- |
-| 5 | 10 |
+| 1 | 2 |
 
 The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
 */
@@ -236,7 +236,7 @@ func (a *Client) GetListingOffers(params *GetListingOffersParams, opts ...Client
 
 | Rate (requests per second) | Burst |
 | ---- | ---- |
-| .5 | 1 |
+| 0.5 | 1 |
 
 The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
 */
@@ -282,7 +282,7 @@ func (a *Client) GetListingOffersBatch(params *GetListingOffersBatchParams, opts
 
 | Rate (requests per second) | Burst |
 | ---- | ---- |
-| 10 | 20 |
+| 0.5 | 1 |
 
 The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
 */
