@@ -52,7 +52,7 @@ type Container struct {
 	// SCAC code required for NA VOC vendors only.
 	ScacCode string `json:"scacCode,omitempty"`
 
-	// The shipment method.
+	// The shipment method. This property is required when calling the submitShipmentConfirmations operation, and optional otherwise.
 	ShipMethod string `json:"shipMethod,omitempty"`
 
 	// The tracking number.

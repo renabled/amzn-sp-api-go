@@ -10,6 +10,8 @@ import (
 	httptransport "github.com/go-openapi/runtime/client"
 	"github.com/go-openapi/strfmt"
 
+	"github.com/xamandar/amzn-sp-api-go/api/vendorDirectFulfillmentShipping_2021-12-28/vendor_direct_fulfillment_shipping_2021_12_28_client/customer_invoices"
+	"github.com/xamandar/amzn-sp-api-go/api/vendorDirectFulfillmentShipping_2021-12-28/vendor_direct_fulfillment_shipping_2021_12_28_client/vendor_shipping"
 	"github.com/xamandar/amzn-sp-api-go/api/vendorDirectFulfillmentShipping_2021-12-28/vendor_direct_fulfillment_shipping_2021_12_28_client/vendor_shipping_labels"
 )
 
@@ -55,6 +57,8 @@ func New(transport runtime.ClientTransport, formats strfmt.Registry) *VendorDire
 
 	cli := new(VendorDirectFulfillmentShipping20211228)
 	cli.Transport = transport
+	cli.CustomerInvoices = customer_invoices.New(transport, formats)
+	cli.VendorShipping = vendor_shipping.New(transport, formats)
 	cli.VendorShippingLabels = vendor_shipping_labels.New(transport, formats)
 	return cli
 }
@@ -100,6 +104,10 @@ func (cfg *TransportConfig) WithSchemes(schemes []string) *TransportConfig {
 
 // VendorDirectFulfillmentShipping20211228 is a client for vendor direct fulfillment shipping20211228
 type VendorDirectFulfillmentShipping20211228 struct {
+	CustomerInvoices customer_invoices.ClientService
+
+	VendorShipping vendor_shipping.ClientService
+
 	VendorShippingLabels vendor_shipping_labels.ClientService
 
 	Transport runtime.ClientTransport
@@ -108,5 +116,7 @@ type VendorDirectFulfillmentShipping20211228 struct {
 // SetTransport changes the transport on the client and all its subresources
 func (c *VendorDirectFulfillmentShipping20211228) SetTransport(transport runtime.ClientTransport) {
 	c.Transport = transport
+	c.CustomerInvoices.SetTransport(transport)
+	c.VendorShipping.SetTransport(transport)
 	c.VendorShippingLabels.SetTransport(transport)
 }

@@ -30,6 +30,9 @@ type PackedItem struct {
 	// Required: true
 	PackedQuantity *ItemQuantity `json:"packedQuantity"`
 
+	// The piece number of the item in this container. This is required when the item is split across different containers.
+	PieceNumber int64 `json:"pieceNumber,omitempty"`
+
 	// The vendor selected product identification of the item. Should be the same as was sent in the Purchase Order, like SKU Number.
 	VendorProductIdentifier string `json:"vendorProductIdentifier,omitempty"`
 }
