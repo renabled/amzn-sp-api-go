@@ -36,11 +36,11 @@ type ClientService interface {
 }
 
 /*
-  GetInventorySummaries Returns a list of inventory summaries. The summaries returned depend on the presence or absence of the startDateTime and sellerSkus parameters:
+  GetInventorySummaries Returns a list of inventory summaries. The summaries returned depend on the presence or absence of the `startDateTime` and `sellerSkus` parameters:
 
-- All inventory summaries with available details are returned when the startDateTime and sellerSkus parameters are omitted.
-- When startDateTime is provided, the operation returns inventory summaries that have had changes after the date and time specified. The sellerSkus parameter is ignored.
-- When the sellerSkus parameter is provided, the operation returns inventory summaries for only the specified sellerSkus.
+- All inventory summaries with available details are returned when the `startDateTime` and `sellerSkus` parameters are omitted.
+- When `startDateTime` is provided, the operation returns inventory summaries that have had changes after the date and time specified. The `sellerSkus` parameter is ignored. **Important:** To avoid errors, use both `startDateTime` and `nextToken` to get the next page of inventory summaries that have changed after the date and time specified.
+- When the `sellerSkus` parameter is provided, the operation returns inventory summaries for only the specified `sellerSkus`.
 
 **Usage Plan:**
 
@@ -48,7 +48,7 @@ type ClientService interface {
 | ---- | ---- |
 | 2 | 2 |
 
-For more information, see "Usage Plans and Rate Limits" in the Selling Partner API documentation.
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
 */
 func (a *Client) GetInventorySummaries(params *GetInventorySummariesParams, opts ...ClientOption) (*GetInventorySummariesOK, error) {
 	// TODO: Validate the params before sending
