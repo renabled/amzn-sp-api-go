@@ -16,6 +16,13 @@ else
   for f in ./selling-partner-api-models/models/**/*.json; do \
     echo "⚙️ Processing $f..."; \
 
+    if [ "$(basename -s .json $f)" == "sales" ]; then \
+      cat $f | jq '.definitions.Decimal.type = "number" | .definitions.Decimal.format = "float"' > ./selling-partner-api-models/tmp.json; \
+      mkdir -p ./api/"$(basename -s .json $f)"; \
+      swagger --quiet generate client -f ./selling-partner-api-models/tmp.json -t ./api/"$(basename -s .json $f)" -c "$(basename -s .json $f)-client" -A "$(basename -s .json $f)" -m "$(basename -s .json $f)-models"; \
+      continue; \
+    fi; \
+
     if [ "$(basename -s .json $f)" == "catalogItems_2020-12-01" ] || \
         [ "$(basename -s .json $f)" == "listingsItems_2021-08-01" ]; then \
       cat $f | jq '(.paths[].get.parameters[] | select(.name == "includedData").default) |= ["summaries"]' > ./selling-partner-api-models/tmp.json; \

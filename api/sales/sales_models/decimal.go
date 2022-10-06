@@ -14,7 +14,7 @@ import (
 // Decimal A decimal number with no loss of precision. Useful when precision loss is unnaceptable, as with currencies. Follows RFC7159 for number representation.
 //
 // swagger:model Decimal
-type Decimal string
+type Decimal float32
 
 // Validate validates this decimal
 func (m Decimal) Validate(formats strfmt.Registry) error {
