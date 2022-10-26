@@ -13,7 +13,7 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// GetPricingResponse The response schema for the getPricing and getCompetitivePricing operations.
+// GetPricingResponse The response schema for the `getPricing` and `getCompetitivePricing` operations.
 //
 // swagger:model GetPricingResponse
 type GetPricingResponse struct {

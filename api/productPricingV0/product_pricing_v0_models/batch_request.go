@@ -26,9 +26,15 @@ type BatchRequest struct {
 	// Required: true
 	Method *HTTPMethod `json:"method"`
 
-	// The `getItemOffers` resource path without any query parameters.
+	// The resource path of the operation you are calling in batch without any query parameters.
+	//
+	// If you are calling `getItemOffersBatch`, supply the path of `getItemOffers`.
 	//
 	// **Example:** `/products/pricing/v0/items/B000P6Q7MY/offers`
+	//
+	// If you are calling `getListingOffersBatch`, supply the path of `getListingOffers`.
+	//
+	// **Example:** `/products/pricing/v0/listings/B000P6Q7MY/offers`
 	// Required: true
 	URI *string `json:"uri"`
 }

@@ -13,7 +13,7 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// GetOffersResponse The response schema for the getListingOffers and getItemOffers operations.
+// GetOffersResponse The response schema for the `getListingOffers` and `getItemOffers` operations.
 //
 // swagger:model GetOffersResponse
 type GetOffersResponse struct {
@@ -21,7 +21,7 @@ type GetOffersResponse struct {
 	// One or more unexpected errors occurred during the operation.
 	Errors ErrorList `json:"errors,omitempty"`
 
-	// The payload for the getListingOffers and getItemOffers operations.
+	// The payload for the `getListingOffers` and `getItemOffers` operations.
 	Payload *GetOffersResult `json:"payload,omitempty"`
 }
 
