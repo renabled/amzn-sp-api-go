@@ -46,7 +46,7 @@ type ClientService interface {
 }
 
 /*
-  GetCompetitivePricing Returns competitive pricing information for a seller's offer listings based on seller SKU or ASIN.
+	GetCompetitivePricing Returns competitive pricing information for a seller's offer listings based on seller SKU or ASIN.
 
 **Usage Plan:**
 
@@ -92,7 +92,7 @@ func (a *Client) GetCompetitivePricing(params *GetCompetitivePricingParams, opts
 }
 
 /*
-  GetItemOffers Returns the lowest priced offers for a single item based on ASIN.
+	GetItemOffers Returns the lowest priced offers for a single item based on ASIN.
 
 **Usage Plan:**
 
@@ -138,7 +138,7 @@ func (a *Client) GetItemOffers(params *GetItemOffersParams, opts ...ClientOption
 }
 
 /*
-  GetItemOffersBatch Returns the lowest priced offers for a batch of items based on ASIN.
+	GetItemOffersBatch Returns the lowest priced offers for a batch of items based on ASIN.
 
 **Usage Plan:**
 
@@ -184,7 +184,7 @@ func (a *Client) GetItemOffersBatch(params *GetItemOffersBatchParams, opts ...Cl
 }
 
 /*
-  GetListingOffers Returns the lowest priced offers for a single SKU listing.
+	GetListingOffers Returns the lowest priced offers for a single SKU listing.
 
 **Usage Plan:**
 
@@ -230,7 +230,7 @@ func (a *Client) GetListingOffers(params *GetListingOffersParams, opts ...Client
 }
 
 /*
-  GetListingOffersBatch Returns the lowest priced offers for a batch of listings by SKU.
+	GetListingOffersBatch Returns the lowest priced offers for a batch of listings by SKU.
 
 **Usage Plan:**
 
@@ -276,7 +276,7 @@ func (a *Client) GetListingOffersBatch(params *GetListingOffersBatchParams, opts
 }
 
 /*
-  GetPricing Returns pricing information for a seller's offer listings based on seller SKU or ASIN.
+	GetPricing Returns pricing information for a seller's offer listings based on seller SKU or ASIN.
 
 **Usage Plan:**
 

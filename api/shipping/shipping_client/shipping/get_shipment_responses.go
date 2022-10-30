@@ -81,7 +81,8 @@ func NewGetShipmentOK() *GetShipmentOK {
 	return &GetShipmentOK{}
 }
 
-/* GetShipmentOK describes a response with status code 200, with default header values.
+/*
+GetShipmentOK describes a response with status code 200, with default header values.
 
 Success.
 */
@@ -98,9 +99,39 @@ type GetShipmentOK struct {
 	Payload *shipping_models.GetShipmentResponse
 }
 
+// IsSuccess returns true when this get shipment o k response has a 2xx status code
+func (o *GetShipmentOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this get shipment o k response has a 3xx status code
+func (o *GetShipmentOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get shipment o k response has a 4xx status code
+func (o *GetShipmentOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get shipment o k response has a 5xx status code
+func (o *GetShipmentOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get shipment o k response a status code equal to that given
+func (o *GetShipmentOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *GetShipmentOK) Error() string {
 	return fmt.Sprintf("[GET /shipping/v1/shipments/{shipmentId}][%d] getShipmentOK  %+v", 200, o.Payload)
 }
+
+func (o *GetShipmentOK) String() string {
+	return fmt.Sprintf("[GET /shipping/v1/shipments/{shipmentId}][%d] getShipmentOK  %+v", 200, o.Payload)
+}
+
 func (o *GetShipmentOK) GetPayload() *shipping_models.GetShipmentResponse {
 	return o.Payload
 }
@@ -136,7 +167,8 @@ func NewGetShipmentBadRequest() *GetShipmentBadRequest {
 	return &GetShipmentBadRequest{}
 }
 
-/* GetShipmentBadRequest describes a response with status code 400, with default header values.
+/*
+GetShipmentBadRequest describes a response with status code 400, with default header values.
 
 Request has missing or invalid parameters and cannot be parsed.
 */
@@ -153,9 +185,39 @@ type GetShipmentBadRequest struct {
 	Payload *shipping_models.GetShipmentResponse
 }
 
+// IsSuccess returns true when this get shipment bad request response has a 2xx status code
+func (o *GetShipmentBadRequest) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get shipment bad request response has a 3xx status code
+func (o *GetShipmentBadRequest) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get shipment bad request response has a 4xx status code
+func (o *GetShipmentBadRequest) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get shipment bad request response has a 5xx status code
+func (o *GetShipmentBadRequest) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get shipment bad request response a status code equal to that given
+func (o *GetShipmentBadRequest) IsCode(code int) bool {
+	return code == 400
+}
+
 func (o *GetShipmentBadRequest) Error() string {
 	return fmt.Sprintf("[GET /shipping/v1/shipments/{shipmentId}][%d] getShipmentBadRequest  %+v", 400, o.Payload)
 }
+
+func (o *GetShipmentBadRequest) String() string {
+	return fmt.Sprintf("[GET /shipping/v1/shipments/{shipmentId}][%d] getShipmentBadRequest  %+v", 400, o.Payload)
+}
+
 func (o *GetShipmentBadRequest) GetPayload() *shipping_models.GetShipmentResponse {
 	return o.Payload
 }
@@ -191,7 +253,8 @@ func NewGetShipmentUnauthorized() *GetShipmentUnauthorized {
 	return &GetShipmentUnauthorized{}
 }
 
-/* GetShipmentUnauthorized describes a response with status code 401, with default header values.
+/*
+GetShipmentUnauthorized describes a response with status code 401, with default header values.
 
 The request's Authorization header is not formatted correctly or does not contain a valid token.
 */
@@ -209,9 +272,39 @@ type GetShipmentUnauthorized struct {
 	Payload *shipping_models.GetShipmentResponse
 }
 
+// IsSuccess returns true when this get shipment unauthorized response has a 2xx status code
+func (o *GetShipmentUnauthorized) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get shipment unauthorized response has a 3xx status code
+func (o *GetShipmentUnauthorized) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get shipment unauthorized response has a 4xx status code
+func (o *GetShipmentUnauthorized) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get shipment unauthorized response has a 5xx status code
+func (o *GetShipmentUnauthorized) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get shipment unauthorized response a status code equal to that given
+func (o *GetShipmentUnauthorized) IsCode(code int) bool {
+	return code == 401
+}
+
 func (o *GetShipmentUnauthorized) Error() string {
 	return fmt.Sprintf("[GET /shipping/v1/shipments/{shipmentId}][%d] getShipmentUnauthorized  %+v", 401, o.Payload)
 }
+
+func (o *GetShipmentUnauthorized) String() string {
+	return fmt.Sprintf("[GET /shipping/v1/shipments/{shipmentId}][%d] getShipmentUnauthorized  %+v", 401, o.Payload)
+}
+
 func (o *GetShipmentUnauthorized) GetPayload() *shipping_models.GetShipmentResponse {
 	return o.Payload
 }
@@ -247,7 +340,8 @@ func NewGetShipmentForbidden() *GetShipmentForbidden {
 	return &GetShipmentForbidden{}
 }
 
-/* GetShipmentForbidden describes a response with status code 403, with default header values.
+/*
+GetShipmentForbidden describes a response with status code 403, with default header values.
 
 403 can be caused for reasons like Access Denied, Unauthorized, Expired Token, Invalid Signature or Resource Not Found.
 */
@@ -260,9 +354,39 @@ type GetShipmentForbidden struct {
 	Payload *shipping_models.GetShipmentResponse
 }
 
+// IsSuccess returns true when this get shipment forbidden response has a 2xx status code
+func (o *GetShipmentForbidden) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get shipment forbidden response has a 3xx status code
+func (o *GetShipmentForbidden) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get shipment forbidden response has a 4xx status code
+func (o *GetShipmentForbidden) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get shipment forbidden response has a 5xx status code
+func (o *GetShipmentForbidden) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get shipment forbidden response a status code equal to that given
+func (o *GetShipmentForbidden) IsCode(code int) bool {
+	return code == 403
+}
+
 func (o *GetShipmentForbidden) Error() string {
 	return fmt.Sprintf("[GET /shipping/v1/shipments/{shipmentId}][%d] getShipmentForbidden  %+v", 403, o.Payload)
 }
+
+func (o *GetShipmentForbidden) String() string {
+	return fmt.Sprintf("[GET /shipping/v1/shipments/{shipmentId}][%d] getShipmentForbidden  %+v", 403, o.Payload)
+}
+
 func (o *GetShipmentForbidden) GetPayload() *shipping_models.GetShipmentResponse {
 	return o.Payload
 }
@@ -291,7 +415,8 @@ func NewGetShipmentNotFound() *GetShipmentNotFound {
 	return &GetShipmentNotFound{}
 }
 
-/* GetShipmentNotFound describes a response with status code 404, with default header values.
+/*
+GetShipmentNotFound describes a response with status code 404, with default header values.
 
 The resource specified does not exist.
 */
@@ -308,9 +433,39 @@ type GetShipmentNotFound struct {
 	Payload *shipping_models.GetShipmentResponse
 }
 
+// IsSuccess returns true when this get shipment not found response has a 2xx status code
+func (o *GetShipmentNotFound) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get shipment not found response has a 3xx status code
+func (o *GetShipmentNotFound) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get shipment not found response has a 4xx status code
+func (o *GetShipmentNotFound) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get shipment not found response has a 5xx status code
+func (o *GetShipmentNotFound) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get shipment not found response a status code equal to that given
+func (o *GetShipmentNotFound) IsCode(code int) bool {
+	return code == 404
+}
+
 func (o *GetShipmentNotFound) Error() string {
 	return fmt.Sprintf("[GET /shipping/v1/shipments/{shipmentId}][%d] getShipmentNotFound  %+v", 404, o.Payload)
 }
+
+func (o *GetShipmentNotFound) String() string {
+	return fmt.Sprintf("[GET /shipping/v1/shipments/{shipmentId}][%d] getShipmentNotFound  %+v", 404, o.Payload)
+}
+
 func (o *GetShipmentNotFound) GetPayload() *shipping_models.GetShipmentResponse {
 	return o.Payload
 }
@@ -346,7 +501,8 @@ func NewGetShipmentTooManyRequests() *GetShipmentTooManyRequests {
 	return &GetShipmentTooManyRequests{}
 }
 
-/* GetShipmentTooManyRequests describes a response with status code 429, with default header values.
+/*
+GetShipmentTooManyRequests describes a response with status code 429, with default header values.
 
 The frequency of requests was greater than allowed.
 */
@@ -364,9 +520,39 @@ type GetShipmentTooManyRequests struct {
 	Payload *shipping_models.GetShipmentResponse
 }
 
+// IsSuccess returns true when this get shipment too many requests response has a 2xx status code
+func (o *GetShipmentTooManyRequests) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get shipment too many requests response has a 3xx status code
+func (o *GetShipmentTooManyRequests) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get shipment too many requests response has a 4xx status code
+func (o *GetShipmentTooManyRequests) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get shipment too many requests response has a 5xx status code
+func (o *GetShipmentTooManyRequests) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get shipment too many requests response a status code equal to that given
+func (o *GetShipmentTooManyRequests) IsCode(code int) bool {
+	return code == 429
+}
+
 func (o *GetShipmentTooManyRequests) Error() string {
 	return fmt.Sprintf("[GET /shipping/v1/shipments/{shipmentId}][%d] getShipmentTooManyRequests  %+v", 429, o.Payload)
 }
+
+func (o *GetShipmentTooManyRequests) String() string {
+	return fmt.Sprintf("[GET /shipping/v1/shipments/{shipmentId}][%d] getShipmentTooManyRequests  %+v", 429, o.Payload)
+}
+
 func (o *GetShipmentTooManyRequests) GetPayload() *shipping_models.GetShipmentResponse {
 	return o.Payload
 }
@@ -402,7 +588,8 @@ func NewGetShipmentInternalServerError() *GetShipmentInternalServerError {
 	return &GetShipmentInternalServerError{}
 }
 
-/* GetShipmentInternalServerError describes a response with status code 500, with default header values.
+/*
+GetShipmentInternalServerError describes a response with status code 500, with default header values.
 
 Encountered an unexpected condition which prevented the server from fulfilling the request.
 */
@@ -420,9 +607,39 @@ type GetShipmentInternalServerError struct {
 	Payload *shipping_models.GetShipmentResponse
 }
 
+// IsSuccess returns true when this get shipment internal server error response has a 2xx status code
+func (o *GetShipmentInternalServerError) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get shipment internal server error response has a 3xx status code
+func (o *GetShipmentInternalServerError) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get shipment internal server error response has a 4xx status code
+func (o *GetShipmentInternalServerError) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get shipment internal server error response has a 5xx status code
+func (o *GetShipmentInternalServerError) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this get shipment internal server error response a status code equal to that given
+func (o *GetShipmentInternalServerError) IsCode(code int) bool {
+	return code == 500
+}
+
 func (o *GetShipmentInternalServerError) Error() string {
 	return fmt.Sprintf("[GET /shipping/v1/shipments/{shipmentId}][%d] getShipmentInternalServerError  %+v", 500, o.Payload)
 }
+
+func (o *GetShipmentInternalServerError) String() string {
+	return fmt.Sprintf("[GET /shipping/v1/shipments/{shipmentId}][%d] getShipmentInternalServerError  %+v", 500, o.Payload)
+}
+
 func (o *GetShipmentInternalServerError) GetPayload() *shipping_models.GetShipmentResponse {
 	return o.Payload
 }
@@ -458,7 +675,8 @@ func NewGetShipmentServiceUnavailable() *GetShipmentServiceUnavailable {
 	return &GetShipmentServiceUnavailable{}
 }
 
-/* GetShipmentServiceUnavailable describes a response with status code 503, with default header values.
+/*
+GetShipmentServiceUnavailable describes a response with status code 503, with default header values.
 
 Temporary overloading or maintenance of the server.
 */
@@ -476,9 +694,39 @@ type GetShipmentServiceUnavailable struct {
 	Payload *shipping_models.GetShipmentResponse
 }
 
+// IsSuccess returns true when this get shipment service unavailable response has a 2xx status code
+func (o *GetShipmentServiceUnavailable) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get shipment service unavailable response has a 3xx status code
+func (o *GetShipmentServiceUnavailable) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get shipment service unavailable response has a 4xx status code
+func (o *GetShipmentServiceUnavailable) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get shipment service unavailable response has a 5xx status code
+func (o *GetShipmentServiceUnavailable) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this get shipment service unavailable response a status code equal to that given
+func (o *GetShipmentServiceUnavailable) IsCode(code int) bool {
+	return code == 503
+}
+
 func (o *GetShipmentServiceUnavailable) Error() string {
 	return fmt.Sprintf("[GET /shipping/v1/shipments/{shipmentId}][%d] getShipmentServiceUnavailable  %+v", 503, o.Payload)
 }
+
+func (o *GetShipmentServiceUnavailable) String() string {
+	return fmt.Sprintf("[GET /shipping/v1/shipments/{shipmentId}][%d] getShipmentServiceUnavailable  %+v", 503, o.Payload)
+}
+
 func (o *GetShipmentServiceUnavailable) GetPayload() *shipping_models.GetShipmentResponse {
 	return o.Payload
 }

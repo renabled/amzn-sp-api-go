@@ -87,7 +87,8 @@ func NewDeleteSmallAndLightEnrollmentBySellerSKUNoContent() *DeleteSmallAndLight
 	return &DeleteSmallAndLightEnrollmentBySellerSKUNoContent{}
 }
 
-/* DeleteSmallAndLightEnrollmentBySellerSKUNoContent describes a response with status code 204, with default header values.
+/*
+DeleteSmallAndLightEnrollmentBySellerSKUNoContent describes a response with status code 204, with default header values.
 
 Success.
 */
@@ -102,7 +103,36 @@ type DeleteSmallAndLightEnrollmentBySellerSKUNoContent struct {
 	XAmznRequestID string
 }
 
+// IsSuccess returns true when this delete small and light enrollment by seller s k u no content response has a 2xx status code
+func (o *DeleteSmallAndLightEnrollmentBySellerSKUNoContent) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this delete small and light enrollment by seller s k u no content response has a 3xx status code
+func (o *DeleteSmallAndLightEnrollmentBySellerSKUNoContent) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this delete small and light enrollment by seller s k u no content response has a 4xx status code
+func (o *DeleteSmallAndLightEnrollmentBySellerSKUNoContent) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this delete small and light enrollment by seller s k u no content response has a 5xx status code
+func (o *DeleteSmallAndLightEnrollmentBySellerSKUNoContent) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this delete small and light enrollment by seller s k u no content response a status code equal to that given
+func (o *DeleteSmallAndLightEnrollmentBySellerSKUNoContent) IsCode(code int) bool {
+	return code == 204
+}
+
 func (o *DeleteSmallAndLightEnrollmentBySellerSKUNoContent) Error() string {
+	return fmt.Sprintf("[DELETE /fba/smallAndLight/v1/enrollments/{sellerSKU}][%d] deleteSmallAndLightEnrollmentBySellerSKUNoContent ", 204)
+}
+
+func (o *DeleteSmallAndLightEnrollmentBySellerSKUNoContent) String() string {
 	return fmt.Sprintf("[DELETE /fba/smallAndLight/v1/enrollments/{sellerSKU}][%d] deleteSmallAndLightEnrollmentBySellerSKUNoContent ", 204)
 }
 
@@ -130,7 +160,8 @@ func NewDeleteSmallAndLightEnrollmentBySellerSKUBadRequest() *DeleteSmallAndLigh
 	return &DeleteSmallAndLightEnrollmentBySellerSKUBadRequest{}
 }
 
-/* DeleteSmallAndLightEnrollmentBySellerSKUBadRequest describes a response with status code 400, with default header values.
+/*
+DeleteSmallAndLightEnrollmentBySellerSKUBadRequest describes a response with status code 400, with default header values.
 
 Request has missing or invalid parameters and cannot be parsed.
 */
@@ -147,9 +178,39 @@ type DeleteSmallAndLightEnrollmentBySellerSKUBadRequest struct {
 	Payload *fba_smalland_light_models.ErrorList
 }
 
+// IsSuccess returns true when this delete small and light enrollment by seller s k u bad request response has a 2xx status code
+func (o *DeleteSmallAndLightEnrollmentBySellerSKUBadRequest) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this delete small and light enrollment by seller s k u bad request response has a 3xx status code
+func (o *DeleteSmallAndLightEnrollmentBySellerSKUBadRequest) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this delete small and light enrollment by seller s k u bad request response has a 4xx status code
+func (o *DeleteSmallAndLightEnrollmentBySellerSKUBadRequest) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this delete small and light enrollment by seller s k u bad request response has a 5xx status code
+func (o *DeleteSmallAndLightEnrollmentBySellerSKUBadRequest) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this delete small and light enrollment by seller s k u bad request response a status code equal to that given
+func (o *DeleteSmallAndLightEnrollmentBySellerSKUBadRequest) IsCode(code int) bool {
+	return code == 400
+}
+
 func (o *DeleteSmallAndLightEnrollmentBySellerSKUBadRequest) Error() string {
 	return fmt.Sprintf("[DELETE /fba/smallAndLight/v1/enrollments/{sellerSKU}][%d] deleteSmallAndLightEnrollmentBySellerSKUBadRequest  %+v", 400, o.Payload)
 }
+
+func (o *DeleteSmallAndLightEnrollmentBySellerSKUBadRequest) String() string {
+	return fmt.Sprintf("[DELETE /fba/smallAndLight/v1/enrollments/{sellerSKU}][%d] deleteSmallAndLightEnrollmentBySellerSKUBadRequest  %+v", 400, o.Payload)
+}
+
 func (o *DeleteSmallAndLightEnrollmentBySellerSKUBadRequest) GetPayload() *fba_smalland_light_models.ErrorList {
 	return o.Payload
 }
@@ -185,7 +246,8 @@ func NewDeleteSmallAndLightEnrollmentBySellerSKUForbidden() *DeleteSmallAndLight
 	return &DeleteSmallAndLightEnrollmentBySellerSKUForbidden{}
 }
 
-/* DeleteSmallAndLightEnrollmentBySellerSKUForbidden describes a response with status code 403, with default header values.
+/*
+DeleteSmallAndLightEnrollmentBySellerSKUForbidden describes a response with status code 403, with default header values.
 
 Indicates that access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.
 */
@@ -198,9 +260,39 @@ type DeleteSmallAndLightEnrollmentBySellerSKUForbidden struct {
 	Payload *fba_smalland_light_models.ErrorList
 }
 
+// IsSuccess returns true when this delete small and light enrollment by seller s k u forbidden response has a 2xx status code
+func (o *DeleteSmallAndLightEnrollmentBySellerSKUForbidden) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this delete small and light enrollment by seller s k u forbidden response has a 3xx status code
+func (o *DeleteSmallAndLightEnrollmentBySellerSKUForbidden) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this delete small and light enrollment by seller s k u forbidden response has a 4xx status code
+func (o *DeleteSmallAndLightEnrollmentBySellerSKUForbidden) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this delete small and light enrollment by seller s k u forbidden response has a 5xx status code
+func (o *DeleteSmallAndLightEnrollmentBySellerSKUForbidden) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this delete small and light enrollment by seller s k u forbidden response a status code equal to that given
+func (o *DeleteSmallAndLightEnrollmentBySellerSKUForbidden) IsCode(code int) bool {
+	return code == 403
+}
+
 func (o *DeleteSmallAndLightEnrollmentBySellerSKUForbidden) Error() string {
 	return fmt.Sprintf("[DELETE /fba/smallAndLight/v1/enrollments/{sellerSKU}][%d] deleteSmallAndLightEnrollmentBySellerSKUForbidden  %+v", 403, o.Payload)
 }
+
+func (o *DeleteSmallAndLightEnrollmentBySellerSKUForbidden) String() string {
+	return fmt.Sprintf("[DELETE /fba/smallAndLight/v1/enrollments/{sellerSKU}][%d] deleteSmallAndLightEnrollmentBySellerSKUForbidden  %+v", 403, o.Payload)
+}
+
 func (o *DeleteSmallAndLightEnrollmentBySellerSKUForbidden) GetPayload() *fba_smalland_light_models.ErrorList {
 	return o.Payload
 }
@@ -229,7 +321,8 @@ func NewDeleteSmallAndLightEnrollmentBySellerSKUNotFound() *DeleteSmallAndLightE
 	return &DeleteSmallAndLightEnrollmentBySellerSKUNotFound{}
 }
 
-/* DeleteSmallAndLightEnrollmentBySellerSKUNotFound describes a response with status code 404, with default header values.
+/*
+DeleteSmallAndLightEnrollmentBySellerSKUNotFound describes a response with status code 404, with default header values.
 
 The resource specified does not exist.
 */
@@ -246,9 +339,39 @@ type DeleteSmallAndLightEnrollmentBySellerSKUNotFound struct {
 	Payload *fba_smalland_light_models.ErrorList
 }
 
+// IsSuccess returns true when this delete small and light enrollment by seller s k u not found response has a 2xx status code
+func (o *DeleteSmallAndLightEnrollmentBySellerSKUNotFound) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this delete small and light enrollment by seller s k u not found response has a 3xx status code
+func (o *DeleteSmallAndLightEnrollmentBySellerSKUNotFound) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this delete small and light enrollment by seller s k u not found response has a 4xx status code
+func (o *DeleteSmallAndLightEnrollmentBySellerSKUNotFound) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this delete small and light enrollment by seller s k u not found response has a 5xx status code
+func (o *DeleteSmallAndLightEnrollmentBySellerSKUNotFound) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this delete small and light enrollment by seller s k u not found response a status code equal to that given
+func (o *DeleteSmallAndLightEnrollmentBySellerSKUNotFound) IsCode(code int) bool {
+	return code == 404
+}
+
 func (o *DeleteSmallAndLightEnrollmentBySellerSKUNotFound) Error() string {
 	return fmt.Sprintf("[DELETE /fba/smallAndLight/v1/enrollments/{sellerSKU}][%d] deleteSmallAndLightEnrollmentBySellerSKUNotFound  %+v", 404, o.Payload)
 }
+
+func (o *DeleteSmallAndLightEnrollmentBySellerSKUNotFound) String() string {
+	return fmt.Sprintf("[DELETE /fba/smallAndLight/v1/enrollments/{sellerSKU}][%d] deleteSmallAndLightEnrollmentBySellerSKUNotFound  %+v", 404, o.Payload)
+}
+
 func (o *DeleteSmallAndLightEnrollmentBySellerSKUNotFound) GetPayload() *fba_smalland_light_models.ErrorList {
 	return o.Payload
 }
@@ -284,7 +407,8 @@ func NewDeleteSmallAndLightEnrollmentBySellerSKURequestEntityTooLarge() *DeleteS
 	return &DeleteSmallAndLightEnrollmentBySellerSKURequestEntityTooLarge{}
 }
 
-/* DeleteSmallAndLightEnrollmentBySellerSKURequestEntityTooLarge describes a response with status code 413, with default header values.
+/*
+DeleteSmallAndLightEnrollmentBySellerSKURequestEntityTooLarge describes a response with status code 413, with default header values.
 
 The request size exceeded the maximum accepted size.
 */
@@ -302,9 +426,39 @@ type DeleteSmallAndLightEnrollmentBySellerSKURequestEntityTooLarge struct {
 	Payload *fba_smalland_light_models.ErrorList
 }
 
+// IsSuccess returns true when this delete small and light enrollment by seller s k u request entity too large response has a 2xx status code
+func (o *DeleteSmallAndLightEnrollmentBySellerSKURequestEntityTooLarge) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this delete small and light enrollment by seller s k u request entity too large response has a 3xx status code
+func (o *DeleteSmallAndLightEnrollmentBySellerSKURequestEntityTooLarge) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this delete small and light enrollment by seller s k u request entity too large response has a 4xx status code
+func (o *DeleteSmallAndLightEnrollmentBySellerSKURequestEntityTooLarge) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this delete small and light enrollment by seller s k u request entity too large response has a 5xx status code
+func (o *DeleteSmallAndLightEnrollmentBySellerSKURequestEntityTooLarge) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this delete small and light enrollment by seller s k u request entity too large response a status code equal to that given
+func (o *DeleteSmallAndLightEnrollmentBySellerSKURequestEntityTooLarge) IsCode(code int) bool {
+	return code == 413
+}
+
 func (o *DeleteSmallAndLightEnrollmentBySellerSKURequestEntityTooLarge) Error() string {
 	return fmt.Sprintf("[DELETE /fba/smallAndLight/v1/enrollments/{sellerSKU}][%d] deleteSmallAndLightEnrollmentBySellerSKURequestEntityTooLarge  %+v", 413, o.Payload)
 }
+
+func (o *DeleteSmallAndLightEnrollmentBySellerSKURequestEntityTooLarge) String() string {
+	return fmt.Sprintf("[DELETE /fba/smallAndLight/v1/enrollments/{sellerSKU}][%d] deleteSmallAndLightEnrollmentBySellerSKURequestEntityTooLarge  %+v", 413, o.Payload)
+}
+
 func (o *DeleteSmallAndLightEnrollmentBySellerSKURequestEntityTooLarge) GetPayload() *fba_smalland_light_models.ErrorList {
 	return o.Payload
 }
@@ -340,7 +494,8 @@ func NewDeleteSmallAndLightEnrollmentBySellerSKUUnsupportedMediaType() *DeleteSm
 	return &DeleteSmallAndLightEnrollmentBySellerSKUUnsupportedMediaType{}
 }
 
-/* DeleteSmallAndLightEnrollmentBySellerSKUUnsupportedMediaType describes a response with status code 415, with default header values.
+/*
+DeleteSmallAndLightEnrollmentBySellerSKUUnsupportedMediaType describes a response with status code 415, with default header values.
 
 The request payload is in an unsupported format.
 */
@@ -358,9 +513,39 @@ type DeleteSmallAndLightEnrollmentBySellerSKUUnsupportedMediaType struct {
 	Payload *fba_smalland_light_models.ErrorList
 }
 
+// IsSuccess returns true when this delete small and light enrollment by seller s k u unsupported media type response has a 2xx status code
+func (o *DeleteSmallAndLightEnrollmentBySellerSKUUnsupportedMediaType) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this delete small and light enrollment by seller s k u unsupported media type response has a 3xx status code
+func (o *DeleteSmallAndLightEnrollmentBySellerSKUUnsupportedMediaType) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this delete small and light enrollment by seller s k u unsupported media type response has a 4xx status code
+func (o *DeleteSmallAndLightEnrollmentBySellerSKUUnsupportedMediaType) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this delete small and light enrollment by seller s k u unsupported media type response has a 5xx status code
+func (o *DeleteSmallAndLightEnrollmentBySellerSKUUnsupportedMediaType) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this delete small and light enrollment by seller s k u unsupported media type response a status code equal to that given
+func (o *DeleteSmallAndLightEnrollmentBySellerSKUUnsupportedMediaType) IsCode(code int) bool {
+	return code == 415
+}
+
 func (o *DeleteSmallAndLightEnrollmentBySellerSKUUnsupportedMediaType) Error() string {
 	return fmt.Sprintf("[DELETE /fba/smallAndLight/v1/enrollments/{sellerSKU}][%d] deleteSmallAndLightEnrollmentBySellerSKUUnsupportedMediaType  %+v", 415, o.Payload)
 }
+
+func (o *DeleteSmallAndLightEnrollmentBySellerSKUUnsupportedMediaType) String() string {
+	return fmt.Sprintf("[DELETE /fba/smallAndLight/v1/enrollments/{sellerSKU}][%d] deleteSmallAndLightEnrollmentBySellerSKUUnsupportedMediaType  %+v", 415, o.Payload)
+}
+
 func (o *DeleteSmallAndLightEnrollmentBySellerSKUUnsupportedMediaType) GetPayload() *fba_smalland_light_models.ErrorList {
 	return o.Payload
 }
@@ -396,7 +581,8 @@ func NewDeleteSmallAndLightEnrollmentBySellerSKUTooManyRequests() *DeleteSmallAn
 	return &DeleteSmallAndLightEnrollmentBySellerSKUTooManyRequests{}
 }
 
-/* DeleteSmallAndLightEnrollmentBySellerSKUTooManyRequests describes a response with status code 429, with default header values.
+/*
+DeleteSmallAndLightEnrollmentBySellerSKUTooManyRequests describes a response with status code 429, with default header values.
 
 The frequency of requests was greater than allowed.
 */
@@ -414,9 +600,39 @@ type DeleteSmallAndLightEnrollmentBySellerSKUTooManyRequests struct {
 	Payload *fba_smalland_light_models.ErrorList
 }
 
+// IsSuccess returns true when this delete small and light enrollment by seller s k u too many requests response has a 2xx status code
+func (o *DeleteSmallAndLightEnrollmentBySellerSKUTooManyRequests) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this delete small and light enrollment by seller s k u too many requests response has a 3xx status code
+func (o *DeleteSmallAndLightEnrollmentBySellerSKUTooManyRequests) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this delete small and light enrollment by seller s k u too many requests response has a 4xx status code
+func (o *DeleteSmallAndLightEnrollmentBySellerSKUTooManyRequests) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this delete small and light enrollment by seller s k u too many requests response has a 5xx status code
+func (o *DeleteSmallAndLightEnrollmentBySellerSKUTooManyRequests) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this delete small and light enrollment by seller s k u too many requests response a status code equal to that given
+func (o *DeleteSmallAndLightEnrollmentBySellerSKUTooManyRequests) IsCode(code int) bool {
+	return code == 429
+}
+
 func (o *DeleteSmallAndLightEnrollmentBySellerSKUTooManyRequests) Error() string {
 	return fmt.Sprintf("[DELETE /fba/smallAndLight/v1/enrollments/{sellerSKU}][%d] deleteSmallAndLightEnrollmentBySellerSKUTooManyRequests  %+v", 429, o.Payload)
 }
+
+func (o *DeleteSmallAndLightEnrollmentBySellerSKUTooManyRequests) String() string {
+	return fmt.Sprintf("[DELETE /fba/smallAndLight/v1/enrollments/{sellerSKU}][%d] deleteSmallAndLightEnrollmentBySellerSKUTooManyRequests  %+v", 429, o.Payload)
+}
+
 func (o *DeleteSmallAndLightEnrollmentBySellerSKUTooManyRequests) GetPayload() *fba_smalland_light_models.ErrorList {
 	return o.Payload
 }
@@ -452,7 +668,8 @@ func NewDeleteSmallAndLightEnrollmentBySellerSKUInternalServerError() *DeleteSma
 	return &DeleteSmallAndLightEnrollmentBySellerSKUInternalServerError{}
 }
 
-/* DeleteSmallAndLightEnrollmentBySellerSKUInternalServerError describes a response with status code 500, with default header values.
+/*
+DeleteSmallAndLightEnrollmentBySellerSKUInternalServerError describes a response with status code 500, with default header values.
 
 An unexpected condition occurred that prevented the server from fulfilling the request.
 */
@@ -470,9 +687,39 @@ type DeleteSmallAndLightEnrollmentBySellerSKUInternalServerError struct {
 	Payload *fba_smalland_light_models.ErrorList
 }
 
+// IsSuccess returns true when this delete small and light enrollment by seller s k u internal server error response has a 2xx status code
+func (o *DeleteSmallAndLightEnrollmentBySellerSKUInternalServerError) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this delete small and light enrollment by seller s k u internal server error response has a 3xx status code
+func (o *DeleteSmallAndLightEnrollmentBySellerSKUInternalServerError) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this delete small and light enrollment by seller s k u internal server error response has a 4xx status code
+func (o *DeleteSmallAndLightEnrollmentBySellerSKUInternalServerError) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this delete small and light enrollment by seller s k u internal server error response has a 5xx status code
+func (o *DeleteSmallAndLightEnrollmentBySellerSKUInternalServerError) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this delete small and light enrollment by seller s k u internal server error response a status code equal to that given
+func (o *DeleteSmallAndLightEnrollmentBySellerSKUInternalServerError) IsCode(code int) bool {
+	return code == 500
+}
+
 func (o *DeleteSmallAndLightEnrollmentBySellerSKUInternalServerError) Error() string {
 	return fmt.Sprintf("[DELETE /fba/smallAndLight/v1/enrollments/{sellerSKU}][%d] deleteSmallAndLightEnrollmentBySellerSKUInternalServerError  %+v", 500, o.Payload)
 }
+
+func (o *DeleteSmallAndLightEnrollmentBySellerSKUInternalServerError) String() string {
+	return fmt.Sprintf("[DELETE /fba/smallAndLight/v1/enrollments/{sellerSKU}][%d] deleteSmallAndLightEnrollmentBySellerSKUInternalServerError  %+v", 500, o.Payload)
+}
+
 func (o *DeleteSmallAndLightEnrollmentBySellerSKUInternalServerError) GetPayload() *fba_smalland_light_models.ErrorList {
 	return o.Payload
 }
@@ -508,7 +755,8 @@ func NewDeleteSmallAndLightEnrollmentBySellerSKUServiceUnavailable() *DeleteSmal
 	return &DeleteSmallAndLightEnrollmentBySellerSKUServiceUnavailable{}
 }
 
-/* DeleteSmallAndLightEnrollmentBySellerSKUServiceUnavailable describes a response with status code 503, with default header values.
+/*
+DeleteSmallAndLightEnrollmentBySellerSKUServiceUnavailable describes a response with status code 503, with default header values.
 
 Temporary overloading or maintenance of the server.
 */
@@ -526,9 +774,39 @@ type DeleteSmallAndLightEnrollmentBySellerSKUServiceUnavailable struct {
 	Payload *fba_smalland_light_models.ErrorList
 }
 
+// IsSuccess returns true when this delete small and light enrollment by seller s k u service unavailable response has a 2xx status code
+func (o *DeleteSmallAndLightEnrollmentBySellerSKUServiceUnavailable) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this delete small and light enrollment by seller s k u service unavailable response has a 3xx status code
+func (o *DeleteSmallAndLightEnrollmentBySellerSKUServiceUnavailable) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this delete small and light enrollment by seller s k u service unavailable response has a 4xx status code
+func (o *DeleteSmallAndLightEnrollmentBySellerSKUServiceUnavailable) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this delete small and light enrollment by seller s k u service unavailable response has a 5xx status code
+func (o *DeleteSmallAndLightEnrollmentBySellerSKUServiceUnavailable) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this delete small and light enrollment by seller s k u service unavailable response a status code equal to that given
+func (o *DeleteSmallAndLightEnrollmentBySellerSKUServiceUnavailable) IsCode(code int) bool {
+	return code == 503
+}
+
 func (o *DeleteSmallAndLightEnrollmentBySellerSKUServiceUnavailable) Error() string {
 	return fmt.Sprintf("[DELETE /fba/smallAndLight/v1/enrollments/{sellerSKU}][%d] deleteSmallAndLightEnrollmentBySellerSKUServiceUnavailable  %+v", 503, o.Payload)
 }
+
+func (o *DeleteSmallAndLightEnrollmentBySellerSKUServiceUnavailable) String() string {
+	return fmt.Sprintf("[DELETE /fba/smallAndLight/v1/enrollments/{sellerSKU}][%d] deleteSmallAndLightEnrollmentBySellerSKUServiceUnavailable  %+v", 503, o.Payload)
+}
+
 func (o *DeleteSmallAndLightEnrollmentBySellerSKUServiceUnavailable) GetPayload() *fba_smalland_light_models.ErrorList {
 	return o.Payload
 }

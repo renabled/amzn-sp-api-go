@@ -75,7 +75,8 @@ func NewListFinancialEventsByGroupIDOK() *ListFinancialEventsByGroupIDOK {
 	return &ListFinancialEventsByGroupIDOK{}
 }
 
-/* ListFinancialEventsByGroupIDOK describes a response with status code 200, with default header values.
+/*
+ListFinancialEventsByGroupIDOK describes a response with status code 200, with default header values.
 
 Success.
 */
@@ -83,9 +84,39 @@ type ListFinancialEventsByGroupIDOK struct {
 	Payload *finances_v0_models.ListFinancialEventsResponse
 }
 
+// IsSuccess returns true when this list financial events by group Id o k response has a 2xx status code
+func (o *ListFinancialEventsByGroupIDOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this list financial events by group Id o k response has a 3xx status code
+func (o *ListFinancialEventsByGroupIDOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this list financial events by group Id o k response has a 4xx status code
+func (o *ListFinancialEventsByGroupIDOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this list financial events by group Id o k response has a 5xx status code
+func (o *ListFinancialEventsByGroupIDOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this list financial events by group Id o k response a status code equal to that given
+func (o *ListFinancialEventsByGroupIDOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *ListFinancialEventsByGroupIDOK) Error() string {
 	return fmt.Sprintf("[GET /finances/v0/financialEventGroups/{eventGroupId}/financialEvents][%d] listFinancialEventsByGroupIdOK  %+v", 200, o.Payload)
 }
+
+func (o *ListFinancialEventsByGroupIDOK) String() string {
+	return fmt.Sprintf("[GET /finances/v0/financialEventGroups/{eventGroupId}/financialEvents][%d] listFinancialEventsByGroupIdOK  %+v", 200, o.Payload)
+}
+
 func (o *ListFinancialEventsByGroupIDOK) GetPayload() *finances_v0_models.ListFinancialEventsResponse {
 	return o.Payload
 }
@@ -107,7 +138,8 @@ func NewListFinancialEventsByGroupIDBadRequest() *ListFinancialEventsByGroupIDBa
 	return &ListFinancialEventsByGroupIDBadRequest{}
 }
 
-/* ListFinancialEventsByGroupIDBadRequest describes a response with status code 400, with default header values.
+/*
+ListFinancialEventsByGroupIDBadRequest describes a response with status code 400, with default header values.
 
 Request has missing or invalid parameters and cannot be parsed.
 */
@@ -115,9 +147,39 @@ type ListFinancialEventsByGroupIDBadRequest struct {
 	Payload *finances_v0_models.ListFinancialEventsResponse
 }
 
+// IsSuccess returns true when this list financial events by group Id bad request response has a 2xx status code
+func (o *ListFinancialEventsByGroupIDBadRequest) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this list financial events by group Id bad request response has a 3xx status code
+func (o *ListFinancialEventsByGroupIDBadRequest) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this list financial events by group Id bad request response has a 4xx status code
+func (o *ListFinancialEventsByGroupIDBadRequest) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this list financial events by group Id bad request response has a 5xx status code
+func (o *ListFinancialEventsByGroupIDBadRequest) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this list financial events by group Id bad request response a status code equal to that given
+func (o *ListFinancialEventsByGroupIDBadRequest) IsCode(code int) bool {
+	return code == 400
+}
+
 func (o *ListFinancialEventsByGroupIDBadRequest) Error() string {
 	return fmt.Sprintf("[GET /finances/v0/financialEventGroups/{eventGroupId}/financialEvents][%d] listFinancialEventsByGroupIdBadRequest  %+v", 400, o.Payload)
 }
+
+func (o *ListFinancialEventsByGroupIDBadRequest) String() string {
+	return fmt.Sprintf("[GET /finances/v0/financialEventGroups/{eventGroupId}/financialEvents][%d] listFinancialEventsByGroupIdBadRequest  %+v", 400, o.Payload)
+}
+
 func (o *ListFinancialEventsByGroupIDBadRequest) GetPayload() *finances_v0_models.ListFinancialEventsResponse {
 	return o.Payload
 }
@@ -139,7 +201,8 @@ func NewListFinancialEventsByGroupIDForbidden() *ListFinancialEventsByGroupIDFor
 	return &ListFinancialEventsByGroupIDForbidden{}
 }
 
-/* ListFinancialEventsByGroupIDForbidden describes a response with status code 403, with default header values.
+/*
+ListFinancialEventsByGroupIDForbidden describes a response with status code 403, with default header values.
 
 Indicates that access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.
 */
@@ -152,9 +215,39 @@ type ListFinancialEventsByGroupIDForbidden struct {
 	Payload *finances_v0_models.ListFinancialEventsResponse
 }
 
+// IsSuccess returns true when this list financial events by group Id forbidden response has a 2xx status code
+func (o *ListFinancialEventsByGroupIDForbidden) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this list financial events by group Id forbidden response has a 3xx status code
+func (o *ListFinancialEventsByGroupIDForbidden) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this list financial events by group Id forbidden response has a 4xx status code
+func (o *ListFinancialEventsByGroupIDForbidden) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this list financial events by group Id forbidden response has a 5xx status code
+func (o *ListFinancialEventsByGroupIDForbidden) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this list financial events by group Id forbidden response a status code equal to that given
+func (o *ListFinancialEventsByGroupIDForbidden) IsCode(code int) bool {
+	return code == 403
+}
+
 func (o *ListFinancialEventsByGroupIDForbidden) Error() string {
 	return fmt.Sprintf("[GET /finances/v0/financialEventGroups/{eventGroupId}/financialEvents][%d] listFinancialEventsByGroupIdForbidden  %+v", 403, o.Payload)
 }
+
+func (o *ListFinancialEventsByGroupIDForbidden) String() string {
+	return fmt.Sprintf("[GET /finances/v0/financialEventGroups/{eventGroupId}/financialEvents][%d] listFinancialEventsByGroupIdForbidden  %+v", 403, o.Payload)
+}
+
 func (o *ListFinancialEventsByGroupIDForbidden) GetPayload() *finances_v0_models.ListFinancialEventsResponse {
 	return o.Payload
 }
@@ -183,7 +276,8 @@ func NewListFinancialEventsByGroupIDNotFound() *ListFinancialEventsByGroupIDNotF
 	return &ListFinancialEventsByGroupIDNotFound{}
 }
 
-/* ListFinancialEventsByGroupIDNotFound describes a response with status code 404, with default header values.
+/*
+ListFinancialEventsByGroupIDNotFound describes a response with status code 404, with default header values.
 
 The resource specified does not exist.
 */
@@ -200,9 +294,39 @@ type ListFinancialEventsByGroupIDNotFound struct {
 	Payload *finances_v0_models.ListFinancialEventsResponse
 }
 
+// IsSuccess returns true when this list financial events by group Id not found response has a 2xx status code
+func (o *ListFinancialEventsByGroupIDNotFound) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this list financial events by group Id not found response has a 3xx status code
+func (o *ListFinancialEventsByGroupIDNotFound) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this list financial events by group Id not found response has a 4xx status code
+func (o *ListFinancialEventsByGroupIDNotFound) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this list financial events by group Id not found response has a 5xx status code
+func (o *ListFinancialEventsByGroupIDNotFound) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this list financial events by group Id not found response a status code equal to that given
+func (o *ListFinancialEventsByGroupIDNotFound) IsCode(code int) bool {
+	return code == 404
+}
+
 func (o *ListFinancialEventsByGroupIDNotFound) Error() string {
 	return fmt.Sprintf("[GET /finances/v0/financialEventGroups/{eventGroupId}/financialEvents][%d] listFinancialEventsByGroupIdNotFound  %+v", 404, o.Payload)
 }
+
+func (o *ListFinancialEventsByGroupIDNotFound) String() string {
+	return fmt.Sprintf("[GET /finances/v0/financialEventGroups/{eventGroupId}/financialEvents][%d] listFinancialEventsByGroupIdNotFound  %+v", 404, o.Payload)
+}
+
 func (o *ListFinancialEventsByGroupIDNotFound) GetPayload() *finances_v0_models.ListFinancialEventsResponse {
 	return o.Payload
 }
@@ -238,7 +362,8 @@ func NewListFinancialEventsByGroupIDTooManyRequests() *ListFinancialEventsByGrou
 	return &ListFinancialEventsByGroupIDTooManyRequests{}
 }
 
-/* ListFinancialEventsByGroupIDTooManyRequests describes a response with status code 429, with default header values.
+/*
+ListFinancialEventsByGroupIDTooManyRequests describes a response with status code 429, with default header values.
 
 The frequency of requests was greater than allowed.
 */
@@ -256,9 +381,39 @@ type ListFinancialEventsByGroupIDTooManyRequests struct {
 	Payload *finances_v0_models.ListFinancialEventsResponse
 }
 
+// IsSuccess returns true when this list financial events by group Id too many requests response has a 2xx status code
+func (o *ListFinancialEventsByGroupIDTooManyRequests) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this list financial events by group Id too many requests response has a 3xx status code
+func (o *ListFinancialEventsByGroupIDTooManyRequests) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this list financial events by group Id too many requests response has a 4xx status code
+func (o *ListFinancialEventsByGroupIDTooManyRequests) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this list financial events by group Id too many requests response has a 5xx status code
+func (o *ListFinancialEventsByGroupIDTooManyRequests) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this list financial events by group Id too many requests response a status code equal to that given
+func (o *ListFinancialEventsByGroupIDTooManyRequests) IsCode(code int) bool {
+	return code == 429
+}
+
 func (o *ListFinancialEventsByGroupIDTooManyRequests) Error() string {
 	return fmt.Sprintf("[GET /finances/v0/financialEventGroups/{eventGroupId}/financialEvents][%d] listFinancialEventsByGroupIdTooManyRequests  %+v", 429, o.Payload)
 }
+
+func (o *ListFinancialEventsByGroupIDTooManyRequests) String() string {
+	return fmt.Sprintf("[GET /finances/v0/financialEventGroups/{eventGroupId}/financialEvents][%d] listFinancialEventsByGroupIdTooManyRequests  %+v", 429, o.Payload)
+}
+
 func (o *ListFinancialEventsByGroupIDTooManyRequests) GetPayload() *finances_v0_models.ListFinancialEventsResponse {
 	return o.Payload
 }
@@ -294,7 +449,8 @@ func NewListFinancialEventsByGroupIDInternalServerError() *ListFinancialEventsBy
 	return &ListFinancialEventsByGroupIDInternalServerError{}
 }
 
-/* ListFinancialEventsByGroupIDInternalServerError describes a response with status code 500, with default header values.
+/*
+ListFinancialEventsByGroupIDInternalServerError describes a response with status code 500, with default header values.
 
 An unexpected condition occurred that prevented the server from fulfilling the request.
 */
@@ -312,9 +468,39 @@ type ListFinancialEventsByGroupIDInternalServerError struct {
 	Payload *finances_v0_models.ListFinancialEventsResponse
 }
 
+// IsSuccess returns true when this list financial events by group Id internal server error response has a 2xx status code
+func (o *ListFinancialEventsByGroupIDInternalServerError) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this list financial events by group Id internal server error response has a 3xx status code
+func (o *ListFinancialEventsByGroupIDInternalServerError) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this list financial events by group Id internal server error response has a 4xx status code
+func (o *ListFinancialEventsByGroupIDInternalServerError) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this list financial events by group Id internal server error response has a 5xx status code
+func (o *ListFinancialEventsByGroupIDInternalServerError) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this list financial events by group Id internal server error response a status code equal to that given
+func (o *ListFinancialEventsByGroupIDInternalServerError) IsCode(code int) bool {
+	return code == 500
+}
+
 func (o *ListFinancialEventsByGroupIDInternalServerError) Error() string {
 	return fmt.Sprintf("[GET /finances/v0/financialEventGroups/{eventGroupId}/financialEvents][%d] listFinancialEventsByGroupIdInternalServerError  %+v", 500, o.Payload)
 }
+
+func (o *ListFinancialEventsByGroupIDInternalServerError) String() string {
+	return fmt.Sprintf("[GET /finances/v0/financialEventGroups/{eventGroupId}/financialEvents][%d] listFinancialEventsByGroupIdInternalServerError  %+v", 500, o.Payload)
+}
+
 func (o *ListFinancialEventsByGroupIDInternalServerError) GetPayload() *finances_v0_models.ListFinancialEventsResponse {
 	return o.Payload
 }
@@ -350,7 +536,8 @@ func NewListFinancialEventsByGroupIDServiceUnavailable() *ListFinancialEventsByG
 	return &ListFinancialEventsByGroupIDServiceUnavailable{}
 }
 
-/* ListFinancialEventsByGroupIDServiceUnavailable describes a response with status code 503, with default header values.
+/*
+ListFinancialEventsByGroupIDServiceUnavailable describes a response with status code 503, with default header values.
 
 Temporary overloading or maintenance of the server.
 */
@@ -368,9 +555,39 @@ type ListFinancialEventsByGroupIDServiceUnavailable struct {
 	Payload *finances_v0_models.ListFinancialEventsResponse
 }
 
+// IsSuccess returns true when this list financial events by group Id service unavailable response has a 2xx status code
+func (o *ListFinancialEventsByGroupIDServiceUnavailable) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this list financial events by group Id service unavailable response has a 3xx status code
+func (o *ListFinancialEventsByGroupIDServiceUnavailable) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this list financial events by group Id service unavailable response has a 4xx status code
+func (o *ListFinancialEventsByGroupIDServiceUnavailable) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this list financial events by group Id service unavailable response has a 5xx status code
+func (o *ListFinancialEventsByGroupIDServiceUnavailable) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this list financial events by group Id service unavailable response a status code equal to that given
+func (o *ListFinancialEventsByGroupIDServiceUnavailable) IsCode(code int) bool {
+	return code == 503
+}
+
 func (o *ListFinancialEventsByGroupIDServiceUnavailable) Error() string {
 	return fmt.Sprintf("[GET /finances/v0/financialEventGroups/{eventGroupId}/financialEvents][%d] listFinancialEventsByGroupIdServiceUnavailable  %+v", 503, o.Payload)
 }
+
+func (o *ListFinancialEventsByGroupIDServiceUnavailable) String() string {
+	return fmt.Sprintf("[GET /finances/v0/financialEventGroups/{eventGroupId}/financialEvents][%d] listFinancialEventsByGroupIdServiceUnavailable  %+v", 503, o.Payload)
+}
+
 func (o *ListFinancialEventsByGroupIDServiceUnavailable) GetPayload() *finances_v0_models.ListFinancialEventsResponse {
 	return o.Payload
 }

@@ -52,10 +52,12 @@ func NewGetBillOfLadingParamsWithHTTPClient(client *http.Client) *GetBillOfLadin
 	}
 }
 
-/* GetBillOfLadingParams contains all the parameters to send to the API endpoint
-   for the get bill of lading operation.
+/*
+GetBillOfLadingParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the get bill of lading operation.
+
+	Typically these are written to a http.Request.
 */
 type GetBillOfLadingParams struct {
 

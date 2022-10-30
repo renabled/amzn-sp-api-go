@@ -93,7 +93,8 @@ func NewAddAppointmentForServiceJobByServiceJobIDOK() *AddAppointmentForServiceJ
 	return &AddAppointmentForServiceJobByServiceJobIDOK{}
 }
 
-/* AddAppointmentForServiceJobByServiceJobIDOK describes a response with status code 200, with default header values.
+/*
+AddAppointmentForServiceJobByServiceJobIDOK describes a response with status code 200, with default header values.
 
 Success response.
 */
@@ -110,9 +111,39 @@ type AddAppointmentForServiceJobByServiceJobIDOK struct {
 	Payload *services_models.SetAppointmentResponse
 }
 
+// IsSuccess returns true when this add appointment for service job by service job Id o k response has a 2xx status code
+func (o *AddAppointmentForServiceJobByServiceJobIDOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this add appointment for service job by service job Id o k response has a 3xx status code
+func (o *AddAppointmentForServiceJobByServiceJobIDOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this add appointment for service job by service job Id o k response has a 4xx status code
+func (o *AddAppointmentForServiceJobByServiceJobIDOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this add appointment for service job by service job Id o k response has a 5xx status code
+func (o *AddAppointmentForServiceJobByServiceJobIDOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this add appointment for service job by service job Id o k response a status code equal to that given
+func (o *AddAppointmentForServiceJobByServiceJobIDOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *AddAppointmentForServiceJobByServiceJobIDOK) Error() string {
 	return fmt.Sprintf("[POST /service/v1/serviceJobs/{serviceJobId}/appointments][%d] addAppointmentForServiceJobByServiceJobIdOK  %+v", 200, o.Payload)
 }
+
+func (o *AddAppointmentForServiceJobByServiceJobIDOK) String() string {
+	return fmt.Sprintf("[POST /service/v1/serviceJobs/{serviceJobId}/appointments][%d] addAppointmentForServiceJobByServiceJobIdOK  %+v", 200, o.Payload)
+}
+
 func (o *AddAppointmentForServiceJobByServiceJobIDOK) GetPayload() *services_models.SetAppointmentResponse {
 	return o.Payload
 }
@@ -148,7 +179,8 @@ func NewAddAppointmentForServiceJobByServiceJobIDBadRequest() *AddAppointmentFor
 	return &AddAppointmentForServiceJobByServiceJobIDBadRequest{}
 }
 
-/* AddAppointmentForServiceJobByServiceJobIDBadRequest describes a response with status code 400, with default header values.
+/*
+AddAppointmentForServiceJobByServiceJobIDBadRequest describes a response with status code 400, with default header values.
 
 Request has missing or invalid parameters and cannot be parsed.
 */
@@ -165,9 +197,39 @@ type AddAppointmentForServiceJobByServiceJobIDBadRequest struct {
 	Payload *services_models.SetAppointmentResponse
 }
 
+// IsSuccess returns true when this add appointment for service job by service job Id bad request response has a 2xx status code
+func (o *AddAppointmentForServiceJobByServiceJobIDBadRequest) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this add appointment for service job by service job Id bad request response has a 3xx status code
+func (o *AddAppointmentForServiceJobByServiceJobIDBadRequest) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this add appointment for service job by service job Id bad request response has a 4xx status code
+func (o *AddAppointmentForServiceJobByServiceJobIDBadRequest) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this add appointment for service job by service job Id bad request response has a 5xx status code
+func (o *AddAppointmentForServiceJobByServiceJobIDBadRequest) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this add appointment for service job by service job Id bad request response a status code equal to that given
+func (o *AddAppointmentForServiceJobByServiceJobIDBadRequest) IsCode(code int) bool {
+	return code == 400
+}
+
 func (o *AddAppointmentForServiceJobByServiceJobIDBadRequest) Error() string {
 	return fmt.Sprintf("[POST /service/v1/serviceJobs/{serviceJobId}/appointments][%d] addAppointmentForServiceJobByServiceJobIdBadRequest  %+v", 400, o.Payload)
 }
+
+func (o *AddAppointmentForServiceJobByServiceJobIDBadRequest) String() string {
+	return fmt.Sprintf("[POST /service/v1/serviceJobs/{serviceJobId}/appointments][%d] addAppointmentForServiceJobByServiceJobIdBadRequest  %+v", 400, o.Payload)
+}
+
 func (o *AddAppointmentForServiceJobByServiceJobIDBadRequest) GetPayload() *services_models.SetAppointmentResponse {
 	return o.Payload
 }
@@ -203,7 +265,8 @@ func NewAddAppointmentForServiceJobByServiceJobIDForbidden() *AddAppointmentForS
 	return &AddAppointmentForServiceJobByServiceJobIDForbidden{}
 }
 
-/* AddAppointmentForServiceJobByServiceJobIDForbidden describes a response with status code 403, with default header values.
+/*
+AddAppointmentForServiceJobByServiceJobIDForbidden describes a response with status code 403, with default header values.
 
 Indicates that access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.
 */
@@ -216,9 +279,39 @@ type AddAppointmentForServiceJobByServiceJobIDForbidden struct {
 	Payload *services_models.SetAppointmentResponse
 }
 
+// IsSuccess returns true when this add appointment for service job by service job Id forbidden response has a 2xx status code
+func (o *AddAppointmentForServiceJobByServiceJobIDForbidden) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this add appointment for service job by service job Id forbidden response has a 3xx status code
+func (o *AddAppointmentForServiceJobByServiceJobIDForbidden) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this add appointment for service job by service job Id forbidden response has a 4xx status code
+func (o *AddAppointmentForServiceJobByServiceJobIDForbidden) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this add appointment for service job by service job Id forbidden response has a 5xx status code
+func (o *AddAppointmentForServiceJobByServiceJobIDForbidden) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this add appointment for service job by service job Id forbidden response a status code equal to that given
+func (o *AddAppointmentForServiceJobByServiceJobIDForbidden) IsCode(code int) bool {
+	return code == 403
+}
+
 func (o *AddAppointmentForServiceJobByServiceJobIDForbidden) Error() string {
 	return fmt.Sprintf("[POST /service/v1/serviceJobs/{serviceJobId}/appointments][%d] addAppointmentForServiceJobByServiceJobIdForbidden  %+v", 403, o.Payload)
 }
+
+func (o *AddAppointmentForServiceJobByServiceJobIDForbidden) String() string {
+	return fmt.Sprintf("[POST /service/v1/serviceJobs/{serviceJobId}/appointments][%d] addAppointmentForServiceJobByServiceJobIdForbidden  %+v", 403, o.Payload)
+}
+
 func (o *AddAppointmentForServiceJobByServiceJobIDForbidden) GetPayload() *services_models.SetAppointmentResponse {
 	return o.Payload
 }
@@ -247,7 +340,8 @@ func NewAddAppointmentForServiceJobByServiceJobIDNotFound() *AddAppointmentForSe
 	return &AddAppointmentForServiceJobByServiceJobIDNotFound{}
 }
 
-/* AddAppointmentForServiceJobByServiceJobIDNotFound describes a response with status code 404, with default header values.
+/*
+AddAppointmentForServiceJobByServiceJobIDNotFound describes a response with status code 404, with default header values.
 
 The resource specified does not exist.
 */
@@ -264,9 +358,39 @@ type AddAppointmentForServiceJobByServiceJobIDNotFound struct {
 	Payload *services_models.SetAppointmentResponse
 }
 
+// IsSuccess returns true when this add appointment for service job by service job Id not found response has a 2xx status code
+func (o *AddAppointmentForServiceJobByServiceJobIDNotFound) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this add appointment for service job by service job Id not found response has a 3xx status code
+func (o *AddAppointmentForServiceJobByServiceJobIDNotFound) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this add appointment for service job by service job Id not found response has a 4xx status code
+func (o *AddAppointmentForServiceJobByServiceJobIDNotFound) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this add appointment for service job by service job Id not found response has a 5xx status code
+func (o *AddAppointmentForServiceJobByServiceJobIDNotFound) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this add appointment for service job by service job Id not found response a status code equal to that given
+func (o *AddAppointmentForServiceJobByServiceJobIDNotFound) IsCode(code int) bool {
+	return code == 404
+}
+
 func (o *AddAppointmentForServiceJobByServiceJobIDNotFound) Error() string {
 	return fmt.Sprintf("[POST /service/v1/serviceJobs/{serviceJobId}/appointments][%d] addAppointmentForServiceJobByServiceJobIdNotFound  %+v", 404, o.Payload)
 }
+
+func (o *AddAppointmentForServiceJobByServiceJobIDNotFound) String() string {
+	return fmt.Sprintf("[POST /service/v1/serviceJobs/{serviceJobId}/appointments][%d] addAppointmentForServiceJobByServiceJobIdNotFound  %+v", 404, o.Payload)
+}
+
 func (o *AddAppointmentForServiceJobByServiceJobIDNotFound) GetPayload() *services_models.SetAppointmentResponse {
 	return o.Payload
 }
@@ -302,7 +426,8 @@ func NewAddAppointmentForServiceJobByServiceJobIDRequestEntityTooLarge() *AddApp
 	return &AddAppointmentForServiceJobByServiceJobIDRequestEntityTooLarge{}
 }
 
-/* AddAppointmentForServiceJobByServiceJobIDRequestEntityTooLarge describes a response with status code 413, with default header values.
+/*
+AddAppointmentForServiceJobByServiceJobIDRequestEntityTooLarge describes a response with status code 413, with default header values.
 
 The request size exceeded the maximum accepted size.
 */
@@ -320,9 +445,39 @@ type AddAppointmentForServiceJobByServiceJobIDRequestEntityTooLarge struct {
 	Payload *services_models.SetAppointmentResponse
 }
 
+// IsSuccess returns true when this add appointment for service job by service job Id request entity too large response has a 2xx status code
+func (o *AddAppointmentForServiceJobByServiceJobIDRequestEntityTooLarge) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this add appointment for service job by service job Id request entity too large response has a 3xx status code
+func (o *AddAppointmentForServiceJobByServiceJobIDRequestEntityTooLarge) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this add appointment for service job by service job Id request entity too large response has a 4xx status code
+func (o *AddAppointmentForServiceJobByServiceJobIDRequestEntityTooLarge) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this add appointment for service job by service job Id request entity too large response has a 5xx status code
+func (o *AddAppointmentForServiceJobByServiceJobIDRequestEntityTooLarge) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this add appointment for service job by service job Id request entity too large response a status code equal to that given
+func (o *AddAppointmentForServiceJobByServiceJobIDRequestEntityTooLarge) IsCode(code int) bool {
+	return code == 413
+}
+
 func (o *AddAppointmentForServiceJobByServiceJobIDRequestEntityTooLarge) Error() string {
 	return fmt.Sprintf("[POST /service/v1/serviceJobs/{serviceJobId}/appointments][%d] addAppointmentForServiceJobByServiceJobIdRequestEntityTooLarge  %+v", 413, o.Payload)
 }
+
+func (o *AddAppointmentForServiceJobByServiceJobIDRequestEntityTooLarge) String() string {
+	return fmt.Sprintf("[POST /service/v1/serviceJobs/{serviceJobId}/appointments][%d] addAppointmentForServiceJobByServiceJobIdRequestEntityTooLarge  %+v", 413, o.Payload)
+}
+
 func (o *AddAppointmentForServiceJobByServiceJobIDRequestEntityTooLarge) GetPayload() *services_models.SetAppointmentResponse {
 	return o.Payload
 }
@@ -358,7 +513,8 @@ func NewAddAppointmentForServiceJobByServiceJobIDUnsupportedMediaType() *AddAppo
 	return &AddAppointmentForServiceJobByServiceJobIDUnsupportedMediaType{}
 }
 
-/* AddAppointmentForServiceJobByServiceJobIDUnsupportedMediaType describes a response with status code 415, with default header values.
+/*
+AddAppointmentForServiceJobByServiceJobIDUnsupportedMediaType describes a response with status code 415, with default header values.
 
 The request payload is in an unsupported format.
 */
@@ -376,9 +532,39 @@ type AddAppointmentForServiceJobByServiceJobIDUnsupportedMediaType struct {
 	Payload *services_models.SetAppointmentResponse
 }
 
+// IsSuccess returns true when this add appointment for service job by service job Id unsupported media type response has a 2xx status code
+func (o *AddAppointmentForServiceJobByServiceJobIDUnsupportedMediaType) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this add appointment for service job by service job Id unsupported media type response has a 3xx status code
+func (o *AddAppointmentForServiceJobByServiceJobIDUnsupportedMediaType) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this add appointment for service job by service job Id unsupported media type response has a 4xx status code
+func (o *AddAppointmentForServiceJobByServiceJobIDUnsupportedMediaType) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this add appointment for service job by service job Id unsupported media type response has a 5xx status code
+func (o *AddAppointmentForServiceJobByServiceJobIDUnsupportedMediaType) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this add appointment for service job by service job Id unsupported media type response a status code equal to that given
+func (o *AddAppointmentForServiceJobByServiceJobIDUnsupportedMediaType) IsCode(code int) bool {
+	return code == 415
+}
+
 func (o *AddAppointmentForServiceJobByServiceJobIDUnsupportedMediaType) Error() string {
 	return fmt.Sprintf("[POST /service/v1/serviceJobs/{serviceJobId}/appointments][%d] addAppointmentForServiceJobByServiceJobIdUnsupportedMediaType  %+v", 415, o.Payload)
 }
+
+func (o *AddAppointmentForServiceJobByServiceJobIDUnsupportedMediaType) String() string {
+	return fmt.Sprintf("[POST /service/v1/serviceJobs/{serviceJobId}/appointments][%d] addAppointmentForServiceJobByServiceJobIdUnsupportedMediaType  %+v", 415, o.Payload)
+}
+
 func (o *AddAppointmentForServiceJobByServiceJobIDUnsupportedMediaType) GetPayload() *services_models.SetAppointmentResponse {
 	return o.Payload
 }
@@ -414,7 +600,8 @@ func NewAddAppointmentForServiceJobByServiceJobIDUnprocessableEntity() *AddAppoi
 	return &AddAppointmentForServiceJobByServiceJobIDUnprocessableEntity{}
 }
 
-/* AddAppointmentForServiceJobByServiceJobIDUnprocessableEntity describes a response with status code 422, with default header values.
+/*
+AddAppointmentForServiceJobByServiceJobIDUnprocessableEntity describes a response with status code 422, with default header values.
 
 Unprocessable Entity. Unable to process the contained instructions.
 */
@@ -432,9 +619,39 @@ type AddAppointmentForServiceJobByServiceJobIDUnprocessableEntity struct {
 	Payload *services_models.SetAppointmentResponse
 }
 
+// IsSuccess returns true when this add appointment for service job by service job Id unprocessable entity response has a 2xx status code
+func (o *AddAppointmentForServiceJobByServiceJobIDUnprocessableEntity) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this add appointment for service job by service job Id unprocessable entity response has a 3xx status code
+func (o *AddAppointmentForServiceJobByServiceJobIDUnprocessableEntity) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this add appointment for service job by service job Id unprocessable entity response has a 4xx status code
+func (o *AddAppointmentForServiceJobByServiceJobIDUnprocessableEntity) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this add appointment for service job by service job Id unprocessable entity response has a 5xx status code
+func (o *AddAppointmentForServiceJobByServiceJobIDUnprocessableEntity) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this add appointment for service job by service job Id unprocessable entity response a status code equal to that given
+func (o *AddAppointmentForServiceJobByServiceJobIDUnprocessableEntity) IsCode(code int) bool {
+	return code == 422
+}
+
 func (o *AddAppointmentForServiceJobByServiceJobIDUnprocessableEntity) Error() string {
 	return fmt.Sprintf("[POST /service/v1/serviceJobs/{serviceJobId}/appointments][%d] addAppointmentForServiceJobByServiceJobIdUnprocessableEntity  %+v", 422, o.Payload)
 }
+
+func (o *AddAppointmentForServiceJobByServiceJobIDUnprocessableEntity) String() string {
+	return fmt.Sprintf("[POST /service/v1/serviceJobs/{serviceJobId}/appointments][%d] addAppointmentForServiceJobByServiceJobIdUnprocessableEntity  %+v", 422, o.Payload)
+}
+
 func (o *AddAppointmentForServiceJobByServiceJobIDUnprocessableEntity) GetPayload() *services_models.SetAppointmentResponse {
 	return o.Payload
 }
@@ -470,7 +687,8 @@ func NewAddAppointmentForServiceJobByServiceJobIDTooManyRequests() *AddAppointme
 	return &AddAppointmentForServiceJobByServiceJobIDTooManyRequests{}
 }
 
-/* AddAppointmentForServiceJobByServiceJobIDTooManyRequests describes a response with status code 429, with default header values.
+/*
+AddAppointmentForServiceJobByServiceJobIDTooManyRequests describes a response with status code 429, with default header values.
 
 The frequency of requests was greater than allowed.
 */
@@ -488,9 +706,39 @@ type AddAppointmentForServiceJobByServiceJobIDTooManyRequests struct {
 	Payload *services_models.SetAppointmentResponse
 }
 
+// IsSuccess returns true when this add appointment for service job by service job Id too many requests response has a 2xx status code
+func (o *AddAppointmentForServiceJobByServiceJobIDTooManyRequests) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this add appointment for service job by service job Id too many requests response has a 3xx status code
+func (o *AddAppointmentForServiceJobByServiceJobIDTooManyRequests) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this add appointment for service job by service job Id too many requests response has a 4xx status code
+func (o *AddAppointmentForServiceJobByServiceJobIDTooManyRequests) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this add appointment for service job by service job Id too many requests response has a 5xx status code
+func (o *AddAppointmentForServiceJobByServiceJobIDTooManyRequests) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this add appointment for service job by service job Id too many requests response a status code equal to that given
+func (o *AddAppointmentForServiceJobByServiceJobIDTooManyRequests) IsCode(code int) bool {
+	return code == 429
+}
+
 func (o *AddAppointmentForServiceJobByServiceJobIDTooManyRequests) Error() string {
 	return fmt.Sprintf("[POST /service/v1/serviceJobs/{serviceJobId}/appointments][%d] addAppointmentForServiceJobByServiceJobIdTooManyRequests  %+v", 429, o.Payload)
 }
+
+func (o *AddAppointmentForServiceJobByServiceJobIDTooManyRequests) String() string {
+	return fmt.Sprintf("[POST /service/v1/serviceJobs/{serviceJobId}/appointments][%d] addAppointmentForServiceJobByServiceJobIdTooManyRequests  %+v", 429, o.Payload)
+}
+
 func (o *AddAppointmentForServiceJobByServiceJobIDTooManyRequests) GetPayload() *services_models.SetAppointmentResponse {
 	return o.Payload
 }
@@ -526,7 +774,8 @@ func NewAddAppointmentForServiceJobByServiceJobIDInternalServerError() *AddAppoi
 	return &AddAppointmentForServiceJobByServiceJobIDInternalServerError{}
 }
 
-/* AddAppointmentForServiceJobByServiceJobIDInternalServerError describes a response with status code 500, with default header values.
+/*
+AddAppointmentForServiceJobByServiceJobIDInternalServerError describes a response with status code 500, with default header values.
 
 Encountered an unexpected condition which prevented the server from fulfilling the request.
 */
@@ -544,9 +793,39 @@ type AddAppointmentForServiceJobByServiceJobIDInternalServerError struct {
 	Payload *services_models.SetAppointmentResponse
 }
 
+// IsSuccess returns true when this add appointment for service job by service job Id internal server error response has a 2xx status code
+func (o *AddAppointmentForServiceJobByServiceJobIDInternalServerError) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this add appointment for service job by service job Id internal server error response has a 3xx status code
+func (o *AddAppointmentForServiceJobByServiceJobIDInternalServerError) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this add appointment for service job by service job Id internal server error response has a 4xx status code
+func (o *AddAppointmentForServiceJobByServiceJobIDInternalServerError) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this add appointment for service job by service job Id internal server error response has a 5xx status code
+func (o *AddAppointmentForServiceJobByServiceJobIDInternalServerError) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this add appointment for service job by service job Id internal server error response a status code equal to that given
+func (o *AddAppointmentForServiceJobByServiceJobIDInternalServerError) IsCode(code int) bool {
+	return code == 500
+}
+
 func (o *AddAppointmentForServiceJobByServiceJobIDInternalServerError) Error() string {
 	return fmt.Sprintf("[POST /service/v1/serviceJobs/{serviceJobId}/appointments][%d] addAppointmentForServiceJobByServiceJobIdInternalServerError  %+v", 500, o.Payload)
 }
+
+func (o *AddAppointmentForServiceJobByServiceJobIDInternalServerError) String() string {
+	return fmt.Sprintf("[POST /service/v1/serviceJobs/{serviceJobId}/appointments][%d] addAppointmentForServiceJobByServiceJobIdInternalServerError  %+v", 500, o.Payload)
+}
+
 func (o *AddAppointmentForServiceJobByServiceJobIDInternalServerError) GetPayload() *services_models.SetAppointmentResponse {
 	return o.Payload
 }
@@ -582,7 +861,8 @@ func NewAddAppointmentForServiceJobByServiceJobIDServiceUnavailable() *AddAppoin
 	return &AddAppointmentForServiceJobByServiceJobIDServiceUnavailable{}
 }
 
-/* AddAppointmentForServiceJobByServiceJobIDServiceUnavailable describes a response with status code 503, with default header values.
+/*
+AddAppointmentForServiceJobByServiceJobIDServiceUnavailable describes a response with status code 503, with default header values.
 
 Temporary overloading or maintenance of the server.
 */
@@ -600,9 +880,39 @@ type AddAppointmentForServiceJobByServiceJobIDServiceUnavailable struct {
 	Payload *services_models.SetAppointmentResponse
 }
 
+// IsSuccess returns true when this add appointment for service job by service job Id service unavailable response has a 2xx status code
+func (o *AddAppointmentForServiceJobByServiceJobIDServiceUnavailable) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this add appointment for service job by service job Id service unavailable response has a 3xx status code
+func (o *AddAppointmentForServiceJobByServiceJobIDServiceUnavailable) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this add appointment for service job by service job Id service unavailable response has a 4xx status code
+func (o *AddAppointmentForServiceJobByServiceJobIDServiceUnavailable) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this add appointment for service job by service job Id service unavailable response has a 5xx status code
+func (o *AddAppointmentForServiceJobByServiceJobIDServiceUnavailable) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this add appointment for service job by service job Id service unavailable response a status code equal to that given
+func (o *AddAppointmentForServiceJobByServiceJobIDServiceUnavailable) IsCode(code int) bool {
+	return code == 503
+}
+
 func (o *AddAppointmentForServiceJobByServiceJobIDServiceUnavailable) Error() string {
 	return fmt.Sprintf("[POST /service/v1/serviceJobs/{serviceJobId}/appointments][%d] addAppointmentForServiceJobByServiceJobIdServiceUnavailable  %+v", 503, o.Payload)
 }
+
+func (o *AddAppointmentForServiceJobByServiceJobIDServiceUnavailable) String() string {
+	return fmt.Sprintf("[POST /service/v1/serviceJobs/{serviceJobId}/appointments][%d] addAppointmentForServiceJobByServiceJobIdServiceUnavailable  %+v", 503, o.Payload)
+}
+
 func (o *AddAppointmentForServiceJobByServiceJobIDServiceUnavailable) GetPayload() *services_models.SetAppointmentResponse {
 	return o.Payload
 }

@@ -53,10 +53,12 @@ func NewCancelReservationParamsWithHTTPClient(client *http.Client) *CancelReserv
 	}
 }
 
-/* CancelReservationParams contains all the parameters to send to the API endpoint
-   for the cancel reservation operation.
+/*
+CancelReservationParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the cancel reservation operation.
+
+	Typically these are written to a http.Request.
 */
 type CancelReservationParams struct {
 

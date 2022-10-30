@@ -52,10 +52,12 @@ func NewGetScheduledPackageParamsWithHTTPClient(client *http.Client) *GetSchedul
 	}
 }
 
-/* GetScheduledPackageParams contains all the parameters to send to the API endpoint
-   for the get scheduled package operation.
+/*
+GetScheduledPackageParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the get scheduled package operation.
+
+	Typically these are written to a http.Request.
 */
 type GetScheduledPackageParams struct {
 

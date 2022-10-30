@@ -81,7 +81,8 @@ func NewConfirmPreorderOK() *ConfirmPreorderOK {
 	return &ConfirmPreorderOK{}
 }
 
-/* ConfirmPreorderOK describes a response with status code 200, with default header values.
+/*
+ConfirmPreorderOK describes a response with status code 200, with default header values.
 
 Success.
 */
@@ -98,9 +99,39 @@ type ConfirmPreorderOK struct {
 	Payload *fulfillment_inbound_v0_models.ConfirmPreorderResponse
 }
 
+// IsSuccess returns true when this confirm preorder o k response has a 2xx status code
+func (o *ConfirmPreorderOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this confirm preorder o k response has a 3xx status code
+func (o *ConfirmPreorderOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this confirm preorder o k response has a 4xx status code
+func (o *ConfirmPreorderOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this confirm preorder o k response has a 5xx status code
+func (o *ConfirmPreorderOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this confirm preorder o k response a status code equal to that given
+func (o *ConfirmPreorderOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *ConfirmPreorderOK) Error() string {
 	return fmt.Sprintf("[PUT /fba/inbound/v0/shipments/{shipmentId}/preorder/confirm][%d] confirmPreorderOK  %+v", 200, o.Payload)
 }
+
+func (o *ConfirmPreorderOK) String() string {
+	return fmt.Sprintf("[PUT /fba/inbound/v0/shipments/{shipmentId}/preorder/confirm][%d] confirmPreorderOK  %+v", 200, o.Payload)
+}
+
 func (o *ConfirmPreorderOK) GetPayload() *fulfillment_inbound_v0_models.ConfirmPreorderResponse {
 	return o.Payload
 }
@@ -136,7 +167,8 @@ func NewConfirmPreorderBadRequest() *ConfirmPreorderBadRequest {
 	return &ConfirmPreorderBadRequest{}
 }
 
-/* ConfirmPreorderBadRequest describes a response with status code 400, with default header values.
+/*
+ConfirmPreorderBadRequest describes a response with status code 400, with default header values.
 
 Request has missing or invalid parameters and cannot be parsed.
 */
@@ -153,9 +185,39 @@ type ConfirmPreorderBadRequest struct {
 	Payload *fulfillment_inbound_v0_models.ConfirmPreorderResponse
 }
 
+// IsSuccess returns true when this confirm preorder bad request response has a 2xx status code
+func (o *ConfirmPreorderBadRequest) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this confirm preorder bad request response has a 3xx status code
+func (o *ConfirmPreorderBadRequest) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this confirm preorder bad request response has a 4xx status code
+func (o *ConfirmPreorderBadRequest) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this confirm preorder bad request response has a 5xx status code
+func (o *ConfirmPreorderBadRequest) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this confirm preorder bad request response a status code equal to that given
+func (o *ConfirmPreorderBadRequest) IsCode(code int) bool {
+	return code == 400
+}
+
 func (o *ConfirmPreorderBadRequest) Error() string {
 	return fmt.Sprintf("[PUT /fba/inbound/v0/shipments/{shipmentId}/preorder/confirm][%d] confirmPreorderBadRequest  %+v", 400, o.Payload)
 }
+
+func (o *ConfirmPreorderBadRequest) String() string {
+	return fmt.Sprintf("[PUT /fba/inbound/v0/shipments/{shipmentId}/preorder/confirm][%d] confirmPreorderBadRequest  %+v", 400, o.Payload)
+}
+
 func (o *ConfirmPreorderBadRequest) GetPayload() *fulfillment_inbound_v0_models.ConfirmPreorderResponse {
 	return o.Payload
 }
@@ -191,7 +253,8 @@ func NewConfirmPreorderUnauthorized() *ConfirmPreorderUnauthorized {
 	return &ConfirmPreorderUnauthorized{}
 }
 
-/* ConfirmPreorderUnauthorized describes a response with status code 401, with default header values.
+/*
+ConfirmPreorderUnauthorized describes a response with status code 401, with default header values.
 
 The request's Authorization header is not formatted correctly or does not contain a valid token.
 */
@@ -209,9 +272,39 @@ type ConfirmPreorderUnauthorized struct {
 	Payload *fulfillment_inbound_v0_models.ConfirmPreorderResponse
 }
 
+// IsSuccess returns true when this confirm preorder unauthorized response has a 2xx status code
+func (o *ConfirmPreorderUnauthorized) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this confirm preorder unauthorized response has a 3xx status code
+func (o *ConfirmPreorderUnauthorized) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this confirm preorder unauthorized response has a 4xx status code
+func (o *ConfirmPreorderUnauthorized) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this confirm preorder unauthorized response has a 5xx status code
+func (o *ConfirmPreorderUnauthorized) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this confirm preorder unauthorized response a status code equal to that given
+func (o *ConfirmPreorderUnauthorized) IsCode(code int) bool {
+	return code == 401
+}
+
 func (o *ConfirmPreorderUnauthorized) Error() string {
 	return fmt.Sprintf("[PUT /fba/inbound/v0/shipments/{shipmentId}/preorder/confirm][%d] confirmPreorderUnauthorized  %+v", 401, o.Payload)
 }
+
+func (o *ConfirmPreorderUnauthorized) String() string {
+	return fmt.Sprintf("[PUT /fba/inbound/v0/shipments/{shipmentId}/preorder/confirm][%d] confirmPreorderUnauthorized  %+v", 401, o.Payload)
+}
+
 func (o *ConfirmPreorderUnauthorized) GetPayload() *fulfillment_inbound_v0_models.ConfirmPreorderResponse {
 	return o.Payload
 }
@@ -247,7 +340,8 @@ func NewConfirmPreorderForbidden() *ConfirmPreorderForbidden {
 	return &ConfirmPreorderForbidden{}
 }
 
-/* ConfirmPreorderForbidden describes a response with status code 403, with default header values.
+/*
+ConfirmPreorderForbidden describes a response with status code 403, with default header values.
 
 Indicates that access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.
 */
@@ -260,9 +354,39 @@ type ConfirmPreorderForbidden struct {
 	Payload *fulfillment_inbound_v0_models.ConfirmPreorderResponse
 }
 
+// IsSuccess returns true when this confirm preorder forbidden response has a 2xx status code
+func (o *ConfirmPreorderForbidden) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this confirm preorder forbidden response has a 3xx status code
+func (o *ConfirmPreorderForbidden) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this confirm preorder forbidden response has a 4xx status code
+func (o *ConfirmPreorderForbidden) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this confirm preorder forbidden response has a 5xx status code
+func (o *ConfirmPreorderForbidden) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this confirm preorder forbidden response a status code equal to that given
+func (o *ConfirmPreorderForbidden) IsCode(code int) bool {
+	return code == 403
+}
+
 func (o *ConfirmPreorderForbidden) Error() string {
 	return fmt.Sprintf("[PUT /fba/inbound/v0/shipments/{shipmentId}/preorder/confirm][%d] confirmPreorderForbidden  %+v", 403, o.Payload)
 }
+
+func (o *ConfirmPreorderForbidden) String() string {
+	return fmt.Sprintf("[PUT /fba/inbound/v0/shipments/{shipmentId}/preorder/confirm][%d] confirmPreorderForbidden  %+v", 403, o.Payload)
+}
+
 func (o *ConfirmPreorderForbidden) GetPayload() *fulfillment_inbound_v0_models.ConfirmPreorderResponse {
 	return o.Payload
 }
@@ -291,7 +415,8 @@ func NewConfirmPreorderNotFound() *ConfirmPreorderNotFound {
 	return &ConfirmPreorderNotFound{}
 }
 
-/* ConfirmPreorderNotFound describes a response with status code 404, with default header values.
+/*
+ConfirmPreorderNotFound describes a response with status code 404, with default header values.
 
 The specified resource does not exist.
 */
@@ -308,9 +433,39 @@ type ConfirmPreorderNotFound struct {
 	Payload *fulfillment_inbound_v0_models.ConfirmPreorderResponse
 }
 
+// IsSuccess returns true when this confirm preorder not found response has a 2xx status code
+func (o *ConfirmPreorderNotFound) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this confirm preorder not found response has a 3xx status code
+func (o *ConfirmPreorderNotFound) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this confirm preorder not found response has a 4xx status code
+func (o *ConfirmPreorderNotFound) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this confirm preorder not found response has a 5xx status code
+func (o *ConfirmPreorderNotFound) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this confirm preorder not found response a status code equal to that given
+func (o *ConfirmPreorderNotFound) IsCode(code int) bool {
+	return code == 404
+}
+
 func (o *ConfirmPreorderNotFound) Error() string {
 	return fmt.Sprintf("[PUT /fba/inbound/v0/shipments/{shipmentId}/preorder/confirm][%d] confirmPreorderNotFound  %+v", 404, o.Payload)
 }
+
+func (o *ConfirmPreorderNotFound) String() string {
+	return fmt.Sprintf("[PUT /fba/inbound/v0/shipments/{shipmentId}/preorder/confirm][%d] confirmPreorderNotFound  %+v", 404, o.Payload)
+}
+
 func (o *ConfirmPreorderNotFound) GetPayload() *fulfillment_inbound_v0_models.ConfirmPreorderResponse {
 	return o.Payload
 }
@@ -346,7 +501,8 @@ func NewConfirmPreorderTooManyRequests() *ConfirmPreorderTooManyRequests {
 	return &ConfirmPreorderTooManyRequests{}
 }
 
-/* ConfirmPreorderTooManyRequests describes a response with status code 429, with default header values.
+/*
+ConfirmPreorderTooManyRequests describes a response with status code 429, with default header values.
 
 The frequency of requests was greater than allowed.
 */
@@ -364,9 +520,39 @@ type ConfirmPreorderTooManyRequests struct {
 	Payload *fulfillment_inbound_v0_models.ConfirmPreorderResponse
 }
 
+// IsSuccess returns true when this confirm preorder too many requests response has a 2xx status code
+func (o *ConfirmPreorderTooManyRequests) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this confirm preorder too many requests response has a 3xx status code
+func (o *ConfirmPreorderTooManyRequests) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this confirm preorder too many requests response has a 4xx status code
+func (o *ConfirmPreorderTooManyRequests) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this confirm preorder too many requests response has a 5xx status code
+func (o *ConfirmPreorderTooManyRequests) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this confirm preorder too many requests response a status code equal to that given
+func (o *ConfirmPreorderTooManyRequests) IsCode(code int) bool {
+	return code == 429
+}
+
 func (o *ConfirmPreorderTooManyRequests) Error() string {
 	return fmt.Sprintf("[PUT /fba/inbound/v0/shipments/{shipmentId}/preorder/confirm][%d] confirmPreorderTooManyRequests  %+v", 429, o.Payload)
 }
+
+func (o *ConfirmPreorderTooManyRequests) String() string {
+	return fmt.Sprintf("[PUT /fba/inbound/v0/shipments/{shipmentId}/preorder/confirm][%d] confirmPreorderTooManyRequests  %+v", 429, o.Payload)
+}
+
 func (o *ConfirmPreorderTooManyRequests) GetPayload() *fulfillment_inbound_v0_models.ConfirmPreorderResponse {
 	return o.Payload
 }
@@ -402,7 +588,8 @@ func NewConfirmPreorderInternalServerError() *ConfirmPreorderInternalServerError
 	return &ConfirmPreorderInternalServerError{}
 }
 
-/* ConfirmPreorderInternalServerError describes a response with status code 500, with default header values.
+/*
+ConfirmPreorderInternalServerError describes a response with status code 500, with default header values.
 
 An unexpected condition occurred that prevented the server from fulfilling the request.
 */
@@ -420,9 +607,39 @@ type ConfirmPreorderInternalServerError struct {
 	Payload *fulfillment_inbound_v0_models.ConfirmPreorderResponse
 }
 
+// IsSuccess returns true when this confirm preorder internal server error response has a 2xx status code
+func (o *ConfirmPreorderInternalServerError) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this confirm preorder internal server error response has a 3xx status code
+func (o *ConfirmPreorderInternalServerError) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this confirm preorder internal server error response has a 4xx status code
+func (o *ConfirmPreorderInternalServerError) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this confirm preorder internal server error response has a 5xx status code
+func (o *ConfirmPreorderInternalServerError) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this confirm preorder internal server error response a status code equal to that given
+func (o *ConfirmPreorderInternalServerError) IsCode(code int) bool {
+	return code == 500
+}
+
 func (o *ConfirmPreorderInternalServerError) Error() string {
 	return fmt.Sprintf("[PUT /fba/inbound/v0/shipments/{shipmentId}/preorder/confirm][%d] confirmPreorderInternalServerError  %+v", 500, o.Payload)
 }
+
+func (o *ConfirmPreorderInternalServerError) String() string {
+	return fmt.Sprintf("[PUT /fba/inbound/v0/shipments/{shipmentId}/preorder/confirm][%d] confirmPreorderInternalServerError  %+v", 500, o.Payload)
+}
+
 func (o *ConfirmPreorderInternalServerError) GetPayload() *fulfillment_inbound_v0_models.ConfirmPreorderResponse {
 	return o.Payload
 }
@@ -458,7 +675,8 @@ func NewConfirmPreorderServiceUnavailable() *ConfirmPreorderServiceUnavailable {
 	return &ConfirmPreorderServiceUnavailable{}
 }
 
-/* ConfirmPreorderServiceUnavailable describes a response with status code 503, with default header values.
+/*
+ConfirmPreorderServiceUnavailable describes a response with status code 503, with default header values.
 
 Temporary overloading or maintenance of the server.
 */
@@ -476,9 +694,39 @@ type ConfirmPreorderServiceUnavailable struct {
 	Payload *fulfillment_inbound_v0_models.ConfirmPreorderResponse
 }
 
+// IsSuccess returns true when this confirm preorder service unavailable response has a 2xx status code
+func (o *ConfirmPreorderServiceUnavailable) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this confirm preorder service unavailable response has a 3xx status code
+func (o *ConfirmPreorderServiceUnavailable) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this confirm preorder service unavailable response has a 4xx status code
+func (o *ConfirmPreorderServiceUnavailable) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this confirm preorder service unavailable response has a 5xx status code
+func (o *ConfirmPreorderServiceUnavailable) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this confirm preorder service unavailable response a status code equal to that given
+func (o *ConfirmPreorderServiceUnavailable) IsCode(code int) bool {
+	return code == 503
+}
+
 func (o *ConfirmPreorderServiceUnavailable) Error() string {
 	return fmt.Sprintf("[PUT /fba/inbound/v0/shipments/{shipmentId}/preorder/confirm][%d] confirmPreorderServiceUnavailable  %+v", 503, o.Payload)
 }
+
+func (o *ConfirmPreorderServiceUnavailable) String() string {
+	return fmt.Sprintf("[PUT /fba/inbound/v0/shipments/{shipmentId}/preorder/confirm][%d] confirmPreorderServiceUnavailable  %+v", 503, o.Payload)
+}
+
 func (o *ConfirmPreorderServiceUnavailable) GetPayload() *fulfillment_inbound_v0_models.ConfirmPreorderResponse {
 	return o.Payload
 }

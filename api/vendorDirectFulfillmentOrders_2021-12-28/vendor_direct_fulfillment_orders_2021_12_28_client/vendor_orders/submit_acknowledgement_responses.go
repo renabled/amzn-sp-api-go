@@ -87,7 +87,8 @@ func NewSubmitAcknowledgementAccepted() *SubmitAcknowledgementAccepted {
 	return &SubmitAcknowledgementAccepted{}
 }
 
-/* SubmitAcknowledgementAccepted describes a response with status code 202, with default header values.
+/*
+SubmitAcknowledgementAccepted describes a response with status code 202, with default header values.
 
 Success.
 */
@@ -104,9 +105,39 @@ type SubmitAcknowledgementAccepted struct {
 	Payload *vendor_direct_fulfillment_orders_2021_12_28_models.TransactionID
 }
 
+// IsSuccess returns true when this submit acknowledgement accepted response has a 2xx status code
+func (o *SubmitAcknowledgementAccepted) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this submit acknowledgement accepted response has a 3xx status code
+func (o *SubmitAcknowledgementAccepted) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this submit acknowledgement accepted response has a 4xx status code
+func (o *SubmitAcknowledgementAccepted) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this submit acknowledgement accepted response has a 5xx status code
+func (o *SubmitAcknowledgementAccepted) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this submit acknowledgement accepted response a status code equal to that given
+func (o *SubmitAcknowledgementAccepted) IsCode(code int) bool {
+	return code == 202
+}
+
 func (o *SubmitAcknowledgementAccepted) Error() string {
 	return fmt.Sprintf("[POST /vendor/directFulfillment/orders/2021-12-28/acknowledgements][%d] submitAcknowledgementAccepted  %+v", 202, o.Payload)
 }
+
+func (o *SubmitAcknowledgementAccepted) String() string {
+	return fmt.Sprintf("[POST /vendor/directFulfillment/orders/2021-12-28/acknowledgements][%d] submitAcknowledgementAccepted  %+v", 202, o.Payload)
+}
+
 func (o *SubmitAcknowledgementAccepted) GetPayload() *vendor_direct_fulfillment_orders_2021_12_28_models.TransactionID {
 	return o.Payload
 }
@@ -142,7 +173,8 @@ func NewSubmitAcknowledgementBadRequest() *SubmitAcknowledgementBadRequest {
 	return &SubmitAcknowledgementBadRequest{}
 }
 
-/* SubmitAcknowledgementBadRequest describes a response with status code 400, with default header values.
+/*
+SubmitAcknowledgementBadRequest describes a response with status code 400, with default header values.
 
 Request has missing or invalid parameters and cannot be parsed.
 */
@@ -159,9 +191,39 @@ type SubmitAcknowledgementBadRequest struct {
 	Payload *vendor_direct_fulfillment_orders_2021_12_28_models.ErrorList
 }
 
+// IsSuccess returns true when this submit acknowledgement bad request response has a 2xx status code
+func (o *SubmitAcknowledgementBadRequest) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this submit acknowledgement bad request response has a 3xx status code
+func (o *SubmitAcknowledgementBadRequest) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this submit acknowledgement bad request response has a 4xx status code
+func (o *SubmitAcknowledgementBadRequest) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this submit acknowledgement bad request response has a 5xx status code
+func (o *SubmitAcknowledgementBadRequest) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this submit acknowledgement bad request response a status code equal to that given
+func (o *SubmitAcknowledgementBadRequest) IsCode(code int) bool {
+	return code == 400
+}
+
 func (o *SubmitAcknowledgementBadRequest) Error() string {
 	return fmt.Sprintf("[POST /vendor/directFulfillment/orders/2021-12-28/acknowledgements][%d] submitAcknowledgementBadRequest  %+v", 400, o.Payload)
 }
+
+func (o *SubmitAcknowledgementBadRequest) String() string {
+	return fmt.Sprintf("[POST /vendor/directFulfillment/orders/2021-12-28/acknowledgements][%d] submitAcknowledgementBadRequest  %+v", 400, o.Payload)
+}
+
 func (o *SubmitAcknowledgementBadRequest) GetPayload() *vendor_direct_fulfillment_orders_2021_12_28_models.ErrorList {
 	return o.Payload
 }
@@ -197,7 +259,8 @@ func NewSubmitAcknowledgementForbidden() *SubmitAcknowledgementForbidden {
 	return &SubmitAcknowledgementForbidden{}
 }
 
-/* SubmitAcknowledgementForbidden describes a response with status code 403, with default header values.
+/*
+SubmitAcknowledgementForbidden describes a response with status code 403, with default header values.
 
 Indicates that access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.
 */
@@ -210,9 +273,39 @@ type SubmitAcknowledgementForbidden struct {
 	Payload *vendor_direct_fulfillment_orders_2021_12_28_models.ErrorList
 }
 
+// IsSuccess returns true when this submit acknowledgement forbidden response has a 2xx status code
+func (o *SubmitAcknowledgementForbidden) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this submit acknowledgement forbidden response has a 3xx status code
+func (o *SubmitAcknowledgementForbidden) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this submit acknowledgement forbidden response has a 4xx status code
+func (o *SubmitAcknowledgementForbidden) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this submit acknowledgement forbidden response has a 5xx status code
+func (o *SubmitAcknowledgementForbidden) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this submit acknowledgement forbidden response a status code equal to that given
+func (o *SubmitAcknowledgementForbidden) IsCode(code int) bool {
+	return code == 403
+}
+
 func (o *SubmitAcknowledgementForbidden) Error() string {
 	return fmt.Sprintf("[POST /vendor/directFulfillment/orders/2021-12-28/acknowledgements][%d] submitAcknowledgementForbidden  %+v", 403, o.Payload)
 }
+
+func (o *SubmitAcknowledgementForbidden) String() string {
+	return fmt.Sprintf("[POST /vendor/directFulfillment/orders/2021-12-28/acknowledgements][%d] submitAcknowledgementForbidden  %+v", 403, o.Payload)
+}
+
 func (o *SubmitAcknowledgementForbidden) GetPayload() *vendor_direct_fulfillment_orders_2021_12_28_models.ErrorList {
 	return o.Payload
 }
@@ -241,7 +334,8 @@ func NewSubmitAcknowledgementNotFound() *SubmitAcknowledgementNotFound {
 	return &SubmitAcknowledgementNotFound{}
 }
 
-/* SubmitAcknowledgementNotFound describes a response with status code 404, with default header values.
+/*
+SubmitAcknowledgementNotFound describes a response with status code 404, with default header values.
 
 The resource specified does not exist.
 */
@@ -258,9 +352,39 @@ type SubmitAcknowledgementNotFound struct {
 	Payload *vendor_direct_fulfillment_orders_2021_12_28_models.ErrorList
 }
 
+// IsSuccess returns true when this submit acknowledgement not found response has a 2xx status code
+func (o *SubmitAcknowledgementNotFound) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this submit acknowledgement not found response has a 3xx status code
+func (o *SubmitAcknowledgementNotFound) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this submit acknowledgement not found response has a 4xx status code
+func (o *SubmitAcknowledgementNotFound) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this submit acknowledgement not found response has a 5xx status code
+func (o *SubmitAcknowledgementNotFound) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this submit acknowledgement not found response a status code equal to that given
+func (o *SubmitAcknowledgementNotFound) IsCode(code int) bool {
+	return code == 404
+}
+
 func (o *SubmitAcknowledgementNotFound) Error() string {
 	return fmt.Sprintf("[POST /vendor/directFulfillment/orders/2021-12-28/acknowledgements][%d] submitAcknowledgementNotFound  %+v", 404, o.Payload)
 }
+
+func (o *SubmitAcknowledgementNotFound) String() string {
+	return fmt.Sprintf("[POST /vendor/directFulfillment/orders/2021-12-28/acknowledgements][%d] submitAcknowledgementNotFound  %+v", 404, o.Payload)
+}
+
 func (o *SubmitAcknowledgementNotFound) GetPayload() *vendor_direct_fulfillment_orders_2021_12_28_models.ErrorList {
 	return o.Payload
 }
@@ -296,7 +420,8 @@ func NewSubmitAcknowledgementRequestEntityTooLarge() *SubmitAcknowledgementReque
 	return &SubmitAcknowledgementRequestEntityTooLarge{}
 }
 
-/* SubmitAcknowledgementRequestEntityTooLarge describes a response with status code 413, with default header values.
+/*
+SubmitAcknowledgementRequestEntityTooLarge describes a response with status code 413, with default header values.
 
 The request size exceeded the maximum accepted size.
 */
@@ -314,9 +439,39 @@ type SubmitAcknowledgementRequestEntityTooLarge struct {
 	Payload *vendor_direct_fulfillment_orders_2021_12_28_models.ErrorList
 }
 
+// IsSuccess returns true when this submit acknowledgement request entity too large response has a 2xx status code
+func (o *SubmitAcknowledgementRequestEntityTooLarge) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this submit acknowledgement request entity too large response has a 3xx status code
+func (o *SubmitAcknowledgementRequestEntityTooLarge) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this submit acknowledgement request entity too large response has a 4xx status code
+func (o *SubmitAcknowledgementRequestEntityTooLarge) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this submit acknowledgement request entity too large response has a 5xx status code
+func (o *SubmitAcknowledgementRequestEntityTooLarge) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this submit acknowledgement request entity too large response a status code equal to that given
+func (o *SubmitAcknowledgementRequestEntityTooLarge) IsCode(code int) bool {
+	return code == 413
+}
+
 func (o *SubmitAcknowledgementRequestEntityTooLarge) Error() string {
 	return fmt.Sprintf("[POST /vendor/directFulfillment/orders/2021-12-28/acknowledgements][%d] submitAcknowledgementRequestEntityTooLarge  %+v", 413, o.Payload)
 }
+
+func (o *SubmitAcknowledgementRequestEntityTooLarge) String() string {
+	return fmt.Sprintf("[POST /vendor/directFulfillment/orders/2021-12-28/acknowledgements][%d] submitAcknowledgementRequestEntityTooLarge  %+v", 413, o.Payload)
+}
+
 func (o *SubmitAcknowledgementRequestEntityTooLarge) GetPayload() *vendor_direct_fulfillment_orders_2021_12_28_models.ErrorList {
 	return o.Payload
 }
@@ -352,7 +507,8 @@ func NewSubmitAcknowledgementUnsupportedMediaType() *SubmitAcknowledgementUnsupp
 	return &SubmitAcknowledgementUnsupportedMediaType{}
 }
 
-/* SubmitAcknowledgementUnsupportedMediaType describes a response with status code 415, with default header values.
+/*
+SubmitAcknowledgementUnsupportedMediaType describes a response with status code 415, with default header values.
 
 The request payload is in an unsupported format.
 */
@@ -370,9 +526,39 @@ type SubmitAcknowledgementUnsupportedMediaType struct {
 	Payload *vendor_direct_fulfillment_orders_2021_12_28_models.ErrorList
 }
 
+// IsSuccess returns true when this submit acknowledgement unsupported media type response has a 2xx status code
+func (o *SubmitAcknowledgementUnsupportedMediaType) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this submit acknowledgement unsupported media type response has a 3xx status code
+func (o *SubmitAcknowledgementUnsupportedMediaType) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this submit acknowledgement unsupported media type response has a 4xx status code
+func (o *SubmitAcknowledgementUnsupportedMediaType) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this submit acknowledgement unsupported media type response has a 5xx status code
+func (o *SubmitAcknowledgementUnsupportedMediaType) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this submit acknowledgement unsupported media type response a status code equal to that given
+func (o *SubmitAcknowledgementUnsupportedMediaType) IsCode(code int) bool {
+	return code == 415
+}
+
 func (o *SubmitAcknowledgementUnsupportedMediaType) Error() string {
 	return fmt.Sprintf("[POST /vendor/directFulfillment/orders/2021-12-28/acknowledgements][%d] submitAcknowledgementUnsupportedMediaType  %+v", 415, o.Payload)
 }
+
+func (o *SubmitAcknowledgementUnsupportedMediaType) String() string {
+	return fmt.Sprintf("[POST /vendor/directFulfillment/orders/2021-12-28/acknowledgements][%d] submitAcknowledgementUnsupportedMediaType  %+v", 415, o.Payload)
+}
+
 func (o *SubmitAcknowledgementUnsupportedMediaType) GetPayload() *vendor_direct_fulfillment_orders_2021_12_28_models.ErrorList {
 	return o.Payload
 }
@@ -408,7 +594,8 @@ func NewSubmitAcknowledgementTooManyRequests() *SubmitAcknowledgementTooManyRequ
 	return &SubmitAcknowledgementTooManyRequests{}
 }
 
-/* SubmitAcknowledgementTooManyRequests describes a response with status code 429, with default header values.
+/*
+SubmitAcknowledgementTooManyRequests describes a response with status code 429, with default header values.
 
 The frequency of requests was greater than allowed.
 */
@@ -426,9 +613,39 @@ type SubmitAcknowledgementTooManyRequests struct {
 	Payload *vendor_direct_fulfillment_orders_2021_12_28_models.ErrorList
 }
 
+// IsSuccess returns true when this submit acknowledgement too many requests response has a 2xx status code
+func (o *SubmitAcknowledgementTooManyRequests) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this submit acknowledgement too many requests response has a 3xx status code
+func (o *SubmitAcknowledgementTooManyRequests) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this submit acknowledgement too many requests response has a 4xx status code
+func (o *SubmitAcknowledgementTooManyRequests) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this submit acknowledgement too many requests response has a 5xx status code
+func (o *SubmitAcknowledgementTooManyRequests) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this submit acknowledgement too many requests response a status code equal to that given
+func (o *SubmitAcknowledgementTooManyRequests) IsCode(code int) bool {
+	return code == 429
+}
+
 func (o *SubmitAcknowledgementTooManyRequests) Error() string {
 	return fmt.Sprintf("[POST /vendor/directFulfillment/orders/2021-12-28/acknowledgements][%d] submitAcknowledgementTooManyRequests  %+v", 429, o.Payload)
 }
+
+func (o *SubmitAcknowledgementTooManyRequests) String() string {
+	return fmt.Sprintf("[POST /vendor/directFulfillment/orders/2021-12-28/acknowledgements][%d] submitAcknowledgementTooManyRequests  %+v", 429, o.Payload)
+}
+
 func (o *SubmitAcknowledgementTooManyRequests) GetPayload() *vendor_direct_fulfillment_orders_2021_12_28_models.ErrorList {
 	return o.Payload
 }
@@ -464,7 +681,8 @@ func NewSubmitAcknowledgementInternalServerError() *SubmitAcknowledgementInterna
 	return &SubmitAcknowledgementInternalServerError{}
 }
 
-/* SubmitAcknowledgementInternalServerError describes a response with status code 500, with default header values.
+/*
+SubmitAcknowledgementInternalServerError describes a response with status code 500, with default header values.
 
 An unexpected condition occurred that prevented the server from fulfilling the request.
 */
@@ -482,9 +700,39 @@ type SubmitAcknowledgementInternalServerError struct {
 	Payload *vendor_direct_fulfillment_orders_2021_12_28_models.ErrorList
 }
 
+// IsSuccess returns true when this submit acknowledgement internal server error response has a 2xx status code
+func (o *SubmitAcknowledgementInternalServerError) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this submit acknowledgement internal server error response has a 3xx status code
+func (o *SubmitAcknowledgementInternalServerError) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this submit acknowledgement internal server error response has a 4xx status code
+func (o *SubmitAcknowledgementInternalServerError) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this submit acknowledgement internal server error response has a 5xx status code
+func (o *SubmitAcknowledgementInternalServerError) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this submit acknowledgement internal server error response a status code equal to that given
+func (o *SubmitAcknowledgementInternalServerError) IsCode(code int) bool {
+	return code == 500
+}
+
 func (o *SubmitAcknowledgementInternalServerError) Error() string {
 	return fmt.Sprintf("[POST /vendor/directFulfillment/orders/2021-12-28/acknowledgements][%d] submitAcknowledgementInternalServerError  %+v", 500, o.Payload)
 }
+
+func (o *SubmitAcknowledgementInternalServerError) String() string {
+	return fmt.Sprintf("[POST /vendor/directFulfillment/orders/2021-12-28/acknowledgements][%d] submitAcknowledgementInternalServerError  %+v", 500, o.Payload)
+}
+
 func (o *SubmitAcknowledgementInternalServerError) GetPayload() *vendor_direct_fulfillment_orders_2021_12_28_models.ErrorList {
 	return o.Payload
 }
@@ -520,7 +768,8 @@ func NewSubmitAcknowledgementServiceUnavailable() *SubmitAcknowledgementServiceU
 	return &SubmitAcknowledgementServiceUnavailable{}
 }
 
-/* SubmitAcknowledgementServiceUnavailable describes a response with status code 503, with default header values.
+/*
+SubmitAcknowledgementServiceUnavailable describes a response with status code 503, with default header values.
 
 Temporary overloading or maintenance of the server.
 */
@@ -538,9 +787,39 @@ type SubmitAcknowledgementServiceUnavailable struct {
 	Payload *vendor_direct_fulfillment_orders_2021_12_28_models.ErrorList
 }
 
+// IsSuccess returns true when this submit acknowledgement service unavailable response has a 2xx status code
+func (o *SubmitAcknowledgementServiceUnavailable) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this submit acknowledgement service unavailable response has a 3xx status code
+func (o *SubmitAcknowledgementServiceUnavailable) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this submit acknowledgement service unavailable response has a 4xx status code
+func (o *SubmitAcknowledgementServiceUnavailable) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this submit acknowledgement service unavailable response has a 5xx status code
+func (o *SubmitAcknowledgementServiceUnavailable) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this submit acknowledgement service unavailable response a status code equal to that given
+func (o *SubmitAcknowledgementServiceUnavailable) IsCode(code int) bool {
+	return code == 503
+}
+
 func (o *SubmitAcknowledgementServiceUnavailable) Error() string {
 	return fmt.Sprintf("[POST /vendor/directFulfillment/orders/2021-12-28/acknowledgements][%d] submitAcknowledgementServiceUnavailable  %+v", 503, o.Payload)
 }
+
+func (o *SubmitAcknowledgementServiceUnavailable) String() string {
+	return fmt.Sprintf("[POST /vendor/directFulfillment/orders/2021-12-28/acknowledgements][%d] submitAcknowledgementServiceUnavailable  %+v", 503, o.Payload)
+}
+
 func (o *SubmitAcknowledgementServiceUnavailable) GetPayload() *vendor_direct_fulfillment_orders_2021_12_28_models.ErrorList {
 	return o.Payload
 }

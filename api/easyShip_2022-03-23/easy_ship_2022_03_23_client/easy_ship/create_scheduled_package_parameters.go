@@ -54,10 +54,12 @@ func NewCreateScheduledPackageParamsWithHTTPClient(client *http.Client) *CreateS
 	}
 }
 
-/* CreateScheduledPackageParams contains all the parameters to send to the API endpoint
-   for the create scheduled package operation.
+/*
+CreateScheduledPackageParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the create scheduled package operation.
+
+	Typically these are written to a http.Request.
 */
 type CreateScheduledPackageParams struct {
 

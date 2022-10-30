@@ -36,7 +36,7 @@ type ClientService interface {
 }
 
 /*
-  SubmitInventoryUpdate Submits inventory updates for the specified warehouse for either a partial or full feed of inventory items.
+	SubmitInventoryUpdate Submits inventory updates for the specified warehouse for either a partial or full feed of inventory items.
 
 **Usage Plans:**
 

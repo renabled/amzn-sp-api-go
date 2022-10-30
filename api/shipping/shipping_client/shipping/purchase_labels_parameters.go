@@ -54,10 +54,12 @@ func NewPurchaseLabelsParamsWithHTTPClient(client *http.Client) *PurchaseLabelsP
 	}
 }
 
-/* PurchaseLabelsParams contains all the parameters to send to the API endpoint
-   for the purchase labels operation.
+/*
+PurchaseLabelsParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the purchase labels operation.
+
+	Typically these are written to a http.Request.
 */
 type PurchaseLabelsParams struct {
 

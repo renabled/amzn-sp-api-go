@@ -54,10 +54,12 @@ func NewUpdateVerificationStatusParamsWithHTTPClient(client *http.Client) *Updat
 	}
 }
 
-/* UpdateVerificationStatusParams contains all the parameters to send to the API endpoint
-   for the update verification status operation.
+/*
+UpdateVerificationStatusParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the update verification status operation.
+
+	Typically these are written to a http.Request.
 */
 type UpdateVerificationStatusParams struct {
 

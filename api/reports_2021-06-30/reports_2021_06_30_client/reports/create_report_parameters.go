@@ -54,10 +54,12 @@ func NewCreateReportParamsWithHTTPClient(client *http.Client) *CreateReportParam
 	}
 }
 
-/* CreateReportParams contains all the parameters to send to the API endpoint
-   for the create report operation.
+/*
+CreateReportParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the create report operation.
+
+	Typically these are written to a http.Request.
 */
 type CreateReportParams struct {
 

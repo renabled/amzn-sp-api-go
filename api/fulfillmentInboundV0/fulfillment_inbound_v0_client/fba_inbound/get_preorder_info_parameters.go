@@ -52,10 +52,12 @@ func NewGetPreorderInfoParamsWithHTTPClient(client *http.Client) *GetPreorderInf
 	}
 }
 
-/* GetPreorderInfoParams contains all the parameters to send to the API endpoint
-   for the get preorder info operation.
+/*
+GetPreorderInfoParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the get preorder info operation.
+
+	Typically these are written to a http.Request.
 */
 type GetPreorderInfoParams struct {
 

@@ -54,7 +54,7 @@ type ClientService interface {
 }
 
 /*
-  CreateContentDocument Creates a new A+ Content document.
+	CreateContentDocument Creates a new A+ Content document.
 
 **Usage Plans:**
 
@@ -101,7 +101,7 @@ func (a *Client) CreateContentDocument(params *CreateContentDocumentParams, opts
 }
 
 /*
-  GetContentDocument Returns an A+ Content document, if available.
+	GetContentDocument Returns an A+ Content document, if available.
 
 **Usage Plans:**
 
@@ -148,7 +148,7 @@ func (a *Client) GetContentDocument(params *GetContentDocumentParams, opts ...Cl
 }
 
 /*
-  ListContentDocumentAsinRelations Returns a list of ASINs related to the specified A+ Content document, if available. If you do not include the asinSet parameter, the operation returns all ASINs related to the content document.
+	ListContentDocumentAsinRelations Returns a list of ASINs related to the specified A+ Content document, if available. If you do not include the asinSet parameter, the operation returns all ASINs related to the content document.
 
 **Usage Plans:**
 
@@ -195,7 +195,7 @@ func (a *Client) ListContentDocumentAsinRelations(params *ListContentDocumentAsi
 }
 
 /*
-  PostContentDocumentApprovalSubmission Submits an A+ Content document for review, approval, and publishing.
+	PostContentDocumentApprovalSubmission Submits an A+ Content document for review, approval, and publishing.
 
 **Usage Plans:**
 
@@ -242,7 +242,7 @@ func (a *Client) PostContentDocumentApprovalSubmission(params *PostContentDocume
 }
 
 /*
-  PostContentDocumentAsinRelations Replaces all ASINs related to the specified A+ Content document, if available. This may add or remove ASINs, depending on the current set of related ASINs. Removing an ASIN has the side effect of suspending the content document from that ASIN.
+	PostContentDocumentAsinRelations Replaces all ASINs related to the specified A+ Content document, if available. This may add or remove ASINs, depending on the current set of related ASINs. Removing an ASIN has the side effect of suspending the content document from that ASIN.
 
 **Usage Plans:**
 
@@ -289,7 +289,7 @@ func (a *Client) PostContentDocumentAsinRelations(params *PostContentDocumentAsi
 }
 
 /*
-  PostContentDocumentSuspendSubmission Submits a request to suspend visible A+ Content. This neither deletes the content document nor the ASIN relations.
+	PostContentDocumentSuspendSubmission Submits a request to suspend visible A+ Content. This neither deletes the content document nor the ASIN relations.
 
 **Usage Plans:**
 
@@ -336,7 +336,7 @@ func (a *Client) PostContentDocumentSuspendSubmission(params *PostContentDocumen
 }
 
 /*
-  SearchContentDocuments Returns a list of all A+ Content documents assigned to a selling partner. This operation returns only the metadata of the A+ Content documents. Call the getContentDocument operation to get the actual contents of the A+ Content documents.
+	SearchContentDocuments Returns a list of all A+ Content documents assigned to a selling partner. This operation returns only the metadata of the A+ Content documents. Call the getContentDocument operation to get the actual contents of the A+ Content documents.
 
 **Usage Plans:**
 
@@ -383,7 +383,7 @@ func (a *Client) SearchContentDocuments(params *SearchContentDocumentsParams, op
 }
 
 /*
-  SearchContentPublishRecords Searches for A+ Content publishing records, if available.
+	SearchContentPublishRecords Searches for A+ Content publishing records, if available.
 
 **Usage Plans:**
 
@@ -430,7 +430,7 @@ func (a *Client) SearchContentPublishRecords(params *SearchContentPublishRecords
 }
 
 /*
-  UpdateContentDocument Updates an existing A+ Content document.
+	UpdateContentDocument Updates an existing A+ Content document.
 
 **Usage Plans:**
 
@@ -477,7 +477,7 @@ func (a *Client) UpdateContentDocument(params *UpdateContentDocumentParams, opts
 }
 
 /*
-  ValidateContentDocumentAsinRelations Checks if the A+ Content document is valid for use on a set of ASINs.
+	ValidateContentDocumentAsinRelations Checks if the A+ Content document is valid for use on a set of ASINs.
 
 **Usage Plans:**
 

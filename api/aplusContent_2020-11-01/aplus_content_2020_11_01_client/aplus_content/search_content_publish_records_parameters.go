@@ -52,10 +52,12 @@ func NewSearchContentPublishRecordsParamsWithHTTPClient(client *http.Client) *Se
 	}
 }
 
-/* SearchContentPublishRecordsParams contains all the parameters to send to the API endpoint
-   for the search content publish records operation.
+/*
+SearchContentPublishRecordsParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the search content publish records operation.
+
+	Typically these are written to a http.Request.
 */
 type SearchContentPublishRecordsParams struct {
 

@@ -53,10 +53,12 @@ func NewListContentDocumentAsinRelationsParamsWithHTTPClient(client *http.Client
 	}
 }
 
-/* ListContentDocumentAsinRelationsParams contains all the parameters to send to the API endpoint
-   for the list content document asin relations operation.
+/*
+ListContentDocumentAsinRelationsParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the list content document asin relations operation.
+
+	Typically these are written to a http.Request.
 */
 type ListContentDocumentAsinRelationsParams struct {
 

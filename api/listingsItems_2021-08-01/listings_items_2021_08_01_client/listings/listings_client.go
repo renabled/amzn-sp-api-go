@@ -42,7 +42,7 @@ type ClientService interface {
 }
 
 /*
-  DeleteListingsItem Delete a listings item for a selling partner.
+	DeleteListingsItem Delete a listings item for a selling partner.
 
 **Usage Plan:**
 
@@ -88,7 +88,7 @@ func (a *Client) DeleteListingsItem(params *DeleteListingsItemParams, opts ...Cl
 }
 
 /*
-  GetListingsItem Returns details about a listings item for a selling partner.
+	GetListingsItem Returns details about a listings item for a selling partner.
 
 **Usage Plan:**
 
@@ -134,7 +134,7 @@ func (a *Client) GetListingsItem(params *GetListingsItemParams, opts ...ClientOp
 }
 
 /*
-  PatchListingsItem Partially update (patch) a listings item for a selling partner. Only top-level listings item attributes can be patched. Patching nested attributes is not supported.
+	PatchListingsItem Partially update (patch) a listings item for a selling partner. Only top-level listings item attributes can be patched. Patching nested attributes is not supported.
 
 **Usage Plan:**
 
@@ -180,7 +180,7 @@ func (a *Client) PatchListingsItem(params *PatchListingsItemParams, opts ...Clie
 }
 
 /*
-  PutListingsItem Creates a new or fully-updates an existing listings item for a selling partner.
+	PutListingsItem Creates a new or fully-updates an existing listings item for a selling partner.
 
 **Usage Plan:**
 

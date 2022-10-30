@@ -93,7 +93,8 @@ func NewRescheduleAppointmentForServiceJobByServiceJobIDOK() *RescheduleAppointm
 	return &RescheduleAppointmentForServiceJobByServiceJobIDOK{}
 }
 
-/* RescheduleAppointmentForServiceJobByServiceJobIDOK describes a response with status code 200, with default header values.
+/*
+RescheduleAppointmentForServiceJobByServiceJobIDOK describes a response with status code 200, with default header values.
 
 Success response.
 */
@@ -110,9 +111,39 @@ type RescheduleAppointmentForServiceJobByServiceJobIDOK struct {
 	Payload *services_models.SetAppointmentResponse
 }
 
+// IsSuccess returns true when this reschedule appointment for service job by service job Id o k response has a 2xx status code
+func (o *RescheduleAppointmentForServiceJobByServiceJobIDOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this reschedule appointment for service job by service job Id o k response has a 3xx status code
+func (o *RescheduleAppointmentForServiceJobByServiceJobIDOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this reschedule appointment for service job by service job Id o k response has a 4xx status code
+func (o *RescheduleAppointmentForServiceJobByServiceJobIDOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this reschedule appointment for service job by service job Id o k response has a 5xx status code
+func (o *RescheduleAppointmentForServiceJobByServiceJobIDOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this reschedule appointment for service job by service job Id o k response a status code equal to that given
+func (o *RescheduleAppointmentForServiceJobByServiceJobIDOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *RescheduleAppointmentForServiceJobByServiceJobIDOK) Error() string {
 	return fmt.Sprintf("[POST /service/v1/serviceJobs/{serviceJobId}/appointments/{appointmentId}][%d] rescheduleAppointmentForServiceJobByServiceJobIdOK  %+v", 200, o.Payload)
 }
+
+func (o *RescheduleAppointmentForServiceJobByServiceJobIDOK) String() string {
+	return fmt.Sprintf("[POST /service/v1/serviceJobs/{serviceJobId}/appointments/{appointmentId}][%d] rescheduleAppointmentForServiceJobByServiceJobIdOK  %+v", 200, o.Payload)
+}
+
 func (o *RescheduleAppointmentForServiceJobByServiceJobIDOK) GetPayload() *services_models.SetAppointmentResponse {
 	return o.Payload
 }
@@ -148,7 +179,8 @@ func NewRescheduleAppointmentForServiceJobByServiceJobIDBadRequest() *Reschedule
 	return &RescheduleAppointmentForServiceJobByServiceJobIDBadRequest{}
 }
 
-/* RescheduleAppointmentForServiceJobByServiceJobIDBadRequest describes a response with status code 400, with default header values.
+/*
+RescheduleAppointmentForServiceJobByServiceJobIDBadRequest describes a response with status code 400, with default header values.
 
 Request has missing or invalid parameters and cannot be parsed.
 */
@@ -165,9 +197,39 @@ type RescheduleAppointmentForServiceJobByServiceJobIDBadRequest struct {
 	Payload *services_models.SetAppointmentResponse
 }
 
+// IsSuccess returns true when this reschedule appointment for service job by service job Id bad request response has a 2xx status code
+func (o *RescheduleAppointmentForServiceJobByServiceJobIDBadRequest) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this reschedule appointment for service job by service job Id bad request response has a 3xx status code
+func (o *RescheduleAppointmentForServiceJobByServiceJobIDBadRequest) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this reschedule appointment for service job by service job Id bad request response has a 4xx status code
+func (o *RescheduleAppointmentForServiceJobByServiceJobIDBadRequest) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this reschedule appointment for service job by service job Id bad request response has a 5xx status code
+func (o *RescheduleAppointmentForServiceJobByServiceJobIDBadRequest) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this reschedule appointment for service job by service job Id bad request response a status code equal to that given
+func (o *RescheduleAppointmentForServiceJobByServiceJobIDBadRequest) IsCode(code int) bool {
+	return code == 400
+}
+
 func (o *RescheduleAppointmentForServiceJobByServiceJobIDBadRequest) Error() string {
 	return fmt.Sprintf("[POST /service/v1/serviceJobs/{serviceJobId}/appointments/{appointmentId}][%d] rescheduleAppointmentForServiceJobByServiceJobIdBadRequest  %+v", 400, o.Payload)
 }
+
+func (o *RescheduleAppointmentForServiceJobByServiceJobIDBadRequest) String() string {
+	return fmt.Sprintf("[POST /service/v1/serviceJobs/{serviceJobId}/appointments/{appointmentId}][%d] rescheduleAppointmentForServiceJobByServiceJobIdBadRequest  %+v", 400, o.Payload)
+}
+
 func (o *RescheduleAppointmentForServiceJobByServiceJobIDBadRequest) GetPayload() *services_models.SetAppointmentResponse {
 	return o.Payload
 }
@@ -203,7 +265,8 @@ func NewRescheduleAppointmentForServiceJobByServiceJobIDForbidden() *RescheduleA
 	return &RescheduleAppointmentForServiceJobByServiceJobIDForbidden{}
 }
 
-/* RescheduleAppointmentForServiceJobByServiceJobIDForbidden describes a response with status code 403, with default header values.
+/*
+RescheduleAppointmentForServiceJobByServiceJobIDForbidden describes a response with status code 403, with default header values.
 
 Indicates that access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.
 */
@@ -216,9 +279,39 @@ type RescheduleAppointmentForServiceJobByServiceJobIDForbidden struct {
 	Payload *services_models.SetAppointmentResponse
 }
 
+// IsSuccess returns true when this reschedule appointment for service job by service job Id forbidden response has a 2xx status code
+func (o *RescheduleAppointmentForServiceJobByServiceJobIDForbidden) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this reschedule appointment for service job by service job Id forbidden response has a 3xx status code
+func (o *RescheduleAppointmentForServiceJobByServiceJobIDForbidden) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this reschedule appointment for service job by service job Id forbidden response has a 4xx status code
+func (o *RescheduleAppointmentForServiceJobByServiceJobIDForbidden) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this reschedule appointment for service job by service job Id forbidden response has a 5xx status code
+func (o *RescheduleAppointmentForServiceJobByServiceJobIDForbidden) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this reschedule appointment for service job by service job Id forbidden response a status code equal to that given
+func (o *RescheduleAppointmentForServiceJobByServiceJobIDForbidden) IsCode(code int) bool {
+	return code == 403
+}
+
 func (o *RescheduleAppointmentForServiceJobByServiceJobIDForbidden) Error() string {
 	return fmt.Sprintf("[POST /service/v1/serviceJobs/{serviceJobId}/appointments/{appointmentId}][%d] rescheduleAppointmentForServiceJobByServiceJobIdForbidden  %+v", 403, o.Payload)
 }
+
+func (o *RescheduleAppointmentForServiceJobByServiceJobIDForbidden) String() string {
+	return fmt.Sprintf("[POST /service/v1/serviceJobs/{serviceJobId}/appointments/{appointmentId}][%d] rescheduleAppointmentForServiceJobByServiceJobIdForbidden  %+v", 403, o.Payload)
+}
+
 func (o *RescheduleAppointmentForServiceJobByServiceJobIDForbidden) GetPayload() *services_models.SetAppointmentResponse {
 	return o.Payload
 }
@@ -247,7 +340,8 @@ func NewRescheduleAppointmentForServiceJobByServiceJobIDNotFound() *RescheduleAp
 	return &RescheduleAppointmentForServiceJobByServiceJobIDNotFound{}
 }
 
-/* RescheduleAppointmentForServiceJobByServiceJobIDNotFound describes a response with status code 404, with default header values.
+/*
+RescheduleAppointmentForServiceJobByServiceJobIDNotFound describes a response with status code 404, with default header values.
 
 The resource specified does not exist.
 */
@@ -264,9 +358,39 @@ type RescheduleAppointmentForServiceJobByServiceJobIDNotFound struct {
 	Payload *services_models.SetAppointmentResponse
 }
 
+// IsSuccess returns true when this reschedule appointment for service job by service job Id not found response has a 2xx status code
+func (o *RescheduleAppointmentForServiceJobByServiceJobIDNotFound) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this reschedule appointment for service job by service job Id not found response has a 3xx status code
+func (o *RescheduleAppointmentForServiceJobByServiceJobIDNotFound) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this reschedule appointment for service job by service job Id not found response has a 4xx status code
+func (o *RescheduleAppointmentForServiceJobByServiceJobIDNotFound) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this reschedule appointment for service job by service job Id not found response has a 5xx status code
+func (o *RescheduleAppointmentForServiceJobByServiceJobIDNotFound) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this reschedule appointment for service job by service job Id not found response a status code equal to that given
+func (o *RescheduleAppointmentForServiceJobByServiceJobIDNotFound) IsCode(code int) bool {
+	return code == 404
+}
+
 func (o *RescheduleAppointmentForServiceJobByServiceJobIDNotFound) Error() string {
 	return fmt.Sprintf("[POST /service/v1/serviceJobs/{serviceJobId}/appointments/{appointmentId}][%d] rescheduleAppointmentForServiceJobByServiceJobIdNotFound  %+v", 404, o.Payload)
 }
+
+func (o *RescheduleAppointmentForServiceJobByServiceJobIDNotFound) String() string {
+	return fmt.Sprintf("[POST /service/v1/serviceJobs/{serviceJobId}/appointments/{appointmentId}][%d] rescheduleAppointmentForServiceJobByServiceJobIdNotFound  %+v", 404, o.Payload)
+}
+
 func (o *RescheduleAppointmentForServiceJobByServiceJobIDNotFound) GetPayload() *services_models.SetAppointmentResponse {
 	return o.Payload
 }
@@ -302,7 +426,8 @@ func NewRescheduleAppointmentForServiceJobByServiceJobIDRequestEntityTooLarge() 
 	return &RescheduleAppointmentForServiceJobByServiceJobIDRequestEntityTooLarge{}
 }
 
-/* RescheduleAppointmentForServiceJobByServiceJobIDRequestEntityTooLarge describes a response with status code 413, with default header values.
+/*
+RescheduleAppointmentForServiceJobByServiceJobIDRequestEntityTooLarge describes a response with status code 413, with default header values.
 
 The request size exceeded the maximum accepted size.
 */
@@ -320,9 +445,39 @@ type RescheduleAppointmentForServiceJobByServiceJobIDRequestEntityTooLarge struc
 	Payload *services_models.SetAppointmentResponse
 }
 
+// IsSuccess returns true when this reschedule appointment for service job by service job Id request entity too large response has a 2xx status code
+func (o *RescheduleAppointmentForServiceJobByServiceJobIDRequestEntityTooLarge) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this reschedule appointment for service job by service job Id request entity too large response has a 3xx status code
+func (o *RescheduleAppointmentForServiceJobByServiceJobIDRequestEntityTooLarge) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this reschedule appointment for service job by service job Id request entity too large response has a 4xx status code
+func (o *RescheduleAppointmentForServiceJobByServiceJobIDRequestEntityTooLarge) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this reschedule appointment for service job by service job Id request entity too large response has a 5xx status code
+func (o *RescheduleAppointmentForServiceJobByServiceJobIDRequestEntityTooLarge) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this reschedule appointment for service job by service job Id request entity too large response a status code equal to that given
+func (o *RescheduleAppointmentForServiceJobByServiceJobIDRequestEntityTooLarge) IsCode(code int) bool {
+	return code == 413
+}
+
 func (o *RescheduleAppointmentForServiceJobByServiceJobIDRequestEntityTooLarge) Error() string {
 	return fmt.Sprintf("[POST /service/v1/serviceJobs/{serviceJobId}/appointments/{appointmentId}][%d] rescheduleAppointmentForServiceJobByServiceJobIdRequestEntityTooLarge  %+v", 413, o.Payload)
 }
+
+func (o *RescheduleAppointmentForServiceJobByServiceJobIDRequestEntityTooLarge) String() string {
+	return fmt.Sprintf("[POST /service/v1/serviceJobs/{serviceJobId}/appointments/{appointmentId}][%d] rescheduleAppointmentForServiceJobByServiceJobIdRequestEntityTooLarge  %+v", 413, o.Payload)
+}
+
 func (o *RescheduleAppointmentForServiceJobByServiceJobIDRequestEntityTooLarge) GetPayload() *services_models.SetAppointmentResponse {
 	return o.Payload
 }
@@ -358,7 +513,8 @@ func NewRescheduleAppointmentForServiceJobByServiceJobIDUnsupportedMediaType() *
 	return &RescheduleAppointmentForServiceJobByServiceJobIDUnsupportedMediaType{}
 }
 
-/* RescheduleAppointmentForServiceJobByServiceJobIDUnsupportedMediaType describes a response with status code 415, with default header values.
+/*
+RescheduleAppointmentForServiceJobByServiceJobIDUnsupportedMediaType describes a response with status code 415, with default header values.
 
 The request payload is in an unsupported format.
 */
@@ -376,9 +532,39 @@ type RescheduleAppointmentForServiceJobByServiceJobIDUnsupportedMediaType struct
 	Payload *services_models.SetAppointmentResponse
 }
 
+// IsSuccess returns true when this reschedule appointment for service job by service job Id unsupported media type response has a 2xx status code
+func (o *RescheduleAppointmentForServiceJobByServiceJobIDUnsupportedMediaType) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this reschedule appointment for service job by service job Id unsupported media type response has a 3xx status code
+func (o *RescheduleAppointmentForServiceJobByServiceJobIDUnsupportedMediaType) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this reschedule appointment for service job by service job Id unsupported media type response has a 4xx status code
+func (o *RescheduleAppointmentForServiceJobByServiceJobIDUnsupportedMediaType) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this reschedule appointment for service job by service job Id unsupported media type response has a 5xx status code
+func (o *RescheduleAppointmentForServiceJobByServiceJobIDUnsupportedMediaType) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this reschedule appointment for service job by service job Id unsupported media type response a status code equal to that given
+func (o *RescheduleAppointmentForServiceJobByServiceJobIDUnsupportedMediaType) IsCode(code int) bool {
+	return code == 415
+}
+
 func (o *RescheduleAppointmentForServiceJobByServiceJobIDUnsupportedMediaType) Error() string {
 	return fmt.Sprintf("[POST /service/v1/serviceJobs/{serviceJobId}/appointments/{appointmentId}][%d] rescheduleAppointmentForServiceJobByServiceJobIdUnsupportedMediaType  %+v", 415, o.Payload)
 }
+
+func (o *RescheduleAppointmentForServiceJobByServiceJobIDUnsupportedMediaType) String() string {
+	return fmt.Sprintf("[POST /service/v1/serviceJobs/{serviceJobId}/appointments/{appointmentId}][%d] rescheduleAppointmentForServiceJobByServiceJobIdUnsupportedMediaType  %+v", 415, o.Payload)
+}
+
 func (o *RescheduleAppointmentForServiceJobByServiceJobIDUnsupportedMediaType) GetPayload() *services_models.SetAppointmentResponse {
 	return o.Payload
 }
@@ -414,7 +600,8 @@ func NewRescheduleAppointmentForServiceJobByServiceJobIDUnprocessableEntity() *R
 	return &RescheduleAppointmentForServiceJobByServiceJobIDUnprocessableEntity{}
 }
 
-/* RescheduleAppointmentForServiceJobByServiceJobIDUnprocessableEntity describes a response with status code 422, with default header values.
+/*
+RescheduleAppointmentForServiceJobByServiceJobIDUnprocessableEntity describes a response with status code 422, with default header values.
 
 Unprocessable Entity. Unable to process the contained instructions.
 */
@@ -432,9 +619,39 @@ type RescheduleAppointmentForServiceJobByServiceJobIDUnprocessableEntity struct 
 	Payload *services_models.SetAppointmentResponse
 }
 
+// IsSuccess returns true when this reschedule appointment for service job by service job Id unprocessable entity response has a 2xx status code
+func (o *RescheduleAppointmentForServiceJobByServiceJobIDUnprocessableEntity) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this reschedule appointment for service job by service job Id unprocessable entity response has a 3xx status code
+func (o *RescheduleAppointmentForServiceJobByServiceJobIDUnprocessableEntity) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this reschedule appointment for service job by service job Id unprocessable entity response has a 4xx status code
+func (o *RescheduleAppointmentForServiceJobByServiceJobIDUnprocessableEntity) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this reschedule appointment for service job by service job Id unprocessable entity response has a 5xx status code
+func (o *RescheduleAppointmentForServiceJobByServiceJobIDUnprocessableEntity) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this reschedule appointment for service job by service job Id unprocessable entity response a status code equal to that given
+func (o *RescheduleAppointmentForServiceJobByServiceJobIDUnprocessableEntity) IsCode(code int) bool {
+	return code == 422
+}
+
 func (o *RescheduleAppointmentForServiceJobByServiceJobIDUnprocessableEntity) Error() string {
 	return fmt.Sprintf("[POST /service/v1/serviceJobs/{serviceJobId}/appointments/{appointmentId}][%d] rescheduleAppointmentForServiceJobByServiceJobIdUnprocessableEntity  %+v", 422, o.Payload)
 }
+
+func (o *RescheduleAppointmentForServiceJobByServiceJobIDUnprocessableEntity) String() string {
+	return fmt.Sprintf("[POST /service/v1/serviceJobs/{serviceJobId}/appointments/{appointmentId}][%d] rescheduleAppointmentForServiceJobByServiceJobIdUnprocessableEntity  %+v", 422, o.Payload)
+}
+
 func (o *RescheduleAppointmentForServiceJobByServiceJobIDUnprocessableEntity) GetPayload() *services_models.SetAppointmentResponse {
 	return o.Payload
 }
@@ -470,7 +687,8 @@ func NewRescheduleAppointmentForServiceJobByServiceJobIDTooManyRequests() *Resch
 	return &RescheduleAppointmentForServiceJobByServiceJobIDTooManyRequests{}
 }
 
-/* RescheduleAppointmentForServiceJobByServiceJobIDTooManyRequests describes a response with status code 429, with default header values.
+/*
+RescheduleAppointmentForServiceJobByServiceJobIDTooManyRequests describes a response with status code 429, with default header values.
 
 The frequency of requests was greater than allowed.
 */
@@ -488,9 +706,39 @@ type RescheduleAppointmentForServiceJobByServiceJobIDTooManyRequests struct {
 	Payload *services_models.SetAppointmentResponse
 }
 
+// IsSuccess returns true when this reschedule appointment for service job by service job Id too many requests response has a 2xx status code
+func (o *RescheduleAppointmentForServiceJobByServiceJobIDTooManyRequests) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this reschedule appointment for service job by service job Id too many requests response has a 3xx status code
+func (o *RescheduleAppointmentForServiceJobByServiceJobIDTooManyRequests) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this reschedule appointment for service job by service job Id too many requests response has a 4xx status code
+func (o *RescheduleAppointmentForServiceJobByServiceJobIDTooManyRequests) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this reschedule appointment for service job by service job Id too many requests response has a 5xx status code
+func (o *RescheduleAppointmentForServiceJobByServiceJobIDTooManyRequests) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this reschedule appointment for service job by service job Id too many requests response a status code equal to that given
+func (o *RescheduleAppointmentForServiceJobByServiceJobIDTooManyRequests) IsCode(code int) bool {
+	return code == 429
+}
+
 func (o *RescheduleAppointmentForServiceJobByServiceJobIDTooManyRequests) Error() string {
 	return fmt.Sprintf("[POST /service/v1/serviceJobs/{serviceJobId}/appointments/{appointmentId}][%d] rescheduleAppointmentForServiceJobByServiceJobIdTooManyRequests  %+v", 429, o.Payload)
 }
+
+func (o *RescheduleAppointmentForServiceJobByServiceJobIDTooManyRequests) String() string {
+	return fmt.Sprintf("[POST /service/v1/serviceJobs/{serviceJobId}/appointments/{appointmentId}][%d] rescheduleAppointmentForServiceJobByServiceJobIdTooManyRequests  %+v", 429, o.Payload)
+}
+
 func (o *RescheduleAppointmentForServiceJobByServiceJobIDTooManyRequests) GetPayload() *services_models.SetAppointmentResponse {
 	return o.Payload
 }
@@ -526,7 +774,8 @@ func NewRescheduleAppointmentForServiceJobByServiceJobIDInternalServerError() *R
 	return &RescheduleAppointmentForServiceJobByServiceJobIDInternalServerError{}
 }
 
-/* RescheduleAppointmentForServiceJobByServiceJobIDInternalServerError describes a response with status code 500, with default header values.
+/*
+RescheduleAppointmentForServiceJobByServiceJobIDInternalServerError describes a response with status code 500, with default header values.
 
 Encountered an unexpected condition which prevented the server from fulfilling the request.
 */
@@ -544,9 +793,39 @@ type RescheduleAppointmentForServiceJobByServiceJobIDInternalServerError struct 
 	Payload *services_models.SetAppointmentResponse
 }
 
+// IsSuccess returns true when this reschedule appointment for service job by service job Id internal server error response has a 2xx status code
+func (o *RescheduleAppointmentForServiceJobByServiceJobIDInternalServerError) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this reschedule appointment for service job by service job Id internal server error response has a 3xx status code
+func (o *RescheduleAppointmentForServiceJobByServiceJobIDInternalServerError) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this reschedule appointment for service job by service job Id internal server error response has a 4xx status code
+func (o *RescheduleAppointmentForServiceJobByServiceJobIDInternalServerError) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this reschedule appointment for service job by service job Id internal server error response has a 5xx status code
+func (o *RescheduleAppointmentForServiceJobByServiceJobIDInternalServerError) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this reschedule appointment for service job by service job Id internal server error response a status code equal to that given
+func (o *RescheduleAppointmentForServiceJobByServiceJobIDInternalServerError) IsCode(code int) bool {
+	return code == 500
+}
+
 func (o *RescheduleAppointmentForServiceJobByServiceJobIDInternalServerError) Error() string {
 	return fmt.Sprintf("[POST /service/v1/serviceJobs/{serviceJobId}/appointments/{appointmentId}][%d] rescheduleAppointmentForServiceJobByServiceJobIdInternalServerError  %+v", 500, o.Payload)
 }
+
+func (o *RescheduleAppointmentForServiceJobByServiceJobIDInternalServerError) String() string {
+	return fmt.Sprintf("[POST /service/v1/serviceJobs/{serviceJobId}/appointments/{appointmentId}][%d] rescheduleAppointmentForServiceJobByServiceJobIdInternalServerError  %+v", 500, o.Payload)
+}
+
 func (o *RescheduleAppointmentForServiceJobByServiceJobIDInternalServerError) GetPayload() *services_models.SetAppointmentResponse {
 	return o.Payload
 }
@@ -582,7 +861,8 @@ func NewRescheduleAppointmentForServiceJobByServiceJobIDServiceUnavailable() *Re
 	return &RescheduleAppointmentForServiceJobByServiceJobIDServiceUnavailable{}
 }
 
-/* RescheduleAppointmentForServiceJobByServiceJobIDServiceUnavailable describes a response with status code 503, with default header values.
+/*
+RescheduleAppointmentForServiceJobByServiceJobIDServiceUnavailable describes a response with status code 503, with default header values.
 
 Temporary overloading or maintenance of the server.
 */
@@ -600,9 +880,39 @@ type RescheduleAppointmentForServiceJobByServiceJobIDServiceUnavailable struct {
 	Payload *services_models.SetAppointmentResponse
 }
 
+// IsSuccess returns true when this reschedule appointment for service job by service job Id service unavailable response has a 2xx status code
+func (o *RescheduleAppointmentForServiceJobByServiceJobIDServiceUnavailable) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this reschedule appointment for service job by service job Id service unavailable response has a 3xx status code
+func (o *RescheduleAppointmentForServiceJobByServiceJobIDServiceUnavailable) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this reschedule appointment for service job by service job Id service unavailable response has a 4xx status code
+func (o *RescheduleAppointmentForServiceJobByServiceJobIDServiceUnavailable) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this reschedule appointment for service job by service job Id service unavailable response has a 5xx status code
+func (o *RescheduleAppointmentForServiceJobByServiceJobIDServiceUnavailable) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this reschedule appointment for service job by service job Id service unavailable response a status code equal to that given
+func (o *RescheduleAppointmentForServiceJobByServiceJobIDServiceUnavailable) IsCode(code int) bool {
+	return code == 503
+}
+
 func (o *RescheduleAppointmentForServiceJobByServiceJobIDServiceUnavailable) Error() string {
 	return fmt.Sprintf("[POST /service/v1/serviceJobs/{serviceJobId}/appointments/{appointmentId}][%d] rescheduleAppointmentForServiceJobByServiceJobIdServiceUnavailable  %+v", 503, o.Payload)
 }
+
+func (o *RescheduleAppointmentForServiceJobByServiceJobIDServiceUnavailable) String() string {
+	return fmt.Sprintf("[POST /service/v1/serviceJobs/{serviceJobId}/appointments/{appointmentId}][%d] rescheduleAppointmentForServiceJobByServiceJobIdServiceUnavailable  %+v", 503, o.Payload)
+}
+
 func (o *RescheduleAppointmentForServiceJobByServiceJobIDServiceUnavailable) GetPayload() *services_models.SetAppointmentResponse {
 	return o.Payload
 }

@@ -38,7 +38,7 @@ type ClientService interface {
 }
 
 /*
-  GetCustomerInvoice Returns a customer invoice based on the purchaseOrderNumber that you specify.
+	GetCustomerInvoice Returns a customer invoice based on the purchaseOrderNumber that you specify.
 
 **Usage Plan:**
 
@@ -84,7 +84,7 @@ func (a *Client) GetCustomerInvoice(params *GetCustomerInvoiceParams, opts ...Cl
 }
 
 /*
-  GetCustomerInvoices Returns a list of customer invoices created during a time frame that you specify. You define the time frame using the createdAfter and createdBefore parameters. You must use both of these parameters. The date range to search must be no more than 7 days.
+	GetCustomerInvoices Returns a list of customer invoices created during a time frame that you specify. You define the time frame using the createdAfter and createdBefore parameters. You must use both of these parameters. The date range to search must be no more than 7 days.
 
 **Usage Plan:**
 

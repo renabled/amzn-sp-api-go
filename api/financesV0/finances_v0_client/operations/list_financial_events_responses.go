@@ -75,7 +75,8 @@ func NewListFinancialEventsOK() *ListFinancialEventsOK {
 	return &ListFinancialEventsOK{}
 }
 
-/* ListFinancialEventsOK describes a response with status code 200, with default header values.
+/*
+ListFinancialEventsOK describes a response with status code 200, with default header values.
 
 Success.
 */
@@ -83,9 +84,39 @@ type ListFinancialEventsOK struct {
 	Payload *finances_v0_models.ListFinancialEventsResponse
 }
 
+// IsSuccess returns true when this list financial events o k response has a 2xx status code
+func (o *ListFinancialEventsOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this list financial events o k response has a 3xx status code
+func (o *ListFinancialEventsOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this list financial events o k response has a 4xx status code
+func (o *ListFinancialEventsOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this list financial events o k response has a 5xx status code
+func (o *ListFinancialEventsOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this list financial events o k response a status code equal to that given
+func (o *ListFinancialEventsOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *ListFinancialEventsOK) Error() string {
 	return fmt.Sprintf("[GET /finances/v0/financialEvents][%d] listFinancialEventsOK  %+v", 200, o.Payload)
 }
+
+func (o *ListFinancialEventsOK) String() string {
+	return fmt.Sprintf("[GET /finances/v0/financialEvents][%d] listFinancialEventsOK  %+v", 200, o.Payload)
+}
+
 func (o *ListFinancialEventsOK) GetPayload() *finances_v0_models.ListFinancialEventsResponse {
 	return o.Payload
 }
@@ -107,7 +138,8 @@ func NewListFinancialEventsBadRequest() *ListFinancialEventsBadRequest {
 	return &ListFinancialEventsBadRequest{}
 }
 
-/* ListFinancialEventsBadRequest describes a response with status code 400, with default header values.
+/*
+ListFinancialEventsBadRequest describes a response with status code 400, with default header values.
 
 Request has missing or invalid parameters and cannot be parsed.
 */
@@ -115,9 +147,39 @@ type ListFinancialEventsBadRequest struct {
 	Payload *finances_v0_models.ListFinancialEventsResponse
 }
 
+// IsSuccess returns true when this list financial events bad request response has a 2xx status code
+func (o *ListFinancialEventsBadRequest) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this list financial events bad request response has a 3xx status code
+func (o *ListFinancialEventsBadRequest) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this list financial events bad request response has a 4xx status code
+func (o *ListFinancialEventsBadRequest) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this list financial events bad request response has a 5xx status code
+func (o *ListFinancialEventsBadRequest) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this list financial events bad request response a status code equal to that given
+func (o *ListFinancialEventsBadRequest) IsCode(code int) bool {
+	return code == 400
+}
+
 func (o *ListFinancialEventsBadRequest) Error() string {
 	return fmt.Sprintf("[GET /finances/v0/financialEvents][%d] listFinancialEventsBadRequest  %+v", 400, o.Payload)
 }
+
+func (o *ListFinancialEventsBadRequest) String() string {
+	return fmt.Sprintf("[GET /finances/v0/financialEvents][%d] listFinancialEventsBadRequest  %+v", 400, o.Payload)
+}
+
 func (o *ListFinancialEventsBadRequest) GetPayload() *finances_v0_models.ListFinancialEventsResponse {
 	return o.Payload
 }
@@ -139,7 +201,8 @@ func NewListFinancialEventsForbidden() *ListFinancialEventsForbidden {
 	return &ListFinancialEventsForbidden{}
 }
 
-/* ListFinancialEventsForbidden describes a response with status code 403, with default header values.
+/*
+ListFinancialEventsForbidden describes a response with status code 403, with default header values.
 
 Indicates that access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.
 */
@@ -152,9 +215,39 @@ type ListFinancialEventsForbidden struct {
 	Payload *finances_v0_models.ListFinancialEventsResponse
 }
 
+// IsSuccess returns true when this list financial events forbidden response has a 2xx status code
+func (o *ListFinancialEventsForbidden) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this list financial events forbidden response has a 3xx status code
+func (o *ListFinancialEventsForbidden) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this list financial events forbidden response has a 4xx status code
+func (o *ListFinancialEventsForbidden) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this list financial events forbidden response has a 5xx status code
+func (o *ListFinancialEventsForbidden) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this list financial events forbidden response a status code equal to that given
+func (o *ListFinancialEventsForbidden) IsCode(code int) bool {
+	return code == 403
+}
+
 func (o *ListFinancialEventsForbidden) Error() string {
 	return fmt.Sprintf("[GET /finances/v0/financialEvents][%d] listFinancialEventsForbidden  %+v", 403, o.Payload)
 }
+
+func (o *ListFinancialEventsForbidden) String() string {
+	return fmt.Sprintf("[GET /finances/v0/financialEvents][%d] listFinancialEventsForbidden  %+v", 403, o.Payload)
+}
+
 func (o *ListFinancialEventsForbidden) GetPayload() *finances_v0_models.ListFinancialEventsResponse {
 	return o.Payload
 }
@@ -183,7 +276,8 @@ func NewListFinancialEventsNotFound() *ListFinancialEventsNotFound {
 	return &ListFinancialEventsNotFound{}
 }
 
-/* ListFinancialEventsNotFound describes a response with status code 404, with default header values.
+/*
+ListFinancialEventsNotFound describes a response with status code 404, with default header values.
 
 The resource specified does not exist.
 */
@@ -200,9 +294,39 @@ type ListFinancialEventsNotFound struct {
 	Payload *finances_v0_models.ListFinancialEventsResponse
 }
 
+// IsSuccess returns true when this list financial events not found response has a 2xx status code
+func (o *ListFinancialEventsNotFound) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this list financial events not found response has a 3xx status code
+func (o *ListFinancialEventsNotFound) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this list financial events not found response has a 4xx status code
+func (o *ListFinancialEventsNotFound) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this list financial events not found response has a 5xx status code
+func (o *ListFinancialEventsNotFound) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this list financial events not found response a status code equal to that given
+func (o *ListFinancialEventsNotFound) IsCode(code int) bool {
+	return code == 404
+}
+
 func (o *ListFinancialEventsNotFound) Error() string {
 	return fmt.Sprintf("[GET /finances/v0/financialEvents][%d] listFinancialEventsNotFound  %+v", 404, o.Payload)
 }
+
+func (o *ListFinancialEventsNotFound) String() string {
+	return fmt.Sprintf("[GET /finances/v0/financialEvents][%d] listFinancialEventsNotFound  %+v", 404, o.Payload)
+}
+
 func (o *ListFinancialEventsNotFound) GetPayload() *finances_v0_models.ListFinancialEventsResponse {
 	return o.Payload
 }
@@ -238,7 +362,8 @@ func NewListFinancialEventsTooManyRequests() *ListFinancialEventsTooManyRequests
 	return &ListFinancialEventsTooManyRequests{}
 }
 
-/* ListFinancialEventsTooManyRequests describes a response with status code 429, with default header values.
+/*
+ListFinancialEventsTooManyRequests describes a response with status code 429, with default header values.
 
 The frequency of requests was greater than allowed.
 */
@@ -256,9 +381,39 @@ type ListFinancialEventsTooManyRequests struct {
 	Payload *finances_v0_models.ListFinancialEventsResponse
 }
 
+// IsSuccess returns true when this list financial events too many requests response has a 2xx status code
+func (o *ListFinancialEventsTooManyRequests) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this list financial events too many requests response has a 3xx status code
+func (o *ListFinancialEventsTooManyRequests) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this list financial events too many requests response has a 4xx status code
+func (o *ListFinancialEventsTooManyRequests) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this list financial events too many requests response has a 5xx status code
+func (o *ListFinancialEventsTooManyRequests) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this list financial events too many requests response a status code equal to that given
+func (o *ListFinancialEventsTooManyRequests) IsCode(code int) bool {
+	return code == 429
+}
+
 func (o *ListFinancialEventsTooManyRequests) Error() string {
 	return fmt.Sprintf("[GET /finances/v0/financialEvents][%d] listFinancialEventsTooManyRequests  %+v", 429, o.Payload)
 }
+
+func (o *ListFinancialEventsTooManyRequests) String() string {
+	return fmt.Sprintf("[GET /finances/v0/financialEvents][%d] listFinancialEventsTooManyRequests  %+v", 429, o.Payload)
+}
+
 func (o *ListFinancialEventsTooManyRequests) GetPayload() *finances_v0_models.ListFinancialEventsResponse {
 	return o.Payload
 }
@@ -294,7 +449,8 @@ func NewListFinancialEventsInternalServerError() *ListFinancialEventsInternalSer
 	return &ListFinancialEventsInternalServerError{}
 }
 
-/* ListFinancialEventsInternalServerError describes a response with status code 500, with default header values.
+/*
+ListFinancialEventsInternalServerError describes a response with status code 500, with default header values.
 
 An unexpected condition occurred that prevented the server from fulfilling the request.
 */
@@ -312,9 +468,39 @@ type ListFinancialEventsInternalServerError struct {
 	Payload *finances_v0_models.ListFinancialEventsResponse
 }
 
+// IsSuccess returns true when this list financial events internal server error response has a 2xx status code
+func (o *ListFinancialEventsInternalServerError) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this list financial events internal server error response has a 3xx status code
+func (o *ListFinancialEventsInternalServerError) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this list financial events internal server error response has a 4xx status code
+func (o *ListFinancialEventsInternalServerError) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this list financial events internal server error response has a 5xx status code
+func (o *ListFinancialEventsInternalServerError) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this list financial events internal server error response a status code equal to that given
+func (o *ListFinancialEventsInternalServerError) IsCode(code int) bool {
+	return code == 500
+}
+
 func (o *ListFinancialEventsInternalServerError) Error() string {
 	return fmt.Sprintf("[GET /finances/v0/financialEvents][%d] listFinancialEventsInternalServerError  %+v", 500, o.Payload)
 }
+
+func (o *ListFinancialEventsInternalServerError) String() string {
+	return fmt.Sprintf("[GET /finances/v0/financialEvents][%d] listFinancialEventsInternalServerError  %+v", 500, o.Payload)
+}
+
 func (o *ListFinancialEventsInternalServerError) GetPayload() *finances_v0_models.ListFinancialEventsResponse {
 	return o.Payload
 }
@@ -350,7 +536,8 @@ func NewListFinancialEventsServiceUnavailable() *ListFinancialEventsServiceUnava
 	return &ListFinancialEventsServiceUnavailable{}
 }
 
-/* ListFinancialEventsServiceUnavailable describes a response with status code 503, with default header values.
+/*
+ListFinancialEventsServiceUnavailable describes a response with status code 503, with default header values.
 
 Temporary overloading or maintenance of the server.
 */
@@ -368,9 +555,39 @@ type ListFinancialEventsServiceUnavailable struct {
 	Payload *finances_v0_models.ListFinancialEventsResponse
 }
 
+// IsSuccess returns true when this list financial events service unavailable response has a 2xx status code
+func (o *ListFinancialEventsServiceUnavailable) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this list financial events service unavailable response has a 3xx status code
+func (o *ListFinancialEventsServiceUnavailable) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this list financial events service unavailable response has a 4xx status code
+func (o *ListFinancialEventsServiceUnavailable) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this list financial events service unavailable response has a 5xx status code
+func (o *ListFinancialEventsServiceUnavailable) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this list financial events service unavailable response a status code equal to that given
+func (o *ListFinancialEventsServiceUnavailable) IsCode(code int) bool {
+	return code == 503
+}
+
 func (o *ListFinancialEventsServiceUnavailable) Error() string {
 	return fmt.Sprintf("[GET /finances/v0/financialEvents][%d] listFinancialEventsServiceUnavailable  %+v", 503, o.Payload)
 }
+
+func (o *ListFinancialEventsServiceUnavailable) String() string {
+	return fmt.Sprintf("[GET /finances/v0/financialEvents][%d] listFinancialEventsServiceUnavailable  %+v", 503, o.Payload)
+}
+
 func (o *ListFinancialEventsServiceUnavailable) GetPayload() *finances_v0_models.ListFinancialEventsResponse {
 	return o.Payload
 }

@@ -81,7 +81,8 @@ func NewGetRatesOK() *GetRatesOK {
 	return &GetRatesOK{}
 }
 
-/* GetRatesOK describes a response with status code 200, with default header values.
+/*
+GetRatesOK describes a response with status code 200, with default header values.
 
 Success.
 */
@@ -98,9 +99,39 @@ type GetRatesOK struct {
 	Payload *shipping_models.GetRatesResponse
 }
 
+// IsSuccess returns true when this get rates o k response has a 2xx status code
+func (o *GetRatesOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this get rates o k response has a 3xx status code
+func (o *GetRatesOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get rates o k response has a 4xx status code
+func (o *GetRatesOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get rates o k response has a 5xx status code
+func (o *GetRatesOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get rates o k response a status code equal to that given
+func (o *GetRatesOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *GetRatesOK) Error() string {
 	return fmt.Sprintf("[POST /shipping/v1/rates][%d] getRatesOK  %+v", 200, o.Payload)
 }
+
+func (o *GetRatesOK) String() string {
+	return fmt.Sprintf("[POST /shipping/v1/rates][%d] getRatesOK  %+v", 200, o.Payload)
+}
+
 func (o *GetRatesOK) GetPayload() *shipping_models.GetRatesResponse {
 	return o.Payload
 }
@@ -136,7 +167,8 @@ func NewGetRatesBadRequest() *GetRatesBadRequest {
 	return &GetRatesBadRequest{}
 }
 
-/* GetRatesBadRequest describes a response with status code 400, with default header values.
+/*
+GetRatesBadRequest describes a response with status code 400, with default header values.
 
 Request is missing or has invalid parameters and cannot be parsed.
 */
@@ -153,9 +185,39 @@ type GetRatesBadRequest struct {
 	Payload *shipping_models.GetRatesResponse
 }
 
+// IsSuccess returns true when this get rates bad request response has a 2xx status code
+func (o *GetRatesBadRequest) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get rates bad request response has a 3xx status code
+func (o *GetRatesBadRequest) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get rates bad request response has a 4xx status code
+func (o *GetRatesBadRequest) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get rates bad request response has a 5xx status code
+func (o *GetRatesBadRequest) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get rates bad request response a status code equal to that given
+func (o *GetRatesBadRequest) IsCode(code int) bool {
+	return code == 400
+}
+
 func (o *GetRatesBadRequest) Error() string {
 	return fmt.Sprintf("[POST /shipping/v1/rates][%d] getRatesBadRequest  %+v", 400, o.Payload)
 }
+
+func (o *GetRatesBadRequest) String() string {
+	return fmt.Sprintf("[POST /shipping/v1/rates][%d] getRatesBadRequest  %+v", 400, o.Payload)
+}
+
 func (o *GetRatesBadRequest) GetPayload() *shipping_models.GetRatesResponse {
 	return o.Payload
 }
@@ -191,7 +253,8 @@ func NewGetRatesUnauthorized() *GetRatesUnauthorized {
 	return &GetRatesUnauthorized{}
 }
 
-/* GetRatesUnauthorized describes a response with status code 401, with default header values.
+/*
+GetRatesUnauthorized describes a response with status code 401, with default header values.
 
 The request's Authorization header is not formatted correctly or does not contain a valid token.
 */
@@ -209,9 +272,39 @@ type GetRatesUnauthorized struct {
 	Payload *shipping_models.GetRatesResponse
 }
 
+// IsSuccess returns true when this get rates unauthorized response has a 2xx status code
+func (o *GetRatesUnauthorized) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get rates unauthorized response has a 3xx status code
+func (o *GetRatesUnauthorized) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get rates unauthorized response has a 4xx status code
+func (o *GetRatesUnauthorized) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get rates unauthorized response has a 5xx status code
+func (o *GetRatesUnauthorized) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get rates unauthorized response a status code equal to that given
+func (o *GetRatesUnauthorized) IsCode(code int) bool {
+	return code == 401
+}
+
 func (o *GetRatesUnauthorized) Error() string {
 	return fmt.Sprintf("[POST /shipping/v1/rates][%d] getRatesUnauthorized  %+v", 401, o.Payload)
 }
+
+func (o *GetRatesUnauthorized) String() string {
+	return fmt.Sprintf("[POST /shipping/v1/rates][%d] getRatesUnauthorized  %+v", 401, o.Payload)
+}
+
 func (o *GetRatesUnauthorized) GetPayload() *shipping_models.GetRatesResponse {
 	return o.Payload
 }
@@ -247,7 +340,8 @@ func NewGetRatesForbidden() *GetRatesForbidden {
 	return &GetRatesForbidden{}
 }
 
-/* GetRatesForbidden describes a response with status code 403, with default header values.
+/*
+GetRatesForbidden describes a response with status code 403, with default header values.
 
 403 can be caused for reasons like Access Denied, Unauthorized, Expired Token, Invalid Signature or Resource Not Found.
 */
@@ -260,9 +354,39 @@ type GetRatesForbidden struct {
 	Payload *shipping_models.GetRatesResponse
 }
 
+// IsSuccess returns true when this get rates forbidden response has a 2xx status code
+func (o *GetRatesForbidden) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get rates forbidden response has a 3xx status code
+func (o *GetRatesForbidden) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get rates forbidden response has a 4xx status code
+func (o *GetRatesForbidden) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get rates forbidden response has a 5xx status code
+func (o *GetRatesForbidden) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get rates forbidden response a status code equal to that given
+func (o *GetRatesForbidden) IsCode(code int) bool {
+	return code == 403
+}
+
 func (o *GetRatesForbidden) Error() string {
 	return fmt.Sprintf("[POST /shipping/v1/rates][%d] getRatesForbidden  %+v", 403, o.Payload)
 }
+
+func (o *GetRatesForbidden) String() string {
+	return fmt.Sprintf("[POST /shipping/v1/rates][%d] getRatesForbidden  %+v", 403, o.Payload)
+}
+
 func (o *GetRatesForbidden) GetPayload() *shipping_models.GetRatesResponse {
 	return o.Payload
 }
@@ -291,7 +415,8 @@ func NewGetRatesNotFound() *GetRatesNotFound {
 	return &GetRatesNotFound{}
 }
 
-/* GetRatesNotFound describes a response with status code 404, with default header values.
+/*
+GetRatesNotFound describes a response with status code 404, with default header values.
 
 The resource specified does not exist.
 */
@@ -308,9 +433,39 @@ type GetRatesNotFound struct {
 	Payload *shipping_models.GetRatesResponse
 }
 
+// IsSuccess returns true when this get rates not found response has a 2xx status code
+func (o *GetRatesNotFound) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get rates not found response has a 3xx status code
+func (o *GetRatesNotFound) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get rates not found response has a 4xx status code
+func (o *GetRatesNotFound) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get rates not found response has a 5xx status code
+func (o *GetRatesNotFound) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get rates not found response a status code equal to that given
+func (o *GetRatesNotFound) IsCode(code int) bool {
+	return code == 404
+}
+
 func (o *GetRatesNotFound) Error() string {
 	return fmt.Sprintf("[POST /shipping/v1/rates][%d] getRatesNotFound  %+v", 404, o.Payload)
 }
+
+func (o *GetRatesNotFound) String() string {
+	return fmt.Sprintf("[POST /shipping/v1/rates][%d] getRatesNotFound  %+v", 404, o.Payload)
+}
+
 func (o *GetRatesNotFound) GetPayload() *shipping_models.GetRatesResponse {
 	return o.Payload
 }
@@ -346,7 +501,8 @@ func NewGetRatesTooManyRequests() *GetRatesTooManyRequests {
 	return &GetRatesTooManyRequests{}
 }
 
-/* GetRatesTooManyRequests describes a response with status code 429, with default header values.
+/*
+GetRatesTooManyRequests describes a response with status code 429, with default header values.
 
 The frequency of requests was greater than allowed.
 */
@@ -364,9 +520,39 @@ type GetRatesTooManyRequests struct {
 	Payload *shipping_models.GetRatesResponse
 }
 
+// IsSuccess returns true when this get rates too many requests response has a 2xx status code
+func (o *GetRatesTooManyRequests) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get rates too many requests response has a 3xx status code
+func (o *GetRatesTooManyRequests) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get rates too many requests response has a 4xx status code
+func (o *GetRatesTooManyRequests) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get rates too many requests response has a 5xx status code
+func (o *GetRatesTooManyRequests) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get rates too many requests response a status code equal to that given
+func (o *GetRatesTooManyRequests) IsCode(code int) bool {
+	return code == 429
+}
+
 func (o *GetRatesTooManyRequests) Error() string {
 	return fmt.Sprintf("[POST /shipping/v1/rates][%d] getRatesTooManyRequests  %+v", 429, o.Payload)
 }
+
+func (o *GetRatesTooManyRequests) String() string {
+	return fmt.Sprintf("[POST /shipping/v1/rates][%d] getRatesTooManyRequests  %+v", 429, o.Payload)
+}
+
 func (o *GetRatesTooManyRequests) GetPayload() *shipping_models.GetRatesResponse {
 	return o.Payload
 }
@@ -402,7 +588,8 @@ func NewGetRatesInternalServerError() *GetRatesInternalServerError {
 	return &GetRatesInternalServerError{}
 }
 
-/* GetRatesInternalServerError describes a response with status code 500, with default header values.
+/*
+GetRatesInternalServerError describes a response with status code 500, with default header values.
 
 Encountered an unexpected condition which prevented the server from fulfilling the request.
 */
@@ -420,9 +607,39 @@ type GetRatesInternalServerError struct {
 	Payload *shipping_models.GetRatesResponse
 }
 
+// IsSuccess returns true when this get rates internal server error response has a 2xx status code
+func (o *GetRatesInternalServerError) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get rates internal server error response has a 3xx status code
+func (o *GetRatesInternalServerError) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get rates internal server error response has a 4xx status code
+func (o *GetRatesInternalServerError) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get rates internal server error response has a 5xx status code
+func (o *GetRatesInternalServerError) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this get rates internal server error response a status code equal to that given
+func (o *GetRatesInternalServerError) IsCode(code int) bool {
+	return code == 500
+}
+
 func (o *GetRatesInternalServerError) Error() string {
 	return fmt.Sprintf("[POST /shipping/v1/rates][%d] getRatesInternalServerError  %+v", 500, o.Payload)
 }
+
+func (o *GetRatesInternalServerError) String() string {
+	return fmt.Sprintf("[POST /shipping/v1/rates][%d] getRatesInternalServerError  %+v", 500, o.Payload)
+}
+
 func (o *GetRatesInternalServerError) GetPayload() *shipping_models.GetRatesResponse {
 	return o.Payload
 }
@@ -458,7 +675,8 @@ func NewGetRatesServiceUnavailable() *GetRatesServiceUnavailable {
 	return &GetRatesServiceUnavailable{}
 }
 
-/* GetRatesServiceUnavailable describes a response with status code 503, with default header values.
+/*
+GetRatesServiceUnavailable describes a response with status code 503, with default header values.
 
 Temporary overloading or maintenance of the server.
 */
@@ -476,9 +694,39 @@ type GetRatesServiceUnavailable struct {
 	Payload *shipping_models.GetRatesResponse
 }
 
+// IsSuccess returns true when this get rates service unavailable response has a 2xx status code
+func (o *GetRatesServiceUnavailable) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get rates service unavailable response has a 3xx status code
+func (o *GetRatesServiceUnavailable) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get rates service unavailable response has a 4xx status code
+func (o *GetRatesServiceUnavailable) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get rates service unavailable response has a 5xx status code
+func (o *GetRatesServiceUnavailable) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this get rates service unavailable response a status code equal to that given
+func (o *GetRatesServiceUnavailable) IsCode(code int) bool {
+	return code == 503
+}
+
 func (o *GetRatesServiceUnavailable) Error() string {
 	return fmt.Sprintf("[POST /shipping/v1/rates][%d] getRatesServiceUnavailable  %+v", 503, o.Payload)
 }
+
+func (o *GetRatesServiceUnavailable) String() string {
+	return fmt.Sprintf("[POST /shipping/v1/rates][%d] getRatesServiceUnavailable  %+v", 503, o.Payload)
+}
+
 func (o *GetRatesServiceUnavailable) GetPayload() *shipping_models.GetRatesResponse {
 	return o.Payload
 }

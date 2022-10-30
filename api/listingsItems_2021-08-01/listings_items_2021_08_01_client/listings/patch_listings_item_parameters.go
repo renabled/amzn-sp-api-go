@@ -55,10 +55,12 @@ func NewPatchListingsItemParamsWithHTTPClient(client *http.Client) *PatchListing
 	}
 }
 
-/* PatchListingsItemParams contains all the parameters to send to the API endpoint
-   for the patch listings item operation.
+/*
+PatchListingsItemParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the patch listings item operation.
+
+	Typically these are written to a http.Request.
 */
 type PatchListingsItemParams struct {
 

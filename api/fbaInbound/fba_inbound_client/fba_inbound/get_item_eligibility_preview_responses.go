@@ -81,7 +81,8 @@ func NewGetItemEligibilityPreviewOK() *GetItemEligibilityPreviewOK {
 	return &GetItemEligibilityPreviewOK{}
 }
 
-/* GetItemEligibilityPreviewOK describes a response with status code 200, with default header values.
+/*
+GetItemEligibilityPreviewOK describes a response with status code 200, with default header values.
 
 Success.
 */
@@ -98,9 +99,39 @@ type GetItemEligibilityPreviewOK struct {
 	Payload *fba_inbound_models.GetItemEligibilityPreviewResponse
 }
 
+// IsSuccess returns true when this get item eligibility preview o k response has a 2xx status code
+func (o *GetItemEligibilityPreviewOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this get item eligibility preview o k response has a 3xx status code
+func (o *GetItemEligibilityPreviewOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get item eligibility preview o k response has a 4xx status code
+func (o *GetItemEligibilityPreviewOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get item eligibility preview o k response has a 5xx status code
+func (o *GetItemEligibilityPreviewOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get item eligibility preview o k response a status code equal to that given
+func (o *GetItemEligibilityPreviewOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *GetItemEligibilityPreviewOK) Error() string {
 	return fmt.Sprintf("[GET /fba/inbound/v1/eligibility/itemPreview][%d] getItemEligibilityPreviewOK  %+v", 200, o.Payload)
 }
+
+func (o *GetItemEligibilityPreviewOK) String() string {
+	return fmt.Sprintf("[GET /fba/inbound/v1/eligibility/itemPreview][%d] getItemEligibilityPreviewOK  %+v", 200, o.Payload)
+}
+
 func (o *GetItemEligibilityPreviewOK) GetPayload() *fba_inbound_models.GetItemEligibilityPreviewResponse {
 	return o.Payload
 }
@@ -136,7 +167,8 @@ func NewGetItemEligibilityPreviewBadRequest() *GetItemEligibilityPreviewBadReque
 	return &GetItemEligibilityPreviewBadRequest{}
 }
 
-/* GetItemEligibilityPreviewBadRequest describes a response with status code 400, with default header values.
+/*
+GetItemEligibilityPreviewBadRequest describes a response with status code 400, with default header values.
 
 Request has missing or invalid parameters and cannot be parsed.
 */
@@ -153,9 +185,39 @@ type GetItemEligibilityPreviewBadRequest struct {
 	Payload *fba_inbound_models.GetItemEligibilityPreviewResponse
 }
 
+// IsSuccess returns true when this get item eligibility preview bad request response has a 2xx status code
+func (o *GetItemEligibilityPreviewBadRequest) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get item eligibility preview bad request response has a 3xx status code
+func (o *GetItemEligibilityPreviewBadRequest) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get item eligibility preview bad request response has a 4xx status code
+func (o *GetItemEligibilityPreviewBadRequest) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get item eligibility preview bad request response has a 5xx status code
+func (o *GetItemEligibilityPreviewBadRequest) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get item eligibility preview bad request response a status code equal to that given
+func (o *GetItemEligibilityPreviewBadRequest) IsCode(code int) bool {
+	return code == 400
+}
+
 func (o *GetItemEligibilityPreviewBadRequest) Error() string {
 	return fmt.Sprintf("[GET /fba/inbound/v1/eligibility/itemPreview][%d] getItemEligibilityPreviewBadRequest  %+v", 400, o.Payload)
 }
+
+func (o *GetItemEligibilityPreviewBadRequest) String() string {
+	return fmt.Sprintf("[GET /fba/inbound/v1/eligibility/itemPreview][%d] getItemEligibilityPreviewBadRequest  %+v", 400, o.Payload)
+}
+
 func (o *GetItemEligibilityPreviewBadRequest) GetPayload() *fba_inbound_models.GetItemEligibilityPreviewResponse {
 	return o.Payload
 }
@@ -191,7 +253,8 @@ func NewGetItemEligibilityPreviewUnauthorized() *GetItemEligibilityPreviewUnauth
 	return &GetItemEligibilityPreviewUnauthorized{}
 }
 
-/* GetItemEligibilityPreviewUnauthorized describes a response with status code 401, with default header values.
+/*
+GetItemEligibilityPreviewUnauthorized describes a response with status code 401, with default header values.
 
 The request's Authorization header is not formatted correctly or does not contain a valid token.
 */
@@ -209,9 +272,39 @@ type GetItemEligibilityPreviewUnauthorized struct {
 	Payload *fba_inbound_models.GetItemEligibilityPreviewResponse
 }
 
+// IsSuccess returns true when this get item eligibility preview unauthorized response has a 2xx status code
+func (o *GetItemEligibilityPreviewUnauthorized) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get item eligibility preview unauthorized response has a 3xx status code
+func (o *GetItemEligibilityPreviewUnauthorized) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get item eligibility preview unauthorized response has a 4xx status code
+func (o *GetItemEligibilityPreviewUnauthorized) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get item eligibility preview unauthorized response has a 5xx status code
+func (o *GetItemEligibilityPreviewUnauthorized) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get item eligibility preview unauthorized response a status code equal to that given
+func (o *GetItemEligibilityPreviewUnauthorized) IsCode(code int) bool {
+	return code == 401
+}
+
 func (o *GetItemEligibilityPreviewUnauthorized) Error() string {
 	return fmt.Sprintf("[GET /fba/inbound/v1/eligibility/itemPreview][%d] getItemEligibilityPreviewUnauthorized  %+v", 401, o.Payload)
 }
+
+func (o *GetItemEligibilityPreviewUnauthorized) String() string {
+	return fmt.Sprintf("[GET /fba/inbound/v1/eligibility/itemPreview][%d] getItemEligibilityPreviewUnauthorized  %+v", 401, o.Payload)
+}
+
 func (o *GetItemEligibilityPreviewUnauthorized) GetPayload() *fba_inbound_models.GetItemEligibilityPreviewResponse {
 	return o.Payload
 }
@@ -247,7 +340,8 @@ func NewGetItemEligibilityPreviewForbidden() *GetItemEligibilityPreviewForbidden
 	return &GetItemEligibilityPreviewForbidden{}
 }
 
-/* GetItemEligibilityPreviewForbidden describes a response with status code 403, with default header values.
+/*
+GetItemEligibilityPreviewForbidden describes a response with status code 403, with default header values.
 
 403 can be caused for reasons like Access Denied, Unauthorized, Expired Token, Invalid Signature or Resource Not Found.
 */
@@ -260,9 +354,39 @@ type GetItemEligibilityPreviewForbidden struct {
 	Payload *fba_inbound_models.GetItemEligibilityPreviewResponse
 }
 
+// IsSuccess returns true when this get item eligibility preview forbidden response has a 2xx status code
+func (o *GetItemEligibilityPreviewForbidden) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get item eligibility preview forbidden response has a 3xx status code
+func (o *GetItemEligibilityPreviewForbidden) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get item eligibility preview forbidden response has a 4xx status code
+func (o *GetItemEligibilityPreviewForbidden) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get item eligibility preview forbidden response has a 5xx status code
+func (o *GetItemEligibilityPreviewForbidden) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get item eligibility preview forbidden response a status code equal to that given
+func (o *GetItemEligibilityPreviewForbidden) IsCode(code int) bool {
+	return code == 403
+}
+
 func (o *GetItemEligibilityPreviewForbidden) Error() string {
 	return fmt.Sprintf("[GET /fba/inbound/v1/eligibility/itemPreview][%d] getItemEligibilityPreviewForbidden  %+v", 403, o.Payload)
 }
+
+func (o *GetItemEligibilityPreviewForbidden) String() string {
+	return fmt.Sprintf("[GET /fba/inbound/v1/eligibility/itemPreview][%d] getItemEligibilityPreviewForbidden  %+v", 403, o.Payload)
+}
+
 func (o *GetItemEligibilityPreviewForbidden) GetPayload() *fba_inbound_models.GetItemEligibilityPreviewResponse {
 	return o.Payload
 }
@@ -291,7 +415,8 @@ func NewGetItemEligibilityPreviewNotFound() *GetItemEligibilityPreviewNotFound {
 	return &GetItemEligibilityPreviewNotFound{}
 }
 
-/* GetItemEligibilityPreviewNotFound describes a response with status code 404, with default header values.
+/*
+GetItemEligibilityPreviewNotFound describes a response with status code 404, with default header values.
 
 The resource specified does not exist.
 */
@@ -308,9 +433,39 @@ type GetItemEligibilityPreviewNotFound struct {
 	Payload *fba_inbound_models.GetItemEligibilityPreviewResponse
 }
 
+// IsSuccess returns true when this get item eligibility preview not found response has a 2xx status code
+func (o *GetItemEligibilityPreviewNotFound) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get item eligibility preview not found response has a 3xx status code
+func (o *GetItemEligibilityPreviewNotFound) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get item eligibility preview not found response has a 4xx status code
+func (o *GetItemEligibilityPreviewNotFound) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get item eligibility preview not found response has a 5xx status code
+func (o *GetItemEligibilityPreviewNotFound) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get item eligibility preview not found response a status code equal to that given
+func (o *GetItemEligibilityPreviewNotFound) IsCode(code int) bool {
+	return code == 404
+}
+
 func (o *GetItemEligibilityPreviewNotFound) Error() string {
 	return fmt.Sprintf("[GET /fba/inbound/v1/eligibility/itemPreview][%d] getItemEligibilityPreviewNotFound  %+v", 404, o.Payload)
 }
+
+func (o *GetItemEligibilityPreviewNotFound) String() string {
+	return fmt.Sprintf("[GET /fba/inbound/v1/eligibility/itemPreview][%d] getItemEligibilityPreviewNotFound  %+v", 404, o.Payload)
+}
+
 func (o *GetItemEligibilityPreviewNotFound) GetPayload() *fba_inbound_models.GetItemEligibilityPreviewResponse {
 	return o.Payload
 }
@@ -346,7 +501,8 @@ func NewGetItemEligibilityPreviewTooManyRequests() *GetItemEligibilityPreviewToo
 	return &GetItemEligibilityPreviewTooManyRequests{}
 }
 
-/* GetItemEligibilityPreviewTooManyRequests describes a response with status code 429, with default header values.
+/*
+GetItemEligibilityPreviewTooManyRequests describes a response with status code 429, with default header values.
 
 The frequency of requests was greater than allowed.
 */
@@ -364,9 +520,39 @@ type GetItemEligibilityPreviewTooManyRequests struct {
 	Payload *fba_inbound_models.GetItemEligibilityPreviewResponse
 }
 
+// IsSuccess returns true when this get item eligibility preview too many requests response has a 2xx status code
+func (o *GetItemEligibilityPreviewTooManyRequests) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get item eligibility preview too many requests response has a 3xx status code
+func (o *GetItemEligibilityPreviewTooManyRequests) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get item eligibility preview too many requests response has a 4xx status code
+func (o *GetItemEligibilityPreviewTooManyRequests) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get item eligibility preview too many requests response has a 5xx status code
+func (o *GetItemEligibilityPreviewTooManyRequests) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get item eligibility preview too many requests response a status code equal to that given
+func (o *GetItemEligibilityPreviewTooManyRequests) IsCode(code int) bool {
+	return code == 429
+}
+
 func (o *GetItemEligibilityPreviewTooManyRequests) Error() string {
 	return fmt.Sprintf("[GET /fba/inbound/v1/eligibility/itemPreview][%d] getItemEligibilityPreviewTooManyRequests  %+v", 429, o.Payload)
 }
+
+func (o *GetItemEligibilityPreviewTooManyRequests) String() string {
+	return fmt.Sprintf("[GET /fba/inbound/v1/eligibility/itemPreview][%d] getItemEligibilityPreviewTooManyRequests  %+v", 429, o.Payload)
+}
+
 func (o *GetItemEligibilityPreviewTooManyRequests) GetPayload() *fba_inbound_models.GetItemEligibilityPreviewResponse {
 	return o.Payload
 }
@@ -402,7 +588,8 @@ func NewGetItemEligibilityPreviewInternalServerError() *GetItemEligibilityPrevie
 	return &GetItemEligibilityPreviewInternalServerError{}
 }
 
-/* GetItemEligibilityPreviewInternalServerError describes a response with status code 500, with default header values.
+/*
+GetItemEligibilityPreviewInternalServerError describes a response with status code 500, with default header values.
 
 Encountered an unexpected condition which prevented the server from fulfilling the request.
 */
@@ -420,9 +607,39 @@ type GetItemEligibilityPreviewInternalServerError struct {
 	Payload *fba_inbound_models.GetItemEligibilityPreviewResponse
 }
 
+// IsSuccess returns true when this get item eligibility preview internal server error response has a 2xx status code
+func (o *GetItemEligibilityPreviewInternalServerError) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get item eligibility preview internal server error response has a 3xx status code
+func (o *GetItemEligibilityPreviewInternalServerError) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get item eligibility preview internal server error response has a 4xx status code
+func (o *GetItemEligibilityPreviewInternalServerError) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get item eligibility preview internal server error response has a 5xx status code
+func (o *GetItemEligibilityPreviewInternalServerError) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this get item eligibility preview internal server error response a status code equal to that given
+func (o *GetItemEligibilityPreviewInternalServerError) IsCode(code int) bool {
+	return code == 500
+}
+
 func (o *GetItemEligibilityPreviewInternalServerError) Error() string {
 	return fmt.Sprintf("[GET /fba/inbound/v1/eligibility/itemPreview][%d] getItemEligibilityPreviewInternalServerError  %+v", 500, o.Payload)
 }
+
+func (o *GetItemEligibilityPreviewInternalServerError) String() string {
+	return fmt.Sprintf("[GET /fba/inbound/v1/eligibility/itemPreview][%d] getItemEligibilityPreviewInternalServerError  %+v", 500, o.Payload)
+}
+
 func (o *GetItemEligibilityPreviewInternalServerError) GetPayload() *fba_inbound_models.GetItemEligibilityPreviewResponse {
 	return o.Payload
 }
@@ -458,7 +675,8 @@ func NewGetItemEligibilityPreviewServiceUnavailable() *GetItemEligibilityPreview
 	return &GetItemEligibilityPreviewServiceUnavailable{}
 }
 
-/* GetItemEligibilityPreviewServiceUnavailable describes a response with status code 503, with default header values.
+/*
+GetItemEligibilityPreviewServiceUnavailable describes a response with status code 503, with default header values.
 
 Temporary overloading or maintenance of the server.
 */
@@ -476,9 +694,39 @@ type GetItemEligibilityPreviewServiceUnavailable struct {
 	Payload *fba_inbound_models.GetItemEligibilityPreviewResponse
 }
 
+// IsSuccess returns true when this get item eligibility preview service unavailable response has a 2xx status code
+func (o *GetItemEligibilityPreviewServiceUnavailable) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get item eligibility preview service unavailable response has a 3xx status code
+func (o *GetItemEligibilityPreviewServiceUnavailable) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get item eligibility preview service unavailable response has a 4xx status code
+func (o *GetItemEligibilityPreviewServiceUnavailable) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get item eligibility preview service unavailable response has a 5xx status code
+func (o *GetItemEligibilityPreviewServiceUnavailable) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this get item eligibility preview service unavailable response a status code equal to that given
+func (o *GetItemEligibilityPreviewServiceUnavailable) IsCode(code int) bool {
+	return code == 503
+}
+
 func (o *GetItemEligibilityPreviewServiceUnavailable) Error() string {
 	return fmt.Sprintf("[GET /fba/inbound/v1/eligibility/itemPreview][%d] getItemEligibilityPreviewServiceUnavailable  %+v", 503, o.Payload)
 }
+
+func (o *GetItemEligibilityPreviewServiceUnavailable) String() string {
+	return fmt.Sprintf("[GET /fba/inbound/v1/eligibility/itemPreview][%d] getItemEligibilityPreviewServiceUnavailable  %+v", 503, o.Payload)
+}
+
 func (o *GetItemEligibilityPreviewServiceUnavailable) GetPayload() *fba_inbound_models.GetItemEligibilityPreviewResponse {
 	return o.Payload
 }

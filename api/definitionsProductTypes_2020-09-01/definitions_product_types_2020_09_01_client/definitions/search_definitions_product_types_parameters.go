@@ -53,10 +53,12 @@ func NewSearchDefinitionsProductTypesParamsWithHTTPClient(client *http.Client) *
 	}
 }
 
-/* SearchDefinitionsProductTypesParams contains all the parameters to send to the API endpoint
-   for the search definitions product types operation.
+/*
+SearchDefinitionsProductTypesParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the search definitions product types operation.
+
+	Typically these are written to a http.Request.
 */
 type SearchDefinitionsProductTypesParams struct {
 

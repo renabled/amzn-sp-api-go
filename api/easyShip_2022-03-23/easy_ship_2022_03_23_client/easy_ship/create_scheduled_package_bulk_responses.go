@@ -87,7 +87,8 @@ func NewCreateScheduledPackageBulkOK() *CreateScheduledPackageBulkOK {
 	return &CreateScheduledPackageBulkOK{}
 }
 
-/* CreateScheduledPackageBulkOK describes a response with status code 200, with default header values.
+/*
+CreateScheduledPackageBulkOK describes a response with status code 200, with default header values.
 
 Success
 */
@@ -104,9 +105,39 @@ type CreateScheduledPackageBulkOK struct {
 	Payload *easy_ship_2022_03_23_models.CreateScheduledPackagesResponse
 }
 
+// IsSuccess returns true when this create scheduled package bulk o k response has a 2xx status code
+func (o *CreateScheduledPackageBulkOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this create scheduled package bulk o k response has a 3xx status code
+func (o *CreateScheduledPackageBulkOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create scheduled package bulk o k response has a 4xx status code
+func (o *CreateScheduledPackageBulkOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this create scheduled package bulk o k response has a 5xx status code
+func (o *CreateScheduledPackageBulkOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this create scheduled package bulk o k response a status code equal to that given
+func (o *CreateScheduledPackageBulkOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *CreateScheduledPackageBulkOK) Error() string {
 	return fmt.Sprintf("[POST /easyShip/2022-03-23/packages/bulk][%d] createScheduledPackageBulkOK  %+v", 200, o.Payload)
 }
+
+func (o *CreateScheduledPackageBulkOK) String() string {
+	return fmt.Sprintf("[POST /easyShip/2022-03-23/packages/bulk][%d] createScheduledPackageBulkOK  %+v", 200, o.Payload)
+}
+
 func (o *CreateScheduledPackageBulkOK) GetPayload() *easy_ship_2022_03_23_models.CreateScheduledPackagesResponse {
 	return o.Payload
 }
@@ -142,7 +173,8 @@ func NewCreateScheduledPackageBulkBadRequest() *CreateScheduledPackageBulkBadReq
 	return &CreateScheduledPackageBulkBadRequest{}
 }
 
-/* CreateScheduledPackageBulkBadRequest describes a response with status code 400, with default header values.
+/*
+CreateScheduledPackageBulkBadRequest describes a response with status code 400, with default header values.
 
 Request has missing or invalid parameters and cannot be parsed.
 */
@@ -159,9 +191,39 @@ type CreateScheduledPackageBulkBadRequest struct {
 	Payload *easy_ship_2022_03_23_models.ErrorList
 }
 
+// IsSuccess returns true when this create scheduled package bulk bad request response has a 2xx status code
+func (o *CreateScheduledPackageBulkBadRequest) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this create scheduled package bulk bad request response has a 3xx status code
+func (o *CreateScheduledPackageBulkBadRequest) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create scheduled package bulk bad request response has a 4xx status code
+func (o *CreateScheduledPackageBulkBadRequest) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this create scheduled package bulk bad request response has a 5xx status code
+func (o *CreateScheduledPackageBulkBadRequest) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this create scheduled package bulk bad request response a status code equal to that given
+func (o *CreateScheduledPackageBulkBadRequest) IsCode(code int) bool {
+	return code == 400
+}
+
 func (o *CreateScheduledPackageBulkBadRequest) Error() string {
 	return fmt.Sprintf("[POST /easyShip/2022-03-23/packages/bulk][%d] createScheduledPackageBulkBadRequest  %+v", 400, o.Payload)
 }
+
+func (o *CreateScheduledPackageBulkBadRequest) String() string {
+	return fmt.Sprintf("[POST /easyShip/2022-03-23/packages/bulk][%d] createScheduledPackageBulkBadRequest  %+v", 400, o.Payload)
+}
+
 func (o *CreateScheduledPackageBulkBadRequest) GetPayload() *easy_ship_2022_03_23_models.ErrorList {
 	return o.Payload
 }
@@ -197,7 +259,8 @@ func NewCreateScheduledPackageBulkUnauthorized() *CreateScheduledPackageBulkUnau
 	return &CreateScheduledPackageBulkUnauthorized{}
 }
 
-/* CreateScheduledPackageBulkUnauthorized describes a response with status code 401, with default header values.
+/*
+CreateScheduledPackageBulkUnauthorized describes a response with status code 401, with default header values.
 
 The request's Authorization header is not formatted correctly or does not contain a valid token.
 */
@@ -215,9 +278,39 @@ type CreateScheduledPackageBulkUnauthorized struct {
 	Payload *easy_ship_2022_03_23_models.ErrorList
 }
 
+// IsSuccess returns true when this create scheduled package bulk unauthorized response has a 2xx status code
+func (o *CreateScheduledPackageBulkUnauthorized) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this create scheduled package bulk unauthorized response has a 3xx status code
+func (o *CreateScheduledPackageBulkUnauthorized) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create scheduled package bulk unauthorized response has a 4xx status code
+func (o *CreateScheduledPackageBulkUnauthorized) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this create scheduled package bulk unauthorized response has a 5xx status code
+func (o *CreateScheduledPackageBulkUnauthorized) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this create scheduled package bulk unauthorized response a status code equal to that given
+func (o *CreateScheduledPackageBulkUnauthorized) IsCode(code int) bool {
+	return code == 401
+}
+
 func (o *CreateScheduledPackageBulkUnauthorized) Error() string {
 	return fmt.Sprintf("[POST /easyShip/2022-03-23/packages/bulk][%d] createScheduledPackageBulkUnauthorized  %+v", 401, o.Payload)
 }
+
+func (o *CreateScheduledPackageBulkUnauthorized) String() string {
+	return fmt.Sprintf("[POST /easyShip/2022-03-23/packages/bulk][%d] createScheduledPackageBulkUnauthorized  %+v", 401, o.Payload)
+}
+
 func (o *CreateScheduledPackageBulkUnauthorized) GetPayload() *easy_ship_2022_03_23_models.ErrorList {
 	return o.Payload
 }
@@ -253,7 +346,8 @@ func NewCreateScheduledPackageBulkForbidden() *CreateScheduledPackageBulkForbidd
 	return &CreateScheduledPackageBulkForbidden{}
 }
 
-/* CreateScheduledPackageBulkForbidden describes a response with status code 403, with default header values.
+/*
+CreateScheduledPackageBulkForbidden describes a response with status code 403, with default header values.
 
 Indicates access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.
 */
@@ -266,9 +360,39 @@ type CreateScheduledPackageBulkForbidden struct {
 	Payload *easy_ship_2022_03_23_models.ErrorList
 }
 
+// IsSuccess returns true when this create scheduled package bulk forbidden response has a 2xx status code
+func (o *CreateScheduledPackageBulkForbidden) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this create scheduled package bulk forbidden response has a 3xx status code
+func (o *CreateScheduledPackageBulkForbidden) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create scheduled package bulk forbidden response has a 4xx status code
+func (o *CreateScheduledPackageBulkForbidden) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this create scheduled package bulk forbidden response has a 5xx status code
+func (o *CreateScheduledPackageBulkForbidden) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this create scheduled package bulk forbidden response a status code equal to that given
+func (o *CreateScheduledPackageBulkForbidden) IsCode(code int) bool {
+	return code == 403
+}
+
 func (o *CreateScheduledPackageBulkForbidden) Error() string {
 	return fmt.Sprintf("[POST /easyShip/2022-03-23/packages/bulk][%d] createScheduledPackageBulkForbidden  %+v", 403, o.Payload)
 }
+
+func (o *CreateScheduledPackageBulkForbidden) String() string {
+	return fmt.Sprintf("[POST /easyShip/2022-03-23/packages/bulk][%d] createScheduledPackageBulkForbidden  %+v", 403, o.Payload)
+}
+
 func (o *CreateScheduledPackageBulkForbidden) GetPayload() *easy_ship_2022_03_23_models.ErrorList {
 	return o.Payload
 }
@@ -297,7 +421,8 @@ func NewCreateScheduledPackageBulkNotFound() *CreateScheduledPackageBulkNotFound
 	return &CreateScheduledPackageBulkNotFound{}
 }
 
-/* CreateScheduledPackageBulkNotFound describes a response with status code 404, with default header values.
+/*
+CreateScheduledPackageBulkNotFound describes a response with status code 404, with default header values.
 
 The specified resource does not exist.
 */
@@ -314,9 +439,39 @@ type CreateScheduledPackageBulkNotFound struct {
 	Payload *easy_ship_2022_03_23_models.ErrorList
 }
 
+// IsSuccess returns true when this create scheduled package bulk not found response has a 2xx status code
+func (o *CreateScheduledPackageBulkNotFound) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this create scheduled package bulk not found response has a 3xx status code
+func (o *CreateScheduledPackageBulkNotFound) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create scheduled package bulk not found response has a 4xx status code
+func (o *CreateScheduledPackageBulkNotFound) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this create scheduled package bulk not found response has a 5xx status code
+func (o *CreateScheduledPackageBulkNotFound) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this create scheduled package bulk not found response a status code equal to that given
+func (o *CreateScheduledPackageBulkNotFound) IsCode(code int) bool {
+	return code == 404
+}
+
 func (o *CreateScheduledPackageBulkNotFound) Error() string {
 	return fmt.Sprintf("[POST /easyShip/2022-03-23/packages/bulk][%d] createScheduledPackageBulkNotFound  %+v", 404, o.Payload)
 }
+
+func (o *CreateScheduledPackageBulkNotFound) String() string {
+	return fmt.Sprintf("[POST /easyShip/2022-03-23/packages/bulk][%d] createScheduledPackageBulkNotFound  %+v", 404, o.Payload)
+}
+
 func (o *CreateScheduledPackageBulkNotFound) GetPayload() *easy_ship_2022_03_23_models.ErrorList {
 	return o.Payload
 }
@@ -352,7 +507,8 @@ func NewCreateScheduledPackageBulkUnsupportedMediaType() *CreateScheduledPackage
 	return &CreateScheduledPackageBulkUnsupportedMediaType{}
 }
 
-/* CreateScheduledPackageBulkUnsupportedMediaType describes a response with status code 415, with default header values.
+/*
+CreateScheduledPackageBulkUnsupportedMediaType describes a response with status code 415, with default header values.
 
 The request payload is in an unsupported format.
 */
@@ -365,9 +521,39 @@ type CreateScheduledPackageBulkUnsupportedMediaType struct {
 	Payload *easy_ship_2022_03_23_models.ErrorList
 }
 
+// IsSuccess returns true when this create scheduled package bulk unsupported media type response has a 2xx status code
+func (o *CreateScheduledPackageBulkUnsupportedMediaType) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this create scheduled package bulk unsupported media type response has a 3xx status code
+func (o *CreateScheduledPackageBulkUnsupportedMediaType) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create scheduled package bulk unsupported media type response has a 4xx status code
+func (o *CreateScheduledPackageBulkUnsupportedMediaType) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this create scheduled package bulk unsupported media type response has a 5xx status code
+func (o *CreateScheduledPackageBulkUnsupportedMediaType) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this create scheduled package bulk unsupported media type response a status code equal to that given
+func (o *CreateScheduledPackageBulkUnsupportedMediaType) IsCode(code int) bool {
+	return code == 415
+}
+
 func (o *CreateScheduledPackageBulkUnsupportedMediaType) Error() string {
 	return fmt.Sprintf("[POST /easyShip/2022-03-23/packages/bulk][%d] createScheduledPackageBulkUnsupportedMediaType  %+v", 415, o.Payload)
 }
+
+func (o *CreateScheduledPackageBulkUnsupportedMediaType) String() string {
+	return fmt.Sprintf("[POST /easyShip/2022-03-23/packages/bulk][%d] createScheduledPackageBulkUnsupportedMediaType  %+v", 415, o.Payload)
+}
+
 func (o *CreateScheduledPackageBulkUnsupportedMediaType) GetPayload() *easy_ship_2022_03_23_models.ErrorList {
 	return o.Payload
 }
@@ -396,7 +582,8 @@ func NewCreateScheduledPackageBulkTooManyRequests() *CreateScheduledPackageBulkT
 	return &CreateScheduledPackageBulkTooManyRequests{}
 }
 
-/* CreateScheduledPackageBulkTooManyRequests describes a response with status code 429, with default header values.
+/*
+CreateScheduledPackageBulkTooManyRequests describes a response with status code 429, with default header values.
 
 The frequency of requests was greater than allowed.
 */
@@ -413,9 +600,39 @@ type CreateScheduledPackageBulkTooManyRequests struct {
 	Payload *easy_ship_2022_03_23_models.ErrorList
 }
 
+// IsSuccess returns true when this create scheduled package bulk too many requests response has a 2xx status code
+func (o *CreateScheduledPackageBulkTooManyRequests) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this create scheduled package bulk too many requests response has a 3xx status code
+func (o *CreateScheduledPackageBulkTooManyRequests) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create scheduled package bulk too many requests response has a 4xx status code
+func (o *CreateScheduledPackageBulkTooManyRequests) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this create scheduled package bulk too many requests response has a 5xx status code
+func (o *CreateScheduledPackageBulkTooManyRequests) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this create scheduled package bulk too many requests response a status code equal to that given
+func (o *CreateScheduledPackageBulkTooManyRequests) IsCode(code int) bool {
+	return code == 429
+}
+
 func (o *CreateScheduledPackageBulkTooManyRequests) Error() string {
 	return fmt.Sprintf("[POST /easyShip/2022-03-23/packages/bulk][%d] createScheduledPackageBulkTooManyRequests  %+v", 429, o.Payload)
 }
+
+func (o *CreateScheduledPackageBulkTooManyRequests) String() string {
+	return fmt.Sprintf("[POST /easyShip/2022-03-23/packages/bulk][%d] createScheduledPackageBulkTooManyRequests  %+v", 429, o.Payload)
+}
+
 func (o *CreateScheduledPackageBulkTooManyRequests) GetPayload() *easy_ship_2022_03_23_models.ErrorList {
 	return o.Payload
 }
@@ -451,9 +668,11 @@ func NewCreateScheduledPackageBulkInternalServerError() *CreateScheduledPackageB
 	return &CreateScheduledPackageBulkInternalServerError{}
 }
 
-/* CreateScheduledPackageBulkInternalServerError describes a response with status code 500, with default header values.
+/*
+	CreateScheduledPackageBulkInternalServerError describes a response with status code 500, with default header values.
 
- Your rate limit (requests per second) for this operation.
+	Your rate limit (requests per second) for this operation.
+
 _Note:_ For this status code, the rate limit header is deprecated and no longer returned..
 */
 type CreateScheduledPackageBulkInternalServerError struct {
@@ -470,9 +689,39 @@ type CreateScheduledPackageBulkInternalServerError struct {
 	Payload *easy_ship_2022_03_23_models.ErrorList
 }
 
+// IsSuccess returns true when this create scheduled package bulk internal server error response has a 2xx status code
+func (o *CreateScheduledPackageBulkInternalServerError) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this create scheduled package bulk internal server error response has a 3xx status code
+func (o *CreateScheduledPackageBulkInternalServerError) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create scheduled package bulk internal server error response has a 4xx status code
+func (o *CreateScheduledPackageBulkInternalServerError) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this create scheduled package bulk internal server error response has a 5xx status code
+func (o *CreateScheduledPackageBulkInternalServerError) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this create scheduled package bulk internal server error response a status code equal to that given
+func (o *CreateScheduledPackageBulkInternalServerError) IsCode(code int) bool {
+	return code == 500
+}
+
 func (o *CreateScheduledPackageBulkInternalServerError) Error() string {
 	return fmt.Sprintf("[POST /easyShip/2022-03-23/packages/bulk][%d] createScheduledPackageBulkInternalServerError  %+v", 500, o.Payload)
 }
+
+func (o *CreateScheduledPackageBulkInternalServerError) String() string {
+	return fmt.Sprintf("[POST /easyShip/2022-03-23/packages/bulk][%d] createScheduledPackageBulkInternalServerError  %+v", 500, o.Payload)
+}
+
 func (o *CreateScheduledPackageBulkInternalServerError) GetPayload() *easy_ship_2022_03_23_models.ErrorList {
 	return o.Payload
 }
@@ -508,7 +757,8 @@ func NewCreateScheduledPackageBulkServiceUnavailable() *CreateScheduledPackageBu
 	return &CreateScheduledPackageBulkServiceUnavailable{}
 }
 
-/* CreateScheduledPackageBulkServiceUnavailable describes a response with status code 503, with default header values.
+/*
+CreateScheduledPackageBulkServiceUnavailable describes a response with status code 503, with default header values.
 
 Temporary overloading or maintenance of the server.
 */
@@ -526,9 +776,39 @@ type CreateScheduledPackageBulkServiceUnavailable struct {
 	Payload *easy_ship_2022_03_23_models.ErrorList
 }
 
+// IsSuccess returns true when this create scheduled package bulk service unavailable response has a 2xx status code
+func (o *CreateScheduledPackageBulkServiceUnavailable) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this create scheduled package bulk service unavailable response has a 3xx status code
+func (o *CreateScheduledPackageBulkServiceUnavailable) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create scheduled package bulk service unavailable response has a 4xx status code
+func (o *CreateScheduledPackageBulkServiceUnavailable) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this create scheduled package bulk service unavailable response has a 5xx status code
+func (o *CreateScheduledPackageBulkServiceUnavailable) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this create scheduled package bulk service unavailable response a status code equal to that given
+func (o *CreateScheduledPackageBulkServiceUnavailable) IsCode(code int) bool {
+	return code == 503
+}
+
 func (o *CreateScheduledPackageBulkServiceUnavailable) Error() string {
 	return fmt.Sprintf("[POST /easyShip/2022-03-23/packages/bulk][%d] createScheduledPackageBulkServiceUnavailable  %+v", 503, o.Payload)
 }
+
+func (o *CreateScheduledPackageBulkServiceUnavailable) String() string {
+	return fmt.Sprintf("[POST /easyShip/2022-03-23/packages/bulk][%d] createScheduledPackageBulkServiceUnavailable  %+v", 503, o.Payload)
+}
+
 func (o *CreateScheduledPackageBulkServiceUnavailable) GetPayload() *easy_ship_2022_03_23_models.ErrorList {
 	return o.Payload
 }

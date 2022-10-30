@@ -93,7 +93,8 @@ func NewGetFixedSlotCapacityOK() *GetFixedSlotCapacityOK {
 	return &GetFixedSlotCapacityOK{}
 }
 
-/* GetFixedSlotCapacityOK describes a response with status code 200, with default header values.
+/*
+GetFixedSlotCapacityOK describes a response with status code 200, with default header values.
 
 Success response.
 */
@@ -110,9 +111,39 @@ type GetFixedSlotCapacityOK struct {
 	Payload *services_models.FixedSlotCapacity
 }
 
+// IsSuccess returns true when this get fixed slot capacity o k response has a 2xx status code
+func (o *GetFixedSlotCapacityOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this get fixed slot capacity o k response has a 3xx status code
+func (o *GetFixedSlotCapacityOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get fixed slot capacity o k response has a 4xx status code
+func (o *GetFixedSlotCapacityOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get fixed slot capacity o k response has a 5xx status code
+func (o *GetFixedSlotCapacityOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get fixed slot capacity o k response a status code equal to that given
+func (o *GetFixedSlotCapacityOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *GetFixedSlotCapacityOK) Error() string {
 	return fmt.Sprintf("[POST /service/v1/serviceResources/{resourceId}/capacity/fixed][%d] getFixedSlotCapacityOK  %+v", 200, o.Payload)
 }
+
+func (o *GetFixedSlotCapacityOK) String() string {
+	return fmt.Sprintf("[POST /service/v1/serviceResources/{resourceId}/capacity/fixed][%d] getFixedSlotCapacityOK  %+v", 200, o.Payload)
+}
+
 func (o *GetFixedSlotCapacityOK) GetPayload() *services_models.FixedSlotCapacity {
 	return o.Payload
 }
@@ -148,7 +179,8 @@ func NewGetFixedSlotCapacityBadRequest() *GetFixedSlotCapacityBadRequest {
 	return &GetFixedSlotCapacityBadRequest{}
 }
 
-/* GetFixedSlotCapacityBadRequest describes a response with status code 400, with default header values.
+/*
+GetFixedSlotCapacityBadRequest describes a response with status code 400, with default header values.
 
 Request has missing or invalid parameters and cannot be parsed.
 */
@@ -165,9 +197,39 @@ type GetFixedSlotCapacityBadRequest struct {
 	Payload *services_models.FixedSlotCapacityErrors
 }
 
+// IsSuccess returns true when this get fixed slot capacity bad request response has a 2xx status code
+func (o *GetFixedSlotCapacityBadRequest) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get fixed slot capacity bad request response has a 3xx status code
+func (o *GetFixedSlotCapacityBadRequest) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get fixed slot capacity bad request response has a 4xx status code
+func (o *GetFixedSlotCapacityBadRequest) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get fixed slot capacity bad request response has a 5xx status code
+func (o *GetFixedSlotCapacityBadRequest) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get fixed slot capacity bad request response a status code equal to that given
+func (o *GetFixedSlotCapacityBadRequest) IsCode(code int) bool {
+	return code == 400
+}
+
 func (o *GetFixedSlotCapacityBadRequest) Error() string {
 	return fmt.Sprintf("[POST /service/v1/serviceResources/{resourceId}/capacity/fixed][%d] getFixedSlotCapacityBadRequest  %+v", 400, o.Payload)
 }
+
+func (o *GetFixedSlotCapacityBadRequest) String() string {
+	return fmt.Sprintf("[POST /service/v1/serviceResources/{resourceId}/capacity/fixed][%d] getFixedSlotCapacityBadRequest  %+v", 400, o.Payload)
+}
+
 func (o *GetFixedSlotCapacityBadRequest) GetPayload() *services_models.FixedSlotCapacityErrors {
 	return o.Payload
 }
@@ -203,7 +265,8 @@ func NewGetFixedSlotCapacityUnauthorized() *GetFixedSlotCapacityUnauthorized {
 	return &GetFixedSlotCapacityUnauthorized{}
 }
 
-/* GetFixedSlotCapacityUnauthorized describes a response with status code 401, with default header values.
+/*
+GetFixedSlotCapacityUnauthorized describes a response with status code 401, with default header values.
 
 The request's Authorization header is not formatted correctly or does not contain a valid token.
 */
@@ -216,9 +279,39 @@ type GetFixedSlotCapacityUnauthorized struct {
 	Payload *services_models.FixedSlotCapacityErrors
 }
 
+// IsSuccess returns true when this get fixed slot capacity unauthorized response has a 2xx status code
+func (o *GetFixedSlotCapacityUnauthorized) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get fixed slot capacity unauthorized response has a 3xx status code
+func (o *GetFixedSlotCapacityUnauthorized) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get fixed slot capacity unauthorized response has a 4xx status code
+func (o *GetFixedSlotCapacityUnauthorized) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get fixed slot capacity unauthorized response has a 5xx status code
+func (o *GetFixedSlotCapacityUnauthorized) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get fixed slot capacity unauthorized response a status code equal to that given
+func (o *GetFixedSlotCapacityUnauthorized) IsCode(code int) bool {
+	return code == 401
+}
+
 func (o *GetFixedSlotCapacityUnauthorized) Error() string {
 	return fmt.Sprintf("[POST /service/v1/serviceResources/{resourceId}/capacity/fixed][%d] getFixedSlotCapacityUnauthorized  %+v", 401, o.Payload)
 }
+
+func (o *GetFixedSlotCapacityUnauthorized) String() string {
+	return fmt.Sprintf("[POST /service/v1/serviceResources/{resourceId}/capacity/fixed][%d] getFixedSlotCapacityUnauthorized  %+v", 401, o.Payload)
+}
+
 func (o *GetFixedSlotCapacityUnauthorized) GetPayload() *services_models.FixedSlotCapacityErrors {
 	return o.Payload
 }
@@ -247,7 +340,8 @@ func NewGetFixedSlotCapacityForbidden() *GetFixedSlotCapacityForbidden {
 	return &GetFixedSlotCapacityForbidden{}
 }
 
-/* GetFixedSlotCapacityForbidden describes a response with status code 403, with default header values.
+/*
+GetFixedSlotCapacityForbidden describes a response with status code 403, with default header values.
 
 Indicates that access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.
 */
@@ -260,9 +354,39 @@ type GetFixedSlotCapacityForbidden struct {
 	Payload *services_models.FixedSlotCapacityErrors
 }
 
+// IsSuccess returns true when this get fixed slot capacity forbidden response has a 2xx status code
+func (o *GetFixedSlotCapacityForbidden) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get fixed slot capacity forbidden response has a 3xx status code
+func (o *GetFixedSlotCapacityForbidden) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get fixed slot capacity forbidden response has a 4xx status code
+func (o *GetFixedSlotCapacityForbidden) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get fixed slot capacity forbidden response has a 5xx status code
+func (o *GetFixedSlotCapacityForbidden) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get fixed slot capacity forbidden response a status code equal to that given
+func (o *GetFixedSlotCapacityForbidden) IsCode(code int) bool {
+	return code == 403
+}
+
 func (o *GetFixedSlotCapacityForbidden) Error() string {
 	return fmt.Sprintf("[POST /service/v1/serviceResources/{resourceId}/capacity/fixed][%d] getFixedSlotCapacityForbidden  %+v", 403, o.Payload)
 }
+
+func (o *GetFixedSlotCapacityForbidden) String() string {
+	return fmt.Sprintf("[POST /service/v1/serviceResources/{resourceId}/capacity/fixed][%d] getFixedSlotCapacityForbidden  %+v", 403, o.Payload)
+}
+
 func (o *GetFixedSlotCapacityForbidden) GetPayload() *services_models.FixedSlotCapacityErrors {
 	return o.Payload
 }
@@ -291,7 +415,8 @@ func NewGetFixedSlotCapacityNotFound() *GetFixedSlotCapacityNotFound {
 	return &GetFixedSlotCapacityNotFound{}
 }
 
-/* GetFixedSlotCapacityNotFound describes a response with status code 404, with default header values.
+/*
+GetFixedSlotCapacityNotFound describes a response with status code 404, with default header values.
 
 The resource specified does not exist.
 */
@@ -308,9 +433,39 @@ type GetFixedSlotCapacityNotFound struct {
 	Payload *services_models.FixedSlotCapacityErrors
 }
 
+// IsSuccess returns true when this get fixed slot capacity not found response has a 2xx status code
+func (o *GetFixedSlotCapacityNotFound) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get fixed slot capacity not found response has a 3xx status code
+func (o *GetFixedSlotCapacityNotFound) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get fixed slot capacity not found response has a 4xx status code
+func (o *GetFixedSlotCapacityNotFound) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get fixed slot capacity not found response has a 5xx status code
+func (o *GetFixedSlotCapacityNotFound) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get fixed slot capacity not found response a status code equal to that given
+func (o *GetFixedSlotCapacityNotFound) IsCode(code int) bool {
+	return code == 404
+}
+
 func (o *GetFixedSlotCapacityNotFound) Error() string {
 	return fmt.Sprintf("[POST /service/v1/serviceResources/{resourceId}/capacity/fixed][%d] getFixedSlotCapacityNotFound  %+v", 404, o.Payload)
 }
+
+func (o *GetFixedSlotCapacityNotFound) String() string {
+	return fmt.Sprintf("[POST /service/v1/serviceResources/{resourceId}/capacity/fixed][%d] getFixedSlotCapacityNotFound  %+v", 404, o.Payload)
+}
+
 func (o *GetFixedSlotCapacityNotFound) GetPayload() *services_models.FixedSlotCapacityErrors {
 	return o.Payload
 }
@@ -346,7 +501,8 @@ func NewGetFixedSlotCapacityRequestEntityTooLarge() *GetFixedSlotCapacityRequest
 	return &GetFixedSlotCapacityRequestEntityTooLarge{}
 }
 
-/* GetFixedSlotCapacityRequestEntityTooLarge describes a response with status code 413, with default header values.
+/*
+GetFixedSlotCapacityRequestEntityTooLarge describes a response with status code 413, with default header values.
 
 The request size exceeded the maximum accepted size.
 */
@@ -359,9 +515,39 @@ type GetFixedSlotCapacityRequestEntityTooLarge struct {
 	Payload *services_models.FixedSlotCapacityErrors
 }
 
+// IsSuccess returns true when this get fixed slot capacity request entity too large response has a 2xx status code
+func (o *GetFixedSlotCapacityRequestEntityTooLarge) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get fixed slot capacity request entity too large response has a 3xx status code
+func (o *GetFixedSlotCapacityRequestEntityTooLarge) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get fixed slot capacity request entity too large response has a 4xx status code
+func (o *GetFixedSlotCapacityRequestEntityTooLarge) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get fixed slot capacity request entity too large response has a 5xx status code
+func (o *GetFixedSlotCapacityRequestEntityTooLarge) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get fixed slot capacity request entity too large response a status code equal to that given
+func (o *GetFixedSlotCapacityRequestEntityTooLarge) IsCode(code int) bool {
+	return code == 413
+}
+
 func (o *GetFixedSlotCapacityRequestEntityTooLarge) Error() string {
 	return fmt.Sprintf("[POST /service/v1/serviceResources/{resourceId}/capacity/fixed][%d] getFixedSlotCapacityRequestEntityTooLarge  %+v", 413, o.Payload)
 }
+
+func (o *GetFixedSlotCapacityRequestEntityTooLarge) String() string {
+	return fmt.Sprintf("[POST /service/v1/serviceResources/{resourceId}/capacity/fixed][%d] getFixedSlotCapacityRequestEntityTooLarge  %+v", 413, o.Payload)
+}
+
 func (o *GetFixedSlotCapacityRequestEntityTooLarge) GetPayload() *services_models.FixedSlotCapacityErrors {
 	return o.Payload
 }
@@ -390,7 +576,8 @@ func NewGetFixedSlotCapacityUnsupportedMediaType() *GetFixedSlotCapacityUnsuppor
 	return &GetFixedSlotCapacityUnsupportedMediaType{}
 }
 
-/* GetFixedSlotCapacityUnsupportedMediaType describes a response with status code 415, with default header values.
+/*
+GetFixedSlotCapacityUnsupportedMediaType describes a response with status code 415, with default header values.
 
 The request payload is in an unsupported format.
 */
@@ -403,9 +590,39 @@ type GetFixedSlotCapacityUnsupportedMediaType struct {
 	Payload *services_models.FixedSlotCapacityErrors
 }
 
+// IsSuccess returns true when this get fixed slot capacity unsupported media type response has a 2xx status code
+func (o *GetFixedSlotCapacityUnsupportedMediaType) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get fixed slot capacity unsupported media type response has a 3xx status code
+func (o *GetFixedSlotCapacityUnsupportedMediaType) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get fixed slot capacity unsupported media type response has a 4xx status code
+func (o *GetFixedSlotCapacityUnsupportedMediaType) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get fixed slot capacity unsupported media type response has a 5xx status code
+func (o *GetFixedSlotCapacityUnsupportedMediaType) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get fixed slot capacity unsupported media type response a status code equal to that given
+func (o *GetFixedSlotCapacityUnsupportedMediaType) IsCode(code int) bool {
+	return code == 415
+}
+
 func (o *GetFixedSlotCapacityUnsupportedMediaType) Error() string {
 	return fmt.Sprintf("[POST /service/v1/serviceResources/{resourceId}/capacity/fixed][%d] getFixedSlotCapacityUnsupportedMediaType  %+v", 415, o.Payload)
 }
+
+func (o *GetFixedSlotCapacityUnsupportedMediaType) String() string {
+	return fmt.Sprintf("[POST /service/v1/serviceResources/{resourceId}/capacity/fixed][%d] getFixedSlotCapacityUnsupportedMediaType  %+v", 415, o.Payload)
+}
+
 func (o *GetFixedSlotCapacityUnsupportedMediaType) GetPayload() *services_models.FixedSlotCapacityErrors {
 	return o.Payload
 }
@@ -434,7 +651,8 @@ func NewGetFixedSlotCapacityTooManyRequests() *GetFixedSlotCapacityTooManyReques
 	return &GetFixedSlotCapacityTooManyRequests{}
 }
 
-/* GetFixedSlotCapacityTooManyRequests describes a response with status code 429, with default header values.
+/*
+GetFixedSlotCapacityTooManyRequests describes a response with status code 429, with default header values.
 
 The frequency of requests was greater than allowed.
 */
@@ -447,9 +665,39 @@ type GetFixedSlotCapacityTooManyRequests struct {
 	Payload *services_models.FixedSlotCapacityErrors
 }
 
+// IsSuccess returns true when this get fixed slot capacity too many requests response has a 2xx status code
+func (o *GetFixedSlotCapacityTooManyRequests) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get fixed slot capacity too many requests response has a 3xx status code
+func (o *GetFixedSlotCapacityTooManyRequests) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get fixed slot capacity too many requests response has a 4xx status code
+func (o *GetFixedSlotCapacityTooManyRequests) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get fixed slot capacity too many requests response has a 5xx status code
+func (o *GetFixedSlotCapacityTooManyRequests) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get fixed slot capacity too many requests response a status code equal to that given
+func (o *GetFixedSlotCapacityTooManyRequests) IsCode(code int) bool {
+	return code == 429
+}
+
 func (o *GetFixedSlotCapacityTooManyRequests) Error() string {
 	return fmt.Sprintf("[POST /service/v1/serviceResources/{resourceId}/capacity/fixed][%d] getFixedSlotCapacityTooManyRequests  %+v", 429, o.Payload)
 }
+
+func (o *GetFixedSlotCapacityTooManyRequests) String() string {
+	return fmt.Sprintf("[POST /service/v1/serviceResources/{resourceId}/capacity/fixed][%d] getFixedSlotCapacityTooManyRequests  %+v", 429, o.Payload)
+}
+
 func (o *GetFixedSlotCapacityTooManyRequests) GetPayload() *services_models.FixedSlotCapacityErrors {
 	return o.Payload
 }
@@ -478,7 +726,8 @@ func NewGetFixedSlotCapacityInternalServerError() *GetFixedSlotCapacityInternalS
 	return &GetFixedSlotCapacityInternalServerError{}
 }
 
-/* GetFixedSlotCapacityInternalServerError describes a response with status code 500, with default header values.
+/*
+GetFixedSlotCapacityInternalServerError describes a response with status code 500, with default header values.
 
 An unexpected condition occurred that prevented the server from fulfilling the request.
 */
@@ -491,9 +740,39 @@ type GetFixedSlotCapacityInternalServerError struct {
 	Payload *services_models.FixedSlotCapacityErrors
 }
 
+// IsSuccess returns true when this get fixed slot capacity internal server error response has a 2xx status code
+func (o *GetFixedSlotCapacityInternalServerError) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get fixed slot capacity internal server error response has a 3xx status code
+func (o *GetFixedSlotCapacityInternalServerError) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get fixed slot capacity internal server error response has a 4xx status code
+func (o *GetFixedSlotCapacityInternalServerError) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get fixed slot capacity internal server error response has a 5xx status code
+func (o *GetFixedSlotCapacityInternalServerError) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this get fixed slot capacity internal server error response a status code equal to that given
+func (o *GetFixedSlotCapacityInternalServerError) IsCode(code int) bool {
+	return code == 500
+}
+
 func (o *GetFixedSlotCapacityInternalServerError) Error() string {
 	return fmt.Sprintf("[POST /service/v1/serviceResources/{resourceId}/capacity/fixed][%d] getFixedSlotCapacityInternalServerError  %+v", 500, o.Payload)
 }
+
+func (o *GetFixedSlotCapacityInternalServerError) String() string {
+	return fmt.Sprintf("[POST /service/v1/serviceResources/{resourceId}/capacity/fixed][%d] getFixedSlotCapacityInternalServerError  %+v", 500, o.Payload)
+}
+
 func (o *GetFixedSlotCapacityInternalServerError) GetPayload() *services_models.FixedSlotCapacityErrors {
 	return o.Payload
 }
@@ -522,7 +801,8 @@ func NewGetFixedSlotCapacityServiceUnavailable() *GetFixedSlotCapacityServiceUna
 	return &GetFixedSlotCapacityServiceUnavailable{}
 }
 
-/* GetFixedSlotCapacityServiceUnavailable describes a response with status code 503, with default header values.
+/*
+GetFixedSlotCapacityServiceUnavailable describes a response with status code 503, with default header values.
 
 Temporary overloading or maintenance of the server.
 */
@@ -535,9 +815,39 @@ type GetFixedSlotCapacityServiceUnavailable struct {
 	Payload *services_models.FixedSlotCapacityErrors
 }
 
+// IsSuccess returns true when this get fixed slot capacity service unavailable response has a 2xx status code
+func (o *GetFixedSlotCapacityServiceUnavailable) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get fixed slot capacity service unavailable response has a 3xx status code
+func (o *GetFixedSlotCapacityServiceUnavailable) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get fixed slot capacity service unavailable response has a 4xx status code
+func (o *GetFixedSlotCapacityServiceUnavailable) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get fixed slot capacity service unavailable response has a 5xx status code
+func (o *GetFixedSlotCapacityServiceUnavailable) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this get fixed slot capacity service unavailable response a status code equal to that given
+func (o *GetFixedSlotCapacityServiceUnavailable) IsCode(code int) bool {
+	return code == 503
+}
+
 func (o *GetFixedSlotCapacityServiceUnavailable) Error() string {
 	return fmt.Sprintf("[POST /service/v1/serviceResources/{resourceId}/capacity/fixed][%d] getFixedSlotCapacityServiceUnavailable  %+v", 503, o.Payload)
 }
+
+func (o *GetFixedSlotCapacityServiceUnavailable) String() string {
+	return fmt.Sprintf("[POST /service/v1/serviceResources/{resourceId}/capacity/fixed][%d] getFixedSlotCapacityServiceUnavailable  %+v", 503, o.Payload)
+}
+
 func (o *GetFixedSlotCapacityServiceUnavailable) GetPayload() *services_models.FixedSlotCapacityErrors {
 	return o.Payload
 }

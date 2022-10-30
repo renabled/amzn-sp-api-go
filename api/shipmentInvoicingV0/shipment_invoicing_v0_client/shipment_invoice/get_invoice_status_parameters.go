@@ -52,10 +52,12 @@ func NewGetInvoiceStatusParamsWithHTTPClient(client *http.Client) *GetInvoiceSta
 	}
 }
 
-/* GetInvoiceStatusParams contains all the parameters to send to the API endpoint
-   for the get invoice status operation.
+/*
+GetInvoiceStatusParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the get invoice status operation.
+
+	Typically these are written to a http.Request.
 */
 type GetInvoiceStatusParams struct {
 

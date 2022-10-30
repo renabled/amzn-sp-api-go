@@ -54,10 +54,12 @@ func NewCreateContentDocumentParamsWithHTTPClient(client *http.Client) *CreateCo
 	}
 }
 
-/* CreateContentDocumentParams contains all the parameters to send to the API endpoint
-   for the create content document operation.
+/*
+CreateContentDocumentParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the create content document operation.
+
+	Typically these are written to a http.Request.
 */
 type CreateContentDocumentParams struct {
 

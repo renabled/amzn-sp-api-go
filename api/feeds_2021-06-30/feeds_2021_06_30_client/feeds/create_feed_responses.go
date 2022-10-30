@@ -87,7 +87,8 @@ func NewCreateFeedAccepted() *CreateFeedAccepted {
 	return &CreateFeedAccepted{}
 }
 
-/* CreateFeedAccepted describes a response with status code 202, with default header values.
+/*
+CreateFeedAccepted describes a response with status code 202, with default header values.
 
 Success.
 */
@@ -104,9 +105,39 @@ type CreateFeedAccepted struct {
 	Payload *feeds_2021_06_30_models.CreateFeedResponse
 }
 
+// IsSuccess returns true when this create feed accepted response has a 2xx status code
+func (o *CreateFeedAccepted) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this create feed accepted response has a 3xx status code
+func (o *CreateFeedAccepted) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create feed accepted response has a 4xx status code
+func (o *CreateFeedAccepted) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this create feed accepted response has a 5xx status code
+func (o *CreateFeedAccepted) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this create feed accepted response a status code equal to that given
+func (o *CreateFeedAccepted) IsCode(code int) bool {
+	return code == 202
+}
+
 func (o *CreateFeedAccepted) Error() string {
 	return fmt.Sprintf("[POST /feeds/2021-06-30/feeds][%d] createFeedAccepted  %+v", 202, o.Payload)
 }
+
+func (o *CreateFeedAccepted) String() string {
+	return fmt.Sprintf("[POST /feeds/2021-06-30/feeds][%d] createFeedAccepted  %+v", 202, o.Payload)
+}
+
 func (o *CreateFeedAccepted) GetPayload() *feeds_2021_06_30_models.CreateFeedResponse {
 	return o.Payload
 }
@@ -142,7 +173,8 @@ func NewCreateFeedBadRequest() *CreateFeedBadRequest {
 	return &CreateFeedBadRequest{}
 }
 
-/* CreateFeedBadRequest describes a response with status code 400, with default header values.
+/*
+CreateFeedBadRequest describes a response with status code 400, with default header values.
 
 Request has missing or invalid parameters and cannot be parsed.
 */
@@ -159,9 +191,39 @@ type CreateFeedBadRequest struct {
 	Payload *feeds_2021_06_30_models.ErrorList
 }
 
+// IsSuccess returns true when this create feed bad request response has a 2xx status code
+func (o *CreateFeedBadRequest) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this create feed bad request response has a 3xx status code
+func (o *CreateFeedBadRequest) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create feed bad request response has a 4xx status code
+func (o *CreateFeedBadRequest) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this create feed bad request response has a 5xx status code
+func (o *CreateFeedBadRequest) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this create feed bad request response a status code equal to that given
+func (o *CreateFeedBadRequest) IsCode(code int) bool {
+	return code == 400
+}
+
 func (o *CreateFeedBadRequest) Error() string {
 	return fmt.Sprintf("[POST /feeds/2021-06-30/feeds][%d] createFeedBadRequest  %+v", 400, o.Payload)
 }
+
+func (o *CreateFeedBadRequest) String() string {
+	return fmt.Sprintf("[POST /feeds/2021-06-30/feeds][%d] createFeedBadRequest  %+v", 400, o.Payload)
+}
+
 func (o *CreateFeedBadRequest) GetPayload() *feeds_2021_06_30_models.ErrorList {
 	return o.Payload
 }
@@ -197,7 +259,8 @@ func NewCreateFeedUnauthorized() *CreateFeedUnauthorized {
 	return &CreateFeedUnauthorized{}
 }
 
-/* CreateFeedUnauthorized describes a response with status code 401, with default header values.
+/*
+CreateFeedUnauthorized describes a response with status code 401, with default header values.
 
 The request's Authorization header is not formatted correctly or does not contain a valid token.
 */
@@ -215,9 +278,39 @@ type CreateFeedUnauthorized struct {
 	Payload *feeds_2021_06_30_models.ErrorList
 }
 
+// IsSuccess returns true when this create feed unauthorized response has a 2xx status code
+func (o *CreateFeedUnauthorized) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this create feed unauthorized response has a 3xx status code
+func (o *CreateFeedUnauthorized) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create feed unauthorized response has a 4xx status code
+func (o *CreateFeedUnauthorized) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this create feed unauthorized response has a 5xx status code
+func (o *CreateFeedUnauthorized) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this create feed unauthorized response a status code equal to that given
+func (o *CreateFeedUnauthorized) IsCode(code int) bool {
+	return code == 401
+}
+
 func (o *CreateFeedUnauthorized) Error() string {
 	return fmt.Sprintf("[POST /feeds/2021-06-30/feeds][%d] createFeedUnauthorized  %+v", 401, o.Payload)
 }
+
+func (o *CreateFeedUnauthorized) String() string {
+	return fmt.Sprintf("[POST /feeds/2021-06-30/feeds][%d] createFeedUnauthorized  %+v", 401, o.Payload)
+}
+
 func (o *CreateFeedUnauthorized) GetPayload() *feeds_2021_06_30_models.ErrorList {
 	return o.Payload
 }
@@ -253,7 +346,8 @@ func NewCreateFeedForbidden() *CreateFeedForbidden {
 	return &CreateFeedForbidden{}
 }
 
-/* CreateFeedForbidden describes a response with status code 403, with default header values.
+/*
+CreateFeedForbidden describes a response with status code 403, with default header values.
 
 Indicates access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.
 */
@@ -266,9 +360,39 @@ type CreateFeedForbidden struct {
 	Payload *feeds_2021_06_30_models.ErrorList
 }
 
+// IsSuccess returns true when this create feed forbidden response has a 2xx status code
+func (o *CreateFeedForbidden) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this create feed forbidden response has a 3xx status code
+func (o *CreateFeedForbidden) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create feed forbidden response has a 4xx status code
+func (o *CreateFeedForbidden) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this create feed forbidden response has a 5xx status code
+func (o *CreateFeedForbidden) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this create feed forbidden response a status code equal to that given
+func (o *CreateFeedForbidden) IsCode(code int) bool {
+	return code == 403
+}
+
 func (o *CreateFeedForbidden) Error() string {
 	return fmt.Sprintf("[POST /feeds/2021-06-30/feeds][%d] createFeedForbidden  %+v", 403, o.Payload)
 }
+
+func (o *CreateFeedForbidden) String() string {
+	return fmt.Sprintf("[POST /feeds/2021-06-30/feeds][%d] createFeedForbidden  %+v", 403, o.Payload)
+}
+
 func (o *CreateFeedForbidden) GetPayload() *feeds_2021_06_30_models.ErrorList {
 	return o.Payload
 }
@@ -297,7 +421,8 @@ func NewCreateFeedNotFound() *CreateFeedNotFound {
 	return &CreateFeedNotFound{}
 }
 
-/* CreateFeedNotFound describes a response with status code 404, with default header values.
+/*
+CreateFeedNotFound describes a response with status code 404, with default header values.
 
 The specified resource does not exist.
 */
@@ -314,9 +439,39 @@ type CreateFeedNotFound struct {
 	Payload *feeds_2021_06_30_models.ErrorList
 }
 
+// IsSuccess returns true when this create feed not found response has a 2xx status code
+func (o *CreateFeedNotFound) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this create feed not found response has a 3xx status code
+func (o *CreateFeedNotFound) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create feed not found response has a 4xx status code
+func (o *CreateFeedNotFound) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this create feed not found response has a 5xx status code
+func (o *CreateFeedNotFound) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this create feed not found response a status code equal to that given
+func (o *CreateFeedNotFound) IsCode(code int) bool {
+	return code == 404
+}
+
 func (o *CreateFeedNotFound) Error() string {
 	return fmt.Sprintf("[POST /feeds/2021-06-30/feeds][%d] createFeedNotFound  %+v", 404, o.Payload)
 }
+
+func (o *CreateFeedNotFound) String() string {
+	return fmt.Sprintf("[POST /feeds/2021-06-30/feeds][%d] createFeedNotFound  %+v", 404, o.Payload)
+}
+
 func (o *CreateFeedNotFound) GetPayload() *feeds_2021_06_30_models.ErrorList {
 	return o.Payload
 }
@@ -352,7 +507,8 @@ func NewCreateFeedUnsupportedMediaType() *CreateFeedUnsupportedMediaType {
 	return &CreateFeedUnsupportedMediaType{}
 }
 
-/* CreateFeedUnsupportedMediaType describes a response with status code 415, with default header values.
+/*
+CreateFeedUnsupportedMediaType describes a response with status code 415, with default header values.
 
 The request's Content-Type header is invalid.
 */
@@ -370,9 +526,39 @@ type CreateFeedUnsupportedMediaType struct {
 	Payload *feeds_2021_06_30_models.ErrorList
 }
 
+// IsSuccess returns true when this create feed unsupported media type response has a 2xx status code
+func (o *CreateFeedUnsupportedMediaType) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this create feed unsupported media type response has a 3xx status code
+func (o *CreateFeedUnsupportedMediaType) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create feed unsupported media type response has a 4xx status code
+func (o *CreateFeedUnsupportedMediaType) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this create feed unsupported media type response has a 5xx status code
+func (o *CreateFeedUnsupportedMediaType) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this create feed unsupported media type response a status code equal to that given
+func (o *CreateFeedUnsupportedMediaType) IsCode(code int) bool {
+	return code == 415
+}
+
 func (o *CreateFeedUnsupportedMediaType) Error() string {
 	return fmt.Sprintf("[POST /feeds/2021-06-30/feeds][%d] createFeedUnsupportedMediaType  %+v", 415, o.Payload)
 }
+
+func (o *CreateFeedUnsupportedMediaType) String() string {
+	return fmt.Sprintf("[POST /feeds/2021-06-30/feeds][%d] createFeedUnsupportedMediaType  %+v", 415, o.Payload)
+}
+
 func (o *CreateFeedUnsupportedMediaType) GetPayload() *feeds_2021_06_30_models.ErrorList {
 	return o.Payload
 }
@@ -408,7 +594,8 @@ func NewCreateFeedTooManyRequests() *CreateFeedTooManyRequests {
 	return &CreateFeedTooManyRequests{}
 }
 
-/* CreateFeedTooManyRequests describes a response with status code 429, with default header values.
+/*
+CreateFeedTooManyRequests describes a response with status code 429, with default header values.
 
 The frequency of requests was greater than allowed.
 */
@@ -426,9 +613,39 @@ type CreateFeedTooManyRequests struct {
 	Payload *feeds_2021_06_30_models.ErrorList
 }
 
+// IsSuccess returns true when this create feed too many requests response has a 2xx status code
+func (o *CreateFeedTooManyRequests) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this create feed too many requests response has a 3xx status code
+func (o *CreateFeedTooManyRequests) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create feed too many requests response has a 4xx status code
+func (o *CreateFeedTooManyRequests) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this create feed too many requests response has a 5xx status code
+func (o *CreateFeedTooManyRequests) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this create feed too many requests response a status code equal to that given
+func (o *CreateFeedTooManyRequests) IsCode(code int) bool {
+	return code == 429
+}
+
 func (o *CreateFeedTooManyRequests) Error() string {
 	return fmt.Sprintf("[POST /feeds/2021-06-30/feeds][%d] createFeedTooManyRequests  %+v", 429, o.Payload)
 }
+
+func (o *CreateFeedTooManyRequests) String() string {
+	return fmt.Sprintf("[POST /feeds/2021-06-30/feeds][%d] createFeedTooManyRequests  %+v", 429, o.Payload)
+}
+
 func (o *CreateFeedTooManyRequests) GetPayload() *feeds_2021_06_30_models.ErrorList {
 	return o.Payload
 }
@@ -464,7 +681,8 @@ func NewCreateFeedInternalServerError() *CreateFeedInternalServerError {
 	return &CreateFeedInternalServerError{}
 }
 
-/* CreateFeedInternalServerError describes a response with status code 500, with default header values.
+/*
+CreateFeedInternalServerError describes a response with status code 500, with default header values.
 
 An unexpected condition occurred that prevented the server from fulfilling the request.
 */
@@ -482,9 +700,39 @@ type CreateFeedInternalServerError struct {
 	Payload *feeds_2021_06_30_models.ErrorList
 }
 
+// IsSuccess returns true when this create feed internal server error response has a 2xx status code
+func (o *CreateFeedInternalServerError) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this create feed internal server error response has a 3xx status code
+func (o *CreateFeedInternalServerError) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create feed internal server error response has a 4xx status code
+func (o *CreateFeedInternalServerError) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this create feed internal server error response has a 5xx status code
+func (o *CreateFeedInternalServerError) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this create feed internal server error response a status code equal to that given
+func (o *CreateFeedInternalServerError) IsCode(code int) bool {
+	return code == 500
+}
+
 func (o *CreateFeedInternalServerError) Error() string {
 	return fmt.Sprintf("[POST /feeds/2021-06-30/feeds][%d] createFeedInternalServerError  %+v", 500, o.Payload)
 }
+
+func (o *CreateFeedInternalServerError) String() string {
+	return fmt.Sprintf("[POST /feeds/2021-06-30/feeds][%d] createFeedInternalServerError  %+v", 500, o.Payload)
+}
+
 func (o *CreateFeedInternalServerError) GetPayload() *feeds_2021_06_30_models.ErrorList {
 	return o.Payload
 }
@@ -520,7 +768,8 @@ func NewCreateFeedServiceUnavailable() *CreateFeedServiceUnavailable {
 	return &CreateFeedServiceUnavailable{}
 }
 
-/* CreateFeedServiceUnavailable describes a response with status code 503, with default header values.
+/*
+CreateFeedServiceUnavailable describes a response with status code 503, with default header values.
 
 Temporary overloading or maintenance of the server.
 */
@@ -538,9 +787,39 @@ type CreateFeedServiceUnavailable struct {
 	Payload *feeds_2021_06_30_models.ErrorList
 }
 
+// IsSuccess returns true when this create feed service unavailable response has a 2xx status code
+func (o *CreateFeedServiceUnavailable) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this create feed service unavailable response has a 3xx status code
+func (o *CreateFeedServiceUnavailable) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create feed service unavailable response has a 4xx status code
+func (o *CreateFeedServiceUnavailable) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this create feed service unavailable response has a 5xx status code
+func (o *CreateFeedServiceUnavailable) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this create feed service unavailable response a status code equal to that given
+func (o *CreateFeedServiceUnavailable) IsCode(code int) bool {
+	return code == 503
+}
+
 func (o *CreateFeedServiceUnavailable) Error() string {
 	return fmt.Sprintf("[POST /feeds/2021-06-30/feeds][%d] createFeedServiceUnavailable  %+v", 503, o.Payload)
 }
+
+func (o *CreateFeedServiceUnavailable) String() string {
+	return fmt.Sprintf("[POST /feeds/2021-06-30/feeds][%d] createFeedServiceUnavailable  %+v", 503, o.Payload)
+}
+
 func (o *CreateFeedServiceUnavailable) GetPayload() *feeds_2021_06_30_models.ErrorList {
 	return o.Payload
 }

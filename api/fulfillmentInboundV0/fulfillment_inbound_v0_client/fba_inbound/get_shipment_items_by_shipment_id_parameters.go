@@ -52,10 +52,12 @@ func NewGetShipmentItemsByShipmentIDParamsWithHTTPClient(client *http.Client) *G
 	}
 }
 
-/* GetShipmentItemsByShipmentIDParams contains all the parameters to send to the API endpoint
-   for the get shipment items by shipment Id operation.
+/*
+GetShipmentItemsByShipmentIDParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the get shipment items by shipment Id operation.
+
+	Typically these are written to a http.Request.
 */
 type GetShipmentItemsByShipmentIDParams struct {
 

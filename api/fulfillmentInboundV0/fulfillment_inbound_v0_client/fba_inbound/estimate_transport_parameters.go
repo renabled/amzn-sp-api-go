@@ -52,10 +52,12 @@ func NewEstimateTransportParamsWithHTTPClient(client *http.Client) *EstimateTran
 	}
 }
 
-/* EstimateTransportParams contains all the parameters to send to the API endpoint
-   for the estimate transport operation.
+/*
+EstimateTransportParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the estimate transport operation.
+
+	Typically these are written to a http.Request.
 */
 type EstimateTransportParams struct {
 

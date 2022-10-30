@@ -54,10 +54,12 @@ func NewSubmitShipmentConfirmationsParamsWithHTTPClient(client *http.Client) *Su
 	}
 }
 
-/* SubmitShipmentConfirmationsParams contains all the parameters to send to the API endpoint
-   for the submit shipment confirmations operation.
+/*
+SubmitShipmentConfirmationsParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the submit shipment confirmations operation.
+
+	Typically these are written to a http.Request.
 */
 type SubmitShipmentConfirmationsParams struct {
 

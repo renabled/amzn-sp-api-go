@@ -36,7 +36,7 @@ type ClientService interface {
 }
 
 /*
-  GetItemEligibilityPreview This operation gets an eligibility preview for an item that you specify. You can specify the type of eligibility preview that you want (INBOUND or COMMINGLING). For INBOUND previews, you can specify the marketplace in which you want to determine the item's eligibility.
+	GetItemEligibilityPreview This operation gets an eligibility preview for an item that you specify. You can specify the type of eligibility preview that you want (INBOUND or COMMINGLING). For INBOUND previews, you can specify the marketplace in which you want to determine the item's eligibility.
 
 **Usage Plan:**
 

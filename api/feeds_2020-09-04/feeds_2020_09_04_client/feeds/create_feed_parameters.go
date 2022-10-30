@@ -54,10 +54,12 @@ func NewCreateFeedParamsWithHTTPClient(client *http.Client) *CreateFeedParams {
 	}
 }
 
-/* CreateFeedParams contains all the parameters to send to the API endpoint
-   for the create feed operation.
+/*
+CreateFeedParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the create feed operation.
+
+	Typically these are written to a http.Request.
 */
 type CreateFeedParams struct {
 

@@ -36,7 +36,7 @@ type ClientService interface {
 }
 
 /*
-  GetOrderMetrics Returns aggregated order metrics for given interval, broken down by granularity, for given buyer type.
+	GetOrderMetrics Returns aggregated order metrics for given interval, broken down by granularity, for given buyer type.
 
 **Usage Plan:**
 

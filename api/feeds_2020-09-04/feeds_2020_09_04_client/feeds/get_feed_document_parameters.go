@@ -52,10 +52,12 @@ func NewGetFeedDocumentParamsWithHTTPClient(client *http.Client) *GetFeedDocumen
 	}
 }
 
-/* GetFeedDocumentParams contains all the parameters to send to the API endpoint
-   for the get feed document operation.
+/*
+GetFeedDocumentParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the get feed document operation.
+
+	Typically these are written to a http.Request.
 */
 type GetFeedDocumentParams struct {
 

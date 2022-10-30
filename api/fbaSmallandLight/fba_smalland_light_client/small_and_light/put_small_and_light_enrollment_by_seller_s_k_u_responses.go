@@ -87,7 +87,8 @@ func NewPutSmallAndLightEnrollmentBySellerSKUOK() *PutSmallAndLightEnrollmentByS
 	return &PutSmallAndLightEnrollmentBySellerSKUOK{}
 }
 
-/* PutSmallAndLightEnrollmentBySellerSKUOK describes a response with status code 200, with default header values.
+/*
+PutSmallAndLightEnrollmentBySellerSKUOK describes a response with status code 200, with default header values.
 
 Success.
 */
@@ -104,9 +105,39 @@ type PutSmallAndLightEnrollmentBySellerSKUOK struct {
 	Payload *fba_smalland_light_models.SmallAndLightEnrollment
 }
 
+// IsSuccess returns true when this put small and light enrollment by seller s k u o k response has a 2xx status code
+func (o *PutSmallAndLightEnrollmentBySellerSKUOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this put small and light enrollment by seller s k u o k response has a 3xx status code
+func (o *PutSmallAndLightEnrollmentBySellerSKUOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this put small and light enrollment by seller s k u o k response has a 4xx status code
+func (o *PutSmallAndLightEnrollmentBySellerSKUOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this put small and light enrollment by seller s k u o k response has a 5xx status code
+func (o *PutSmallAndLightEnrollmentBySellerSKUOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this put small and light enrollment by seller s k u o k response a status code equal to that given
+func (o *PutSmallAndLightEnrollmentBySellerSKUOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *PutSmallAndLightEnrollmentBySellerSKUOK) Error() string {
 	return fmt.Sprintf("[PUT /fba/smallAndLight/v1/enrollments/{sellerSKU}][%d] putSmallAndLightEnrollmentBySellerSKUOK  %+v", 200, o.Payload)
 }
+
+func (o *PutSmallAndLightEnrollmentBySellerSKUOK) String() string {
+	return fmt.Sprintf("[PUT /fba/smallAndLight/v1/enrollments/{sellerSKU}][%d] putSmallAndLightEnrollmentBySellerSKUOK  %+v", 200, o.Payload)
+}
+
 func (o *PutSmallAndLightEnrollmentBySellerSKUOK) GetPayload() *fba_smalland_light_models.SmallAndLightEnrollment {
 	return o.Payload
 }
@@ -142,7 +173,8 @@ func NewPutSmallAndLightEnrollmentBySellerSKUBadRequest() *PutSmallAndLightEnrol
 	return &PutSmallAndLightEnrollmentBySellerSKUBadRequest{}
 }
 
-/* PutSmallAndLightEnrollmentBySellerSKUBadRequest describes a response with status code 400, with default header values.
+/*
+PutSmallAndLightEnrollmentBySellerSKUBadRequest describes a response with status code 400, with default header values.
 
 Request has missing or invalid parameters and cannot be parsed.
 */
@@ -159,9 +191,39 @@ type PutSmallAndLightEnrollmentBySellerSKUBadRequest struct {
 	Payload *fba_smalland_light_models.ErrorList
 }
 
+// IsSuccess returns true when this put small and light enrollment by seller s k u bad request response has a 2xx status code
+func (o *PutSmallAndLightEnrollmentBySellerSKUBadRequest) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this put small and light enrollment by seller s k u bad request response has a 3xx status code
+func (o *PutSmallAndLightEnrollmentBySellerSKUBadRequest) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this put small and light enrollment by seller s k u bad request response has a 4xx status code
+func (o *PutSmallAndLightEnrollmentBySellerSKUBadRequest) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this put small and light enrollment by seller s k u bad request response has a 5xx status code
+func (o *PutSmallAndLightEnrollmentBySellerSKUBadRequest) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this put small and light enrollment by seller s k u bad request response a status code equal to that given
+func (o *PutSmallAndLightEnrollmentBySellerSKUBadRequest) IsCode(code int) bool {
+	return code == 400
+}
+
 func (o *PutSmallAndLightEnrollmentBySellerSKUBadRequest) Error() string {
 	return fmt.Sprintf("[PUT /fba/smallAndLight/v1/enrollments/{sellerSKU}][%d] putSmallAndLightEnrollmentBySellerSKUBadRequest  %+v", 400, o.Payload)
 }
+
+func (o *PutSmallAndLightEnrollmentBySellerSKUBadRequest) String() string {
+	return fmt.Sprintf("[PUT /fba/smallAndLight/v1/enrollments/{sellerSKU}][%d] putSmallAndLightEnrollmentBySellerSKUBadRequest  %+v", 400, o.Payload)
+}
+
 func (o *PutSmallAndLightEnrollmentBySellerSKUBadRequest) GetPayload() *fba_smalland_light_models.ErrorList {
 	return o.Payload
 }
@@ -197,7 +259,8 @@ func NewPutSmallAndLightEnrollmentBySellerSKUForbidden() *PutSmallAndLightEnroll
 	return &PutSmallAndLightEnrollmentBySellerSKUForbidden{}
 }
 
-/* PutSmallAndLightEnrollmentBySellerSKUForbidden describes a response with status code 403, with default header values.
+/*
+PutSmallAndLightEnrollmentBySellerSKUForbidden describes a response with status code 403, with default header values.
 
 Indicates that access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.
 */
@@ -210,9 +273,39 @@ type PutSmallAndLightEnrollmentBySellerSKUForbidden struct {
 	Payload *fba_smalland_light_models.ErrorList
 }
 
+// IsSuccess returns true when this put small and light enrollment by seller s k u forbidden response has a 2xx status code
+func (o *PutSmallAndLightEnrollmentBySellerSKUForbidden) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this put small and light enrollment by seller s k u forbidden response has a 3xx status code
+func (o *PutSmallAndLightEnrollmentBySellerSKUForbidden) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this put small and light enrollment by seller s k u forbidden response has a 4xx status code
+func (o *PutSmallAndLightEnrollmentBySellerSKUForbidden) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this put small and light enrollment by seller s k u forbidden response has a 5xx status code
+func (o *PutSmallAndLightEnrollmentBySellerSKUForbidden) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this put small and light enrollment by seller s k u forbidden response a status code equal to that given
+func (o *PutSmallAndLightEnrollmentBySellerSKUForbidden) IsCode(code int) bool {
+	return code == 403
+}
+
 func (o *PutSmallAndLightEnrollmentBySellerSKUForbidden) Error() string {
 	return fmt.Sprintf("[PUT /fba/smallAndLight/v1/enrollments/{sellerSKU}][%d] putSmallAndLightEnrollmentBySellerSKUForbidden  %+v", 403, o.Payload)
 }
+
+func (o *PutSmallAndLightEnrollmentBySellerSKUForbidden) String() string {
+	return fmt.Sprintf("[PUT /fba/smallAndLight/v1/enrollments/{sellerSKU}][%d] putSmallAndLightEnrollmentBySellerSKUForbidden  %+v", 403, o.Payload)
+}
+
 func (o *PutSmallAndLightEnrollmentBySellerSKUForbidden) GetPayload() *fba_smalland_light_models.ErrorList {
 	return o.Payload
 }
@@ -241,7 +334,8 @@ func NewPutSmallAndLightEnrollmentBySellerSKUNotFound() *PutSmallAndLightEnrollm
 	return &PutSmallAndLightEnrollmentBySellerSKUNotFound{}
 }
 
-/* PutSmallAndLightEnrollmentBySellerSKUNotFound describes a response with status code 404, with default header values.
+/*
+PutSmallAndLightEnrollmentBySellerSKUNotFound describes a response with status code 404, with default header values.
 
 The resource specified does not exist.
 */
@@ -258,9 +352,39 @@ type PutSmallAndLightEnrollmentBySellerSKUNotFound struct {
 	Payload *fba_smalland_light_models.ErrorList
 }
 
+// IsSuccess returns true when this put small and light enrollment by seller s k u not found response has a 2xx status code
+func (o *PutSmallAndLightEnrollmentBySellerSKUNotFound) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this put small and light enrollment by seller s k u not found response has a 3xx status code
+func (o *PutSmallAndLightEnrollmentBySellerSKUNotFound) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this put small and light enrollment by seller s k u not found response has a 4xx status code
+func (o *PutSmallAndLightEnrollmentBySellerSKUNotFound) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this put small and light enrollment by seller s k u not found response has a 5xx status code
+func (o *PutSmallAndLightEnrollmentBySellerSKUNotFound) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this put small and light enrollment by seller s k u not found response a status code equal to that given
+func (o *PutSmallAndLightEnrollmentBySellerSKUNotFound) IsCode(code int) bool {
+	return code == 404
+}
+
 func (o *PutSmallAndLightEnrollmentBySellerSKUNotFound) Error() string {
 	return fmt.Sprintf("[PUT /fba/smallAndLight/v1/enrollments/{sellerSKU}][%d] putSmallAndLightEnrollmentBySellerSKUNotFound  %+v", 404, o.Payload)
 }
+
+func (o *PutSmallAndLightEnrollmentBySellerSKUNotFound) String() string {
+	return fmt.Sprintf("[PUT /fba/smallAndLight/v1/enrollments/{sellerSKU}][%d] putSmallAndLightEnrollmentBySellerSKUNotFound  %+v", 404, o.Payload)
+}
+
 func (o *PutSmallAndLightEnrollmentBySellerSKUNotFound) GetPayload() *fba_smalland_light_models.ErrorList {
 	return o.Payload
 }
@@ -296,7 +420,8 @@ func NewPutSmallAndLightEnrollmentBySellerSKURequestEntityTooLarge() *PutSmallAn
 	return &PutSmallAndLightEnrollmentBySellerSKURequestEntityTooLarge{}
 }
 
-/* PutSmallAndLightEnrollmentBySellerSKURequestEntityTooLarge describes a response with status code 413, with default header values.
+/*
+PutSmallAndLightEnrollmentBySellerSKURequestEntityTooLarge describes a response with status code 413, with default header values.
 
 The request size exceeded the maximum accepted size.
 */
@@ -314,9 +439,39 @@ type PutSmallAndLightEnrollmentBySellerSKURequestEntityTooLarge struct {
 	Payload *fba_smalland_light_models.ErrorList
 }
 
+// IsSuccess returns true when this put small and light enrollment by seller s k u request entity too large response has a 2xx status code
+func (o *PutSmallAndLightEnrollmentBySellerSKURequestEntityTooLarge) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this put small and light enrollment by seller s k u request entity too large response has a 3xx status code
+func (o *PutSmallAndLightEnrollmentBySellerSKURequestEntityTooLarge) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this put small and light enrollment by seller s k u request entity too large response has a 4xx status code
+func (o *PutSmallAndLightEnrollmentBySellerSKURequestEntityTooLarge) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this put small and light enrollment by seller s k u request entity too large response has a 5xx status code
+func (o *PutSmallAndLightEnrollmentBySellerSKURequestEntityTooLarge) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this put small and light enrollment by seller s k u request entity too large response a status code equal to that given
+func (o *PutSmallAndLightEnrollmentBySellerSKURequestEntityTooLarge) IsCode(code int) bool {
+	return code == 413
+}
+
 func (o *PutSmallAndLightEnrollmentBySellerSKURequestEntityTooLarge) Error() string {
 	return fmt.Sprintf("[PUT /fba/smallAndLight/v1/enrollments/{sellerSKU}][%d] putSmallAndLightEnrollmentBySellerSKURequestEntityTooLarge  %+v", 413, o.Payload)
 }
+
+func (o *PutSmallAndLightEnrollmentBySellerSKURequestEntityTooLarge) String() string {
+	return fmt.Sprintf("[PUT /fba/smallAndLight/v1/enrollments/{sellerSKU}][%d] putSmallAndLightEnrollmentBySellerSKURequestEntityTooLarge  %+v", 413, o.Payload)
+}
+
 func (o *PutSmallAndLightEnrollmentBySellerSKURequestEntityTooLarge) GetPayload() *fba_smalland_light_models.ErrorList {
 	return o.Payload
 }
@@ -352,7 +507,8 @@ func NewPutSmallAndLightEnrollmentBySellerSKUUnsupportedMediaType() *PutSmallAnd
 	return &PutSmallAndLightEnrollmentBySellerSKUUnsupportedMediaType{}
 }
 
-/* PutSmallAndLightEnrollmentBySellerSKUUnsupportedMediaType describes a response with status code 415, with default header values.
+/*
+PutSmallAndLightEnrollmentBySellerSKUUnsupportedMediaType describes a response with status code 415, with default header values.
 
 The request payload is in an unsupported format.
 */
@@ -370,9 +526,39 @@ type PutSmallAndLightEnrollmentBySellerSKUUnsupportedMediaType struct {
 	Payload *fba_smalland_light_models.ErrorList
 }
 
+// IsSuccess returns true when this put small and light enrollment by seller s k u unsupported media type response has a 2xx status code
+func (o *PutSmallAndLightEnrollmentBySellerSKUUnsupportedMediaType) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this put small and light enrollment by seller s k u unsupported media type response has a 3xx status code
+func (o *PutSmallAndLightEnrollmentBySellerSKUUnsupportedMediaType) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this put small and light enrollment by seller s k u unsupported media type response has a 4xx status code
+func (o *PutSmallAndLightEnrollmentBySellerSKUUnsupportedMediaType) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this put small and light enrollment by seller s k u unsupported media type response has a 5xx status code
+func (o *PutSmallAndLightEnrollmentBySellerSKUUnsupportedMediaType) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this put small and light enrollment by seller s k u unsupported media type response a status code equal to that given
+func (o *PutSmallAndLightEnrollmentBySellerSKUUnsupportedMediaType) IsCode(code int) bool {
+	return code == 415
+}
+
 func (o *PutSmallAndLightEnrollmentBySellerSKUUnsupportedMediaType) Error() string {
 	return fmt.Sprintf("[PUT /fba/smallAndLight/v1/enrollments/{sellerSKU}][%d] putSmallAndLightEnrollmentBySellerSKUUnsupportedMediaType  %+v", 415, o.Payload)
 }
+
+func (o *PutSmallAndLightEnrollmentBySellerSKUUnsupportedMediaType) String() string {
+	return fmt.Sprintf("[PUT /fba/smallAndLight/v1/enrollments/{sellerSKU}][%d] putSmallAndLightEnrollmentBySellerSKUUnsupportedMediaType  %+v", 415, o.Payload)
+}
+
 func (o *PutSmallAndLightEnrollmentBySellerSKUUnsupportedMediaType) GetPayload() *fba_smalland_light_models.ErrorList {
 	return o.Payload
 }
@@ -408,7 +594,8 @@ func NewPutSmallAndLightEnrollmentBySellerSKUTooManyRequests() *PutSmallAndLight
 	return &PutSmallAndLightEnrollmentBySellerSKUTooManyRequests{}
 }
 
-/* PutSmallAndLightEnrollmentBySellerSKUTooManyRequests describes a response with status code 429, with default header values.
+/*
+PutSmallAndLightEnrollmentBySellerSKUTooManyRequests describes a response with status code 429, with default header values.
 
 The frequency of requests was greater than allowed.
 */
@@ -426,9 +613,39 @@ type PutSmallAndLightEnrollmentBySellerSKUTooManyRequests struct {
 	Payload *fba_smalland_light_models.ErrorList
 }
 
+// IsSuccess returns true when this put small and light enrollment by seller s k u too many requests response has a 2xx status code
+func (o *PutSmallAndLightEnrollmentBySellerSKUTooManyRequests) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this put small and light enrollment by seller s k u too many requests response has a 3xx status code
+func (o *PutSmallAndLightEnrollmentBySellerSKUTooManyRequests) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this put small and light enrollment by seller s k u too many requests response has a 4xx status code
+func (o *PutSmallAndLightEnrollmentBySellerSKUTooManyRequests) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this put small and light enrollment by seller s k u too many requests response has a 5xx status code
+func (o *PutSmallAndLightEnrollmentBySellerSKUTooManyRequests) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this put small and light enrollment by seller s k u too many requests response a status code equal to that given
+func (o *PutSmallAndLightEnrollmentBySellerSKUTooManyRequests) IsCode(code int) bool {
+	return code == 429
+}
+
 func (o *PutSmallAndLightEnrollmentBySellerSKUTooManyRequests) Error() string {
 	return fmt.Sprintf("[PUT /fba/smallAndLight/v1/enrollments/{sellerSKU}][%d] putSmallAndLightEnrollmentBySellerSKUTooManyRequests  %+v", 429, o.Payload)
 }
+
+func (o *PutSmallAndLightEnrollmentBySellerSKUTooManyRequests) String() string {
+	return fmt.Sprintf("[PUT /fba/smallAndLight/v1/enrollments/{sellerSKU}][%d] putSmallAndLightEnrollmentBySellerSKUTooManyRequests  %+v", 429, o.Payload)
+}
+
 func (o *PutSmallAndLightEnrollmentBySellerSKUTooManyRequests) GetPayload() *fba_smalland_light_models.ErrorList {
 	return o.Payload
 }
@@ -464,7 +681,8 @@ func NewPutSmallAndLightEnrollmentBySellerSKUInternalServerError() *PutSmallAndL
 	return &PutSmallAndLightEnrollmentBySellerSKUInternalServerError{}
 }
 
-/* PutSmallAndLightEnrollmentBySellerSKUInternalServerError describes a response with status code 500, with default header values.
+/*
+PutSmallAndLightEnrollmentBySellerSKUInternalServerError describes a response with status code 500, with default header values.
 
 An unexpected condition occurred that prevented the server from fulfilling the request.
 */
@@ -482,9 +700,39 @@ type PutSmallAndLightEnrollmentBySellerSKUInternalServerError struct {
 	Payload *fba_smalland_light_models.ErrorList
 }
 
+// IsSuccess returns true when this put small and light enrollment by seller s k u internal server error response has a 2xx status code
+func (o *PutSmallAndLightEnrollmentBySellerSKUInternalServerError) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this put small and light enrollment by seller s k u internal server error response has a 3xx status code
+func (o *PutSmallAndLightEnrollmentBySellerSKUInternalServerError) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this put small and light enrollment by seller s k u internal server error response has a 4xx status code
+func (o *PutSmallAndLightEnrollmentBySellerSKUInternalServerError) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this put small and light enrollment by seller s k u internal server error response has a 5xx status code
+func (o *PutSmallAndLightEnrollmentBySellerSKUInternalServerError) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this put small and light enrollment by seller s k u internal server error response a status code equal to that given
+func (o *PutSmallAndLightEnrollmentBySellerSKUInternalServerError) IsCode(code int) bool {
+	return code == 500
+}
+
 func (o *PutSmallAndLightEnrollmentBySellerSKUInternalServerError) Error() string {
 	return fmt.Sprintf("[PUT /fba/smallAndLight/v1/enrollments/{sellerSKU}][%d] putSmallAndLightEnrollmentBySellerSKUInternalServerError  %+v", 500, o.Payload)
 }
+
+func (o *PutSmallAndLightEnrollmentBySellerSKUInternalServerError) String() string {
+	return fmt.Sprintf("[PUT /fba/smallAndLight/v1/enrollments/{sellerSKU}][%d] putSmallAndLightEnrollmentBySellerSKUInternalServerError  %+v", 500, o.Payload)
+}
+
 func (o *PutSmallAndLightEnrollmentBySellerSKUInternalServerError) GetPayload() *fba_smalland_light_models.ErrorList {
 	return o.Payload
 }
@@ -520,7 +768,8 @@ func NewPutSmallAndLightEnrollmentBySellerSKUServiceUnavailable() *PutSmallAndLi
 	return &PutSmallAndLightEnrollmentBySellerSKUServiceUnavailable{}
 }
 
-/* PutSmallAndLightEnrollmentBySellerSKUServiceUnavailable describes a response with status code 503, with default header values.
+/*
+PutSmallAndLightEnrollmentBySellerSKUServiceUnavailable describes a response with status code 503, with default header values.
 
 Temporary overloading or maintenance of the server.
 */
@@ -538,9 +787,39 @@ type PutSmallAndLightEnrollmentBySellerSKUServiceUnavailable struct {
 	Payload *fba_smalland_light_models.ErrorList
 }
 
+// IsSuccess returns true when this put small and light enrollment by seller s k u service unavailable response has a 2xx status code
+func (o *PutSmallAndLightEnrollmentBySellerSKUServiceUnavailable) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this put small and light enrollment by seller s k u service unavailable response has a 3xx status code
+func (o *PutSmallAndLightEnrollmentBySellerSKUServiceUnavailable) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this put small and light enrollment by seller s k u service unavailable response has a 4xx status code
+func (o *PutSmallAndLightEnrollmentBySellerSKUServiceUnavailable) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this put small and light enrollment by seller s k u service unavailable response has a 5xx status code
+func (o *PutSmallAndLightEnrollmentBySellerSKUServiceUnavailable) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this put small and light enrollment by seller s k u service unavailable response a status code equal to that given
+func (o *PutSmallAndLightEnrollmentBySellerSKUServiceUnavailable) IsCode(code int) bool {
+	return code == 503
+}
+
 func (o *PutSmallAndLightEnrollmentBySellerSKUServiceUnavailable) Error() string {
 	return fmt.Sprintf("[PUT /fba/smallAndLight/v1/enrollments/{sellerSKU}][%d] putSmallAndLightEnrollmentBySellerSKUServiceUnavailable  %+v", 503, o.Payload)
 }
+
+func (o *PutSmallAndLightEnrollmentBySellerSKUServiceUnavailable) String() string {
+	return fmt.Sprintf("[PUT /fba/smallAndLight/v1/enrollments/{sellerSKU}][%d] putSmallAndLightEnrollmentBySellerSKUServiceUnavailable  %+v", 503, o.Payload)
+}
+
 func (o *PutSmallAndLightEnrollmentBySellerSKUServiceUnavailable) GetPayload() *fba_smalland_light_models.ErrorList {
 	return o.Payload
 }

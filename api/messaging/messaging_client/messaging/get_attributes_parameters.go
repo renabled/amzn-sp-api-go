@@ -53,10 +53,12 @@ func NewGetAttributesParamsWithHTTPClient(client *http.Client) *GetAttributesPar
 	}
 }
 
-/* GetAttributesParams contains all the parameters to send to the API endpoint
-   for the get attributes operation.
+/*
+GetAttributesParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the get attributes operation.
+
+	Typically these are written to a http.Request.
 */
 type GetAttributesParams struct {
 

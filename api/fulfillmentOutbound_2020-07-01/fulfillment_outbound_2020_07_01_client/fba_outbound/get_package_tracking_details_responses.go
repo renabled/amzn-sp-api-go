@@ -81,7 +81,8 @@ func NewGetPackageTrackingDetailsOK() *GetPackageTrackingDetailsOK {
 	return &GetPackageTrackingDetailsOK{}
 }
 
-/* GetPackageTrackingDetailsOK describes a response with status code 200, with default header values.
+/*
+GetPackageTrackingDetailsOK describes a response with status code 200, with default header values.
 
 Success.
 */
@@ -98,9 +99,39 @@ type GetPackageTrackingDetailsOK struct {
 	Payload *fulfillment_outbound_2020_07_01_models.GetPackageTrackingDetailsResponse
 }
 
+// IsSuccess returns true when this get package tracking details o k response has a 2xx status code
+func (o *GetPackageTrackingDetailsOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this get package tracking details o k response has a 3xx status code
+func (o *GetPackageTrackingDetailsOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get package tracking details o k response has a 4xx status code
+func (o *GetPackageTrackingDetailsOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get package tracking details o k response has a 5xx status code
+func (o *GetPackageTrackingDetailsOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get package tracking details o k response a status code equal to that given
+func (o *GetPackageTrackingDetailsOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *GetPackageTrackingDetailsOK) Error() string {
 	return fmt.Sprintf("[GET /fba/outbound/2020-07-01/tracking][%d] getPackageTrackingDetailsOK  %+v", 200, o.Payload)
 }
+
+func (o *GetPackageTrackingDetailsOK) String() string {
+	return fmt.Sprintf("[GET /fba/outbound/2020-07-01/tracking][%d] getPackageTrackingDetailsOK  %+v", 200, o.Payload)
+}
+
 func (o *GetPackageTrackingDetailsOK) GetPayload() *fulfillment_outbound_2020_07_01_models.GetPackageTrackingDetailsResponse {
 	return o.Payload
 }
@@ -136,7 +167,8 @@ func NewGetPackageTrackingDetailsBadRequest() *GetPackageTrackingDetailsBadReque
 	return &GetPackageTrackingDetailsBadRequest{}
 }
 
-/* GetPackageTrackingDetailsBadRequest describes a response with status code 400, with default header values.
+/*
+GetPackageTrackingDetailsBadRequest describes a response with status code 400, with default header values.
 
 Request has missing or invalid parameters and cannot be parsed.
 */
@@ -153,9 +185,39 @@ type GetPackageTrackingDetailsBadRequest struct {
 	Payload *fulfillment_outbound_2020_07_01_models.GetPackageTrackingDetailsResponse
 }
 
+// IsSuccess returns true when this get package tracking details bad request response has a 2xx status code
+func (o *GetPackageTrackingDetailsBadRequest) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get package tracking details bad request response has a 3xx status code
+func (o *GetPackageTrackingDetailsBadRequest) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get package tracking details bad request response has a 4xx status code
+func (o *GetPackageTrackingDetailsBadRequest) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get package tracking details bad request response has a 5xx status code
+func (o *GetPackageTrackingDetailsBadRequest) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get package tracking details bad request response a status code equal to that given
+func (o *GetPackageTrackingDetailsBadRequest) IsCode(code int) bool {
+	return code == 400
+}
+
 func (o *GetPackageTrackingDetailsBadRequest) Error() string {
 	return fmt.Sprintf("[GET /fba/outbound/2020-07-01/tracking][%d] getPackageTrackingDetailsBadRequest  %+v", 400, o.Payload)
 }
+
+func (o *GetPackageTrackingDetailsBadRequest) String() string {
+	return fmt.Sprintf("[GET /fba/outbound/2020-07-01/tracking][%d] getPackageTrackingDetailsBadRequest  %+v", 400, o.Payload)
+}
+
 func (o *GetPackageTrackingDetailsBadRequest) GetPayload() *fulfillment_outbound_2020_07_01_models.GetPackageTrackingDetailsResponse {
 	return o.Payload
 }
@@ -191,7 +253,8 @@ func NewGetPackageTrackingDetailsUnauthorized() *GetPackageTrackingDetailsUnauth
 	return &GetPackageTrackingDetailsUnauthorized{}
 }
 
-/* GetPackageTrackingDetailsUnauthorized describes a response with status code 401, with default header values.
+/*
+GetPackageTrackingDetailsUnauthorized describes a response with status code 401, with default header values.
 
 The request's Authorization header is not formatted correctly or does not contain a valid token.
 */
@@ -209,9 +272,39 @@ type GetPackageTrackingDetailsUnauthorized struct {
 	Payload *fulfillment_outbound_2020_07_01_models.GetPackageTrackingDetailsResponse
 }
 
+// IsSuccess returns true when this get package tracking details unauthorized response has a 2xx status code
+func (o *GetPackageTrackingDetailsUnauthorized) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get package tracking details unauthorized response has a 3xx status code
+func (o *GetPackageTrackingDetailsUnauthorized) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get package tracking details unauthorized response has a 4xx status code
+func (o *GetPackageTrackingDetailsUnauthorized) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get package tracking details unauthorized response has a 5xx status code
+func (o *GetPackageTrackingDetailsUnauthorized) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get package tracking details unauthorized response a status code equal to that given
+func (o *GetPackageTrackingDetailsUnauthorized) IsCode(code int) bool {
+	return code == 401
+}
+
 func (o *GetPackageTrackingDetailsUnauthorized) Error() string {
 	return fmt.Sprintf("[GET /fba/outbound/2020-07-01/tracking][%d] getPackageTrackingDetailsUnauthorized  %+v", 401, o.Payload)
 }
+
+func (o *GetPackageTrackingDetailsUnauthorized) String() string {
+	return fmt.Sprintf("[GET /fba/outbound/2020-07-01/tracking][%d] getPackageTrackingDetailsUnauthorized  %+v", 401, o.Payload)
+}
+
 func (o *GetPackageTrackingDetailsUnauthorized) GetPayload() *fulfillment_outbound_2020_07_01_models.GetPackageTrackingDetailsResponse {
 	return o.Payload
 }
@@ -247,7 +340,8 @@ func NewGetPackageTrackingDetailsForbidden() *GetPackageTrackingDetailsForbidden
 	return &GetPackageTrackingDetailsForbidden{}
 }
 
-/* GetPackageTrackingDetailsForbidden describes a response with status code 403, with default header values.
+/*
+GetPackageTrackingDetailsForbidden describes a response with status code 403, with default header values.
 
 Indicates that access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.
 */
@@ -260,9 +354,39 @@ type GetPackageTrackingDetailsForbidden struct {
 	Payload *fulfillment_outbound_2020_07_01_models.GetPackageTrackingDetailsResponse
 }
 
+// IsSuccess returns true when this get package tracking details forbidden response has a 2xx status code
+func (o *GetPackageTrackingDetailsForbidden) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get package tracking details forbidden response has a 3xx status code
+func (o *GetPackageTrackingDetailsForbidden) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get package tracking details forbidden response has a 4xx status code
+func (o *GetPackageTrackingDetailsForbidden) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get package tracking details forbidden response has a 5xx status code
+func (o *GetPackageTrackingDetailsForbidden) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get package tracking details forbidden response a status code equal to that given
+func (o *GetPackageTrackingDetailsForbidden) IsCode(code int) bool {
+	return code == 403
+}
+
 func (o *GetPackageTrackingDetailsForbidden) Error() string {
 	return fmt.Sprintf("[GET /fba/outbound/2020-07-01/tracking][%d] getPackageTrackingDetailsForbidden  %+v", 403, o.Payload)
 }
+
+func (o *GetPackageTrackingDetailsForbidden) String() string {
+	return fmt.Sprintf("[GET /fba/outbound/2020-07-01/tracking][%d] getPackageTrackingDetailsForbidden  %+v", 403, o.Payload)
+}
+
 func (o *GetPackageTrackingDetailsForbidden) GetPayload() *fulfillment_outbound_2020_07_01_models.GetPackageTrackingDetailsResponse {
 	return o.Payload
 }
@@ -291,7 +415,8 @@ func NewGetPackageTrackingDetailsNotFound() *GetPackageTrackingDetailsNotFound {
 	return &GetPackageTrackingDetailsNotFound{}
 }
 
-/* GetPackageTrackingDetailsNotFound describes a response with status code 404, with default header values.
+/*
+GetPackageTrackingDetailsNotFound describes a response with status code 404, with default header values.
 
 The specified resource does not exist.
 */
@@ -308,9 +433,39 @@ type GetPackageTrackingDetailsNotFound struct {
 	Payload *fulfillment_outbound_2020_07_01_models.GetPackageTrackingDetailsResponse
 }
 
+// IsSuccess returns true when this get package tracking details not found response has a 2xx status code
+func (o *GetPackageTrackingDetailsNotFound) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get package tracking details not found response has a 3xx status code
+func (o *GetPackageTrackingDetailsNotFound) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get package tracking details not found response has a 4xx status code
+func (o *GetPackageTrackingDetailsNotFound) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get package tracking details not found response has a 5xx status code
+func (o *GetPackageTrackingDetailsNotFound) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get package tracking details not found response a status code equal to that given
+func (o *GetPackageTrackingDetailsNotFound) IsCode(code int) bool {
+	return code == 404
+}
+
 func (o *GetPackageTrackingDetailsNotFound) Error() string {
 	return fmt.Sprintf("[GET /fba/outbound/2020-07-01/tracking][%d] getPackageTrackingDetailsNotFound  %+v", 404, o.Payload)
 }
+
+func (o *GetPackageTrackingDetailsNotFound) String() string {
+	return fmt.Sprintf("[GET /fba/outbound/2020-07-01/tracking][%d] getPackageTrackingDetailsNotFound  %+v", 404, o.Payload)
+}
+
 func (o *GetPackageTrackingDetailsNotFound) GetPayload() *fulfillment_outbound_2020_07_01_models.GetPackageTrackingDetailsResponse {
 	return o.Payload
 }
@@ -346,7 +501,8 @@ func NewGetPackageTrackingDetailsTooManyRequests() *GetPackageTrackingDetailsToo
 	return &GetPackageTrackingDetailsTooManyRequests{}
 }
 
-/* GetPackageTrackingDetailsTooManyRequests describes a response with status code 429, with default header values.
+/*
+GetPackageTrackingDetailsTooManyRequests describes a response with status code 429, with default header values.
 
 The frequency of requests was greater than allowed.
 */
@@ -364,9 +520,39 @@ type GetPackageTrackingDetailsTooManyRequests struct {
 	Payload *fulfillment_outbound_2020_07_01_models.GetPackageTrackingDetailsResponse
 }
 
+// IsSuccess returns true when this get package tracking details too many requests response has a 2xx status code
+func (o *GetPackageTrackingDetailsTooManyRequests) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get package tracking details too many requests response has a 3xx status code
+func (o *GetPackageTrackingDetailsTooManyRequests) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get package tracking details too many requests response has a 4xx status code
+func (o *GetPackageTrackingDetailsTooManyRequests) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get package tracking details too many requests response has a 5xx status code
+func (o *GetPackageTrackingDetailsTooManyRequests) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get package tracking details too many requests response a status code equal to that given
+func (o *GetPackageTrackingDetailsTooManyRequests) IsCode(code int) bool {
+	return code == 429
+}
+
 func (o *GetPackageTrackingDetailsTooManyRequests) Error() string {
 	return fmt.Sprintf("[GET /fba/outbound/2020-07-01/tracking][%d] getPackageTrackingDetailsTooManyRequests  %+v", 429, o.Payload)
 }
+
+func (o *GetPackageTrackingDetailsTooManyRequests) String() string {
+	return fmt.Sprintf("[GET /fba/outbound/2020-07-01/tracking][%d] getPackageTrackingDetailsTooManyRequests  %+v", 429, o.Payload)
+}
+
 func (o *GetPackageTrackingDetailsTooManyRequests) GetPayload() *fulfillment_outbound_2020_07_01_models.GetPackageTrackingDetailsResponse {
 	return o.Payload
 }
@@ -402,7 +588,8 @@ func NewGetPackageTrackingDetailsInternalServerError() *GetPackageTrackingDetail
 	return &GetPackageTrackingDetailsInternalServerError{}
 }
 
-/* GetPackageTrackingDetailsInternalServerError describes a response with status code 500, with default header values.
+/*
+GetPackageTrackingDetailsInternalServerError describes a response with status code 500, with default header values.
 
 An unexpected condition occurred that prevented the server from fulfilling the request.
 */
@@ -420,9 +607,39 @@ type GetPackageTrackingDetailsInternalServerError struct {
 	Payload *fulfillment_outbound_2020_07_01_models.GetPackageTrackingDetailsResponse
 }
 
+// IsSuccess returns true when this get package tracking details internal server error response has a 2xx status code
+func (o *GetPackageTrackingDetailsInternalServerError) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get package tracking details internal server error response has a 3xx status code
+func (o *GetPackageTrackingDetailsInternalServerError) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get package tracking details internal server error response has a 4xx status code
+func (o *GetPackageTrackingDetailsInternalServerError) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get package tracking details internal server error response has a 5xx status code
+func (o *GetPackageTrackingDetailsInternalServerError) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this get package tracking details internal server error response a status code equal to that given
+func (o *GetPackageTrackingDetailsInternalServerError) IsCode(code int) bool {
+	return code == 500
+}
+
 func (o *GetPackageTrackingDetailsInternalServerError) Error() string {
 	return fmt.Sprintf("[GET /fba/outbound/2020-07-01/tracking][%d] getPackageTrackingDetailsInternalServerError  %+v", 500, o.Payload)
 }
+
+func (o *GetPackageTrackingDetailsInternalServerError) String() string {
+	return fmt.Sprintf("[GET /fba/outbound/2020-07-01/tracking][%d] getPackageTrackingDetailsInternalServerError  %+v", 500, o.Payload)
+}
+
 func (o *GetPackageTrackingDetailsInternalServerError) GetPayload() *fulfillment_outbound_2020_07_01_models.GetPackageTrackingDetailsResponse {
 	return o.Payload
 }
@@ -458,7 +675,8 @@ func NewGetPackageTrackingDetailsServiceUnavailable() *GetPackageTrackingDetails
 	return &GetPackageTrackingDetailsServiceUnavailable{}
 }
 
-/* GetPackageTrackingDetailsServiceUnavailable describes a response with status code 503, with default header values.
+/*
+GetPackageTrackingDetailsServiceUnavailable describes a response with status code 503, with default header values.
 
 Temporary overloading or maintenance of the server.
 */
@@ -476,9 +694,39 @@ type GetPackageTrackingDetailsServiceUnavailable struct {
 	Payload *fulfillment_outbound_2020_07_01_models.GetPackageTrackingDetailsResponse
 }
 
+// IsSuccess returns true when this get package tracking details service unavailable response has a 2xx status code
+func (o *GetPackageTrackingDetailsServiceUnavailable) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get package tracking details service unavailable response has a 3xx status code
+func (o *GetPackageTrackingDetailsServiceUnavailable) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get package tracking details service unavailable response has a 4xx status code
+func (o *GetPackageTrackingDetailsServiceUnavailable) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get package tracking details service unavailable response has a 5xx status code
+func (o *GetPackageTrackingDetailsServiceUnavailable) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this get package tracking details service unavailable response a status code equal to that given
+func (o *GetPackageTrackingDetailsServiceUnavailable) IsCode(code int) bool {
+	return code == 503
+}
+
 func (o *GetPackageTrackingDetailsServiceUnavailable) Error() string {
 	return fmt.Sprintf("[GET /fba/outbound/2020-07-01/tracking][%d] getPackageTrackingDetailsServiceUnavailable  %+v", 503, o.Payload)
 }
+
+func (o *GetPackageTrackingDetailsServiceUnavailable) String() string {
+	return fmt.Sprintf("[GET /fba/outbound/2020-07-01/tracking][%d] getPackageTrackingDetailsServiceUnavailable  %+v", 503, o.Payload)
+}
+
 func (o *GetPackageTrackingDetailsServiceUnavailable) GetPayload() *fulfillment_outbound_2020_07_01_models.GetPackageTrackingDetailsResponse {
 	return o.Payload
 }

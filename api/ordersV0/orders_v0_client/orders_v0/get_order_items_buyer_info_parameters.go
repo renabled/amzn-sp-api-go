@@ -52,10 +52,12 @@ func NewGetOrderItemsBuyerInfoParamsWithHTTPClient(client *http.Client) *GetOrde
 	}
 }
 
-/* GetOrderItemsBuyerInfoParams contains all the parameters to send to the API endpoint
-   for the get order items buyer info operation.
+/*
+GetOrderItemsBuyerInfoParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the get order items buyer info operation.
+
+	Typically these are written to a http.Request.
 */
 type GetOrderItemsBuyerInfoParams struct {
 

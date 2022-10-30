@@ -53,10 +53,12 @@ func NewGetAppointmentSlotsParamsWithHTTPClient(client *http.Client) *GetAppoint
 	}
 }
 
-/* GetAppointmentSlotsParams contains all the parameters to send to the API endpoint
-   for the get appointment slots operation.
+/*
+GetAppointmentSlotsParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the get appointment slots operation.
+
+	Typically these are written to a http.Request.
 */
 type GetAppointmentSlotsParams struct {
 

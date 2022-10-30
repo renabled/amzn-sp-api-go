@@ -81,7 +81,8 @@ func NewConfirmTransportOK() *ConfirmTransportOK {
 	return &ConfirmTransportOK{}
 }
 
-/* ConfirmTransportOK describes a response with status code 200, with default header values.
+/*
+ConfirmTransportOK describes a response with status code 200, with default header values.
 
 Success.
 */
@@ -98,9 +99,39 @@ type ConfirmTransportOK struct {
 	Payload *fulfillment_inbound_v0_models.ConfirmTransportResponse
 }
 
+// IsSuccess returns true when this confirm transport o k response has a 2xx status code
+func (o *ConfirmTransportOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this confirm transport o k response has a 3xx status code
+func (o *ConfirmTransportOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this confirm transport o k response has a 4xx status code
+func (o *ConfirmTransportOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this confirm transport o k response has a 5xx status code
+func (o *ConfirmTransportOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this confirm transport o k response a status code equal to that given
+func (o *ConfirmTransportOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *ConfirmTransportOK) Error() string {
 	return fmt.Sprintf("[POST /fba/inbound/v0/shipments/{shipmentId}/transport/confirm][%d] confirmTransportOK  %+v", 200, o.Payload)
 }
+
+func (o *ConfirmTransportOK) String() string {
+	return fmt.Sprintf("[POST /fba/inbound/v0/shipments/{shipmentId}/transport/confirm][%d] confirmTransportOK  %+v", 200, o.Payload)
+}
+
 func (o *ConfirmTransportOK) GetPayload() *fulfillment_inbound_v0_models.ConfirmTransportResponse {
 	return o.Payload
 }
@@ -136,7 +167,8 @@ func NewConfirmTransportBadRequest() *ConfirmTransportBadRequest {
 	return &ConfirmTransportBadRequest{}
 }
 
-/* ConfirmTransportBadRequest describes a response with status code 400, with default header values.
+/*
+ConfirmTransportBadRequest describes a response with status code 400, with default header values.
 
 Request has missing or invalid parameters and cannot be parsed.
 */
@@ -153,9 +185,39 @@ type ConfirmTransportBadRequest struct {
 	Payload *fulfillment_inbound_v0_models.ConfirmTransportResponse
 }
 
+// IsSuccess returns true when this confirm transport bad request response has a 2xx status code
+func (o *ConfirmTransportBadRequest) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this confirm transport bad request response has a 3xx status code
+func (o *ConfirmTransportBadRequest) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this confirm transport bad request response has a 4xx status code
+func (o *ConfirmTransportBadRequest) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this confirm transport bad request response has a 5xx status code
+func (o *ConfirmTransportBadRequest) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this confirm transport bad request response a status code equal to that given
+func (o *ConfirmTransportBadRequest) IsCode(code int) bool {
+	return code == 400
+}
+
 func (o *ConfirmTransportBadRequest) Error() string {
 	return fmt.Sprintf("[POST /fba/inbound/v0/shipments/{shipmentId}/transport/confirm][%d] confirmTransportBadRequest  %+v", 400, o.Payload)
 }
+
+func (o *ConfirmTransportBadRequest) String() string {
+	return fmt.Sprintf("[POST /fba/inbound/v0/shipments/{shipmentId}/transport/confirm][%d] confirmTransportBadRequest  %+v", 400, o.Payload)
+}
+
 func (o *ConfirmTransportBadRequest) GetPayload() *fulfillment_inbound_v0_models.ConfirmTransportResponse {
 	return o.Payload
 }
@@ -191,7 +253,8 @@ func NewConfirmTransportUnauthorized() *ConfirmTransportUnauthorized {
 	return &ConfirmTransportUnauthorized{}
 }
 
-/* ConfirmTransportUnauthorized describes a response with status code 401, with default header values.
+/*
+ConfirmTransportUnauthorized describes a response with status code 401, with default header values.
 
 The request's Authorization header is not formatted correctly or does not contain a valid token.
 */
@@ -209,9 +272,39 @@ type ConfirmTransportUnauthorized struct {
 	Payload *fulfillment_inbound_v0_models.ConfirmTransportResponse
 }
 
+// IsSuccess returns true when this confirm transport unauthorized response has a 2xx status code
+func (o *ConfirmTransportUnauthorized) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this confirm transport unauthorized response has a 3xx status code
+func (o *ConfirmTransportUnauthorized) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this confirm transport unauthorized response has a 4xx status code
+func (o *ConfirmTransportUnauthorized) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this confirm transport unauthorized response has a 5xx status code
+func (o *ConfirmTransportUnauthorized) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this confirm transport unauthorized response a status code equal to that given
+func (o *ConfirmTransportUnauthorized) IsCode(code int) bool {
+	return code == 401
+}
+
 func (o *ConfirmTransportUnauthorized) Error() string {
 	return fmt.Sprintf("[POST /fba/inbound/v0/shipments/{shipmentId}/transport/confirm][%d] confirmTransportUnauthorized  %+v", 401, o.Payload)
 }
+
+func (o *ConfirmTransportUnauthorized) String() string {
+	return fmt.Sprintf("[POST /fba/inbound/v0/shipments/{shipmentId}/transport/confirm][%d] confirmTransportUnauthorized  %+v", 401, o.Payload)
+}
+
 func (o *ConfirmTransportUnauthorized) GetPayload() *fulfillment_inbound_v0_models.ConfirmTransportResponse {
 	return o.Payload
 }
@@ -247,7 +340,8 @@ func NewConfirmTransportForbidden() *ConfirmTransportForbidden {
 	return &ConfirmTransportForbidden{}
 }
 
-/* ConfirmTransportForbidden describes a response with status code 403, with default header values.
+/*
+ConfirmTransportForbidden describes a response with status code 403, with default header values.
 
 Indicates that access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.
 */
@@ -260,9 +354,39 @@ type ConfirmTransportForbidden struct {
 	Payload *fulfillment_inbound_v0_models.ConfirmTransportResponse
 }
 
+// IsSuccess returns true when this confirm transport forbidden response has a 2xx status code
+func (o *ConfirmTransportForbidden) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this confirm transport forbidden response has a 3xx status code
+func (o *ConfirmTransportForbidden) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this confirm transport forbidden response has a 4xx status code
+func (o *ConfirmTransportForbidden) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this confirm transport forbidden response has a 5xx status code
+func (o *ConfirmTransportForbidden) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this confirm transport forbidden response a status code equal to that given
+func (o *ConfirmTransportForbidden) IsCode(code int) bool {
+	return code == 403
+}
+
 func (o *ConfirmTransportForbidden) Error() string {
 	return fmt.Sprintf("[POST /fba/inbound/v0/shipments/{shipmentId}/transport/confirm][%d] confirmTransportForbidden  %+v", 403, o.Payload)
 }
+
+func (o *ConfirmTransportForbidden) String() string {
+	return fmt.Sprintf("[POST /fba/inbound/v0/shipments/{shipmentId}/transport/confirm][%d] confirmTransportForbidden  %+v", 403, o.Payload)
+}
+
 func (o *ConfirmTransportForbidden) GetPayload() *fulfillment_inbound_v0_models.ConfirmTransportResponse {
 	return o.Payload
 }
@@ -291,7 +415,8 @@ func NewConfirmTransportNotFound() *ConfirmTransportNotFound {
 	return &ConfirmTransportNotFound{}
 }
 
-/* ConfirmTransportNotFound describes a response with status code 404, with default header values.
+/*
+ConfirmTransportNotFound describes a response with status code 404, with default header values.
 
 The specified resource does not exist.
 */
@@ -308,9 +433,39 @@ type ConfirmTransportNotFound struct {
 	Payload *fulfillment_inbound_v0_models.ConfirmTransportResponse
 }
 
+// IsSuccess returns true when this confirm transport not found response has a 2xx status code
+func (o *ConfirmTransportNotFound) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this confirm transport not found response has a 3xx status code
+func (o *ConfirmTransportNotFound) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this confirm transport not found response has a 4xx status code
+func (o *ConfirmTransportNotFound) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this confirm transport not found response has a 5xx status code
+func (o *ConfirmTransportNotFound) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this confirm transport not found response a status code equal to that given
+func (o *ConfirmTransportNotFound) IsCode(code int) bool {
+	return code == 404
+}
+
 func (o *ConfirmTransportNotFound) Error() string {
 	return fmt.Sprintf("[POST /fba/inbound/v0/shipments/{shipmentId}/transport/confirm][%d] confirmTransportNotFound  %+v", 404, o.Payload)
 }
+
+func (o *ConfirmTransportNotFound) String() string {
+	return fmt.Sprintf("[POST /fba/inbound/v0/shipments/{shipmentId}/transport/confirm][%d] confirmTransportNotFound  %+v", 404, o.Payload)
+}
+
 func (o *ConfirmTransportNotFound) GetPayload() *fulfillment_inbound_v0_models.ConfirmTransportResponse {
 	return o.Payload
 }
@@ -346,7 +501,8 @@ func NewConfirmTransportTooManyRequests() *ConfirmTransportTooManyRequests {
 	return &ConfirmTransportTooManyRequests{}
 }
 
-/* ConfirmTransportTooManyRequests describes a response with status code 429, with default header values.
+/*
+ConfirmTransportTooManyRequests describes a response with status code 429, with default header values.
 
 The frequency of requests was greater than allowed.
 */
@@ -364,9 +520,39 @@ type ConfirmTransportTooManyRequests struct {
 	Payload *fulfillment_inbound_v0_models.ConfirmTransportResponse
 }
 
+// IsSuccess returns true when this confirm transport too many requests response has a 2xx status code
+func (o *ConfirmTransportTooManyRequests) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this confirm transport too many requests response has a 3xx status code
+func (o *ConfirmTransportTooManyRequests) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this confirm transport too many requests response has a 4xx status code
+func (o *ConfirmTransportTooManyRequests) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this confirm transport too many requests response has a 5xx status code
+func (o *ConfirmTransportTooManyRequests) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this confirm transport too many requests response a status code equal to that given
+func (o *ConfirmTransportTooManyRequests) IsCode(code int) bool {
+	return code == 429
+}
+
 func (o *ConfirmTransportTooManyRequests) Error() string {
 	return fmt.Sprintf("[POST /fba/inbound/v0/shipments/{shipmentId}/transport/confirm][%d] confirmTransportTooManyRequests  %+v", 429, o.Payload)
 }
+
+func (o *ConfirmTransportTooManyRequests) String() string {
+	return fmt.Sprintf("[POST /fba/inbound/v0/shipments/{shipmentId}/transport/confirm][%d] confirmTransportTooManyRequests  %+v", 429, o.Payload)
+}
+
 func (o *ConfirmTransportTooManyRequests) GetPayload() *fulfillment_inbound_v0_models.ConfirmTransportResponse {
 	return o.Payload
 }
@@ -402,7 +588,8 @@ func NewConfirmTransportInternalServerError() *ConfirmTransportInternalServerErr
 	return &ConfirmTransportInternalServerError{}
 }
 
-/* ConfirmTransportInternalServerError describes a response with status code 500, with default header values.
+/*
+ConfirmTransportInternalServerError describes a response with status code 500, with default header values.
 
 An unexpected condition occurred that prevented the server from fulfilling the request.
 */
@@ -420,9 +607,39 @@ type ConfirmTransportInternalServerError struct {
 	Payload *fulfillment_inbound_v0_models.ConfirmTransportResponse
 }
 
+// IsSuccess returns true when this confirm transport internal server error response has a 2xx status code
+func (o *ConfirmTransportInternalServerError) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this confirm transport internal server error response has a 3xx status code
+func (o *ConfirmTransportInternalServerError) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this confirm transport internal server error response has a 4xx status code
+func (o *ConfirmTransportInternalServerError) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this confirm transport internal server error response has a 5xx status code
+func (o *ConfirmTransportInternalServerError) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this confirm transport internal server error response a status code equal to that given
+func (o *ConfirmTransportInternalServerError) IsCode(code int) bool {
+	return code == 500
+}
+
 func (o *ConfirmTransportInternalServerError) Error() string {
 	return fmt.Sprintf("[POST /fba/inbound/v0/shipments/{shipmentId}/transport/confirm][%d] confirmTransportInternalServerError  %+v", 500, o.Payload)
 }
+
+func (o *ConfirmTransportInternalServerError) String() string {
+	return fmt.Sprintf("[POST /fba/inbound/v0/shipments/{shipmentId}/transport/confirm][%d] confirmTransportInternalServerError  %+v", 500, o.Payload)
+}
+
 func (o *ConfirmTransportInternalServerError) GetPayload() *fulfillment_inbound_v0_models.ConfirmTransportResponse {
 	return o.Payload
 }
@@ -458,7 +675,8 @@ func NewConfirmTransportServiceUnavailable() *ConfirmTransportServiceUnavailable
 	return &ConfirmTransportServiceUnavailable{}
 }
 
-/* ConfirmTransportServiceUnavailable describes a response with status code 503, with default header values.
+/*
+ConfirmTransportServiceUnavailable describes a response with status code 503, with default header values.
 
 Temporary overloading or maintenance of the server.
 */
@@ -476,9 +694,39 @@ type ConfirmTransportServiceUnavailable struct {
 	Payload *fulfillment_inbound_v0_models.ConfirmTransportResponse
 }
 
+// IsSuccess returns true when this confirm transport service unavailable response has a 2xx status code
+func (o *ConfirmTransportServiceUnavailable) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this confirm transport service unavailable response has a 3xx status code
+func (o *ConfirmTransportServiceUnavailable) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this confirm transport service unavailable response has a 4xx status code
+func (o *ConfirmTransportServiceUnavailable) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this confirm transport service unavailable response has a 5xx status code
+func (o *ConfirmTransportServiceUnavailable) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this confirm transport service unavailable response a status code equal to that given
+func (o *ConfirmTransportServiceUnavailable) IsCode(code int) bool {
+	return code == 503
+}
+
 func (o *ConfirmTransportServiceUnavailable) Error() string {
 	return fmt.Sprintf("[POST /fba/inbound/v0/shipments/{shipmentId}/transport/confirm][%d] confirmTransportServiceUnavailable  %+v", 503, o.Payload)
 }
+
+func (o *ConfirmTransportServiceUnavailable) String() string {
+	return fmt.Sprintf("[POST /fba/inbound/v0/shipments/{shipmentId}/transport/confirm][%d] confirmTransportServiceUnavailable  %+v", 503, o.Payload)
+}
+
 func (o *ConfirmTransportServiceUnavailable) GetPayload() *fulfillment_inbound_v0_models.ConfirmTransportResponse {
 	return o.Payload
 }

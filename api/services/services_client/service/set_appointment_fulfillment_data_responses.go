@@ -93,7 +93,8 @@ func NewSetAppointmentFulfillmentDataNoContent() *SetAppointmentFulfillmentDataN
 	return &SetAppointmentFulfillmentDataNoContent{}
 }
 
-/* SetAppointmentFulfillmentDataNoContent describes a response with status code 204, with default header values.
+/*
+SetAppointmentFulfillmentDataNoContent describes a response with status code 204, with default header values.
 
 Success response.
 */
@@ -110,9 +111,39 @@ type SetAppointmentFulfillmentDataNoContent struct {
 	Payload string
 }
 
+// IsSuccess returns true when this set appointment fulfillment data no content response has a 2xx status code
+func (o *SetAppointmentFulfillmentDataNoContent) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this set appointment fulfillment data no content response has a 3xx status code
+func (o *SetAppointmentFulfillmentDataNoContent) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this set appointment fulfillment data no content response has a 4xx status code
+func (o *SetAppointmentFulfillmentDataNoContent) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this set appointment fulfillment data no content response has a 5xx status code
+func (o *SetAppointmentFulfillmentDataNoContent) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this set appointment fulfillment data no content response a status code equal to that given
+func (o *SetAppointmentFulfillmentDataNoContent) IsCode(code int) bool {
+	return code == 204
+}
+
 func (o *SetAppointmentFulfillmentDataNoContent) Error() string {
 	return fmt.Sprintf("[PUT /service/v1/serviceJobs/{serviceJobId}/appointments/{appointmentId}/fulfillment][%d] setAppointmentFulfillmentDataNoContent  %+v", 204, o.Payload)
 }
+
+func (o *SetAppointmentFulfillmentDataNoContent) String() string {
+	return fmt.Sprintf("[PUT /service/v1/serviceJobs/{serviceJobId}/appointments/{appointmentId}/fulfillment][%d] setAppointmentFulfillmentDataNoContent  %+v", 204, o.Payload)
+}
+
 func (o *SetAppointmentFulfillmentDataNoContent) GetPayload() string {
 	return o.Payload
 }
@@ -146,7 +177,8 @@ func NewSetAppointmentFulfillmentDataBadRequest() *SetAppointmentFulfillmentData
 	return &SetAppointmentFulfillmentDataBadRequest{}
 }
 
-/* SetAppointmentFulfillmentDataBadRequest describes a response with status code 400, with default header values.
+/*
+SetAppointmentFulfillmentDataBadRequest describes a response with status code 400, with default header values.
 
 Request has missing or invalid parameters and cannot be parsed.
 */
@@ -163,9 +195,39 @@ type SetAppointmentFulfillmentDataBadRequest struct {
 	Payload services_models.ErrorList
 }
 
+// IsSuccess returns true when this set appointment fulfillment data bad request response has a 2xx status code
+func (o *SetAppointmentFulfillmentDataBadRequest) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this set appointment fulfillment data bad request response has a 3xx status code
+func (o *SetAppointmentFulfillmentDataBadRequest) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this set appointment fulfillment data bad request response has a 4xx status code
+func (o *SetAppointmentFulfillmentDataBadRequest) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this set appointment fulfillment data bad request response has a 5xx status code
+func (o *SetAppointmentFulfillmentDataBadRequest) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this set appointment fulfillment data bad request response a status code equal to that given
+func (o *SetAppointmentFulfillmentDataBadRequest) IsCode(code int) bool {
+	return code == 400
+}
+
 func (o *SetAppointmentFulfillmentDataBadRequest) Error() string {
 	return fmt.Sprintf("[PUT /service/v1/serviceJobs/{serviceJobId}/appointments/{appointmentId}/fulfillment][%d] setAppointmentFulfillmentDataBadRequest  %+v", 400, o.Payload)
 }
+
+func (o *SetAppointmentFulfillmentDataBadRequest) String() string {
+	return fmt.Sprintf("[PUT /service/v1/serviceJobs/{serviceJobId}/appointments/{appointmentId}/fulfillment][%d] setAppointmentFulfillmentDataBadRequest  %+v", 400, o.Payload)
+}
+
 func (o *SetAppointmentFulfillmentDataBadRequest) GetPayload() services_models.ErrorList {
 	return o.Payload
 }
@@ -199,7 +261,8 @@ func NewSetAppointmentFulfillmentDataForbidden() *SetAppointmentFulfillmentDataF
 	return &SetAppointmentFulfillmentDataForbidden{}
 }
 
-/* SetAppointmentFulfillmentDataForbidden describes a response with status code 403, with default header values.
+/*
+SetAppointmentFulfillmentDataForbidden describes a response with status code 403, with default header values.
 
 403 can be caused for reasons like Access Denied, Unauthorized, Expired Token, Invalid Signature or Resource Not Found.
 */
@@ -212,9 +275,39 @@ type SetAppointmentFulfillmentDataForbidden struct {
 	Payload services_models.ErrorList
 }
 
+// IsSuccess returns true when this set appointment fulfillment data forbidden response has a 2xx status code
+func (o *SetAppointmentFulfillmentDataForbidden) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this set appointment fulfillment data forbidden response has a 3xx status code
+func (o *SetAppointmentFulfillmentDataForbidden) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this set appointment fulfillment data forbidden response has a 4xx status code
+func (o *SetAppointmentFulfillmentDataForbidden) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this set appointment fulfillment data forbidden response has a 5xx status code
+func (o *SetAppointmentFulfillmentDataForbidden) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this set appointment fulfillment data forbidden response a status code equal to that given
+func (o *SetAppointmentFulfillmentDataForbidden) IsCode(code int) bool {
+	return code == 403
+}
+
 func (o *SetAppointmentFulfillmentDataForbidden) Error() string {
 	return fmt.Sprintf("[PUT /service/v1/serviceJobs/{serviceJobId}/appointments/{appointmentId}/fulfillment][%d] setAppointmentFulfillmentDataForbidden  %+v", 403, o.Payload)
 }
+
+func (o *SetAppointmentFulfillmentDataForbidden) String() string {
+	return fmt.Sprintf("[PUT /service/v1/serviceJobs/{serviceJobId}/appointments/{appointmentId}/fulfillment][%d] setAppointmentFulfillmentDataForbidden  %+v", 403, o.Payload)
+}
+
 func (o *SetAppointmentFulfillmentDataForbidden) GetPayload() services_models.ErrorList {
 	return o.Payload
 }
@@ -241,7 +334,8 @@ func NewSetAppointmentFulfillmentDataNotFound() *SetAppointmentFulfillmentDataNo
 	return &SetAppointmentFulfillmentDataNotFound{}
 }
 
-/* SetAppointmentFulfillmentDataNotFound describes a response with status code 404, with default header values.
+/*
+SetAppointmentFulfillmentDataNotFound describes a response with status code 404, with default header values.
 
 The resource specified does not exist.
 */
@@ -258,9 +352,39 @@ type SetAppointmentFulfillmentDataNotFound struct {
 	Payload services_models.ErrorList
 }
 
+// IsSuccess returns true when this set appointment fulfillment data not found response has a 2xx status code
+func (o *SetAppointmentFulfillmentDataNotFound) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this set appointment fulfillment data not found response has a 3xx status code
+func (o *SetAppointmentFulfillmentDataNotFound) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this set appointment fulfillment data not found response has a 4xx status code
+func (o *SetAppointmentFulfillmentDataNotFound) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this set appointment fulfillment data not found response has a 5xx status code
+func (o *SetAppointmentFulfillmentDataNotFound) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this set appointment fulfillment data not found response a status code equal to that given
+func (o *SetAppointmentFulfillmentDataNotFound) IsCode(code int) bool {
+	return code == 404
+}
+
 func (o *SetAppointmentFulfillmentDataNotFound) Error() string {
 	return fmt.Sprintf("[PUT /service/v1/serviceJobs/{serviceJobId}/appointments/{appointmentId}/fulfillment][%d] setAppointmentFulfillmentDataNotFound  %+v", 404, o.Payload)
 }
+
+func (o *SetAppointmentFulfillmentDataNotFound) String() string {
+	return fmt.Sprintf("[PUT /service/v1/serviceJobs/{serviceJobId}/appointments/{appointmentId}/fulfillment][%d] setAppointmentFulfillmentDataNotFound  %+v", 404, o.Payload)
+}
+
 func (o *SetAppointmentFulfillmentDataNotFound) GetPayload() services_models.ErrorList {
 	return o.Payload
 }
@@ -294,7 +418,8 @@ func NewSetAppointmentFulfillmentDataRequestEntityTooLarge() *SetAppointmentFulf
 	return &SetAppointmentFulfillmentDataRequestEntityTooLarge{}
 }
 
-/* SetAppointmentFulfillmentDataRequestEntityTooLarge describes a response with status code 413, with default header values.
+/*
+SetAppointmentFulfillmentDataRequestEntityTooLarge describes a response with status code 413, with default header values.
 
 The request size exceeded the maximum accepted size.
 */
@@ -312,9 +437,39 @@ type SetAppointmentFulfillmentDataRequestEntityTooLarge struct {
 	Payload services_models.ErrorList
 }
 
+// IsSuccess returns true when this set appointment fulfillment data request entity too large response has a 2xx status code
+func (o *SetAppointmentFulfillmentDataRequestEntityTooLarge) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this set appointment fulfillment data request entity too large response has a 3xx status code
+func (o *SetAppointmentFulfillmentDataRequestEntityTooLarge) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this set appointment fulfillment data request entity too large response has a 4xx status code
+func (o *SetAppointmentFulfillmentDataRequestEntityTooLarge) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this set appointment fulfillment data request entity too large response has a 5xx status code
+func (o *SetAppointmentFulfillmentDataRequestEntityTooLarge) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this set appointment fulfillment data request entity too large response a status code equal to that given
+func (o *SetAppointmentFulfillmentDataRequestEntityTooLarge) IsCode(code int) bool {
+	return code == 413
+}
+
 func (o *SetAppointmentFulfillmentDataRequestEntityTooLarge) Error() string {
 	return fmt.Sprintf("[PUT /service/v1/serviceJobs/{serviceJobId}/appointments/{appointmentId}/fulfillment][%d] setAppointmentFulfillmentDataRequestEntityTooLarge  %+v", 413, o.Payload)
 }
+
+func (o *SetAppointmentFulfillmentDataRequestEntityTooLarge) String() string {
+	return fmt.Sprintf("[PUT /service/v1/serviceJobs/{serviceJobId}/appointments/{appointmentId}/fulfillment][%d] setAppointmentFulfillmentDataRequestEntityTooLarge  %+v", 413, o.Payload)
+}
+
 func (o *SetAppointmentFulfillmentDataRequestEntityTooLarge) GetPayload() services_models.ErrorList {
 	return o.Payload
 }
@@ -348,7 +503,8 @@ func NewSetAppointmentFulfillmentDataUnsupportedMediaType() *SetAppointmentFulfi
 	return &SetAppointmentFulfillmentDataUnsupportedMediaType{}
 }
 
-/* SetAppointmentFulfillmentDataUnsupportedMediaType describes a response with status code 415, with default header values.
+/*
+SetAppointmentFulfillmentDataUnsupportedMediaType describes a response with status code 415, with default header values.
 
 The entity of the request is in a format not supported by the requested resource.
 */
@@ -366,9 +522,39 @@ type SetAppointmentFulfillmentDataUnsupportedMediaType struct {
 	Payload services_models.ErrorList
 }
 
+// IsSuccess returns true when this set appointment fulfillment data unsupported media type response has a 2xx status code
+func (o *SetAppointmentFulfillmentDataUnsupportedMediaType) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this set appointment fulfillment data unsupported media type response has a 3xx status code
+func (o *SetAppointmentFulfillmentDataUnsupportedMediaType) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this set appointment fulfillment data unsupported media type response has a 4xx status code
+func (o *SetAppointmentFulfillmentDataUnsupportedMediaType) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this set appointment fulfillment data unsupported media type response has a 5xx status code
+func (o *SetAppointmentFulfillmentDataUnsupportedMediaType) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this set appointment fulfillment data unsupported media type response a status code equal to that given
+func (o *SetAppointmentFulfillmentDataUnsupportedMediaType) IsCode(code int) bool {
+	return code == 415
+}
+
 func (o *SetAppointmentFulfillmentDataUnsupportedMediaType) Error() string {
 	return fmt.Sprintf("[PUT /service/v1/serviceJobs/{serviceJobId}/appointments/{appointmentId}/fulfillment][%d] setAppointmentFulfillmentDataUnsupportedMediaType  %+v", 415, o.Payload)
 }
+
+func (o *SetAppointmentFulfillmentDataUnsupportedMediaType) String() string {
+	return fmt.Sprintf("[PUT /service/v1/serviceJobs/{serviceJobId}/appointments/{appointmentId}/fulfillment][%d] setAppointmentFulfillmentDataUnsupportedMediaType  %+v", 415, o.Payload)
+}
+
 func (o *SetAppointmentFulfillmentDataUnsupportedMediaType) GetPayload() services_models.ErrorList {
 	return o.Payload
 }
@@ -402,7 +588,8 @@ func NewSetAppointmentFulfillmentDataUnprocessableEntity() *SetAppointmentFulfil
 	return &SetAppointmentFulfillmentDataUnprocessableEntity{}
 }
 
-/* SetAppointmentFulfillmentDataUnprocessableEntity describes a response with status code 422, with default header values.
+/*
+SetAppointmentFulfillmentDataUnprocessableEntity describes a response with status code 422, with default header values.
 
 Unprocessable Entity. Unable to process the contained instructions.
 */
@@ -420,9 +607,39 @@ type SetAppointmentFulfillmentDataUnprocessableEntity struct {
 	Payload services_models.ErrorList
 }
 
+// IsSuccess returns true when this set appointment fulfillment data unprocessable entity response has a 2xx status code
+func (o *SetAppointmentFulfillmentDataUnprocessableEntity) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this set appointment fulfillment data unprocessable entity response has a 3xx status code
+func (o *SetAppointmentFulfillmentDataUnprocessableEntity) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this set appointment fulfillment data unprocessable entity response has a 4xx status code
+func (o *SetAppointmentFulfillmentDataUnprocessableEntity) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this set appointment fulfillment data unprocessable entity response has a 5xx status code
+func (o *SetAppointmentFulfillmentDataUnprocessableEntity) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this set appointment fulfillment data unprocessable entity response a status code equal to that given
+func (o *SetAppointmentFulfillmentDataUnprocessableEntity) IsCode(code int) bool {
+	return code == 422
+}
+
 func (o *SetAppointmentFulfillmentDataUnprocessableEntity) Error() string {
 	return fmt.Sprintf("[PUT /service/v1/serviceJobs/{serviceJobId}/appointments/{appointmentId}/fulfillment][%d] setAppointmentFulfillmentDataUnprocessableEntity  %+v", 422, o.Payload)
 }
+
+func (o *SetAppointmentFulfillmentDataUnprocessableEntity) String() string {
+	return fmt.Sprintf("[PUT /service/v1/serviceJobs/{serviceJobId}/appointments/{appointmentId}/fulfillment][%d] setAppointmentFulfillmentDataUnprocessableEntity  %+v", 422, o.Payload)
+}
+
 func (o *SetAppointmentFulfillmentDataUnprocessableEntity) GetPayload() services_models.ErrorList {
 	return o.Payload
 }
@@ -456,7 +673,8 @@ func NewSetAppointmentFulfillmentDataTooManyRequests() *SetAppointmentFulfillmen
 	return &SetAppointmentFulfillmentDataTooManyRequests{}
 }
 
-/* SetAppointmentFulfillmentDataTooManyRequests describes a response with status code 429, with default header values.
+/*
+SetAppointmentFulfillmentDataTooManyRequests describes a response with status code 429, with default header values.
 
 The frequency of requests was greater than allowed.
 */
@@ -474,9 +692,39 @@ type SetAppointmentFulfillmentDataTooManyRequests struct {
 	Payload services_models.ErrorList
 }
 
+// IsSuccess returns true when this set appointment fulfillment data too many requests response has a 2xx status code
+func (o *SetAppointmentFulfillmentDataTooManyRequests) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this set appointment fulfillment data too many requests response has a 3xx status code
+func (o *SetAppointmentFulfillmentDataTooManyRequests) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this set appointment fulfillment data too many requests response has a 4xx status code
+func (o *SetAppointmentFulfillmentDataTooManyRequests) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this set appointment fulfillment data too many requests response has a 5xx status code
+func (o *SetAppointmentFulfillmentDataTooManyRequests) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this set appointment fulfillment data too many requests response a status code equal to that given
+func (o *SetAppointmentFulfillmentDataTooManyRequests) IsCode(code int) bool {
+	return code == 429
+}
+
 func (o *SetAppointmentFulfillmentDataTooManyRequests) Error() string {
 	return fmt.Sprintf("[PUT /service/v1/serviceJobs/{serviceJobId}/appointments/{appointmentId}/fulfillment][%d] setAppointmentFulfillmentDataTooManyRequests  %+v", 429, o.Payload)
 }
+
+func (o *SetAppointmentFulfillmentDataTooManyRequests) String() string {
+	return fmt.Sprintf("[PUT /service/v1/serviceJobs/{serviceJobId}/appointments/{appointmentId}/fulfillment][%d] setAppointmentFulfillmentDataTooManyRequests  %+v", 429, o.Payload)
+}
+
 func (o *SetAppointmentFulfillmentDataTooManyRequests) GetPayload() services_models.ErrorList {
 	return o.Payload
 }
@@ -510,7 +758,8 @@ func NewSetAppointmentFulfillmentDataInternalServerError() *SetAppointmentFulfil
 	return &SetAppointmentFulfillmentDataInternalServerError{}
 }
 
-/* SetAppointmentFulfillmentDataInternalServerError describes a response with status code 500, with default header values.
+/*
+SetAppointmentFulfillmentDataInternalServerError describes a response with status code 500, with default header values.
 
 Encountered an unexpected condition which prevented the server from fulfilling the request.
 */
@@ -528,9 +777,39 @@ type SetAppointmentFulfillmentDataInternalServerError struct {
 	Payload services_models.ErrorList
 }
 
+// IsSuccess returns true when this set appointment fulfillment data internal server error response has a 2xx status code
+func (o *SetAppointmentFulfillmentDataInternalServerError) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this set appointment fulfillment data internal server error response has a 3xx status code
+func (o *SetAppointmentFulfillmentDataInternalServerError) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this set appointment fulfillment data internal server error response has a 4xx status code
+func (o *SetAppointmentFulfillmentDataInternalServerError) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this set appointment fulfillment data internal server error response has a 5xx status code
+func (o *SetAppointmentFulfillmentDataInternalServerError) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this set appointment fulfillment data internal server error response a status code equal to that given
+func (o *SetAppointmentFulfillmentDataInternalServerError) IsCode(code int) bool {
+	return code == 500
+}
+
 func (o *SetAppointmentFulfillmentDataInternalServerError) Error() string {
 	return fmt.Sprintf("[PUT /service/v1/serviceJobs/{serviceJobId}/appointments/{appointmentId}/fulfillment][%d] setAppointmentFulfillmentDataInternalServerError  %+v", 500, o.Payload)
 }
+
+func (o *SetAppointmentFulfillmentDataInternalServerError) String() string {
+	return fmt.Sprintf("[PUT /service/v1/serviceJobs/{serviceJobId}/appointments/{appointmentId}/fulfillment][%d] setAppointmentFulfillmentDataInternalServerError  %+v", 500, o.Payload)
+}
+
 func (o *SetAppointmentFulfillmentDataInternalServerError) GetPayload() services_models.ErrorList {
 	return o.Payload
 }
@@ -564,7 +843,8 @@ func NewSetAppointmentFulfillmentDataServiceUnavailable() *SetAppointmentFulfill
 	return &SetAppointmentFulfillmentDataServiceUnavailable{}
 }
 
-/* SetAppointmentFulfillmentDataServiceUnavailable describes a response with status code 503, with default header values.
+/*
+SetAppointmentFulfillmentDataServiceUnavailable describes a response with status code 503, with default header values.
 
 Temporary overloading or maintenance of the server.
 */
@@ -582,9 +862,39 @@ type SetAppointmentFulfillmentDataServiceUnavailable struct {
 	Payload services_models.ErrorList
 }
 
+// IsSuccess returns true when this set appointment fulfillment data service unavailable response has a 2xx status code
+func (o *SetAppointmentFulfillmentDataServiceUnavailable) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this set appointment fulfillment data service unavailable response has a 3xx status code
+func (o *SetAppointmentFulfillmentDataServiceUnavailable) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this set appointment fulfillment data service unavailable response has a 4xx status code
+func (o *SetAppointmentFulfillmentDataServiceUnavailable) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this set appointment fulfillment data service unavailable response has a 5xx status code
+func (o *SetAppointmentFulfillmentDataServiceUnavailable) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this set appointment fulfillment data service unavailable response a status code equal to that given
+func (o *SetAppointmentFulfillmentDataServiceUnavailable) IsCode(code int) bool {
+	return code == 503
+}
+
 func (o *SetAppointmentFulfillmentDataServiceUnavailable) Error() string {
 	return fmt.Sprintf("[PUT /service/v1/serviceJobs/{serviceJobId}/appointments/{appointmentId}/fulfillment][%d] setAppointmentFulfillmentDataServiceUnavailable  %+v", 503, o.Payload)
 }
+
+func (o *SetAppointmentFulfillmentDataServiceUnavailable) String() string {
+	return fmt.Sprintf("[PUT /service/v1/serviceJobs/{serviceJobId}/appointments/{appointmentId}/fulfillment][%d] setAppointmentFulfillmentDataServiceUnavailable  %+v", 503, o.Payload)
+}
+
 func (o *SetAppointmentFulfillmentDataServiceUnavailable) GetPayload() services_models.ErrorList {
 	return o.Payload
 }

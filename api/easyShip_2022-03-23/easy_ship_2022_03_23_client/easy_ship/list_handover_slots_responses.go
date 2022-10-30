@@ -87,7 +87,8 @@ func NewListHandoverSlotsOK() *ListHandoverSlotsOK {
 	return &ListHandoverSlotsOK{}
 }
 
-/* ListHandoverSlotsOK describes a response with status code 200, with default header values.
+/*
+ListHandoverSlotsOK describes a response with status code 200, with default header values.
 
 Success.
 */
@@ -104,9 +105,39 @@ type ListHandoverSlotsOK struct {
 	Payload *easy_ship_2022_03_23_models.ListHandoverSlotsResponse
 }
 
+// IsSuccess returns true when this list handover slots o k response has a 2xx status code
+func (o *ListHandoverSlotsOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this list handover slots o k response has a 3xx status code
+func (o *ListHandoverSlotsOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this list handover slots o k response has a 4xx status code
+func (o *ListHandoverSlotsOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this list handover slots o k response has a 5xx status code
+func (o *ListHandoverSlotsOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this list handover slots o k response a status code equal to that given
+func (o *ListHandoverSlotsOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *ListHandoverSlotsOK) Error() string {
 	return fmt.Sprintf("[POST /easyShip/2022-03-23/timeSlot][%d] listHandoverSlotsOK  %+v", 200, o.Payload)
 }
+
+func (o *ListHandoverSlotsOK) String() string {
+	return fmt.Sprintf("[POST /easyShip/2022-03-23/timeSlot][%d] listHandoverSlotsOK  %+v", 200, o.Payload)
+}
+
 func (o *ListHandoverSlotsOK) GetPayload() *easy_ship_2022_03_23_models.ListHandoverSlotsResponse {
 	return o.Payload
 }
@@ -142,7 +173,8 @@ func NewListHandoverSlotsBadRequest() *ListHandoverSlotsBadRequest {
 	return &ListHandoverSlotsBadRequest{}
 }
 
-/* ListHandoverSlotsBadRequest describes a response with status code 400, with default header values.
+/*
+ListHandoverSlotsBadRequest describes a response with status code 400, with default header values.
 
 Request has missing or invalid parameters and cannot be parsed.
 */
@@ -159,9 +191,39 @@ type ListHandoverSlotsBadRequest struct {
 	Payload *easy_ship_2022_03_23_models.ErrorList
 }
 
+// IsSuccess returns true when this list handover slots bad request response has a 2xx status code
+func (o *ListHandoverSlotsBadRequest) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this list handover slots bad request response has a 3xx status code
+func (o *ListHandoverSlotsBadRequest) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this list handover slots bad request response has a 4xx status code
+func (o *ListHandoverSlotsBadRequest) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this list handover slots bad request response has a 5xx status code
+func (o *ListHandoverSlotsBadRequest) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this list handover slots bad request response a status code equal to that given
+func (o *ListHandoverSlotsBadRequest) IsCode(code int) bool {
+	return code == 400
+}
+
 func (o *ListHandoverSlotsBadRequest) Error() string {
 	return fmt.Sprintf("[POST /easyShip/2022-03-23/timeSlot][%d] listHandoverSlotsBadRequest  %+v", 400, o.Payload)
 }
+
+func (o *ListHandoverSlotsBadRequest) String() string {
+	return fmt.Sprintf("[POST /easyShip/2022-03-23/timeSlot][%d] listHandoverSlotsBadRequest  %+v", 400, o.Payload)
+}
+
 func (o *ListHandoverSlotsBadRequest) GetPayload() *easy_ship_2022_03_23_models.ErrorList {
 	return o.Payload
 }
@@ -197,7 +259,8 @@ func NewListHandoverSlotsUnauthorized() *ListHandoverSlotsUnauthorized {
 	return &ListHandoverSlotsUnauthorized{}
 }
 
-/* ListHandoverSlotsUnauthorized describes a response with status code 401, with default header values.
+/*
+ListHandoverSlotsUnauthorized describes a response with status code 401, with default header values.
 
 The request's Authorization header is not formatted correctly or does not contain a valid token.
 */
@@ -214,9 +277,39 @@ type ListHandoverSlotsUnauthorized struct {
 	Payload *easy_ship_2022_03_23_models.ErrorList
 }
 
+// IsSuccess returns true when this list handover slots unauthorized response has a 2xx status code
+func (o *ListHandoverSlotsUnauthorized) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this list handover slots unauthorized response has a 3xx status code
+func (o *ListHandoverSlotsUnauthorized) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this list handover slots unauthorized response has a 4xx status code
+func (o *ListHandoverSlotsUnauthorized) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this list handover slots unauthorized response has a 5xx status code
+func (o *ListHandoverSlotsUnauthorized) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this list handover slots unauthorized response a status code equal to that given
+func (o *ListHandoverSlotsUnauthorized) IsCode(code int) bool {
+	return code == 401
+}
+
 func (o *ListHandoverSlotsUnauthorized) Error() string {
 	return fmt.Sprintf("[POST /easyShip/2022-03-23/timeSlot][%d] listHandoverSlotsUnauthorized  %+v", 401, o.Payload)
 }
+
+func (o *ListHandoverSlotsUnauthorized) String() string {
+	return fmt.Sprintf("[POST /easyShip/2022-03-23/timeSlot][%d] listHandoverSlotsUnauthorized  %+v", 401, o.Payload)
+}
+
 func (o *ListHandoverSlotsUnauthorized) GetPayload() *easy_ship_2022_03_23_models.ErrorList {
 	return o.Payload
 }
@@ -252,7 +345,8 @@ func NewListHandoverSlotsForbidden() *ListHandoverSlotsForbidden {
 	return &ListHandoverSlotsForbidden{}
 }
 
-/* ListHandoverSlotsForbidden describes a response with status code 403, with default header values.
+/*
+ListHandoverSlotsForbidden describes a response with status code 403, with default header values.
 
 Indicates access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.
 */
@@ -265,9 +359,39 @@ type ListHandoverSlotsForbidden struct {
 	Payload *easy_ship_2022_03_23_models.ErrorList
 }
 
+// IsSuccess returns true when this list handover slots forbidden response has a 2xx status code
+func (o *ListHandoverSlotsForbidden) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this list handover slots forbidden response has a 3xx status code
+func (o *ListHandoverSlotsForbidden) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this list handover slots forbidden response has a 4xx status code
+func (o *ListHandoverSlotsForbidden) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this list handover slots forbidden response has a 5xx status code
+func (o *ListHandoverSlotsForbidden) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this list handover slots forbidden response a status code equal to that given
+func (o *ListHandoverSlotsForbidden) IsCode(code int) bool {
+	return code == 403
+}
+
 func (o *ListHandoverSlotsForbidden) Error() string {
 	return fmt.Sprintf("[POST /easyShip/2022-03-23/timeSlot][%d] listHandoverSlotsForbidden  %+v", 403, o.Payload)
 }
+
+func (o *ListHandoverSlotsForbidden) String() string {
+	return fmt.Sprintf("[POST /easyShip/2022-03-23/timeSlot][%d] listHandoverSlotsForbidden  %+v", 403, o.Payload)
+}
+
 func (o *ListHandoverSlotsForbidden) GetPayload() *easy_ship_2022_03_23_models.ErrorList {
 	return o.Payload
 }
@@ -296,7 +420,8 @@ func NewListHandoverSlotsNotFound() *ListHandoverSlotsNotFound {
 	return &ListHandoverSlotsNotFound{}
 }
 
-/* ListHandoverSlotsNotFound describes a response with status code 404, with default header values.
+/*
+ListHandoverSlotsNotFound describes a response with status code 404, with default header values.
 
 The specified resource does not exist.
 */
@@ -313,9 +438,39 @@ type ListHandoverSlotsNotFound struct {
 	Payload *easy_ship_2022_03_23_models.ErrorList
 }
 
+// IsSuccess returns true when this list handover slots not found response has a 2xx status code
+func (o *ListHandoverSlotsNotFound) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this list handover slots not found response has a 3xx status code
+func (o *ListHandoverSlotsNotFound) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this list handover slots not found response has a 4xx status code
+func (o *ListHandoverSlotsNotFound) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this list handover slots not found response has a 5xx status code
+func (o *ListHandoverSlotsNotFound) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this list handover slots not found response a status code equal to that given
+func (o *ListHandoverSlotsNotFound) IsCode(code int) bool {
+	return code == 404
+}
+
 func (o *ListHandoverSlotsNotFound) Error() string {
 	return fmt.Sprintf("[POST /easyShip/2022-03-23/timeSlot][%d] listHandoverSlotsNotFound  %+v", 404, o.Payload)
 }
+
+func (o *ListHandoverSlotsNotFound) String() string {
+	return fmt.Sprintf("[POST /easyShip/2022-03-23/timeSlot][%d] listHandoverSlotsNotFound  %+v", 404, o.Payload)
+}
+
 func (o *ListHandoverSlotsNotFound) GetPayload() *easy_ship_2022_03_23_models.ErrorList {
 	return o.Payload
 }
@@ -351,7 +506,8 @@ func NewListHandoverSlotsUnsupportedMediaType() *ListHandoverSlotsUnsupportedMed
 	return &ListHandoverSlotsUnsupportedMediaType{}
 }
 
-/* ListHandoverSlotsUnsupportedMediaType describes a response with status code 415, with default header values.
+/*
+ListHandoverSlotsUnsupportedMediaType describes a response with status code 415, with default header values.
 
 The request payload is in an unsupported format.
 */
@@ -364,9 +520,39 @@ type ListHandoverSlotsUnsupportedMediaType struct {
 	Payload *easy_ship_2022_03_23_models.ErrorList
 }
 
+// IsSuccess returns true when this list handover slots unsupported media type response has a 2xx status code
+func (o *ListHandoverSlotsUnsupportedMediaType) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this list handover slots unsupported media type response has a 3xx status code
+func (o *ListHandoverSlotsUnsupportedMediaType) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this list handover slots unsupported media type response has a 4xx status code
+func (o *ListHandoverSlotsUnsupportedMediaType) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this list handover slots unsupported media type response has a 5xx status code
+func (o *ListHandoverSlotsUnsupportedMediaType) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this list handover slots unsupported media type response a status code equal to that given
+func (o *ListHandoverSlotsUnsupportedMediaType) IsCode(code int) bool {
+	return code == 415
+}
+
 func (o *ListHandoverSlotsUnsupportedMediaType) Error() string {
 	return fmt.Sprintf("[POST /easyShip/2022-03-23/timeSlot][%d] listHandoverSlotsUnsupportedMediaType  %+v", 415, o.Payload)
 }
+
+func (o *ListHandoverSlotsUnsupportedMediaType) String() string {
+	return fmt.Sprintf("[POST /easyShip/2022-03-23/timeSlot][%d] listHandoverSlotsUnsupportedMediaType  %+v", 415, o.Payload)
+}
+
 func (o *ListHandoverSlotsUnsupportedMediaType) GetPayload() *easy_ship_2022_03_23_models.ErrorList {
 	return o.Payload
 }
@@ -395,7 +581,8 @@ func NewListHandoverSlotsTooManyRequests() *ListHandoverSlotsTooManyRequests {
 	return &ListHandoverSlotsTooManyRequests{}
 }
 
-/* ListHandoverSlotsTooManyRequests describes a response with status code 429, with default header values.
+/*
+ListHandoverSlotsTooManyRequests describes a response with status code 429, with default header values.
 
 The frequency of requests was greater than allowed.
 */
@@ -408,9 +595,39 @@ type ListHandoverSlotsTooManyRequests struct {
 	Payload *easy_ship_2022_03_23_models.ErrorList
 }
 
+// IsSuccess returns true when this list handover slots too many requests response has a 2xx status code
+func (o *ListHandoverSlotsTooManyRequests) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this list handover slots too many requests response has a 3xx status code
+func (o *ListHandoverSlotsTooManyRequests) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this list handover slots too many requests response has a 4xx status code
+func (o *ListHandoverSlotsTooManyRequests) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this list handover slots too many requests response has a 5xx status code
+func (o *ListHandoverSlotsTooManyRequests) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this list handover slots too many requests response a status code equal to that given
+func (o *ListHandoverSlotsTooManyRequests) IsCode(code int) bool {
+	return code == 429
+}
+
 func (o *ListHandoverSlotsTooManyRequests) Error() string {
 	return fmt.Sprintf("[POST /easyShip/2022-03-23/timeSlot][%d] listHandoverSlotsTooManyRequests  %+v", 429, o.Payload)
 }
+
+func (o *ListHandoverSlotsTooManyRequests) String() string {
+	return fmt.Sprintf("[POST /easyShip/2022-03-23/timeSlot][%d] listHandoverSlotsTooManyRequests  %+v", 429, o.Payload)
+}
+
 func (o *ListHandoverSlotsTooManyRequests) GetPayload() *easy_ship_2022_03_23_models.ErrorList {
 	return o.Payload
 }
@@ -439,7 +656,8 @@ func NewListHandoverSlotsInternalServerError() *ListHandoverSlotsInternalServerE
 	return &ListHandoverSlotsInternalServerError{}
 }
 
-/* ListHandoverSlotsInternalServerError describes a response with status code 500, with default header values.
+/*
+ListHandoverSlotsInternalServerError describes a response with status code 500, with default header values.
 
 An unexpected condition occurred that prevented the server from fulfilling the request.
 */
@@ -452,9 +670,39 @@ type ListHandoverSlotsInternalServerError struct {
 	Payload *easy_ship_2022_03_23_models.ErrorList
 }
 
+// IsSuccess returns true when this list handover slots internal server error response has a 2xx status code
+func (o *ListHandoverSlotsInternalServerError) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this list handover slots internal server error response has a 3xx status code
+func (o *ListHandoverSlotsInternalServerError) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this list handover slots internal server error response has a 4xx status code
+func (o *ListHandoverSlotsInternalServerError) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this list handover slots internal server error response has a 5xx status code
+func (o *ListHandoverSlotsInternalServerError) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this list handover slots internal server error response a status code equal to that given
+func (o *ListHandoverSlotsInternalServerError) IsCode(code int) bool {
+	return code == 500
+}
+
 func (o *ListHandoverSlotsInternalServerError) Error() string {
 	return fmt.Sprintf("[POST /easyShip/2022-03-23/timeSlot][%d] listHandoverSlotsInternalServerError  %+v", 500, o.Payload)
 }
+
+func (o *ListHandoverSlotsInternalServerError) String() string {
+	return fmt.Sprintf("[POST /easyShip/2022-03-23/timeSlot][%d] listHandoverSlotsInternalServerError  %+v", 500, o.Payload)
+}
+
 func (o *ListHandoverSlotsInternalServerError) GetPayload() *easy_ship_2022_03_23_models.ErrorList {
 	return o.Payload
 }
@@ -483,7 +731,8 @@ func NewListHandoverSlotsServiceUnavailable() *ListHandoverSlotsServiceUnavailab
 	return &ListHandoverSlotsServiceUnavailable{}
 }
 
-/* ListHandoverSlotsServiceUnavailable describes a response with status code 503, with default header values.
+/*
+ListHandoverSlotsServiceUnavailable describes a response with status code 503, with default header values.
 
 Temporary overloading or maintenance of the server.
 */
@@ -496,9 +745,39 @@ type ListHandoverSlotsServiceUnavailable struct {
 	Payload *easy_ship_2022_03_23_models.ErrorList
 }
 
+// IsSuccess returns true when this list handover slots service unavailable response has a 2xx status code
+func (o *ListHandoverSlotsServiceUnavailable) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this list handover slots service unavailable response has a 3xx status code
+func (o *ListHandoverSlotsServiceUnavailable) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this list handover slots service unavailable response has a 4xx status code
+func (o *ListHandoverSlotsServiceUnavailable) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this list handover slots service unavailable response has a 5xx status code
+func (o *ListHandoverSlotsServiceUnavailable) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this list handover slots service unavailable response a status code equal to that given
+func (o *ListHandoverSlotsServiceUnavailable) IsCode(code int) bool {
+	return code == 503
+}
+
 func (o *ListHandoverSlotsServiceUnavailable) Error() string {
 	return fmt.Sprintf("[POST /easyShip/2022-03-23/timeSlot][%d] listHandoverSlotsServiceUnavailable  %+v", 503, o.Payload)
 }
+
+func (o *ListHandoverSlotsServiceUnavailable) String() string {
+	return fmt.Sprintf("[POST /easyShip/2022-03-23/timeSlot][%d] listHandoverSlotsServiceUnavailable  %+v", 503, o.Payload)
+}
+
 func (o *ListHandoverSlotsServiceUnavailable) GetPayload() *easy_ship_2022_03_23_models.ErrorList {
 	return o.Payload
 }

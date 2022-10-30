@@ -81,7 +81,8 @@ func NewEstimateTransportOK() *EstimateTransportOK {
 	return &EstimateTransportOK{}
 }
 
-/* EstimateTransportOK describes a response with status code 200, with default header values.
+/*
+EstimateTransportOK describes a response with status code 200, with default header values.
 
 Success.
 */
@@ -98,9 +99,39 @@ type EstimateTransportOK struct {
 	Payload *fulfillment_inbound_v0_models.EstimateTransportResponse
 }
 
+// IsSuccess returns true when this estimate transport o k response has a 2xx status code
+func (o *EstimateTransportOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this estimate transport o k response has a 3xx status code
+func (o *EstimateTransportOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this estimate transport o k response has a 4xx status code
+func (o *EstimateTransportOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this estimate transport o k response has a 5xx status code
+func (o *EstimateTransportOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this estimate transport o k response a status code equal to that given
+func (o *EstimateTransportOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *EstimateTransportOK) Error() string {
 	return fmt.Sprintf("[POST /fba/inbound/v0/shipments/{shipmentId}/transport/estimate][%d] estimateTransportOK  %+v", 200, o.Payload)
 }
+
+func (o *EstimateTransportOK) String() string {
+	return fmt.Sprintf("[POST /fba/inbound/v0/shipments/{shipmentId}/transport/estimate][%d] estimateTransportOK  %+v", 200, o.Payload)
+}
+
 func (o *EstimateTransportOK) GetPayload() *fulfillment_inbound_v0_models.EstimateTransportResponse {
 	return o.Payload
 }
@@ -136,7 +167,8 @@ func NewEstimateTransportBadRequest() *EstimateTransportBadRequest {
 	return &EstimateTransportBadRequest{}
 }
 
-/* EstimateTransportBadRequest describes a response with status code 400, with default header values.
+/*
+EstimateTransportBadRequest describes a response with status code 400, with default header values.
 
 Request has missing or invalid parameters and cannot be parsed.
 */
@@ -153,9 +185,39 @@ type EstimateTransportBadRequest struct {
 	Payload *fulfillment_inbound_v0_models.EstimateTransportResponse
 }
 
+// IsSuccess returns true when this estimate transport bad request response has a 2xx status code
+func (o *EstimateTransportBadRequest) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this estimate transport bad request response has a 3xx status code
+func (o *EstimateTransportBadRequest) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this estimate transport bad request response has a 4xx status code
+func (o *EstimateTransportBadRequest) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this estimate transport bad request response has a 5xx status code
+func (o *EstimateTransportBadRequest) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this estimate transport bad request response a status code equal to that given
+func (o *EstimateTransportBadRequest) IsCode(code int) bool {
+	return code == 400
+}
+
 func (o *EstimateTransportBadRequest) Error() string {
 	return fmt.Sprintf("[POST /fba/inbound/v0/shipments/{shipmentId}/transport/estimate][%d] estimateTransportBadRequest  %+v", 400, o.Payload)
 }
+
+func (o *EstimateTransportBadRequest) String() string {
+	return fmt.Sprintf("[POST /fba/inbound/v0/shipments/{shipmentId}/transport/estimate][%d] estimateTransportBadRequest  %+v", 400, o.Payload)
+}
+
 func (o *EstimateTransportBadRequest) GetPayload() *fulfillment_inbound_v0_models.EstimateTransportResponse {
 	return o.Payload
 }
@@ -191,7 +253,8 @@ func NewEstimateTransportUnauthorized() *EstimateTransportUnauthorized {
 	return &EstimateTransportUnauthorized{}
 }
 
-/* EstimateTransportUnauthorized describes a response with status code 401, with default header values.
+/*
+EstimateTransportUnauthorized describes a response with status code 401, with default header values.
 
 The request's Authorization header is not formatted correctly or does not contain a valid token.
 */
@@ -209,9 +272,39 @@ type EstimateTransportUnauthorized struct {
 	Payload *fulfillment_inbound_v0_models.EstimateTransportResponse
 }
 
+// IsSuccess returns true when this estimate transport unauthorized response has a 2xx status code
+func (o *EstimateTransportUnauthorized) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this estimate transport unauthorized response has a 3xx status code
+func (o *EstimateTransportUnauthorized) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this estimate transport unauthorized response has a 4xx status code
+func (o *EstimateTransportUnauthorized) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this estimate transport unauthorized response has a 5xx status code
+func (o *EstimateTransportUnauthorized) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this estimate transport unauthorized response a status code equal to that given
+func (o *EstimateTransportUnauthorized) IsCode(code int) bool {
+	return code == 401
+}
+
 func (o *EstimateTransportUnauthorized) Error() string {
 	return fmt.Sprintf("[POST /fba/inbound/v0/shipments/{shipmentId}/transport/estimate][%d] estimateTransportUnauthorized  %+v", 401, o.Payload)
 }
+
+func (o *EstimateTransportUnauthorized) String() string {
+	return fmt.Sprintf("[POST /fba/inbound/v0/shipments/{shipmentId}/transport/estimate][%d] estimateTransportUnauthorized  %+v", 401, o.Payload)
+}
+
 func (o *EstimateTransportUnauthorized) GetPayload() *fulfillment_inbound_v0_models.EstimateTransportResponse {
 	return o.Payload
 }
@@ -247,7 +340,8 @@ func NewEstimateTransportForbidden() *EstimateTransportForbidden {
 	return &EstimateTransportForbidden{}
 }
 
-/* EstimateTransportForbidden describes a response with status code 403, with default header values.
+/*
+EstimateTransportForbidden describes a response with status code 403, with default header values.
 
 Indicates that access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.
 */
@@ -260,9 +354,39 @@ type EstimateTransportForbidden struct {
 	Payload *fulfillment_inbound_v0_models.EstimateTransportResponse
 }
 
+// IsSuccess returns true when this estimate transport forbidden response has a 2xx status code
+func (o *EstimateTransportForbidden) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this estimate transport forbidden response has a 3xx status code
+func (o *EstimateTransportForbidden) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this estimate transport forbidden response has a 4xx status code
+func (o *EstimateTransportForbidden) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this estimate transport forbidden response has a 5xx status code
+func (o *EstimateTransportForbidden) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this estimate transport forbidden response a status code equal to that given
+func (o *EstimateTransportForbidden) IsCode(code int) bool {
+	return code == 403
+}
+
 func (o *EstimateTransportForbidden) Error() string {
 	return fmt.Sprintf("[POST /fba/inbound/v0/shipments/{shipmentId}/transport/estimate][%d] estimateTransportForbidden  %+v", 403, o.Payload)
 }
+
+func (o *EstimateTransportForbidden) String() string {
+	return fmt.Sprintf("[POST /fba/inbound/v0/shipments/{shipmentId}/transport/estimate][%d] estimateTransportForbidden  %+v", 403, o.Payload)
+}
+
 func (o *EstimateTransportForbidden) GetPayload() *fulfillment_inbound_v0_models.EstimateTransportResponse {
 	return o.Payload
 }
@@ -291,7 +415,8 @@ func NewEstimateTransportNotFound() *EstimateTransportNotFound {
 	return &EstimateTransportNotFound{}
 }
 
-/* EstimateTransportNotFound describes a response with status code 404, with default header values.
+/*
+EstimateTransportNotFound describes a response with status code 404, with default header values.
 
 The specified resource does not exist.
 */
@@ -308,9 +433,39 @@ type EstimateTransportNotFound struct {
 	Payload *fulfillment_inbound_v0_models.EstimateTransportResponse
 }
 
+// IsSuccess returns true when this estimate transport not found response has a 2xx status code
+func (o *EstimateTransportNotFound) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this estimate transport not found response has a 3xx status code
+func (o *EstimateTransportNotFound) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this estimate transport not found response has a 4xx status code
+func (o *EstimateTransportNotFound) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this estimate transport not found response has a 5xx status code
+func (o *EstimateTransportNotFound) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this estimate transport not found response a status code equal to that given
+func (o *EstimateTransportNotFound) IsCode(code int) bool {
+	return code == 404
+}
+
 func (o *EstimateTransportNotFound) Error() string {
 	return fmt.Sprintf("[POST /fba/inbound/v0/shipments/{shipmentId}/transport/estimate][%d] estimateTransportNotFound  %+v", 404, o.Payload)
 }
+
+func (o *EstimateTransportNotFound) String() string {
+	return fmt.Sprintf("[POST /fba/inbound/v0/shipments/{shipmentId}/transport/estimate][%d] estimateTransportNotFound  %+v", 404, o.Payload)
+}
+
 func (o *EstimateTransportNotFound) GetPayload() *fulfillment_inbound_v0_models.EstimateTransportResponse {
 	return o.Payload
 }
@@ -346,7 +501,8 @@ func NewEstimateTransportTooManyRequests() *EstimateTransportTooManyRequests {
 	return &EstimateTransportTooManyRequests{}
 }
 
-/* EstimateTransportTooManyRequests describes a response with status code 429, with default header values.
+/*
+EstimateTransportTooManyRequests describes a response with status code 429, with default header values.
 
 The frequency of requests was greater than allowed.
 */
@@ -364,9 +520,39 @@ type EstimateTransportTooManyRequests struct {
 	Payload *fulfillment_inbound_v0_models.EstimateTransportResponse
 }
 
+// IsSuccess returns true when this estimate transport too many requests response has a 2xx status code
+func (o *EstimateTransportTooManyRequests) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this estimate transport too many requests response has a 3xx status code
+func (o *EstimateTransportTooManyRequests) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this estimate transport too many requests response has a 4xx status code
+func (o *EstimateTransportTooManyRequests) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this estimate transport too many requests response has a 5xx status code
+func (o *EstimateTransportTooManyRequests) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this estimate transport too many requests response a status code equal to that given
+func (o *EstimateTransportTooManyRequests) IsCode(code int) bool {
+	return code == 429
+}
+
 func (o *EstimateTransportTooManyRequests) Error() string {
 	return fmt.Sprintf("[POST /fba/inbound/v0/shipments/{shipmentId}/transport/estimate][%d] estimateTransportTooManyRequests  %+v", 429, o.Payload)
 }
+
+func (o *EstimateTransportTooManyRequests) String() string {
+	return fmt.Sprintf("[POST /fba/inbound/v0/shipments/{shipmentId}/transport/estimate][%d] estimateTransportTooManyRequests  %+v", 429, o.Payload)
+}
+
 func (o *EstimateTransportTooManyRequests) GetPayload() *fulfillment_inbound_v0_models.EstimateTransportResponse {
 	return o.Payload
 }
@@ -402,7 +588,8 @@ func NewEstimateTransportInternalServerError() *EstimateTransportInternalServerE
 	return &EstimateTransportInternalServerError{}
 }
 
-/* EstimateTransportInternalServerError describes a response with status code 500, with default header values.
+/*
+EstimateTransportInternalServerError describes a response with status code 500, with default header values.
 
 An unexpected condition occurred that prevented the server from fulfilling the request.
 */
@@ -420,9 +607,39 @@ type EstimateTransportInternalServerError struct {
 	Payload *fulfillment_inbound_v0_models.EstimateTransportResponse
 }
 
+// IsSuccess returns true when this estimate transport internal server error response has a 2xx status code
+func (o *EstimateTransportInternalServerError) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this estimate transport internal server error response has a 3xx status code
+func (o *EstimateTransportInternalServerError) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this estimate transport internal server error response has a 4xx status code
+func (o *EstimateTransportInternalServerError) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this estimate transport internal server error response has a 5xx status code
+func (o *EstimateTransportInternalServerError) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this estimate transport internal server error response a status code equal to that given
+func (o *EstimateTransportInternalServerError) IsCode(code int) bool {
+	return code == 500
+}
+
 func (o *EstimateTransportInternalServerError) Error() string {
 	return fmt.Sprintf("[POST /fba/inbound/v0/shipments/{shipmentId}/transport/estimate][%d] estimateTransportInternalServerError  %+v", 500, o.Payload)
 }
+
+func (o *EstimateTransportInternalServerError) String() string {
+	return fmt.Sprintf("[POST /fba/inbound/v0/shipments/{shipmentId}/transport/estimate][%d] estimateTransportInternalServerError  %+v", 500, o.Payload)
+}
+
 func (o *EstimateTransportInternalServerError) GetPayload() *fulfillment_inbound_v0_models.EstimateTransportResponse {
 	return o.Payload
 }
@@ -458,7 +675,8 @@ func NewEstimateTransportServiceUnavailable() *EstimateTransportServiceUnavailab
 	return &EstimateTransportServiceUnavailable{}
 }
 
-/* EstimateTransportServiceUnavailable describes a response with status code 503, with default header values.
+/*
+EstimateTransportServiceUnavailable describes a response with status code 503, with default header values.
 
 Temporary overloading or maintenance of the server.
 */
@@ -476,9 +694,39 @@ type EstimateTransportServiceUnavailable struct {
 	Payload *fulfillment_inbound_v0_models.EstimateTransportResponse
 }
 
+// IsSuccess returns true when this estimate transport service unavailable response has a 2xx status code
+func (o *EstimateTransportServiceUnavailable) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this estimate transport service unavailable response has a 3xx status code
+func (o *EstimateTransportServiceUnavailable) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this estimate transport service unavailable response has a 4xx status code
+func (o *EstimateTransportServiceUnavailable) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this estimate transport service unavailable response has a 5xx status code
+func (o *EstimateTransportServiceUnavailable) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this estimate transport service unavailable response a status code equal to that given
+func (o *EstimateTransportServiceUnavailable) IsCode(code int) bool {
+	return code == 503
+}
+
 func (o *EstimateTransportServiceUnavailable) Error() string {
 	return fmt.Sprintf("[POST /fba/inbound/v0/shipments/{shipmentId}/transport/estimate][%d] estimateTransportServiceUnavailable  %+v", 503, o.Payload)
 }
+
+func (o *EstimateTransportServiceUnavailable) String() string {
+	return fmt.Sprintf("[POST /fba/inbound/v0/shipments/{shipmentId}/transport/estimate][%d] estimateTransportServiceUnavailable  %+v", 503, o.Payload)
+}
+
 func (o *EstimateTransportServiceUnavailable) GetPayload() *fulfillment_inbound_v0_models.EstimateTransportResponse {
 	return o.Payload
 }

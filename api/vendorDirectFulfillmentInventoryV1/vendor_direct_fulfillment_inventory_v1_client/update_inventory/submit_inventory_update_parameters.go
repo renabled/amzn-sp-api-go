@@ -54,10 +54,12 @@ func NewSubmitInventoryUpdateParamsWithHTTPClient(client *http.Client) *SubmitIn
 	}
 }
 
-/* SubmitInventoryUpdateParams contains all the parameters to send to the API endpoint
-   for the submit inventory update operation.
+/*
+SubmitInventoryUpdateParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the submit inventory update operation.
+
+	Typically these are written to a http.Request.
 */
 type SubmitInventoryUpdateParams struct {
 

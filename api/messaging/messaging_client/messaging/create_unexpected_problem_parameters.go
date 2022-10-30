@@ -55,10 +55,12 @@ func NewCreateUnexpectedProblemParamsWithHTTPClient(client *http.Client) *Create
 	}
 }
 
-/* CreateUnexpectedProblemParams contains all the parameters to send to the API endpoint
-   for the create unexpected problem operation.
+/*
+CreateUnexpectedProblemParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the create unexpected problem operation.
+
+	Typically these are written to a http.Request.
 */
 type CreateUnexpectedProblemParams struct {
 

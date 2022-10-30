@@ -87,7 +87,8 @@ func NewGetOrderMetricsOK() *GetOrderMetricsOK {
 	return &GetOrderMetricsOK{}
 }
 
-/* GetOrderMetricsOK describes a response with status code 200, with default header values.
+/*
+GetOrderMetricsOK describes a response with status code 200, with default header values.
 
 OrderMetric action taken on the resource OrderMetrics.
 */
@@ -104,9 +105,39 @@ type GetOrderMetricsOK struct {
 	Payload *sales_models.GetOrderMetricsResponse
 }
 
+// IsSuccess returns true when this get order metrics o k response has a 2xx status code
+func (o *GetOrderMetricsOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this get order metrics o k response has a 3xx status code
+func (o *GetOrderMetricsOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get order metrics o k response has a 4xx status code
+func (o *GetOrderMetricsOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get order metrics o k response has a 5xx status code
+func (o *GetOrderMetricsOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get order metrics o k response a status code equal to that given
+func (o *GetOrderMetricsOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *GetOrderMetricsOK) Error() string {
 	return fmt.Sprintf("[GET /sales/v1/orderMetrics][%d] getOrderMetricsOK  %+v", 200, o.Payload)
 }
+
+func (o *GetOrderMetricsOK) String() string {
+	return fmt.Sprintf("[GET /sales/v1/orderMetrics][%d] getOrderMetricsOK  %+v", 200, o.Payload)
+}
+
 func (o *GetOrderMetricsOK) GetPayload() *sales_models.GetOrderMetricsResponse {
 	return o.Payload
 }
@@ -142,7 +173,8 @@ func NewGetOrderMetricsBadRequest() *GetOrderMetricsBadRequest {
 	return &GetOrderMetricsBadRequest{}
 }
 
-/* GetOrderMetricsBadRequest describes a response with status code 400, with default header values.
+/*
+GetOrderMetricsBadRequest describes a response with status code 400, with default header values.
 
 Request has missing or invalid parameters and cannot be parsed.
 */
@@ -159,9 +191,39 @@ type GetOrderMetricsBadRequest struct {
 	Payload *sales_models.GetOrderMetricsResponse
 }
 
+// IsSuccess returns true when this get order metrics bad request response has a 2xx status code
+func (o *GetOrderMetricsBadRequest) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get order metrics bad request response has a 3xx status code
+func (o *GetOrderMetricsBadRequest) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get order metrics bad request response has a 4xx status code
+func (o *GetOrderMetricsBadRequest) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get order metrics bad request response has a 5xx status code
+func (o *GetOrderMetricsBadRequest) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get order metrics bad request response a status code equal to that given
+func (o *GetOrderMetricsBadRequest) IsCode(code int) bool {
+	return code == 400
+}
+
 func (o *GetOrderMetricsBadRequest) Error() string {
 	return fmt.Sprintf("[GET /sales/v1/orderMetrics][%d] getOrderMetricsBadRequest  %+v", 400, o.Payload)
 }
+
+func (o *GetOrderMetricsBadRequest) String() string {
+	return fmt.Sprintf("[GET /sales/v1/orderMetrics][%d] getOrderMetricsBadRequest  %+v", 400, o.Payload)
+}
+
 func (o *GetOrderMetricsBadRequest) GetPayload() *sales_models.GetOrderMetricsResponse {
 	return o.Payload
 }
@@ -197,7 +259,8 @@ func NewGetOrderMetricsForbidden() *GetOrderMetricsForbidden {
 	return &GetOrderMetricsForbidden{}
 }
 
-/* GetOrderMetricsForbidden describes a response with status code 403, with default header values.
+/*
+GetOrderMetricsForbidden describes a response with status code 403, with default header values.
 
 403 can be caused for reasons like Access Denied, Unauthorized, Expired Token, Invalid Signature or Resource Not Found.
 */
@@ -210,9 +273,39 @@ type GetOrderMetricsForbidden struct {
 	Payload *sales_models.GetOrderMetricsResponse
 }
 
+// IsSuccess returns true when this get order metrics forbidden response has a 2xx status code
+func (o *GetOrderMetricsForbidden) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get order metrics forbidden response has a 3xx status code
+func (o *GetOrderMetricsForbidden) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get order metrics forbidden response has a 4xx status code
+func (o *GetOrderMetricsForbidden) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get order metrics forbidden response has a 5xx status code
+func (o *GetOrderMetricsForbidden) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get order metrics forbidden response a status code equal to that given
+func (o *GetOrderMetricsForbidden) IsCode(code int) bool {
+	return code == 403
+}
+
 func (o *GetOrderMetricsForbidden) Error() string {
 	return fmt.Sprintf("[GET /sales/v1/orderMetrics][%d] getOrderMetricsForbidden  %+v", 403, o.Payload)
 }
+
+func (o *GetOrderMetricsForbidden) String() string {
+	return fmt.Sprintf("[GET /sales/v1/orderMetrics][%d] getOrderMetricsForbidden  %+v", 403, o.Payload)
+}
+
 func (o *GetOrderMetricsForbidden) GetPayload() *sales_models.GetOrderMetricsResponse {
 	return o.Payload
 }
@@ -241,7 +334,8 @@ func NewGetOrderMetricsNotFound() *GetOrderMetricsNotFound {
 	return &GetOrderMetricsNotFound{}
 }
 
-/* GetOrderMetricsNotFound describes a response with status code 404, with default header values.
+/*
+GetOrderMetricsNotFound describes a response with status code 404, with default header values.
 
 The resource specified does not exist.
 */
@@ -258,9 +352,39 @@ type GetOrderMetricsNotFound struct {
 	Payload *sales_models.GetOrderMetricsResponse
 }
 
+// IsSuccess returns true when this get order metrics not found response has a 2xx status code
+func (o *GetOrderMetricsNotFound) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get order metrics not found response has a 3xx status code
+func (o *GetOrderMetricsNotFound) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get order metrics not found response has a 4xx status code
+func (o *GetOrderMetricsNotFound) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get order metrics not found response has a 5xx status code
+func (o *GetOrderMetricsNotFound) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get order metrics not found response a status code equal to that given
+func (o *GetOrderMetricsNotFound) IsCode(code int) bool {
+	return code == 404
+}
+
 func (o *GetOrderMetricsNotFound) Error() string {
 	return fmt.Sprintf("[GET /sales/v1/orderMetrics][%d] getOrderMetricsNotFound  %+v", 404, o.Payload)
 }
+
+func (o *GetOrderMetricsNotFound) String() string {
+	return fmt.Sprintf("[GET /sales/v1/orderMetrics][%d] getOrderMetricsNotFound  %+v", 404, o.Payload)
+}
+
 func (o *GetOrderMetricsNotFound) GetPayload() *sales_models.GetOrderMetricsResponse {
 	return o.Payload
 }
@@ -296,7 +420,8 @@ func NewGetOrderMetricsRequestEntityTooLarge() *GetOrderMetricsRequestEntityTooL
 	return &GetOrderMetricsRequestEntityTooLarge{}
 }
 
-/* GetOrderMetricsRequestEntityTooLarge describes a response with status code 413, with default header values.
+/*
+GetOrderMetricsRequestEntityTooLarge describes a response with status code 413, with default header values.
 
 The request size exceeded the maximum accepted size.
 */
@@ -314,9 +439,39 @@ type GetOrderMetricsRequestEntityTooLarge struct {
 	Payload *sales_models.GetOrderMetricsResponse
 }
 
+// IsSuccess returns true when this get order metrics request entity too large response has a 2xx status code
+func (o *GetOrderMetricsRequestEntityTooLarge) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get order metrics request entity too large response has a 3xx status code
+func (o *GetOrderMetricsRequestEntityTooLarge) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get order metrics request entity too large response has a 4xx status code
+func (o *GetOrderMetricsRequestEntityTooLarge) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get order metrics request entity too large response has a 5xx status code
+func (o *GetOrderMetricsRequestEntityTooLarge) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get order metrics request entity too large response a status code equal to that given
+func (o *GetOrderMetricsRequestEntityTooLarge) IsCode(code int) bool {
+	return code == 413
+}
+
 func (o *GetOrderMetricsRequestEntityTooLarge) Error() string {
 	return fmt.Sprintf("[GET /sales/v1/orderMetrics][%d] getOrderMetricsRequestEntityTooLarge  %+v", 413, o.Payload)
 }
+
+func (o *GetOrderMetricsRequestEntityTooLarge) String() string {
+	return fmt.Sprintf("[GET /sales/v1/orderMetrics][%d] getOrderMetricsRequestEntityTooLarge  %+v", 413, o.Payload)
+}
+
 func (o *GetOrderMetricsRequestEntityTooLarge) GetPayload() *sales_models.GetOrderMetricsResponse {
 	return o.Payload
 }
@@ -352,7 +507,8 @@ func NewGetOrderMetricsUnsupportedMediaType() *GetOrderMetricsUnsupportedMediaTy
 	return &GetOrderMetricsUnsupportedMediaType{}
 }
 
-/* GetOrderMetricsUnsupportedMediaType describes a response with status code 415, with default header values.
+/*
+GetOrderMetricsUnsupportedMediaType describes a response with status code 415, with default header values.
 
 The entity of the request is in a format not supported by the requested resource.
 */
@@ -370,9 +526,39 @@ type GetOrderMetricsUnsupportedMediaType struct {
 	Payload *sales_models.GetOrderMetricsResponse
 }
 
+// IsSuccess returns true when this get order metrics unsupported media type response has a 2xx status code
+func (o *GetOrderMetricsUnsupportedMediaType) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get order metrics unsupported media type response has a 3xx status code
+func (o *GetOrderMetricsUnsupportedMediaType) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get order metrics unsupported media type response has a 4xx status code
+func (o *GetOrderMetricsUnsupportedMediaType) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get order metrics unsupported media type response has a 5xx status code
+func (o *GetOrderMetricsUnsupportedMediaType) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get order metrics unsupported media type response a status code equal to that given
+func (o *GetOrderMetricsUnsupportedMediaType) IsCode(code int) bool {
+	return code == 415
+}
+
 func (o *GetOrderMetricsUnsupportedMediaType) Error() string {
 	return fmt.Sprintf("[GET /sales/v1/orderMetrics][%d] getOrderMetricsUnsupportedMediaType  %+v", 415, o.Payload)
 }
+
+func (o *GetOrderMetricsUnsupportedMediaType) String() string {
+	return fmt.Sprintf("[GET /sales/v1/orderMetrics][%d] getOrderMetricsUnsupportedMediaType  %+v", 415, o.Payload)
+}
+
 func (o *GetOrderMetricsUnsupportedMediaType) GetPayload() *sales_models.GetOrderMetricsResponse {
 	return o.Payload
 }
@@ -408,7 +594,8 @@ func NewGetOrderMetricsTooManyRequests() *GetOrderMetricsTooManyRequests {
 	return &GetOrderMetricsTooManyRequests{}
 }
 
-/* GetOrderMetricsTooManyRequests describes a response with status code 429, with default header values.
+/*
+GetOrderMetricsTooManyRequests describes a response with status code 429, with default header values.
 
 The frequency of requests was greater than allowed.
 */
@@ -426,9 +613,39 @@ type GetOrderMetricsTooManyRequests struct {
 	Payload *sales_models.GetOrderMetricsResponse
 }
 
+// IsSuccess returns true when this get order metrics too many requests response has a 2xx status code
+func (o *GetOrderMetricsTooManyRequests) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get order metrics too many requests response has a 3xx status code
+func (o *GetOrderMetricsTooManyRequests) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get order metrics too many requests response has a 4xx status code
+func (o *GetOrderMetricsTooManyRequests) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get order metrics too many requests response has a 5xx status code
+func (o *GetOrderMetricsTooManyRequests) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get order metrics too many requests response a status code equal to that given
+func (o *GetOrderMetricsTooManyRequests) IsCode(code int) bool {
+	return code == 429
+}
+
 func (o *GetOrderMetricsTooManyRequests) Error() string {
 	return fmt.Sprintf("[GET /sales/v1/orderMetrics][%d] getOrderMetricsTooManyRequests  %+v", 429, o.Payload)
 }
+
+func (o *GetOrderMetricsTooManyRequests) String() string {
+	return fmt.Sprintf("[GET /sales/v1/orderMetrics][%d] getOrderMetricsTooManyRequests  %+v", 429, o.Payload)
+}
+
 func (o *GetOrderMetricsTooManyRequests) GetPayload() *sales_models.GetOrderMetricsResponse {
 	return o.Payload
 }
@@ -464,7 +681,8 @@ func NewGetOrderMetricsInternalServerError() *GetOrderMetricsInternalServerError
 	return &GetOrderMetricsInternalServerError{}
 }
 
-/* GetOrderMetricsInternalServerError describes a response with status code 500, with default header values.
+/*
+GetOrderMetricsInternalServerError describes a response with status code 500, with default header values.
 
 Encountered an unexpected condition which prevented the server from fulfilling the request.
 */
@@ -482,9 +700,39 @@ type GetOrderMetricsInternalServerError struct {
 	Payload *sales_models.GetOrderMetricsResponse
 }
 
+// IsSuccess returns true when this get order metrics internal server error response has a 2xx status code
+func (o *GetOrderMetricsInternalServerError) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get order metrics internal server error response has a 3xx status code
+func (o *GetOrderMetricsInternalServerError) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get order metrics internal server error response has a 4xx status code
+func (o *GetOrderMetricsInternalServerError) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get order metrics internal server error response has a 5xx status code
+func (o *GetOrderMetricsInternalServerError) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this get order metrics internal server error response a status code equal to that given
+func (o *GetOrderMetricsInternalServerError) IsCode(code int) bool {
+	return code == 500
+}
+
 func (o *GetOrderMetricsInternalServerError) Error() string {
 	return fmt.Sprintf("[GET /sales/v1/orderMetrics][%d] getOrderMetricsInternalServerError  %+v", 500, o.Payload)
 }
+
+func (o *GetOrderMetricsInternalServerError) String() string {
+	return fmt.Sprintf("[GET /sales/v1/orderMetrics][%d] getOrderMetricsInternalServerError  %+v", 500, o.Payload)
+}
+
 func (o *GetOrderMetricsInternalServerError) GetPayload() *sales_models.GetOrderMetricsResponse {
 	return o.Payload
 }
@@ -520,7 +768,8 @@ func NewGetOrderMetricsServiceUnavailable() *GetOrderMetricsServiceUnavailable {
 	return &GetOrderMetricsServiceUnavailable{}
 }
 
-/* GetOrderMetricsServiceUnavailable describes a response with status code 503, with default header values.
+/*
+GetOrderMetricsServiceUnavailable describes a response with status code 503, with default header values.
 
 Temporary overloading or maintenance of the server.
 */
@@ -538,9 +787,39 @@ type GetOrderMetricsServiceUnavailable struct {
 	Payload *sales_models.GetOrderMetricsResponse
 }
 
+// IsSuccess returns true when this get order metrics service unavailable response has a 2xx status code
+func (o *GetOrderMetricsServiceUnavailable) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get order metrics service unavailable response has a 3xx status code
+func (o *GetOrderMetricsServiceUnavailable) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get order metrics service unavailable response has a 4xx status code
+func (o *GetOrderMetricsServiceUnavailable) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get order metrics service unavailable response has a 5xx status code
+func (o *GetOrderMetricsServiceUnavailable) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this get order metrics service unavailable response a status code equal to that given
+func (o *GetOrderMetricsServiceUnavailable) IsCode(code int) bool {
+	return code == 503
+}
+
 func (o *GetOrderMetricsServiceUnavailable) Error() string {
 	return fmt.Sprintf("[GET /sales/v1/orderMetrics][%d] getOrderMetricsServiceUnavailable  %+v", 503, o.Payload)
 }
+
+func (o *GetOrderMetricsServiceUnavailable) String() string {
+	return fmt.Sprintf("[GET /sales/v1/orderMetrics][%d] getOrderMetricsServiceUnavailable  %+v", 503, o.Payload)
+}
+
 func (o *GetOrderMetricsServiceUnavailable) GetPayload() *sales_models.GetOrderMetricsResponse {
 	return o.Payload
 }

@@ -87,7 +87,8 @@ func NewGetReportsOK() *GetReportsOK {
 	return &GetReportsOK{}
 }
 
-/* GetReportsOK describes a response with status code 200, with default header values.
+/*
+GetReportsOK describes a response with status code 200, with default header values.
 
 Success.
 */
@@ -104,9 +105,39 @@ type GetReportsOK struct {
 	Payload *reports_2020_09_04_models.GetReportsResponse
 }
 
+// IsSuccess returns true when this get reports o k response has a 2xx status code
+func (o *GetReportsOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this get reports o k response has a 3xx status code
+func (o *GetReportsOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get reports o k response has a 4xx status code
+func (o *GetReportsOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get reports o k response has a 5xx status code
+func (o *GetReportsOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get reports o k response a status code equal to that given
+func (o *GetReportsOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *GetReportsOK) Error() string {
 	return fmt.Sprintf("[GET /reports/2020-09-04/reports][%d] getReportsOK  %+v", 200, o.Payload)
 }
+
+func (o *GetReportsOK) String() string {
+	return fmt.Sprintf("[GET /reports/2020-09-04/reports][%d] getReportsOK  %+v", 200, o.Payload)
+}
+
 func (o *GetReportsOK) GetPayload() *reports_2020_09_04_models.GetReportsResponse {
 	return o.Payload
 }
@@ -142,7 +173,8 @@ func NewGetReportsBadRequest() *GetReportsBadRequest {
 	return &GetReportsBadRequest{}
 }
 
-/* GetReportsBadRequest describes a response with status code 400, with default header values.
+/*
+GetReportsBadRequest describes a response with status code 400, with default header values.
 
 Request has missing or invalid parameters and cannot be parsed.
 */
@@ -159,9 +191,39 @@ type GetReportsBadRequest struct {
 	Payload *reports_2020_09_04_models.GetReportsResponse
 }
 
+// IsSuccess returns true when this get reports bad request response has a 2xx status code
+func (o *GetReportsBadRequest) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get reports bad request response has a 3xx status code
+func (o *GetReportsBadRequest) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get reports bad request response has a 4xx status code
+func (o *GetReportsBadRequest) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get reports bad request response has a 5xx status code
+func (o *GetReportsBadRequest) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get reports bad request response a status code equal to that given
+func (o *GetReportsBadRequest) IsCode(code int) bool {
+	return code == 400
+}
+
 func (o *GetReportsBadRequest) Error() string {
 	return fmt.Sprintf("[GET /reports/2020-09-04/reports][%d] getReportsBadRequest  %+v", 400, o.Payload)
 }
+
+func (o *GetReportsBadRequest) String() string {
+	return fmt.Sprintf("[GET /reports/2020-09-04/reports][%d] getReportsBadRequest  %+v", 400, o.Payload)
+}
+
 func (o *GetReportsBadRequest) GetPayload() *reports_2020_09_04_models.GetReportsResponse {
 	return o.Payload
 }
@@ -197,7 +259,8 @@ func NewGetReportsUnauthorized() *GetReportsUnauthorized {
 	return &GetReportsUnauthorized{}
 }
 
-/* GetReportsUnauthorized describes a response with status code 401, with default header values.
+/*
+GetReportsUnauthorized describes a response with status code 401, with default header values.
 
 The request's Authorization header is not formatted correctly or does not contain a valid token.
 */
@@ -215,9 +278,39 @@ type GetReportsUnauthorized struct {
 	Payload *reports_2020_09_04_models.GetReportsResponse
 }
 
+// IsSuccess returns true when this get reports unauthorized response has a 2xx status code
+func (o *GetReportsUnauthorized) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get reports unauthorized response has a 3xx status code
+func (o *GetReportsUnauthorized) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get reports unauthorized response has a 4xx status code
+func (o *GetReportsUnauthorized) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get reports unauthorized response has a 5xx status code
+func (o *GetReportsUnauthorized) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get reports unauthorized response a status code equal to that given
+func (o *GetReportsUnauthorized) IsCode(code int) bool {
+	return code == 401
+}
+
 func (o *GetReportsUnauthorized) Error() string {
 	return fmt.Sprintf("[GET /reports/2020-09-04/reports][%d] getReportsUnauthorized  %+v", 401, o.Payload)
 }
+
+func (o *GetReportsUnauthorized) String() string {
+	return fmt.Sprintf("[GET /reports/2020-09-04/reports][%d] getReportsUnauthorized  %+v", 401, o.Payload)
+}
+
 func (o *GetReportsUnauthorized) GetPayload() *reports_2020_09_04_models.GetReportsResponse {
 	return o.Payload
 }
@@ -253,7 +346,8 @@ func NewGetReportsForbidden() *GetReportsForbidden {
 	return &GetReportsForbidden{}
 }
 
-/* GetReportsForbidden describes a response with status code 403, with default header values.
+/*
+GetReportsForbidden describes a response with status code 403, with default header values.
 
 Indicates that access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.
 */
@@ -266,9 +360,39 @@ type GetReportsForbidden struct {
 	Payload *reports_2020_09_04_models.GetReportsResponse
 }
 
+// IsSuccess returns true when this get reports forbidden response has a 2xx status code
+func (o *GetReportsForbidden) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get reports forbidden response has a 3xx status code
+func (o *GetReportsForbidden) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get reports forbidden response has a 4xx status code
+func (o *GetReportsForbidden) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get reports forbidden response has a 5xx status code
+func (o *GetReportsForbidden) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get reports forbidden response a status code equal to that given
+func (o *GetReportsForbidden) IsCode(code int) bool {
+	return code == 403
+}
+
 func (o *GetReportsForbidden) Error() string {
 	return fmt.Sprintf("[GET /reports/2020-09-04/reports][%d] getReportsForbidden  %+v", 403, o.Payload)
 }
+
+func (o *GetReportsForbidden) String() string {
+	return fmt.Sprintf("[GET /reports/2020-09-04/reports][%d] getReportsForbidden  %+v", 403, o.Payload)
+}
+
 func (o *GetReportsForbidden) GetPayload() *reports_2020_09_04_models.GetReportsResponse {
 	return o.Payload
 }
@@ -297,7 +421,8 @@ func NewGetReportsNotFound() *GetReportsNotFound {
 	return &GetReportsNotFound{}
 }
 
-/* GetReportsNotFound describes a response with status code 404, with default header values.
+/*
+GetReportsNotFound describes a response with status code 404, with default header values.
 
 The specified resource does not exist.
 */
@@ -314,9 +439,39 @@ type GetReportsNotFound struct {
 	Payload *reports_2020_09_04_models.GetReportsResponse
 }
 
+// IsSuccess returns true when this get reports not found response has a 2xx status code
+func (o *GetReportsNotFound) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get reports not found response has a 3xx status code
+func (o *GetReportsNotFound) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get reports not found response has a 4xx status code
+func (o *GetReportsNotFound) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get reports not found response has a 5xx status code
+func (o *GetReportsNotFound) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get reports not found response a status code equal to that given
+func (o *GetReportsNotFound) IsCode(code int) bool {
+	return code == 404
+}
+
 func (o *GetReportsNotFound) Error() string {
 	return fmt.Sprintf("[GET /reports/2020-09-04/reports][%d] getReportsNotFound  %+v", 404, o.Payload)
 }
+
+func (o *GetReportsNotFound) String() string {
+	return fmt.Sprintf("[GET /reports/2020-09-04/reports][%d] getReportsNotFound  %+v", 404, o.Payload)
+}
+
 func (o *GetReportsNotFound) GetPayload() *reports_2020_09_04_models.GetReportsResponse {
 	return o.Payload
 }
@@ -352,7 +507,8 @@ func NewGetReportsUnsupportedMediaType() *GetReportsUnsupportedMediaType {
 	return &GetReportsUnsupportedMediaType{}
 }
 
-/* GetReportsUnsupportedMediaType describes a response with status code 415, with default header values.
+/*
+GetReportsUnsupportedMediaType describes a response with status code 415, with default header values.
 
 The request's Content-Type header is invalid.
 */
@@ -370,9 +526,39 @@ type GetReportsUnsupportedMediaType struct {
 	Payload *reports_2020_09_04_models.GetReportsResponse
 }
 
+// IsSuccess returns true when this get reports unsupported media type response has a 2xx status code
+func (o *GetReportsUnsupportedMediaType) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get reports unsupported media type response has a 3xx status code
+func (o *GetReportsUnsupportedMediaType) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get reports unsupported media type response has a 4xx status code
+func (o *GetReportsUnsupportedMediaType) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get reports unsupported media type response has a 5xx status code
+func (o *GetReportsUnsupportedMediaType) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get reports unsupported media type response a status code equal to that given
+func (o *GetReportsUnsupportedMediaType) IsCode(code int) bool {
+	return code == 415
+}
+
 func (o *GetReportsUnsupportedMediaType) Error() string {
 	return fmt.Sprintf("[GET /reports/2020-09-04/reports][%d] getReportsUnsupportedMediaType  %+v", 415, o.Payload)
 }
+
+func (o *GetReportsUnsupportedMediaType) String() string {
+	return fmt.Sprintf("[GET /reports/2020-09-04/reports][%d] getReportsUnsupportedMediaType  %+v", 415, o.Payload)
+}
+
 func (o *GetReportsUnsupportedMediaType) GetPayload() *reports_2020_09_04_models.GetReportsResponse {
 	return o.Payload
 }
@@ -408,7 +594,8 @@ func NewGetReportsTooManyRequests() *GetReportsTooManyRequests {
 	return &GetReportsTooManyRequests{}
 }
 
-/* GetReportsTooManyRequests describes a response with status code 429, with default header values.
+/*
+GetReportsTooManyRequests describes a response with status code 429, with default header values.
 
 The frequency of requests was greater than allowed.
 */
@@ -426,9 +613,39 @@ type GetReportsTooManyRequests struct {
 	Payload *reports_2020_09_04_models.GetReportsResponse
 }
 
+// IsSuccess returns true when this get reports too many requests response has a 2xx status code
+func (o *GetReportsTooManyRequests) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get reports too many requests response has a 3xx status code
+func (o *GetReportsTooManyRequests) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get reports too many requests response has a 4xx status code
+func (o *GetReportsTooManyRequests) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get reports too many requests response has a 5xx status code
+func (o *GetReportsTooManyRequests) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get reports too many requests response a status code equal to that given
+func (o *GetReportsTooManyRequests) IsCode(code int) bool {
+	return code == 429
+}
+
 func (o *GetReportsTooManyRequests) Error() string {
 	return fmt.Sprintf("[GET /reports/2020-09-04/reports][%d] getReportsTooManyRequests  %+v", 429, o.Payload)
 }
+
+func (o *GetReportsTooManyRequests) String() string {
+	return fmt.Sprintf("[GET /reports/2020-09-04/reports][%d] getReportsTooManyRequests  %+v", 429, o.Payload)
+}
+
 func (o *GetReportsTooManyRequests) GetPayload() *reports_2020_09_04_models.GetReportsResponse {
 	return o.Payload
 }
@@ -464,7 +681,8 @@ func NewGetReportsInternalServerError() *GetReportsInternalServerError {
 	return &GetReportsInternalServerError{}
 }
 
-/* GetReportsInternalServerError describes a response with status code 500, with default header values.
+/*
+GetReportsInternalServerError describes a response with status code 500, with default header values.
 
 An unexpected condition occurred that prevented the server from fulfilling the request.
 */
@@ -482,9 +700,39 @@ type GetReportsInternalServerError struct {
 	Payload *reports_2020_09_04_models.GetReportsResponse
 }
 
+// IsSuccess returns true when this get reports internal server error response has a 2xx status code
+func (o *GetReportsInternalServerError) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get reports internal server error response has a 3xx status code
+func (o *GetReportsInternalServerError) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get reports internal server error response has a 4xx status code
+func (o *GetReportsInternalServerError) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get reports internal server error response has a 5xx status code
+func (o *GetReportsInternalServerError) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this get reports internal server error response a status code equal to that given
+func (o *GetReportsInternalServerError) IsCode(code int) bool {
+	return code == 500
+}
+
 func (o *GetReportsInternalServerError) Error() string {
 	return fmt.Sprintf("[GET /reports/2020-09-04/reports][%d] getReportsInternalServerError  %+v", 500, o.Payload)
 }
+
+func (o *GetReportsInternalServerError) String() string {
+	return fmt.Sprintf("[GET /reports/2020-09-04/reports][%d] getReportsInternalServerError  %+v", 500, o.Payload)
+}
+
 func (o *GetReportsInternalServerError) GetPayload() *reports_2020_09_04_models.GetReportsResponse {
 	return o.Payload
 }
@@ -520,7 +768,8 @@ func NewGetReportsServiceUnavailable() *GetReportsServiceUnavailable {
 	return &GetReportsServiceUnavailable{}
 }
 
-/* GetReportsServiceUnavailable describes a response with status code 503, with default header values.
+/*
+GetReportsServiceUnavailable describes a response with status code 503, with default header values.
 
 Temporary overloading or maintenance of the server.
 */
@@ -538,9 +787,39 @@ type GetReportsServiceUnavailable struct {
 	Payload *reports_2020_09_04_models.GetReportsResponse
 }
 
+// IsSuccess returns true when this get reports service unavailable response has a 2xx status code
+func (o *GetReportsServiceUnavailable) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get reports service unavailable response has a 3xx status code
+func (o *GetReportsServiceUnavailable) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get reports service unavailable response has a 4xx status code
+func (o *GetReportsServiceUnavailable) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get reports service unavailable response has a 5xx status code
+func (o *GetReportsServiceUnavailable) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this get reports service unavailable response a status code equal to that given
+func (o *GetReportsServiceUnavailable) IsCode(code int) bool {
+	return code == 503
+}
+
 func (o *GetReportsServiceUnavailable) Error() string {
 	return fmt.Sprintf("[GET /reports/2020-09-04/reports][%d] getReportsServiceUnavailable  %+v", 503, o.Payload)
 }
+
+func (o *GetReportsServiceUnavailable) String() string {
+	return fmt.Sprintf("[GET /reports/2020-09-04/reports][%d] getReportsServiceUnavailable  %+v", 503, o.Payload)
+}
+
 func (o *GetReportsServiceUnavailable) GetPayload() *reports_2020_09_04_models.GetReportsResponse {
 	return o.Payload
 }

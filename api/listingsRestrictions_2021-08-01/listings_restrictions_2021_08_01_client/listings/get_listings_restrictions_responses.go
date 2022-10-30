@@ -87,7 +87,8 @@ func NewGetListingsRestrictionsOK() *GetListingsRestrictionsOK {
 	return &GetListingsRestrictionsOK{}
 }
 
-/* GetListingsRestrictionsOK describes a response with status code 200, with default header values.
+/*
+GetListingsRestrictionsOK describes a response with status code 200, with default header values.
 
 Successfully retrieved the listings restrictions.
 */
@@ -104,9 +105,39 @@ type GetListingsRestrictionsOK struct {
 	Payload *listings_restrictions_2021_08_01_models.RestrictionList
 }
 
+// IsSuccess returns true when this get listings restrictions o k response has a 2xx status code
+func (o *GetListingsRestrictionsOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this get listings restrictions o k response has a 3xx status code
+func (o *GetListingsRestrictionsOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get listings restrictions o k response has a 4xx status code
+func (o *GetListingsRestrictionsOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get listings restrictions o k response has a 5xx status code
+func (o *GetListingsRestrictionsOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get listings restrictions o k response a status code equal to that given
+func (o *GetListingsRestrictionsOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *GetListingsRestrictionsOK) Error() string {
 	return fmt.Sprintf("[GET /listings/2021-08-01/restrictions][%d] getListingsRestrictionsOK  %+v", 200, o.Payload)
 }
+
+func (o *GetListingsRestrictionsOK) String() string {
+	return fmt.Sprintf("[GET /listings/2021-08-01/restrictions][%d] getListingsRestrictionsOK  %+v", 200, o.Payload)
+}
+
 func (o *GetListingsRestrictionsOK) GetPayload() *listings_restrictions_2021_08_01_models.RestrictionList {
 	return o.Payload
 }
@@ -142,7 +173,8 @@ func NewGetListingsRestrictionsBadRequest() *GetListingsRestrictionsBadRequest {
 	return &GetListingsRestrictionsBadRequest{}
 }
 
-/* GetListingsRestrictionsBadRequest describes a response with status code 400, with default header values.
+/*
+GetListingsRestrictionsBadRequest describes a response with status code 400, with default header values.
 
 Request has missing or invalid parameters and cannot be parsed.
 */
@@ -159,9 +191,39 @@ type GetListingsRestrictionsBadRequest struct {
 	Payload listings_restrictions_2021_08_01_models.ErrorList
 }
 
+// IsSuccess returns true when this get listings restrictions bad request response has a 2xx status code
+func (o *GetListingsRestrictionsBadRequest) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get listings restrictions bad request response has a 3xx status code
+func (o *GetListingsRestrictionsBadRequest) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get listings restrictions bad request response has a 4xx status code
+func (o *GetListingsRestrictionsBadRequest) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get listings restrictions bad request response has a 5xx status code
+func (o *GetListingsRestrictionsBadRequest) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get listings restrictions bad request response a status code equal to that given
+func (o *GetListingsRestrictionsBadRequest) IsCode(code int) bool {
+	return code == 400
+}
+
 func (o *GetListingsRestrictionsBadRequest) Error() string {
 	return fmt.Sprintf("[GET /listings/2021-08-01/restrictions][%d] getListingsRestrictionsBadRequest  %+v", 400, o.Payload)
 }
+
+func (o *GetListingsRestrictionsBadRequest) String() string {
+	return fmt.Sprintf("[GET /listings/2021-08-01/restrictions][%d] getListingsRestrictionsBadRequest  %+v", 400, o.Payload)
+}
+
 func (o *GetListingsRestrictionsBadRequest) GetPayload() listings_restrictions_2021_08_01_models.ErrorList {
 	return o.Payload
 }
@@ -195,7 +257,8 @@ func NewGetListingsRestrictionsForbidden() *GetListingsRestrictionsForbidden {
 	return &GetListingsRestrictionsForbidden{}
 }
 
-/* GetListingsRestrictionsForbidden describes a response with status code 403, with default header values.
+/*
+GetListingsRestrictionsForbidden describes a response with status code 403, with default header values.
 
 Indicates that access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.
 */
@@ -208,9 +271,39 @@ type GetListingsRestrictionsForbidden struct {
 	Payload listings_restrictions_2021_08_01_models.ErrorList
 }
 
+// IsSuccess returns true when this get listings restrictions forbidden response has a 2xx status code
+func (o *GetListingsRestrictionsForbidden) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get listings restrictions forbidden response has a 3xx status code
+func (o *GetListingsRestrictionsForbidden) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get listings restrictions forbidden response has a 4xx status code
+func (o *GetListingsRestrictionsForbidden) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get listings restrictions forbidden response has a 5xx status code
+func (o *GetListingsRestrictionsForbidden) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get listings restrictions forbidden response a status code equal to that given
+func (o *GetListingsRestrictionsForbidden) IsCode(code int) bool {
+	return code == 403
+}
+
 func (o *GetListingsRestrictionsForbidden) Error() string {
 	return fmt.Sprintf("[GET /listings/2021-08-01/restrictions][%d] getListingsRestrictionsForbidden  %+v", 403, o.Payload)
 }
+
+func (o *GetListingsRestrictionsForbidden) String() string {
+	return fmt.Sprintf("[GET /listings/2021-08-01/restrictions][%d] getListingsRestrictionsForbidden  %+v", 403, o.Payload)
+}
+
 func (o *GetListingsRestrictionsForbidden) GetPayload() listings_restrictions_2021_08_01_models.ErrorList {
 	return o.Payload
 }
@@ -237,7 +330,8 @@ func NewGetListingsRestrictionsNotFound() *GetListingsRestrictionsNotFound {
 	return &GetListingsRestrictionsNotFound{}
 }
 
-/* GetListingsRestrictionsNotFound describes a response with status code 404, with default header values.
+/*
+GetListingsRestrictionsNotFound describes a response with status code 404, with default header values.
 
 The resource specified does not exist.
 */
@@ -254,9 +348,39 @@ type GetListingsRestrictionsNotFound struct {
 	Payload listings_restrictions_2021_08_01_models.ErrorList
 }
 
+// IsSuccess returns true when this get listings restrictions not found response has a 2xx status code
+func (o *GetListingsRestrictionsNotFound) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get listings restrictions not found response has a 3xx status code
+func (o *GetListingsRestrictionsNotFound) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get listings restrictions not found response has a 4xx status code
+func (o *GetListingsRestrictionsNotFound) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get listings restrictions not found response has a 5xx status code
+func (o *GetListingsRestrictionsNotFound) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get listings restrictions not found response a status code equal to that given
+func (o *GetListingsRestrictionsNotFound) IsCode(code int) bool {
+	return code == 404
+}
+
 func (o *GetListingsRestrictionsNotFound) Error() string {
 	return fmt.Sprintf("[GET /listings/2021-08-01/restrictions][%d] getListingsRestrictionsNotFound  %+v", 404, o.Payload)
 }
+
+func (o *GetListingsRestrictionsNotFound) String() string {
+	return fmt.Sprintf("[GET /listings/2021-08-01/restrictions][%d] getListingsRestrictionsNotFound  %+v", 404, o.Payload)
+}
+
 func (o *GetListingsRestrictionsNotFound) GetPayload() listings_restrictions_2021_08_01_models.ErrorList {
 	return o.Payload
 }
@@ -290,7 +414,8 @@ func NewGetListingsRestrictionsRequestEntityTooLarge() *GetListingsRestrictionsR
 	return &GetListingsRestrictionsRequestEntityTooLarge{}
 }
 
-/* GetListingsRestrictionsRequestEntityTooLarge describes a response with status code 413, with default header values.
+/*
+GetListingsRestrictionsRequestEntityTooLarge describes a response with status code 413, with default header values.
 
 The request size exceeded the maximum accepted size.
 */
@@ -303,9 +428,39 @@ type GetListingsRestrictionsRequestEntityTooLarge struct {
 	Payload listings_restrictions_2021_08_01_models.ErrorList
 }
 
+// IsSuccess returns true when this get listings restrictions request entity too large response has a 2xx status code
+func (o *GetListingsRestrictionsRequestEntityTooLarge) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get listings restrictions request entity too large response has a 3xx status code
+func (o *GetListingsRestrictionsRequestEntityTooLarge) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get listings restrictions request entity too large response has a 4xx status code
+func (o *GetListingsRestrictionsRequestEntityTooLarge) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get listings restrictions request entity too large response has a 5xx status code
+func (o *GetListingsRestrictionsRequestEntityTooLarge) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get listings restrictions request entity too large response a status code equal to that given
+func (o *GetListingsRestrictionsRequestEntityTooLarge) IsCode(code int) bool {
+	return code == 413
+}
+
 func (o *GetListingsRestrictionsRequestEntityTooLarge) Error() string {
 	return fmt.Sprintf("[GET /listings/2021-08-01/restrictions][%d] getListingsRestrictionsRequestEntityTooLarge  %+v", 413, o.Payload)
 }
+
+func (o *GetListingsRestrictionsRequestEntityTooLarge) String() string {
+	return fmt.Sprintf("[GET /listings/2021-08-01/restrictions][%d] getListingsRestrictionsRequestEntityTooLarge  %+v", 413, o.Payload)
+}
+
 func (o *GetListingsRestrictionsRequestEntityTooLarge) GetPayload() listings_restrictions_2021_08_01_models.ErrorList {
 	return o.Payload
 }
@@ -332,7 +487,8 @@ func NewGetListingsRestrictionsUnsupportedMediaType() *GetListingsRestrictionsUn
 	return &GetListingsRestrictionsUnsupportedMediaType{}
 }
 
-/* GetListingsRestrictionsUnsupportedMediaType describes a response with status code 415, with default header values.
+/*
+GetListingsRestrictionsUnsupportedMediaType describes a response with status code 415, with default header values.
 
 The request payload is in an unsupported format.
 */
@@ -345,9 +501,39 @@ type GetListingsRestrictionsUnsupportedMediaType struct {
 	Payload listings_restrictions_2021_08_01_models.ErrorList
 }
 
+// IsSuccess returns true when this get listings restrictions unsupported media type response has a 2xx status code
+func (o *GetListingsRestrictionsUnsupportedMediaType) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get listings restrictions unsupported media type response has a 3xx status code
+func (o *GetListingsRestrictionsUnsupportedMediaType) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get listings restrictions unsupported media type response has a 4xx status code
+func (o *GetListingsRestrictionsUnsupportedMediaType) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get listings restrictions unsupported media type response has a 5xx status code
+func (o *GetListingsRestrictionsUnsupportedMediaType) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get listings restrictions unsupported media type response a status code equal to that given
+func (o *GetListingsRestrictionsUnsupportedMediaType) IsCode(code int) bool {
+	return code == 415
+}
+
 func (o *GetListingsRestrictionsUnsupportedMediaType) Error() string {
 	return fmt.Sprintf("[GET /listings/2021-08-01/restrictions][%d] getListingsRestrictionsUnsupportedMediaType  %+v", 415, o.Payload)
 }
+
+func (o *GetListingsRestrictionsUnsupportedMediaType) String() string {
+	return fmt.Sprintf("[GET /listings/2021-08-01/restrictions][%d] getListingsRestrictionsUnsupportedMediaType  %+v", 415, o.Payload)
+}
+
 func (o *GetListingsRestrictionsUnsupportedMediaType) GetPayload() listings_restrictions_2021_08_01_models.ErrorList {
 	return o.Payload
 }
@@ -374,7 +560,8 @@ func NewGetListingsRestrictionsTooManyRequests() *GetListingsRestrictionsTooMany
 	return &GetListingsRestrictionsTooManyRequests{}
 }
 
-/* GetListingsRestrictionsTooManyRequests describes a response with status code 429, with default header values.
+/*
+GetListingsRestrictionsTooManyRequests describes a response with status code 429, with default header values.
 
 The frequency of requests was greater than allowed.
 */
@@ -387,9 +574,39 @@ type GetListingsRestrictionsTooManyRequests struct {
 	Payload listings_restrictions_2021_08_01_models.ErrorList
 }
 
+// IsSuccess returns true when this get listings restrictions too many requests response has a 2xx status code
+func (o *GetListingsRestrictionsTooManyRequests) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get listings restrictions too many requests response has a 3xx status code
+func (o *GetListingsRestrictionsTooManyRequests) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get listings restrictions too many requests response has a 4xx status code
+func (o *GetListingsRestrictionsTooManyRequests) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get listings restrictions too many requests response has a 5xx status code
+func (o *GetListingsRestrictionsTooManyRequests) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get listings restrictions too many requests response a status code equal to that given
+func (o *GetListingsRestrictionsTooManyRequests) IsCode(code int) bool {
+	return code == 429
+}
+
 func (o *GetListingsRestrictionsTooManyRequests) Error() string {
 	return fmt.Sprintf("[GET /listings/2021-08-01/restrictions][%d] getListingsRestrictionsTooManyRequests  %+v", 429, o.Payload)
 }
+
+func (o *GetListingsRestrictionsTooManyRequests) String() string {
+	return fmt.Sprintf("[GET /listings/2021-08-01/restrictions][%d] getListingsRestrictionsTooManyRequests  %+v", 429, o.Payload)
+}
+
 func (o *GetListingsRestrictionsTooManyRequests) GetPayload() listings_restrictions_2021_08_01_models.ErrorList {
 	return o.Payload
 }
@@ -416,7 +633,8 @@ func NewGetListingsRestrictionsInternalServerError() *GetListingsRestrictionsInt
 	return &GetListingsRestrictionsInternalServerError{}
 }
 
-/* GetListingsRestrictionsInternalServerError describes a response with status code 500, with default header values.
+/*
+GetListingsRestrictionsInternalServerError describes a response with status code 500, with default header values.
 
 An unexpected condition occurred that prevented the server from fulfilling the request.
 */
@@ -429,9 +647,39 @@ type GetListingsRestrictionsInternalServerError struct {
 	Payload listings_restrictions_2021_08_01_models.ErrorList
 }
 
+// IsSuccess returns true when this get listings restrictions internal server error response has a 2xx status code
+func (o *GetListingsRestrictionsInternalServerError) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get listings restrictions internal server error response has a 3xx status code
+func (o *GetListingsRestrictionsInternalServerError) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get listings restrictions internal server error response has a 4xx status code
+func (o *GetListingsRestrictionsInternalServerError) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get listings restrictions internal server error response has a 5xx status code
+func (o *GetListingsRestrictionsInternalServerError) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this get listings restrictions internal server error response a status code equal to that given
+func (o *GetListingsRestrictionsInternalServerError) IsCode(code int) bool {
+	return code == 500
+}
+
 func (o *GetListingsRestrictionsInternalServerError) Error() string {
 	return fmt.Sprintf("[GET /listings/2021-08-01/restrictions][%d] getListingsRestrictionsInternalServerError  %+v", 500, o.Payload)
 }
+
+func (o *GetListingsRestrictionsInternalServerError) String() string {
+	return fmt.Sprintf("[GET /listings/2021-08-01/restrictions][%d] getListingsRestrictionsInternalServerError  %+v", 500, o.Payload)
+}
+
 func (o *GetListingsRestrictionsInternalServerError) GetPayload() listings_restrictions_2021_08_01_models.ErrorList {
 	return o.Payload
 }
@@ -458,7 +706,8 @@ func NewGetListingsRestrictionsServiceUnavailable() *GetListingsRestrictionsServ
 	return &GetListingsRestrictionsServiceUnavailable{}
 }
 
-/* GetListingsRestrictionsServiceUnavailable describes a response with status code 503, with default header values.
+/*
+GetListingsRestrictionsServiceUnavailable describes a response with status code 503, with default header values.
 
 Temporary overloading or maintenance of the server.
 */
@@ -471,9 +720,39 @@ type GetListingsRestrictionsServiceUnavailable struct {
 	Payload listings_restrictions_2021_08_01_models.ErrorList
 }
 
+// IsSuccess returns true when this get listings restrictions service unavailable response has a 2xx status code
+func (o *GetListingsRestrictionsServiceUnavailable) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get listings restrictions service unavailable response has a 3xx status code
+func (o *GetListingsRestrictionsServiceUnavailable) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get listings restrictions service unavailable response has a 4xx status code
+func (o *GetListingsRestrictionsServiceUnavailable) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get listings restrictions service unavailable response has a 5xx status code
+func (o *GetListingsRestrictionsServiceUnavailable) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this get listings restrictions service unavailable response a status code equal to that given
+func (o *GetListingsRestrictionsServiceUnavailable) IsCode(code int) bool {
+	return code == 503
+}
+
 func (o *GetListingsRestrictionsServiceUnavailable) Error() string {
 	return fmt.Sprintf("[GET /listings/2021-08-01/restrictions][%d] getListingsRestrictionsServiceUnavailable  %+v", 503, o.Payload)
 }
+
+func (o *GetListingsRestrictionsServiceUnavailable) String() string {
+	return fmt.Sprintf("[GET /listings/2021-08-01/restrictions][%d] getListingsRestrictionsServiceUnavailable  %+v", 503, o.Payload)
+}
+
 func (o *GetListingsRestrictionsServiceUnavailable) GetPayload() listings_restrictions_2021_08_01_models.ErrorList {
 	return o.Payload
 }

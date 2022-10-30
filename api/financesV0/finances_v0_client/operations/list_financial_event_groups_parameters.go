@@ -53,10 +53,12 @@ func NewListFinancialEventGroupsParamsWithHTTPClient(client *http.Client) *ListF
 	}
 }
 
-/* ListFinancialEventGroupsParams contains all the parameters to send to the API endpoint
-   for the list financial event groups operation.
+/*
+ListFinancialEventGroupsParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the list financial event groups operation.
+
+	Typically these are written to a http.Request.
 */
 type ListFinancialEventGroupsParams struct {
 

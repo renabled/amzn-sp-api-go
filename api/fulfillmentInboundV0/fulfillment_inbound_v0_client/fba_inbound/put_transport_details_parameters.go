@@ -54,10 +54,12 @@ func NewPutTransportDetailsParamsWithHTTPClient(client *http.Client) *PutTranspo
 	}
 }
 
-/* PutTransportDetailsParams contains all the parameters to send to the API endpoint
-   for the put transport details operation.
+/*
+PutTransportDetailsParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the put transport details operation.
+
+	Typically these are written to a http.Request.
 */
 type PutTransportDetailsParams struct {
 

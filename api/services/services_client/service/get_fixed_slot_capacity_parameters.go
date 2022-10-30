@@ -55,10 +55,12 @@ func NewGetFixedSlotCapacityParamsWithHTTPClient(client *http.Client) *GetFixedS
 	}
 }
 
-/* GetFixedSlotCapacityParams contains all the parameters to send to the API endpoint
-   for the get fixed slot capacity operation.
+/*
+GetFixedSlotCapacityParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the get fixed slot capacity operation.
+
+	Typically these are written to a http.Request.
 */
 type GetFixedSlotCapacityParams struct {
 

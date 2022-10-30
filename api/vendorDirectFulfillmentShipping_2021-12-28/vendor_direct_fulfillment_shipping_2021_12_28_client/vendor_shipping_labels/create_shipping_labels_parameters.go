@@ -54,10 +54,12 @@ func NewCreateShippingLabelsParamsWithHTTPClient(client *http.Client) *CreateShi
 	}
 }
 
-/* CreateShippingLabelsParams contains all the parameters to send to the API endpoint
-   for the create shipping labels operation.
+/*
+CreateShippingLabelsParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the create shipping labels operation.
+
+	Typically these are written to a http.Request.
 */
 type CreateShippingLabelsParams struct {
 

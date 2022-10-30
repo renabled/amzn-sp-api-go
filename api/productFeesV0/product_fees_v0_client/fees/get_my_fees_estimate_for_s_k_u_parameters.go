@@ -54,10 +54,12 @@ func NewGetMyFeesEstimateForSKUParamsWithHTTPClient(client *http.Client) *GetMyF
 	}
 }
 
-/* GetMyFeesEstimateForSKUParams contains all the parameters to send to the API endpoint
-   for the get my fees estimate for s k u operation.
+/*
+GetMyFeesEstimateForSKUParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the get my fees estimate for s k u operation.
+
+	Typically these are written to a http.Request.
 */
 type GetMyFeesEstimateForSKUParams struct {
 

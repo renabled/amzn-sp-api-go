@@ -52,10 +52,12 @@ func NewGetPurchaseOrderParamsWithHTTPClient(client *http.Client) *GetPurchaseOr
 	}
 }
 
-/* GetPurchaseOrderParams contains all the parameters to send to the API endpoint
-   for the get purchase order operation.
+/*
+GetPurchaseOrderParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the get purchase order operation.
+
+	Typically these are written to a http.Request.
 */
 type GetPurchaseOrderParams struct {
 

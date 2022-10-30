@@ -53,10 +53,12 @@ func NewGetPackageTrackingDetailsParamsWithHTTPClient(client *http.Client) *GetP
 	}
 }
 
-/* GetPackageTrackingDetailsParams contains all the parameters to send to the API endpoint
-   for the get package tracking details operation.
+/*
+GetPackageTrackingDetailsParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the get package tracking details operation.
+
+	Typically these are written to a http.Request.
 */
 type GetPackageTrackingDetailsParams struct {
 

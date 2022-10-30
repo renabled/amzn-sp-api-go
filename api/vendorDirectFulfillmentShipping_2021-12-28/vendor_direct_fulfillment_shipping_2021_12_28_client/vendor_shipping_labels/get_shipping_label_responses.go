@@ -87,7 +87,8 @@ func NewGetShippingLabelOK() *GetShippingLabelOK {
 	return &GetShippingLabelOK{}
 }
 
-/* GetShippingLabelOK describes a response with status code 200, with default header values.
+/*
+GetShippingLabelOK describes a response with status code 200, with default header values.
 
 Success.
 */
@@ -104,9 +105,39 @@ type GetShippingLabelOK struct {
 	Payload *vendor_direct_fulfillment_shipping_2021_12_28_models.ShippingLabel
 }
 
+// IsSuccess returns true when this get shipping label o k response has a 2xx status code
+func (o *GetShippingLabelOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this get shipping label o k response has a 3xx status code
+func (o *GetShippingLabelOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get shipping label o k response has a 4xx status code
+func (o *GetShippingLabelOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get shipping label o k response has a 5xx status code
+func (o *GetShippingLabelOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get shipping label o k response a status code equal to that given
+func (o *GetShippingLabelOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *GetShippingLabelOK) Error() string {
 	return fmt.Sprintf("[GET /vendor/directFulfillment/shipping/2021-12-28/shippingLabels/{purchaseOrderNumber}][%d] getShippingLabelOK  %+v", 200, o.Payload)
 }
+
+func (o *GetShippingLabelOK) String() string {
+	return fmt.Sprintf("[GET /vendor/directFulfillment/shipping/2021-12-28/shippingLabels/{purchaseOrderNumber}][%d] getShippingLabelOK  %+v", 200, o.Payload)
+}
+
 func (o *GetShippingLabelOK) GetPayload() *vendor_direct_fulfillment_shipping_2021_12_28_models.ShippingLabel {
 	return o.Payload
 }
@@ -142,7 +173,8 @@ func NewGetShippingLabelBadRequest() *GetShippingLabelBadRequest {
 	return &GetShippingLabelBadRequest{}
 }
 
-/* GetShippingLabelBadRequest describes a response with status code 400, with default header values.
+/*
+GetShippingLabelBadRequest describes a response with status code 400, with default header values.
 
 Request has missing or invalid parameters and cannot be parsed.
 */
@@ -159,9 +191,39 @@ type GetShippingLabelBadRequest struct {
 	Payload *vendor_direct_fulfillment_shipping_2021_12_28_models.ErrorList
 }
 
+// IsSuccess returns true when this get shipping label bad request response has a 2xx status code
+func (o *GetShippingLabelBadRequest) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get shipping label bad request response has a 3xx status code
+func (o *GetShippingLabelBadRequest) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get shipping label bad request response has a 4xx status code
+func (o *GetShippingLabelBadRequest) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get shipping label bad request response has a 5xx status code
+func (o *GetShippingLabelBadRequest) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get shipping label bad request response a status code equal to that given
+func (o *GetShippingLabelBadRequest) IsCode(code int) bool {
+	return code == 400
+}
+
 func (o *GetShippingLabelBadRequest) Error() string {
 	return fmt.Sprintf("[GET /vendor/directFulfillment/shipping/2021-12-28/shippingLabels/{purchaseOrderNumber}][%d] getShippingLabelBadRequest  %+v", 400, o.Payload)
 }
+
+func (o *GetShippingLabelBadRequest) String() string {
+	return fmt.Sprintf("[GET /vendor/directFulfillment/shipping/2021-12-28/shippingLabels/{purchaseOrderNumber}][%d] getShippingLabelBadRequest  %+v", 400, o.Payload)
+}
+
 func (o *GetShippingLabelBadRequest) GetPayload() *vendor_direct_fulfillment_shipping_2021_12_28_models.ErrorList {
 	return o.Payload
 }
@@ -197,7 +259,8 @@ func NewGetShippingLabelUnauthorized() *GetShippingLabelUnauthorized {
 	return &GetShippingLabelUnauthorized{}
 }
 
-/* GetShippingLabelUnauthorized describes a response with status code 401, with default header values.
+/*
+GetShippingLabelUnauthorized describes a response with status code 401, with default header values.
 
 The request's Authorization header is not formatted correctly or does not contain a valid token.
 */
@@ -215,9 +278,39 @@ type GetShippingLabelUnauthorized struct {
 	Payload *vendor_direct_fulfillment_shipping_2021_12_28_models.ErrorList
 }
 
+// IsSuccess returns true when this get shipping label unauthorized response has a 2xx status code
+func (o *GetShippingLabelUnauthorized) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get shipping label unauthorized response has a 3xx status code
+func (o *GetShippingLabelUnauthorized) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get shipping label unauthorized response has a 4xx status code
+func (o *GetShippingLabelUnauthorized) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get shipping label unauthorized response has a 5xx status code
+func (o *GetShippingLabelUnauthorized) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get shipping label unauthorized response a status code equal to that given
+func (o *GetShippingLabelUnauthorized) IsCode(code int) bool {
+	return code == 401
+}
+
 func (o *GetShippingLabelUnauthorized) Error() string {
 	return fmt.Sprintf("[GET /vendor/directFulfillment/shipping/2021-12-28/shippingLabels/{purchaseOrderNumber}][%d] getShippingLabelUnauthorized  %+v", 401, o.Payload)
 }
+
+func (o *GetShippingLabelUnauthorized) String() string {
+	return fmt.Sprintf("[GET /vendor/directFulfillment/shipping/2021-12-28/shippingLabels/{purchaseOrderNumber}][%d] getShippingLabelUnauthorized  %+v", 401, o.Payload)
+}
+
 func (o *GetShippingLabelUnauthorized) GetPayload() *vendor_direct_fulfillment_shipping_2021_12_28_models.ErrorList {
 	return o.Payload
 }
@@ -253,7 +346,8 @@ func NewGetShippingLabelForbidden() *GetShippingLabelForbidden {
 	return &GetShippingLabelForbidden{}
 }
 
-/* GetShippingLabelForbidden describes a response with status code 403, with default header values.
+/*
+GetShippingLabelForbidden describes a response with status code 403, with default header values.
 
 Indicates that access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.
 */
@@ -266,9 +360,39 @@ type GetShippingLabelForbidden struct {
 	Payload *vendor_direct_fulfillment_shipping_2021_12_28_models.ErrorList
 }
 
+// IsSuccess returns true when this get shipping label forbidden response has a 2xx status code
+func (o *GetShippingLabelForbidden) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get shipping label forbidden response has a 3xx status code
+func (o *GetShippingLabelForbidden) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get shipping label forbidden response has a 4xx status code
+func (o *GetShippingLabelForbidden) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get shipping label forbidden response has a 5xx status code
+func (o *GetShippingLabelForbidden) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get shipping label forbidden response a status code equal to that given
+func (o *GetShippingLabelForbidden) IsCode(code int) bool {
+	return code == 403
+}
+
 func (o *GetShippingLabelForbidden) Error() string {
 	return fmt.Sprintf("[GET /vendor/directFulfillment/shipping/2021-12-28/shippingLabels/{purchaseOrderNumber}][%d] getShippingLabelForbidden  %+v", 403, o.Payload)
 }
+
+func (o *GetShippingLabelForbidden) String() string {
+	return fmt.Sprintf("[GET /vendor/directFulfillment/shipping/2021-12-28/shippingLabels/{purchaseOrderNumber}][%d] getShippingLabelForbidden  %+v", 403, o.Payload)
+}
+
 func (o *GetShippingLabelForbidden) GetPayload() *vendor_direct_fulfillment_shipping_2021_12_28_models.ErrorList {
 	return o.Payload
 }
@@ -297,7 +421,8 @@ func NewGetShippingLabelNotFound() *GetShippingLabelNotFound {
 	return &GetShippingLabelNotFound{}
 }
 
-/* GetShippingLabelNotFound describes a response with status code 404, with default header values.
+/*
+GetShippingLabelNotFound describes a response with status code 404, with default header values.
 
 The resource specified does not exist.
 */
@@ -314,9 +439,39 @@ type GetShippingLabelNotFound struct {
 	Payload *vendor_direct_fulfillment_shipping_2021_12_28_models.ErrorList
 }
 
+// IsSuccess returns true when this get shipping label not found response has a 2xx status code
+func (o *GetShippingLabelNotFound) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get shipping label not found response has a 3xx status code
+func (o *GetShippingLabelNotFound) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get shipping label not found response has a 4xx status code
+func (o *GetShippingLabelNotFound) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get shipping label not found response has a 5xx status code
+func (o *GetShippingLabelNotFound) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get shipping label not found response a status code equal to that given
+func (o *GetShippingLabelNotFound) IsCode(code int) bool {
+	return code == 404
+}
+
 func (o *GetShippingLabelNotFound) Error() string {
 	return fmt.Sprintf("[GET /vendor/directFulfillment/shipping/2021-12-28/shippingLabels/{purchaseOrderNumber}][%d] getShippingLabelNotFound  %+v", 404, o.Payload)
 }
+
+func (o *GetShippingLabelNotFound) String() string {
+	return fmt.Sprintf("[GET /vendor/directFulfillment/shipping/2021-12-28/shippingLabels/{purchaseOrderNumber}][%d] getShippingLabelNotFound  %+v", 404, o.Payload)
+}
+
 func (o *GetShippingLabelNotFound) GetPayload() *vendor_direct_fulfillment_shipping_2021_12_28_models.ErrorList {
 	return o.Payload
 }
@@ -352,7 +507,8 @@ func NewGetShippingLabelUnsupportedMediaType() *GetShippingLabelUnsupportedMedia
 	return &GetShippingLabelUnsupportedMediaType{}
 }
 
-/* GetShippingLabelUnsupportedMediaType describes a response with status code 415, with default header values.
+/*
+GetShippingLabelUnsupportedMediaType describes a response with status code 415, with default header values.
 
 The request payload is in an unsupported format.
 */
@@ -370,9 +526,39 @@ type GetShippingLabelUnsupportedMediaType struct {
 	Payload *vendor_direct_fulfillment_shipping_2021_12_28_models.ErrorList
 }
 
+// IsSuccess returns true when this get shipping label unsupported media type response has a 2xx status code
+func (o *GetShippingLabelUnsupportedMediaType) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get shipping label unsupported media type response has a 3xx status code
+func (o *GetShippingLabelUnsupportedMediaType) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get shipping label unsupported media type response has a 4xx status code
+func (o *GetShippingLabelUnsupportedMediaType) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get shipping label unsupported media type response has a 5xx status code
+func (o *GetShippingLabelUnsupportedMediaType) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get shipping label unsupported media type response a status code equal to that given
+func (o *GetShippingLabelUnsupportedMediaType) IsCode(code int) bool {
+	return code == 415
+}
+
 func (o *GetShippingLabelUnsupportedMediaType) Error() string {
 	return fmt.Sprintf("[GET /vendor/directFulfillment/shipping/2021-12-28/shippingLabels/{purchaseOrderNumber}][%d] getShippingLabelUnsupportedMediaType  %+v", 415, o.Payload)
 }
+
+func (o *GetShippingLabelUnsupportedMediaType) String() string {
+	return fmt.Sprintf("[GET /vendor/directFulfillment/shipping/2021-12-28/shippingLabels/{purchaseOrderNumber}][%d] getShippingLabelUnsupportedMediaType  %+v", 415, o.Payload)
+}
+
 func (o *GetShippingLabelUnsupportedMediaType) GetPayload() *vendor_direct_fulfillment_shipping_2021_12_28_models.ErrorList {
 	return o.Payload
 }
@@ -408,7 +594,8 @@ func NewGetShippingLabelTooManyRequests() *GetShippingLabelTooManyRequests {
 	return &GetShippingLabelTooManyRequests{}
 }
 
-/* GetShippingLabelTooManyRequests describes a response with status code 429, with default header values.
+/*
+GetShippingLabelTooManyRequests describes a response with status code 429, with default header values.
 
 The frequency of requests was greater than allowed.
 */
@@ -426,9 +613,39 @@ type GetShippingLabelTooManyRequests struct {
 	Payload *vendor_direct_fulfillment_shipping_2021_12_28_models.ErrorList
 }
 
+// IsSuccess returns true when this get shipping label too many requests response has a 2xx status code
+func (o *GetShippingLabelTooManyRequests) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get shipping label too many requests response has a 3xx status code
+func (o *GetShippingLabelTooManyRequests) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get shipping label too many requests response has a 4xx status code
+func (o *GetShippingLabelTooManyRequests) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get shipping label too many requests response has a 5xx status code
+func (o *GetShippingLabelTooManyRequests) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get shipping label too many requests response a status code equal to that given
+func (o *GetShippingLabelTooManyRequests) IsCode(code int) bool {
+	return code == 429
+}
+
 func (o *GetShippingLabelTooManyRequests) Error() string {
 	return fmt.Sprintf("[GET /vendor/directFulfillment/shipping/2021-12-28/shippingLabels/{purchaseOrderNumber}][%d] getShippingLabelTooManyRequests  %+v", 429, o.Payload)
 }
+
+func (o *GetShippingLabelTooManyRequests) String() string {
+	return fmt.Sprintf("[GET /vendor/directFulfillment/shipping/2021-12-28/shippingLabels/{purchaseOrderNumber}][%d] getShippingLabelTooManyRequests  %+v", 429, o.Payload)
+}
+
 func (o *GetShippingLabelTooManyRequests) GetPayload() *vendor_direct_fulfillment_shipping_2021_12_28_models.ErrorList {
 	return o.Payload
 }
@@ -464,7 +681,8 @@ func NewGetShippingLabelInternalServerError() *GetShippingLabelInternalServerErr
 	return &GetShippingLabelInternalServerError{}
 }
 
-/* GetShippingLabelInternalServerError describes a response with status code 500, with default header values.
+/*
+GetShippingLabelInternalServerError describes a response with status code 500, with default header values.
 
 An unexpected condition occurred that prevented the server from fulfilling the request.
 */
@@ -482,9 +700,39 @@ type GetShippingLabelInternalServerError struct {
 	Payload *vendor_direct_fulfillment_shipping_2021_12_28_models.ErrorList
 }
 
+// IsSuccess returns true when this get shipping label internal server error response has a 2xx status code
+func (o *GetShippingLabelInternalServerError) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get shipping label internal server error response has a 3xx status code
+func (o *GetShippingLabelInternalServerError) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get shipping label internal server error response has a 4xx status code
+func (o *GetShippingLabelInternalServerError) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get shipping label internal server error response has a 5xx status code
+func (o *GetShippingLabelInternalServerError) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this get shipping label internal server error response a status code equal to that given
+func (o *GetShippingLabelInternalServerError) IsCode(code int) bool {
+	return code == 500
+}
+
 func (o *GetShippingLabelInternalServerError) Error() string {
 	return fmt.Sprintf("[GET /vendor/directFulfillment/shipping/2021-12-28/shippingLabels/{purchaseOrderNumber}][%d] getShippingLabelInternalServerError  %+v", 500, o.Payload)
 }
+
+func (o *GetShippingLabelInternalServerError) String() string {
+	return fmt.Sprintf("[GET /vendor/directFulfillment/shipping/2021-12-28/shippingLabels/{purchaseOrderNumber}][%d] getShippingLabelInternalServerError  %+v", 500, o.Payload)
+}
+
 func (o *GetShippingLabelInternalServerError) GetPayload() *vendor_direct_fulfillment_shipping_2021_12_28_models.ErrorList {
 	return o.Payload
 }
@@ -520,7 +768,8 @@ func NewGetShippingLabelServiceUnavailable() *GetShippingLabelServiceUnavailable
 	return &GetShippingLabelServiceUnavailable{}
 }
 
-/* GetShippingLabelServiceUnavailable describes a response with status code 503, with default header values.
+/*
+GetShippingLabelServiceUnavailable describes a response with status code 503, with default header values.
 
 Temporary overloading or maintenance of the server.
 */
@@ -538,9 +787,39 @@ type GetShippingLabelServiceUnavailable struct {
 	Payload *vendor_direct_fulfillment_shipping_2021_12_28_models.ErrorList
 }
 
+// IsSuccess returns true when this get shipping label service unavailable response has a 2xx status code
+func (o *GetShippingLabelServiceUnavailable) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get shipping label service unavailable response has a 3xx status code
+func (o *GetShippingLabelServiceUnavailable) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get shipping label service unavailable response has a 4xx status code
+func (o *GetShippingLabelServiceUnavailable) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get shipping label service unavailable response has a 5xx status code
+func (o *GetShippingLabelServiceUnavailable) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this get shipping label service unavailable response a status code equal to that given
+func (o *GetShippingLabelServiceUnavailable) IsCode(code int) bool {
+	return code == 503
+}
+
 func (o *GetShippingLabelServiceUnavailable) Error() string {
 	return fmt.Sprintf("[GET /vendor/directFulfillment/shipping/2021-12-28/shippingLabels/{purchaseOrderNumber}][%d] getShippingLabelServiceUnavailable  %+v", 503, o.Payload)
 }
+
+func (o *GetShippingLabelServiceUnavailable) String() string {
+	return fmt.Sprintf("[GET /vendor/directFulfillment/shipping/2021-12-28/shippingLabels/{purchaseOrderNumber}][%d] getShippingLabelServiceUnavailable  %+v", 503, o.Payload)
+}
+
 func (o *GetShippingLabelServiceUnavailable) GetPayload() *vendor_direct_fulfillment_shipping_2021_12_28_models.ErrorList {
 	return o.Payload
 }

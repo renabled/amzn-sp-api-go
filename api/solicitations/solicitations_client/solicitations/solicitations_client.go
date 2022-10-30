@@ -38,7 +38,7 @@ type ClientService interface {
 }
 
 /*
-  CreateProductReviewAndSellerFeedbackSolicitation Sends a solicitation to a buyer asking for seller feedback and a product review for the specified order. Send only one productReviewAndSellerFeedback or free form proactive message per order.
+	CreateProductReviewAndSellerFeedbackSolicitation Sends a solicitation to a buyer asking for seller feedback and a product review for the specified order. Send only one productReviewAndSellerFeedback or free form proactive message per order.
 
 **Usage Plan:**
 
@@ -84,7 +84,7 @@ func (a *Client) CreateProductReviewAndSellerFeedbackSolicitation(params *Create
 }
 
 /*
-  GetSolicitationActionsForOrder Returns a list of solicitation types that are available for an order that you specify. A solicitation type is represented by an actions object, which contains a path and query parameter(s). You can use the path and parameter(s) to call an operation that sends a solicitation. Currently only the productReviewAndSellerFeedbackSolicitation solicitation type is available.
+	GetSolicitationActionsForOrder Returns a list of solicitation types that are available for an order that you specify. A solicitation type is represented by an actions object, which contains a path and query parameter(s). You can use the path and parameter(s) to call an operation that sends a solicitation. Currently only the productReviewAndSellerFeedbackSolicitation solicitation type is available.
 
 **Usage Plan:**
 

@@ -81,7 +81,8 @@ func NewGetFulfillmentPreviewOK() *GetFulfillmentPreviewOK {
 	return &GetFulfillmentPreviewOK{}
 }
 
-/* GetFulfillmentPreviewOK describes a response with status code 200, with default header values.
+/*
+GetFulfillmentPreviewOK describes a response with status code 200, with default header values.
 
 Success.
 */
@@ -98,9 +99,39 @@ type GetFulfillmentPreviewOK struct {
 	Payload *fulfillment_outbound_2020_07_01_models.GetFulfillmentPreviewResponse
 }
 
+// IsSuccess returns true when this get fulfillment preview o k response has a 2xx status code
+func (o *GetFulfillmentPreviewOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this get fulfillment preview o k response has a 3xx status code
+func (o *GetFulfillmentPreviewOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get fulfillment preview o k response has a 4xx status code
+func (o *GetFulfillmentPreviewOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get fulfillment preview o k response has a 5xx status code
+func (o *GetFulfillmentPreviewOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get fulfillment preview o k response a status code equal to that given
+func (o *GetFulfillmentPreviewOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *GetFulfillmentPreviewOK) Error() string {
 	return fmt.Sprintf("[POST /fba/outbound/2020-07-01/fulfillmentOrders/preview][%d] getFulfillmentPreviewOK  %+v", 200, o.Payload)
 }
+
+func (o *GetFulfillmentPreviewOK) String() string {
+	return fmt.Sprintf("[POST /fba/outbound/2020-07-01/fulfillmentOrders/preview][%d] getFulfillmentPreviewOK  %+v", 200, o.Payload)
+}
+
 func (o *GetFulfillmentPreviewOK) GetPayload() *fulfillment_outbound_2020_07_01_models.GetFulfillmentPreviewResponse {
 	return o.Payload
 }
@@ -136,7 +167,8 @@ func NewGetFulfillmentPreviewBadRequest() *GetFulfillmentPreviewBadRequest {
 	return &GetFulfillmentPreviewBadRequest{}
 }
 
-/* GetFulfillmentPreviewBadRequest describes a response with status code 400, with default header values.
+/*
+GetFulfillmentPreviewBadRequest describes a response with status code 400, with default header values.
 
 Request has missing or invalid parameters and cannot be parsed.
 */
@@ -153,9 +185,39 @@ type GetFulfillmentPreviewBadRequest struct {
 	Payload *fulfillment_outbound_2020_07_01_models.GetFulfillmentPreviewResponse
 }
 
+// IsSuccess returns true when this get fulfillment preview bad request response has a 2xx status code
+func (o *GetFulfillmentPreviewBadRequest) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get fulfillment preview bad request response has a 3xx status code
+func (o *GetFulfillmentPreviewBadRequest) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get fulfillment preview bad request response has a 4xx status code
+func (o *GetFulfillmentPreviewBadRequest) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get fulfillment preview bad request response has a 5xx status code
+func (o *GetFulfillmentPreviewBadRequest) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get fulfillment preview bad request response a status code equal to that given
+func (o *GetFulfillmentPreviewBadRequest) IsCode(code int) bool {
+	return code == 400
+}
+
 func (o *GetFulfillmentPreviewBadRequest) Error() string {
 	return fmt.Sprintf("[POST /fba/outbound/2020-07-01/fulfillmentOrders/preview][%d] getFulfillmentPreviewBadRequest  %+v", 400, o.Payload)
 }
+
+func (o *GetFulfillmentPreviewBadRequest) String() string {
+	return fmt.Sprintf("[POST /fba/outbound/2020-07-01/fulfillmentOrders/preview][%d] getFulfillmentPreviewBadRequest  %+v", 400, o.Payload)
+}
+
 func (o *GetFulfillmentPreviewBadRequest) GetPayload() *fulfillment_outbound_2020_07_01_models.GetFulfillmentPreviewResponse {
 	return o.Payload
 }
@@ -191,7 +253,8 @@ func NewGetFulfillmentPreviewUnauthorized() *GetFulfillmentPreviewUnauthorized {
 	return &GetFulfillmentPreviewUnauthorized{}
 }
 
-/* GetFulfillmentPreviewUnauthorized describes a response with status code 401, with default header values.
+/*
+GetFulfillmentPreviewUnauthorized describes a response with status code 401, with default header values.
 
 The request's Authorization header is not formatted correctly or does not contain a valid token.
 */
@@ -209,9 +272,39 @@ type GetFulfillmentPreviewUnauthorized struct {
 	Payload *fulfillment_outbound_2020_07_01_models.GetFulfillmentPreviewResponse
 }
 
+// IsSuccess returns true when this get fulfillment preview unauthorized response has a 2xx status code
+func (o *GetFulfillmentPreviewUnauthorized) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get fulfillment preview unauthorized response has a 3xx status code
+func (o *GetFulfillmentPreviewUnauthorized) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get fulfillment preview unauthorized response has a 4xx status code
+func (o *GetFulfillmentPreviewUnauthorized) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get fulfillment preview unauthorized response has a 5xx status code
+func (o *GetFulfillmentPreviewUnauthorized) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get fulfillment preview unauthorized response a status code equal to that given
+func (o *GetFulfillmentPreviewUnauthorized) IsCode(code int) bool {
+	return code == 401
+}
+
 func (o *GetFulfillmentPreviewUnauthorized) Error() string {
 	return fmt.Sprintf("[POST /fba/outbound/2020-07-01/fulfillmentOrders/preview][%d] getFulfillmentPreviewUnauthorized  %+v", 401, o.Payload)
 }
+
+func (o *GetFulfillmentPreviewUnauthorized) String() string {
+	return fmt.Sprintf("[POST /fba/outbound/2020-07-01/fulfillmentOrders/preview][%d] getFulfillmentPreviewUnauthorized  %+v", 401, o.Payload)
+}
+
 func (o *GetFulfillmentPreviewUnauthorized) GetPayload() *fulfillment_outbound_2020_07_01_models.GetFulfillmentPreviewResponse {
 	return o.Payload
 }
@@ -247,7 +340,8 @@ func NewGetFulfillmentPreviewForbidden() *GetFulfillmentPreviewForbidden {
 	return &GetFulfillmentPreviewForbidden{}
 }
 
-/* GetFulfillmentPreviewForbidden describes a response with status code 403, with default header values.
+/*
+GetFulfillmentPreviewForbidden describes a response with status code 403, with default header values.
 
 Indicates that access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.
 */
@@ -260,9 +354,39 @@ type GetFulfillmentPreviewForbidden struct {
 	Payload *fulfillment_outbound_2020_07_01_models.GetFulfillmentPreviewResponse
 }
 
+// IsSuccess returns true when this get fulfillment preview forbidden response has a 2xx status code
+func (o *GetFulfillmentPreviewForbidden) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get fulfillment preview forbidden response has a 3xx status code
+func (o *GetFulfillmentPreviewForbidden) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get fulfillment preview forbidden response has a 4xx status code
+func (o *GetFulfillmentPreviewForbidden) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get fulfillment preview forbidden response has a 5xx status code
+func (o *GetFulfillmentPreviewForbidden) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get fulfillment preview forbidden response a status code equal to that given
+func (o *GetFulfillmentPreviewForbidden) IsCode(code int) bool {
+	return code == 403
+}
+
 func (o *GetFulfillmentPreviewForbidden) Error() string {
 	return fmt.Sprintf("[POST /fba/outbound/2020-07-01/fulfillmentOrders/preview][%d] getFulfillmentPreviewForbidden  %+v", 403, o.Payload)
 }
+
+func (o *GetFulfillmentPreviewForbidden) String() string {
+	return fmt.Sprintf("[POST /fba/outbound/2020-07-01/fulfillmentOrders/preview][%d] getFulfillmentPreviewForbidden  %+v", 403, o.Payload)
+}
+
 func (o *GetFulfillmentPreviewForbidden) GetPayload() *fulfillment_outbound_2020_07_01_models.GetFulfillmentPreviewResponse {
 	return o.Payload
 }
@@ -291,7 +415,8 @@ func NewGetFulfillmentPreviewNotFound() *GetFulfillmentPreviewNotFound {
 	return &GetFulfillmentPreviewNotFound{}
 }
 
-/* GetFulfillmentPreviewNotFound describes a response with status code 404, with default header values.
+/*
+GetFulfillmentPreviewNotFound describes a response with status code 404, with default header values.
 
 The specified resource does not exist.
 */
@@ -308,9 +433,39 @@ type GetFulfillmentPreviewNotFound struct {
 	Payload *fulfillment_outbound_2020_07_01_models.GetFulfillmentPreviewResponse
 }
 
+// IsSuccess returns true when this get fulfillment preview not found response has a 2xx status code
+func (o *GetFulfillmentPreviewNotFound) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get fulfillment preview not found response has a 3xx status code
+func (o *GetFulfillmentPreviewNotFound) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get fulfillment preview not found response has a 4xx status code
+func (o *GetFulfillmentPreviewNotFound) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get fulfillment preview not found response has a 5xx status code
+func (o *GetFulfillmentPreviewNotFound) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get fulfillment preview not found response a status code equal to that given
+func (o *GetFulfillmentPreviewNotFound) IsCode(code int) bool {
+	return code == 404
+}
+
 func (o *GetFulfillmentPreviewNotFound) Error() string {
 	return fmt.Sprintf("[POST /fba/outbound/2020-07-01/fulfillmentOrders/preview][%d] getFulfillmentPreviewNotFound  %+v", 404, o.Payload)
 }
+
+func (o *GetFulfillmentPreviewNotFound) String() string {
+	return fmt.Sprintf("[POST /fba/outbound/2020-07-01/fulfillmentOrders/preview][%d] getFulfillmentPreviewNotFound  %+v", 404, o.Payload)
+}
+
 func (o *GetFulfillmentPreviewNotFound) GetPayload() *fulfillment_outbound_2020_07_01_models.GetFulfillmentPreviewResponse {
 	return o.Payload
 }
@@ -346,7 +501,8 @@ func NewGetFulfillmentPreviewTooManyRequests() *GetFulfillmentPreviewTooManyRequ
 	return &GetFulfillmentPreviewTooManyRequests{}
 }
 
-/* GetFulfillmentPreviewTooManyRequests describes a response with status code 429, with default header values.
+/*
+GetFulfillmentPreviewTooManyRequests describes a response with status code 429, with default header values.
 
 The frequency of requests was greater than allowed.
 */
@@ -364,9 +520,39 @@ type GetFulfillmentPreviewTooManyRequests struct {
 	Payload *fulfillment_outbound_2020_07_01_models.GetFulfillmentPreviewResponse
 }
 
+// IsSuccess returns true when this get fulfillment preview too many requests response has a 2xx status code
+func (o *GetFulfillmentPreviewTooManyRequests) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get fulfillment preview too many requests response has a 3xx status code
+func (o *GetFulfillmentPreviewTooManyRequests) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get fulfillment preview too many requests response has a 4xx status code
+func (o *GetFulfillmentPreviewTooManyRequests) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get fulfillment preview too many requests response has a 5xx status code
+func (o *GetFulfillmentPreviewTooManyRequests) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get fulfillment preview too many requests response a status code equal to that given
+func (o *GetFulfillmentPreviewTooManyRequests) IsCode(code int) bool {
+	return code == 429
+}
+
 func (o *GetFulfillmentPreviewTooManyRequests) Error() string {
 	return fmt.Sprintf("[POST /fba/outbound/2020-07-01/fulfillmentOrders/preview][%d] getFulfillmentPreviewTooManyRequests  %+v", 429, o.Payload)
 }
+
+func (o *GetFulfillmentPreviewTooManyRequests) String() string {
+	return fmt.Sprintf("[POST /fba/outbound/2020-07-01/fulfillmentOrders/preview][%d] getFulfillmentPreviewTooManyRequests  %+v", 429, o.Payload)
+}
+
 func (o *GetFulfillmentPreviewTooManyRequests) GetPayload() *fulfillment_outbound_2020_07_01_models.GetFulfillmentPreviewResponse {
 	return o.Payload
 }
@@ -402,7 +588,8 @@ func NewGetFulfillmentPreviewInternalServerError() *GetFulfillmentPreviewInterna
 	return &GetFulfillmentPreviewInternalServerError{}
 }
 
-/* GetFulfillmentPreviewInternalServerError describes a response with status code 500, with default header values.
+/*
+GetFulfillmentPreviewInternalServerError describes a response with status code 500, with default header values.
 
 An unexpected condition occurred that prevented the server from fulfilling the request.
 */
@@ -420,9 +607,39 @@ type GetFulfillmentPreviewInternalServerError struct {
 	Payload *fulfillment_outbound_2020_07_01_models.GetFulfillmentPreviewResponse
 }
 
+// IsSuccess returns true when this get fulfillment preview internal server error response has a 2xx status code
+func (o *GetFulfillmentPreviewInternalServerError) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get fulfillment preview internal server error response has a 3xx status code
+func (o *GetFulfillmentPreviewInternalServerError) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get fulfillment preview internal server error response has a 4xx status code
+func (o *GetFulfillmentPreviewInternalServerError) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get fulfillment preview internal server error response has a 5xx status code
+func (o *GetFulfillmentPreviewInternalServerError) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this get fulfillment preview internal server error response a status code equal to that given
+func (o *GetFulfillmentPreviewInternalServerError) IsCode(code int) bool {
+	return code == 500
+}
+
 func (o *GetFulfillmentPreviewInternalServerError) Error() string {
 	return fmt.Sprintf("[POST /fba/outbound/2020-07-01/fulfillmentOrders/preview][%d] getFulfillmentPreviewInternalServerError  %+v", 500, o.Payload)
 }
+
+func (o *GetFulfillmentPreviewInternalServerError) String() string {
+	return fmt.Sprintf("[POST /fba/outbound/2020-07-01/fulfillmentOrders/preview][%d] getFulfillmentPreviewInternalServerError  %+v", 500, o.Payload)
+}
+
 func (o *GetFulfillmentPreviewInternalServerError) GetPayload() *fulfillment_outbound_2020_07_01_models.GetFulfillmentPreviewResponse {
 	return o.Payload
 }
@@ -458,7 +675,8 @@ func NewGetFulfillmentPreviewServiceUnavailable() *GetFulfillmentPreviewServiceU
 	return &GetFulfillmentPreviewServiceUnavailable{}
 }
 
-/* GetFulfillmentPreviewServiceUnavailable describes a response with status code 503, with default header values.
+/*
+GetFulfillmentPreviewServiceUnavailable describes a response with status code 503, with default header values.
 
 Temporary overloading or maintenance of the server.
 */
@@ -476,9 +694,39 @@ type GetFulfillmentPreviewServiceUnavailable struct {
 	Payload *fulfillment_outbound_2020_07_01_models.GetFulfillmentPreviewResponse
 }
 
+// IsSuccess returns true when this get fulfillment preview service unavailable response has a 2xx status code
+func (o *GetFulfillmentPreviewServiceUnavailable) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get fulfillment preview service unavailable response has a 3xx status code
+func (o *GetFulfillmentPreviewServiceUnavailable) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get fulfillment preview service unavailable response has a 4xx status code
+func (o *GetFulfillmentPreviewServiceUnavailable) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get fulfillment preview service unavailable response has a 5xx status code
+func (o *GetFulfillmentPreviewServiceUnavailable) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this get fulfillment preview service unavailable response a status code equal to that given
+func (o *GetFulfillmentPreviewServiceUnavailable) IsCode(code int) bool {
+	return code == 503
+}
+
 func (o *GetFulfillmentPreviewServiceUnavailable) Error() string {
 	return fmt.Sprintf("[POST /fba/outbound/2020-07-01/fulfillmentOrders/preview][%d] getFulfillmentPreviewServiceUnavailable  %+v", 503, o.Payload)
 }
+
+func (o *GetFulfillmentPreviewServiceUnavailable) String() string {
+	return fmt.Sprintf("[POST /fba/outbound/2020-07-01/fulfillmentOrders/preview][%d] getFulfillmentPreviewServiceUnavailable  %+v", 503, o.Payload)
+}
+
 func (o *GetFulfillmentPreviewServiceUnavailable) GetPayload() *fulfillment_outbound_2020_07_01_models.GetFulfillmentPreviewResponse {
 	return o.Payload
 }

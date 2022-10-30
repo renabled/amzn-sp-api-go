@@ -52,10 +52,12 @@ func NewGetShipmentDetailsParamsWithHTTPClient(client *http.Client) *GetShipment
 	}
 }
 
-/* GetShipmentDetailsParams contains all the parameters to send to the API endpoint
-   for the get shipment details operation.
+/*
+GetShipmentDetailsParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the get shipment details operation.
+
+	Typically these are written to a http.Request.
 */
 type GetShipmentDetailsParams struct {
 

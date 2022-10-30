@@ -52,10 +52,12 @@ func NewConfirmTransportParamsWithHTTPClient(client *http.Client) *ConfirmTransp
 	}
 }
 
-/* ConfirmTransportParams contains all the parameters to send to the API endpoint
-   for the confirm transport operation.
+/*
+ConfirmTransportParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the confirm transport operation.
+
+	Typically these are written to a http.Request.
 */
 type ConfirmTransportParams struct {
 

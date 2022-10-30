@@ -54,10 +54,12 @@ func NewAddAppointmentForServiceJobByServiceJobIDParamsWithHTTPClient(client *ht
 	}
 }
 
-/* AddAppointmentForServiceJobByServiceJobIDParams contains all the parameters to send to the API endpoint
-   for the add appointment for service job by service job Id operation.
+/*
+AddAppointmentForServiceJobByServiceJobIDParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the add appointment for service job by service job Id operation.
+
+	Typically these are written to a http.Request.
 */
 type AddAppointmentForServiceJobByServiceJobIDParams struct {
 

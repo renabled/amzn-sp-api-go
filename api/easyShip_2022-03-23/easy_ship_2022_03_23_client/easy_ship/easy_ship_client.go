@@ -44,7 +44,7 @@ type ClientService interface {
 }
 
 /*
-  CreateScheduledPackage Schedules an Easy Ship order and returns the scheduled package information.
+	CreateScheduledPackage Schedules an Easy Ship order and returns the scheduled package information.
 
 This operation does the following:
 
@@ -102,7 +102,7 @@ func (a *Client) CreateScheduledPackage(params *CreateScheduledPackageParams, op
 }
 
 /*
-  CreateScheduledPackageBulk This operation automatically schedules a time slot for all the `amazonOrderId`s given as input, generating the associated shipping labels, along with other compliance documents according to the marketplace (refer to the [marketplace document support table](doc:easy-ship-api-v2022-03-23-marketplace-document-support-table)).
+	CreateScheduledPackageBulk This operation automatically schedules a time slot for all the `amazonOrderId`s given as input, generating the associated shipping labels, along with other compliance documents according to the marketplace (refer to the [marketplace document support table](doc:easy-ship-api-v2022-03-23-marketplace-document-support-table)).
 
 Developers calling this operation may optionally assign a `packageDetails` object, allowing them to input a preferred time slot for each order in ther request. In this case, Amazon will try to schedule the respective packages using their optional settings. On the other hand, *i.e.*, if the time slot is not provided, Amazon will then pick the earliest time slot possible.
 
@@ -152,7 +152,7 @@ func (a *Client) CreateScheduledPackageBulk(params *CreateScheduledPackageBulkPa
 }
 
 /*
-  GetScheduledPackage Returns information about a package, including dimensions, weight, time slot information for handover, invoice and item information, and status.
+	GetScheduledPackage Returns information about a package, including dimensions, weight, time slot information for handover, invoice and item information, and status.
 
 **Usage Plan:**
 
@@ -198,7 +198,7 @@ func (a *Client) GetScheduledPackage(params *GetScheduledPackageParams, opts ...
 }
 
 /*
-  ListHandoverSlots Returns time slots available for Easy Ship orders to be scheduled based on the package weight and dimensions that the seller specifies.
+	ListHandoverSlots Returns time slots available for Easy Ship orders to be scheduled based on the package weight and dimensions that the seller specifies.
 
 This operation is available for scheduled and unscheduled orders based on marketplace support. See **Get Time Slots** in the [Marketplace Support Table](doc:easyship-api-v2022-03-23-use-case-guide#marketplace-support-table).
 
@@ -248,7 +248,7 @@ func (a *Client) ListHandoverSlots(params *ListHandoverSlotsParams, opts ...Clie
 }
 
 /*
-  UpdateScheduledPackages Updates the time slot for handing over the package indicated by the specified `scheduledPackageId`. You can get the new `slotId` value for the time slot by calling the `listHandoverSlots` operation before making another `patch` call.
+	UpdateScheduledPackages Updates the time slot for handing over the package indicated by the specified `scheduledPackageId`. You can get the new `slotId` value for the time slot by calling the `listHandoverSlots` operation before making another `patch` call.
 
 See the **Update Package** column in the [Marketplace Support Table](doc:easyship-api-v2022-03-23-use-case-guide#marketplace-support-table) to see which marketplaces this operation is supported in.
 

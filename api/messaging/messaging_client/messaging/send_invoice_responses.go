@@ -87,7 +87,8 @@ func NewSendInvoiceCreated() *SendInvoiceCreated {
 	return &SendInvoiceCreated{}
 }
 
-/* SendInvoiceCreated describes a response with status code 201, with default header values.
+/*
+SendInvoiceCreated describes a response with status code 201, with default header values.
 
 The message was created for the order.
 */
@@ -104,9 +105,39 @@ type SendInvoiceCreated struct {
 	Payload *messaging_models.InvoiceResponse
 }
 
+// IsSuccess returns true when this send invoice created response has a 2xx status code
+func (o *SendInvoiceCreated) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this send invoice created response has a 3xx status code
+func (o *SendInvoiceCreated) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this send invoice created response has a 4xx status code
+func (o *SendInvoiceCreated) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this send invoice created response has a 5xx status code
+func (o *SendInvoiceCreated) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this send invoice created response a status code equal to that given
+func (o *SendInvoiceCreated) IsCode(code int) bool {
+	return code == 201
+}
+
 func (o *SendInvoiceCreated) Error() string {
 	return fmt.Sprintf("[POST /messaging/v1/orders/{amazonOrderId}/messages/invoice][%d] sendInvoiceCreated  %+v", 201, o.Payload)
 }
+
+func (o *SendInvoiceCreated) String() string {
+	return fmt.Sprintf("[POST /messaging/v1/orders/{amazonOrderId}/messages/invoice][%d] sendInvoiceCreated  %+v", 201, o.Payload)
+}
+
 func (o *SendInvoiceCreated) GetPayload() *messaging_models.InvoiceResponse {
 	return o.Payload
 }
@@ -142,7 +173,8 @@ func NewSendInvoiceBadRequest() *SendInvoiceBadRequest {
 	return &SendInvoiceBadRequest{}
 }
 
-/* SendInvoiceBadRequest describes a response with status code 400, with default header values.
+/*
+SendInvoiceBadRequest describes a response with status code 400, with default header values.
 
 Request has missing or invalid parameters and cannot be parsed.
 */
@@ -159,9 +191,39 @@ type SendInvoiceBadRequest struct {
 	Payload *messaging_models.InvoiceResponse
 }
 
+// IsSuccess returns true when this send invoice bad request response has a 2xx status code
+func (o *SendInvoiceBadRequest) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this send invoice bad request response has a 3xx status code
+func (o *SendInvoiceBadRequest) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this send invoice bad request response has a 4xx status code
+func (o *SendInvoiceBadRequest) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this send invoice bad request response has a 5xx status code
+func (o *SendInvoiceBadRequest) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this send invoice bad request response a status code equal to that given
+func (o *SendInvoiceBadRequest) IsCode(code int) bool {
+	return code == 400
+}
+
 func (o *SendInvoiceBadRequest) Error() string {
 	return fmt.Sprintf("[POST /messaging/v1/orders/{amazonOrderId}/messages/invoice][%d] sendInvoiceBadRequest  %+v", 400, o.Payload)
 }
+
+func (o *SendInvoiceBadRequest) String() string {
+	return fmt.Sprintf("[POST /messaging/v1/orders/{amazonOrderId}/messages/invoice][%d] sendInvoiceBadRequest  %+v", 400, o.Payload)
+}
+
 func (o *SendInvoiceBadRequest) GetPayload() *messaging_models.InvoiceResponse {
 	return o.Payload
 }
@@ -197,7 +259,8 @@ func NewSendInvoiceForbidden() *SendInvoiceForbidden {
 	return &SendInvoiceForbidden{}
 }
 
-/* SendInvoiceForbidden describes a response with status code 403, with default header values.
+/*
+SendInvoiceForbidden describes a response with status code 403, with default header values.
 
 403 can be caused for reasons like Access Denied, Unauthorized, Expired Token, Invalid Signature or Resource Not Found.
 */
@@ -210,9 +273,39 @@ type SendInvoiceForbidden struct {
 	Payload *messaging_models.InvoiceResponse
 }
 
+// IsSuccess returns true when this send invoice forbidden response has a 2xx status code
+func (o *SendInvoiceForbidden) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this send invoice forbidden response has a 3xx status code
+func (o *SendInvoiceForbidden) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this send invoice forbidden response has a 4xx status code
+func (o *SendInvoiceForbidden) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this send invoice forbidden response has a 5xx status code
+func (o *SendInvoiceForbidden) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this send invoice forbidden response a status code equal to that given
+func (o *SendInvoiceForbidden) IsCode(code int) bool {
+	return code == 403
+}
+
 func (o *SendInvoiceForbidden) Error() string {
 	return fmt.Sprintf("[POST /messaging/v1/orders/{amazonOrderId}/messages/invoice][%d] sendInvoiceForbidden  %+v", 403, o.Payload)
 }
+
+func (o *SendInvoiceForbidden) String() string {
+	return fmt.Sprintf("[POST /messaging/v1/orders/{amazonOrderId}/messages/invoice][%d] sendInvoiceForbidden  %+v", 403, o.Payload)
+}
+
 func (o *SendInvoiceForbidden) GetPayload() *messaging_models.InvoiceResponse {
 	return o.Payload
 }
@@ -241,7 +334,8 @@ func NewSendInvoiceNotFound() *SendInvoiceNotFound {
 	return &SendInvoiceNotFound{}
 }
 
-/* SendInvoiceNotFound describes a response with status code 404, with default header values.
+/*
+SendInvoiceNotFound describes a response with status code 404, with default header values.
 
 The resource specified does not exist.
 */
@@ -258,9 +352,39 @@ type SendInvoiceNotFound struct {
 	Payload *messaging_models.InvoiceResponse
 }
 
+// IsSuccess returns true when this send invoice not found response has a 2xx status code
+func (o *SendInvoiceNotFound) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this send invoice not found response has a 3xx status code
+func (o *SendInvoiceNotFound) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this send invoice not found response has a 4xx status code
+func (o *SendInvoiceNotFound) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this send invoice not found response has a 5xx status code
+func (o *SendInvoiceNotFound) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this send invoice not found response a status code equal to that given
+func (o *SendInvoiceNotFound) IsCode(code int) bool {
+	return code == 404
+}
+
 func (o *SendInvoiceNotFound) Error() string {
 	return fmt.Sprintf("[POST /messaging/v1/orders/{amazonOrderId}/messages/invoice][%d] sendInvoiceNotFound  %+v", 404, o.Payload)
 }
+
+func (o *SendInvoiceNotFound) String() string {
+	return fmt.Sprintf("[POST /messaging/v1/orders/{amazonOrderId}/messages/invoice][%d] sendInvoiceNotFound  %+v", 404, o.Payload)
+}
+
 func (o *SendInvoiceNotFound) GetPayload() *messaging_models.InvoiceResponse {
 	return o.Payload
 }
@@ -296,7 +420,8 @@ func NewSendInvoiceRequestEntityTooLarge() *SendInvoiceRequestEntityTooLarge {
 	return &SendInvoiceRequestEntityTooLarge{}
 }
 
-/* SendInvoiceRequestEntityTooLarge describes a response with status code 413, with default header values.
+/*
+SendInvoiceRequestEntityTooLarge describes a response with status code 413, with default header values.
 
 The request size exceeded the maximum accepted size.
 */
@@ -314,9 +439,39 @@ type SendInvoiceRequestEntityTooLarge struct {
 	Payload *messaging_models.InvoiceResponse
 }
 
+// IsSuccess returns true when this send invoice request entity too large response has a 2xx status code
+func (o *SendInvoiceRequestEntityTooLarge) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this send invoice request entity too large response has a 3xx status code
+func (o *SendInvoiceRequestEntityTooLarge) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this send invoice request entity too large response has a 4xx status code
+func (o *SendInvoiceRequestEntityTooLarge) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this send invoice request entity too large response has a 5xx status code
+func (o *SendInvoiceRequestEntityTooLarge) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this send invoice request entity too large response a status code equal to that given
+func (o *SendInvoiceRequestEntityTooLarge) IsCode(code int) bool {
+	return code == 413
+}
+
 func (o *SendInvoiceRequestEntityTooLarge) Error() string {
 	return fmt.Sprintf("[POST /messaging/v1/orders/{amazonOrderId}/messages/invoice][%d] sendInvoiceRequestEntityTooLarge  %+v", 413, o.Payload)
 }
+
+func (o *SendInvoiceRequestEntityTooLarge) String() string {
+	return fmt.Sprintf("[POST /messaging/v1/orders/{amazonOrderId}/messages/invoice][%d] sendInvoiceRequestEntityTooLarge  %+v", 413, o.Payload)
+}
+
 func (o *SendInvoiceRequestEntityTooLarge) GetPayload() *messaging_models.InvoiceResponse {
 	return o.Payload
 }
@@ -352,7 +507,8 @@ func NewSendInvoiceUnsupportedMediaType() *SendInvoiceUnsupportedMediaType {
 	return &SendInvoiceUnsupportedMediaType{}
 }
 
-/* SendInvoiceUnsupportedMediaType describes a response with status code 415, with default header values.
+/*
+SendInvoiceUnsupportedMediaType describes a response with status code 415, with default header values.
 
 The entity of the request is in a format not supported by the requested resource.
 */
@@ -370,9 +526,39 @@ type SendInvoiceUnsupportedMediaType struct {
 	Payload *messaging_models.InvoiceResponse
 }
 
+// IsSuccess returns true when this send invoice unsupported media type response has a 2xx status code
+func (o *SendInvoiceUnsupportedMediaType) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this send invoice unsupported media type response has a 3xx status code
+func (o *SendInvoiceUnsupportedMediaType) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this send invoice unsupported media type response has a 4xx status code
+func (o *SendInvoiceUnsupportedMediaType) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this send invoice unsupported media type response has a 5xx status code
+func (o *SendInvoiceUnsupportedMediaType) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this send invoice unsupported media type response a status code equal to that given
+func (o *SendInvoiceUnsupportedMediaType) IsCode(code int) bool {
+	return code == 415
+}
+
 func (o *SendInvoiceUnsupportedMediaType) Error() string {
 	return fmt.Sprintf("[POST /messaging/v1/orders/{amazonOrderId}/messages/invoice][%d] sendInvoiceUnsupportedMediaType  %+v", 415, o.Payload)
 }
+
+func (o *SendInvoiceUnsupportedMediaType) String() string {
+	return fmt.Sprintf("[POST /messaging/v1/orders/{amazonOrderId}/messages/invoice][%d] sendInvoiceUnsupportedMediaType  %+v", 415, o.Payload)
+}
+
 func (o *SendInvoiceUnsupportedMediaType) GetPayload() *messaging_models.InvoiceResponse {
 	return o.Payload
 }
@@ -408,7 +594,8 @@ func NewSendInvoiceTooManyRequests() *SendInvoiceTooManyRequests {
 	return &SendInvoiceTooManyRequests{}
 }
 
-/* SendInvoiceTooManyRequests describes a response with status code 429, with default header values.
+/*
+SendInvoiceTooManyRequests describes a response with status code 429, with default header values.
 
 The frequency of requests was greater than allowed.
 */
@@ -426,9 +613,39 @@ type SendInvoiceTooManyRequests struct {
 	Payload *messaging_models.InvoiceResponse
 }
 
+// IsSuccess returns true when this send invoice too many requests response has a 2xx status code
+func (o *SendInvoiceTooManyRequests) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this send invoice too many requests response has a 3xx status code
+func (o *SendInvoiceTooManyRequests) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this send invoice too many requests response has a 4xx status code
+func (o *SendInvoiceTooManyRequests) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this send invoice too many requests response has a 5xx status code
+func (o *SendInvoiceTooManyRequests) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this send invoice too many requests response a status code equal to that given
+func (o *SendInvoiceTooManyRequests) IsCode(code int) bool {
+	return code == 429
+}
+
 func (o *SendInvoiceTooManyRequests) Error() string {
 	return fmt.Sprintf("[POST /messaging/v1/orders/{amazonOrderId}/messages/invoice][%d] sendInvoiceTooManyRequests  %+v", 429, o.Payload)
 }
+
+func (o *SendInvoiceTooManyRequests) String() string {
+	return fmt.Sprintf("[POST /messaging/v1/orders/{amazonOrderId}/messages/invoice][%d] sendInvoiceTooManyRequests  %+v", 429, o.Payload)
+}
+
 func (o *SendInvoiceTooManyRequests) GetPayload() *messaging_models.InvoiceResponse {
 	return o.Payload
 }
@@ -464,7 +681,8 @@ func NewSendInvoiceInternalServerError() *SendInvoiceInternalServerError {
 	return &SendInvoiceInternalServerError{}
 }
 
-/* SendInvoiceInternalServerError describes a response with status code 500, with default header values.
+/*
+SendInvoiceInternalServerError describes a response with status code 500, with default header values.
 
 Encountered an unexpected condition which prevented the server from fulfilling the request.
 */
@@ -482,9 +700,39 @@ type SendInvoiceInternalServerError struct {
 	Payload *messaging_models.InvoiceResponse
 }
 
+// IsSuccess returns true when this send invoice internal server error response has a 2xx status code
+func (o *SendInvoiceInternalServerError) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this send invoice internal server error response has a 3xx status code
+func (o *SendInvoiceInternalServerError) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this send invoice internal server error response has a 4xx status code
+func (o *SendInvoiceInternalServerError) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this send invoice internal server error response has a 5xx status code
+func (o *SendInvoiceInternalServerError) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this send invoice internal server error response a status code equal to that given
+func (o *SendInvoiceInternalServerError) IsCode(code int) bool {
+	return code == 500
+}
+
 func (o *SendInvoiceInternalServerError) Error() string {
 	return fmt.Sprintf("[POST /messaging/v1/orders/{amazonOrderId}/messages/invoice][%d] sendInvoiceInternalServerError  %+v", 500, o.Payload)
 }
+
+func (o *SendInvoiceInternalServerError) String() string {
+	return fmt.Sprintf("[POST /messaging/v1/orders/{amazonOrderId}/messages/invoice][%d] sendInvoiceInternalServerError  %+v", 500, o.Payload)
+}
+
 func (o *SendInvoiceInternalServerError) GetPayload() *messaging_models.InvoiceResponse {
 	return o.Payload
 }
@@ -520,7 +768,8 @@ func NewSendInvoiceServiceUnavailable() *SendInvoiceServiceUnavailable {
 	return &SendInvoiceServiceUnavailable{}
 }
 
-/* SendInvoiceServiceUnavailable describes a response with status code 503, with default header values.
+/*
+SendInvoiceServiceUnavailable describes a response with status code 503, with default header values.
 
 Temporary overloading or maintenance of the server.
 */
@@ -538,9 +787,39 @@ type SendInvoiceServiceUnavailable struct {
 	Payload *messaging_models.InvoiceResponse
 }
 
+// IsSuccess returns true when this send invoice service unavailable response has a 2xx status code
+func (o *SendInvoiceServiceUnavailable) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this send invoice service unavailable response has a 3xx status code
+func (o *SendInvoiceServiceUnavailable) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this send invoice service unavailable response has a 4xx status code
+func (o *SendInvoiceServiceUnavailable) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this send invoice service unavailable response has a 5xx status code
+func (o *SendInvoiceServiceUnavailable) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this send invoice service unavailable response a status code equal to that given
+func (o *SendInvoiceServiceUnavailable) IsCode(code int) bool {
+	return code == 503
+}
+
 func (o *SendInvoiceServiceUnavailable) Error() string {
 	return fmt.Sprintf("[POST /messaging/v1/orders/{amazonOrderId}/messages/invoice][%d] sendInvoiceServiceUnavailable  %+v", 503, o.Payload)
 }
+
+func (o *SendInvoiceServiceUnavailable) String() string {
+	return fmt.Sprintf("[POST /messaging/v1/orders/{amazonOrderId}/messages/invoice][%d] sendInvoiceServiceUnavailable  %+v", 503, o.Payload)
+}
+
 func (o *SendInvoiceServiceUnavailable) GetPayload() *messaging_models.InvoiceResponse {
 	return o.Payload
 }

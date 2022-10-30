@@ -60,7 +60,7 @@ type ClientService interface {
 }
 
 /*
-  CreateAmazonMotors Sends a message to a buyer to provide details about an Amazon Motors order. This message can only be sent by Amazon Motors sellers.
+	CreateAmazonMotors Sends a message to a buyer to provide details about an Amazon Motors order. This message can only be sent by Amazon Motors sellers.
 
 **Usage Plan:**
 
@@ -106,7 +106,7 @@ func (a *Client) CreateAmazonMotors(params *CreateAmazonMotorsParams, opts ...Cl
 }
 
 /*
-  CreateWarranty Sends a message to a buyer to provide details about warranty information on a purchase in their order.
+	CreateWarranty Sends a message to a buyer to provide details about warranty information on a purchase in their order.
 
 **Usage Plan:**
 
@@ -152,7 +152,7 @@ func (a *Client) CreateWarranty(params *CreateWarrantyParams, opts ...ClientOpti
 }
 
 /*
-  GetAttributes Returns a response containing attributes related to an order. This includes buyer preferences.
+	GetAttributes Returns a response containing attributes related to an order. This includes buyer preferences.
 
 **Usage Plan:**
 
@@ -196,7 +196,7 @@ func (a *Client) GetAttributes(params *GetAttributesParams, opts ...ClientOption
 }
 
 /*
-  ConfirmCustomizationDetails Sends a message asking a buyer to provide or verify customization details such as name spelling, images, initials, etc.
+	ConfirmCustomizationDetails Sends a message asking a buyer to provide or verify customization details such as name spelling, images, initials, etc.
 
 **Usage Plan:**
 
@@ -242,7 +242,7 @@ func (a *Client) ConfirmCustomizationDetails(params *ConfirmCustomizationDetails
 }
 
 /*
-  CreateConfirmDeliveryDetails Sends a message to a buyer to arrange a delivery or to confirm contact information for making a delivery.
+	CreateConfirmDeliveryDetails Sends a message to a buyer to arrange a delivery or to confirm contact information for making a delivery.
 
 **Usage Plan:**
 
@@ -288,7 +288,7 @@ func (a *Client) CreateConfirmDeliveryDetails(params *CreateConfirmDeliveryDetai
 }
 
 /*
-  CreateConfirmOrderDetails Sends a message to ask a buyer an order-related question prior to shipping their order.
+	CreateConfirmOrderDetails Sends a message to ask a buyer an order-related question prior to shipping their order.
 
 **Usage Plan:**
 
@@ -334,7 +334,7 @@ func (a *Client) CreateConfirmOrderDetails(params *CreateConfirmOrderDetailsPara
 }
 
 /*
-  CreateConfirmServiceDetails Sends a message to contact a Home Service customer to arrange a service call or to gather information prior to a service call.
+	CreateConfirmServiceDetails Sends a message to contact a Home Service customer to arrange a service call or to gather information prior to a service call.
 
 **Usage Plan:**
 
@@ -380,7 +380,7 @@ func (a *Client) CreateConfirmServiceDetails(params *CreateConfirmServiceDetails
 }
 
 /*
-  CreateDigitalAccessKey Sends a message to a buyer to share a digital access key needed to utilize digital content in their order.
+	CreateDigitalAccessKey Sends a message to a buyer to share a digital access key needed to utilize digital content in their order.
 
 **Usage Plan:**
 
@@ -426,7 +426,7 @@ func (a *Client) CreateDigitalAccessKey(params *CreateDigitalAccessKeyParams, op
 }
 
 /*
-  CreateLegalDisclosure Sends a critical message that contains documents that a seller is legally obligated to provide to the buyer. This message should only be used to deliver documents that are required by law.
+	CreateLegalDisclosure Sends a critical message that contains documents that a seller is legally obligated to provide to the buyer. This message should only be used to deliver documents that are required by law.
 
 **Usage Plan:**
 
@@ -472,7 +472,7 @@ func (a *Client) CreateLegalDisclosure(params *CreateLegalDisclosureParams, opts
 }
 
 /*
-  CreateNegativeFeedbackRemoval Sends a non-critical message that asks a buyer to remove their negative feedback. This message should only be sent after the seller has resolved the buyer's problem.
+	CreateNegativeFeedbackRemoval Sends a non-critical message that asks a buyer to remove their negative feedback. This message should only be sent after the seller has resolved the buyer's problem.
 
 **Usage Plan:**
 
@@ -518,7 +518,7 @@ func (a *Client) CreateNegativeFeedbackRemoval(params *CreateNegativeFeedbackRem
 }
 
 /*
-  CreateUnexpectedProblem Sends a critical message to a buyer that an unexpected problem was encountered affecting the completion of the order.
+	CreateUnexpectedProblem Sends a critical message to a buyer that an unexpected problem was encountered affecting the completion of the order.
 
 **Usage Plan:**
 
@@ -564,7 +564,7 @@ func (a *Client) CreateUnexpectedProblem(params *CreateUnexpectedProblemParams, 
 }
 
 /*
-  GetMessagingActionsForOrder Returns a list of message types that are available for an order that you specify. A message type is represented by an actions object, which contains a path and query parameter(s). You can use the path and parameter(s) to call an operation that sends a message.
+	GetMessagingActionsForOrder Returns a list of message types that are available for an order that you specify. A message type is represented by an actions object, which contains a path and query parameter(s). You can use the path and parameter(s) to call an operation that sends a message.
 
 **Usage Plan:**
 
@@ -610,7 +610,7 @@ func (a *Client) GetMessagingActionsForOrder(params *GetMessagingActionsForOrder
 }
 
 /*
-  SendInvoice Sends a message providing the buyer an invoice
+SendInvoice Sends a message providing the buyer an invoice
 */
 func (a *Client) SendInvoice(params *SendInvoiceParams, opts ...ClientOption) (*SendInvoiceCreated, error) {
 	// TODO: Validate the params before sending

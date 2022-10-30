@@ -50,7 +50,7 @@ type ClientService interface {
 }
 
 /*
-  CancelShipment Cancel the shipment indicated by the specified shipment identifier.
+	CancelShipment Cancel the shipment indicated by the specified shipment identifier.
 
 **Usage Plan:**
 
@@ -96,7 +96,7 @@ func (a *Client) CancelShipment(params *CancelShipmentParams, opts ...ClientOpti
 }
 
 /*
-  CancelShipmentOld Cancel the shipment indicated by the specified shipment identifer.
+	CancelShipmentOld Cancel the shipment indicated by the specified shipment identifer.
 
 **Usage Plan:**
 
@@ -142,7 +142,7 @@ func (a *Client) CancelShipmentOld(params *CancelShipmentOldParams, opts ...Clie
 }
 
 /*
-  CreateShipment Create a shipment with the information provided.
+	CreateShipment Create a shipment with the information provided.
 
 **Usage Plan:**
 
@@ -188,7 +188,7 @@ func (a *Client) CreateShipment(params *CreateShipmentParams, opts ...ClientOpti
 }
 
 /*
-  GetAdditionalSellerInputs Gets a list of additional seller inputs required for a ship method. This is generally used for international shipping.
+	GetAdditionalSellerInputs Gets a list of additional seller inputs required for a ship method. This is generally used for international shipping.
 
 **Usage Plan:**
 
@@ -234,7 +234,7 @@ func (a *Client) GetAdditionalSellerInputs(params *GetAdditionalSellerInputsPara
 }
 
 /*
-  GetAdditionalSellerInputsOld Get a list of additional seller inputs required for a ship method. This is generally used for international shipping.
+	GetAdditionalSellerInputsOld Get a list of additional seller inputs required for a ship method. This is generally used for international shipping.
 
 **Usage Plan:**
 
@@ -280,7 +280,7 @@ func (a *Client) GetAdditionalSellerInputsOld(params *GetAdditionalSellerInputsO
 }
 
 /*
-  GetEligibleShipmentServices Returns a list of shipping service offers that satisfy the specified shipment request details.
+	GetEligibleShipmentServices Returns a list of shipping service offers that satisfy the specified shipment request details.
 
 **Usage Plan:**
 
@@ -326,7 +326,7 @@ func (a *Client) GetEligibleShipmentServices(params *GetEligibleShipmentServices
 }
 
 /*
-  GetEligibleShipmentServicesOld Returns a list of shipping service offers that satisfy the specified shipment request details.
+	GetEligibleShipmentServicesOld Returns a list of shipping service offers that satisfy the specified shipment request details.
 
 **Usage Plan:**
 
@@ -372,7 +372,7 @@ func (a *Client) GetEligibleShipmentServicesOld(params *GetEligibleShipmentServi
 }
 
 /*
-  GetShipment Returns the shipment information for an existing shipment.
+	GetShipment Returns the shipment information for an existing shipment.
 
 **Usage Plan:**
 

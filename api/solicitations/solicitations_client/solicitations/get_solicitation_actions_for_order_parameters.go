@@ -53,10 +53,12 @@ func NewGetSolicitationActionsForOrderParamsWithHTTPClient(client *http.Client) 
 	}
 }
 
-/* GetSolicitationActionsForOrderParams contains all the parameters to send to the API endpoint
-   for the get solicitation actions for order operation.
+/*
+GetSolicitationActionsForOrderParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the get solicitation actions for order operation.
+
+	Typically these are written to a http.Request.
 */
 type GetSolicitationActionsForOrderParams struct {
 

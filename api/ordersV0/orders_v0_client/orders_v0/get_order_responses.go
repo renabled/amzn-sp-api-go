@@ -75,7 +75,8 @@ func NewGetOrderOK() *GetOrderOK {
 	return &GetOrderOK{}
 }
 
-/* GetOrderOK describes a response with status code 200, with default header values.
+/*
+GetOrderOK describes a response with status code 200, with default header values.
 
 Success.
 */
@@ -92,9 +93,39 @@ type GetOrderOK struct {
 	Payload *orders_v0_models.GetOrderResponse
 }
 
+// IsSuccess returns true when this get order o k response has a 2xx status code
+func (o *GetOrderOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this get order o k response has a 3xx status code
+func (o *GetOrderOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get order o k response has a 4xx status code
+func (o *GetOrderOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get order o k response has a 5xx status code
+func (o *GetOrderOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get order o k response a status code equal to that given
+func (o *GetOrderOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *GetOrderOK) Error() string {
 	return fmt.Sprintf("[GET /orders/v0/orders/{orderId}][%d] getOrderOK  %+v", 200, o.Payload)
 }
+
+func (o *GetOrderOK) String() string {
+	return fmt.Sprintf("[GET /orders/v0/orders/{orderId}][%d] getOrderOK  %+v", 200, o.Payload)
+}
+
 func (o *GetOrderOK) GetPayload() *orders_v0_models.GetOrderResponse {
 	return o.Payload
 }
@@ -130,7 +161,8 @@ func NewGetOrderBadRequest() *GetOrderBadRequest {
 	return &GetOrderBadRequest{}
 }
 
-/* GetOrderBadRequest describes a response with status code 400, with default header values.
+/*
+GetOrderBadRequest describes a response with status code 400, with default header values.
 
 Request has missing or invalid parameters and cannot be parsed.
 */
@@ -147,9 +179,39 @@ type GetOrderBadRequest struct {
 	Payload *orders_v0_models.GetOrderResponse
 }
 
+// IsSuccess returns true when this get order bad request response has a 2xx status code
+func (o *GetOrderBadRequest) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get order bad request response has a 3xx status code
+func (o *GetOrderBadRequest) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get order bad request response has a 4xx status code
+func (o *GetOrderBadRequest) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get order bad request response has a 5xx status code
+func (o *GetOrderBadRequest) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get order bad request response a status code equal to that given
+func (o *GetOrderBadRequest) IsCode(code int) bool {
+	return code == 400
+}
+
 func (o *GetOrderBadRequest) Error() string {
 	return fmt.Sprintf("[GET /orders/v0/orders/{orderId}][%d] getOrderBadRequest  %+v", 400, o.Payload)
 }
+
+func (o *GetOrderBadRequest) String() string {
+	return fmt.Sprintf("[GET /orders/v0/orders/{orderId}][%d] getOrderBadRequest  %+v", 400, o.Payload)
+}
+
 func (o *GetOrderBadRequest) GetPayload() *orders_v0_models.GetOrderResponse {
 	return o.Payload
 }
@@ -185,7 +247,8 @@ func NewGetOrderForbidden() *GetOrderForbidden {
 	return &GetOrderForbidden{}
 }
 
-/* GetOrderForbidden describes a response with status code 403, with default header values.
+/*
+GetOrderForbidden describes a response with status code 403, with default header values.
 
 Indicates access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.
 */
@@ -198,9 +261,39 @@ type GetOrderForbidden struct {
 	Payload *orders_v0_models.GetOrderResponse
 }
 
+// IsSuccess returns true when this get order forbidden response has a 2xx status code
+func (o *GetOrderForbidden) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get order forbidden response has a 3xx status code
+func (o *GetOrderForbidden) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get order forbidden response has a 4xx status code
+func (o *GetOrderForbidden) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get order forbidden response has a 5xx status code
+func (o *GetOrderForbidden) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get order forbidden response a status code equal to that given
+func (o *GetOrderForbidden) IsCode(code int) bool {
+	return code == 403
+}
+
 func (o *GetOrderForbidden) Error() string {
 	return fmt.Sprintf("[GET /orders/v0/orders/{orderId}][%d] getOrderForbidden  %+v", 403, o.Payload)
 }
+
+func (o *GetOrderForbidden) String() string {
+	return fmt.Sprintf("[GET /orders/v0/orders/{orderId}][%d] getOrderForbidden  %+v", 403, o.Payload)
+}
+
 func (o *GetOrderForbidden) GetPayload() *orders_v0_models.GetOrderResponse {
 	return o.Payload
 }
@@ -229,7 +322,8 @@ func NewGetOrderNotFound() *GetOrderNotFound {
 	return &GetOrderNotFound{}
 }
 
-/* GetOrderNotFound describes a response with status code 404, with default header values.
+/*
+GetOrderNotFound describes a response with status code 404, with default header values.
 
 The resource specified does not exist.
 */
@@ -246,9 +340,39 @@ type GetOrderNotFound struct {
 	Payload *orders_v0_models.GetOrderResponse
 }
 
+// IsSuccess returns true when this get order not found response has a 2xx status code
+func (o *GetOrderNotFound) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get order not found response has a 3xx status code
+func (o *GetOrderNotFound) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get order not found response has a 4xx status code
+func (o *GetOrderNotFound) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get order not found response has a 5xx status code
+func (o *GetOrderNotFound) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get order not found response a status code equal to that given
+func (o *GetOrderNotFound) IsCode(code int) bool {
+	return code == 404
+}
+
 func (o *GetOrderNotFound) Error() string {
 	return fmt.Sprintf("[GET /orders/v0/orders/{orderId}][%d] getOrderNotFound  %+v", 404, o.Payload)
 }
+
+func (o *GetOrderNotFound) String() string {
+	return fmt.Sprintf("[GET /orders/v0/orders/{orderId}][%d] getOrderNotFound  %+v", 404, o.Payload)
+}
+
 func (o *GetOrderNotFound) GetPayload() *orders_v0_models.GetOrderResponse {
 	return o.Payload
 }
@@ -284,7 +408,8 @@ func NewGetOrderTooManyRequests() *GetOrderTooManyRequests {
 	return &GetOrderTooManyRequests{}
 }
 
-/* GetOrderTooManyRequests describes a response with status code 429, with default header values.
+/*
+GetOrderTooManyRequests describes a response with status code 429, with default header values.
 
 The frequency of requests was greater than allowed.
 */
@@ -302,9 +427,39 @@ type GetOrderTooManyRequests struct {
 	Payload *orders_v0_models.GetOrderResponse
 }
 
+// IsSuccess returns true when this get order too many requests response has a 2xx status code
+func (o *GetOrderTooManyRequests) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get order too many requests response has a 3xx status code
+func (o *GetOrderTooManyRequests) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get order too many requests response has a 4xx status code
+func (o *GetOrderTooManyRequests) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get order too many requests response has a 5xx status code
+func (o *GetOrderTooManyRequests) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get order too many requests response a status code equal to that given
+func (o *GetOrderTooManyRequests) IsCode(code int) bool {
+	return code == 429
+}
+
 func (o *GetOrderTooManyRequests) Error() string {
 	return fmt.Sprintf("[GET /orders/v0/orders/{orderId}][%d] getOrderTooManyRequests  %+v", 429, o.Payload)
 }
+
+func (o *GetOrderTooManyRequests) String() string {
+	return fmt.Sprintf("[GET /orders/v0/orders/{orderId}][%d] getOrderTooManyRequests  %+v", 429, o.Payload)
+}
+
 func (o *GetOrderTooManyRequests) GetPayload() *orders_v0_models.GetOrderResponse {
 	return o.Payload
 }
@@ -340,7 +495,8 @@ func NewGetOrderInternalServerError() *GetOrderInternalServerError {
 	return &GetOrderInternalServerError{}
 }
 
-/* GetOrderInternalServerError describes a response with status code 500, with default header values.
+/*
+GetOrderInternalServerError describes a response with status code 500, with default header values.
 
 An unexpected condition occurred that prevented the server from fulfilling the request.
 */
@@ -358,9 +514,39 @@ type GetOrderInternalServerError struct {
 	Payload *orders_v0_models.GetOrderResponse
 }
 
+// IsSuccess returns true when this get order internal server error response has a 2xx status code
+func (o *GetOrderInternalServerError) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get order internal server error response has a 3xx status code
+func (o *GetOrderInternalServerError) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get order internal server error response has a 4xx status code
+func (o *GetOrderInternalServerError) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get order internal server error response has a 5xx status code
+func (o *GetOrderInternalServerError) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this get order internal server error response a status code equal to that given
+func (o *GetOrderInternalServerError) IsCode(code int) bool {
+	return code == 500
+}
+
 func (o *GetOrderInternalServerError) Error() string {
 	return fmt.Sprintf("[GET /orders/v0/orders/{orderId}][%d] getOrderInternalServerError  %+v", 500, o.Payload)
 }
+
+func (o *GetOrderInternalServerError) String() string {
+	return fmt.Sprintf("[GET /orders/v0/orders/{orderId}][%d] getOrderInternalServerError  %+v", 500, o.Payload)
+}
+
 func (o *GetOrderInternalServerError) GetPayload() *orders_v0_models.GetOrderResponse {
 	return o.Payload
 }
@@ -396,7 +582,8 @@ func NewGetOrderServiceUnavailable() *GetOrderServiceUnavailable {
 	return &GetOrderServiceUnavailable{}
 }
 
-/* GetOrderServiceUnavailable describes a response with status code 503, with default header values.
+/*
+GetOrderServiceUnavailable describes a response with status code 503, with default header values.
 
 Temporary overloading or maintenance of the server.
 */
@@ -414,9 +601,39 @@ type GetOrderServiceUnavailable struct {
 	Payload *orders_v0_models.GetOrderResponse
 }
 
+// IsSuccess returns true when this get order service unavailable response has a 2xx status code
+func (o *GetOrderServiceUnavailable) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get order service unavailable response has a 3xx status code
+func (o *GetOrderServiceUnavailable) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get order service unavailable response has a 4xx status code
+func (o *GetOrderServiceUnavailable) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get order service unavailable response has a 5xx status code
+func (o *GetOrderServiceUnavailable) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this get order service unavailable response a status code equal to that given
+func (o *GetOrderServiceUnavailable) IsCode(code int) bool {
+	return code == 503
+}
+
 func (o *GetOrderServiceUnavailable) Error() string {
 	return fmt.Sprintf("[GET /orders/v0/orders/{orderId}][%d] getOrderServiceUnavailable  %+v", 503, o.Payload)
 }
+
+func (o *GetOrderServiceUnavailable) String() string {
+	return fmt.Sprintf("[GET /orders/v0/orders/{orderId}][%d] getOrderServiceUnavailable  %+v", 503, o.Payload)
+}
+
 func (o *GetOrderServiceUnavailable) GetPayload() *orders_v0_models.GetOrderResponse {
 	return o.Payload
 }

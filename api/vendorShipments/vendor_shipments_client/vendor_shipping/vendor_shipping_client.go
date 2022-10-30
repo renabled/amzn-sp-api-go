@@ -36,7 +36,7 @@ type ClientService interface {
 }
 
 /*
-  SubmitShipmentConfirmations Submits one or more shipment confirmations for vendor orders.
+	SubmitShipmentConfirmations Submits one or more shipment confirmations for vendor orders.
 
 **Usage Plans:**
 

@@ -54,10 +54,12 @@ func NewUpdateFulfillmentOrderParamsWithHTTPClient(client *http.Client) *UpdateF
 	}
 }
 
-/* UpdateFulfillmentOrderParams contains all the parameters to send to the API endpoint
-   for the update fulfillment order operation.
+/*
+UpdateFulfillmentOrderParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the update fulfillment order operation.
+
+	Typically these are written to a http.Request.
 */
 type UpdateFulfillmentOrderParams struct {
 

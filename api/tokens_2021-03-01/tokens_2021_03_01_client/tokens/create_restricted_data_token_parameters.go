@@ -54,10 +54,12 @@ func NewCreateRestrictedDataTokenParamsWithHTTPClient(client *http.Client) *Crea
 	}
 }
 
-/* CreateRestrictedDataTokenParams contains all the parameters to send to the API endpoint
-   for the create restricted data token operation.
+/*
+CreateRestrictedDataTokenParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the create restricted data token operation.
+
+	Typically these are written to a http.Request.
 */
 type CreateRestrictedDataTokenParams struct {
 

@@ -81,7 +81,8 @@ func NewGetFeatureSKUOK() *GetFeatureSKUOK {
 	return &GetFeatureSKUOK{}
 }
 
-/* GetFeatureSKUOK describes a response with status code 200, with default header values.
+/*
+GetFeatureSKUOK describes a response with status code 200, with default header values.
 
 Success.
 */
@@ -98,9 +99,39 @@ type GetFeatureSKUOK struct {
 	Payload *fulfillment_outbound_2020_07_01_models.GetFeatureSkuResponse
 }
 
+// IsSuccess returns true when this get feature s k u o k response has a 2xx status code
+func (o *GetFeatureSKUOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this get feature s k u o k response has a 3xx status code
+func (o *GetFeatureSKUOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get feature s k u o k response has a 4xx status code
+func (o *GetFeatureSKUOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get feature s k u o k response has a 5xx status code
+func (o *GetFeatureSKUOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get feature s k u o k response a status code equal to that given
+func (o *GetFeatureSKUOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *GetFeatureSKUOK) Error() string {
 	return fmt.Sprintf("[GET /fba/outbound/2020-07-01/features/inventory/{featureName}/{sellerSku}][%d] getFeatureSKUOK  %+v", 200, o.Payload)
 }
+
+func (o *GetFeatureSKUOK) String() string {
+	return fmt.Sprintf("[GET /fba/outbound/2020-07-01/features/inventory/{featureName}/{sellerSku}][%d] getFeatureSKUOK  %+v", 200, o.Payload)
+}
+
 func (o *GetFeatureSKUOK) GetPayload() *fulfillment_outbound_2020_07_01_models.GetFeatureSkuResponse {
 	return o.Payload
 }
@@ -136,7 +167,8 @@ func NewGetFeatureSKUBadRequest() *GetFeatureSKUBadRequest {
 	return &GetFeatureSKUBadRequest{}
 }
 
-/* GetFeatureSKUBadRequest describes a response with status code 400, with default header values.
+/*
+GetFeatureSKUBadRequest describes a response with status code 400, with default header values.
 
 Request has missing or invalid parameters and cannot be parsed.
 */
@@ -153,9 +185,39 @@ type GetFeatureSKUBadRequest struct {
 	Payload *fulfillment_outbound_2020_07_01_models.GetFeatureSkuResponse
 }
 
+// IsSuccess returns true when this get feature s k u bad request response has a 2xx status code
+func (o *GetFeatureSKUBadRequest) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get feature s k u bad request response has a 3xx status code
+func (o *GetFeatureSKUBadRequest) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get feature s k u bad request response has a 4xx status code
+func (o *GetFeatureSKUBadRequest) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get feature s k u bad request response has a 5xx status code
+func (o *GetFeatureSKUBadRequest) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get feature s k u bad request response a status code equal to that given
+func (o *GetFeatureSKUBadRequest) IsCode(code int) bool {
+	return code == 400
+}
+
 func (o *GetFeatureSKUBadRequest) Error() string {
 	return fmt.Sprintf("[GET /fba/outbound/2020-07-01/features/inventory/{featureName}/{sellerSku}][%d] getFeatureSKUBadRequest  %+v", 400, o.Payload)
 }
+
+func (o *GetFeatureSKUBadRequest) String() string {
+	return fmt.Sprintf("[GET /fba/outbound/2020-07-01/features/inventory/{featureName}/{sellerSku}][%d] getFeatureSKUBadRequest  %+v", 400, o.Payload)
+}
+
 func (o *GetFeatureSKUBadRequest) GetPayload() *fulfillment_outbound_2020_07_01_models.GetFeatureSkuResponse {
 	return o.Payload
 }
@@ -191,7 +253,8 @@ func NewGetFeatureSKUUnauthorized() *GetFeatureSKUUnauthorized {
 	return &GetFeatureSKUUnauthorized{}
 }
 
-/* GetFeatureSKUUnauthorized describes a response with status code 401, with default header values.
+/*
+GetFeatureSKUUnauthorized describes a response with status code 401, with default header values.
 
 The request's Authorization header is not formatted correctly or does not contain a valid token.
 */
@@ -209,9 +272,39 @@ type GetFeatureSKUUnauthorized struct {
 	Payload *fulfillment_outbound_2020_07_01_models.GetFeatureSkuResponse
 }
 
+// IsSuccess returns true when this get feature s k u unauthorized response has a 2xx status code
+func (o *GetFeatureSKUUnauthorized) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get feature s k u unauthorized response has a 3xx status code
+func (o *GetFeatureSKUUnauthorized) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get feature s k u unauthorized response has a 4xx status code
+func (o *GetFeatureSKUUnauthorized) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get feature s k u unauthorized response has a 5xx status code
+func (o *GetFeatureSKUUnauthorized) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get feature s k u unauthorized response a status code equal to that given
+func (o *GetFeatureSKUUnauthorized) IsCode(code int) bool {
+	return code == 401
+}
+
 func (o *GetFeatureSKUUnauthorized) Error() string {
 	return fmt.Sprintf("[GET /fba/outbound/2020-07-01/features/inventory/{featureName}/{sellerSku}][%d] getFeatureSKUUnauthorized  %+v", 401, o.Payload)
 }
+
+func (o *GetFeatureSKUUnauthorized) String() string {
+	return fmt.Sprintf("[GET /fba/outbound/2020-07-01/features/inventory/{featureName}/{sellerSku}][%d] getFeatureSKUUnauthorized  %+v", 401, o.Payload)
+}
+
 func (o *GetFeatureSKUUnauthorized) GetPayload() *fulfillment_outbound_2020_07_01_models.GetFeatureSkuResponse {
 	return o.Payload
 }
@@ -247,7 +340,8 @@ func NewGetFeatureSKUForbidden() *GetFeatureSKUForbidden {
 	return &GetFeatureSKUForbidden{}
 }
 
-/* GetFeatureSKUForbidden describes a response with status code 403, with default header values.
+/*
+GetFeatureSKUForbidden describes a response with status code 403, with default header values.
 
 Indicates that access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.
 */
@@ -260,9 +354,39 @@ type GetFeatureSKUForbidden struct {
 	Payload *fulfillment_outbound_2020_07_01_models.GetFeatureSkuResponse
 }
 
+// IsSuccess returns true when this get feature s k u forbidden response has a 2xx status code
+func (o *GetFeatureSKUForbidden) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get feature s k u forbidden response has a 3xx status code
+func (o *GetFeatureSKUForbidden) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get feature s k u forbidden response has a 4xx status code
+func (o *GetFeatureSKUForbidden) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get feature s k u forbidden response has a 5xx status code
+func (o *GetFeatureSKUForbidden) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get feature s k u forbidden response a status code equal to that given
+func (o *GetFeatureSKUForbidden) IsCode(code int) bool {
+	return code == 403
+}
+
 func (o *GetFeatureSKUForbidden) Error() string {
 	return fmt.Sprintf("[GET /fba/outbound/2020-07-01/features/inventory/{featureName}/{sellerSku}][%d] getFeatureSKUForbidden  %+v", 403, o.Payload)
 }
+
+func (o *GetFeatureSKUForbidden) String() string {
+	return fmt.Sprintf("[GET /fba/outbound/2020-07-01/features/inventory/{featureName}/{sellerSku}][%d] getFeatureSKUForbidden  %+v", 403, o.Payload)
+}
+
 func (o *GetFeatureSKUForbidden) GetPayload() *fulfillment_outbound_2020_07_01_models.GetFeatureSkuResponse {
 	return o.Payload
 }
@@ -291,7 +415,8 @@ func NewGetFeatureSKUNotFound() *GetFeatureSKUNotFound {
 	return &GetFeatureSKUNotFound{}
 }
 
-/* GetFeatureSKUNotFound describes a response with status code 404, with default header values.
+/*
+GetFeatureSKUNotFound describes a response with status code 404, with default header values.
 
 The specified resource does not exist.
 */
@@ -308,9 +433,39 @@ type GetFeatureSKUNotFound struct {
 	Payload *fulfillment_outbound_2020_07_01_models.GetFeatureSkuResponse
 }
 
+// IsSuccess returns true when this get feature s k u not found response has a 2xx status code
+func (o *GetFeatureSKUNotFound) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get feature s k u not found response has a 3xx status code
+func (o *GetFeatureSKUNotFound) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get feature s k u not found response has a 4xx status code
+func (o *GetFeatureSKUNotFound) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get feature s k u not found response has a 5xx status code
+func (o *GetFeatureSKUNotFound) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get feature s k u not found response a status code equal to that given
+func (o *GetFeatureSKUNotFound) IsCode(code int) bool {
+	return code == 404
+}
+
 func (o *GetFeatureSKUNotFound) Error() string {
 	return fmt.Sprintf("[GET /fba/outbound/2020-07-01/features/inventory/{featureName}/{sellerSku}][%d] getFeatureSKUNotFound  %+v", 404, o.Payload)
 }
+
+func (o *GetFeatureSKUNotFound) String() string {
+	return fmt.Sprintf("[GET /fba/outbound/2020-07-01/features/inventory/{featureName}/{sellerSku}][%d] getFeatureSKUNotFound  %+v", 404, o.Payload)
+}
+
 func (o *GetFeatureSKUNotFound) GetPayload() *fulfillment_outbound_2020_07_01_models.GetFeatureSkuResponse {
 	return o.Payload
 }
@@ -346,7 +501,8 @@ func NewGetFeatureSKUTooManyRequests() *GetFeatureSKUTooManyRequests {
 	return &GetFeatureSKUTooManyRequests{}
 }
 
-/* GetFeatureSKUTooManyRequests describes a response with status code 429, with default header values.
+/*
+GetFeatureSKUTooManyRequests describes a response with status code 429, with default header values.
 
 The frequency of requests was greater than allowed.
 */
@@ -364,9 +520,39 @@ type GetFeatureSKUTooManyRequests struct {
 	Payload *fulfillment_outbound_2020_07_01_models.GetFeatureSkuResponse
 }
 
+// IsSuccess returns true when this get feature s k u too many requests response has a 2xx status code
+func (o *GetFeatureSKUTooManyRequests) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get feature s k u too many requests response has a 3xx status code
+func (o *GetFeatureSKUTooManyRequests) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get feature s k u too many requests response has a 4xx status code
+func (o *GetFeatureSKUTooManyRequests) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get feature s k u too many requests response has a 5xx status code
+func (o *GetFeatureSKUTooManyRequests) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get feature s k u too many requests response a status code equal to that given
+func (o *GetFeatureSKUTooManyRequests) IsCode(code int) bool {
+	return code == 429
+}
+
 func (o *GetFeatureSKUTooManyRequests) Error() string {
 	return fmt.Sprintf("[GET /fba/outbound/2020-07-01/features/inventory/{featureName}/{sellerSku}][%d] getFeatureSKUTooManyRequests  %+v", 429, o.Payload)
 }
+
+func (o *GetFeatureSKUTooManyRequests) String() string {
+	return fmt.Sprintf("[GET /fba/outbound/2020-07-01/features/inventory/{featureName}/{sellerSku}][%d] getFeatureSKUTooManyRequests  %+v", 429, o.Payload)
+}
+
 func (o *GetFeatureSKUTooManyRequests) GetPayload() *fulfillment_outbound_2020_07_01_models.GetFeatureSkuResponse {
 	return o.Payload
 }
@@ -402,7 +588,8 @@ func NewGetFeatureSKUInternalServerError() *GetFeatureSKUInternalServerError {
 	return &GetFeatureSKUInternalServerError{}
 }
 
-/* GetFeatureSKUInternalServerError describes a response with status code 500, with default header values.
+/*
+GetFeatureSKUInternalServerError describes a response with status code 500, with default header values.
 
 An unexpected condition occurred that prevented the server from fulfilling the request.
 */
@@ -420,9 +607,39 @@ type GetFeatureSKUInternalServerError struct {
 	Payload *fulfillment_outbound_2020_07_01_models.GetFeatureSkuResponse
 }
 
+// IsSuccess returns true when this get feature s k u internal server error response has a 2xx status code
+func (o *GetFeatureSKUInternalServerError) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get feature s k u internal server error response has a 3xx status code
+func (o *GetFeatureSKUInternalServerError) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get feature s k u internal server error response has a 4xx status code
+func (o *GetFeatureSKUInternalServerError) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get feature s k u internal server error response has a 5xx status code
+func (o *GetFeatureSKUInternalServerError) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this get feature s k u internal server error response a status code equal to that given
+func (o *GetFeatureSKUInternalServerError) IsCode(code int) bool {
+	return code == 500
+}
+
 func (o *GetFeatureSKUInternalServerError) Error() string {
 	return fmt.Sprintf("[GET /fba/outbound/2020-07-01/features/inventory/{featureName}/{sellerSku}][%d] getFeatureSKUInternalServerError  %+v", 500, o.Payload)
 }
+
+func (o *GetFeatureSKUInternalServerError) String() string {
+	return fmt.Sprintf("[GET /fba/outbound/2020-07-01/features/inventory/{featureName}/{sellerSku}][%d] getFeatureSKUInternalServerError  %+v", 500, o.Payload)
+}
+
 func (o *GetFeatureSKUInternalServerError) GetPayload() *fulfillment_outbound_2020_07_01_models.GetFeatureSkuResponse {
 	return o.Payload
 }
@@ -458,7 +675,8 @@ func NewGetFeatureSKUServiceUnavailable() *GetFeatureSKUServiceUnavailable {
 	return &GetFeatureSKUServiceUnavailable{}
 }
 
-/* GetFeatureSKUServiceUnavailable describes a response with status code 503, with default header values.
+/*
+GetFeatureSKUServiceUnavailable describes a response with status code 503, with default header values.
 
 Temporary overloading or maintenance of the server.
 */
@@ -476,9 +694,39 @@ type GetFeatureSKUServiceUnavailable struct {
 	Payload *fulfillment_outbound_2020_07_01_models.GetFeatureSkuResponse
 }
 
+// IsSuccess returns true when this get feature s k u service unavailable response has a 2xx status code
+func (o *GetFeatureSKUServiceUnavailable) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get feature s k u service unavailable response has a 3xx status code
+func (o *GetFeatureSKUServiceUnavailable) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get feature s k u service unavailable response has a 4xx status code
+func (o *GetFeatureSKUServiceUnavailable) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get feature s k u service unavailable response has a 5xx status code
+func (o *GetFeatureSKUServiceUnavailable) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this get feature s k u service unavailable response a status code equal to that given
+func (o *GetFeatureSKUServiceUnavailable) IsCode(code int) bool {
+	return code == 503
+}
+
 func (o *GetFeatureSKUServiceUnavailable) Error() string {
 	return fmt.Sprintf("[GET /fba/outbound/2020-07-01/features/inventory/{featureName}/{sellerSku}][%d] getFeatureSKUServiceUnavailable  %+v", 503, o.Payload)
 }
+
+func (o *GetFeatureSKUServiceUnavailable) String() string {
+	return fmt.Sprintf("[GET /fba/outbound/2020-07-01/features/inventory/{featureName}/{sellerSku}][%d] getFeatureSKUServiceUnavailable  %+v", 503, o.Payload)
+}
+
 func (o *GetFeatureSKUServiceUnavailable) GetPayload() *fulfillment_outbound_2020_07_01_models.GetFeatureSkuResponse {
 	return o.Payload
 }

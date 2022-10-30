@@ -87,7 +87,8 @@ func NewGetSmallAndLightEligibilityBySellerSKUOK() *GetSmallAndLightEligibilityB
 	return &GetSmallAndLightEligibilityBySellerSKUOK{}
 }
 
-/* GetSmallAndLightEligibilityBySellerSKUOK describes a response with status code 200, with default header values.
+/*
+GetSmallAndLightEligibilityBySellerSKUOK describes a response with status code 200, with default header values.
 
 Success.
 */
@@ -104,9 +105,39 @@ type GetSmallAndLightEligibilityBySellerSKUOK struct {
 	Payload *fba_smalland_light_models.SmallAndLightEligibility
 }
 
+// IsSuccess returns true when this get small and light eligibility by seller s k u o k response has a 2xx status code
+func (o *GetSmallAndLightEligibilityBySellerSKUOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this get small and light eligibility by seller s k u o k response has a 3xx status code
+func (o *GetSmallAndLightEligibilityBySellerSKUOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get small and light eligibility by seller s k u o k response has a 4xx status code
+func (o *GetSmallAndLightEligibilityBySellerSKUOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get small and light eligibility by seller s k u o k response has a 5xx status code
+func (o *GetSmallAndLightEligibilityBySellerSKUOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get small and light eligibility by seller s k u o k response a status code equal to that given
+func (o *GetSmallAndLightEligibilityBySellerSKUOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *GetSmallAndLightEligibilityBySellerSKUOK) Error() string {
 	return fmt.Sprintf("[GET /fba/smallAndLight/v1/eligibilities/{sellerSKU}][%d] getSmallAndLightEligibilityBySellerSKUOK  %+v", 200, o.Payload)
 }
+
+func (o *GetSmallAndLightEligibilityBySellerSKUOK) String() string {
+	return fmt.Sprintf("[GET /fba/smallAndLight/v1/eligibilities/{sellerSKU}][%d] getSmallAndLightEligibilityBySellerSKUOK  %+v", 200, o.Payload)
+}
+
 func (o *GetSmallAndLightEligibilityBySellerSKUOK) GetPayload() *fba_smalland_light_models.SmallAndLightEligibility {
 	return o.Payload
 }
@@ -142,7 +173,8 @@ func NewGetSmallAndLightEligibilityBySellerSKUBadRequest() *GetSmallAndLightElig
 	return &GetSmallAndLightEligibilityBySellerSKUBadRequest{}
 }
 
-/* GetSmallAndLightEligibilityBySellerSKUBadRequest describes a response with status code 400, with default header values.
+/*
+GetSmallAndLightEligibilityBySellerSKUBadRequest describes a response with status code 400, with default header values.
 
 Request has missing or invalid parameters and cannot be parsed.
 */
@@ -159,9 +191,39 @@ type GetSmallAndLightEligibilityBySellerSKUBadRequest struct {
 	Payload *fba_smalland_light_models.ErrorList
 }
 
+// IsSuccess returns true when this get small and light eligibility by seller s k u bad request response has a 2xx status code
+func (o *GetSmallAndLightEligibilityBySellerSKUBadRequest) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get small and light eligibility by seller s k u bad request response has a 3xx status code
+func (o *GetSmallAndLightEligibilityBySellerSKUBadRequest) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get small and light eligibility by seller s k u bad request response has a 4xx status code
+func (o *GetSmallAndLightEligibilityBySellerSKUBadRequest) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get small and light eligibility by seller s k u bad request response has a 5xx status code
+func (o *GetSmallAndLightEligibilityBySellerSKUBadRequest) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get small and light eligibility by seller s k u bad request response a status code equal to that given
+func (o *GetSmallAndLightEligibilityBySellerSKUBadRequest) IsCode(code int) bool {
+	return code == 400
+}
+
 func (o *GetSmallAndLightEligibilityBySellerSKUBadRequest) Error() string {
 	return fmt.Sprintf("[GET /fba/smallAndLight/v1/eligibilities/{sellerSKU}][%d] getSmallAndLightEligibilityBySellerSKUBadRequest  %+v", 400, o.Payload)
 }
+
+func (o *GetSmallAndLightEligibilityBySellerSKUBadRequest) String() string {
+	return fmt.Sprintf("[GET /fba/smallAndLight/v1/eligibilities/{sellerSKU}][%d] getSmallAndLightEligibilityBySellerSKUBadRequest  %+v", 400, o.Payload)
+}
+
 func (o *GetSmallAndLightEligibilityBySellerSKUBadRequest) GetPayload() *fba_smalland_light_models.ErrorList {
 	return o.Payload
 }
@@ -197,7 +259,8 @@ func NewGetSmallAndLightEligibilityBySellerSKUForbidden() *GetSmallAndLightEligi
 	return &GetSmallAndLightEligibilityBySellerSKUForbidden{}
 }
 
-/* GetSmallAndLightEligibilityBySellerSKUForbidden describes a response with status code 403, with default header values.
+/*
+GetSmallAndLightEligibilityBySellerSKUForbidden describes a response with status code 403, with default header values.
 
 Indicates that access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.
 */
@@ -210,9 +273,39 @@ type GetSmallAndLightEligibilityBySellerSKUForbidden struct {
 	Payload *fba_smalland_light_models.ErrorList
 }
 
+// IsSuccess returns true when this get small and light eligibility by seller s k u forbidden response has a 2xx status code
+func (o *GetSmallAndLightEligibilityBySellerSKUForbidden) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get small and light eligibility by seller s k u forbidden response has a 3xx status code
+func (o *GetSmallAndLightEligibilityBySellerSKUForbidden) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get small and light eligibility by seller s k u forbidden response has a 4xx status code
+func (o *GetSmallAndLightEligibilityBySellerSKUForbidden) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get small and light eligibility by seller s k u forbidden response has a 5xx status code
+func (o *GetSmallAndLightEligibilityBySellerSKUForbidden) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get small and light eligibility by seller s k u forbidden response a status code equal to that given
+func (o *GetSmallAndLightEligibilityBySellerSKUForbidden) IsCode(code int) bool {
+	return code == 403
+}
+
 func (o *GetSmallAndLightEligibilityBySellerSKUForbidden) Error() string {
 	return fmt.Sprintf("[GET /fba/smallAndLight/v1/eligibilities/{sellerSKU}][%d] getSmallAndLightEligibilityBySellerSKUForbidden  %+v", 403, o.Payload)
 }
+
+func (o *GetSmallAndLightEligibilityBySellerSKUForbidden) String() string {
+	return fmt.Sprintf("[GET /fba/smallAndLight/v1/eligibilities/{sellerSKU}][%d] getSmallAndLightEligibilityBySellerSKUForbidden  %+v", 403, o.Payload)
+}
+
 func (o *GetSmallAndLightEligibilityBySellerSKUForbidden) GetPayload() *fba_smalland_light_models.ErrorList {
 	return o.Payload
 }
@@ -241,7 +334,8 @@ func NewGetSmallAndLightEligibilityBySellerSKUNotFound() *GetSmallAndLightEligib
 	return &GetSmallAndLightEligibilityBySellerSKUNotFound{}
 }
 
-/* GetSmallAndLightEligibilityBySellerSKUNotFound describes a response with status code 404, with default header values.
+/*
+GetSmallAndLightEligibilityBySellerSKUNotFound describes a response with status code 404, with default header values.
 
 The resource specified does not exist.
 */
@@ -258,9 +352,39 @@ type GetSmallAndLightEligibilityBySellerSKUNotFound struct {
 	Payload *fba_smalland_light_models.ErrorList
 }
 
+// IsSuccess returns true when this get small and light eligibility by seller s k u not found response has a 2xx status code
+func (o *GetSmallAndLightEligibilityBySellerSKUNotFound) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get small and light eligibility by seller s k u not found response has a 3xx status code
+func (o *GetSmallAndLightEligibilityBySellerSKUNotFound) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get small and light eligibility by seller s k u not found response has a 4xx status code
+func (o *GetSmallAndLightEligibilityBySellerSKUNotFound) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get small and light eligibility by seller s k u not found response has a 5xx status code
+func (o *GetSmallAndLightEligibilityBySellerSKUNotFound) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get small and light eligibility by seller s k u not found response a status code equal to that given
+func (o *GetSmallAndLightEligibilityBySellerSKUNotFound) IsCode(code int) bool {
+	return code == 404
+}
+
 func (o *GetSmallAndLightEligibilityBySellerSKUNotFound) Error() string {
 	return fmt.Sprintf("[GET /fba/smallAndLight/v1/eligibilities/{sellerSKU}][%d] getSmallAndLightEligibilityBySellerSKUNotFound  %+v", 404, o.Payload)
 }
+
+func (o *GetSmallAndLightEligibilityBySellerSKUNotFound) String() string {
+	return fmt.Sprintf("[GET /fba/smallAndLight/v1/eligibilities/{sellerSKU}][%d] getSmallAndLightEligibilityBySellerSKUNotFound  %+v", 404, o.Payload)
+}
+
 func (o *GetSmallAndLightEligibilityBySellerSKUNotFound) GetPayload() *fba_smalland_light_models.ErrorList {
 	return o.Payload
 }
@@ -296,7 +420,8 @@ func NewGetSmallAndLightEligibilityBySellerSKURequestEntityTooLarge() *GetSmallA
 	return &GetSmallAndLightEligibilityBySellerSKURequestEntityTooLarge{}
 }
 
-/* GetSmallAndLightEligibilityBySellerSKURequestEntityTooLarge describes a response with status code 413, with default header values.
+/*
+GetSmallAndLightEligibilityBySellerSKURequestEntityTooLarge describes a response with status code 413, with default header values.
 
 The request size exceeded the maximum accepted size.
 */
@@ -314,9 +439,39 @@ type GetSmallAndLightEligibilityBySellerSKURequestEntityTooLarge struct {
 	Payload *fba_smalland_light_models.ErrorList
 }
 
+// IsSuccess returns true when this get small and light eligibility by seller s k u request entity too large response has a 2xx status code
+func (o *GetSmallAndLightEligibilityBySellerSKURequestEntityTooLarge) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get small and light eligibility by seller s k u request entity too large response has a 3xx status code
+func (o *GetSmallAndLightEligibilityBySellerSKURequestEntityTooLarge) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get small and light eligibility by seller s k u request entity too large response has a 4xx status code
+func (o *GetSmallAndLightEligibilityBySellerSKURequestEntityTooLarge) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get small and light eligibility by seller s k u request entity too large response has a 5xx status code
+func (o *GetSmallAndLightEligibilityBySellerSKURequestEntityTooLarge) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get small and light eligibility by seller s k u request entity too large response a status code equal to that given
+func (o *GetSmallAndLightEligibilityBySellerSKURequestEntityTooLarge) IsCode(code int) bool {
+	return code == 413
+}
+
 func (o *GetSmallAndLightEligibilityBySellerSKURequestEntityTooLarge) Error() string {
 	return fmt.Sprintf("[GET /fba/smallAndLight/v1/eligibilities/{sellerSKU}][%d] getSmallAndLightEligibilityBySellerSKURequestEntityTooLarge  %+v", 413, o.Payload)
 }
+
+func (o *GetSmallAndLightEligibilityBySellerSKURequestEntityTooLarge) String() string {
+	return fmt.Sprintf("[GET /fba/smallAndLight/v1/eligibilities/{sellerSKU}][%d] getSmallAndLightEligibilityBySellerSKURequestEntityTooLarge  %+v", 413, o.Payload)
+}
+
 func (o *GetSmallAndLightEligibilityBySellerSKURequestEntityTooLarge) GetPayload() *fba_smalland_light_models.ErrorList {
 	return o.Payload
 }
@@ -352,7 +507,8 @@ func NewGetSmallAndLightEligibilityBySellerSKUUnsupportedMediaType() *GetSmallAn
 	return &GetSmallAndLightEligibilityBySellerSKUUnsupportedMediaType{}
 }
 
-/* GetSmallAndLightEligibilityBySellerSKUUnsupportedMediaType describes a response with status code 415, with default header values.
+/*
+GetSmallAndLightEligibilityBySellerSKUUnsupportedMediaType describes a response with status code 415, with default header values.
 
 The request payload is in an unsupported format.
 */
@@ -370,9 +526,39 @@ type GetSmallAndLightEligibilityBySellerSKUUnsupportedMediaType struct {
 	Payload *fba_smalland_light_models.ErrorList
 }
 
+// IsSuccess returns true when this get small and light eligibility by seller s k u unsupported media type response has a 2xx status code
+func (o *GetSmallAndLightEligibilityBySellerSKUUnsupportedMediaType) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get small and light eligibility by seller s k u unsupported media type response has a 3xx status code
+func (o *GetSmallAndLightEligibilityBySellerSKUUnsupportedMediaType) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get small and light eligibility by seller s k u unsupported media type response has a 4xx status code
+func (o *GetSmallAndLightEligibilityBySellerSKUUnsupportedMediaType) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get small and light eligibility by seller s k u unsupported media type response has a 5xx status code
+func (o *GetSmallAndLightEligibilityBySellerSKUUnsupportedMediaType) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get small and light eligibility by seller s k u unsupported media type response a status code equal to that given
+func (o *GetSmallAndLightEligibilityBySellerSKUUnsupportedMediaType) IsCode(code int) bool {
+	return code == 415
+}
+
 func (o *GetSmallAndLightEligibilityBySellerSKUUnsupportedMediaType) Error() string {
 	return fmt.Sprintf("[GET /fba/smallAndLight/v1/eligibilities/{sellerSKU}][%d] getSmallAndLightEligibilityBySellerSKUUnsupportedMediaType  %+v", 415, o.Payload)
 }
+
+func (o *GetSmallAndLightEligibilityBySellerSKUUnsupportedMediaType) String() string {
+	return fmt.Sprintf("[GET /fba/smallAndLight/v1/eligibilities/{sellerSKU}][%d] getSmallAndLightEligibilityBySellerSKUUnsupportedMediaType  %+v", 415, o.Payload)
+}
+
 func (o *GetSmallAndLightEligibilityBySellerSKUUnsupportedMediaType) GetPayload() *fba_smalland_light_models.ErrorList {
 	return o.Payload
 }
@@ -408,7 +594,8 @@ func NewGetSmallAndLightEligibilityBySellerSKUTooManyRequests() *GetSmallAndLigh
 	return &GetSmallAndLightEligibilityBySellerSKUTooManyRequests{}
 }
 
-/* GetSmallAndLightEligibilityBySellerSKUTooManyRequests describes a response with status code 429, with default header values.
+/*
+GetSmallAndLightEligibilityBySellerSKUTooManyRequests describes a response with status code 429, with default header values.
 
 The frequency of requests was greater than allowed.
 */
@@ -426,9 +613,39 @@ type GetSmallAndLightEligibilityBySellerSKUTooManyRequests struct {
 	Payload *fba_smalland_light_models.ErrorList
 }
 
+// IsSuccess returns true when this get small and light eligibility by seller s k u too many requests response has a 2xx status code
+func (o *GetSmallAndLightEligibilityBySellerSKUTooManyRequests) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get small and light eligibility by seller s k u too many requests response has a 3xx status code
+func (o *GetSmallAndLightEligibilityBySellerSKUTooManyRequests) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get small and light eligibility by seller s k u too many requests response has a 4xx status code
+func (o *GetSmallAndLightEligibilityBySellerSKUTooManyRequests) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get small and light eligibility by seller s k u too many requests response has a 5xx status code
+func (o *GetSmallAndLightEligibilityBySellerSKUTooManyRequests) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get small and light eligibility by seller s k u too many requests response a status code equal to that given
+func (o *GetSmallAndLightEligibilityBySellerSKUTooManyRequests) IsCode(code int) bool {
+	return code == 429
+}
+
 func (o *GetSmallAndLightEligibilityBySellerSKUTooManyRequests) Error() string {
 	return fmt.Sprintf("[GET /fba/smallAndLight/v1/eligibilities/{sellerSKU}][%d] getSmallAndLightEligibilityBySellerSKUTooManyRequests  %+v", 429, o.Payload)
 }
+
+func (o *GetSmallAndLightEligibilityBySellerSKUTooManyRequests) String() string {
+	return fmt.Sprintf("[GET /fba/smallAndLight/v1/eligibilities/{sellerSKU}][%d] getSmallAndLightEligibilityBySellerSKUTooManyRequests  %+v", 429, o.Payload)
+}
+
 func (o *GetSmallAndLightEligibilityBySellerSKUTooManyRequests) GetPayload() *fba_smalland_light_models.ErrorList {
 	return o.Payload
 }
@@ -464,7 +681,8 @@ func NewGetSmallAndLightEligibilityBySellerSKUInternalServerError() *GetSmallAnd
 	return &GetSmallAndLightEligibilityBySellerSKUInternalServerError{}
 }
 
-/* GetSmallAndLightEligibilityBySellerSKUInternalServerError describes a response with status code 500, with default header values.
+/*
+GetSmallAndLightEligibilityBySellerSKUInternalServerError describes a response with status code 500, with default header values.
 
 An unexpected condition occurred that prevented the server from fulfilling the request.
 */
@@ -482,9 +700,39 @@ type GetSmallAndLightEligibilityBySellerSKUInternalServerError struct {
 	Payload *fba_smalland_light_models.ErrorList
 }
 
+// IsSuccess returns true when this get small and light eligibility by seller s k u internal server error response has a 2xx status code
+func (o *GetSmallAndLightEligibilityBySellerSKUInternalServerError) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get small and light eligibility by seller s k u internal server error response has a 3xx status code
+func (o *GetSmallAndLightEligibilityBySellerSKUInternalServerError) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get small and light eligibility by seller s k u internal server error response has a 4xx status code
+func (o *GetSmallAndLightEligibilityBySellerSKUInternalServerError) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get small and light eligibility by seller s k u internal server error response has a 5xx status code
+func (o *GetSmallAndLightEligibilityBySellerSKUInternalServerError) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this get small and light eligibility by seller s k u internal server error response a status code equal to that given
+func (o *GetSmallAndLightEligibilityBySellerSKUInternalServerError) IsCode(code int) bool {
+	return code == 500
+}
+
 func (o *GetSmallAndLightEligibilityBySellerSKUInternalServerError) Error() string {
 	return fmt.Sprintf("[GET /fba/smallAndLight/v1/eligibilities/{sellerSKU}][%d] getSmallAndLightEligibilityBySellerSKUInternalServerError  %+v", 500, o.Payload)
 }
+
+func (o *GetSmallAndLightEligibilityBySellerSKUInternalServerError) String() string {
+	return fmt.Sprintf("[GET /fba/smallAndLight/v1/eligibilities/{sellerSKU}][%d] getSmallAndLightEligibilityBySellerSKUInternalServerError  %+v", 500, o.Payload)
+}
+
 func (o *GetSmallAndLightEligibilityBySellerSKUInternalServerError) GetPayload() *fba_smalland_light_models.ErrorList {
 	return o.Payload
 }
@@ -520,7 +768,8 @@ func NewGetSmallAndLightEligibilityBySellerSKUServiceUnavailable() *GetSmallAndL
 	return &GetSmallAndLightEligibilityBySellerSKUServiceUnavailable{}
 }
 
-/* GetSmallAndLightEligibilityBySellerSKUServiceUnavailable describes a response with status code 503, with default header values.
+/*
+GetSmallAndLightEligibilityBySellerSKUServiceUnavailable describes a response with status code 503, with default header values.
 
 Temporary overloading or maintenance of the server.
 */
@@ -538,9 +787,39 @@ type GetSmallAndLightEligibilityBySellerSKUServiceUnavailable struct {
 	Payload *fba_smalland_light_models.ErrorList
 }
 
+// IsSuccess returns true when this get small and light eligibility by seller s k u service unavailable response has a 2xx status code
+func (o *GetSmallAndLightEligibilityBySellerSKUServiceUnavailable) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get small and light eligibility by seller s k u service unavailable response has a 3xx status code
+func (o *GetSmallAndLightEligibilityBySellerSKUServiceUnavailable) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get small and light eligibility by seller s k u service unavailable response has a 4xx status code
+func (o *GetSmallAndLightEligibilityBySellerSKUServiceUnavailable) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get small and light eligibility by seller s k u service unavailable response has a 5xx status code
+func (o *GetSmallAndLightEligibilityBySellerSKUServiceUnavailable) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this get small and light eligibility by seller s k u service unavailable response a status code equal to that given
+func (o *GetSmallAndLightEligibilityBySellerSKUServiceUnavailable) IsCode(code int) bool {
+	return code == 503
+}
+
 func (o *GetSmallAndLightEligibilityBySellerSKUServiceUnavailable) Error() string {
 	return fmt.Sprintf("[GET /fba/smallAndLight/v1/eligibilities/{sellerSKU}][%d] getSmallAndLightEligibilityBySellerSKUServiceUnavailable  %+v", 503, o.Payload)
 }
+
+func (o *GetSmallAndLightEligibilityBySellerSKUServiceUnavailable) String() string {
+	return fmt.Sprintf("[GET /fba/smallAndLight/v1/eligibilities/{sellerSKU}][%d] getSmallAndLightEligibilityBySellerSKUServiceUnavailable  %+v", 503, o.Payload)
+}
+
 func (o *GetSmallAndLightEligibilityBySellerSKUServiceUnavailable) GetPayload() *fba_smalland_light_models.ErrorList {
 	return o.Payload
 }

@@ -81,7 +81,8 @@ func NewGetCompetitivePricingOK() *GetCompetitivePricingOK {
 	return &GetCompetitivePricingOK{}
 }
 
-/* GetCompetitivePricingOK describes a response with status code 200, with default header values.
+/*
+GetCompetitivePricingOK describes a response with status code 200, with default header values.
 
 Success.
 */
@@ -98,9 +99,39 @@ type GetCompetitivePricingOK struct {
 	Payload *product_pricing_v0_models.GetPricingResponse
 }
 
+// IsSuccess returns true when this get competitive pricing o k response has a 2xx status code
+func (o *GetCompetitivePricingOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this get competitive pricing o k response has a 3xx status code
+func (o *GetCompetitivePricingOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get competitive pricing o k response has a 4xx status code
+func (o *GetCompetitivePricingOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get competitive pricing o k response has a 5xx status code
+func (o *GetCompetitivePricingOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get competitive pricing o k response a status code equal to that given
+func (o *GetCompetitivePricingOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *GetCompetitivePricingOK) Error() string {
 	return fmt.Sprintf("[GET /products/pricing/v0/competitivePrice][%d] getCompetitivePricingOK  %+v", 200, o.Payload)
 }
+
+func (o *GetCompetitivePricingOK) String() string {
+	return fmt.Sprintf("[GET /products/pricing/v0/competitivePrice][%d] getCompetitivePricingOK  %+v", 200, o.Payload)
+}
+
 func (o *GetCompetitivePricingOK) GetPayload() *product_pricing_v0_models.GetPricingResponse {
 	return o.Payload
 }
@@ -136,7 +167,8 @@ func NewGetCompetitivePricingBadRequest() *GetCompetitivePricingBadRequest {
 	return &GetCompetitivePricingBadRequest{}
 }
 
-/* GetCompetitivePricingBadRequest describes a response with status code 400, with default header values.
+/*
+GetCompetitivePricingBadRequest describes a response with status code 400, with default header values.
 
 Request has missing or invalid parameters and cannot be parsed.
 */
@@ -153,9 +185,39 @@ type GetCompetitivePricingBadRequest struct {
 	Payload *product_pricing_v0_models.GetPricingResponse
 }
 
+// IsSuccess returns true when this get competitive pricing bad request response has a 2xx status code
+func (o *GetCompetitivePricingBadRequest) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get competitive pricing bad request response has a 3xx status code
+func (o *GetCompetitivePricingBadRequest) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get competitive pricing bad request response has a 4xx status code
+func (o *GetCompetitivePricingBadRequest) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get competitive pricing bad request response has a 5xx status code
+func (o *GetCompetitivePricingBadRequest) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get competitive pricing bad request response a status code equal to that given
+func (o *GetCompetitivePricingBadRequest) IsCode(code int) bool {
+	return code == 400
+}
+
 func (o *GetCompetitivePricingBadRequest) Error() string {
 	return fmt.Sprintf("[GET /products/pricing/v0/competitivePrice][%d] getCompetitivePricingBadRequest  %+v", 400, o.Payload)
 }
+
+func (o *GetCompetitivePricingBadRequest) String() string {
+	return fmt.Sprintf("[GET /products/pricing/v0/competitivePrice][%d] getCompetitivePricingBadRequest  %+v", 400, o.Payload)
+}
+
 func (o *GetCompetitivePricingBadRequest) GetPayload() *product_pricing_v0_models.GetPricingResponse {
 	return o.Payload
 }
@@ -191,7 +253,8 @@ func NewGetCompetitivePricingUnauthorized() *GetCompetitivePricingUnauthorized {
 	return &GetCompetitivePricingUnauthorized{}
 }
 
-/* GetCompetitivePricingUnauthorized describes a response with status code 401, with default header values.
+/*
+GetCompetitivePricingUnauthorized describes a response with status code 401, with default header values.
 
 The request's Authorization header is not formatted correctly or does not contain a valid token.
 */
@@ -209,9 +272,39 @@ type GetCompetitivePricingUnauthorized struct {
 	Payload *product_pricing_v0_models.GetPricingResponse
 }
 
+// IsSuccess returns true when this get competitive pricing unauthorized response has a 2xx status code
+func (o *GetCompetitivePricingUnauthorized) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get competitive pricing unauthorized response has a 3xx status code
+func (o *GetCompetitivePricingUnauthorized) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get competitive pricing unauthorized response has a 4xx status code
+func (o *GetCompetitivePricingUnauthorized) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get competitive pricing unauthorized response has a 5xx status code
+func (o *GetCompetitivePricingUnauthorized) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get competitive pricing unauthorized response a status code equal to that given
+func (o *GetCompetitivePricingUnauthorized) IsCode(code int) bool {
+	return code == 401
+}
+
 func (o *GetCompetitivePricingUnauthorized) Error() string {
 	return fmt.Sprintf("[GET /products/pricing/v0/competitivePrice][%d] getCompetitivePricingUnauthorized  %+v", 401, o.Payload)
 }
+
+func (o *GetCompetitivePricingUnauthorized) String() string {
+	return fmt.Sprintf("[GET /products/pricing/v0/competitivePrice][%d] getCompetitivePricingUnauthorized  %+v", 401, o.Payload)
+}
+
 func (o *GetCompetitivePricingUnauthorized) GetPayload() *product_pricing_v0_models.GetPricingResponse {
 	return o.Payload
 }
@@ -247,7 +340,8 @@ func NewGetCompetitivePricingForbidden() *GetCompetitivePricingForbidden {
 	return &GetCompetitivePricingForbidden{}
 }
 
-/* GetCompetitivePricingForbidden describes a response with status code 403, with default header values.
+/*
+GetCompetitivePricingForbidden describes a response with status code 403, with default header values.
 
 Indicates access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.
 */
@@ -260,9 +354,39 @@ type GetCompetitivePricingForbidden struct {
 	Payload *product_pricing_v0_models.GetPricingResponse
 }
 
+// IsSuccess returns true when this get competitive pricing forbidden response has a 2xx status code
+func (o *GetCompetitivePricingForbidden) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get competitive pricing forbidden response has a 3xx status code
+func (o *GetCompetitivePricingForbidden) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get competitive pricing forbidden response has a 4xx status code
+func (o *GetCompetitivePricingForbidden) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get competitive pricing forbidden response has a 5xx status code
+func (o *GetCompetitivePricingForbidden) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get competitive pricing forbidden response a status code equal to that given
+func (o *GetCompetitivePricingForbidden) IsCode(code int) bool {
+	return code == 403
+}
+
 func (o *GetCompetitivePricingForbidden) Error() string {
 	return fmt.Sprintf("[GET /products/pricing/v0/competitivePrice][%d] getCompetitivePricingForbidden  %+v", 403, o.Payload)
 }
+
+func (o *GetCompetitivePricingForbidden) String() string {
+	return fmt.Sprintf("[GET /products/pricing/v0/competitivePrice][%d] getCompetitivePricingForbidden  %+v", 403, o.Payload)
+}
+
 func (o *GetCompetitivePricingForbidden) GetPayload() *product_pricing_v0_models.GetPricingResponse {
 	return o.Payload
 }
@@ -291,7 +415,8 @@ func NewGetCompetitivePricingNotFound() *GetCompetitivePricingNotFound {
 	return &GetCompetitivePricingNotFound{}
 }
 
-/* GetCompetitivePricingNotFound describes a response with status code 404, with default header values.
+/*
+GetCompetitivePricingNotFound describes a response with status code 404, with default header values.
 
 The specified resource does not exist.
 */
@@ -308,9 +433,39 @@ type GetCompetitivePricingNotFound struct {
 	Payload *product_pricing_v0_models.GetPricingResponse
 }
 
+// IsSuccess returns true when this get competitive pricing not found response has a 2xx status code
+func (o *GetCompetitivePricingNotFound) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get competitive pricing not found response has a 3xx status code
+func (o *GetCompetitivePricingNotFound) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get competitive pricing not found response has a 4xx status code
+func (o *GetCompetitivePricingNotFound) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get competitive pricing not found response has a 5xx status code
+func (o *GetCompetitivePricingNotFound) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get competitive pricing not found response a status code equal to that given
+func (o *GetCompetitivePricingNotFound) IsCode(code int) bool {
+	return code == 404
+}
+
 func (o *GetCompetitivePricingNotFound) Error() string {
 	return fmt.Sprintf("[GET /products/pricing/v0/competitivePrice][%d] getCompetitivePricingNotFound  %+v", 404, o.Payload)
 }
+
+func (o *GetCompetitivePricingNotFound) String() string {
+	return fmt.Sprintf("[GET /products/pricing/v0/competitivePrice][%d] getCompetitivePricingNotFound  %+v", 404, o.Payload)
+}
+
 func (o *GetCompetitivePricingNotFound) GetPayload() *product_pricing_v0_models.GetPricingResponse {
 	return o.Payload
 }
@@ -346,7 +501,8 @@ func NewGetCompetitivePricingTooManyRequests() *GetCompetitivePricingTooManyRequ
 	return &GetCompetitivePricingTooManyRequests{}
 }
 
-/* GetCompetitivePricingTooManyRequests describes a response with status code 429, with default header values.
+/*
+GetCompetitivePricingTooManyRequests describes a response with status code 429, with default header values.
 
 The frequency of requests was greater than allowed.
 */
@@ -364,9 +520,39 @@ type GetCompetitivePricingTooManyRequests struct {
 	Payload *product_pricing_v0_models.GetPricingResponse
 }
 
+// IsSuccess returns true when this get competitive pricing too many requests response has a 2xx status code
+func (o *GetCompetitivePricingTooManyRequests) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get competitive pricing too many requests response has a 3xx status code
+func (o *GetCompetitivePricingTooManyRequests) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get competitive pricing too many requests response has a 4xx status code
+func (o *GetCompetitivePricingTooManyRequests) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get competitive pricing too many requests response has a 5xx status code
+func (o *GetCompetitivePricingTooManyRequests) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get competitive pricing too many requests response a status code equal to that given
+func (o *GetCompetitivePricingTooManyRequests) IsCode(code int) bool {
+	return code == 429
+}
+
 func (o *GetCompetitivePricingTooManyRequests) Error() string {
 	return fmt.Sprintf("[GET /products/pricing/v0/competitivePrice][%d] getCompetitivePricingTooManyRequests  %+v", 429, o.Payload)
 }
+
+func (o *GetCompetitivePricingTooManyRequests) String() string {
+	return fmt.Sprintf("[GET /products/pricing/v0/competitivePrice][%d] getCompetitivePricingTooManyRequests  %+v", 429, o.Payload)
+}
+
 func (o *GetCompetitivePricingTooManyRequests) GetPayload() *product_pricing_v0_models.GetPricingResponse {
 	return o.Payload
 }
@@ -402,7 +588,8 @@ func NewGetCompetitivePricingInternalServerError() *GetCompetitivePricingInterna
 	return &GetCompetitivePricingInternalServerError{}
 }
 
-/* GetCompetitivePricingInternalServerError describes a response with status code 500, with default header values.
+/*
+GetCompetitivePricingInternalServerError describes a response with status code 500, with default header values.
 
 An unexpected condition occurred that prevented the server from fulfilling the request.
 */
@@ -420,9 +607,39 @@ type GetCompetitivePricingInternalServerError struct {
 	Payload *product_pricing_v0_models.GetPricingResponse
 }
 
+// IsSuccess returns true when this get competitive pricing internal server error response has a 2xx status code
+func (o *GetCompetitivePricingInternalServerError) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get competitive pricing internal server error response has a 3xx status code
+func (o *GetCompetitivePricingInternalServerError) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get competitive pricing internal server error response has a 4xx status code
+func (o *GetCompetitivePricingInternalServerError) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get competitive pricing internal server error response has a 5xx status code
+func (o *GetCompetitivePricingInternalServerError) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this get competitive pricing internal server error response a status code equal to that given
+func (o *GetCompetitivePricingInternalServerError) IsCode(code int) bool {
+	return code == 500
+}
+
 func (o *GetCompetitivePricingInternalServerError) Error() string {
 	return fmt.Sprintf("[GET /products/pricing/v0/competitivePrice][%d] getCompetitivePricingInternalServerError  %+v", 500, o.Payload)
 }
+
+func (o *GetCompetitivePricingInternalServerError) String() string {
+	return fmt.Sprintf("[GET /products/pricing/v0/competitivePrice][%d] getCompetitivePricingInternalServerError  %+v", 500, o.Payload)
+}
+
 func (o *GetCompetitivePricingInternalServerError) GetPayload() *product_pricing_v0_models.GetPricingResponse {
 	return o.Payload
 }
@@ -458,7 +675,8 @@ func NewGetCompetitivePricingServiceUnavailable() *GetCompetitivePricingServiceU
 	return &GetCompetitivePricingServiceUnavailable{}
 }
 
-/* GetCompetitivePricingServiceUnavailable describes a response with status code 503, with default header values.
+/*
+GetCompetitivePricingServiceUnavailable describes a response with status code 503, with default header values.
 
 Temporary overloading or maintenance of the server.
 */
@@ -476,9 +694,39 @@ type GetCompetitivePricingServiceUnavailable struct {
 	Payload *product_pricing_v0_models.GetPricingResponse
 }
 
+// IsSuccess returns true when this get competitive pricing service unavailable response has a 2xx status code
+func (o *GetCompetitivePricingServiceUnavailable) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get competitive pricing service unavailable response has a 3xx status code
+func (o *GetCompetitivePricingServiceUnavailable) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get competitive pricing service unavailable response has a 4xx status code
+func (o *GetCompetitivePricingServiceUnavailable) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get competitive pricing service unavailable response has a 5xx status code
+func (o *GetCompetitivePricingServiceUnavailable) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this get competitive pricing service unavailable response a status code equal to that given
+func (o *GetCompetitivePricingServiceUnavailable) IsCode(code int) bool {
+	return code == 503
+}
+
 func (o *GetCompetitivePricingServiceUnavailable) Error() string {
 	return fmt.Sprintf("[GET /products/pricing/v0/competitivePrice][%d] getCompetitivePricingServiceUnavailable  %+v", 503, o.Payload)
 }
+
+func (o *GetCompetitivePricingServiceUnavailable) String() string {
+	return fmt.Sprintf("[GET /products/pricing/v0/competitivePrice][%d] getCompetitivePricingServiceUnavailable  %+v", 503, o.Payload)
+}
+
 func (o *GetCompetitivePricingServiceUnavailable) GetPayload() *product_pricing_v0_models.GetPricingResponse {
 	return o.Payload
 }

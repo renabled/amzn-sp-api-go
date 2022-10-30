@@ -54,10 +54,12 @@ func NewGetFulfillmentPreviewParamsWithHTTPClient(client *http.Client) *GetFulfi
 	}
 }
 
-/* GetFulfillmentPreviewParams contains all the parameters to send to the API endpoint
-   for the get fulfillment preview operation.
+/*
+GetFulfillmentPreviewParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the get fulfillment preview operation.
+
+	Typically these are written to a http.Request.
 */
 type GetFulfillmentPreviewParams struct {
 

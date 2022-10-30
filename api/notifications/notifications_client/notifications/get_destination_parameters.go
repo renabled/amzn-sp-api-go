@@ -52,10 +52,12 @@ func NewGetDestinationParamsWithHTTPClient(client *http.Client) *GetDestinationP
 	}
 }
 
-/* GetDestinationParams contains all the parameters to send to the API endpoint
-   for the get destination operation.
+/*
+GetDestinationParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the get destination operation.
+
+	Typically these are written to a http.Request.
 */
 type GetDestinationParams struct {
 

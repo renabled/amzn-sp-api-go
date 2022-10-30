@@ -54,10 +54,12 @@ func NewRetrieveShippingLabelParamsWithHTTPClient(client *http.Client) *Retrieve
 	}
 }
 
-/* RetrieveShippingLabelParams contains all the parameters to send to the API endpoint
-   for the retrieve shipping label operation.
+/*
+RetrieveShippingLabelParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the retrieve shipping label operation.
+
+	Typically these are written to a http.Request.
 */
 type RetrieveShippingLabelParams struct {
 

@@ -40,7 +40,7 @@ type ClientService interface {
 }
 
 /*
-  GetCatalogItem Returns a specified item and its attributes.
+	GetCatalogItem Returns a specified item and its attributes.
 
 **Usage Plan:**
 
@@ -86,7 +86,7 @@ func (a *Client) GetCatalogItem(params *GetCatalogItemParams, opts ...ClientOpti
 }
 
 /*
-  ListCatalogCategories Returns the parent categories to which an item belongs, based on the specified ASIN or SellerSKU.
+	ListCatalogCategories Returns the parent categories to which an item belongs, based on the specified ASIN or SellerSKU.
 
 **Usage Plan:**
 
@@ -132,7 +132,7 @@ func (a *Client) ListCatalogCategories(params *ListCatalogCategoriesParams, opts
 }
 
 /*
-  ListCatalogItems Returns a list of items and their attributes, based on a search query or item identifiers that you specify. When based on a search query, provide the Query parameter and optionally, the QueryContextId parameter. When based on item identifiers, provide a single appropriate parameter based on the identifier type, and specify the associated item value.
+	ListCatalogItems Returns a list of items and their attributes, based on a search query or item identifiers that you specify. When based on a search query, provide the Query parameter and optionally, the QueryContextId parameter. When based on item identifiers, provide a single appropriate parameter based on the identifier type, and specify the associated item value.
 
 MarketplaceId is always required. At least one of Query, SellerSKU, UPC, EAN, ISBN, JAN is also required.
 

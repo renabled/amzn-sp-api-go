@@ -81,7 +81,8 @@ func NewGetCustomerInvoicesOK() *GetCustomerInvoicesOK {
 	return &GetCustomerInvoicesOK{}
 }
 
-/* GetCustomerInvoicesOK describes a response with status code 200, with default header values.
+/*
+GetCustomerInvoicesOK describes a response with status code 200, with default header values.
 
 Success.
 */
@@ -98,9 +99,39 @@ type GetCustomerInvoicesOK struct {
 	Payload *vendor_direct_fulfillment_shipping_v1_models.GetCustomerInvoicesResponse
 }
 
+// IsSuccess returns true when this get customer invoices o k response has a 2xx status code
+func (o *GetCustomerInvoicesOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this get customer invoices o k response has a 3xx status code
+func (o *GetCustomerInvoicesOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get customer invoices o k response has a 4xx status code
+func (o *GetCustomerInvoicesOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get customer invoices o k response has a 5xx status code
+func (o *GetCustomerInvoicesOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get customer invoices o k response a status code equal to that given
+func (o *GetCustomerInvoicesOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *GetCustomerInvoicesOK) Error() string {
 	return fmt.Sprintf("[GET /vendor/directFulfillment/shipping/v1/customerInvoices][%d] getCustomerInvoicesOK  %+v", 200, o.Payload)
 }
+
+func (o *GetCustomerInvoicesOK) String() string {
+	return fmt.Sprintf("[GET /vendor/directFulfillment/shipping/v1/customerInvoices][%d] getCustomerInvoicesOK  %+v", 200, o.Payload)
+}
+
 func (o *GetCustomerInvoicesOK) GetPayload() *vendor_direct_fulfillment_shipping_v1_models.GetCustomerInvoicesResponse {
 	return o.Payload
 }
@@ -136,7 +167,8 @@ func NewGetCustomerInvoicesBadRequest() *GetCustomerInvoicesBadRequest {
 	return &GetCustomerInvoicesBadRequest{}
 }
 
-/* GetCustomerInvoicesBadRequest describes a response with status code 400, with default header values.
+/*
+GetCustomerInvoicesBadRequest describes a response with status code 400, with default header values.
 
 Request has missing or invalid parameters and cannot be parsed.
 */
@@ -153,9 +185,39 @@ type GetCustomerInvoicesBadRequest struct {
 	Payload *vendor_direct_fulfillment_shipping_v1_models.GetCustomerInvoiceResponse
 }
 
+// IsSuccess returns true when this get customer invoices bad request response has a 2xx status code
+func (o *GetCustomerInvoicesBadRequest) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get customer invoices bad request response has a 3xx status code
+func (o *GetCustomerInvoicesBadRequest) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get customer invoices bad request response has a 4xx status code
+func (o *GetCustomerInvoicesBadRequest) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get customer invoices bad request response has a 5xx status code
+func (o *GetCustomerInvoicesBadRequest) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get customer invoices bad request response a status code equal to that given
+func (o *GetCustomerInvoicesBadRequest) IsCode(code int) bool {
+	return code == 400
+}
+
 func (o *GetCustomerInvoicesBadRequest) Error() string {
 	return fmt.Sprintf("[GET /vendor/directFulfillment/shipping/v1/customerInvoices][%d] getCustomerInvoicesBadRequest  %+v", 400, o.Payload)
 }
+
+func (o *GetCustomerInvoicesBadRequest) String() string {
+	return fmt.Sprintf("[GET /vendor/directFulfillment/shipping/v1/customerInvoices][%d] getCustomerInvoicesBadRequest  %+v", 400, o.Payload)
+}
+
 func (o *GetCustomerInvoicesBadRequest) GetPayload() *vendor_direct_fulfillment_shipping_v1_models.GetCustomerInvoiceResponse {
 	return o.Payload
 }
@@ -191,7 +253,8 @@ func NewGetCustomerInvoicesForbidden() *GetCustomerInvoicesForbidden {
 	return &GetCustomerInvoicesForbidden{}
 }
 
-/* GetCustomerInvoicesForbidden describes a response with status code 403, with default header values.
+/*
+GetCustomerInvoicesForbidden describes a response with status code 403, with default header values.
 
 Indicates that access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.
 */
@@ -204,9 +267,39 @@ type GetCustomerInvoicesForbidden struct {
 	Payload *vendor_direct_fulfillment_shipping_v1_models.GetCustomerInvoiceResponse
 }
 
+// IsSuccess returns true when this get customer invoices forbidden response has a 2xx status code
+func (o *GetCustomerInvoicesForbidden) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get customer invoices forbidden response has a 3xx status code
+func (o *GetCustomerInvoicesForbidden) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get customer invoices forbidden response has a 4xx status code
+func (o *GetCustomerInvoicesForbidden) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get customer invoices forbidden response has a 5xx status code
+func (o *GetCustomerInvoicesForbidden) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get customer invoices forbidden response a status code equal to that given
+func (o *GetCustomerInvoicesForbidden) IsCode(code int) bool {
+	return code == 403
+}
+
 func (o *GetCustomerInvoicesForbidden) Error() string {
 	return fmt.Sprintf("[GET /vendor/directFulfillment/shipping/v1/customerInvoices][%d] getCustomerInvoicesForbidden  %+v", 403, o.Payload)
 }
+
+func (o *GetCustomerInvoicesForbidden) String() string {
+	return fmt.Sprintf("[GET /vendor/directFulfillment/shipping/v1/customerInvoices][%d] getCustomerInvoicesForbidden  %+v", 403, o.Payload)
+}
+
 func (o *GetCustomerInvoicesForbidden) GetPayload() *vendor_direct_fulfillment_shipping_v1_models.GetCustomerInvoiceResponse {
 	return o.Payload
 }
@@ -235,7 +328,8 @@ func NewGetCustomerInvoicesNotFound() *GetCustomerInvoicesNotFound {
 	return &GetCustomerInvoicesNotFound{}
 }
 
-/* GetCustomerInvoicesNotFound describes a response with status code 404, with default header values.
+/*
+GetCustomerInvoicesNotFound describes a response with status code 404, with default header values.
 
 The resource specified does not exist.
 */
@@ -252,9 +346,39 @@ type GetCustomerInvoicesNotFound struct {
 	Payload *vendor_direct_fulfillment_shipping_v1_models.GetCustomerInvoiceResponse
 }
 
+// IsSuccess returns true when this get customer invoices not found response has a 2xx status code
+func (o *GetCustomerInvoicesNotFound) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get customer invoices not found response has a 3xx status code
+func (o *GetCustomerInvoicesNotFound) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get customer invoices not found response has a 4xx status code
+func (o *GetCustomerInvoicesNotFound) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get customer invoices not found response has a 5xx status code
+func (o *GetCustomerInvoicesNotFound) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get customer invoices not found response a status code equal to that given
+func (o *GetCustomerInvoicesNotFound) IsCode(code int) bool {
+	return code == 404
+}
+
 func (o *GetCustomerInvoicesNotFound) Error() string {
 	return fmt.Sprintf("[GET /vendor/directFulfillment/shipping/v1/customerInvoices][%d] getCustomerInvoicesNotFound  %+v", 404, o.Payload)
 }
+
+func (o *GetCustomerInvoicesNotFound) String() string {
+	return fmt.Sprintf("[GET /vendor/directFulfillment/shipping/v1/customerInvoices][%d] getCustomerInvoicesNotFound  %+v", 404, o.Payload)
+}
+
 func (o *GetCustomerInvoicesNotFound) GetPayload() *vendor_direct_fulfillment_shipping_v1_models.GetCustomerInvoiceResponse {
 	return o.Payload
 }
@@ -290,7 +414,8 @@ func NewGetCustomerInvoicesUnsupportedMediaType() *GetCustomerInvoicesUnsupporte
 	return &GetCustomerInvoicesUnsupportedMediaType{}
 }
 
-/* GetCustomerInvoicesUnsupportedMediaType describes a response with status code 415, with default header values.
+/*
+GetCustomerInvoicesUnsupportedMediaType describes a response with status code 415, with default header values.
 
 The request payload is in an unsupported format.
 */
@@ -308,9 +433,39 @@ type GetCustomerInvoicesUnsupportedMediaType struct {
 	Payload *vendor_direct_fulfillment_shipping_v1_models.GetCustomerInvoiceResponse
 }
 
+// IsSuccess returns true when this get customer invoices unsupported media type response has a 2xx status code
+func (o *GetCustomerInvoicesUnsupportedMediaType) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get customer invoices unsupported media type response has a 3xx status code
+func (o *GetCustomerInvoicesUnsupportedMediaType) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get customer invoices unsupported media type response has a 4xx status code
+func (o *GetCustomerInvoicesUnsupportedMediaType) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get customer invoices unsupported media type response has a 5xx status code
+func (o *GetCustomerInvoicesUnsupportedMediaType) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get customer invoices unsupported media type response a status code equal to that given
+func (o *GetCustomerInvoicesUnsupportedMediaType) IsCode(code int) bool {
+	return code == 415
+}
+
 func (o *GetCustomerInvoicesUnsupportedMediaType) Error() string {
 	return fmt.Sprintf("[GET /vendor/directFulfillment/shipping/v1/customerInvoices][%d] getCustomerInvoicesUnsupportedMediaType  %+v", 415, o.Payload)
 }
+
+func (o *GetCustomerInvoicesUnsupportedMediaType) String() string {
+	return fmt.Sprintf("[GET /vendor/directFulfillment/shipping/v1/customerInvoices][%d] getCustomerInvoicesUnsupportedMediaType  %+v", 415, o.Payload)
+}
+
 func (o *GetCustomerInvoicesUnsupportedMediaType) GetPayload() *vendor_direct_fulfillment_shipping_v1_models.GetCustomerInvoiceResponse {
 	return o.Payload
 }
@@ -346,7 +501,8 @@ func NewGetCustomerInvoicesTooManyRequests() *GetCustomerInvoicesTooManyRequests
 	return &GetCustomerInvoicesTooManyRequests{}
 }
 
-/* GetCustomerInvoicesTooManyRequests describes a response with status code 429, with default header values.
+/*
+GetCustomerInvoicesTooManyRequests describes a response with status code 429, with default header values.
 
 The frequency of requests was greater than allowed.
 */
@@ -364,9 +520,39 @@ type GetCustomerInvoicesTooManyRequests struct {
 	Payload *vendor_direct_fulfillment_shipping_v1_models.GetCustomerInvoiceResponse
 }
 
+// IsSuccess returns true when this get customer invoices too many requests response has a 2xx status code
+func (o *GetCustomerInvoicesTooManyRequests) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get customer invoices too many requests response has a 3xx status code
+func (o *GetCustomerInvoicesTooManyRequests) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get customer invoices too many requests response has a 4xx status code
+func (o *GetCustomerInvoicesTooManyRequests) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get customer invoices too many requests response has a 5xx status code
+func (o *GetCustomerInvoicesTooManyRequests) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get customer invoices too many requests response a status code equal to that given
+func (o *GetCustomerInvoicesTooManyRequests) IsCode(code int) bool {
+	return code == 429
+}
+
 func (o *GetCustomerInvoicesTooManyRequests) Error() string {
 	return fmt.Sprintf("[GET /vendor/directFulfillment/shipping/v1/customerInvoices][%d] getCustomerInvoicesTooManyRequests  %+v", 429, o.Payload)
 }
+
+func (o *GetCustomerInvoicesTooManyRequests) String() string {
+	return fmt.Sprintf("[GET /vendor/directFulfillment/shipping/v1/customerInvoices][%d] getCustomerInvoicesTooManyRequests  %+v", 429, o.Payload)
+}
+
 func (o *GetCustomerInvoicesTooManyRequests) GetPayload() *vendor_direct_fulfillment_shipping_v1_models.GetCustomerInvoiceResponse {
 	return o.Payload
 }
@@ -402,7 +588,8 @@ func NewGetCustomerInvoicesInternalServerError() *GetCustomerInvoicesInternalSer
 	return &GetCustomerInvoicesInternalServerError{}
 }
 
-/* GetCustomerInvoicesInternalServerError describes a response with status code 500, with default header values.
+/*
+GetCustomerInvoicesInternalServerError describes a response with status code 500, with default header values.
 
 Encountered an unexpected condition which prevented the server from fulfilling the request.
 */
@@ -420,9 +607,39 @@ type GetCustomerInvoicesInternalServerError struct {
 	Payload *vendor_direct_fulfillment_shipping_v1_models.GetCustomerInvoiceResponse
 }
 
+// IsSuccess returns true when this get customer invoices internal server error response has a 2xx status code
+func (o *GetCustomerInvoicesInternalServerError) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get customer invoices internal server error response has a 3xx status code
+func (o *GetCustomerInvoicesInternalServerError) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get customer invoices internal server error response has a 4xx status code
+func (o *GetCustomerInvoicesInternalServerError) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get customer invoices internal server error response has a 5xx status code
+func (o *GetCustomerInvoicesInternalServerError) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this get customer invoices internal server error response a status code equal to that given
+func (o *GetCustomerInvoicesInternalServerError) IsCode(code int) bool {
+	return code == 500
+}
+
 func (o *GetCustomerInvoicesInternalServerError) Error() string {
 	return fmt.Sprintf("[GET /vendor/directFulfillment/shipping/v1/customerInvoices][%d] getCustomerInvoicesInternalServerError  %+v", 500, o.Payload)
 }
+
+func (o *GetCustomerInvoicesInternalServerError) String() string {
+	return fmt.Sprintf("[GET /vendor/directFulfillment/shipping/v1/customerInvoices][%d] getCustomerInvoicesInternalServerError  %+v", 500, o.Payload)
+}
+
 func (o *GetCustomerInvoicesInternalServerError) GetPayload() *vendor_direct_fulfillment_shipping_v1_models.GetCustomerInvoiceResponse {
 	return o.Payload
 }
@@ -458,7 +675,8 @@ func NewGetCustomerInvoicesServiceUnavailable() *GetCustomerInvoicesServiceUnava
 	return &GetCustomerInvoicesServiceUnavailable{}
 }
 
-/* GetCustomerInvoicesServiceUnavailable describes a response with status code 503, with default header values.
+/*
+GetCustomerInvoicesServiceUnavailable describes a response with status code 503, with default header values.
 
 Temporary overloading or maintenance of the server.
 */
@@ -476,9 +694,39 @@ type GetCustomerInvoicesServiceUnavailable struct {
 	Payload *vendor_direct_fulfillment_shipping_v1_models.GetCustomerInvoiceResponse
 }
 
+// IsSuccess returns true when this get customer invoices service unavailable response has a 2xx status code
+func (o *GetCustomerInvoicesServiceUnavailable) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get customer invoices service unavailable response has a 3xx status code
+func (o *GetCustomerInvoicesServiceUnavailable) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get customer invoices service unavailable response has a 4xx status code
+func (o *GetCustomerInvoicesServiceUnavailable) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get customer invoices service unavailable response has a 5xx status code
+func (o *GetCustomerInvoicesServiceUnavailable) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this get customer invoices service unavailable response a status code equal to that given
+func (o *GetCustomerInvoicesServiceUnavailable) IsCode(code int) bool {
+	return code == 503
+}
+
 func (o *GetCustomerInvoicesServiceUnavailable) Error() string {
 	return fmt.Sprintf("[GET /vendor/directFulfillment/shipping/v1/customerInvoices][%d] getCustomerInvoicesServiceUnavailable  %+v", 503, o.Payload)
 }
+
+func (o *GetCustomerInvoicesServiceUnavailable) String() string {
+	return fmt.Sprintf("[GET /vendor/directFulfillment/shipping/v1/customerInvoices][%d] getCustomerInvoicesServiceUnavailable  %+v", 503, o.Payload)
+}
+
 func (o *GetCustomerInvoicesServiceUnavailable) GetPayload() *vendor_direct_fulfillment_shipping_v1_models.GetCustomerInvoiceResponse {
 	return o.Payload
 }

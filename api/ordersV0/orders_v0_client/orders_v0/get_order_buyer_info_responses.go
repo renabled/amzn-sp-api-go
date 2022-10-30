@@ -75,7 +75,8 @@ func NewGetOrderBuyerInfoOK() *GetOrderBuyerInfoOK {
 	return &GetOrderBuyerInfoOK{}
 }
 
-/* GetOrderBuyerInfoOK describes a response with status code 200, with default header values.
+/*
+GetOrderBuyerInfoOK describes a response with status code 200, with default header values.
 
 Success.
 */
@@ -92,9 +93,39 @@ type GetOrderBuyerInfoOK struct {
 	Payload *orders_v0_models.GetOrderBuyerInfoResponse
 }
 
+// IsSuccess returns true when this get order buyer info o k response has a 2xx status code
+func (o *GetOrderBuyerInfoOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this get order buyer info o k response has a 3xx status code
+func (o *GetOrderBuyerInfoOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get order buyer info o k response has a 4xx status code
+func (o *GetOrderBuyerInfoOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get order buyer info o k response has a 5xx status code
+func (o *GetOrderBuyerInfoOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get order buyer info o k response a status code equal to that given
+func (o *GetOrderBuyerInfoOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *GetOrderBuyerInfoOK) Error() string {
 	return fmt.Sprintf("[GET /orders/v0/orders/{orderId}/buyerInfo][%d] getOrderBuyerInfoOK  %+v", 200, o.Payload)
 }
+
+func (o *GetOrderBuyerInfoOK) String() string {
+	return fmt.Sprintf("[GET /orders/v0/orders/{orderId}/buyerInfo][%d] getOrderBuyerInfoOK  %+v", 200, o.Payload)
+}
+
 func (o *GetOrderBuyerInfoOK) GetPayload() *orders_v0_models.GetOrderBuyerInfoResponse {
 	return o.Payload
 }
@@ -130,7 +161,8 @@ func NewGetOrderBuyerInfoBadRequest() *GetOrderBuyerInfoBadRequest {
 	return &GetOrderBuyerInfoBadRequest{}
 }
 
-/* GetOrderBuyerInfoBadRequest describes a response with status code 400, with default header values.
+/*
+GetOrderBuyerInfoBadRequest describes a response with status code 400, with default header values.
 
 Request has missing or invalid parameters and cannot be parsed.
 */
@@ -147,9 +179,39 @@ type GetOrderBuyerInfoBadRequest struct {
 	Payload *orders_v0_models.GetOrderBuyerInfoResponse
 }
 
+// IsSuccess returns true when this get order buyer info bad request response has a 2xx status code
+func (o *GetOrderBuyerInfoBadRequest) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get order buyer info bad request response has a 3xx status code
+func (o *GetOrderBuyerInfoBadRequest) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get order buyer info bad request response has a 4xx status code
+func (o *GetOrderBuyerInfoBadRequest) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get order buyer info bad request response has a 5xx status code
+func (o *GetOrderBuyerInfoBadRequest) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get order buyer info bad request response a status code equal to that given
+func (o *GetOrderBuyerInfoBadRequest) IsCode(code int) bool {
+	return code == 400
+}
+
 func (o *GetOrderBuyerInfoBadRequest) Error() string {
 	return fmt.Sprintf("[GET /orders/v0/orders/{orderId}/buyerInfo][%d] getOrderBuyerInfoBadRequest  %+v", 400, o.Payload)
 }
+
+func (o *GetOrderBuyerInfoBadRequest) String() string {
+	return fmt.Sprintf("[GET /orders/v0/orders/{orderId}/buyerInfo][%d] getOrderBuyerInfoBadRequest  %+v", 400, o.Payload)
+}
+
 func (o *GetOrderBuyerInfoBadRequest) GetPayload() *orders_v0_models.GetOrderBuyerInfoResponse {
 	return o.Payload
 }
@@ -185,7 +247,8 @@ func NewGetOrderBuyerInfoForbidden() *GetOrderBuyerInfoForbidden {
 	return &GetOrderBuyerInfoForbidden{}
 }
 
-/* GetOrderBuyerInfoForbidden describes a response with status code 403, with default header values.
+/*
+GetOrderBuyerInfoForbidden describes a response with status code 403, with default header values.
 
 Indicates access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.
 */
@@ -198,9 +261,39 @@ type GetOrderBuyerInfoForbidden struct {
 	Payload *orders_v0_models.GetOrderBuyerInfoResponse
 }
 
+// IsSuccess returns true when this get order buyer info forbidden response has a 2xx status code
+func (o *GetOrderBuyerInfoForbidden) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get order buyer info forbidden response has a 3xx status code
+func (o *GetOrderBuyerInfoForbidden) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get order buyer info forbidden response has a 4xx status code
+func (o *GetOrderBuyerInfoForbidden) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get order buyer info forbidden response has a 5xx status code
+func (o *GetOrderBuyerInfoForbidden) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get order buyer info forbidden response a status code equal to that given
+func (o *GetOrderBuyerInfoForbidden) IsCode(code int) bool {
+	return code == 403
+}
+
 func (o *GetOrderBuyerInfoForbidden) Error() string {
 	return fmt.Sprintf("[GET /orders/v0/orders/{orderId}/buyerInfo][%d] getOrderBuyerInfoForbidden  %+v", 403, o.Payload)
 }
+
+func (o *GetOrderBuyerInfoForbidden) String() string {
+	return fmt.Sprintf("[GET /orders/v0/orders/{orderId}/buyerInfo][%d] getOrderBuyerInfoForbidden  %+v", 403, o.Payload)
+}
+
 func (o *GetOrderBuyerInfoForbidden) GetPayload() *orders_v0_models.GetOrderBuyerInfoResponse {
 	return o.Payload
 }
@@ -229,7 +322,8 @@ func NewGetOrderBuyerInfoNotFound() *GetOrderBuyerInfoNotFound {
 	return &GetOrderBuyerInfoNotFound{}
 }
 
-/* GetOrderBuyerInfoNotFound describes a response with status code 404, with default header values.
+/*
+GetOrderBuyerInfoNotFound describes a response with status code 404, with default header values.
 
 The resource specified does not exist.
 */
@@ -246,9 +340,39 @@ type GetOrderBuyerInfoNotFound struct {
 	Payload *orders_v0_models.GetOrderBuyerInfoResponse
 }
 
+// IsSuccess returns true when this get order buyer info not found response has a 2xx status code
+func (o *GetOrderBuyerInfoNotFound) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get order buyer info not found response has a 3xx status code
+func (o *GetOrderBuyerInfoNotFound) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get order buyer info not found response has a 4xx status code
+func (o *GetOrderBuyerInfoNotFound) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get order buyer info not found response has a 5xx status code
+func (o *GetOrderBuyerInfoNotFound) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get order buyer info not found response a status code equal to that given
+func (o *GetOrderBuyerInfoNotFound) IsCode(code int) bool {
+	return code == 404
+}
+
 func (o *GetOrderBuyerInfoNotFound) Error() string {
 	return fmt.Sprintf("[GET /orders/v0/orders/{orderId}/buyerInfo][%d] getOrderBuyerInfoNotFound  %+v", 404, o.Payload)
 }
+
+func (o *GetOrderBuyerInfoNotFound) String() string {
+	return fmt.Sprintf("[GET /orders/v0/orders/{orderId}/buyerInfo][%d] getOrderBuyerInfoNotFound  %+v", 404, o.Payload)
+}
+
 func (o *GetOrderBuyerInfoNotFound) GetPayload() *orders_v0_models.GetOrderBuyerInfoResponse {
 	return o.Payload
 }
@@ -284,7 +408,8 @@ func NewGetOrderBuyerInfoTooManyRequests() *GetOrderBuyerInfoTooManyRequests {
 	return &GetOrderBuyerInfoTooManyRequests{}
 }
 
-/* GetOrderBuyerInfoTooManyRequests describes a response with status code 429, with default header values.
+/*
+GetOrderBuyerInfoTooManyRequests describes a response with status code 429, with default header values.
 
 The frequency of requests was greater than allowed.
 */
@@ -302,9 +427,39 @@ type GetOrderBuyerInfoTooManyRequests struct {
 	Payload *orders_v0_models.GetOrderBuyerInfoResponse
 }
 
+// IsSuccess returns true when this get order buyer info too many requests response has a 2xx status code
+func (o *GetOrderBuyerInfoTooManyRequests) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get order buyer info too many requests response has a 3xx status code
+func (o *GetOrderBuyerInfoTooManyRequests) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get order buyer info too many requests response has a 4xx status code
+func (o *GetOrderBuyerInfoTooManyRequests) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get order buyer info too many requests response has a 5xx status code
+func (o *GetOrderBuyerInfoTooManyRequests) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get order buyer info too many requests response a status code equal to that given
+func (o *GetOrderBuyerInfoTooManyRequests) IsCode(code int) bool {
+	return code == 429
+}
+
 func (o *GetOrderBuyerInfoTooManyRequests) Error() string {
 	return fmt.Sprintf("[GET /orders/v0/orders/{orderId}/buyerInfo][%d] getOrderBuyerInfoTooManyRequests  %+v", 429, o.Payload)
 }
+
+func (o *GetOrderBuyerInfoTooManyRequests) String() string {
+	return fmt.Sprintf("[GET /orders/v0/orders/{orderId}/buyerInfo][%d] getOrderBuyerInfoTooManyRequests  %+v", 429, o.Payload)
+}
+
 func (o *GetOrderBuyerInfoTooManyRequests) GetPayload() *orders_v0_models.GetOrderBuyerInfoResponse {
 	return o.Payload
 }
@@ -340,7 +495,8 @@ func NewGetOrderBuyerInfoInternalServerError() *GetOrderBuyerInfoInternalServerE
 	return &GetOrderBuyerInfoInternalServerError{}
 }
 
-/* GetOrderBuyerInfoInternalServerError describes a response with status code 500, with default header values.
+/*
+GetOrderBuyerInfoInternalServerError describes a response with status code 500, with default header values.
 
 An unexpected condition occurred that prevented the server from fulfilling the request.
 */
@@ -358,9 +514,39 @@ type GetOrderBuyerInfoInternalServerError struct {
 	Payload *orders_v0_models.GetOrderBuyerInfoResponse
 }
 
+// IsSuccess returns true when this get order buyer info internal server error response has a 2xx status code
+func (o *GetOrderBuyerInfoInternalServerError) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get order buyer info internal server error response has a 3xx status code
+func (o *GetOrderBuyerInfoInternalServerError) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get order buyer info internal server error response has a 4xx status code
+func (o *GetOrderBuyerInfoInternalServerError) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get order buyer info internal server error response has a 5xx status code
+func (o *GetOrderBuyerInfoInternalServerError) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this get order buyer info internal server error response a status code equal to that given
+func (o *GetOrderBuyerInfoInternalServerError) IsCode(code int) bool {
+	return code == 500
+}
+
 func (o *GetOrderBuyerInfoInternalServerError) Error() string {
 	return fmt.Sprintf("[GET /orders/v0/orders/{orderId}/buyerInfo][%d] getOrderBuyerInfoInternalServerError  %+v", 500, o.Payload)
 }
+
+func (o *GetOrderBuyerInfoInternalServerError) String() string {
+	return fmt.Sprintf("[GET /orders/v0/orders/{orderId}/buyerInfo][%d] getOrderBuyerInfoInternalServerError  %+v", 500, o.Payload)
+}
+
 func (o *GetOrderBuyerInfoInternalServerError) GetPayload() *orders_v0_models.GetOrderBuyerInfoResponse {
 	return o.Payload
 }
@@ -396,7 +582,8 @@ func NewGetOrderBuyerInfoServiceUnavailable() *GetOrderBuyerInfoServiceUnavailab
 	return &GetOrderBuyerInfoServiceUnavailable{}
 }
 
-/* GetOrderBuyerInfoServiceUnavailable describes a response with status code 503, with default header values.
+/*
+GetOrderBuyerInfoServiceUnavailable describes a response with status code 503, with default header values.
 
 Temporary overloading or maintenance of the server.
 */
@@ -414,9 +601,39 @@ type GetOrderBuyerInfoServiceUnavailable struct {
 	Payload *orders_v0_models.GetOrderBuyerInfoResponse
 }
 
+// IsSuccess returns true when this get order buyer info service unavailable response has a 2xx status code
+func (o *GetOrderBuyerInfoServiceUnavailable) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get order buyer info service unavailable response has a 3xx status code
+func (o *GetOrderBuyerInfoServiceUnavailable) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get order buyer info service unavailable response has a 4xx status code
+func (o *GetOrderBuyerInfoServiceUnavailable) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get order buyer info service unavailable response has a 5xx status code
+func (o *GetOrderBuyerInfoServiceUnavailable) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this get order buyer info service unavailable response a status code equal to that given
+func (o *GetOrderBuyerInfoServiceUnavailable) IsCode(code int) bool {
+	return code == 503
+}
+
 func (o *GetOrderBuyerInfoServiceUnavailable) Error() string {
 	return fmt.Sprintf("[GET /orders/v0/orders/{orderId}/buyerInfo][%d] getOrderBuyerInfoServiceUnavailable  %+v", 503, o.Payload)
 }
+
+func (o *GetOrderBuyerInfoServiceUnavailable) String() string {
+	return fmt.Sprintf("[GET /orders/v0/orders/{orderId}/buyerInfo][%d] getOrderBuyerInfoServiceUnavailable  %+v", 503, o.Payload)
+}
+
 func (o *GetOrderBuyerInfoServiceUnavailable) GetPayload() *orders_v0_models.GetOrderBuyerInfoResponse {
 	return o.Payload
 }

@@ -54,10 +54,12 @@ func NewSetAppointmentFulfillmentDataParamsWithHTTPClient(client *http.Client) *
 	}
 }
 
-/* SetAppointmentFulfillmentDataParams contains all the parameters to send to the API endpoint
-   for the set appointment fulfillment data operation.
+/*
+SetAppointmentFulfillmentDataParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the set appointment fulfillment data operation.
+
+	Typically these are written to a http.Request.
 */
 type SetAppointmentFulfillmentDataParams struct {
 

@@ -87,7 +87,8 @@ func NewGetOrderScenariosOK() *GetOrderScenariosOK {
 	return &GetOrderScenariosOK{}
 }
 
-/* GetOrderScenariosOK describes a response with status code 200, with default header values.
+/*
+GetOrderScenariosOK describes a response with status code 200, with default header values.
 
 Success.
 */
@@ -104,9 +105,39 @@ type GetOrderScenariosOK struct {
 	Payload *vendor_direct_fulfillment_sandbox_data_2021_10_28_models.TransactionStatus
 }
 
+// IsSuccess returns true when this get order scenarios o k response has a 2xx status code
+func (o *GetOrderScenariosOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this get order scenarios o k response has a 3xx status code
+func (o *GetOrderScenariosOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get order scenarios o k response has a 4xx status code
+func (o *GetOrderScenariosOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get order scenarios o k response has a 5xx status code
+func (o *GetOrderScenariosOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get order scenarios o k response a status code equal to that given
+func (o *GetOrderScenariosOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *GetOrderScenariosOK) Error() string {
 	return fmt.Sprintf("[GET /vendor/directFulfillment/sandbox/2021-10-28/transactions/{transactionId}][%d] getOrderScenariosOK  %+v", 200, o.Payload)
 }
+
+func (o *GetOrderScenariosOK) String() string {
+	return fmt.Sprintf("[GET /vendor/directFulfillment/sandbox/2021-10-28/transactions/{transactionId}][%d] getOrderScenariosOK  %+v", 200, o.Payload)
+}
+
 func (o *GetOrderScenariosOK) GetPayload() *vendor_direct_fulfillment_sandbox_data_2021_10_28_models.TransactionStatus {
 	return o.Payload
 }
@@ -142,7 +173,8 @@ func NewGetOrderScenariosBadRequest() *GetOrderScenariosBadRequest {
 	return &GetOrderScenariosBadRequest{}
 }
 
-/* GetOrderScenariosBadRequest describes a response with status code 400, with default header values.
+/*
+GetOrderScenariosBadRequest describes a response with status code 400, with default header values.
 
 Request has missing or invalid parameters and cannot be parsed.
 */
@@ -159,9 +191,39 @@ type GetOrderScenariosBadRequest struct {
 	Payload *vendor_direct_fulfillment_sandbox_data_2021_10_28_models.ErrorList
 }
 
+// IsSuccess returns true when this get order scenarios bad request response has a 2xx status code
+func (o *GetOrderScenariosBadRequest) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get order scenarios bad request response has a 3xx status code
+func (o *GetOrderScenariosBadRequest) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get order scenarios bad request response has a 4xx status code
+func (o *GetOrderScenariosBadRequest) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get order scenarios bad request response has a 5xx status code
+func (o *GetOrderScenariosBadRequest) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get order scenarios bad request response a status code equal to that given
+func (o *GetOrderScenariosBadRequest) IsCode(code int) bool {
+	return code == 400
+}
+
 func (o *GetOrderScenariosBadRequest) Error() string {
 	return fmt.Sprintf("[GET /vendor/directFulfillment/sandbox/2021-10-28/transactions/{transactionId}][%d] getOrderScenariosBadRequest  %+v", 400, o.Payload)
 }
+
+func (o *GetOrderScenariosBadRequest) String() string {
+	return fmt.Sprintf("[GET /vendor/directFulfillment/sandbox/2021-10-28/transactions/{transactionId}][%d] getOrderScenariosBadRequest  %+v", 400, o.Payload)
+}
+
 func (o *GetOrderScenariosBadRequest) GetPayload() *vendor_direct_fulfillment_sandbox_data_2021_10_28_models.ErrorList {
 	return o.Payload
 }
@@ -197,7 +259,8 @@ func NewGetOrderScenariosUnauthorized() *GetOrderScenariosUnauthorized {
 	return &GetOrderScenariosUnauthorized{}
 }
 
-/* GetOrderScenariosUnauthorized describes a response with status code 401, with default header values.
+/*
+GetOrderScenariosUnauthorized describes a response with status code 401, with default header values.
 
 The request's Authorization header is not formatted correctly or does not contain a valid token.
 */
@@ -215,9 +278,39 @@ type GetOrderScenariosUnauthorized struct {
 	Payload *vendor_direct_fulfillment_sandbox_data_2021_10_28_models.ErrorList
 }
 
+// IsSuccess returns true when this get order scenarios unauthorized response has a 2xx status code
+func (o *GetOrderScenariosUnauthorized) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get order scenarios unauthorized response has a 3xx status code
+func (o *GetOrderScenariosUnauthorized) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get order scenarios unauthorized response has a 4xx status code
+func (o *GetOrderScenariosUnauthorized) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get order scenarios unauthorized response has a 5xx status code
+func (o *GetOrderScenariosUnauthorized) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get order scenarios unauthorized response a status code equal to that given
+func (o *GetOrderScenariosUnauthorized) IsCode(code int) bool {
+	return code == 401
+}
+
 func (o *GetOrderScenariosUnauthorized) Error() string {
 	return fmt.Sprintf("[GET /vendor/directFulfillment/sandbox/2021-10-28/transactions/{transactionId}][%d] getOrderScenariosUnauthorized  %+v", 401, o.Payload)
 }
+
+func (o *GetOrderScenariosUnauthorized) String() string {
+	return fmt.Sprintf("[GET /vendor/directFulfillment/sandbox/2021-10-28/transactions/{transactionId}][%d] getOrderScenariosUnauthorized  %+v", 401, o.Payload)
+}
+
 func (o *GetOrderScenariosUnauthorized) GetPayload() *vendor_direct_fulfillment_sandbox_data_2021_10_28_models.ErrorList {
 	return o.Payload
 }
@@ -253,7 +346,8 @@ func NewGetOrderScenariosForbidden() *GetOrderScenariosForbidden {
 	return &GetOrderScenariosForbidden{}
 }
 
-/* GetOrderScenariosForbidden describes a response with status code 403, with default header values.
+/*
+GetOrderScenariosForbidden describes a response with status code 403, with default header values.
 
 Indicates that access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.
 */
@@ -266,9 +360,39 @@ type GetOrderScenariosForbidden struct {
 	Payload *vendor_direct_fulfillment_sandbox_data_2021_10_28_models.ErrorList
 }
 
+// IsSuccess returns true when this get order scenarios forbidden response has a 2xx status code
+func (o *GetOrderScenariosForbidden) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get order scenarios forbidden response has a 3xx status code
+func (o *GetOrderScenariosForbidden) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get order scenarios forbidden response has a 4xx status code
+func (o *GetOrderScenariosForbidden) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get order scenarios forbidden response has a 5xx status code
+func (o *GetOrderScenariosForbidden) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get order scenarios forbidden response a status code equal to that given
+func (o *GetOrderScenariosForbidden) IsCode(code int) bool {
+	return code == 403
+}
+
 func (o *GetOrderScenariosForbidden) Error() string {
 	return fmt.Sprintf("[GET /vendor/directFulfillment/sandbox/2021-10-28/transactions/{transactionId}][%d] getOrderScenariosForbidden  %+v", 403, o.Payload)
 }
+
+func (o *GetOrderScenariosForbidden) String() string {
+	return fmt.Sprintf("[GET /vendor/directFulfillment/sandbox/2021-10-28/transactions/{transactionId}][%d] getOrderScenariosForbidden  %+v", 403, o.Payload)
+}
+
 func (o *GetOrderScenariosForbidden) GetPayload() *vendor_direct_fulfillment_sandbox_data_2021_10_28_models.ErrorList {
 	return o.Payload
 }
@@ -297,7 +421,8 @@ func NewGetOrderScenariosNotFound() *GetOrderScenariosNotFound {
 	return &GetOrderScenariosNotFound{}
 }
 
-/* GetOrderScenariosNotFound describes a response with status code 404, with default header values.
+/*
+GetOrderScenariosNotFound describes a response with status code 404, with default header values.
 
 The resource specified does not exist.
 */
@@ -314,9 +439,39 @@ type GetOrderScenariosNotFound struct {
 	Payload *vendor_direct_fulfillment_sandbox_data_2021_10_28_models.ErrorList
 }
 
+// IsSuccess returns true when this get order scenarios not found response has a 2xx status code
+func (o *GetOrderScenariosNotFound) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get order scenarios not found response has a 3xx status code
+func (o *GetOrderScenariosNotFound) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get order scenarios not found response has a 4xx status code
+func (o *GetOrderScenariosNotFound) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get order scenarios not found response has a 5xx status code
+func (o *GetOrderScenariosNotFound) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get order scenarios not found response a status code equal to that given
+func (o *GetOrderScenariosNotFound) IsCode(code int) bool {
+	return code == 404
+}
+
 func (o *GetOrderScenariosNotFound) Error() string {
 	return fmt.Sprintf("[GET /vendor/directFulfillment/sandbox/2021-10-28/transactions/{transactionId}][%d] getOrderScenariosNotFound  %+v", 404, o.Payload)
 }
+
+func (o *GetOrderScenariosNotFound) String() string {
+	return fmt.Sprintf("[GET /vendor/directFulfillment/sandbox/2021-10-28/transactions/{transactionId}][%d] getOrderScenariosNotFound  %+v", 404, o.Payload)
+}
+
 func (o *GetOrderScenariosNotFound) GetPayload() *vendor_direct_fulfillment_sandbox_data_2021_10_28_models.ErrorList {
 	return o.Payload
 }
@@ -352,7 +507,8 @@ func NewGetOrderScenariosUnsupportedMediaType() *GetOrderScenariosUnsupportedMed
 	return &GetOrderScenariosUnsupportedMediaType{}
 }
 
-/* GetOrderScenariosUnsupportedMediaType describes a response with status code 415, with default header values.
+/*
+GetOrderScenariosUnsupportedMediaType describes a response with status code 415, with default header values.
 
 The request payload is in an unsupported format.
 */
@@ -370,9 +526,39 @@ type GetOrderScenariosUnsupportedMediaType struct {
 	Payload *vendor_direct_fulfillment_sandbox_data_2021_10_28_models.ErrorList
 }
 
+// IsSuccess returns true when this get order scenarios unsupported media type response has a 2xx status code
+func (o *GetOrderScenariosUnsupportedMediaType) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get order scenarios unsupported media type response has a 3xx status code
+func (o *GetOrderScenariosUnsupportedMediaType) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get order scenarios unsupported media type response has a 4xx status code
+func (o *GetOrderScenariosUnsupportedMediaType) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get order scenarios unsupported media type response has a 5xx status code
+func (o *GetOrderScenariosUnsupportedMediaType) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get order scenarios unsupported media type response a status code equal to that given
+func (o *GetOrderScenariosUnsupportedMediaType) IsCode(code int) bool {
+	return code == 415
+}
+
 func (o *GetOrderScenariosUnsupportedMediaType) Error() string {
 	return fmt.Sprintf("[GET /vendor/directFulfillment/sandbox/2021-10-28/transactions/{transactionId}][%d] getOrderScenariosUnsupportedMediaType  %+v", 415, o.Payload)
 }
+
+func (o *GetOrderScenariosUnsupportedMediaType) String() string {
+	return fmt.Sprintf("[GET /vendor/directFulfillment/sandbox/2021-10-28/transactions/{transactionId}][%d] getOrderScenariosUnsupportedMediaType  %+v", 415, o.Payload)
+}
+
 func (o *GetOrderScenariosUnsupportedMediaType) GetPayload() *vendor_direct_fulfillment_sandbox_data_2021_10_28_models.ErrorList {
 	return o.Payload
 }
@@ -408,7 +594,8 @@ func NewGetOrderScenariosTooManyRequests() *GetOrderScenariosTooManyRequests {
 	return &GetOrderScenariosTooManyRequests{}
 }
 
-/* GetOrderScenariosTooManyRequests describes a response with status code 429, with default header values.
+/*
+GetOrderScenariosTooManyRequests describes a response with status code 429, with default header values.
 
 The frequency of requests was greater than allowed.
 */
@@ -426,9 +613,39 @@ type GetOrderScenariosTooManyRequests struct {
 	Payload *vendor_direct_fulfillment_sandbox_data_2021_10_28_models.ErrorList
 }
 
+// IsSuccess returns true when this get order scenarios too many requests response has a 2xx status code
+func (o *GetOrderScenariosTooManyRequests) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get order scenarios too many requests response has a 3xx status code
+func (o *GetOrderScenariosTooManyRequests) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get order scenarios too many requests response has a 4xx status code
+func (o *GetOrderScenariosTooManyRequests) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get order scenarios too many requests response has a 5xx status code
+func (o *GetOrderScenariosTooManyRequests) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get order scenarios too many requests response a status code equal to that given
+func (o *GetOrderScenariosTooManyRequests) IsCode(code int) bool {
+	return code == 429
+}
+
 func (o *GetOrderScenariosTooManyRequests) Error() string {
 	return fmt.Sprintf("[GET /vendor/directFulfillment/sandbox/2021-10-28/transactions/{transactionId}][%d] getOrderScenariosTooManyRequests  %+v", 429, o.Payload)
 }
+
+func (o *GetOrderScenariosTooManyRequests) String() string {
+	return fmt.Sprintf("[GET /vendor/directFulfillment/sandbox/2021-10-28/transactions/{transactionId}][%d] getOrderScenariosTooManyRequests  %+v", 429, o.Payload)
+}
+
 func (o *GetOrderScenariosTooManyRequests) GetPayload() *vendor_direct_fulfillment_sandbox_data_2021_10_28_models.ErrorList {
 	return o.Payload
 }
@@ -464,7 +681,8 @@ func NewGetOrderScenariosInternalServerError() *GetOrderScenariosInternalServerE
 	return &GetOrderScenariosInternalServerError{}
 }
 
-/* GetOrderScenariosInternalServerError describes a response with status code 500, with default header values.
+/*
+GetOrderScenariosInternalServerError describes a response with status code 500, with default header values.
 
 An unexpected condition occurred that prevented the server from fulfilling the request.
 */
@@ -482,9 +700,39 @@ type GetOrderScenariosInternalServerError struct {
 	Payload *vendor_direct_fulfillment_sandbox_data_2021_10_28_models.ErrorList
 }
 
+// IsSuccess returns true when this get order scenarios internal server error response has a 2xx status code
+func (o *GetOrderScenariosInternalServerError) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get order scenarios internal server error response has a 3xx status code
+func (o *GetOrderScenariosInternalServerError) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get order scenarios internal server error response has a 4xx status code
+func (o *GetOrderScenariosInternalServerError) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get order scenarios internal server error response has a 5xx status code
+func (o *GetOrderScenariosInternalServerError) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this get order scenarios internal server error response a status code equal to that given
+func (o *GetOrderScenariosInternalServerError) IsCode(code int) bool {
+	return code == 500
+}
+
 func (o *GetOrderScenariosInternalServerError) Error() string {
 	return fmt.Sprintf("[GET /vendor/directFulfillment/sandbox/2021-10-28/transactions/{transactionId}][%d] getOrderScenariosInternalServerError  %+v", 500, o.Payload)
 }
+
+func (o *GetOrderScenariosInternalServerError) String() string {
+	return fmt.Sprintf("[GET /vendor/directFulfillment/sandbox/2021-10-28/transactions/{transactionId}][%d] getOrderScenariosInternalServerError  %+v", 500, o.Payload)
+}
+
 func (o *GetOrderScenariosInternalServerError) GetPayload() *vendor_direct_fulfillment_sandbox_data_2021_10_28_models.ErrorList {
 	return o.Payload
 }
@@ -520,7 +768,8 @@ func NewGetOrderScenariosServiceUnavailable() *GetOrderScenariosServiceUnavailab
 	return &GetOrderScenariosServiceUnavailable{}
 }
 
-/* GetOrderScenariosServiceUnavailable describes a response with status code 503, with default header values.
+/*
+GetOrderScenariosServiceUnavailable describes a response with status code 503, with default header values.
 
 Temporary overloading or maintenance of the server.
 */
@@ -538,9 +787,39 @@ type GetOrderScenariosServiceUnavailable struct {
 	Payload *vendor_direct_fulfillment_sandbox_data_2021_10_28_models.ErrorList
 }
 
+// IsSuccess returns true when this get order scenarios service unavailable response has a 2xx status code
+func (o *GetOrderScenariosServiceUnavailable) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get order scenarios service unavailable response has a 3xx status code
+func (o *GetOrderScenariosServiceUnavailable) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get order scenarios service unavailable response has a 4xx status code
+func (o *GetOrderScenariosServiceUnavailable) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get order scenarios service unavailable response has a 5xx status code
+func (o *GetOrderScenariosServiceUnavailable) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this get order scenarios service unavailable response a status code equal to that given
+func (o *GetOrderScenariosServiceUnavailable) IsCode(code int) bool {
+	return code == 503
+}
+
 func (o *GetOrderScenariosServiceUnavailable) Error() string {
 	return fmt.Sprintf("[GET /vendor/directFulfillment/sandbox/2021-10-28/transactions/{transactionId}][%d] getOrderScenariosServiceUnavailable  %+v", 503, o.Payload)
 }
+
+func (o *GetOrderScenariosServiceUnavailable) String() string {
+	return fmt.Sprintf("[GET /vendor/directFulfillment/sandbox/2021-10-28/transactions/{transactionId}][%d] getOrderScenariosServiceUnavailable  %+v", 503, o.Payload)
+}
+
 func (o *GetOrderScenariosServiceUnavailable) GetPayload() *vendor_direct_fulfillment_sandbox_data_2021_10_28_models.ErrorList {
 	return o.Payload
 }

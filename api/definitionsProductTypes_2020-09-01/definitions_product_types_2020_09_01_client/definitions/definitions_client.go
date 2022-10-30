@@ -38,7 +38,7 @@ type ClientService interface {
 }
 
 /*
-  GetDefinitionsProductType Retrieve an Amazon product type definition.
+	GetDefinitionsProductType Retrieve an Amazon product type definition.
 
 **Usage Plans:**
 
@@ -85,7 +85,7 @@ func (a *Client) GetDefinitionsProductType(params *GetDefinitionsProductTypePara
 }
 
 /*
-  SearchDefinitionsProductTypes Search for and return a list of Amazon product types that have definitions available.
+	SearchDefinitionsProductTypes Search for and return a list of Amazon product types that have definitions available.
 
 **Usage Plans:**
 

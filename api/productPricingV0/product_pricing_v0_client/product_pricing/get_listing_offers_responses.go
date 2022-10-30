@@ -81,7 +81,8 @@ func NewGetListingOffersOK() *GetListingOffersOK {
 	return &GetListingOffersOK{}
 }
 
-/* GetListingOffersOK describes a response with status code 200, with default header values.
+/*
+GetListingOffersOK describes a response with status code 200, with default header values.
 
 Success.
 */
@@ -98,9 +99,39 @@ type GetListingOffersOK struct {
 	Payload *product_pricing_v0_models.GetOffersResponse
 }
 
+// IsSuccess returns true when this get listing offers o k response has a 2xx status code
+func (o *GetListingOffersOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this get listing offers o k response has a 3xx status code
+func (o *GetListingOffersOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get listing offers o k response has a 4xx status code
+func (o *GetListingOffersOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get listing offers o k response has a 5xx status code
+func (o *GetListingOffersOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get listing offers o k response a status code equal to that given
+func (o *GetListingOffersOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *GetListingOffersOK) Error() string {
 	return fmt.Sprintf("[GET /products/pricing/v0/listings/{SellerSKU}/offers][%d] getListingOffersOK  %+v", 200, o.Payload)
 }
+
+func (o *GetListingOffersOK) String() string {
+	return fmt.Sprintf("[GET /products/pricing/v0/listings/{SellerSKU}/offers][%d] getListingOffersOK  %+v", 200, o.Payload)
+}
+
 func (o *GetListingOffersOK) GetPayload() *product_pricing_v0_models.GetOffersResponse {
 	return o.Payload
 }
@@ -136,7 +167,8 @@ func NewGetListingOffersBadRequest() *GetListingOffersBadRequest {
 	return &GetListingOffersBadRequest{}
 }
 
-/* GetListingOffersBadRequest describes a response with status code 400, with default header values.
+/*
+GetListingOffersBadRequest describes a response with status code 400, with default header values.
 
 Request has missing or invalid parameters and cannot be parsed.
 */
@@ -153,9 +185,39 @@ type GetListingOffersBadRequest struct {
 	Payload *product_pricing_v0_models.GetOffersResponse
 }
 
+// IsSuccess returns true when this get listing offers bad request response has a 2xx status code
+func (o *GetListingOffersBadRequest) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get listing offers bad request response has a 3xx status code
+func (o *GetListingOffersBadRequest) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get listing offers bad request response has a 4xx status code
+func (o *GetListingOffersBadRequest) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get listing offers bad request response has a 5xx status code
+func (o *GetListingOffersBadRequest) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get listing offers bad request response a status code equal to that given
+func (o *GetListingOffersBadRequest) IsCode(code int) bool {
+	return code == 400
+}
+
 func (o *GetListingOffersBadRequest) Error() string {
 	return fmt.Sprintf("[GET /products/pricing/v0/listings/{SellerSKU}/offers][%d] getListingOffersBadRequest  %+v", 400, o.Payload)
 }
+
+func (o *GetListingOffersBadRequest) String() string {
+	return fmt.Sprintf("[GET /products/pricing/v0/listings/{SellerSKU}/offers][%d] getListingOffersBadRequest  %+v", 400, o.Payload)
+}
+
 func (o *GetListingOffersBadRequest) GetPayload() *product_pricing_v0_models.GetOffersResponse {
 	return o.Payload
 }
@@ -191,7 +253,8 @@ func NewGetListingOffersUnauthorized() *GetListingOffersUnauthorized {
 	return &GetListingOffersUnauthorized{}
 }
 
-/* GetListingOffersUnauthorized describes a response with status code 401, with default header values.
+/*
+GetListingOffersUnauthorized describes a response with status code 401, with default header values.
 
 The request's Authorization header is not formatted correctly or does not contain a valid token.
 */
@@ -209,9 +272,39 @@ type GetListingOffersUnauthorized struct {
 	Payload *product_pricing_v0_models.GetOffersResponse
 }
 
+// IsSuccess returns true when this get listing offers unauthorized response has a 2xx status code
+func (o *GetListingOffersUnauthorized) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get listing offers unauthorized response has a 3xx status code
+func (o *GetListingOffersUnauthorized) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get listing offers unauthorized response has a 4xx status code
+func (o *GetListingOffersUnauthorized) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get listing offers unauthorized response has a 5xx status code
+func (o *GetListingOffersUnauthorized) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get listing offers unauthorized response a status code equal to that given
+func (o *GetListingOffersUnauthorized) IsCode(code int) bool {
+	return code == 401
+}
+
 func (o *GetListingOffersUnauthorized) Error() string {
 	return fmt.Sprintf("[GET /products/pricing/v0/listings/{SellerSKU}/offers][%d] getListingOffersUnauthorized  %+v", 401, o.Payload)
 }
+
+func (o *GetListingOffersUnauthorized) String() string {
+	return fmt.Sprintf("[GET /products/pricing/v0/listings/{SellerSKU}/offers][%d] getListingOffersUnauthorized  %+v", 401, o.Payload)
+}
+
 func (o *GetListingOffersUnauthorized) GetPayload() *product_pricing_v0_models.GetOffersResponse {
 	return o.Payload
 }
@@ -247,7 +340,8 @@ func NewGetListingOffersForbidden() *GetListingOffersForbidden {
 	return &GetListingOffersForbidden{}
 }
 
-/* GetListingOffersForbidden describes a response with status code 403, with default header values.
+/*
+GetListingOffersForbidden describes a response with status code 403, with default header values.
 
 Indicates access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.
 */
@@ -260,9 +354,39 @@ type GetListingOffersForbidden struct {
 	Payload *product_pricing_v0_models.GetOffersResponse
 }
 
+// IsSuccess returns true when this get listing offers forbidden response has a 2xx status code
+func (o *GetListingOffersForbidden) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get listing offers forbidden response has a 3xx status code
+func (o *GetListingOffersForbidden) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get listing offers forbidden response has a 4xx status code
+func (o *GetListingOffersForbidden) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get listing offers forbidden response has a 5xx status code
+func (o *GetListingOffersForbidden) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get listing offers forbidden response a status code equal to that given
+func (o *GetListingOffersForbidden) IsCode(code int) bool {
+	return code == 403
+}
+
 func (o *GetListingOffersForbidden) Error() string {
 	return fmt.Sprintf("[GET /products/pricing/v0/listings/{SellerSKU}/offers][%d] getListingOffersForbidden  %+v", 403, o.Payload)
 }
+
+func (o *GetListingOffersForbidden) String() string {
+	return fmt.Sprintf("[GET /products/pricing/v0/listings/{SellerSKU}/offers][%d] getListingOffersForbidden  %+v", 403, o.Payload)
+}
+
 func (o *GetListingOffersForbidden) GetPayload() *product_pricing_v0_models.GetOffersResponse {
 	return o.Payload
 }
@@ -291,7 +415,8 @@ func NewGetListingOffersNotFound() *GetListingOffersNotFound {
 	return &GetListingOffersNotFound{}
 }
 
-/* GetListingOffersNotFound describes a response with status code 404, with default header values.
+/*
+GetListingOffersNotFound describes a response with status code 404, with default header values.
 
 The specified resource does not exist.
 */
@@ -308,9 +433,39 @@ type GetListingOffersNotFound struct {
 	Payload *product_pricing_v0_models.GetOffersResponse
 }
 
+// IsSuccess returns true when this get listing offers not found response has a 2xx status code
+func (o *GetListingOffersNotFound) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get listing offers not found response has a 3xx status code
+func (o *GetListingOffersNotFound) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get listing offers not found response has a 4xx status code
+func (o *GetListingOffersNotFound) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get listing offers not found response has a 5xx status code
+func (o *GetListingOffersNotFound) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get listing offers not found response a status code equal to that given
+func (o *GetListingOffersNotFound) IsCode(code int) bool {
+	return code == 404
+}
+
 func (o *GetListingOffersNotFound) Error() string {
 	return fmt.Sprintf("[GET /products/pricing/v0/listings/{SellerSKU}/offers][%d] getListingOffersNotFound  %+v", 404, o.Payload)
 }
+
+func (o *GetListingOffersNotFound) String() string {
+	return fmt.Sprintf("[GET /products/pricing/v0/listings/{SellerSKU}/offers][%d] getListingOffersNotFound  %+v", 404, o.Payload)
+}
+
 func (o *GetListingOffersNotFound) GetPayload() *product_pricing_v0_models.GetOffersResponse {
 	return o.Payload
 }
@@ -346,7 +501,8 @@ func NewGetListingOffersTooManyRequests() *GetListingOffersTooManyRequests {
 	return &GetListingOffersTooManyRequests{}
 }
 
-/* GetListingOffersTooManyRequests describes a response with status code 429, with default header values.
+/*
+GetListingOffersTooManyRequests describes a response with status code 429, with default header values.
 
 The frequency of requests was greater than allowed.
 */
@@ -364,9 +520,39 @@ type GetListingOffersTooManyRequests struct {
 	Payload *product_pricing_v0_models.GetOffersResponse
 }
 
+// IsSuccess returns true when this get listing offers too many requests response has a 2xx status code
+func (o *GetListingOffersTooManyRequests) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get listing offers too many requests response has a 3xx status code
+func (o *GetListingOffersTooManyRequests) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get listing offers too many requests response has a 4xx status code
+func (o *GetListingOffersTooManyRequests) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get listing offers too many requests response has a 5xx status code
+func (o *GetListingOffersTooManyRequests) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get listing offers too many requests response a status code equal to that given
+func (o *GetListingOffersTooManyRequests) IsCode(code int) bool {
+	return code == 429
+}
+
 func (o *GetListingOffersTooManyRequests) Error() string {
 	return fmt.Sprintf("[GET /products/pricing/v0/listings/{SellerSKU}/offers][%d] getListingOffersTooManyRequests  %+v", 429, o.Payload)
 }
+
+func (o *GetListingOffersTooManyRequests) String() string {
+	return fmt.Sprintf("[GET /products/pricing/v0/listings/{SellerSKU}/offers][%d] getListingOffersTooManyRequests  %+v", 429, o.Payload)
+}
+
 func (o *GetListingOffersTooManyRequests) GetPayload() *product_pricing_v0_models.GetOffersResponse {
 	return o.Payload
 }
@@ -402,7 +588,8 @@ func NewGetListingOffersInternalServerError() *GetListingOffersInternalServerErr
 	return &GetListingOffersInternalServerError{}
 }
 
-/* GetListingOffersInternalServerError describes a response with status code 500, with default header values.
+/*
+GetListingOffersInternalServerError describes a response with status code 500, with default header values.
 
 An unexpected condition occurred that prevented the server from fulfilling the request.
 */
@@ -420,9 +607,39 @@ type GetListingOffersInternalServerError struct {
 	Payload *product_pricing_v0_models.GetOffersResponse
 }
 
+// IsSuccess returns true when this get listing offers internal server error response has a 2xx status code
+func (o *GetListingOffersInternalServerError) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get listing offers internal server error response has a 3xx status code
+func (o *GetListingOffersInternalServerError) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get listing offers internal server error response has a 4xx status code
+func (o *GetListingOffersInternalServerError) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get listing offers internal server error response has a 5xx status code
+func (o *GetListingOffersInternalServerError) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this get listing offers internal server error response a status code equal to that given
+func (o *GetListingOffersInternalServerError) IsCode(code int) bool {
+	return code == 500
+}
+
 func (o *GetListingOffersInternalServerError) Error() string {
 	return fmt.Sprintf("[GET /products/pricing/v0/listings/{SellerSKU}/offers][%d] getListingOffersInternalServerError  %+v", 500, o.Payload)
 }
+
+func (o *GetListingOffersInternalServerError) String() string {
+	return fmt.Sprintf("[GET /products/pricing/v0/listings/{SellerSKU}/offers][%d] getListingOffersInternalServerError  %+v", 500, o.Payload)
+}
+
 func (o *GetListingOffersInternalServerError) GetPayload() *product_pricing_v0_models.GetOffersResponse {
 	return o.Payload
 }
@@ -458,7 +675,8 @@ func NewGetListingOffersServiceUnavailable() *GetListingOffersServiceUnavailable
 	return &GetListingOffersServiceUnavailable{}
 }
 
-/* GetListingOffersServiceUnavailable describes a response with status code 503, with default header values.
+/*
+GetListingOffersServiceUnavailable describes a response with status code 503, with default header values.
 
 Temporary overloading or maintenance of the server.
 */
@@ -476,9 +694,39 @@ type GetListingOffersServiceUnavailable struct {
 	Payload *product_pricing_v0_models.GetOffersResponse
 }
 
+// IsSuccess returns true when this get listing offers service unavailable response has a 2xx status code
+func (o *GetListingOffersServiceUnavailable) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get listing offers service unavailable response has a 3xx status code
+func (o *GetListingOffersServiceUnavailable) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get listing offers service unavailable response has a 4xx status code
+func (o *GetListingOffersServiceUnavailable) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get listing offers service unavailable response has a 5xx status code
+func (o *GetListingOffersServiceUnavailable) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this get listing offers service unavailable response a status code equal to that given
+func (o *GetListingOffersServiceUnavailable) IsCode(code int) bool {
+	return code == 503
+}
+
 func (o *GetListingOffersServiceUnavailable) Error() string {
 	return fmt.Sprintf("[GET /products/pricing/v0/listings/{SellerSKU}/offers][%d] getListingOffersServiceUnavailable  %+v", 503, o.Payload)
 }
+
+func (o *GetListingOffersServiceUnavailable) String() string {
+	return fmt.Sprintf("[GET /products/pricing/v0/listings/{SellerSKU}/offers][%d] getListingOffersServiceUnavailable  %+v", 503, o.Payload)
+}
+
 func (o *GetListingOffersServiceUnavailable) GetPayload() *product_pricing_v0_models.GetOffersResponse {
 	return o.Payload
 }

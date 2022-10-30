@@ -52,10 +52,12 @@ func NewGetDestinationsParamsWithHTTPClient(client *http.Client) *GetDestination
 	}
 }
 
-/* GetDestinationsParams contains all the parameters to send to the API endpoint
-   for the get destinations operation.
+/*
+GetDestinationsParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the get destinations operation.
+
+	Typically these are written to a http.Request.
 */
 type GetDestinationsParams struct {
 	timeout    time.Duration

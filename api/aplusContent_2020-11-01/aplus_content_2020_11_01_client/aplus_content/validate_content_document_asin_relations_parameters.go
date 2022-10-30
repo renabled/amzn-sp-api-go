@@ -55,10 +55,12 @@ func NewValidateContentDocumentAsinRelationsParamsWithHTTPClient(client *http.Cl
 	}
 }
 
-/* ValidateContentDocumentAsinRelationsParams contains all the parameters to send to the API endpoint
-   for the validate content document asin relations operation.
+/*
+ValidateContentDocumentAsinRelationsParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the validate content document asin relations operation.
+
+	Typically these are written to a http.Request.
 */
 type ValidateContentDocumentAsinRelationsParams struct {
 

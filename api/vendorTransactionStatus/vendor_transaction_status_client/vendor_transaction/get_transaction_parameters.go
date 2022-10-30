@@ -52,10 +52,12 @@ func NewGetTransactionParamsWithHTTPClient(client *http.Client) *GetTransactionP
 	}
 }
 
-/* GetTransactionParams contains all the parameters to send to the API endpoint
-   for the get transaction operation.
+/*
+GetTransactionParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the get transaction operation.
+
+	Typically these are written to a http.Request.
 */
 type GetTransactionParams struct {
 

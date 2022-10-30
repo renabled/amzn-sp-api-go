@@ -87,7 +87,8 @@ func NewGetContentDocumentOK() *GetContentDocumentOK {
 	return &GetContentDocumentOK{}
 }
 
-/* GetContentDocumentOK describes a response with status code 200, with default header values.
+/*
+GetContentDocumentOK describes a response with status code 200, with default header values.
 
 Success.
 */
@@ -104,9 +105,39 @@ type GetContentDocumentOK struct {
 	Payload *aplus_content_2020_11_01_models.GetContentDocumentResponse
 }
 
+// IsSuccess returns true when this get content document o k response has a 2xx status code
+func (o *GetContentDocumentOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this get content document o k response has a 3xx status code
+func (o *GetContentDocumentOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get content document o k response has a 4xx status code
+func (o *GetContentDocumentOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get content document o k response has a 5xx status code
+func (o *GetContentDocumentOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get content document o k response a status code equal to that given
+func (o *GetContentDocumentOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *GetContentDocumentOK) Error() string {
 	return fmt.Sprintf("[GET /aplus/2020-11-01/contentDocuments/{contentReferenceKey}][%d] getContentDocumentOK  %+v", 200, o.Payload)
 }
+
+func (o *GetContentDocumentOK) String() string {
+	return fmt.Sprintf("[GET /aplus/2020-11-01/contentDocuments/{contentReferenceKey}][%d] getContentDocumentOK  %+v", 200, o.Payload)
+}
+
 func (o *GetContentDocumentOK) GetPayload() *aplus_content_2020_11_01_models.GetContentDocumentResponse {
 	return o.Payload
 }
@@ -142,7 +173,8 @@ func NewGetContentDocumentBadRequest() *GetContentDocumentBadRequest {
 	return &GetContentDocumentBadRequest{}
 }
 
-/* GetContentDocumentBadRequest describes a response with status code 400, with default header values.
+/*
+GetContentDocumentBadRequest describes a response with status code 400, with default header values.
 
 Request has missing or invalid parameters and cannot be parsed.
 */
@@ -159,9 +191,39 @@ type GetContentDocumentBadRequest struct {
 	Payload *aplus_content_2020_11_01_models.ErrorList
 }
 
+// IsSuccess returns true when this get content document bad request response has a 2xx status code
+func (o *GetContentDocumentBadRequest) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get content document bad request response has a 3xx status code
+func (o *GetContentDocumentBadRequest) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get content document bad request response has a 4xx status code
+func (o *GetContentDocumentBadRequest) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get content document bad request response has a 5xx status code
+func (o *GetContentDocumentBadRequest) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get content document bad request response a status code equal to that given
+func (o *GetContentDocumentBadRequest) IsCode(code int) bool {
+	return code == 400
+}
+
 func (o *GetContentDocumentBadRequest) Error() string {
 	return fmt.Sprintf("[GET /aplus/2020-11-01/contentDocuments/{contentReferenceKey}][%d] getContentDocumentBadRequest  %+v", 400, o.Payload)
 }
+
+func (o *GetContentDocumentBadRequest) String() string {
+	return fmt.Sprintf("[GET /aplus/2020-11-01/contentDocuments/{contentReferenceKey}][%d] getContentDocumentBadRequest  %+v", 400, o.Payload)
+}
+
 func (o *GetContentDocumentBadRequest) GetPayload() *aplus_content_2020_11_01_models.ErrorList {
 	return o.Payload
 }
@@ -197,7 +259,8 @@ func NewGetContentDocumentUnauthorized() *GetContentDocumentUnauthorized {
 	return &GetContentDocumentUnauthorized{}
 }
 
-/* GetContentDocumentUnauthorized describes a response with status code 401, with default header values.
+/*
+GetContentDocumentUnauthorized describes a response with status code 401, with default header values.
 
 The request's Authorization header is not formatted correctly or does not contain a valid token.
 */
@@ -215,9 +278,39 @@ type GetContentDocumentUnauthorized struct {
 	Payload *aplus_content_2020_11_01_models.ErrorList
 }
 
+// IsSuccess returns true when this get content document unauthorized response has a 2xx status code
+func (o *GetContentDocumentUnauthorized) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get content document unauthorized response has a 3xx status code
+func (o *GetContentDocumentUnauthorized) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get content document unauthorized response has a 4xx status code
+func (o *GetContentDocumentUnauthorized) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get content document unauthorized response has a 5xx status code
+func (o *GetContentDocumentUnauthorized) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get content document unauthorized response a status code equal to that given
+func (o *GetContentDocumentUnauthorized) IsCode(code int) bool {
+	return code == 401
+}
+
 func (o *GetContentDocumentUnauthorized) Error() string {
 	return fmt.Sprintf("[GET /aplus/2020-11-01/contentDocuments/{contentReferenceKey}][%d] getContentDocumentUnauthorized  %+v", 401, o.Payload)
 }
+
+func (o *GetContentDocumentUnauthorized) String() string {
+	return fmt.Sprintf("[GET /aplus/2020-11-01/contentDocuments/{contentReferenceKey}][%d] getContentDocumentUnauthorized  %+v", 401, o.Payload)
+}
+
 func (o *GetContentDocumentUnauthorized) GetPayload() *aplus_content_2020_11_01_models.ErrorList {
 	return o.Payload
 }
@@ -253,7 +346,8 @@ func NewGetContentDocumentForbidden() *GetContentDocumentForbidden {
 	return &GetContentDocumentForbidden{}
 }
 
-/* GetContentDocumentForbidden describes a response with status code 403, with default header values.
+/*
+GetContentDocumentForbidden describes a response with status code 403, with default header values.
 
 Indicates that access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.
 */
@@ -266,9 +360,39 @@ type GetContentDocumentForbidden struct {
 	Payload *aplus_content_2020_11_01_models.ErrorList
 }
 
+// IsSuccess returns true when this get content document forbidden response has a 2xx status code
+func (o *GetContentDocumentForbidden) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get content document forbidden response has a 3xx status code
+func (o *GetContentDocumentForbidden) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get content document forbidden response has a 4xx status code
+func (o *GetContentDocumentForbidden) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get content document forbidden response has a 5xx status code
+func (o *GetContentDocumentForbidden) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get content document forbidden response a status code equal to that given
+func (o *GetContentDocumentForbidden) IsCode(code int) bool {
+	return code == 403
+}
+
 func (o *GetContentDocumentForbidden) Error() string {
 	return fmt.Sprintf("[GET /aplus/2020-11-01/contentDocuments/{contentReferenceKey}][%d] getContentDocumentForbidden  %+v", 403, o.Payload)
 }
+
+func (o *GetContentDocumentForbidden) String() string {
+	return fmt.Sprintf("[GET /aplus/2020-11-01/contentDocuments/{contentReferenceKey}][%d] getContentDocumentForbidden  %+v", 403, o.Payload)
+}
+
 func (o *GetContentDocumentForbidden) GetPayload() *aplus_content_2020_11_01_models.ErrorList {
 	return o.Payload
 }
@@ -297,7 +421,8 @@ func NewGetContentDocumentNotFound() *GetContentDocumentNotFound {
 	return &GetContentDocumentNotFound{}
 }
 
-/* GetContentDocumentNotFound describes a response with status code 404, with default header values.
+/*
+GetContentDocumentNotFound describes a response with status code 404, with default header values.
 
 The specified resource does not exist.
 */
@@ -314,9 +439,39 @@ type GetContentDocumentNotFound struct {
 	Payload *aplus_content_2020_11_01_models.ErrorList
 }
 
+// IsSuccess returns true when this get content document not found response has a 2xx status code
+func (o *GetContentDocumentNotFound) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get content document not found response has a 3xx status code
+func (o *GetContentDocumentNotFound) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get content document not found response has a 4xx status code
+func (o *GetContentDocumentNotFound) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get content document not found response has a 5xx status code
+func (o *GetContentDocumentNotFound) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get content document not found response a status code equal to that given
+func (o *GetContentDocumentNotFound) IsCode(code int) bool {
+	return code == 404
+}
+
 func (o *GetContentDocumentNotFound) Error() string {
 	return fmt.Sprintf("[GET /aplus/2020-11-01/contentDocuments/{contentReferenceKey}][%d] getContentDocumentNotFound  %+v", 404, o.Payload)
 }
+
+func (o *GetContentDocumentNotFound) String() string {
+	return fmt.Sprintf("[GET /aplus/2020-11-01/contentDocuments/{contentReferenceKey}][%d] getContentDocumentNotFound  %+v", 404, o.Payload)
+}
+
 func (o *GetContentDocumentNotFound) GetPayload() *aplus_content_2020_11_01_models.ErrorList {
 	return o.Payload
 }
@@ -352,7 +507,8 @@ func NewGetContentDocumentGone() *GetContentDocumentGone {
 	return &GetContentDocumentGone{}
 }
 
-/* GetContentDocumentGone describes a response with status code 410, with default header values.
+/*
+GetContentDocumentGone describes a response with status code 410, with default header values.
 
 The specified resource no longer exists.
 */
@@ -370,9 +526,39 @@ type GetContentDocumentGone struct {
 	Payload *aplus_content_2020_11_01_models.ErrorList
 }
 
+// IsSuccess returns true when this get content document gone response has a 2xx status code
+func (o *GetContentDocumentGone) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get content document gone response has a 3xx status code
+func (o *GetContentDocumentGone) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get content document gone response has a 4xx status code
+func (o *GetContentDocumentGone) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get content document gone response has a 5xx status code
+func (o *GetContentDocumentGone) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get content document gone response a status code equal to that given
+func (o *GetContentDocumentGone) IsCode(code int) bool {
+	return code == 410
+}
+
 func (o *GetContentDocumentGone) Error() string {
 	return fmt.Sprintf("[GET /aplus/2020-11-01/contentDocuments/{contentReferenceKey}][%d] getContentDocumentGone  %+v", 410, o.Payload)
 }
+
+func (o *GetContentDocumentGone) String() string {
+	return fmt.Sprintf("[GET /aplus/2020-11-01/contentDocuments/{contentReferenceKey}][%d] getContentDocumentGone  %+v", 410, o.Payload)
+}
+
 func (o *GetContentDocumentGone) GetPayload() *aplus_content_2020_11_01_models.ErrorList {
 	return o.Payload
 }
@@ -408,7 +594,8 @@ func NewGetContentDocumentTooManyRequests() *GetContentDocumentTooManyRequests {
 	return &GetContentDocumentTooManyRequests{}
 }
 
-/* GetContentDocumentTooManyRequests describes a response with status code 429, with default header values.
+/*
+GetContentDocumentTooManyRequests describes a response with status code 429, with default header values.
 
 The frequency of requests was greater than allowed.
 */
@@ -426,9 +613,39 @@ type GetContentDocumentTooManyRequests struct {
 	Payload *aplus_content_2020_11_01_models.ErrorList
 }
 
+// IsSuccess returns true when this get content document too many requests response has a 2xx status code
+func (o *GetContentDocumentTooManyRequests) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get content document too many requests response has a 3xx status code
+func (o *GetContentDocumentTooManyRequests) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get content document too many requests response has a 4xx status code
+func (o *GetContentDocumentTooManyRequests) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get content document too many requests response has a 5xx status code
+func (o *GetContentDocumentTooManyRequests) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get content document too many requests response a status code equal to that given
+func (o *GetContentDocumentTooManyRequests) IsCode(code int) bool {
+	return code == 429
+}
+
 func (o *GetContentDocumentTooManyRequests) Error() string {
 	return fmt.Sprintf("[GET /aplus/2020-11-01/contentDocuments/{contentReferenceKey}][%d] getContentDocumentTooManyRequests  %+v", 429, o.Payload)
 }
+
+func (o *GetContentDocumentTooManyRequests) String() string {
+	return fmt.Sprintf("[GET /aplus/2020-11-01/contentDocuments/{contentReferenceKey}][%d] getContentDocumentTooManyRequests  %+v", 429, o.Payload)
+}
+
 func (o *GetContentDocumentTooManyRequests) GetPayload() *aplus_content_2020_11_01_models.ErrorList {
 	return o.Payload
 }
@@ -464,7 +681,8 @@ func NewGetContentDocumentInternalServerError() *GetContentDocumentInternalServe
 	return &GetContentDocumentInternalServerError{}
 }
 
-/* GetContentDocumentInternalServerError describes a response with status code 500, with default header values.
+/*
+GetContentDocumentInternalServerError describes a response with status code 500, with default header values.
 
 An unexpected condition occurred that prevented the server from fulfilling the request.
 */
@@ -482,9 +700,39 @@ type GetContentDocumentInternalServerError struct {
 	Payload *aplus_content_2020_11_01_models.ErrorList
 }
 
+// IsSuccess returns true when this get content document internal server error response has a 2xx status code
+func (o *GetContentDocumentInternalServerError) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get content document internal server error response has a 3xx status code
+func (o *GetContentDocumentInternalServerError) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get content document internal server error response has a 4xx status code
+func (o *GetContentDocumentInternalServerError) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get content document internal server error response has a 5xx status code
+func (o *GetContentDocumentInternalServerError) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this get content document internal server error response a status code equal to that given
+func (o *GetContentDocumentInternalServerError) IsCode(code int) bool {
+	return code == 500
+}
+
 func (o *GetContentDocumentInternalServerError) Error() string {
 	return fmt.Sprintf("[GET /aplus/2020-11-01/contentDocuments/{contentReferenceKey}][%d] getContentDocumentInternalServerError  %+v", 500, o.Payload)
 }
+
+func (o *GetContentDocumentInternalServerError) String() string {
+	return fmt.Sprintf("[GET /aplus/2020-11-01/contentDocuments/{contentReferenceKey}][%d] getContentDocumentInternalServerError  %+v", 500, o.Payload)
+}
+
 func (o *GetContentDocumentInternalServerError) GetPayload() *aplus_content_2020_11_01_models.ErrorList {
 	return o.Payload
 }
@@ -520,7 +768,8 @@ func NewGetContentDocumentServiceUnavailable() *GetContentDocumentServiceUnavail
 	return &GetContentDocumentServiceUnavailable{}
 }
 
-/* GetContentDocumentServiceUnavailable describes a response with status code 503, with default header values.
+/*
+GetContentDocumentServiceUnavailable describes a response with status code 503, with default header values.
 
 Temporary overloading or maintenance of the server.
 */
@@ -538,9 +787,39 @@ type GetContentDocumentServiceUnavailable struct {
 	Payload *aplus_content_2020_11_01_models.ErrorList
 }
 
+// IsSuccess returns true when this get content document service unavailable response has a 2xx status code
+func (o *GetContentDocumentServiceUnavailable) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get content document service unavailable response has a 3xx status code
+func (o *GetContentDocumentServiceUnavailable) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get content document service unavailable response has a 4xx status code
+func (o *GetContentDocumentServiceUnavailable) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get content document service unavailable response has a 5xx status code
+func (o *GetContentDocumentServiceUnavailable) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this get content document service unavailable response a status code equal to that given
+func (o *GetContentDocumentServiceUnavailable) IsCode(code int) bool {
+	return code == 503
+}
+
 func (o *GetContentDocumentServiceUnavailable) Error() string {
 	return fmt.Sprintf("[GET /aplus/2020-11-01/contentDocuments/{contentReferenceKey}][%d] getContentDocumentServiceUnavailable  %+v", 503, o.Payload)
 }
+
+func (o *GetContentDocumentServiceUnavailable) String() string {
+	return fmt.Sprintf("[GET /aplus/2020-11-01/contentDocuments/{contentReferenceKey}][%d] getContentDocumentServiceUnavailable  %+v", 503, o.Payload)
+}
+
 func (o *GetContentDocumentServiceUnavailable) GetPayload() *aplus_content_2020_11_01_models.ErrorList {
 	return o.Payload
 }

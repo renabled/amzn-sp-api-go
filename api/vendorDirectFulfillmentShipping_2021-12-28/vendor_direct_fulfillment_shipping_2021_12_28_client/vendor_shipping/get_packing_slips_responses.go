@@ -87,7 +87,8 @@ func NewGetPackingSlipsOK() *GetPackingSlipsOK {
 	return &GetPackingSlipsOK{}
 }
 
-/* GetPackingSlipsOK describes a response with status code 200, with default header values.
+/*
+GetPackingSlipsOK describes a response with status code 200, with default header values.
 
 Success.
 */
@@ -104,9 +105,39 @@ type GetPackingSlipsOK struct {
 	Payload *vendor_direct_fulfillment_shipping_2021_12_28_models.PackingSlipList
 }
 
+// IsSuccess returns true when this get packing slips o k response has a 2xx status code
+func (o *GetPackingSlipsOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this get packing slips o k response has a 3xx status code
+func (o *GetPackingSlipsOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get packing slips o k response has a 4xx status code
+func (o *GetPackingSlipsOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get packing slips o k response has a 5xx status code
+func (o *GetPackingSlipsOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get packing slips o k response a status code equal to that given
+func (o *GetPackingSlipsOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *GetPackingSlipsOK) Error() string {
 	return fmt.Sprintf("[GET /vendor/directFulfillment/shipping/2021-12-28/packingSlips][%d] getPackingSlipsOK  %+v", 200, o.Payload)
 }
+
+func (o *GetPackingSlipsOK) String() string {
+	return fmt.Sprintf("[GET /vendor/directFulfillment/shipping/2021-12-28/packingSlips][%d] getPackingSlipsOK  %+v", 200, o.Payload)
+}
+
 func (o *GetPackingSlipsOK) GetPayload() *vendor_direct_fulfillment_shipping_2021_12_28_models.PackingSlipList {
 	return o.Payload
 }
@@ -142,7 +173,8 @@ func NewGetPackingSlipsBadRequest() *GetPackingSlipsBadRequest {
 	return &GetPackingSlipsBadRequest{}
 }
 
-/* GetPackingSlipsBadRequest describes a response with status code 400, with default header values.
+/*
+GetPackingSlipsBadRequest describes a response with status code 400, with default header values.
 
 Request has missing or invalid parameters and cannot be parsed.
 */
@@ -159,9 +191,39 @@ type GetPackingSlipsBadRequest struct {
 	Payload *vendor_direct_fulfillment_shipping_2021_12_28_models.ErrorList
 }
 
+// IsSuccess returns true when this get packing slips bad request response has a 2xx status code
+func (o *GetPackingSlipsBadRequest) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get packing slips bad request response has a 3xx status code
+func (o *GetPackingSlipsBadRequest) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get packing slips bad request response has a 4xx status code
+func (o *GetPackingSlipsBadRequest) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get packing slips bad request response has a 5xx status code
+func (o *GetPackingSlipsBadRequest) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get packing slips bad request response a status code equal to that given
+func (o *GetPackingSlipsBadRequest) IsCode(code int) bool {
+	return code == 400
+}
+
 func (o *GetPackingSlipsBadRequest) Error() string {
 	return fmt.Sprintf("[GET /vendor/directFulfillment/shipping/2021-12-28/packingSlips][%d] getPackingSlipsBadRequest  %+v", 400, o.Payload)
 }
+
+func (o *GetPackingSlipsBadRequest) String() string {
+	return fmt.Sprintf("[GET /vendor/directFulfillment/shipping/2021-12-28/packingSlips][%d] getPackingSlipsBadRequest  %+v", 400, o.Payload)
+}
+
 func (o *GetPackingSlipsBadRequest) GetPayload() *vendor_direct_fulfillment_shipping_2021_12_28_models.ErrorList {
 	return o.Payload
 }
@@ -197,7 +259,8 @@ func NewGetPackingSlipsUnauthorized() *GetPackingSlipsUnauthorized {
 	return &GetPackingSlipsUnauthorized{}
 }
 
-/* GetPackingSlipsUnauthorized describes a response with status code 401, with default header values.
+/*
+GetPackingSlipsUnauthorized describes a response with status code 401, with default header values.
 
 The request's Authorization header is not formatted correctly or does not contain a valid token.
 */
@@ -210,9 +273,39 @@ type GetPackingSlipsUnauthorized struct {
 	Payload *vendor_direct_fulfillment_shipping_2021_12_28_models.ErrorList
 }
 
+// IsSuccess returns true when this get packing slips unauthorized response has a 2xx status code
+func (o *GetPackingSlipsUnauthorized) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get packing slips unauthorized response has a 3xx status code
+func (o *GetPackingSlipsUnauthorized) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get packing slips unauthorized response has a 4xx status code
+func (o *GetPackingSlipsUnauthorized) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get packing slips unauthorized response has a 5xx status code
+func (o *GetPackingSlipsUnauthorized) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get packing slips unauthorized response a status code equal to that given
+func (o *GetPackingSlipsUnauthorized) IsCode(code int) bool {
+	return code == 401
+}
+
 func (o *GetPackingSlipsUnauthorized) Error() string {
 	return fmt.Sprintf("[GET /vendor/directFulfillment/shipping/2021-12-28/packingSlips][%d] getPackingSlipsUnauthorized  %+v", 401, o.Payload)
 }
+
+func (o *GetPackingSlipsUnauthorized) String() string {
+	return fmt.Sprintf("[GET /vendor/directFulfillment/shipping/2021-12-28/packingSlips][%d] getPackingSlipsUnauthorized  %+v", 401, o.Payload)
+}
+
 func (o *GetPackingSlipsUnauthorized) GetPayload() *vendor_direct_fulfillment_shipping_2021_12_28_models.ErrorList {
 	return o.Payload
 }
@@ -241,7 +334,8 @@ func NewGetPackingSlipsForbidden() *GetPackingSlipsForbidden {
 	return &GetPackingSlipsForbidden{}
 }
 
-/* GetPackingSlipsForbidden describes a response with status code 403, with default header values.
+/*
+GetPackingSlipsForbidden describes a response with status code 403, with default header values.
 
 Indicates that access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.
 */
@@ -254,9 +348,39 @@ type GetPackingSlipsForbidden struct {
 	Payload *vendor_direct_fulfillment_shipping_2021_12_28_models.ErrorList
 }
 
+// IsSuccess returns true when this get packing slips forbidden response has a 2xx status code
+func (o *GetPackingSlipsForbidden) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get packing slips forbidden response has a 3xx status code
+func (o *GetPackingSlipsForbidden) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get packing slips forbidden response has a 4xx status code
+func (o *GetPackingSlipsForbidden) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get packing slips forbidden response has a 5xx status code
+func (o *GetPackingSlipsForbidden) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get packing slips forbidden response a status code equal to that given
+func (o *GetPackingSlipsForbidden) IsCode(code int) bool {
+	return code == 403
+}
+
 func (o *GetPackingSlipsForbidden) Error() string {
 	return fmt.Sprintf("[GET /vendor/directFulfillment/shipping/2021-12-28/packingSlips][%d] getPackingSlipsForbidden  %+v", 403, o.Payload)
 }
+
+func (o *GetPackingSlipsForbidden) String() string {
+	return fmt.Sprintf("[GET /vendor/directFulfillment/shipping/2021-12-28/packingSlips][%d] getPackingSlipsForbidden  %+v", 403, o.Payload)
+}
+
 func (o *GetPackingSlipsForbidden) GetPayload() *vendor_direct_fulfillment_shipping_2021_12_28_models.ErrorList {
 	return o.Payload
 }
@@ -285,7 +409,8 @@ func NewGetPackingSlipsNotFound() *GetPackingSlipsNotFound {
 	return &GetPackingSlipsNotFound{}
 }
 
-/* GetPackingSlipsNotFound describes a response with status code 404, with default header values.
+/*
+GetPackingSlipsNotFound describes a response with status code 404, with default header values.
 
 The resource specified does not exist.
 */
@@ -302,9 +427,39 @@ type GetPackingSlipsNotFound struct {
 	Payload *vendor_direct_fulfillment_shipping_2021_12_28_models.ErrorList
 }
 
+// IsSuccess returns true when this get packing slips not found response has a 2xx status code
+func (o *GetPackingSlipsNotFound) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get packing slips not found response has a 3xx status code
+func (o *GetPackingSlipsNotFound) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get packing slips not found response has a 4xx status code
+func (o *GetPackingSlipsNotFound) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get packing slips not found response has a 5xx status code
+func (o *GetPackingSlipsNotFound) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get packing slips not found response a status code equal to that given
+func (o *GetPackingSlipsNotFound) IsCode(code int) bool {
+	return code == 404
+}
+
 func (o *GetPackingSlipsNotFound) Error() string {
 	return fmt.Sprintf("[GET /vendor/directFulfillment/shipping/2021-12-28/packingSlips][%d] getPackingSlipsNotFound  %+v", 404, o.Payload)
 }
+
+func (o *GetPackingSlipsNotFound) String() string {
+	return fmt.Sprintf("[GET /vendor/directFulfillment/shipping/2021-12-28/packingSlips][%d] getPackingSlipsNotFound  %+v", 404, o.Payload)
+}
+
 func (o *GetPackingSlipsNotFound) GetPayload() *vendor_direct_fulfillment_shipping_2021_12_28_models.ErrorList {
 	return o.Payload
 }
@@ -340,7 +495,8 @@ func NewGetPackingSlipsUnsupportedMediaType() *GetPackingSlipsUnsupportedMediaTy
 	return &GetPackingSlipsUnsupportedMediaType{}
 }
 
-/* GetPackingSlipsUnsupportedMediaType describes a response with status code 415, with default header values.
+/*
+GetPackingSlipsUnsupportedMediaType describes a response with status code 415, with default header values.
 
 The request payload is in an unsupported format.
 */
@@ -353,9 +509,39 @@ type GetPackingSlipsUnsupportedMediaType struct {
 	Payload *vendor_direct_fulfillment_shipping_2021_12_28_models.ErrorList
 }
 
+// IsSuccess returns true when this get packing slips unsupported media type response has a 2xx status code
+func (o *GetPackingSlipsUnsupportedMediaType) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get packing slips unsupported media type response has a 3xx status code
+func (o *GetPackingSlipsUnsupportedMediaType) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get packing slips unsupported media type response has a 4xx status code
+func (o *GetPackingSlipsUnsupportedMediaType) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get packing slips unsupported media type response has a 5xx status code
+func (o *GetPackingSlipsUnsupportedMediaType) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get packing slips unsupported media type response a status code equal to that given
+func (o *GetPackingSlipsUnsupportedMediaType) IsCode(code int) bool {
+	return code == 415
+}
+
 func (o *GetPackingSlipsUnsupportedMediaType) Error() string {
 	return fmt.Sprintf("[GET /vendor/directFulfillment/shipping/2021-12-28/packingSlips][%d] getPackingSlipsUnsupportedMediaType  %+v", 415, o.Payload)
 }
+
+func (o *GetPackingSlipsUnsupportedMediaType) String() string {
+	return fmt.Sprintf("[GET /vendor/directFulfillment/shipping/2021-12-28/packingSlips][%d] getPackingSlipsUnsupportedMediaType  %+v", 415, o.Payload)
+}
+
 func (o *GetPackingSlipsUnsupportedMediaType) GetPayload() *vendor_direct_fulfillment_shipping_2021_12_28_models.ErrorList {
 	return o.Payload
 }
@@ -384,7 +570,8 @@ func NewGetPackingSlipsTooManyRequests() *GetPackingSlipsTooManyRequests {
 	return &GetPackingSlipsTooManyRequests{}
 }
 
-/* GetPackingSlipsTooManyRequests describes a response with status code 429, with default header values.
+/*
+GetPackingSlipsTooManyRequests describes a response with status code 429, with default header values.
 
 The frequency of requests was greater than allowed.
 */
@@ -397,9 +584,39 @@ type GetPackingSlipsTooManyRequests struct {
 	Payload *vendor_direct_fulfillment_shipping_2021_12_28_models.ErrorList
 }
 
+// IsSuccess returns true when this get packing slips too many requests response has a 2xx status code
+func (o *GetPackingSlipsTooManyRequests) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get packing slips too many requests response has a 3xx status code
+func (o *GetPackingSlipsTooManyRequests) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get packing slips too many requests response has a 4xx status code
+func (o *GetPackingSlipsTooManyRequests) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get packing slips too many requests response has a 5xx status code
+func (o *GetPackingSlipsTooManyRequests) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get packing slips too many requests response a status code equal to that given
+func (o *GetPackingSlipsTooManyRequests) IsCode(code int) bool {
+	return code == 429
+}
+
 func (o *GetPackingSlipsTooManyRequests) Error() string {
 	return fmt.Sprintf("[GET /vendor/directFulfillment/shipping/2021-12-28/packingSlips][%d] getPackingSlipsTooManyRequests  %+v", 429, o.Payload)
 }
+
+func (o *GetPackingSlipsTooManyRequests) String() string {
+	return fmt.Sprintf("[GET /vendor/directFulfillment/shipping/2021-12-28/packingSlips][%d] getPackingSlipsTooManyRequests  %+v", 429, o.Payload)
+}
+
 func (o *GetPackingSlipsTooManyRequests) GetPayload() *vendor_direct_fulfillment_shipping_2021_12_28_models.ErrorList {
 	return o.Payload
 }
@@ -428,7 +645,8 @@ func NewGetPackingSlipsInternalServerError() *GetPackingSlipsInternalServerError
 	return &GetPackingSlipsInternalServerError{}
 }
 
-/* GetPackingSlipsInternalServerError describes a response with status code 500, with default header values.
+/*
+GetPackingSlipsInternalServerError describes a response with status code 500, with default header values.
 
 An unexpected condition occurred that prevented the server from fulfilling the request.
 */
@@ -441,9 +659,39 @@ type GetPackingSlipsInternalServerError struct {
 	Payload *vendor_direct_fulfillment_shipping_2021_12_28_models.ErrorList
 }
 
+// IsSuccess returns true when this get packing slips internal server error response has a 2xx status code
+func (o *GetPackingSlipsInternalServerError) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get packing slips internal server error response has a 3xx status code
+func (o *GetPackingSlipsInternalServerError) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get packing slips internal server error response has a 4xx status code
+func (o *GetPackingSlipsInternalServerError) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get packing slips internal server error response has a 5xx status code
+func (o *GetPackingSlipsInternalServerError) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this get packing slips internal server error response a status code equal to that given
+func (o *GetPackingSlipsInternalServerError) IsCode(code int) bool {
+	return code == 500
+}
+
 func (o *GetPackingSlipsInternalServerError) Error() string {
 	return fmt.Sprintf("[GET /vendor/directFulfillment/shipping/2021-12-28/packingSlips][%d] getPackingSlipsInternalServerError  %+v", 500, o.Payload)
 }
+
+func (o *GetPackingSlipsInternalServerError) String() string {
+	return fmt.Sprintf("[GET /vendor/directFulfillment/shipping/2021-12-28/packingSlips][%d] getPackingSlipsInternalServerError  %+v", 500, o.Payload)
+}
+
 func (o *GetPackingSlipsInternalServerError) GetPayload() *vendor_direct_fulfillment_shipping_2021_12_28_models.ErrorList {
 	return o.Payload
 }
@@ -472,7 +720,8 @@ func NewGetPackingSlipsServiceUnavailable() *GetPackingSlipsServiceUnavailable {
 	return &GetPackingSlipsServiceUnavailable{}
 }
 
-/* GetPackingSlipsServiceUnavailable describes a response with status code 503, with default header values.
+/*
+GetPackingSlipsServiceUnavailable describes a response with status code 503, with default header values.
 
 Temporary overloading or maintenance of the server.
 */
@@ -485,9 +734,39 @@ type GetPackingSlipsServiceUnavailable struct {
 	Payload *vendor_direct_fulfillment_shipping_2021_12_28_models.ErrorList
 }
 
+// IsSuccess returns true when this get packing slips service unavailable response has a 2xx status code
+func (o *GetPackingSlipsServiceUnavailable) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get packing slips service unavailable response has a 3xx status code
+func (o *GetPackingSlipsServiceUnavailable) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get packing slips service unavailable response has a 4xx status code
+func (o *GetPackingSlipsServiceUnavailable) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get packing slips service unavailable response has a 5xx status code
+func (o *GetPackingSlipsServiceUnavailable) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this get packing slips service unavailable response a status code equal to that given
+func (o *GetPackingSlipsServiceUnavailable) IsCode(code int) bool {
+	return code == 503
+}
+
 func (o *GetPackingSlipsServiceUnavailable) Error() string {
 	return fmt.Sprintf("[GET /vendor/directFulfillment/shipping/2021-12-28/packingSlips][%d] getPackingSlipsServiceUnavailable  %+v", 503, o.Payload)
 }
+
+func (o *GetPackingSlipsServiceUnavailable) String() string {
+	return fmt.Sprintf("[GET /vendor/directFulfillment/shipping/2021-12-28/packingSlips][%d] getPackingSlipsServiceUnavailable  %+v", 503, o.Payload)
+}
+
 func (o *GetPackingSlipsServiceUnavailable) GetPayload() *vendor_direct_fulfillment_shipping_2021_12_28_models.ErrorList {
 	return o.Payload
 }

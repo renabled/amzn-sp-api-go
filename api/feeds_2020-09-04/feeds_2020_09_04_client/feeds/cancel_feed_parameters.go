@@ -52,10 +52,12 @@ func NewCancelFeedParamsWithHTTPClient(client *http.Client) *CancelFeedParams {
 	}
 }
 
-/* CancelFeedParams contains all the parameters to send to the API endpoint
-   for the cancel feed operation.
+/*
+CancelFeedParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the cancel feed operation.
+
+	Typically these are written to a http.Request.
 */
 type CancelFeedParams struct {
 

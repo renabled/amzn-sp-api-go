@@ -53,10 +53,12 @@ func NewGetSmallAndLightEligibilityBySellerSKUParamsWithHTTPClient(client *http.
 	}
 }
 
-/* GetSmallAndLightEligibilityBySellerSKUParams contains all the parameters to send to the API endpoint
-   for the get small and light eligibility by seller s k u operation.
+/*
+GetSmallAndLightEligibilityBySellerSKUParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the get small and light eligibility by seller s k u operation.
+
+	Typically these are written to a http.Request.
 */
 type GetSmallAndLightEligibilityBySellerSKUParams struct {
 

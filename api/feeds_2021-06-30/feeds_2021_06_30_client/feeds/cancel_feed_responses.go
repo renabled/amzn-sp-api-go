@@ -87,7 +87,8 @@ func NewCancelFeedOK() *CancelFeedOK {
 	return &CancelFeedOK{}
 }
 
-/* CancelFeedOK describes a response with status code 200, with default header values.
+/*
+CancelFeedOK describes a response with status code 200, with default header values.
 
 Success.
 */
@@ -102,7 +103,36 @@ type CancelFeedOK struct {
 	XAmznRequestID string
 }
 
+// IsSuccess returns true when this cancel feed o k response has a 2xx status code
+func (o *CancelFeedOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this cancel feed o k response has a 3xx status code
+func (o *CancelFeedOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this cancel feed o k response has a 4xx status code
+func (o *CancelFeedOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this cancel feed o k response has a 5xx status code
+func (o *CancelFeedOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this cancel feed o k response a status code equal to that given
+func (o *CancelFeedOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *CancelFeedOK) Error() string {
+	return fmt.Sprintf("[DELETE /feeds/2021-06-30/feeds/{feedId}][%d] cancelFeedOK ", 200)
+}
+
+func (o *CancelFeedOK) String() string {
 	return fmt.Sprintf("[DELETE /feeds/2021-06-30/feeds/{feedId}][%d] cancelFeedOK ", 200)
 }
 
@@ -130,7 +160,8 @@ func NewCancelFeedBadRequest() *CancelFeedBadRequest {
 	return &CancelFeedBadRequest{}
 }
 
-/* CancelFeedBadRequest describes a response with status code 400, with default header values.
+/*
+CancelFeedBadRequest describes a response with status code 400, with default header values.
 
 Request has missing or invalid parameters and cannot be parsed.
 */
@@ -147,9 +178,39 @@ type CancelFeedBadRequest struct {
 	Payload *feeds_2021_06_30_models.ErrorList
 }
 
+// IsSuccess returns true when this cancel feed bad request response has a 2xx status code
+func (o *CancelFeedBadRequest) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this cancel feed bad request response has a 3xx status code
+func (o *CancelFeedBadRequest) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this cancel feed bad request response has a 4xx status code
+func (o *CancelFeedBadRequest) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this cancel feed bad request response has a 5xx status code
+func (o *CancelFeedBadRequest) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this cancel feed bad request response a status code equal to that given
+func (o *CancelFeedBadRequest) IsCode(code int) bool {
+	return code == 400
+}
+
 func (o *CancelFeedBadRequest) Error() string {
 	return fmt.Sprintf("[DELETE /feeds/2021-06-30/feeds/{feedId}][%d] cancelFeedBadRequest  %+v", 400, o.Payload)
 }
+
+func (o *CancelFeedBadRequest) String() string {
+	return fmt.Sprintf("[DELETE /feeds/2021-06-30/feeds/{feedId}][%d] cancelFeedBadRequest  %+v", 400, o.Payload)
+}
+
 func (o *CancelFeedBadRequest) GetPayload() *feeds_2021_06_30_models.ErrorList {
 	return o.Payload
 }
@@ -185,7 +246,8 @@ func NewCancelFeedUnauthorized() *CancelFeedUnauthorized {
 	return &CancelFeedUnauthorized{}
 }
 
-/* CancelFeedUnauthorized describes a response with status code 401, with default header values.
+/*
+CancelFeedUnauthorized describes a response with status code 401, with default header values.
 
 The request's Authorization header is not formatted correctly or does not contain a valid token.
 */
@@ -203,9 +265,39 @@ type CancelFeedUnauthorized struct {
 	Payload *feeds_2021_06_30_models.ErrorList
 }
 
+// IsSuccess returns true when this cancel feed unauthorized response has a 2xx status code
+func (o *CancelFeedUnauthorized) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this cancel feed unauthorized response has a 3xx status code
+func (o *CancelFeedUnauthorized) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this cancel feed unauthorized response has a 4xx status code
+func (o *CancelFeedUnauthorized) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this cancel feed unauthorized response has a 5xx status code
+func (o *CancelFeedUnauthorized) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this cancel feed unauthorized response a status code equal to that given
+func (o *CancelFeedUnauthorized) IsCode(code int) bool {
+	return code == 401
+}
+
 func (o *CancelFeedUnauthorized) Error() string {
 	return fmt.Sprintf("[DELETE /feeds/2021-06-30/feeds/{feedId}][%d] cancelFeedUnauthorized  %+v", 401, o.Payload)
 }
+
+func (o *CancelFeedUnauthorized) String() string {
+	return fmt.Sprintf("[DELETE /feeds/2021-06-30/feeds/{feedId}][%d] cancelFeedUnauthorized  %+v", 401, o.Payload)
+}
+
 func (o *CancelFeedUnauthorized) GetPayload() *feeds_2021_06_30_models.ErrorList {
 	return o.Payload
 }
@@ -241,7 +333,8 @@ func NewCancelFeedForbidden() *CancelFeedForbidden {
 	return &CancelFeedForbidden{}
 }
 
-/* CancelFeedForbidden describes a response with status code 403, with default header values.
+/*
+CancelFeedForbidden describes a response with status code 403, with default header values.
 
 Indicates access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.
 */
@@ -254,9 +347,39 @@ type CancelFeedForbidden struct {
 	Payload *feeds_2021_06_30_models.ErrorList
 }
 
+// IsSuccess returns true when this cancel feed forbidden response has a 2xx status code
+func (o *CancelFeedForbidden) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this cancel feed forbidden response has a 3xx status code
+func (o *CancelFeedForbidden) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this cancel feed forbidden response has a 4xx status code
+func (o *CancelFeedForbidden) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this cancel feed forbidden response has a 5xx status code
+func (o *CancelFeedForbidden) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this cancel feed forbidden response a status code equal to that given
+func (o *CancelFeedForbidden) IsCode(code int) bool {
+	return code == 403
+}
+
 func (o *CancelFeedForbidden) Error() string {
 	return fmt.Sprintf("[DELETE /feeds/2021-06-30/feeds/{feedId}][%d] cancelFeedForbidden  %+v", 403, o.Payload)
 }
+
+func (o *CancelFeedForbidden) String() string {
+	return fmt.Sprintf("[DELETE /feeds/2021-06-30/feeds/{feedId}][%d] cancelFeedForbidden  %+v", 403, o.Payload)
+}
+
 func (o *CancelFeedForbidden) GetPayload() *feeds_2021_06_30_models.ErrorList {
 	return o.Payload
 }
@@ -285,7 +408,8 @@ func NewCancelFeedNotFound() *CancelFeedNotFound {
 	return &CancelFeedNotFound{}
 }
 
-/* CancelFeedNotFound describes a response with status code 404, with default header values.
+/*
+CancelFeedNotFound describes a response with status code 404, with default header values.
 
 The specified resource does not exist.
 */
@@ -302,9 +426,39 @@ type CancelFeedNotFound struct {
 	Payload *feeds_2021_06_30_models.ErrorList
 }
 
+// IsSuccess returns true when this cancel feed not found response has a 2xx status code
+func (o *CancelFeedNotFound) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this cancel feed not found response has a 3xx status code
+func (o *CancelFeedNotFound) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this cancel feed not found response has a 4xx status code
+func (o *CancelFeedNotFound) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this cancel feed not found response has a 5xx status code
+func (o *CancelFeedNotFound) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this cancel feed not found response a status code equal to that given
+func (o *CancelFeedNotFound) IsCode(code int) bool {
+	return code == 404
+}
+
 func (o *CancelFeedNotFound) Error() string {
 	return fmt.Sprintf("[DELETE /feeds/2021-06-30/feeds/{feedId}][%d] cancelFeedNotFound  %+v", 404, o.Payload)
 }
+
+func (o *CancelFeedNotFound) String() string {
+	return fmt.Sprintf("[DELETE /feeds/2021-06-30/feeds/{feedId}][%d] cancelFeedNotFound  %+v", 404, o.Payload)
+}
+
 func (o *CancelFeedNotFound) GetPayload() *feeds_2021_06_30_models.ErrorList {
 	return o.Payload
 }
@@ -340,7 +494,8 @@ func NewCancelFeedUnsupportedMediaType() *CancelFeedUnsupportedMediaType {
 	return &CancelFeedUnsupportedMediaType{}
 }
 
-/* CancelFeedUnsupportedMediaType describes a response with status code 415, with default header values.
+/*
+CancelFeedUnsupportedMediaType describes a response with status code 415, with default header values.
 
 The request's Content-Type header is invalid.
 */
@@ -358,9 +513,39 @@ type CancelFeedUnsupportedMediaType struct {
 	Payload *feeds_2021_06_30_models.ErrorList
 }
 
+// IsSuccess returns true when this cancel feed unsupported media type response has a 2xx status code
+func (o *CancelFeedUnsupportedMediaType) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this cancel feed unsupported media type response has a 3xx status code
+func (o *CancelFeedUnsupportedMediaType) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this cancel feed unsupported media type response has a 4xx status code
+func (o *CancelFeedUnsupportedMediaType) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this cancel feed unsupported media type response has a 5xx status code
+func (o *CancelFeedUnsupportedMediaType) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this cancel feed unsupported media type response a status code equal to that given
+func (o *CancelFeedUnsupportedMediaType) IsCode(code int) bool {
+	return code == 415
+}
+
 func (o *CancelFeedUnsupportedMediaType) Error() string {
 	return fmt.Sprintf("[DELETE /feeds/2021-06-30/feeds/{feedId}][%d] cancelFeedUnsupportedMediaType  %+v", 415, o.Payload)
 }
+
+func (o *CancelFeedUnsupportedMediaType) String() string {
+	return fmt.Sprintf("[DELETE /feeds/2021-06-30/feeds/{feedId}][%d] cancelFeedUnsupportedMediaType  %+v", 415, o.Payload)
+}
+
 func (o *CancelFeedUnsupportedMediaType) GetPayload() *feeds_2021_06_30_models.ErrorList {
 	return o.Payload
 }
@@ -396,7 +581,8 @@ func NewCancelFeedTooManyRequests() *CancelFeedTooManyRequests {
 	return &CancelFeedTooManyRequests{}
 }
 
-/* CancelFeedTooManyRequests describes a response with status code 429, with default header values.
+/*
+CancelFeedTooManyRequests describes a response with status code 429, with default header values.
 
 The frequency of requests was greater than allowed.
 */
@@ -414,9 +600,39 @@ type CancelFeedTooManyRequests struct {
 	Payload *feeds_2021_06_30_models.ErrorList
 }
 
+// IsSuccess returns true when this cancel feed too many requests response has a 2xx status code
+func (o *CancelFeedTooManyRequests) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this cancel feed too many requests response has a 3xx status code
+func (o *CancelFeedTooManyRequests) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this cancel feed too many requests response has a 4xx status code
+func (o *CancelFeedTooManyRequests) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this cancel feed too many requests response has a 5xx status code
+func (o *CancelFeedTooManyRequests) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this cancel feed too many requests response a status code equal to that given
+func (o *CancelFeedTooManyRequests) IsCode(code int) bool {
+	return code == 429
+}
+
 func (o *CancelFeedTooManyRequests) Error() string {
 	return fmt.Sprintf("[DELETE /feeds/2021-06-30/feeds/{feedId}][%d] cancelFeedTooManyRequests  %+v", 429, o.Payload)
 }
+
+func (o *CancelFeedTooManyRequests) String() string {
+	return fmt.Sprintf("[DELETE /feeds/2021-06-30/feeds/{feedId}][%d] cancelFeedTooManyRequests  %+v", 429, o.Payload)
+}
+
 func (o *CancelFeedTooManyRequests) GetPayload() *feeds_2021_06_30_models.ErrorList {
 	return o.Payload
 }
@@ -452,7 +668,8 @@ func NewCancelFeedInternalServerError() *CancelFeedInternalServerError {
 	return &CancelFeedInternalServerError{}
 }
 
-/* CancelFeedInternalServerError describes a response with status code 500, with default header values.
+/*
+CancelFeedInternalServerError describes a response with status code 500, with default header values.
 
 An unexpected condition occurred that prevented the server from fulfilling the request.
 */
@@ -470,9 +687,39 @@ type CancelFeedInternalServerError struct {
 	Payload *feeds_2021_06_30_models.ErrorList
 }
 
+// IsSuccess returns true when this cancel feed internal server error response has a 2xx status code
+func (o *CancelFeedInternalServerError) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this cancel feed internal server error response has a 3xx status code
+func (o *CancelFeedInternalServerError) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this cancel feed internal server error response has a 4xx status code
+func (o *CancelFeedInternalServerError) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this cancel feed internal server error response has a 5xx status code
+func (o *CancelFeedInternalServerError) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this cancel feed internal server error response a status code equal to that given
+func (o *CancelFeedInternalServerError) IsCode(code int) bool {
+	return code == 500
+}
+
 func (o *CancelFeedInternalServerError) Error() string {
 	return fmt.Sprintf("[DELETE /feeds/2021-06-30/feeds/{feedId}][%d] cancelFeedInternalServerError  %+v", 500, o.Payload)
 }
+
+func (o *CancelFeedInternalServerError) String() string {
+	return fmt.Sprintf("[DELETE /feeds/2021-06-30/feeds/{feedId}][%d] cancelFeedInternalServerError  %+v", 500, o.Payload)
+}
+
 func (o *CancelFeedInternalServerError) GetPayload() *feeds_2021_06_30_models.ErrorList {
 	return o.Payload
 }
@@ -508,7 +755,8 @@ func NewCancelFeedServiceUnavailable() *CancelFeedServiceUnavailable {
 	return &CancelFeedServiceUnavailable{}
 }
 
-/* CancelFeedServiceUnavailable describes a response with status code 503, with default header values.
+/*
+CancelFeedServiceUnavailable describes a response with status code 503, with default header values.
 
 Temporary overloading or maintenance of the server.
 */
@@ -526,9 +774,39 @@ type CancelFeedServiceUnavailable struct {
 	Payload *feeds_2021_06_30_models.ErrorList
 }
 
+// IsSuccess returns true when this cancel feed service unavailable response has a 2xx status code
+func (o *CancelFeedServiceUnavailable) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this cancel feed service unavailable response has a 3xx status code
+func (o *CancelFeedServiceUnavailable) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this cancel feed service unavailable response has a 4xx status code
+func (o *CancelFeedServiceUnavailable) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this cancel feed service unavailable response has a 5xx status code
+func (o *CancelFeedServiceUnavailable) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this cancel feed service unavailable response a status code equal to that given
+func (o *CancelFeedServiceUnavailable) IsCode(code int) bool {
+	return code == 503
+}
+
 func (o *CancelFeedServiceUnavailable) Error() string {
 	return fmt.Sprintf("[DELETE /feeds/2021-06-30/feeds/{feedId}][%d] cancelFeedServiceUnavailable  %+v", 503, o.Payload)
 }
+
+func (o *CancelFeedServiceUnavailable) String() string {
+	return fmt.Sprintf("[DELETE /feeds/2021-06-30/feeds/{feedId}][%d] cancelFeedServiceUnavailable  %+v", 503, o.Payload)
+}
+
 func (o *CancelFeedServiceUnavailable) GetPayload() *feeds_2021_06_30_models.ErrorList {
 	return o.Payload
 }

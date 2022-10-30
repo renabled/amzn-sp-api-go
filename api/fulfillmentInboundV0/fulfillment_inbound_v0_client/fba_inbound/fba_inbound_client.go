@@ -68,7 +68,7 @@ type ClientService interface {
 }
 
 /*
-  ConfirmPreorder Returns information needed to confirm a shipment for pre-order. Call this operation after calling the getPreorderInfo operation to get the NeedByDate value and other pre-order information about the shipment.
+	ConfirmPreorder Returns information needed to confirm a shipment for pre-order. Call this operation after calling the getPreorderInfo operation to get the NeedByDate value and other pre-order information about the shipment.
 
 **Usage Plan:**
 
@@ -114,7 +114,7 @@ func (a *Client) ConfirmPreorder(params *ConfirmPreorderParams, opts ...ClientOp
 }
 
 /*
-  ConfirmTransport Confirms that the seller accepts the Amazon-partnered shipping estimate, agrees to allow Amazon to charge their account for the shipping cost, and requests that the Amazon-partnered carrier ship the inbound shipment.
+	ConfirmTransport Confirms that the seller accepts the Amazon-partnered shipping estimate, agrees to allow Amazon to charge their account for the shipping cost, and requests that the Amazon-partnered carrier ship the inbound shipment.
 
 Prior to calling the confirmTransport operation, you should call the getTransportDetails operation to get the Amazon-partnered shipping estimate.
 
@@ -164,7 +164,7 @@ func (a *Client) ConfirmTransport(params *ConfirmTransportParams, opts ...Client
 }
 
 /*
-  CreateInboundShipment Returns a new inbound shipment based on the specified shipmentId that was returned by the createInboundShipmentPlan operation.
+	CreateInboundShipment Returns a new inbound shipment based on the specified shipmentId that was returned by the createInboundShipmentPlan operation.
 
 **Usage Plan:**
 
@@ -210,7 +210,7 @@ func (a *Client) CreateInboundShipment(params *CreateInboundShipmentParams, opts
 }
 
 /*
-  CreateInboundShipmentPlan Returns one or more inbound shipment plans, which provide the information you need to create one or more inbound shipments for a set of items that you specify. Multiple inbound shipment plans might be required so that items can be optimally placed in Amazon's fulfillment network—for example, positioning inventory closer to the customer. Alternatively, two inbound shipment plans might be created with the same Amazon fulfillment center destination if the two shipment plans require different processing—for example, items that require labels must be shipped separately from stickerless, commingled inventory.
+	CreateInboundShipmentPlan Returns one or more inbound shipment plans, which provide the information you need to create one or more inbound shipments for a set of items that you specify. Multiple inbound shipment plans might be required so that items can be optimally placed in Amazon's fulfillment network—for example, positioning inventory closer to the customer. Alternatively, two inbound shipment plans might be created with the same Amazon fulfillment center destination if the two shipment plans require different processing—for example, items that require labels must be shipped separately from stickerless, commingled inventory.
 
 **Usage Plan:**
 
@@ -256,7 +256,7 @@ func (a *Client) CreateInboundShipmentPlan(params *CreateInboundShipmentPlanPara
 }
 
 /*
-  EstimateTransport Initiates the process of estimating the shipping cost for an inbound shipment by an Amazon-partnered carrier.
+	EstimateTransport Initiates the process of estimating the shipping cost for an inbound shipment by an Amazon-partnered carrier.
 
 Prior to calling the estimateTransport operation, you must call the putTransportDetails operation to provide Amazon with the transportation information for the inbound shipment.
 
@@ -304,7 +304,7 @@ func (a *Client) EstimateTransport(params *EstimateTransportParams, opts ...Clie
 }
 
 /*
-  GetBillOfLading Returns a bill of lading for a Less Than Truckload/Full Truckload (LTL/FTL) shipment. The getBillOfLading operation returns PDF document data for printing a bill of lading for an Amazon-partnered Less Than Truckload/Full Truckload (LTL/FTL) inbound shipment.
+	GetBillOfLading Returns a bill of lading for a Less Than Truckload/Full Truckload (LTL/FTL) shipment. The getBillOfLading operation returns PDF document data for printing a bill of lading for an Amazon-partnered Less Than Truckload/Full Truckload (LTL/FTL) inbound shipment.
 
 **Usage Plan:**
 
@@ -350,7 +350,7 @@ func (a *Client) GetBillOfLading(params *GetBillOfLadingParams, opts ...ClientOp
 }
 
 /*
-  GetInboundGuidance Returns information that lets a seller know if Amazon recommends sending an item to a given marketplace. In some cases, Amazon provides guidance for why a given SellerSKU or ASIN is not recommended for shipment to Amazon's fulfillment network. Sellers may still ship items that are not recommended, at their discretion.
+	GetInboundGuidance Returns information that lets a seller know if Amazon recommends sending an item to a given marketplace. In some cases, Amazon provides guidance for why a given SellerSKU or ASIN is not recommended for shipment to Amazon's fulfillment network. Sellers may still ship items that are not recommended, at their discretion.
 
 **Usage Plan:**
 
@@ -396,7 +396,7 @@ func (a *Client) GetInboundGuidance(params *GetInboundGuidanceParams, opts ...Cl
 }
 
 /*
-  GetLabels Returns package/pallet labels for faster and more accurate shipment processing at the Amazon fulfillment center.
+	GetLabels Returns package/pallet labels for faster and more accurate shipment processing at the Amazon fulfillment center.
 
 **Usage Plan:**
 
@@ -442,7 +442,7 @@ func (a *Client) GetLabels(params *GetLabelsParams, opts ...ClientOption) (*GetL
 }
 
 /*
-  GetPreorderInfo Returns pre-order information, including dates, that a seller needs before confirming a shipment for pre-order.
+	GetPreorderInfo Returns pre-order information, including dates, that a seller needs before confirming a shipment for pre-order.
 
 **Usage Plan:**
 
@@ -488,7 +488,7 @@ func (a *Client) GetPreorderInfo(params *GetPreorderInfoParams, opts ...ClientOp
 }
 
 /*
-  GetPrepInstructions Returns labeling requirements and item preparation instructions to help prepare items for shipment to Amazon's fulfillment network.
+	GetPrepInstructions Returns labeling requirements and item preparation instructions to help prepare items for shipment to Amazon's fulfillment network.
 
 **Usage Plan:**
 
@@ -534,7 +534,7 @@ func (a *Client) GetPrepInstructions(params *GetPrepInstructionsParams, opts ...
 }
 
 /*
-  GetShipmentItems Returns a list of items in a specified inbound shipment, or a list of items that were updated within a specified time frame.
+	GetShipmentItems Returns a list of items in a specified inbound shipment, or a list of items that were updated within a specified time frame.
 
 **Usage Plan:**
 
@@ -580,7 +580,7 @@ func (a *Client) GetShipmentItems(params *GetShipmentItemsParams, opts ...Client
 }
 
 /*
-  GetShipmentItemsByShipmentID Returns a list of items in a specified inbound shipment.
+	GetShipmentItemsByShipmentID Returns a list of items in a specified inbound shipment.
 
 **Usage Plan:**
 
@@ -626,7 +626,7 @@ func (a *Client) GetShipmentItemsByShipmentID(params *GetShipmentItemsByShipment
 }
 
 /*
-  GetShipments Returns a list of inbound shipments based on criteria that you specify.
+	GetShipments Returns a list of inbound shipments based on criteria that you specify.
 
 **Usage Plan:**
 
@@ -672,7 +672,7 @@ func (a *Client) GetShipments(params *GetShipmentsParams, opts ...ClientOption) 
 }
 
 /*
-  GetTransportDetails Returns current transportation information about an inbound shipment.
+	GetTransportDetails Returns current transportation information about an inbound shipment.
 
 **Usage Plan:**
 
@@ -718,7 +718,7 @@ func (a *Client) GetTransportDetails(params *GetTransportDetailsParams, opts ...
 }
 
 /*
-  PutTransportDetails Sends transportation information to Amazon about an inbound shipment.
+	PutTransportDetails Sends transportation information to Amazon about an inbound shipment.
 
 **Usage Plan:**
 
@@ -764,7 +764,7 @@ func (a *Client) PutTransportDetails(params *PutTransportDetailsParams, opts ...
 }
 
 /*
-  UpdateInboundShipment Updates or removes items from the inbound shipment identified by the specified shipment identifier. Adding new items is not supported.
+	UpdateInboundShipment Updates or removes items from the inbound shipment identified by the specified shipment identifier. Adding new items is not supported.
 
 **Usage Plan:**
 
@@ -810,7 +810,7 @@ func (a *Client) UpdateInboundShipment(params *UpdateInboundShipmentParams, opts
 }
 
 /*
-  VoidTransport Cancels a previously-confirmed request to ship an inbound shipment using an Amazon-partnered carrier.
+	VoidTransport Cancels a previously-confirmed request to ship an inbound shipment using an Amazon-partnered carrier.
 
 To be successful, you must call this operation before the VoidDeadline date that is returned by the getTransportDetails operation.
 

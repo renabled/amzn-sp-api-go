@@ -87,7 +87,8 @@ func NewCreateFeedDocumentCreated() *CreateFeedDocumentCreated {
 	return &CreateFeedDocumentCreated{}
 }
 
-/* CreateFeedDocumentCreated describes a response with status code 201, with default header values.
+/*
+CreateFeedDocumentCreated describes a response with status code 201, with default header values.
 
 Successfully created a feed document that is ready to receive contents.
 */
@@ -104,9 +105,39 @@ type CreateFeedDocumentCreated struct {
 	Payload *feeds_2020_09_04_models.CreateFeedDocumentResponse
 }
 
+// IsSuccess returns true when this create feed document created response has a 2xx status code
+func (o *CreateFeedDocumentCreated) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this create feed document created response has a 3xx status code
+func (o *CreateFeedDocumentCreated) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create feed document created response has a 4xx status code
+func (o *CreateFeedDocumentCreated) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this create feed document created response has a 5xx status code
+func (o *CreateFeedDocumentCreated) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this create feed document created response a status code equal to that given
+func (o *CreateFeedDocumentCreated) IsCode(code int) bool {
+	return code == 201
+}
+
 func (o *CreateFeedDocumentCreated) Error() string {
 	return fmt.Sprintf("[POST /feeds/2020-09-04/documents][%d] createFeedDocumentCreated  %+v", 201, o.Payload)
 }
+
+func (o *CreateFeedDocumentCreated) String() string {
+	return fmt.Sprintf("[POST /feeds/2020-09-04/documents][%d] createFeedDocumentCreated  %+v", 201, o.Payload)
+}
+
 func (o *CreateFeedDocumentCreated) GetPayload() *feeds_2020_09_04_models.CreateFeedDocumentResponse {
 	return o.Payload
 }
@@ -142,7 +173,8 @@ func NewCreateFeedDocumentBadRequest() *CreateFeedDocumentBadRequest {
 	return &CreateFeedDocumentBadRequest{}
 }
 
-/* CreateFeedDocumentBadRequest describes a response with status code 400, with default header values.
+/*
+CreateFeedDocumentBadRequest describes a response with status code 400, with default header values.
 
 Request has missing or invalid parameters and cannot be parsed.
 */
@@ -159,9 +191,39 @@ type CreateFeedDocumentBadRequest struct {
 	Payload *feeds_2020_09_04_models.CreateFeedDocumentResponse
 }
 
+// IsSuccess returns true when this create feed document bad request response has a 2xx status code
+func (o *CreateFeedDocumentBadRequest) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this create feed document bad request response has a 3xx status code
+func (o *CreateFeedDocumentBadRequest) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create feed document bad request response has a 4xx status code
+func (o *CreateFeedDocumentBadRequest) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this create feed document bad request response has a 5xx status code
+func (o *CreateFeedDocumentBadRequest) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this create feed document bad request response a status code equal to that given
+func (o *CreateFeedDocumentBadRequest) IsCode(code int) bool {
+	return code == 400
+}
+
 func (o *CreateFeedDocumentBadRequest) Error() string {
 	return fmt.Sprintf("[POST /feeds/2020-09-04/documents][%d] createFeedDocumentBadRequest  %+v", 400, o.Payload)
 }
+
+func (o *CreateFeedDocumentBadRequest) String() string {
+	return fmt.Sprintf("[POST /feeds/2020-09-04/documents][%d] createFeedDocumentBadRequest  %+v", 400, o.Payload)
+}
+
 func (o *CreateFeedDocumentBadRequest) GetPayload() *feeds_2020_09_04_models.CreateFeedDocumentResponse {
 	return o.Payload
 }
@@ -197,7 +259,8 @@ func NewCreateFeedDocumentForbidden() *CreateFeedDocumentForbidden {
 	return &CreateFeedDocumentForbidden{}
 }
 
-/* CreateFeedDocumentForbidden describes a response with status code 403, with default header values.
+/*
+CreateFeedDocumentForbidden describes a response with status code 403, with default header values.
 
 Indicates that access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.
 */
@@ -210,9 +273,39 @@ type CreateFeedDocumentForbidden struct {
 	Payload *feeds_2020_09_04_models.CreateFeedDocumentResponse
 }
 
+// IsSuccess returns true when this create feed document forbidden response has a 2xx status code
+func (o *CreateFeedDocumentForbidden) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this create feed document forbidden response has a 3xx status code
+func (o *CreateFeedDocumentForbidden) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create feed document forbidden response has a 4xx status code
+func (o *CreateFeedDocumentForbidden) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this create feed document forbidden response has a 5xx status code
+func (o *CreateFeedDocumentForbidden) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this create feed document forbidden response a status code equal to that given
+func (o *CreateFeedDocumentForbidden) IsCode(code int) bool {
+	return code == 403
+}
+
 func (o *CreateFeedDocumentForbidden) Error() string {
 	return fmt.Sprintf("[POST /feeds/2020-09-04/documents][%d] createFeedDocumentForbidden  %+v", 403, o.Payload)
 }
+
+func (o *CreateFeedDocumentForbidden) String() string {
+	return fmt.Sprintf("[POST /feeds/2020-09-04/documents][%d] createFeedDocumentForbidden  %+v", 403, o.Payload)
+}
+
 func (o *CreateFeedDocumentForbidden) GetPayload() *feeds_2020_09_04_models.CreateFeedDocumentResponse {
 	return o.Payload
 }
@@ -241,7 +334,8 @@ func NewCreateFeedDocumentNotFound() *CreateFeedDocumentNotFound {
 	return &CreateFeedDocumentNotFound{}
 }
 
-/* CreateFeedDocumentNotFound describes a response with status code 404, with default header values.
+/*
+CreateFeedDocumentNotFound describes a response with status code 404, with default header values.
 
 The resource specified does not exist.
 */
@@ -258,9 +352,39 @@ type CreateFeedDocumentNotFound struct {
 	Payload *feeds_2020_09_04_models.CreateFeedDocumentResponse
 }
 
+// IsSuccess returns true when this create feed document not found response has a 2xx status code
+func (o *CreateFeedDocumentNotFound) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this create feed document not found response has a 3xx status code
+func (o *CreateFeedDocumentNotFound) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create feed document not found response has a 4xx status code
+func (o *CreateFeedDocumentNotFound) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this create feed document not found response has a 5xx status code
+func (o *CreateFeedDocumentNotFound) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this create feed document not found response a status code equal to that given
+func (o *CreateFeedDocumentNotFound) IsCode(code int) bool {
+	return code == 404
+}
+
 func (o *CreateFeedDocumentNotFound) Error() string {
 	return fmt.Sprintf("[POST /feeds/2020-09-04/documents][%d] createFeedDocumentNotFound  %+v", 404, o.Payload)
 }
+
+func (o *CreateFeedDocumentNotFound) String() string {
+	return fmt.Sprintf("[POST /feeds/2020-09-04/documents][%d] createFeedDocumentNotFound  %+v", 404, o.Payload)
+}
+
 func (o *CreateFeedDocumentNotFound) GetPayload() *feeds_2020_09_04_models.CreateFeedDocumentResponse {
 	return o.Payload
 }
@@ -296,7 +420,8 @@ func NewCreateFeedDocumentRequestEntityTooLarge() *CreateFeedDocumentRequestEnti
 	return &CreateFeedDocumentRequestEntityTooLarge{}
 }
 
-/* CreateFeedDocumentRequestEntityTooLarge describes a response with status code 413, with default header values.
+/*
+CreateFeedDocumentRequestEntityTooLarge describes a response with status code 413, with default header values.
 
 The request size exceeded the maximum accepted size.
 */
@@ -314,9 +439,39 @@ type CreateFeedDocumentRequestEntityTooLarge struct {
 	Payload *feeds_2020_09_04_models.CreateFeedDocumentResponse
 }
 
+// IsSuccess returns true when this create feed document request entity too large response has a 2xx status code
+func (o *CreateFeedDocumentRequestEntityTooLarge) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this create feed document request entity too large response has a 3xx status code
+func (o *CreateFeedDocumentRequestEntityTooLarge) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create feed document request entity too large response has a 4xx status code
+func (o *CreateFeedDocumentRequestEntityTooLarge) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this create feed document request entity too large response has a 5xx status code
+func (o *CreateFeedDocumentRequestEntityTooLarge) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this create feed document request entity too large response a status code equal to that given
+func (o *CreateFeedDocumentRequestEntityTooLarge) IsCode(code int) bool {
+	return code == 413
+}
+
 func (o *CreateFeedDocumentRequestEntityTooLarge) Error() string {
 	return fmt.Sprintf("[POST /feeds/2020-09-04/documents][%d] createFeedDocumentRequestEntityTooLarge  %+v", 413, o.Payload)
 }
+
+func (o *CreateFeedDocumentRequestEntityTooLarge) String() string {
+	return fmt.Sprintf("[POST /feeds/2020-09-04/documents][%d] createFeedDocumentRequestEntityTooLarge  %+v", 413, o.Payload)
+}
+
 func (o *CreateFeedDocumentRequestEntityTooLarge) GetPayload() *feeds_2020_09_04_models.CreateFeedDocumentResponse {
 	return o.Payload
 }
@@ -352,7 +507,8 @@ func NewCreateFeedDocumentUnsupportedMediaType() *CreateFeedDocumentUnsupportedM
 	return &CreateFeedDocumentUnsupportedMediaType{}
 }
 
-/* CreateFeedDocumentUnsupportedMediaType describes a response with status code 415, with default header values.
+/*
+CreateFeedDocumentUnsupportedMediaType describes a response with status code 415, with default header values.
 
 The request payload is in an unsupported format.
 */
@@ -370,9 +526,39 @@ type CreateFeedDocumentUnsupportedMediaType struct {
 	Payload *feeds_2020_09_04_models.CreateFeedDocumentResponse
 }
 
+// IsSuccess returns true when this create feed document unsupported media type response has a 2xx status code
+func (o *CreateFeedDocumentUnsupportedMediaType) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this create feed document unsupported media type response has a 3xx status code
+func (o *CreateFeedDocumentUnsupportedMediaType) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create feed document unsupported media type response has a 4xx status code
+func (o *CreateFeedDocumentUnsupportedMediaType) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this create feed document unsupported media type response has a 5xx status code
+func (o *CreateFeedDocumentUnsupportedMediaType) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this create feed document unsupported media type response a status code equal to that given
+func (o *CreateFeedDocumentUnsupportedMediaType) IsCode(code int) bool {
+	return code == 415
+}
+
 func (o *CreateFeedDocumentUnsupportedMediaType) Error() string {
 	return fmt.Sprintf("[POST /feeds/2020-09-04/documents][%d] createFeedDocumentUnsupportedMediaType  %+v", 415, o.Payload)
 }
+
+func (o *CreateFeedDocumentUnsupportedMediaType) String() string {
+	return fmt.Sprintf("[POST /feeds/2020-09-04/documents][%d] createFeedDocumentUnsupportedMediaType  %+v", 415, o.Payload)
+}
+
 func (o *CreateFeedDocumentUnsupportedMediaType) GetPayload() *feeds_2020_09_04_models.CreateFeedDocumentResponse {
 	return o.Payload
 }
@@ -408,7 +594,8 @@ func NewCreateFeedDocumentTooManyRequests() *CreateFeedDocumentTooManyRequests {
 	return &CreateFeedDocumentTooManyRequests{}
 }
 
-/* CreateFeedDocumentTooManyRequests describes a response with status code 429, with default header values.
+/*
+CreateFeedDocumentTooManyRequests describes a response with status code 429, with default header values.
 
 The frequency of requests was greater than allowed.
 */
@@ -426,9 +613,39 @@ type CreateFeedDocumentTooManyRequests struct {
 	Payload *feeds_2020_09_04_models.CreateFeedDocumentResponse
 }
 
+// IsSuccess returns true when this create feed document too many requests response has a 2xx status code
+func (o *CreateFeedDocumentTooManyRequests) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this create feed document too many requests response has a 3xx status code
+func (o *CreateFeedDocumentTooManyRequests) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create feed document too many requests response has a 4xx status code
+func (o *CreateFeedDocumentTooManyRequests) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this create feed document too many requests response has a 5xx status code
+func (o *CreateFeedDocumentTooManyRequests) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this create feed document too many requests response a status code equal to that given
+func (o *CreateFeedDocumentTooManyRequests) IsCode(code int) bool {
+	return code == 429
+}
+
 func (o *CreateFeedDocumentTooManyRequests) Error() string {
 	return fmt.Sprintf("[POST /feeds/2020-09-04/documents][%d] createFeedDocumentTooManyRequests  %+v", 429, o.Payload)
 }
+
+func (o *CreateFeedDocumentTooManyRequests) String() string {
+	return fmt.Sprintf("[POST /feeds/2020-09-04/documents][%d] createFeedDocumentTooManyRequests  %+v", 429, o.Payload)
+}
+
 func (o *CreateFeedDocumentTooManyRequests) GetPayload() *feeds_2020_09_04_models.CreateFeedDocumentResponse {
 	return o.Payload
 }
@@ -464,7 +681,8 @@ func NewCreateFeedDocumentInternalServerError() *CreateFeedDocumentInternalServe
 	return &CreateFeedDocumentInternalServerError{}
 }
 
-/* CreateFeedDocumentInternalServerError describes a response with status code 500, with default header values.
+/*
+CreateFeedDocumentInternalServerError describes a response with status code 500, with default header values.
 
 An unexpected condition occurred that prevented the server from fulfilling the request.
 */
@@ -482,9 +700,39 @@ type CreateFeedDocumentInternalServerError struct {
 	Payload *feeds_2020_09_04_models.CreateFeedDocumentResponse
 }
 
+// IsSuccess returns true when this create feed document internal server error response has a 2xx status code
+func (o *CreateFeedDocumentInternalServerError) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this create feed document internal server error response has a 3xx status code
+func (o *CreateFeedDocumentInternalServerError) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create feed document internal server error response has a 4xx status code
+func (o *CreateFeedDocumentInternalServerError) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this create feed document internal server error response has a 5xx status code
+func (o *CreateFeedDocumentInternalServerError) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this create feed document internal server error response a status code equal to that given
+func (o *CreateFeedDocumentInternalServerError) IsCode(code int) bool {
+	return code == 500
+}
+
 func (o *CreateFeedDocumentInternalServerError) Error() string {
 	return fmt.Sprintf("[POST /feeds/2020-09-04/documents][%d] createFeedDocumentInternalServerError  %+v", 500, o.Payload)
 }
+
+func (o *CreateFeedDocumentInternalServerError) String() string {
+	return fmt.Sprintf("[POST /feeds/2020-09-04/documents][%d] createFeedDocumentInternalServerError  %+v", 500, o.Payload)
+}
+
 func (o *CreateFeedDocumentInternalServerError) GetPayload() *feeds_2020_09_04_models.CreateFeedDocumentResponse {
 	return o.Payload
 }
@@ -520,7 +768,8 @@ func NewCreateFeedDocumentServiceUnavailable() *CreateFeedDocumentServiceUnavail
 	return &CreateFeedDocumentServiceUnavailable{}
 }
 
-/* CreateFeedDocumentServiceUnavailable describes a response with status code 503, with default header values.
+/*
+CreateFeedDocumentServiceUnavailable describes a response with status code 503, with default header values.
 
 Temporary overloading or maintenance of the server.
 */
@@ -538,9 +787,39 @@ type CreateFeedDocumentServiceUnavailable struct {
 	Payload *feeds_2020_09_04_models.CreateFeedDocumentResponse
 }
 
+// IsSuccess returns true when this create feed document service unavailable response has a 2xx status code
+func (o *CreateFeedDocumentServiceUnavailable) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this create feed document service unavailable response has a 3xx status code
+func (o *CreateFeedDocumentServiceUnavailable) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create feed document service unavailable response has a 4xx status code
+func (o *CreateFeedDocumentServiceUnavailable) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this create feed document service unavailable response has a 5xx status code
+func (o *CreateFeedDocumentServiceUnavailable) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this create feed document service unavailable response a status code equal to that given
+func (o *CreateFeedDocumentServiceUnavailable) IsCode(code int) bool {
+	return code == 503
+}
+
 func (o *CreateFeedDocumentServiceUnavailable) Error() string {
 	return fmt.Sprintf("[POST /feeds/2020-09-04/documents][%d] createFeedDocumentServiceUnavailable  %+v", 503, o.Payload)
 }
+
+func (o *CreateFeedDocumentServiceUnavailable) String() string {
+	return fmt.Sprintf("[POST /feeds/2020-09-04/documents][%d] createFeedDocumentServiceUnavailable  %+v", 503, o.Payload)
+}
+
 func (o *CreateFeedDocumentServiceUnavailable) GetPayload() *feeds_2020_09_04_models.CreateFeedDocumentResponse {
 	return o.Payload
 }

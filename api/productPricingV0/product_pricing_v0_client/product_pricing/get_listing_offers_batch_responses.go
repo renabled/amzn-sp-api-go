@@ -81,7 +81,8 @@ func NewGetListingOffersBatchOK() *GetListingOffersBatchOK {
 	return &GetListingOffersBatchOK{}
 }
 
-/* GetListingOffersBatchOK describes a response with status code 200, with default header values.
+/*
+GetListingOffersBatchOK describes a response with status code 200, with default header values.
 
 Indicates that requests were run in batch.  Check the batch response status lines for information on whether a batch request succeeded.
 */
@@ -98,9 +99,39 @@ type GetListingOffersBatchOK struct {
 	Payload *product_pricing_v0_models.GetListingOffersBatchResponse
 }
 
+// IsSuccess returns true when this get listing offers batch o k response has a 2xx status code
+func (o *GetListingOffersBatchOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this get listing offers batch o k response has a 3xx status code
+func (o *GetListingOffersBatchOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get listing offers batch o k response has a 4xx status code
+func (o *GetListingOffersBatchOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get listing offers batch o k response has a 5xx status code
+func (o *GetListingOffersBatchOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get listing offers batch o k response a status code equal to that given
+func (o *GetListingOffersBatchOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *GetListingOffersBatchOK) Error() string {
 	return fmt.Sprintf("[POST /batches/products/pricing/v0/listingOffers][%d] getListingOffersBatchOK  %+v", 200, o.Payload)
 }
+
+func (o *GetListingOffersBatchOK) String() string {
+	return fmt.Sprintf("[POST /batches/products/pricing/v0/listingOffers][%d] getListingOffersBatchOK  %+v", 200, o.Payload)
+}
+
 func (o *GetListingOffersBatchOK) GetPayload() *product_pricing_v0_models.GetListingOffersBatchResponse {
 	return o.Payload
 }
@@ -136,7 +167,8 @@ func NewGetListingOffersBatchBadRequest() *GetListingOffersBatchBadRequest {
 	return &GetListingOffersBatchBadRequest{}
 }
 
-/* GetListingOffersBatchBadRequest describes a response with status code 400, with default header values.
+/*
+GetListingOffersBatchBadRequest describes a response with status code 400, with default header values.
 
 Request has missing or invalid parameters and cannot be parsed.
 */
@@ -153,9 +185,39 @@ type GetListingOffersBatchBadRequest struct {
 	Payload *product_pricing_v0_models.Errors
 }
 
+// IsSuccess returns true when this get listing offers batch bad request response has a 2xx status code
+func (o *GetListingOffersBatchBadRequest) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get listing offers batch bad request response has a 3xx status code
+func (o *GetListingOffersBatchBadRequest) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get listing offers batch bad request response has a 4xx status code
+func (o *GetListingOffersBatchBadRequest) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get listing offers batch bad request response has a 5xx status code
+func (o *GetListingOffersBatchBadRequest) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get listing offers batch bad request response a status code equal to that given
+func (o *GetListingOffersBatchBadRequest) IsCode(code int) bool {
+	return code == 400
+}
+
 func (o *GetListingOffersBatchBadRequest) Error() string {
 	return fmt.Sprintf("[POST /batches/products/pricing/v0/listingOffers][%d] getListingOffersBatchBadRequest  %+v", 400, o.Payload)
 }
+
+func (o *GetListingOffersBatchBadRequest) String() string {
+	return fmt.Sprintf("[POST /batches/products/pricing/v0/listingOffers][%d] getListingOffersBatchBadRequest  %+v", 400, o.Payload)
+}
+
 func (o *GetListingOffersBatchBadRequest) GetPayload() *product_pricing_v0_models.Errors {
 	return o.Payload
 }
@@ -191,7 +253,8 @@ func NewGetListingOffersBatchUnauthorized() *GetListingOffersBatchUnauthorized {
 	return &GetListingOffersBatchUnauthorized{}
 }
 
-/* GetListingOffersBatchUnauthorized describes a response with status code 401, with default header values.
+/*
+GetListingOffersBatchUnauthorized describes a response with status code 401, with default header values.
 
 The request's Authorization header is not formatted correctly or does not contain a valid token.
 */
@@ -209,9 +272,39 @@ type GetListingOffersBatchUnauthorized struct {
 	Payload *product_pricing_v0_models.Errors
 }
 
+// IsSuccess returns true when this get listing offers batch unauthorized response has a 2xx status code
+func (o *GetListingOffersBatchUnauthorized) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get listing offers batch unauthorized response has a 3xx status code
+func (o *GetListingOffersBatchUnauthorized) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get listing offers batch unauthorized response has a 4xx status code
+func (o *GetListingOffersBatchUnauthorized) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get listing offers batch unauthorized response has a 5xx status code
+func (o *GetListingOffersBatchUnauthorized) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get listing offers batch unauthorized response a status code equal to that given
+func (o *GetListingOffersBatchUnauthorized) IsCode(code int) bool {
+	return code == 401
+}
+
 func (o *GetListingOffersBatchUnauthorized) Error() string {
 	return fmt.Sprintf("[POST /batches/products/pricing/v0/listingOffers][%d] getListingOffersBatchUnauthorized  %+v", 401, o.Payload)
 }
+
+func (o *GetListingOffersBatchUnauthorized) String() string {
+	return fmt.Sprintf("[POST /batches/products/pricing/v0/listingOffers][%d] getListingOffersBatchUnauthorized  %+v", 401, o.Payload)
+}
+
 func (o *GetListingOffersBatchUnauthorized) GetPayload() *product_pricing_v0_models.Errors {
 	return o.Payload
 }
@@ -247,7 +340,8 @@ func NewGetListingOffersBatchForbidden() *GetListingOffersBatchForbidden {
 	return &GetListingOffersBatchForbidden{}
 }
 
-/* GetListingOffersBatchForbidden describes a response with status code 403, with default header values.
+/*
+GetListingOffersBatchForbidden describes a response with status code 403, with default header values.
 
 Indicates access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.
 */
@@ -260,9 +354,39 @@ type GetListingOffersBatchForbidden struct {
 	Payload *product_pricing_v0_models.Errors
 }
 
+// IsSuccess returns true when this get listing offers batch forbidden response has a 2xx status code
+func (o *GetListingOffersBatchForbidden) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get listing offers batch forbidden response has a 3xx status code
+func (o *GetListingOffersBatchForbidden) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get listing offers batch forbidden response has a 4xx status code
+func (o *GetListingOffersBatchForbidden) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get listing offers batch forbidden response has a 5xx status code
+func (o *GetListingOffersBatchForbidden) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get listing offers batch forbidden response a status code equal to that given
+func (o *GetListingOffersBatchForbidden) IsCode(code int) bool {
+	return code == 403
+}
+
 func (o *GetListingOffersBatchForbidden) Error() string {
 	return fmt.Sprintf("[POST /batches/products/pricing/v0/listingOffers][%d] getListingOffersBatchForbidden  %+v", 403, o.Payload)
 }
+
+func (o *GetListingOffersBatchForbidden) String() string {
+	return fmt.Sprintf("[POST /batches/products/pricing/v0/listingOffers][%d] getListingOffersBatchForbidden  %+v", 403, o.Payload)
+}
+
 func (o *GetListingOffersBatchForbidden) GetPayload() *product_pricing_v0_models.Errors {
 	return o.Payload
 }
@@ -291,7 +415,8 @@ func NewGetListingOffersBatchNotFound() *GetListingOffersBatchNotFound {
 	return &GetListingOffersBatchNotFound{}
 }
 
-/* GetListingOffersBatchNotFound describes a response with status code 404, with default header values.
+/*
+GetListingOffersBatchNotFound describes a response with status code 404, with default header values.
 
 The specified resource does not exist.
 */
@@ -308,9 +433,39 @@ type GetListingOffersBatchNotFound struct {
 	Payload *product_pricing_v0_models.Errors
 }
 
+// IsSuccess returns true when this get listing offers batch not found response has a 2xx status code
+func (o *GetListingOffersBatchNotFound) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get listing offers batch not found response has a 3xx status code
+func (o *GetListingOffersBatchNotFound) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get listing offers batch not found response has a 4xx status code
+func (o *GetListingOffersBatchNotFound) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get listing offers batch not found response has a 5xx status code
+func (o *GetListingOffersBatchNotFound) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get listing offers batch not found response a status code equal to that given
+func (o *GetListingOffersBatchNotFound) IsCode(code int) bool {
+	return code == 404
+}
+
 func (o *GetListingOffersBatchNotFound) Error() string {
 	return fmt.Sprintf("[POST /batches/products/pricing/v0/listingOffers][%d] getListingOffersBatchNotFound  %+v", 404, o.Payload)
 }
+
+func (o *GetListingOffersBatchNotFound) String() string {
+	return fmt.Sprintf("[POST /batches/products/pricing/v0/listingOffers][%d] getListingOffersBatchNotFound  %+v", 404, o.Payload)
+}
+
 func (o *GetListingOffersBatchNotFound) GetPayload() *product_pricing_v0_models.Errors {
 	return o.Payload
 }
@@ -346,7 +501,8 @@ func NewGetListingOffersBatchTooManyRequests() *GetListingOffersBatchTooManyRequ
 	return &GetListingOffersBatchTooManyRequests{}
 }
 
-/* GetListingOffersBatchTooManyRequests describes a response with status code 429, with default header values.
+/*
+GetListingOffersBatchTooManyRequests describes a response with status code 429, with default header values.
 
 The frequency of requests was greater than allowed.
 */
@@ -364,9 +520,39 @@ type GetListingOffersBatchTooManyRequests struct {
 	Payload *product_pricing_v0_models.Errors
 }
 
+// IsSuccess returns true when this get listing offers batch too many requests response has a 2xx status code
+func (o *GetListingOffersBatchTooManyRequests) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get listing offers batch too many requests response has a 3xx status code
+func (o *GetListingOffersBatchTooManyRequests) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get listing offers batch too many requests response has a 4xx status code
+func (o *GetListingOffersBatchTooManyRequests) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get listing offers batch too many requests response has a 5xx status code
+func (o *GetListingOffersBatchTooManyRequests) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get listing offers batch too many requests response a status code equal to that given
+func (o *GetListingOffersBatchTooManyRequests) IsCode(code int) bool {
+	return code == 429
+}
+
 func (o *GetListingOffersBatchTooManyRequests) Error() string {
 	return fmt.Sprintf("[POST /batches/products/pricing/v0/listingOffers][%d] getListingOffersBatchTooManyRequests  %+v", 429, o.Payload)
 }
+
+func (o *GetListingOffersBatchTooManyRequests) String() string {
+	return fmt.Sprintf("[POST /batches/products/pricing/v0/listingOffers][%d] getListingOffersBatchTooManyRequests  %+v", 429, o.Payload)
+}
+
 func (o *GetListingOffersBatchTooManyRequests) GetPayload() *product_pricing_v0_models.Errors {
 	return o.Payload
 }
@@ -402,7 +588,8 @@ func NewGetListingOffersBatchInternalServerError() *GetListingOffersBatchInterna
 	return &GetListingOffersBatchInternalServerError{}
 }
 
-/* GetListingOffersBatchInternalServerError describes a response with status code 500, with default header values.
+/*
+GetListingOffersBatchInternalServerError describes a response with status code 500, with default header values.
 
 An unexpected condition occurred that prevented the server from fulfilling the request.
 */
@@ -420,9 +607,39 @@ type GetListingOffersBatchInternalServerError struct {
 	Payload *product_pricing_v0_models.Errors
 }
 
+// IsSuccess returns true when this get listing offers batch internal server error response has a 2xx status code
+func (o *GetListingOffersBatchInternalServerError) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get listing offers batch internal server error response has a 3xx status code
+func (o *GetListingOffersBatchInternalServerError) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get listing offers batch internal server error response has a 4xx status code
+func (o *GetListingOffersBatchInternalServerError) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get listing offers batch internal server error response has a 5xx status code
+func (o *GetListingOffersBatchInternalServerError) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this get listing offers batch internal server error response a status code equal to that given
+func (o *GetListingOffersBatchInternalServerError) IsCode(code int) bool {
+	return code == 500
+}
+
 func (o *GetListingOffersBatchInternalServerError) Error() string {
 	return fmt.Sprintf("[POST /batches/products/pricing/v0/listingOffers][%d] getListingOffersBatchInternalServerError  %+v", 500, o.Payload)
 }
+
+func (o *GetListingOffersBatchInternalServerError) String() string {
+	return fmt.Sprintf("[POST /batches/products/pricing/v0/listingOffers][%d] getListingOffersBatchInternalServerError  %+v", 500, o.Payload)
+}
+
 func (o *GetListingOffersBatchInternalServerError) GetPayload() *product_pricing_v0_models.Errors {
 	return o.Payload
 }
@@ -458,7 +675,8 @@ func NewGetListingOffersBatchServiceUnavailable() *GetListingOffersBatchServiceU
 	return &GetListingOffersBatchServiceUnavailable{}
 }
 
-/* GetListingOffersBatchServiceUnavailable describes a response with status code 503, with default header values.
+/*
+GetListingOffersBatchServiceUnavailable describes a response with status code 503, with default header values.
 
 Temporary overloading or maintenance of the server.
 */
@@ -476,9 +694,39 @@ type GetListingOffersBatchServiceUnavailable struct {
 	Payload *product_pricing_v0_models.Errors
 }
 
+// IsSuccess returns true when this get listing offers batch service unavailable response has a 2xx status code
+func (o *GetListingOffersBatchServiceUnavailable) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get listing offers batch service unavailable response has a 3xx status code
+func (o *GetListingOffersBatchServiceUnavailable) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get listing offers batch service unavailable response has a 4xx status code
+func (o *GetListingOffersBatchServiceUnavailable) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get listing offers batch service unavailable response has a 5xx status code
+func (o *GetListingOffersBatchServiceUnavailable) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this get listing offers batch service unavailable response a status code equal to that given
+func (o *GetListingOffersBatchServiceUnavailable) IsCode(code int) bool {
+	return code == 503
+}
+
 func (o *GetListingOffersBatchServiceUnavailable) Error() string {
 	return fmt.Sprintf("[POST /batches/products/pricing/v0/listingOffers][%d] getListingOffersBatchServiceUnavailable  %+v", 503, o.Payload)
 }
+
+func (o *GetListingOffersBatchServiceUnavailable) String() string {
+	return fmt.Sprintf("[POST /batches/products/pricing/v0/listingOffers][%d] getListingOffersBatchServiceUnavailable  %+v", 503, o.Payload)
+}
+
 func (o *GetListingOffersBatchServiceUnavailable) GetPayload() *product_pricing_v0_models.Errors {
 	return o.Payload
 }

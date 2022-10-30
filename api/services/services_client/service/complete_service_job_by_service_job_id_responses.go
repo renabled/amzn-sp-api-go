@@ -93,7 +93,8 @@ func NewCompleteServiceJobByServiceJobIDOK() *CompleteServiceJobByServiceJobIDOK
 	return &CompleteServiceJobByServiceJobIDOK{}
 }
 
-/* CompleteServiceJobByServiceJobIDOK describes a response with status code 200, with default header values.
+/*
+CompleteServiceJobByServiceJobIDOK describes a response with status code 200, with default header values.
 
 Success response.
 */
@@ -110,9 +111,39 @@ type CompleteServiceJobByServiceJobIDOK struct {
 	Payload *services_models.CompleteServiceJobByServiceJobIDResponse
 }
 
+// IsSuccess returns true when this complete service job by service job Id o k response has a 2xx status code
+func (o *CompleteServiceJobByServiceJobIDOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this complete service job by service job Id o k response has a 3xx status code
+func (o *CompleteServiceJobByServiceJobIDOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this complete service job by service job Id o k response has a 4xx status code
+func (o *CompleteServiceJobByServiceJobIDOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this complete service job by service job Id o k response has a 5xx status code
+func (o *CompleteServiceJobByServiceJobIDOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this complete service job by service job Id o k response a status code equal to that given
+func (o *CompleteServiceJobByServiceJobIDOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *CompleteServiceJobByServiceJobIDOK) Error() string {
 	return fmt.Sprintf("[PUT /service/v1/serviceJobs/{serviceJobId}/completions][%d] completeServiceJobByServiceJobIdOK  %+v", 200, o.Payload)
 }
+
+func (o *CompleteServiceJobByServiceJobIDOK) String() string {
+	return fmt.Sprintf("[PUT /service/v1/serviceJobs/{serviceJobId}/completions][%d] completeServiceJobByServiceJobIdOK  %+v", 200, o.Payload)
+}
+
 func (o *CompleteServiceJobByServiceJobIDOK) GetPayload() *services_models.CompleteServiceJobByServiceJobIDResponse {
 	return o.Payload
 }
@@ -148,7 +179,8 @@ func NewCompleteServiceJobByServiceJobIDBadRequest() *CompleteServiceJobByServic
 	return &CompleteServiceJobByServiceJobIDBadRequest{}
 }
 
-/* CompleteServiceJobByServiceJobIDBadRequest describes a response with status code 400, with default header values.
+/*
+CompleteServiceJobByServiceJobIDBadRequest describes a response with status code 400, with default header values.
 
 Request has missing or invalid parameters and cannot be parsed.
 */
@@ -165,9 +197,39 @@ type CompleteServiceJobByServiceJobIDBadRequest struct {
 	Payload *services_models.CompleteServiceJobByServiceJobIDResponse
 }
 
+// IsSuccess returns true when this complete service job by service job Id bad request response has a 2xx status code
+func (o *CompleteServiceJobByServiceJobIDBadRequest) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this complete service job by service job Id bad request response has a 3xx status code
+func (o *CompleteServiceJobByServiceJobIDBadRequest) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this complete service job by service job Id bad request response has a 4xx status code
+func (o *CompleteServiceJobByServiceJobIDBadRequest) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this complete service job by service job Id bad request response has a 5xx status code
+func (o *CompleteServiceJobByServiceJobIDBadRequest) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this complete service job by service job Id bad request response a status code equal to that given
+func (o *CompleteServiceJobByServiceJobIDBadRequest) IsCode(code int) bool {
+	return code == 400
+}
+
 func (o *CompleteServiceJobByServiceJobIDBadRequest) Error() string {
 	return fmt.Sprintf("[PUT /service/v1/serviceJobs/{serviceJobId}/completions][%d] completeServiceJobByServiceJobIdBadRequest  %+v", 400, o.Payload)
 }
+
+func (o *CompleteServiceJobByServiceJobIDBadRequest) String() string {
+	return fmt.Sprintf("[PUT /service/v1/serviceJobs/{serviceJobId}/completions][%d] completeServiceJobByServiceJobIdBadRequest  %+v", 400, o.Payload)
+}
+
 func (o *CompleteServiceJobByServiceJobIDBadRequest) GetPayload() *services_models.CompleteServiceJobByServiceJobIDResponse {
 	return o.Payload
 }
@@ -203,7 +265,8 @@ func NewCompleteServiceJobByServiceJobIDForbidden() *CompleteServiceJobByService
 	return &CompleteServiceJobByServiceJobIDForbidden{}
 }
 
-/* CompleteServiceJobByServiceJobIDForbidden describes a response with status code 403, with default header values.
+/*
+CompleteServiceJobByServiceJobIDForbidden describes a response with status code 403, with default header values.
 
 Indicates that access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.
 */
@@ -216,9 +279,39 @@ type CompleteServiceJobByServiceJobIDForbidden struct {
 	Payload *services_models.CompleteServiceJobByServiceJobIDResponse
 }
 
+// IsSuccess returns true when this complete service job by service job Id forbidden response has a 2xx status code
+func (o *CompleteServiceJobByServiceJobIDForbidden) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this complete service job by service job Id forbidden response has a 3xx status code
+func (o *CompleteServiceJobByServiceJobIDForbidden) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this complete service job by service job Id forbidden response has a 4xx status code
+func (o *CompleteServiceJobByServiceJobIDForbidden) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this complete service job by service job Id forbidden response has a 5xx status code
+func (o *CompleteServiceJobByServiceJobIDForbidden) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this complete service job by service job Id forbidden response a status code equal to that given
+func (o *CompleteServiceJobByServiceJobIDForbidden) IsCode(code int) bool {
+	return code == 403
+}
+
 func (o *CompleteServiceJobByServiceJobIDForbidden) Error() string {
 	return fmt.Sprintf("[PUT /service/v1/serviceJobs/{serviceJobId}/completions][%d] completeServiceJobByServiceJobIdForbidden  %+v", 403, o.Payload)
 }
+
+func (o *CompleteServiceJobByServiceJobIDForbidden) String() string {
+	return fmt.Sprintf("[PUT /service/v1/serviceJobs/{serviceJobId}/completions][%d] completeServiceJobByServiceJobIdForbidden  %+v", 403, o.Payload)
+}
+
 func (o *CompleteServiceJobByServiceJobIDForbidden) GetPayload() *services_models.CompleteServiceJobByServiceJobIDResponse {
 	return o.Payload
 }
@@ -247,7 +340,8 @@ func NewCompleteServiceJobByServiceJobIDNotFound() *CompleteServiceJobByServiceJ
 	return &CompleteServiceJobByServiceJobIDNotFound{}
 }
 
-/* CompleteServiceJobByServiceJobIDNotFound describes a response with status code 404, with default header values.
+/*
+CompleteServiceJobByServiceJobIDNotFound describes a response with status code 404, with default header values.
 
 The resource specified does not exist.
 */
@@ -264,9 +358,39 @@ type CompleteServiceJobByServiceJobIDNotFound struct {
 	Payload *services_models.CompleteServiceJobByServiceJobIDResponse
 }
 
+// IsSuccess returns true when this complete service job by service job Id not found response has a 2xx status code
+func (o *CompleteServiceJobByServiceJobIDNotFound) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this complete service job by service job Id not found response has a 3xx status code
+func (o *CompleteServiceJobByServiceJobIDNotFound) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this complete service job by service job Id not found response has a 4xx status code
+func (o *CompleteServiceJobByServiceJobIDNotFound) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this complete service job by service job Id not found response has a 5xx status code
+func (o *CompleteServiceJobByServiceJobIDNotFound) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this complete service job by service job Id not found response a status code equal to that given
+func (o *CompleteServiceJobByServiceJobIDNotFound) IsCode(code int) bool {
+	return code == 404
+}
+
 func (o *CompleteServiceJobByServiceJobIDNotFound) Error() string {
 	return fmt.Sprintf("[PUT /service/v1/serviceJobs/{serviceJobId}/completions][%d] completeServiceJobByServiceJobIdNotFound  %+v", 404, o.Payload)
 }
+
+func (o *CompleteServiceJobByServiceJobIDNotFound) String() string {
+	return fmt.Sprintf("[PUT /service/v1/serviceJobs/{serviceJobId}/completions][%d] completeServiceJobByServiceJobIdNotFound  %+v", 404, o.Payload)
+}
+
 func (o *CompleteServiceJobByServiceJobIDNotFound) GetPayload() *services_models.CompleteServiceJobByServiceJobIDResponse {
 	return o.Payload
 }
@@ -302,7 +426,8 @@ func NewCompleteServiceJobByServiceJobIDRequestEntityTooLarge() *CompleteService
 	return &CompleteServiceJobByServiceJobIDRequestEntityTooLarge{}
 }
 
-/* CompleteServiceJobByServiceJobIDRequestEntityTooLarge describes a response with status code 413, with default header values.
+/*
+CompleteServiceJobByServiceJobIDRequestEntityTooLarge describes a response with status code 413, with default header values.
 
 The request size exceeded the maximum accepted size.
 */
@@ -320,9 +445,39 @@ type CompleteServiceJobByServiceJobIDRequestEntityTooLarge struct {
 	Payload *services_models.CompleteServiceJobByServiceJobIDResponse
 }
 
+// IsSuccess returns true when this complete service job by service job Id request entity too large response has a 2xx status code
+func (o *CompleteServiceJobByServiceJobIDRequestEntityTooLarge) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this complete service job by service job Id request entity too large response has a 3xx status code
+func (o *CompleteServiceJobByServiceJobIDRequestEntityTooLarge) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this complete service job by service job Id request entity too large response has a 4xx status code
+func (o *CompleteServiceJobByServiceJobIDRequestEntityTooLarge) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this complete service job by service job Id request entity too large response has a 5xx status code
+func (o *CompleteServiceJobByServiceJobIDRequestEntityTooLarge) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this complete service job by service job Id request entity too large response a status code equal to that given
+func (o *CompleteServiceJobByServiceJobIDRequestEntityTooLarge) IsCode(code int) bool {
+	return code == 413
+}
+
 func (o *CompleteServiceJobByServiceJobIDRequestEntityTooLarge) Error() string {
 	return fmt.Sprintf("[PUT /service/v1/serviceJobs/{serviceJobId}/completions][%d] completeServiceJobByServiceJobIdRequestEntityTooLarge  %+v", 413, o.Payload)
 }
+
+func (o *CompleteServiceJobByServiceJobIDRequestEntityTooLarge) String() string {
+	return fmt.Sprintf("[PUT /service/v1/serviceJobs/{serviceJobId}/completions][%d] completeServiceJobByServiceJobIdRequestEntityTooLarge  %+v", 413, o.Payload)
+}
+
 func (o *CompleteServiceJobByServiceJobIDRequestEntityTooLarge) GetPayload() *services_models.CompleteServiceJobByServiceJobIDResponse {
 	return o.Payload
 }
@@ -358,7 +513,8 @@ func NewCompleteServiceJobByServiceJobIDUnsupportedMediaType() *CompleteServiceJ
 	return &CompleteServiceJobByServiceJobIDUnsupportedMediaType{}
 }
 
-/* CompleteServiceJobByServiceJobIDUnsupportedMediaType describes a response with status code 415, with default header values.
+/*
+CompleteServiceJobByServiceJobIDUnsupportedMediaType describes a response with status code 415, with default header values.
 
 The request payload is in an unsupported format.
 */
@@ -376,9 +532,39 @@ type CompleteServiceJobByServiceJobIDUnsupportedMediaType struct {
 	Payload *services_models.CompleteServiceJobByServiceJobIDResponse
 }
 
+// IsSuccess returns true when this complete service job by service job Id unsupported media type response has a 2xx status code
+func (o *CompleteServiceJobByServiceJobIDUnsupportedMediaType) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this complete service job by service job Id unsupported media type response has a 3xx status code
+func (o *CompleteServiceJobByServiceJobIDUnsupportedMediaType) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this complete service job by service job Id unsupported media type response has a 4xx status code
+func (o *CompleteServiceJobByServiceJobIDUnsupportedMediaType) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this complete service job by service job Id unsupported media type response has a 5xx status code
+func (o *CompleteServiceJobByServiceJobIDUnsupportedMediaType) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this complete service job by service job Id unsupported media type response a status code equal to that given
+func (o *CompleteServiceJobByServiceJobIDUnsupportedMediaType) IsCode(code int) bool {
+	return code == 415
+}
+
 func (o *CompleteServiceJobByServiceJobIDUnsupportedMediaType) Error() string {
 	return fmt.Sprintf("[PUT /service/v1/serviceJobs/{serviceJobId}/completions][%d] completeServiceJobByServiceJobIdUnsupportedMediaType  %+v", 415, o.Payload)
 }
+
+func (o *CompleteServiceJobByServiceJobIDUnsupportedMediaType) String() string {
+	return fmt.Sprintf("[PUT /service/v1/serviceJobs/{serviceJobId}/completions][%d] completeServiceJobByServiceJobIdUnsupportedMediaType  %+v", 415, o.Payload)
+}
+
 func (o *CompleteServiceJobByServiceJobIDUnsupportedMediaType) GetPayload() *services_models.CompleteServiceJobByServiceJobIDResponse {
 	return o.Payload
 }
@@ -414,7 +600,8 @@ func NewCompleteServiceJobByServiceJobIDUnprocessableEntity() *CompleteServiceJo
 	return &CompleteServiceJobByServiceJobIDUnprocessableEntity{}
 }
 
-/* CompleteServiceJobByServiceJobIDUnprocessableEntity describes a response with status code 422, with default header values.
+/*
+CompleteServiceJobByServiceJobIDUnprocessableEntity describes a response with status code 422, with default header values.
 
 Unprocessable Entity. Unable to process the contained instructions.
 */
@@ -432,9 +619,39 @@ type CompleteServiceJobByServiceJobIDUnprocessableEntity struct {
 	Payload *services_models.CompleteServiceJobByServiceJobIDResponse
 }
 
+// IsSuccess returns true when this complete service job by service job Id unprocessable entity response has a 2xx status code
+func (o *CompleteServiceJobByServiceJobIDUnprocessableEntity) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this complete service job by service job Id unprocessable entity response has a 3xx status code
+func (o *CompleteServiceJobByServiceJobIDUnprocessableEntity) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this complete service job by service job Id unprocessable entity response has a 4xx status code
+func (o *CompleteServiceJobByServiceJobIDUnprocessableEntity) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this complete service job by service job Id unprocessable entity response has a 5xx status code
+func (o *CompleteServiceJobByServiceJobIDUnprocessableEntity) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this complete service job by service job Id unprocessable entity response a status code equal to that given
+func (o *CompleteServiceJobByServiceJobIDUnprocessableEntity) IsCode(code int) bool {
+	return code == 422
+}
+
 func (o *CompleteServiceJobByServiceJobIDUnprocessableEntity) Error() string {
 	return fmt.Sprintf("[PUT /service/v1/serviceJobs/{serviceJobId}/completions][%d] completeServiceJobByServiceJobIdUnprocessableEntity  %+v", 422, o.Payload)
 }
+
+func (o *CompleteServiceJobByServiceJobIDUnprocessableEntity) String() string {
+	return fmt.Sprintf("[PUT /service/v1/serviceJobs/{serviceJobId}/completions][%d] completeServiceJobByServiceJobIdUnprocessableEntity  %+v", 422, o.Payload)
+}
+
 func (o *CompleteServiceJobByServiceJobIDUnprocessableEntity) GetPayload() *services_models.CompleteServiceJobByServiceJobIDResponse {
 	return o.Payload
 }
@@ -470,7 +687,8 @@ func NewCompleteServiceJobByServiceJobIDTooManyRequests() *CompleteServiceJobByS
 	return &CompleteServiceJobByServiceJobIDTooManyRequests{}
 }
 
-/* CompleteServiceJobByServiceJobIDTooManyRequests describes a response with status code 429, with default header values.
+/*
+CompleteServiceJobByServiceJobIDTooManyRequests describes a response with status code 429, with default header values.
 
 The frequency of requests was greater than allowed.
 */
@@ -488,9 +706,39 @@ type CompleteServiceJobByServiceJobIDTooManyRequests struct {
 	Payload *services_models.CompleteServiceJobByServiceJobIDResponse
 }
 
+// IsSuccess returns true when this complete service job by service job Id too many requests response has a 2xx status code
+func (o *CompleteServiceJobByServiceJobIDTooManyRequests) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this complete service job by service job Id too many requests response has a 3xx status code
+func (o *CompleteServiceJobByServiceJobIDTooManyRequests) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this complete service job by service job Id too many requests response has a 4xx status code
+func (o *CompleteServiceJobByServiceJobIDTooManyRequests) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this complete service job by service job Id too many requests response has a 5xx status code
+func (o *CompleteServiceJobByServiceJobIDTooManyRequests) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this complete service job by service job Id too many requests response a status code equal to that given
+func (o *CompleteServiceJobByServiceJobIDTooManyRequests) IsCode(code int) bool {
+	return code == 429
+}
+
 func (o *CompleteServiceJobByServiceJobIDTooManyRequests) Error() string {
 	return fmt.Sprintf("[PUT /service/v1/serviceJobs/{serviceJobId}/completions][%d] completeServiceJobByServiceJobIdTooManyRequests  %+v", 429, o.Payload)
 }
+
+func (o *CompleteServiceJobByServiceJobIDTooManyRequests) String() string {
+	return fmt.Sprintf("[PUT /service/v1/serviceJobs/{serviceJobId}/completions][%d] completeServiceJobByServiceJobIdTooManyRequests  %+v", 429, o.Payload)
+}
+
 func (o *CompleteServiceJobByServiceJobIDTooManyRequests) GetPayload() *services_models.CompleteServiceJobByServiceJobIDResponse {
 	return o.Payload
 }
@@ -526,7 +774,8 @@ func NewCompleteServiceJobByServiceJobIDInternalServerError() *CompleteServiceJo
 	return &CompleteServiceJobByServiceJobIDInternalServerError{}
 }
 
-/* CompleteServiceJobByServiceJobIDInternalServerError describes a response with status code 500, with default header values.
+/*
+CompleteServiceJobByServiceJobIDInternalServerError describes a response with status code 500, with default header values.
 
 An unexpected condition occurred that prevented the server from fulfilling the request.
 */
@@ -544,9 +793,39 @@ type CompleteServiceJobByServiceJobIDInternalServerError struct {
 	Payload *services_models.CompleteServiceJobByServiceJobIDResponse
 }
 
+// IsSuccess returns true when this complete service job by service job Id internal server error response has a 2xx status code
+func (o *CompleteServiceJobByServiceJobIDInternalServerError) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this complete service job by service job Id internal server error response has a 3xx status code
+func (o *CompleteServiceJobByServiceJobIDInternalServerError) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this complete service job by service job Id internal server error response has a 4xx status code
+func (o *CompleteServiceJobByServiceJobIDInternalServerError) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this complete service job by service job Id internal server error response has a 5xx status code
+func (o *CompleteServiceJobByServiceJobIDInternalServerError) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this complete service job by service job Id internal server error response a status code equal to that given
+func (o *CompleteServiceJobByServiceJobIDInternalServerError) IsCode(code int) bool {
+	return code == 500
+}
+
 func (o *CompleteServiceJobByServiceJobIDInternalServerError) Error() string {
 	return fmt.Sprintf("[PUT /service/v1/serviceJobs/{serviceJobId}/completions][%d] completeServiceJobByServiceJobIdInternalServerError  %+v", 500, o.Payload)
 }
+
+func (o *CompleteServiceJobByServiceJobIDInternalServerError) String() string {
+	return fmt.Sprintf("[PUT /service/v1/serviceJobs/{serviceJobId}/completions][%d] completeServiceJobByServiceJobIdInternalServerError  %+v", 500, o.Payload)
+}
+
 func (o *CompleteServiceJobByServiceJobIDInternalServerError) GetPayload() *services_models.CompleteServiceJobByServiceJobIDResponse {
 	return o.Payload
 }
@@ -582,7 +861,8 @@ func NewCompleteServiceJobByServiceJobIDServiceUnavailable() *CompleteServiceJob
 	return &CompleteServiceJobByServiceJobIDServiceUnavailable{}
 }
 
-/* CompleteServiceJobByServiceJobIDServiceUnavailable describes a response with status code 503, with default header values.
+/*
+CompleteServiceJobByServiceJobIDServiceUnavailable describes a response with status code 503, with default header values.
 
 Temporary overloading or maintenance of the server.
 */
@@ -600,9 +880,39 @@ type CompleteServiceJobByServiceJobIDServiceUnavailable struct {
 	Payload *services_models.CompleteServiceJobByServiceJobIDResponse
 }
 
+// IsSuccess returns true when this complete service job by service job Id service unavailable response has a 2xx status code
+func (o *CompleteServiceJobByServiceJobIDServiceUnavailable) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this complete service job by service job Id service unavailable response has a 3xx status code
+func (o *CompleteServiceJobByServiceJobIDServiceUnavailable) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this complete service job by service job Id service unavailable response has a 4xx status code
+func (o *CompleteServiceJobByServiceJobIDServiceUnavailable) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this complete service job by service job Id service unavailable response has a 5xx status code
+func (o *CompleteServiceJobByServiceJobIDServiceUnavailable) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this complete service job by service job Id service unavailable response a status code equal to that given
+func (o *CompleteServiceJobByServiceJobIDServiceUnavailable) IsCode(code int) bool {
+	return code == 503
+}
+
 func (o *CompleteServiceJobByServiceJobIDServiceUnavailable) Error() string {
 	return fmt.Sprintf("[PUT /service/v1/serviceJobs/{serviceJobId}/completions][%d] completeServiceJobByServiceJobIdServiceUnavailable  %+v", 503, o.Payload)
 }
+
+func (o *CompleteServiceJobByServiceJobIDServiceUnavailable) String() string {
+	return fmt.Sprintf("[PUT /service/v1/serviceJobs/{serviceJobId}/completions][%d] completeServiceJobByServiceJobIdServiceUnavailable  %+v", 503, o.Payload)
+}
+
 func (o *CompleteServiceJobByServiceJobIDServiceUnavailable) GetPayload() *services_models.CompleteServiceJobByServiceJobIDResponse {
 	return o.Payload
 }

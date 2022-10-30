@@ -52,10 +52,12 @@ func NewCompleteServiceJobByServiceJobIDParamsWithHTTPClient(client *http.Client
 	}
 }
 
-/* CompleteServiceJobByServiceJobIDParams contains all the parameters to send to the API endpoint
-   for the complete service job by service job Id operation.
+/*
+CompleteServiceJobByServiceJobIDParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the complete service job by service job Id operation.
+
+	Typically these are written to a http.Request.
 */
 type CompleteServiceJobByServiceJobIDParams struct {
 

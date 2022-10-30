@@ -54,10 +54,12 @@ func NewCreateInboundShipmentPlanParamsWithHTTPClient(client *http.Client) *Crea
 	}
 }
 
-/* CreateInboundShipmentPlanParams contains all the parameters to send to the API endpoint
-   for the create inbound shipment plan operation.
+/*
+CreateInboundShipmentPlanParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the create inbound shipment plan operation.
+
+	Typically these are written to a http.Request.
 */
 type CreateInboundShipmentPlanParams struct {
 

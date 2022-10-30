@@ -52,10 +52,12 @@ func NewPostContentDocumentApprovalSubmissionParamsWithHTTPClient(client *http.C
 	}
 }
 
-/* PostContentDocumentApprovalSubmissionParams contains all the parameters to send to the API endpoint
-   for the post content document approval submission operation.
+/*
+PostContentDocumentApprovalSubmissionParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the post content document approval submission operation.
+
+	Typically these are written to a http.Request.
 */
 type PostContentDocumentApprovalSubmissionParams struct {
 

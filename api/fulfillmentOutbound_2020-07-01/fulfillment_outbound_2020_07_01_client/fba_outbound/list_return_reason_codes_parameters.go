@@ -52,10 +52,12 @@ func NewListReturnReasonCodesParamsWithHTTPClient(client *http.Client) *ListRetu
 	}
 }
 
-/* ListReturnReasonCodesParams contains all the parameters to send to the API endpoint
-   for the list return reason codes operation.
+/*
+ListReturnReasonCodesParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the list return reason codes operation.
+
+	Typically these are written to a http.Request.
 */
 type ListReturnReasonCodesParams struct {
 

@@ -52,10 +52,12 @@ func NewGetOrderAddressParamsWithHTTPClient(client *http.Client) *GetOrderAddres
 	}
 }
 
-/* GetOrderAddressParams contains all the parameters to send to the API endpoint
-   for the get order address operation.
+/*
+GetOrderAddressParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the get order address operation.
+
+	Typically these are written to a http.Request.
 */
 type GetOrderAddressParams struct {
 

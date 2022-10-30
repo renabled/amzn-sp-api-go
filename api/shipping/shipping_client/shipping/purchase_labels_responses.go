@@ -81,7 +81,8 @@ func NewPurchaseLabelsOK() *PurchaseLabelsOK {
 	return &PurchaseLabelsOK{}
 }
 
-/* PurchaseLabelsOK describes a response with status code 200, with default header values.
+/*
+PurchaseLabelsOK describes a response with status code 200, with default header values.
 
 Success.
 */
@@ -98,9 +99,39 @@ type PurchaseLabelsOK struct {
 	Payload *shipping_models.PurchaseLabelsResponse
 }
 
+// IsSuccess returns true when this purchase labels o k response has a 2xx status code
+func (o *PurchaseLabelsOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this purchase labels o k response has a 3xx status code
+func (o *PurchaseLabelsOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this purchase labels o k response has a 4xx status code
+func (o *PurchaseLabelsOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this purchase labels o k response has a 5xx status code
+func (o *PurchaseLabelsOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this purchase labels o k response a status code equal to that given
+func (o *PurchaseLabelsOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *PurchaseLabelsOK) Error() string {
 	return fmt.Sprintf("[POST /shipping/v1/shipments/{shipmentId}/purchaseLabels][%d] purchaseLabelsOK  %+v", 200, o.Payload)
 }
+
+func (o *PurchaseLabelsOK) String() string {
+	return fmt.Sprintf("[POST /shipping/v1/shipments/{shipmentId}/purchaseLabels][%d] purchaseLabelsOK  %+v", 200, o.Payload)
+}
+
 func (o *PurchaseLabelsOK) GetPayload() *shipping_models.PurchaseLabelsResponse {
 	return o.Payload
 }
@@ -136,7 +167,8 @@ func NewPurchaseLabelsBadRequest() *PurchaseLabelsBadRequest {
 	return &PurchaseLabelsBadRequest{}
 }
 
-/* PurchaseLabelsBadRequest describes a response with status code 400, with default header values.
+/*
+PurchaseLabelsBadRequest describes a response with status code 400, with default header values.
 
 Request has missing or invalid parameters and cannot be parsed.
 */
@@ -153,9 +185,39 @@ type PurchaseLabelsBadRequest struct {
 	Payload *shipping_models.PurchaseLabelsResponse
 }
 
+// IsSuccess returns true when this purchase labels bad request response has a 2xx status code
+func (o *PurchaseLabelsBadRequest) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this purchase labels bad request response has a 3xx status code
+func (o *PurchaseLabelsBadRequest) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this purchase labels bad request response has a 4xx status code
+func (o *PurchaseLabelsBadRequest) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this purchase labels bad request response has a 5xx status code
+func (o *PurchaseLabelsBadRequest) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this purchase labels bad request response a status code equal to that given
+func (o *PurchaseLabelsBadRequest) IsCode(code int) bool {
+	return code == 400
+}
+
 func (o *PurchaseLabelsBadRequest) Error() string {
 	return fmt.Sprintf("[POST /shipping/v1/shipments/{shipmentId}/purchaseLabels][%d] purchaseLabelsBadRequest  %+v", 400, o.Payload)
 }
+
+func (o *PurchaseLabelsBadRequest) String() string {
+	return fmt.Sprintf("[POST /shipping/v1/shipments/{shipmentId}/purchaseLabels][%d] purchaseLabelsBadRequest  %+v", 400, o.Payload)
+}
+
 func (o *PurchaseLabelsBadRequest) GetPayload() *shipping_models.PurchaseLabelsResponse {
 	return o.Payload
 }
@@ -191,7 +253,8 @@ func NewPurchaseLabelsUnauthorized() *PurchaseLabelsUnauthorized {
 	return &PurchaseLabelsUnauthorized{}
 }
 
-/* PurchaseLabelsUnauthorized describes a response with status code 401, with default header values.
+/*
+PurchaseLabelsUnauthorized describes a response with status code 401, with default header values.
 
 The request's Authorization header is not formatted correctly or does not contain a valid token.
 */
@@ -209,9 +272,39 @@ type PurchaseLabelsUnauthorized struct {
 	Payload *shipping_models.PurchaseLabelsResponse
 }
 
+// IsSuccess returns true when this purchase labels unauthorized response has a 2xx status code
+func (o *PurchaseLabelsUnauthorized) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this purchase labels unauthorized response has a 3xx status code
+func (o *PurchaseLabelsUnauthorized) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this purchase labels unauthorized response has a 4xx status code
+func (o *PurchaseLabelsUnauthorized) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this purchase labels unauthorized response has a 5xx status code
+func (o *PurchaseLabelsUnauthorized) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this purchase labels unauthorized response a status code equal to that given
+func (o *PurchaseLabelsUnauthorized) IsCode(code int) bool {
+	return code == 401
+}
+
 func (o *PurchaseLabelsUnauthorized) Error() string {
 	return fmt.Sprintf("[POST /shipping/v1/shipments/{shipmentId}/purchaseLabels][%d] purchaseLabelsUnauthorized  %+v", 401, o.Payload)
 }
+
+func (o *PurchaseLabelsUnauthorized) String() string {
+	return fmt.Sprintf("[POST /shipping/v1/shipments/{shipmentId}/purchaseLabels][%d] purchaseLabelsUnauthorized  %+v", 401, o.Payload)
+}
+
 func (o *PurchaseLabelsUnauthorized) GetPayload() *shipping_models.PurchaseLabelsResponse {
 	return o.Payload
 }
@@ -247,7 +340,8 @@ func NewPurchaseLabelsForbidden() *PurchaseLabelsForbidden {
 	return &PurchaseLabelsForbidden{}
 }
 
-/* PurchaseLabelsForbidden describes a response with status code 403, with default header values.
+/*
+PurchaseLabelsForbidden describes a response with status code 403, with default header values.
 
 403 can be caused for reasons like Access Denied, Unauthorized, Expired Token, Invalid Signature or Resource Not Found.
 */
@@ -260,9 +354,39 @@ type PurchaseLabelsForbidden struct {
 	Payload *shipping_models.PurchaseLabelsResponse
 }
 
+// IsSuccess returns true when this purchase labels forbidden response has a 2xx status code
+func (o *PurchaseLabelsForbidden) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this purchase labels forbidden response has a 3xx status code
+func (o *PurchaseLabelsForbidden) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this purchase labels forbidden response has a 4xx status code
+func (o *PurchaseLabelsForbidden) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this purchase labels forbidden response has a 5xx status code
+func (o *PurchaseLabelsForbidden) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this purchase labels forbidden response a status code equal to that given
+func (o *PurchaseLabelsForbidden) IsCode(code int) bool {
+	return code == 403
+}
+
 func (o *PurchaseLabelsForbidden) Error() string {
 	return fmt.Sprintf("[POST /shipping/v1/shipments/{shipmentId}/purchaseLabels][%d] purchaseLabelsForbidden  %+v", 403, o.Payload)
 }
+
+func (o *PurchaseLabelsForbidden) String() string {
+	return fmt.Sprintf("[POST /shipping/v1/shipments/{shipmentId}/purchaseLabels][%d] purchaseLabelsForbidden  %+v", 403, o.Payload)
+}
+
 func (o *PurchaseLabelsForbidden) GetPayload() *shipping_models.PurchaseLabelsResponse {
 	return o.Payload
 }
@@ -291,7 +415,8 @@ func NewPurchaseLabelsNotFound() *PurchaseLabelsNotFound {
 	return &PurchaseLabelsNotFound{}
 }
 
-/* PurchaseLabelsNotFound describes a response with status code 404, with default header values.
+/*
+PurchaseLabelsNotFound describes a response with status code 404, with default header values.
 
 The resource specified does not exist.
 */
@@ -308,9 +433,39 @@ type PurchaseLabelsNotFound struct {
 	Payload *shipping_models.PurchaseLabelsResponse
 }
 
+// IsSuccess returns true when this purchase labels not found response has a 2xx status code
+func (o *PurchaseLabelsNotFound) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this purchase labels not found response has a 3xx status code
+func (o *PurchaseLabelsNotFound) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this purchase labels not found response has a 4xx status code
+func (o *PurchaseLabelsNotFound) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this purchase labels not found response has a 5xx status code
+func (o *PurchaseLabelsNotFound) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this purchase labels not found response a status code equal to that given
+func (o *PurchaseLabelsNotFound) IsCode(code int) bool {
+	return code == 404
+}
+
 func (o *PurchaseLabelsNotFound) Error() string {
 	return fmt.Sprintf("[POST /shipping/v1/shipments/{shipmentId}/purchaseLabels][%d] purchaseLabelsNotFound  %+v", 404, o.Payload)
 }
+
+func (o *PurchaseLabelsNotFound) String() string {
+	return fmt.Sprintf("[POST /shipping/v1/shipments/{shipmentId}/purchaseLabels][%d] purchaseLabelsNotFound  %+v", 404, o.Payload)
+}
+
 func (o *PurchaseLabelsNotFound) GetPayload() *shipping_models.PurchaseLabelsResponse {
 	return o.Payload
 }
@@ -346,7 +501,8 @@ func NewPurchaseLabelsTooManyRequests() *PurchaseLabelsTooManyRequests {
 	return &PurchaseLabelsTooManyRequests{}
 }
 
-/* PurchaseLabelsTooManyRequests describes a response with status code 429, with default header values.
+/*
+PurchaseLabelsTooManyRequests describes a response with status code 429, with default header values.
 
 The frequency of requests was greater than allowed.
 */
@@ -364,9 +520,39 @@ type PurchaseLabelsTooManyRequests struct {
 	Payload *shipping_models.PurchaseLabelsResponse
 }
 
+// IsSuccess returns true when this purchase labels too many requests response has a 2xx status code
+func (o *PurchaseLabelsTooManyRequests) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this purchase labels too many requests response has a 3xx status code
+func (o *PurchaseLabelsTooManyRequests) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this purchase labels too many requests response has a 4xx status code
+func (o *PurchaseLabelsTooManyRequests) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this purchase labels too many requests response has a 5xx status code
+func (o *PurchaseLabelsTooManyRequests) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this purchase labels too many requests response a status code equal to that given
+func (o *PurchaseLabelsTooManyRequests) IsCode(code int) bool {
+	return code == 429
+}
+
 func (o *PurchaseLabelsTooManyRequests) Error() string {
 	return fmt.Sprintf("[POST /shipping/v1/shipments/{shipmentId}/purchaseLabels][%d] purchaseLabelsTooManyRequests  %+v", 429, o.Payload)
 }
+
+func (o *PurchaseLabelsTooManyRequests) String() string {
+	return fmt.Sprintf("[POST /shipping/v1/shipments/{shipmentId}/purchaseLabels][%d] purchaseLabelsTooManyRequests  %+v", 429, o.Payload)
+}
+
 func (o *PurchaseLabelsTooManyRequests) GetPayload() *shipping_models.PurchaseLabelsResponse {
 	return o.Payload
 }
@@ -402,7 +588,8 @@ func NewPurchaseLabelsInternalServerError() *PurchaseLabelsInternalServerError {
 	return &PurchaseLabelsInternalServerError{}
 }
 
-/* PurchaseLabelsInternalServerError describes a response with status code 500, with default header values.
+/*
+PurchaseLabelsInternalServerError describes a response with status code 500, with default header values.
 
 Encountered an unexpected condition which prevented the server from fulfilling the request.
 */
@@ -420,9 +607,39 @@ type PurchaseLabelsInternalServerError struct {
 	Payload *shipping_models.PurchaseLabelsResponse
 }
 
+// IsSuccess returns true when this purchase labels internal server error response has a 2xx status code
+func (o *PurchaseLabelsInternalServerError) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this purchase labels internal server error response has a 3xx status code
+func (o *PurchaseLabelsInternalServerError) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this purchase labels internal server error response has a 4xx status code
+func (o *PurchaseLabelsInternalServerError) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this purchase labels internal server error response has a 5xx status code
+func (o *PurchaseLabelsInternalServerError) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this purchase labels internal server error response a status code equal to that given
+func (o *PurchaseLabelsInternalServerError) IsCode(code int) bool {
+	return code == 500
+}
+
 func (o *PurchaseLabelsInternalServerError) Error() string {
 	return fmt.Sprintf("[POST /shipping/v1/shipments/{shipmentId}/purchaseLabels][%d] purchaseLabelsInternalServerError  %+v", 500, o.Payload)
 }
+
+func (o *PurchaseLabelsInternalServerError) String() string {
+	return fmt.Sprintf("[POST /shipping/v1/shipments/{shipmentId}/purchaseLabels][%d] purchaseLabelsInternalServerError  %+v", 500, o.Payload)
+}
+
 func (o *PurchaseLabelsInternalServerError) GetPayload() *shipping_models.PurchaseLabelsResponse {
 	return o.Payload
 }
@@ -458,7 +675,8 @@ func NewPurchaseLabelsServiceUnavailable() *PurchaseLabelsServiceUnavailable {
 	return &PurchaseLabelsServiceUnavailable{}
 }
 
-/* PurchaseLabelsServiceUnavailable describes a response with status code 503, with default header values.
+/*
+PurchaseLabelsServiceUnavailable describes a response with status code 503, with default header values.
 
 Temporary overloading or maintenance of the server.
 */
@@ -476,9 +694,39 @@ type PurchaseLabelsServiceUnavailable struct {
 	Payload *shipping_models.PurchaseLabelsResponse
 }
 
+// IsSuccess returns true when this purchase labels service unavailable response has a 2xx status code
+func (o *PurchaseLabelsServiceUnavailable) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this purchase labels service unavailable response has a 3xx status code
+func (o *PurchaseLabelsServiceUnavailable) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this purchase labels service unavailable response has a 4xx status code
+func (o *PurchaseLabelsServiceUnavailable) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this purchase labels service unavailable response has a 5xx status code
+func (o *PurchaseLabelsServiceUnavailable) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this purchase labels service unavailable response a status code equal to that given
+func (o *PurchaseLabelsServiceUnavailable) IsCode(code int) bool {
+	return code == 503
+}
+
 func (o *PurchaseLabelsServiceUnavailable) Error() string {
 	return fmt.Sprintf("[POST /shipping/v1/shipments/{shipmentId}/purchaseLabels][%d] purchaseLabelsServiceUnavailable  %+v", 503, o.Payload)
 }
+
+func (o *PurchaseLabelsServiceUnavailable) String() string {
+	return fmt.Sprintf("[POST /shipping/v1/shipments/{shipmentId}/purchaseLabels][%d] purchaseLabelsServiceUnavailable  %+v", 503, o.Payload)
+}
+
 func (o *PurchaseLabelsServiceUnavailable) GetPayload() *shipping_models.PurchaseLabelsResponse {
 	return o.Payload
 }

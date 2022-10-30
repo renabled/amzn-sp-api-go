@@ -58,7 +58,7 @@ type ClientService interface {
 }
 
 /*
-  CancelFulfillmentOrder Requests that Amazon stop attempting to fulfill the fulfillment order indicated by the specified order identifier.
+	CancelFulfillmentOrder Requests that Amazon stop attempting to fulfill the fulfillment order indicated by the specified order identifier.
 
 **Usage Plan:**
 
@@ -104,7 +104,7 @@ func (a *Client) CancelFulfillmentOrder(params *CancelFulfillmentOrderParams, op
 }
 
 /*
-  CreateFulfillmentOrder Requests that Amazon ship items from the seller's inventory in Amazon's fulfillment network to a destination address.
+	CreateFulfillmentOrder Requests that Amazon ship items from the seller's inventory in Amazon's fulfillment network to a destination address.
 
 **Usage Plan:**
 
@@ -150,7 +150,7 @@ func (a *Client) CreateFulfillmentOrder(params *CreateFulfillmentOrderParams, op
 }
 
 /*
-  CreateFulfillmentReturn Creates a fulfillment return.
+	CreateFulfillmentReturn Creates a fulfillment return.
 
 **Usage Plan:**
 
@@ -196,7 +196,7 @@ func (a *Client) CreateFulfillmentReturn(params *CreateFulfillmentReturnParams, 
 }
 
 /*
-  GetFeatureInventory Returns a list of inventory items that are eligible for the fulfillment feature you specify.
+	GetFeatureInventory Returns a list of inventory items that are eligible for the fulfillment feature you specify.
 
 **Usage Plan:**
 
@@ -242,7 +242,7 @@ func (a *Client) GetFeatureInventory(params *GetFeatureInventoryParams, opts ...
 }
 
 /*
-  GetFeatureSKU Returns the number of items with the sellerSKU you specify that can have orders fulfilled using the specified feature. Note that if the sellerSKU isn't eligible, the response will contain an empty skuInfo object.
+	GetFeatureSKU Returns the number of items with the sellerSKU you specify that can have orders fulfilled using the specified feature. Note that if the sellerSKU isn't eligible, the response will contain an empty skuInfo object.
 
 **Usage Plan:**
 
@@ -288,7 +288,7 @@ func (a *Client) GetFeatureSKU(params *GetFeatureSKUParams, opts ...ClientOption
 }
 
 /*
-  GetFeatures Returns a list of features available for Multi-Channel Fulfillment orders in the marketplace you specify, and whether the seller for which you made the call is enrolled for each feature.
+	GetFeatures Returns a list of features available for Multi-Channel Fulfillment orders in the marketplace you specify, and whether the seller for which you made the call is enrolled for each feature.
 
 **Usage Plan:**
 
@@ -334,7 +334,7 @@ func (a *Client) GetFeatures(params *GetFeaturesParams, opts ...ClientOption) (*
 }
 
 /*
-  GetFulfillmentOrder Returns the fulfillment order indicated by the specified order identifier.
+	GetFulfillmentOrder Returns the fulfillment order indicated by the specified order identifier.
 
 **Usage Plan:**
 
@@ -380,7 +380,7 @@ func (a *Client) GetFulfillmentOrder(params *GetFulfillmentOrderParams, opts ...
 }
 
 /*
-  GetFulfillmentPreview Returns a list of fulfillment order previews based on shipping criteria that you specify.
+	GetFulfillmentPreview Returns a list of fulfillment order previews based on shipping criteria that you specify.
 
 **Usage Plan:**
 
@@ -426,7 +426,7 @@ func (a *Client) GetFulfillmentPreview(params *GetFulfillmentPreviewParams, opts
 }
 
 /*
-  GetPackageTrackingDetails Returns delivery tracking information for a package in an outbound shipment for a Multi-Channel Fulfillment order.
+	GetPackageTrackingDetails Returns delivery tracking information for a package in an outbound shipment for a Multi-Channel Fulfillment order.
 
 **Usage Plan:**
 
@@ -472,7 +472,7 @@ func (a *Client) GetPackageTrackingDetails(params *GetPackageTrackingDetailsPara
 }
 
 /*
-  ListAllFulfillmentOrders Returns a list of fulfillment orders fulfilled after (or at) a specified date-time, or indicated by the next token parameter.
+	ListAllFulfillmentOrders Returns a list of fulfillment orders fulfilled after (or at) a specified date-time, or indicated by the next token parameter.
 
 **Usage Plan:**
 
@@ -518,7 +518,7 @@ func (a *Client) ListAllFulfillmentOrders(params *ListAllFulfillmentOrdersParams
 }
 
 /*
-  ListReturnReasonCodes Returns a list of return reason codes for a seller SKU in a given marketplace.
+	ListReturnReasonCodes Returns a list of return reason codes for a seller SKU in a given marketplace.
 
 **Usage Plan:**
 
@@ -564,7 +564,7 @@ func (a *Client) ListReturnReasonCodes(params *ListReturnReasonCodesParams, opts
 }
 
 /*
-  UpdateFulfillmentOrder Updates and/or requests shipment for a fulfillment order with an order hold on it.
+	UpdateFulfillmentOrder Updates and/or requests shipment for a fulfillment order with an order hold on it.
 
 **Usage Plan:**
 

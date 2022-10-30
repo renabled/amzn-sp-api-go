@@ -52,10 +52,12 @@ func NewGetServiceJobByServiceJobIDParamsWithHTTPClient(client *http.Client) *Ge
 	}
 }
 
-/* GetServiceJobByServiceJobIDParams contains all the parameters to send to the API endpoint
-   for the get service job by service job Id operation.
+/*
+GetServiceJobByServiceJobIDParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the get service job by service job Id operation.
+
+	Typically these are written to a http.Request.
 */
 type GetServiceJobByServiceJobIDParams struct {
 

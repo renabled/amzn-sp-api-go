@@ -53,10 +53,12 @@ func NewDeleteSmallAndLightEnrollmentBySellerSKUParamsWithHTTPClient(client *htt
 	}
 }
 
-/* DeleteSmallAndLightEnrollmentBySellerSKUParams contains all the parameters to send to the API endpoint
-   for the delete small and light enrollment by seller s k u operation.
+/*
+DeleteSmallAndLightEnrollmentBySellerSKUParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the delete small and light enrollment by seller s k u operation.
+
+	Typically these are written to a http.Request.
 */
 type DeleteSmallAndLightEnrollmentBySellerSKUParams struct {
 

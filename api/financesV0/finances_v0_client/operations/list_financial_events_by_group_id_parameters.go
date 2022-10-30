@@ -53,10 +53,12 @@ func NewListFinancialEventsByGroupIDParamsWithHTTPClient(client *http.Client) *L
 	}
 }
 
-/* ListFinancialEventsByGroupIDParams contains all the parameters to send to the API endpoint
-   for the list financial events by group Id operation.
+/*
+ListFinancialEventsByGroupIDParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the list financial events by group Id operation.
+
+	Typically these are written to a http.Request.
 */
 type ListFinancialEventsByGroupIDParams struct {
 

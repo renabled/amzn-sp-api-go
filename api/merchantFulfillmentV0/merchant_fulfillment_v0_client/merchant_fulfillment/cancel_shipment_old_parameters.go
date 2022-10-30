@@ -52,10 +52,12 @@ func NewCancelShipmentOldParamsWithHTTPClient(client *http.Client) *CancelShipme
 	}
 }
 
-/* CancelShipmentOldParams contains all the parameters to send to the API endpoint
-   for the cancel shipment old operation.
+/*
+CancelShipmentOldParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the cancel shipment old operation.
+
+	Typically these are written to a http.Request.
 */
 type CancelShipmentOldParams struct {
 

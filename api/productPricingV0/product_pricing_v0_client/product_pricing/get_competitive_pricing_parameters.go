@@ -53,10 +53,12 @@ func NewGetCompetitivePricingParamsWithHTTPClient(client *http.Client) *GetCompe
 	}
 }
 
-/* GetCompetitivePricingParams contains all the parameters to send to the API endpoint
-   for the get competitive pricing operation.
+/*
+GetCompetitivePricingParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the get competitive pricing operation.
+
+	Typically these are written to a http.Request.
 */
 type GetCompetitivePricingParams struct {
 

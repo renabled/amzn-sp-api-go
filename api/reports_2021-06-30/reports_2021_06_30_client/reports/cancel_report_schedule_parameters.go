@@ -52,10 +52,12 @@ func NewCancelReportScheduleParamsWithHTTPClient(client *http.Client) *CancelRep
 	}
 }
 
-/* CancelReportScheduleParams contains all the parameters to send to the API endpoint
-   for the cancel report schedule operation.
+/*
+CancelReportScheduleParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the cancel report schedule operation.
+
+	Typically these are written to a http.Request.
 */
 type CancelReportScheduleParams struct {
 

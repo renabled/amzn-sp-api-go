@@ -53,10 +53,12 @@ func NewGetSmallAndLightEnrollmentBySellerSKUParamsWithHTTPClient(client *http.C
 	}
 }
 
-/* GetSmallAndLightEnrollmentBySellerSKUParams contains all the parameters to send to the API endpoint
-   for the get small and light enrollment by seller s k u operation.
+/*
+GetSmallAndLightEnrollmentBySellerSKUParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the get small and light enrollment by seller s k u operation.
+
+	Typically these are written to a http.Request.
 */
 type GetSmallAndLightEnrollmentBySellerSKUParams struct {
 

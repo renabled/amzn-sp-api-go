@@ -87,7 +87,8 @@ func NewSubmitInvoiceOK() *SubmitInvoiceOK {
 	return &SubmitInvoiceOK{}
 }
 
-/* SubmitInvoiceOK describes a response with status code 200, with default header values.
+/*
+SubmitInvoiceOK describes a response with status code 200, with default header values.
 
 Success.
 */
@@ -104,9 +105,39 @@ type SubmitInvoiceOK struct {
 	Payload *shipment_invoicing_v0_models.SubmitInvoiceResponse
 }
 
+// IsSuccess returns true when this submit invoice o k response has a 2xx status code
+func (o *SubmitInvoiceOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this submit invoice o k response has a 3xx status code
+func (o *SubmitInvoiceOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this submit invoice o k response has a 4xx status code
+func (o *SubmitInvoiceOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this submit invoice o k response has a 5xx status code
+func (o *SubmitInvoiceOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this submit invoice o k response a status code equal to that given
+func (o *SubmitInvoiceOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *SubmitInvoiceOK) Error() string {
 	return fmt.Sprintf("[POST /fba/outbound/brazil/v0/shipments/{shipmentId}/invoice][%d] submitInvoiceOK  %+v", 200, o.Payload)
 }
+
+func (o *SubmitInvoiceOK) String() string {
+	return fmt.Sprintf("[POST /fba/outbound/brazil/v0/shipments/{shipmentId}/invoice][%d] submitInvoiceOK  %+v", 200, o.Payload)
+}
+
 func (o *SubmitInvoiceOK) GetPayload() *shipment_invoicing_v0_models.SubmitInvoiceResponse {
 	return o.Payload
 }
@@ -142,7 +173,8 @@ func NewSubmitInvoiceBadRequest() *SubmitInvoiceBadRequest {
 	return &SubmitInvoiceBadRequest{}
 }
 
-/* SubmitInvoiceBadRequest describes a response with status code 400, with default header values.
+/*
+SubmitInvoiceBadRequest describes a response with status code 400, with default header values.
 
 Request has missing or invalid parameters and cannot be parsed.
 */
@@ -159,9 +191,39 @@ type SubmitInvoiceBadRequest struct {
 	Payload *shipment_invoicing_v0_models.SubmitInvoiceResponse
 }
 
+// IsSuccess returns true when this submit invoice bad request response has a 2xx status code
+func (o *SubmitInvoiceBadRequest) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this submit invoice bad request response has a 3xx status code
+func (o *SubmitInvoiceBadRequest) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this submit invoice bad request response has a 4xx status code
+func (o *SubmitInvoiceBadRequest) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this submit invoice bad request response has a 5xx status code
+func (o *SubmitInvoiceBadRequest) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this submit invoice bad request response a status code equal to that given
+func (o *SubmitInvoiceBadRequest) IsCode(code int) bool {
+	return code == 400
+}
+
 func (o *SubmitInvoiceBadRequest) Error() string {
 	return fmt.Sprintf("[POST /fba/outbound/brazil/v0/shipments/{shipmentId}/invoice][%d] submitInvoiceBadRequest  %+v", 400, o.Payload)
 }
+
+func (o *SubmitInvoiceBadRequest) String() string {
+	return fmt.Sprintf("[POST /fba/outbound/brazil/v0/shipments/{shipmentId}/invoice][%d] submitInvoiceBadRequest  %+v", 400, o.Payload)
+}
+
 func (o *SubmitInvoiceBadRequest) GetPayload() *shipment_invoicing_v0_models.SubmitInvoiceResponse {
 	return o.Payload
 }
@@ -197,7 +259,8 @@ func NewSubmitInvoiceUnauthorized() *SubmitInvoiceUnauthorized {
 	return &SubmitInvoiceUnauthorized{}
 }
 
-/* SubmitInvoiceUnauthorized describes a response with status code 401, with default header values.
+/*
+SubmitInvoiceUnauthorized describes a response with status code 401, with default header values.
 
 The request's Authorization header is not formatted correctly or does not contain a valid token.
 */
@@ -215,9 +278,39 @@ type SubmitInvoiceUnauthorized struct {
 	Payload *shipment_invoicing_v0_models.SubmitInvoiceResponse
 }
 
+// IsSuccess returns true when this submit invoice unauthorized response has a 2xx status code
+func (o *SubmitInvoiceUnauthorized) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this submit invoice unauthorized response has a 3xx status code
+func (o *SubmitInvoiceUnauthorized) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this submit invoice unauthorized response has a 4xx status code
+func (o *SubmitInvoiceUnauthorized) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this submit invoice unauthorized response has a 5xx status code
+func (o *SubmitInvoiceUnauthorized) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this submit invoice unauthorized response a status code equal to that given
+func (o *SubmitInvoiceUnauthorized) IsCode(code int) bool {
+	return code == 401
+}
+
 func (o *SubmitInvoiceUnauthorized) Error() string {
 	return fmt.Sprintf("[POST /fba/outbound/brazil/v0/shipments/{shipmentId}/invoice][%d] submitInvoiceUnauthorized  %+v", 401, o.Payload)
 }
+
+func (o *SubmitInvoiceUnauthorized) String() string {
+	return fmt.Sprintf("[POST /fba/outbound/brazil/v0/shipments/{shipmentId}/invoice][%d] submitInvoiceUnauthorized  %+v", 401, o.Payload)
+}
+
 func (o *SubmitInvoiceUnauthorized) GetPayload() *shipment_invoicing_v0_models.SubmitInvoiceResponse {
 	return o.Payload
 }
@@ -253,7 +346,8 @@ func NewSubmitInvoiceForbidden() *SubmitInvoiceForbidden {
 	return &SubmitInvoiceForbidden{}
 }
 
-/* SubmitInvoiceForbidden describes a response with status code 403, with default header values.
+/*
+SubmitInvoiceForbidden describes a response with status code 403, with default header values.
 
 Indicates that access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.
 */
@@ -266,9 +360,39 @@ type SubmitInvoiceForbidden struct {
 	Payload *shipment_invoicing_v0_models.SubmitInvoiceResponse
 }
 
+// IsSuccess returns true when this submit invoice forbidden response has a 2xx status code
+func (o *SubmitInvoiceForbidden) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this submit invoice forbidden response has a 3xx status code
+func (o *SubmitInvoiceForbidden) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this submit invoice forbidden response has a 4xx status code
+func (o *SubmitInvoiceForbidden) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this submit invoice forbidden response has a 5xx status code
+func (o *SubmitInvoiceForbidden) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this submit invoice forbidden response a status code equal to that given
+func (o *SubmitInvoiceForbidden) IsCode(code int) bool {
+	return code == 403
+}
+
 func (o *SubmitInvoiceForbidden) Error() string {
 	return fmt.Sprintf("[POST /fba/outbound/brazil/v0/shipments/{shipmentId}/invoice][%d] submitInvoiceForbidden  %+v", 403, o.Payload)
 }
+
+func (o *SubmitInvoiceForbidden) String() string {
+	return fmt.Sprintf("[POST /fba/outbound/brazil/v0/shipments/{shipmentId}/invoice][%d] submitInvoiceForbidden  %+v", 403, o.Payload)
+}
+
 func (o *SubmitInvoiceForbidden) GetPayload() *shipment_invoicing_v0_models.SubmitInvoiceResponse {
 	return o.Payload
 }
@@ -297,7 +421,8 @@ func NewSubmitInvoiceNotFound() *SubmitInvoiceNotFound {
 	return &SubmitInvoiceNotFound{}
 }
 
-/* SubmitInvoiceNotFound describes a response with status code 404, with default header values.
+/*
+SubmitInvoiceNotFound describes a response with status code 404, with default header values.
 
 The resource specified does not exist.
 */
@@ -314,9 +439,39 @@ type SubmitInvoiceNotFound struct {
 	Payload *shipment_invoicing_v0_models.SubmitInvoiceResponse
 }
 
+// IsSuccess returns true when this submit invoice not found response has a 2xx status code
+func (o *SubmitInvoiceNotFound) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this submit invoice not found response has a 3xx status code
+func (o *SubmitInvoiceNotFound) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this submit invoice not found response has a 4xx status code
+func (o *SubmitInvoiceNotFound) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this submit invoice not found response has a 5xx status code
+func (o *SubmitInvoiceNotFound) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this submit invoice not found response a status code equal to that given
+func (o *SubmitInvoiceNotFound) IsCode(code int) bool {
+	return code == 404
+}
+
 func (o *SubmitInvoiceNotFound) Error() string {
 	return fmt.Sprintf("[POST /fba/outbound/brazil/v0/shipments/{shipmentId}/invoice][%d] submitInvoiceNotFound  %+v", 404, o.Payload)
 }
+
+func (o *SubmitInvoiceNotFound) String() string {
+	return fmt.Sprintf("[POST /fba/outbound/brazil/v0/shipments/{shipmentId}/invoice][%d] submitInvoiceNotFound  %+v", 404, o.Payload)
+}
+
 func (o *SubmitInvoiceNotFound) GetPayload() *shipment_invoicing_v0_models.SubmitInvoiceResponse {
 	return o.Payload
 }
@@ -352,7 +507,8 @@ func NewSubmitInvoiceUnsupportedMediaType() *SubmitInvoiceUnsupportedMediaType {
 	return &SubmitInvoiceUnsupportedMediaType{}
 }
 
-/* SubmitInvoiceUnsupportedMediaType describes a response with status code 415, with default header values.
+/*
+SubmitInvoiceUnsupportedMediaType describes a response with status code 415, with default header values.
 
 The request payload is in an unsupported format.
 */
@@ -370,9 +526,39 @@ type SubmitInvoiceUnsupportedMediaType struct {
 	Payload *shipment_invoicing_v0_models.SubmitInvoiceResponse
 }
 
+// IsSuccess returns true when this submit invoice unsupported media type response has a 2xx status code
+func (o *SubmitInvoiceUnsupportedMediaType) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this submit invoice unsupported media type response has a 3xx status code
+func (o *SubmitInvoiceUnsupportedMediaType) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this submit invoice unsupported media type response has a 4xx status code
+func (o *SubmitInvoiceUnsupportedMediaType) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this submit invoice unsupported media type response has a 5xx status code
+func (o *SubmitInvoiceUnsupportedMediaType) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this submit invoice unsupported media type response a status code equal to that given
+func (o *SubmitInvoiceUnsupportedMediaType) IsCode(code int) bool {
+	return code == 415
+}
+
 func (o *SubmitInvoiceUnsupportedMediaType) Error() string {
 	return fmt.Sprintf("[POST /fba/outbound/brazil/v0/shipments/{shipmentId}/invoice][%d] submitInvoiceUnsupportedMediaType  %+v", 415, o.Payload)
 }
+
+func (o *SubmitInvoiceUnsupportedMediaType) String() string {
+	return fmt.Sprintf("[POST /fba/outbound/brazil/v0/shipments/{shipmentId}/invoice][%d] submitInvoiceUnsupportedMediaType  %+v", 415, o.Payload)
+}
+
 func (o *SubmitInvoiceUnsupportedMediaType) GetPayload() *shipment_invoicing_v0_models.SubmitInvoiceResponse {
 	return o.Payload
 }
@@ -408,7 +594,8 @@ func NewSubmitInvoiceTooManyRequests() *SubmitInvoiceTooManyRequests {
 	return &SubmitInvoiceTooManyRequests{}
 }
 
-/* SubmitInvoiceTooManyRequests describes a response with status code 429, with default header values.
+/*
+SubmitInvoiceTooManyRequests describes a response with status code 429, with default header values.
 
 The frequency of requests was greater than allowed.
 */
@@ -426,9 +613,39 @@ type SubmitInvoiceTooManyRequests struct {
 	Payload *shipment_invoicing_v0_models.SubmitInvoiceResponse
 }
 
+// IsSuccess returns true when this submit invoice too many requests response has a 2xx status code
+func (o *SubmitInvoiceTooManyRequests) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this submit invoice too many requests response has a 3xx status code
+func (o *SubmitInvoiceTooManyRequests) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this submit invoice too many requests response has a 4xx status code
+func (o *SubmitInvoiceTooManyRequests) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this submit invoice too many requests response has a 5xx status code
+func (o *SubmitInvoiceTooManyRequests) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this submit invoice too many requests response a status code equal to that given
+func (o *SubmitInvoiceTooManyRequests) IsCode(code int) bool {
+	return code == 429
+}
+
 func (o *SubmitInvoiceTooManyRequests) Error() string {
 	return fmt.Sprintf("[POST /fba/outbound/brazil/v0/shipments/{shipmentId}/invoice][%d] submitInvoiceTooManyRequests  %+v", 429, o.Payload)
 }
+
+func (o *SubmitInvoiceTooManyRequests) String() string {
+	return fmt.Sprintf("[POST /fba/outbound/brazil/v0/shipments/{shipmentId}/invoice][%d] submitInvoiceTooManyRequests  %+v", 429, o.Payload)
+}
+
 func (o *SubmitInvoiceTooManyRequests) GetPayload() *shipment_invoicing_v0_models.SubmitInvoiceResponse {
 	return o.Payload
 }
@@ -464,7 +681,8 @@ func NewSubmitInvoiceInternalServerError() *SubmitInvoiceInternalServerError {
 	return &SubmitInvoiceInternalServerError{}
 }
 
-/* SubmitInvoiceInternalServerError describes a response with status code 500, with default header values.
+/*
+SubmitInvoiceInternalServerError describes a response with status code 500, with default header values.
 
 An unexpected condition occurred that prevented the server from fulfilling the request.
 */
@@ -482,9 +700,39 @@ type SubmitInvoiceInternalServerError struct {
 	Payload *shipment_invoicing_v0_models.SubmitInvoiceResponse
 }
 
+// IsSuccess returns true when this submit invoice internal server error response has a 2xx status code
+func (o *SubmitInvoiceInternalServerError) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this submit invoice internal server error response has a 3xx status code
+func (o *SubmitInvoiceInternalServerError) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this submit invoice internal server error response has a 4xx status code
+func (o *SubmitInvoiceInternalServerError) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this submit invoice internal server error response has a 5xx status code
+func (o *SubmitInvoiceInternalServerError) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this submit invoice internal server error response a status code equal to that given
+func (o *SubmitInvoiceInternalServerError) IsCode(code int) bool {
+	return code == 500
+}
+
 func (o *SubmitInvoiceInternalServerError) Error() string {
 	return fmt.Sprintf("[POST /fba/outbound/brazil/v0/shipments/{shipmentId}/invoice][%d] submitInvoiceInternalServerError  %+v", 500, o.Payload)
 }
+
+func (o *SubmitInvoiceInternalServerError) String() string {
+	return fmt.Sprintf("[POST /fba/outbound/brazil/v0/shipments/{shipmentId}/invoice][%d] submitInvoiceInternalServerError  %+v", 500, o.Payload)
+}
+
 func (o *SubmitInvoiceInternalServerError) GetPayload() *shipment_invoicing_v0_models.SubmitInvoiceResponse {
 	return o.Payload
 }
@@ -520,7 +768,8 @@ func NewSubmitInvoiceServiceUnavailable() *SubmitInvoiceServiceUnavailable {
 	return &SubmitInvoiceServiceUnavailable{}
 }
 
-/* SubmitInvoiceServiceUnavailable describes a response with status code 503, with default header values.
+/*
+SubmitInvoiceServiceUnavailable describes a response with status code 503, with default header values.
 
 Temporary overloading or maintenance of the server.
 */
@@ -538,9 +787,39 @@ type SubmitInvoiceServiceUnavailable struct {
 	Payload *shipment_invoicing_v0_models.SubmitInvoiceResponse
 }
 
+// IsSuccess returns true when this submit invoice service unavailable response has a 2xx status code
+func (o *SubmitInvoiceServiceUnavailable) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this submit invoice service unavailable response has a 3xx status code
+func (o *SubmitInvoiceServiceUnavailable) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this submit invoice service unavailable response has a 4xx status code
+func (o *SubmitInvoiceServiceUnavailable) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this submit invoice service unavailable response has a 5xx status code
+func (o *SubmitInvoiceServiceUnavailable) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this submit invoice service unavailable response a status code equal to that given
+func (o *SubmitInvoiceServiceUnavailable) IsCode(code int) bool {
+	return code == 503
+}
+
 func (o *SubmitInvoiceServiceUnavailable) Error() string {
 	return fmt.Sprintf("[POST /fba/outbound/brazil/v0/shipments/{shipmentId}/invoice][%d] submitInvoiceServiceUnavailable  %+v", 503, o.Payload)
 }
+
+func (o *SubmitInvoiceServiceUnavailable) String() string {
+	return fmt.Sprintf("[POST /fba/outbound/brazil/v0/shipments/{shipmentId}/invoice][%d] submitInvoiceServiceUnavailable  %+v", 503, o.Payload)
+}
+
 func (o *SubmitInvoiceServiceUnavailable) GetPayload() *shipment_invoicing_v0_models.SubmitInvoiceResponse {
 	return o.Payload
 }

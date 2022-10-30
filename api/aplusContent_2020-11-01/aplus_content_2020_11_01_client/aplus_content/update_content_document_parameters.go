@@ -54,10 +54,12 @@ func NewUpdateContentDocumentParamsWithHTTPClient(client *http.Client) *UpdateCo
 	}
 }
 
-/* UpdateContentDocumentParams contains all the parameters to send to the API endpoint
-   for the update content document operation.
+/*
+UpdateContentDocumentParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the update content document operation.
+
+	Typically these are written to a http.Request.
 */
 type UpdateContentDocumentParams struct {
 

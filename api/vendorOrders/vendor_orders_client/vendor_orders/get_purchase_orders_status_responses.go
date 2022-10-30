@@ -81,7 +81,8 @@ func NewGetPurchaseOrdersStatusOK() *GetPurchaseOrdersStatusOK {
 	return &GetPurchaseOrdersStatusOK{}
 }
 
-/* GetPurchaseOrdersStatusOK describes a response with status code 200, with default header values.
+/*
+GetPurchaseOrdersStatusOK describes a response with status code 200, with default header values.
 
 Success.
 */
@@ -98,9 +99,39 @@ type GetPurchaseOrdersStatusOK struct {
 	Payload *vendor_orders_models.GetPurchaseOrdersStatusResponse
 }
 
+// IsSuccess returns true when this get purchase orders status o k response has a 2xx status code
+func (o *GetPurchaseOrdersStatusOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this get purchase orders status o k response has a 3xx status code
+func (o *GetPurchaseOrdersStatusOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get purchase orders status o k response has a 4xx status code
+func (o *GetPurchaseOrdersStatusOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get purchase orders status o k response has a 5xx status code
+func (o *GetPurchaseOrdersStatusOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get purchase orders status o k response a status code equal to that given
+func (o *GetPurchaseOrdersStatusOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *GetPurchaseOrdersStatusOK) Error() string {
 	return fmt.Sprintf("[GET /vendor/orders/v1/purchaseOrdersStatus][%d] getPurchaseOrdersStatusOK  %+v", 200, o.Payload)
 }
+
+func (o *GetPurchaseOrdersStatusOK) String() string {
+	return fmt.Sprintf("[GET /vendor/orders/v1/purchaseOrdersStatus][%d] getPurchaseOrdersStatusOK  %+v", 200, o.Payload)
+}
+
 func (o *GetPurchaseOrdersStatusOK) GetPayload() *vendor_orders_models.GetPurchaseOrdersStatusResponse {
 	return o.Payload
 }
@@ -136,7 +167,8 @@ func NewGetPurchaseOrdersStatusBadRequest() *GetPurchaseOrdersStatusBadRequest {
 	return &GetPurchaseOrdersStatusBadRequest{}
 }
 
-/* GetPurchaseOrdersStatusBadRequest describes a response with status code 400, with default header values.
+/*
+GetPurchaseOrdersStatusBadRequest describes a response with status code 400, with default header values.
 
 Request has missing or invalid parameters and cannot be parsed.
 */
@@ -153,9 +185,39 @@ type GetPurchaseOrdersStatusBadRequest struct {
 	Payload *vendor_orders_models.GetPurchaseOrdersStatusResponse
 }
 
+// IsSuccess returns true when this get purchase orders status bad request response has a 2xx status code
+func (o *GetPurchaseOrdersStatusBadRequest) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get purchase orders status bad request response has a 3xx status code
+func (o *GetPurchaseOrdersStatusBadRequest) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get purchase orders status bad request response has a 4xx status code
+func (o *GetPurchaseOrdersStatusBadRequest) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get purchase orders status bad request response has a 5xx status code
+func (o *GetPurchaseOrdersStatusBadRequest) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get purchase orders status bad request response a status code equal to that given
+func (o *GetPurchaseOrdersStatusBadRequest) IsCode(code int) bool {
+	return code == 400
+}
+
 func (o *GetPurchaseOrdersStatusBadRequest) Error() string {
 	return fmt.Sprintf("[GET /vendor/orders/v1/purchaseOrdersStatus][%d] getPurchaseOrdersStatusBadRequest  %+v", 400, o.Payload)
 }
+
+func (o *GetPurchaseOrdersStatusBadRequest) String() string {
+	return fmt.Sprintf("[GET /vendor/orders/v1/purchaseOrdersStatus][%d] getPurchaseOrdersStatusBadRequest  %+v", 400, o.Payload)
+}
+
 func (o *GetPurchaseOrdersStatusBadRequest) GetPayload() *vendor_orders_models.GetPurchaseOrdersStatusResponse {
 	return o.Payload
 }
@@ -191,7 +253,8 @@ func NewGetPurchaseOrdersStatusForbidden() *GetPurchaseOrdersStatusForbidden {
 	return &GetPurchaseOrdersStatusForbidden{}
 }
 
-/* GetPurchaseOrdersStatusForbidden describes a response with status code 403, with default header values.
+/*
+GetPurchaseOrdersStatusForbidden describes a response with status code 403, with default header values.
 
 Indicates that access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.
 */
@@ -209,9 +272,39 @@ type GetPurchaseOrdersStatusForbidden struct {
 	Payload *vendor_orders_models.GetPurchaseOrdersStatusResponse
 }
 
+// IsSuccess returns true when this get purchase orders status forbidden response has a 2xx status code
+func (o *GetPurchaseOrdersStatusForbidden) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get purchase orders status forbidden response has a 3xx status code
+func (o *GetPurchaseOrdersStatusForbidden) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get purchase orders status forbidden response has a 4xx status code
+func (o *GetPurchaseOrdersStatusForbidden) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get purchase orders status forbidden response has a 5xx status code
+func (o *GetPurchaseOrdersStatusForbidden) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get purchase orders status forbidden response a status code equal to that given
+func (o *GetPurchaseOrdersStatusForbidden) IsCode(code int) bool {
+	return code == 403
+}
+
 func (o *GetPurchaseOrdersStatusForbidden) Error() string {
 	return fmt.Sprintf("[GET /vendor/orders/v1/purchaseOrdersStatus][%d] getPurchaseOrdersStatusForbidden  %+v", 403, o.Payload)
 }
+
+func (o *GetPurchaseOrdersStatusForbidden) String() string {
+	return fmt.Sprintf("[GET /vendor/orders/v1/purchaseOrdersStatus][%d] getPurchaseOrdersStatusForbidden  %+v", 403, o.Payload)
+}
+
 func (o *GetPurchaseOrdersStatusForbidden) GetPayload() *vendor_orders_models.GetPurchaseOrdersStatusResponse {
 	return o.Payload
 }
@@ -247,7 +340,8 @@ func NewGetPurchaseOrdersStatusNotFound() *GetPurchaseOrdersStatusNotFound {
 	return &GetPurchaseOrdersStatusNotFound{}
 }
 
-/* GetPurchaseOrdersStatusNotFound describes a response with status code 404, with default header values.
+/*
+GetPurchaseOrdersStatusNotFound describes a response with status code 404, with default header values.
 
 The resource specified does not exist.
 */
@@ -264,9 +358,39 @@ type GetPurchaseOrdersStatusNotFound struct {
 	Payload *vendor_orders_models.GetPurchaseOrdersStatusResponse
 }
 
+// IsSuccess returns true when this get purchase orders status not found response has a 2xx status code
+func (o *GetPurchaseOrdersStatusNotFound) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get purchase orders status not found response has a 3xx status code
+func (o *GetPurchaseOrdersStatusNotFound) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get purchase orders status not found response has a 4xx status code
+func (o *GetPurchaseOrdersStatusNotFound) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get purchase orders status not found response has a 5xx status code
+func (o *GetPurchaseOrdersStatusNotFound) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get purchase orders status not found response a status code equal to that given
+func (o *GetPurchaseOrdersStatusNotFound) IsCode(code int) bool {
+	return code == 404
+}
+
 func (o *GetPurchaseOrdersStatusNotFound) Error() string {
 	return fmt.Sprintf("[GET /vendor/orders/v1/purchaseOrdersStatus][%d] getPurchaseOrdersStatusNotFound  %+v", 404, o.Payload)
 }
+
+func (o *GetPurchaseOrdersStatusNotFound) String() string {
+	return fmt.Sprintf("[GET /vendor/orders/v1/purchaseOrdersStatus][%d] getPurchaseOrdersStatusNotFound  %+v", 404, o.Payload)
+}
+
 func (o *GetPurchaseOrdersStatusNotFound) GetPayload() *vendor_orders_models.GetPurchaseOrdersStatusResponse {
 	return o.Payload
 }
@@ -302,7 +426,8 @@ func NewGetPurchaseOrdersStatusUnsupportedMediaType() *GetPurchaseOrdersStatusUn
 	return &GetPurchaseOrdersStatusUnsupportedMediaType{}
 }
 
-/* GetPurchaseOrdersStatusUnsupportedMediaType describes a response with status code 415, with default header values.
+/*
+GetPurchaseOrdersStatusUnsupportedMediaType describes a response with status code 415, with default header values.
 
 The request payload is in an unsupported format.
 */
@@ -320,9 +445,39 @@ type GetPurchaseOrdersStatusUnsupportedMediaType struct {
 	Payload *vendor_orders_models.GetPurchaseOrdersStatusResponse
 }
 
+// IsSuccess returns true when this get purchase orders status unsupported media type response has a 2xx status code
+func (o *GetPurchaseOrdersStatusUnsupportedMediaType) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get purchase orders status unsupported media type response has a 3xx status code
+func (o *GetPurchaseOrdersStatusUnsupportedMediaType) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get purchase orders status unsupported media type response has a 4xx status code
+func (o *GetPurchaseOrdersStatusUnsupportedMediaType) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get purchase orders status unsupported media type response has a 5xx status code
+func (o *GetPurchaseOrdersStatusUnsupportedMediaType) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get purchase orders status unsupported media type response a status code equal to that given
+func (o *GetPurchaseOrdersStatusUnsupportedMediaType) IsCode(code int) bool {
+	return code == 415
+}
+
 func (o *GetPurchaseOrdersStatusUnsupportedMediaType) Error() string {
 	return fmt.Sprintf("[GET /vendor/orders/v1/purchaseOrdersStatus][%d] getPurchaseOrdersStatusUnsupportedMediaType  %+v", 415, o.Payload)
 }
+
+func (o *GetPurchaseOrdersStatusUnsupportedMediaType) String() string {
+	return fmt.Sprintf("[GET /vendor/orders/v1/purchaseOrdersStatus][%d] getPurchaseOrdersStatusUnsupportedMediaType  %+v", 415, o.Payload)
+}
+
 func (o *GetPurchaseOrdersStatusUnsupportedMediaType) GetPayload() *vendor_orders_models.GetPurchaseOrdersStatusResponse {
 	return o.Payload
 }
@@ -358,7 +513,8 @@ func NewGetPurchaseOrdersStatusTooManyRequests() *GetPurchaseOrdersStatusTooMany
 	return &GetPurchaseOrdersStatusTooManyRequests{}
 }
 
-/* GetPurchaseOrdersStatusTooManyRequests describes a response with status code 429, with default header values.
+/*
+GetPurchaseOrdersStatusTooManyRequests describes a response with status code 429, with default header values.
 
 The frequency of requests was greater than allowed.
 */
@@ -376,9 +532,39 @@ type GetPurchaseOrdersStatusTooManyRequests struct {
 	Payload *vendor_orders_models.GetPurchaseOrdersStatusResponse
 }
 
+// IsSuccess returns true when this get purchase orders status too many requests response has a 2xx status code
+func (o *GetPurchaseOrdersStatusTooManyRequests) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get purchase orders status too many requests response has a 3xx status code
+func (o *GetPurchaseOrdersStatusTooManyRequests) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get purchase orders status too many requests response has a 4xx status code
+func (o *GetPurchaseOrdersStatusTooManyRequests) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get purchase orders status too many requests response has a 5xx status code
+func (o *GetPurchaseOrdersStatusTooManyRequests) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get purchase orders status too many requests response a status code equal to that given
+func (o *GetPurchaseOrdersStatusTooManyRequests) IsCode(code int) bool {
+	return code == 429
+}
+
 func (o *GetPurchaseOrdersStatusTooManyRequests) Error() string {
 	return fmt.Sprintf("[GET /vendor/orders/v1/purchaseOrdersStatus][%d] getPurchaseOrdersStatusTooManyRequests  %+v", 429, o.Payload)
 }
+
+func (o *GetPurchaseOrdersStatusTooManyRequests) String() string {
+	return fmt.Sprintf("[GET /vendor/orders/v1/purchaseOrdersStatus][%d] getPurchaseOrdersStatusTooManyRequests  %+v", 429, o.Payload)
+}
+
 func (o *GetPurchaseOrdersStatusTooManyRequests) GetPayload() *vendor_orders_models.GetPurchaseOrdersStatusResponse {
 	return o.Payload
 }
@@ -414,7 +600,8 @@ func NewGetPurchaseOrdersStatusInternalServerError() *GetPurchaseOrdersStatusInt
 	return &GetPurchaseOrdersStatusInternalServerError{}
 }
 
-/* GetPurchaseOrdersStatusInternalServerError describes a response with status code 500, with default header values.
+/*
+GetPurchaseOrdersStatusInternalServerError describes a response with status code 500, with default header values.
 
 An unexpected condition occurred that prevented the server from fulfilling the request.
 */
@@ -432,9 +619,39 @@ type GetPurchaseOrdersStatusInternalServerError struct {
 	Payload *vendor_orders_models.GetPurchaseOrdersStatusResponse
 }
 
+// IsSuccess returns true when this get purchase orders status internal server error response has a 2xx status code
+func (o *GetPurchaseOrdersStatusInternalServerError) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get purchase orders status internal server error response has a 3xx status code
+func (o *GetPurchaseOrdersStatusInternalServerError) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get purchase orders status internal server error response has a 4xx status code
+func (o *GetPurchaseOrdersStatusInternalServerError) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get purchase orders status internal server error response has a 5xx status code
+func (o *GetPurchaseOrdersStatusInternalServerError) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this get purchase orders status internal server error response a status code equal to that given
+func (o *GetPurchaseOrdersStatusInternalServerError) IsCode(code int) bool {
+	return code == 500
+}
+
 func (o *GetPurchaseOrdersStatusInternalServerError) Error() string {
 	return fmt.Sprintf("[GET /vendor/orders/v1/purchaseOrdersStatus][%d] getPurchaseOrdersStatusInternalServerError  %+v", 500, o.Payload)
 }
+
+func (o *GetPurchaseOrdersStatusInternalServerError) String() string {
+	return fmt.Sprintf("[GET /vendor/orders/v1/purchaseOrdersStatus][%d] getPurchaseOrdersStatusInternalServerError  %+v", 500, o.Payload)
+}
+
 func (o *GetPurchaseOrdersStatusInternalServerError) GetPayload() *vendor_orders_models.GetPurchaseOrdersStatusResponse {
 	return o.Payload
 }
@@ -470,7 +687,8 @@ func NewGetPurchaseOrdersStatusServiceUnavailable() *GetPurchaseOrdersStatusServ
 	return &GetPurchaseOrdersStatusServiceUnavailable{}
 }
 
-/* GetPurchaseOrdersStatusServiceUnavailable describes a response with status code 503, with default header values.
+/*
+GetPurchaseOrdersStatusServiceUnavailable describes a response with status code 503, with default header values.
 
 Temporary overloading or maintenance of the server.
 */
@@ -488,9 +706,39 @@ type GetPurchaseOrdersStatusServiceUnavailable struct {
 	Payload *vendor_orders_models.GetPurchaseOrdersStatusResponse
 }
 
+// IsSuccess returns true when this get purchase orders status service unavailable response has a 2xx status code
+func (o *GetPurchaseOrdersStatusServiceUnavailable) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get purchase orders status service unavailable response has a 3xx status code
+func (o *GetPurchaseOrdersStatusServiceUnavailable) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get purchase orders status service unavailable response has a 4xx status code
+func (o *GetPurchaseOrdersStatusServiceUnavailable) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get purchase orders status service unavailable response has a 5xx status code
+func (o *GetPurchaseOrdersStatusServiceUnavailable) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this get purchase orders status service unavailable response a status code equal to that given
+func (o *GetPurchaseOrdersStatusServiceUnavailable) IsCode(code int) bool {
+	return code == 503
+}
+
 func (o *GetPurchaseOrdersStatusServiceUnavailable) Error() string {
 	return fmt.Sprintf("[GET /vendor/orders/v1/purchaseOrdersStatus][%d] getPurchaseOrdersStatusServiceUnavailable  %+v", 503, o.Payload)
 }
+
+func (o *GetPurchaseOrdersStatusServiceUnavailable) String() string {
+	return fmt.Sprintf("[GET /vendor/orders/v1/purchaseOrdersStatus][%d] getPurchaseOrdersStatusServiceUnavailable  %+v", 503, o.Payload)
+}
+
 func (o *GetPurchaseOrdersStatusServiceUnavailable) GetPayload() *vendor_orders_models.GetPurchaseOrdersStatusResponse {
 	return o.Payload
 }

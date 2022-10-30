@@ -87,7 +87,8 @@ func NewCreateUploadDestinationForResourceCreated() *CreateUploadDestinationForR
 	return &CreateUploadDestinationForResourceCreated{}
 }
 
-/* CreateUploadDestinationForResourceCreated describes a response with status code 201, with default header values.
+/*
+CreateUploadDestinationForResourceCreated describes a response with status code 201, with default header values.
 
 Success.
 */
@@ -104,9 +105,39 @@ type CreateUploadDestinationForResourceCreated struct {
 	Payload *uploads_2020_11_01_models.CreateUploadDestinationResponse
 }
 
+// IsSuccess returns true when this create upload destination for resource created response has a 2xx status code
+func (o *CreateUploadDestinationForResourceCreated) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this create upload destination for resource created response has a 3xx status code
+func (o *CreateUploadDestinationForResourceCreated) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create upload destination for resource created response has a 4xx status code
+func (o *CreateUploadDestinationForResourceCreated) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this create upload destination for resource created response has a 5xx status code
+func (o *CreateUploadDestinationForResourceCreated) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this create upload destination for resource created response a status code equal to that given
+func (o *CreateUploadDestinationForResourceCreated) IsCode(code int) bool {
+	return code == 201
+}
+
 func (o *CreateUploadDestinationForResourceCreated) Error() string {
 	return fmt.Sprintf("[POST /uploads/2020-11-01/uploadDestinations/{resource}][%d] createUploadDestinationForResourceCreated  %+v", 201, o.Payload)
 }
+
+func (o *CreateUploadDestinationForResourceCreated) String() string {
+	return fmt.Sprintf("[POST /uploads/2020-11-01/uploadDestinations/{resource}][%d] createUploadDestinationForResourceCreated  %+v", 201, o.Payload)
+}
+
 func (o *CreateUploadDestinationForResourceCreated) GetPayload() *uploads_2020_11_01_models.CreateUploadDestinationResponse {
 	return o.Payload
 }
@@ -142,7 +173,8 @@ func NewCreateUploadDestinationForResourceBadRequest() *CreateUploadDestinationF
 	return &CreateUploadDestinationForResourceBadRequest{}
 }
 
-/* CreateUploadDestinationForResourceBadRequest describes a response with status code 400, with default header values.
+/*
+CreateUploadDestinationForResourceBadRequest describes a response with status code 400, with default header values.
 
 Request has missing or invalid parameters and cannot be parsed.
 */
@@ -159,9 +191,39 @@ type CreateUploadDestinationForResourceBadRequest struct {
 	Payload *uploads_2020_11_01_models.CreateUploadDestinationResponse
 }
 
+// IsSuccess returns true when this create upload destination for resource bad request response has a 2xx status code
+func (o *CreateUploadDestinationForResourceBadRequest) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this create upload destination for resource bad request response has a 3xx status code
+func (o *CreateUploadDestinationForResourceBadRequest) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create upload destination for resource bad request response has a 4xx status code
+func (o *CreateUploadDestinationForResourceBadRequest) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this create upload destination for resource bad request response has a 5xx status code
+func (o *CreateUploadDestinationForResourceBadRequest) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this create upload destination for resource bad request response a status code equal to that given
+func (o *CreateUploadDestinationForResourceBadRequest) IsCode(code int) bool {
+	return code == 400
+}
+
 func (o *CreateUploadDestinationForResourceBadRequest) Error() string {
 	return fmt.Sprintf("[POST /uploads/2020-11-01/uploadDestinations/{resource}][%d] createUploadDestinationForResourceBadRequest  %+v", 400, o.Payload)
 }
+
+func (o *CreateUploadDestinationForResourceBadRequest) String() string {
+	return fmt.Sprintf("[POST /uploads/2020-11-01/uploadDestinations/{resource}][%d] createUploadDestinationForResourceBadRequest  %+v", 400, o.Payload)
+}
+
 func (o *CreateUploadDestinationForResourceBadRequest) GetPayload() *uploads_2020_11_01_models.CreateUploadDestinationResponse {
 	return o.Payload
 }
@@ -197,7 +259,8 @@ func NewCreateUploadDestinationForResourceForbidden() *CreateUploadDestinationFo
 	return &CreateUploadDestinationForResourceForbidden{}
 }
 
-/* CreateUploadDestinationForResourceForbidden describes a response with status code 403, with default header values.
+/*
+CreateUploadDestinationForResourceForbidden describes a response with status code 403, with default header values.
 
 Indicates that access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.
 */
@@ -210,9 +273,39 @@ type CreateUploadDestinationForResourceForbidden struct {
 	Payload *uploads_2020_11_01_models.CreateUploadDestinationResponse
 }
 
+// IsSuccess returns true when this create upload destination for resource forbidden response has a 2xx status code
+func (o *CreateUploadDestinationForResourceForbidden) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this create upload destination for resource forbidden response has a 3xx status code
+func (o *CreateUploadDestinationForResourceForbidden) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create upload destination for resource forbidden response has a 4xx status code
+func (o *CreateUploadDestinationForResourceForbidden) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this create upload destination for resource forbidden response has a 5xx status code
+func (o *CreateUploadDestinationForResourceForbidden) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this create upload destination for resource forbidden response a status code equal to that given
+func (o *CreateUploadDestinationForResourceForbidden) IsCode(code int) bool {
+	return code == 403
+}
+
 func (o *CreateUploadDestinationForResourceForbidden) Error() string {
 	return fmt.Sprintf("[POST /uploads/2020-11-01/uploadDestinations/{resource}][%d] createUploadDestinationForResourceForbidden  %+v", 403, o.Payload)
 }
+
+func (o *CreateUploadDestinationForResourceForbidden) String() string {
+	return fmt.Sprintf("[POST /uploads/2020-11-01/uploadDestinations/{resource}][%d] createUploadDestinationForResourceForbidden  %+v", 403, o.Payload)
+}
+
 func (o *CreateUploadDestinationForResourceForbidden) GetPayload() *uploads_2020_11_01_models.CreateUploadDestinationResponse {
 	return o.Payload
 }
@@ -241,7 +334,8 @@ func NewCreateUploadDestinationForResourceNotFound() *CreateUploadDestinationFor
 	return &CreateUploadDestinationForResourceNotFound{}
 }
 
-/* CreateUploadDestinationForResourceNotFound describes a response with status code 404, with default header values.
+/*
+CreateUploadDestinationForResourceNotFound describes a response with status code 404, with default header values.
 
 The resource specified does not exist.
 */
@@ -258,9 +352,39 @@ type CreateUploadDestinationForResourceNotFound struct {
 	Payload *uploads_2020_11_01_models.CreateUploadDestinationResponse
 }
 
+// IsSuccess returns true when this create upload destination for resource not found response has a 2xx status code
+func (o *CreateUploadDestinationForResourceNotFound) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this create upload destination for resource not found response has a 3xx status code
+func (o *CreateUploadDestinationForResourceNotFound) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create upload destination for resource not found response has a 4xx status code
+func (o *CreateUploadDestinationForResourceNotFound) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this create upload destination for resource not found response has a 5xx status code
+func (o *CreateUploadDestinationForResourceNotFound) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this create upload destination for resource not found response a status code equal to that given
+func (o *CreateUploadDestinationForResourceNotFound) IsCode(code int) bool {
+	return code == 404
+}
+
 func (o *CreateUploadDestinationForResourceNotFound) Error() string {
 	return fmt.Sprintf("[POST /uploads/2020-11-01/uploadDestinations/{resource}][%d] createUploadDestinationForResourceNotFound  %+v", 404, o.Payload)
 }
+
+func (o *CreateUploadDestinationForResourceNotFound) String() string {
+	return fmt.Sprintf("[POST /uploads/2020-11-01/uploadDestinations/{resource}][%d] createUploadDestinationForResourceNotFound  %+v", 404, o.Payload)
+}
+
 func (o *CreateUploadDestinationForResourceNotFound) GetPayload() *uploads_2020_11_01_models.CreateUploadDestinationResponse {
 	return o.Payload
 }
@@ -296,7 +420,8 @@ func NewCreateUploadDestinationForResourceRequestEntityTooLarge() *CreateUploadD
 	return &CreateUploadDestinationForResourceRequestEntityTooLarge{}
 }
 
-/* CreateUploadDestinationForResourceRequestEntityTooLarge describes a response with status code 413, with default header values.
+/*
+CreateUploadDestinationForResourceRequestEntityTooLarge describes a response with status code 413, with default header values.
 
 The request size exceeded the maximum accepted size.
 */
@@ -314,9 +439,39 @@ type CreateUploadDestinationForResourceRequestEntityTooLarge struct {
 	Payload *uploads_2020_11_01_models.CreateUploadDestinationResponse
 }
 
+// IsSuccess returns true when this create upload destination for resource request entity too large response has a 2xx status code
+func (o *CreateUploadDestinationForResourceRequestEntityTooLarge) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this create upload destination for resource request entity too large response has a 3xx status code
+func (o *CreateUploadDestinationForResourceRequestEntityTooLarge) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create upload destination for resource request entity too large response has a 4xx status code
+func (o *CreateUploadDestinationForResourceRequestEntityTooLarge) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this create upload destination for resource request entity too large response has a 5xx status code
+func (o *CreateUploadDestinationForResourceRequestEntityTooLarge) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this create upload destination for resource request entity too large response a status code equal to that given
+func (o *CreateUploadDestinationForResourceRequestEntityTooLarge) IsCode(code int) bool {
+	return code == 413
+}
+
 func (o *CreateUploadDestinationForResourceRequestEntityTooLarge) Error() string {
 	return fmt.Sprintf("[POST /uploads/2020-11-01/uploadDestinations/{resource}][%d] createUploadDestinationForResourceRequestEntityTooLarge  %+v", 413, o.Payload)
 }
+
+func (o *CreateUploadDestinationForResourceRequestEntityTooLarge) String() string {
+	return fmt.Sprintf("[POST /uploads/2020-11-01/uploadDestinations/{resource}][%d] createUploadDestinationForResourceRequestEntityTooLarge  %+v", 413, o.Payload)
+}
+
 func (o *CreateUploadDestinationForResourceRequestEntityTooLarge) GetPayload() *uploads_2020_11_01_models.CreateUploadDestinationResponse {
 	return o.Payload
 }
@@ -352,7 +507,8 @@ func NewCreateUploadDestinationForResourceUnsupportedMediaType() *CreateUploadDe
 	return &CreateUploadDestinationForResourceUnsupportedMediaType{}
 }
 
-/* CreateUploadDestinationForResourceUnsupportedMediaType describes a response with status code 415, with default header values.
+/*
+CreateUploadDestinationForResourceUnsupportedMediaType describes a response with status code 415, with default header values.
 
 The request payload is in an unsupported format.
 */
@@ -370,9 +526,39 @@ type CreateUploadDestinationForResourceUnsupportedMediaType struct {
 	Payload *uploads_2020_11_01_models.CreateUploadDestinationResponse
 }
 
+// IsSuccess returns true when this create upload destination for resource unsupported media type response has a 2xx status code
+func (o *CreateUploadDestinationForResourceUnsupportedMediaType) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this create upload destination for resource unsupported media type response has a 3xx status code
+func (o *CreateUploadDestinationForResourceUnsupportedMediaType) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create upload destination for resource unsupported media type response has a 4xx status code
+func (o *CreateUploadDestinationForResourceUnsupportedMediaType) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this create upload destination for resource unsupported media type response has a 5xx status code
+func (o *CreateUploadDestinationForResourceUnsupportedMediaType) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this create upload destination for resource unsupported media type response a status code equal to that given
+func (o *CreateUploadDestinationForResourceUnsupportedMediaType) IsCode(code int) bool {
+	return code == 415
+}
+
 func (o *CreateUploadDestinationForResourceUnsupportedMediaType) Error() string {
 	return fmt.Sprintf("[POST /uploads/2020-11-01/uploadDestinations/{resource}][%d] createUploadDestinationForResourceUnsupportedMediaType  %+v", 415, o.Payload)
 }
+
+func (o *CreateUploadDestinationForResourceUnsupportedMediaType) String() string {
+	return fmt.Sprintf("[POST /uploads/2020-11-01/uploadDestinations/{resource}][%d] createUploadDestinationForResourceUnsupportedMediaType  %+v", 415, o.Payload)
+}
+
 func (o *CreateUploadDestinationForResourceUnsupportedMediaType) GetPayload() *uploads_2020_11_01_models.CreateUploadDestinationResponse {
 	return o.Payload
 }
@@ -408,7 +594,8 @@ func NewCreateUploadDestinationForResourceTooManyRequests() *CreateUploadDestina
 	return &CreateUploadDestinationForResourceTooManyRequests{}
 }
 
-/* CreateUploadDestinationForResourceTooManyRequests describes a response with status code 429, with default header values.
+/*
+CreateUploadDestinationForResourceTooManyRequests describes a response with status code 429, with default header values.
 
 The frequency of requests was greater than allowed.
 */
@@ -426,9 +613,39 @@ type CreateUploadDestinationForResourceTooManyRequests struct {
 	Payload *uploads_2020_11_01_models.CreateUploadDestinationResponse
 }
 
+// IsSuccess returns true when this create upload destination for resource too many requests response has a 2xx status code
+func (o *CreateUploadDestinationForResourceTooManyRequests) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this create upload destination for resource too many requests response has a 3xx status code
+func (o *CreateUploadDestinationForResourceTooManyRequests) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create upload destination for resource too many requests response has a 4xx status code
+func (o *CreateUploadDestinationForResourceTooManyRequests) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this create upload destination for resource too many requests response has a 5xx status code
+func (o *CreateUploadDestinationForResourceTooManyRequests) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this create upload destination for resource too many requests response a status code equal to that given
+func (o *CreateUploadDestinationForResourceTooManyRequests) IsCode(code int) bool {
+	return code == 429
+}
+
 func (o *CreateUploadDestinationForResourceTooManyRequests) Error() string {
 	return fmt.Sprintf("[POST /uploads/2020-11-01/uploadDestinations/{resource}][%d] createUploadDestinationForResourceTooManyRequests  %+v", 429, o.Payload)
 }
+
+func (o *CreateUploadDestinationForResourceTooManyRequests) String() string {
+	return fmt.Sprintf("[POST /uploads/2020-11-01/uploadDestinations/{resource}][%d] createUploadDestinationForResourceTooManyRequests  %+v", 429, o.Payload)
+}
+
 func (o *CreateUploadDestinationForResourceTooManyRequests) GetPayload() *uploads_2020_11_01_models.CreateUploadDestinationResponse {
 	return o.Payload
 }
@@ -464,7 +681,8 @@ func NewCreateUploadDestinationForResourceInternalServerError() *CreateUploadDes
 	return &CreateUploadDestinationForResourceInternalServerError{}
 }
 
-/* CreateUploadDestinationForResourceInternalServerError describes a response with status code 500, with default header values.
+/*
+CreateUploadDestinationForResourceInternalServerError describes a response with status code 500, with default header values.
 
 An unexpected condition occurred that prevented the server from fulfilling the request.
 */
@@ -482,9 +700,39 @@ type CreateUploadDestinationForResourceInternalServerError struct {
 	Payload *uploads_2020_11_01_models.CreateUploadDestinationResponse
 }
 
+// IsSuccess returns true when this create upload destination for resource internal server error response has a 2xx status code
+func (o *CreateUploadDestinationForResourceInternalServerError) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this create upload destination for resource internal server error response has a 3xx status code
+func (o *CreateUploadDestinationForResourceInternalServerError) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create upload destination for resource internal server error response has a 4xx status code
+func (o *CreateUploadDestinationForResourceInternalServerError) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this create upload destination for resource internal server error response has a 5xx status code
+func (o *CreateUploadDestinationForResourceInternalServerError) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this create upload destination for resource internal server error response a status code equal to that given
+func (o *CreateUploadDestinationForResourceInternalServerError) IsCode(code int) bool {
+	return code == 500
+}
+
 func (o *CreateUploadDestinationForResourceInternalServerError) Error() string {
 	return fmt.Sprintf("[POST /uploads/2020-11-01/uploadDestinations/{resource}][%d] createUploadDestinationForResourceInternalServerError  %+v", 500, o.Payload)
 }
+
+func (o *CreateUploadDestinationForResourceInternalServerError) String() string {
+	return fmt.Sprintf("[POST /uploads/2020-11-01/uploadDestinations/{resource}][%d] createUploadDestinationForResourceInternalServerError  %+v", 500, o.Payload)
+}
+
 func (o *CreateUploadDestinationForResourceInternalServerError) GetPayload() *uploads_2020_11_01_models.CreateUploadDestinationResponse {
 	return o.Payload
 }
@@ -520,7 +768,8 @@ func NewCreateUploadDestinationForResourceServiceUnavailable() *CreateUploadDest
 	return &CreateUploadDestinationForResourceServiceUnavailable{}
 }
 
-/* CreateUploadDestinationForResourceServiceUnavailable describes a response with status code 503, with default header values.
+/*
+CreateUploadDestinationForResourceServiceUnavailable describes a response with status code 503, with default header values.
 
 Temporary overloading or maintenance of the server.
 */
@@ -538,9 +787,39 @@ type CreateUploadDestinationForResourceServiceUnavailable struct {
 	Payload *uploads_2020_11_01_models.CreateUploadDestinationResponse
 }
 
+// IsSuccess returns true when this create upload destination for resource service unavailable response has a 2xx status code
+func (o *CreateUploadDestinationForResourceServiceUnavailable) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this create upload destination for resource service unavailable response has a 3xx status code
+func (o *CreateUploadDestinationForResourceServiceUnavailable) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create upload destination for resource service unavailable response has a 4xx status code
+func (o *CreateUploadDestinationForResourceServiceUnavailable) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this create upload destination for resource service unavailable response has a 5xx status code
+func (o *CreateUploadDestinationForResourceServiceUnavailable) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this create upload destination for resource service unavailable response a status code equal to that given
+func (o *CreateUploadDestinationForResourceServiceUnavailable) IsCode(code int) bool {
+	return code == 503
+}
+
 func (o *CreateUploadDestinationForResourceServiceUnavailable) Error() string {
 	return fmt.Sprintf("[POST /uploads/2020-11-01/uploadDestinations/{resource}][%d] createUploadDestinationForResourceServiceUnavailable  %+v", 503, o.Payload)
 }
+
+func (o *CreateUploadDestinationForResourceServiceUnavailable) String() string {
+	return fmt.Sprintf("[POST /uploads/2020-11-01/uploadDestinations/{resource}][%d] createUploadDestinationForResourceServiceUnavailable  %+v", 503, o.Payload)
+}
+
 func (o *CreateUploadDestinationForResourceServiceUnavailable) GetPayload() *uploads_2020_11_01_models.CreateUploadDestinationResponse {
 	return o.Payload
 }

@@ -87,7 +87,8 @@ func NewGetSubscriptionOK() *GetSubscriptionOK {
 	return &GetSubscriptionOK{}
 }
 
-/* GetSubscriptionOK describes a response with status code 200, with default header values.
+/*
+GetSubscriptionOK describes a response with status code 200, with default header values.
 
 Success.
 */
@@ -104,9 +105,39 @@ type GetSubscriptionOK struct {
 	Payload *notifications_models.GetSubscriptionResponse
 }
 
+// IsSuccess returns true when this get subscription o k response has a 2xx status code
+func (o *GetSubscriptionOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this get subscription o k response has a 3xx status code
+func (o *GetSubscriptionOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get subscription o k response has a 4xx status code
+func (o *GetSubscriptionOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get subscription o k response has a 5xx status code
+func (o *GetSubscriptionOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get subscription o k response a status code equal to that given
+func (o *GetSubscriptionOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *GetSubscriptionOK) Error() string {
 	return fmt.Sprintf("[GET /notifications/v1/subscriptions/{notificationType}][%d] getSubscriptionOK  %+v", 200, o.Payload)
 }
+
+func (o *GetSubscriptionOK) String() string {
+	return fmt.Sprintf("[GET /notifications/v1/subscriptions/{notificationType}][%d] getSubscriptionOK  %+v", 200, o.Payload)
+}
+
 func (o *GetSubscriptionOK) GetPayload() *notifications_models.GetSubscriptionResponse {
 	return o.Payload
 }
@@ -142,7 +173,8 @@ func NewGetSubscriptionBadRequest() *GetSubscriptionBadRequest {
 	return &GetSubscriptionBadRequest{}
 }
 
-/* GetSubscriptionBadRequest describes a response with status code 400, with default header values.
+/*
+GetSubscriptionBadRequest describes a response with status code 400, with default header values.
 
 Request has missing or invalid parameters and cannot be parsed.
 */
@@ -159,9 +191,39 @@ type GetSubscriptionBadRequest struct {
 	Payload *notifications_models.GetSubscriptionResponse
 }
 
+// IsSuccess returns true when this get subscription bad request response has a 2xx status code
+func (o *GetSubscriptionBadRequest) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get subscription bad request response has a 3xx status code
+func (o *GetSubscriptionBadRequest) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get subscription bad request response has a 4xx status code
+func (o *GetSubscriptionBadRequest) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get subscription bad request response has a 5xx status code
+func (o *GetSubscriptionBadRequest) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get subscription bad request response a status code equal to that given
+func (o *GetSubscriptionBadRequest) IsCode(code int) bool {
+	return code == 400
+}
+
 func (o *GetSubscriptionBadRequest) Error() string {
 	return fmt.Sprintf("[GET /notifications/v1/subscriptions/{notificationType}][%d] getSubscriptionBadRequest  %+v", 400, o.Payload)
 }
+
+func (o *GetSubscriptionBadRequest) String() string {
+	return fmt.Sprintf("[GET /notifications/v1/subscriptions/{notificationType}][%d] getSubscriptionBadRequest  %+v", 400, o.Payload)
+}
+
 func (o *GetSubscriptionBadRequest) GetPayload() *notifications_models.GetSubscriptionResponse {
 	return o.Payload
 }
@@ -197,7 +259,8 @@ func NewGetSubscriptionForbidden() *GetSubscriptionForbidden {
 	return &GetSubscriptionForbidden{}
 }
 
-/* GetSubscriptionForbidden describes a response with status code 403, with default header values.
+/*
+GetSubscriptionForbidden describes a response with status code 403, with default header values.
 
 Indicates that access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.
 */
@@ -210,9 +273,39 @@ type GetSubscriptionForbidden struct {
 	Payload *notifications_models.GetSubscriptionResponse
 }
 
+// IsSuccess returns true when this get subscription forbidden response has a 2xx status code
+func (o *GetSubscriptionForbidden) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get subscription forbidden response has a 3xx status code
+func (o *GetSubscriptionForbidden) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get subscription forbidden response has a 4xx status code
+func (o *GetSubscriptionForbidden) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get subscription forbidden response has a 5xx status code
+func (o *GetSubscriptionForbidden) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get subscription forbidden response a status code equal to that given
+func (o *GetSubscriptionForbidden) IsCode(code int) bool {
+	return code == 403
+}
+
 func (o *GetSubscriptionForbidden) Error() string {
 	return fmt.Sprintf("[GET /notifications/v1/subscriptions/{notificationType}][%d] getSubscriptionForbidden  %+v", 403, o.Payload)
 }
+
+func (o *GetSubscriptionForbidden) String() string {
+	return fmt.Sprintf("[GET /notifications/v1/subscriptions/{notificationType}][%d] getSubscriptionForbidden  %+v", 403, o.Payload)
+}
+
 func (o *GetSubscriptionForbidden) GetPayload() *notifications_models.GetSubscriptionResponse {
 	return o.Payload
 }
@@ -241,7 +334,8 @@ func NewGetSubscriptionNotFound() *GetSubscriptionNotFound {
 	return &GetSubscriptionNotFound{}
 }
 
-/* GetSubscriptionNotFound describes a response with status code 404, with default header values.
+/*
+GetSubscriptionNotFound describes a response with status code 404, with default header values.
 
 The resource specified does not exist.
 */
@@ -258,9 +352,39 @@ type GetSubscriptionNotFound struct {
 	Payload *notifications_models.GetSubscriptionResponse
 }
 
+// IsSuccess returns true when this get subscription not found response has a 2xx status code
+func (o *GetSubscriptionNotFound) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get subscription not found response has a 3xx status code
+func (o *GetSubscriptionNotFound) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get subscription not found response has a 4xx status code
+func (o *GetSubscriptionNotFound) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get subscription not found response has a 5xx status code
+func (o *GetSubscriptionNotFound) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get subscription not found response a status code equal to that given
+func (o *GetSubscriptionNotFound) IsCode(code int) bool {
+	return code == 404
+}
+
 func (o *GetSubscriptionNotFound) Error() string {
 	return fmt.Sprintf("[GET /notifications/v1/subscriptions/{notificationType}][%d] getSubscriptionNotFound  %+v", 404, o.Payload)
 }
+
+func (o *GetSubscriptionNotFound) String() string {
+	return fmt.Sprintf("[GET /notifications/v1/subscriptions/{notificationType}][%d] getSubscriptionNotFound  %+v", 404, o.Payload)
+}
+
 func (o *GetSubscriptionNotFound) GetPayload() *notifications_models.GetSubscriptionResponse {
 	return o.Payload
 }
@@ -296,7 +420,8 @@ func NewGetSubscriptionRequestEntityTooLarge() *GetSubscriptionRequestEntityTooL
 	return &GetSubscriptionRequestEntityTooLarge{}
 }
 
-/* GetSubscriptionRequestEntityTooLarge describes a response with status code 413, with default header values.
+/*
+GetSubscriptionRequestEntityTooLarge describes a response with status code 413, with default header values.
 
 The request size exceeded the maximum accepted size.
 */
@@ -314,9 +439,39 @@ type GetSubscriptionRequestEntityTooLarge struct {
 	Payload *notifications_models.GetSubscriptionResponse
 }
 
+// IsSuccess returns true when this get subscription request entity too large response has a 2xx status code
+func (o *GetSubscriptionRequestEntityTooLarge) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get subscription request entity too large response has a 3xx status code
+func (o *GetSubscriptionRequestEntityTooLarge) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get subscription request entity too large response has a 4xx status code
+func (o *GetSubscriptionRequestEntityTooLarge) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get subscription request entity too large response has a 5xx status code
+func (o *GetSubscriptionRequestEntityTooLarge) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get subscription request entity too large response a status code equal to that given
+func (o *GetSubscriptionRequestEntityTooLarge) IsCode(code int) bool {
+	return code == 413
+}
+
 func (o *GetSubscriptionRequestEntityTooLarge) Error() string {
 	return fmt.Sprintf("[GET /notifications/v1/subscriptions/{notificationType}][%d] getSubscriptionRequestEntityTooLarge  %+v", 413, o.Payload)
 }
+
+func (o *GetSubscriptionRequestEntityTooLarge) String() string {
+	return fmt.Sprintf("[GET /notifications/v1/subscriptions/{notificationType}][%d] getSubscriptionRequestEntityTooLarge  %+v", 413, o.Payload)
+}
+
 func (o *GetSubscriptionRequestEntityTooLarge) GetPayload() *notifications_models.GetSubscriptionResponse {
 	return o.Payload
 }
@@ -352,7 +507,8 @@ func NewGetSubscriptionUnsupportedMediaType() *GetSubscriptionUnsupportedMediaTy
 	return &GetSubscriptionUnsupportedMediaType{}
 }
 
-/* GetSubscriptionUnsupportedMediaType describes a response with status code 415, with default header values.
+/*
+GetSubscriptionUnsupportedMediaType describes a response with status code 415, with default header values.
 
 The request payload is in an unsupported format.
 */
@@ -370,9 +526,39 @@ type GetSubscriptionUnsupportedMediaType struct {
 	Payload *notifications_models.GetSubscriptionResponse
 }
 
+// IsSuccess returns true when this get subscription unsupported media type response has a 2xx status code
+func (o *GetSubscriptionUnsupportedMediaType) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get subscription unsupported media type response has a 3xx status code
+func (o *GetSubscriptionUnsupportedMediaType) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get subscription unsupported media type response has a 4xx status code
+func (o *GetSubscriptionUnsupportedMediaType) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get subscription unsupported media type response has a 5xx status code
+func (o *GetSubscriptionUnsupportedMediaType) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get subscription unsupported media type response a status code equal to that given
+func (o *GetSubscriptionUnsupportedMediaType) IsCode(code int) bool {
+	return code == 415
+}
+
 func (o *GetSubscriptionUnsupportedMediaType) Error() string {
 	return fmt.Sprintf("[GET /notifications/v1/subscriptions/{notificationType}][%d] getSubscriptionUnsupportedMediaType  %+v", 415, o.Payload)
 }
+
+func (o *GetSubscriptionUnsupportedMediaType) String() string {
+	return fmt.Sprintf("[GET /notifications/v1/subscriptions/{notificationType}][%d] getSubscriptionUnsupportedMediaType  %+v", 415, o.Payload)
+}
+
 func (o *GetSubscriptionUnsupportedMediaType) GetPayload() *notifications_models.GetSubscriptionResponse {
 	return o.Payload
 }
@@ -408,7 +594,8 @@ func NewGetSubscriptionTooManyRequests() *GetSubscriptionTooManyRequests {
 	return &GetSubscriptionTooManyRequests{}
 }
 
-/* GetSubscriptionTooManyRequests describes a response with status code 429, with default header values.
+/*
+GetSubscriptionTooManyRequests describes a response with status code 429, with default header values.
 
 The frequency of requests was greater than allowed.
 */
@@ -426,9 +613,39 @@ type GetSubscriptionTooManyRequests struct {
 	Payload *notifications_models.GetSubscriptionResponse
 }
 
+// IsSuccess returns true when this get subscription too many requests response has a 2xx status code
+func (o *GetSubscriptionTooManyRequests) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get subscription too many requests response has a 3xx status code
+func (o *GetSubscriptionTooManyRequests) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get subscription too many requests response has a 4xx status code
+func (o *GetSubscriptionTooManyRequests) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get subscription too many requests response has a 5xx status code
+func (o *GetSubscriptionTooManyRequests) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get subscription too many requests response a status code equal to that given
+func (o *GetSubscriptionTooManyRequests) IsCode(code int) bool {
+	return code == 429
+}
+
 func (o *GetSubscriptionTooManyRequests) Error() string {
 	return fmt.Sprintf("[GET /notifications/v1/subscriptions/{notificationType}][%d] getSubscriptionTooManyRequests  %+v", 429, o.Payload)
 }
+
+func (o *GetSubscriptionTooManyRequests) String() string {
+	return fmt.Sprintf("[GET /notifications/v1/subscriptions/{notificationType}][%d] getSubscriptionTooManyRequests  %+v", 429, o.Payload)
+}
+
 func (o *GetSubscriptionTooManyRequests) GetPayload() *notifications_models.GetSubscriptionResponse {
 	return o.Payload
 }
@@ -464,7 +681,8 @@ func NewGetSubscriptionInternalServerError() *GetSubscriptionInternalServerError
 	return &GetSubscriptionInternalServerError{}
 }
 
-/* GetSubscriptionInternalServerError describes a response with status code 500, with default header values.
+/*
+GetSubscriptionInternalServerError describes a response with status code 500, with default header values.
 
 An unexpected condition occurred that prevented the server from fulfilling the request.
 */
@@ -482,9 +700,39 @@ type GetSubscriptionInternalServerError struct {
 	Payload *notifications_models.GetSubscriptionResponse
 }
 
+// IsSuccess returns true when this get subscription internal server error response has a 2xx status code
+func (o *GetSubscriptionInternalServerError) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get subscription internal server error response has a 3xx status code
+func (o *GetSubscriptionInternalServerError) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get subscription internal server error response has a 4xx status code
+func (o *GetSubscriptionInternalServerError) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get subscription internal server error response has a 5xx status code
+func (o *GetSubscriptionInternalServerError) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this get subscription internal server error response a status code equal to that given
+func (o *GetSubscriptionInternalServerError) IsCode(code int) bool {
+	return code == 500
+}
+
 func (o *GetSubscriptionInternalServerError) Error() string {
 	return fmt.Sprintf("[GET /notifications/v1/subscriptions/{notificationType}][%d] getSubscriptionInternalServerError  %+v", 500, o.Payload)
 }
+
+func (o *GetSubscriptionInternalServerError) String() string {
+	return fmt.Sprintf("[GET /notifications/v1/subscriptions/{notificationType}][%d] getSubscriptionInternalServerError  %+v", 500, o.Payload)
+}
+
 func (o *GetSubscriptionInternalServerError) GetPayload() *notifications_models.GetSubscriptionResponse {
 	return o.Payload
 }
@@ -520,7 +768,8 @@ func NewGetSubscriptionServiceUnavailable() *GetSubscriptionServiceUnavailable {
 	return &GetSubscriptionServiceUnavailable{}
 }
 
-/* GetSubscriptionServiceUnavailable describes a response with status code 503, with default header values.
+/*
+GetSubscriptionServiceUnavailable describes a response with status code 503, with default header values.
 
 Temporary overloading or maintenance of the server.
 */
@@ -538,9 +787,39 @@ type GetSubscriptionServiceUnavailable struct {
 	Payload *notifications_models.GetSubscriptionResponse
 }
 
+// IsSuccess returns true when this get subscription service unavailable response has a 2xx status code
+func (o *GetSubscriptionServiceUnavailable) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get subscription service unavailable response has a 3xx status code
+func (o *GetSubscriptionServiceUnavailable) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get subscription service unavailable response has a 4xx status code
+func (o *GetSubscriptionServiceUnavailable) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get subscription service unavailable response has a 5xx status code
+func (o *GetSubscriptionServiceUnavailable) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this get subscription service unavailable response a status code equal to that given
+func (o *GetSubscriptionServiceUnavailable) IsCode(code int) bool {
+	return code == 503
+}
+
 func (o *GetSubscriptionServiceUnavailable) Error() string {
 	return fmt.Sprintf("[GET /notifications/v1/subscriptions/{notificationType}][%d] getSubscriptionServiceUnavailable  %+v", 503, o.Payload)
 }
+
+func (o *GetSubscriptionServiceUnavailable) String() string {
+	return fmt.Sprintf("[GET /notifications/v1/subscriptions/{notificationType}][%d] getSubscriptionServiceUnavailable  %+v", 503, o.Payload)
+}
+
 func (o *GetSubscriptionServiceUnavailable) GetPayload() *notifications_models.GetSubscriptionResponse {
 	return o.Payload
 }

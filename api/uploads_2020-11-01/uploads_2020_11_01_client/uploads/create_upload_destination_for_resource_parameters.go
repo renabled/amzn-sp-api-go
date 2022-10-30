@@ -53,10 +53,12 @@ func NewCreateUploadDestinationForResourceParamsWithHTTPClient(client *http.Clie
 	}
 }
 
-/* CreateUploadDestinationForResourceParams contains all the parameters to send to the API endpoint
-   for the create upload destination for resource operation.
+/*
+CreateUploadDestinationForResourceParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the create upload destination for resource operation.
+
+	Typically these are written to a http.Request.
 */
 type CreateUploadDestinationForResourceParams struct {
 

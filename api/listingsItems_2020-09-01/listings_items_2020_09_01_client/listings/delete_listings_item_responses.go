@@ -81,7 +81,8 @@ func NewDeleteListingsItemOK() *DeleteListingsItemOK {
 	return &DeleteListingsItemOK{}
 }
 
-/* DeleteListingsItemOK describes a response with status code 200, with default header values.
+/*
+DeleteListingsItemOK describes a response with status code 200, with default header values.
 
 Successfully understood the listings item delete request. See the response to determine whether the submission has been accepted.
 */
@@ -98,9 +99,39 @@ type DeleteListingsItemOK struct {
 	Payload *listings_items_2020_09_01_models.ListingsItemSubmissionResponse
 }
 
+// IsSuccess returns true when this delete listings item o k response has a 2xx status code
+func (o *DeleteListingsItemOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this delete listings item o k response has a 3xx status code
+func (o *DeleteListingsItemOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this delete listings item o k response has a 4xx status code
+func (o *DeleteListingsItemOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this delete listings item o k response has a 5xx status code
+func (o *DeleteListingsItemOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this delete listings item o k response a status code equal to that given
+func (o *DeleteListingsItemOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *DeleteListingsItemOK) Error() string {
 	return fmt.Sprintf("[DELETE /listings/2020-09-01/items/{sellerId}/{sku}][%d] deleteListingsItemOK  %+v", 200, o.Payload)
 }
+
+func (o *DeleteListingsItemOK) String() string {
+	return fmt.Sprintf("[DELETE /listings/2020-09-01/items/{sellerId}/{sku}][%d] deleteListingsItemOK  %+v", 200, o.Payload)
+}
+
 func (o *DeleteListingsItemOK) GetPayload() *listings_items_2020_09_01_models.ListingsItemSubmissionResponse {
 	return o.Payload
 }
@@ -136,7 +167,8 @@ func NewDeleteListingsItemBadRequest() *DeleteListingsItemBadRequest {
 	return &DeleteListingsItemBadRequest{}
 }
 
-/* DeleteListingsItemBadRequest describes a response with status code 400, with default header values.
+/*
+DeleteListingsItemBadRequest describes a response with status code 400, with default header values.
 
 Request has missing or invalid parameters and cannot be parsed.
 */
@@ -153,9 +185,39 @@ type DeleteListingsItemBadRequest struct {
 	Payload *listings_items_2020_09_01_models.ErrorList
 }
 
+// IsSuccess returns true when this delete listings item bad request response has a 2xx status code
+func (o *DeleteListingsItemBadRequest) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this delete listings item bad request response has a 3xx status code
+func (o *DeleteListingsItemBadRequest) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this delete listings item bad request response has a 4xx status code
+func (o *DeleteListingsItemBadRequest) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this delete listings item bad request response has a 5xx status code
+func (o *DeleteListingsItemBadRequest) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this delete listings item bad request response a status code equal to that given
+func (o *DeleteListingsItemBadRequest) IsCode(code int) bool {
+	return code == 400
+}
+
 func (o *DeleteListingsItemBadRequest) Error() string {
 	return fmt.Sprintf("[DELETE /listings/2020-09-01/items/{sellerId}/{sku}][%d] deleteListingsItemBadRequest  %+v", 400, o.Payload)
 }
+
+func (o *DeleteListingsItemBadRequest) String() string {
+	return fmt.Sprintf("[DELETE /listings/2020-09-01/items/{sellerId}/{sku}][%d] deleteListingsItemBadRequest  %+v", 400, o.Payload)
+}
+
 func (o *DeleteListingsItemBadRequest) GetPayload() *listings_items_2020_09_01_models.ErrorList {
 	return o.Payload
 }
@@ -191,7 +253,8 @@ func NewDeleteListingsItemForbidden() *DeleteListingsItemForbidden {
 	return &DeleteListingsItemForbidden{}
 }
 
-/* DeleteListingsItemForbidden describes a response with status code 403, with default header values.
+/*
+DeleteListingsItemForbidden describes a response with status code 403, with default header values.
 
 Indicates that access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.
 */
@@ -204,9 +267,39 @@ type DeleteListingsItemForbidden struct {
 	Payload *listings_items_2020_09_01_models.ErrorList
 }
 
+// IsSuccess returns true when this delete listings item forbidden response has a 2xx status code
+func (o *DeleteListingsItemForbidden) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this delete listings item forbidden response has a 3xx status code
+func (o *DeleteListingsItemForbidden) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this delete listings item forbidden response has a 4xx status code
+func (o *DeleteListingsItemForbidden) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this delete listings item forbidden response has a 5xx status code
+func (o *DeleteListingsItemForbidden) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this delete listings item forbidden response a status code equal to that given
+func (o *DeleteListingsItemForbidden) IsCode(code int) bool {
+	return code == 403
+}
+
 func (o *DeleteListingsItemForbidden) Error() string {
 	return fmt.Sprintf("[DELETE /listings/2020-09-01/items/{sellerId}/{sku}][%d] deleteListingsItemForbidden  %+v", 403, o.Payload)
 }
+
+func (o *DeleteListingsItemForbidden) String() string {
+	return fmt.Sprintf("[DELETE /listings/2020-09-01/items/{sellerId}/{sku}][%d] deleteListingsItemForbidden  %+v", 403, o.Payload)
+}
+
 func (o *DeleteListingsItemForbidden) GetPayload() *listings_items_2020_09_01_models.ErrorList {
 	return o.Payload
 }
@@ -235,7 +328,8 @@ func NewDeleteListingsItemRequestEntityTooLarge() *DeleteListingsItemRequestEnti
 	return &DeleteListingsItemRequestEntityTooLarge{}
 }
 
-/* DeleteListingsItemRequestEntityTooLarge describes a response with status code 413, with default header values.
+/*
+DeleteListingsItemRequestEntityTooLarge describes a response with status code 413, with default header values.
 
 The request size exceeded the maximum accepted size.
 */
@@ -253,9 +347,39 @@ type DeleteListingsItemRequestEntityTooLarge struct {
 	Payload *listings_items_2020_09_01_models.ErrorList
 }
 
+// IsSuccess returns true when this delete listings item request entity too large response has a 2xx status code
+func (o *DeleteListingsItemRequestEntityTooLarge) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this delete listings item request entity too large response has a 3xx status code
+func (o *DeleteListingsItemRequestEntityTooLarge) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this delete listings item request entity too large response has a 4xx status code
+func (o *DeleteListingsItemRequestEntityTooLarge) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this delete listings item request entity too large response has a 5xx status code
+func (o *DeleteListingsItemRequestEntityTooLarge) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this delete listings item request entity too large response a status code equal to that given
+func (o *DeleteListingsItemRequestEntityTooLarge) IsCode(code int) bool {
+	return code == 413
+}
+
 func (o *DeleteListingsItemRequestEntityTooLarge) Error() string {
 	return fmt.Sprintf("[DELETE /listings/2020-09-01/items/{sellerId}/{sku}][%d] deleteListingsItemRequestEntityTooLarge  %+v", 413, o.Payload)
 }
+
+func (o *DeleteListingsItemRequestEntityTooLarge) String() string {
+	return fmt.Sprintf("[DELETE /listings/2020-09-01/items/{sellerId}/{sku}][%d] deleteListingsItemRequestEntityTooLarge  %+v", 413, o.Payload)
+}
+
 func (o *DeleteListingsItemRequestEntityTooLarge) GetPayload() *listings_items_2020_09_01_models.ErrorList {
 	return o.Payload
 }
@@ -291,7 +415,8 @@ func NewDeleteListingsItemUnsupportedMediaType() *DeleteListingsItemUnsupportedM
 	return &DeleteListingsItemUnsupportedMediaType{}
 }
 
-/* DeleteListingsItemUnsupportedMediaType describes a response with status code 415, with default header values.
+/*
+DeleteListingsItemUnsupportedMediaType describes a response with status code 415, with default header values.
 
 The request payload is in an unsupported format.
 */
@@ -309,9 +434,39 @@ type DeleteListingsItemUnsupportedMediaType struct {
 	Payload *listings_items_2020_09_01_models.ErrorList
 }
 
+// IsSuccess returns true when this delete listings item unsupported media type response has a 2xx status code
+func (o *DeleteListingsItemUnsupportedMediaType) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this delete listings item unsupported media type response has a 3xx status code
+func (o *DeleteListingsItemUnsupportedMediaType) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this delete listings item unsupported media type response has a 4xx status code
+func (o *DeleteListingsItemUnsupportedMediaType) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this delete listings item unsupported media type response has a 5xx status code
+func (o *DeleteListingsItemUnsupportedMediaType) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this delete listings item unsupported media type response a status code equal to that given
+func (o *DeleteListingsItemUnsupportedMediaType) IsCode(code int) bool {
+	return code == 415
+}
+
 func (o *DeleteListingsItemUnsupportedMediaType) Error() string {
 	return fmt.Sprintf("[DELETE /listings/2020-09-01/items/{sellerId}/{sku}][%d] deleteListingsItemUnsupportedMediaType  %+v", 415, o.Payload)
 }
+
+func (o *DeleteListingsItemUnsupportedMediaType) String() string {
+	return fmt.Sprintf("[DELETE /listings/2020-09-01/items/{sellerId}/{sku}][%d] deleteListingsItemUnsupportedMediaType  %+v", 415, o.Payload)
+}
+
 func (o *DeleteListingsItemUnsupportedMediaType) GetPayload() *listings_items_2020_09_01_models.ErrorList {
 	return o.Payload
 }
@@ -347,7 +502,8 @@ func NewDeleteListingsItemTooManyRequests() *DeleteListingsItemTooManyRequests {
 	return &DeleteListingsItemTooManyRequests{}
 }
 
-/* DeleteListingsItemTooManyRequests describes a response with status code 429, with default header values.
+/*
+DeleteListingsItemTooManyRequests describes a response with status code 429, with default header values.
 
 The frequency of requests was greater than allowed.
 */
@@ -365,9 +521,39 @@ type DeleteListingsItemTooManyRequests struct {
 	Payload *listings_items_2020_09_01_models.ErrorList
 }
 
+// IsSuccess returns true when this delete listings item too many requests response has a 2xx status code
+func (o *DeleteListingsItemTooManyRequests) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this delete listings item too many requests response has a 3xx status code
+func (o *DeleteListingsItemTooManyRequests) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this delete listings item too many requests response has a 4xx status code
+func (o *DeleteListingsItemTooManyRequests) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this delete listings item too many requests response has a 5xx status code
+func (o *DeleteListingsItemTooManyRequests) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this delete listings item too many requests response a status code equal to that given
+func (o *DeleteListingsItemTooManyRequests) IsCode(code int) bool {
+	return code == 429
+}
+
 func (o *DeleteListingsItemTooManyRequests) Error() string {
 	return fmt.Sprintf("[DELETE /listings/2020-09-01/items/{sellerId}/{sku}][%d] deleteListingsItemTooManyRequests  %+v", 429, o.Payload)
 }
+
+func (o *DeleteListingsItemTooManyRequests) String() string {
+	return fmt.Sprintf("[DELETE /listings/2020-09-01/items/{sellerId}/{sku}][%d] deleteListingsItemTooManyRequests  %+v", 429, o.Payload)
+}
+
 func (o *DeleteListingsItemTooManyRequests) GetPayload() *listings_items_2020_09_01_models.ErrorList {
 	return o.Payload
 }
@@ -403,7 +589,8 @@ func NewDeleteListingsItemInternalServerError() *DeleteListingsItemInternalServe
 	return &DeleteListingsItemInternalServerError{}
 }
 
-/* DeleteListingsItemInternalServerError describes a response with status code 500, with default header values.
+/*
+DeleteListingsItemInternalServerError describes a response with status code 500, with default header values.
 
 An unexpected condition occurred that prevented the server from fulfilling the request.
 */
@@ -421,9 +608,39 @@ type DeleteListingsItemInternalServerError struct {
 	Payload *listings_items_2020_09_01_models.ErrorList
 }
 
+// IsSuccess returns true when this delete listings item internal server error response has a 2xx status code
+func (o *DeleteListingsItemInternalServerError) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this delete listings item internal server error response has a 3xx status code
+func (o *DeleteListingsItemInternalServerError) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this delete listings item internal server error response has a 4xx status code
+func (o *DeleteListingsItemInternalServerError) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this delete listings item internal server error response has a 5xx status code
+func (o *DeleteListingsItemInternalServerError) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this delete listings item internal server error response a status code equal to that given
+func (o *DeleteListingsItemInternalServerError) IsCode(code int) bool {
+	return code == 500
+}
+
 func (o *DeleteListingsItemInternalServerError) Error() string {
 	return fmt.Sprintf("[DELETE /listings/2020-09-01/items/{sellerId}/{sku}][%d] deleteListingsItemInternalServerError  %+v", 500, o.Payload)
 }
+
+func (o *DeleteListingsItemInternalServerError) String() string {
+	return fmt.Sprintf("[DELETE /listings/2020-09-01/items/{sellerId}/{sku}][%d] deleteListingsItemInternalServerError  %+v", 500, o.Payload)
+}
+
 func (o *DeleteListingsItemInternalServerError) GetPayload() *listings_items_2020_09_01_models.ErrorList {
 	return o.Payload
 }
@@ -459,7 +676,8 @@ func NewDeleteListingsItemServiceUnavailable() *DeleteListingsItemServiceUnavail
 	return &DeleteListingsItemServiceUnavailable{}
 }
 
-/* DeleteListingsItemServiceUnavailable describes a response with status code 503, with default header values.
+/*
+DeleteListingsItemServiceUnavailable describes a response with status code 503, with default header values.
 
 Temporary overloading or maintenance of the server.
 */
@@ -477,9 +695,39 @@ type DeleteListingsItemServiceUnavailable struct {
 	Payload *listings_items_2020_09_01_models.ErrorList
 }
 
+// IsSuccess returns true when this delete listings item service unavailable response has a 2xx status code
+func (o *DeleteListingsItemServiceUnavailable) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this delete listings item service unavailable response has a 3xx status code
+func (o *DeleteListingsItemServiceUnavailable) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this delete listings item service unavailable response has a 4xx status code
+func (o *DeleteListingsItemServiceUnavailable) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this delete listings item service unavailable response has a 5xx status code
+func (o *DeleteListingsItemServiceUnavailable) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this delete listings item service unavailable response a status code equal to that given
+func (o *DeleteListingsItemServiceUnavailable) IsCode(code int) bool {
+	return code == 503
+}
+
 func (o *DeleteListingsItemServiceUnavailable) Error() string {
 	return fmt.Sprintf("[DELETE /listings/2020-09-01/items/{sellerId}/{sku}][%d] deleteListingsItemServiceUnavailable  %+v", 503, o.Payload)
 }
+
+func (o *DeleteListingsItemServiceUnavailable) String() string {
+	return fmt.Sprintf("[DELETE /listings/2020-09-01/items/{sellerId}/{sku}][%d] deleteListingsItemServiceUnavailable  %+v", 503, o.Payload)
+}
+
 func (o *DeleteListingsItemServiceUnavailable) GetPayload() *listings_items_2020_09_01_models.ErrorList {
 	return o.Payload
 }

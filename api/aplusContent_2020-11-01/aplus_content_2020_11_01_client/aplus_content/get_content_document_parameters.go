@@ -53,10 +53,12 @@ func NewGetContentDocumentParamsWithHTTPClient(client *http.Client) *GetContentD
 	}
 }
 
-/* GetContentDocumentParams contains all the parameters to send to the API endpoint
-   for the get content document operation.
+/*
+GetContentDocumentParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the get content document operation.
+
+	Typically these are written to a http.Request.
 */
 type GetContentDocumentParams struct {
 
