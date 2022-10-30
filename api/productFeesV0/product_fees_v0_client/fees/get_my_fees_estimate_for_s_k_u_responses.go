@@ -81,7 +81,8 @@ func NewGetMyFeesEstimateForSKUOK() *GetMyFeesEstimateForSKUOK {
 	return &GetMyFeesEstimateForSKUOK{}
 }
 
-/* GetMyFeesEstimateForSKUOK describes a response with status code 200, with default header values.
+/*
+GetMyFeesEstimateForSKUOK describes a response with status code 200, with default header values.
 
 Success.
 */
@@ -98,9 +99,39 @@ type GetMyFeesEstimateForSKUOK struct {
 	Payload *product_fees_v0_models.GetMyFeesEstimateResponse
 }
 
+// IsSuccess returns true when this get my fees estimate for s k u o k response has a 2xx status code
+func (o *GetMyFeesEstimateForSKUOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this get my fees estimate for s k u o k response has a 3xx status code
+func (o *GetMyFeesEstimateForSKUOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get my fees estimate for s k u o k response has a 4xx status code
+func (o *GetMyFeesEstimateForSKUOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get my fees estimate for s k u o k response has a 5xx status code
+func (o *GetMyFeesEstimateForSKUOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get my fees estimate for s k u o k response a status code equal to that given
+func (o *GetMyFeesEstimateForSKUOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *GetMyFeesEstimateForSKUOK) Error() string {
 	return fmt.Sprintf("[POST /products/fees/v0/listings/{SellerSKU}/feesEstimate][%d] getMyFeesEstimateForSKUOK  %+v", 200, o.Payload)
 }
+
+func (o *GetMyFeesEstimateForSKUOK) String() string {
+	return fmt.Sprintf("[POST /products/fees/v0/listings/{SellerSKU}/feesEstimate][%d] getMyFeesEstimateForSKUOK  %+v", 200, o.Payload)
+}
+
 func (o *GetMyFeesEstimateForSKUOK) GetPayload() *product_fees_v0_models.GetMyFeesEstimateResponse {
 	return o.Payload
 }
@@ -136,7 +167,8 @@ func NewGetMyFeesEstimateForSKUBadRequest() *GetMyFeesEstimateForSKUBadRequest {
 	return &GetMyFeesEstimateForSKUBadRequest{}
 }
 
-/* GetMyFeesEstimateForSKUBadRequest describes a response with status code 400, with default header values.
+/*
+GetMyFeesEstimateForSKUBadRequest describes a response with status code 400, with default header values.
 
 Request has missing or invalid parameters and cannot be parsed.
 */
@@ -153,9 +185,39 @@ type GetMyFeesEstimateForSKUBadRequest struct {
 	Payload *product_fees_v0_models.GetMyFeesEstimateResponse
 }
 
+// IsSuccess returns true when this get my fees estimate for s k u bad request response has a 2xx status code
+func (o *GetMyFeesEstimateForSKUBadRequest) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get my fees estimate for s k u bad request response has a 3xx status code
+func (o *GetMyFeesEstimateForSKUBadRequest) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get my fees estimate for s k u bad request response has a 4xx status code
+func (o *GetMyFeesEstimateForSKUBadRequest) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get my fees estimate for s k u bad request response has a 5xx status code
+func (o *GetMyFeesEstimateForSKUBadRequest) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get my fees estimate for s k u bad request response a status code equal to that given
+func (o *GetMyFeesEstimateForSKUBadRequest) IsCode(code int) bool {
+	return code == 400
+}
+
 func (o *GetMyFeesEstimateForSKUBadRequest) Error() string {
 	return fmt.Sprintf("[POST /products/fees/v0/listings/{SellerSKU}/feesEstimate][%d] getMyFeesEstimateForSKUBadRequest  %+v", 400, o.Payload)
 }
+
+func (o *GetMyFeesEstimateForSKUBadRequest) String() string {
+	return fmt.Sprintf("[POST /products/fees/v0/listings/{SellerSKU}/feesEstimate][%d] getMyFeesEstimateForSKUBadRequest  %+v", 400, o.Payload)
+}
+
 func (o *GetMyFeesEstimateForSKUBadRequest) GetPayload() *product_fees_v0_models.GetMyFeesEstimateResponse {
 	return o.Payload
 }
@@ -191,7 +253,8 @@ func NewGetMyFeesEstimateForSKUUnauthorized() *GetMyFeesEstimateForSKUUnauthoriz
 	return &GetMyFeesEstimateForSKUUnauthorized{}
 }
 
-/* GetMyFeesEstimateForSKUUnauthorized describes a response with status code 401, with default header values.
+/*
+GetMyFeesEstimateForSKUUnauthorized describes a response with status code 401, with default header values.
 
 The request's Authorization header is not formatted correctly or does not contain a valid token.
 */
@@ -209,9 +272,39 @@ type GetMyFeesEstimateForSKUUnauthorized struct {
 	Payload *product_fees_v0_models.GetMyFeesEstimateResponse
 }
 
+// IsSuccess returns true when this get my fees estimate for s k u unauthorized response has a 2xx status code
+func (o *GetMyFeesEstimateForSKUUnauthorized) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get my fees estimate for s k u unauthorized response has a 3xx status code
+func (o *GetMyFeesEstimateForSKUUnauthorized) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get my fees estimate for s k u unauthorized response has a 4xx status code
+func (o *GetMyFeesEstimateForSKUUnauthorized) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get my fees estimate for s k u unauthorized response has a 5xx status code
+func (o *GetMyFeesEstimateForSKUUnauthorized) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get my fees estimate for s k u unauthorized response a status code equal to that given
+func (o *GetMyFeesEstimateForSKUUnauthorized) IsCode(code int) bool {
+	return code == 401
+}
+
 func (o *GetMyFeesEstimateForSKUUnauthorized) Error() string {
 	return fmt.Sprintf("[POST /products/fees/v0/listings/{SellerSKU}/feesEstimate][%d] getMyFeesEstimateForSKUUnauthorized  %+v", 401, o.Payload)
 }
+
+func (o *GetMyFeesEstimateForSKUUnauthorized) String() string {
+	return fmt.Sprintf("[POST /products/fees/v0/listings/{SellerSKU}/feesEstimate][%d] getMyFeesEstimateForSKUUnauthorized  %+v", 401, o.Payload)
+}
+
 func (o *GetMyFeesEstimateForSKUUnauthorized) GetPayload() *product_fees_v0_models.GetMyFeesEstimateResponse {
 	return o.Payload
 }
@@ -247,7 +340,8 @@ func NewGetMyFeesEstimateForSKUForbidden() *GetMyFeesEstimateForSKUForbidden {
 	return &GetMyFeesEstimateForSKUForbidden{}
 }
 
-/* GetMyFeesEstimateForSKUForbidden describes a response with status code 403, with default header values.
+/*
+GetMyFeesEstimateForSKUForbidden describes a response with status code 403, with default header values.
 
 Indicates access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.
 */
@@ -260,9 +354,39 @@ type GetMyFeesEstimateForSKUForbidden struct {
 	Payload *product_fees_v0_models.GetMyFeesEstimateResponse
 }
 
+// IsSuccess returns true when this get my fees estimate for s k u forbidden response has a 2xx status code
+func (o *GetMyFeesEstimateForSKUForbidden) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get my fees estimate for s k u forbidden response has a 3xx status code
+func (o *GetMyFeesEstimateForSKUForbidden) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get my fees estimate for s k u forbidden response has a 4xx status code
+func (o *GetMyFeesEstimateForSKUForbidden) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get my fees estimate for s k u forbidden response has a 5xx status code
+func (o *GetMyFeesEstimateForSKUForbidden) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get my fees estimate for s k u forbidden response a status code equal to that given
+func (o *GetMyFeesEstimateForSKUForbidden) IsCode(code int) bool {
+	return code == 403
+}
+
 func (o *GetMyFeesEstimateForSKUForbidden) Error() string {
 	return fmt.Sprintf("[POST /products/fees/v0/listings/{SellerSKU}/feesEstimate][%d] getMyFeesEstimateForSKUForbidden  %+v", 403, o.Payload)
 }
+
+func (o *GetMyFeesEstimateForSKUForbidden) String() string {
+	return fmt.Sprintf("[POST /products/fees/v0/listings/{SellerSKU}/feesEstimate][%d] getMyFeesEstimateForSKUForbidden  %+v", 403, o.Payload)
+}
+
 func (o *GetMyFeesEstimateForSKUForbidden) GetPayload() *product_fees_v0_models.GetMyFeesEstimateResponse {
 	return o.Payload
 }
@@ -291,7 +415,8 @@ func NewGetMyFeesEstimateForSKUNotFound() *GetMyFeesEstimateForSKUNotFound {
 	return &GetMyFeesEstimateForSKUNotFound{}
 }
 
-/* GetMyFeesEstimateForSKUNotFound describes a response with status code 404, with default header values.
+/*
+GetMyFeesEstimateForSKUNotFound describes a response with status code 404, with default header values.
 
 The specified resource does not exist.
 */
@@ -308,9 +433,39 @@ type GetMyFeesEstimateForSKUNotFound struct {
 	Payload *product_fees_v0_models.GetMyFeesEstimateResponse
 }
 
+// IsSuccess returns true when this get my fees estimate for s k u not found response has a 2xx status code
+func (o *GetMyFeesEstimateForSKUNotFound) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get my fees estimate for s k u not found response has a 3xx status code
+func (o *GetMyFeesEstimateForSKUNotFound) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get my fees estimate for s k u not found response has a 4xx status code
+func (o *GetMyFeesEstimateForSKUNotFound) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get my fees estimate for s k u not found response has a 5xx status code
+func (o *GetMyFeesEstimateForSKUNotFound) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get my fees estimate for s k u not found response a status code equal to that given
+func (o *GetMyFeesEstimateForSKUNotFound) IsCode(code int) bool {
+	return code == 404
+}
+
 func (o *GetMyFeesEstimateForSKUNotFound) Error() string {
 	return fmt.Sprintf("[POST /products/fees/v0/listings/{SellerSKU}/feesEstimate][%d] getMyFeesEstimateForSKUNotFound  %+v", 404, o.Payload)
 }
+
+func (o *GetMyFeesEstimateForSKUNotFound) String() string {
+	return fmt.Sprintf("[POST /products/fees/v0/listings/{SellerSKU}/feesEstimate][%d] getMyFeesEstimateForSKUNotFound  %+v", 404, o.Payload)
+}
+
 func (o *GetMyFeesEstimateForSKUNotFound) GetPayload() *product_fees_v0_models.GetMyFeesEstimateResponse {
 	return o.Payload
 }
@@ -346,7 +501,8 @@ func NewGetMyFeesEstimateForSKUTooManyRequests() *GetMyFeesEstimateForSKUTooMany
 	return &GetMyFeesEstimateForSKUTooManyRequests{}
 }
 
-/* GetMyFeesEstimateForSKUTooManyRequests describes a response with status code 429, with default header values.
+/*
+GetMyFeesEstimateForSKUTooManyRequests describes a response with status code 429, with default header values.
 
 The frequency of requests was greater than allowed.
 */
@@ -364,9 +520,39 @@ type GetMyFeesEstimateForSKUTooManyRequests struct {
 	Payload *product_fees_v0_models.GetMyFeesEstimateResponse
 }
 
+// IsSuccess returns true when this get my fees estimate for s k u too many requests response has a 2xx status code
+func (o *GetMyFeesEstimateForSKUTooManyRequests) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get my fees estimate for s k u too many requests response has a 3xx status code
+func (o *GetMyFeesEstimateForSKUTooManyRequests) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get my fees estimate for s k u too many requests response has a 4xx status code
+func (o *GetMyFeesEstimateForSKUTooManyRequests) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get my fees estimate for s k u too many requests response has a 5xx status code
+func (o *GetMyFeesEstimateForSKUTooManyRequests) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get my fees estimate for s k u too many requests response a status code equal to that given
+func (o *GetMyFeesEstimateForSKUTooManyRequests) IsCode(code int) bool {
+	return code == 429
+}
+
 func (o *GetMyFeesEstimateForSKUTooManyRequests) Error() string {
 	return fmt.Sprintf("[POST /products/fees/v0/listings/{SellerSKU}/feesEstimate][%d] getMyFeesEstimateForSKUTooManyRequests  %+v", 429, o.Payload)
 }
+
+func (o *GetMyFeesEstimateForSKUTooManyRequests) String() string {
+	return fmt.Sprintf("[POST /products/fees/v0/listings/{SellerSKU}/feesEstimate][%d] getMyFeesEstimateForSKUTooManyRequests  %+v", 429, o.Payload)
+}
+
 func (o *GetMyFeesEstimateForSKUTooManyRequests) GetPayload() *product_fees_v0_models.GetMyFeesEstimateResponse {
 	return o.Payload
 }
@@ -402,7 +588,8 @@ func NewGetMyFeesEstimateForSKUInternalServerError() *GetMyFeesEstimateForSKUInt
 	return &GetMyFeesEstimateForSKUInternalServerError{}
 }
 
-/* GetMyFeesEstimateForSKUInternalServerError describes a response with status code 500, with default header values.
+/*
+GetMyFeesEstimateForSKUInternalServerError describes a response with status code 500, with default header values.
 
 An unexpected condition occurred that prevented the server from fulfilling the request.
 */
@@ -420,9 +607,39 @@ type GetMyFeesEstimateForSKUInternalServerError struct {
 	Payload *product_fees_v0_models.GetMyFeesEstimateResponse
 }
 
+// IsSuccess returns true when this get my fees estimate for s k u internal server error response has a 2xx status code
+func (o *GetMyFeesEstimateForSKUInternalServerError) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get my fees estimate for s k u internal server error response has a 3xx status code
+func (o *GetMyFeesEstimateForSKUInternalServerError) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get my fees estimate for s k u internal server error response has a 4xx status code
+func (o *GetMyFeesEstimateForSKUInternalServerError) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get my fees estimate for s k u internal server error response has a 5xx status code
+func (o *GetMyFeesEstimateForSKUInternalServerError) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this get my fees estimate for s k u internal server error response a status code equal to that given
+func (o *GetMyFeesEstimateForSKUInternalServerError) IsCode(code int) bool {
+	return code == 500
+}
+
 func (o *GetMyFeesEstimateForSKUInternalServerError) Error() string {
 	return fmt.Sprintf("[POST /products/fees/v0/listings/{SellerSKU}/feesEstimate][%d] getMyFeesEstimateForSKUInternalServerError  %+v", 500, o.Payload)
 }
+
+func (o *GetMyFeesEstimateForSKUInternalServerError) String() string {
+	return fmt.Sprintf("[POST /products/fees/v0/listings/{SellerSKU}/feesEstimate][%d] getMyFeesEstimateForSKUInternalServerError  %+v", 500, o.Payload)
+}
+
 func (o *GetMyFeesEstimateForSKUInternalServerError) GetPayload() *product_fees_v0_models.GetMyFeesEstimateResponse {
 	return o.Payload
 }
@@ -458,7 +675,8 @@ func NewGetMyFeesEstimateForSKUServiceUnavailable() *GetMyFeesEstimateForSKUServ
 	return &GetMyFeesEstimateForSKUServiceUnavailable{}
 }
 
-/* GetMyFeesEstimateForSKUServiceUnavailable describes a response with status code 503, with default header values.
+/*
+GetMyFeesEstimateForSKUServiceUnavailable describes a response with status code 503, with default header values.
 
 Temporary overloading or maintenance of the server.
 */
@@ -476,9 +694,39 @@ type GetMyFeesEstimateForSKUServiceUnavailable struct {
 	Payload *product_fees_v0_models.GetMyFeesEstimateResponse
 }
 
+// IsSuccess returns true when this get my fees estimate for s k u service unavailable response has a 2xx status code
+func (o *GetMyFeesEstimateForSKUServiceUnavailable) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get my fees estimate for s k u service unavailable response has a 3xx status code
+func (o *GetMyFeesEstimateForSKUServiceUnavailable) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get my fees estimate for s k u service unavailable response has a 4xx status code
+func (o *GetMyFeesEstimateForSKUServiceUnavailable) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get my fees estimate for s k u service unavailable response has a 5xx status code
+func (o *GetMyFeesEstimateForSKUServiceUnavailable) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this get my fees estimate for s k u service unavailable response a status code equal to that given
+func (o *GetMyFeesEstimateForSKUServiceUnavailable) IsCode(code int) bool {
+	return code == 503
+}
+
 func (o *GetMyFeesEstimateForSKUServiceUnavailable) Error() string {
 	return fmt.Sprintf("[POST /products/fees/v0/listings/{SellerSKU}/feesEstimate][%d] getMyFeesEstimateForSKUServiceUnavailable  %+v", 503, o.Payload)
 }
+
+func (o *GetMyFeesEstimateForSKUServiceUnavailable) String() string {
+	return fmt.Sprintf("[POST /products/fees/v0/listings/{SellerSKU}/feesEstimate][%d] getMyFeesEstimateForSKUServiceUnavailable  %+v", 503, o.Payload)
+}
+
 func (o *GetMyFeesEstimateForSKUServiceUnavailable) GetPayload() *product_fees_v0_models.GetMyFeesEstimateResponse {
 	return o.Payload
 }

@@ -87,7 +87,8 @@ func NewCreateNegativeFeedbackRemovalCreated() *CreateNegativeFeedbackRemovalCre
 	return &CreateNegativeFeedbackRemovalCreated{}
 }
 
-/* CreateNegativeFeedbackRemovalCreated describes a response with status code 201, with default header values.
+/*
+CreateNegativeFeedbackRemovalCreated describes a response with status code 201, with default header values.
 
 The negativeFeedbackRemoval message was created for the order.
 */
@@ -104,9 +105,39 @@ type CreateNegativeFeedbackRemovalCreated struct {
 	Payload *messaging_models.CreateNegativeFeedbackRemovalResponse
 }
 
+// IsSuccess returns true when this create negative feedback removal created response has a 2xx status code
+func (o *CreateNegativeFeedbackRemovalCreated) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this create negative feedback removal created response has a 3xx status code
+func (o *CreateNegativeFeedbackRemovalCreated) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create negative feedback removal created response has a 4xx status code
+func (o *CreateNegativeFeedbackRemovalCreated) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this create negative feedback removal created response has a 5xx status code
+func (o *CreateNegativeFeedbackRemovalCreated) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this create negative feedback removal created response a status code equal to that given
+func (o *CreateNegativeFeedbackRemovalCreated) IsCode(code int) bool {
+	return code == 201
+}
+
 func (o *CreateNegativeFeedbackRemovalCreated) Error() string {
 	return fmt.Sprintf("[POST /messaging/v1/orders/{amazonOrderId}/messages/negativeFeedbackRemoval][%d] createNegativeFeedbackRemovalCreated  %+v", 201, o.Payload)
 }
+
+func (o *CreateNegativeFeedbackRemovalCreated) String() string {
+	return fmt.Sprintf("[POST /messaging/v1/orders/{amazonOrderId}/messages/negativeFeedbackRemoval][%d] createNegativeFeedbackRemovalCreated  %+v", 201, o.Payload)
+}
+
 func (o *CreateNegativeFeedbackRemovalCreated) GetPayload() *messaging_models.CreateNegativeFeedbackRemovalResponse {
 	return o.Payload
 }
@@ -142,7 +173,8 @@ func NewCreateNegativeFeedbackRemovalBadRequest() *CreateNegativeFeedbackRemoval
 	return &CreateNegativeFeedbackRemovalBadRequest{}
 }
 
-/* CreateNegativeFeedbackRemovalBadRequest describes a response with status code 400, with default header values.
+/*
+CreateNegativeFeedbackRemovalBadRequest describes a response with status code 400, with default header values.
 
 Request has missing or invalid parameters and cannot be parsed.
 */
@@ -159,9 +191,39 @@ type CreateNegativeFeedbackRemovalBadRequest struct {
 	Payload *messaging_models.CreateNegativeFeedbackRemovalResponse
 }
 
+// IsSuccess returns true when this create negative feedback removal bad request response has a 2xx status code
+func (o *CreateNegativeFeedbackRemovalBadRequest) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this create negative feedback removal bad request response has a 3xx status code
+func (o *CreateNegativeFeedbackRemovalBadRequest) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create negative feedback removal bad request response has a 4xx status code
+func (o *CreateNegativeFeedbackRemovalBadRequest) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this create negative feedback removal bad request response has a 5xx status code
+func (o *CreateNegativeFeedbackRemovalBadRequest) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this create negative feedback removal bad request response a status code equal to that given
+func (o *CreateNegativeFeedbackRemovalBadRequest) IsCode(code int) bool {
+	return code == 400
+}
+
 func (o *CreateNegativeFeedbackRemovalBadRequest) Error() string {
 	return fmt.Sprintf("[POST /messaging/v1/orders/{amazonOrderId}/messages/negativeFeedbackRemoval][%d] createNegativeFeedbackRemovalBadRequest  %+v", 400, o.Payload)
 }
+
+func (o *CreateNegativeFeedbackRemovalBadRequest) String() string {
+	return fmt.Sprintf("[POST /messaging/v1/orders/{amazonOrderId}/messages/negativeFeedbackRemoval][%d] createNegativeFeedbackRemovalBadRequest  %+v", 400, o.Payload)
+}
+
 func (o *CreateNegativeFeedbackRemovalBadRequest) GetPayload() *messaging_models.CreateNegativeFeedbackRemovalResponse {
 	return o.Payload
 }
@@ -197,7 +259,8 @@ func NewCreateNegativeFeedbackRemovalForbidden() *CreateNegativeFeedbackRemovalF
 	return &CreateNegativeFeedbackRemovalForbidden{}
 }
 
-/* CreateNegativeFeedbackRemovalForbidden describes a response with status code 403, with default header values.
+/*
+CreateNegativeFeedbackRemovalForbidden describes a response with status code 403, with default header values.
 
 Indicates that access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.
 */
@@ -210,9 +273,39 @@ type CreateNegativeFeedbackRemovalForbidden struct {
 	Payload *messaging_models.CreateNegativeFeedbackRemovalResponse
 }
 
+// IsSuccess returns true when this create negative feedback removal forbidden response has a 2xx status code
+func (o *CreateNegativeFeedbackRemovalForbidden) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this create negative feedback removal forbidden response has a 3xx status code
+func (o *CreateNegativeFeedbackRemovalForbidden) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create negative feedback removal forbidden response has a 4xx status code
+func (o *CreateNegativeFeedbackRemovalForbidden) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this create negative feedback removal forbidden response has a 5xx status code
+func (o *CreateNegativeFeedbackRemovalForbidden) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this create negative feedback removal forbidden response a status code equal to that given
+func (o *CreateNegativeFeedbackRemovalForbidden) IsCode(code int) bool {
+	return code == 403
+}
+
 func (o *CreateNegativeFeedbackRemovalForbidden) Error() string {
 	return fmt.Sprintf("[POST /messaging/v1/orders/{amazonOrderId}/messages/negativeFeedbackRemoval][%d] createNegativeFeedbackRemovalForbidden  %+v", 403, o.Payload)
 }
+
+func (o *CreateNegativeFeedbackRemovalForbidden) String() string {
+	return fmt.Sprintf("[POST /messaging/v1/orders/{amazonOrderId}/messages/negativeFeedbackRemoval][%d] createNegativeFeedbackRemovalForbidden  %+v", 403, o.Payload)
+}
+
 func (o *CreateNegativeFeedbackRemovalForbidden) GetPayload() *messaging_models.CreateNegativeFeedbackRemovalResponse {
 	return o.Payload
 }
@@ -241,7 +334,8 @@ func NewCreateNegativeFeedbackRemovalNotFound() *CreateNegativeFeedbackRemovalNo
 	return &CreateNegativeFeedbackRemovalNotFound{}
 }
 
-/* CreateNegativeFeedbackRemovalNotFound describes a response with status code 404, with default header values.
+/*
+CreateNegativeFeedbackRemovalNotFound describes a response with status code 404, with default header values.
 
 The resource specified does not exist.
 */
@@ -258,9 +352,39 @@ type CreateNegativeFeedbackRemovalNotFound struct {
 	Payload *messaging_models.CreateNegativeFeedbackRemovalResponse
 }
 
+// IsSuccess returns true when this create negative feedback removal not found response has a 2xx status code
+func (o *CreateNegativeFeedbackRemovalNotFound) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this create negative feedback removal not found response has a 3xx status code
+func (o *CreateNegativeFeedbackRemovalNotFound) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create negative feedback removal not found response has a 4xx status code
+func (o *CreateNegativeFeedbackRemovalNotFound) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this create negative feedback removal not found response has a 5xx status code
+func (o *CreateNegativeFeedbackRemovalNotFound) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this create negative feedback removal not found response a status code equal to that given
+func (o *CreateNegativeFeedbackRemovalNotFound) IsCode(code int) bool {
+	return code == 404
+}
+
 func (o *CreateNegativeFeedbackRemovalNotFound) Error() string {
 	return fmt.Sprintf("[POST /messaging/v1/orders/{amazonOrderId}/messages/negativeFeedbackRemoval][%d] createNegativeFeedbackRemovalNotFound  %+v", 404, o.Payload)
 }
+
+func (o *CreateNegativeFeedbackRemovalNotFound) String() string {
+	return fmt.Sprintf("[POST /messaging/v1/orders/{amazonOrderId}/messages/negativeFeedbackRemoval][%d] createNegativeFeedbackRemovalNotFound  %+v", 404, o.Payload)
+}
+
 func (o *CreateNegativeFeedbackRemovalNotFound) GetPayload() *messaging_models.CreateNegativeFeedbackRemovalResponse {
 	return o.Payload
 }
@@ -296,7 +420,8 @@ func NewCreateNegativeFeedbackRemovalRequestEntityTooLarge() *CreateNegativeFeed
 	return &CreateNegativeFeedbackRemovalRequestEntityTooLarge{}
 }
 
-/* CreateNegativeFeedbackRemovalRequestEntityTooLarge describes a response with status code 413, with default header values.
+/*
+CreateNegativeFeedbackRemovalRequestEntityTooLarge describes a response with status code 413, with default header values.
 
 The request size exceeded the maximum accepted size.
 */
@@ -314,9 +439,39 @@ type CreateNegativeFeedbackRemovalRequestEntityTooLarge struct {
 	Payload *messaging_models.CreateNegativeFeedbackRemovalResponse
 }
 
+// IsSuccess returns true when this create negative feedback removal request entity too large response has a 2xx status code
+func (o *CreateNegativeFeedbackRemovalRequestEntityTooLarge) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this create negative feedback removal request entity too large response has a 3xx status code
+func (o *CreateNegativeFeedbackRemovalRequestEntityTooLarge) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create negative feedback removal request entity too large response has a 4xx status code
+func (o *CreateNegativeFeedbackRemovalRequestEntityTooLarge) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this create negative feedback removal request entity too large response has a 5xx status code
+func (o *CreateNegativeFeedbackRemovalRequestEntityTooLarge) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this create negative feedback removal request entity too large response a status code equal to that given
+func (o *CreateNegativeFeedbackRemovalRequestEntityTooLarge) IsCode(code int) bool {
+	return code == 413
+}
+
 func (o *CreateNegativeFeedbackRemovalRequestEntityTooLarge) Error() string {
 	return fmt.Sprintf("[POST /messaging/v1/orders/{amazonOrderId}/messages/negativeFeedbackRemoval][%d] createNegativeFeedbackRemovalRequestEntityTooLarge  %+v", 413, o.Payload)
 }
+
+func (o *CreateNegativeFeedbackRemovalRequestEntityTooLarge) String() string {
+	return fmt.Sprintf("[POST /messaging/v1/orders/{amazonOrderId}/messages/negativeFeedbackRemoval][%d] createNegativeFeedbackRemovalRequestEntityTooLarge  %+v", 413, o.Payload)
+}
+
 func (o *CreateNegativeFeedbackRemovalRequestEntityTooLarge) GetPayload() *messaging_models.CreateNegativeFeedbackRemovalResponse {
 	return o.Payload
 }
@@ -352,7 +507,8 @@ func NewCreateNegativeFeedbackRemovalUnsupportedMediaType() *CreateNegativeFeedb
 	return &CreateNegativeFeedbackRemovalUnsupportedMediaType{}
 }
 
-/* CreateNegativeFeedbackRemovalUnsupportedMediaType describes a response with status code 415, with default header values.
+/*
+CreateNegativeFeedbackRemovalUnsupportedMediaType describes a response with status code 415, with default header values.
 
 The request payload is in an unsupported format.
 */
@@ -370,9 +526,39 @@ type CreateNegativeFeedbackRemovalUnsupportedMediaType struct {
 	Payload *messaging_models.CreateNegativeFeedbackRemovalResponse
 }
 
+// IsSuccess returns true when this create negative feedback removal unsupported media type response has a 2xx status code
+func (o *CreateNegativeFeedbackRemovalUnsupportedMediaType) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this create negative feedback removal unsupported media type response has a 3xx status code
+func (o *CreateNegativeFeedbackRemovalUnsupportedMediaType) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create negative feedback removal unsupported media type response has a 4xx status code
+func (o *CreateNegativeFeedbackRemovalUnsupportedMediaType) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this create negative feedback removal unsupported media type response has a 5xx status code
+func (o *CreateNegativeFeedbackRemovalUnsupportedMediaType) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this create negative feedback removal unsupported media type response a status code equal to that given
+func (o *CreateNegativeFeedbackRemovalUnsupportedMediaType) IsCode(code int) bool {
+	return code == 415
+}
+
 func (o *CreateNegativeFeedbackRemovalUnsupportedMediaType) Error() string {
 	return fmt.Sprintf("[POST /messaging/v1/orders/{amazonOrderId}/messages/negativeFeedbackRemoval][%d] createNegativeFeedbackRemovalUnsupportedMediaType  %+v", 415, o.Payload)
 }
+
+func (o *CreateNegativeFeedbackRemovalUnsupportedMediaType) String() string {
+	return fmt.Sprintf("[POST /messaging/v1/orders/{amazonOrderId}/messages/negativeFeedbackRemoval][%d] createNegativeFeedbackRemovalUnsupportedMediaType  %+v", 415, o.Payload)
+}
+
 func (o *CreateNegativeFeedbackRemovalUnsupportedMediaType) GetPayload() *messaging_models.CreateNegativeFeedbackRemovalResponse {
 	return o.Payload
 }
@@ -408,7 +594,8 @@ func NewCreateNegativeFeedbackRemovalTooManyRequests() *CreateNegativeFeedbackRe
 	return &CreateNegativeFeedbackRemovalTooManyRequests{}
 }
 
-/* CreateNegativeFeedbackRemovalTooManyRequests describes a response with status code 429, with default header values.
+/*
+CreateNegativeFeedbackRemovalTooManyRequests describes a response with status code 429, with default header values.
 
 The frequency of requests was greater than allowed.
 */
@@ -426,9 +613,39 @@ type CreateNegativeFeedbackRemovalTooManyRequests struct {
 	Payload *messaging_models.CreateNegativeFeedbackRemovalResponse
 }
 
+// IsSuccess returns true when this create negative feedback removal too many requests response has a 2xx status code
+func (o *CreateNegativeFeedbackRemovalTooManyRequests) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this create negative feedback removal too many requests response has a 3xx status code
+func (o *CreateNegativeFeedbackRemovalTooManyRequests) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create negative feedback removal too many requests response has a 4xx status code
+func (o *CreateNegativeFeedbackRemovalTooManyRequests) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this create negative feedback removal too many requests response has a 5xx status code
+func (o *CreateNegativeFeedbackRemovalTooManyRequests) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this create negative feedback removal too many requests response a status code equal to that given
+func (o *CreateNegativeFeedbackRemovalTooManyRequests) IsCode(code int) bool {
+	return code == 429
+}
+
 func (o *CreateNegativeFeedbackRemovalTooManyRequests) Error() string {
 	return fmt.Sprintf("[POST /messaging/v1/orders/{amazonOrderId}/messages/negativeFeedbackRemoval][%d] createNegativeFeedbackRemovalTooManyRequests  %+v", 429, o.Payload)
 }
+
+func (o *CreateNegativeFeedbackRemovalTooManyRequests) String() string {
+	return fmt.Sprintf("[POST /messaging/v1/orders/{amazonOrderId}/messages/negativeFeedbackRemoval][%d] createNegativeFeedbackRemovalTooManyRequests  %+v", 429, o.Payload)
+}
+
 func (o *CreateNegativeFeedbackRemovalTooManyRequests) GetPayload() *messaging_models.CreateNegativeFeedbackRemovalResponse {
 	return o.Payload
 }
@@ -464,7 +681,8 @@ func NewCreateNegativeFeedbackRemovalInternalServerError() *CreateNegativeFeedba
 	return &CreateNegativeFeedbackRemovalInternalServerError{}
 }
 
-/* CreateNegativeFeedbackRemovalInternalServerError describes a response with status code 500, with default header values.
+/*
+CreateNegativeFeedbackRemovalInternalServerError describes a response with status code 500, with default header values.
 
 An unexpected condition occurred that prevented the server from fulfilling the request.
 */
@@ -482,9 +700,39 @@ type CreateNegativeFeedbackRemovalInternalServerError struct {
 	Payload *messaging_models.CreateNegativeFeedbackRemovalResponse
 }
 
+// IsSuccess returns true when this create negative feedback removal internal server error response has a 2xx status code
+func (o *CreateNegativeFeedbackRemovalInternalServerError) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this create negative feedback removal internal server error response has a 3xx status code
+func (o *CreateNegativeFeedbackRemovalInternalServerError) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create negative feedback removal internal server error response has a 4xx status code
+func (o *CreateNegativeFeedbackRemovalInternalServerError) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this create negative feedback removal internal server error response has a 5xx status code
+func (o *CreateNegativeFeedbackRemovalInternalServerError) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this create negative feedback removal internal server error response a status code equal to that given
+func (o *CreateNegativeFeedbackRemovalInternalServerError) IsCode(code int) bool {
+	return code == 500
+}
+
 func (o *CreateNegativeFeedbackRemovalInternalServerError) Error() string {
 	return fmt.Sprintf("[POST /messaging/v1/orders/{amazonOrderId}/messages/negativeFeedbackRemoval][%d] createNegativeFeedbackRemovalInternalServerError  %+v", 500, o.Payload)
 }
+
+func (o *CreateNegativeFeedbackRemovalInternalServerError) String() string {
+	return fmt.Sprintf("[POST /messaging/v1/orders/{amazonOrderId}/messages/negativeFeedbackRemoval][%d] createNegativeFeedbackRemovalInternalServerError  %+v", 500, o.Payload)
+}
+
 func (o *CreateNegativeFeedbackRemovalInternalServerError) GetPayload() *messaging_models.CreateNegativeFeedbackRemovalResponse {
 	return o.Payload
 }
@@ -520,7 +768,8 @@ func NewCreateNegativeFeedbackRemovalServiceUnavailable() *CreateNegativeFeedbac
 	return &CreateNegativeFeedbackRemovalServiceUnavailable{}
 }
 
-/* CreateNegativeFeedbackRemovalServiceUnavailable describes a response with status code 503, with default header values.
+/*
+CreateNegativeFeedbackRemovalServiceUnavailable describes a response with status code 503, with default header values.
 
 Temporary overloading or maintenance of the server.
 */
@@ -538,9 +787,39 @@ type CreateNegativeFeedbackRemovalServiceUnavailable struct {
 	Payload *messaging_models.CreateNegativeFeedbackRemovalResponse
 }
 
+// IsSuccess returns true when this create negative feedback removal service unavailable response has a 2xx status code
+func (o *CreateNegativeFeedbackRemovalServiceUnavailable) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this create negative feedback removal service unavailable response has a 3xx status code
+func (o *CreateNegativeFeedbackRemovalServiceUnavailable) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create negative feedback removal service unavailable response has a 4xx status code
+func (o *CreateNegativeFeedbackRemovalServiceUnavailable) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this create negative feedback removal service unavailable response has a 5xx status code
+func (o *CreateNegativeFeedbackRemovalServiceUnavailable) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this create negative feedback removal service unavailable response a status code equal to that given
+func (o *CreateNegativeFeedbackRemovalServiceUnavailable) IsCode(code int) bool {
+	return code == 503
+}
+
 func (o *CreateNegativeFeedbackRemovalServiceUnavailable) Error() string {
 	return fmt.Sprintf("[POST /messaging/v1/orders/{amazonOrderId}/messages/negativeFeedbackRemoval][%d] createNegativeFeedbackRemovalServiceUnavailable  %+v", 503, o.Payload)
 }
+
+func (o *CreateNegativeFeedbackRemovalServiceUnavailable) String() string {
+	return fmt.Sprintf("[POST /messaging/v1/orders/{amazonOrderId}/messages/negativeFeedbackRemoval][%d] createNegativeFeedbackRemovalServiceUnavailable  %+v", 503, o.Payload)
+}
+
 func (o *CreateNegativeFeedbackRemovalServiceUnavailable) GetPayload() *messaging_models.CreateNegativeFeedbackRemovalResponse {
 	return o.Payload
 }

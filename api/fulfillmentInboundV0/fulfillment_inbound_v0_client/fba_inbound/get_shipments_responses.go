@@ -81,7 +81,8 @@ func NewGetShipmentsOK() *GetShipmentsOK {
 	return &GetShipmentsOK{}
 }
 
-/* GetShipmentsOK describes a response with status code 200, with default header values.
+/*
+GetShipmentsOK describes a response with status code 200, with default header values.
 
 Success.
 */
@@ -98,9 +99,39 @@ type GetShipmentsOK struct {
 	Payload *fulfillment_inbound_v0_models.GetShipmentsResponse
 }
 
+// IsSuccess returns true when this get shipments o k response has a 2xx status code
+func (o *GetShipmentsOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this get shipments o k response has a 3xx status code
+func (o *GetShipmentsOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get shipments o k response has a 4xx status code
+func (o *GetShipmentsOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get shipments o k response has a 5xx status code
+func (o *GetShipmentsOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get shipments o k response a status code equal to that given
+func (o *GetShipmentsOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *GetShipmentsOK) Error() string {
 	return fmt.Sprintf("[GET /fba/inbound/v0/shipments][%d] getShipmentsOK  %+v", 200, o.Payload)
 }
+
+func (o *GetShipmentsOK) String() string {
+	return fmt.Sprintf("[GET /fba/inbound/v0/shipments][%d] getShipmentsOK  %+v", 200, o.Payload)
+}
+
 func (o *GetShipmentsOK) GetPayload() *fulfillment_inbound_v0_models.GetShipmentsResponse {
 	return o.Payload
 }
@@ -136,7 +167,8 @@ func NewGetShipmentsBadRequest() *GetShipmentsBadRequest {
 	return &GetShipmentsBadRequest{}
 }
 
-/* GetShipmentsBadRequest describes a response with status code 400, with default header values.
+/*
+GetShipmentsBadRequest describes a response with status code 400, with default header values.
 
 Request has missing or invalid parameters and cannot be parsed.
 */
@@ -153,9 +185,39 @@ type GetShipmentsBadRequest struct {
 	Payload *fulfillment_inbound_v0_models.GetShipmentsResponse
 }
 
+// IsSuccess returns true when this get shipments bad request response has a 2xx status code
+func (o *GetShipmentsBadRequest) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get shipments bad request response has a 3xx status code
+func (o *GetShipmentsBadRequest) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get shipments bad request response has a 4xx status code
+func (o *GetShipmentsBadRequest) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get shipments bad request response has a 5xx status code
+func (o *GetShipmentsBadRequest) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get shipments bad request response a status code equal to that given
+func (o *GetShipmentsBadRequest) IsCode(code int) bool {
+	return code == 400
+}
+
 func (o *GetShipmentsBadRequest) Error() string {
 	return fmt.Sprintf("[GET /fba/inbound/v0/shipments][%d] getShipmentsBadRequest  %+v", 400, o.Payload)
 }
+
+func (o *GetShipmentsBadRequest) String() string {
+	return fmt.Sprintf("[GET /fba/inbound/v0/shipments][%d] getShipmentsBadRequest  %+v", 400, o.Payload)
+}
+
 func (o *GetShipmentsBadRequest) GetPayload() *fulfillment_inbound_v0_models.GetShipmentsResponse {
 	return o.Payload
 }
@@ -191,7 +253,8 @@ func NewGetShipmentsUnauthorized() *GetShipmentsUnauthorized {
 	return &GetShipmentsUnauthorized{}
 }
 
-/* GetShipmentsUnauthorized describes a response with status code 401, with default header values.
+/*
+GetShipmentsUnauthorized describes a response with status code 401, with default header values.
 
 The request's Authorization header is not formatted correctly or does not contain a valid token.
 */
@@ -209,9 +272,39 @@ type GetShipmentsUnauthorized struct {
 	Payload *fulfillment_inbound_v0_models.GetShipmentsResponse
 }
 
+// IsSuccess returns true when this get shipments unauthorized response has a 2xx status code
+func (o *GetShipmentsUnauthorized) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get shipments unauthorized response has a 3xx status code
+func (o *GetShipmentsUnauthorized) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get shipments unauthorized response has a 4xx status code
+func (o *GetShipmentsUnauthorized) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get shipments unauthorized response has a 5xx status code
+func (o *GetShipmentsUnauthorized) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get shipments unauthorized response a status code equal to that given
+func (o *GetShipmentsUnauthorized) IsCode(code int) bool {
+	return code == 401
+}
+
 func (o *GetShipmentsUnauthorized) Error() string {
 	return fmt.Sprintf("[GET /fba/inbound/v0/shipments][%d] getShipmentsUnauthorized  %+v", 401, o.Payload)
 }
+
+func (o *GetShipmentsUnauthorized) String() string {
+	return fmt.Sprintf("[GET /fba/inbound/v0/shipments][%d] getShipmentsUnauthorized  %+v", 401, o.Payload)
+}
+
 func (o *GetShipmentsUnauthorized) GetPayload() *fulfillment_inbound_v0_models.GetShipmentsResponse {
 	return o.Payload
 }
@@ -247,7 +340,8 @@ func NewGetShipmentsForbidden() *GetShipmentsForbidden {
 	return &GetShipmentsForbidden{}
 }
 
-/* GetShipmentsForbidden describes a response with status code 403, with default header values.
+/*
+GetShipmentsForbidden describes a response with status code 403, with default header values.
 
 Indicates that access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.
 */
@@ -260,9 +354,39 @@ type GetShipmentsForbidden struct {
 	Payload *fulfillment_inbound_v0_models.GetShipmentsResponse
 }
 
+// IsSuccess returns true when this get shipments forbidden response has a 2xx status code
+func (o *GetShipmentsForbidden) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get shipments forbidden response has a 3xx status code
+func (o *GetShipmentsForbidden) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get shipments forbidden response has a 4xx status code
+func (o *GetShipmentsForbidden) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get shipments forbidden response has a 5xx status code
+func (o *GetShipmentsForbidden) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get shipments forbidden response a status code equal to that given
+func (o *GetShipmentsForbidden) IsCode(code int) bool {
+	return code == 403
+}
+
 func (o *GetShipmentsForbidden) Error() string {
 	return fmt.Sprintf("[GET /fba/inbound/v0/shipments][%d] getShipmentsForbidden  %+v", 403, o.Payload)
 }
+
+func (o *GetShipmentsForbidden) String() string {
+	return fmt.Sprintf("[GET /fba/inbound/v0/shipments][%d] getShipmentsForbidden  %+v", 403, o.Payload)
+}
+
 func (o *GetShipmentsForbidden) GetPayload() *fulfillment_inbound_v0_models.GetShipmentsResponse {
 	return o.Payload
 }
@@ -291,7 +415,8 @@ func NewGetShipmentsNotFound() *GetShipmentsNotFound {
 	return &GetShipmentsNotFound{}
 }
 
-/* GetShipmentsNotFound describes a response with status code 404, with default header values.
+/*
+GetShipmentsNotFound describes a response with status code 404, with default header values.
 
 The specified resource does not exist.
 */
@@ -308,9 +433,39 @@ type GetShipmentsNotFound struct {
 	Payload *fulfillment_inbound_v0_models.GetShipmentsResponse
 }
 
+// IsSuccess returns true when this get shipments not found response has a 2xx status code
+func (o *GetShipmentsNotFound) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get shipments not found response has a 3xx status code
+func (o *GetShipmentsNotFound) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get shipments not found response has a 4xx status code
+func (o *GetShipmentsNotFound) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get shipments not found response has a 5xx status code
+func (o *GetShipmentsNotFound) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get shipments not found response a status code equal to that given
+func (o *GetShipmentsNotFound) IsCode(code int) bool {
+	return code == 404
+}
+
 func (o *GetShipmentsNotFound) Error() string {
 	return fmt.Sprintf("[GET /fba/inbound/v0/shipments][%d] getShipmentsNotFound  %+v", 404, o.Payload)
 }
+
+func (o *GetShipmentsNotFound) String() string {
+	return fmt.Sprintf("[GET /fba/inbound/v0/shipments][%d] getShipmentsNotFound  %+v", 404, o.Payload)
+}
+
 func (o *GetShipmentsNotFound) GetPayload() *fulfillment_inbound_v0_models.GetShipmentsResponse {
 	return o.Payload
 }
@@ -346,7 +501,8 @@ func NewGetShipmentsTooManyRequests() *GetShipmentsTooManyRequests {
 	return &GetShipmentsTooManyRequests{}
 }
 
-/* GetShipmentsTooManyRequests describes a response with status code 429, with default header values.
+/*
+GetShipmentsTooManyRequests describes a response with status code 429, with default header values.
 
 The frequency of requests was greater than allowed.
 */
@@ -364,9 +520,39 @@ type GetShipmentsTooManyRequests struct {
 	Payload *fulfillment_inbound_v0_models.GetShipmentsResponse
 }
 
+// IsSuccess returns true when this get shipments too many requests response has a 2xx status code
+func (o *GetShipmentsTooManyRequests) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get shipments too many requests response has a 3xx status code
+func (o *GetShipmentsTooManyRequests) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get shipments too many requests response has a 4xx status code
+func (o *GetShipmentsTooManyRequests) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get shipments too many requests response has a 5xx status code
+func (o *GetShipmentsTooManyRequests) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get shipments too many requests response a status code equal to that given
+func (o *GetShipmentsTooManyRequests) IsCode(code int) bool {
+	return code == 429
+}
+
 func (o *GetShipmentsTooManyRequests) Error() string {
 	return fmt.Sprintf("[GET /fba/inbound/v0/shipments][%d] getShipmentsTooManyRequests  %+v", 429, o.Payload)
 }
+
+func (o *GetShipmentsTooManyRequests) String() string {
+	return fmt.Sprintf("[GET /fba/inbound/v0/shipments][%d] getShipmentsTooManyRequests  %+v", 429, o.Payload)
+}
+
 func (o *GetShipmentsTooManyRequests) GetPayload() *fulfillment_inbound_v0_models.GetShipmentsResponse {
 	return o.Payload
 }
@@ -402,7 +588,8 @@ func NewGetShipmentsInternalServerError() *GetShipmentsInternalServerError {
 	return &GetShipmentsInternalServerError{}
 }
 
-/* GetShipmentsInternalServerError describes a response with status code 500, with default header values.
+/*
+GetShipmentsInternalServerError describes a response with status code 500, with default header values.
 
 An unexpected condition occurred that prevented the server from fulfilling the request.
 */
@@ -420,9 +607,39 @@ type GetShipmentsInternalServerError struct {
 	Payload *fulfillment_inbound_v0_models.GetShipmentsResponse
 }
 
+// IsSuccess returns true when this get shipments internal server error response has a 2xx status code
+func (o *GetShipmentsInternalServerError) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get shipments internal server error response has a 3xx status code
+func (o *GetShipmentsInternalServerError) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get shipments internal server error response has a 4xx status code
+func (o *GetShipmentsInternalServerError) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get shipments internal server error response has a 5xx status code
+func (o *GetShipmentsInternalServerError) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this get shipments internal server error response a status code equal to that given
+func (o *GetShipmentsInternalServerError) IsCode(code int) bool {
+	return code == 500
+}
+
 func (o *GetShipmentsInternalServerError) Error() string {
 	return fmt.Sprintf("[GET /fba/inbound/v0/shipments][%d] getShipmentsInternalServerError  %+v", 500, o.Payload)
 }
+
+func (o *GetShipmentsInternalServerError) String() string {
+	return fmt.Sprintf("[GET /fba/inbound/v0/shipments][%d] getShipmentsInternalServerError  %+v", 500, o.Payload)
+}
+
 func (o *GetShipmentsInternalServerError) GetPayload() *fulfillment_inbound_v0_models.GetShipmentsResponse {
 	return o.Payload
 }
@@ -458,7 +675,8 @@ func NewGetShipmentsServiceUnavailable() *GetShipmentsServiceUnavailable {
 	return &GetShipmentsServiceUnavailable{}
 }
 
-/* GetShipmentsServiceUnavailable describes a response with status code 503, with default header values.
+/*
+GetShipmentsServiceUnavailable describes a response with status code 503, with default header values.
 
 Temporary overloading or maintenance of the server.
 */
@@ -476,9 +694,39 @@ type GetShipmentsServiceUnavailable struct {
 	Payload *fulfillment_inbound_v0_models.GetShipmentsResponse
 }
 
+// IsSuccess returns true when this get shipments service unavailable response has a 2xx status code
+func (o *GetShipmentsServiceUnavailable) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get shipments service unavailable response has a 3xx status code
+func (o *GetShipmentsServiceUnavailable) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get shipments service unavailable response has a 4xx status code
+func (o *GetShipmentsServiceUnavailable) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get shipments service unavailable response has a 5xx status code
+func (o *GetShipmentsServiceUnavailable) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this get shipments service unavailable response a status code equal to that given
+func (o *GetShipmentsServiceUnavailable) IsCode(code int) bool {
+	return code == 503
+}
+
 func (o *GetShipmentsServiceUnavailable) Error() string {
 	return fmt.Sprintf("[GET /fba/inbound/v0/shipments][%d] getShipmentsServiceUnavailable  %+v", 503, o.Payload)
 }
+
+func (o *GetShipmentsServiceUnavailable) String() string {
+	return fmt.Sprintf("[GET /fba/inbound/v0/shipments][%d] getShipmentsServiceUnavailable  %+v", 503, o.Payload)
+}
+
 func (o *GetShipmentsServiceUnavailable) GetPayload() *fulfillment_inbound_v0_models.GetShipmentsResponse {
 	return o.Payload
 }

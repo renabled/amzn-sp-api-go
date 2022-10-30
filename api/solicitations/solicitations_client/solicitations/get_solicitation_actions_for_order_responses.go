@@ -87,7 +87,8 @@ func NewGetSolicitationActionsForOrderOK() *GetSolicitationActionsForOrderOK {
 	return &GetSolicitationActionsForOrderOK{}
 }
 
-/* GetSolicitationActionsForOrderOK describes a response with status code 200, with default header values.
+/*
+GetSolicitationActionsForOrderOK describes a response with status code 200, with default header values.
 
 Returns hypermedia links under the _links.actions key that specify which solicitation actions are allowed for the order.
 */
@@ -104,9 +105,39 @@ type GetSolicitationActionsForOrderOK struct {
 	Payload *solicitations_models.GetSolicitationActionsForOrderResponse
 }
 
+// IsSuccess returns true when this get solicitation actions for order o k response has a 2xx status code
+func (o *GetSolicitationActionsForOrderOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this get solicitation actions for order o k response has a 3xx status code
+func (o *GetSolicitationActionsForOrderOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get solicitation actions for order o k response has a 4xx status code
+func (o *GetSolicitationActionsForOrderOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get solicitation actions for order o k response has a 5xx status code
+func (o *GetSolicitationActionsForOrderOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get solicitation actions for order o k response a status code equal to that given
+func (o *GetSolicitationActionsForOrderOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *GetSolicitationActionsForOrderOK) Error() string {
 	return fmt.Sprintf("[GET /solicitations/v1/orders/{amazonOrderId}][%d] getSolicitationActionsForOrderOK  %+v", 200, o.Payload)
 }
+
+func (o *GetSolicitationActionsForOrderOK) String() string {
+	return fmt.Sprintf("[GET /solicitations/v1/orders/{amazonOrderId}][%d] getSolicitationActionsForOrderOK  %+v", 200, o.Payload)
+}
+
 func (o *GetSolicitationActionsForOrderOK) GetPayload() *solicitations_models.GetSolicitationActionsForOrderResponse {
 	return o.Payload
 }
@@ -142,7 +173,8 @@ func NewGetSolicitationActionsForOrderBadRequest() *GetSolicitationActionsForOrd
 	return &GetSolicitationActionsForOrderBadRequest{}
 }
 
-/* GetSolicitationActionsForOrderBadRequest describes a response with status code 400, with default header values.
+/*
+GetSolicitationActionsForOrderBadRequest describes a response with status code 400, with default header values.
 
 Request has missing or invalid parameters and cannot be parsed.
 */
@@ -159,9 +191,39 @@ type GetSolicitationActionsForOrderBadRequest struct {
 	Payload *solicitations_models.GetSolicitationActionsForOrderResponse
 }
 
+// IsSuccess returns true when this get solicitation actions for order bad request response has a 2xx status code
+func (o *GetSolicitationActionsForOrderBadRequest) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get solicitation actions for order bad request response has a 3xx status code
+func (o *GetSolicitationActionsForOrderBadRequest) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get solicitation actions for order bad request response has a 4xx status code
+func (o *GetSolicitationActionsForOrderBadRequest) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get solicitation actions for order bad request response has a 5xx status code
+func (o *GetSolicitationActionsForOrderBadRequest) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get solicitation actions for order bad request response a status code equal to that given
+func (o *GetSolicitationActionsForOrderBadRequest) IsCode(code int) bool {
+	return code == 400
+}
+
 func (o *GetSolicitationActionsForOrderBadRequest) Error() string {
 	return fmt.Sprintf("[GET /solicitations/v1/orders/{amazonOrderId}][%d] getSolicitationActionsForOrderBadRequest  %+v", 400, o.Payload)
 }
+
+func (o *GetSolicitationActionsForOrderBadRequest) String() string {
+	return fmt.Sprintf("[GET /solicitations/v1/orders/{amazonOrderId}][%d] getSolicitationActionsForOrderBadRequest  %+v", 400, o.Payload)
+}
+
 func (o *GetSolicitationActionsForOrderBadRequest) GetPayload() *solicitations_models.GetSolicitationActionsForOrderResponse {
 	return o.Payload
 }
@@ -197,7 +259,8 @@ func NewGetSolicitationActionsForOrderForbidden() *GetSolicitationActionsForOrde
 	return &GetSolicitationActionsForOrderForbidden{}
 }
 
-/* GetSolicitationActionsForOrderForbidden describes a response with status code 403, with default header values.
+/*
+GetSolicitationActionsForOrderForbidden describes a response with status code 403, with default header values.
 
 Indicates that access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.
 */
@@ -210,9 +273,39 @@ type GetSolicitationActionsForOrderForbidden struct {
 	Payload *solicitations_models.GetSolicitationActionsForOrderResponse
 }
 
+// IsSuccess returns true when this get solicitation actions for order forbidden response has a 2xx status code
+func (o *GetSolicitationActionsForOrderForbidden) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get solicitation actions for order forbidden response has a 3xx status code
+func (o *GetSolicitationActionsForOrderForbidden) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get solicitation actions for order forbidden response has a 4xx status code
+func (o *GetSolicitationActionsForOrderForbidden) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get solicitation actions for order forbidden response has a 5xx status code
+func (o *GetSolicitationActionsForOrderForbidden) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get solicitation actions for order forbidden response a status code equal to that given
+func (o *GetSolicitationActionsForOrderForbidden) IsCode(code int) bool {
+	return code == 403
+}
+
 func (o *GetSolicitationActionsForOrderForbidden) Error() string {
 	return fmt.Sprintf("[GET /solicitations/v1/orders/{amazonOrderId}][%d] getSolicitationActionsForOrderForbidden  %+v", 403, o.Payload)
 }
+
+func (o *GetSolicitationActionsForOrderForbidden) String() string {
+	return fmt.Sprintf("[GET /solicitations/v1/orders/{amazonOrderId}][%d] getSolicitationActionsForOrderForbidden  %+v", 403, o.Payload)
+}
+
 func (o *GetSolicitationActionsForOrderForbidden) GetPayload() *solicitations_models.GetSolicitationActionsForOrderResponse {
 	return o.Payload
 }
@@ -241,7 +334,8 @@ func NewGetSolicitationActionsForOrderNotFound() *GetSolicitationActionsForOrder
 	return &GetSolicitationActionsForOrderNotFound{}
 }
 
-/* GetSolicitationActionsForOrderNotFound describes a response with status code 404, with default header values.
+/*
+GetSolicitationActionsForOrderNotFound describes a response with status code 404, with default header values.
 
 The resource specified does not exist.
 */
@@ -258,9 +352,39 @@ type GetSolicitationActionsForOrderNotFound struct {
 	Payload *solicitations_models.GetSolicitationActionsForOrderResponse
 }
 
+// IsSuccess returns true when this get solicitation actions for order not found response has a 2xx status code
+func (o *GetSolicitationActionsForOrderNotFound) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get solicitation actions for order not found response has a 3xx status code
+func (o *GetSolicitationActionsForOrderNotFound) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get solicitation actions for order not found response has a 4xx status code
+func (o *GetSolicitationActionsForOrderNotFound) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get solicitation actions for order not found response has a 5xx status code
+func (o *GetSolicitationActionsForOrderNotFound) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get solicitation actions for order not found response a status code equal to that given
+func (o *GetSolicitationActionsForOrderNotFound) IsCode(code int) bool {
+	return code == 404
+}
+
 func (o *GetSolicitationActionsForOrderNotFound) Error() string {
 	return fmt.Sprintf("[GET /solicitations/v1/orders/{amazonOrderId}][%d] getSolicitationActionsForOrderNotFound  %+v", 404, o.Payload)
 }
+
+func (o *GetSolicitationActionsForOrderNotFound) String() string {
+	return fmt.Sprintf("[GET /solicitations/v1/orders/{amazonOrderId}][%d] getSolicitationActionsForOrderNotFound  %+v", 404, o.Payload)
+}
+
 func (o *GetSolicitationActionsForOrderNotFound) GetPayload() *solicitations_models.GetSolicitationActionsForOrderResponse {
 	return o.Payload
 }
@@ -296,7 +420,8 @@ func NewGetSolicitationActionsForOrderRequestEntityTooLarge() *GetSolicitationAc
 	return &GetSolicitationActionsForOrderRequestEntityTooLarge{}
 }
 
-/* GetSolicitationActionsForOrderRequestEntityTooLarge describes a response with status code 413, with default header values.
+/*
+GetSolicitationActionsForOrderRequestEntityTooLarge describes a response with status code 413, with default header values.
 
 The request size exceeded the maximum accepted size.
 */
@@ -314,9 +439,39 @@ type GetSolicitationActionsForOrderRequestEntityTooLarge struct {
 	Payload *solicitations_models.GetSolicitationActionsForOrderResponse
 }
 
+// IsSuccess returns true when this get solicitation actions for order request entity too large response has a 2xx status code
+func (o *GetSolicitationActionsForOrderRequestEntityTooLarge) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get solicitation actions for order request entity too large response has a 3xx status code
+func (o *GetSolicitationActionsForOrderRequestEntityTooLarge) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get solicitation actions for order request entity too large response has a 4xx status code
+func (o *GetSolicitationActionsForOrderRequestEntityTooLarge) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get solicitation actions for order request entity too large response has a 5xx status code
+func (o *GetSolicitationActionsForOrderRequestEntityTooLarge) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get solicitation actions for order request entity too large response a status code equal to that given
+func (o *GetSolicitationActionsForOrderRequestEntityTooLarge) IsCode(code int) bool {
+	return code == 413
+}
+
 func (o *GetSolicitationActionsForOrderRequestEntityTooLarge) Error() string {
 	return fmt.Sprintf("[GET /solicitations/v1/orders/{amazonOrderId}][%d] getSolicitationActionsForOrderRequestEntityTooLarge  %+v", 413, o.Payload)
 }
+
+func (o *GetSolicitationActionsForOrderRequestEntityTooLarge) String() string {
+	return fmt.Sprintf("[GET /solicitations/v1/orders/{amazonOrderId}][%d] getSolicitationActionsForOrderRequestEntityTooLarge  %+v", 413, o.Payload)
+}
+
 func (o *GetSolicitationActionsForOrderRequestEntityTooLarge) GetPayload() *solicitations_models.GetSolicitationActionsForOrderResponse {
 	return o.Payload
 }
@@ -352,7 +507,8 @@ func NewGetSolicitationActionsForOrderUnsupportedMediaType() *GetSolicitationAct
 	return &GetSolicitationActionsForOrderUnsupportedMediaType{}
 }
 
-/* GetSolicitationActionsForOrderUnsupportedMediaType describes a response with status code 415, with default header values.
+/*
+GetSolicitationActionsForOrderUnsupportedMediaType describes a response with status code 415, with default header values.
 
 The request payload is in an unsupported format.
 */
@@ -370,9 +526,39 @@ type GetSolicitationActionsForOrderUnsupportedMediaType struct {
 	Payload *solicitations_models.GetSolicitationActionsForOrderResponse
 }
 
+// IsSuccess returns true when this get solicitation actions for order unsupported media type response has a 2xx status code
+func (o *GetSolicitationActionsForOrderUnsupportedMediaType) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get solicitation actions for order unsupported media type response has a 3xx status code
+func (o *GetSolicitationActionsForOrderUnsupportedMediaType) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get solicitation actions for order unsupported media type response has a 4xx status code
+func (o *GetSolicitationActionsForOrderUnsupportedMediaType) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get solicitation actions for order unsupported media type response has a 5xx status code
+func (o *GetSolicitationActionsForOrderUnsupportedMediaType) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get solicitation actions for order unsupported media type response a status code equal to that given
+func (o *GetSolicitationActionsForOrderUnsupportedMediaType) IsCode(code int) bool {
+	return code == 415
+}
+
 func (o *GetSolicitationActionsForOrderUnsupportedMediaType) Error() string {
 	return fmt.Sprintf("[GET /solicitations/v1/orders/{amazonOrderId}][%d] getSolicitationActionsForOrderUnsupportedMediaType  %+v", 415, o.Payload)
 }
+
+func (o *GetSolicitationActionsForOrderUnsupportedMediaType) String() string {
+	return fmt.Sprintf("[GET /solicitations/v1/orders/{amazonOrderId}][%d] getSolicitationActionsForOrderUnsupportedMediaType  %+v", 415, o.Payload)
+}
+
 func (o *GetSolicitationActionsForOrderUnsupportedMediaType) GetPayload() *solicitations_models.GetSolicitationActionsForOrderResponse {
 	return o.Payload
 }
@@ -408,7 +594,8 @@ func NewGetSolicitationActionsForOrderTooManyRequests() *GetSolicitationActionsF
 	return &GetSolicitationActionsForOrderTooManyRequests{}
 }
 
-/* GetSolicitationActionsForOrderTooManyRequests describes a response with status code 429, with default header values.
+/*
+GetSolicitationActionsForOrderTooManyRequests describes a response with status code 429, with default header values.
 
 The frequency of requests was greater than allowed.
 */
@@ -426,9 +613,39 @@ type GetSolicitationActionsForOrderTooManyRequests struct {
 	Payload *solicitations_models.GetSolicitationActionsForOrderResponse
 }
 
+// IsSuccess returns true when this get solicitation actions for order too many requests response has a 2xx status code
+func (o *GetSolicitationActionsForOrderTooManyRequests) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get solicitation actions for order too many requests response has a 3xx status code
+func (o *GetSolicitationActionsForOrderTooManyRequests) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get solicitation actions for order too many requests response has a 4xx status code
+func (o *GetSolicitationActionsForOrderTooManyRequests) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get solicitation actions for order too many requests response has a 5xx status code
+func (o *GetSolicitationActionsForOrderTooManyRequests) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get solicitation actions for order too many requests response a status code equal to that given
+func (o *GetSolicitationActionsForOrderTooManyRequests) IsCode(code int) bool {
+	return code == 429
+}
+
 func (o *GetSolicitationActionsForOrderTooManyRequests) Error() string {
 	return fmt.Sprintf("[GET /solicitations/v1/orders/{amazonOrderId}][%d] getSolicitationActionsForOrderTooManyRequests  %+v", 429, o.Payload)
 }
+
+func (o *GetSolicitationActionsForOrderTooManyRequests) String() string {
+	return fmt.Sprintf("[GET /solicitations/v1/orders/{amazonOrderId}][%d] getSolicitationActionsForOrderTooManyRequests  %+v", 429, o.Payload)
+}
+
 func (o *GetSolicitationActionsForOrderTooManyRequests) GetPayload() *solicitations_models.GetSolicitationActionsForOrderResponse {
 	return o.Payload
 }
@@ -464,7 +681,8 @@ func NewGetSolicitationActionsForOrderInternalServerError() *GetSolicitationActi
 	return &GetSolicitationActionsForOrderInternalServerError{}
 }
 
-/* GetSolicitationActionsForOrderInternalServerError describes a response with status code 500, with default header values.
+/*
+GetSolicitationActionsForOrderInternalServerError describes a response with status code 500, with default header values.
 
 An unexpected condition occurred that prevented the server from fulfilling the request.
 */
@@ -482,9 +700,39 @@ type GetSolicitationActionsForOrderInternalServerError struct {
 	Payload *solicitations_models.GetSolicitationActionsForOrderResponse
 }
 
+// IsSuccess returns true when this get solicitation actions for order internal server error response has a 2xx status code
+func (o *GetSolicitationActionsForOrderInternalServerError) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get solicitation actions for order internal server error response has a 3xx status code
+func (o *GetSolicitationActionsForOrderInternalServerError) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get solicitation actions for order internal server error response has a 4xx status code
+func (o *GetSolicitationActionsForOrderInternalServerError) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get solicitation actions for order internal server error response has a 5xx status code
+func (o *GetSolicitationActionsForOrderInternalServerError) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this get solicitation actions for order internal server error response a status code equal to that given
+func (o *GetSolicitationActionsForOrderInternalServerError) IsCode(code int) bool {
+	return code == 500
+}
+
 func (o *GetSolicitationActionsForOrderInternalServerError) Error() string {
 	return fmt.Sprintf("[GET /solicitations/v1/orders/{amazonOrderId}][%d] getSolicitationActionsForOrderInternalServerError  %+v", 500, o.Payload)
 }
+
+func (o *GetSolicitationActionsForOrderInternalServerError) String() string {
+	return fmt.Sprintf("[GET /solicitations/v1/orders/{amazonOrderId}][%d] getSolicitationActionsForOrderInternalServerError  %+v", 500, o.Payload)
+}
+
 func (o *GetSolicitationActionsForOrderInternalServerError) GetPayload() *solicitations_models.GetSolicitationActionsForOrderResponse {
 	return o.Payload
 }
@@ -520,7 +768,8 @@ func NewGetSolicitationActionsForOrderServiceUnavailable() *GetSolicitationActio
 	return &GetSolicitationActionsForOrderServiceUnavailable{}
 }
 
-/* GetSolicitationActionsForOrderServiceUnavailable describes a response with status code 503, with default header values.
+/*
+GetSolicitationActionsForOrderServiceUnavailable describes a response with status code 503, with default header values.
 
 Temporary overloading or maintenance of the server.
 */
@@ -538,9 +787,39 @@ type GetSolicitationActionsForOrderServiceUnavailable struct {
 	Payload *solicitations_models.GetSolicitationActionsForOrderResponse
 }
 
+// IsSuccess returns true when this get solicitation actions for order service unavailable response has a 2xx status code
+func (o *GetSolicitationActionsForOrderServiceUnavailable) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get solicitation actions for order service unavailable response has a 3xx status code
+func (o *GetSolicitationActionsForOrderServiceUnavailable) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get solicitation actions for order service unavailable response has a 4xx status code
+func (o *GetSolicitationActionsForOrderServiceUnavailable) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get solicitation actions for order service unavailable response has a 5xx status code
+func (o *GetSolicitationActionsForOrderServiceUnavailable) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this get solicitation actions for order service unavailable response a status code equal to that given
+func (o *GetSolicitationActionsForOrderServiceUnavailable) IsCode(code int) bool {
+	return code == 503
+}
+
 func (o *GetSolicitationActionsForOrderServiceUnavailable) Error() string {
 	return fmt.Sprintf("[GET /solicitations/v1/orders/{amazonOrderId}][%d] getSolicitationActionsForOrderServiceUnavailable  %+v", 503, o.Payload)
 }
+
+func (o *GetSolicitationActionsForOrderServiceUnavailable) String() string {
+	return fmt.Sprintf("[GET /solicitations/v1/orders/{amazonOrderId}][%d] getSolicitationActionsForOrderServiceUnavailable  %+v", 503, o.Payload)
+}
+
 func (o *GetSolicitationActionsForOrderServiceUnavailable) GetPayload() *solicitations_models.GetSolicitationActionsForOrderResponse {
 	return o.Payload
 }

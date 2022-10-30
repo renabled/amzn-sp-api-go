@@ -87,7 +87,8 @@ func NewGetCatalogItemOK() *GetCatalogItemOK {
 	return &GetCatalogItemOK{}
 }
 
-/* GetCatalogItemOK describes a response with status code 200, with default header values.
+/*
+GetCatalogItemOK describes a response with status code 200, with default header values.
 
 Success.
 */
@@ -104,9 +105,39 @@ type GetCatalogItemOK struct {
 	Payload *catalog_items_2020_12_01_models.Item
 }
 
+// IsSuccess returns true when this get catalog item o k response has a 2xx status code
+func (o *GetCatalogItemOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this get catalog item o k response has a 3xx status code
+func (o *GetCatalogItemOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get catalog item o k response has a 4xx status code
+func (o *GetCatalogItemOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get catalog item o k response has a 5xx status code
+func (o *GetCatalogItemOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get catalog item o k response a status code equal to that given
+func (o *GetCatalogItemOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *GetCatalogItemOK) Error() string {
 	return fmt.Sprintf("[GET /catalog/2020-12-01/items/{asin}][%d] getCatalogItemOK  %+v", 200, o.Payload)
 }
+
+func (o *GetCatalogItemOK) String() string {
+	return fmt.Sprintf("[GET /catalog/2020-12-01/items/{asin}][%d] getCatalogItemOK  %+v", 200, o.Payload)
+}
+
 func (o *GetCatalogItemOK) GetPayload() *catalog_items_2020_12_01_models.Item {
 	return o.Payload
 }
@@ -142,7 +173,8 @@ func NewGetCatalogItemBadRequest() *GetCatalogItemBadRequest {
 	return &GetCatalogItemBadRequest{}
 }
 
-/* GetCatalogItemBadRequest describes a response with status code 400, with default header values.
+/*
+GetCatalogItemBadRequest describes a response with status code 400, with default header values.
 
 Request has missing or invalid parameters and cannot be parsed.
 */
@@ -159,9 +191,39 @@ type GetCatalogItemBadRequest struct {
 	Payload *catalog_items_2020_12_01_models.ErrorList
 }
 
+// IsSuccess returns true when this get catalog item bad request response has a 2xx status code
+func (o *GetCatalogItemBadRequest) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get catalog item bad request response has a 3xx status code
+func (o *GetCatalogItemBadRequest) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get catalog item bad request response has a 4xx status code
+func (o *GetCatalogItemBadRequest) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get catalog item bad request response has a 5xx status code
+func (o *GetCatalogItemBadRequest) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get catalog item bad request response a status code equal to that given
+func (o *GetCatalogItemBadRequest) IsCode(code int) bool {
+	return code == 400
+}
+
 func (o *GetCatalogItemBadRequest) Error() string {
 	return fmt.Sprintf("[GET /catalog/2020-12-01/items/{asin}][%d] getCatalogItemBadRequest  %+v", 400, o.Payload)
 }
+
+func (o *GetCatalogItemBadRequest) String() string {
+	return fmt.Sprintf("[GET /catalog/2020-12-01/items/{asin}][%d] getCatalogItemBadRequest  %+v", 400, o.Payload)
+}
+
 func (o *GetCatalogItemBadRequest) GetPayload() *catalog_items_2020_12_01_models.ErrorList {
 	return o.Payload
 }
@@ -197,7 +259,8 @@ func NewGetCatalogItemForbidden() *GetCatalogItemForbidden {
 	return &GetCatalogItemForbidden{}
 }
 
-/* GetCatalogItemForbidden describes a response with status code 403, with default header values.
+/*
+GetCatalogItemForbidden describes a response with status code 403, with default header values.
 
 Indicates that access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.
 */
@@ -210,9 +273,39 @@ type GetCatalogItemForbidden struct {
 	Payload *catalog_items_2020_12_01_models.ErrorList
 }
 
+// IsSuccess returns true when this get catalog item forbidden response has a 2xx status code
+func (o *GetCatalogItemForbidden) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get catalog item forbidden response has a 3xx status code
+func (o *GetCatalogItemForbidden) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get catalog item forbidden response has a 4xx status code
+func (o *GetCatalogItemForbidden) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get catalog item forbidden response has a 5xx status code
+func (o *GetCatalogItemForbidden) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get catalog item forbidden response a status code equal to that given
+func (o *GetCatalogItemForbidden) IsCode(code int) bool {
+	return code == 403
+}
+
 func (o *GetCatalogItemForbidden) Error() string {
 	return fmt.Sprintf("[GET /catalog/2020-12-01/items/{asin}][%d] getCatalogItemForbidden  %+v", 403, o.Payload)
 }
+
+func (o *GetCatalogItemForbidden) String() string {
+	return fmt.Sprintf("[GET /catalog/2020-12-01/items/{asin}][%d] getCatalogItemForbidden  %+v", 403, o.Payload)
+}
+
 func (o *GetCatalogItemForbidden) GetPayload() *catalog_items_2020_12_01_models.ErrorList {
 	return o.Payload
 }
@@ -241,7 +334,8 @@ func NewGetCatalogItemNotFound() *GetCatalogItemNotFound {
 	return &GetCatalogItemNotFound{}
 }
 
-/* GetCatalogItemNotFound describes a response with status code 404, with default header values.
+/*
+GetCatalogItemNotFound describes a response with status code 404, with default header values.
 
 The resource specified does not exist.
 */
@@ -258,9 +352,39 @@ type GetCatalogItemNotFound struct {
 	Payload *catalog_items_2020_12_01_models.ErrorList
 }
 
+// IsSuccess returns true when this get catalog item not found response has a 2xx status code
+func (o *GetCatalogItemNotFound) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get catalog item not found response has a 3xx status code
+func (o *GetCatalogItemNotFound) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get catalog item not found response has a 4xx status code
+func (o *GetCatalogItemNotFound) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get catalog item not found response has a 5xx status code
+func (o *GetCatalogItemNotFound) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get catalog item not found response a status code equal to that given
+func (o *GetCatalogItemNotFound) IsCode(code int) bool {
+	return code == 404
+}
+
 func (o *GetCatalogItemNotFound) Error() string {
 	return fmt.Sprintf("[GET /catalog/2020-12-01/items/{asin}][%d] getCatalogItemNotFound  %+v", 404, o.Payload)
 }
+
+func (o *GetCatalogItemNotFound) String() string {
+	return fmt.Sprintf("[GET /catalog/2020-12-01/items/{asin}][%d] getCatalogItemNotFound  %+v", 404, o.Payload)
+}
+
 func (o *GetCatalogItemNotFound) GetPayload() *catalog_items_2020_12_01_models.ErrorList {
 	return o.Payload
 }
@@ -296,7 +420,8 @@ func NewGetCatalogItemRequestEntityTooLarge() *GetCatalogItemRequestEntityTooLar
 	return &GetCatalogItemRequestEntityTooLarge{}
 }
 
-/* GetCatalogItemRequestEntityTooLarge describes a response with status code 413, with default header values.
+/*
+GetCatalogItemRequestEntityTooLarge describes a response with status code 413, with default header values.
 
 The request size exceeded the maximum accepted size.
 */
@@ -314,9 +439,39 @@ type GetCatalogItemRequestEntityTooLarge struct {
 	Payload *catalog_items_2020_12_01_models.ErrorList
 }
 
+// IsSuccess returns true when this get catalog item request entity too large response has a 2xx status code
+func (o *GetCatalogItemRequestEntityTooLarge) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get catalog item request entity too large response has a 3xx status code
+func (o *GetCatalogItemRequestEntityTooLarge) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get catalog item request entity too large response has a 4xx status code
+func (o *GetCatalogItemRequestEntityTooLarge) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get catalog item request entity too large response has a 5xx status code
+func (o *GetCatalogItemRequestEntityTooLarge) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get catalog item request entity too large response a status code equal to that given
+func (o *GetCatalogItemRequestEntityTooLarge) IsCode(code int) bool {
+	return code == 413
+}
+
 func (o *GetCatalogItemRequestEntityTooLarge) Error() string {
 	return fmt.Sprintf("[GET /catalog/2020-12-01/items/{asin}][%d] getCatalogItemRequestEntityTooLarge  %+v", 413, o.Payload)
 }
+
+func (o *GetCatalogItemRequestEntityTooLarge) String() string {
+	return fmt.Sprintf("[GET /catalog/2020-12-01/items/{asin}][%d] getCatalogItemRequestEntityTooLarge  %+v", 413, o.Payload)
+}
+
 func (o *GetCatalogItemRequestEntityTooLarge) GetPayload() *catalog_items_2020_12_01_models.ErrorList {
 	return o.Payload
 }
@@ -352,7 +507,8 @@ func NewGetCatalogItemUnsupportedMediaType() *GetCatalogItemUnsupportedMediaType
 	return &GetCatalogItemUnsupportedMediaType{}
 }
 
-/* GetCatalogItemUnsupportedMediaType describes a response with status code 415, with default header values.
+/*
+GetCatalogItemUnsupportedMediaType describes a response with status code 415, with default header values.
 
 The request payload is in an unsupported format.
 */
@@ -370,9 +526,39 @@ type GetCatalogItemUnsupportedMediaType struct {
 	Payload *catalog_items_2020_12_01_models.ErrorList
 }
 
+// IsSuccess returns true when this get catalog item unsupported media type response has a 2xx status code
+func (o *GetCatalogItemUnsupportedMediaType) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get catalog item unsupported media type response has a 3xx status code
+func (o *GetCatalogItemUnsupportedMediaType) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get catalog item unsupported media type response has a 4xx status code
+func (o *GetCatalogItemUnsupportedMediaType) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get catalog item unsupported media type response has a 5xx status code
+func (o *GetCatalogItemUnsupportedMediaType) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get catalog item unsupported media type response a status code equal to that given
+func (o *GetCatalogItemUnsupportedMediaType) IsCode(code int) bool {
+	return code == 415
+}
+
 func (o *GetCatalogItemUnsupportedMediaType) Error() string {
 	return fmt.Sprintf("[GET /catalog/2020-12-01/items/{asin}][%d] getCatalogItemUnsupportedMediaType  %+v", 415, o.Payload)
 }
+
+func (o *GetCatalogItemUnsupportedMediaType) String() string {
+	return fmt.Sprintf("[GET /catalog/2020-12-01/items/{asin}][%d] getCatalogItemUnsupportedMediaType  %+v", 415, o.Payload)
+}
+
 func (o *GetCatalogItemUnsupportedMediaType) GetPayload() *catalog_items_2020_12_01_models.ErrorList {
 	return o.Payload
 }
@@ -408,7 +594,8 @@ func NewGetCatalogItemTooManyRequests() *GetCatalogItemTooManyRequests {
 	return &GetCatalogItemTooManyRequests{}
 }
 
-/* GetCatalogItemTooManyRequests describes a response with status code 429, with default header values.
+/*
+GetCatalogItemTooManyRequests describes a response with status code 429, with default header values.
 
 The frequency of requests was greater than allowed.
 */
@@ -426,9 +613,39 @@ type GetCatalogItemTooManyRequests struct {
 	Payload *catalog_items_2020_12_01_models.ErrorList
 }
 
+// IsSuccess returns true when this get catalog item too many requests response has a 2xx status code
+func (o *GetCatalogItemTooManyRequests) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get catalog item too many requests response has a 3xx status code
+func (o *GetCatalogItemTooManyRequests) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get catalog item too many requests response has a 4xx status code
+func (o *GetCatalogItemTooManyRequests) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get catalog item too many requests response has a 5xx status code
+func (o *GetCatalogItemTooManyRequests) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get catalog item too many requests response a status code equal to that given
+func (o *GetCatalogItemTooManyRequests) IsCode(code int) bool {
+	return code == 429
+}
+
 func (o *GetCatalogItemTooManyRequests) Error() string {
 	return fmt.Sprintf("[GET /catalog/2020-12-01/items/{asin}][%d] getCatalogItemTooManyRequests  %+v", 429, o.Payload)
 }
+
+func (o *GetCatalogItemTooManyRequests) String() string {
+	return fmt.Sprintf("[GET /catalog/2020-12-01/items/{asin}][%d] getCatalogItemTooManyRequests  %+v", 429, o.Payload)
+}
+
 func (o *GetCatalogItemTooManyRequests) GetPayload() *catalog_items_2020_12_01_models.ErrorList {
 	return o.Payload
 }
@@ -464,7 +681,8 @@ func NewGetCatalogItemInternalServerError() *GetCatalogItemInternalServerError {
 	return &GetCatalogItemInternalServerError{}
 }
 
-/* GetCatalogItemInternalServerError describes a response with status code 500, with default header values.
+/*
+GetCatalogItemInternalServerError describes a response with status code 500, with default header values.
 
 An unexpected condition occurred that prevented the server from fulfilling the request.
 */
@@ -482,9 +700,39 @@ type GetCatalogItemInternalServerError struct {
 	Payload *catalog_items_2020_12_01_models.ErrorList
 }
 
+// IsSuccess returns true when this get catalog item internal server error response has a 2xx status code
+func (o *GetCatalogItemInternalServerError) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get catalog item internal server error response has a 3xx status code
+func (o *GetCatalogItemInternalServerError) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get catalog item internal server error response has a 4xx status code
+func (o *GetCatalogItemInternalServerError) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get catalog item internal server error response has a 5xx status code
+func (o *GetCatalogItemInternalServerError) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this get catalog item internal server error response a status code equal to that given
+func (o *GetCatalogItemInternalServerError) IsCode(code int) bool {
+	return code == 500
+}
+
 func (o *GetCatalogItemInternalServerError) Error() string {
 	return fmt.Sprintf("[GET /catalog/2020-12-01/items/{asin}][%d] getCatalogItemInternalServerError  %+v", 500, o.Payload)
 }
+
+func (o *GetCatalogItemInternalServerError) String() string {
+	return fmt.Sprintf("[GET /catalog/2020-12-01/items/{asin}][%d] getCatalogItemInternalServerError  %+v", 500, o.Payload)
+}
+
 func (o *GetCatalogItemInternalServerError) GetPayload() *catalog_items_2020_12_01_models.ErrorList {
 	return o.Payload
 }
@@ -520,7 +768,8 @@ func NewGetCatalogItemServiceUnavailable() *GetCatalogItemServiceUnavailable {
 	return &GetCatalogItemServiceUnavailable{}
 }
 
-/* GetCatalogItemServiceUnavailable describes a response with status code 503, with default header values.
+/*
+GetCatalogItemServiceUnavailable describes a response with status code 503, with default header values.
 
 Temporary overloading or maintenance of the server.
 */
@@ -538,9 +787,39 @@ type GetCatalogItemServiceUnavailable struct {
 	Payload *catalog_items_2020_12_01_models.ErrorList
 }
 
+// IsSuccess returns true when this get catalog item service unavailable response has a 2xx status code
+func (o *GetCatalogItemServiceUnavailable) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get catalog item service unavailable response has a 3xx status code
+func (o *GetCatalogItemServiceUnavailable) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get catalog item service unavailable response has a 4xx status code
+func (o *GetCatalogItemServiceUnavailable) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get catalog item service unavailable response has a 5xx status code
+func (o *GetCatalogItemServiceUnavailable) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this get catalog item service unavailable response a status code equal to that given
+func (o *GetCatalogItemServiceUnavailable) IsCode(code int) bool {
+	return code == 503
+}
+
 func (o *GetCatalogItemServiceUnavailable) Error() string {
 	return fmt.Sprintf("[GET /catalog/2020-12-01/items/{asin}][%d] getCatalogItemServiceUnavailable  %+v", 503, o.Payload)
 }
+
+func (o *GetCatalogItemServiceUnavailable) String() string {
+	return fmt.Sprintf("[GET /catalog/2020-12-01/items/{asin}][%d] getCatalogItemServiceUnavailable  %+v", 503, o.Payload)
+}
+
 func (o *GetCatalogItemServiceUnavailable) GetPayload() *catalog_items_2020_12_01_models.ErrorList {
 	return o.Payload
 }

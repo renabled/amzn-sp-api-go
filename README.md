@@ -48,7 +48,9 @@ config := selling_partner.NewConfig(
 cli := selling_partner.New(config)
 
 // Transport that require auth
-transport := cli.ClientTransport(context.Background(), false /* true, if grantless ops */)
+transport := cli.ClientTransport(
+  context.Background(),
+  /* selling_partner.Grantless(), selling_partner.Debug() */)
 
 // Call sellers
 sellersCli := sellers.New(transport, nil)

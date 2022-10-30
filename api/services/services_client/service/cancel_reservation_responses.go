@@ -87,7 +87,8 @@ func NewCancelReservationNoContent() *CancelReservationNoContent {
 	return &CancelReservationNoContent{}
 }
 
-/* CancelReservationNoContent describes a response with status code 204, with default header values.
+/*
+CancelReservationNoContent describes a response with status code 204, with default header values.
 
 Success response.
 */
@@ -104,9 +105,39 @@ type CancelReservationNoContent struct {
 	Payload *services_models.CancelReservationResponse
 }
 
+// IsSuccess returns true when this cancel reservation no content response has a 2xx status code
+func (o *CancelReservationNoContent) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this cancel reservation no content response has a 3xx status code
+func (o *CancelReservationNoContent) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this cancel reservation no content response has a 4xx status code
+func (o *CancelReservationNoContent) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this cancel reservation no content response has a 5xx status code
+func (o *CancelReservationNoContent) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this cancel reservation no content response a status code equal to that given
+func (o *CancelReservationNoContent) IsCode(code int) bool {
+	return code == 204
+}
+
 func (o *CancelReservationNoContent) Error() string {
 	return fmt.Sprintf("[DELETE /service/v1/reservation/{reservationId}][%d] cancelReservationNoContent  %+v", 204, o.Payload)
 }
+
+func (o *CancelReservationNoContent) String() string {
+	return fmt.Sprintf("[DELETE /service/v1/reservation/{reservationId}][%d] cancelReservationNoContent  %+v", 204, o.Payload)
+}
+
 func (o *CancelReservationNoContent) GetPayload() *services_models.CancelReservationResponse {
 	return o.Payload
 }
@@ -142,7 +173,8 @@ func NewCancelReservationBadRequest() *CancelReservationBadRequest {
 	return &CancelReservationBadRequest{}
 }
 
-/* CancelReservationBadRequest describes a response with status code 400, with default header values.
+/*
+CancelReservationBadRequest describes a response with status code 400, with default header values.
 
 Request has missing or invalid parameters and cannot be parsed.
 */
@@ -159,9 +191,39 @@ type CancelReservationBadRequest struct {
 	Payload *services_models.CancelReservationResponse
 }
 
+// IsSuccess returns true when this cancel reservation bad request response has a 2xx status code
+func (o *CancelReservationBadRequest) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this cancel reservation bad request response has a 3xx status code
+func (o *CancelReservationBadRequest) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this cancel reservation bad request response has a 4xx status code
+func (o *CancelReservationBadRequest) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this cancel reservation bad request response has a 5xx status code
+func (o *CancelReservationBadRequest) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this cancel reservation bad request response a status code equal to that given
+func (o *CancelReservationBadRequest) IsCode(code int) bool {
+	return code == 400
+}
+
 func (o *CancelReservationBadRequest) Error() string {
 	return fmt.Sprintf("[DELETE /service/v1/reservation/{reservationId}][%d] cancelReservationBadRequest  %+v", 400, o.Payload)
 }
+
+func (o *CancelReservationBadRequest) String() string {
+	return fmt.Sprintf("[DELETE /service/v1/reservation/{reservationId}][%d] cancelReservationBadRequest  %+v", 400, o.Payload)
+}
+
 func (o *CancelReservationBadRequest) GetPayload() *services_models.CancelReservationResponse {
 	return o.Payload
 }
@@ -197,7 +259,8 @@ func NewCancelReservationForbidden() *CancelReservationForbidden {
 	return &CancelReservationForbidden{}
 }
 
-/* CancelReservationForbidden describes a response with status code 403, with default header values.
+/*
+CancelReservationForbidden describes a response with status code 403, with default header values.
 
 403 can be caused for reasons like Access Denied, Unauthorized, Expired Token, Invalid Signature or Resource Not Found.
 */
@@ -210,9 +273,39 @@ type CancelReservationForbidden struct {
 	Payload *services_models.CancelReservationResponse
 }
 
+// IsSuccess returns true when this cancel reservation forbidden response has a 2xx status code
+func (o *CancelReservationForbidden) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this cancel reservation forbidden response has a 3xx status code
+func (o *CancelReservationForbidden) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this cancel reservation forbidden response has a 4xx status code
+func (o *CancelReservationForbidden) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this cancel reservation forbidden response has a 5xx status code
+func (o *CancelReservationForbidden) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this cancel reservation forbidden response a status code equal to that given
+func (o *CancelReservationForbidden) IsCode(code int) bool {
+	return code == 403
+}
+
 func (o *CancelReservationForbidden) Error() string {
 	return fmt.Sprintf("[DELETE /service/v1/reservation/{reservationId}][%d] cancelReservationForbidden  %+v", 403, o.Payload)
 }
+
+func (o *CancelReservationForbidden) String() string {
+	return fmt.Sprintf("[DELETE /service/v1/reservation/{reservationId}][%d] cancelReservationForbidden  %+v", 403, o.Payload)
+}
+
 func (o *CancelReservationForbidden) GetPayload() *services_models.CancelReservationResponse {
 	return o.Payload
 }
@@ -241,7 +334,8 @@ func NewCancelReservationNotFound() *CancelReservationNotFound {
 	return &CancelReservationNotFound{}
 }
 
-/* CancelReservationNotFound describes a response with status code 404, with default header values.
+/*
+CancelReservationNotFound describes a response with status code 404, with default header values.
 
 The reservation specified does not exist.
 */
@@ -258,9 +352,39 @@ type CancelReservationNotFound struct {
 	Payload *services_models.CancelReservationResponse
 }
 
+// IsSuccess returns true when this cancel reservation not found response has a 2xx status code
+func (o *CancelReservationNotFound) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this cancel reservation not found response has a 3xx status code
+func (o *CancelReservationNotFound) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this cancel reservation not found response has a 4xx status code
+func (o *CancelReservationNotFound) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this cancel reservation not found response has a 5xx status code
+func (o *CancelReservationNotFound) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this cancel reservation not found response a status code equal to that given
+func (o *CancelReservationNotFound) IsCode(code int) bool {
+	return code == 404
+}
+
 func (o *CancelReservationNotFound) Error() string {
 	return fmt.Sprintf("[DELETE /service/v1/reservation/{reservationId}][%d] cancelReservationNotFound  %+v", 404, o.Payload)
 }
+
+func (o *CancelReservationNotFound) String() string {
+	return fmt.Sprintf("[DELETE /service/v1/reservation/{reservationId}][%d] cancelReservationNotFound  %+v", 404, o.Payload)
+}
+
 func (o *CancelReservationNotFound) GetPayload() *services_models.CancelReservationResponse {
 	return o.Payload
 }
@@ -296,7 +420,8 @@ func NewCancelReservationRequestEntityTooLarge() *CancelReservationRequestEntity
 	return &CancelReservationRequestEntityTooLarge{}
 }
 
-/* CancelReservationRequestEntityTooLarge describes a response with status code 413, with default header values.
+/*
+CancelReservationRequestEntityTooLarge describes a response with status code 413, with default header values.
 
 The request size exceeded the maximum accepted size.
 */
@@ -314,9 +439,39 @@ type CancelReservationRequestEntityTooLarge struct {
 	Payload *services_models.CancelReservationResponse
 }
 
+// IsSuccess returns true when this cancel reservation request entity too large response has a 2xx status code
+func (o *CancelReservationRequestEntityTooLarge) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this cancel reservation request entity too large response has a 3xx status code
+func (o *CancelReservationRequestEntityTooLarge) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this cancel reservation request entity too large response has a 4xx status code
+func (o *CancelReservationRequestEntityTooLarge) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this cancel reservation request entity too large response has a 5xx status code
+func (o *CancelReservationRequestEntityTooLarge) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this cancel reservation request entity too large response a status code equal to that given
+func (o *CancelReservationRequestEntityTooLarge) IsCode(code int) bool {
+	return code == 413
+}
+
 func (o *CancelReservationRequestEntityTooLarge) Error() string {
 	return fmt.Sprintf("[DELETE /service/v1/reservation/{reservationId}][%d] cancelReservationRequestEntityTooLarge  %+v", 413, o.Payload)
 }
+
+func (o *CancelReservationRequestEntityTooLarge) String() string {
+	return fmt.Sprintf("[DELETE /service/v1/reservation/{reservationId}][%d] cancelReservationRequestEntityTooLarge  %+v", 413, o.Payload)
+}
+
 func (o *CancelReservationRequestEntityTooLarge) GetPayload() *services_models.CancelReservationResponse {
 	return o.Payload
 }
@@ -352,7 +507,8 @@ func NewCancelReservationUnsupportedMediaType() *CancelReservationUnsupportedMed
 	return &CancelReservationUnsupportedMediaType{}
 }
 
-/* CancelReservationUnsupportedMediaType describes a response with status code 415, with default header values.
+/*
+CancelReservationUnsupportedMediaType describes a response with status code 415, with default header values.
 
 The entity of the request is in a format not supported by the requested resource.
 */
@@ -370,9 +526,39 @@ type CancelReservationUnsupportedMediaType struct {
 	Payload *services_models.CancelReservationResponse
 }
 
+// IsSuccess returns true when this cancel reservation unsupported media type response has a 2xx status code
+func (o *CancelReservationUnsupportedMediaType) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this cancel reservation unsupported media type response has a 3xx status code
+func (o *CancelReservationUnsupportedMediaType) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this cancel reservation unsupported media type response has a 4xx status code
+func (o *CancelReservationUnsupportedMediaType) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this cancel reservation unsupported media type response has a 5xx status code
+func (o *CancelReservationUnsupportedMediaType) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this cancel reservation unsupported media type response a status code equal to that given
+func (o *CancelReservationUnsupportedMediaType) IsCode(code int) bool {
+	return code == 415
+}
+
 func (o *CancelReservationUnsupportedMediaType) Error() string {
 	return fmt.Sprintf("[DELETE /service/v1/reservation/{reservationId}][%d] cancelReservationUnsupportedMediaType  %+v", 415, o.Payload)
 }
+
+func (o *CancelReservationUnsupportedMediaType) String() string {
+	return fmt.Sprintf("[DELETE /service/v1/reservation/{reservationId}][%d] cancelReservationUnsupportedMediaType  %+v", 415, o.Payload)
+}
+
 func (o *CancelReservationUnsupportedMediaType) GetPayload() *services_models.CancelReservationResponse {
 	return o.Payload
 }
@@ -408,7 +594,8 @@ func NewCancelReservationTooManyRequests() *CancelReservationTooManyRequests {
 	return &CancelReservationTooManyRequests{}
 }
 
-/* CancelReservationTooManyRequests describes a response with status code 429, with default header values.
+/*
+CancelReservationTooManyRequests describes a response with status code 429, with default header values.
 
 The frequency of requests was greater than allowed.
 */
@@ -426,9 +613,39 @@ type CancelReservationTooManyRequests struct {
 	Payload *services_models.CancelReservationResponse
 }
 
+// IsSuccess returns true when this cancel reservation too many requests response has a 2xx status code
+func (o *CancelReservationTooManyRequests) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this cancel reservation too many requests response has a 3xx status code
+func (o *CancelReservationTooManyRequests) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this cancel reservation too many requests response has a 4xx status code
+func (o *CancelReservationTooManyRequests) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this cancel reservation too many requests response has a 5xx status code
+func (o *CancelReservationTooManyRequests) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this cancel reservation too many requests response a status code equal to that given
+func (o *CancelReservationTooManyRequests) IsCode(code int) bool {
+	return code == 429
+}
+
 func (o *CancelReservationTooManyRequests) Error() string {
 	return fmt.Sprintf("[DELETE /service/v1/reservation/{reservationId}][%d] cancelReservationTooManyRequests  %+v", 429, o.Payload)
 }
+
+func (o *CancelReservationTooManyRequests) String() string {
+	return fmt.Sprintf("[DELETE /service/v1/reservation/{reservationId}][%d] cancelReservationTooManyRequests  %+v", 429, o.Payload)
+}
+
 func (o *CancelReservationTooManyRequests) GetPayload() *services_models.CancelReservationResponse {
 	return o.Payload
 }
@@ -464,7 +681,8 @@ func NewCancelReservationInternalServerError() *CancelReservationInternalServerE
 	return &CancelReservationInternalServerError{}
 }
 
-/* CancelReservationInternalServerError describes a response with status code 500, with default header values.
+/*
+CancelReservationInternalServerError describes a response with status code 500, with default header values.
 
 Encountered an unexpected condition which prevented the server from fulfilling the request.
 */
@@ -482,9 +700,39 @@ type CancelReservationInternalServerError struct {
 	Payload *services_models.CancelReservationResponse
 }
 
+// IsSuccess returns true when this cancel reservation internal server error response has a 2xx status code
+func (o *CancelReservationInternalServerError) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this cancel reservation internal server error response has a 3xx status code
+func (o *CancelReservationInternalServerError) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this cancel reservation internal server error response has a 4xx status code
+func (o *CancelReservationInternalServerError) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this cancel reservation internal server error response has a 5xx status code
+func (o *CancelReservationInternalServerError) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this cancel reservation internal server error response a status code equal to that given
+func (o *CancelReservationInternalServerError) IsCode(code int) bool {
+	return code == 500
+}
+
 func (o *CancelReservationInternalServerError) Error() string {
 	return fmt.Sprintf("[DELETE /service/v1/reservation/{reservationId}][%d] cancelReservationInternalServerError  %+v", 500, o.Payload)
 }
+
+func (o *CancelReservationInternalServerError) String() string {
+	return fmt.Sprintf("[DELETE /service/v1/reservation/{reservationId}][%d] cancelReservationInternalServerError  %+v", 500, o.Payload)
+}
+
 func (o *CancelReservationInternalServerError) GetPayload() *services_models.CancelReservationResponse {
 	return o.Payload
 }
@@ -520,7 +768,8 @@ func NewCancelReservationServiceUnavailable() *CancelReservationServiceUnavailab
 	return &CancelReservationServiceUnavailable{}
 }
 
-/* CancelReservationServiceUnavailable describes a response with status code 503, with default header values.
+/*
+CancelReservationServiceUnavailable describes a response with status code 503, with default header values.
 
 Temporary overloading or maintenance of the server.
 */
@@ -538,9 +787,39 @@ type CancelReservationServiceUnavailable struct {
 	Payload *services_models.CancelReservationResponse
 }
 
+// IsSuccess returns true when this cancel reservation service unavailable response has a 2xx status code
+func (o *CancelReservationServiceUnavailable) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this cancel reservation service unavailable response has a 3xx status code
+func (o *CancelReservationServiceUnavailable) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this cancel reservation service unavailable response has a 4xx status code
+func (o *CancelReservationServiceUnavailable) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this cancel reservation service unavailable response has a 5xx status code
+func (o *CancelReservationServiceUnavailable) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this cancel reservation service unavailable response a status code equal to that given
+func (o *CancelReservationServiceUnavailable) IsCode(code int) bool {
+	return code == 503
+}
+
 func (o *CancelReservationServiceUnavailable) Error() string {
 	return fmt.Sprintf("[DELETE /service/v1/reservation/{reservationId}][%d] cancelReservationServiceUnavailable  %+v", 503, o.Payload)
 }
+
+func (o *CancelReservationServiceUnavailable) String() string {
+	return fmt.Sprintf("[DELETE /service/v1/reservation/{reservationId}][%d] cancelReservationServiceUnavailable  %+v", 503, o.Payload)
+}
+
 func (o *CancelReservationServiceUnavailable) GetPayload() *services_models.CancelReservationResponse {
 	return o.Payload
 }

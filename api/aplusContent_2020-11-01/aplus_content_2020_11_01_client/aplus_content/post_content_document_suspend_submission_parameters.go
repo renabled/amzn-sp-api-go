@@ -52,10 +52,12 @@ func NewPostContentDocumentSuspendSubmissionParamsWithHTTPClient(client *http.Cl
 	}
 }
 
-/* PostContentDocumentSuspendSubmissionParams contains all the parameters to send to the API endpoint
-   for the post content document suspend submission operation.
+/*
+PostContentDocumentSuspendSubmissionParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the post content document suspend submission operation.
+
+	Typically these are written to a http.Request.
 */
 type PostContentDocumentSuspendSubmissionParams struct {
 

@@ -87,7 +87,8 @@ func NewConfirmCustomizationDetailsCreated() *ConfirmCustomizationDetailsCreated
 	return &ConfirmCustomizationDetailsCreated{}
 }
 
-/* ConfirmCustomizationDetailsCreated describes a response with status code 201, with default header values.
+/*
+ConfirmCustomizationDetailsCreated describes a response with status code 201, with default header values.
 
 The message was created for the order.
 */
@@ -104,9 +105,39 @@ type ConfirmCustomizationDetailsCreated struct {
 	Payload *messaging_models.CreateConfirmCustomizationDetailsResponse
 }
 
+// IsSuccess returns true when this confirm customization details created response has a 2xx status code
+func (o *ConfirmCustomizationDetailsCreated) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this confirm customization details created response has a 3xx status code
+func (o *ConfirmCustomizationDetailsCreated) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this confirm customization details created response has a 4xx status code
+func (o *ConfirmCustomizationDetailsCreated) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this confirm customization details created response has a 5xx status code
+func (o *ConfirmCustomizationDetailsCreated) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this confirm customization details created response a status code equal to that given
+func (o *ConfirmCustomizationDetailsCreated) IsCode(code int) bool {
+	return code == 201
+}
+
 func (o *ConfirmCustomizationDetailsCreated) Error() string {
 	return fmt.Sprintf("[POST /messaging/v1/orders/{amazonOrderId}/messages/confirmCustomizationDetails][%d] confirmCustomizationDetailsCreated  %+v", 201, o.Payload)
 }
+
+func (o *ConfirmCustomizationDetailsCreated) String() string {
+	return fmt.Sprintf("[POST /messaging/v1/orders/{amazonOrderId}/messages/confirmCustomizationDetails][%d] confirmCustomizationDetailsCreated  %+v", 201, o.Payload)
+}
+
 func (o *ConfirmCustomizationDetailsCreated) GetPayload() *messaging_models.CreateConfirmCustomizationDetailsResponse {
 	return o.Payload
 }
@@ -142,7 +173,8 @@ func NewConfirmCustomizationDetailsBadRequest() *ConfirmCustomizationDetailsBadR
 	return &ConfirmCustomizationDetailsBadRequest{}
 }
 
-/* ConfirmCustomizationDetailsBadRequest describes a response with status code 400, with default header values.
+/*
+ConfirmCustomizationDetailsBadRequest describes a response with status code 400, with default header values.
 
 Request has missing or invalid parameters and cannot be parsed.
 */
@@ -159,9 +191,39 @@ type ConfirmCustomizationDetailsBadRequest struct {
 	Payload *messaging_models.CreateConfirmCustomizationDetailsResponse
 }
 
+// IsSuccess returns true when this confirm customization details bad request response has a 2xx status code
+func (o *ConfirmCustomizationDetailsBadRequest) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this confirm customization details bad request response has a 3xx status code
+func (o *ConfirmCustomizationDetailsBadRequest) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this confirm customization details bad request response has a 4xx status code
+func (o *ConfirmCustomizationDetailsBadRequest) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this confirm customization details bad request response has a 5xx status code
+func (o *ConfirmCustomizationDetailsBadRequest) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this confirm customization details bad request response a status code equal to that given
+func (o *ConfirmCustomizationDetailsBadRequest) IsCode(code int) bool {
+	return code == 400
+}
+
 func (o *ConfirmCustomizationDetailsBadRequest) Error() string {
 	return fmt.Sprintf("[POST /messaging/v1/orders/{amazonOrderId}/messages/confirmCustomizationDetails][%d] confirmCustomizationDetailsBadRequest  %+v", 400, o.Payload)
 }
+
+func (o *ConfirmCustomizationDetailsBadRequest) String() string {
+	return fmt.Sprintf("[POST /messaging/v1/orders/{amazonOrderId}/messages/confirmCustomizationDetails][%d] confirmCustomizationDetailsBadRequest  %+v", 400, o.Payload)
+}
+
 func (o *ConfirmCustomizationDetailsBadRequest) GetPayload() *messaging_models.CreateConfirmCustomizationDetailsResponse {
 	return o.Payload
 }
@@ -197,7 +259,8 @@ func NewConfirmCustomizationDetailsForbidden() *ConfirmCustomizationDetailsForbi
 	return &ConfirmCustomizationDetailsForbidden{}
 }
 
-/* ConfirmCustomizationDetailsForbidden describes a response with status code 403, with default header values.
+/*
+ConfirmCustomizationDetailsForbidden describes a response with status code 403, with default header values.
 
 Indicates that access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.
 */
@@ -210,9 +273,39 @@ type ConfirmCustomizationDetailsForbidden struct {
 	Payload *messaging_models.CreateConfirmCustomizationDetailsResponse
 }
 
+// IsSuccess returns true when this confirm customization details forbidden response has a 2xx status code
+func (o *ConfirmCustomizationDetailsForbidden) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this confirm customization details forbidden response has a 3xx status code
+func (o *ConfirmCustomizationDetailsForbidden) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this confirm customization details forbidden response has a 4xx status code
+func (o *ConfirmCustomizationDetailsForbidden) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this confirm customization details forbidden response has a 5xx status code
+func (o *ConfirmCustomizationDetailsForbidden) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this confirm customization details forbidden response a status code equal to that given
+func (o *ConfirmCustomizationDetailsForbidden) IsCode(code int) bool {
+	return code == 403
+}
+
 func (o *ConfirmCustomizationDetailsForbidden) Error() string {
 	return fmt.Sprintf("[POST /messaging/v1/orders/{amazonOrderId}/messages/confirmCustomizationDetails][%d] confirmCustomizationDetailsForbidden  %+v", 403, o.Payload)
 }
+
+func (o *ConfirmCustomizationDetailsForbidden) String() string {
+	return fmt.Sprintf("[POST /messaging/v1/orders/{amazonOrderId}/messages/confirmCustomizationDetails][%d] confirmCustomizationDetailsForbidden  %+v", 403, o.Payload)
+}
+
 func (o *ConfirmCustomizationDetailsForbidden) GetPayload() *messaging_models.CreateConfirmCustomizationDetailsResponse {
 	return o.Payload
 }
@@ -241,7 +334,8 @@ func NewConfirmCustomizationDetailsNotFound() *ConfirmCustomizationDetailsNotFou
 	return &ConfirmCustomizationDetailsNotFound{}
 }
 
-/* ConfirmCustomizationDetailsNotFound describes a response with status code 404, with default header values.
+/*
+ConfirmCustomizationDetailsNotFound describes a response with status code 404, with default header values.
 
 The resource specified does not exist.
 */
@@ -258,9 +352,39 @@ type ConfirmCustomizationDetailsNotFound struct {
 	Payload *messaging_models.CreateConfirmCustomizationDetailsResponse
 }
 
+// IsSuccess returns true when this confirm customization details not found response has a 2xx status code
+func (o *ConfirmCustomizationDetailsNotFound) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this confirm customization details not found response has a 3xx status code
+func (o *ConfirmCustomizationDetailsNotFound) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this confirm customization details not found response has a 4xx status code
+func (o *ConfirmCustomizationDetailsNotFound) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this confirm customization details not found response has a 5xx status code
+func (o *ConfirmCustomizationDetailsNotFound) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this confirm customization details not found response a status code equal to that given
+func (o *ConfirmCustomizationDetailsNotFound) IsCode(code int) bool {
+	return code == 404
+}
+
 func (o *ConfirmCustomizationDetailsNotFound) Error() string {
 	return fmt.Sprintf("[POST /messaging/v1/orders/{amazonOrderId}/messages/confirmCustomizationDetails][%d] confirmCustomizationDetailsNotFound  %+v", 404, o.Payload)
 }
+
+func (o *ConfirmCustomizationDetailsNotFound) String() string {
+	return fmt.Sprintf("[POST /messaging/v1/orders/{amazonOrderId}/messages/confirmCustomizationDetails][%d] confirmCustomizationDetailsNotFound  %+v", 404, o.Payload)
+}
+
 func (o *ConfirmCustomizationDetailsNotFound) GetPayload() *messaging_models.CreateConfirmCustomizationDetailsResponse {
 	return o.Payload
 }
@@ -296,7 +420,8 @@ func NewConfirmCustomizationDetailsRequestEntityTooLarge() *ConfirmCustomization
 	return &ConfirmCustomizationDetailsRequestEntityTooLarge{}
 }
 
-/* ConfirmCustomizationDetailsRequestEntityTooLarge describes a response with status code 413, with default header values.
+/*
+ConfirmCustomizationDetailsRequestEntityTooLarge describes a response with status code 413, with default header values.
 
 The request size exceeded the maximum accepted size.
 */
@@ -314,9 +439,39 @@ type ConfirmCustomizationDetailsRequestEntityTooLarge struct {
 	Payload *messaging_models.CreateConfirmCustomizationDetailsResponse
 }
 
+// IsSuccess returns true when this confirm customization details request entity too large response has a 2xx status code
+func (o *ConfirmCustomizationDetailsRequestEntityTooLarge) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this confirm customization details request entity too large response has a 3xx status code
+func (o *ConfirmCustomizationDetailsRequestEntityTooLarge) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this confirm customization details request entity too large response has a 4xx status code
+func (o *ConfirmCustomizationDetailsRequestEntityTooLarge) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this confirm customization details request entity too large response has a 5xx status code
+func (o *ConfirmCustomizationDetailsRequestEntityTooLarge) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this confirm customization details request entity too large response a status code equal to that given
+func (o *ConfirmCustomizationDetailsRequestEntityTooLarge) IsCode(code int) bool {
+	return code == 413
+}
+
 func (o *ConfirmCustomizationDetailsRequestEntityTooLarge) Error() string {
 	return fmt.Sprintf("[POST /messaging/v1/orders/{amazonOrderId}/messages/confirmCustomizationDetails][%d] confirmCustomizationDetailsRequestEntityTooLarge  %+v", 413, o.Payload)
 }
+
+func (o *ConfirmCustomizationDetailsRequestEntityTooLarge) String() string {
+	return fmt.Sprintf("[POST /messaging/v1/orders/{amazonOrderId}/messages/confirmCustomizationDetails][%d] confirmCustomizationDetailsRequestEntityTooLarge  %+v", 413, o.Payload)
+}
+
 func (o *ConfirmCustomizationDetailsRequestEntityTooLarge) GetPayload() *messaging_models.CreateConfirmCustomizationDetailsResponse {
 	return o.Payload
 }
@@ -352,7 +507,8 @@ func NewConfirmCustomizationDetailsUnsupportedMediaType() *ConfirmCustomizationD
 	return &ConfirmCustomizationDetailsUnsupportedMediaType{}
 }
 
-/* ConfirmCustomizationDetailsUnsupportedMediaType describes a response with status code 415, with default header values.
+/*
+ConfirmCustomizationDetailsUnsupportedMediaType describes a response with status code 415, with default header values.
 
 The request payload is in an unsupported format.
 */
@@ -370,9 +526,39 @@ type ConfirmCustomizationDetailsUnsupportedMediaType struct {
 	Payload *messaging_models.CreateConfirmCustomizationDetailsResponse
 }
 
+// IsSuccess returns true when this confirm customization details unsupported media type response has a 2xx status code
+func (o *ConfirmCustomizationDetailsUnsupportedMediaType) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this confirm customization details unsupported media type response has a 3xx status code
+func (o *ConfirmCustomizationDetailsUnsupportedMediaType) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this confirm customization details unsupported media type response has a 4xx status code
+func (o *ConfirmCustomizationDetailsUnsupportedMediaType) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this confirm customization details unsupported media type response has a 5xx status code
+func (o *ConfirmCustomizationDetailsUnsupportedMediaType) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this confirm customization details unsupported media type response a status code equal to that given
+func (o *ConfirmCustomizationDetailsUnsupportedMediaType) IsCode(code int) bool {
+	return code == 415
+}
+
 func (o *ConfirmCustomizationDetailsUnsupportedMediaType) Error() string {
 	return fmt.Sprintf("[POST /messaging/v1/orders/{amazonOrderId}/messages/confirmCustomizationDetails][%d] confirmCustomizationDetailsUnsupportedMediaType  %+v", 415, o.Payload)
 }
+
+func (o *ConfirmCustomizationDetailsUnsupportedMediaType) String() string {
+	return fmt.Sprintf("[POST /messaging/v1/orders/{amazonOrderId}/messages/confirmCustomizationDetails][%d] confirmCustomizationDetailsUnsupportedMediaType  %+v", 415, o.Payload)
+}
+
 func (o *ConfirmCustomizationDetailsUnsupportedMediaType) GetPayload() *messaging_models.CreateConfirmCustomizationDetailsResponse {
 	return o.Payload
 }
@@ -408,7 +594,8 @@ func NewConfirmCustomizationDetailsTooManyRequests() *ConfirmCustomizationDetail
 	return &ConfirmCustomizationDetailsTooManyRequests{}
 }
 
-/* ConfirmCustomizationDetailsTooManyRequests describes a response with status code 429, with default header values.
+/*
+ConfirmCustomizationDetailsTooManyRequests describes a response with status code 429, with default header values.
 
 The frequency of requests was greater than allowed.
 */
@@ -426,9 +613,39 @@ type ConfirmCustomizationDetailsTooManyRequests struct {
 	Payload *messaging_models.CreateConfirmCustomizationDetailsResponse
 }
 
+// IsSuccess returns true when this confirm customization details too many requests response has a 2xx status code
+func (o *ConfirmCustomizationDetailsTooManyRequests) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this confirm customization details too many requests response has a 3xx status code
+func (o *ConfirmCustomizationDetailsTooManyRequests) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this confirm customization details too many requests response has a 4xx status code
+func (o *ConfirmCustomizationDetailsTooManyRequests) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this confirm customization details too many requests response has a 5xx status code
+func (o *ConfirmCustomizationDetailsTooManyRequests) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this confirm customization details too many requests response a status code equal to that given
+func (o *ConfirmCustomizationDetailsTooManyRequests) IsCode(code int) bool {
+	return code == 429
+}
+
 func (o *ConfirmCustomizationDetailsTooManyRequests) Error() string {
 	return fmt.Sprintf("[POST /messaging/v1/orders/{amazonOrderId}/messages/confirmCustomizationDetails][%d] confirmCustomizationDetailsTooManyRequests  %+v", 429, o.Payload)
 }
+
+func (o *ConfirmCustomizationDetailsTooManyRequests) String() string {
+	return fmt.Sprintf("[POST /messaging/v1/orders/{amazonOrderId}/messages/confirmCustomizationDetails][%d] confirmCustomizationDetailsTooManyRequests  %+v", 429, o.Payload)
+}
+
 func (o *ConfirmCustomizationDetailsTooManyRequests) GetPayload() *messaging_models.CreateConfirmCustomizationDetailsResponse {
 	return o.Payload
 }
@@ -464,7 +681,8 @@ func NewConfirmCustomizationDetailsInternalServerError() *ConfirmCustomizationDe
 	return &ConfirmCustomizationDetailsInternalServerError{}
 }
 
-/* ConfirmCustomizationDetailsInternalServerError describes a response with status code 500, with default header values.
+/*
+ConfirmCustomizationDetailsInternalServerError describes a response with status code 500, with default header values.
 
 An unexpected condition occurred that prevented the server from fulfilling the request.
 */
@@ -482,9 +700,39 @@ type ConfirmCustomizationDetailsInternalServerError struct {
 	Payload *messaging_models.CreateConfirmCustomizationDetailsResponse
 }
 
+// IsSuccess returns true when this confirm customization details internal server error response has a 2xx status code
+func (o *ConfirmCustomizationDetailsInternalServerError) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this confirm customization details internal server error response has a 3xx status code
+func (o *ConfirmCustomizationDetailsInternalServerError) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this confirm customization details internal server error response has a 4xx status code
+func (o *ConfirmCustomizationDetailsInternalServerError) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this confirm customization details internal server error response has a 5xx status code
+func (o *ConfirmCustomizationDetailsInternalServerError) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this confirm customization details internal server error response a status code equal to that given
+func (o *ConfirmCustomizationDetailsInternalServerError) IsCode(code int) bool {
+	return code == 500
+}
+
 func (o *ConfirmCustomizationDetailsInternalServerError) Error() string {
 	return fmt.Sprintf("[POST /messaging/v1/orders/{amazonOrderId}/messages/confirmCustomizationDetails][%d] confirmCustomizationDetailsInternalServerError  %+v", 500, o.Payload)
 }
+
+func (o *ConfirmCustomizationDetailsInternalServerError) String() string {
+	return fmt.Sprintf("[POST /messaging/v1/orders/{amazonOrderId}/messages/confirmCustomizationDetails][%d] confirmCustomizationDetailsInternalServerError  %+v", 500, o.Payload)
+}
+
 func (o *ConfirmCustomizationDetailsInternalServerError) GetPayload() *messaging_models.CreateConfirmCustomizationDetailsResponse {
 	return o.Payload
 }
@@ -520,7 +768,8 @@ func NewConfirmCustomizationDetailsServiceUnavailable() *ConfirmCustomizationDet
 	return &ConfirmCustomizationDetailsServiceUnavailable{}
 }
 
-/* ConfirmCustomizationDetailsServiceUnavailable describes a response with status code 503, with default header values.
+/*
+ConfirmCustomizationDetailsServiceUnavailable describes a response with status code 503, with default header values.
 
 Temporary overloading or maintenance of the server.
 */
@@ -538,9 +787,39 @@ type ConfirmCustomizationDetailsServiceUnavailable struct {
 	Payload *messaging_models.CreateConfirmCustomizationDetailsResponse
 }
 
+// IsSuccess returns true when this confirm customization details service unavailable response has a 2xx status code
+func (o *ConfirmCustomizationDetailsServiceUnavailable) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this confirm customization details service unavailable response has a 3xx status code
+func (o *ConfirmCustomizationDetailsServiceUnavailable) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this confirm customization details service unavailable response has a 4xx status code
+func (o *ConfirmCustomizationDetailsServiceUnavailable) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this confirm customization details service unavailable response has a 5xx status code
+func (o *ConfirmCustomizationDetailsServiceUnavailable) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this confirm customization details service unavailable response a status code equal to that given
+func (o *ConfirmCustomizationDetailsServiceUnavailable) IsCode(code int) bool {
+	return code == 503
+}
+
 func (o *ConfirmCustomizationDetailsServiceUnavailable) Error() string {
 	return fmt.Sprintf("[POST /messaging/v1/orders/{amazonOrderId}/messages/confirmCustomizationDetails][%d] confirmCustomizationDetailsServiceUnavailable  %+v", 503, o.Payload)
 }
+
+func (o *ConfirmCustomizationDetailsServiceUnavailable) String() string {
+	return fmt.Sprintf("[POST /messaging/v1/orders/{amazonOrderId}/messages/confirmCustomizationDetails][%d] confirmCustomizationDetailsServiceUnavailable  %+v", 503, o.Payload)
+}
+
 func (o *ConfirmCustomizationDetailsServiceUnavailable) GetPayload() *messaging_models.CreateConfirmCustomizationDetailsResponse {
 	return o.Payload
 }

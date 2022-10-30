@@ -87,7 +87,8 @@ func NewUpdateScheduleOK() *UpdateScheduleOK {
 	return &UpdateScheduleOK{}
 }
 
-/* UpdateScheduleOK describes a response with status code 200, with default header values.
+/*
+UpdateScheduleOK describes a response with status code 200, with default header values.
 
 Success response.
 */
@@ -104,9 +105,39 @@ type UpdateScheduleOK struct {
 	Payload *services_models.UpdateScheduleResponse
 }
 
+// IsSuccess returns true when this update schedule o k response has a 2xx status code
+func (o *UpdateScheduleOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this update schedule o k response has a 3xx status code
+func (o *UpdateScheduleOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this update schedule o k response has a 4xx status code
+func (o *UpdateScheduleOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this update schedule o k response has a 5xx status code
+func (o *UpdateScheduleOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this update schedule o k response a status code equal to that given
+func (o *UpdateScheduleOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *UpdateScheduleOK) Error() string {
 	return fmt.Sprintf("[PUT /service/v1/serviceResources/{resourceId}/schedules][%d] updateScheduleOK  %+v", 200, o.Payload)
 }
+
+func (o *UpdateScheduleOK) String() string {
+	return fmt.Sprintf("[PUT /service/v1/serviceResources/{resourceId}/schedules][%d] updateScheduleOK  %+v", 200, o.Payload)
+}
+
 func (o *UpdateScheduleOK) GetPayload() *services_models.UpdateScheduleResponse {
 	return o.Payload
 }
@@ -142,7 +173,8 @@ func NewUpdateScheduleBadRequest() *UpdateScheduleBadRequest {
 	return &UpdateScheduleBadRequest{}
 }
 
-/* UpdateScheduleBadRequest describes a response with status code 400, with default header values.
+/*
+UpdateScheduleBadRequest describes a response with status code 400, with default header values.
 
 Request has missing or invalid parameters and cannot be parsed.
 */
@@ -159,9 +191,39 @@ type UpdateScheduleBadRequest struct {
 	Payload *services_models.UpdateScheduleResponse
 }
 
+// IsSuccess returns true when this update schedule bad request response has a 2xx status code
+func (o *UpdateScheduleBadRequest) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this update schedule bad request response has a 3xx status code
+func (o *UpdateScheduleBadRequest) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this update schedule bad request response has a 4xx status code
+func (o *UpdateScheduleBadRequest) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this update schedule bad request response has a 5xx status code
+func (o *UpdateScheduleBadRequest) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this update schedule bad request response a status code equal to that given
+func (o *UpdateScheduleBadRequest) IsCode(code int) bool {
+	return code == 400
+}
+
 func (o *UpdateScheduleBadRequest) Error() string {
 	return fmt.Sprintf("[PUT /service/v1/serviceResources/{resourceId}/schedules][%d] updateScheduleBadRequest  %+v", 400, o.Payload)
 }
+
+func (o *UpdateScheduleBadRequest) String() string {
+	return fmt.Sprintf("[PUT /service/v1/serviceResources/{resourceId}/schedules][%d] updateScheduleBadRequest  %+v", 400, o.Payload)
+}
+
 func (o *UpdateScheduleBadRequest) GetPayload() *services_models.UpdateScheduleResponse {
 	return o.Payload
 }
@@ -197,7 +259,8 @@ func NewUpdateScheduleForbidden() *UpdateScheduleForbidden {
 	return &UpdateScheduleForbidden{}
 }
 
-/* UpdateScheduleForbidden describes a response with status code 403, with default header values.
+/*
+UpdateScheduleForbidden describes a response with status code 403, with default header values.
 
 Indicates that access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.
 */
@@ -210,9 +273,39 @@ type UpdateScheduleForbidden struct {
 	Payload *services_models.UpdateScheduleResponse
 }
 
+// IsSuccess returns true when this update schedule forbidden response has a 2xx status code
+func (o *UpdateScheduleForbidden) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this update schedule forbidden response has a 3xx status code
+func (o *UpdateScheduleForbidden) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this update schedule forbidden response has a 4xx status code
+func (o *UpdateScheduleForbidden) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this update schedule forbidden response has a 5xx status code
+func (o *UpdateScheduleForbidden) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this update schedule forbidden response a status code equal to that given
+func (o *UpdateScheduleForbidden) IsCode(code int) bool {
+	return code == 403
+}
+
 func (o *UpdateScheduleForbidden) Error() string {
 	return fmt.Sprintf("[PUT /service/v1/serviceResources/{resourceId}/schedules][%d] updateScheduleForbidden  %+v", 403, o.Payload)
 }
+
+func (o *UpdateScheduleForbidden) String() string {
+	return fmt.Sprintf("[PUT /service/v1/serviceResources/{resourceId}/schedules][%d] updateScheduleForbidden  %+v", 403, o.Payload)
+}
+
 func (o *UpdateScheduleForbidden) GetPayload() *services_models.UpdateScheduleResponse {
 	return o.Payload
 }
@@ -241,7 +334,8 @@ func NewUpdateScheduleNotFound() *UpdateScheduleNotFound {
 	return &UpdateScheduleNotFound{}
 }
 
-/* UpdateScheduleNotFound describes a response with status code 404, with default header values.
+/*
+UpdateScheduleNotFound describes a response with status code 404, with default header values.
 
 The resource specified does not exist.
 */
@@ -258,9 +352,39 @@ type UpdateScheduleNotFound struct {
 	Payload *services_models.UpdateScheduleResponse
 }
 
+// IsSuccess returns true when this update schedule not found response has a 2xx status code
+func (o *UpdateScheduleNotFound) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this update schedule not found response has a 3xx status code
+func (o *UpdateScheduleNotFound) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this update schedule not found response has a 4xx status code
+func (o *UpdateScheduleNotFound) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this update schedule not found response has a 5xx status code
+func (o *UpdateScheduleNotFound) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this update schedule not found response a status code equal to that given
+func (o *UpdateScheduleNotFound) IsCode(code int) bool {
+	return code == 404
+}
+
 func (o *UpdateScheduleNotFound) Error() string {
 	return fmt.Sprintf("[PUT /service/v1/serviceResources/{resourceId}/schedules][%d] updateScheduleNotFound  %+v", 404, o.Payload)
 }
+
+func (o *UpdateScheduleNotFound) String() string {
+	return fmt.Sprintf("[PUT /service/v1/serviceResources/{resourceId}/schedules][%d] updateScheduleNotFound  %+v", 404, o.Payload)
+}
+
 func (o *UpdateScheduleNotFound) GetPayload() *services_models.UpdateScheduleResponse {
 	return o.Payload
 }
@@ -296,7 +420,8 @@ func NewUpdateScheduleRequestEntityTooLarge() *UpdateScheduleRequestEntityTooLar
 	return &UpdateScheduleRequestEntityTooLarge{}
 }
 
-/* UpdateScheduleRequestEntityTooLarge describes a response with status code 413, with default header values.
+/*
+UpdateScheduleRequestEntityTooLarge describes a response with status code 413, with default header values.
 
 The request size exceeded the maximum accepted size.
 */
@@ -314,9 +439,39 @@ type UpdateScheduleRequestEntityTooLarge struct {
 	Payload *services_models.UpdateScheduleResponse
 }
 
+// IsSuccess returns true when this update schedule request entity too large response has a 2xx status code
+func (o *UpdateScheduleRequestEntityTooLarge) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this update schedule request entity too large response has a 3xx status code
+func (o *UpdateScheduleRequestEntityTooLarge) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this update schedule request entity too large response has a 4xx status code
+func (o *UpdateScheduleRequestEntityTooLarge) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this update schedule request entity too large response has a 5xx status code
+func (o *UpdateScheduleRequestEntityTooLarge) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this update schedule request entity too large response a status code equal to that given
+func (o *UpdateScheduleRequestEntityTooLarge) IsCode(code int) bool {
+	return code == 413
+}
+
 func (o *UpdateScheduleRequestEntityTooLarge) Error() string {
 	return fmt.Sprintf("[PUT /service/v1/serviceResources/{resourceId}/schedules][%d] updateScheduleRequestEntityTooLarge  %+v", 413, o.Payload)
 }
+
+func (o *UpdateScheduleRequestEntityTooLarge) String() string {
+	return fmt.Sprintf("[PUT /service/v1/serviceResources/{resourceId}/schedules][%d] updateScheduleRequestEntityTooLarge  %+v", 413, o.Payload)
+}
+
 func (o *UpdateScheduleRequestEntityTooLarge) GetPayload() *services_models.UpdateScheduleResponse {
 	return o.Payload
 }
@@ -352,7 +507,8 @@ func NewUpdateScheduleUnsupportedMediaType() *UpdateScheduleUnsupportedMediaType
 	return &UpdateScheduleUnsupportedMediaType{}
 }
 
-/* UpdateScheduleUnsupportedMediaType describes a response with status code 415, with default header values.
+/*
+UpdateScheduleUnsupportedMediaType describes a response with status code 415, with default header values.
 
 The request payload is in an unsupported format.
 */
@@ -370,9 +526,39 @@ type UpdateScheduleUnsupportedMediaType struct {
 	Payload *services_models.UpdateScheduleResponse
 }
 
+// IsSuccess returns true when this update schedule unsupported media type response has a 2xx status code
+func (o *UpdateScheduleUnsupportedMediaType) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this update schedule unsupported media type response has a 3xx status code
+func (o *UpdateScheduleUnsupportedMediaType) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this update schedule unsupported media type response has a 4xx status code
+func (o *UpdateScheduleUnsupportedMediaType) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this update schedule unsupported media type response has a 5xx status code
+func (o *UpdateScheduleUnsupportedMediaType) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this update schedule unsupported media type response a status code equal to that given
+func (o *UpdateScheduleUnsupportedMediaType) IsCode(code int) bool {
+	return code == 415
+}
+
 func (o *UpdateScheduleUnsupportedMediaType) Error() string {
 	return fmt.Sprintf("[PUT /service/v1/serviceResources/{resourceId}/schedules][%d] updateScheduleUnsupportedMediaType  %+v", 415, o.Payload)
 }
+
+func (o *UpdateScheduleUnsupportedMediaType) String() string {
+	return fmt.Sprintf("[PUT /service/v1/serviceResources/{resourceId}/schedules][%d] updateScheduleUnsupportedMediaType  %+v", 415, o.Payload)
+}
+
 func (o *UpdateScheduleUnsupportedMediaType) GetPayload() *services_models.UpdateScheduleResponse {
 	return o.Payload
 }
@@ -408,7 +594,8 @@ func NewUpdateScheduleTooManyRequests() *UpdateScheduleTooManyRequests {
 	return &UpdateScheduleTooManyRequests{}
 }
 
-/* UpdateScheduleTooManyRequests describes a response with status code 429, with default header values.
+/*
+UpdateScheduleTooManyRequests describes a response with status code 429, with default header values.
 
 The frequency of requests was greater than allowed.
 */
@@ -426,9 +613,39 @@ type UpdateScheduleTooManyRequests struct {
 	Payload *services_models.UpdateScheduleResponse
 }
 
+// IsSuccess returns true when this update schedule too many requests response has a 2xx status code
+func (o *UpdateScheduleTooManyRequests) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this update schedule too many requests response has a 3xx status code
+func (o *UpdateScheduleTooManyRequests) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this update schedule too many requests response has a 4xx status code
+func (o *UpdateScheduleTooManyRequests) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this update schedule too many requests response has a 5xx status code
+func (o *UpdateScheduleTooManyRequests) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this update schedule too many requests response a status code equal to that given
+func (o *UpdateScheduleTooManyRequests) IsCode(code int) bool {
+	return code == 429
+}
+
 func (o *UpdateScheduleTooManyRequests) Error() string {
 	return fmt.Sprintf("[PUT /service/v1/serviceResources/{resourceId}/schedules][%d] updateScheduleTooManyRequests  %+v", 429, o.Payload)
 }
+
+func (o *UpdateScheduleTooManyRequests) String() string {
+	return fmt.Sprintf("[PUT /service/v1/serviceResources/{resourceId}/schedules][%d] updateScheduleTooManyRequests  %+v", 429, o.Payload)
+}
+
 func (o *UpdateScheduleTooManyRequests) GetPayload() *services_models.UpdateScheduleResponse {
 	return o.Payload
 }
@@ -464,7 +681,8 @@ func NewUpdateScheduleInternalServerError() *UpdateScheduleInternalServerError {
 	return &UpdateScheduleInternalServerError{}
 }
 
-/* UpdateScheduleInternalServerError describes a response with status code 500, with default header values.
+/*
+UpdateScheduleInternalServerError describes a response with status code 500, with default header values.
 
 Encountered an unexpected condition which prevented the server from fulfilling the request.
 */
@@ -482,9 +700,39 @@ type UpdateScheduleInternalServerError struct {
 	Payload *services_models.UpdateScheduleResponse
 }
 
+// IsSuccess returns true when this update schedule internal server error response has a 2xx status code
+func (o *UpdateScheduleInternalServerError) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this update schedule internal server error response has a 3xx status code
+func (o *UpdateScheduleInternalServerError) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this update schedule internal server error response has a 4xx status code
+func (o *UpdateScheduleInternalServerError) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this update schedule internal server error response has a 5xx status code
+func (o *UpdateScheduleInternalServerError) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this update schedule internal server error response a status code equal to that given
+func (o *UpdateScheduleInternalServerError) IsCode(code int) bool {
+	return code == 500
+}
+
 func (o *UpdateScheduleInternalServerError) Error() string {
 	return fmt.Sprintf("[PUT /service/v1/serviceResources/{resourceId}/schedules][%d] updateScheduleInternalServerError  %+v", 500, o.Payload)
 }
+
+func (o *UpdateScheduleInternalServerError) String() string {
+	return fmt.Sprintf("[PUT /service/v1/serviceResources/{resourceId}/schedules][%d] updateScheduleInternalServerError  %+v", 500, o.Payload)
+}
+
 func (o *UpdateScheduleInternalServerError) GetPayload() *services_models.UpdateScheduleResponse {
 	return o.Payload
 }
@@ -520,7 +768,8 @@ func NewUpdateScheduleServiceUnavailable() *UpdateScheduleServiceUnavailable {
 	return &UpdateScheduleServiceUnavailable{}
 }
 
-/* UpdateScheduleServiceUnavailable describes a response with status code 503, with default header values.
+/*
+UpdateScheduleServiceUnavailable describes a response with status code 503, with default header values.
 
 Temporary overloading or maintenance of the server.
 */
@@ -538,9 +787,39 @@ type UpdateScheduleServiceUnavailable struct {
 	Payload *services_models.UpdateScheduleResponse
 }
 
+// IsSuccess returns true when this update schedule service unavailable response has a 2xx status code
+func (o *UpdateScheduleServiceUnavailable) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this update schedule service unavailable response has a 3xx status code
+func (o *UpdateScheduleServiceUnavailable) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this update schedule service unavailable response has a 4xx status code
+func (o *UpdateScheduleServiceUnavailable) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this update schedule service unavailable response has a 5xx status code
+func (o *UpdateScheduleServiceUnavailable) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this update schedule service unavailable response a status code equal to that given
+func (o *UpdateScheduleServiceUnavailable) IsCode(code int) bool {
+	return code == 503
+}
+
 func (o *UpdateScheduleServiceUnavailable) Error() string {
 	return fmt.Sprintf("[PUT /service/v1/serviceResources/{resourceId}/schedules][%d] updateScheduleServiceUnavailable  %+v", 503, o.Payload)
 }
+
+func (o *UpdateScheduleServiceUnavailable) String() string {
+	return fmt.Sprintf("[PUT /service/v1/serviceResources/{resourceId}/schedules][%d] updateScheduleServiceUnavailable  %+v", 503, o.Payload)
+}
+
 func (o *UpdateScheduleServiceUnavailable) GetPayload() *services_models.UpdateScheduleResponse {
 	return o.Payload
 }

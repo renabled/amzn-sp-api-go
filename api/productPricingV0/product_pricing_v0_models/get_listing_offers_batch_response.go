@@ -13,7 +13,7 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// GetListingOffersBatchResponse The response associated with the getListingOffersBatch API call.
+// GetListingOffersBatchResponse The response associated with the `getListingOffersBatch` API call.
 //
 // swagger:model GetListingOffersBatchResponse
 type GetListingOffersBatchResponse struct {

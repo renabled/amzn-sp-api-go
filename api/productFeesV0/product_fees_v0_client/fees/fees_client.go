@@ -40,7 +40,7 @@ type ClientService interface {
 }
 
 /*
-  GetMyFeesEstimateForASIN Returns the estimated fees for the item indicated by the specified ASIN in the marketplace specified in the request body.
+	GetMyFeesEstimateForASIN Returns the estimated fees for the item indicated by the specified ASIN in the marketplace specified in the request body.
 
 You can call `getMyFeesEstimateForASIN` for an item on behalf of a selling partner before the selling partner sets the item's price. The selling partner can then take estimated fees into account. Each fees request must include an original identifier. This identifier is included in the fees estimate so you can correlate a fees estimate with the original request.
 
@@ -90,7 +90,7 @@ func (a *Client) GetMyFeesEstimateForASIN(params *GetMyFeesEstimateForASINParams
 }
 
 /*
-  GetMyFeesEstimateForSKU Returns the estimated fees for the item indicated by the specified seller SKU in the marketplace specified in the request body.
+	GetMyFeesEstimateForSKU Returns the estimated fees for the item indicated by the specified seller SKU in the marketplace specified in the request body.
 
 You can call `getMyFeesEstimateForSKU` for an item on behalf of a selling partner before the selling partner sets the item's price. The selling partner can then take any estimated fees into account. Each fees estimate request must include an original identifier. This identifier is included in the fees estimate so that you can correlate a fees estimate with the original request.
 
@@ -140,7 +140,7 @@ func (a *Client) GetMyFeesEstimateForSKU(params *GetMyFeesEstimateForSKUParams, 
 }
 
 /*
-  GetMyFeesEstimates Returns the estimated fees for a list of products.
+	GetMyFeesEstimates Returns the estimated fees for a list of products.
 
 **Usage Plan:**
 

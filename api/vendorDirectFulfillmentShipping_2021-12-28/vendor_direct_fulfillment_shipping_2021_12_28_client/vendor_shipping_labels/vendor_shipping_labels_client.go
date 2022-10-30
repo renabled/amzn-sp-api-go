@@ -42,7 +42,7 @@ type ClientService interface {
 }
 
 /*
-  CreateShippingLabels Creates shipping labels for a purchase order and returns the labels.
+	CreateShippingLabels Creates shipping labels for a purchase order and returns the labels.
 
 **Usage Plan:**
 
@@ -88,7 +88,7 @@ func (a *Client) CreateShippingLabels(params *CreateShippingLabelsParams, opts .
 }
 
 /*
-  GetShippingLabel Returns a shipping label for the purchaseOrderNumber that you specify.
+	GetShippingLabel Returns a shipping label for the purchaseOrderNumber that you specify.
 
 **Usage Plan:**
 
@@ -134,7 +134,7 @@ func (a *Client) GetShippingLabel(params *GetShippingLabelParams, opts ...Client
 }
 
 /*
-  GetShippingLabels Returns a list of shipping labels created during the time frame that you specify. You define that time frame using the createdAfter and createdBefore parameters. You must use both of these parameters. The date range to search must not be more than 7 days.
+	GetShippingLabels Returns a list of shipping labels created during the time frame that you specify. You define that time frame using the createdAfter and createdBefore parameters. You must use both of these parameters. The date range to search must not be more than 7 days.
 
 **Usage Plan:**
 
@@ -180,7 +180,7 @@ func (a *Client) GetShippingLabels(params *GetShippingLabelsParams, opts ...Clie
 }
 
 /*
-  SubmitShippingLabelRequest Creates a shipping label for a purchase order and returns a transactionId for reference.
+	SubmitShippingLabelRequest Creates a shipping label for a purchase order and returns a transactionId for reference.
 
 **Usage Plan:**
 

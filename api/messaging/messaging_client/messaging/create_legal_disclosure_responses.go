@@ -87,7 +87,8 @@ func NewCreateLegalDisclosureCreated() *CreateLegalDisclosureCreated {
 	return &CreateLegalDisclosureCreated{}
 }
 
-/* CreateLegalDisclosureCreated describes a response with status code 201, with default header values.
+/*
+CreateLegalDisclosureCreated describes a response with status code 201, with default header values.
 
 The legal disclosure message was created for the order.
 */
@@ -104,9 +105,39 @@ type CreateLegalDisclosureCreated struct {
 	Payload *messaging_models.CreateLegalDisclosureResponse
 }
 
+// IsSuccess returns true when this create legal disclosure created response has a 2xx status code
+func (o *CreateLegalDisclosureCreated) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this create legal disclosure created response has a 3xx status code
+func (o *CreateLegalDisclosureCreated) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create legal disclosure created response has a 4xx status code
+func (o *CreateLegalDisclosureCreated) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this create legal disclosure created response has a 5xx status code
+func (o *CreateLegalDisclosureCreated) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this create legal disclosure created response a status code equal to that given
+func (o *CreateLegalDisclosureCreated) IsCode(code int) bool {
+	return code == 201
+}
+
 func (o *CreateLegalDisclosureCreated) Error() string {
 	return fmt.Sprintf("[POST /messaging/v1/orders/{amazonOrderId}/messages/legalDisclosure][%d] createLegalDisclosureCreated  %+v", 201, o.Payload)
 }
+
+func (o *CreateLegalDisclosureCreated) String() string {
+	return fmt.Sprintf("[POST /messaging/v1/orders/{amazonOrderId}/messages/legalDisclosure][%d] createLegalDisclosureCreated  %+v", 201, o.Payload)
+}
+
 func (o *CreateLegalDisclosureCreated) GetPayload() *messaging_models.CreateLegalDisclosureResponse {
 	return o.Payload
 }
@@ -142,7 +173,8 @@ func NewCreateLegalDisclosureBadRequest() *CreateLegalDisclosureBadRequest {
 	return &CreateLegalDisclosureBadRequest{}
 }
 
-/* CreateLegalDisclosureBadRequest describes a response with status code 400, with default header values.
+/*
+CreateLegalDisclosureBadRequest describes a response with status code 400, with default header values.
 
 Request has missing or invalid parameters and cannot be parsed.
 */
@@ -159,9 +191,39 @@ type CreateLegalDisclosureBadRequest struct {
 	Payload *messaging_models.CreateLegalDisclosureResponse
 }
 
+// IsSuccess returns true when this create legal disclosure bad request response has a 2xx status code
+func (o *CreateLegalDisclosureBadRequest) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this create legal disclosure bad request response has a 3xx status code
+func (o *CreateLegalDisclosureBadRequest) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create legal disclosure bad request response has a 4xx status code
+func (o *CreateLegalDisclosureBadRequest) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this create legal disclosure bad request response has a 5xx status code
+func (o *CreateLegalDisclosureBadRequest) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this create legal disclosure bad request response a status code equal to that given
+func (o *CreateLegalDisclosureBadRequest) IsCode(code int) bool {
+	return code == 400
+}
+
 func (o *CreateLegalDisclosureBadRequest) Error() string {
 	return fmt.Sprintf("[POST /messaging/v1/orders/{amazonOrderId}/messages/legalDisclosure][%d] createLegalDisclosureBadRequest  %+v", 400, o.Payload)
 }
+
+func (o *CreateLegalDisclosureBadRequest) String() string {
+	return fmt.Sprintf("[POST /messaging/v1/orders/{amazonOrderId}/messages/legalDisclosure][%d] createLegalDisclosureBadRequest  %+v", 400, o.Payload)
+}
+
 func (o *CreateLegalDisclosureBadRequest) GetPayload() *messaging_models.CreateLegalDisclosureResponse {
 	return o.Payload
 }
@@ -197,7 +259,8 @@ func NewCreateLegalDisclosureForbidden() *CreateLegalDisclosureForbidden {
 	return &CreateLegalDisclosureForbidden{}
 }
 
-/* CreateLegalDisclosureForbidden describes a response with status code 403, with default header values.
+/*
+CreateLegalDisclosureForbidden describes a response with status code 403, with default header values.
 
 Indicates that access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.
 */
@@ -210,9 +273,39 @@ type CreateLegalDisclosureForbidden struct {
 	Payload *messaging_models.CreateLegalDisclosureResponse
 }
 
+// IsSuccess returns true when this create legal disclosure forbidden response has a 2xx status code
+func (o *CreateLegalDisclosureForbidden) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this create legal disclosure forbidden response has a 3xx status code
+func (o *CreateLegalDisclosureForbidden) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create legal disclosure forbidden response has a 4xx status code
+func (o *CreateLegalDisclosureForbidden) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this create legal disclosure forbidden response has a 5xx status code
+func (o *CreateLegalDisclosureForbidden) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this create legal disclosure forbidden response a status code equal to that given
+func (o *CreateLegalDisclosureForbidden) IsCode(code int) bool {
+	return code == 403
+}
+
 func (o *CreateLegalDisclosureForbidden) Error() string {
 	return fmt.Sprintf("[POST /messaging/v1/orders/{amazonOrderId}/messages/legalDisclosure][%d] createLegalDisclosureForbidden  %+v", 403, o.Payload)
 }
+
+func (o *CreateLegalDisclosureForbidden) String() string {
+	return fmt.Sprintf("[POST /messaging/v1/orders/{amazonOrderId}/messages/legalDisclosure][%d] createLegalDisclosureForbidden  %+v", 403, o.Payload)
+}
+
 func (o *CreateLegalDisclosureForbidden) GetPayload() *messaging_models.CreateLegalDisclosureResponse {
 	return o.Payload
 }
@@ -241,7 +334,8 @@ func NewCreateLegalDisclosureNotFound() *CreateLegalDisclosureNotFound {
 	return &CreateLegalDisclosureNotFound{}
 }
 
-/* CreateLegalDisclosureNotFound describes a response with status code 404, with default header values.
+/*
+CreateLegalDisclosureNotFound describes a response with status code 404, with default header values.
 
 The resource specified does not exist.
 */
@@ -258,9 +352,39 @@ type CreateLegalDisclosureNotFound struct {
 	Payload *messaging_models.CreateLegalDisclosureResponse
 }
 
+// IsSuccess returns true when this create legal disclosure not found response has a 2xx status code
+func (o *CreateLegalDisclosureNotFound) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this create legal disclosure not found response has a 3xx status code
+func (o *CreateLegalDisclosureNotFound) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create legal disclosure not found response has a 4xx status code
+func (o *CreateLegalDisclosureNotFound) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this create legal disclosure not found response has a 5xx status code
+func (o *CreateLegalDisclosureNotFound) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this create legal disclosure not found response a status code equal to that given
+func (o *CreateLegalDisclosureNotFound) IsCode(code int) bool {
+	return code == 404
+}
+
 func (o *CreateLegalDisclosureNotFound) Error() string {
 	return fmt.Sprintf("[POST /messaging/v1/orders/{amazonOrderId}/messages/legalDisclosure][%d] createLegalDisclosureNotFound  %+v", 404, o.Payload)
 }
+
+func (o *CreateLegalDisclosureNotFound) String() string {
+	return fmt.Sprintf("[POST /messaging/v1/orders/{amazonOrderId}/messages/legalDisclosure][%d] createLegalDisclosureNotFound  %+v", 404, o.Payload)
+}
+
 func (o *CreateLegalDisclosureNotFound) GetPayload() *messaging_models.CreateLegalDisclosureResponse {
 	return o.Payload
 }
@@ -296,7 +420,8 @@ func NewCreateLegalDisclosureRequestEntityTooLarge() *CreateLegalDisclosureReque
 	return &CreateLegalDisclosureRequestEntityTooLarge{}
 }
 
-/* CreateLegalDisclosureRequestEntityTooLarge describes a response with status code 413, with default header values.
+/*
+CreateLegalDisclosureRequestEntityTooLarge describes a response with status code 413, with default header values.
 
 The request size exceeded the maximum accepted size.
 */
@@ -314,9 +439,39 @@ type CreateLegalDisclosureRequestEntityTooLarge struct {
 	Payload *messaging_models.CreateLegalDisclosureResponse
 }
 
+// IsSuccess returns true when this create legal disclosure request entity too large response has a 2xx status code
+func (o *CreateLegalDisclosureRequestEntityTooLarge) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this create legal disclosure request entity too large response has a 3xx status code
+func (o *CreateLegalDisclosureRequestEntityTooLarge) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create legal disclosure request entity too large response has a 4xx status code
+func (o *CreateLegalDisclosureRequestEntityTooLarge) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this create legal disclosure request entity too large response has a 5xx status code
+func (o *CreateLegalDisclosureRequestEntityTooLarge) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this create legal disclosure request entity too large response a status code equal to that given
+func (o *CreateLegalDisclosureRequestEntityTooLarge) IsCode(code int) bool {
+	return code == 413
+}
+
 func (o *CreateLegalDisclosureRequestEntityTooLarge) Error() string {
 	return fmt.Sprintf("[POST /messaging/v1/orders/{amazonOrderId}/messages/legalDisclosure][%d] createLegalDisclosureRequestEntityTooLarge  %+v", 413, o.Payload)
 }
+
+func (o *CreateLegalDisclosureRequestEntityTooLarge) String() string {
+	return fmt.Sprintf("[POST /messaging/v1/orders/{amazonOrderId}/messages/legalDisclosure][%d] createLegalDisclosureRequestEntityTooLarge  %+v", 413, o.Payload)
+}
+
 func (o *CreateLegalDisclosureRequestEntityTooLarge) GetPayload() *messaging_models.CreateLegalDisclosureResponse {
 	return o.Payload
 }
@@ -352,7 +507,8 @@ func NewCreateLegalDisclosureUnsupportedMediaType() *CreateLegalDisclosureUnsupp
 	return &CreateLegalDisclosureUnsupportedMediaType{}
 }
 
-/* CreateLegalDisclosureUnsupportedMediaType describes a response with status code 415, with default header values.
+/*
+CreateLegalDisclosureUnsupportedMediaType describes a response with status code 415, with default header values.
 
 The request payload is in an unsupported format.
 */
@@ -370,9 +526,39 @@ type CreateLegalDisclosureUnsupportedMediaType struct {
 	Payload *messaging_models.CreateLegalDisclosureResponse
 }
 
+// IsSuccess returns true when this create legal disclosure unsupported media type response has a 2xx status code
+func (o *CreateLegalDisclosureUnsupportedMediaType) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this create legal disclosure unsupported media type response has a 3xx status code
+func (o *CreateLegalDisclosureUnsupportedMediaType) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create legal disclosure unsupported media type response has a 4xx status code
+func (o *CreateLegalDisclosureUnsupportedMediaType) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this create legal disclosure unsupported media type response has a 5xx status code
+func (o *CreateLegalDisclosureUnsupportedMediaType) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this create legal disclosure unsupported media type response a status code equal to that given
+func (o *CreateLegalDisclosureUnsupportedMediaType) IsCode(code int) bool {
+	return code == 415
+}
+
 func (o *CreateLegalDisclosureUnsupportedMediaType) Error() string {
 	return fmt.Sprintf("[POST /messaging/v1/orders/{amazonOrderId}/messages/legalDisclosure][%d] createLegalDisclosureUnsupportedMediaType  %+v", 415, o.Payload)
 }
+
+func (o *CreateLegalDisclosureUnsupportedMediaType) String() string {
+	return fmt.Sprintf("[POST /messaging/v1/orders/{amazonOrderId}/messages/legalDisclosure][%d] createLegalDisclosureUnsupportedMediaType  %+v", 415, o.Payload)
+}
+
 func (o *CreateLegalDisclosureUnsupportedMediaType) GetPayload() *messaging_models.CreateLegalDisclosureResponse {
 	return o.Payload
 }
@@ -408,7 +594,8 @@ func NewCreateLegalDisclosureTooManyRequests() *CreateLegalDisclosureTooManyRequ
 	return &CreateLegalDisclosureTooManyRequests{}
 }
 
-/* CreateLegalDisclosureTooManyRequests describes a response with status code 429, with default header values.
+/*
+CreateLegalDisclosureTooManyRequests describes a response with status code 429, with default header values.
 
 The frequency of requests was greater than allowed.
 */
@@ -426,9 +613,39 @@ type CreateLegalDisclosureTooManyRequests struct {
 	Payload *messaging_models.CreateLegalDisclosureResponse
 }
 
+// IsSuccess returns true when this create legal disclosure too many requests response has a 2xx status code
+func (o *CreateLegalDisclosureTooManyRequests) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this create legal disclosure too many requests response has a 3xx status code
+func (o *CreateLegalDisclosureTooManyRequests) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create legal disclosure too many requests response has a 4xx status code
+func (o *CreateLegalDisclosureTooManyRequests) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this create legal disclosure too many requests response has a 5xx status code
+func (o *CreateLegalDisclosureTooManyRequests) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this create legal disclosure too many requests response a status code equal to that given
+func (o *CreateLegalDisclosureTooManyRequests) IsCode(code int) bool {
+	return code == 429
+}
+
 func (o *CreateLegalDisclosureTooManyRequests) Error() string {
 	return fmt.Sprintf("[POST /messaging/v1/orders/{amazonOrderId}/messages/legalDisclosure][%d] createLegalDisclosureTooManyRequests  %+v", 429, o.Payload)
 }
+
+func (o *CreateLegalDisclosureTooManyRequests) String() string {
+	return fmt.Sprintf("[POST /messaging/v1/orders/{amazonOrderId}/messages/legalDisclosure][%d] createLegalDisclosureTooManyRequests  %+v", 429, o.Payload)
+}
+
 func (o *CreateLegalDisclosureTooManyRequests) GetPayload() *messaging_models.CreateLegalDisclosureResponse {
 	return o.Payload
 }
@@ -464,7 +681,8 @@ func NewCreateLegalDisclosureInternalServerError() *CreateLegalDisclosureInterna
 	return &CreateLegalDisclosureInternalServerError{}
 }
 
-/* CreateLegalDisclosureInternalServerError describes a response with status code 500, with default header values.
+/*
+CreateLegalDisclosureInternalServerError describes a response with status code 500, with default header values.
 
 An unexpected condition occurred that prevented the server from fulfilling the request.
 */
@@ -482,9 +700,39 @@ type CreateLegalDisclosureInternalServerError struct {
 	Payload *messaging_models.CreateLegalDisclosureResponse
 }
 
+// IsSuccess returns true when this create legal disclosure internal server error response has a 2xx status code
+func (o *CreateLegalDisclosureInternalServerError) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this create legal disclosure internal server error response has a 3xx status code
+func (o *CreateLegalDisclosureInternalServerError) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create legal disclosure internal server error response has a 4xx status code
+func (o *CreateLegalDisclosureInternalServerError) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this create legal disclosure internal server error response has a 5xx status code
+func (o *CreateLegalDisclosureInternalServerError) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this create legal disclosure internal server error response a status code equal to that given
+func (o *CreateLegalDisclosureInternalServerError) IsCode(code int) bool {
+	return code == 500
+}
+
 func (o *CreateLegalDisclosureInternalServerError) Error() string {
 	return fmt.Sprintf("[POST /messaging/v1/orders/{amazonOrderId}/messages/legalDisclosure][%d] createLegalDisclosureInternalServerError  %+v", 500, o.Payload)
 }
+
+func (o *CreateLegalDisclosureInternalServerError) String() string {
+	return fmt.Sprintf("[POST /messaging/v1/orders/{amazonOrderId}/messages/legalDisclosure][%d] createLegalDisclosureInternalServerError  %+v", 500, o.Payload)
+}
+
 func (o *CreateLegalDisclosureInternalServerError) GetPayload() *messaging_models.CreateLegalDisclosureResponse {
 	return o.Payload
 }
@@ -520,7 +768,8 @@ func NewCreateLegalDisclosureServiceUnavailable() *CreateLegalDisclosureServiceU
 	return &CreateLegalDisclosureServiceUnavailable{}
 }
 
-/* CreateLegalDisclosureServiceUnavailable describes a response with status code 503, with default header values.
+/*
+CreateLegalDisclosureServiceUnavailable describes a response with status code 503, with default header values.
 
 Temporary overloading or maintenance of the server.
 */
@@ -538,9 +787,39 @@ type CreateLegalDisclosureServiceUnavailable struct {
 	Payload *messaging_models.CreateLegalDisclosureResponse
 }
 
+// IsSuccess returns true when this create legal disclosure service unavailable response has a 2xx status code
+func (o *CreateLegalDisclosureServiceUnavailable) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this create legal disclosure service unavailable response has a 3xx status code
+func (o *CreateLegalDisclosureServiceUnavailable) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create legal disclosure service unavailable response has a 4xx status code
+func (o *CreateLegalDisclosureServiceUnavailable) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this create legal disclosure service unavailable response has a 5xx status code
+func (o *CreateLegalDisclosureServiceUnavailable) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this create legal disclosure service unavailable response a status code equal to that given
+func (o *CreateLegalDisclosureServiceUnavailable) IsCode(code int) bool {
+	return code == 503
+}
+
 func (o *CreateLegalDisclosureServiceUnavailable) Error() string {
 	return fmt.Sprintf("[POST /messaging/v1/orders/{amazonOrderId}/messages/legalDisclosure][%d] createLegalDisclosureServiceUnavailable  %+v", 503, o.Payload)
 }
+
+func (o *CreateLegalDisclosureServiceUnavailable) String() string {
+	return fmt.Sprintf("[POST /messaging/v1/orders/{amazonOrderId}/messages/legalDisclosure][%d] createLegalDisclosureServiceUnavailable  %+v", 503, o.Payload)
+}
+
 func (o *CreateLegalDisclosureServiceUnavailable) GetPayload() *messaging_models.CreateLegalDisclosureResponse {
 	return o.Payload
 }

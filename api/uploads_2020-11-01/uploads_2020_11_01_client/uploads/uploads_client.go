@@ -36,7 +36,7 @@ type ClientService interface {
 }
 
 /*
-  CreateUploadDestinationForResource Creates an upload destination, returning the information required to upload a file to the destination and to programmatically access the file.
+	CreateUploadDestinationForResource Creates an upload destination, returning the information required to upload a file to the destination and to programmatically access the file.
 
 **Usage Plan:**
 

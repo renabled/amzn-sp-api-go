@@ -81,7 +81,8 @@ func NewListCatalogCategoriesOK() *ListCatalogCategoriesOK {
 	return &ListCatalogCategoriesOK{}
 }
 
-/* ListCatalogCategoriesOK describes a response with status code 200, with default header values.
+/*
+ListCatalogCategoriesOK describes a response with status code 200, with default header values.
 
 Success.
 */
@@ -98,9 +99,39 @@ type ListCatalogCategoriesOK struct {
 	Payload *catalog_items_v0_models.ListCatalogCategoriesResponse
 }
 
+// IsSuccess returns true when this list catalog categories o k response has a 2xx status code
+func (o *ListCatalogCategoriesOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this list catalog categories o k response has a 3xx status code
+func (o *ListCatalogCategoriesOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this list catalog categories o k response has a 4xx status code
+func (o *ListCatalogCategoriesOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this list catalog categories o k response has a 5xx status code
+func (o *ListCatalogCategoriesOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this list catalog categories o k response a status code equal to that given
+func (o *ListCatalogCategoriesOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *ListCatalogCategoriesOK) Error() string {
 	return fmt.Sprintf("[GET /catalog/v0/categories][%d] listCatalogCategoriesOK  %+v", 200, o.Payload)
 }
+
+func (o *ListCatalogCategoriesOK) String() string {
+	return fmt.Sprintf("[GET /catalog/v0/categories][%d] listCatalogCategoriesOK  %+v", 200, o.Payload)
+}
+
 func (o *ListCatalogCategoriesOK) GetPayload() *catalog_items_v0_models.ListCatalogCategoriesResponse {
 	return o.Payload
 }
@@ -136,7 +167,8 @@ func NewListCatalogCategoriesBadRequest() *ListCatalogCategoriesBadRequest {
 	return &ListCatalogCategoriesBadRequest{}
 }
 
-/* ListCatalogCategoriesBadRequest describes a response with status code 400, with default header values.
+/*
+ListCatalogCategoriesBadRequest describes a response with status code 400, with default header values.
 
 Request has missing or invalid parameters and cannot be parsed.
 */
@@ -153,9 +185,39 @@ type ListCatalogCategoriesBadRequest struct {
 	Payload *catalog_items_v0_models.ListCatalogCategoriesResponse
 }
 
+// IsSuccess returns true when this list catalog categories bad request response has a 2xx status code
+func (o *ListCatalogCategoriesBadRequest) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this list catalog categories bad request response has a 3xx status code
+func (o *ListCatalogCategoriesBadRequest) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this list catalog categories bad request response has a 4xx status code
+func (o *ListCatalogCategoriesBadRequest) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this list catalog categories bad request response has a 5xx status code
+func (o *ListCatalogCategoriesBadRequest) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this list catalog categories bad request response a status code equal to that given
+func (o *ListCatalogCategoriesBadRequest) IsCode(code int) bool {
+	return code == 400
+}
+
 func (o *ListCatalogCategoriesBadRequest) Error() string {
 	return fmt.Sprintf("[GET /catalog/v0/categories][%d] listCatalogCategoriesBadRequest  %+v", 400, o.Payload)
 }
+
+func (o *ListCatalogCategoriesBadRequest) String() string {
+	return fmt.Sprintf("[GET /catalog/v0/categories][%d] listCatalogCategoriesBadRequest  %+v", 400, o.Payload)
+}
+
 func (o *ListCatalogCategoriesBadRequest) GetPayload() *catalog_items_v0_models.ListCatalogCategoriesResponse {
 	return o.Payload
 }
@@ -191,7 +253,8 @@ func NewListCatalogCategoriesUnauthorized() *ListCatalogCategoriesUnauthorized {
 	return &ListCatalogCategoriesUnauthorized{}
 }
 
-/* ListCatalogCategoriesUnauthorized describes a response with status code 401, with default header values.
+/*
+ListCatalogCategoriesUnauthorized describes a response with status code 401, with default header values.
 
 The request's Authorization header is not formatted correctly or does not contain a valid token.
 */
@@ -209,9 +272,39 @@ type ListCatalogCategoriesUnauthorized struct {
 	Payload *catalog_items_v0_models.ListCatalogCategoriesResponse
 }
 
+// IsSuccess returns true when this list catalog categories unauthorized response has a 2xx status code
+func (o *ListCatalogCategoriesUnauthorized) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this list catalog categories unauthorized response has a 3xx status code
+func (o *ListCatalogCategoriesUnauthorized) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this list catalog categories unauthorized response has a 4xx status code
+func (o *ListCatalogCategoriesUnauthorized) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this list catalog categories unauthorized response has a 5xx status code
+func (o *ListCatalogCategoriesUnauthorized) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this list catalog categories unauthorized response a status code equal to that given
+func (o *ListCatalogCategoriesUnauthorized) IsCode(code int) bool {
+	return code == 401
+}
+
 func (o *ListCatalogCategoriesUnauthorized) Error() string {
 	return fmt.Sprintf("[GET /catalog/v0/categories][%d] listCatalogCategoriesUnauthorized  %+v", 401, o.Payload)
 }
+
+func (o *ListCatalogCategoriesUnauthorized) String() string {
+	return fmt.Sprintf("[GET /catalog/v0/categories][%d] listCatalogCategoriesUnauthorized  %+v", 401, o.Payload)
+}
+
 func (o *ListCatalogCategoriesUnauthorized) GetPayload() *catalog_items_v0_models.ListCatalogCategoriesResponse {
 	return o.Payload
 }
@@ -247,7 +340,8 @@ func NewListCatalogCategoriesForbidden() *ListCatalogCategoriesForbidden {
 	return &ListCatalogCategoriesForbidden{}
 }
 
-/* ListCatalogCategoriesForbidden describes a response with status code 403, with default header values.
+/*
+ListCatalogCategoriesForbidden describes a response with status code 403, with default header values.
 
 Indicates access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.
 */
@@ -260,9 +354,39 @@ type ListCatalogCategoriesForbidden struct {
 	Payload *catalog_items_v0_models.ListCatalogCategoriesResponse
 }
 
+// IsSuccess returns true when this list catalog categories forbidden response has a 2xx status code
+func (o *ListCatalogCategoriesForbidden) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this list catalog categories forbidden response has a 3xx status code
+func (o *ListCatalogCategoriesForbidden) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this list catalog categories forbidden response has a 4xx status code
+func (o *ListCatalogCategoriesForbidden) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this list catalog categories forbidden response has a 5xx status code
+func (o *ListCatalogCategoriesForbidden) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this list catalog categories forbidden response a status code equal to that given
+func (o *ListCatalogCategoriesForbidden) IsCode(code int) bool {
+	return code == 403
+}
+
 func (o *ListCatalogCategoriesForbidden) Error() string {
 	return fmt.Sprintf("[GET /catalog/v0/categories][%d] listCatalogCategoriesForbidden  %+v", 403, o.Payload)
 }
+
+func (o *ListCatalogCategoriesForbidden) String() string {
+	return fmt.Sprintf("[GET /catalog/v0/categories][%d] listCatalogCategoriesForbidden  %+v", 403, o.Payload)
+}
+
 func (o *ListCatalogCategoriesForbidden) GetPayload() *catalog_items_v0_models.ListCatalogCategoriesResponse {
 	return o.Payload
 }
@@ -291,7 +415,8 @@ func NewListCatalogCategoriesNotFound() *ListCatalogCategoriesNotFound {
 	return &ListCatalogCategoriesNotFound{}
 }
 
-/* ListCatalogCategoriesNotFound describes a response with status code 404, with default header values.
+/*
+ListCatalogCategoriesNotFound describes a response with status code 404, with default header values.
 
 The specified resource does not exist.
 */
@@ -308,9 +433,39 @@ type ListCatalogCategoriesNotFound struct {
 	Payload *catalog_items_v0_models.ListCatalogCategoriesResponse
 }
 
+// IsSuccess returns true when this list catalog categories not found response has a 2xx status code
+func (o *ListCatalogCategoriesNotFound) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this list catalog categories not found response has a 3xx status code
+func (o *ListCatalogCategoriesNotFound) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this list catalog categories not found response has a 4xx status code
+func (o *ListCatalogCategoriesNotFound) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this list catalog categories not found response has a 5xx status code
+func (o *ListCatalogCategoriesNotFound) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this list catalog categories not found response a status code equal to that given
+func (o *ListCatalogCategoriesNotFound) IsCode(code int) bool {
+	return code == 404
+}
+
 func (o *ListCatalogCategoriesNotFound) Error() string {
 	return fmt.Sprintf("[GET /catalog/v0/categories][%d] listCatalogCategoriesNotFound  %+v", 404, o.Payload)
 }
+
+func (o *ListCatalogCategoriesNotFound) String() string {
+	return fmt.Sprintf("[GET /catalog/v0/categories][%d] listCatalogCategoriesNotFound  %+v", 404, o.Payload)
+}
+
 func (o *ListCatalogCategoriesNotFound) GetPayload() *catalog_items_v0_models.ListCatalogCategoriesResponse {
 	return o.Payload
 }
@@ -346,7 +501,8 @@ func NewListCatalogCategoriesTooManyRequests() *ListCatalogCategoriesTooManyRequ
 	return &ListCatalogCategoriesTooManyRequests{}
 }
 
-/* ListCatalogCategoriesTooManyRequests describes a response with status code 429, with default header values.
+/*
+ListCatalogCategoriesTooManyRequests describes a response with status code 429, with default header values.
 
 The frequency of requests was greater than allowed.
 */
@@ -364,9 +520,39 @@ type ListCatalogCategoriesTooManyRequests struct {
 	Payload *catalog_items_v0_models.ListCatalogCategoriesResponse
 }
 
+// IsSuccess returns true when this list catalog categories too many requests response has a 2xx status code
+func (o *ListCatalogCategoriesTooManyRequests) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this list catalog categories too many requests response has a 3xx status code
+func (o *ListCatalogCategoriesTooManyRequests) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this list catalog categories too many requests response has a 4xx status code
+func (o *ListCatalogCategoriesTooManyRequests) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this list catalog categories too many requests response has a 5xx status code
+func (o *ListCatalogCategoriesTooManyRequests) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this list catalog categories too many requests response a status code equal to that given
+func (o *ListCatalogCategoriesTooManyRequests) IsCode(code int) bool {
+	return code == 429
+}
+
 func (o *ListCatalogCategoriesTooManyRequests) Error() string {
 	return fmt.Sprintf("[GET /catalog/v0/categories][%d] listCatalogCategoriesTooManyRequests  %+v", 429, o.Payload)
 }
+
+func (o *ListCatalogCategoriesTooManyRequests) String() string {
+	return fmt.Sprintf("[GET /catalog/v0/categories][%d] listCatalogCategoriesTooManyRequests  %+v", 429, o.Payload)
+}
+
 func (o *ListCatalogCategoriesTooManyRequests) GetPayload() *catalog_items_v0_models.ListCatalogCategoriesResponse {
 	return o.Payload
 }
@@ -402,7 +588,8 @@ func NewListCatalogCategoriesInternalServerError() *ListCatalogCategoriesInterna
 	return &ListCatalogCategoriesInternalServerError{}
 }
 
-/* ListCatalogCategoriesInternalServerError describes a response with status code 500, with default header values.
+/*
+ListCatalogCategoriesInternalServerError describes a response with status code 500, with default header values.
 
 An unexpected condition occurred that prevented the server from fulfilling the request.
 */
@@ -420,9 +607,39 @@ type ListCatalogCategoriesInternalServerError struct {
 	Payload *catalog_items_v0_models.ListCatalogCategoriesResponse
 }
 
+// IsSuccess returns true when this list catalog categories internal server error response has a 2xx status code
+func (o *ListCatalogCategoriesInternalServerError) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this list catalog categories internal server error response has a 3xx status code
+func (o *ListCatalogCategoriesInternalServerError) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this list catalog categories internal server error response has a 4xx status code
+func (o *ListCatalogCategoriesInternalServerError) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this list catalog categories internal server error response has a 5xx status code
+func (o *ListCatalogCategoriesInternalServerError) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this list catalog categories internal server error response a status code equal to that given
+func (o *ListCatalogCategoriesInternalServerError) IsCode(code int) bool {
+	return code == 500
+}
+
 func (o *ListCatalogCategoriesInternalServerError) Error() string {
 	return fmt.Sprintf("[GET /catalog/v0/categories][%d] listCatalogCategoriesInternalServerError  %+v", 500, o.Payload)
 }
+
+func (o *ListCatalogCategoriesInternalServerError) String() string {
+	return fmt.Sprintf("[GET /catalog/v0/categories][%d] listCatalogCategoriesInternalServerError  %+v", 500, o.Payload)
+}
+
 func (o *ListCatalogCategoriesInternalServerError) GetPayload() *catalog_items_v0_models.ListCatalogCategoriesResponse {
 	return o.Payload
 }
@@ -458,7 +675,8 @@ func NewListCatalogCategoriesServiceUnavailable() *ListCatalogCategoriesServiceU
 	return &ListCatalogCategoriesServiceUnavailable{}
 }
 
-/* ListCatalogCategoriesServiceUnavailable describes a response with status code 503, with default header values.
+/*
+ListCatalogCategoriesServiceUnavailable describes a response with status code 503, with default header values.
 
 Temporary overloading or maintenance of the server.
 */
@@ -476,9 +694,39 @@ type ListCatalogCategoriesServiceUnavailable struct {
 	Payload *catalog_items_v0_models.ListCatalogCategoriesResponse
 }
 
+// IsSuccess returns true when this list catalog categories service unavailable response has a 2xx status code
+func (o *ListCatalogCategoriesServiceUnavailable) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this list catalog categories service unavailable response has a 3xx status code
+func (o *ListCatalogCategoriesServiceUnavailable) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this list catalog categories service unavailable response has a 4xx status code
+func (o *ListCatalogCategoriesServiceUnavailable) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this list catalog categories service unavailable response has a 5xx status code
+func (o *ListCatalogCategoriesServiceUnavailable) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this list catalog categories service unavailable response a status code equal to that given
+func (o *ListCatalogCategoriesServiceUnavailable) IsCode(code int) bool {
+	return code == 503
+}
+
 func (o *ListCatalogCategoriesServiceUnavailable) Error() string {
 	return fmt.Sprintf("[GET /catalog/v0/categories][%d] listCatalogCategoriesServiceUnavailable  %+v", 503, o.Payload)
 }
+
+func (o *ListCatalogCategoriesServiceUnavailable) String() string {
+	return fmt.Sprintf("[GET /catalog/v0/categories][%d] listCatalogCategoriesServiceUnavailable  %+v", 503, o.Payload)
+}
+
 func (o *ListCatalogCategoriesServiceUnavailable) GetPayload() *catalog_items_v0_models.ListCatalogCategoriesResponse {
 	return o.Payload
 }

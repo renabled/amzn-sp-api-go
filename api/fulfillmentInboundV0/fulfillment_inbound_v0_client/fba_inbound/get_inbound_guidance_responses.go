@@ -81,7 +81,8 @@ func NewGetInboundGuidanceOK() *GetInboundGuidanceOK {
 	return &GetInboundGuidanceOK{}
 }
 
-/* GetInboundGuidanceOK describes a response with status code 200, with default header values.
+/*
+GetInboundGuidanceOK describes a response with status code 200, with default header values.
 
 Success.
 */
@@ -98,9 +99,39 @@ type GetInboundGuidanceOK struct {
 	Payload *fulfillment_inbound_v0_models.GetInboundGuidanceResponse
 }
 
+// IsSuccess returns true when this get inbound guidance o k response has a 2xx status code
+func (o *GetInboundGuidanceOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this get inbound guidance o k response has a 3xx status code
+func (o *GetInboundGuidanceOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get inbound guidance o k response has a 4xx status code
+func (o *GetInboundGuidanceOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get inbound guidance o k response has a 5xx status code
+func (o *GetInboundGuidanceOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get inbound guidance o k response a status code equal to that given
+func (o *GetInboundGuidanceOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *GetInboundGuidanceOK) Error() string {
 	return fmt.Sprintf("[GET /fba/inbound/v0/itemsGuidance][%d] getInboundGuidanceOK  %+v", 200, o.Payload)
 }
+
+func (o *GetInboundGuidanceOK) String() string {
+	return fmt.Sprintf("[GET /fba/inbound/v0/itemsGuidance][%d] getInboundGuidanceOK  %+v", 200, o.Payload)
+}
+
 func (o *GetInboundGuidanceOK) GetPayload() *fulfillment_inbound_v0_models.GetInboundGuidanceResponse {
 	return o.Payload
 }
@@ -136,7 +167,8 @@ func NewGetInboundGuidanceBadRequest() *GetInboundGuidanceBadRequest {
 	return &GetInboundGuidanceBadRequest{}
 }
 
-/* GetInboundGuidanceBadRequest describes a response with status code 400, with default header values.
+/*
+GetInboundGuidanceBadRequest describes a response with status code 400, with default header values.
 
 Request has missing or invalid parameters and cannot be parsed.
 */
@@ -153,9 +185,39 @@ type GetInboundGuidanceBadRequest struct {
 	Payload *fulfillment_inbound_v0_models.GetInboundGuidanceResponse
 }
 
+// IsSuccess returns true when this get inbound guidance bad request response has a 2xx status code
+func (o *GetInboundGuidanceBadRequest) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get inbound guidance bad request response has a 3xx status code
+func (o *GetInboundGuidanceBadRequest) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get inbound guidance bad request response has a 4xx status code
+func (o *GetInboundGuidanceBadRequest) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get inbound guidance bad request response has a 5xx status code
+func (o *GetInboundGuidanceBadRequest) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get inbound guidance bad request response a status code equal to that given
+func (o *GetInboundGuidanceBadRequest) IsCode(code int) bool {
+	return code == 400
+}
+
 func (o *GetInboundGuidanceBadRequest) Error() string {
 	return fmt.Sprintf("[GET /fba/inbound/v0/itemsGuidance][%d] getInboundGuidanceBadRequest  %+v", 400, o.Payload)
 }
+
+func (o *GetInboundGuidanceBadRequest) String() string {
+	return fmt.Sprintf("[GET /fba/inbound/v0/itemsGuidance][%d] getInboundGuidanceBadRequest  %+v", 400, o.Payload)
+}
+
 func (o *GetInboundGuidanceBadRequest) GetPayload() *fulfillment_inbound_v0_models.GetInboundGuidanceResponse {
 	return o.Payload
 }
@@ -191,7 +253,8 @@ func NewGetInboundGuidanceUnauthorized() *GetInboundGuidanceUnauthorized {
 	return &GetInboundGuidanceUnauthorized{}
 }
 
-/* GetInboundGuidanceUnauthorized describes a response with status code 401, with default header values.
+/*
+GetInboundGuidanceUnauthorized describes a response with status code 401, with default header values.
 
 The request's Authorization header is not formatted correctly or does not contain a valid token.
 */
@@ -209,9 +272,39 @@ type GetInboundGuidanceUnauthorized struct {
 	Payload *fulfillment_inbound_v0_models.GetInboundGuidanceResponse
 }
 
+// IsSuccess returns true when this get inbound guidance unauthorized response has a 2xx status code
+func (o *GetInboundGuidanceUnauthorized) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get inbound guidance unauthorized response has a 3xx status code
+func (o *GetInboundGuidanceUnauthorized) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get inbound guidance unauthorized response has a 4xx status code
+func (o *GetInboundGuidanceUnauthorized) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get inbound guidance unauthorized response has a 5xx status code
+func (o *GetInboundGuidanceUnauthorized) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get inbound guidance unauthorized response a status code equal to that given
+func (o *GetInboundGuidanceUnauthorized) IsCode(code int) bool {
+	return code == 401
+}
+
 func (o *GetInboundGuidanceUnauthorized) Error() string {
 	return fmt.Sprintf("[GET /fba/inbound/v0/itemsGuidance][%d] getInboundGuidanceUnauthorized  %+v", 401, o.Payload)
 }
+
+func (o *GetInboundGuidanceUnauthorized) String() string {
+	return fmt.Sprintf("[GET /fba/inbound/v0/itemsGuidance][%d] getInboundGuidanceUnauthorized  %+v", 401, o.Payload)
+}
+
 func (o *GetInboundGuidanceUnauthorized) GetPayload() *fulfillment_inbound_v0_models.GetInboundGuidanceResponse {
 	return o.Payload
 }
@@ -247,7 +340,8 @@ func NewGetInboundGuidanceForbidden() *GetInboundGuidanceForbidden {
 	return &GetInboundGuidanceForbidden{}
 }
 
-/* GetInboundGuidanceForbidden describes a response with status code 403, with default header values.
+/*
+GetInboundGuidanceForbidden describes a response with status code 403, with default header values.
 
 Indicates that access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.
 */
@@ -260,9 +354,39 @@ type GetInboundGuidanceForbidden struct {
 	Payload *fulfillment_inbound_v0_models.GetInboundGuidanceResponse
 }
 
+// IsSuccess returns true when this get inbound guidance forbidden response has a 2xx status code
+func (o *GetInboundGuidanceForbidden) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get inbound guidance forbidden response has a 3xx status code
+func (o *GetInboundGuidanceForbidden) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get inbound guidance forbidden response has a 4xx status code
+func (o *GetInboundGuidanceForbidden) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get inbound guidance forbidden response has a 5xx status code
+func (o *GetInboundGuidanceForbidden) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get inbound guidance forbidden response a status code equal to that given
+func (o *GetInboundGuidanceForbidden) IsCode(code int) bool {
+	return code == 403
+}
+
 func (o *GetInboundGuidanceForbidden) Error() string {
 	return fmt.Sprintf("[GET /fba/inbound/v0/itemsGuidance][%d] getInboundGuidanceForbidden  %+v", 403, o.Payload)
 }
+
+func (o *GetInboundGuidanceForbidden) String() string {
+	return fmt.Sprintf("[GET /fba/inbound/v0/itemsGuidance][%d] getInboundGuidanceForbidden  %+v", 403, o.Payload)
+}
+
 func (o *GetInboundGuidanceForbidden) GetPayload() *fulfillment_inbound_v0_models.GetInboundGuidanceResponse {
 	return o.Payload
 }
@@ -291,7 +415,8 @@ func NewGetInboundGuidanceNotFound() *GetInboundGuidanceNotFound {
 	return &GetInboundGuidanceNotFound{}
 }
 
-/* GetInboundGuidanceNotFound describes a response with status code 404, with default header values.
+/*
+GetInboundGuidanceNotFound describes a response with status code 404, with default header values.
 
 The specified resource does not exist.
 */
@@ -308,9 +433,39 @@ type GetInboundGuidanceNotFound struct {
 	Payload *fulfillment_inbound_v0_models.GetInboundGuidanceResponse
 }
 
+// IsSuccess returns true when this get inbound guidance not found response has a 2xx status code
+func (o *GetInboundGuidanceNotFound) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get inbound guidance not found response has a 3xx status code
+func (o *GetInboundGuidanceNotFound) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get inbound guidance not found response has a 4xx status code
+func (o *GetInboundGuidanceNotFound) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get inbound guidance not found response has a 5xx status code
+func (o *GetInboundGuidanceNotFound) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get inbound guidance not found response a status code equal to that given
+func (o *GetInboundGuidanceNotFound) IsCode(code int) bool {
+	return code == 404
+}
+
 func (o *GetInboundGuidanceNotFound) Error() string {
 	return fmt.Sprintf("[GET /fba/inbound/v0/itemsGuidance][%d] getInboundGuidanceNotFound  %+v", 404, o.Payload)
 }
+
+func (o *GetInboundGuidanceNotFound) String() string {
+	return fmt.Sprintf("[GET /fba/inbound/v0/itemsGuidance][%d] getInboundGuidanceNotFound  %+v", 404, o.Payload)
+}
+
 func (o *GetInboundGuidanceNotFound) GetPayload() *fulfillment_inbound_v0_models.GetInboundGuidanceResponse {
 	return o.Payload
 }
@@ -346,7 +501,8 @@ func NewGetInboundGuidanceTooManyRequests() *GetInboundGuidanceTooManyRequests {
 	return &GetInboundGuidanceTooManyRequests{}
 }
 
-/* GetInboundGuidanceTooManyRequests describes a response with status code 429, with default header values.
+/*
+GetInboundGuidanceTooManyRequests describes a response with status code 429, with default header values.
 
 The frequency of requests was greater than allowed.
 */
@@ -364,9 +520,39 @@ type GetInboundGuidanceTooManyRequests struct {
 	Payload *fulfillment_inbound_v0_models.GetInboundGuidanceResponse
 }
 
+// IsSuccess returns true when this get inbound guidance too many requests response has a 2xx status code
+func (o *GetInboundGuidanceTooManyRequests) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get inbound guidance too many requests response has a 3xx status code
+func (o *GetInboundGuidanceTooManyRequests) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get inbound guidance too many requests response has a 4xx status code
+func (o *GetInboundGuidanceTooManyRequests) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get inbound guidance too many requests response has a 5xx status code
+func (o *GetInboundGuidanceTooManyRequests) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get inbound guidance too many requests response a status code equal to that given
+func (o *GetInboundGuidanceTooManyRequests) IsCode(code int) bool {
+	return code == 429
+}
+
 func (o *GetInboundGuidanceTooManyRequests) Error() string {
 	return fmt.Sprintf("[GET /fba/inbound/v0/itemsGuidance][%d] getInboundGuidanceTooManyRequests  %+v", 429, o.Payload)
 }
+
+func (o *GetInboundGuidanceTooManyRequests) String() string {
+	return fmt.Sprintf("[GET /fba/inbound/v0/itemsGuidance][%d] getInboundGuidanceTooManyRequests  %+v", 429, o.Payload)
+}
+
 func (o *GetInboundGuidanceTooManyRequests) GetPayload() *fulfillment_inbound_v0_models.GetInboundGuidanceResponse {
 	return o.Payload
 }
@@ -402,7 +588,8 @@ func NewGetInboundGuidanceInternalServerError() *GetInboundGuidanceInternalServe
 	return &GetInboundGuidanceInternalServerError{}
 }
 
-/* GetInboundGuidanceInternalServerError describes a response with status code 500, with default header values.
+/*
+GetInboundGuidanceInternalServerError describes a response with status code 500, with default header values.
 
 An unexpected condition occurred that prevented the server from fulfilling the request.
 */
@@ -420,9 +607,39 @@ type GetInboundGuidanceInternalServerError struct {
 	Payload *fulfillment_inbound_v0_models.GetInboundGuidanceResponse
 }
 
+// IsSuccess returns true when this get inbound guidance internal server error response has a 2xx status code
+func (o *GetInboundGuidanceInternalServerError) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get inbound guidance internal server error response has a 3xx status code
+func (o *GetInboundGuidanceInternalServerError) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get inbound guidance internal server error response has a 4xx status code
+func (o *GetInboundGuidanceInternalServerError) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get inbound guidance internal server error response has a 5xx status code
+func (o *GetInboundGuidanceInternalServerError) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this get inbound guidance internal server error response a status code equal to that given
+func (o *GetInboundGuidanceInternalServerError) IsCode(code int) bool {
+	return code == 500
+}
+
 func (o *GetInboundGuidanceInternalServerError) Error() string {
 	return fmt.Sprintf("[GET /fba/inbound/v0/itemsGuidance][%d] getInboundGuidanceInternalServerError  %+v", 500, o.Payload)
 }
+
+func (o *GetInboundGuidanceInternalServerError) String() string {
+	return fmt.Sprintf("[GET /fba/inbound/v0/itemsGuidance][%d] getInboundGuidanceInternalServerError  %+v", 500, o.Payload)
+}
+
 func (o *GetInboundGuidanceInternalServerError) GetPayload() *fulfillment_inbound_v0_models.GetInboundGuidanceResponse {
 	return o.Payload
 }
@@ -458,7 +675,8 @@ func NewGetInboundGuidanceServiceUnavailable() *GetInboundGuidanceServiceUnavail
 	return &GetInboundGuidanceServiceUnavailable{}
 }
 
-/* GetInboundGuidanceServiceUnavailable describes a response with status code 503, with default header values.
+/*
+GetInboundGuidanceServiceUnavailable describes a response with status code 503, with default header values.
 
 Temporary overloading or maintenance of the server.
 */
@@ -476,9 +694,39 @@ type GetInboundGuidanceServiceUnavailable struct {
 	Payload *fulfillment_inbound_v0_models.GetInboundGuidanceResponse
 }
 
+// IsSuccess returns true when this get inbound guidance service unavailable response has a 2xx status code
+func (o *GetInboundGuidanceServiceUnavailable) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get inbound guidance service unavailable response has a 3xx status code
+func (o *GetInboundGuidanceServiceUnavailable) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get inbound guidance service unavailable response has a 4xx status code
+func (o *GetInboundGuidanceServiceUnavailable) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get inbound guidance service unavailable response has a 5xx status code
+func (o *GetInboundGuidanceServiceUnavailable) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this get inbound guidance service unavailable response a status code equal to that given
+func (o *GetInboundGuidanceServiceUnavailable) IsCode(code int) bool {
+	return code == 503
+}
+
 func (o *GetInboundGuidanceServiceUnavailable) Error() string {
 	return fmt.Sprintf("[GET /fba/inbound/v0/itemsGuidance][%d] getInboundGuidanceServiceUnavailable  %+v", 503, o.Payload)
 }
+
+func (o *GetInboundGuidanceServiceUnavailable) String() string {
+	return fmt.Sprintf("[GET /fba/inbound/v0/itemsGuidance][%d] getInboundGuidanceServiceUnavailable  %+v", 503, o.Payload)
+}
+
 func (o *GetInboundGuidanceServiceUnavailable) GetPayload() *fulfillment_inbound_v0_models.GetInboundGuidanceResponse {
 	return o.Payload
 }

@@ -93,7 +93,8 @@ func NewDeleteSubscriptionByIDOK() *DeleteSubscriptionByIDOK {
 	return &DeleteSubscriptionByIDOK{}
 }
 
-/* DeleteSubscriptionByIDOK describes a response with status code 200, with default header values.
+/*
+DeleteSubscriptionByIDOK describes a response with status code 200, with default header values.
 
 Success.
 */
@@ -110,9 +111,39 @@ type DeleteSubscriptionByIDOK struct {
 	Payload *notifications_models.DeleteSubscriptionByIDResponse
 }
 
+// IsSuccess returns true when this delete subscription by Id o k response has a 2xx status code
+func (o *DeleteSubscriptionByIDOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this delete subscription by Id o k response has a 3xx status code
+func (o *DeleteSubscriptionByIDOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this delete subscription by Id o k response has a 4xx status code
+func (o *DeleteSubscriptionByIDOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this delete subscription by Id o k response has a 5xx status code
+func (o *DeleteSubscriptionByIDOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this delete subscription by Id o k response a status code equal to that given
+func (o *DeleteSubscriptionByIDOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *DeleteSubscriptionByIDOK) Error() string {
 	return fmt.Sprintf("[DELETE /notifications/v1/subscriptions/{notificationType}/{subscriptionId}][%d] deleteSubscriptionByIdOK  %+v", 200, o.Payload)
 }
+
+func (o *DeleteSubscriptionByIDOK) String() string {
+	return fmt.Sprintf("[DELETE /notifications/v1/subscriptions/{notificationType}/{subscriptionId}][%d] deleteSubscriptionByIdOK  %+v", 200, o.Payload)
+}
+
 func (o *DeleteSubscriptionByIDOK) GetPayload() *notifications_models.DeleteSubscriptionByIDResponse {
 	return o.Payload
 }
@@ -148,7 +179,8 @@ func NewDeleteSubscriptionByIDBadRequest() *DeleteSubscriptionByIDBadRequest {
 	return &DeleteSubscriptionByIDBadRequest{}
 }
 
-/* DeleteSubscriptionByIDBadRequest describes a response with status code 400, with default header values.
+/*
+DeleteSubscriptionByIDBadRequest describes a response with status code 400, with default header values.
 
 Request has missing or invalid parameters and cannot be parsed.
 */
@@ -165,9 +197,39 @@ type DeleteSubscriptionByIDBadRequest struct {
 	Payload *notifications_models.DeleteSubscriptionByIDResponse
 }
 
+// IsSuccess returns true when this delete subscription by Id bad request response has a 2xx status code
+func (o *DeleteSubscriptionByIDBadRequest) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this delete subscription by Id bad request response has a 3xx status code
+func (o *DeleteSubscriptionByIDBadRequest) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this delete subscription by Id bad request response has a 4xx status code
+func (o *DeleteSubscriptionByIDBadRequest) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this delete subscription by Id bad request response has a 5xx status code
+func (o *DeleteSubscriptionByIDBadRequest) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this delete subscription by Id bad request response a status code equal to that given
+func (o *DeleteSubscriptionByIDBadRequest) IsCode(code int) bool {
+	return code == 400
+}
+
 func (o *DeleteSubscriptionByIDBadRequest) Error() string {
 	return fmt.Sprintf("[DELETE /notifications/v1/subscriptions/{notificationType}/{subscriptionId}][%d] deleteSubscriptionByIdBadRequest  %+v", 400, o.Payload)
 }
+
+func (o *DeleteSubscriptionByIDBadRequest) String() string {
+	return fmt.Sprintf("[DELETE /notifications/v1/subscriptions/{notificationType}/{subscriptionId}][%d] deleteSubscriptionByIdBadRequest  %+v", 400, o.Payload)
+}
+
 func (o *DeleteSubscriptionByIDBadRequest) GetPayload() *notifications_models.DeleteSubscriptionByIDResponse {
 	return o.Payload
 }
@@ -203,7 +265,8 @@ func NewDeleteSubscriptionByIDForbidden() *DeleteSubscriptionByIDForbidden {
 	return &DeleteSubscriptionByIDForbidden{}
 }
 
-/* DeleteSubscriptionByIDForbidden describes a response with status code 403, with default header values.
+/*
+DeleteSubscriptionByIDForbidden describes a response with status code 403, with default header values.
 
 Indicates that access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.
 */
@@ -216,9 +279,39 @@ type DeleteSubscriptionByIDForbidden struct {
 	Payload *notifications_models.DeleteSubscriptionByIDResponse
 }
 
+// IsSuccess returns true when this delete subscription by Id forbidden response has a 2xx status code
+func (o *DeleteSubscriptionByIDForbidden) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this delete subscription by Id forbidden response has a 3xx status code
+func (o *DeleteSubscriptionByIDForbidden) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this delete subscription by Id forbidden response has a 4xx status code
+func (o *DeleteSubscriptionByIDForbidden) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this delete subscription by Id forbidden response has a 5xx status code
+func (o *DeleteSubscriptionByIDForbidden) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this delete subscription by Id forbidden response a status code equal to that given
+func (o *DeleteSubscriptionByIDForbidden) IsCode(code int) bool {
+	return code == 403
+}
+
 func (o *DeleteSubscriptionByIDForbidden) Error() string {
 	return fmt.Sprintf("[DELETE /notifications/v1/subscriptions/{notificationType}/{subscriptionId}][%d] deleteSubscriptionByIdForbidden  %+v", 403, o.Payload)
 }
+
+func (o *DeleteSubscriptionByIDForbidden) String() string {
+	return fmt.Sprintf("[DELETE /notifications/v1/subscriptions/{notificationType}/{subscriptionId}][%d] deleteSubscriptionByIdForbidden  %+v", 403, o.Payload)
+}
+
 func (o *DeleteSubscriptionByIDForbidden) GetPayload() *notifications_models.DeleteSubscriptionByIDResponse {
 	return o.Payload
 }
@@ -247,7 +340,8 @@ func NewDeleteSubscriptionByIDNotFound() *DeleteSubscriptionByIDNotFound {
 	return &DeleteSubscriptionByIDNotFound{}
 }
 
-/* DeleteSubscriptionByIDNotFound describes a response with status code 404, with default header values.
+/*
+DeleteSubscriptionByIDNotFound describes a response with status code 404, with default header values.
 
 The resource specified does not exist.
 */
@@ -264,9 +358,39 @@ type DeleteSubscriptionByIDNotFound struct {
 	Payload *notifications_models.DeleteSubscriptionByIDResponse
 }
 
+// IsSuccess returns true when this delete subscription by Id not found response has a 2xx status code
+func (o *DeleteSubscriptionByIDNotFound) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this delete subscription by Id not found response has a 3xx status code
+func (o *DeleteSubscriptionByIDNotFound) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this delete subscription by Id not found response has a 4xx status code
+func (o *DeleteSubscriptionByIDNotFound) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this delete subscription by Id not found response has a 5xx status code
+func (o *DeleteSubscriptionByIDNotFound) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this delete subscription by Id not found response a status code equal to that given
+func (o *DeleteSubscriptionByIDNotFound) IsCode(code int) bool {
+	return code == 404
+}
+
 func (o *DeleteSubscriptionByIDNotFound) Error() string {
 	return fmt.Sprintf("[DELETE /notifications/v1/subscriptions/{notificationType}/{subscriptionId}][%d] deleteSubscriptionByIdNotFound  %+v", 404, o.Payload)
 }
+
+func (o *DeleteSubscriptionByIDNotFound) String() string {
+	return fmt.Sprintf("[DELETE /notifications/v1/subscriptions/{notificationType}/{subscriptionId}][%d] deleteSubscriptionByIdNotFound  %+v", 404, o.Payload)
+}
+
 func (o *DeleteSubscriptionByIDNotFound) GetPayload() *notifications_models.DeleteSubscriptionByIDResponse {
 	return o.Payload
 }
@@ -302,7 +426,8 @@ func NewDeleteSubscriptionByIDConflict() *DeleteSubscriptionByIDConflict {
 	return &DeleteSubscriptionByIDConflict{}
 }
 
-/* DeleteSubscriptionByIDConflict describes a response with status code 409, with default header values.
+/*
+DeleteSubscriptionByIDConflict describes a response with status code 409, with default header values.
 
 The resource specified conflicts with the current state.
 */
@@ -320,9 +445,39 @@ type DeleteSubscriptionByIDConflict struct {
 	Payload *notifications_models.DeleteSubscriptionByIDResponse
 }
 
+// IsSuccess returns true when this delete subscription by Id conflict response has a 2xx status code
+func (o *DeleteSubscriptionByIDConflict) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this delete subscription by Id conflict response has a 3xx status code
+func (o *DeleteSubscriptionByIDConflict) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this delete subscription by Id conflict response has a 4xx status code
+func (o *DeleteSubscriptionByIDConflict) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this delete subscription by Id conflict response has a 5xx status code
+func (o *DeleteSubscriptionByIDConflict) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this delete subscription by Id conflict response a status code equal to that given
+func (o *DeleteSubscriptionByIDConflict) IsCode(code int) bool {
+	return code == 409
+}
+
 func (o *DeleteSubscriptionByIDConflict) Error() string {
 	return fmt.Sprintf("[DELETE /notifications/v1/subscriptions/{notificationType}/{subscriptionId}][%d] deleteSubscriptionByIdConflict  %+v", 409, o.Payload)
 }
+
+func (o *DeleteSubscriptionByIDConflict) String() string {
+	return fmt.Sprintf("[DELETE /notifications/v1/subscriptions/{notificationType}/{subscriptionId}][%d] deleteSubscriptionByIdConflict  %+v", 409, o.Payload)
+}
+
 func (o *DeleteSubscriptionByIDConflict) GetPayload() *notifications_models.DeleteSubscriptionByIDResponse {
 	return o.Payload
 }
@@ -358,7 +513,8 @@ func NewDeleteSubscriptionByIDRequestEntityTooLarge() *DeleteSubscriptionByIDReq
 	return &DeleteSubscriptionByIDRequestEntityTooLarge{}
 }
 
-/* DeleteSubscriptionByIDRequestEntityTooLarge describes a response with status code 413, with default header values.
+/*
+DeleteSubscriptionByIDRequestEntityTooLarge describes a response with status code 413, with default header values.
 
 The request size exceeded the maximum accepted size.
 */
@@ -376,9 +532,39 @@ type DeleteSubscriptionByIDRequestEntityTooLarge struct {
 	Payload *notifications_models.DeleteSubscriptionByIDResponse
 }
 
+// IsSuccess returns true when this delete subscription by Id request entity too large response has a 2xx status code
+func (o *DeleteSubscriptionByIDRequestEntityTooLarge) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this delete subscription by Id request entity too large response has a 3xx status code
+func (o *DeleteSubscriptionByIDRequestEntityTooLarge) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this delete subscription by Id request entity too large response has a 4xx status code
+func (o *DeleteSubscriptionByIDRequestEntityTooLarge) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this delete subscription by Id request entity too large response has a 5xx status code
+func (o *DeleteSubscriptionByIDRequestEntityTooLarge) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this delete subscription by Id request entity too large response a status code equal to that given
+func (o *DeleteSubscriptionByIDRequestEntityTooLarge) IsCode(code int) bool {
+	return code == 413
+}
+
 func (o *DeleteSubscriptionByIDRequestEntityTooLarge) Error() string {
 	return fmt.Sprintf("[DELETE /notifications/v1/subscriptions/{notificationType}/{subscriptionId}][%d] deleteSubscriptionByIdRequestEntityTooLarge  %+v", 413, o.Payload)
 }
+
+func (o *DeleteSubscriptionByIDRequestEntityTooLarge) String() string {
+	return fmt.Sprintf("[DELETE /notifications/v1/subscriptions/{notificationType}/{subscriptionId}][%d] deleteSubscriptionByIdRequestEntityTooLarge  %+v", 413, o.Payload)
+}
+
 func (o *DeleteSubscriptionByIDRequestEntityTooLarge) GetPayload() *notifications_models.DeleteSubscriptionByIDResponse {
 	return o.Payload
 }
@@ -414,7 +600,8 @@ func NewDeleteSubscriptionByIDUnsupportedMediaType() *DeleteSubscriptionByIDUnsu
 	return &DeleteSubscriptionByIDUnsupportedMediaType{}
 }
 
-/* DeleteSubscriptionByIDUnsupportedMediaType describes a response with status code 415, with default header values.
+/*
+DeleteSubscriptionByIDUnsupportedMediaType describes a response with status code 415, with default header values.
 
 The request payload is in an unsupported format.
 */
@@ -432,9 +619,39 @@ type DeleteSubscriptionByIDUnsupportedMediaType struct {
 	Payload *notifications_models.DeleteSubscriptionByIDResponse
 }
 
+// IsSuccess returns true when this delete subscription by Id unsupported media type response has a 2xx status code
+func (o *DeleteSubscriptionByIDUnsupportedMediaType) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this delete subscription by Id unsupported media type response has a 3xx status code
+func (o *DeleteSubscriptionByIDUnsupportedMediaType) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this delete subscription by Id unsupported media type response has a 4xx status code
+func (o *DeleteSubscriptionByIDUnsupportedMediaType) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this delete subscription by Id unsupported media type response has a 5xx status code
+func (o *DeleteSubscriptionByIDUnsupportedMediaType) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this delete subscription by Id unsupported media type response a status code equal to that given
+func (o *DeleteSubscriptionByIDUnsupportedMediaType) IsCode(code int) bool {
+	return code == 415
+}
+
 func (o *DeleteSubscriptionByIDUnsupportedMediaType) Error() string {
 	return fmt.Sprintf("[DELETE /notifications/v1/subscriptions/{notificationType}/{subscriptionId}][%d] deleteSubscriptionByIdUnsupportedMediaType  %+v", 415, o.Payload)
 }
+
+func (o *DeleteSubscriptionByIDUnsupportedMediaType) String() string {
+	return fmt.Sprintf("[DELETE /notifications/v1/subscriptions/{notificationType}/{subscriptionId}][%d] deleteSubscriptionByIdUnsupportedMediaType  %+v", 415, o.Payload)
+}
+
 func (o *DeleteSubscriptionByIDUnsupportedMediaType) GetPayload() *notifications_models.DeleteSubscriptionByIDResponse {
 	return o.Payload
 }
@@ -470,7 +687,8 @@ func NewDeleteSubscriptionByIDTooManyRequests() *DeleteSubscriptionByIDTooManyRe
 	return &DeleteSubscriptionByIDTooManyRequests{}
 }
 
-/* DeleteSubscriptionByIDTooManyRequests describes a response with status code 429, with default header values.
+/*
+DeleteSubscriptionByIDTooManyRequests describes a response with status code 429, with default header values.
 
 The frequency of requests was greater than allowed.
 */
@@ -487,9 +705,39 @@ type DeleteSubscriptionByIDTooManyRequests struct {
 	Payload *notifications_models.DeleteSubscriptionByIDResponse
 }
 
+// IsSuccess returns true when this delete subscription by Id too many requests response has a 2xx status code
+func (o *DeleteSubscriptionByIDTooManyRequests) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this delete subscription by Id too many requests response has a 3xx status code
+func (o *DeleteSubscriptionByIDTooManyRequests) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this delete subscription by Id too many requests response has a 4xx status code
+func (o *DeleteSubscriptionByIDTooManyRequests) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this delete subscription by Id too many requests response has a 5xx status code
+func (o *DeleteSubscriptionByIDTooManyRequests) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this delete subscription by Id too many requests response a status code equal to that given
+func (o *DeleteSubscriptionByIDTooManyRequests) IsCode(code int) bool {
+	return code == 429
+}
+
 func (o *DeleteSubscriptionByIDTooManyRequests) Error() string {
 	return fmt.Sprintf("[DELETE /notifications/v1/subscriptions/{notificationType}/{subscriptionId}][%d] deleteSubscriptionByIdTooManyRequests  %+v", 429, o.Payload)
 }
+
+func (o *DeleteSubscriptionByIDTooManyRequests) String() string {
+	return fmt.Sprintf("[DELETE /notifications/v1/subscriptions/{notificationType}/{subscriptionId}][%d] deleteSubscriptionByIdTooManyRequests  %+v", 429, o.Payload)
+}
+
 func (o *DeleteSubscriptionByIDTooManyRequests) GetPayload() *notifications_models.DeleteSubscriptionByIDResponse {
 	return o.Payload
 }
@@ -525,7 +773,8 @@ func NewDeleteSubscriptionByIDInternalServerError() *DeleteSubscriptionByIDInter
 	return &DeleteSubscriptionByIDInternalServerError{}
 }
 
-/* DeleteSubscriptionByIDInternalServerError describes a response with status code 500, with default header values.
+/*
+DeleteSubscriptionByIDInternalServerError describes a response with status code 500, with default header values.
 
 An unexpected condition occurred that prevented the server from fulfilling the request.
 */
@@ -543,9 +792,39 @@ type DeleteSubscriptionByIDInternalServerError struct {
 	Payload *notifications_models.DeleteSubscriptionByIDResponse
 }
 
+// IsSuccess returns true when this delete subscription by Id internal server error response has a 2xx status code
+func (o *DeleteSubscriptionByIDInternalServerError) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this delete subscription by Id internal server error response has a 3xx status code
+func (o *DeleteSubscriptionByIDInternalServerError) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this delete subscription by Id internal server error response has a 4xx status code
+func (o *DeleteSubscriptionByIDInternalServerError) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this delete subscription by Id internal server error response has a 5xx status code
+func (o *DeleteSubscriptionByIDInternalServerError) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this delete subscription by Id internal server error response a status code equal to that given
+func (o *DeleteSubscriptionByIDInternalServerError) IsCode(code int) bool {
+	return code == 500
+}
+
 func (o *DeleteSubscriptionByIDInternalServerError) Error() string {
 	return fmt.Sprintf("[DELETE /notifications/v1/subscriptions/{notificationType}/{subscriptionId}][%d] deleteSubscriptionByIdInternalServerError  %+v", 500, o.Payload)
 }
+
+func (o *DeleteSubscriptionByIDInternalServerError) String() string {
+	return fmt.Sprintf("[DELETE /notifications/v1/subscriptions/{notificationType}/{subscriptionId}][%d] deleteSubscriptionByIdInternalServerError  %+v", 500, o.Payload)
+}
+
 func (o *DeleteSubscriptionByIDInternalServerError) GetPayload() *notifications_models.DeleteSubscriptionByIDResponse {
 	return o.Payload
 }
@@ -581,7 +860,8 @@ func NewDeleteSubscriptionByIDServiceUnavailable() *DeleteSubscriptionByIDServic
 	return &DeleteSubscriptionByIDServiceUnavailable{}
 }
 
-/* DeleteSubscriptionByIDServiceUnavailable describes a response with status code 503, with default header values.
+/*
+DeleteSubscriptionByIDServiceUnavailable describes a response with status code 503, with default header values.
 
 Temporary overloading or maintenance of the server.
 */
@@ -599,9 +879,39 @@ type DeleteSubscriptionByIDServiceUnavailable struct {
 	Payload *notifications_models.DeleteSubscriptionByIDResponse
 }
 
+// IsSuccess returns true when this delete subscription by Id service unavailable response has a 2xx status code
+func (o *DeleteSubscriptionByIDServiceUnavailable) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this delete subscription by Id service unavailable response has a 3xx status code
+func (o *DeleteSubscriptionByIDServiceUnavailable) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this delete subscription by Id service unavailable response has a 4xx status code
+func (o *DeleteSubscriptionByIDServiceUnavailable) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this delete subscription by Id service unavailable response has a 5xx status code
+func (o *DeleteSubscriptionByIDServiceUnavailable) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this delete subscription by Id service unavailable response a status code equal to that given
+func (o *DeleteSubscriptionByIDServiceUnavailable) IsCode(code int) bool {
+	return code == 503
+}
+
 func (o *DeleteSubscriptionByIDServiceUnavailable) Error() string {
 	return fmt.Sprintf("[DELETE /notifications/v1/subscriptions/{notificationType}/{subscriptionId}][%d] deleteSubscriptionByIdServiceUnavailable  %+v", 503, o.Payload)
 }
+
+func (o *DeleteSubscriptionByIDServiceUnavailable) String() string {
+	return fmt.Sprintf("[DELETE /notifications/v1/subscriptions/{notificationType}/{subscriptionId}][%d] deleteSubscriptionByIdServiceUnavailable  %+v", 503, o.Payload)
+}
+
 func (o *DeleteSubscriptionByIDServiceUnavailable) GetPayload() *notifications_models.DeleteSubscriptionByIDResponse {
 	return o.Payload
 }

@@ -52,10 +52,12 @@ func NewGetPackingSlipParamsWithHTTPClient(client *http.Client) *GetPackingSlipP
 	}
 }
 
-/* GetPackingSlipParams contains all the parameters to send to the API endpoint
-   for the get packing slip operation.
+/*
+GetPackingSlipParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the get packing slip operation.
+
+	Typically these are written to a http.Request.
 */
 type GetPackingSlipParams struct {
 

@@ -87,7 +87,8 @@ func NewGetAppointmentSlotsOK() *GetAppointmentSlotsOK {
 	return &GetAppointmentSlotsOK{}
 }
 
-/* GetAppointmentSlotsOK describes a response with status code 200, with default header values.
+/*
+GetAppointmentSlotsOK describes a response with status code 200, with default header values.
 
 Success response.
 */
@@ -104,9 +105,39 @@ type GetAppointmentSlotsOK struct {
 	Payload *services_models.GetAppointmentSlotsResponse
 }
 
+// IsSuccess returns true when this get appointment slots o k response has a 2xx status code
+func (o *GetAppointmentSlotsOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this get appointment slots o k response has a 3xx status code
+func (o *GetAppointmentSlotsOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get appointment slots o k response has a 4xx status code
+func (o *GetAppointmentSlotsOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get appointment slots o k response has a 5xx status code
+func (o *GetAppointmentSlotsOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get appointment slots o k response a status code equal to that given
+func (o *GetAppointmentSlotsOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *GetAppointmentSlotsOK) Error() string {
 	return fmt.Sprintf("[GET /service/v1/appointmentSlots][%d] getAppointmentSlotsOK  %+v", 200, o.Payload)
 }
+
+func (o *GetAppointmentSlotsOK) String() string {
+	return fmt.Sprintf("[GET /service/v1/appointmentSlots][%d] getAppointmentSlotsOK  %+v", 200, o.Payload)
+}
+
 func (o *GetAppointmentSlotsOK) GetPayload() *services_models.GetAppointmentSlotsResponse {
 	return o.Payload
 }
@@ -142,7 +173,8 @@ func NewGetAppointmentSlotsBadRequest() *GetAppointmentSlotsBadRequest {
 	return &GetAppointmentSlotsBadRequest{}
 }
 
-/* GetAppointmentSlotsBadRequest describes a response with status code 400, with default header values.
+/*
+GetAppointmentSlotsBadRequest describes a response with status code 400, with default header values.
 
 Request has missing or invalid parameters and cannot be parsed.
 */
@@ -159,9 +191,39 @@ type GetAppointmentSlotsBadRequest struct {
 	Payload *services_models.GetAppointmentSlotsResponse
 }
 
+// IsSuccess returns true when this get appointment slots bad request response has a 2xx status code
+func (o *GetAppointmentSlotsBadRequest) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get appointment slots bad request response has a 3xx status code
+func (o *GetAppointmentSlotsBadRequest) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get appointment slots bad request response has a 4xx status code
+func (o *GetAppointmentSlotsBadRequest) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get appointment slots bad request response has a 5xx status code
+func (o *GetAppointmentSlotsBadRequest) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get appointment slots bad request response a status code equal to that given
+func (o *GetAppointmentSlotsBadRequest) IsCode(code int) bool {
+	return code == 400
+}
+
 func (o *GetAppointmentSlotsBadRequest) Error() string {
 	return fmt.Sprintf("[GET /service/v1/appointmentSlots][%d] getAppointmentSlotsBadRequest  %+v", 400, o.Payload)
 }
+
+func (o *GetAppointmentSlotsBadRequest) String() string {
+	return fmt.Sprintf("[GET /service/v1/appointmentSlots][%d] getAppointmentSlotsBadRequest  %+v", 400, o.Payload)
+}
+
 func (o *GetAppointmentSlotsBadRequest) GetPayload() *services_models.GetAppointmentSlotsResponse {
 	return o.Payload
 }
@@ -197,7 +259,8 @@ func NewGetAppointmentSlotsForbidden() *GetAppointmentSlotsForbidden {
 	return &GetAppointmentSlotsForbidden{}
 }
 
-/* GetAppointmentSlotsForbidden describes a response with status code 403, with default header values.
+/*
+GetAppointmentSlotsForbidden describes a response with status code 403, with default header values.
 
 Indicates that access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.
 */
@@ -210,9 +273,39 @@ type GetAppointmentSlotsForbidden struct {
 	Payload *services_models.GetAppointmentSlotsResponse
 }
 
+// IsSuccess returns true when this get appointment slots forbidden response has a 2xx status code
+func (o *GetAppointmentSlotsForbidden) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get appointment slots forbidden response has a 3xx status code
+func (o *GetAppointmentSlotsForbidden) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get appointment slots forbidden response has a 4xx status code
+func (o *GetAppointmentSlotsForbidden) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get appointment slots forbidden response has a 5xx status code
+func (o *GetAppointmentSlotsForbidden) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get appointment slots forbidden response a status code equal to that given
+func (o *GetAppointmentSlotsForbidden) IsCode(code int) bool {
+	return code == 403
+}
+
 func (o *GetAppointmentSlotsForbidden) Error() string {
 	return fmt.Sprintf("[GET /service/v1/appointmentSlots][%d] getAppointmentSlotsForbidden  %+v", 403, o.Payload)
 }
+
+func (o *GetAppointmentSlotsForbidden) String() string {
+	return fmt.Sprintf("[GET /service/v1/appointmentSlots][%d] getAppointmentSlotsForbidden  %+v", 403, o.Payload)
+}
+
 func (o *GetAppointmentSlotsForbidden) GetPayload() *services_models.GetAppointmentSlotsResponse {
 	return o.Payload
 }
@@ -241,7 +334,8 @@ func NewGetAppointmentSlotsNotFound() *GetAppointmentSlotsNotFound {
 	return &GetAppointmentSlotsNotFound{}
 }
 
-/* GetAppointmentSlotsNotFound describes a response with status code 404, with default header values.
+/*
+GetAppointmentSlotsNotFound describes a response with status code 404, with default header values.
 
 The resource specified does not exist.
 */
@@ -258,9 +352,39 @@ type GetAppointmentSlotsNotFound struct {
 	Payload *services_models.GetAppointmentSlotsResponse
 }
 
+// IsSuccess returns true when this get appointment slots not found response has a 2xx status code
+func (o *GetAppointmentSlotsNotFound) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get appointment slots not found response has a 3xx status code
+func (o *GetAppointmentSlotsNotFound) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get appointment slots not found response has a 4xx status code
+func (o *GetAppointmentSlotsNotFound) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get appointment slots not found response has a 5xx status code
+func (o *GetAppointmentSlotsNotFound) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get appointment slots not found response a status code equal to that given
+func (o *GetAppointmentSlotsNotFound) IsCode(code int) bool {
+	return code == 404
+}
+
 func (o *GetAppointmentSlotsNotFound) Error() string {
 	return fmt.Sprintf("[GET /service/v1/appointmentSlots][%d] getAppointmentSlotsNotFound  %+v", 404, o.Payload)
 }
+
+func (o *GetAppointmentSlotsNotFound) String() string {
+	return fmt.Sprintf("[GET /service/v1/appointmentSlots][%d] getAppointmentSlotsNotFound  %+v", 404, o.Payload)
+}
+
 func (o *GetAppointmentSlotsNotFound) GetPayload() *services_models.GetAppointmentSlotsResponse {
 	return o.Payload
 }
@@ -296,7 +420,8 @@ func NewGetAppointmentSlotsUnsupportedMediaType() *GetAppointmentSlotsUnsupporte
 	return &GetAppointmentSlotsUnsupportedMediaType{}
 }
 
-/* GetAppointmentSlotsUnsupportedMediaType describes a response with status code 415, with default header values.
+/*
+GetAppointmentSlotsUnsupportedMediaType describes a response with status code 415, with default header values.
 
 The request payload is in an unsupported format.
 */
@@ -313,9 +438,39 @@ type GetAppointmentSlotsUnsupportedMediaType struct {
 	Payload *services_models.GetAppointmentSlotsResponse
 }
 
+// IsSuccess returns true when this get appointment slots unsupported media type response has a 2xx status code
+func (o *GetAppointmentSlotsUnsupportedMediaType) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get appointment slots unsupported media type response has a 3xx status code
+func (o *GetAppointmentSlotsUnsupportedMediaType) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get appointment slots unsupported media type response has a 4xx status code
+func (o *GetAppointmentSlotsUnsupportedMediaType) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get appointment slots unsupported media type response has a 5xx status code
+func (o *GetAppointmentSlotsUnsupportedMediaType) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get appointment slots unsupported media type response a status code equal to that given
+func (o *GetAppointmentSlotsUnsupportedMediaType) IsCode(code int) bool {
+	return code == 415
+}
+
 func (o *GetAppointmentSlotsUnsupportedMediaType) Error() string {
 	return fmt.Sprintf("[GET /service/v1/appointmentSlots][%d] getAppointmentSlotsUnsupportedMediaType  %+v", 415, o.Payload)
 }
+
+func (o *GetAppointmentSlotsUnsupportedMediaType) String() string {
+	return fmt.Sprintf("[GET /service/v1/appointmentSlots][%d] getAppointmentSlotsUnsupportedMediaType  %+v", 415, o.Payload)
+}
+
 func (o *GetAppointmentSlotsUnsupportedMediaType) GetPayload() *services_models.GetAppointmentSlotsResponse {
 	return o.Payload
 }
@@ -351,7 +506,8 @@ func NewGetAppointmentSlotsUnprocessableEntity() *GetAppointmentSlotsUnprocessab
 	return &GetAppointmentSlotsUnprocessableEntity{}
 }
 
-/* GetAppointmentSlotsUnprocessableEntity describes a response with status code 422, with default header values.
+/*
+GetAppointmentSlotsUnprocessableEntity describes a response with status code 422, with default header values.
 
 Unprocessable Entity. Unable to process the contained instructions.
 */
@@ -368,9 +524,39 @@ type GetAppointmentSlotsUnprocessableEntity struct {
 	Payload *services_models.GetAppointmentSlotsResponse
 }
 
+// IsSuccess returns true when this get appointment slots unprocessable entity response has a 2xx status code
+func (o *GetAppointmentSlotsUnprocessableEntity) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get appointment slots unprocessable entity response has a 3xx status code
+func (o *GetAppointmentSlotsUnprocessableEntity) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get appointment slots unprocessable entity response has a 4xx status code
+func (o *GetAppointmentSlotsUnprocessableEntity) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get appointment slots unprocessable entity response has a 5xx status code
+func (o *GetAppointmentSlotsUnprocessableEntity) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get appointment slots unprocessable entity response a status code equal to that given
+func (o *GetAppointmentSlotsUnprocessableEntity) IsCode(code int) bool {
+	return code == 422
+}
+
 func (o *GetAppointmentSlotsUnprocessableEntity) Error() string {
 	return fmt.Sprintf("[GET /service/v1/appointmentSlots][%d] getAppointmentSlotsUnprocessableEntity  %+v", 422, o.Payload)
 }
+
+func (o *GetAppointmentSlotsUnprocessableEntity) String() string {
+	return fmt.Sprintf("[GET /service/v1/appointmentSlots][%d] getAppointmentSlotsUnprocessableEntity  %+v", 422, o.Payload)
+}
+
 func (o *GetAppointmentSlotsUnprocessableEntity) GetPayload() *services_models.GetAppointmentSlotsResponse {
 	return o.Payload
 }
@@ -406,7 +592,8 @@ func NewGetAppointmentSlotsTooManyRequests() *GetAppointmentSlotsTooManyRequests
 	return &GetAppointmentSlotsTooManyRequests{}
 }
 
-/* GetAppointmentSlotsTooManyRequests describes a response with status code 429, with default header values.
+/*
+GetAppointmentSlotsTooManyRequests describes a response with status code 429, with default header values.
 
 The frequency of requests was greater than allowed.
 */
@@ -423,9 +610,39 @@ type GetAppointmentSlotsTooManyRequests struct {
 	Payload *services_models.GetAppointmentSlotsResponse
 }
 
+// IsSuccess returns true when this get appointment slots too many requests response has a 2xx status code
+func (o *GetAppointmentSlotsTooManyRequests) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get appointment slots too many requests response has a 3xx status code
+func (o *GetAppointmentSlotsTooManyRequests) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get appointment slots too many requests response has a 4xx status code
+func (o *GetAppointmentSlotsTooManyRequests) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get appointment slots too many requests response has a 5xx status code
+func (o *GetAppointmentSlotsTooManyRequests) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get appointment slots too many requests response a status code equal to that given
+func (o *GetAppointmentSlotsTooManyRequests) IsCode(code int) bool {
+	return code == 429
+}
+
 func (o *GetAppointmentSlotsTooManyRequests) Error() string {
 	return fmt.Sprintf("[GET /service/v1/appointmentSlots][%d] getAppointmentSlotsTooManyRequests  %+v", 429, o.Payload)
 }
+
+func (o *GetAppointmentSlotsTooManyRequests) String() string {
+	return fmt.Sprintf("[GET /service/v1/appointmentSlots][%d] getAppointmentSlotsTooManyRequests  %+v", 429, o.Payload)
+}
+
 func (o *GetAppointmentSlotsTooManyRequests) GetPayload() *services_models.GetAppointmentSlotsResponse {
 	return o.Payload
 }
@@ -461,7 +678,8 @@ func NewGetAppointmentSlotsInternalServerError() *GetAppointmentSlotsInternalSer
 	return &GetAppointmentSlotsInternalServerError{}
 }
 
-/* GetAppointmentSlotsInternalServerError describes a response with status code 500, with default header values.
+/*
+GetAppointmentSlotsInternalServerError describes a response with status code 500, with default header values.
 
 An unexpected condition occurred that prevented the server from fulfilling the request.
 */
@@ -478,9 +696,39 @@ type GetAppointmentSlotsInternalServerError struct {
 	Payload *services_models.GetAppointmentSlotsResponse
 }
 
+// IsSuccess returns true when this get appointment slots internal server error response has a 2xx status code
+func (o *GetAppointmentSlotsInternalServerError) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get appointment slots internal server error response has a 3xx status code
+func (o *GetAppointmentSlotsInternalServerError) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get appointment slots internal server error response has a 4xx status code
+func (o *GetAppointmentSlotsInternalServerError) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get appointment slots internal server error response has a 5xx status code
+func (o *GetAppointmentSlotsInternalServerError) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this get appointment slots internal server error response a status code equal to that given
+func (o *GetAppointmentSlotsInternalServerError) IsCode(code int) bool {
+	return code == 500
+}
+
 func (o *GetAppointmentSlotsInternalServerError) Error() string {
 	return fmt.Sprintf("[GET /service/v1/appointmentSlots][%d] getAppointmentSlotsInternalServerError  %+v", 500, o.Payload)
 }
+
+func (o *GetAppointmentSlotsInternalServerError) String() string {
+	return fmt.Sprintf("[GET /service/v1/appointmentSlots][%d] getAppointmentSlotsInternalServerError  %+v", 500, o.Payload)
+}
+
 func (o *GetAppointmentSlotsInternalServerError) GetPayload() *services_models.GetAppointmentSlotsResponse {
 	return o.Payload
 }
@@ -516,7 +764,8 @@ func NewGetAppointmentSlotsServiceUnavailable() *GetAppointmentSlotsServiceUnava
 	return &GetAppointmentSlotsServiceUnavailable{}
 }
 
-/* GetAppointmentSlotsServiceUnavailable describes a response with status code 503, with default header values.
+/*
+GetAppointmentSlotsServiceUnavailable describes a response with status code 503, with default header values.
 
 Temporary overloading or maintenance of the server.
 */
@@ -533,9 +782,39 @@ type GetAppointmentSlotsServiceUnavailable struct {
 	Payload *services_models.GetAppointmentSlotsResponse
 }
 
+// IsSuccess returns true when this get appointment slots service unavailable response has a 2xx status code
+func (o *GetAppointmentSlotsServiceUnavailable) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get appointment slots service unavailable response has a 3xx status code
+func (o *GetAppointmentSlotsServiceUnavailable) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get appointment slots service unavailable response has a 4xx status code
+func (o *GetAppointmentSlotsServiceUnavailable) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get appointment slots service unavailable response has a 5xx status code
+func (o *GetAppointmentSlotsServiceUnavailable) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this get appointment slots service unavailable response a status code equal to that given
+func (o *GetAppointmentSlotsServiceUnavailable) IsCode(code int) bool {
+	return code == 503
+}
+
 func (o *GetAppointmentSlotsServiceUnavailable) Error() string {
 	return fmt.Sprintf("[GET /service/v1/appointmentSlots][%d] getAppointmentSlotsServiceUnavailable  %+v", 503, o.Payload)
 }
+
+func (o *GetAppointmentSlotsServiceUnavailable) String() string {
+	return fmt.Sprintf("[GET /service/v1/appointmentSlots][%d] getAppointmentSlotsServiceUnavailable  %+v", 503, o.Payload)
+}
+
 func (o *GetAppointmentSlotsServiceUnavailable) GetPayload() *services_models.GetAppointmentSlotsResponse {
 	return o.Payload
 }

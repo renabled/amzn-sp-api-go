@@ -87,7 +87,8 @@ func NewCreateDigitalAccessKeyCreated() *CreateDigitalAccessKeyCreated {
 	return &CreateDigitalAccessKeyCreated{}
 }
 
-/* CreateDigitalAccessKeyCreated describes a response with status code 201, with default header values.
+/*
+CreateDigitalAccessKeyCreated describes a response with status code 201, with default header values.
 
 The message was created for the order.
 */
@@ -104,9 +105,39 @@ type CreateDigitalAccessKeyCreated struct {
 	Payload *messaging_models.CreateDigitalAccessKeyResponse
 }
 
+// IsSuccess returns true when this create digital access key created response has a 2xx status code
+func (o *CreateDigitalAccessKeyCreated) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this create digital access key created response has a 3xx status code
+func (o *CreateDigitalAccessKeyCreated) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create digital access key created response has a 4xx status code
+func (o *CreateDigitalAccessKeyCreated) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this create digital access key created response has a 5xx status code
+func (o *CreateDigitalAccessKeyCreated) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this create digital access key created response a status code equal to that given
+func (o *CreateDigitalAccessKeyCreated) IsCode(code int) bool {
+	return code == 201
+}
+
 func (o *CreateDigitalAccessKeyCreated) Error() string {
 	return fmt.Sprintf("[POST /messaging/v1/orders/{amazonOrderId}/messages/digitalAccessKey][%d] createDigitalAccessKeyCreated  %+v", 201, o.Payload)
 }
+
+func (o *CreateDigitalAccessKeyCreated) String() string {
+	return fmt.Sprintf("[POST /messaging/v1/orders/{amazonOrderId}/messages/digitalAccessKey][%d] createDigitalAccessKeyCreated  %+v", 201, o.Payload)
+}
+
 func (o *CreateDigitalAccessKeyCreated) GetPayload() *messaging_models.CreateDigitalAccessKeyResponse {
 	return o.Payload
 }
@@ -142,7 +173,8 @@ func NewCreateDigitalAccessKeyBadRequest() *CreateDigitalAccessKeyBadRequest {
 	return &CreateDigitalAccessKeyBadRequest{}
 }
 
-/* CreateDigitalAccessKeyBadRequest describes a response with status code 400, with default header values.
+/*
+CreateDigitalAccessKeyBadRequest describes a response with status code 400, with default header values.
 
 Request has missing or invalid parameters and cannot be parsed.
 */
@@ -159,9 +191,39 @@ type CreateDigitalAccessKeyBadRequest struct {
 	Payload *messaging_models.CreateDigitalAccessKeyResponse
 }
 
+// IsSuccess returns true when this create digital access key bad request response has a 2xx status code
+func (o *CreateDigitalAccessKeyBadRequest) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this create digital access key bad request response has a 3xx status code
+func (o *CreateDigitalAccessKeyBadRequest) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create digital access key bad request response has a 4xx status code
+func (o *CreateDigitalAccessKeyBadRequest) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this create digital access key bad request response has a 5xx status code
+func (o *CreateDigitalAccessKeyBadRequest) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this create digital access key bad request response a status code equal to that given
+func (o *CreateDigitalAccessKeyBadRequest) IsCode(code int) bool {
+	return code == 400
+}
+
 func (o *CreateDigitalAccessKeyBadRequest) Error() string {
 	return fmt.Sprintf("[POST /messaging/v1/orders/{amazonOrderId}/messages/digitalAccessKey][%d] createDigitalAccessKeyBadRequest  %+v", 400, o.Payload)
 }
+
+func (o *CreateDigitalAccessKeyBadRequest) String() string {
+	return fmt.Sprintf("[POST /messaging/v1/orders/{amazonOrderId}/messages/digitalAccessKey][%d] createDigitalAccessKeyBadRequest  %+v", 400, o.Payload)
+}
+
 func (o *CreateDigitalAccessKeyBadRequest) GetPayload() *messaging_models.CreateDigitalAccessKeyResponse {
 	return o.Payload
 }
@@ -197,7 +259,8 @@ func NewCreateDigitalAccessKeyForbidden() *CreateDigitalAccessKeyForbidden {
 	return &CreateDigitalAccessKeyForbidden{}
 }
 
-/* CreateDigitalAccessKeyForbidden describes a response with status code 403, with default header values.
+/*
+CreateDigitalAccessKeyForbidden describes a response with status code 403, with default header values.
 
 Indicates that access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.
 */
@@ -210,9 +273,39 @@ type CreateDigitalAccessKeyForbidden struct {
 	Payload *messaging_models.CreateDigitalAccessKeyResponse
 }
 
+// IsSuccess returns true when this create digital access key forbidden response has a 2xx status code
+func (o *CreateDigitalAccessKeyForbidden) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this create digital access key forbidden response has a 3xx status code
+func (o *CreateDigitalAccessKeyForbidden) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create digital access key forbidden response has a 4xx status code
+func (o *CreateDigitalAccessKeyForbidden) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this create digital access key forbidden response has a 5xx status code
+func (o *CreateDigitalAccessKeyForbidden) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this create digital access key forbidden response a status code equal to that given
+func (o *CreateDigitalAccessKeyForbidden) IsCode(code int) bool {
+	return code == 403
+}
+
 func (o *CreateDigitalAccessKeyForbidden) Error() string {
 	return fmt.Sprintf("[POST /messaging/v1/orders/{amazonOrderId}/messages/digitalAccessKey][%d] createDigitalAccessKeyForbidden  %+v", 403, o.Payload)
 }
+
+func (o *CreateDigitalAccessKeyForbidden) String() string {
+	return fmt.Sprintf("[POST /messaging/v1/orders/{amazonOrderId}/messages/digitalAccessKey][%d] createDigitalAccessKeyForbidden  %+v", 403, o.Payload)
+}
+
 func (o *CreateDigitalAccessKeyForbidden) GetPayload() *messaging_models.CreateDigitalAccessKeyResponse {
 	return o.Payload
 }
@@ -241,7 +334,8 @@ func NewCreateDigitalAccessKeyNotFound() *CreateDigitalAccessKeyNotFound {
 	return &CreateDigitalAccessKeyNotFound{}
 }
 
-/* CreateDigitalAccessKeyNotFound describes a response with status code 404, with default header values.
+/*
+CreateDigitalAccessKeyNotFound describes a response with status code 404, with default header values.
 
 The resource specified does not exist.
 */
@@ -258,9 +352,39 @@ type CreateDigitalAccessKeyNotFound struct {
 	Payload *messaging_models.CreateDigitalAccessKeyResponse
 }
 
+// IsSuccess returns true when this create digital access key not found response has a 2xx status code
+func (o *CreateDigitalAccessKeyNotFound) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this create digital access key not found response has a 3xx status code
+func (o *CreateDigitalAccessKeyNotFound) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create digital access key not found response has a 4xx status code
+func (o *CreateDigitalAccessKeyNotFound) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this create digital access key not found response has a 5xx status code
+func (o *CreateDigitalAccessKeyNotFound) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this create digital access key not found response a status code equal to that given
+func (o *CreateDigitalAccessKeyNotFound) IsCode(code int) bool {
+	return code == 404
+}
+
 func (o *CreateDigitalAccessKeyNotFound) Error() string {
 	return fmt.Sprintf("[POST /messaging/v1/orders/{amazonOrderId}/messages/digitalAccessKey][%d] createDigitalAccessKeyNotFound  %+v", 404, o.Payload)
 }
+
+func (o *CreateDigitalAccessKeyNotFound) String() string {
+	return fmt.Sprintf("[POST /messaging/v1/orders/{amazonOrderId}/messages/digitalAccessKey][%d] createDigitalAccessKeyNotFound  %+v", 404, o.Payload)
+}
+
 func (o *CreateDigitalAccessKeyNotFound) GetPayload() *messaging_models.CreateDigitalAccessKeyResponse {
 	return o.Payload
 }
@@ -296,7 +420,8 @@ func NewCreateDigitalAccessKeyRequestEntityTooLarge() *CreateDigitalAccessKeyReq
 	return &CreateDigitalAccessKeyRequestEntityTooLarge{}
 }
 
-/* CreateDigitalAccessKeyRequestEntityTooLarge describes a response with status code 413, with default header values.
+/*
+CreateDigitalAccessKeyRequestEntityTooLarge describes a response with status code 413, with default header values.
 
 The request size exceeded the maximum accepted size.
 */
@@ -314,9 +439,39 @@ type CreateDigitalAccessKeyRequestEntityTooLarge struct {
 	Payload *messaging_models.CreateDigitalAccessKeyResponse
 }
 
+// IsSuccess returns true when this create digital access key request entity too large response has a 2xx status code
+func (o *CreateDigitalAccessKeyRequestEntityTooLarge) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this create digital access key request entity too large response has a 3xx status code
+func (o *CreateDigitalAccessKeyRequestEntityTooLarge) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create digital access key request entity too large response has a 4xx status code
+func (o *CreateDigitalAccessKeyRequestEntityTooLarge) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this create digital access key request entity too large response has a 5xx status code
+func (o *CreateDigitalAccessKeyRequestEntityTooLarge) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this create digital access key request entity too large response a status code equal to that given
+func (o *CreateDigitalAccessKeyRequestEntityTooLarge) IsCode(code int) bool {
+	return code == 413
+}
+
 func (o *CreateDigitalAccessKeyRequestEntityTooLarge) Error() string {
 	return fmt.Sprintf("[POST /messaging/v1/orders/{amazonOrderId}/messages/digitalAccessKey][%d] createDigitalAccessKeyRequestEntityTooLarge  %+v", 413, o.Payload)
 }
+
+func (o *CreateDigitalAccessKeyRequestEntityTooLarge) String() string {
+	return fmt.Sprintf("[POST /messaging/v1/orders/{amazonOrderId}/messages/digitalAccessKey][%d] createDigitalAccessKeyRequestEntityTooLarge  %+v", 413, o.Payload)
+}
+
 func (o *CreateDigitalAccessKeyRequestEntityTooLarge) GetPayload() *messaging_models.CreateDigitalAccessKeyResponse {
 	return o.Payload
 }
@@ -352,7 +507,8 @@ func NewCreateDigitalAccessKeyUnsupportedMediaType() *CreateDigitalAccessKeyUnsu
 	return &CreateDigitalAccessKeyUnsupportedMediaType{}
 }
 
-/* CreateDigitalAccessKeyUnsupportedMediaType describes a response with status code 415, with default header values.
+/*
+CreateDigitalAccessKeyUnsupportedMediaType describes a response with status code 415, with default header values.
 
 The request payload is in an unsupported format.
 */
@@ -370,9 +526,39 @@ type CreateDigitalAccessKeyUnsupportedMediaType struct {
 	Payload *messaging_models.CreateDigitalAccessKeyResponse
 }
 
+// IsSuccess returns true when this create digital access key unsupported media type response has a 2xx status code
+func (o *CreateDigitalAccessKeyUnsupportedMediaType) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this create digital access key unsupported media type response has a 3xx status code
+func (o *CreateDigitalAccessKeyUnsupportedMediaType) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create digital access key unsupported media type response has a 4xx status code
+func (o *CreateDigitalAccessKeyUnsupportedMediaType) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this create digital access key unsupported media type response has a 5xx status code
+func (o *CreateDigitalAccessKeyUnsupportedMediaType) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this create digital access key unsupported media type response a status code equal to that given
+func (o *CreateDigitalAccessKeyUnsupportedMediaType) IsCode(code int) bool {
+	return code == 415
+}
+
 func (o *CreateDigitalAccessKeyUnsupportedMediaType) Error() string {
 	return fmt.Sprintf("[POST /messaging/v1/orders/{amazonOrderId}/messages/digitalAccessKey][%d] createDigitalAccessKeyUnsupportedMediaType  %+v", 415, o.Payload)
 }
+
+func (o *CreateDigitalAccessKeyUnsupportedMediaType) String() string {
+	return fmt.Sprintf("[POST /messaging/v1/orders/{amazonOrderId}/messages/digitalAccessKey][%d] createDigitalAccessKeyUnsupportedMediaType  %+v", 415, o.Payload)
+}
+
 func (o *CreateDigitalAccessKeyUnsupportedMediaType) GetPayload() *messaging_models.CreateDigitalAccessKeyResponse {
 	return o.Payload
 }
@@ -408,7 +594,8 @@ func NewCreateDigitalAccessKeyTooManyRequests() *CreateDigitalAccessKeyTooManyRe
 	return &CreateDigitalAccessKeyTooManyRequests{}
 }
 
-/* CreateDigitalAccessKeyTooManyRequests describes a response with status code 429, with default header values.
+/*
+CreateDigitalAccessKeyTooManyRequests describes a response with status code 429, with default header values.
 
 The frequency of requests was greater than allowed.
 */
@@ -426,9 +613,39 @@ type CreateDigitalAccessKeyTooManyRequests struct {
 	Payload *messaging_models.CreateDigitalAccessKeyResponse
 }
 
+// IsSuccess returns true when this create digital access key too many requests response has a 2xx status code
+func (o *CreateDigitalAccessKeyTooManyRequests) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this create digital access key too many requests response has a 3xx status code
+func (o *CreateDigitalAccessKeyTooManyRequests) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create digital access key too many requests response has a 4xx status code
+func (o *CreateDigitalAccessKeyTooManyRequests) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this create digital access key too many requests response has a 5xx status code
+func (o *CreateDigitalAccessKeyTooManyRequests) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this create digital access key too many requests response a status code equal to that given
+func (o *CreateDigitalAccessKeyTooManyRequests) IsCode(code int) bool {
+	return code == 429
+}
+
 func (o *CreateDigitalAccessKeyTooManyRequests) Error() string {
 	return fmt.Sprintf("[POST /messaging/v1/orders/{amazonOrderId}/messages/digitalAccessKey][%d] createDigitalAccessKeyTooManyRequests  %+v", 429, o.Payload)
 }
+
+func (o *CreateDigitalAccessKeyTooManyRequests) String() string {
+	return fmt.Sprintf("[POST /messaging/v1/orders/{amazonOrderId}/messages/digitalAccessKey][%d] createDigitalAccessKeyTooManyRequests  %+v", 429, o.Payload)
+}
+
 func (o *CreateDigitalAccessKeyTooManyRequests) GetPayload() *messaging_models.CreateDigitalAccessKeyResponse {
 	return o.Payload
 }
@@ -464,7 +681,8 @@ func NewCreateDigitalAccessKeyInternalServerError() *CreateDigitalAccessKeyInter
 	return &CreateDigitalAccessKeyInternalServerError{}
 }
 
-/* CreateDigitalAccessKeyInternalServerError describes a response with status code 500, with default header values.
+/*
+CreateDigitalAccessKeyInternalServerError describes a response with status code 500, with default header values.
 
 An unexpected condition occurred that prevented the server from fulfilling the request.
 */
@@ -482,9 +700,39 @@ type CreateDigitalAccessKeyInternalServerError struct {
 	Payload *messaging_models.CreateDigitalAccessKeyResponse
 }
 
+// IsSuccess returns true when this create digital access key internal server error response has a 2xx status code
+func (o *CreateDigitalAccessKeyInternalServerError) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this create digital access key internal server error response has a 3xx status code
+func (o *CreateDigitalAccessKeyInternalServerError) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create digital access key internal server error response has a 4xx status code
+func (o *CreateDigitalAccessKeyInternalServerError) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this create digital access key internal server error response has a 5xx status code
+func (o *CreateDigitalAccessKeyInternalServerError) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this create digital access key internal server error response a status code equal to that given
+func (o *CreateDigitalAccessKeyInternalServerError) IsCode(code int) bool {
+	return code == 500
+}
+
 func (o *CreateDigitalAccessKeyInternalServerError) Error() string {
 	return fmt.Sprintf("[POST /messaging/v1/orders/{amazonOrderId}/messages/digitalAccessKey][%d] createDigitalAccessKeyInternalServerError  %+v", 500, o.Payload)
 }
+
+func (o *CreateDigitalAccessKeyInternalServerError) String() string {
+	return fmt.Sprintf("[POST /messaging/v1/orders/{amazonOrderId}/messages/digitalAccessKey][%d] createDigitalAccessKeyInternalServerError  %+v", 500, o.Payload)
+}
+
 func (o *CreateDigitalAccessKeyInternalServerError) GetPayload() *messaging_models.CreateDigitalAccessKeyResponse {
 	return o.Payload
 }
@@ -520,7 +768,8 @@ func NewCreateDigitalAccessKeyServiceUnavailable() *CreateDigitalAccessKeyServic
 	return &CreateDigitalAccessKeyServiceUnavailable{}
 }
 
-/* CreateDigitalAccessKeyServiceUnavailable describes a response with status code 503, with default header values.
+/*
+CreateDigitalAccessKeyServiceUnavailable describes a response with status code 503, with default header values.
 
 Temporary overloading or maintenance of the server.
 */
@@ -538,9 +787,39 @@ type CreateDigitalAccessKeyServiceUnavailable struct {
 	Payload *messaging_models.CreateDigitalAccessKeyResponse
 }
 
+// IsSuccess returns true when this create digital access key service unavailable response has a 2xx status code
+func (o *CreateDigitalAccessKeyServiceUnavailable) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this create digital access key service unavailable response has a 3xx status code
+func (o *CreateDigitalAccessKeyServiceUnavailable) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create digital access key service unavailable response has a 4xx status code
+func (o *CreateDigitalAccessKeyServiceUnavailable) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this create digital access key service unavailable response has a 5xx status code
+func (o *CreateDigitalAccessKeyServiceUnavailable) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this create digital access key service unavailable response a status code equal to that given
+func (o *CreateDigitalAccessKeyServiceUnavailable) IsCode(code int) bool {
+	return code == 503
+}
+
 func (o *CreateDigitalAccessKeyServiceUnavailable) Error() string {
 	return fmt.Sprintf("[POST /messaging/v1/orders/{amazonOrderId}/messages/digitalAccessKey][%d] createDigitalAccessKeyServiceUnavailable  %+v", 503, o.Payload)
 }
+
+func (o *CreateDigitalAccessKeyServiceUnavailable) String() string {
+	return fmt.Sprintf("[POST /messaging/v1/orders/{amazonOrderId}/messages/digitalAccessKey][%d] createDigitalAccessKeyServiceUnavailable  %+v", 503, o.Payload)
+}
+
 func (o *CreateDigitalAccessKeyServiceUnavailable) GetPayload() *messaging_models.CreateDigitalAccessKeyResponse {
 	return o.Payload
 }

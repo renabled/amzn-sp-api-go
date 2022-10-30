@@ -93,7 +93,8 @@ func NewCancelServiceJobByServiceJobIDOK() *CancelServiceJobByServiceJobIDOK {
 	return &CancelServiceJobByServiceJobIDOK{}
 }
 
-/* CancelServiceJobByServiceJobIDOK describes a response with status code 200, with default header values.
+/*
+CancelServiceJobByServiceJobIDOK describes a response with status code 200, with default header values.
 
 Success response.
 */
@@ -110,9 +111,39 @@ type CancelServiceJobByServiceJobIDOK struct {
 	Payload *services_models.CancelServiceJobByServiceJobIDResponse
 }
 
+// IsSuccess returns true when this cancel service job by service job Id o k response has a 2xx status code
+func (o *CancelServiceJobByServiceJobIDOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this cancel service job by service job Id o k response has a 3xx status code
+func (o *CancelServiceJobByServiceJobIDOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this cancel service job by service job Id o k response has a 4xx status code
+func (o *CancelServiceJobByServiceJobIDOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this cancel service job by service job Id o k response has a 5xx status code
+func (o *CancelServiceJobByServiceJobIDOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this cancel service job by service job Id o k response a status code equal to that given
+func (o *CancelServiceJobByServiceJobIDOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *CancelServiceJobByServiceJobIDOK) Error() string {
 	return fmt.Sprintf("[PUT /service/v1/serviceJobs/{serviceJobId}/cancellations][%d] cancelServiceJobByServiceJobIdOK  %+v", 200, o.Payload)
 }
+
+func (o *CancelServiceJobByServiceJobIDOK) String() string {
+	return fmt.Sprintf("[PUT /service/v1/serviceJobs/{serviceJobId}/cancellations][%d] cancelServiceJobByServiceJobIdOK  %+v", 200, o.Payload)
+}
+
 func (o *CancelServiceJobByServiceJobIDOK) GetPayload() *services_models.CancelServiceJobByServiceJobIDResponse {
 	return o.Payload
 }
@@ -148,7 +179,8 @@ func NewCancelServiceJobByServiceJobIDBadRequest() *CancelServiceJobByServiceJob
 	return &CancelServiceJobByServiceJobIDBadRequest{}
 }
 
-/* CancelServiceJobByServiceJobIDBadRequest describes a response with status code 400, with default header values.
+/*
+CancelServiceJobByServiceJobIDBadRequest describes a response with status code 400, with default header values.
 
 Request has missing or invalid parameters and cannot be parsed.
 */
@@ -165,9 +197,39 @@ type CancelServiceJobByServiceJobIDBadRequest struct {
 	Payload *services_models.CancelServiceJobByServiceJobIDResponse
 }
 
+// IsSuccess returns true when this cancel service job by service job Id bad request response has a 2xx status code
+func (o *CancelServiceJobByServiceJobIDBadRequest) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this cancel service job by service job Id bad request response has a 3xx status code
+func (o *CancelServiceJobByServiceJobIDBadRequest) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this cancel service job by service job Id bad request response has a 4xx status code
+func (o *CancelServiceJobByServiceJobIDBadRequest) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this cancel service job by service job Id bad request response has a 5xx status code
+func (o *CancelServiceJobByServiceJobIDBadRequest) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this cancel service job by service job Id bad request response a status code equal to that given
+func (o *CancelServiceJobByServiceJobIDBadRequest) IsCode(code int) bool {
+	return code == 400
+}
+
 func (o *CancelServiceJobByServiceJobIDBadRequest) Error() string {
 	return fmt.Sprintf("[PUT /service/v1/serviceJobs/{serviceJobId}/cancellations][%d] cancelServiceJobByServiceJobIdBadRequest  %+v", 400, o.Payload)
 }
+
+func (o *CancelServiceJobByServiceJobIDBadRequest) String() string {
+	return fmt.Sprintf("[PUT /service/v1/serviceJobs/{serviceJobId}/cancellations][%d] cancelServiceJobByServiceJobIdBadRequest  %+v", 400, o.Payload)
+}
+
 func (o *CancelServiceJobByServiceJobIDBadRequest) GetPayload() *services_models.CancelServiceJobByServiceJobIDResponse {
 	return o.Payload
 }
@@ -203,7 +265,8 @@ func NewCancelServiceJobByServiceJobIDForbidden() *CancelServiceJobByServiceJobI
 	return &CancelServiceJobByServiceJobIDForbidden{}
 }
 
-/* CancelServiceJobByServiceJobIDForbidden describes a response with status code 403, with default header values.
+/*
+CancelServiceJobByServiceJobIDForbidden describes a response with status code 403, with default header values.
 
 Indicates that access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.
 */
@@ -216,9 +279,39 @@ type CancelServiceJobByServiceJobIDForbidden struct {
 	Payload *services_models.CancelServiceJobByServiceJobIDResponse
 }
 
+// IsSuccess returns true when this cancel service job by service job Id forbidden response has a 2xx status code
+func (o *CancelServiceJobByServiceJobIDForbidden) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this cancel service job by service job Id forbidden response has a 3xx status code
+func (o *CancelServiceJobByServiceJobIDForbidden) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this cancel service job by service job Id forbidden response has a 4xx status code
+func (o *CancelServiceJobByServiceJobIDForbidden) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this cancel service job by service job Id forbidden response has a 5xx status code
+func (o *CancelServiceJobByServiceJobIDForbidden) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this cancel service job by service job Id forbidden response a status code equal to that given
+func (o *CancelServiceJobByServiceJobIDForbidden) IsCode(code int) bool {
+	return code == 403
+}
+
 func (o *CancelServiceJobByServiceJobIDForbidden) Error() string {
 	return fmt.Sprintf("[PUT /service/v1/serviceJobs/{serviceJobId}/cancellations][%d] cancelServiceJobByServiceJobIdForbidden  %+v", 403, o.Payload)
 }
+
+func (o *CancelServiceJobByServiceJobIDForbidden) String() string {
+	return fmt.Sprintf("[PUT /service/v1/serviceJobs/{serviceJobId}/cancellations][%d] cancelServiceJobByServiceJobIdForbidden  %+v", 403, o.Payload)
+}
+
 func (o *CancelServiceJobByServiceJobIDForbidden) GetPayload() *services_models.CancelServiceJobByServiceJobIDResponse {
 	return o.Payload
 }
@@ -247,7 +340,8 @@ func NewCancelServiceJobByServiceJobIDNotFound() *CancelServiceJobByServiceJobID
 	return &CancelServiceJobByServiceJobIDNotFound{}
 }
 
-/* CancelServiceJobByServiceJobIDNotFound describes a response with status code 404, with default header values.
+/*
+CancelServiceJobByServiceJobIDNotFound describes a response with status code 404, with default header values.
 
 The resource specified does not exist.
 */
@@ -264,9 +358,39 @@ type CancelServiceJobByServiceJobIDNotFound struct {
 	Payload *services_models.CancelServiceJobByServiceJobIDResponse
 }
 
+// IsSuccess returns true when this cancel service job by service job Id not found response has a 2xx status code
+func (o *CancelServiceJobByServiceJobIDNotFound) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this cancel service job by service job Id not found response has a 3xx status code
+func (o *CancelServiceJobByServiceJobIDNotFound) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this cancel service job by service job Id not found response has a 4xx status code
+func (o *CancelServiceJobByServiceJobIDNotFound) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this cancel service job by service job Id not found response has a 5xx status code
+func (o *CancelServiceJobByServiceJobIDNotFound) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this cancel service job by service job Id not found response a status code equal to that given
+func (o *CancelServiceJobByServiceJobIDNotFound) IsCode(code int) bool {
+	return code == 404
+}
+
 func (o *CancelServiceJobByServiceJobIDNotFound) Error() string {
 	return fmt.Sprintf("[PUT /service/v1/serviceJobs/{serviceJobId}/cancellations][%d] cancelServiceJobByServiceJobIdNotFound  %+v", 404, o.Payload)
 }
+
+func (o *CancelServiceJobByServiceJobIDNotFound) String() string {
+	return fmt.Sprintf("[PUT /service/v1/serviceJobs/{serviceJobId}/cancellations][%d] cancelServiceJobByServiceJobIdNotFound  %+v", 404, o.Payload)
+}
+
 func (o *CancelServiceJobByServiceJobIDNotFound) GetPayload() *services_models.CancelServiceJobByServiceJobIDResponse {
 	return o.Payload
 }
@@ -302,7 +426,8 @@ func NewCancelServiceJobByServiceJobIDRequestEntityTooLarge() *CancelServiceJobB
 	return &CancelServiceJobByServiceJobIDRequestEntityTooLarge{}
 }
 
-/* CancelServiceJobByServiceJobIDRequestEntityTooLarge describes a response with status code 413, with default header values.
+/*
+CancelServiceJobByServiceJobIDRequestEntityTooLarge describes a response with status code 413, with default header values.
 
 The request size exceeded the maximum accepted size.
 */
@@ -320,9 +445,39 @@ type CancelServiceJobByServiceJobIDRequestEntityTooLarge struct {
 	Payload *services_models.CancelServiceJobByServiceJobIDResponse
 }
 
+// IsSuccess returns true when this cancel service job by service job Id request entity too large response has a 2xx status code
+func (o *CancelServiceJobByServiceJobIDRequestEntityTooLarge) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this cancel service job by service job Id request entity too large response has a 3xx status code
+func (o *CancelServiceJobByServiceJobIDRequestEntityTooLarge) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this cancel service job by service job Id request entity too large response has a 4xx status code
+func (o *CancelServiceJobByServiceJobIDRequestEntityTooLarge) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this cancel service job by service job Id request entity too large response has a 5xx status code
+func (o *CancelServiceJobByServiceJobIDRequestEntityTooLarge) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this cancel service job by service job Id request entity too large response a status code equal to that given
+func (o *CancelServiceJobByServiceJobIDRequestEntityTooLarge) IsCode(code int) bool {
+	return code == 413
+}
+
 func (o *CancelServiceJobByServiceJobIDRequestEntityTooLarge) Error() string {
 	return fmt.Sprintf("[PUT /service/v1/serviceJobs/{serviceJobId}/cancellations][%d] cancelServiceJobByServiceJobIdRequestEntityTooLarge  %+v", 413, o.Payload)
 }
+
+func (o *CancelServiceJobByServiceJobIDRequestEntityTooLarge) String() string {
+	return fmt.Sprintf("[PUT /service/v1/serviceJobs/{serviceJobId}/cancellations][%d] cancelServiceJobByServiceJobIdRequestEntityTooLarge  %+v", 413, o.Payload)
+}
+
 func (o *CancelServiceJobByServiceJobIDRequestEntityTooLarge) GetPayload() *services_models.CancelServiceJobByServiceJobIDResponse {
 	return o.Payload
 }
@@ -358,7 +513,8 @@ func NewCancelServiceJobByServiceJobIDUnsupportedMediaType() *CancelServiceJobBy
 	return &CancelServiceJobByServiceJobIDUnsupportedMediaType{}
 }
 
-/* CancelServiceJobByServiceJobIDUnsupportedMediaType describes a response with status code 415, with default header values.
+/*
+CancelServiceJobByServiceJobIDUnsupportedMediaType describes a response with status code 415, with default header values.
 
 The request payload is in an unsupported format.
 */
@@ -376,9 +532,39 @@ type CancelServiceJobByServiceJobIDUnsupportedMediaType struct {
 	Payload *services_models.CancelServiceJobByServiceJobIDResponse
 }
 
+// IsSuccess returns true when this cancel service job by service job Id unsupported media type response has a 2xx status code
+func (o *CancelServiceJobByServiceJobIDUnsupportedMediaType) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this cancel service job by service job Id unsupported media type response has a 3xx status code
+func (o *CancelServiceJobByServiceJobIDUnsupportedMediaType) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this cancel service job by service job Id unsupported media type response has a 4xx status code
+func (o *CancelServiceJobByServiceJobIDUnsupportedMediaType) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this cancel service job by service job Id unsupported media type response has a 5xx status code
+func (o *CancelServiceJobByServiceJobIDUnsupportedMediaType) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this cancel service job by service job Id unsupported media type response a status code equal to that given
+func (o *CancelServiceJobByServiceJobIDUnsupportedMediaType) IsCode(code int) bool {
+	return code == 415
+}
+
 func (o *CancelServiceJobByServiceJobIDUnsupportedMediaType) Error() string {
 	return fmt.Sprintf("[PUT /service/v1/serviceJobs/{serviceJobId}/cancellations][%d] cancelServiceJobByServiceJobIdUnsupportedMediaType  %+v", 415, o.Payload)
 }
+
+func (o *CancelServiceJobByServiceJobIDUnsupportedMediaType) String() string {
+	return fmt.Sprintf("[PUT /service/v1/serviceJobs/{serviceJobId}/cancellations][%d] cancelServiceJobByServiceJobIdUnsupportedMediaType  %+v", 415, o.Payload)
+}
+
 func (o *CancelServiceJobByServiceJobIDUnsupportedMediaType) GetPayload() *services_models.CancelServiceJobByServiceJobIDResponse {
 	return o.Payload
 }
@@ -414,7 +600,8 @@ func NewCancelServiceJobByServiceJobIDUnprocessableEntity() *CancelServiceJobByS
 	return &CancelServiceJobByServiceJobIDUnprocessableEntity{}
 }
 
-/* CancelServiceJobByServiceJobIDUnprocessableEntity describes a response with status code 422, with default header values.
+/*
+CancelServiceJobByServiceJobIDUnprocessableEntity describes a response with status code 422, with default header values.
 
 Unprocessable Entity. Unable to process the contained instructions.
 */
@@ -432,9 +619,39 @@ type CancelServiceJobByServiceJobIDUnprocessableEntity struct {
 	Payload *services_models.CancelServiceJobByServiceJobIDResponse
 }
 
+// IsSuccess returns true when this cancel service job by service job Id unprocessable entity response has a 2xx status code
+func (o *CancelServiceJobByServiceJobIDUnprocessableEntity) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this cancel service job by service job Id unprocessable entity response has a 3xx status code
+func (o *CancelServiceJobByServiceJobIDUnprocessableEntity) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this cancel service job by service job Id unprocessable entity response has a 4xx status code
+func (o *CancelServiceJobByServiceJobIDUnprocessableEntity) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this cancel service job by service job Id unprocessable entity response has a 5xx status code
+func (o *CancelServiceJobByServiceJobIDUnprocessableEntity) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this cancel service job by service job Id unprocessable entity response a status code equal to that given
+func (o *CancelServiceJobByServiceJobIDUnprocessableEntity) IsCode(code int) bool {
+	return code == 422
+}
+
 func (o *CancelServiceJobByServiceJobIDUnprocessableEntity) Error() string {
 	return fmt.Sprintf("[PUT /service/v1/serviceJobs/{serviceJobId}/cancellations][%d] cancelServiceJobByServiceJobIdUnprocessableEntity  %+v", 422, o.Payload)
 }
+
+func (o *CancelServiceJobByServiceJobIDUnprocessableEntity) String() string {
+	return fmt.Sprintf("[PUT /service/v1/serviceJobs/{serviceJobId}/cancellations][%d] cancelServiceJobByServiceJobIdUnprocessableEntity  %+v", 422, o.Payload)
+}
+
 func (o *CancelServiceJobByServiceJobIDUnprocessableEntity) GetPayload() *services_models.CancelServiceJobByServiceJobIDResponse {
 	return o.Payload
 }
@@ -470,7 +687,8 @@ func NewCancelServiceJobByServiceJobIDTooManyRequests() *CancelServiceJobByServi
 	return &CancelServiceJobByServiceJobIDTooManyRequests{}
 }
 
-/* CancelServiceJobByServiceJobIDTooManyRequests describes a response with status code 429, with default header values.
+/*
+CancelServiceJobByServiceJobIDTooManyRequests describes a response with status code 429, with default header values.
 
 The frequency of requests was greater than allowed.
 */
@@ -488,9 +706,39 @@ type CancelServiceJobByServiceJobIDTooManyRequests struct {
 	Payload *services_models.CancelServiceJobByServiceJobIDResponse
 }
 
+// IsSuccess returns true when this cancel service job by service job Id too many requests response has a 2xx status code
+func (o *CancelServiceJobByServiceJobIDTooManyRequests) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this cancel service job by service job Id too many requests response has a 3xx status code
+func (o *CancelServiceJobByServiceJobIDTooManyRequests) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this cancel service job by service job Id too many requests response has a 4xx status code
+func (o *CancelServiceJobByServiceJobIDTooManyRequests) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this cancel service job by service job Id too many requests response has a 5xx status code
+func (o *CancelServiceJobByServiceJobIDTooManyRequests) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this cancel service job by service job Id too many requests response a status code equal to that given
+func (o *CancelServiceJobByServiceJobIDTooManyRequests) IsCode(code int) bool {
+	return code == 429
+}
+
 func (o *CancelServiceJobByServiceJobIDTooManyRequests) Error() string {
 	return fmt.Sprintf("[PUT /service/v1/serviceJobs/{serviceJobId}/cancellations][%d] cancelServiceJobByServiceJobIdTooManyRequests  %+v", 429, o.Payload)
 }
+
+func (o *CancelServiceJobByServiceJobIDTooManyRequests) String() string {
+	return fmt.Sprintf("[PUT /service/v1/serviceJobs/{serviceJobId}/cancellations][%d] cancelServiceJobByServiceJobIdTooManyRequests  %+v", 429, o.Payload)
+}
+
 func (o *CancelServiceJobByServiceJobIDTooManyRequests) GetPayload() *services_models.CancelServiceJobByServiceJobIDResponse {
 	return o.Payload
 }
@@ -526,7 +774,8 @@ func NewCancelServiceJobByServiceJobIDInternalServerError() *CancelServiceJobByS
 	return &CancelServiceJobByServiceJobIDInternalServerError{}
 }
 
-/* CancelServiceJobByServiceJobIDInternalServerError describes a response with status code 500, with default header values.
+/*
+CancelServiceJobByServiceJobIDInternalServerError describes a response with status code 500, with default header values.
 
 An unexpected condition occurred that prevented the server from fulfilling the request.
 */
@@ -544,9 +793,39 @@ type CancelServiceJobByServiceJobIDInternalServerError struct {
 	Payload *services_models.CancelServiceJobByServiceJobIDResponse
 }
 
+// IsSuccess returns true when this cancel service job by service job Id internal server error response has a 2xx status code
+func (o *CancelServiceJobByServiceJobIDInternalServerError) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this cancel service job by service job Id internal server error response has a 3xx status code
+func (o *CancelServiceJobByServiceJobIDInternalServerError) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this cancel service job by service job Id internal server error response has a 4xx status code
+func (o *CancelServiceJobByServiceJobIDInternalServerError) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this cancel service job by service job Id internal server error response has a 5xx status code
+func (o *CancelServiceJobByServiceJobIDInternalServerError) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this cancel service job by service job Id internal server error response a status code equal to that given
+func (o *CancelServiceJobByServiceJobIDInternalServerError) IsCode(code int) bool {
+	return code == 500
+}
+
 func (o *CancelServiceJobByServiceJobIDInternalServerError) Error() string {
 	return fmt.Sprintf("[PUT /service/v1/serviceJobs/{serviceJobId}/cancellations][%d] cancelServiceJobByServiceJobIdInternalServerError  %+v", 500, o.Payload)
 }
+
+func (o *CancelServiceJobByServiceJobIDInternalServerError) String() string {
+	return fmt.Sprintf("[PUT /service/v1/serviceJobs/{serviceJobId}/cancellations][%d] cancelServiceJobByServiceJobIdInternalServerError  %+v", 500, o.Payload)
+}
+
 func (o *CancelServiceJobByServiceJobIDInternalServerError) GetPayload() *services_models.CancelServiceJobByServiceJobIDResponse {
 	return o.Payload
 }
@@ -582,7 +861,8 @@ func NewCancelServiceJobByServiceJobIDServiceUnavailable() *CancelServiceJobBySe
 	return &CancelServiceJobByServiceJobIDServiceUnavailable{}
 }
 
-/* CancelServiceJobByServiceJobIDServiceUnavailable describes a response with status code 503, with default header values.
+/*
+CancelServiceJobByServiceJobIDServiceUnavailable describes a response with status code 503, with default header values.
 
 Temporary overloading or maintenance of the server.
 */
@@ -600,9 +880,39 @@ type CancelServiceJobByServiceJobIDServiceUnavailable struct {
 	Payload *services_models.CancelServiceJobByServiceJobIDResponse
 }
 
+// IsSuccess returns true when this cancel service job by service job Id service unavailable response has a 2xx status code
+func (o *CancelServiceJobByServiceJobIDServiceUnavailable) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this cancel service job by service job Id service unavailable response has a 3xx status code
+func (o *CancelServiceJobByServiceJobIDServiceUnavailable) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this cancel service job by service job Id service unavailable response has a 4xx status code
+func (o *CancelServiceJobByServiceJobIDServiceUnavailable) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this cancel service job by service job Id service unavailable response has a 5xx status code
+func (o *CancelServiceJobByServiceJobIDServiceUnavailable) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this cancel service job by service job Id service unavailable response a status code equal to that given
+func (o *CancelServiceJobByServiceJobIDServiceUnavailable) IsCode(code int) bool {
+	return code == 503
+}
+
 func (o *CancelServiceJobByServiceJobIDServiceUnavailable) Error() string {
 	return fmt.Sprintf("[PUT /service/v1/serviceJobs/{serviceJobId}/cancellations][%d] cancelServiceJobByServiceJobIdServiceUnavailable  %+v", 503, o.Payload)
 }
+
+func (o *CancelServiceJobByServiceJobIDServiceUnavailable) String() string {
+	return fmt.Sprintf("[PUT /service/v1/serviceJobs/{serviceJobId}/cancellations][%d] cancelServiceJobByServiceJobIdServiceUnavailable  %+v", 503, o.Payload)
+}
+
 func (o *CancelServiceJobByServiceJobIDServiceUnavailable) GetPayload() *services_models.CancelServiceJobByServiceJobIDResponse {
 	return o.Payload
 }

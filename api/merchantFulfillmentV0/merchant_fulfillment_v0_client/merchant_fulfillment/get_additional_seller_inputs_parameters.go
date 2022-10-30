@@ -54,10 +54,12 @@ func NewGetAdditionalSellerInputsParamsWithHTTPClient(client *http.Client) *GetA
 	}
 }
 
-/* GetAdditionalSellerInputsParams contains all the parameters to send to the API endpoint
-   for the get additional seller inputs operation.
+/*
+GetAdditionalSellerInputsParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the get additional seller inputs operation.
+
+	Typically these are written to a http.Request.
 */
 type GetAdditionalSellerInputsParams struct {
 

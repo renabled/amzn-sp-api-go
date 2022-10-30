@@ -53,10 +53,12 @@ func NewGetPricingParamsWithHTTPClient(client *http.Client) *GetPricingParams {
 	}
 }
 
-/* GetPricingParams contains all the parameters to send to the API endpoint
-   for the get pricing operation.
+/*
+GetPricingParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the get pricing operation.
+
+	Typically these are written to a http.Request.
 */
 type GetPricingParams struct {
 

@@ -36,7 +36,7 @@ type ClientService interface {
 }
 
 /*
-  SubmitInvoices Submit new invoices to Amazon.
+	SubmitInvoices Submit new invoices to Amazon.
 
 **Usage Plans:**
 

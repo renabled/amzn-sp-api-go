@@ -87,7 +87,8 @@ func NewCreateRestrictedDataTokenOK() *CreateRestrictedDataTokenOK {
 	return &CreateRestrictedDataTokenOK{}
 }
 
-/* CreateRestrictedDataTokenOK describes a response with status code 200, with default header values.
+/*
+CreateRestrictedDataTokenOK describes a response with status code 200, with default header values.
 
 Success.
 */
@@ -104,9 +105,39 @@ type CreateRestrictedDataTokenOK struct {
 	Payload *tokens_2021_03_01_models.CreateRestrictedDataTokenResponse
 }
 
+// IsSuccess returns true when this create restricted data token o k response has a 2xx status code
+func (o *CreateRestrictedDataTokenOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this create restricted data token o k response has a 3xx status code
+func (o *CreateRestrictedDataTokenOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create restricted data token o k response has a 4xx status code
+func (o *CreateRestrictedDataTokenOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this create restricted data token o k response has a 5xx status code
+func (o *CreateRestrictedDataTokenOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this create restricted data token o k response a status code equal to that given
+func (o *CreateRestrictedDataTokenOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *CreateRestrictedDataTokenOK) Error() string {
 	return fmt.Sprintf("[POST /tokens/2021-03-01/restrictedDataToken][%d] createRestrictedDataTokenOK  %+v", 200, o.Payload)
 }
+
+func (o *CreateRestrictedDataTokenOK) String() string {
+	return fmt.Sprintf("[POST /tokens/2021-03-01/restrictedDataToken][%d] createRestrictedDataTokenOK  %+v", 200, o.Payload)
+}
+
 func (o *CreateRestrictedDataTokenOK) GetPayload() *tokens_2021_03_01_models.CreateRestrictedDataTokenResponse {
 	return o.Payload
 }
@@ -142,7 +173,8 @@ func NewCreateRestrictedDataTokenBadRequest() *CreateRestrictedDataTokenBadReque
 	return &CreateRestrictedDataTokenBadRequest{}
 }
 
-/* CreateRestrictedDataTokenBadRequest describes a response with status code 400, with default header values.
+/*
+CreateRestrictedDataTokenBadRequest describes a response with status code 400, with default header values.
 
 Request has missing or invalid parameters and cannot be parsed.
 */
@@ -159,9 +191,39 @@ type CreateRestrictedDataTokenBadRequest struct {
 	Payload *tokens_2021_03_01_models.ErrorList
 }
 
+// IsSuccess returns true when this create restricted data token bad request response has a 2xx status code
+func (o *CreateRestrictedDataTokenBadRequest) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this create restricted data token bad request response has a 3xx status code
+func (o *CreateRestrictedDataTokenBadRequest) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create restricted data token bad request response has a 4xx status code
+func (o *CreateRestrictedDataTokenBadRequest) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this create restricted data token bad request response has a 5xx status code
+func (o *CreateRestrictedDataTokenBadRequest) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this create restricted data token bad request response a status code equal to that given
+func (o *CreateRestrictedDataTokenBadRequest) IsCode(code int) bool {
+	return code == 400
+}
+
 func (o *CreateRestrictedDataTokenBadRequest) Error() string {
 	return fmt.Sprintf("[POST /tokens/2021-03-01/restrictedDataToken][%d] createRestrictedDataTokenBadRequest  %+v", 400, o.Payload)
 }
+
+func (o *CreateRestrictedDataTokenBadRequest) String() string {
+	return fmt.Sprintf("[POST /tokens/2021-03-01/restrictedDataToken][%d] createRestrictedDataTokenBadRequest  %+v", 400, o.Payload)
+}
+
 func (o *CreateRestrictedDataTokenBadRequest) GetPayload() *tokens_2021_03_01_models.ErrorList {
 	return o.Payload
 }
@@ -197,7 +259,8 @@ func NewCreateRestrictedDataTokenUnauthorized() *CreateRestrictedDataTokenUnauth
 	return &CreateRestrictedDataTokenUnauthorized{}
 }
 
-/* CreateRestrictedDataTokenUnauthorized describes a response with status code 401, with default header values.
+/*
+CreateRestrictedDataTokenUnauthorized describes a response with status code 401, with default header values.
 
 The request's Authorization header is not formatted correctly or does not contain a valid token.
 */
@@ -210,9 +273,39 @@ type CreateRestrictedDataTokenUnauthorized struct {
 	Payload *tokens_2021_03_01_models.ErrorList
 }
 
+// IsSuccess returns true when this create restricted data token unauthorized response has a 2xx status code
+func (o *CreateRestrictedDataTokenUnauthorized) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this create restricted data token unauthorized response has a 3xx status code
+func (o *CreateRestrictedDataTokenUnauthorized) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create restricted data token unauthorized response has a 4xx status code
+func (o *CreateRestrictedDataTokenUnauthorized) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this create restricted data token unauthorized response has a 5xx status code
+func (o *CreateRestrictedDataTokenUnauthorized) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this create restricted data token unauthorized response a status code equal to that given
+func (o *CreateRestrictedDataTokenUnauthorized) IsCode(code int) bool {
+	return code == 401
+}
+
 func (o *CreateRestrictedDataTokenUnauthorized) Error() string {
 	return fmt.Sprintf("[POST /tokens/2021-03-01/restrictedDataToken][%d] createRestrictedDataTokenUnauthorized  %+v", 401, o.Payload)
 }
+
+func (o *CreateRestrictedDataTokenUnauthorized) String() string {
+	return fmt.Sprintf("[POST /tokens/2021-03-01/restrictedDataToken][%d] createRestrictedDataTokenUnauthorized  %+v", 401, o.Payload)
+}
+
 func (o *CreateRestrictedDataTokenUnauthorized) GetPayload() *tokens_2021_03_01_models.ErrorList {
 	return o.Payload
 }
@@ -241,7 +334,8 @@ func NewCreateRestrictedDataTokenForbidden() *CreateRestrictedDataTokenForbidden
 	return &CreateRestrictedDataTokenForbidden{}
 }
 
-/* CreateRestrictedDataTokenForbidden describes a response with status code 403, with default header values.
+/*
+CreateRestrictedDataTokenForbidden describes a response with status code 403, with default header values.
 
 Indicates that access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.
 */
@@ -254,9 +348,39 @@ type CreateRestrictedDataTokenForbidden struct {
 	Payload *tokens_2021_03_01_models.ErrorList
 }
 
+// IsSuccess returns true when this create restricted data token forbidden response has a 2xx status code
+func (o *CreateRestrictedDataTokenForbidden) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this create restricted data token forbidden response has a 3xx status code
+func (o *CreateRestrictedDataTokenForbidden) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create restricted data token forbidden response has a 4xx status code
+func (o *CreateRestrictedDataTokenForbidden) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this create restricted data token forbidden response has a 5xx status code
+func (o *CreateRestrictedDataTokenForbidden) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this create restricted data token forbidden response a status code equal to that given
+func (o *CreateRestrictedDataTokenForbidden) IsCode(code int) bool {
+	return code == 403
+}
+
 func (o *CreateRestrictedDataTokenForbidden) Error() string {
 	return fmt.Sprintf("[POST /tokens/2021-03-01/restrictedDataToken][%d] createRestrictedDataTokenForbidden  %+v", 403, o.Payload)
 }
+
+func (o *CreateRestrictedDataTokenForbidden) String() string {
+	return fmt.Sprintf("[POST /tokens/2021-03-01/restrictedDataToken][%d] createRestrictedDataTokenForbidden  %+v", 403, o.Payload)
+}
+
 func (o *CreateRestrictedDataTokenForbidden) GetPayload() *tokens_2021_03_01_models.ErrorList {
 	return o.Payload
 }
@@ -285,7 +409,8 @@ func NewCreateRestrictedDataTokenNotFound() *CreateRestrictedDataTokenNotFound {
 	return &CreateRestrictedDataTokenNotFound{}
 }
 
-/* CreateRestrictedDataTokenNotFound describes a response with status code 404, with default header values.
+/*
+CreateRestrictedDataTokenNotFound describes a response with status code 404, with default header values.
 
 The specified resource does not exist.
 */
@@ -302,9 +427,39 @@ type CreateRestrictedDataTokenNotFound struct {
 	Payload *tokens_2021_03_01_models.ErrorList
 }
 
+// IsSuccess returns true when this create restricted data token not found response has a 2xx status code
+func (o *CreateRestrictedDataTokenNotFound) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this create restricted data token not found response has a 3xx status code
+func (o *CreateRestrictedDataTokenNotFound) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create restricted data token not found response has a 4xx status code
+func (o *CreateRestrictedDataTokenNotFound) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this create restricted data token not found response has a 5xx status code
+func (o *CreateRestrictedDataTokenNotFound) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this create restricted data token not found response a status code equal to that given
+func (o *CreateRestrictedDataTokenNotFound) IsCode(code int) bool {
+	return code == 404
+}
+
 func (o *CreateRestrictedDataTokenNotFound) Error() string {
 	return fmt.Sprintf("[POST /tokens/2021-03-01/restrictedDataToken][%d] createRestrictedDataTokenNotFound  %+v", 404, o.Payload)
 }
+
+func (o *CreateRestrictedDataTokenNotFound) String() string {
+	return fmt.Sprintf("[POST /tokens/2021-03-01/restrictedDataToken][%d] createRestrictedDataTokenNotFound  %+v", 404, o.Payload)
+}
+
 func (o *CreateRestrictedDataTokenNotFound) GetPayload() *tokens_2021_03_01_models.ErrorList {
 	return o.Payload
 }
@@ -340,7 +495,8 @@ func NewCreateRestrictedDataTokenUnsupportedMediaType() *CreateRestrictedDataTok
 	return &CreateRestrictedDataTokenUnsupportedMediaType{}
 }
 
-/* CreateRestrictedDataTokenUnsupportedMediaType describes a response with status code 415, with default header values.
+/*
+CreateRestrictedDataTokenUnsupportedMediaType describes a response with status code 415, with default header values.
 
 The request payload is in an unsupported format.
 */
@@ -358,9 +514,39 @@ type CreateRestrictedDataTokenUnsupportedMediaType struct {
 	Payload *tokens_2021_03_01_models.ErrorList
 }
 
+// IsSuccess returns true when this create restricted data token unsupported media type response has a 2xx status code
+func (o *CreateRestrictedDataTokenUnsupportedMediaType) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this create restricted data token unsupported media type response has a 3xx status code
+func (o *CreateRestrictedDataTokenUnsupportedMediaType) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create restricted data token unsupported media type response has a 4xx status code
+func (o *CreateRestrictedDataTokenUnsupportedMediaType) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this create restricted data token unsupported media type response has a 5xx status code
+func (o *CreateRestrictedDataTokenUnsupportedMediaType) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this create restricted data token unsupported media type response a status code equal to that given
+func (o *CreateRestrictedDataTokenUnsupportedMediaType) IsCode(code int) bool {
+	return code == 415
+}
+
 func (o *CreateRestrictedDataTokenUnsupportedMediaType) Error() string {
 	return fmt.Sprintf("[POST /tokens/2021-03-01/restrictedDataToken][%d] createRestrictedDataTokenUnsupportedMediaType  %+v", 415, o.Payload)
 }
+
+func (o *CreateRestrictedDataTokenUnsupportedMediaType) String() string {
+	return fmt.Sprintf("[POST /tokens/2021-03-01/restrictedDataToken][%d] createRestrictedDataTokenUnsupportedMediaType  %+v", 415, o.Payload)
+}
+
 func (o *CreateRestrictedDataTokenUnsupportedMediaType) GetPayload() *tokens_2021_03_01_models.ErrorList {
 	return o.Payload
 }
@@ -396,7 +582,8 @@ func NewCreateRestrictedDataTokenTooManyRequests() *CreateRestrictedDataTokenToo
 	return &CreateRestrictedDataTokenTooManyRequests{}
 }
 
-/* CreateRestrictedDataTokenTooManyRequests describes a response with status code 429, with default header values.
+/*
+CreateRestrictedDataTokenTooManyRequests describes a response with status code 429, with default header values.
 
 The frequency of requests was greater than allowed.
 */
@@ -414,9 +601,39 @@ type CreateRestrictedDataTokenTooManyRequests struct {
 	Payload *tokens_2021_03_01_models.ErrorList
 }
 
+// IsSuccess returns true when this create restricted data token too many requests response has a 2xx status code
+func (o *CreateRestrictedDataTokenTooManyRequests) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this create restricted data token too many requests response has a 3xx status code
+func (o *CreateRestrictedDataTokenTooManyRequests) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create restricted data token too many requests response has a 4xx status code
+func (o *CreateRestrictedDataTokenTooManyRequests) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this create restricted data token too many requests response has a 5xx status code
+func (o *CreateRestrictedDataTokenTooManyRequests) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this create restricted data token too many requests response a status code equal to that given
+func (o *CreateRestrictedDataTokenTooManyRequests) IsCode(code int) bool {
+	return code == 429
+}
+
 func (o *CreateRestrictedDataTokenTooManyRequests) Error() string {
 	return fmt.Sprintf("[POST /tokens/2021-03-01/restrictedDataToken][%d] createRestrictedDataTokenTooManyRequests  %+v", 429, o.Payload)
 }
+
+func (o *CreateRestrictedDataTokenTooManyRequests) String() string {
+	return fmt.Sprintf("[POST /tokens/2021-03-01/restrictedDataToken][%d] createRestrictedDataTokenTooManyRequests  %+v", 429, o.Payload)
+}
+
 func (o *CreateRestrictedDataTokenTooManyRequests) GetPayload() *tokens_2021_03_01_models.ErrorList {
 	return o.Payload
 }
@@ -452,7 +669,8 @@ func NewCreateRestrictedDataTokenInternalServerError() *CreateRestrictedDataToke
 	return &CreateRestrictedDataTokenInternalServerError{}
 }
 
-/* CreateRestrictedDataTokenInternalServerError describes a response with status code 500, with default header values.
+/*
+CreateRestrictedDataTokenInternalServerError describes a response with status code 500, with default header values.
 
 An unexpected condition occurred that prevented the server from fulfilling the request.
 */
@@ -470,9 +688,39 @@ type CreateRestrictedDataTokenInternalServerError struct {
 	Payload *tokens_2021_03_01_models.ErrorList
 }
 
+// IsSuccess returns true when this create restricted data token internal server error response has a 2xx status code
+func (o *CreateRestrictedDataTokenInternalServerError) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this create restricted data token internal server error response has a 3xx status code
+func (o *CreateRestrictedDataTokenInternalServerError) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create restricted data token internal server error response has a 4xx status code
+func (o *CreateRestrictedDataTokenInternalServerError) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this create restricted data token internal server error response has a 5xx status code
+func (o *CreateRestrictedDataTokenInternalServerError) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this create restricted data token internal server error response a status code equal to that given
+func (o *CreateRestrictedDataTokenInternalServerError) IsCode(code int) bool {
+	return code == 500
+}
+
 func (o *CreateRestrictedDataTokenInternalServerError) Error() string {
 	return fmt.Sprintf("[POST /tokens/2021-03-01/restrictedDataToken][%d] createRestrictedDataTokenInternalServerError  %+v", 500, o.Payload)
 }
+
+func (o *CreateRestrictedDataTokenInternalServerError) String() string {
+	return fmt.Sprintf("[POST /tokens/2021-03-01/restrictedDataToken][%d] createRestrictedDataTokenInternalServerError  %+v", 500, o.Payload)
+}
+
 func (o *CreateRestrictedDataTokenInternalServerError) GetPayload() *tokens_2021_03_01_models.ErrorList {
 	return o.Payload
 }
@@ -508,7 +756,8 @@ func NewCreateRestrictedDataTokenServiceUnavailable() *CreateRestrictedDataToken
 	return &CreateRestrictedDataTokenServiceUnavailable{}
 }
 
-/* CreateRestrictedDataTokenServiceUnavailable describes a response with status code 503, with default header values.
+/*
+CreateRestrictedDataTokenServiceUnavailable describes a response with status code 503, with default header values.
 
 Temporary overloading or maintenance of the server.
 */
@@ -526,9 +775,39 @@ type CreateRestrictedDataTokenServiceUnavailable struct {
 	Payload *tokens_2021_03_01_models.ErrorList
 }
 
+// IsSuccess returns true when this create restricted data token service unavailable response has a 2xx status code
+func (o *CreateRestrictedDataTokenServiceUnavailable) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this create restricted data token service unavailable response has a 3xx status code
+func (o *CreateRestrictedDataTokenServiceUnavailable) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create restricted data token service unavailable response has a 4xx status code
+func (o *CreateRestrictedDataTokenServiceUnavailable) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this create restricted data token service unavailable response has a 5xx status code
+func (o *CreateRestrictedDataTokenServiceUnavailable) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this create restricted data token service unavailable response a status code equal to that given
+func (o *CreateRestrictedDataTokenServiceUnavailable) IsCode(code int) bool {
+	return code == 503
+}
+
 func (o *CreateRestrictedDataTokenServiceUnavailable) Error() string {
 	return fmt.Sprintf("[POST /tokens/2021-03-01/restrictedDataToken][%d] createRestrictedDataTokenServiceUnavailable  %+v", 503, o.Payload)
 }
+
+func (o *CreateRestrictedDataTokenServiceUnavailable) String() string {
+	return fmt.Sprintf("[POST /tokens/2021-03-01/restrictedDataToken][%d] createRestrictedDataTokenServiceUnavailable  %+v", 503, o.Payload)
+}
+
 func (o *CreateRestrictedDataTokenServiceUnavailable) GetPayload() *tokens_2021_03_01_models.ErrorList {
 	return o.Payload
 }

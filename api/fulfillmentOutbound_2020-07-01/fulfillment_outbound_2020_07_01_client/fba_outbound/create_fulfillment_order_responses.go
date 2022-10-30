@@ -81,7 +81,8 @@ func NewCreateFulfillmentOrderOK() *CreateFulfillmentOrderOK {
 	return &CreateFulfillmentOrderOK{}
 }
 
-/* CreateFulfillmentOrderOK describes a response with status code 200, with default header values.
+/*
+CreateFulfillmentOrderOK describes a response with status code 200, with default header values.
 
 Success.
 */
@@ -98,9 +99,39 @@ type CreateFulfillmentOrderOK struct {
 	Payload *fulfillment_outbound_2020_07_01_models.CreateFulfillmentOrderResponse
 }
 
+// IsSuccess returns true when this create fulfillment order o k response has a 2xx status code
+func (o *CreateFulfillmentOrderOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this create fulfillment order o k response has a 3xx status code
+func (o *CreateFulfillmentOrderOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create fulfillment order o k response has a 4xx status code
+func (o *CreateFulfillmentOrderOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this create fulfillment order o k response has a 5xx status code
+func (o *CreateFulfillmentOrderOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this create fulfillment order o k response a status code equal to that given
+func (o *CreateFulfillmentOrderOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *CreateFulfillmentOrderOK) Error() string {
 	return fmt.Sprintf("[POST /fba/outbound/2020-07-01/fulfillmentOrders][%d] createFulfillmentOrderOK  %+v", 200, o.Payload)
 }
+
+func (o *CreateFulfillmentOrderOK) String() string {
+	return fmt.Sprintf("[POST /fba/outbound/2020-07-01/fulfillmentOrders][%d] createFulfillmentOrderOK  %+v", 200, o.Payload)
+}
+
 func (o *CreateFulfillmentOrderOK) GetPayload() *fulfillment_outbound_2020_07_01_models.CreateFulfillmentOrderResponse {
 	return o.Payload
 }
@@ -136,7 +167,8 @@ func NewCreateFulfillmentOrderBadRequest() *CreateFulfillmentOrderBadRequest {
 	return &CreateFulfillmentOrderBadRequest{}
 }
 
-/* CreateFulfillmentOrderBadRequest describes a response with status code 400, with default header values.
+/*
+CreateFulfillmentOrderBadRequest describes a response with status code 400, with default header values.
 
 Request has missing or invalid parameters and cannot be parsed.
 */
@@ -153,9 +185,39 @@ type CreateFulfillmentOrderBadRequest struct {
 	Payload *fulfillment_outbound_2020_07_01_models.CreateFulfillmentOrderResponse
 }
 
+// IsSuccess returns true when this create fulfillment order bad request response has a 2xx status code
+func (o *CreateFulfillmentOrderBadRequest) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this create fulfillment order bad request response has a 3xx status code
+func (o *CreateFulfillmentOrderBadRequest) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create fulfillment order bad request response has a 4xx status code
+func (o *CreateFulfillmentOrderBadRequest) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this create fulfillment order bad request response has a 5xx status code
+func (o *CreateFulfillmentOrderBadRequest) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this create fulfillment order bad request response a status code equal to that given
+func (o *CreateFulfillmentOrderBadRequest) IsCode(code int) bool {
+	return code == 400
+}
+
 func (o *CreateFulfillmentOrderBadRequest) Error() string {
 	return fmt.Sprintf("[POST /fba/outbound/2020-07-01/fulfillmentOrders][%d] createFulfillmentOrderBadRequest  %+v", 400, o.Payload)
 }
+
+func (o *CreateFulfillmentOrderBadRequest) String() string {
+	return fmt.Sprintf("[POST /fba/outbound/2020-07-01/fulfillmentOrders][%d] createFulfillmentOrderBadRequest  %+v", 400, o.Payload)
+}
+
 func (o *CreateFulfillmentOrderBadRequest) GetPayload() *fulfillment_outbound_2020_07_01_models.CreateFulfillmentOrderResponse {
 	return o.Payload
 }
@@ -191,7 +253,8 @@ func NewCreateFulfillmentOrderUnauthorized() *CreateFulfillmentOrderUnauthorized
 	return &CreateFulfillmentOrderUnauthorized{}
 }
 
-/* CreateFulfillmentOrderUnauthorized describes a response with status code 401, with default header values.
+/*
+CreateFulfillmentOrderUnauthorized describes a response with status code 401, with default header values.
 
 The request's Authorization header is not formatted correctly or does not contain a valid token.
 */
@@ -209,9 +272,39 @@ type CreateFulfillmentOrderUnauthorized struct {
 	Payload *fulfillment_outbound_2020_07_01_models.CreateFulfillmentOrderResponse
 }
 
+// IsSuccess returns true when this create fulfillment order unauthorized response has a 2xx status code
+func (o *CreateFulfillmentOrderUnauthorized) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this create fulfillment order unauthorized response has a 3xx status code
+func (o *CreateFulfillmentOrderUnauthorized) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create fulfillment order unauthorized response has a 4xx status code
+func (o *CreateFulfillmentOrderUnauthorized) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this create fulfillment order unauthorized response has a 5xx status code
+func (o *CreateFulfillmentOrderUnauthorized) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this create fulfillment order unauthorized response a status code equal to that given
+func (o *CreateFulfillmentOrderUnauthorized) IsCode(code int) bool {
+	return code == 401
+}
+
 func (o *CreateFulfillmentOrderUnauthorized) Error() string {
 	return fmt.Sprintf("[POST /fba/outbound/2020-07-01/fulfillmentOrders][%d] createFulfillmentOrderUnauthorized  %+v", 401, o.Payload)
 }
+
+func (o *CreateFulfillmentOrderUnauthorized) String() string {
+	return fmt.Sprintf("[POST /fba/outbound/2020-07-01/fulfillmentOrders][%d] createFulfillmentOrderUnauthorized  %+v", 401, o.Payload)
+}
+
 func (o *CreateFulfillmentOrderUnauthorized) GetPayload() *fulfillment_outbound_2020_07_01_models.CreateFulfillmentOrderResponse {
 	return o.Payload
 }
@@ -247,7 +340,8 @@ func NewCreateFulfillmentOrderForbidden() *CreateFulfillmentOrderForbidden {
 	return &CreateFulfillmentOrderForbidden{}
 }
 
-/* CreateFulfillmentOrderForbidden describes a response with status code 403, with default header values.
+/*
+CreateFulfillmentOrderForbidden describes a response with status code 403, with default header values.
 
 Indicates that access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.
 */
@@ -260,9 +354,39 @@ type CreateFulfillmentOrderForbidden struct {
 	Payload *fulfillment_outbound_2020_07_01_models.CreateFulfillmentOrderResponse
 }
 
+// IsSuccess returns true when this create fulfillment order forbidden response has a 2xx status code
+func (o *CreateFulfillmentOrderForbidden) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this create fulfillment order forbidden response has a 3xx status code
+func (o *CreateFulfillmentOrderForbidden) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create fulfillment order forbidden response has a 4xx status code
+func (o *CreateFulfillmentOrderForbidden) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this create fulfillment order forbidden response has a 5xx status code
+func (o *CreateFulfillmentOrderForbidden) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this create fulfillment order forbidden response a status code equal to that given
+func (o *CreateFulfillmentOrderForbidden) IsCode(code int) bool {
+	return code == 403
+}
+
 func (o *CreateFulfillmentOrderForbidden) Error() string {
 	return fmt.Sprintf("[POST /fba/outbound/2020-07-01/fulfillmentOrders][%d] createFulfillmentOrderForbidden  %+v", 403, o.Payload)
 }
+
+func (o *CreateFulfillmentOrderForbidden) String() string {
+	return fmt.Sprintf("[POST /fba/outbound/2020-07-01/fulfillmentOrders][%d] createFulfillmentOrderForbidden  %+v", 403, o.Payload)
+}
+
 func (o *CreateFulfillmentOrderForbidden) GetPayload() *fulfillment_outbound_2020_07_01_models.CreateFulfillmentOrderResponse {
 	return o.Payload
 }
@@ -291,7 +415,8 @@ func NewCreateFulfillmentOrderNotFound() *CreateFulfillmentOrderNotFound {
 	return &CreateFulfillmentOrderNotFound{}
 }
 
-/* CreateFulfillmentOrderNotFound describes a response with status code 404, with default header values.
+/*
+CreateFulfillmentOrderNotFound describes a response with status code 404, with default header values.
 
 The specified resource does not exist.
 */
@@ -308,9 +433,39 @@ type CreateFulfillmentOrderNotFound struct {
 	Payload *fulfillment_outbound_2020_07_01_models.CreateFulfillmentOrderResponse
 }
 
+// IsSuccess returns true when this create fulfillment order not found response has a 2xx status code
+func (o *CreateFulfillmentOrderNotFound) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this create fulfillment order not found response has a 3xx status code
+func (o *CreateFulfillmentOrderNotFound) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create fulfillment order not found response has a 4xx status code
+func (o *CreateFulfillmentOrderNotFound) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this create fulfillment order not found response has a 5xx status code
+func (o *CreateFulfillmentOrderNotFound) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this create fulfillment order not found response a status code equal to that given
+func (o *CreateFulfillmentOrderNotFound) IsCode(code int) bool {
+	return code == 404
+}
+
 func (o *CreateFulfillmentOrderNotFound) Error() string {
 	return fmt.Sprintf("[POST /fba/outbound/2020-07-01/fulfillmentOrders][%d] createFulfillmentOrderNotFound  %+v", 404, o.Payload)
 }
+
+func (o *CreateFulfillmentOrderNotFound) String() string {
+	return fmt.Sprintf("[POST /fba/outbound/2020-07-01/fulfillmentOrders][%d] createFulfillmentOrderNotFound  %+v", 404, o.Payload)
+}
+
 func (o *CreateFulfillmentOrderNotFound) GetPayload() *fulfillment_outbound_2020_07_01_models.CreateFulfillmentOrderResponse {
 	return o.Payload
 }
@@ -346,7 +501,8 @@ func NewCreateFulfillmentOrderTooManyRequests() *CreateFulfillmentOrderTooManyRe
 	return &CreateFulfillmentOrderTooManyRequests{}
 }
 
-/* CreateFulfillmentOrderTooManyRequests describes a response with status code 429, with default header values.
+/*
+CreateFulfillmentOrderTooManyRequests describes a response with status code 429, with default header values.
 
 The frequency of requests was greater than allowed.
 */
@@ -364,9 +520,39 @@ type CreateFulfillmentOrderTooManyRequests struct {
 	Payload *fulfillment_outbound_2020_07_01_models.CreateFulfillmentOrderResponse
 }
 
+// IsSuccess returns true when this create fulfillment order too many requests response has a 2xx status code
+func (o *CreateFulfillmentOrderTooManyRequests) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this create fulfillment order too many requests response has a 3xx status code
+func (o *CreateFulfillmentOrderTooManyRequests) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create fulfillment order too many requests response has a 4xx status code
+func (o *CreateFulfillmentOrderTooManyRequests) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this create fulfillment order too many requests response has a 5xx status code
+func (o *CreateFulfillmentOrderTooManyRequests) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this create fulfillment order too many requests response a status code equal to that given
+func (o *CreateFulfillmentOrderTooManyRequests) IsCode(code int) bool {
+	return code == 429
+}
+
 func (o *CreateFulfillmentOrderTooManyRequests) Error() string {
 	return fmt.Sprintf("[POST /fba/outbound/2020-07-01/fulfillmentOrders][%d] createFulfillmentOrderTooManyRequests  %+v", 429, o.Payload)
 }
+
+func (o *CreateFulfillmentOrderTooManyRequests) String() string {
+	return fmt.Sprintf("[POST /fba/outbound/2020-07-01/fulfillmentOrders][%d] createFulfillmentOrderTooManyRequests  %+v", 429, o.Payload)
+}
+
 func (o *CreateFulfillmentOrderTooManyRequests) GetPayload() *fulfillment_outbound_2020_07_01_models.CreateFulfillmentOrderResponse {
 	return o.Payload
 }
@@ -402,7 +588,8 @@ func NewCreateFulfillmentOrderInternalServerError() *CreateFulfillmentOrderInter
 	return &CreateFulfillmentOrderInternalServerError{}
 }
 
-/* CreateFulfillmentOrderInternalServerError describes a response with status code 500, with default header values.
+/*
+CreateFulfillmentOrderInternalServerError describes a response with status code 500, with default header values.
 
 An unexpected condition occurred that prevented the server from fulfilling the request.
 */
@@ -420,9 +607,39 @@ type CreateFulfillmentOrderInternalServerError struct {
 	Payload *fulfillment_outbound_2020_07_01_models.CreateFulfillmentOrderResponse
 }
 
+// IsSuccess returns true when this create fulfillment order internal server error response has a 2xx status code
+func (o *CreateFulfillmentOrderInternalServerError) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this create fulfillment order internal server error response has a 3xx status code
+func (o *CreateFulfillmentOrderInternalServerError) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create fulfillment order internal server error response has a 4xx status code
+func (o *CreateFulfillmentOrderInternalServerError) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this create fulfillment order internal server error response has a 5xx status code
+func (o *CreateFulfillmentOrderInternalServerError) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this create fulfillment order internal server error response a status code equal to that given
+func (o *CreateFulfillmentOrderInternalServerError) IsCode(code int) bool {
+	return code == 500
+}
+
 func (o *CreateFulfillmentOrderInternalServerError) Error() string {
 	return fmt.Sprintf("[POST /fba/outbound/2020-07-01/fulfillmentOrders][%d] createFulfillmentOrderInternalServerError  %+v", 500, o.Payload)
 }
+
+func (o *CreateFulfillmentOrderInternalServerError) String() string {
+	return fmt.Sprintf("[POST /fba/outbound/2020-07-01/fulfillmentOrders][%d] createFulfillmentOrderInternalServerError  %+v", 500, o.Payload)
+}
+
 func (o *CreateFulfillmentOrderInternalServerError) GetPayload() *fulfillment_outbound_2020_07_01_models.CreateFulfillmentOrderResponse {
 	return o.Payload
 }
@@ -458,7 +675,8 @@ func NewCreateFulfillmentOrderServiceUnavailable() *CreateFulfillmentOrderServic
 	return &CreateFulfillmentOrderServiceUnavailable{}
 }
 
-/* CreateFulfillmentOrderServiceUnavailable describes a response with status code 503, with default header values.
+/*
+CreateFulfillmentOrderServiceUnavailable describes a response with status code 503, with default header values.
 
 Temporary overloading or maintenance of the server.
 */
@@ -476,9 +694,39 @@ type CreateFulfillmentOrderServiceUnavailable struct {
 	Payload *fulfillment_outbound_2020_07_01_models.CreateFulfillmentOrderResponse
 }
 
+// IsSuccess returns true when this create fulfillment order service unavailable response has a 2xx status code
+func (o *CreateFulfillmentOrderServiceUnavailable) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this create fulfillment order service unavailable response has a 3xx status code
+func (o *CreateFulfillmentOrderServiceUnavailable) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create fulfillment order service unavailable response has a 4xx status code
+func (o *CreateFulfillmentOrderServiceUnavailable) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this create fulfillment order service unavailable response has a 5xx status code
+func (o *CreateFulfillmentOrderServiceUnavailable) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this create fulfillment order service unavailable response a status code equal to that given
+func (o *CreateFulfillmentOrderServiceUnavailable) IsCode(code int) bool {
+	return code == 503
+}
+
 func (o *CreateFulfillmentOrderServiceUnavailable) Error() string {
 	return fmt.Sprintf("[POST /fba/outbound/2020-07-01/fulfillmentOrders][%d] createFulfillmentOrderServiceUnavailable  %+v", 503, o.Payload)
 }
+
+func (o *CreateFulfillmentOrderServiceUnavailable) String() string {
+	return fmt.Sprintf("[POST /fba/outbound/2020-07-01/fulfillmentOrders][%d] createFulfillmentOrderServiceUnavailable  %+v", 503, o.Payload)
+}
+
 func (o *CreateFulfillmentOrderServiceUnavailable) GetPayload() *fulfillment_outbound_2020_07_01_models.CreateFulfillmentOrderResponse {
 	return o.Payload
 }

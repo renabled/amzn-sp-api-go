@@ -38,7 +38,7 @@ type ClientService interface {
 }
 
 /*
-  GetCatalogItem Retrieves details for an item in the Amazon catalog.
+	GetCatalogItem Retrieves details for an item in the Amazon catalog.
 
 **Usage Plan:**
 
@@ -84,7 +84,7 @@ func (a *Client) GetCatalogItem(params *GetCatalogItemParams, opts ...ClientOpti
 }
 
 /*
-  SearchCatalogItems Search for and return a list of Amazon catalog items and associated information.
+	SearchCatalogItems Search for and return a list of Amazon catalog items and associated information.
 
 **Usage Plan:**
 

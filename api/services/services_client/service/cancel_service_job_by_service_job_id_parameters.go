@@ -52,10 +52,12 @@ func NewCancelServiceJobByServiceJobIDParamsWithHTTPClient(client *http.Client) 
 	}
 }
 
-/* CancelServiceJobByServiceJobIDParams contains all the parameters to send to the API endpoint
-   for the cancel service job by service job Id operation.
+/*
+CancelServiceJobByServiceJobIDParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the cancel service job by service job Id operation.
+
+	Typically these are written to a http.Request.
 */
 type CancelServiceJobByServiceJobIDParams struct {
 

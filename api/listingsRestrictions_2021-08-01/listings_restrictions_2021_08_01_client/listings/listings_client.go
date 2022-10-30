@@ -36,7 +36,7 @@ type ClientService interface {
 }
 
 /*
-  GetListingsRestrictions Returns listing restrictions for an item in the Amazon Catalog.
+	GetListingsRestrictions Returns listing restrictions for an item in the Amazon Catalog.
 
 **Usage Plan:**
 

@@ -53,10 +53,12 @@ func NewDeleteListingsItemParamsWithHTTPClient(client *http.Client) *DeleteListi
 	}
 }
 
-/* DeleteListingsItemParams contains all the parameters to send to the API endpoint
-   for the delete listings item operation.
+/*
+DeleteListingsItemParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the delete listings item operation.
+
+	Typically these are written to a http.Request.
 */
 type DeleteListingsItemParams struct {
 

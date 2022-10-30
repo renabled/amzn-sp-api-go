@@ -40,7 +40,7 @@ type ClientService interface {
 }
 
 /*
-  GetOrder Returns purchase order information for the purchaseOrderNumber that you specify.
+	GetOrder Returns purchase order information for the purchaseOrderNumber that you specify.
 
 **Usage Plans:**
 
@@ -87,7 +87,7 @@ func (a *Client) GetOrder(params *GetOrderParams, opts ...ClientOption) (*GetOrd
 }
 
 /*
-  GetOrders Returns a list of purchase orders created during the time frame that you specify. You define the time frame using the createdAfter and createdBefore parameters. You must use both parameters. You can choose to get only the purchase order numbers by setting the includeDetails parameter to false. In that case, the operation returns a list of purchase order numbers. You can then call the getOrder operation to return the details of a specific order.
+	GetOrders Returns a list of purchase orders created during the time frame that you specify. You define the time frame using the createdAfter and createdBefore parameters. You must use both parameters. You can choose to get only the purchase order numbers by setting the includeDetails parameter to false. In that case, the operation returns a list of purchase order numbers. You can then call the getOrder operation to return the details of a specific order.
 
 **Usage Plans:**
 
@@ -134,7 +134,7 @@ func (a *Client) GetOrders(params *GetOrdersParams, opts ...ClientOption) (*GetO
 }
 
 /*
-  SubmitAcknowledgement Submits acknowledgements for one or more purchase orders.
+	SubmitAcknowledgement Submits acknowledgements for one or more purchase orders.
 
 **Usage Plans:**
 

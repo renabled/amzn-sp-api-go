@@ -55,10 +55,12 @@ func NewUpdateScheduleParamsWithHTTPClient(client *http.Client) *UpdateScheduleP
 	}
 }
 
-/* UpdateScheduleParams contains all the parameters to send to the API endpoint
-   for the update schedule operation.
+/*
+UpdateScheduleParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the update schedule operation.
+
+	Typically these are written to a http.Request.
 */
 type UpdateScheduleParams struct {
 

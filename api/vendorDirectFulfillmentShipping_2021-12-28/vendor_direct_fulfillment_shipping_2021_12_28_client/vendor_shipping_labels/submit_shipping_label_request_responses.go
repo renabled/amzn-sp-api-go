@@ -87,7 +87,8 @@ func NewSubmitShippingLabelRequestAccepted() *SubmitShippingLabelRequestAccepted
 	return &SubmitShippingLabelRequestAccepted{}
 }
 
-/* SubmitShippingLabelRequestAccepted describes a response with status code 202, with default header values.
+/*
+SubmitShippingLabelRequestAccepted describes a response with status code 202, with default header values.
 
 Success.
 */
@@ -104,9 +105,39 @@ type SubmitShippingLabelRequestAccepted struct {
 	Payload *vendor_direct_fulfillment_shipping_2021_12_28_models.TransactionReference
 }
 
+// IsSuccess returns true when this submit shipping label request accepted response has a 2xx status code
+func (o *SubmitShippingLabelRequestAccepted) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this submit shipping label request accepted response has a 3xx status code
+func (o *SubmitShippingLabelRequestAccepted) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this submit shipping label request accepted response has a 4xx status code
+func (o *SubmitShippingLabelRequestAccepted) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this submit shipping label request accepted response has a 5xx status code
+func (o *SubmitShippingLabelRequestAccepted) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this submit shipping label request accepted response a status code equal to that given
+func (o *SubmitShippingLabelRequestAccepted) IsCode(code int) bool {
+	return code == 202
+}
+
 func (o *SubmitShippingLabelRequestAccepted) Error() string {
 	return fmt.Sprintf("[POST /vendor/directFulfillment/shipping/2021-12-28/shippingLabels][%d] submitShippingLabelRequestAccepted  %+v", 202, o.Payload)
 }
+
+func (o *SubmitShippingLabelRequestAccepted) String() string {
+	return fmt.Sprintf("[POST /vendor/directFulfillment/shipping/2021-12-28/shippingLabels][%d] submitShippingLabelRequestAccepted  %+v", 202, o.Payload)
+}
+
 func (o *SubmitShippingLabelRequestAccepted) GetPayload() *vendor_direct_fulfillment_shipping_2021_12_28_models.TransactionReference {
 	return o.Payload
 }
@@ -142,7 +173,8 @@ func NewSubmitShippingLabelRequestBadRequest() *SubmitShippingLabelRequestBadReq
 	return &SubmitShippingLabelRequestBadRequest{}
 }
 
-/* SubmitShippingLabelRequestBadRequest describes a response with status code 400, with default header values.
+/*
+SubmitShippingLabelRequestBadRequest describes a response with status code 400, with default header values.
 
 Request has missing or invalid parameters and cannot be parsed.
 */
@@ -159,9 +191,39 @@ type SubmitShippingLabelRequestBadRequest struct {
 	Payload *vendor_direct_fulfillment_shipping_2021_12_28_models.ErrorList
 }
 
+// IsSuccess returns true when this submit shipping label request bad request response has a 2xx status code
+func (o *SubmitShippingLabelRequestBadRequest) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this submit shipping label request bad request response has a 3xx status code
+func (o *SubmitShippingLabelRequestBadRequest) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this submit shipping label request bad request response has a 4xx status code
+func (o *SubmitShippingLabelRequestBadRequest) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this submit shipping label request bad request response has a 5xx status code
+func (o *SubmitShippingLabelRequestBadRequest) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this submit shipping label request bad request response a status code equal to that given
+func (o *SubmitShippingLabelRequestBadRequest) IsCode(code int) bool {
+	return code == 400
+}
+
 func (o *SubmitShippingLabelRequestBadRequest) Error() string {
 	return fmt.Sprintf("[POST /vendor/directFulfillment/shipping/2021-12-28/shippingLabels][%d] submitShippingLabelRequestBadRequest  %+v", 400, o.Payload)
 }
+
+func (o *SubmitShippingLabelRequestBadRequest) String() string {
+	return fmt.Sprintf("[POST /vendor/directFulfillment/shipping/2021-12-28/shippingLabels][%d] submitShippingLabelRequestBadRequest  %+v", 400, o.Payload)
+}
+
 func (o *SubmitShippingLabelRequestBadRequest) GetPayload() *vendor_direct_fulfillment_shipping_2021_12_28_models.ErrorList {
 	return o.Payload
 }
@@ -197,7 +259,8 @@ func NewSubmitShippingLabelRequestForbidden() *SubmitShippingLabelRequestForbidd
 	return &SubmitShippingLabelRequestForbidden{}
 }
 
-/* SubmitShippingLabelRequestForbidden describes a response with status code 403, with default header values.
+/*
+SubmitShippingLabelRequestForbidden describes a response with status code 403, with default header values.
 
 Indicates that access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.
 */
@@ -210,9 +273,39 @@ type SubmitShippingLabelRequestForbidden struct {
 	Payload *vendor_direct_fulfillment_shipping_2021_12_28_models.ErrorList
 }
 
+// IsSuccess returns true when this submit shipping label request forbidden response has a 2xx status code
+func (o *SubmitShippingLabelRequestForbidden) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this submit shipping label request forbidden response has a 3xx status code
+func (o *SubmitShippingLabelRequestForbidden) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this submit shipping label request forbidden response has a 4xx status code
+func (o *SubmitShippingLabelRequestForbidden) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this submit shipping label request forbidden response has a 5xx status code
+func (o *SubmitShippingLabelRequestForbidden) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this submit shipping label request forbidden response a status code equal to that given
+func (o *SubmitShippingLabelRequestForbidden) IsCode(code int) bool {
+	return code == 403
+}
+
 func (o *SubmitShippingLabelRequestForbidden) Error() string {
 	return fmt.Sprintf("[POST /vendor/directFulfillment/shipping/2021-12-28/shippingLabels][%d] submitShippingLabelRequestForbidden  %+v", 403, o.Payload)
 }
+
+func (o *SubmitShippingLabelRequestForbidden) String() string {
+	return fmt.Sprintf("[POST /vendor/directFulfillment/shipping/2021-12-28/shippingLabels][%d] submitShippingLabelRequestForbidden  %+v", 403, o.Payload)
+}
+
 func (o *SubmitShippingLabelRequestForbidden) GetPayload() *vendor_direct_fulfillment_shipping_2021_12_28_models.ErrorList {
 	return o.Payload
 }
@@ -241,7 +334,8 @@ func NewSubmitShippingLabelRequestNotFound() *SubmitShippingLabelRequestNotFound
 	return &SubmitShippingLabelRequestNotFound{}
 }
 
-/* SubmitShippingLabelRequestNotFound describes a response with status code 404, with default header values.
+/*
+SubmitShippingLabelRequestNotFound describes a response with status code 404, with default header values.
 
 The resource specified does not exist.
 */
@@ -258,9 +352,39 @@ type SubmitShippingLabelRequestNotFound struct {
 	Payload *vendor_direct_fulfillment_shipping_2021_12_28_models.ErrorList
 }
 
+// IsSuccess returns true when this submit shipping label request not found response has a 2xx status code
+func (o *SubmitShippingLabelRequestNotFound) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this submit shipping label request not found response has a 3xx status code
+func (o *SubmitShippingLabelRequestNotFound) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this submit shipping label request not found response has a 4xx status code
+func (o *SubmitShippingLabelRequestNotFound) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this submit shipping label request not found response has a 5xx status code
+func (o *SubmitShippingLabelRequestNotFound) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this submit shipping label request not found response a status code equal to that given
+func (o *SubmitShippingLabelRequestNotFound) IsCode(code int) bool {
+	return code == 404
+}
+
 func (o *SubmitShippingLabelRequestNotFound) Error() string {
 	return fmt.Sprintf("[POST /vendor/directFulfillment/shipping/2021-12-28/shippingLabels][%d] submitShippingLabelRequestNotFound  %+v", 404, o.Payload)
 }
+
+func (o *SubmitShippingLabelRequestNotFound) String() string {
+	return fmt.Sprintf("[POST /vendor/directFulfillment/shipping/2021-12-28/shippingLabels][%d] submitShippingLabelRequestNotFound  %+v", 404, o.Payload)
+}
+
 func (o *SubmitShippingLabelRequestNotFound) GetPayload() *vendor_direct_fulfillment_shipping_2021_12_28_models.ErrorList {
 	return o.Payload
 }
@@ -296,7 +420,8 @@ func NewSubmitShippingLabelRequestRequestEntityTooLarge() *SubmitShippingLabelRe
 	return &SubmitShippingLabelRequestRequestEntityTooLarge{}
 }
 
-/* SubmitShippingLabelRequestRequestEntityTooLarge describes a response with status code 413, with default header values.
+/*
+SubmitShippingLabelRequestRequestEntityTooLarge describes a response with status code 413, with default header values.
 
 The request size exceeded the maximum accepted size.
 */
@@ -314,9 +439,39 @@ type SubmitShippingLabelRequestRequestEntityTooLarge struct {
 	Payload *vendor_direct_fulfillment_shipping_2021_12_28_models.ErrorList
 }
 
+// IsSuccess returns true when this submit shipping label request request entity too large response has a 2xx status code
+func (o *SubmitShippingLabelRequestRequestEntityTooLarge) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this submit shipping label request request entity too large response has a 3xx status code
+func (o *SubmitShippingLabelRequestRequestEntityTooLarge) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this submit shipping label request request entity too large response has a 4xx status code
+func (o *SubmitShippingLabelRequestRequestEntityTooLarge) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this submit shipping label request request entity too large response has a 5xx status code
+func (o *SubmitShippingLabelRequestRequestEntityTooLarge) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this submit shipping label request request entity too large response a status code equal to that given
+func (o *SubmitShippingLabelRequestRequestEntityTooLarge) IsCode(code int) bool {
+	return code == 413
+}
+
 func (o *SubmitShippingLabelRequestRequestEntityTooLarge) Error() string {
 	return fmt.Sprintf("[POST /vendor/directFulfillment/shipping/2021-12-28/shippingLabels][%d] submitShippingLabelRequestRequestEntityTooLarge  %+v", 413, o.Payload)
 }
+
+func (o *SubmitShippingLabelRequestRequestEntityTooLarge) String() string {
+	return fmt.Sprintf("[POST /vendor/directFulfillment/shipping/2021-12-28/shippingLabels][%d] submitShippingLabelRequestRequestEntityTooLarge  %+v", 413, o.Payload)
+}
+
 func (o *SubmitShippingLabelRequestRequestEntityTooLarge) GetPayload() *vendor_direct_fulfillment_shipping_2021_12_28_models.ErrorList {
 	return o.Payload
 }
@@ -352,7 +507,8 @@ func NewSubmitShippingLabelRequestUnsupportedMediaType() *SubmitShippingLabelReq
 	return &SubmitShippingLabelRequestUnsupportedMediaType{}
 }
 
-/* SubmitShippingLabelRequestUnsupportedMediaType describes a response with status code 415, with default header values.
+/*
+SubmitShippingLabelRequestUnsupportedMediaType describes a response with status code 415, with default header values.
 
 The request payload is in an unsupported format.
 */
@@ -370,9 +526,39 @@ type SubmitShippingLabelRequestUnsupportedMediaType struct {
 	Payload *vendor_direct_fulfillment_shipping_2021_12_28_models.ErrorList
 }
 
+// IsSuccess returns true when this submit shipping label request unsupported media type response has a 2xx status code
+func (o *SubmitShippingLabelRequestUnsupportedMediaType) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this submit shipping label request unsupported media type response has a 3xx status code
+func (o *SubmitShippingLabelRequestUnsupportedMediaType) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this submit shipping label request unsupported media type response has a 4xx status code
+func (o *SubmitShippingLabelRequestUnsupportedMediaType) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this submit shipping label request unsupported media type response has a 5xx status code
+func (o *SubmitShippingLabelRequestUnsupportedMediaType) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this submit shipping label request unsupported media type response a status code equal to that given
+func (o *SubmitShippingLabelRequestUnsupportedMediaType) IsCode(code int) bool {
+	return code == 415
+}
+
 func (o *SubmitShippingLabelRequestUnsupportedMediaType) Error() string {
 	return fmt.Sprintf("[POST /vendor/directFulfillment/shipping/2021-12-28/shippingLabels][%d] submitShippingLabelRequestUnsupportedMediaType  %+v", 415, o.Payload)
 }
+
+func (o *SubmitShippingLabelRequestUnsupportedMediaType) String() string {
+	return fmt.Sprintf("[POST /vendor/directFulfillment/shipping/2021-12-28/shippingLabels][%d] submitShippingLabelRequestUnsupportedMediaType  %+v", 415, o.Payload)
+}
+
 func (o *SubmitShippingLabelRequestUnsupportedMediaType) GetPayload() *vendor_direct_fulfillment_shipping_2021_12_28_models.ErrorList {
 	return o.Payload
 }
@@ -408,7 +594,8 @@ func NewSubmitShippingLabelRequestTooManyRequests() *SubmitShippingLabelRequestT
 	return &SubmitShippingLabelRequestTooManyRequests{}
 }
 
-/* SubmitShippingLabelRequestTooManyRequests describes a response with status code 429, with default header values.
+/*
+SubmitShippingLabelRequestTooManyRequests describes a response with status code 429, with default header values.
 
 The frequency of requests was greater than allowed.
 */
@@ -426,9 +613,39 @@ type SubmitShippingLabelRequestTooManyRequests struct {
 	Payload *vendor_direct_fulfillment_shipping_2021_12_28_models.ErrorList
 }
 
+// IsSuccess returns true when this submit shipping label request too many requests response has a 2xx status code
+func (o *SubmitShippingLabelRequestTooManyRequests) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this submit shipping label request too many requests response has a 3xx status code
+func (o *SubmitShippingLabelRequestTooManyRequests) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this submit shipping label request too many requests response has a 4xx status code
+func (o *SubmitShippingLabelRequestTooManyRequests) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this submit shipping label request too many requests response has a 5xx status code
+func (o *SubmitShippingLabelRequestTooManyRequests) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this submit shipping label request too many requests response a status code equal to that given
+func (o *SubmitShippingLabelRequestTooManyRequests) IsCode(code int) bool {
+	return code == 429
+}
+
 func (o *SubmitShippingLabelRequestTooManyRequests) Error() string {
 	return fmt.Sprintf("[POST /vendor/directFulfillment/shipping/2021-12-28/shippingLabels][%d] submitShippingLabelRequestTooManyRequests  %+v", 429, o.Payload)
 }
+
+func (o *SubmitShippingLabelRequestTooManyRequests) String() string {
+	return fmt.Sprintf("[POST /vendor/directFulfillment/shipping/2021-12-28/shippingLabels][%d] submitShippingLabelRequestTooManyRequests  %+v", 429, o.Payload)
+}
+
 func (o *SubmitShippingLabelRequestTooManyRequests) GetPayload() *vendor_direct_fulfillment_shipping_2021_12_28_models.ErrorList {
 	return o.Payload
 }
@@ -464,7 +681,8 @@ func NewSubmitShippingLabelRequestInternalServerError() *SubmitShippingLabelRequ
 	return &SubmitShippingLabelRequestInternalServerError{}
 }
 
-/* SubmitShippingLabelRequestInternalServerError describes a response with status code 500, with default header values.
+/*
+SubmitShippingLabelRequestInternalServerError describes a response with status code 500, with default header values.
 
 An unexpected condition occurred that prevented the server from fulfilling the request.
 */
@@ -482,9 +700,39 @@ type SubmitShippingLabelRequestInternalServerError struct {
 	Payload *vendor_direct_fulfillment_shipping_2021_12_28_models.ErrorList
 }
 
+// IsSuccess returns true when this submit shipping label request internal server error response has a 2xx status code
+func (o *SubmitShippingLabelRequestInternalServerError) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this submit shipping label request internal server error response has a 3xx status code
+func (o *SubmitShippingLabelRequestInternalServerError) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this submit shipping label request internal server error response has a 4xx status code
+func (o *SubmitShippingLabelRequestInternalServerError) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this submit shipping label request internal server error response has a 5xx status code
+func (o *SubmitShippingLabelRequestInternalServerError) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this submit shipping label request internal server error response a status code equal to that given
+func (o *SubmitShippingLabelRequestInternalServerError) IsCode(code int) bool {
+	return code == 500
+}
+
 func (o *SubmitShippingLabelRequestInternalServerError) Error() string {
 	return fmt.Sprintf("[POST /vendor/directFulfillment/shipping/2021-12-28/shippingLabels][%d] submitShippingLabelRequestInternalServerError  %+v", 500, o.Payload)
 }
+
+func (o *SubmitShippingLabelRequestInternalServerError) String() string {
+	return fmt.Sprintf("[POST /vendor/directFulfillment/shipping/2021-12-28/shippingLabels][%d] submitShippingLabelRequestInternalServerError  %+v", 500, o.Payload)
+}
+
 func (o *SubmitShippingLabelRequestInternalServerError) GetPayload() *vendor_direct_fulfillment_shipping_2021_12_28_models.ErrorList {
 	return o.Payload
 }
@@ -520,7 +768,8 @@ func NewSubmitShippingLabelRequestServiceUnavailable() *SubmitShippingLabelReque
 	return &SubmitShippingLabelRequestServiceUnavailable{}
 }
 
-/* SubmitShippingLabelRequestServiceUnavailable describes a response with status code 503, with default header values.
+/*
+SubmitShippingLabelRequestServiceUnavailable describes a response with status code 503, with default header values.
 
 Temporary overloading or maintenance of the server.
 */
@@ -538,9 +787,39 @@ type SubmitShippingLabelRequestServiceUnavailable struct {
 	Payload *vendor_direct_fulfillment_shipping_2021_12_28_models.ErrorList
 }
 
+// IsSuccess returns true when this submit shipping label request service unavailable response has a 2xx status code
+func (o *SubmitShippingLabelRequestServiceUnavailable) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this submit shipping label request service unavailable response has a 3xx status code
+func (o *SubmitShippingLabelRequestServiceUnavailable) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this submit shipping label request service unavailable response has a 4xx status code
+func (o *SubmitShippingLabelRequestServiceUnavailable) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this submit shipping label request service unavailable response has a 5xx status code
+func (o *SubmitShippingLabelRequestServiceUnavailable) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this submit shipping label request service unavailable response a status code equal to that given
+func (o *SubmitShippingLabelRequestServiceUnavailable) IsCode(code int) bool {
+	return code == 503
+}
+
 func (o *SubmitShippingLabelRequestServiceUnavailable) Error() string {
 	return fmt.Sprintf("[POST /vendor/directFulfillment/shipping/2021-12-28/shippingLabels][%d] submitShippingLabelRequestServiceUnavailable  %+v", 503, o.Payload)
 }
+
+func (o *SubmitShippingLabelRequestServiceUnavailable) String() string {
+	return fmt.Sprintf("[POST /vendor/directFulfillment/shipping/2021-12-28/shippingLabels][%d] submitShippingLabelRequestServiceUnavailable  %+v", 503, o.Payload)
+}
+
 func (o *SubmitShippingLabelRequestServiceUnavailable) GetPayload() *vendor_direct_fulfillment_shipping_2021_12_28_models.ErrorList {
 	return o.Payload
 }

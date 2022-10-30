@@ -87,7 +87,8 @@ func NewGetListingsItemOK() *GetListingsItemOK {
 	return &GetListingsItemOK{}
 }
 
-/* GetListingsItemOK describes a response with status code 200, with default header values.
+/*
+GetListingsItemOK describes a response with status code 200, with default header values.
 
 Success.
 */
@@ -104,9 +105,39 @@ type GetListingsItemOK struct {
 	Payload *listings_items_2021_08_01_models.Item
 }
 
+// IsSuccess returns true when this get listings item o k response has a 2xx status code
+func (o *GetListingsItemOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this get listings item o k response has a 3xx status code
+func (o *GetListingsItemOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get listings item o k response has a 4xx status code
+func (o *GetListingsItemOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get listings item o k response has a 5xx status code
+func (o *GetListingsItemOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get listings item o k response a status code equal to that given
+func (o *GetListingsItemOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *GetListingsItemOK) Error() string {
 	return fmt.Sprintf("[GET /listings/2021-08-01/items/{sellerId}/{sku}][%d] getListingsItemOK  %+v", 200, o.Payload)
 }
+
+func (o *GetListingsItemOK) String() string {
+	return fmt.Sprintf("[GET /listings/2021-08-01/items/{sellerId}/{sku}][%d] getListingsItemOK  %+v", 200, o.Payload)
+}
+
 func (o *GetListingsItemOK) GetPayload() *listings_items_2021_08_01_models.Item {
 	return o.Payload
 }
@@ -142,7 +173,8 @@ func NewGetListingsItemBadRequest() *GetListingsItemBadRequest {
 	return &GetListingsItemBadRequest{}
 }
 
-/* GetListingsItemBadRequest describes a response with status code 400, with default header values.
+/*
+GetListingsItemBadRequest describes a response with status code 400, with default header values.
 
 Request has missing or invalid parameters and cannot be parsed.
 */
@@ -159,9 +191,39 @@ type GetListingsItemBadRequest struct {
 	Payload *listings_items_2021_08_01_models.ErrorList
 }
 
+// IsSuccess returns true when this get listings item bad request response has a 2xx status code
+func (o *GetListingsItemBadRequest) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get listings item bad request response has a 3xx status code
+func (o *GetListingsItemBadRequest) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get listings item bad request response has a 4xx status code
+func (o *GetListingsItemBadRequest) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get listings item bad request response has a 5xx status code
+func (o *GetListingsItemBadRequest) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get listings item bad request response a status code equal to that given
+func (o *GetListingsItemBadRequest) IsCode(code int) bool {
+	return code == 400
+}
+
 func (o *GetListingsItemBadRequest) Error() string {
 	return fmt.Sprintf("[GET /listings/2021-08-01/items/{sellerId}/{sku}][%d] getListingsItemBadRequest  %+v", 400, o.Payload)
 }
+
+func (o *GetListingsItemBadRequest) String() string {
+	return fmt.Sprintf("[GET /listings/2021-08-01/items/{sellerId}/{sku}][%d] getListingsItemBadRequest  %+v", 400, o.Payload)
+}
+
 func (o *GetListingsItemBadRequest) GetPayload() *listings_items_2021_08_01_models.ErrorList {
 	return o.Payload
 }
@@ -197,7 +259,8 @@ func NewGetListingsItemForbidden() *GetListingsItemForbidden {
 	return &GetListingsItemForbidden{}
 }
 
-/* GetListingsItemForbidden describes a response with status code 403, with default header values.
+/*
+GetListingsItemForbidden describes a response with status code 403, with default header values.
 
 Indicates that access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.
 */
@@ -210,9 +273,39 @@ type GetListingsItemForbidden struct {
 	Payload *listings_items_2021_08_01_models.ErrorList
 }
 
+// IsSuccess returns true when this get listings item forbidden response has a 2xx status code
+func (o *GetListingsItemForbidden) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get listings item forbidden response has a 3xx status code
+func (o *GetListingsItemForbidden) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get listings item forbidden response has a 4xx status code
+func (o *GetListingsItemForbidden) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get listings item forbidden response has a 5xx status code
+func (o *GetListingsItemForbidden) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get listings item forbidden response a status code equal to that given
+func (o *GetListingsItemForbidden) IsCode(code int) bool {
+	return code == 403
+}
+
 func (o *GetListingsItemForbidden) Error() string {
 	return fmt.Sprintf("[GET /listings/2021-08-01/items/{sellerId}/{sku}][%d] getListingsItemForbidden  %+v", 403, o.Payload)
 }
+
+func (o *GetListingsItemForbidden) String() string {
+	return fmt.Sprintf("[GET /listings/2021-08-01/items/{sellerId}/{sku}][%d] getListingsItemForbidden  %+v", 403, o.Payload)
+}
+
 func (o *GetListingsItemForbidden) GetPayload() *listings_items_2021_08_01_models.ErrorList {
 	return o.Payload
 }
@@ -241,7 +334,8 @@ func NewGetListingsItemNotFound() *GetListingsItemNotFound {
 	return &GetListingsItemNotFound{}
 }
 
-/* GetListingsItemNotFound describes a response with status code 404, with default header values.
+/*
+GetListingsItemNotFound describes a response with status code 404, with default header values.
 
 The resource specified does not exist.
 */
@@ -258,9 +352,39 @@ type GetListingsItemNotFound struct {
 	Payload *listings_items_2021_08_01_models.ErrorList
 }
 
+// IsSuccess returns true when this get listings item not found response has a 2xx status code
+func (o *GetListingsItemNotFound) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get listings item not found response has a 3xx status code
+func (o *GetListingsItemNotFound) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get listings item not found response has a 4xx status code
+func (o *GetListingsItemNotFound) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get listings item not found response has a 5xx status code
+func (o *GetListingsItemNotFound) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get listings item not found response a status code equal to that given
+func (o *GetListingsItemNotFound) IsCode(code int) bool {
+	return code == 404
+}
+
 func (o *GetListingsItemNotFound) Error() string {
 	return fmt.Sprintf("[GET /listings/2021-08-01/items/{sellerId}/{sku}][%d] getListingsItemNotFound  %+v", 404, o.Payload)
 }
+
+func (o *GetListingsItemNotFound) String() string {
+	return fmt.Sprintf("[GET /listings/2021-08-01/items/{sellerId}/{sku}][%d] getListingsItemNotFound  %+v", 404, o.Payload)
+}
+
 func (o *GetListingsItemNotFound) GetPayload() *listings_items_2021_08_01_models.ErrorList {
 	return o.Payload
 }
@@ -296,7 +420,8 @@ func NewGetListingsItemRequestEntityTooLarge() *GetListingsItemRequestEntityTooL
 	return &GetListingsItemRequestEntityTooLarge{}
 }
 
-/* GetListingsItemRequestEntityTooLarge describes a response with status code 413, with default header values.
+/*
+GetListingsItemRequestEntityTooLarge describes a response with status code 413, with default header values.
 
 The request size exceeded the maximum accepted size.
 */
@@ -309,9 +434,39 @@ type GetListingsItemRequestEntityTooLarge struct {
 	Payload *listings_items_2021_08_01_models.ErrorList
 }
 
+// IsSuccess returns true when this get listings item request entity too large response has a 2xx status code
+func (o *GetListingsItemRequestEntityTooLarge) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get listings item request entity too large response has a 3xx status code
+func (o *GetListingsItemRequestEntityTooLarge) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get listings item request entity too large response has a 4xx status code
+func (o *GetListingsItemRequestEntityTooLarge) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get listings item request entity too large response has a 5xx status code
+func (o *GetListingsItemRequestEntityTooLarge) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get listings item request entity too large response a status code equal to that given
+func (o *GetListingsItemRequestEntityTooLarge) IsCode(code int) bool {
+	return code == 413
+}
+
 func (o *GetListingsItemRequestEntityTooLarge) Error() string {
 	return fmt.Sprintf("[GET /listings/2021-08-01/items/{sellerId}/{sku}][%d] getListingsItemRequestEntityTooLarge  %+v", 413, o.Payload)
 }
+
+func (o *GetListingsItemRequestEntityTooLarge) String() string {
+	return fmt.Sprintf("[GET /listings/2021-08-01/items/{sellerId}/{sku}][%d] getListingsItemRequestEntityTooLarge  %+v", 413, o.Payload)
+}
+
 func (o *GetListingsItemRequestEntityTooLarge) GetPayload() *listings_items_2021_08_01_models.ErrorList {
 	return o.Payload
 }
@@ -340,7 +495,8 @@ func NewGetListingsItemUnsupportedMediaType() *GetListingsItemUnsupportedMediaTy
 	return &GetListingsItemUnsupportedMediaType{}
 }
 
-/* GetListingsItemUnsupportedMediaType describes a response with status code 415, with default header values.
+/*
+GetListingsItemUnsupportedMediaType describes a response with status code 415, with default header values.
 
 The request payload is in an unsupported format.
 */
@@ -353,9 +509,39 @@ type GetListingsItemUnsupportedMediaType struct {
 	Payload *listings_items_2021_08_01_models.ErrorList
 }
 
+// IsSuccess returns true when this get listings item unsupported media type response has a 2xx status code
+func (o *GetListingsItemUnsupportedMediaType) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get listings item unsupported media type response has a 3xx status code
+func (o *GetListingsItemUnsupportedMediaType) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get listings item unsupported media type response has a 4xx status code
+func (o *GetListingsItemUnsupportedMediaType) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get listings item unsupported media type response has a 5xx status code
+func (o *GetListingsItemUnsupportedMediaType) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get listings item unsupported media type response a status code equal to that given
+func (o *GetListingsItemUnsupportedMediaType) IsCode(code int) bool {
+	return code == 415
+}
+
 func (o *GetListingsItemUnsupportedMediaType) Error() string {
 	return fmt.Sprintf("[GET /listings/2021-08-01/items/{sellerId}/{sku}][%d] getListingsItemUnsupportedMediaType  %+v", 415, o.Payload)
 }
+
+func (o *GetListingsItemUnsupportedMediaType) String() string {
+	return fmt.Sprintf("[GET /listings/2021-08-01/items/{sellerId}/{sku}][%d] getListingsItemUnsupportedMediaType  %+v", 415, o.Payload)
+}
+
 func (o *GetListingsItemUnsupportedMediaType) GetPayload() *listings_items_2021_08_01_models.ErrorList {
 	return o.Payload
 }
@@ -384,7 +570,8 @@ func NewGetListingsItemTooManyRequests() *GetListingsItemTooManyRequests {
 	return &GetListingsItemTooManyRequests{}
 }
 
-/* GetListingsItemTooManyRequests describes a response with status code 429, with default header values.
+/*
+GetListingsItemTooManyRequests describes a response with status code 429, with default header values.
 
 The frequency of requests was greater than allowed.
 */
@@ -397,9 +584,39 @@ type GetListingsItemTooManyRequests struct {
 	Payload *listings_items_2021_08_01_models.ErrorList
 }
 
+// IsSuccess returns true when this get listings item too many requests response has a 2xx status code
+func (o *GetListingsItemTooManyRequests) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get listings item too many requests response has a 3xx status code
+func (o *GetListingsItemTooManyRequests) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get listings item too many requests response has a 4xx status code
+func (o *GetListingsItemTooManyRequests) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get listings item too many requests response has a 5xx status code
+func (o *GetListingsItemTooManyRequests) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get listings item too many requests response a status code equal to that given
+func (o *GetListingsItemTooManyRequests) IsCode(code int) bool {
+	return code == 429
+}
+
 func (o *GetListingsItemTooManyRequests) Error() string {
 	return fmt.Sprintf("[GET /listings/2021-08-01/items/{sellerId}/{sku}][%d] getListingsItemTooManyRequests  %+v", 429, o.Payload)
 }
+
+func (o *GetListingsItemTooManyRequests) String() string {
+	return fmt.Sprintf("[GET /listings/2021-08-01/items/{sellerId}/{sku}][%d] getListingsItemTooManyRequests  %+v", 429, o.Payload)
+}
+
 func (o *GetListingsItemTooManyRequests) GetPayload() *listings_items_2021_08_01_models.ErrorList {
 	return o.Payload
 }
@@ -428,7 +645,8 @@ func NewGetListingsItemInternalServerError() *GetListingsItemInternalServerError
 	return &GetListingsItemInternalServerError{}
 }
 
-/* GetListingsItemInternalServerError describes a response with status code 500, with default header values.
+/*
+GetListingsItemInternalServerError describes a response with status code 500, with default header values.
 
 An unexpected condition occurred that prevented the server from fulfilling the request.
 */
@@ -441,9 +659,39 @@ type GetListingsItemInternalServerError struct {
 	Payload *listings_items_2021_08_01_models.ErrorList
 }
 
+// IsSuccess returns true when this get listings item internal server error response has a 2xx status code
+func (o *GetListingsItemInternalServerError) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get listings item internal server error response has a 3xx status code
+func (o *GetListingsItemInternalServerError) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get listings item internal server error response has a 4xx status code
+func (o *GetListingsItemInternalServerError) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get listings item internal server error response has a 5xx status code
+func (o *GetListingsItemInternalServerError) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this get listings item internal server error response a status code equal to that given
+func (o *GetListingsItemInternalServerError) IsCode(code int) bool {
+	return code == 500
+}
+
 func (o *GetListingsItemInternalServerError) Error() string {
 	return fmt.Sprintf("[GET /listings/2021-08-01/items/{sellerId}/{sku}][%d] getListingsItemInternalServerError  %+v", 500, o.Payload)
 }
+
+func (o *GetListingsItemInternalServerError) String() string {
+	return fmt.Sprintf("[GET /listings/2021-08-01/items/{sellerId}/{sku}][%d] getListingsItemInternalServerError  %+v", 500, o.Payload)
+}
+
 func (o *GetListingsItemInternalServerError) GetPayload() *listings_items_2021_08_01_models.ErrorList {
 	return o.Payload
 }
@@ -472,7 +720,8 @@ func NewGetListingsItemServiceUnavailable() *GetListingsItemServiceUnavailable {
 	return &GetListingsItemServiceUnavailable{}
 }
 
-/* GetListingsItemServiceUnavailable describes a response with status code 503, with default header values.
+/*
+GetListingsItemServiceUnavailable describes a response with status code 503, with default header values.
 
 Temporary overloading or maintenance of the server.
 */
@@ -485,9 +734,39 @@ type GetListingsItemServiceUnavailable struct {
 	Payload *listings_items_2021_08_01_models.ErrorList
 }
 
+// IsSuccess returns true when this get listings item service unavailable response has a 2xx status code
+func (o *GetListingsItemServiceUnavailable) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get listings item service unavailable response has a 3xx status code
+func (o *GetListingsItemServiceUnavailable) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get listings item service unavailable response has a 4xx status code
+func (o *GetListingsItemServiceUnavailable) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get listings item service unavailable response has a 5xx status code
+func (o *GetListingsItemServiceUnavailable) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this get listings item service unavailable response a status code equal to that given
+func (o *GetListingsItemServiceUnavailable) IsCode(code int) bool {
+	return code == 503
+}
+
 func (o *GetListingsItemServiceUnavailable) Error() string {
 	return fmt.Sprintf("[GET /listings/2021-08-01/items/{sellerId}/{sku}][%d] getListingsItemServiceUnavailable  %+v", 503, o.Payload)
 }
+
+func (o *GetListingsItemServiceUnavailable) String() string {
+	return fmt.Sprintf("[GET /listings/2021-08-01/items/{sellerId}/{sku}][%d] getListingsItemServiceUnavailable  %+v", 503, o.Payload)
+}
+
 func (o *GetListingsItemServiceUnavailable) GetPayload() *listings_items_2021_08_01_models.ErrorList {
 	return o.Payload
 }

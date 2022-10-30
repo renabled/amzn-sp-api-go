@@ -81,7 +81,8 @@ func NewRetrieveShippingLabelOK() *RetrieveShippingLabelOK {
 	return &RetrieveShippingLabelOK{}
 }
 
-/* RetrieveShippingLabelOK describes a response with status code 200, with default header values.
+/*
+RetrieveShippingLabelOK describes a response with status code 200, with default header values.
 
 Success.
 */
@@ -98,9 +99,39 @@ type RetrieveShippingLabelOK struct {
 	Payload *shipping_models.RetrieveShippingLabelResponse
 }
 
+// IsSuccess returns true when this retrieve shipping label o k response has a 2xx status code
+func (o *RetrieveShippingLabelOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this retrieve shipping label o k response has a 3xx status code
+func (o *RetrieveShippingLabelOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this retrieve shipping label o k response has a 4xx status code
+func (o *RetrieveShippingLabelOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this retrieve shipping label o k response has a 5xx status code
+func (o *RetrieveShippingLabelOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this retrieve shipping label o k response a status code equal to that given
+func (o *RetrieveShippingLabelOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *RetrieveShippingLabelOK) Error() string {
 	return fmt.Sprintf("[POST /shipping/v1/shipments/{shipmentId}/containers/{trackingId}/label][%d] retrieveShippingLabelOK  %+v", 200, o.Payload)
 }
+
+func (o *RetrieveShippingLabelOK) String() string {
+	return fmt.Sprintf("[POST /shipping/v1/shipments/{shipmentId}/containers/{trackingId}/label][%d] retrieveShippingLabelOK  %+v", 200, o.Payload)
+}
+
 func (o *RetrieveShippingLabelOK) GetPayload() *shipping_models.RetrieveShippingLabelResponse {
 	return o.Payload
 }
@@ -136,7 +167,8 @@ func NewRetrieveShippingLabelBadRequest() *RetrieveShippingLabelBadRequest {
 	return &RetrieveShippingLabelBadRequest{}
 }
 
-/* RetrieveShippingLabelBadRequest describes a response with status code 400, with default header values.
+/*
+RetrieveShippingLabelBadRequest describes a response with status code 400, with default header values.
 
 Request has missing or invalid parameters and cannot be parsed.
 */
@@ -153,9 +185,39 @@ type RetrieveShippingLabelBadRequest struct {
 	Payload *shipping_models.RetrieveShippingLabelResponse
 }
 
+// IsSuccess returns true when this retrieve shipping label bad request response has a 2xx status code
+func (o *RetrieveShippingLabelBadRequest) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this retrieve shipping label bad request response has a 3xx status code
+func (o *RetrieveShippingLabelBadRequest) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this retrieve shipping label bad request response has a 4xx status code
+func (o *RetrieveShippingLabelBadRequest) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this retrieve shipping label bad request response has a 5xx status code
+func (o *RetrieveShippingLabelBadRequest) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this retrieve shipping label bad request response a status code equal to that given
+func (o *RetrieveShippingLabelBadRequest) IsCode(code int) bool {
+	return code == 400
+}
+
 func (o *RetrieveShippingLabelBadRequest) Error() string {
 	return fmt.Sprintf("[POST /shipping/v1/shipments/{shipmentId}/containers/{trackingId}/label][%d] retrieveShippingLabelBadRequest  %+v", 400, o.Payload)
 }
+
+func (o *RetrieveShippingLabelBadRequest) String() string {
+	return fmt.Sprintf("[POST /shipping/v1/shipments/{shipmentId}/containers/{trackingId}/label][%d] retrieveShippingLabelBadRequest  %+v", 400, o.Payload)
+}
+
 func (o *RetrieveShippingLabelBadRequest) GetPayload() *shipping_models.RetrieveShippingLabelResponse {
 	return o.Payload
 }
@@ -191,7 +253,8 @@ func NewRetrieveShippingLabelUnauthorized() *RetrieveShippingLabelUnauthorized {
 	return &RetrieveShippingLabelUnauthorized{}
 }
 
-/* RetrieveShippingLabelUnauthorized describes a response with status code 401, with default header values.
+/*
+RetrieveShippingLabelUnauthorized describes a response with status code 401, with default header values.
 
 The request's Authorization header is not formatted correctly or does not contain a valid token.
 */
@@ -209,9 +272,39 @@ type RetrieveShippingLabelUnauthorized struct {
 	Payload *shipping_models.RetrieveShippingLabelResponse
 }
 
+// IsSuccess returns true when this retrieve shipping label unauthorized response has a 2xx status code
+func (o *RetrieveShippingLabelUnauthorized) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this retrieve shipping label unauthorized response has a 3xx status code
+func (o *RetrieveShippingLabelUnauthorized) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this retrieve shipping label unauthorized response has a 4xx status code
+func (o *RetrieveShippingLabelUnauthorized) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this retrieve shipping label unauthorized response has a 5xx status code
+func (o *RetrieveShippingLabelUnauthorized) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this retrieve shipping label unauthorized response a status code equal to that given
+func (o *RetrieveShippingLabelUnauthorized) IsCode(code int) bool {
+	return code == 401
+}
+
 func (o *RetrieveShippingLabelUnauthorized) Error() string {
 	return fmt.Sprintf("[POST /shipping/v1/shipments/{shipmentId}/containers/{trackingId}/label][%d] retrieveShippingLabelUnauthorized  %+v", 401, o.Payload)
 }
+
+func (o *RetrieveShippingLabelUnauthorized) String() string {
+	return fmt.Sprintf("[POST /shipping/v1/shipments/{shipmentId}/containers/{trackingId}/label][%d] retrieveShippingLabelUnauthorized  %+v", 401, o.Payload)
+}
+
 func (o *RetrieveShippingLabelUnauthorized) GetPayload() *shipping_models.RetrieveShippingLabelResponse {
 	return o.Payload
 }
@@ -247,7 +340,8 @@ func NewRetrieveShippingLabelForbidden() *RetrieveShippingLabelForbidden {
 	return &RetrieveShippingLabelForbidden{}
 }
 
-/* RetrieveShippingLabelForbidden describes a response with status code 403, with default header values.
+/*
+RetrieveShippingLabelForbidden describes a response with status code 403, with default header values.
 
 403 can be caused for reasons like Access Denied, Unauthorized, Expired Token, Invalid Signature or Resource Not Found.
 */
@@ -260,9 +354,39 @@ type RetrieveShippingLabelForbidden struct {
 	Payload *shipping_models.RetrieveShippingLabelResponse
 }
 
+// IsSuccess returns true when this retrieve shipping label forbidden response has a 2xx status code
+func (o *RetrieveShippingLabelForbidden) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this retrieve shipping label forbidden response has a 3xx status code
+func (o *RetrieveShippingLabelForbidden) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this retrieve shipping label forbidden response has a 4xx status code
+func (o *RetrieveShippingLabelForbidden) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this retrieve shipping label forbidden response has a 5xx status code
+func (o *RetrieveShippingLabelForbidden) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this retrieve shipping label forbidden response a status code equal to that given
+func (o *RetrieveShippingLabelForbidden) IsCode(code int) bool {
+	return code == 403
+}
+
 func (o *RetrieveShippingLabelForbidden) Error() string {
 	return fmt.Sprintf("[POST /shipping/v1/shipments/{shipmentId}/containers/{trackingId}/label][%d] retrieveShippingLabelForbidden  %+v", 403, o.Payload)
 }
+
+func (o *RetrieveShippingLabelForbidden) String() string {
+	return fmt.Sprintf("[POST /shipping/v1/shipments/{shipmentId}/containers/{trackingId}/label][%d] retrieveShippingLabelForbidden  %+v", 403, o.Payload)
+}
+
 func (o *RetrieveShippingLabelForbidden) GetPayload() *shipping_models.RetrieveShippingLabelResponse {
 	return o.Payload
 }
@@ -291,7 +415,8 @@ func NewRetrieveShippingLabelNotFound() *RetrieveShippingLabelNotFound {
 	return &RetrieveShippingLabelNotFound{}
 }
 
-/* RetrieveShippingLabelNotFound describes a response with status code 404, with default header values.
+/*
+RetrieveShippingLabelNotFound describes a response with status code 404, with default header values.
 
 The resource specified does not exist.
 */
@@ -308,9 +433,39 @@ type RetrieveShippingLabelNotFound struct {
 	Payload *shipping_models.RetrieveShippingLabelResponse
 }
 
+// IsSuccess returns true when this retrieve shipping label not found response has a 2xx status code
+func (o *RetrieveShippingLabelNotFound) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this retrieve shipping label not found response has a 3xx status code
+func (o *RetrieveShippingLabelNotFound) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this retrieve shipping label not found response has a 4xx status code
+func (o *RetrieveShippingLabelNotFound) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this retrieve shipping label not found response has a 5xx status code
+func (o *RetrieveShippingLabelNotFound) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this retrieve shipping label not found response a status code equal to that given
+func (o *RetrieveShippingLabelNotFound) IsCode(code int) bool {
+	return code == 404
+}
+
 func (o *RetrieveShippingLabelNotFound) Error() string {
 	return fmt.Sprintf("[POST /shipping/v1/shipments/{shipmentId}/containers/{trackingId}/label][%d] retrieveShippingLabelNotFound  %+v", 404, o.Payload)
 }
+
+func (o *RetrieveShippingLabelNotFound) String() string {
+	return fmt.Sprintf("[POST /shipping/v1/shipments/{shipmentId}/containers/{trackingId}/label][%d] retrieveShippingLabelNotFound  %+v", 404, o.Payload)
+}
+
 func (o *RetrieveShippingLabelNotFound) GetPayload() *shipping_models.RetrieveShippingLabelResponse {
 	return o.Payload
 }
@@ -346,7 +501,8 @@ func NewRetrieveShippingLabelTooManyRequests() *RetrieveShippingLabelTooManyRequ
 	return &RetrieveShippingLabelTooManyRequests{}
 }
 
-/* RetrieveShippingLabelTooManyRequests describes a response with status code 429, with default header values.
+/*
+RetrieveShippingLabelTooManyRequests describes a response with status code 429, with default header values.
 
 The frequency of requests was greater than allowed.
 */
@@ -364,9 +520,39 @@ type RetrieveShippingLabelTooManyRequests struct {
 	Payload *shipping_models.RetrieveShippingLabelResponse
 }
 
+// IsSuccess returns true when this retrieve shipping label too many requests response has a 2xx status code
+func (o *RetrieveShippingLabelTooManyRequests) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this retrieve shipping label too many requests response has a 3xx status code
+func (o *RetrieveShippingLabelTooManyRequests) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this retrieve shipping label too many requests response has a 4xx status code
+func (o *RetrieveShippingLabelTooManyRequests) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this retrieve shipping label too many requests response has a 5xx status code
+func (o *RetrieveShippingLabelTooManyRequests) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this retrieve shipping label too many requests response a status code equal to that given
+func (o *RetrieveShippingLabelTooManyRequests) IsCode(code int) bool {
+	return code == 429
+}
+
 func (o *RetrieveShippingLabelTooManyRequests) Error() string {
 	return fmt.Sprintf("[POST /shipping/v1/shipments/{shipmentId}/containers/{trackingId}/label][%d] retrieveShippingLabelTooManyRequests  %+v", 429, o.Payload)
 }
+
+func (o *RetrieveShippingLabelTooManyRequests) String() string {
+	return fmt.Sprintf("[POST /shipping/v1/shipments/{shipmentId}/containers/{trackingId}/label][%d] retrieveShippingLabelTooManyRequests  %+v", 429, o.Payload)
+}
+
 func (o *RetrieveShippingLabelTooManyRequests) GetPayload() *shipping_models.RetrieveShippingLabelResponse {
 	return o.Payload
 }
@@ -402,7 +588,8 @@ func NewRetrieveShippingLabelInternalServerError() *RetrieveShippingLabelInterna
 	return &RetrieveShippingLabelInternalServerError{}
 }
 
-/* RetrieveShippingLabelInternalServerError describes a response with status code 500, with default header values.
+/*
+RetrieveShippingLabelInternalServerError describes a response with status code 500, with default header values.
 
 Encountered an unexpected condition which prevented the server from fulfilling the request.
 */
@@ -420,9 +607,39 @@ type RetrieveShippingLabelInternalServerError struct {
 	Payload *shipping_models.RetrieveShippingLabelResponse
 }
 
+// IsSuccess returns true when this retrieve shipping label internal server error response has a 2xx status code
+func (o *RetrieveShippingLabelInternalServerError) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this retrieve shipping label internal server error response has a 3xx status code
+func (o *RetrieveShippingLabelInternalServerError) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this retrieve shipping label internal server error response has a 4xx status code
+func (o *RetrieveShippingLabelInternalServerError) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this retrieve shipping label internal server error response has a 5xx status code
+func (o *RetrieveShippingLabelInternalServerError) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this retrieve shipping label internal server error response a status code equal to that given
+func (o *RetrieveShippingLabelInternalServerError) IsCode(code int) bool {
+	return code == 500
+}
+
 func (o *RetrieveShippingLabelInternalServerError) Error() string {
 	return fmt.Sprintf("[POST /shipping/v1/shipments/{shipmentId}/containers/{trackingId}/label][%d] retrieveShippingLabelInternalServerError  %+v", 500, o.Payload)
 }
+
+func (o *RetrieveShippingLabelInternalServerError) String() string {
+	return fmt.Sprintf("[POST /shipping/v1/shipments/{shipmentId}/containers/{trackingId}/label][%d] retrieveShippingLabelInternalServerError  %+v", 500, o.Payload)
+}
+
 func (o *RetrieveShippingLabelInternalServerError) GetPayload() *shipping_models.RetrieveShippingLabelResponse {
 	return o.Payload
 }
@@ -458,7 +675,8 @@ func NewRetrieveShippingLabelServiceUnavailable() *RetrieveShippingLabelServiceU
 	return &RetrieveShippingLabelServiceUnavailable{}
 }
 
-/* RetrieveShippingLabelServiceUnavailable describes a response with status code 503, with default header values.
+/*
+RetrieveShippingLabelServiceUnavailable describes a response with status code 503, with default header values.
 
 Temporary overloading or maintenance of the server.
 */
@@ -476,9 +694,39 @@ type RetrieveShippingLabelServiceUnavailable struct {
 	Payload *shipping_models.RetrieveShippingLabelResponse
 }
 
+// IsSuccess returns true when this retrieve shipping label service unavailable response has a 2xx status code
+func (o *RetrieveShippingLabelServiceUnavailable) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this retrieve shipping label service unavailable response has a 3xx status code
+func (o *RetrieveShippingLabelServiceUnavailable) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this retrieve shipping label service unavailable response has a 4xx status code
+func (o *RetrieveShippingLabelServiceUnavailable) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this retrieve shipping label service unavailable response has a 5xx status code
+func (o *RetrieveShippingLabelServiceUnavailable) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this retrieve shipping label service unavailable response a status code equal to that given
+func (o *RetrieveShippingLabelServiceUnavailable) IsCode(code int) bool {
+	return code == 503
+}
+
 func (o *RetrieveShippingLabelServiceUnavailable) Error() string {
 	return fmt.Sprintf("[POST /shipping/v1/shipments/{shipmentId}/containers/{trackingId}/label][%d] retrieveShippingLabelServiceUnavailable  %+v", 503, o.Payload)
 }
+
+func (o *RetrieveShippingLabelServiceUnavailable) String() string {
+	return fmt.Sprintf("[POST /shipping/v1/shipments/{shipmentId}/containers/{trackingId}/label][%d] retrieveShippingLabelServiceUnavailable  %+v", 503, o.Payload)
+}
+
 func (o *RetrieveShippingLabelServiceUnavailable) GetPayload() *shipping_models.RetrieveShippingLabelResponse {
 	return o.Payload
 }

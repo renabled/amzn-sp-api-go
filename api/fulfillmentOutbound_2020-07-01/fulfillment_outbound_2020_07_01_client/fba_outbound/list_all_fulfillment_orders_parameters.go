@@ -52,10 +52,12 @@ func NewListAllFulfillmentOrdersParamsWithHTTPClient(client *http.Client) *ListA
 	}
 }
 
-/* ListAllFulfillmentOrdersParams contains all the parameters to send to the API endpoint
-   for the list all fulfillment orders operation.
+/*
+ListAllFulfillmentOrdersParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the list all fulfillment orders operation.
+
+	Typically these are written to a http.Request.
 */
 type ListAllFulfillmentOrdersParams struct {
 

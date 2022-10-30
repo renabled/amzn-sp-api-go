@@ -81,7 +81,8 @@ func NewGetAccountOK() *GetAccountOK {
 	return &GetAccountOK{}
 }
 
-/* GetAccountOK describes a response with status code 200, with default header values.
+/*
+GetAccountOK describes a response with status code 200, with default header values.
 
 The account was valid.
 */
@@ -98,9 +99,39 @@ type GetAccountOK struct {
 	Payload *shipping_models.GetAccountResponse
 }
 
+// IsSuccess returns true when this get account o k response has a 2xx status code
+func (o *GetAccountOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this get account o k response has a 3xx status code
+func (o *GetAccountOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get account o k response has a 4xx status code
+func (o *GetAccountOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get account o k response has a 5xx status code
+func (o *GetAccountOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get account o k response a status code equal to that given
+func (o *GetAccountOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *GetAccountOK) Error() string {
 	return fmt.Sprintf("[GET /shipping/v1/account][%d] getAccountOK  %+v", 200, o.Payload)
 }
+
+func (o *GetAccountOK) String() string {
+	return fmt.Sprintf("[GET /shipping/v1/account][%d] getAccountOK  %+v", 200, o.Payload)
+}
+
 func (o *GetAccountOK) GetPayload() *shipping_models.GetAccountResponse {
 	return o.Payload
 }
@@ -136,7 +167,8 @@ func NewGetAccountBadRequest() *GetAccountBadRequest {
 	return &GetAccountBadRequest{}
 }
 
-/* GetAccountBadRequest describes a response with status code 400, with default header values.
+/*
+GetAccountBadRequest describes a response with status code 400, with default header values.
 
 Request has missing or invalid parameters and cannot be parsed.
 */
@@ -153,9 +185,39 @@ type GetAccountBadRequest struct {
 	Payload *shipping_models.GetAccountResponse
 }
 
+// IsSuccess returns true when this get account bad request response has a 2xx status code
+func (o *GetAccountBadRequest) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get account bad request response has a 3xx status code
+func (o *GetAccountBadRequest) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get account bad request response has a 4xx status code
+func (o *GetAccountBadRequest) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get account bad request response has a 5xx status code
+func (o *GetAccountBadRequest) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get account bad request response a status code equal to that given
+func (o *GetAccountBadRequest) IsCode(code int) bool {
+	return code == 400
+}
+
 func (o *GetAccountBadRequest) Error() string {
 	return fmt.Sprintf("[GET /shipping/v1/account][%d] getAccountBadRequest  %+v", 400, o.Payload)
 }
+
+func (o *GetAccountBadRequest) String() string {
+	return fmt.Sprintf("[GET /shipping/v1/account][%d] getAccountBadRequest  %+v", 400, o.Payload)
+}
+
 func (o *GetAccountBadRequest) GetPayload() *shipping_models.GetAccountResponse {
 	return o.Payload
 }
@@ -191,7 +253,8 @@ func NewGetAccountUnauthorized() *GetAccountUnauthorized {
 	return &GetAccountUnauthorized{}
 }
 
-/* GetAccountUnauthorized describes a response with status code 401, with default header values.
+/*
+GetAccountUnauthorized describes a response with status code 401, with default header values.
 
 The request's Authorization header is not formatted correctly or does not contain a valid token.
 */
@@ -209,9 +272,39 @@ type GetAccountUnauthorized struct {
 	Payload *shipping_models.GetAccountResponse
 }
 
+// IsSuccess returns true when this get account unauthorized response has a 2xx status code
+func (o *GetAccountUnauthorized) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get account unauthorized response has a 3xx status code
+func (o *GetAccountUnauthorized) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get account unauthorized response has a 4xx status code
+func (o *GetAccountUnauthorized) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get account unauthorized response has a 5xx status code
+func (o *GetAccountUnauthorized) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get account unauthorized response a status code equal to that given
+func (o *GetAccountUnauthorized) IsCode(code int) bool {
+	return code == 401
+}
+
 func (o *GetAccountUnauthorized) Error() string {
 	return fmt.Sprintf("[GET /shipping/v1/account][%d] getAccountUnauthorized  %+v", 401, o.Payload)
 }
+
+func (o *GetAccountUnauthorized) String() string {
+	return fmt.Sprintf("[GET /shipping/v1/account][%d] getAccountUnauthorized  %+v", 401, o.Payload)
+}
+
 func (o *GetAccountUnauthorized) GetPayload() *shipping_models.GetAccountResponse {
 	return o.Payload
 }
@@ -247,7 +340,8 @@ func NewGetAccountForbidden() *GetAccountForbidden {
 	return &GetAccountForbidden{}
 }
 
-/* GetAccountForbidden describes a response with status code 403, with default header values.
+/*
+GetAccountForbidden describes a response with status code 403, with default header values.
 
 403 can be caused for reasons like Access Denied, Unauthorized, Expired Token, Invalid Signature or Resource Not Found.
 */
@@ -260,9 +354,39 @@ type GetAccountForbidden struct {
 	Payload *shipping_models.GetAccountResponse
 }
 
+// IsSuccess returns true when this get account forbidden response has a 2xx status code
+func (o *GetAccountForbidden) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get account forbidden response has a 3xx status code
+func (o *GetAccountForbidden) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get account forbidden response has a 4xx status code
+func (o *GetAccountForbidden) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get account forbidden response has a 5xx status code
+func (o *GetAccountForbidden) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get account forbidden response a status code equal to that given
+func (o *GetAccountForbidden) IsCode(code int) bool {
+	return code == 403
+}
+
 func (o *GetAccountForbidden) Error() string {
 	return fmt.Sprintf("[GET /shipping/v1/account][%d] getAccountForbidden  %+v", 403, o.Payload)
 }
+
+func (o *GetAccountForbidden) String() string {
+	return fmt.Sprintf("[GET /shipping/v1/account][%d] getAccountForbidden  %+v", 403, o.Payload)
+}
+
 func (o *GetAccountForbidden) GetPayload() *shipping_models.GetAccountResponse {
 	return o.Payload
 }
@@ -291,7 +415,8 @@ func NewGetAccountNotFound() *GetAccountNotFound {
 	return &GetAccountNotFound{}
 }
 
-/* GetAccountNotFound describes a response with status code 404, with default header values.
+/*
+GetAccountNotFound describes a response with status code 404, with default header values.
 
 The resource specified does not exist.
 */
@@ -308,9 +433,39 @@ type GetAccountNotFound struct {
 	Payload *shipping_models.GetAccountResponse
 }
 
+// IsSuccess returns true when this get account not found response has a 2xx status code
+func (o *GetAccountNotFound) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get account not found response has a 3xx status code
+func (o *GetAccountNotFound) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get account not found response has a 4xx status code
+func (o *GetAccountNotFound) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get account not found response has a 5xx status code
+func (o *GetAccountNotFound) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get account not found response a status code equal to that given
+func (o *GetAccountNotFound) IsCode(code int) bool {
+	return code == 404
+}
+
 func (o *GetAccountNotFound) Error() string {
 	return fmt.Sprintf("[GET /shipping/v1/account][%d] getAccountNotFound  %+v", 404, o.Payload)
 }
+
+func (o *GetAccountNotFound) String() string {
+	return fmt.Sprintf("[GET /shipping/v1/account][%d] getAccountNotFound  %+v", 404, o.Payload)
+}
+
 func (o *GetAccountNotFound) GetPayload() *shipping_models.GetAccountResponse {
 	return o.Payload
 }
@@ -346,7 +501,8 @@ func NewGetAccountTooManyRequests() *GetAccountTooManyRequests {
 	return &GetAccountTooManyRequests{}
 }
 
-/* GetAccountTooManyRequests describes a response with status code 429, with default header values.
+/*
+GetAccountTooManyRequests describes a response with status code 429, with default header values.
 
 The frequency of requests was greater than allowed.
 */
@@ -364,9 +520,39 @@ type GetAccountTooManyRequests struct {
 	Payload *shipping_models.GetAccountResponse
 }
 
+// IsSuccess returns true when this get account too many requests response has a 2xx status code
+func (o *GetAccountTooManyRequests) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get account too many requests response has a 3xx status code
+func (o *GetAccountTooManyRequests) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get account too many requests response has a 4xx status code
+func (o *GetAccountTooManyRequests) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get account too many requests response has a 5xx status code
+func (o *GetAccountTooManyRequests) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get account too many requests response a status code equal to that given
+func (o *GetAccountTooManyRequests) IsCode(code int) bool {
+	return code == 429
+}
+
 func (o *GetAccountTooManyRequests) Error() string {
 	return fmt.Sprintf("[GET /shipping/v1/account][%d] getAccountTooManyRequests  %+v", 429, o.Payload)
 }
+
+func (o *GetAccountTooManyRequests) String() string {
+	return fmt.Sprintf("[GET /shipping/v1/account][%d] getAccountTooManyRequests  %+v", 429, o.Payload)
+}
+
 func (o *GetAccountTooManyRequests) GetPayload() *shipping_models.GetAccountResponse {
 	return o.Payload
 }
@@ -402,7 +588,8 @@ func NewGetAccountInternalServerError() *GetAccountInternalServerError {
 	return &GetAccountInternalServerError{}
 }
 
-/* GetAccountInternalServerError describes a response with status code 500, with default header values.
+/*
+GetAccountInternalServerError describes a response with status code 500, with default header values.
 
 Encountered an unexpected condition which prevented the server from fulfilling the request.
 */
@@ -420,9 +607,39 @@ type GetAccountInternalServerError struct {
 	Payload *shipping_models.GetAccountResponse
 }
 
+// IsSuccess returns true when this get account internal server error response has a 2xx status code
+func (o *GetAccountInternalServerError) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get account internal server error response has a 3xx status code
+func (o *GetAccountInternalServerError) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get account internal server error response has a 4xx status code
+func (o *GetAccountInternalServerError) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get account internal server error response has a 5xx status code
+func (o *GetAccountInternalServerError) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this get account internal server error response a status code equal to that given
+func (o *GetAccountInternalServerError) IsCode(code int) bool {
+	return code == 500
+}
+
 func (o *GetAccountInternalServerError) Error() string {
 	return fmt.Sprintf("[GET /shipping/v1/account][%d] getAccountInternalServerError  %+v", 500, o.Payload)
 }
+
+func (o *GetAccountInternalServerError) String() string {
+	return fmt.Sprintf("[GET /shipping/v1/account][%d] getAccountInternalServerError  %+v", 500, o.Payload)
+}
+
 func (o *GetAccountInternalServerError) GetPayload() *shipping_models.GetAccountResponse {
 	return o.Payload
 }
@@ -458,7 +675,8 @@ func NewGetAccountServiceUnavailable() *GetAccountServiceUnavailable {
 	return &GetAccountServiceUnavailable{}
 }
 
-/* GetAccountServiceUnavailable describes a response with status code 503, with default header values.
+/*
+GetAccountServiceUnavailable describes a response with status code 503, with default header values.
 
 Temporary overloading or maintenance of the server.
 */
@@ -476,9 +694,39 @@ type GetAccountServiceUnavailable struct {
 	Payload *shipping_models.GetAccountResponse
 }
 
+// IsSuccess returns true when this get account service unavailable response has a 2xx status code
+func (o *GetAccountServiceUnavailable) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get account service unavailable response has a 3xx status code
+func (o *GetAccountServiceUnavailable) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get account service unavailable response has a 4xx status code
+func (o *GetAccountServiceUnavailable) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get account service unavailable response has a 5xx status code
+func (o *GetAccountServiceUnavailable) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this get account service unavailable response a status code equal to that given
+func (o *GetAccountServiceUnavailable) IsCode(code int) bool {
+	return code == 503
+}
+
 func (o *GetAccountServiceUnavailable) Error() string {
 	return fmt.Sprintf("[GET /shipping/v1/account][%d] getAccountServiceUnavailable  %+v", 503, o.Payload)
 }
+
+func (o *GetAccountServiceUnavailable) String() string {
+	return fmt.Sprintf("[GET /shipping/v1/account][%d] getAccountServiceUnavailable  %+v", 503, o.Payload)
+}
+
 func (o *GetAccountServiceUnavailable) GetPayload() *shipping_models.GetAccountResponse {
 	return o.Payload
 }

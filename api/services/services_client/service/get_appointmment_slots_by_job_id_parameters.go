@@ -53,10 +53,12 @@ func NewGetAppointmmentSlotsByJobIDParamsWithHTTPClient(client *http.Client) *Ge
 	}
 }
 
-/* GetAppointmmentSlotsByJobIDParams contains all the parameters to send to the API endpoint
-   for the get appointmment slots by job Id operation.
+/*
+GetAppointmmentSlotsByJobIDParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the get appointmment slots by job Id operation.
+
+	Typically these are written to a http.Request.
 */
 type GetAppointmmentSlotsByJobIDParams struct {
 

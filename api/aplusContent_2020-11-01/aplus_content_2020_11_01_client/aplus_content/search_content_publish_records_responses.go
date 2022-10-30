@@ -81,7 +81,8 @@ func NewSearchContentPublishRecordsOK() *SearchContentPublishRecordsOK {
 	return &SearchContentPublishRecordsOK{}
 }
 
-/* SearchContentPublishRecordsOK describes a response with status code 200, with default header values.
+/*
+SearchContentPublishRecordsOK describes a response with status code 200, with default header values.
 
 Success.
 */
@@ -98,9 +99,39 @@ type SearchContentPublishRecordsOK struct {
 	Payload *aplus_content_2020_11_01_models.SearchContentPublishRecordsResponse
 }
 
+// IsSuccess returns true when this search content publish records o k response has a 2xx status code
+func (o *SearchContentPublishRecordsOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this search content publish records o k response has a 3xx status code
+func (o *SearchContentPublishRecordsOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this search content publish records o k response has a 4xx status code
+func (o *SearchContentPublishRecordsOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this search content publish records o k response has a 5xx status code
+func (o *SearchContentPublishRecordsOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this search content publish records o k response a status code equal to that given
+func (o *SearchContentPublishRecordsOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *SearchContentPublishRecordsOK) Error() string {
 	return fmt.Sprintf("[GET /aplus/2020-11-01/contentPublishRecords][%d] searchContentPublishRecordsOK  %+v", 200, o.Payload)
 }
+
+func (o *SearchContentPublishRecordsOK) String() string {
+	return fmt.Sprintf("[GET /aplus/2020-11-01/contentPublishRecords][%d] searchContentPublishRecordsOK  %+v", 200, o.Payload)
+}
+
 func (o *SearchContentPublishRecordsOK) GetPayload() *aplus_content_2020_11_01_models.SearchContentPublishRecordsResponse {
 	return o.Payload
 }
@@ -136,7 +167,8 @@ func NewSearchContentPublishRecordsBadRequest() *SearchContentPublishRecordsBadR
 	return &SearchContentPublishRecordsBadRequest{}
 }
 
-/* SearchContentPublishRecordsBadRequest describes a response with status code 400, with default header values.
+/*
+SearchContentPublishRecordsBadRequest describes a response with status code 400, with default header values.
 
 Request has missing or invalid parameters and cannot be parsed.
 */
@@ -153,9 +185,39 @@ type SearchContentPublishRecordsBadRequest struct {
 	Payload *aplus_content_2020_11_01_models.ErrorList
 }
 
+// IsSuccess returns true when this search content publish records bad request response has a 2xx status code
+func (o *SearchContentPublishRecordsBadRequest) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this search content publish records bad request response has a 3xx status code
+func (o *SearchContentPublishRecordsBadRequest) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this search content publish records bad request response has a 4xx status code
+func (o *SearchContentPublishRecordsBadRequest) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this search content publish records bad request response has a 5xx status code
+func (o *SearchContentPublishRecordsBadRequest) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this search content publish records bad request response a status code equal to that given
+func (o *SearchContentPublishRecordsBadRequest) IsCode(code int) bool {
+	return code == 400
+}
+
 func (o *SearchContentPublishRecordsBadRequest) Error() string {
 	return fmt.Sprintf("[GET /aplus/2020-11-01/contentPublishRecords][%d] searchContentPublishRecordsBadRequest  %+v", 400, o.Payload)
 }
+
+func (o *SearchContentPublishRecordsBadRequest) String() string {
+	return fmt.Sprintf("[GET /aplus/2020-11-01/contentPublishRecords][%d] searchContentPublishRecordsBadRequest  %+v", 400, o.Payload)
+}
+
 func (o *SearchContentPublishRecordsBadRequest) GetPayload() *aplus_content_2020_11_01_models.ErrorList {
 	return o.Payload
 }
@@ -191,7 +253,8 @@ func NewSearchContentPublishRecordsUnauthorized() *SearchContentPublishRecordsUn
 	return &SearchContentPublishRecordsUnauthorized{}
 }
 
-/* SearchContentPublishRecordsUnauthorized describes a response with status code 401, with default header values.
+/*
+SearchContentPublishRecordsUnauthorized describes a response with status code 401, with default header values.
 
 The request's Authorization header is not formatted correctly or does not contain a valid token.
 */
@@ -209,9 +272,39 @@ type SearchContentPublishRecordsUnauthorized struct {
 	Payload *aplus_content_2020_11_01_models.ErrorList
 }
 
+// IsSuccess returns true when this search content publish records unauthorized response has a 2xx status code
+func (o *SearchContentPublishRecordsUnauthorized) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this search content publish records unauthorized response has a 3xx status code
+func (o *SearchContentPublishRecordsUnauthorized) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this search content publish records unauthorized response has a 4xx status code
+func (o *SearchContentPublishRecordsUnauthorized) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this search content publish records unauthorized response has a 5xx status code
+func (o *SearchContentPublishRecordsUnauthorized) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this search content publish records unauthorized response a status code equal to that given
+func (o *SearchContentPublishRecordsUnauthorized) IsCode(code int) bool {
+	return code == 401
+}
+
 func (o *SearchContentPublishRecordsUnauthorized) Error() string {
 	return fmt.Sprintf("[GET /aplus/2020-11-01/contentPublishRecords][%d] searchContentPublishRecordsUnauthorized  %+v", 401, o.Payload)
 }
+
+func (o *SearchContentPublishRecordsUnauthorized) String() string {
+	return fmt.Sprintf("[GET /aplus/2020-11-01/contentPublishRecords][%d] searchContentPublishRecordsUnauthorized  %+v", 401, o.Payload)
+}
+
 func (o *SearchContentPublishRecordsUnauthorized) GetPayload() *aplus_content_2020_11_01_models.ErrorList {
 	return o.Payload
 }
@@ -247,7 +340,8 @@ func NewSearchContentPublishRecordsForbidden() *SearchContentPublishRecordsForbi
 	return &SearchContentPublishRecordsForbidden{}
 }
 
-/* SearchContentPublishRecordsForbidden describes a response with status code 403, with default header values.
+/*
+SearchContentPublishRecordsForbidden describes a response with status code 403, with default header values.
 
 Indicates that access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.
 */
@@ -260,9 +354,39 @@ type SearchContentPublishRecordsForbidden struct {
 	Payload *aplus_content_2020_11_01_models.ErrorList
 }
 
+// IsSuccess returns true when this search content publish records forbidden response has a 2xx status code
+func (o *SearchContentPublishRecordsForbidden) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this search content publish records forbidden response has a 3xx status code
+func (o *SearchContentPublishRecordsForbidden) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this search content publish records forbidden response has a 4xx status code
+func (o *SearchContentPublishRecordsForbidden) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this search content publish records forbidden response has a 5xx status code
+func (o *SearchContentPublishRecordsForbidden) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this search content publish records forbidden response a status code equal to that given
+func (o *SearchContentPublishRecordsForbidden) IsCode(code int) bool {
+	return code == 403
+}
+
 func (o *SearchContentPublishRecordsForbidden) Error() string {
 	return fmt.Sprintf("[GET /aplus/2020-11-01/contentPublishRecords][%d] searchContentPublishRecordsForbidden  %+v", 403, o.Payload)
 }
+
+func (o *SearchContentPublishRecordsForbidden) String() string {
+	return fmt.Sprintf("[GET /aplus/2020-11-01/contentPublishRecords][%d] searchContentPublishRecordsForbidden  %+v", 403, o.Payload)
+}
+
 func (o *SearchContentPublishRecordsForbidden) GetPayload() *aplus_content_2020_11_01_models.ErrorList {
 	return o.Payload
 }
@@ -291,7 +415,8 @@ func NewSearchContentPublishRecordsNotFound() *SearchContentPublishRecordsNotFou
 	return &SearchContentPublishRecordsNotFound{}
 }
 
-/* SearchContentPublishRecordsNotFound describes a response with status code 404, with default header values.
+/*
+SearchContentPublishRecordsNotFound describes a response with status code 404, with default header values.
 
 The specified resource does not exist.
 */
@@ -308,9 +433,39 @@ type SearchContentPublishRecordsNotFound struct {
 	Payload *aplus_content_2020_11_01_models.ErrorList
 }
 
+// IsSuccess returns true when this search content publish records not found response has a 2xx status code
+func (o *SearchContentPublishRecordsNotFound) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this search content publish records not found response has a 3xx status code
+func (o *SearchContentPublishRecordsNotFound) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this search content publish records not found response has a 4xx status code
+func (o *SearchContentPublishRecordsNotFound) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this search content publish records not found response has a 5xx status code
+func (o *SearchContentPublishRecordsNotFound) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this search content publish records not found response a status code equal to that given
+func (o *SearchContentPublishRecordsNotFound) IsCode(code int) bool {
+	return code == 404
+}
+
 func (o *SearchContentPublishRecordsNotFound) Error() string {
 	return fmt.Sprintf("[GET /aplus/2020-11-01/contentPublishRecords][%d] searchContentPublishRecordsNotFound  %+v", 404, o.Payload)
 }
+
+func (o *SearchContentPublishRecordsNotFound) String() string {
+	return fmt.Sprintf("[GET /aplus/2020-11-01/contentPublishRecords][%d] searchContentPublishRecordsNotFound  %+v", 404, o.Payload)
+}
+
 func (o *SearchContentPublishRecordsNotFound) GetPayload() *aplus_content_2020_11_01_models.ErrorList {
 	return o.Payload
 }
@@ -346,7 +501,8 @@ func NewSearchContentPublishRecordsTooManyRequests() *SearchContentPublishRecord
 	return &SearchContentPublishRecordsTooManyRequests{}
 }
 
-/* SearchContentPublishRecordsTooManyRequests describes a response with status code 429, with default header values.
+/*
+SearchContentPublishRecordsTooManyRequests describes a response with status code 429, with default header values.
 
 The frequency of requests was greater than allowed.
 */
@@ -364,9 +520,39 @@ type SearchContentPublishRecordsTooManyRequests struct {
 	Payload *aplus_content_2020_11_01_models.ErrorList
 }
 
+// IsSuccess returns true when this search content publish records too many requests response has a 2xx status code
+func (o *SearchContentPublishRecordsTooManyRequests) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this search content publish records too many requests response has a 3xx status code
+func (o *SearchContentPublishRecordsTooManyRequests) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this search content publish records too many requests response has a 4xx status code
+func (o *SearchContentPublishRecordsTooManyRequests) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this search content publish records too many requests response has a 5xx status code
+func (o *SearchContentPublishRecordsTooManyRequests) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this search content publish records too many requests response a status code equal to that given
+func (o *SearchContentPublishRecordsTooManyRequests) IsCode(code int) bool {
+	return code == 429
+}
+
 func (o *SearchContentPublishRecordsTooManyRequests) Error() string {
 	return fmt.Sprintf("[GET /aplus/2020-11-01/contentPublishRecords][%d] searchContentPublishRecordsTooManyRequests  %+v", 429, o.Payload)
 }
+
+func (o *SearchContentPublishRecordsTooManyRequests) String() string {
+	return fmt.Sprintf("[GET /aplus/2020-11-01/contentPublishRecords][%d] searchContentPublishRecordsTooManyRequests  %+v", 429, o.Payload)
+}
+
 func (o *SearchContentPublishRecordsTooManyRequests) GetPayload() *aplus_content_2020_11_01_models.ErrorList {
 	return o.Payload
 }
@@ -402,7 +588,8 @@ func NewSearchContentPublishRecordsInternalServerError() *SearchContentPublishRe
 	return &SearchContentPublishRecordsInternalServerError{}
 }
 
-/* SearchContentPublishRecordsInternalServerError describes a response with status code 500, with default header values.
+/*
+SearchContentPublishRecordsInternalServerError describes a response with status code 500, with default header values.
 
 An unexpected condition occurred that prevented the server from fulfilling the request.
 */
@@ -420,9 +607,39 @@ type SearchContentPublishRecordsInternalServerError struct {
 	Payload *aplus_content_2020_11_01_models.ErrorList
 }
 
+// IsSuccess returns true when this search content publish records internal server error response has a 2xx status code
+func (o *SearchContentPublishRecordsInternalServerError) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this search content publish records internal server error response has a 3xx status code
+func (o *SearchContentPublishRecordsInternalServerError) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this search content publish records internal server error response has a 4xx status code
+func (o *SearchContentPublishRecordsInternalServerError) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this search content publish records internal server error response has a 5xx status code
+func (o *SearchContentPublishRecordsInternalServerError) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this search content publish records internal server error response a status code equal to that given
+func (o *SearchContentPublishRecordsInternalServerError) IsCode(code int) bool {
+	return code == 500
+}
+
 func (o *SearchContentPublishRecordsInternalServerError) Error() string {
 	return fmt.Sprintf("[GET /aplus/2020-11-01/contentPublishRecords][%d] searchContentPublishRecordsInternalServerError  %+v", 500, o.Payload)
 }
+
+func (o *SearchContentPublishRecordsInternalServerError) String() string {
+	return fmt.Sprintf("[GET /aplus/2020-11-01/contentPublishRecords][%d] searchContentPublishRecordsInternalServerError  %+v", 500, o.Payload)
+}
+
 func (o *SearchContentPublishRecordsInternalServerError) GetPayload() *aplus_content_2020_11_01_models.ErrorList {
 	return o.Payload
 }
@@ -458,7 +675,8 @@ func NewSearchContentPublishRecordsServiceUnavailable() *SearchContentPublishRec
 	return &SearchContentPublishRecordsServiceUnavailable{}
 }
 
-/* SearchContentPublishRecordsServiceUnavailable describes a response with status code 503, with default header values.
+/*
+SearchContentPublishRecordsServiceUnavailable describes a response with status code 503, with default header values.
 
 Temporary overloading or maintenance of the server.
 */
@@ -476,9 +694,39 @@ type SearchContentPublishRecordsServiceUnavailable struct {
 	Payload *aplus_content_2020_11_01_models.ErrorList
 }
 
+// IsSuccess returns true when this search content publish records service unavailable response has a 2xx status code
+func (o *SearchContentPublishRecordsServiceUnavailable) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this search content publish records service unavailable response has a 3xx status code
+func (o *SearchContentPublishRecordsServiceUnavailable) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this search content publish records service unavailable response has a 4xx status code
+func (o *SearchContentPublishRecordsServiceUnavailable) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this search content publish records service unavailable response has a 5xx status code
+func (o *SearchContentPublishRecordsServiceUnavailable) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this search content publish records service unavailable response a status code equal to that given
+func (o *SearchContentPublishRecordsServiceUnavailable) IsCode(code int) bool {
+	return code == 503
+}
+
 func (o *SearchContentPublishRecordsServiceUnavailable) Error() string {
 	return fmt.Sprintf("[GET /aplus/2020-11-01/contentPublishRecords][%d] searchContentPublishRecordsServiceUnavailable  %+v", 503, o.Payload)
 }
+
+func (o *SearchContentPublishRecordsServiceUnavailable) String() string {
+	return fmt.Sprintf("[GET /aplus/2020-11-01/contentPublishRecords][%d] searchContentPublishRecordsServiceUnavailable  %+v", 503, o.Payload)
+}
+
 func (o *SearchContentPublishRecordsServiceUnavailable) GetPayload() *aplus_content_2020_11_01_models.ErrorList {
 	return o.Payload
 }

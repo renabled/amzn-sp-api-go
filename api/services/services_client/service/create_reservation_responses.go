@@ -87,7 +87,8 @@ func NewCreateReservationOK() *CreateReservationOK {
 	return &CreateReservationOK{}
 }
 
-/* CreateReservationOK describes a response with status code 200, with default header values.
+/*
+CreateReservationOK describes a response with status code 200, with default header values.
 
 Success response.
 */
@@ -104,9 +105,39 @@ type CreateReservationOK struct {
 	Payload *services_models.CreateReservationResponse
 }
 
+// IsSuccess returns true when this create reservation o k response has a 2xx status code
+func (o *CreateReservationOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this create reservation o k response has a 3xx status code
+func (o *CreateReservationOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create reservation o k response has a 4xx status code
+func (o *CreateReservationOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this create reservation o k response has a 5xx status code
+func (o *CreateReservationOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this create reservation o k response a status code equal to that given
+func (o *CreateReservationOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *CreateReservationOK) Error() string {
 	return fmt.Sprintf("[POST /service/v1/reservation][%d] createReservationOK  %+v", 200, o.Payload)
 }
+
+func (o *CreateReservationOK) String() string {
+	return fmt.Sprintf("[POST /service/v1/reservation][%d] createReservationOK  %+v", 200, o.Payload)
+}
+
 func (o *CreateReservationOK) GetPayload() *services_models.CreateReservationResponse {
 	return o.Payload
 }
@@ -142,7 +173,8 @@ func NewCreateReservationBadRequest() *CreateReservationBadRequest {
 	return &CreateReservationBadRequest{}
 }
 
-/* CreateReservationBadRequest describes a response with status code 400, with default header values.
+/*
+CreateReservationBadRequest describes a response with status code 400, with default header values.
 
 Request has missing or invalid parameters and cannot be parsed.
 */
@@ -159,9 +191,39 @@ type CreateReservationBadRequest struct {
 	Payload *services_models.CreateReservationResponse
 }
 
+// IsSuccess returns true when this create reservation bad request response has a 2xx status code
+func (o *CreateReservationBadRequest) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this create reservation bad request response has a 3xx status code
+func (o *CreateReservationBadRequest) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create reservation bad request response has a 4xx status code
+func (o *CreateReservationBadRequest) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this create reservation bad request response has a 5xx status code
+func (o *CreateReservationBadRequest) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this create reservation bad request response a status code equal to that given
+func (o *CreateReservationBadRequest) IsCode(code int) bool {
+	return code == 400
+}
+
 func (o *CreateReservationBadRequest) Error() string {
 	return fmt.Sprintf("[POST /service/v1/reservation][%d] createReservationBadRequest  %+v", 400, o.Payload)
 }
+
+func (o *CreateReservationBadRequest) String() string {
+	return fmt.Sprintf("[POST /service/v1/reservation][%d] createReservationBadRequest  %+v", 400, o.Payload)
+}
+
 func (o *CreateReservationBadRequest) GetPayload() *services_models.CreateReservationResponse {
 	return o.Payload
 }
@@ -197,7 +259,8 @@ func NewCreateReservationForbidden() *CreateReservationForbidden {
 	return &CreateReservationForbidden{}
 }
 
-/* CreateReservationForbidden describes a response with status code 403, with default header values.
+/*
+CreateReservationForbidden describes a response with status code 403, with default header values.
 
 Indicates that access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.
 */
@@ -210,9 +273,39 @@ type CreateReservationForbidden struct {
 	Payload *services_models.CreateReservationResponse
 }
 
+// IsSuccess returns true when this create reservation forbidden response has a 2xx status code
+func (o *CreateReservationForbidden) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this create reservation forbidden response has a 3xx status code
+func (o *CreateReservationForbidden) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create reservation forbidden response has a 4xx status code
+func (o *CreateReservationForbidden) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this create reservation forbidden response has a 5xx status code
+func (o *CreateReservationForbidden) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this create reservation forbidden response a status code equal to that given
+func (o *CreateReservationForbidden) IsCode(code int) bool {
+	return code == 403
+}
+
 func (o *CreateReservationForbidden) Error() string {
 	return fmt.Sprintf("[POST /service/v1/reservation][%d] createReservationForbidden  %+v", 403, o.Payload)
 }
+
+func (o *CreateReservationForbidden) String() string {
+	return fmt.Sprintf("[POST /service/v1/reservation][%d] createReservationForbidden  %+v", 403, o.Payload)
+}
+
 func (o *CreateReservationForbidden) GetPayload() *services_models.CreateReservationResponse {
 	return o.Payload
 }
@@ -241,7 +334,8 @@ func NewCreateReservationNotFound() *CreateReservationNotFound {
 	return &CreateReservationNotFound{}
 }
 
-/* CreateReservationNotFound describes a response with status code 404, with default header values.
+/*
+CreateReservationNotFound describes a response with status code 404, with default header values.
 
 The resource specified does not exist.
 */
@@ -258,9 +352,39 @@ type CreateReservationNotFound struct {
 	Payload *services_models.CreateReservationResponse
 }
 
+// IsSuccess returns true when this create reservation not found response has a 2xx status code
+func (o *CreateReservationNotFound) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this create reservation not found response has a 3xx status code
+func (o *CreateReservationNotFound) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create reservation not found response has a 4xx status code
+func (o *CreateReservationNotFound) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this create reservation not found response has a 5xx status code
+func (o *CreateReservationNotFound) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this create reservation not found response a status code equal to that given
+func (o *CreateReservationNotFound) IsCode(code int) bool {
+	return code == 404
+}
+
 func (o *CreateReservationNotFound) Error() string {
 	return fmt.Sprintf("[POST /service/v1/reservation][%d] createReservationNotFound  %+v", 404, o.Payload)
 }
+
+func (o *CreateReservationNotFound) String() string {
+	return fmt.Sprintf("[POST /service/v1/reservation][%d] createReservationNotFound  %+v", 404, o.Payload)
+}
+
 func (o *CreateReservationNotFound) GetPayload() *services_models.CreateReservationResponse {
 	return o.Payload
 }
@@ -296,7 +420,8 @@ func NewCreateReservationRequestEntityTooLarge() *CreateReservationRequestEntity
 	return &CreateReservationRequestEntityTooLarge{}
 }
 
-/* CreateReservationRequestEntityTooLarge describes a response with status code 413, with default header values.
+/*
+CreateReservationRequestEntityTooLarge describes a response with status code 413, with default header values.
 
 The request size exceeded the maximum accepted size.
 */
@@ -314,9 +439,39 @@ type CreateReservationRequestEntityTooLarge struct {
 	Payload *services_models.CreateReservationResponse
 }
 
+// IsSuccess returns true when this create reservation request entity too large response has a 2xx status code
+func (o *CreateReservationRequestEntityTooLarge) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this create reservation request entity too large response has a 3xx status code
+func (o *CreateReservationRequestEntityTooLarge) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create reservation request entity too large response has a 4xx status code
+func (o *CreateReservationRequestEntityTooLarge) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this create reservation request entity too large response has a 5xx status code
+func (o *CreateReservationRequestEntityTooLarge) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this create reservation request entity too large response a status code equal to that given
+func (o *CreateReservationRequestEntityTooLarge) IsCode(code int) bool {
+	return code == 413
+}
+
 func (o *CreateReservationRequestEntityTooLarge) Error() string {
 	return fmt.Sprintf("[POST /service/v1/reservation][%d] createReservationRequestEntityTooLarge  %+v", 413, o.Payload)
 }
+
+func (o *CreateReservationRequestEntityTooLarge) String() string {
+	return fmt.Sprintf("[POST /service/v1/reservation][%d] createReservationRequestEntityTooLarge  %+v", 413, o.Payload)
+}
+
 func (o *CreateReservationRequestEntityTooLarge) GetPayload() *services_models.CreateReservationResponse {
 	return o.Payload
 }
@@ -352,7 +507,8 @@ func NewCreateReservationUnsupportedMediaType() *CreateReservationUnsupportedMed
 	return &CreateReservationUnsupportedMediaType{}
 }
 
-/* CreateReservationUnsupportedMediaType describes a response with status code 415, with default header values.
+/*
+CreateReservationUnsupportedMediaType describes a response with status code 415, with default header values.
 
 The request payload is in an unsupported format.
 */
@@ -370,9 +526,39 @@ type CreateReservationUnsupportedMediaType struct {
 	Payload *services_models.CreateReservationResponse
 }
 
+// IsSuccess returns true when this create reservation unsupported media type response has a 2xx status code
+func (o *CreateReservationUnsupportedMediaType) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this create reservation unsupported media type response has a 3xx status code
+func (o *CreateReservationUnsupportedMediaType) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create reservation unsupported media type response has a 4xx status code
+func (o *CreateReservationUnsupportedMediaType) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this create reservation unsupported media type response has a 5xx status code
+func (o *CreateReservationUnsupportedMediaType) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this create reservation unsupported media type response a status code equal to that given
+func (o *CreateReservationUnsupportedMediaType) IsCode(code int) bool {
+	return code == 415
+}
+
 func (o *CreateReservationUnsupportedMediaType) Error() string {
 	return fmt.Sprintf("[POST /service/v1/reservation][%d] createReservationUnsupportedMediaType  %+v", 415, o.Payload)
 }
+
+func (o *CreateReservationUnsupportedMediaType) String() string {
+	return fmt.Sprintf("[POST /service/v1/reservation][%d] createReservationUnsupportedMediaType  %+v", 415, o.Payload)
+}
+
 func (o *CreateReservationUnsupportedMediaType) GetPayload() *services_models.CreateReservationResponse {
 	return o.Payload
 }
@@ -408,7 +594,8 @@ func NewCreateReservationTooManyRequests() *CreateReservationTooManyRequests {
 	return &CreateReservationTooManyRequests{}
 }
 
-/* CreateReservationTooManyRequests describes a response with status code 429, with default header values.
+/*
+CreateReservationTooManyRequests describes a response with status code 429, with default header values.
 
 The frequency of requests was greater than allowed.
 */
@@ -426,9 +613,39 @@ type CreateReservationTooManyRequests struct {
 	Payload *services_models.CreateReservationResponse
 }
 
+// IsSuccess returns true when this create reservation too many requests response has a 2xx status code
+func (o *CreateReservationTooManyRequests) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this create reservation too many requests response has a 3xx status code
+func (o *CreateReservationTooManyRequests) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create reservation too many requests response has a 4xx status code
+func (o *CreateReservationTooManyRequests) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this create reservation too many requests response has a 5xx status code
+func (o *CreateReservationTooManyRequests) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this create reservation too many requests response a status code equal to that given
+func (o *CreateReservationTooManyRequests) IsCode(code int) bool {
+	return code == 429
+}
+
 func (o *CreateReservationTooManyRequests) Error() string {
 	return fmt.Sprintf("[POST /service/v1/reservation][%d] createReservationTooManyRequests  %+v", 429, o.Payload)
 }
+
+func (o *CreateReservationTooManyRequests) String() string {
+	return fmt.Sprintf("[POST /service/v1/reservation][%d] createReservationTooManyRequests  %+v", 429, o.Payload)
+}
+
 func (o *CreateReservationTooManyRequests) GetPayload() *services_models.CreateReservationResponse {
 	return o.Payload
 }
@@ -464,7 +681,8 @@ func NewCreateReservationInternalServerError() *CreateReservationInternalServerE
 	return &CreateReservationInternalServerError{}
 }
 
-/* CreateReservationInternalServerError describes a response with status code 500, with default header values.
+/*
+CreateReservationInternalServerError describes a response with status code 500, with default header values.
 
 Encountered an unexpected condition which prevented the server from fulfilling the request.
 */
@@ -482,9 +700,39 @@ type CreateReservationInternalServerError struct {
 	Payload *services_models.CreateReservationResponse
 }
 
+// IsSuccess returns true when this create reservation internal server error response has a 2xx status code
+func (o *CreateReservationInternalServerError) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this create reservation internal server error response has a 3xx status code
+func (o *CreateReservationInternalServerError) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create reservation internal server error response has a 4xx status code
+func (o *CreateReservationInternalServerError) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this create reservation internal server error response has a 5xx status code
+func (o *CreateReservationInternalServerError) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this create reservation internal server error response a status code equal to that given
+func (o *CreateReservationInternalServerError) IsCode(code int) bool {
+	return code == 500
+}
+
 func (o *CreateReservationInternalServerError) Error() string {
 	return fmt.Sprintf("[POST /service/v1/reservation][%d] createReservationInternalServerError  %+v", 500, o.Payload)
 }
+
+func (o *CreateReservationInternalServerError) String() string {
+	return fmt.Sprintf("[POST /service/v1/reservation][%d] createReservationInternalServerError  %+v", 500, o.Payload)
+}
+
 func (o *CreateReservationInternalServerError) GetPayload() *services_models.CreateReservationResponse {
 	return o.Payload
 }
@@ -520,7 +768,8 @@ func NewCreateReservationServiceUnavailable() *CreateReservationServiceUnavailab
 	return &CreateReservationServiceUnavailable{}
 }
 
-/* CreateReservationServiceUnavailable describes a response with status code 503, with default header values.
+/*
+CreateReservationServiceUnavailable describes a response with status code 503, with default header values.
 
 Temporary overloading or maintenance of the server.
 */
@@ -538,9 +787,39 @@ type CreateReservationServiceUnavailable struct {
 	Payload *services_models.CreateReservationResponse
 }
 
+// IsSuccess returns true when this create reservation service unavailable response has a 2xx status code
+func (o *CreateReservationServiceUnavailable) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this create reservation service unavailable response has a 3xx status code
+func (o *CreateReservationServiceUnavailable) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create reservation service unavailable response has a 4xx status code
+func (o *CreateReservationServiceUnavailable) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this create reservation service unavailable response has a 5xx status code
+func (o *CreateReservationServiceUnavailable) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this create reservation service unavailable response a status code equal to that given
+func (o *CreateReservationServiceUnavailable) IsCode(code int) bool {
+	return code == 503
+}
+
 func (o *CreateReservationServiceUnavailable) Error() string {
 	return fmt.Sprintf("[POST /service/v1/reservation][%d] createReservationServiceUnavailable  %+v", 503, o.Payload)
 }
+
+func (o *CreateReservationServiceUnavailable) String() string {
+	return fmt.Sprintf("[POST /service/v1/reservation][%d] createReservationServiceUnavailable  %+v", 503, o.Payload)
+}
+
 func (o *CreateReservationServiceUnavailable) GetPayload() *services_models.CreateReservationResponse {
 	return o.Payload
 }

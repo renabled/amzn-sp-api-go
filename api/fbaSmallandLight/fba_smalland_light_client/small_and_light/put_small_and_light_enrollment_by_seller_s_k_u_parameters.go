@@ -53,10 +53,12 @@ func NewPutSmallAndLightEnrollmentBySellerSKUParamsWithHTTPClient(client *http.C
 	}
 }
 
-/* PutSmallAndLightEnrollmentBySellerSKUParams contains all the parameters to send to the API endpoint
-   for the put small and light enrollment by seller s k u operation.
+/*
+PutSmallAndLightEnrollmentBySellerSKUParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the put small and light enrollment by seller s k u operation.
+
+	Typically these are written to a http.Request.
 */
 type PutSmallAndLightEnrollmentBySellerSKUParams struct {
 

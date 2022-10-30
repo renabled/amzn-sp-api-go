@@ -52,10 +52,12 @@ func NewGetOrderScenariosParamsWithHTTPClient(client *http.Client) *GetOrderScen
 	}
 }
 
-/* GetOrderScenariosParams contains all the parameters to send to the API endpoint
-   for the get order scenarios operation.
+/*
+GetOrderScenariosParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the get order scenarios operation.
+
+	Typically these are written to a http.Request.
 */
 type GetOrderScenariosParams struct {
 

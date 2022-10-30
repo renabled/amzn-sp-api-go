@@ -93,7 +93,8 @@ func NewCreateSubscriptionOK() *CreateSubscriptionOK {
 	return &CreateSubscriptionOK{}
 }
 
-/* CreateSubscriptionOK describes a response with status code 200, with default header values.
+/*
+CreateSubscriptionOK describes a response with status code 200, with default header values.
 
 Success.
 */
@@ -110,9 +111,39 @@ type CreateSubscriptionOK struct {
 	Payload *notifications_models.CreateSubscriptionResponse
 }
 
+// IsSuccess returns true when this create subscription o k response has a 2xx status code
+func (o *CreateSubscriptionOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this create subscription o k response has a 3xx status code
+func (o *CreateSubscriptionOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create subscription o k response has a 4xx status code
+func (o *CreateSubscriptionOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this create subscription o k response has a 5xx status code
+func (o *CreateSubscriptionOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this create subscription o k response a status code equal to that given
+func (o *CreateSubscriptionOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *CreateSubscriptionOK) Error() string {
 	return fmt.Sprintf("[POST /notifications/v1/subscriptions/{notificationType}][%d] createSubscriptionOK  %+v", 200, o.Payload)
 }
+
+func (o *CreateSubscriptionOK) String() string {
+	return fmt.Sprintf("[POST /notifications/v1/subscriptions/{notificationType}][%d] createSubscriptionOK  %+v", 200, o.Payload)
+}
+
 func (o *CreateSubscriptionOK) GetPayload() *notifications_models.CreateSubscriptionResponse {
 	return o.Payload
 }
@@ -148,7 +179,8 @@ func NewCreateSubscriptionBadRequest() *CreateSubscriptionBadRequest {
 	return &CreateSubscriptionBadRequest{}
 }
 
-/* CreateSubscriptionBadRequest describes a response with status code 400, with default header values.
+/*
+CreateSubscriptionBadRequest describes a response with status code 400, with default header values.
 
 Request has missing or invalid parameters and cannot be parsed.
 */
@@ -165,9 +197,39 @@ type CreateSubscriptionBadRequest struct {
 	Payload *notifications_models.CreateSubscriptionResponse
 }
 
+// IsSuccess returns true when this create subscription bad request response has a 2xx status code
+func (o *CreateSubscriptionBadRequest) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this create subscription bad request response has a 3xx status code
+func (o *CreateSubscriptionBadRequest) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create subscription bad request response has a 4xx status code
+func (o *CreateSubscriptionBadRequest) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this create subscription bad request response has a 5xx status code
+func (o *CreateSubscriptionBadRequest) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this create subscription bad request response a status code equal to that given
+func (o *CreateSubscriptionBadRequest) IsCode(code int) bool {
+	return code == 400
+}
+
 func (o *CreateSubscriptionBadRequest) Error() string {
 	return fmt.Sprintf("[POST /notifications/v1/subscriptions/{notificationType}][%d] createSubscriptionBadRequest  %+v", 400, o.Payload)
 }
+
+func (o *CreateSubscriptionBadRequest) String() string {
+	return fmt.Sprintf("[POST /notifications/v1/subscriptions/{notificationType}][%d] createSubscriptionBadRequest  %+v", 400, o.Payload)
+}
+
 func (o *CreateSubscriptionBadRequest) GetPayload() *notifications_models.CreateSubscriptionResponse {
 	return o.Payload
 }
@@ -203,7 +265,8 @@ func NewCreateSubscriptionForbidden() *CreateSubscriptionForbidden {
 	return &CreateSubscriptionForbidden{}
 }
 
-/* CreateSubscriptionForbidden describes a response with status code 403, with default header values.
+/*
+CreateSubscriptionForbidden describes a response with status code 403, with default header values.
 
 Indicates that access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.
 */
@@ -216,9 +279,39 @@ type CreateSubscriptionForbidden struct {
 	Payload *notifications_models.CreateSubscriptionResponse
 }
 
+// IsSuccess returns true when this create subscription forbidden response has a 2xx status code
+func (o *CreateSubscriptionForbidden) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this create subscription forbidden response has a 3xx status code
+func (o *CreateSubscriptionForbidden) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create subscription forbidden response has a 4xx status code
+func (o *CreateSubscriptionForbidden) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this create subscription forbidden response has a 5xx status code
+func (o *CreateSubscriptionForbidden) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this create subscription forbidden response a status code equal to that given
+func (o *CreateSubscriptionForbidden) IsCode(code int) bool {
+	return code == 403
+}
+
 func (o *CreateSubscriptionForbidden) Error() string {
 	return fmt.Sprintf("[POST /notifications/v1/subscriptions/{notificationType}][%d] createSubscriptionForbidden  %+v", 403, o.Payload)
 }
+
+func (o *CreateSubscriptionForbidden) String() string {
+	return fmt.Sprintf("[POST /notifications/v1/subscriptions/{notificationType}][%d] createSubscriptionForbidden  %+v", 403, o.Payload)
+}
+
 func (o *CreateSubscriptionForbidden) GetPayload() *notifications_models.CreateSubscriptionResponse {
 	return o.Payload
 }
@@ -247,7 +340,8 @@ func NewCreateSubscriptionNotFound() *CreateSubscriptionNotFound {
 	return &CreateSubscriptionNotFound{}
 }
 
-/* CreateSubscriptionNotFound describes a response with status code 404, with default header values.
+/*
+CreateSubscriptionNotFound describes a response with status code 404, with default header values.
 
 The resource specified does not exist.
 */
@@ -264,9 +358,39 @@ type CreateSubscriptionNotFound struct {
 	Payload *notifications_models.CreateSubscriptionResponse
 }
 
+// IsSuccess returns true when this create subscription not found response has a 2xx status code
+func (o *CreateSubscriptionNotFound) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this create subscription not found response has a 3xx status code
+func (o *CreateSubscriptionNotFound) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create subscription not found response has a 4xx status code
+func (o *CreateSubscriptionNotFound) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this create subscription not found response has a 5xx status code
+func (o *CreateSubscriptionNotFound) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this create subscription not found response a status code equal to that given
+func (o *CreateSubscriptionNotFound) IsCode(code int) bool {
+	return code == 404
+}
+
 func (o *CreateSubscriptionNotFound) Error() string {
 	return fmt.Sprintf("[POST /notifications/v1/subscriptions/{notificationType}][%d] createSubscriptionNotFound  %+v", 404, o.Payload)
 }
+
+func (o *CreateSubscriptionNotFound) String() string {
+	return fmt.Sprintf("[POST /notifications/v1/subscriptions/{notificationType}][%d] createSubscriptionNotFound  %+v", 404, o.Payload)
+}
+
 func (o *CreateSubscriptionNotFound) GetPayload() *notifications_models.CreateSubscriptionResponse {
 	return o.Payload
 }
@@ -302,7 +426,8 @@ func NewCreateSubscriptionConflict() *CreateSubscriptionConflict {
 	return &CreateSubscriptionConflict{}
 }
 
-/* CreateSubscriptionConflict describes a response with status code 409, with default header values.
+/*
+CreateSubscriptionConflict describes a response with status code 409, with default header values.
 
 The resource specified conflicts with the current state.
 */
@@ -320,9 +445,39 @@ type CreateSubscriptionConflict struct {
 	Payload *notifications_models.CreateSubscriptionResponse
 }
 
+// IsSuccess returns true when this create subscription conflict response has a 2xx status code
+func (o *CreateSubscriptionConflict) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this create subscription conflict response has a 3xx status code
+func (o *CreateSubscriptionConflict) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create subscription conflict response has a 4xx status code
+func (o *CreateSubscriptionConflict) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this create subscription conflict response has a 5xx status code
+func (o *CreateSubscriptionConflict) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this create subscription conflict response a status code equal to that given
+func (o *CreateSubscriptionConflict) IsCode(code int) bool {
+	return code == 409
+}
+
 func (o *CreateSubscriptionConflict) Error() string {
 	return fmt.Sprintf("[POST /notifications/v1/subscriptions/{notificationType}][%d] createSubscriptionConflict  %+v", 409, o.Payload)
 }
+
+func (o *CreateSubscriptionConflict) String() string {
+	return fmt.Sprintf("[POST /notifications/v1/subscriptions/{notificationType}][%d] createSubscriptionConflict  %+v", 409, o.Payload)
+}
+
 func (o *CreateSubscriptionConflict) GetPayload() *notifications_models.CreateSubscriptionResponse {
 	return o.Payload
 }
@@ -358,7 +513,8 @@ func NewCreateSubscriptionRequestEntityTooLarge() *CreateSubscriptionRequestEnti
 	return &CreateSubscriptionRequestEntityTooLarge{}
 }
 
-/* CreateSubscriptionRequestEntityTooLarge describes a response with status code 413, with default header values.
+/*
+CreateSubscriptionRequestEntityTooLarge describes a response with status code 413, with default header values.
 
 The request size exceeded the maximum accepted size.
 */
@@ -376,9 +532,39 @@ type CreateSubscriptionRequestEntityTooLarge struct {
 	Payload *notifications_models.CreateSubscriptionResponse
 }
 
+// IsSuccess returns true when this create subscription request entity too large response has a 2xx status code
+func (o *CreateSubscriptionRequestEntityTooLarge) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this create subscription request entity too large response has a 3xx status code
+func (o *CreateSubscriptionRequestEntityTooLarge) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create subscription request entity too large response has a 4xx status code
+func (o *CreateSubscriptionRequestEntityTooLarge) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this create subscription request entity too large response has a 5xx status code
+func (o *CreateSubscriptionRequestEntityTooLarge) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this create subscription request entity too large response a status code equal to that given
+func (o *CreateSubscriptionRequestEntityTooLarge) IsCode(code int) bool {
+	return code == 413
+}
+
 func (o *CreateSubscriptionRequestEntityTooLarge) Error() string {
 	return fmt.Sprintf("[POST /notifications/v1/subscriptions/{notificationType}][%d] createSubscriptionRequestEntityTooLarge  %+v", 413, o.Payload)
 }
+
+func (o *CreateSubscriptionRequestEntityTooLarge) String() string {
+	return fmt.Sprintf("[POST /notifications/v1/subscriptions/{notificationType}][%d] createSubscriptionRequestEntityTooLarge  %+v", 413, o.Payload)
+}
+
 func (o *CreateSubscriptionRequestEntityTooLarge) GetPayload() *notifications_models.CreateSubscriptionResponse {
 	return o.Payload
 }
@@ -414,7 +600,8 @@ func NewCreateSubscriptionUnsupportedMediaType() *CreateSubscriptionUnsupportedM
 	return &CreateSubscriptionUnsupportedMediaType{}
 }
 
-/* CreateSubscriptionUnsupportedMediaType describes a response with status code 415, with default header values.
+/*
+CreateSubscriptionUnsupportedMediaType describes a response with status code 415, with default header values.
 
 The request payload is in an unsupported format.
 */
@@ -432,9 +619,39 @@ type CreateSubscriptionUnsupportedMediaType struct {
 	Payload *notifications_models.CreateSubscriptionResponse
 }
 
+// IsSuccess returns true when this create subscription unsupported media type response has a 2xx status code
+func (o *CreateSubscriptionUnsupportedMediaType) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this create subscription unsupported media type response has a 3xx status code
+func (o *CreateSubscriptionUnsupportedMediaType) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create subscription unsupported media type response has a 4xx status code
+func (o *CreateSubscriptionUnsupportedMediaType) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this create subscription unsupported media type response has a 5xx status code
+func (o *CreateSubscriptionUnsupportedMediaType) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this create subscription unsupported media type response a status code equal to that given
+func (o *CreateSubscriptionUnsupportedMediaType) IsCode(code int) bool {
+	return code == 415
+}
+
 func (o *CreateSubscriptionUnsupportedMediaType) Error() string {
 	return fmt.Sprintf("[POST /notifications/v1/subscriptions/{notificationType}][%d] createSubscriptionUnsupportedMediaType  %+v", 415, o.Payload)
 }
+
+func (o *CreateSubscriptionUnsupportedMediaType) String() string {
+	return fmt.Sprintf("[POST /notifications/v1/subscriptions/{notificationType}][%d] createSubscriptionUnsupportedMediaType  %+v", 415, o.Payload)
+}
+
 func (o *CreateSubscriptionUnsupportedMediaType) GetPayload() *notifications_models.CreateSubscriptionResponse {
 	return o.Payload
 }
@@ -470,7 +687,8 @@ func NewCreateSubscriptionTooManyRequests() *CreateSubscriptionTooManyRequests {
 	return &CreateSubscriptionTooManyRequests{}
 }
 
-/* CreateSubscriptionTooManyRequests describes a response with status code 429, with default header values.
+/*
+CreateSubscriptionTooManyRequests describes a response with status code 429, with default header values.
 
 The frequency of requests was greater than allowed.
 */
@@ -488,9 +706,39 @@ type CreateSubscriptionTooManyRequests struct {
 	Payload *notifications_models.CreateSubscriptionResponse
 }
 
+// IsSuccess returns true when this create subscription too many requests response has a 2xx status code
+func (o *CreateSubscriptionTooManyRequests) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this create subscription too many requests response has a 3xx status code
+func (o *CreateSubscriptionTooManyRequests) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create subscription too many requests response has a 4xx status code
+func (o *CreateSubscriptionTooManyRequests) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this create subscription too many requests response has a 5xx status code
+func (o *CreateSubscriptionTooManyRequests) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this create subscription too many requests response a status code equal to that given
+func (o *CreateSubscriptionTooManyRequests) IsCode(code int) bool {
+	return code == 429
+}
+
 func (o *CreateSubscriptionTooManyRequests) Error() string {
 	return fmt.Sprintf("[POST /notifications/v1/subscriptions/{notificationType}][%d] createSubscriptionTooManyRequests  %+v", 429, o.Payload)
 }
+
+func (o *CreateSubscriptionTooManyRequests) String() string {
+	return fmt.Sprintf("[POST /notifications/v1/subscriptions/{notificationType}][%d] createSubscriptionTooManyRequests  %+v", 429, o.Payload)
+}
+
 func (o *CreateSubscriptionTooManyRequests) GetPayload() *notifications_models.CreateSubscriptionResponse {
 	return o.Payload
 }
@@ -526,7 +774,8 @@ func NewCreateSubscriptionInternalServerError() *CreateSubscriptionInternalServe
 	return &CreateSubscriptionInternalServerError{}
 }
 
-/* CreateSubscriptionInternalServerError describes a response with status code 500, with default header values.
+/*
+CreateSubscriptionInternalServerError describes a response with status code 500, with default header values.
 
 An unexpected condition occurred that prevented the server from fulfilling the request.
 */
@@ -544,9 +793,39 @@ type CreateSubscriptionInternalServerError struct {
 	Payload *notifications_models.CreateSubscriptionResponse
 }
 
+// IsSuccess returns true when this create subscription internal server error response has a 2xx status code
+func (o *CreateSubscriptionInternalServerError) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this create subscription internal server error response has a 3xx status code
+func (o *CreateSubscriptionInternalServerError) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create subscription internal server error response has a 4xx status code
+func (o *CreateSubscriptionInternalServerError) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this create subscription internal server error response has a 5xx status code
+func (o *CreateSubscriptionInternalServerError) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this create subscription internal server error response a status code equal to that given
+func (o *CreateSubscriptionInternalServerError) IsCode(code int) bool {
+	return code == 500
+}
+
 func (o *CreateSubscriptionInternalServerError) Error() string {
 	return fmt.Sprintf("[POST /notifications/v1/subscriptions/{notificationType}][%d] createSubscriptionInternalServerError  %+v", 500, o.Payload)
 }
+
+func (o *CreateSubscriptionInternalServerError) String() string {
+	return fmt.Sprintf("[POST /notifications/v1/subscriptions/{notificationType}][%d] createSubscriptionInternalServerError  %+v", 500, o.Payload)
+}
+
 func (o *CreateSubscriptionInternalServerError) GetPayload() *notifications_models.CreateSubscriptionResponse {
 	return o.Payload
 }
@@ -582,7 +861,8 @@ func NewCreateSubscriptionServiceUnavailable() *CreateSubscriptionServiceUnavail
 	return &CreateSubscriptionServiceUnavailable{}
 }
 
-/* CreateSubscriptionServiceUnavailable describes a response with status code 503, with default header values.
+/*
+CreateSubscriptionServiceUnavailable describes a response with status code 503, with default header values.
 
 Temporary overloading or maintenance of the server.
 */
@@ -600,9 +880,39 @@ type CreateSubscriptionServiceUnavailable struct {
 	Payload *notifications_models.CreateSubscriptionResponse
 }
 
+// IsSuccess returns true when this create subscription service unavailable response has a 2xx status code
+func (o *CreateSubscriptionServiceUnavailable) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this create subscription service unavailable response has a 3xx status code
+func (o *CreateSubscriptionServiceUnavailable) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create subscription service unavailable response has a 4xx status code
+func (o *CreateSubscriptionServiceUnavailable) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this create subscription service unavailable response has a 5xx status code
+func (o *CreateSubscriptionServiceUnavailable) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this create subscription service unavailable response a status code equal to that given
+func (o *CreateSubscriptionServiceUnavailable) IsCode(code int) bool {
+	return code == 503
+}
+
 func (o *CreateSubscriptionServiceUnavailable) Error() string {
 	return fmt.Sprintf("[POST /notifications/v1/subscriptions/{notificationType}][%d] createSubscriptionServiceUnavailable  %+v", 503, o.Payload)
 }
+
+func (o *CreateSubscriptionServiceUnavailable) String() string {
+	return fmt.Sprintf("[POST /notifications/v1/subscriptions/{notificationType}][%d] createSubscriptionServiceUnavailable  %+v", 503, o.Payload)
+}
+
 func (o *CreateSubscriptionServiceUnavailable) GetPayload() *notifications_models.CreateSubscriptionResponse {
 	return o.Payload
 }

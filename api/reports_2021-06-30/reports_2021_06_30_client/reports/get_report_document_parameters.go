@@ -52,10 +52,12 @@ func NewGetReportDocumentParamsWithHTTPClient(client *http.Client) *GetReportDoc
 	}
 }
 
-/* GetReportDocumentParams contains all the parameters to send to the API endpoint
-   for the get report document operation.
+/*
+GetReportDocumentParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the get report document operation.
+
+	Typically these are written to a http.Request.
 */
 type GetReportDocumentParams struct {
 

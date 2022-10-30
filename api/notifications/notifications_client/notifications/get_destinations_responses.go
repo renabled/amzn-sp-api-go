@@ -93,7 +93,8 @@ func NewGetDestinationsOK() *GetDestinationsOK {
 	return &GetDestinationsOK{}
 }
 
-/* GetDestinationsOK describes a response with status code 200, with default header values.
+/*
+GetDestinationsOK describes a response with status code 200, with default header values.
 
 Success.
 */
@@ -110,9 +111,39 @@ type GetDestinationsOK struct {
 	Payload *notifications_models.GetDestinationsResponse
 }
 
+// IsSuccess returns true when this get destinations o k response has a 2xx status code
+func (o *GetDestinationsOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this get destinations o k response has a 3xx status code
+func (o *GetDestinationsOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get destinations o k response has a 4xx status code
+func (o *GetDestinationsOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get destinations o k response has a 5xx status code
+func (o *GetDestinationsOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get destinations o k response a status code equal to that given
+func (o *GetDestinationsOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *GetDestinationsOK) Error() string {
 	return fmt.Sprintf("[GET /notifications/v1/destinations][%d] getDestinationsOK  %+v", 200, o.Payload)
 }
+
+func (o *GetDestinationsOK) String() string {
+	return fmt.Sprintf("[GET /notifications/v1/destinations][%d] getDestinationsOK  %+v", 200, o.Payload)
+}
+
 func (o *GetDestinationsOK) GetPayload() *notifications_models.GetDestinationsResponse {
 	return o.Payload
 }
@@ -148,7 +179,8 @@ func NewGetDestinationsBadRequest() *GetDestinationsBadRequest {
 	return &GetDestinationsBadRequest{}
 }
 
-/* GetDestinationsBadRequest describes a response with status code 400, with default header values.
+/*
+GetDestinationsBadRequest describes a response with status code 400, with default header values.
 
 Request has missing or invalid parameters and cannot be parsed.
 */
@@ -165,9 +197,39 @@ type GetDestinationsBadRequest struct {
 	Payload *notifications_models.GetDestinationsResponse
 }
 
+// IsSuccess returns true when this get destinations bad request response has a 2xx status code
+func (o *GetDestinationsBadRequest) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get destinations bad request response has a 3xx status code
+func (o *GetDestinationsBadRequest) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get destinations bad request response has a 4xx status code
+func (o *GetDestinationsBadRequest) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get destinations bad request response has a 5xx status code
+func (o *GetDestinationsBadRequest) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get destinations bad request response a status code equal to that given
+func (o *GetDestinationsBadRequest) IsCode(code int) bool {
+	return code == 400
+}
+
 func (o *GetDestinationsBadRequest) Error() string {
 	return fmt.Sprintf("[GET /notifications/v1/destinations][%d] getDestinationsBadRequest  %+v", 400, o.Payload)
 }
+
+func (o *GetDestinationsBadRequest) String() string {
+	return fmt.Sprintf("[GET /notifications/v1/destinations][%d] getDestinationsBadRequest  %+v", 400, o.Payload)
+}
+
 func (o *GetDestinationsBadRequest) GetPayload() *notifications_models.GetDestinationsResponse {
 	return o.Payload
 }
@@ -203,7 +265,8 @@ func NewGetDestinationsForbidden() *GetDestinationsForbidden {
 	return &GetDestinationsForbidden{}
 }
 
-/* GetDestinationsForbidden describes a response with status code 403, with default header values.
+/*
+GetDestinationsForbidden describes a response with status code 403, with default header values.
 
 Indicates that access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.
 */
@@ -216,9 +279,39 @@ type GetDestinationsForbidden struct {
 	Payload *notifications_models.GetDestinationsResponse
 }
 
+// IsSuccess returns true when this get destinations forbidden response has a 2xx status code
+func (o *GetDestinationsForbidden) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get destinations forbidden response has a 3xx status code
+func (o *GetDestinationsForbidden) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get destinations forbidden response has a 4xx status code
+func (o *GetDestinationsForbidden) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get destinations forbidden response has a 5xx status code
+func (o *GetDestinationsForbidden) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get destinations forbidden response a status code equal to that given
+func (o *GetDestinationsForbidden) IsCode(code int) bool {
+	return code == 403
+}
+
 func (o *GetDestinationsForbidden) Error() string {
 	return fmt.Sprintf("[GET /notifications/v1/destinations][%d] getDestinationsForbidden  %+v", 403, o.Payload)
 }
+
+func (o *GetDestinationsForbidden) String() string {
+	return fmt.Sprintf("[GET /notifications/v1/destinations][%d] getDestinationsForbidden  %+v", 403, o.Payload)
+}
+
 func (o *GetDestinationsForbidden) GetPayload() *notifications_models.GetDestinationsResponse {
 	return o.Payload
 }
@@ -247,7 +340,8 @@ func NewGetDestinationsNotFound() *GetDestinationsNotFound {
 	return &GetDestinationsNotFound{}
 }
 
-/* GetDestinationsNotFound describes a response with status code 404, with default header values.
+/*
+GetDestinationsNotFound describes a response with status code 404, with default header values.
 
 The resource specified does not exist.
 */
@@ -264,9 +358,39 @@ type GetDestinationsNotFound struct {
 	Payload *notifications_models.GetDestinationsResponse
 }
 
+// IsSuccess returns true when this get destinations not found response has a 2xx status code
+func (o *GetDestinationsNotFound) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get destinations not found response has a 3xx status code
+func (o *GetDestinationsNotFound) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get destinations not found response has a 4xx status code
+func (o *GetDestinationsNotFound) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get destinations not found response has a 5xx status code
+func (o *GetDestinationsNotFound) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get destinations not found response a status code equal to that given
+func (o *GetDestinationsNotFound) IsCode(code int) bool {
+	return code == 404
+}
+
 func (o *GetDestinationsNotFound) Error() string {
 	return fmt.Sprintf("[GET /notifications/v1/destinations][%d] getDestinationsNotFound  %+v", 404, o.Payload)
 }
+
+func (o *GetDestinationsNotFound) String() string {
+	return fmt.Sprintf("[GET /notifications/v1/destinations][%d] getDestinationsNotFound  %+v", 404, o.Payload)
+}
+
 func (o *GetDestinationsNotFound) GetPayload() *notifications_models.GetDestinationsResponse {
 	return o.Payload
 }
@@ -302,7 +426,8 @@ func NewGetDestinationsConflict() *GetDestinationsConflict {
 	return &GetDestinationsConflict{}
 }
 
-/* GetDestinationsConflict describes a response with status code 409, with default header values.
+/*
+GetDestinationsConflict describes a response with status code 409, with default header values.
 
 The resource specified conflicts with the current state.
 */
@@ -320,9 +445,39 @@ type GetDestinationsConflict struct {
 	Payload *notifications_models.GetDestinationsResponse
 }
 
+// IsSuccess returns true when this get destinations conflict response has a 2xx status code
+func (o *GetDestinationsConflict) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get destinations conflict response has a 3xx status code
+func (o *GetDestinationsConflict) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get destinations conflict response has a 4xx status code
+func (o *GetDestinationsConflict) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get destinations conflict response has a 5xx status code
+func (o *GetDestinationsConflict) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get destinations conflict response a status code equal to that given
+func (o *GetDestinationsConflict) IsCode(code int) bool {
+	return code == 409
+}
+
 func (o *GetDestinationsConflict) Error() string {
 	return fmt.Sprintf("[GET /notifications/v1/destinations][%d] getDestinationsConflict  %+v", 409, o.Payload)
 }
+
+func (o *GetDestinationsConflict) String() string {
+	return fmt.Sprintf("[GET /notifications/v1/destinations][%d] getDestinationsConflict  %+v", 409, o.Payload)
+}
+
 func (o *GetDestinationsConflict) GetPayload() *notifications_models.GetDestinationsResponse {
 	return o.Payload
 }
@@ -358,7 +513,8 @@ func NewGetDestinationsRequestEntityTooLarge() *GetDestinationsRequestEntityTooL
 	return &GetDestinationsRequestEntityTooLarge{}
 }
 
-/* GetDestinationsRequestEntityTooLarge describes a response with status code 413, with default header values.
+/*
+GetDestinationsRequestEntityTooLarge describes a response with status code 413, with default header values.
 
 The request size exceeded the maximum accepted size.
 */
@@ -376,9 +532,39 @@ type GetDestinationsRequestEntityTooLarge struct {
 	Payload *notifications_models.GetDestinationsResponse
 }
 
+// IsSuccess returns true when this get destinations request entity too large response has a 2xx status code
+func (o *GetDestinationsRequestEntityTooLarge) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get destinations request entity too large response has a 3xx status code
+func (o *GetDestinationsRequestEntityTooLarge) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get destinations request entity too large response has a 4xx status code
+func (o *GetDestinationsRequestEntityTooLarge) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get destinations request entity too large response has a 5xx status code
+func (o *GetDestinationsRequestEntityTooLarge) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get destinations request entity too large response a status code equal to that given
+func (o *GetDestinationsRequestEntityTooLarge) IsCode(code int) bool {
+	return code == 413
+}
+
 func (o *GetDestinationsRequestEntityTooLarge) Error() string {
 	return fmt.Sprintf("[GET /notifications/v1/destinations][%d] getDestinationsRequestEntityTooLarge  %+v", 413, o.Payload)
 }
+
+func (o *GetDestinationsRequestEntityTooLarge) String() string {
+	return fmt.Sprintf("[GET /notifications/v1/destinations][%d] getDestinationsRequestEntityTooLarge  %+v", 413, o.Payload)
+}
+
 func (o *GetDestinationsRequestEntityTooLarge) GetPayload() *notifications_models.GetDestinationsResponse {
 	return o.Payload
 }
@@ -414,7 +600,8 @@ func NewGetDestinationsUnsupportedMediaType() *GetDestinationsUnsupportedMediaTy
 	return &GetDestinationsUnsupportedMediaType{}
 }
 
-/* GetDestinationsUnsupportedMediaType describes a response with status code 415, with default header values.
+/*
+GetDestinationsUnsupportedMediaType describes a response with status code 415, with default header values.
 
 The request payload is in an unsupported format.
 */
@@ -432,9 +619,39 @@ type GetDestinationsUnsupportedMediaType struct {
 	Payload *notifications_models.GetDestinationsResponse
 }
 
+// IsSuccess returns true when this get destinations unsupported media type response has a 2xx status code
+func (o *GetDestinationsUnsupportedMediaType) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get destinations unsupported media type response has a 3xx status code
+func (o *GetDestinationsUnsupportedMediaType) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get destinations unsupported media type response has a 4xx status code
+func (o *GetDestinationsUnsupportedMediaType) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get destinations unsupported media type response has a 5xx status code
+func (o *GetDestinationsUnsupportedMediaType) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get destinations unsupported media type response a status code equal to that given
+func (o *GetDestinationsUnsupportedMediaType) IsCode(code int) bool {
+	return code == 415
+}
+
 func (o *GetDestinationsUnsupportedMediaType) Error() string {
 	return fmt.Sprintf("[GET /notifications/v1/destinations][%d] getDestinationsUnsupportedMediaType  %+v", 415, o.Payload)
 }
+
+func (o *GetDestinationsUnsupportedMediaType) String() string {
+	return fmt.Sprintf("[GET /notifications/v1/destinations][%d] getDestinationsUnsupportedMediaType  %+v", 415, o.Payload)
+}
+
 func (o *GetDestinationsUnsupportedMediaType) GetPayload() *notifications_models.GetDestinationsResponse {
 	return o.Payload
 }
@@ -470,7 +687,8 @@ func NewGetDestinationsTooManyRequests() *GetDestinationsTooManyRequests {
 	return &GetDestinationsTooManyRequests{}
 }
 
-/* GetDestinationsTooManyRequests describes a response with status code 429, with default header values.
+/*
+GetDestinationsTooManyRequests describes a response with status code 429, with default header values.
 
 The frequency of requests was greater than allowed.
 */
@@ -488,9 +706,39 @@ type GetDestinationsTooManyRequests struct {
 	Payload *notifications_models.GetDestinationsResponse
 }
 
+// IsSuccess returns true when this get destinations too many requests response has a 2xx status code
+func (o *GetDestinationsTooManyRequests) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get destinations too many requests response has a 3xx status code
+func (o *GetDestinationsTooManyRequests) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get destinations too many requests response has a 4xx status code
+func (o *GetDestinationsTooManyRequests) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get destinations too many requests response has a 5xx status code
+func (o *GetDestinationsTooManyRequests) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get destinations too many requests response a status code equal to that given
+func (o *GetDestinationsTooManyRequests) IsCode(code int) bool {
+	return code == 429
+}
+
 func (o *GetDestinationsTooManyRequests) Error() string {
 	return fmt.Sprintf("[GET /notifications/v1/destinations][%d] getDestinationsTooManyRequests  %+v", 429, o.Payload)
 }
+
+func (o *GetDestinationsTooManyRequests) String() string {
+	return fmt.Sprintf("[GET /notifications/v1/destinations][%d] getDestinationsTooManyRequests  %+v", 429, o.Payload)
+}
+
 func (o *GetDestinationsTooManyRequests) GetPayload() *notifications_models.GetDestinationsResponse {
 	return o.Payload
 }
@@ -526,7 +774,8 @@ func NewGetDestinationsInternalServerError() *GetDestinationsInternalServerError
 	return &GetDestinationsInternalServerError{}
 }
 
-/* GetDestinationsInternalServerError describes a response with status code 500, with default header values.
+/*
+GetDestinationsInternalServerError describes a response with status code 500, with default header values.
 
 An unexpected condition occurred that prevented the server from fulfilling the request.
 */
@@ -544,9 +793,39 @@ type GetDestinationsInternalServerError struct {
 	Payload *notifications_models.GetDestinationsResponse
 }
 
+// IsSuccess returns true when this get destinations internal server error response has a 2xx status code
+func (o *GetDestinationsInternalServerError) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get destinations internal server error response has a 3xx status code
+func (o *GetDestinationsInternalServerError) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get destinations internal server error response has a 4xx status code
+func (o *GetDestinationsInternalServerError) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get destinations internal server error response has a 5xx status code
+func (o *GetDestinationsInternalServerError) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this get destinations internal server error response a status code equal to that given
+func (o *GetDestinationsInternalServerError) IsCode(code int) bool {
+	return code == 500
+}
+
 func (o *GetDestinationsInternalServerError) Error() string {
 	return fmt.Sprintf("[GET /notifications/v1/destinations][%d] getDestinationsInternalServerError  %+v", 500, o.Payload)
 }
+
+func (o *GetDestinationsInternalServerError) String() string {
+	return fmt.Sprintf("[GET /notifications/v1/destinations][%d] getDestinationsInternalServerError  %+v", 500, o.Payload)
+}
+
 func (o *GetDestinationsInternalServerError) GetPayload() *notifications_models.GetDestinationsResponse {
 	return o.Payload
 }
@@ -582,7 +861,8 @@ func NewGetDestinationsServiceUnavailable() *GetDestinationsServiceUnavailable {
 	return &GetDestinationsServiceUnavailable{}
 }
 
-/* GetDestinationsServiceUnavailable describes a response with status code 503, with default header values.
+/*
+GetDestinationsServiceUnavailable describes a response with status code 503, with default header values.
 
 Temporary overloading or maintenance of the server.
 */
@@ -600,9 +880,39 @@ type GetDestinationsServiceUnavailable struct {
 	Payload *notifications_models.GetDestinationsResponse
 }
 
+// IsSuccess returns true when this get destinations service unavailable response has a 2xx status code
+func (o *GetDestinationsServiceUnavailable) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get destinations service unavailable response has a 3xx status code
+func (o *GetDestinationsServiceUnavailable) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get destinations service unavailable response has a 4xx status code
+func (o *GetDestinationsServiceUnavailable) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get destinations service unavailable response has a 5xx status code
+func (o *GetDestinationsServiceUnavailable) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this get destinations service unavailable response a status code equal to that given
+func (o *GetDestinationsServiceUnavailable) IsCode(code int) bool {
+	return code == 503
+}
+
 func (o *GetDestinationsServiceUnavailable) Error() string {
 	return fmt.Sprintf("[GET /notifications/v1/destinations][%d] getDestinationsServiceUnavailable  %+v", 503, o.Payload)
 }
+
+func (o *GetDestinationsServiceUnavailable) String() string {
+	return fmt.Sprintf("[GET /notifications/v1/destinations][%d] getDestinationsServiceUnavailable  %+v", 503, o.Payload)
+}
+
 func (o *GetDestinationsServiceUnavailable) GetPayload() *notifications_models.GetDestinationsResponse {
 	return o.Payload
 }

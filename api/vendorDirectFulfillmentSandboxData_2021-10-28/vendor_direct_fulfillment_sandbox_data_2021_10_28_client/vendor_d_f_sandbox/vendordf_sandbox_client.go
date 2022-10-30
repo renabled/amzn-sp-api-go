@@ -36,7 +36,7 @@ type ClientService interface {
 }
 
 /*
-  GenerateOrderScenarios Submits a request to generate test order data for Vendor Direct Fulfillment API entities.
+GenerateOrderScenarios Submits a request to generate test order data for Vendor Direct Fulfillment API entities.
 */
 func (a *Client) GenerateOrderScenarios(params *GenerateOrderScenariosParams, opts ...ClientOption) (*GenerateOrderScenariosAccepted, error) {
 	// TODO: Validate the params before sending

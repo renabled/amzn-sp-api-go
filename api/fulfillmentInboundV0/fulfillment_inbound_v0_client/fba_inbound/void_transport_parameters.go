@@ -52,10 +52,12 @@ func NewVoidTransportParamsWithHTTPClient(client *http.Client) *VoidTransportPar
 	}
 }
 
-/* VoidTransportParams contains all the parameters to send to the API endpoint
-   for the void transport operation.
+/*
+VoidTransportParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the void transport operation.
+
+	Typically these are written to a http.Request.
 */
 type VoidTransportParams struct {
 

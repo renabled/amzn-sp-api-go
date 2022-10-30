@@ -54,10 +54,12 @@ func NewSubmitAcknowledgementParamsWithHTTPClient(client *http.Client) *SubmitAc
 	}
 }
 
-/* SubmitAcknowledgementParams contains all the parameters to send to the API endpoint
-   for the submit acknowledgement operation.
+/*
+SubmitAcknowledgementParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the submit acknowledgement operation.
+
+	Typically these are written to a http.Request.
 */
 type SubmitAcknowledgementParams struct {
 

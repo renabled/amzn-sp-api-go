@@ -87,7 +87,8 @@ func NewGetScheduledPackageOK() *GetScheduledPackageOK {
 	return &GetScheduledPackageOK{}
 }
 
-/* GetScheduledPackageOK describes a response with status code 200, with default header values.
+/*
+GetScheduledPackageOK describes a response with status code 200, with default header values.
 
 Success.
 */
@@ -104,9 +105,39 @@ type GetScheduledPackageOK struct {
 	Payload *easy_ship_2022_03_23_models.Package
 }
 
+// IsSuccess returns true when this get scheduled package o k response has a 2xx status code
+func (o *GetScheduledPackageOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this get scheduled package o k response has a 3xx status code
+func (o *GetScheduledPackageOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get scheduled package o k response has a 4xx status code
+func (o *GetScheduledPackageOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get scheduled package o k response has a 5xx status code
+func (o *GetScheduledPackageOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get scheduled package o k response a status code equal to that given
+func (o *GetScheduledPackageOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *GetScheduledPackageOK) Error() string {
 	return fmt.Sprintf("[GET /easyShip/2022-03-23/package][%d] getScheduledPackageOK  %+v", 200, o.Payload)
 }
+
+func (o *GetScheduledPackageOK) String() string {
+	return fmt.Sprintf("[GET /easyShip/2022-03-23/package][%d] getScheduledPackageOK  %+v", 200, o.Payload)
+}
+
 func (o *GetScheduledPackageOK) GetPayload() *easy_ship_2022_03_23_models.Package {
 	return o.Payload
 }
@@ -142,7 +173,8 @@ func NewGetScheduledPackageBadRequest() *GetScheduledPackageBadRequest {
 	return &GetScheduledPackageBadRequest{}
 }
 
-/* GetScheduledPackageBadRequest describes a response with status code 400, with default header values.
+/*
+GetScheduledPackageBadRequest describes a response with status code 400, with default header values.
 
 Request has missing or invalid parameters and cannot be parsed.
 */
@@ -159,9 +191,39 @@ type GetScheduledPackageBadRequest struct {
 	Payload *easy_ship_2022_03_23_models.ErrorList
 }
 
+// IsSuccess returns true when this get scheduled package bad request response has a 2xx status code
+func (o *GetScheduledPackageBadRequest) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get scheduled package bad request response has a 3xx status code
+func (o *GetScheduledPackageBadRequest) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get scheduled package bad request response has a 4xx status code
+func (o *GetScheduledPackageBadRequest) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get scheduled package bad request response has a 5xx status code
+func (o *GetScheduledPackageBadRequest) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get scheduled package bad request response a status code equal to that given
+func (o *GetScheduledPackageBadRequest) IsCode(code int) bool {
+	return code == 400
+}
+
 func (o *GetScheduledPackageBadRequest) Error() string {
 	return fmt.Sprintf("[GET /easyShip/2022-03-23/package][%d] getScheduledPackageBadRequest  %+v", 400, o.Payload)
 }
+
+func (o *GetScheduledPackageBadRequest) String() string {
+	return fmt.Sprintf("[GET /easyShip/2022-03-23/package][%d] getScheduledPackageBadRequest  %+v", 400, o.Payload)
+}
+
 func (o *GetScheduledPackageBadRequest) GetPayload() *easy_ship_2022_03_23_models.ErrorList {
 	return o.Payload
 }
@@ -197,7 +259,8 @@ func NewGetScheduledPackageUnauthorized() *GetScheduledPackageUnauthorized {
 	return &GetScheduledPackageUnauthorized{}
 }
 
-/* GetScheduledPackageUnauthorized describes a response with status code 401, with default header values.
+/*
+GetScheduledPackageUnauthorized describes a response with status code 401, with default header values.
 
 The request's Authorization header is not formatted correctly or does not contain a valid token.
 */
@@ -214,9 +277,39 @@ type GetScheduledPackageUnauthorized struct {
 	Payload *easy_ship_2022_03_23_models.ErrorList
 }
 
+// IsSuccess returns true when this get scheduled package unauthorized response has a 2xx status code
+func (o *GetScheduledPackageUnauthorized) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get scheduled package unauthorized response has a 3xx status code
+func (o *GetScheduledPackageUnauthorized) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get scheduled package unauthorized response has a 4xx status code
+func (o *GetScheduledPackageUnauthorized) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get scheduled package unauthorized response has a 5xx status code
+func (o *GetScheduledPackageUnauthorized) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get scheduled package unauthorized response a status code equal to that given
+func (o *GetScheduledPackageUnauthorized) IsCode(code int) bool {
+	return code == 401
+}
+
 func (o *GetScheduledPackageUnauthorized) Error() string {
 	return fmt.Sprintf("[GET /easyShip/2022-03-23/package][%d] getScheduledPackageUnauthorized  %+v", 401, o.Payload)
 }
+
+func (o *GetScheduledPackageUnauthorized) String() string {
+	return fmt.Sprintf("[GET /easyShip/2022-03-23/package][%d] getScheduledPackageUnauthorized  %+v", 401, o.Payload)
+}
+
 func (o *GetScheduledPackageUnauthorized) GetPayload() *easy_ship_2022_03_23_models.ErrorList {
 	return o.Payload
 }
@@ -252,7 +345,8 @@ func NewGetScheduledPackageForbidden() *GetScheduledPackageForbidden {
 	return &GetScheduledPackageForbidden{}
 }
 
-/* GetScheduledPackageForbidden describes a response with status code 403, with default header values.
+/*
+GetScheduledPackageForbidden describes a response with status code 403, with default header values.
 
 Indicates access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.
 */
@@ -265,9 +359,39 @@ type GetScheduledPackageForbidden struct {
 	Payload *easy_ship_2022_03_23_models.ErrorList
 }
 
+// IsSuccess returns true when this get scheduled package forbidden response has a 2xx status code
+func (o *GetScheduledPackageForbidden) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get scheduled package forbidden response has a 3xx status code
+func (o *GetScheduledPackageForbidden) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get scheduled package forbidden response has a 4xx status code
+func (o *GetScheduledPackageForbidden) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get scheduled package forbidden response has a 5xx status code
+func (o *GetScheduledPackageForbidden) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get scheduled package forbidden response a status code equal to that given
+func (o *GetScheduledPackageForbidden) IsCode(code int) bool {
+	return code == 403
+}
+
 func (o *GetScheduledPackageForbidden) Error() string {
 	return fmt.Sprintf("[GET /easyShip/2022-03-23/package][%d] getScheduledPackageForbidden  %+v", 403, o.Payload)
 }
+
+func (o *GetScheduledPackageForbidden) String() string {
+	return fmt.Sprintf("[GET /easyShip/2022-03-23/package][%d] getScheduledPackageForbidden  %+v", 403, o.Payload)
+}
+
 func (o *GetScheduledPackageForbidden) GetPayload() *easy_ship_2022_03_23_models.ErrorList {
 	return o.Payload
 }
@@ -296,7 +420,8 @@ func NewGetScheduledPackageNotFound() *GetScheduledPackageNotFound {
 	return &GetScheduledPackageNotFound{}
 }
 
-/* GetScheduledPackageNotFound describes a response with status code 404, with default header values.
+/*
+GetScheduledPackageNotFound describes a response with status code 404, with default header values.
 
 The specified resource does not exist.
 */
@@ -313,9 +438,39 @@ type GetScheduledPackageNotFound struct {
 	Payload *easy_ship_2022_03_23_models.ErrorList
 }
 
+// IsSuccess returns true when this get scheduled package not found response has a 2xx status code
+func (o *GetScheduledPackageNotFound) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get scheduled package not found response has a 3xx status code
+func (o *GetScheduledPackageNotFound) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get scheduled package not found response has a 4xx status code
+func (o *GetScheduledPackageNotFound) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get scheduled package not found response has a 5xx status code
+func (o *GetScheduledPackageNotFound) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get scheduled package not found response a status code equal to that given
+func (o *GetScheduledPackageNotFound) IsCode(code int) bool {
+	return code == 404
+}
+
 func (o *GetScheduledPackageNotFound) Error() string {
 	return fmt.Sprintf("[GET /easyShip/2022-03-23/package][%d] getScheduledPackageNotFound  %+v", 404, o.Payload)
 }
+
+func (o *GetScheduledPackageNotFound) String() string {
+	return fmt.Sprintf("[GET /easyShip/2022-03-23/package][%d] getScheduledPackageNotFound  %+v", 404, o.Payload)
+}
+
 func (o *GetScheduledPackageNotFound) GetPayload() *easy_ship_2022_03_23_models.ErrorList {
 	return o.Payload
 }
@@ -351,7 +506,8 @@ func NewGetScheduledPackageUnsupportedMediaType() *GetScheduledPackageUnsupporte
 	return &GetScheduledPackageUnsupportedMediaType{}
 }
 
-/* GetScheduledPackageUnsupportedMediaType describes a response with status code 415, with default header values.
+/*
+GetScheduledPackageUnsupportedMediaType describes a response with status code 415, with default header values.
 
 The request payload is in an unsupported format.
 */
@@ -364,9 +520,39 @@ type GetScheduledPackageUnsupportedMediaType struct {
 	Payload *easy_ship_2022_03_23_models.ErrorList
 }
 
+// IsSuccess returns true when this get scheduled package unsupported media type response has a 2xx status code
+func (o *GetScheduledPackageUnsupportedMediaType) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get scheduled package unsupported media type response has a 3xx status code
+func (o *GetScheduledPackageUnsupportedMediaType) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get scheduled package unsupported media type response has a 4xx status code
+func (o *GetScheduledPackageUnsupportedMediaType) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get scheduled package unsupported media type response has a 5xx status code
+func (o *GetScheduledPackageUnsupportedMediaType) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get scheduled package unsupported media type response a status code equal to that given
+func (o *GetScheduledPackageUnsupportedMediaType) IsCode(code int) bool {
+	return code == 415
+}
+
 func (o *GetScheduledPackageUnsupportedMediaType) Error() string {
 	return fmt.Sprintf("[GET /easyShip/2022-03-23/package][%d] getScheduledPackageUnsupportedMediaType  %+v", 415, o.Payload)
 }
+
+func (o *GetScheduledPackageUnsupportedMediaType) String() string {
+	return fmt.Sprintf("[GET /easyShip/2022-03-23/package][%d] getScheduledPackageUnsupportedMediaType  %+v", 415, o.Payload)
+}
+
 func (o *GetScheduledPackageUnsupportedMediaType) GetPayload() *easy_ship_2022_03_23_models.ErrorList {
 	return o.Payload
 }
@@ -395,7 +581,8 @@ func NewGetScheduledPackageTooManyRequests() *GetScheduledPackageTooManyRequests
 	return &GetScheduledPackageTooManyRequests{}
 }
 
-/* GetScheduledPackageTooManyRequests describes a response with status code 429, with default header values.
+/*
+GetScheduledPackageTooManyRequests describes a response with status code 429, with default header values.
 
 The frequency of requests was greater than allowed.
 */
@@ -408,9 +595,39 @@ type GetScheduledPackageTooManyRequests struct {
 	Payload *easy_ship_2022_03_23_models.ErrorList
 }
 
+// IsSuccess returns true when this get scheduled package too many requests response has a 2xx status code
+func (o *GetScheduledPackageTooManyRequests) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get scheduled package too many requests response has a 3xx status code
+func (o *GetScheduledPackageTooManyRequests) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get scheduled package too many requests response has a 4xx status code
+func (o *GetScheduledPackageTooManyRequests) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get scheduled package too many requests response has a 5xx status code
+func (o *GetScheduledPackageTooManyRequests) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get scheduled package too many requests response a status code equal to that given
+func (o *GetScheduledPackageTooManyRequests) IsCode(code int) bool {
+	return code == 429
+}
+
 func (o *GetScheduledPackageTooManyRequests) Error() string {
 	return fmt.Sprintf("[GET /easyShip/2022-03-23/package][%d] getScheduledPackageTooManyRequests  %+v", 429, o.Payload)
 }
+
+func (o *GetScheduledPackageTooManyRequests) String() string {
+	return fmt.Sprintf("[GET /easyShip/2022-03-23/package][%d] getScheduledPackageTooManyRequests  %+v", 429, o.Payload)
+}
+
 func (o *GetScheduledPackageTooManyRequests) GetPayload() *easy_ship_2022_03_23_models.ErrorList {
 	return o.Payload
 }
@@ -439,7 +656,8 @@ func NewGetScheduledPackageInternalServerError() *GetScheduledPackageInternalSer
 	return &GetScheduledPackageInternalServerError{}
 }
 
-/* GetScheduledPackageInternalServerError describes a response with status code 500, with default header values.
+/*
+GetScheduledPackageInternalServerError describes a response with status code 500, with default header values.
 
 An unexpected condition occurred that prevented the server from fulfilling the request.
 */
@@ -452,9 +670,39 @@ type GetScheduledPackageInternalServerError struct {
 	Payload *easy_ship_2022_03_23_models.ErrorList
 }
 
+// IsSuccess returns true when this get scheduled package internal server error response has a 2xx status code
+func (o *GetScheduledPackageInternalServerError) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get scheduled package internal server error response has a 3xx status code
+func (o *GetScheduledPackageInternalServerError) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get scheduled package internal server error response has a 4xx status code
+func (o *GetScheduledPackageInternalServerError) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get scheduled package internal server error response has a 5xx status code
+func (o *GetScheduledPackageInternalServerError) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this get scheduled package internal server error response a status code equal to that given
+func (o *GetScheduledPackageInternalServerError) IsCode(code int) bool {
+	return code == 500
+}
+
 func (o *GetScheduledPackageInternalServerError) Error() string {
 	return fmt.Sprintf("[GET /easyShip/2022-03-23/package][%d] getScheduledPackageInternalServerError  %+v", 500, o.Payload)
 }
+
+func (o *GetScheduledPackageInternalServerError) String() string {
+	return fmt.Sprintf("[GET /easyShip/2022-03-23/package][%d] getScheduledPackageInternalServerError  %+v", 500, o.Payload)
+}
+
 func (o *GetScheduledPackageInternalServerError) GetPayload() *easy_ship_2022_03_23_models.ErrorList {
 	return o.Payload
 }
@@ -483,7 +731,8 @@ func NewGetScheduledPackageServiceUnavailable() *GetScheduledPackageServiceUnava
 	return &GetScheduledPackageServiceUnavailable{}
 }
 
-/* GetScheduledPackageServiceUnavailable describes a response with status code 503, with default header values.
+/*
+GetScheduledPackageServiceUnavailable describes a response with status code 503, with default header values.
 
 Temporary overloading or maintenance of the server.
 */
@@ -496,9 +745,39 @@ type GetScheduledPackageServiceUnavailable struct {
 	Payload *easy_ship_2022_03_23_models.ErrorList
 }
 
+// IsSuccess returns true when this get scheduled package service unavailable response has a 2xx status code
+func (o *GetScheduledPackageServiceUnavailable) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get scheduled package service unavailable response has a 3xx status code
+func (o *GetScheduledPackageServiceUnavailable) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get scheduled package service unavailable response has a 4xx status code
+func (o *GetScheduledPackageServiceUnavailable) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get scheduled package service unavailable response has a 5xx status code
+func (o *GetScheduledPackageServiceUnavailable) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this get scheduled package service unavailable response a status code equal to that given
+func (o *GetScheduledPackageServiceUnavailable) IsCode(code int) bool {
+	return code == 503
+}
+
 func (o *GetScheduledPackageServiceUnavailable) Error() string {
 	return fmt.Sprintf("[GET /easyShip/2022-03-23/package][%d] getScheduledPackageServiceUnavailable  %+v", 503, o.Payload)
 }
+
+func (o *GetScheduledPackageServiceUnavailable) String() string {
+	return fmt.Sprintf("[GET /easyShip/2022-03-23/package][%d] getScheduledPackageServiceUnavailable  %+v", 503, o.Payload)
+}
+
 func (o *GetScheduledPackageServiceUnavailable) GetPayload() *easy_ship_2022_03_23_models.ErrorList {
 	return o.Payload
 }

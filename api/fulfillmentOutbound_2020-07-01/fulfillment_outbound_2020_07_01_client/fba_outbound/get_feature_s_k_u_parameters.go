@@ -52,10 +52,12 @@ func NewGetFeatureSKUParamsWithHTTPClient(client *http.Client) *GetFeatureSKUPar
 	}
 }
 
-/* GetFeatureSKUParams contains all the parameters to send to the API endpoint
-   for the get feature s k u operation.
+/*
+GetFeatureSKUParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the get feature s k u operation.
+
+	Typically these are written to a http.Request.
 */
 type GetFeatureSKUParams struct {
 

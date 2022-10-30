@@ -87,7 +87,8 @@ func NewPostContentDocumentAsinRelationsOK() *PostContentDocumentAsinRelationsOK
 	return &PostContentDocumentAsinRelationsOK{}
 }
 
-/* PostContentDocumentAsinRelationsOK describes a response with status code 200, with default header values.
+/*
+PostContentDocumentAsinRelationsOK describes a response with status code 200, with default header values.
 
 Success.
 */
@@ -104,9 +105,39 @@ type PostContentDocumentAsinRelationsOK struct {
 	Payload *aplus_content_2020_11_01_models.PostContentDocumentAsinRelationsResponse
 }
 
+// IsSuccess returns true when this post content document asin relations o k response has a 2xx status code
+func (o *PostContentDocumentAsinRelationsOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this post content document asin relations o k response has a 3xx status code
+func (o *PostContentDocumentAsinRelationsOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this post content document asin relations o k response has a 4xx status code
+func (o *PostContentDocumentAsinRelationsOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this post content document asin relations o k response has a 5xx status code
+func (o *PostContentDocumentAsinRelationsOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this post content document asin relations o k response a status code equal to that given
+func (o *PostContentDocumentAsinRelationsOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *PostContentDocumentAsinRelationsOK) Error() string {
 	return fmt.Sprintf("[POST /aplus/2020-11-01/contentDocuments/{contentReferenceKey}/asins][%d] postContentDocumentAsinRelationsOK  %+v", 200, o.Payload)
 }
+
+func (o *PostContentDocumentAsinRelationsOK) String() string {
+	return fmt.Sprintf("[POST /aplus/2020-11-01/contentDocuments/{contentReferenceKey}/asins][%d] postContentDocumentAsinRelationsOK  %+v", 200, o.Payload)
+}
+
 func (o *PostContentDocumentAsinRelationsOK) GetPayload() *aplus_content_2020_11_01_models.PostContentDocumentAsinRelationsResponse {
 	return o.Payload
 }
@@ -142,7 +173,8 @@ func NewPostContentDocumentAsinRelationsBadRequest() *PostContentDocumentAsinRel
 	return &PostContentDocumentAsinRelationsBadRequest{}
 }
 
-/* PostContentDocumentAsinRelationsBadRequest describes a response with status code 400, with default header values.
+/*
+PostContentDocumentAsinRelationsBadRequest describes a response with status code 400, with default header values.
 
 Request has missing or invalid parameters and cannot be parsed.
 */
@@ -159,9 +191,39 @@ type PostContentDocumentAsinRelationsBadRequest struct {
 	Payload *aplus_content_2020_11_01_models.ErrorList
 }
 
+// IsSuccess returns true when this post content document asin relations bad request response has a 2xx status code
+func (o *PostContentDocumentAsinRelationsBadRequest) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this post content document asin relations bad request response has a 3xx status code
+func (o *PostContentDocumentAsinRelationsBadRequest) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this post content document asin relations bad request response has a 4xx status code
+func (o *PostContentDocumentAsinRelationsBadRequest) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this post content document asin relations bad request response has a 5xx status code
+func (o *PostContentDocumentAsinRelationsBadRequest) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this post content document asin relations bad request response a status code equal to that given
+func (o *PostContentDocumentAsinRelationsBadRequest) IsCode(code int) bool {
+	return code == 400
+}
+
 func (o *PostContentDocumentAsinRelationsBadRequest) Error() string {
 	return fmt.Sprintf("[POST /aplus/2020-11-01/contentDocuments/{contentReferenceKey}/asins][%d] postContentDocumentAsinRelationsBadRequest  %+v", 400, o.Payload)
 }
+
+func (o *PostContentDocumentAsinRelationsBadRequest) String() string {
+	return fmt.Sprintf("[POST /aplus/2020-11-01/contentDocuments/{contentReferenceKey}/asins][%d] postContentDocumentAsinRelationsBadRequest  %+v", 400, o.Payload)
+}
+
 func (o *PostContentDocumentAsinRelationsBadRequest) GetPayload() *aplus_content_2020_11_01_models.ErrorList {
 	return o.Payload
 }
@@ -197,7 +259,8 @@ func NewPostContentDocumentAsinRelationsUnauthorized() *PostContentDocumentAsinR
 	return &PostContentDocumentAsinRelationsUnauthorized{}
 }
 
-/* PostContentDocumentAsinRelationsUnauthorized describes a response with status code 401, with default header values.
+/*
+PostContentDocumentAsinRelationsUnauthorized describes a response with status code 401, with default header values.
 
 The request's Authorization header is not formatted correctly or does not contain a valid token.
 */
@@ -215,9 +278,39 @@ type PostContentDocumentAsinRelationsUnauthorized struct {
 	Payload *aplus_content_2020_11_01_models.ErrorList
 }
 
+// IsSuccess returns true when this post content document asin relations unauthorized response has a 2xx status code
+func (o *PostContentDocumentAsinRelationsUnauthorized) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this post content document asin relations unauthorized response has a 3xx status code
+func (o *PostContentDocumentAsinRelationsUnauthorized) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this post content document asin relations unauthorized response has a 4xx status code
+func (o *PostContentDocumentAsinRelationsUnauthorized) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this post content document asin relations unauthorized response has a 5xx status code
+func (o *PostContentDocumentAsinRelationsUnauthorized) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this post content document asin relations unauthorized response a status code equal to that given
+func (o *PostContentDocumentAsinRelationsUnauthorized) IsCode(code int) bool {
+	return code == 401
+}
+
 func (o *PostContentDocumentAsinRelationsUnauthorized) Error() string {
 	return fmt.Sprintf("[POST /aplus/2020-11-01/contentDocuments/{contentReferenceKey}/asins][%d] postContentDocumentAsinRelationsUnauthorized  %+v", 401, o.Payload)
 }
+
+func (o *PostContentDocumentAsinRelationsUnauthorized) String() string {
+	return fmt.Sprintf("[POST /aplus/2020-11-01/contentDocuments/{contentReferenceKey}/asins][%d] postContentDocumentAsinRelationsUnauthorized  %+v", 401, o.Payload)
+}
+
 func (o *PostContentDocumentAsinRelationsUnauthorized) GetPayload() *aplus_content_2020_11_01_models.ErrorList {
 	return o.Payload
 }
@@ -253,7 +346,8 @@ func NewPostContentDocumentAsinRelationsForbidden() *PostContentDocumentAsinRela
 	return &PostContentDocumentAsinRelationsForbidden{}
 }
 
-/* PostContentDocumentAsinRelationsForbidden describes a response with status code 403, with default header values.
+/*
+PostContentDocumentAsinRelationsForbidden describes a response with status code 403, with default header values.
 
 Indicates that access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.
 */
@@ -266,9 +360,39 @@ type PostContentDocumentAsinRelationsForbidden struct {
 	Payload *aplus_content_2020_11_01_models.ErrorList
 }
 
+// IsSuccess returns true when this post content document asin relations forbidden response has a 2xx status code
+func (o *PostContentDocumentAsinRelationsForbidden) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this post content document asin relations forbidden response has a 3xx status code
+func (o *PostContentDocumentAsinRelationsForbidden) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this post content document asin relations forbidden response has a 4xx status code
+func (o *PostContentDocumentAsinRelationsForbidden) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this post content document asin relations forbidden response has a 5xx status code
+func (o *PostContentDocumentAsinRelationsForbidden) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this post content document asin relations forbidden response a status code equal to that given
+func (o *PostContentDocumentAsinRelationsForbidden) IsCode(code int) bool {
+	return code == 403
+}
+
 func (o *PostContentDocumentAsinRelationsForbidden) Error() string {
 	return fmt.Sprintf("[POST /aplus/2020-11-01/contentDocuments/{contentReferenceKey}/asins][%d] postContentDocumentAsinRelationsForbidden  %+v", 403, o.Payload)
 }
+
+func (o *PostContentDocumentAsinRelationsForbidden) String() string {
+	return fmt.Sprintf("[POST /aplus/2020-11-01/contentDocuments/{contentReferenceKey}/asins][%d] postContentDocumentAsinRelationsForbidden  %+v", 403, o.Payload)
+}
+
 func (o *PostContentDocumentAsinRelationsForbidden) GetPayload() *aplus_content_2020_11_01_models.ErrorList {
 	return o.Payload
 }
@@ -297,7 +421,8 @@ func NewPostContentDocumentAsinRelationsNotFound() *PostContentDocumentAsinRelat
 	return &PostContentDocumentAsinRelationsNotFound{}
 }
 
-/* PostContentDocumentAsinRelationsNotFound describes a response with status code 404, with default header values.
+/*
+PostContentDocumentAsinRelationsNotFound describes a response with status code 404, with default header values.
 
 The specified resource does not exist.
 */
@@ -314,9 +439,39 @@ type PostContentDocumentAsinRelationsNotFound struct {
 	Payload *aplus_content_2020_11_01_models.ErrorList
 }
 
+// IsSuccess returns true when this post content document asin relations not found response has a 2xx status code
+func (o *PostContentDocumentAsinRelationsNotFound) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this post content document asin relations not found response has a 3xx status code
+func (o *PostContentDocumentAsinRelationsNotFound) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this post content document asin relations not found response has a 4xx status code
+func (o *PostContentDocumentAsinRelationsNotFound) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this post content document asin relations not found response has a 5xx status code
+func (o *PostContentDocumentAsinRelationsNotFound) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this post content document asin relations not found response a status code equal to that given
+func (o *PostContentDocumentAsinRelationsNotFound) IsCode(code int) bool {
+	return code == 404
+}
+
 func (o *PostContentDocumentAsinRelationsNotFound) Error() string {
 	return fmt.Sprintf("[POST /aplus/2020-11-01/contentDocuments/{contentReferenceKey}/asins][%d] postContentDocumentAsinRelationsNotFound  %+v", 404, o.Payload)
 }
+
+func (o *PostContentDocumentAsinRelationsNotFound) String() string {
+	return fmt.Sprintf("[POST /aplus/2020-11-01/contentDocuments/{contentReferenceKey}/asins][%d] postContentDocumentAsinRelationsNotFound  %+v", 404, o.Payload)
+}
+
 func (o *PostContentDocumentAsinRelationsNotFound) GetPayload() *aplus_content_2020_11_01_models.ErrorList {
 	return o.Payload
 }
@@ -352,7 +507,8 @@ func NewPostContentDocumentAsinRelationsGone() *PostContentDocumentAsinRelations
 	return &PostContentDocumentAsinRelationsGone{}
 }
 
-/* PostContentDocumentAsinRelationsGone describes a response with status code 410, with default header values.
+/*
+PostContentDocumentAsinRelationsGone describes a response with status code 410, with default header values.
 
 The specified resource no longer exists.
 */
@@ -370,9 +526,39 @@ type PostContentDocumentAsinRelationsGone struct {
 	Payload *aplus_content_2020_11_01_models.ErrorList
 }
 
+// IsSuccess returns true when this post content document asin relations gone response has a 2xx status code
+func (o *PostContentDocumentAsinRelationsGone) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this post content document asin relations gone response has a 3xx status code
+func (o *PostContentDocumentAsinRelationsGone) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this post content document asin relations gone response has a 4xx status code
+func (o *PostContentDocumentAsinRelationsGone) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this post content document asin relations gone response has a 5xx status code
+func (o *PostContentDocumentAsinRelationsGone) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this post content document asin relations gone response a status code equal to that given
+func (o *PostContentDocumentAsinRelationsGone) IsCode(code int) bool {
+	return code == 410
+}
+
 func (o *PostContentDocumentAsinRelationsGone) Error() string {
 	return fmt.Sprintf("[POST /aplus/2020-11-01/contentDocuments/{contentReferenceKey}/asins][%d] postContentDocumentAsinRelationsGone  %+v", 410, o.Payload)
 }
+
+func (o *PostContentDocumentAsinRelationsGone) String() string {
+	return fmt.Sprintf("[POST /aplus/2020-11-01/contentDocuments/{contentReferenceKey}/asins][%d] postContentDocumentAsinRelationsGone  %+v", 410, o.Payload)
+}
+
 func (o *PostContentDocumentAsinRelationsGone) GetPayload() *aplus_content_2020_11_01_models.ErrorList {
 	return o.Payload
 }
@@ -408,7 +594,8 @@ func NewPostContentDocumentAsinRelationsTooManyRequests() *PostContentDocumentAs
 	return &PostContentDocumentAsinRelationsTooManyRequests{}
 }
 
-/* PostContentDocumentAsinRelationsTooManyRequests describes a response with status code 429, with default header values.
+/*
+PostContentDocumentAsinRelationsTooManyRequests describes a response with status code 429, with default header values.
 
 The frequency of requests was greater than allowed.
 */
@@ -426,9 +613,39 @@ type PostContentDocumentAsinRelationsTooManyRequests struct {
 	Payload *aplus_content_2020_11_01_models.ErrorList
 }
 
+// IsSuccess returns true when this post content document asin relations too many requests response has a 2xx status code
+func (o *PostContentDocumentAsinRelationsTooManyRequests) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this post content document asin relations too many requests response has a 3xx status code
+func (o *PostContentDocumentAsinRelationsTooManyRequests) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this post content document asin relations too many requests response has a 4xx status code
+func (o *PostContentDocumentAsinRelationsTooManyRequests) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this post content document asin relations too many requests response has a 5xx status code
+func (o *PostContentDocumentAsinRelationsTooManyRequests) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this post content document asin relations too many requests response a status code equal to that given
+func (o *PostContentDocumentAsinRelationsTooManyRequests) IsCode(code int) bool {
+	return code == 429
+}
+
 func (o *PostContentDocumentAsinRelationsTooManyRequests) Error() string {
 	return fmt.Sprintf("[POST /aplus/2020-11-01/contentDocuments/{contentReferenceKey}/asins][%d] postContentDocumentAsinRelationsTooManyRequests  %+v", 429, o.Payload)
 }
+
+func (o *PostContentDocumentAsinRelationsTooManyRequests) String() string {
+	return fmt.Sprintf("[POST /aplus/2020-11-01/contentDocuments/{contentReferenceKey}/asins][%d] postContentDocumentAsinRelationsTooManyRequests  %+v", 429, o.Payload)
+}
+
 func (o *PostContentDocumentAsinRelationsTooManyRequests) GetPayload() *aplus_content_2020_11_01_models.ErrorList {
 	return o.Payload
 }
@@ -464,7 +681,8 @@ func NewPostContentDocumentAsinRelationsInternalServerError() *PostContentDocume
 	return &PostContentDocumentAsinRelationsInternalServerError{}
 }
 
-/* PostContentDocumentAsinRelationsInternalServerError describes a response with status code 500, with default header values.
+/*
+PostContentDocumentAsinRelationsInternalServerError describes a response with status code 500, with default header values.
 
 An unexpected condition occurred that prevented the server from fulfilling the request.
 */
@@ -482,9 +700,39 @@ type PostContentDocumentAsinRelationsInternalServerError struct {
 	Payload *aplus_content_2020_11_01_models.ErrorList
 }
 
+// IsSuccess returns true when this post content document asin relations internal server error response has a 2xx status code
+func (o *PostContentDocumentAsinRelationsInternalServerError) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this post content document asin relations internal server error response has a 3xx status code
+func (o *PostContentDocumentAsinRelationsInternalServerError) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this post content document asin relations internal server error response has a 4xx status code
+func (o *PostContentDocumentAsinRelationsInternalServerError) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this post content document asin relations internal server error response has a 5xx status code
+func (o *PostContentDocumentAsinRelationsInternalServerError) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this post content document asin relations internal server error response a status code equal to that given
+func (o *PostContentDocumentAsinRelationsInternalServerError) IsCode(code int) bool {
+	return code == 500
+}
+
 func (o *PostContentDocumentAsinRelationsInternalServerError) Error() string {
 	return fmt.Sprintf("[POST /aplus/2020-11-01/contentDocuments/{contentReferenceKey}/asins][%d] postContentDocumentAsinRelationsInternalServerError  %+v", 500, o.Payload)
 }
+
+func (o *PostContentDocumentAsinRelationsInternalServerError) String() string {
+	return fmt.Sprintf("[POST /aplus/2020-11-01/contentDocuments/{contentReferenceKey}/asins][%d] postContentDocumentAsinRelationsInternalServerError  %+v", 500, o.Payload)
+}
+
 func (o *PostContentDocumentAsinRelationsInternalServerError) GetPayload() *aplus_content_2020_11_01_models.ErrorList {
 	return o.Payload
 }
@@ -520,7 +768,8 @@ func NewPostContentDocumentAsinRelationsServiceUnavailable() *PostContentDocumen
 	return &PostContentDocumentAsinRelationsServiceUnavailable{}
 }
 
-/* PostContentDocumentAsinRelationsServiceUnavailable describes a response with status code 503, with default header values.
+/*
+PostContentDocumentAsinRelationsServiceUnavailable describes a response with status code 503, with default header values.
 
 Temporary overloading or maintenance of the server.
 */
@@ -538,9 +787,39 @@ type PostContentDocumentAsinRelationsServiceUnavailable struct {
 	Payload *aplus_content_2020_11_01_models.ErrorList
 }
 
+// IsSuccess returns true when this post content document asin relations service unavailable response has a 2xx status code
+func (o *PostContentDocumentAsinRelationsServiceUnavailable) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this post content document asin relations service unavailable response has a 3xx status code
+func (o *PostContentDocumentAsinRelationsServiceUnavailable) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this post content document asin relations service unavailable response has a 4xx status code
+func (o *PostContentDocumentAsinRelationsServiceUnavailable) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this post content document asin relations service unavailable response has a 5xx status code
+func (o *PostContentDocumentAsinRelationsServiceUnavailable) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this post content document asin relations service unavailable response a status code equal to that given
+func (o *PostContentDocumentAsinRelationsServiceUnavailable) IsCode(code int) bool {
+	return code == 503
+}
+
 func (o *PostContentDocumentAsinRelationsServiceUnavailable) Error() string {
 	return fmt.Sprintf("[POST /aplus/2020-11-01/contentDocuments/{contentReferenceKey}/asins][%d] postContentDocumentAsinRelationsServiceUnavailable  %+v", 503, o.Payload)
 }
+
+func (o *PostContentDocumentAsinRelationsServiceUnavailable) String() string {
+	return fmt.Sprintf("[POST /aplus/2020-11-01/contentDocuments/{contentReferenceKey}/asins][%d] postContentDocumentAsinRelationsServiceUnavailable  %+v", 503, o.Payload)
+}
+
 func (o *PostContentDocumentAsinRelationsServiceUnavailable) GetPayload() *aplus_content_2020_11_01_models.ErrorList {
 	return o.Payload
 }

@@ -81,7 +81,8 @@ func NewVoidTransportOK() *VoidTransportOK {
 	return &VoidTransportOK{}
 }
 
-/* VoidTransportOK describes a response with status code 200, with default header values.
+/*
+VoidTransportOK describes a response with status code 200, with default header values.
 
 Success.
 */
@@ -98,9 +99,39 @@ type VoidTransportOK struct {
 	Payload *fulfillment_inbound_v0_models.VoidTransportResponse
 }
 
+// IsSuccess returns true when this void transport o k response has a 2xx status code
+func (o *VoidTransportOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this void transport o k response has a 3xx status code
+func (o *VoidTransportOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this void transport o k response has a 4xx status code
+func (o *VoidTransportOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this void transport o k response has a 5xx status code
+func (o *VoidTransportOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this void transport o k response a status code equal to that given
+func (o *VoidTransportOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *VoidTransportOK) Error() string {
 	return fmt.Sprintf("[POST /fba/inbound/v0/shipments/{shipmentId}/transport/void][%d] voidTransportOK  %+v", 200, o.Payload)
 }
+
+func (o *VoidTransportOK) String() string {
+	return fmt.Sprintf("[POST /fba/inbound/v0/shipments/{shipmentId}/transport/void][%d] voidTransportOK  %+v", 200, o.Payload)
+}
+
 func (o *VoidTransportOK) GetPayload() *fulfillment_inbound_v0_models.VoidTransportResponse {
 	return o.Payload
 }
@@ -136,7 +167,8 @@ func NewVoidTransportBadRequest() *VoidTransportBadRequest {
 	return &VoidTransportBadRequest{}
 }
 
-/* VoidTransportBadRequest describes a response with status code 400, with default header values.
+/*
+VoidTransportBadRequest describes a response with status code 400, with default header values.
 
 Request has missing or invalid parameters and cannot be parsed.
 */
@@ -153,9 +185,39 @@ type VoidTransportBadRequest struct {
 	Payload *fulfillment_inbound_v0_models.VoidTransportResponse
 }
 
+// IsSuccess returns true when this void transport bad request response has a 2xx status code
+func (o *VoidTransportBadRequest) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this void transport bad request response has a 3xx status code
+func (o *VoidTransportBadRequest) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this void transport bad request response has a 4xx status code
+func (o *VoidTransportBadRequest) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this void transport bad request response has a 5xx status code
+func (o *VoidTransportBadRequest) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this void transport bad request response a status code equal to that given
+func (o *VoidTransportBadRequest) IsCode(code int) bool {
+	return code == 400
+}
+
 func (o *VoidTransportBadRequest) Error() string {
 	return fmt.Sprintf("[POST /fba/inbound/v0/shipments/{shipmentId}/transport/void][%d] voidTransportBadRequest  %+v", 400, o.Payload)
 }
+
+func (o *VoidTransportBadRequest) String() string {
+	return fmt.Sprintf("[POST /fba/inbound/v0/shipments/{shipmentId}/transport/void][%d] voidTransportBadRequest  %+v", 400, o.Payload)
+}
+
 func (o *VoidTransportBadRequest) GetPayload() *fulfillment_inbound_v0_models.VoidTransportResponse {
 	return o.Payload
 }
@@ -191,7 +253,8 @@ func NewVoidTransportUnauthorized() *VoidTransportUnauthorized {
 	return &VoidTransportUnauthorized{}
 }
 
-/* VoidTransportUnauthorized describes a response with status code 401, with default header values.
+/*
+VoidTransportUnauthorized describes a response with status code 401, with default header values.
 
 The request's Authorization header is not formatted correctly or does not contain a valid token.
 */
@@ -209,9 +272,39 @@ type VoidTransportUnauthorized struct {
 	Payload *fulfillment_inbound_v0_models.VoidTransportResponse
 }
 
+// IsSuccess returns true when this void transport unauthorized response has a 2xx status code
+func (o *VoidTransportUnauthorized) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this void transport unauthorized response has a 3xx status code
+func (o *VoidTransportUnauthorized) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this void transport unauthorized response has a 4xx status code
+func (o *VoidTransportUnauthorized) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this void transport unauthorized response has a 5xx status code
+func (o *VoidTransportUnauthorized) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this void transport unauthorized response a status code equal to that given
+func (o *VoidTransportUnauthorized) IsCode(code int) bool {
+	return code == 401
+}
+
 func (o *VoidTransportUnauthorized) Error() string {
 	return fmt.Sprintf("[POST /fba/inbound/v0/shipments/{shipmentId}/transport/void][%d] voidTransportUnauthorized  %+v", 401, o.Payload)
 }
+
+func (o *VoidTransportUnauthorized) String() string {
+	return fmt.Sprintf("[POST /fba/inbound/v0/shipments/{shipmentId}/transport/void][%d] voidTransportUnauthorized  %+v", 401, o.Payload)
+}
+
 func (o *VoidTransportUnauthorized) GetPayload() *fulfillment_inbound_v0_models.VoidTransportResponse {
 	return o.Payload
 }
@@ -247,7 +340,8 @@ func NewVoidTransportForbidden() *VoidTransportForbidden {
 	return &VoidTransportForbidden{}
 }
 
-/* VoidTransportForbidden describes a response with status code 403, with default header values.
+/*
+VoidTransportForbidden describes a response with status code 403, with default header values.
 
 Indicates that access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.
 */
@@ -260,9 +354,39 @@ type VoidTransportForbidden struct {
 	Payload *fulfillment_inbound_v0_models.VoidTransportResponse
 }
 
+// IsSuccess returns true when this void transport forbidden response has a 2xx status code
+func (o *VoidTransportForbidden) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this void transport forbidden response has a 3xx status code
+func (o *VoidTransportForbidden) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this void transport forbidden response has a 4xx status code
+func (o *VoidTransportForbidden) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this void transport forbidden response has a 5xx status code
+func (o *VoidTransportForbidden) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this void transport forbidden response a status code equal to that given
+func (o *VoidTransportForbidden) IsCode(code int) bool {
+	return code == 403
+}
+
 func (o *VoidTransportForbidden) Error() string {
 	return fmt.Sprintf("[POST /fba/inbound/v0/shipments/{shipmentId}/transport/void][%d] voidTransportForbidden  %+v", 403, o.Payload)
 }
+
+func (o *VoidTransportForbidden) String() string {
+	return fmt.Sprintf("[POST /fba/inbound/v0/shipments/{shipmentId}/transport/void][%d] voidTransportForbidden  %+v", 403, o.Payload)
+}
+
 func (o *VoidTransportForbidden) GetPayload() *fulfillment_inbound_v0_models.VoidTransportResponse {
 	return o.Payload
 }
@@ -291,7 +415,8 @@ func NewVoidTransportNotFound() *VoidTransportNotFound {
 	return &VoidTransportNotFound{}
 }
 
-/* VoidTransportNotFound describes a response with status code 404, with default header values.
+/*
+VoidTransportNotFound describes a response with status code 404, with default header values.
 
 The specified resource does not exist.
 */
@@ -308,9 +433,39 @@ type VoidTransportNotFound struct {
 	Payload *fulfillment_inbound_v0_models.VoidTransportResponse
 }
 
+// IsSuccess returns true when this void transport not found response has a 2xx status code
+func (o *VoidTransportNotFound) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this void transport not found response has a 3xx status code
+func (o *VoidTransportNotFound) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this void transport not found response has a 4xx status code
+func (o *VoidTransportNotFound) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this void transport not found response has a 5xx status code
+func (o *VoidTransportNotFound) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this void transport not found response a status code equal to that given
+func (o *VoidTransportNotFound) IsCode(code int) bool {
+	return code == 404
+}
+
 func (o *VoidTransportNotFound) Error() string {
 	return fmt.Sprintf("[POST /fba/inbound/v0/shipments/{shipmentId}/transport/void][%d] voidTransportNotFound  %+v", 404, o.Payload)
 }
+
+func (o *VoidTransportNotFound) String() string {
+	return fmt.Sprintf("[POST /fba/inbound/v0/shipments/{shipmentId}/transport/void][%d] voidTransportNotFound  %+v", 404, o.Payload)
+}
+
 func (o *VoidTransportNotFound) GetPayload() *fulfillment_inbound_v0_models.VoidTransportResponse {
 	return o.Payload
 }
@@ -346,7 +501,8 @@ func NewVoidTransportTooManyRequests() *VoidTransportTooManyRequests {
 	return &VoidTransportTooManyRequests{}
 }
 
-/* VoidTransportTooManyRequests describes a response with status code 429, with default header values.
+/*
+VoidTransportTooManyRequests describes a response with status code 429, with default header values.
 
 The frequency of requests was greater than allowed.
 */
@@ -364,9 +520,39 @@ type VoidTransportTooManyRequests struct {
 	Payload *fulfillment_inbound_v0_models.VoidTransportResponse
 }
 
+// IsSuccess returns true when this void transport too many requests response has a 2xx status code
+func (o *VoidTransportTooManyRequests) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this void transport too many requests response has a 3xx status code
+func (o *VoidTransportTooManyRequests) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this void transport too many requests response has a 4xx status code
+func (o *VoidTransportTooManyRequests) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this void transport too many requests response has a 5xx status code
+func (o *VoidTransportTooManyRequests) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this void transport too many requests response a status code equal to that given
+func (o *VoidTransportTooManyRequests) IsCode(code int) bool {
+	return code == 429
+}
+
 func (o *VoidTransportTooManyRequests) Error() string {
 	return fmt.Sprintf("[POST /fba/inbound/v0/shipments/{shipmentId}/transport/void][%d] voidTransportTooManyRequests  %+v", 429, o.Payload)
 }
+
+func (o *VoidTransportTooManyRequests) String() string {
+	return fmt.Sprintf("[POST /fba/inbound/v0/shipments/{shipmentId}/transport/void][%d] voidTransportTooManyRequests  %+v", 429, o.Payload)
+}
+
 func (o *VoidTransportTooManyRequests) GetPayload() *fulfillment_inbound_v0_models.VoidTransportResponse {
 	return o.Payload
 }
@@ -402,7 +588,8 @@ func NewVoidTransportInternalServerError() *VoidTransportInternalServerError {
 	return &VoidTransportInternalServerError{}
 }
 
-/* VoidTransportInternalServerError describes a response with status code 500, with default header values.
+/*
+VoidTransportInternalServerError describes a response with status code 500, with default header values.
 
 An unexpected condition occurred that prevented the server from fulfilling the request.
 */
@@ -420,9 +607,39 @@ type VoidTransportInternalServerError struct {
 	Payload *fulfillment_inbound_v0_models.VoidTransportResponse
 }
 
+// IsSuccess returns true when this void transport internal server error response has a 2xx status code
+func (o *VoidTransportInternalServerError) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this void transport internal server error response has a 3xx status code
+func (o *VoidTransportInternalServerError) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this void transport internal server error response has a 4xx status code
+func (o *VoidTransportInternalServerError) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this void transport internal server error response has a 5xx status code
+func (o *VoidTransportInternalServerError) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this void transport internal server error response a status code equal to that given
+func (o *VoidTransportInternalServerError) IsCode(code int) bool {
+	return code == 500
+}
+
 func (o *VoidTransportInternalServerError) Error() string {
 	return fmt.Sprintf("[POST /fba/inbound/v0/shipments/{shipmentId}/transport/void][%d] voidTransportInternalServerError  %+v", 500, o.Payload)
 }
+
+func (o *VoidTransportInternalServerError) String() string {
+	return fmt.Sprintf("[POST /fba/inbound/v0/shipments/{shipmentId}/transport/void][%d] voidTransportInternalServerError  %+v", 500, o.Payload)
+}
+
 func (o *VoidTransportInternalServerError) GetPayload() *fulfillment_inbound_v0_models.VoidTransportResponse {
 	return o.Payload
 }
@@ -458,7 +675,8 @@ func NewVoidTransportServiceUnavailable() *VoidTransportServiceUnavailable {
 	return &VoidTransportServiceUnavailable{}
 }
 
-/* VoidTransportServiceUnavailable describes a response with status code 503, with default header values.
+/*
+VoidTransportServiceUnavailable describes a response with status code 503, with default header values.
 
 Temporary overloading or maintenance of the server.
 */
@@ -476,9 +694,39 @@ type VoidTransportServiceUnavailable struct {
 	Payload *fulfillment_inbound_v0_models.VoidTransportResponse
 }
 
+// IsSuccess returns true when this void transport service unavailable response has a 2xx status code
+func (o *VoidTransportServiceUnavailable) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this void transport service unavailable response has a 3xx status code
+func (o *VoidTransportServiceUnavailable) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this void transport service unavailable response has a 4xx status code
+func (o *VoidTransportServiceUnavailable) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this void transport service unavailable response has a 5xx status code
+func (o *VoidTransportServiceUnavailable) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this void transport service unavailable response a status code equal to that given
+func (o *VoidTransportServiceUnavailable) IsCode(code int) bool {
+	return code == 503
+}
+
 func (o *VoidTransportServiceUnavailable) Error() string {
 	return fmt.Sprintf("[POST /fba/inbound/v0/shipments/{shipmentId}/transport/void][%d] voidTransportServiceUnavailable  %+v", 503, o.Payload)
 }
+
+func (o *VoidTransportServiceUnavailable) String() string {
+	return fmt.Sprintf("[POST /fba/inbound/v0/shipments/{shipmentId}/transport/void][%d] voidTransportServiceUnavailable  %+v", 503, o.Payload)
+}
+
 func (o *VoidTransportServiceUnavailable) GetPayload() *fulfillment_inbound_v0_models.VoidTransportResponse {
 	return o.Payload
 }

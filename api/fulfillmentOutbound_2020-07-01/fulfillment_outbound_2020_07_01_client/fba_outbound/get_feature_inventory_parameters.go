@@ -52,10 +52,12 @@ func NewGetFeatureInventoryParamsWithHTTPClient(client *http.Client) *GetFeature
 	}
 }
 
-/* GetFeatureInventoryParams contains all the parameters to send to the API endpoint
-   for the get feature inventory operation.
+/*
+GetFeatureInventoryParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the get feature inventory operation.
+
+	Typically these are written to a http.Request.
 */
 type GetFeatureInventoryParams struct {
 

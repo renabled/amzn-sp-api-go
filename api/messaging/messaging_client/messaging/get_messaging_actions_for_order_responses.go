@@ -87,7 +87,8 @@ func NewGetMessagingActionsForOrderOK() *GetMessagingActionsForOrderOK {
 	return &GetMessagingActionsForOrderOK{}
 }
 
-/* GetMessagingActionsForOrderOK describes a response with status code 200, with default header values.
+/*
+GetMessagingActionsForOrderOK describes a response with status code 200, with default header values.
 
 Returns hypermedia links under the _links.actions key that specify which messaging actions are allowed for the order.
 */
@@ -104,9 +105,39 @@ type GetMessagingActionsForOrderOK struct {
 	Payload *messaging_models.GetMessagingActionsForOrderResponse
 }
 
+// IsSuccess returns true when this get messaging actions for order o k response has a 2xx status code
+func (o *GetMessagingActionsForOrderOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this get messaging actions for order o k response has a 3xx status code
+func (o *GetMessagingActionsForOrderOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get messaging actions for order o k response has a 4xx status code
+func (o *GetMessagingActionsForOrderOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get messaging actions for order o k response has a 5xx status code
+func (o *GetMessagingActionsForOrderOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get messaging actions for order o k response a status code equal to that given
+func (o *GetMessagingActionsForOrderOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *GetMessagingActionsForOrderOK) Error() string {
 	return fmt.Sprintf("[GET /messaging/v1/orders/{amazonOrderId}][%d] getMessagingActionsForOrderOK  %+v", 200, o.Payload)
 }
+
+func (o *GetMessagingActionsForOrderOK) String() string {
+	return fmt.Sprintf("[GET /messaging/v1/orders/{amazonOrderId}][%d] getMessagingActionsForOrderOK  %+v", 200, o.Payload)
+}
+
 func (o *GetMessagingActionsForOrderOK) GetPayload() *messaging_models.GetMessagingActionsForOrderResponse {
 	return o.Payload
 }
@@ -142,7 +173,8 @@ func NewGetMessagingActionsForOrderBadRequest() *GetMessagingActionsForOrderBadR
 	return &GetMessagingActionsForOrderBadRequest{}
 }
 
-/* GetMessagingActionsForOrderBadRequest describes a response with status code 400, with default header values.
+/*
+GetMessagingActionsForOrderBadRequest describes a response with status code 400, with default header values.
 
 Request has missing or invalid parameters and cannot be parsed.
 */
@@ -159,9 +191,39 @@ type GetMessagingActionsForOrderBadRequest struct {
 	Payload *messaging_models.GetMessagingActionsForOrderResponse
 }
 
+// IsSuccess returns true when this get messaging actions for order bad request response has a 2xx status code
+func (o *GetMessagingActionsForOrderBadRequest) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get messaging actions for order bad request response has a 3xx status code
+func (o *GetMessagingActionsForOrderBadRequest) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get messaging actions for order bad request response has a 4xx status code
+func (o *GetMessagingActionsForOrderBadRequest) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get messaging actions for order bad request response has a 5xx status code
+func (o *GetMessagingActionsForOrderBadRequest) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get messaging actions for order bad request response a status code equal to that given
+func (o *GetMessagingActionsForOrderBadRequest) IsCode(code int) bool {
+	return code == 400
+}
+
 func (o *GetMessagingActionsForOrderBadRequest) Error() string {
 	return fmt.Sprintf("[GET /messaging/v1/orders/{amazonOrderId}][%d] getMessagingActionsForOrderBadRequest  %+v", 400, o.Payload)
 }
+
+func (o *GetMessagingActionsForOrderBadRequest) String() string {
+	return fmt.Sprintf("[GET /messaging/v1/orders/{amazonOrderId}][%d] getMessagingActionsForOrderBadRequest  %+v", 400, o.Payload)
+}
+
 func (o *GetMessagingActionsForOrderBadRequest) GetPayload() *messaging_models.GetMessagingActionsForOrderResponse {
 	return o.Payload
 }
@@ -197,7 +259,8 @@ func NewGetMessagingActionsForOrderForbidden() *GetMessagingActionsForOrderForbi
 	return &GetMessagingActionsForOrderForbidden{}
 }
 
-/* GetMessagingActionsForOrderForbidden describes a response with status code 403, with default header values.
+/*
+GetMessagingActionsForOrderForbidden describes a response with status code 403, with default header values.
 
 Indicates that access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.
 */
@@ -210,9 +273,39 @@ type GetMessagingActionsForOrderForbidden struct {
 	Payload *messaging_models.GetMessagingActionsForOrderResponse
 }
 
+// IsSuccess returns true when this get messaging actions for order forbidden response has a 2xx status code
+func (o *GetMessagingActionsForOrderForbidden) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get messaging actions for order forbidden response has a 3xx status code
+func (o *GetMessagingActionsForOrderForbidden) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get messaging actions for order forbidden response has a 4xx status code
+func (o *GetMessagingActionsForOrderForbidden) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get messaging actions for order forbidden response has a 5xx status code
+func (o *GetMessagingActionsForOrderForbidden) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get messaging actions for order forbidden response a status code equal to that given
+func (o *GetMessagingActionsForOrderForbidden) IsCode(code int) bool {
+	return code == 403
+}
+
 func (o *GetMessagingActionsForOrderForbidden) Error() string {
 	return fmt.Sprintf("[GET /messaging/v1/orders/{amazonOrderId}][%d] getMessagingActionsForOrderForbidden  %+v", 403, o.Payload)
 }
+
+func (o *GetMessagingActionsForOrderForbidden) String() string {
+	return fmt.Sprintf("[GET /messaging/v1/orders/{amazonOrderId}][%d] getMessagingActionsForOrderForbidden  %+v", 403, o.Payload)
+}
+
 func (o *GetMessagingActionsForOrderForbidden) GetPayload() *messaging_models.GetMessagingActionsForOrderResponse {
 	return o.Payload
 }
@@ -241,7 +334,8 @@ func NewGetMessagingActionsForOrderNotFound() *GetMessagingActionsForOrderNotFou
 	return &GetMessagingActionsForOrderNotFound{}
 }
 
-/* GetMessagingActionsForOrderNotFound describes a response with status code 404, with default header values.
+/*
+GetMessagingActionsForOrderNotFound describes a response with status code 404, with default header values.
 
 The resource specified does not exist.
 */
@@ -258,9 +352,39 @@ type GetMessagingActionsForOrderNotFound struct {
 	Payload *messaging_models.GetMessagingActionsForOrderResponse
 }
 
+// IsSuccess returns true when this get messaging actions for order not found response has a 2xx status code
+func (o *GetMessagingActionsForOrderNotFound) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get messaging actions for order not found response has a 3xx status code
+func (o *GetMessagingActionsForOrderNotFound) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get messaging actions for order not found response has a 4xx status code
+func (o *GetMessagingActionsForOrderNotFound) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get messaging actions for order not found response has a 5xx status code
+func (o *GetMessagingActionsForOrderNotFound) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get messaging actions for order not found response a status code equal to that given
+func (o *GetMessagingActionsForOrderNotFound) IsCode(code int) bool {
+	return code == 404
+}
+
 func (o *GetMessagingActionsForOrderNotFound) Error() string {
 	return fmt.Sprintf("[GET /messaging/v1/orders/{amazonOrderId}][%d] getMessagingActionsForOrderNotFound  %+v", 404, o.Payload)
 }
+
+func (o *GetMessagingActionsForOrderNotFound) String() string {
+	return fmt.Sprintf("[GET /messaging/v1/orders/{amazonOrderId}][%d] getMessagingActionsForOrderNotFound  %+v", 404, o.Payload)
+}
+
 func (o *GetMessagingActionsForOrderNotFound) GetPayload() *messaging_models.GetMessagingActionsForOrderResponse {
 	return o.Payload
 }
@@ -296,7 +420,8 @@ func NewGetMessagingActionsForOrderRequestEntityTooLarge() *GetMessagingActionsF
 	return &GetMessagingActionsForOrderRequestEntityTooLarge{}
 }
 
-/* GetMessagingActionsForOrderRequestEntityTooLarge describes a response with status code 413, with default header values.
+/*
+GetMessagingActionsForOrderRequestEntityTooLarge describes a response with status code 413, with default header values.
 
 The request size exceeded the maximum accepted size.
 */
@@ -314,9 +439,39 @@ type GetMessagingActionsForOrderRequestEntityTooLarge struct {
 	Payload *messaging_models.GetMessagingActionsForOrderResponse
 }
 
+// IsSuccess returns true when this get messaging actions for order request entity too large response has a 2xx status code
+func (o *GetMessagingActionsForOrderRequestEntityTooLarge) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get messaging actions for order request entity too large response has a 3xx status code
+func (o *GetMessagingActionsForOrderRequestEntityTooLarge) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get messaging actions for order request entity too large response has a 4xx status code
+func (o *GetMessagingActionsForOrderRequestEntityTooLarge) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get messaging actions for order request entity too large response has a 5xx status code
+func (o *GetMessagingActionsForOrderRequestEntityTooLarge) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get messaging actions for order request entity too large response a status code equal to that given
+func (o *GetMessagingActionsForOrderRequestEntityTooLarge) IsCode(code int) bool {
+	return code == 413
+}
+
 func (o *GetMessagingActionsForOrderRequestEntityTooLarge) Error() string {
 	return fmt.Sprintf("[GET /messaging/v1/orders/{amazonOrderId}][%d] getMessagingActionsForOrderRequestEntityTooLarge  %+v", 413, o.Payload)
 }
+
+func (o *GetMessagingActionsForOrderRequestEntityTooLarge) String() string {
+	return fmt.Sprintf("[GET /messaging/v1/orders/{amazonOrderId}][%d] getMessagingActionsForOrderRequestEntityTooLarge  %+v", 413, o.Payload)
+}
+
 func (o *GetMessagingActionsForOrderRequestEntityTooLarge) GetPayload() *messaging_models.GetMessagingActionsForOrderResponse {
 	return o.Payload
 }
@@ -352,7 +507,8 @@ func NewGetMessagingActionsForOrderUnsupportedMediaType() *GetMessagingActionsFo
 	return &GetMessagingActionsForOrderUnsupportedMediaType{}
 }
 
-/* GetMessagingActionsForOrderUnsupportedMediaType describes a response with status code 415, with default header values.
+/*
+GetMessagingActionsForOrderUnsupportedMediaType describes a response with status code 415, with default header values.
 
 The request payload is in an unsupported format.
 */
@@ -370,9 +526,39 @@ type GetMessagingActionsForOrderUnsupportedMediaType struct {
 	Payload *messaging_models.GetMessagingActionsForOrderResponse
 }
 
+// IsSuccess returns true when this get messaging actions for order unsupported media type response has a 2xx status code
+func (o *GetMessagingActionsForOrderUnsupportedMediaType) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get messaging actions for order unsupported media type response has a 3xx status code
+func (o *GetMessagingActionsForOrderUnsupportedMediaType) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get messaging actions for order unsupported media type response has a 4xx status code
+func (o *GetMessagingActionsForOrderUnsupportedMediaType) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get messaging actions for order unsupported media type response has a 5xx status code
+func (o *GetMessagingActionsForOrderUnsupportedMediaType) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get messaging actions for order unsupported media type response a status code equal to that given
+func (o *GetMessagingActionsForOrderUnsupportedMediaType) IsCode(code int) bool {
+	return code == 415
+}
+
 func (o *GetMessagingActionsForOrderUnsupportedMediaType) Error() string {
 	return fmt.Sprintf("[GET /messaging/v1/orders/{amazonOrderId}][%d] getMessagingActionsForOrderUnsupportedMediaType  %+v", 415, o.Payload)
 }
+
+func (o *GetMessagingActionsForOrderUnsupportedMediaType) String() string {
+	return fmt.Sprintf("[GET /messaging/v1/orders/{amazonOrderId}][%d] getMessagingActionsForOrderUnsupportedMediaType  %+v", 415, o.Payload)
+}
+
 func (o *GetMessagingActionsForOrderUnsupportedMediaType) GetPayload() *messaging_models.GetMessagingActionsForOrderResponse {
 	return o.Payload
 }
@@ -408,7 +594,8 @@ func NewGetMessagingActionsForOrderTooManyRequests() *GetMessagingActionsForOrde
 	return &GetMessagingActionsForOrderTooManyRequests{}
 }
 
-/* GetMessagingActionsForOrderTooManyRequests describes a response with status code 429, with default header values.
+/*
+GetMessagingActionsForOrderTooManyRequests describes a response with status code 429, with default header values.
 
 The frequency of requests was greater than allowed.
 */
@@ -426,9 +613,39 @@ type GetMessagingActionsForOrderTooManyRequests struct {
 	Payload *messaging_models.GetMessagingActionsForOrderResponse
 }
 
+// IsSuccess returns true when this get messaging actions for order too many requests response has a 2xx status code
+func (o *GetMessagingActionsForOrderTooManyRequests) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get messaging actions for order too many requests response has a 3xx status code
+func (o *GetMessagingActionsForOrderTooManyRequests) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get messaging actions for order too many requests response has a 4xx status code
+func (o *GetMessagingActionsForOrderTooManyRequests) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get messaging actions for order too many requests response has a 5xx status code
+func (o *GetMessagingActionsForOrderTooManyRequests) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get messaging actions for order too many requests response a status code equal to that given
+func (o *GetMessagingActionsForOrderTooManyRequests) IsCode(code int) bool {
+	return code == 429
+}
+
 func (o *GetMessagingActionsForOrderTooManyRequests) Error() string {
 	return fmt.Sprintf("[GET /messaging/v1/orders/{amazonOrderId}][%d] getMessagingActionsForOrderTooManyRequests  %+v", 429, o.Payload)
 }
+
+func (o *GetMessagingActionsForOrderTooManyRequests) String() string {
+	return fmt.Sprintf("[GET /messaging/v1/orders/{amazonOrderId}][%d] getMessagingActionsForOrderTooManyRequests  %+v", 429, o.Payload)
+}
+
 func (o *GetMessagingActionsForOrderTooManyRequests) GetPayload() *messaging_models.GetMessagingActionsForOrderResponse {
 	return o.Payload
 }
@@ -464,7 +681,8 @@ func NewGetMessagingActionsForOrderInternalServerError() *GetMessagingActionsFor
 	return &GetMessagingActionsForOrderInternalServerError{}
 }
 
-/* GetMessagingActionsForOrderInternalServerError describes a response with status code 500, with default header values.
+/*
+GetMessagingActionsForOrderInternalServerError describes a response with status code 500, with default header values.
 
 An unexpected condition occurred that prevented the server from fulfilling the request.
 */
@@ -482,9 +700,39 @@ type GetMessagingActionsForOrderInternalServerError struct {
 	Payload *messaging_models.GetMessagingActionsForOrderResponse
 }
 
+// IsSuccess returns true when this get messaging actions for order internal server error response has a 2xx status code
+func (o *GetMessagingActionsForOrderInternalServerError) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get messaging actions for order internal server error response has a 3xx status code
+func (o *GetMessagingActionsForOrderInternalServerError) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get messaging actions for order internal server error response has a 4xx status code
+func (o *GetMessagingActionsForOrderInternalServerError) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get messaging actions for order internal server error response has a 5xx status code
+func (o *GetMessagingActionsForOrderInternalServerError) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this get messaging actions for order internal server error response a status code equal to that given
+func (o *GetMessagingActionsForOrderInternalServerError) IsCode(code int) bool {
+	return code == 500
+}
+
 func (o *GetMessagingActionsForOrderInternalServerError) Error() string {
 	return fmt.Sprintf("[GET /messaging/v1/orders/{amazonOrderId}][%d] getMessagingActionsForOrderInternalServerError  %+v", 500, o.Payload)
 }
+
+func (o *GetMessagingActionsForOrderInternalServerError) String() string {
+	return fmt.Sprintf("[GET /messaging/v1/orders/{amazonOrderId}][%d] getMessagingActionsForOrderInternalServerError  %+v", 500, o.Payload)
+}
+
 func (o *GetMessagingActionsForOrderInternalServerError) GetPayload() *messaging_models.GetMessagingActionsForOrderResponse {
 	return o.Payload
 }
@@ -520,7 +768,8 @@ func NewGetMessagingActionsForOrderServiceUnavailable() *GetMessagingActionsForO
 	return &GetMessagingActionsForOrderServiceUnavailable{}
 }
 
-/* GetMessagingActionsForOrderServiceUnavailable describes a response with status code 503, with default header values.
+/*
+GetMessagingActionsForOrderServiceUnavailable describes a response with status code 503, with default header values.
 
 Temporary overloading or maintenance of the server.
 */
@@ -538,9 +787,39 @@ type GetMessagingActionsForOrderServiceUnavailable struct {
 	Payload *messaging_models.GetMessagingActionsForOrderResponse
 }
 
+// IsSuccess returns true when this get messaging actions for order service unavailable response has a 2xx status code
+func (o *GetMessagingActionsForOrderServiceUnavailable) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get messaging actions for order service unavailable response has a 3xx status code
+func (o *GetMessagingActionsForOrderServiceUnavailable) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get messaging actions for order service unavailable response has a 4xx status code
+func (o *GetMessagingActionsForOrderServiceUnavailable) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get messaging actions for order service unavailable response has a 5xx status code
+func (o *GetMessagingActionsForOrderServiceUnavailable) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this get messaging actions for order service unavailable response a status code equal to that given
+func (o *GetMessagingActionsForOrderServiceUnavailable) IsCode(code int) bool {
+	return code == 503
+}
+
 func (o *GetMessagingActionsForOrderServiceUnavailable) Error() string {
 	return fmt.Sprintf("[GET /messaging/v1/orders/{amazonOrderId}][%d] getMessagingActionsForOrderServiceUnavailable  %+v", 503, o.Payload)
 }
+
+func (o *GetMessagingActionsForOrderServiceUnavailable) String() string {
+	return fmt.Sprintf("[GET /messaging/v1/orders/{amazonOrderId}][%d] getMessagingActionsForOrderServiceUnavailable  %+v", 503, o.Payload)
+}
+
 func (o *GetMessagingActionsForOrderServiceUnavailable) GetPayload() *messaging_models.GetMessagingActionsForOrderResponse {
 	return o.Payload
 }

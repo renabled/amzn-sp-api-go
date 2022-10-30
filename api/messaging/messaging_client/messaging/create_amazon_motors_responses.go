@@ -87,7 +87,8 @@ func NewCreateAmazonMotorsCreated() *CreateAmazonMotorsCreated {
 	return &CreateAmazonMotorsCreated{}
 }
 
-/* CreateAmazonMotorsCreated describes a response with status code 201, with default header values.
+/*
+CreateAmazonMotorsCreated describes a response with status code 201, with default header values.
 
 The message was created for the order.
 */
@@ -104,9 +105,39 @@ type CreateAmazonMotorsCreated struct {
 	Payload *messaging_models.CreateAmazonMotorsResponse
 }
 
+// IsSuccess returns true when this create amazon motors created response has a 2xx status code
+func (o *CreateAmazonMotorsCreated) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this create amazon motors created response has a 3xx status code
+func (o *CreateAmazonMotorsCreated) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create amazon motors created response has a 4xx status code
+func (o *CreateAmazonMotorsCreated) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this create amazon motors created response has a 5xx status code
+func (o *CreateAmazonMotorsCreated) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this create amazon motors created response a status code equal to that given
+func (o *CreateAmazonMotorsCreated) IsCode(code int) bool {
+	return code == 201
+}
+
 func (o *CreateAmazonMotorsCreated) Error() string {
 	return fmt.Sprintf("[POST /messaging/v1/orders/{amazonOrderId}/messages/amazonMotors][%d] createAmazonMotorsCreated  %+v", 201, o.Payload)
 }
+
+func (o *CreateAmazonMotorsCreated) String() string {
+	return fmt.Sprintf("[POST /messaging/v1/orders/{amazonOrderId}/messages/amazonMotors][%d] createAmazonMotorsCreated  %+v", 201, o.Payload)
+}
+
 func (o *CreateAmazonMotorsCreated) GetPayload() *messaging_models.CreateAmazonMotorsResponse {
 	return o.Payload
 }
@@ -142,7 +173,8 @@ func NewCreateAmazonMotorsBadRequest() *CreateAmazonMotorsBadRequest {
 	return &CreateAmazonMotorsBadRequest{}
 }
 
-/* CreateAmazonMotorsBadRequest describes a response with status code 400, with default header values.
+/*
+CreateAmazonMotorsBadRequest describes a response with status code 400, with default header values.
 
 Request has missing or invalid parameters and cannot be parsed.
 */
@@ -159,9 +191,39 @@ type CreateAmazonMotorsBadRequest struct {
 	Payload *messaging_models.CreateAmazonMotorsResponse
 }
 
+// IsSuccess returns true when this create amazon motors bad request response has a 2xx status code
+func (o *CreateAmazonMotorsBadRequest) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this create amazon motors bad request response has a 3xx status code
+func (o *CreateAmazonMotorsBadRequest) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create amazon motors bad request response has a 4xx status code
+func (o *CreateAmazonMotorsBadRequest) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this create amazon motors bad request response has a 5xx status code
+func (o *CreateAmazonMotorsBadRequest) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this create amazon motors bad request response a status code equal to that given
+func (o *CreateAmazonMotorsBadRequest) IsCode(code int) bool {
+	return code == 400
+}
+
 func (o *CreateAmazonMotorsBadRequest) Error() string {
 	return fmt.Sprintf("[POST /messaging/v1/orders/{amazonOrderId}/messages/amazonMotors][%d] createAmazonMotorsBadRequest  %+v", 400, o.Payload)
 }
+
+func (o *CreateAmazonMotorsBadRequest) String() string {
+	return fmt.Sprintf("[POST /messaging/v1/orders/{amazonOrderId}/messages/amazonMotors][%d] createAmazonMotorsBadRequest  %+v", 400, o.Payload)
+}
+
 func (o *CreateAmazonMotorsBadRequest) GetPayload() *messaging_models.CreateAmazonMotorsResponse {
 	return o.Payload
 }
@@ -197,7 +259,8 @@ func NewCreateAmazonMotorsForbidden() *CreateAmazonMotorsForbidden {
 	return &CreateAmazonMotorsForbidden{}
 }
 
-/* CreateAmazonMotorsForbidden describes a response with status code 403, with default header values.
+/*
+CreateAmazonMotorsForbidden describes a response with status code 403, with default header values.
 
 Indicates that access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.
 */
@@ -210,9 +273,39 @@ type CreateAmazonMotorsForbidden struct {
 	Payload *messaging_models.CreateAmazonMotorsResponse
 }
 
+// IsSuccess returns true when this create amazon motors forbidden response has a 2xx status code
+func (o *CreateAmazonMotorsForbidden) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this create amazon motors forbidden response has a 3xx status code
+func (o *CreateAmazonMotorsForbidden) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create amazon motors forbidden response has a 4xx status code
+func (o *CreateAmazonMotorsForbidden) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this create amazon motors forbidden response has a 5xx status code
+func (o *CreateAmazonMotorsForbidden) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this create amazon motors forbidden response a status code equal to that given
+func (o *CreateAmazonMotorsForbidden) IsCode(code int) bool {
+	return code == 403
+}
+
 func (o *CreateAmazonMotorsForbidden) Error() string {
 	return fmt.Sprintf("[POST /messaging/v1/orders/{amazonOrderId}/messages/amazonMotors][%d] createAmazonMotorsForbidden  %+v", 403, o.Payload)
 }
+
+func (o *CreateAmazonMotorsForbidden) String() string {
+	return fmt.Sprintf("[POST /messaging/v1/orders/{amazonOrderId}/messages/amazonMotors][%d] createAmazonMotorsForbidden  %+v", 403, o.Payload)
+}
+
 func (o *CreateAmazonMotorsForbidden) GetPayload() *messaging_models.CreateAmazonMotorsResponse {
 	return o.Payload
 }
@@ -241,7 +334,8 @@ func NewCreateAmazonMotorsNotFound() *CreateAmazonMotorsNotFound {
 	return &CreateAmazonMotorsNotFound{}
 }
 
-/* CreateAmazonMotorsNotFound describes a response with status code 404, with default header values.
+/*
+CreateAmazonMotorsNotFound describes a response with status code 404, with default header values.
 
 The resource specified does not exist.
 */
@@ -258,9 +352,39 @@ type CreateAmazonMotorsNotFound struct {
 	Payload *messaging_models.CreateAmazonMotorsResponse
 }
 
+// IsSuccess returns true when this create amazon motors not found response has a 2xx status code
+func (o *CreateAmazonMotorsNotFound) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this create amazon motors not found response has a 3xx status code
+func (o *CreateAmazonMotorsNotFound) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create amazon motors not found response has a 4xx status code
+func (o *CreateAmazonMotorsNotFound) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this create amazon motors not found response has a 5xx status code
+func (o *CreateAmazonMotorsNotFound) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this create amazon motors not found response a status code equal to that given
+func (o *CreateAmazonMotorsNotFound) IsCode(code int) bool {
+	return code == 404
+}
+
 func (o *CreateAmazonMotorsNotFound) Error() string {
 	return fmt.Sprintf("[POST /messaging/v1/orders/{amazonOrderId}/messages/amazonMotors][%d] createAmazonMotorsNotFound  %+v", 404, o.Payload)
 }
+
+func (o *CreateAmazonMotorsNotFound) String() string {
+	return fmt.Sprintf("[POST /messaging/v1/orders/{amazonOrderId}/messages/amazonMotors][%d] createAmazonMotorsNotFound  %+v", 404, o.Payload)
+}
+
 func (o *CreateAmazonMotorsNotFound) GetPayload() *messaging_models.CreateAmazonMotorsResponse {
 	return o.Payload
 }
@@ -296,7 +420,8 @@ func NewCreateAmazonMotorsRequestEntityTooLarge() *CreateAmazonMotorsRequestEnti
 	return &CreateAmazonMotorsRequestEntityTooLarge{}
 }
 
-/* CreateAmazonMotorsRequestEntityTooLarge describes a response with status code 413, with default header values.
+/*
+CreateAmazonMotorsRequestEntityTooLarge describes a response with status code 413, with default header values.
 
 The request size exceeded the maximum accepted size.
 */
@@ -314,9 +439,39 @@ type CreateAmazonMotorsRequestEntityTooLarge struct {
 	Payload *messaging_models.CreateAmazonMotorsResponse
 }
 
+// IsSuccess returns true when this create amazon motors request entity too large response has a 2xx status code
+func (o *CreateAmazonMotorsRequestEntityTooLarge) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this create amazon motors request entity too large response has a 3xx status code
+func (o *CreateAmazonMotorsRequestEntityTooLarge) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create amazon motors request entity too large response has a 4xx status code
+func (o *CreateAmazonMotorsRequestEntityTooLarge) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this create amazon motors request entity too large response has a 5xx status code
+func (o *CreateAmazonMotorsRequestEntityTooLarge) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this create amazon motors request entity too large response a status code equal to that given
+func (o *CreateAmazonMotorsRequestEntityTooLarge) IsCode(code int) bool {
+	return code == 413
+}
+
 func (o *CreateAmazonMotorsRequestEntityTooLarge) Error() string {
 	return fmt.Sprintf("[POST /messaging/v1/orders/{amazonOrderId}/messages/amazonMotors][%d] createAmazonMotorsRequestEntityTooLarge  %+v", 413, o.Payload)
 }
+
+func (o *CreateAmazonMotorsRequestEntityTooLarge) String() string {
+	return fmt.Sprintf("[POST /messaging/v1/orders/{amazonOrderId}/messages/amazonMotors][%d] createAmazonMotorsRequestEntityTooLarge  %+v", 413, o.Payload)
+}
+
 func (o *CreateAmazonMotorsRequestEntityTooLarge) GetPayload() *messaging_models.CreateAmazonMotorsResponse {
 	return o.Payload
 }
@@ -352,7 +507,8 @@ func NewCreateAmazonMotorsUnsupportedMediaType() *CreateAmazonMotorsUnsupportedM
 	return &CreateAmazonMotorsUnsupportedMediaType{}
 }
 
-/* CreateAmazonMotorsUnsupportedMediaType describes a response with status code 415, with default header values.
+/*
+CreateAmazonMotorsUnsupportedMediaType describes a response with status code 415, with default header values.
 
 The request payload is in an unsupported format.
 */
@@ -370,9 +526,39 @@ type CreateAmazonMotorsUnsupportedMediaType struct {
 	Payload *messaging_models.CreateAmazonMotorsResponse
 }
 
+// IsSuccess returns true when this create amazon motors unsupported media type response has a 2xx status code
+func (o *CreateAmazonMotorsUnsupportedMediaType) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this create amazon motors unsupported media type response has a 3xx status code
+func (o *CreateAmazonMotorsUnsupportedMediaType) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create amazon motors unsupported media type response has a 4xx status code
+func (o *CreateAmazonMotorsUnsupportedMediaType) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this create amazon motors unsupported media type response has a 5xx status code
+func (o *CreateAmazonMotorsUnsupportedMediaType) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this create amazon motors unsupported media type response a status code equal to that given
+func (o *CreateAmazonMotorsUnsupportedMediaType) IsCode(code int) bool {
+	return code == 415
+}
+
 func (o *CreateAmazonMotorsUnsupportedMediaType) Error() string {
 	return fmt.Sprintf("[POST /messaging/v1/orders/{amazonOrderId}/messages/amazonMotors][%d] createAmazonMotorsUnsupportedMediaType  %+v", 415, o.Payload)
 }
+
+func (o *CreateAmazonMotorsUnsupportedMediaType) String() string {
+	return fmt.Sprintf("[POST /messaging/v1/orders/{amazonOrderId}/messages/amazonMotors][%d] createAmazonMotorsUnsupportedMediaType  %+v", 415, o.Payload)
+}
+
 func (o *CreateAmazonMotorsUnsupportedMediaType) GetPayload() *messaging_models.CreateAmazonMotorsResponse {
 	return o.Payload
 }
@@ -408,7 +594,8 @@ func NewCreateAmazonMotorsTooManyRequests() *CreateAmazonMotorsTooManyRequests {
 	return &CreateAmazonMotorsTooManyRequests{}
 }
 
-/* CreateAmazonMotorsTooManyRequests describes a response with status code 429, with default header values.
+/*
+CreateAmazonMotorsTooManyRequests describes a response with status code 429, with default header values.
 
 The frequency of requests was greater than allowed.
 */
@@ -426,9 +613,39 @@ type CreateAmazonMotorsTooManyRequests struct {
 	Payload *messaging_models.CreateAmazonMotorsResponse
 }
 
+// IsSuccess returns true when this create amazon motors too many requests response has a 2xx status code
+func (o *CreateAmazonMotorsTooManyRequests) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this create amazon motors too many requests response has a 3xx status code
+func (o *CreateAmazonMotorsTooManyRequests) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create amazon motors too many requests response has a 4xx status code
+func (o *CreateAmazonMotorsTooManyRequests) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this create amazon motors too many requests response has a 5xx status code
+func (o *CreateAmazonMotorsTooManyRequests) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this create amazon motors too many requests response a status code equal to that given
+func (o *CreateAmazonMotorsTooManyRequests) IsCode(code int) bool {
+	return code == 429
+}
+
 func (o *CreateAmazonMotorsTooManyRequests) Error() string {
 	return fmt.Sprintf("[POST /messaging/v1/orders/{amazonOrderId}/messages/amazonMotors][%d] createAmazonMotorsTooManyRequests  %+v", 429, o.Payload)
 }
+
+func (o *CreateAmazonMotorsTooManyRequests) String() string {
+	return fmt.Sprintf("[POST /messaging/v1/orders/{amazonOrderId}/messages/amazonMotors][%d] createAmazonMotorsTooManyRequests  %+v", 429, o.Payload)
+}
+
 func (o *CreateAmazonMotorsTooManyRequests) GetPayload() *messaging_models.CreateAmazonMotorsResponse {
 	return o.Payload
 }
@@ -464,7 +681,8 @@ func NewCreateAmazonMotorsInternalServerError() *CreateAmazonMotorsInternalServe
 	return &CreateAmazonMotorsInternalServerError{}
 }
 
-/* CreateAmazonMotorsInternalServerError describes a response with status code 500, with default header values.
+/*
+CreateAmazonMotorsInternalServerError describes a response with status code 500, with default header values.
 
 An unexpected condition occurred that prevented the server from fulfilling the request.
 */
@@ -482,9 +700,39 @@ type CreateAmazonMotorsInternalServerError struct {
 	Payload *messaging_models.CreateAmazonMotorsResponse
 }
 
+// IsSuccess returns true when this create amazon motors internal server error response has a 2xx status code
+func (o *CreateAmazonMotorsInternalServerError) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this create amazon motors internal server error response has a 3xx status code
+func (o *CreateAmazonMotorsInternalServerError) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create amazon motors internal server error response has a 4xx status code
+func (o *CreateAmazonMotorsInternalServerError) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this create amazon motors internal server error response has a 5xx status code
+func (o *CreateAmazonMotorsInternalServerError) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this create amazon motors internal server error response a status code equal to that given
+func (o *CreateAmazonMotorsInternalServerError) IsCode(code int) bool {
+	return code == 500
+}
+
 func (o *CreateAmazonMotorsInternalServerError) Error() string {
 	return fmt.Sprintf("[POST /messaging/v1/orders/{amazonOrderId}/messages/amazonMotors][%d] createAmazonMotorsInternalServerError  %+v", 500, o.Payload)
 }
+
+func (o *CreateAmazonMotorsInternalServerError) String() string {
+	return fmt.Sprintf("[POST /messaging/v1/orders/{amazonOrderId}/messages/amazonMotors][%d] createAmazonMotorsInternalServerError  %+v", 500, o.Payload)
+}
+
 func (o *CreateAmazonMotorsInternalServerError) GetPayload() *messaging_models.CreateAmazonMotorsResponse {
 	return o.Payload
 }
@@ -520,7 +768,8 @@ func NewCreateAmazonMotorsServiceUnavailable() *CreateAmazonMotorsServiceUnavail
 	return &CreateAmazonMotorsServiceUnavailable{}
 }
 
-/* CreateAmazonMotorsServiceUnavailable describes a response with status code 503, with default header values.
+/*
+CreateAmazonMotorsServiceUnavailable describes a response with status code 503, with default header values.
 
 Temporary overloading or maintenance of the server.
 */
@@ -538,9 +787,39 @@ type CreateAmazonMotorsServiceUnavailable struct {
 	Payload *messaging_models.CreateAmazonMotorsResponse
 }
 
+// IsSuccess returns true when this create amazon motors service unavailable response has a 2xx status code
+func (o *CreateAmazonMotorsServiceUnavailable) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this create amazon motors service unavailable response has a 3xx status code
+func (o *CreateAmazonMotorsServiceUnavailable) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create amazon motors service unavailable response has a 4xx status code
+func (o *CreateAmazonMotorsServiceUnavailable) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this create amazon motors service unavailable response has a 5xx status code
+func (o *CreateAmazonMotorsServiceUnavailable) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this create amazon motors service unavailable response a status code equal to that given
+func (o *CreateAmazonMotorsServiceUnavailable) IsCode(code int) bool {
+	return code == 503
+}
+
 func (o *CreateAmazonMotorsServiceUnavailable) Error() string {
 	return fmt.Sprintf("[POST /messaging/v1/orders/{amazonOrderId}/messages/amazonMotors][%d] createAmazonMotorsServiceUnavailable  %+v", 503, o.Payload)
 }
+
+func (o *CreateAmazonMotorsServiceUnavailable) String() string {
+	return fmt.Sprintf("[POST /messaging/v1/orders/{amazonOrderId}/messages/amazonMotors][%d] createAmazonMotorsServiceUnavailable  %+v", 503, o.Payload)
+}
+
 func (o *CreateAmazonMotorsServiceUnavailable) GetPayload() *messaging_models.CreateAmazonMotorsResponse {
 	return o.Payload
 }

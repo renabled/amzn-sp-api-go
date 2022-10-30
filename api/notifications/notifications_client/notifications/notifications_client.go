@@ -50,7 +50,7 @@ type ClientService interface {
 }
 
 /*
-  CreateDestination Creates a destination resource to receive notifications. The createDestination API is grantless. For more information, see [Grantless operations](doc:grantless-operations) in the Selling Partner API Developer Guide.
+	CreateDestination Creates a destination resource to receive notifications. The createDestination API is grantless. For more information, see [Grantless operations](doc:grantless-operations) in the Selling Partner API Developer Guide.
 
 **Usage Plan:**
 
@@ -96,7 +96,7 @@ func (a *Client) CreateDestination(params *CreateDestinationParams, opts ...Clie
 }
 
 /*
-  CreateSubscription Creates a subscription for the specified notification type to be delivered to the specified destination. Before you can subscribe, you must first create the destination by calling the createDestination operation.
+	CreateSubscription Creates a subscription for the specified notification type to be delivered to the specified destination. Before you can subscribe, you must first create the destination by calling the createDestination operation.
 
 **Usage Plan:**
 
@@ -142,7 +142,7 @@ func (a *Client) CreateSubscription(params *CreateSubscriptionParams, opts ...Cl
 }
 
 /*
-  DeleteDestination Deletes the destination that you specify. The deleteDestination API is grantless. For more information, see [Grantless operations](doc:grantless-operations) in the Selling Partner API Developer Guide.
+	DeleteDestination Deletes the destination that you specify. The deleteDestination API is grantless. For more information, see [Grantless operations](doc:grantless-operations) in the Selling Partner API Developer Guide.
 
 **Usage Plan:**
 
@@ -188,7 +188,7 @@ func (a *Client) DeleteDestination(params *DeleteDestinationParams, opts ...Clie
 }
 
 /*
-  DeleteSubscriptionByID Deletes the subscription indicated by the subscription identifier and notification type that you specify. The subscription identifier can be for any subscription associated with your application. After you successfully call this operation, notifications will stop being sent for the associated subscription. The deleteSubscriptionById API is grantless. For more information, see [Grantless operations](doc:grantless-operations) in the Selling Partner API Developer Guide.
+	DeleteSubscriptionByID Deletes the subscription indicated by the subscription identifier and notification type that you specify. The subscription identifier can be for any subscription associated with your application. After you successfully call this operation, notifications will stop being sent for the associated subscription. The deleteSubscriptionById API is grantless. For more information, see [Grantless operations](doc:grantless-operations) in the Selling Partner API Developer Guide.
 
 **Usage Plan:**
 
@@ -234,7 +234,7 @@ func (a *Client) DeleteSubscriptionByID(params *DeleteSubscriptionByIDParams, op
 }
 
 /*
-  GetDestination Returns information about the destination that you specify. The getDestination API is grantless. For more information, see [Grantless operations](doc:grantless-operations) in the Selling Partner API Developer Guide.
+	GetDestination Returns information about the destination that you specify. The getDestination API is grantless. For more information, see [Grantless operations](doc:grantless-operations) in the Selling Partner API Developer Guide.
 
 **Usage Plan:**
 
@@ -280,7 +280,7 @@ func (a *Client) GetDestination(params *GetDestinationParams, opts ...ClientOpti
 }
 
 /*
-  GetDestinations Returns information about all destinations. The getDestinations API is grantless. For more information, see [Grantless operations](doc:grantless-operations) in the Selling Partner API Developer Guide.
+	GetDestinations Returns information about all destinations. The getDestinations API is grantless. For more information, see [Grantless operations](doc:grantless-operations) in the Selling Partner API Developer Guide.
 
 **Usage Plan:**
 
@@ -326,7 +326,7 @@ func (a *Client) GetDestinations(params *GetDestinationsParams, opts ...ClientOp
 }
 
 /*
-  GetSubscription Returns information about subscriptions of the specified notification type. You can use this API to get subscription information when you do not have a subscription identifier.
+	GetSubscription Returns information about subscriptions of the specified notification type. You can use this API to get subscription information when you do not have a subscription identifier.
 
 **Usage Plan:**
 
@@ -372,7 +372,7 @@ func (a *Client) GetSubscription(params *GetSubscriptionParams, opts ...ClientOp
 }
 
 /*
-  GetSubscriptionByID Returns information about a subscription for the specified notification type. The getSubscriptionById API is grantless. For more information, see [Grantless operations](doc:grantless-operations) in the Selling Partner API Developer Guide.
+	GetSubscriptionByID Returns information about a subscription for the specified notification type. The getSubscriptionById API is grantless. For more information, see [Grantless operations](doc:grantless-operations) in the Selling Partner API Developer Guide.
 
 **Usage Plan:**
 

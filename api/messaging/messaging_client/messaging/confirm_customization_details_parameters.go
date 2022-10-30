@@ -55,10 +55,12 @@ func NewConfirmCustomizationDetailsParamsWithHTTPClient(client *http.Client) *Co
 	}
 }
 
-/* ConfirmCustomizationDetailsParams contains all the parameters to send to the API endpoint
-   for the confirm customization details operation.
+/*
+ConfirmCustomizationDetailsParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the confirm customization details operation.
+
+	Typically these are written to a http.Request.
 */
 type ConfirmCustomizationDetailsParams struct {
 

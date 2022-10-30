@@ -87,7 +87,8 @@ func NewCreateProductReviewAndSellerFeedbackSolicitationCreated() *CreateProduct
 	return &CreateProductReviewAndSellerFeedbackSolicitationCreated{}
 }
 
-/* CreateProductReviewAndSellerFeedbackSolicitationCreated describes a response with status code 201, with default header values.
+/*
+CreateProductReviewAndSellerFeedbackSolicitationCreated describes a response with status code 201, with default header values.
 
 The message was created for the order.
 */
@@ -104,9 +105,39 @@ type CreateProductReviewAndSellerFeedbackSolicitationCreated struct {
 	Payload *solicitations_models.CreateProductReviewAndSellerFeedbackSolicitationResponse
 }
 
+// IsSuccess returns true when this create product review and seller feedback solicitation created response has a 2xx status code
+func (o *CreateProductReviewAndSellerFeedbackSolicitationCreated) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this create product review and seller feedback solicitation created response has a 3xx status code
+func (o *CreateProductReviewAndSellerFeedbackSolicitationCreated) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create product review and seller feedback solicitation created response has a 4xx status code
+func (o *CreateProductReviewAndSellerFeedbackSolicitationCreated) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this create product review and seller feedback solicitation created response has a 5xx status code
+func (o *CreateProductReviewAndSellerFeedbackSolicitationCreated) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this create product review and seller feedback solicitation created response a status code equal to that given
+func (o *CreateProductReviewAndSellerFeedbackSolicitationCreated) IsCode(code int) bool {
+	return code == 201
+}
+
 func (o *CreateProductReviewAndSellerFeedbackSolicitationCreated) Error() string {
 	return fmt.Sprintf("[POST /solicitations/v1/orders/{amazonOrderId}/solicitations/productReviewAndSellerFeedback][%d] createProductReviewAndSellerFeedbackSolicitationCreated  %+v", 201, o.Payload)
 }
+
+func (o *CreateProductReviewAndSellerFeedbackSolicitationCreated) String() string {
+	return fmt.Sprintf("[POST /solicitations/v1/orders/{amazonOrderId}/solicitations/productReviewAndSellerFeedback][%d] createProductReviewAndSellerFeedbackSolicitationCreated  %+v", 201, o.Payload)
+}
+
 func (o *CreateProductReviewAndSellerFeedbackSolicitationCreated) GetPayload() *solicitations_models.CreateProductReviewAndSellerFeedbackSolicitationResponse {
 	return o.Payload
 }
@@ -142,7 +173,8 @@ func NewCreateProductReviewAndSellerFeedbackSolicitationBadRequest() *CreateProd
 	return &CreateProductReviewAndSellerFeedbackSolicitationBadRequest{}
 }
 
-/* CreateProductReviewAndSellerFeedbackSolicitationBadRequest describes a response with status code 400, with default header values.
+/*
+CreateProductReviewAndSellerFeedbackSolicitationBadRequest describes a response with status code 400, with default header values.
 
 Request has missing or invalid parameters and cannot be parsed.
 */
@@ -159,9 +191,39 @@ type CreateProductReviewAndSellerFeedbackSolicitationBadRequest struct {
 	Payload *solicitations_models.CreateProductReviewAndSellerFeedbackSolicitationResponse
 }
 
+// IsSuccess returns true when this create product review and seller feedback solicitation bad request response has a 2xx status code
+func (o *CreateProductReviewAndSellerFeedbackSolicitationBadRequest) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this create product review and seller feedback solicitation bad request response has a 3xx status code
+func (o *CreateProductReviewAndSellerFeedbackSolicitationBadRequest) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create product review and seller feedback solicitation bad request response has a 4xx status code
+func (o *CreateProductReviewAndSellerFeedbackSolicitationBadRequest) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this create product review and seller feedback solicitation bad request response has a 5xx status code
+func (o *CreateProductReviewAndSellerFeedbackSolicitationBadRequest) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this create product review and seller feedback solicitation bad request response a status code equal to that given
+func (o *CreateProductReviewAndSellerFeedbackSolicitationBadRequest) IsCode(code int) bool {
+	return code == 400
+}
+
 func (o *CreateProductReviewAndSellerFeedbackSolicitationBadRequest) Error() string {
 	return fmt.Sprintf("[POST /solicitations/v1/orders/{amazonOrderId}/solicitations/productReviewAndSellerFeedback][%d] createProductReviewAndSellerFeedbackSolicitationBadRequest  %+v", 400, o.Payload)
 }
+
+func (o *CreateProductReviewAndSellerFeedbackSolicitationBadRequest) String() string {
+	return fmt.Sprintf("[POST /solicitations/v1/orders/{amazonOrderId}/solicitations/productReviewAndSellerFeedback][%d] createProductReviewAndSellerFeedbackSolicitationBadRequest  %+v", 400, o.Payload)
+}
+
 func (o *CreateProductReviewAndSellerFeedbackSolicitationBadRequest) GetPayload() *solicitations_models.CreateProductReviewAndSellerFeedbackSolicitationResponse {
 	return o.Payload
 }
@@ -197,7 +259,8 @@ func NewCreateProductReviewAndSellerFeedbackSolicitationForbidden() *CreateProdu
 	return &CreateProductReviewAndSellerFeedbackSolicitationForbidden{}
 }
 
-/* CreateProductReviewAndSellerFeedbackSolicitationForbidden describes a response with status code 403, with default header values.
+/*
+CreateProductReviewAndSellerFeedbackSolicitationForbidden describes a response with status code 403, with default header values.
 
 Indicates that access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.
 */
@@ -210,9 +273,39 @@ type CreateProductReviewAndSellerFeedbackSolicitationForbidden struct {
 	Payload *solicitations_models.CreateProductReviewAndSellerFeedbackSolicitationResponse
 }
 
+// IsSuccess returns true when this create product review and seller feedback solicitation forbidden response has a 2xx status code
+func (o *CreateProductReviewAndSellerFeedbackSolicitationForbidden) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this create product review and seller feedback solicitation forbidden response has a 3xx status code
+func (o *CreateProductReviewAndSellerFeedbackSolicitationForbidden) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create product review and seller feedback solicitation forbidden response has a 4xx status code
+func (o *CreateProductReviewAndSellerFeedbackSolicitationForbidden) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this create product review and seller feedback solicitation forbidden response has a 5xx status code
+func (o *CreateProductReviewAndSellerFeedbackSolicitationForbidden) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this create product review and seller feedback solicitation forbidden response a status code equal to that given
+func (o *CreateProductReviewAndSellerFeedbackSolicitationForbidden) IsCode(code int) bool {
+	return code == 403
+}
+
 func (o *CreateProductReviewAndSellerFeedbackSolicitationForbidden) Error() string {
 	return fmt.Sprintf("[POST /solicitations/v1/orders/{amazonOrderId}/solicitations/productReviewAndSellerFeedback][%d] createProductReviewAndSellerFeedbackSolicitationForbidden  %+v", 403, o.Payload)
 }
+
+func (o *CreateProductReviewAndSellerFeedbackSolicitationForbidden) String() string {
+	return fmt.Sprintf("[POST /solicitations/v1/orders/{amazonOrderId}/solicitations/productReviewAndSellerFeedback][%d] createProductReviewAndSellerFeedbackSolicitationForbidden  %+v", 403, o.Payload)
+}
+
 func (o *CreateProductReviewAndSellerFeedbackSolicitationForbidden) GetPayload() *solicitations_models.CreateProductReviewAndSellerFeedbackSolicitationResponse {
 	return o.Payload
 }
@@ -241,7 +334,8 @@ func NewCreateProductReviewAndSellerFeedbackSolicitationNotFound() *CreateProduc
 	return &CreateProductReviewAndSellerFeedbackSolicitationNotFound{}
 }
 
-/* CreateProductReviewAndSellerFeedbackSolicitationNotFound describes a response with status code 404, with default header values.
+/*
+CreateProductReviewAndSellerFeedbackSolicitationNotFound describes a response with status code 404, with default header values.
 
 The resource specified does not exist.
 */
@@ -258,9 +352,39 @@ type CreateProductReviewAndSellerFeedbackSolicitationNotFound struct {
 	Payload *solicitations_models.CreateProductReviewAndSellerFeedbackSolicitationResponse
 }
 
+// IsSuccess returns true when this create product review and seller feedback solicitation not found response has a 2xx status code
+func (o *CreateProductReviewAndSellerFeedbackSolicitationNotFound) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this create product review and seller feedback solicitation not found response has a 3xx status code
+func (o *CreateProductReviewAndSellerFeedbackSolicitationNotFound) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create product review and seller feedback solicitation not found response has a 4xx status code
+func (o *CreateProductReviewAndSellerFeedbackSolicitationNotFound) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this create product review and seller feedback solicitation not found response has a 5xx status code
+func (o *CreateProductReviewAndSellerFeedbackSolicitationNotFound) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this create product review and seller feedback solicitation not found response a status code equal to that given
+func (o *CreateProductReviewAndSellerFeedbackSolicitationNotFound) IsCode(code int) bool {
+	return code == 404
+}
+
 func (o *CreateProductReviewAndSellerFeedbackSolicitationNotFound) Error() string {
 	return fmt.Sprintf("[POST /solicitations/v1/orders/{amazonOrderId}/solicitations/productReviewAndSellerFeedback][%d] createProductReviewAndSellerFeedbackSolicitationNotFound  %+v", 404, o.Payload)
 }
+
+func (o *CreateProductReviewAndSellerFeedbackSolicitationNotFound) String() string {
+	return fmt.Sprintf("[POST /solicitations/v1/orders/{amazonOrderId}/solicitations/productReviewAndSellerFeedback][%d] createProductReviewAndSellerFeedbackSolicitationNotFound  %+v", 404, o.Payload)
+}
+
 func (o *CreateProductReviewAndSellerFeedbackSolicitationNotFound) GetPayload() *solicitations_models.CreateProductReviewAndSellerFeedbackSolicitationResponse {
 	return o.Payload
 }
@@ -296,7 +420,8 @@ func NewCreateProductReviewAndSellerFeedbackSolicitationRequestEntityTooLarge() 
 	return &CreateProductReviewAndSellerFeedbackSolicitationRequestEntityTooLarge{}
 }
 
-/* CreateProductReviewAndSellerFeedbackSolicitationRequestEntityTooLarge describes a response with status code 413, with default header values.
+/*
+CreateProductReviewAndSellerFeedbackSolicitationRequestEntityTooLarge describes a response with status code 413, with default header values.
 
 The request size exceeded the maximum accepted size.
 */
@@ -314,9 +439,39 @@ type CreateProductReviewAndSellerFeedbackSolicitationRequestEntityTooLarge struc
 	Payload *solicitations_models.CreateProductReviewAndSellerFeedbackSolicitationResponse
 }
 
+// IsSuccess returns true when this create product review and seller feedback solicitation request entity too large response has a 2xx status code
+func (o *CreateProductReviewAndSellerFeedbackSolicitationRequestEntityTooLarge) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this create product review and seller feedback solicitation request entity too large response has a 3xx status code
+func (o *CreateProductReviewAndSellerFeedbackSolicitationRequestEntityTooLarge) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create product review and seller feedback solicitation request entity too large response has a 4xx status code
+func (o *CreateProductReviewAndSellerFeedbackSolicitationRequestEntityTooLarge) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this create product review and seller feedback solicitation request entity too large response has a 5xx status code
+func (o *CreateProductReviewAndSellerFeedbackSolicitationRequestEntityTooLarge) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this create product review and seller feedback solicitation request entity too large response a status code equal to that given
+func (o *CreateProductReviewAndSellerFeedbackSolicitationRequestEntityTooLarge) IsCode(code int) bool {
+	return code == 413
+}
+
 func (o *CreateProductReviewAndSellerFeedbackSolicitationRequestEntityTooLarge) Error() string {
 	return fmt.Sprintf("[POST /solicitations/v1/orders/{amazonOrderId}/solicitations/productReviewAndSellerFeedback][%d] createProductReviewAndSellerFeedbackSolicitationRequestEntityTooLarge  %+v", 413, o.Payload)
 }
+
+func (o *CreateProductReviewAndSellerFeedbackSolicitationRequestEntityTooLarge) String() string {
+	return fmt.Sprintf("[POST /solicitations/v1/orders/{amazonOrderId}/solicitations/productReviewAndSellerFeedback][%d] createProductReviewAndSellerFeedbackSolicitationRequestEntityTooLarge  %+v", 413, o.Payload)
+}
+
 func (o *CreateProductReviewAndSellerFeedbackSolicitationRequestEntityTooLarge) GetPayload() *solicitations_models.CreateProductReviewAndSellerFeedbackSolicitationResponse {
 	return o.Payload
 }
@@ -352,7 +507,8 @@ func NewCreateProductReviewAndSellerFeedbackSolicitationUnsupportedMediaType() *
 	return &CreateProductReviewAndSellerFeedbackSolicitationUnsupportedMediaType{}
 }
 
-/* CreateProductReviewAndSellerFeedbackSolicitationUnsupportedMediaType describes a response with status code 415, with default header values.
+/*
+CreateProductReviewAndSellerFeedbackSolicitationUnsupportedMediaType describes a response with status code 415, with default header values.
 
 The request payload is in an unsupported format.
 */
@@ -370,9 +526,39 @@ type CreateProductReviewAndSellerFeedbackSolicitationUnsupportedMediaType struct
 	Payload *solicitations_models.CreateProductReviewAndSellerFeedbackSolicitationResponse
 }
 
+// IsSuccess returns true when this create product review and seller feedback solicitation unsupported media type response has a 2xx status code
+func (o *CreateProductReviewAndSellerFeedbackSolicitationUnsupportedMediaType) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this create product review and seller feedback solicitation unsupported media type response has a 3xx status code
+func (o *CreateProductReviewAndSellerFeedbackSolicitationUnsupportedMediaType) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create product review and seller feedback solicitation unsupported media type response has a 4xx status code
+func (o *CreateProductReviewAndSellerFeedbackSolicitationUnsupportedMediaType) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this create product review and seller feedback solicitation unsupported media type response has a 5xx status code
+func (o *CreateProductReviewAndSellerFeedbackSolicitationUnsupportedMediaType) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this create product review and seller feedback solicitation unsupported media type response a status code equal to that given
+func (o *CreateProductReviewAndSellerFeedbackSolicitationUnsupportedMediaType) IsCode(code int) bool {
+	return code == 415
+}
+
 func (o *CreateProductReviewAndSellerFeedbackSolicitationUnsupportedMediaType) Error() string {
 	return fmt.Sprintf("[POST /solicitations/v1/orders/{amazonOrderId}/solicitations/productReviewAndSellerFeedback][%d] createProductReviewAndSellerFeedbackSolicitationUnsupportedMediaType  %+v", 415, o.Payload)
 }
+
+func (o *CreateProductReviewAndSellerFeedbackSolicitationUnsupportedMediaType) String() string {
+	return fmt.Sprintf("[POST /solicitations/v1/orders/{amazonOrderId}/solicitations/productReviewAndSellerFeedback][%d] createProductReviewAndSellerFeedbackSolicitationUnsupportedMediaType  %+v", 415, o.Payload)
+}
+
 func (o *CreateProductReviewAndSellerFeedbackSolicitationUnsupportedMediaType) GetPayload() *solicitations_models.CreateProductReviewAndSellerFeedbackSolicitationResponse {
 	return o.Payload
 }
@@ -408,7 +594,8 @@ func NewCreateProductReviewAndSellerFeedbackSolicitationTooManyRequests() *Creat
 	return &CreateProductReviewAndSellerFeedbackSolicitationTooManyRequests{}
 }
 
-/* CreateProductReviewAndSellerFeedbackSolicitationTooManyRequests describes a response with status code 429, with default header values.
+/*
+CreateProductReviewAndSellerFeedbackSolicitationTooManyRequests describes a response with status code 429, with default header values.
 
 The frequency of requests was greater than allowed.
 */
@@ -426,9 +613,39 @@ type CreateProductReviewAndSellerFeedbackSolicitationTooManyRequests struct {
 	Payload *solicitations_models.CreateProductReviewAndSellerFeedbackSolicitationResponse
 }
 
+// IsSuccess returns true when this create product review and seller feedback solicitation too many requests response has a 2xx status code
+func (o *CreateProductReviewAndSellerFeedbackSolicitationTooManyRequests) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this create product review and seller feedback solicitation too many requests response has a 3xx status code
+func (o *CreateProductReviewAndSellerFeedbackSolicitationTooManyRequests) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create product review and seller feedback solicitation too many requests response has a 4xx status code
+func (o *CreateProductReviewAndSellerFeedbackSolicitationTooManyRequests) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this create product review and seller feedback solicitation too many requests response has a 5xx status code
+func (o *CreateProductReviewAndSellerFeedbackSolicitationTooManyRequests) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this create product review and seller feedback solicitation too many requests response a status code equal to that given
+func (o *CreateProductReviewAndSellerFeedbackSolicitationTooManyRequests) IsCode(code int) bool {
+	return code == 429
+}
+
 func (o *CreateProductReviewAndSellerFeedbackSolicitationTooManyRequests) Error() string {
 	return fmt.Sprintf("[POST /solicitations/v1/orders/{amazonOrderId}/solicitations/productReviewAndSellerFeedback][%d] createProductReviewAndSellerFeedbackSolicitationTooManyRequests  %+v", 429, o.Payload)
 }
+
+func (o *CreateProductReviewAndSellerFeedbackSolicitationTooManyRequests) String() string {
+	return fmt.Sprintf("[POST /solicitations/v1/orders/{amazonOrderId}/solicitations/productReviewAndSellerFeedback][%d] createProductReviewAndSellerFeedbackSolicitationTooManyRequests  %+v", 429, o.Payload)
+}
+
 func (o *CreateProductReviewAndSellerFeedbackSolicitationTooManyRequests) GetPayload() *solicitations_models.CreateProductReviewAndSellerFeedbackSolicitationResponse {
 	return o.Payload
 }
@@ -464,7 +681,8 @@ func NewCreateProductReviewAndSellerFeedbackSolicitationInternalServerError() *C
 	return &CreateProductReviewAndSellerFeedbackSolicitationInternalServerError{}
 }
 
-/* CreateProductReviewAndSellerFeedbackSolicitationInternalServerError describes a response with status code 500, with default header values.
+/*
+CreateProductReviewAndSellerFeedbackSolicitationInternalServerError describes a response with status code 500, with default header values.
 
 An unexpected condition occurred that prevented the server from fulfilling the request.
 */
@@ -482,9 +700,39 @@ type CreateProductReviewAndSellerFeedbackSolicitationInternalServerError struct 
 	Payload *solicitations_models.CreateProductReviewAndSellerFeedbackSolicitationResponse
 }
 
+// IsSuccess returns true when this create product review and seller feedback solicitation internal server error response has a 2xx status code
+func (o *CreateProductReviewAndSellerFeedbackSolicitationInternalServerError) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this create product review and seller feedback solicitation internal server error response has a 3xx status code
+func (o *CreateProductReviewAndSellerFeedbackSolicitationInternalServerError) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create product review and seller feedback solicitation internal server error response has a 4xx status code
+func (o *CreateProductReviewAndSellerFeedbackSolicitationInternalServerError) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this create product review and seller feedback solicitation internal server error response has a 5xx status code
+func (o *CreateProductReviewAndSellerFeedbackSolicitationInternalServerError) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this create product review and seller feedback solicitation internal server error response a status code equal to that given
+func (o *CreateProductReviewAndSellerFeedbackSolicitationInternalServerError) IsCode(code int) bool {
+	return code == 500
+}
+
 func (o *CreateProductReviewAndSellerFeedbackSolicitationInternalServerError) Error() string {
 	return fmt.Sprintf("[POST /solicitations/v1/orders/{amazonOrderId}/solicitations/productReviewAndSellerFeedback][%d] createProductReviewAndSellerFeedbackSolicitationInternalServerError  %+v", 500, o.Payload)
 }
+
+func (o *CreateProductReviewAndSellerFeedbackSolicitationInternalServerError) String() string {
+	return fmt.Sprintf("[POST /solicitations/v1/orders/{amazonOrderId}/solicitations/productReviewAndSellerFeedback][%d] createProductReviewAndSellerFeedbackSolicitationInternalServerError  %+v", 500, o.Payload)
+}
+
 func (o *CreateProductReviewAndSellerFeedbackSolicitationInternalServerError) GetPayload() *solicitations_models.CreateProductReviewAndSellerFeedbackSolicitationResponse {
 	return o.Payload
 }
@@ -520,7 +768,8 @@ func NewCreateProductReviewAndSellerFeedbackSolicitationServiceUnavailable() *Cr
 	return &CreateProductReviewAndSellerFeedbackSolicitationServiceUnavailable{}
 }
 
-/* CreateProductReviewAndSellerFeedbackSolicitationServiceUnavailable describes a response with status code 503, with default header values.
+/*
+CreateProductReviewAndSellerFeedbackSolicitationServiceUnavailable describes a response with status code 503, with default header values.
 
 Temporary overloading or maintenance of the server.
 */
@@ -538,9 +787,39 @@ type CreateProductReviewAndSellerFeedbackSolicitationServiceUnavailable struct {
 	Payload *solicitations_models.CreateProductReviewAndSellerFeedbackSolicitationResponse
 }
 
+// IsSuccess returns true when this create product review and seller feedback solicitation service unavailable response has a 2xx status code
+func (o *CreateProductReviewAndSellerFeedbackSolicitationServiceUnavailable) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this create product review and seller feedback solicitation service unavailable response has a 3xx status code
+func (o *CreateProductReviewAndSellerFeedbackSolicitationServiceUnavailable) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create product review and seller feedback solicitation service unavailable response has a 4xx status code
+func (o *CreateProductReviewAndSellerFeedbackSolicitationServiceUnavailable) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this create product review and seller feedback solicitation service unavailable response has a 5xx status code
+func (o *CreateProductReviewAndSellerFeedbackSolicitationServiceUnavailable) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this create product review and seller feedback solicitation service unavailable response a status code equal to that given
+func (o *CreateProductReviewAndSellerFeedbackSolicitationServiceUnavailable) IsCode(code int) bool {
+	return code == 503
+}
+
 func (o *CreateProductReviewAndSellerFeedbackSolicitationServiceUnavailable) Error() string {
 	return fmt.Sprintf("[POST /solicitations/v1/orders/{amazonOrderId}/solicitations/productReviewAndSellerFeedback][%d] createProductReviewAndSellerFeedbackSolicitationServiceUnavailable  %+v", 503, o.Payload)
 }
+
+func (o *CreateProductReviewAndSellerFeedbackSolicitationServiceUnavailable) String() string {
+	return fmt.Sprintf("[POST /solicitations/v1/orders/{amazonOrderId}/solicitations/productReviewAndSellerFeedback][%d] createProductReviewAndSellerFeedbackSolicitationServiceUnavailable  %+v", 503, o.Payload)
+}
+
 func (o *CreateProductReviewAndSellerFeedbackSolicitationServiceUnavailable) GetPayload() *solicitations_models.CreateProductReviewAndSellerFeedbackSolicitationResponse {
 	return o.Payload
 }

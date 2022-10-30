@@ -81,7 +81,8 @@ func NewGetPrepInstructionsOK() *GetPrepInstructionsOK {
 	return &GetPrepInstructionsOK{}
 }
 
-/* GetPrepInstructionsOK describes a response with status code 200, with default header values.
+/*
+GetPrepInstructionsOK describes a response with status code 200, with default header values.
 
 Success.
 */
@@ -98,9 +99,39 @@ type GetPrepInstructionsOK struct {
 	Payload *fulfillment_inbound_v0_models.GetPrepInstructionsResponse
 }
 
+// IsSuccess returns true when this get prep instructions o k response has a 2xx status code
+func (o *GetPrepInstructionsOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this get prep instructions o k response has a 3xx status code
+func (o *GetPrepInstructionsOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get prep instructions o k response has a 4xx status code
+func (o *GetPrepInstructionsOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get prep instructions o k response has a 5xx status code
+func (o *GetPrepInstructionsOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get prep instructions o k response a status code equal to that given
+func (o *GetPrepInstructionsOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *GetPrepInstructionsOK) Error() string {
 	return fmt.Sprintf("[GET /fba/inbound/v0/prepInstructions][%d] getPrepInstructionsOK  %+v", 200, o.Payload)
 }
+
+func (o *GetPrepInstructionsOK) String() string {
+	return fmt.Sprintf("[GET /fba/inbound/v0/prepInstructions][%d] getPrepInstructionsOK  %+v", 200, o.Payload)
+}
+
 func (o *GetPrepInstructionsOK) GetPayload() *fulfillment_inbound_v0_models.GetPrepInstructionsResponse {
 	return o.Payload
 }
@@ -136,7 +167,8 @@ func NewGetPrepInstructionsBadRequest() *GetPrepInstructionsBadRequest {
 	return &GetPrepInstructionsBadRequest{}
 }
 
-/* GetPrepInstructionsBadRequest describes a response with status code 400, with default header values.
+/*
+GetPrepInstructionsBadRequest describes a response with status code 400, with default header values.
 
 Request has missing or invalid parameters and cannot be parsed.
 */
@@ -153,9 +185,39 @@ type GetPrepInstructionsBadRequest struct {
 	Payload *fulfillment_inbound_v0_models.GetPrepInstructionsResponse
 }
 
+// IsSuccess returns true when this get prep instructions bad request response has a 2xx status code
+func (o *GetPrepInstructionsBadRequest) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get prep instructions bad request response has a 3xx status code
+func (o *GetPrepInstructionsBadRequest) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get prep instructions bad request response has a 4xx status code
+func (o *GetPrepInstructionsBadRequest) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get prep instructions bad request response has a 5xx status code
+func (o *GetPrepInstructionsBadRequest) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get prep instructions bad request response a status code equal to that given
+func (o *GetPrepInstructionsBadRequest) IsCode(code int) bool {
+	return code == 400
+}
+
 func (o *GetPrepInstructionsBadRequest) Error() string {
 	return fmt.Sprintf("[GET /fba/inbound/v0/prepInstructions][%d] getPrepInstructionsBadRequest  %+v", 400, o.Payload)
 }
+
+func (o *GetPrepInstructionsBadRequest) String() string {
+	return fmt.Sprintf("[GET /fba/inbound/v0/prepInstructions][%d] getPrepInstructionsBadRequest  %+v", 400, o.Payload)
+}
+
 func (o *GetPrepInstructionsBadRequest) GetPayload() *fulfillment_inbound_v0_models.GetPrepInstructionsResponse {
 	return o.Payload
 }
@@ -191,7 +253,8 @@ func NewGetPrepInstructionsUnauthorized() *GetPrepInstructionsUnauthorized {
 	return &GetPrepInstructionsUnauthorized{}
 }
 
-/* GetPrepInstructionsUnauthorized describes a response with status code 401, with default header values.
+/*
+GetPrepInstructionsUnauthorized describes a response with status code 401, with default header values.
 
 The request's Authorization header is not formatted correctly or does not contain a valid token.
 */
@@ -209,9 +272,39 @@ type GetPrepInstructionsUnauthorized struct {
 	Payload *fulfillment_inbound_v0_models.GetPrepInstructionsResponse
 }
 
+// IsSuccess returns true when this get prep instructions unauthorized response has a 2xx status code
+func (o *GetPrepInstructionsUnauthorized) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get prep instructions unauthorized response has a 3xx status code
+func (o *GetPrepInstructionsUnauthorized) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get prep instructions unauthorized response has a 4xx status code
+func (o *GetPrepInstructionsUnauthorized) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get prep instructions unauthorized response has a 5xx status code
+func (o *GetPrepInstructionsUnauthorized) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get prep instructions unauthorized response a status code equal to that given
+func (o *GetPrepInstructionsUnauthorized) IsCode(code int) bool {
+	return code == 401
+}
+
 func (o *GetPrepInstructionsUnauthorized) Error() string {
 	return fmt.Sprintf("[GET /fba/inbound/v0/prepInstructions][%d] getPrepInstructionsUnauthorized  %+v", 401, o.Payload)
 }
+
+func (o *GetPrepInstructionsUnauthorized) String() string {
+	return fmt.Sprintf("[GET /fba/inbound/v0/prepInstructions][%d] getPrepInstructionsUnauthorized  %+v", 401, o.Payload)
+}
+
 func (o *GetPrepInstructionsUnauthorized) GetPayload() *fulfillment_inbound_v0_models.GetPrepInstructionsResponse {
 	return o.Payload
 }
@@ -247,7 +340,8 @@ func NewGetPrepInstructionsForbidden() *GetPrepInstructionsForbidden {
 	return &GetPrepInstructionsForbidden{}
 }
 
-/* GetPrepInstructionsForbidden describes a response with status code 403, with default header values.
+/*
+GetPrepInstructionsForbidden describes a response with status code 403, with default header values.
 
 Indicates that access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.
 */
@@ -260,9 +354,39 @@ type GetPrepInstructionsForbidden struct {
 	Payload *fulfillment_inbound_v0_models.GetPrepInstructionsResponse
 }
 
+// IsSuccess returns true when this get prep instructions forbidden response has a 2xx status code
+func (o *GetPrepInstructionsForbidden) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get prep instructions forbidden response has a 3xx status code
+func (o *GetPrepInstructionsForbidden) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get prep instructions forbidden response has a 4xx status code
+func (o *GetPrepInstructionsForbidden) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get prep instructions forbidden response has a 5xx status code
+func (o *GetPrepInstructionsForbidden) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get prep instructions forbidden response a status code equal to that given
+func (o *GetPrepInstructionsForbidden) IsCode(code int) bool {
+	return code == 403
+}
+
 func (o *GetPrepInstructionsForbidden) Error() string {
 	return fmt.Sprintf("[GET /fba/inbound/v0/prepInstructions][%d] getPrepInstructionsForbidden  %+v", 403, o.Payload)
 }
+
+func (o *GetPrepInstructionsForbidden) String() string {
+	return fmt.Sprintf("[GET /fba/inbound/v0/prepInstructions][%d] getPrepInstructionsForbidden  %+v", 403, o.Payload)
+}
+
 func (o *GetPrepInstructionsForbidden) GetPayload() *fulfillment_inbound_v0_models.GetPrepInstructionsResponse {
 	return o.Payload
 }
@@ -291,7 +415,8 @@ func NewGetPrepInstructionsNotFound() *GetPrepInstructionsNotFound {
 	return &GetPrepInstructionsNotFound{}
 }
 
-/* GetPrepInstructionsNotFound describes a response with status code 404, with default header values.
+/*
+GetPrepInstructionsNotFound describes a response with status code 404, with default header values.
 
 The specified resource does not exist.
 */
@@ -308,9 +433,39 @@ type GetPrepInstructionsNotFound struct {
 	Payload *fulfillment_inbound_v0_models.GetPrepInstructionsResponse
 }
 
+// IsSuccess returns true when this get prep instructions not found response has a 2xx status code
+func (o *GetPrepInstructionsNotFound) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get prep instructions not found response has a 3xx status code
+func (o *GetPrepInstructionsNotFound) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get prep instructions not found response has a 4xx status code
+func (o *GetPrepInstructionsNotFound) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get prep instructions not found response has a 5xx status code
+func (o *GetPrepInstructionsNotFound) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get prep instructions not found response a status code equal to that given
+func (o *GetPrepInstructionsNotFound) IsCode(code int) bool {
+	return code == 404
+}
+
 func (o *GetPrepInstructionsNotFound) Error() string {
 	return fmt.Sprintf("[GET /fba/inbound/v0/prepInstructions][%d] getPrepInstructionsNotFound  %+v", 404, o.Payload)
 }
+
+func (o *GetPrepInstructionsNotFound) String() string {
+	return fmt.Sprintf("[GET /fba/inbound/v0/prepInstructions][%d] getPrepInstructionsNotFound  %+v", 404, o.Payload)
+}
+
 func (o *GetPrepInstructionsNotFound) GetPayload() *fulfillment_inbound_v0_models.GetPrepInstructionsResponse {
 	return o.Payload
 }
@@ -346,7 +501,8 @@ func NewGetPrepInstructionsTooManyRequests() *GetPrepInstructionsTooManyRequests
 	return &GetPrepInstructionsTooManyRequests{}
 }
 
-/* GetPrepInstructionsTooManyRequests describes a response with status code 429, with default header values.
+/*
+GetPrepInstructionsTooManyRequests describes a response with status code 429, with default header values.
 
 The frequency of requests was greater than allowed.
 */
@@ -364,9 +520,39 @@ type GetPrepInstructionsTooManyRequests struct {
 	Payload *fulfillment_inbound_v0_models.GetPrepInstructionsResponse
 }
 
+// IsSuccess returns true when this get prep instructions too many requests response has a 2xx status code
+func (o *GetPrepInstructionsTooManyRequests) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get prep instructions too many requests response has a 3xx status code
+func (o *GetPrepInstructionsTooManyRequests) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get prep instructions too many requests response has a 4xx status code
+func (o *GetPrepInstructionsTooManyRequests) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get prep instructions too many requests response has a 5xx status code
+func (o *GetPrepInstructionsTooManyRequests) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get prep instructions too many requests response a status code equal to that given
+func (o *GetPrepInstructionsTooManyRequests) IsCode(code int) bool {
+	return code == 429
+}
+
 func (o *GetPrepInstructionsTooManyRequests) Error() string {
 	return fmt.Sprintf("[GET /fba/inbound/v0/prepInstructions][%d] getPrepInstructionsTooManyRequests  %+v", 429, o.Payload)
 }
+
+func (o *GetPrepInstructionsTooManyRequests) String() string {
+	return fmt.Sprintf("[GET /fba/inbound/v0/prepInstructions][%d] getPrepInstructionsTooManyRequests  %+v", 429, o.Payload)
+}
+
 func (o *GetPrepInstructionsTooManyRequests) GetPayload() *fulfillment_inbound_v0_models.GetPrepInstructionsResponse {
 	return o.Payload
 }
@@ -402,7 +588,8 @@ func NewGetPrepInstructionsInternalServerError() *GetPrepInstructionsInternalSer
 	return &GetPrepInstructionsInternalServerError{}
 }
 
-/* GetPrepInstructionsInternalServerError describes a response with status code 500, with default header values.
+/*
+GetPrepInstructionsInternalServerError describes a response with status code 500, with default header values.
 
 An unexpected condition occurred that prevented the server from fulfilling the request.
 */
@@ -420,9 +607,39 @@ type GetPrepInstructionsInternalServerError struct {
 	Payload *fulfillment_inbound_v0_models.GetPrepInstructionsResponse
 }
 
+// IsSuccess returns true when this get prep instructions internal server error response has a 2xx status code
+func (o *GetPrepInstructionsInternalServerError) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get prep instructions internal server error response has a 3xx status code
+func (o *GetPrepInstructionsInternalServerError) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get prep instructions internal server error response has a 4xx status code
+func (o *GetPrepInstructionsInternalServerError) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get prep instructions internal server error response has a 5xx status code
+func (o *GetPrepInstructionsInternalServerError) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this get prep instructions internal server error response a status code equal to that given
+func (o *GetPrepInstructionsInternalServerError) IsCode(code int) bool {
+	return code == 500
+}
+
 func (o *GetPrepInstructionsInternalServerError) Error() string {
 	return fmt.Sprintf("[GET /fba/inbound/v0/prepInstructions][%d] getPrepInstructionsInternalServerError  %+v", 500, o.Payload)
 }
+
+func (o *GetPrepInstructionsInternalServerError) String() string {
+	return fmt.Sprintf("[GET /fba/inbound/v0/prepInstructions][%d] getPrepInstructionsInternalServerError  %+v", 500, o.Payload)
+}
+
 func (o *GetPrepInstructionsInternalServerError) GetPayload() *fulfillment_inbound_v0_models.GetPrepInstructionsResponse {
 	return o.Payload
 }
@@ -458,7 +675,8 @@ func NewGetPrepInstructionsServiceUnavailable() *GetPrepInstructionsServiceUnava
 	return &GetPrepInstructionsServiceUnavailable{}
 }
 
-/* GetPrepInstructionsServiceUnavailable describes a response with status code 503, with default header values.
+/*
+GetPrepInstructionsServiceUnavailable describes a response with status code 503, with default header values.
 
 Temporary overloading or maintenance of the server.
 */
@@ -476,9 +694,39 @@ type GetPrepInstructionsServiceUnavailable struct {
 	Payload *fulfillment_inbound_v0_models.GetPrepInstructionsResponse
 }
 
+// IsSuccess returns true when this get prep instructions service unavailable response has a 2xx status code
+func (o *GetPrepInstructionsServiceUnavailable) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get prep instructions service unavailable response has a 3xx status code
+func (o *GetPrepInstructionsServiceUnavailable) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get prep instructions service unavailable response has a 4xx status code
+func (o *GetPrepInstructionsServiceUnavailable) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get prep instructions service unavailable response has a 5xx status code
+func (o *GetPrepInstructionsServiceUnavailable) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this get prep instructions service unavailable response a status code equal to that given
+func (o *GetPrepInstructionsServiceUnavailable) IsCode(code int) bool {
+	return code == 503
+}
+
 func (o *GetPrepInstructionsServiceUnavailable) Error() string {
 	return fmt.Sprintf("[GET /fba/inbound/v0/prepInstructions][%d] getPrepInstructionsServiceUnavailable  %+v", 503, o.Payload)
 }
+
+func (o *GetPrepInstructionsServiceUnavailable) String() string {
+	return fmt.Sprintf("[GET /fba/inbound/v0/prepInstructions][%d] getPrepInstructionsServiceUnavailable  %+v", 503, o.Payload)
+}
+
 func (o *GetPrepInstructionsServiceUnavailable) GetPayload() *fulfillment_inbound_v0_models.GetPrepInstructionsResponse {
 	return o.Payload
 }

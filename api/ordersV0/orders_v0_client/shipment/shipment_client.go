@@ -36,7 +36,7 @@ type ClientService interface {
 }
 
 /*
-  UpdateShipmentStatus Update the shipment status for an order that you specify.
+	UpdateShipmentStatus Update the shipment status for an order that you specify.
 
 **Usage Plan:**
 

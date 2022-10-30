@@ -42,7 +42,7 @@ type ClientService interface {
 }
 
 /*
-  GetPackingSlip Returns a packing slip based on the purchaseOrderNumber that you specify.
+	GetPackingSlip Returns a packing slip based on the purchaseOrderNumber that you specify.
 
 **Usage Plan:**
 
@@ -88,7 +88,7 @@ func (a *Client) GetPackingSlip(params *GetPackingSlipParams, opts ...ClientOpti
 }
 
 /*
-  GetPackingSlips Returns a list of packing slips for the purchase orders that match the criteria specified. Date range to search must not be more than 7 days.
+	GetPackingSlips Returns a list of packing slips for the purchase orders that match the criteria specified. Date range to search must not be more than 7 days.
 
 **Usage Plan:**
 
@@ -134,7 +134,7 @@ func (a *Client) GetPackingSlips(params *GetPackingSlipsParams, opts ...ClientOp
 }
 
 /*
-  SubmitShipmentConfirmations Submits one or more shipment confirmations for vendor orders.
+	SubmitShipmentConfirmations Submits one or more shipment confirmations for vendor orders.
 
 **Usage Plan:**
 
@@ -180,7 +180,7 @@ func (a *Client) SubmitShipmentConfirmations(params *SubmitShipmentConfirmations
 }
 
 /*
-  SubmitShipmentStatusUpdates This operation is only to be used by Vendor-Own-Carrier (VOC) vendors. Calling this API submits a shipment status update for the package that a vendor has shipped. It will provide the Amazon customer visibility on their order, when the package is outside of Amazon Network visibility.
+	SubmitShipmentStatusUpdates This operation is only to be used by Vendor-Own-Carrier (VOC) vendors. Calling this API submits a shipment status update for the package that a vendor has shipped. It will provide the Amazon customer visibility on their order, when the package is outside of Amazon Network visibility.
 
 **Usage Plan:**
 

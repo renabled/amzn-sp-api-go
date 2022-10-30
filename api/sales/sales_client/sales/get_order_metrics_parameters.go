@@ -53,10 +53,12 @@ func NewGetOrderMetricsParamsWithHTTPClient(client *http.Client) *GetOrderMetric
 	}
 }
 
-/* GetOrderMetricsParams contains all the parameters to send to the API endpoint
-   for the get order metrics operation.
+/*
+GetOrderMetricsParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the get order metrics operation.
+
+	Typically these are written to a http.Request.
 */
 type GetOrderMetricsParams struct {
 

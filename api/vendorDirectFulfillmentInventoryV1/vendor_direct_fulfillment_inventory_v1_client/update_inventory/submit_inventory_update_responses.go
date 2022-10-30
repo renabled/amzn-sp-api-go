@@ -87,7 +87,8 @@ func NewSubmitInventoryUpdateAccepted() *SubmitInventoryUpdateAccepted {
 	return &SubmitInventoryUpdateAccepted{}
 }
 
-/* SubmitInventoryUpdateAccepted describes a response with status code 202, with default header values.
+/*
+SubmitInventoryUpdateAccepted describes a response with status code 202, with default header values.
 
 Success.
 */
@@ -104,9 +105,39 @@ type SubmitInventoryUpdateAccepted struct {
 	Payload *vendor_direct_fulfillment_inventory_v1_models.SubmitInventoryUpdateResponse
 }
 
+// IsSuccess returns true when this submit inventory update accepted response has a 2xx status code
+func (o *SubmitInventoryUpdateAccepted) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this submit inventory update accepted response has a 3xx status code
+func (o *SubmitInventoryUpdateAccepted) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this submit inventory update accepted response has a 4xx status code
+func (o *SubmitInventoryUpdateAccepted) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this submit inventory update accepted response has a 5xx status code
+func (o *SubmitInventoryUpdateAccepted) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this submit inventory update accepted response a status code equal to that given
+func (o *SubmitInventoryUpdateAccepted) IsCode(code int) bool {
+	return code == 202
+}
+
 func (o *SubmitInventoryUpdateAccepted) Error() string {
 	return fmt.Sprintf("[POST /vendor/directFulfillment/inventory/v1/warehouses/{warehouseId}/items][%d] submitInventoryUpdateAccepted  %+v", 202, o.Payload)
 }
+
+func (o *SubmitInventoryUpdateAccepted) String() string {
+	return fmt.Sprintf("[POST /vendor/directFulfillment/inventory/v1/warehouses/{warehouseId}/items][%d] submitInventoryUpdateAccepted  %+v", 202, o.Payload)
+}
+
 func (o *SubmitInventoryUpdateAccepted) GetPayload() *vendor_direct_fulfillment_inventory_v1_models.SubmitInventoryUpdateResponse {
 	return o.Payload
 }
@@ -142,7 +173,8 @@ func NewSubmitInventoryUpdateBadRequest() *SubmitInventoryUpdateBadRequest {
 	return &SubmitInventoryUpdateBadRequest{}
 }
 
-/* SubmitInventoryUpdateBadRequest describes a response with status code 400, with default header values.
+/*
+SubmitInventoryUpdateBadRequest describes a response with status code 400, with default header values.
 
 Request has missing or invalid parameters and cannot be parsed.
 */
@@ -159,9 +191,39 @@ type SubmitInventoryUpdateBadRequest struct {
 	Payload *vendor_direct_fulfillment_inventory_v1_models.SubmitInventoryUpdateResponse
 }
 
+// IsSuccess returns true when this submit inventory update bad request response has a 2xx status code
+func (o *SubmitInventoryUpdateBadRequest) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this submit inventory update bad request response has a 3xx status code
+func (o *SubmitInventoryUpdateBadRequest) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this submit inventory update bad request response has a 4xx status code
+func (o *SubmitInventoryUpdateBadRequest) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this submit inventory update bad request response has a 5xx status code
+func (o *SubmitInventoryUpdateBadRequest) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this submit inventory update bad request response a status code equal to that given
+func (o *SubmitInventoryUpdateBadRequest) IsCode(code int) bool {
+	return code == 400
+}
+
 func (o *SubmitInventoryUpdateBadRequest) Error() string {
 	return fmt.Sprintf("[POST /vendor/directFulfillment/inventory/v1/warehouses/{warehouseId}/items][%d] submitInventoryUpdateBadRequest  %+v", 400, o.Payload)
 }
+
+func (o *SubmitInventoryUpdateBadRequest) String() string {
+	return fmt.Sprintf("[POST /vendor/directFulfillment/inventory/v1/warehouses/{warehouseId}/items][%d] submitInventoryUpdateBadRequest  %+v", 400, o.Payload)
+}
+
 func (o *SubmitInventoryUpdateBadRequest) GetPayload() *vendor_direct_fulfillment_inventory_v1_models.SubmitInventoryUpdateResponse {
 	return o.Payload
 }
@@ -197,7 +259,8 @@ func NewSubmitInventoryUpdateForbidden() *SubmitInventoryUpdateForbidden {
 	return &SubmitInventoryUpdateForbidden{}
 }
 
-/* SubmitInventoryUpdateForbidden describes a response with status code 403, with default header values.
+/*
+SubmitInventoryUpdateForbidden describes a response with status code 403, with default header values.
 
 Indicates that access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.
 */
@@ -210,9 +273,39 @@ type SubmitInventoryUpdateForbidden struct {
 	Payload *vendor_direct_fulfillment_inventory_v1_models.SubmitInventoryUpdateResponse
 }
 
+// IsSuccess returns true when this submit inventory update forbidden response has a 2xx status code
+func (o *SubmitInventoryUpdateForbidden) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this submit inventory update forbidden response has a 3xx status code
+func (o *SubmitInventoryUpdateForbidden) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this submit inventory update forbidden response has a 4xx status code
+func (o *SubmitInventoryUpdateForbidden) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this submit inventory update forbidden response has a 5xx status code
+func (o *SubmitInventoryUpdateForbidden) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this submit inventory update forbidden response a status code equal to that given
+func (o *SubmitInventoryUpdateForbidden) IsCode(code int) bool {
+	return code == 403
+}
+
 func (o *SubmitInventoryUpdateForbidden) Error() string {
 	return fmt.Sprintf("[POST /vendor/directFulfillment/inventory/v1/warehouses/{warehouseId}/items][%d] submitInventoryUpdateForbidden  %+v", 403, o.Payload)
 }
+
+func (o *SubmitInventoryUpdateForbidden) String() string {
+	return fmt.Sprintf("[POST /vendor/directFulfillment/inventory/v1/warehouses/{warehouseId}/items][%d] submitInventoryUpdateForbidden  %+v", 403, o.Payload)
+}
+
 func (o *SubmitInventoryUpdateForbidden) GetPayload() *vendor_direct_fulfillment_inventory_v1_models.SubmitInventoryUpdateResponse {
 	return o.Payload
 }
@@ -241,7 +334,8 @@ func NewSubmitInventoryUpdateNotFound() *SubmitInventoryUpdateNotFound {
 	return &SubmitInventoryUpdateNotFound{}
 }
 
-/* SubmitInventoryUpdateNotFound describes a response with status code 404, with default header values.
+/*
+SubmitInventoryUpdateNotFound describes a response with status code 404, with default header values.
 
 The resource specified does not exist.
 */
@@ -258,9 +352,39 @@ type SubmitInventoryUpdateNotFound struct {
 	Payload *vendor_direct_fulfillment_inventory_v1_models.SubmitInventoryUpdateResponse
 }
 
+// IsSuccess returns true when this submit inventory update not found response has a 2xx status code
+func (o *SubmitInventoryUpdateNotFound) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this submit inventory update not found response has a 3xx status code
+func (o *SubmitInventoryUpdateNotFound) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this submit inventory update not found response has a 4xx status code
+func (o *SubmitInventoryUpdateNotFound) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this submit inventory update not found response has a 5xx status code
+func (o *SubmitInventoryUpdateNotFound) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this submit inventory update not found response a status code equal to that given
+func (o *SubmitInventoryUpdateNotFound) IsCode(code int) bool {
+	return code == 404
+}
+
 func (o *SubmitInventoryUpdateNotFound) Error() string {
 	return fmt.Sprintf("[POST /vendor/directFulfillment/inventory/v1/warehouses/{warehouseId}/items][%d] submitInventoryUpdateNotFound  %+v", 404, o.Payload)
 }
+
+func (o *SubmitInventoryUpdateNotFound) String() string {
+	return fmt.Sprintf("[POST /vendor/directFulfillment/inventory/v1/warehouses/{warehouseId}/items][%d] submitInventoryUpdateNotFound  %+v", 404, o.Payload)
+}
+
 func (o *SubmitInventoryUpdateNotFound) GetPayload() *vendor_direct_fulfillment_inventory_v1_models.SubmitInventoryUpdateResponse {
 	return o.Payload
 }
@@ -296,7 +420,8 @@ func NewSubmitInventoryUpdateRequestEntityTooLarge() *SubmitInventoryUpdateReque
 	return &SubmitInventoryUpdateRequestEntityTooLarge{}
 }
 
-/* SubmitInventoryUpdateRequestEntityTooLarge describes a response with status code 413, with default header values.
+/*
+SubmitInventoryUpdateRequestEntityTooLarge describes a response with status code 413, with default header values.
 
 The request size exceeded the maximum accepted size.
 */
@@ -314,9 +439,39 @@ type SubmitInventoryUpdateRequestEntityTooLarge struct {
 	Payload *vendor_direct_fulfillment_inventory_v1_models.SubmitInventoryUpdateResponse
 }
 
+// IsSuccess returns true when this submit inventory update request entity too large response has a 2xx status code
+func (o *SubmitInventoryUpdateRequestEntityTooLarge) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this submit inventory update request entity too large response has a 3xx status code
+func (o *SubmitInventoryUpdateRequestEntityTooLarge) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this submit inventory update request entity too large response has a 4xx status code
+func (o *SubmitInventoryUpdateRequestEntityTooLarge) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this submit inventory update request entity too large response has a 5xx status code
+func (o *SubmitInventoryUpdateRequestEntityTooLarge) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this submit inventory update request entity too large response a status code equal to that given
+func (o *SubmitInventoryUpdateRequestEntityTooLarge) IsCode(code int) bool {
+	return code == 413
+}
+
 func (o *SubmitInventoryUpdateRequestEntityTooLarge) Error() string {
 	return fmt.Sprintf("[POST /vendor/directFulfillment/inventory/v1/warehouses/{warehouseId}/items][%d] submitInventoryUpdateRequestEntityTooLarge  %+v", 413, o.Payload)
 }
+
+func (o *SubmitInventoryUpdateRequestEntityTooLarge) String() string {
+	return fmt.Sprintf("[POST /vendor/directFulfillment/inventory/v1/warehouses/{warehouseId}/items][%d] submitInventoryUpdateRequestEntityTooLarge  %+v", 413, o.Payload)
+}
+
 func (o *SubmitInventoryUpdateRequestEntityTooLarge) GetPayload() *vendor_direct_fulfillment_inventory_v1_models.SubmitInventoryUpdateResponse {
 	return o.Payload
 }
@@ -352,7 +507,8 @@ func NewSubmitInventoryUpdateUnsupportedMediaType() *SubmitInventoryUpdateUnsupp
 	return &SubmitInventoryUpdateUnsupportedMediaType{}
 }
 
-/* SubmitInventoryUpdateUnsupportedMediaType describes a response with status code 415, with default header values.
+/*
+SubmitInventoryUpdateUnsupportedMediaType describes a response with status code 415, with default header values.
 
 The request payload is in an unsupported format.
 */
@@ -370,9 +526,39 @@ type SubmitInventoryUpdateUnsupportedMediaType struct {
 	Payload *vendor_direct_fulfillment_inventory_v1_models.SubmitInventoryUpdateResponse
 }
 
+// IsSuccess returns true when this submit inventory update unsupported media type response has a 2xx status code
+func (o *SubmitInventoryUpdateUnsupportedMediaType) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this submit inventory update unsupported media type response has a 3xx status code
+func (o *SubmitInventoryUpdateUnsupportedMediaType) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this submit inventory update unsupported media type response has a 4xx status code
+func (o *SubmitInventoryUpdateUnsupportedMediaType) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this submit inventory update unsupported media type response has a 5xx status code
+func (o *SubmitInventoryUpdateUnsupportedMediaType) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this submit inventory update unsupported media type response a status code equal to that given
+func (o *SubmitInventoryUpdateUnsupportedMediaType) IsCode(code int) bool {
+	return code == 415
+}
+
 func (o *SubmitInventoryUpdateUnsupportedMediaType) Error() string {
 	return fmt.Sprintf("[POST /vendor/directFulfillment/inventory/v1/warehouses/{warehouseId}/items][%d] submitInventoryUpdateUnsupportedMediaType  %+v", 415, o.Payload)
 }
+
+func (o *SubmitInventoryUpdateUnsupportedMediaType) String() string {
+	return fmt.Sprintf("[POST /vendor/directFulfillment/inventory/v1/warehouses/{warehouseId}/items][%d] submitInventoryUpdateUnsupportedMediaType  %+v", 415, o.Payload)
+}
+
 func (o *SubmitInventoryUpdateUnsupportedMediaType) GetPayload() *vendor_direct_fulfillment_inventory_v1_models.SubmitInventoryUpdateResponse {
 	return o.Payload
 }
@@ -408,7 +594,8 @@ func NewSubmitInventoryUpdateTooManyRequests() *SubmitInventoryUpdateTooManyRequ
 	return &SubmitInventoryUpdateTooManyRequests{}
 }
 
-/* SubmitInventoryUpdateTooManyRequests describes a response with status code 429, with default header values.
+/*
+SubmitInventoryUpdateTooManyRequests describes a response with status code 429, with default header values.
 
 The frequency of requests was greater than allowed.
 */
@@ -426,9 +613,39 @@ type SubmitInventoryUpdateTooManyRequests struct {
 	Payload *vendor_direct_fulfillment_inventory_v1_models.SubmitInventoryUpdateResponse
 }
 
+// IsSuccess returns true when this submit inventory update too many requests response has a 2xx status code
+func (o *SubmitInventoryUpdateTooManyRequests) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this submit inventory update too many requests response has a 3xx status code
+func (o *SubmitInventoryUpdateTooManyRequests) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this submit inventory update too many requests response has a 4xx status code
+func (o *SubmitInventoryUpdateTooManyRequests) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this submit inventory update too many requests response has a 5xx status code
+func (o *SubmitInventoryUpdateTooManyRequests) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this submit inventory update too many requests response a status code equal to that given
+func (o *SubmitInventoryUpdateTooManyRequests) IsCode(code int) bool {
+	return code == 429
+}
+
 func (o *SubmitInventoryUpdateTooManyRequests) Error() string {
 	return fmt.Sprintf("[POST /vendor/directFulfillment/inventory/v1/warehouses/{warehouseId}/items][%d] submitInventoryUpdateTooManyRequests  %+v", 429, o.Payload)
 }
+
+func (o *SubmitInventoryUpdateTooManyRequests) String() string {
+	return fmt.Sprintf("[POST /vendor/directFulfillment/inventory/v1/warehouses/{warehouseId}/items][%d] submitInventoryUpdateTooManyRequests  %+v", 429, o.Payload)
+}
+
 func (o *SubmitInventoryUpdateTooManyRequests) GetPayload() *vendor_direct_fulfillment_inventory_v1_models.SubmitInventoryUpdateResponse {
 	return o.Payload
 }
@@ -464,7 +681,8 @@ func NewSubmitInventoryUpdateInternalServerError() *SubmitInventoryUpdateInterna
 	return &SubmitInventoryUpdateInternalServerError{}
 }
 
-/* SubmitInventoryUpdateInternalServerError describes a response with status code 500, with default header values.
+/*
+SubmitInventoryUpdateInternalServerError describes a response with status code 500, with default header values.
 
 An unexpected condition occurred that prevented the server from fulfilling the request.
 */
@@ -482,9 +700,39 @@ type SubmitInventoryUpdateInternalServerError struct {
 	Payload *vendor_direct_fulfillment_inventory_v1_models.SubmitInventoryUpdateResponse
 }
 
+// IsSuccess returns true when this submit inventory update internal server error response has a 2xx status code
+func (o *SubmitInventoryUpdateInternalServerError) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this submit inventory update internal server error response has a 3xx status code
+func (o *SubmitInventoryUpdateInternalServerError) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this submit inventory update internal server error response has a 4xx status code
+func (o *SubmitInventoryUpdateInternalServerError) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this submit inventory update internal server error response has a 5xx status code
+func (o *SubmitInventoryUpdateInternalServerError) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this submit inventory update internal server error response a status code equal to that given
+func (o *SubmitInventoryUpdateInternalServerError) IsCode(code int) bool {
+	return code == 500
+}
+
 func (o *SubmitInventoryUpdateInternalServerError) Error() string {
 	return fmt.Sprintf("[POST /vendor/directFulfillment/inventory/v1/warehouses/{warehouseId}/items][%d] submitInventoryUpdateInternalServerError  %+v", 500, o.Payload)
 }
+
+func (o *SubmitInventoryUpdateInternalServerError) String() string {
+	return fmt.Sprintf("[POST /vendor/directFulfillment/inventory/v1/warehouses/{warehouseId}/items][%d] submitInventoryUpdateInternalServerError  %+v", 500, o.Payload)
+}
+
 func (o *SubmitInventoryUpdateInternalServerError) GetPayload() *vendor_direct_fulfillment_inventory_v1_models.SubmitInventoryUpdateResponse {
 	return o.Payload
 }
@@ -520,7 +768,8 @@ func NewSubmitInventoryUpdateServiceUnavailable() *SubmitInventoryUpdateServiceU
 	return &SubmitInventoryUpdateServiceUnavailable{}
 }
 
-/* SubmitInventoryUpdateServiceUnavailable describes a response with status code 503, with default header values.
+/*
+SubmitInventoryUpdateServiceUnavailable describes a response with status code 503, with default header values.
 
 Temporary overloading or maintenance of the server.
 */
@@ -538,9 +787,39 @@ type SubmitInventoryUpdateServiceUnavailable struct {
 	Payload *vendor_direct_fulfillment_inventory_v1_models.SubmitInventoryUpdateResponse
 }
 
+// IsSuccess returns true when this submit inventory update service unavailable response has a 2xx status code
+func (o *SubmitInventoryUpdateServiceUnavailable) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this submit inventory update service unavailable response has a 3xx status code
+func (o *SubmitInventoryUpdateServiceUnavailable) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this submit inventory update service unavailable response has a 4xx status code
+func (o *SubmitInventoryUpdateServiceUnavailable) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this submit inventory update service unavailable response has a 5xx status code
+func (o *SubmitInventoryUpdateServiceUnavailable) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this submit inventory update service unavailable response a status code equal to that given
+func (o *SubmitInventoryUpdateServiceUnavailable) IsCode(code int) bool {
+	return code == 503
+}
+
 func (o *SubmitInventoryUpdateServiceUnavailable) Error() string {
 	return fmt.Sprintf("[POST /vendor/directFulfillment/inventory/v1/warehouses/{warehouseId}/items][%d] submitInventoryUpdateServiceUnavailable  %+v", 503, o.Payload)
 }
+
+func (o *SubmitInventoryUpdateServiceUnavailable) String() string {
+	return fmt.Sprintf("[POST /vendor/directFulfillment/inventory/v1/warehouses/{warehouseId}/items][%d] submitInventoryUpdateServiceUnavailable  %+v", 503, o.Payload)
+}
+
 func (o *SubmitInventoryUpdateServiceUnavailable) GetPayload() *vendor_direct_fulfillment_inventory_v1_models.SubmitInventoryUpdateResponse {
 	return o.Payload
 }

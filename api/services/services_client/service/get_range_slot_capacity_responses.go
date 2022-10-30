@@ -93,7 +93,8 @@ func NewGetRangeSlotCapacityOK() *GetRangeSlotCapacityOK {
 	return &GetRangeSlotCapacityOK{}
 }
 
-/* GetRangeSlotCapacityOK describes a response with status code 200, with default header values.
+/*
+GetRangeSlotCapacityOK describes a response with status code 200, with default header values.
 
 Success response.
 */
@@ -110,9 +111,39 @@ type GetRangeSlotCapacityOK struct {
 	Payload *services_models.RangeSlotCapacity
 }
 
+// IsSuccess returns true when this get range slot capacity o k response has a 2xx status code
+func (o *GetRangeSlotCapacityOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this get range slot capacity o k response has a 3xx status code
+func (o *GetRangeSlotCapacityOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get range slot capacity o k response has a 4xx status code
+func (o *GetRangeSlotCapacityOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get range slot capacity o k response has a 5xx status code
+func (o *GetRangeSlotCapacityOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get range slot capacity o k response a status code equal to that given
+func (o *GetRangeSlotCapacityOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *GetRangeSlotCapacityOK) Error() string {
 	return fmt.Sprintf("[POST /service/v1/serviceResources/{resourceId}/capacity/range][%d] getRangeSlotCapacityOK  %+v", 200, o.Payload)
 }
+
+func (o *GetRangeSlotCapacityOK) String() string {
+	return fmt.Sprintf("[POST /service/v1/serviceResources/{resourceId}/capacity/range][%d] getRangeSlotCapacityOK  %+v", 200, o.Payload)
+}
+
 func (o *GetRangeSlotCapacityOK) GetPayload() *services_models.RangeSlotCapacity {
 	return o.Payload
 }
@@ -148,7 +179,8 @@ func NewGetRangeSlotCapacityBadRequest() *GetRangeSlotCapacityBadRequest {
 	return &GetRangeSlotCapacityBadRequest{}
 }
 
-/* GetRangeSlotCapacityBadRequest describes a response with status code 400, with default header values.
+/*
+GetRangeSlotCapacityBadRequest describes a response with status code 400, with default header values.
 
 Request has missing or invalid parameters and cannot be parsed.
 */
@@ -165,9 +197,39 @@ type GetRangeSlotCapacityBadRequest struct {
 	Payload *services_models.RangeSlotCapacityErrors
 }
 
+// IsSuccess returns true when this get range slot capacity bad request response has a 2xx status code
+func (o *GetRangeSlotCapacityBadRequest) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get range slot capacity bad request response has a 3xx status code
+func (o *GetRangeSlotCapacityBadRequest) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get range slot capacity bad request response has a 4xx status code
+func (o *GetRangeSlotCapacityBadRequest) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get range slot capacity bad request response has a 5xx status code
+func (o *GetRangeSlotCapacityBadRequest) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get range slot capacity bad request response a status code equal to that given
+func (o *GetRangeSlotCapacityBadRequest) IsCode(code int) bool {
+	return code == 400
+}
+
 func (o *GetRangeSlotCapacityBadRequest) Error() string {
 	return fmt.Sprintf("[POST /service/v1/serviceResources/{resourceId}/capacity/range][%d] getRangeSlotCapacityBadRequest  %+v", 400, o.Payload)
 }
+
+func (o *GetRangeSlotCapacityBadRequest) String() string {
+	return fmt.Sprintf("[POST /service/v1/serviceResources/{resourceId}/capacity/range][%d] getRangeSlotCapacityBadRequest  %+v", 400, o.Payload)
+}
+
 func (o *GetRangeSlotCapacityBadRequest) GetPayload() *services_models.RangeSlotCapacityErrors {
 	return o.Payload
 }
@@ -203,7 +265,8 @@ func NewGetRangeSlotCapacityUnauthorized() *GetRangeSlotCapacityUnauthorized {
 	return &GetRangeSlotCapacityUnauthorized{}
 }
 
-/* GetRangeSlotCapacityUnauthorized describes a response with status code 401, with default header values.
+/*
+GetRangeSlotCapacityUnauthorized describes a response with status code 401, with default header values.
 
 The request's Authorization header is not formatted correctly or does not contain a valid token.
 */
@@ -216,9 +279,39 @@ type GetRangeSlotCapacityUnauthorized struct {
 	Payload *services_models.RangeSlotCapacityErrors
 }
 
+// IsSuccess returns true when this get range slot capacity unauthorized response has a 2xx status code
+func (o *GetRangeSlotCapacityUnauthorized) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get range slot capacity unauthorized response has a 3xx status code
+func (o *GetRangeSlotCapacityUnauthorized) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get range slot capacity unauthorized response has a 4xx status code
+func (o *GetRangeSlotCapacityUnauthorized) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get range slot capacity unauthorized response has a 5xx status code
+func (o *GetRangeSlotCapacityUnauthorized) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get range slot capacity unauthorized response a status code equal to that given
+func (o *GetRangeSlotCapacityUnauthorized) IsCode(code int) bool {
+	return code == 401
+}
+
 func (o *GetRangeSlotCapacityUnauthorized) Error() string {
 	return fmt.Sprintf("[POST /service/v1/serviceResources/{resourceId}/capacity/range][%d] getRangeSlotCapacityUnauthorized  %+v", 401, o.Payload)
 }
+
+func (o *GetRangeSlotCapacityUnauthorized) String() string {
+	return fmt.Sprintf("[POST /service/v1/serviceResources/{resourceId}/capacity/range][%d] getRangeSlotCapacityUnauthorized  %+v", 401, o.Payload)
+}
+
 func (o *GetRangeSlotCapacityUnauthorized) GetPayload() *services_models.RangeSlotCapacityErrors {
 	return o.Payload
 }
@@ -247,7 +340,8 @@ func NewGetRangeSlotCapacityForbidden() *GetRangeSlotCapacityForbidden {
 	return &GetRangeSlotCapacityForbidden{}
 }
 
-/* GetRangeSlotCapacityForbidden describes a response with status code 403, with default header values.
+/*
+GetRangeSlotCapacityForbidden describes a response with status code 403, with default header values.
 
 Indicates that access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.
 */
@@ -260,9 +354,39 @@ type GetRangeSlotCapacityForbidden struct {
 	Payload *services_models.RangeSlotCapacityErrors
 }
 
+// IsSuccess returns true when this get range slot capacity forbidden response has a 2xx status code
+func (o *GetRangeSlotCapacityForbidden) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get range slot capacity forbidden response has a 3xx status code
+func (o *GetRangeSlotCapacityForbidden) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get range slot capacity forbidden response has a 4xx status code
+func (o *GetRangeSlotCapacityForbidden) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get range slot capacity forbidden response has a 5xx status code
+func (o *GetRangeSlotCapacityForbidden) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get range slot capacity forbidden response a status code equal to that given
+func (o *GetRangeSlotCapacityForbidden) IsCode(code int) bool {
+	return code == 403
+}
+
 func (o *GetRangeSlotCapacityForbidden) Error() string {
 	return fmt.Sprintf("[POST /service/v1/serviceResources/{resourceId}/capacity/range][%d] getRangeSlotCapacityForbidden  %+v", 403, o.Payload)
 }
+
+func (o *GetRangeSlotCapacityForbidden) String() string {
+	return fmt.Sprintf("[POST /service/v1/serviceResources/{resourceId}/capacity/range][%d] getRangeSlotCapacityForbidden  %+v", 403, o.Payload)
+}
+
 func (o *GetRangeSlotCapacityForbidden) GetPayload() *services_models.RangeSlotCapacityErrors {
 	return o.Payload
 }
@@ -291,7 +415,8 @@ func NewGetRangeSlotCapacityNotFound() *GetRangeSlotCapacityNotFound {
 	return &GetRangeSlotCapacityNotFound{}
 }
 
-/* GetRangeSlotCapacityNotFound describes a response with status code 404, with default header values.
+/*
+GetRangeSlotCapacityNotFound describes a response with status code 404, with default header values.
 
 The resource specified does not exist.
 */
@@ -308,9 +433,39 @@ type GetRangeSlotCapacityNotFound struct {
 	Payload *services_models.RangeSlotCapacityErrors
 }
 
+// IsSuccess returns true when this get range slot capacity not found response has a 2xx status code
+func (o *GetRangeSlotCapacityNotFound) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get range slot capacity not found response has a 3xx status code
+func (o *GetRangeSlotCapacityNotFound) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get range slot capacity not found response has a 4xx status code
+func (o *GetRangeSlotCapacityNotFound) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get range slot capacity not found response has a 5xx status code
+func (o *GetRangeSlotCapacityNotFound) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get range slot capacity not found response a status code equal to that given
+func (o *GetRangeSlotCapacityNotFound) IsCode(code int) bool {
+	return code == 404
+}
+
 func (o *GetRangeSlotCapacityNotFound) Error() string {
 	return fmt.Sprintf("[POST /service/v1/serviceResources/{resourceId}/capacity/range][%d] getRangeSlotCapacityNotFound  %+v", 404, o.Payload)
 }
+
+func (o *GetRangeSlotCapacityNotFound) String() string {
+	return fmt.Sprintf("[POST /service/v1/serviceResources/{resourceId}/capacity/range][%d] getRangeSlotCapacityNotFound  %+v", 404, o.Payload)
+}
+
 func (o *GetRangeSlotCapacityNotFound) GetPayload() *services_models.RangeSlotCapacityErrors {
 	return o.Payload
 }
@@ -346,7 +501,8 @@ func NewGetRangeSlotCapacityRequestEntityTooLarge() *GetRangeSlotCapacityRequest
 	return &GetRangeSlotCapacityRequestEntityTooLarge{}
 }
 
-/* GetRangeSlotCapacityRequestEntityTooLarge describes a response with status code 413, with default header values.
+/*
+GetRangeSlotCapacityRequestEntityTooLarge describes a response with status code 413, with default header values.
 
 The request size exceeded the maximum accepted size.
 */
@@ -359,9 +515,39 @@ type GetRangeSlotCapacityRequestEntityTooLarge struct {
 	Payload *services_models.RangeSlotCapacityErrors
 }
 
+// IsSuccess returns true when this get range slot capacity request entity too large response has a 2xx status code
+func (o *GetRangeSlotCapacityRequestEntityTooLarge) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get range slot capacity request entity too large response has a 3xx status code
+func (o *GetRangeSlotCapacityRequestEntityTooLarge) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get range slot capacity request entity too large response has a 4xx status code
+func (o *GetRangeSlotCapacityRequestEntityTooLarge) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get range slot capacity request entity too large response has a 5xx status code
+func (o *GetRangeSlotCapacityRequestEntityTooLarge) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get range slot capacity request entity too large response a status code equal to that given
+func (o *GetRangeSlotCapacityRequestEntityTooLarge) IsCode(code int) bool {
+	return code == 413
+}
+
 func (o *GetRangeSlotCapacityRequestEntityTooLarge) Error() string {
 	return fmt.Sprintf("[POST /service/v1/serviceResources/{resourceId}/capacity/range][%d] getRangeSlotCapacityRequestEntityTooLarge  %+v", 413, o.Payload)
 }
+
+func (o *GetRangeSlotCapacityRequestEntityTooLarge) String() string {
+	return fmt.Sprintf("[POST /service/v1/serviceResources/{resourceId}/capacity/range][%d] getRangeSlotCapacityRequestEntityTooLarge  %+v", 413, o.Payload)
+}
+
 func (o *GetRangeSlotCapacityRequestEntityTooLarge) GetPayload() *services_models.RangeSlotCapacityErrors {
 	return o.Payload
 }
@@ -390,7 +576,8 @@ func NewGetRangeSlotCapacityUnsupportedMediaType() *GetRangeSlotCapacityUnsuppor
 	return &GetRangeSlotCapacityUnsupportedMediaType{}
 }
 
-/* GetRangeSlotCapacityUnsupportedMediaType describes a response with status code 415, with default header values.
+/*
+GetRangeSlotCapacityUnsupportedMediaType describes a response with status code 415, with default header values.
 
 The request payload is in an unsupported format.
 */
@@ -403,9 +590,39 @@ type GetRangeSlotCapacityUnsupportedMediaType struct {
 	Payload *services_models.RangeSlotCapacityErrors
 }
 
+// IsSuccess returns true when this get range slot capacity unsupported media type response has a 2xx status code
+func (o *GetRangeSlotCapacityUnsupportedMediaType) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get range slot capacity unsupported media type response has a 3xx status code
+func (o *GetRangeSlotCapacityUnsupportedMediaType) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get range slot capacity unsupported media type response has a 4xx status code
+func (o *GetRangeSlotCapacityUnsupportedMediaType) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get range slot capacity unsupported media type response has a 5xx status code
+func (o *GetRangeSlotCapacityUnsupportedMediaType) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get range slot capacity unsupported media type response a status code equal to that given
+func (o *GetRangeSlotCapacityUnsupportedMediaType) IsCode(code int) bool {
+	return code == 415
+}
+
 func (o *GetRangeSlotCapacityUnsupportedMediaType) Error() string {
 	return fmt.Sprintf("[POST /service/v1/serviceResources/{resourceId}/capacity/range][%d] getRangeSlotCapacityUnsupportedMediaType  %+v", 415, o.Payload)
 }
+
+func (o *GetRangeSlotCapacityUnsupportedMediaType) String() string {
+	return fmt.Sprintf("[POST /service/v1/serviceResources/{resourceId}/capacity/range][%d] getRangeSlotCapacityUnsupportedMediaType  %+v", 415, o.Payload)
+}
+
 func (o *GetRangeSlotCapacityUnsupportedMediaType) GetPayload() *services_models.RangeSlotCapacityErrors {
 	return o.Payload
 }
@@ -434,7 +651,8 @@ func NewGetRangeSlotCapacityTooManyRequests() *GetRangeSlotCapacityTooManyReques
 	return &GetRangeSlotCapacityTooManyRequests{}
 }
 
-/* GetRangeSlotCapacityTooManyRequests describes a response with status code 429, with default header values.
+/*
+GetRangeSlotCapacityTooManyRequests describes a response with status code 429, with default header values.
 
 The frequency of requests was greater than allowed.
 */
@@ -447,9 +665,39 @@ type GetRangeSlotCapacityTooManyRequests struct {
 	Payload *services_models.RangeSlotCapacityErrors
 }
 
+// IsSuccess returns true when this get range slot capacity too many requests response has a 2xx status code
+func (o *GetRangeSlotCapacityTooManyRequests) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get range slot capacity too many requests response has a 3xx status code
+func (o *GetRangeSlotCapacityTooManyRequests) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get range slot capacity too many requests response has a 4xx status code
+func (o *GetRangeSlotCapacityTooManyRequests) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get range slot capacity too many requests response has a 5xx status code
+func (o *GetRangeSlotCapacityTooManyRequests) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get range slot capacity too many requests response a status code equal to that given
+func (o *GetRangeSlotCapacityTooManyRequests) IsCode(code int) bool {
+	return code == 429
+}
+
 func (o *GetRangeSlotCapacityTooManyRequests) Error() string {
 	return fmt.Sprintf("[POST /service/v1/serviceResources/{resourceId}/capacity/range][%d] getRangeSlotCapacityTooManyRequests  %+v", 429, o.Payload)
 }
+
+func (o *GetRangeSlotCapacityTooManyRequests) String() string {
+	return fmt.Sprintf("[POST /service/v1/serviceResources/{resourceId}/capacity/range][%d] getRangeSlotCapacityTooManyRequests  %+v", 429, o.Payload)
+}
+
 func (o *GetRangeSlotCapacityTooManyRequests) GetPayload() *services_models.RangeSlotCapacityErrors {
 	return o.Payload
 }
@@ -478,7 +726,8 @@ func NewGetRangeSlotCapacityInternalServerError() *GetRangeSlotCapacityInternalS
 	return &GetRangeSlotCapacityInternalServerError{}
 }
 
-/* GetRangeSlotCapacityInternalServerError describes a response with status code 500, with default header values.
+/*
+GetRangeSlotCapacityInternalServerError describes a response with status code 500, with default header values.
 
 An unexpected condition occurred that prevented the server from fulfilling the request.
 */
@@ -491,9 +740,39 @@ type GetRangeSlotCapacityInternalServerError struct {
 	Payload *services_models.RangeSlotCapacityErrors
 }
 
+// IsSuccess returns true when this get range slot capacity internal server error response has a 2xx status code
+func (o *GetRangeSlotCapacityInternalServerError) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get range slot capacity internal server error response has a 3xx status code
+func (o *GetRangeSlotCapacityInternalServerError) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get range slot capacity internal server error response has a 4xx status code
+func (o *GetRangeSlotCapacityInternalServerError) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get range slot capacity internal server error response has a 5xx status code
+func (o *GetRangeSlotCapacityInternalServerError) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this get range slot capacity internal server error response a status code equal to that given
+func (o *GetRangeSlotCapacityInternalServerError) IsCode(code int) bool {
+	return code == 500
+}
+
 func (o *GetRangeSlotCapacityInternalServerError) Error() string {
 	return fmt.Sprintf("[POST /service/v1/serviceResources/{resourceId}/capacity/range][%d] getRangeSlotCapacityInternalServerError  %+v", 500, o.Payload)
 }
+
+func (o *GetRangeSlotCapacityInternalServerError) String() string {
+	return fmt.Sprintf("[POST /service/v1/serviceResources/{resourceId}/capacity/range][%d] getRangeSlotCapacityInternalServerError  %+v", 500, o.Payload)
+}
+
 func (o *GetRangeSlotCapacityInternalServerError) GetPayload() *services_models.RangeSlotCapacityErrors {
 	return o.Payload
 }
@@ -522,7 +801,8 @@ func NewGetRangeSlotCapacityServiceUnavailable() *GetRangeSlotCapacityServiceUna
 	return &GetRangeSlotCapacityServiceUnavailable{}
 }
 
-/* GetRangeSlotCapacityServiceUnavailable describes a response with status code 503, with default header values.
+/*
+GetRangeSlotCapacityServiceUnavailable describes a response with status code 503, with default header values.
 
 Temporary overloading or maintenance of the server.
 */
@@ -535,9 +815,39 @@ type GetRangeSlotCapacityServiceUnavailable struct {
 	Payload *services_models.RangeSlotCapacityErrors
 }
 
+// IsSuccess returns true when this get range slot capacity service unavailable response has a 2xx status code
+func (o *GetRangeSlotCapacityServiceUnavailable) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get range slot capacity service unavailable response has a 3xx status code
+func (o *GetRangeSlotCapacityServiceUnavailable) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get range slot capacity service unavailable response has a 4xx status code
+func (o *GetRangeSlotCapacityServiceUnavailable) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get range slot capacity service unavailable response has a 5xx status code
+func (o *GetRangeSlotCapacityServiceUnavailable) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this get range slot capacity service unavailable response a status code equal to that given
+func (o *GetRangeSlotCapacityServiceUnavailable) IsCode(code int) bool {
+	return code == 503
+}
+
 func (o *GetRangeSlotCapacityServiceUnavailable) Error() string {
 	return fmt.Sprintf("[POST /service/v1/serviceResources/{resourceId}/capacity/range][%d] getRangeSlotCapacityServiceUnavailable  %+v", 503, o.Payload)
 }
+
+func (o *GetRangeSlotCapacityServiceUnavailable) String() string {
+	return fmt.Sprintf("[POST /service/v1/serviceResources/{resourceId}/capacity/range][%d] getRangeSlotCapacityServiceUnavailable  %+v", 503, o.Payload)
+}
+
 func (o *GetRangeSlotCapacityServiceUnavailable) GetPayload() *services_models.RangeSlotCapacityErrors {
 	return o.Payload
 }

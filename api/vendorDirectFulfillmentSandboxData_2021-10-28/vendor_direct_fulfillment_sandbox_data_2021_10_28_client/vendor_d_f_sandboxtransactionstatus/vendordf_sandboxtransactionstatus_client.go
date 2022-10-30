@@ -36,7 +36,7 @@ type ClientService interface {
 }
 
 /*
-  GetOrderScenarios Returns the status of the transaction indicated by the specified transactionId. If the transaction was successful, also returns the requested test order data.
+GetOrderScenarios Returns the status of the transaction indicated by the specified transactionId. If the transaction was successful, also returns the requested test order data.
 */
 func (a *Client) GetOrderScenarios(params *GetOrderScenariosParams, opts ...ClientOption) (*GetOrderScenariosOK, error) {
 	// TODO: Validate the params before sending

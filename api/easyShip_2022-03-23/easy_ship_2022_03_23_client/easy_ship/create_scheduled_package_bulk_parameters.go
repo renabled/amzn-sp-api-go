@@ -54,10 +54,12 @@ func NewCreateScheduledPackageBulkParamsWithHTTPClient(client *http.Client) *Cre
 	}
 }
 
-/* CreateScheduledPackageBulkParams contains all the parameters to send to the API endpoint
-   for the create scheduled package bulk operation.
+/*
+CreateScheduledPackageBulkParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the create scheduled package bulk operation.
+
+	Typically these are written to a http.Request.
 */
 type CreateScheduledPackageBulkParams struct {
 

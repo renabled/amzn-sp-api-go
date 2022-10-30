@@ -93,7 +93,8 @@ func NewDeleteDestinationOK() *DeleteDestinationOK {
 	return &DeleteDestinationOK{}
 }
 
-/* DeleteDestinationOK describes a response with status code 200, with default header values.
+/*
+DeleteDestinationOK describes a response with status code 200, with default header values.
 
 Success.
 */
@@ -110,9 +111,39 @@ type DeleteDestinationOK struct {
 	Payload *notifications_models.DeleteDestinationResponse
 }
 
+// IsSuccess returns true when this delete destination o k response has a 2xx status code
+func (o *DeleteDestinationOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this delete destination o k response has a 3xx status code
+func (o *DeleteDestinationOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this delete destination o k response has a 4xx status code
+func (o *DeleteDestinationOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this delete destination o k response has a 5xx status code
+func (o *DeleteDestinationOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this delete destination o k response a status code equal to that given
+func (o *DeleteDestinationOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *DeleteDestinationOK) Error() string {
 	return fmt.Sprintf("[DELETE /notifications/v1/destinations/{destinationId}][%d] deleteDestinationOK  %+v", 200, o.Payload)
 }
+
+func (o *DeleteDestinationOK) String() string {
+	return fmt.Sprintf("[DELETE /notifications/v1/destinations/{destinationId}][%d] deleteDestinationOK  %+v", 200, o.Payload)
+}
+
 func (o *DeleteDestinationOK) GetPayload() *notifications_models.DeleteDestinationResponse {
 	return o.Payload
 }
@@ -148,7 +179,8 @@ func NewDeleteDestinationBadRequest() *DeleteDestinationBadRequest {
 	return &DeleteDestinationBadRequest{}
 }
 
-/* DeleteDestinationBadRequest describes a response with status code 400, with default header values.
+/*
+DeleteDestinationBadRequest describes a response with status code 400, with default header values.
 
 Request has missing or invalid parameters and cannot be parsed.
 */
@@ -165,9 +197,39 @@ type DeleteDestinationBadRequest struct {
 	Payload *notifications_models.DeleteDestinationResponse
 }
 
+// IsSuccess returns true when this delete destination bad request response has a 2xx status code
+func (o *DeleteDestinationBadRequest) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this delete destination bad request response has a 3xx status code
+func (o *DeleteDestinationBadRequest) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this delete destination bad request response has a 4xx status code
+func (o *DeleteDestinationBadRequest) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this delete destination bad request response has a 5xx status code
+func (o *DeleteDestinationBadRequest) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this delete destination bad request response a status code equal to that given
+func (o *DeleteDestinationBadRequest) IsCode(code int) bool {
+	return code == 400
+}
+
 func (o *DeleteDestinationBadRequest) Error() string {
 	return fmt.Sprintf("[DELETE /notifications/v1/destinations/{destinationId}][%d] deleteDestinationBadRequest  %+v", 400, o.Payload)
 }
+
+func (o *DeleteDestinationBadRequest) String() string {
+	return fmt.Sprintf("[DELETE /notifications/v1/destinations/{destinationId}][%d] deleteDestinationBadRequest  %+v", 400, o.Payload)
+}
+
 func (o *DeleteDestinationBadRequest) GetPayload() *notifications_models.DeleteDestinationResponse {
 	return o.Payload
 }
@@ -203,7 +265,8 @@ func NewDeleteDestinationForbidden() *DeleteDestinationForbidden {
 	return &DeleteDestinationForbidden{}
 }
 
-/* DeleteDestinationForbidden describes a response with status code 403, with default header values.
+/*
+DeleteDestinationForbidden describes a response with status code 403, with default header values.
 
 Indicates that access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.
 */
@@ -216,9 +279,39 @@ type DeleteDestinationForbidden struct {
 	Payload *notifications_models.DeleteDestinationResponse
 }
 
+// IsSuccess returns true when this delete destination forbidden response has a 2xx status code
+func (o *DeleteDestinationForbidden) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this delete destination forbidden response has a 3xx status code
+func (o *DeleteDestinationForbidden) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this delete destination forbidden response has a 4xx status code
+func (o *DeleteDestinationForbidden) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this delete destination forbidden response has a 5xx status code
+func (o *DeleteDestinationForbidden) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this delete destination forbidden response a status code equal to that given
+func (o *DeleteDestinationForbidden) IsCode(code int) bool {
+	return code == 403
+}
+
 func (o *DeleteDestinationForbidden) Error() string {
 	return fmt.Sprintf("[DELETE /notifications/v1/destinations/{destinationId}][%d] deleteDestinationForbidden  %+v", 403, o.Payload)
 }
+
+func (o *DeleteDestinationForbidden) String() string {
+	return fmt.Sprintf("[DELETE /notifications/v1/destinations/{destinationId}][%d] deleteDestinationForbidden  %+v", 403, o.Payload)
+}
+
 func (o *DeleteDestinationForbidden) GetPayload() *notifications_models.DeleteDestinationResponse {
 	return o.Payload
 }
@@ -247,7 +340,8 @@ func NewDeleteDestinationNotFound() *DeleteDestinationNotFound {
 	return &DeleteDestinationNotFound{}
 }
 
-/* DeleteDestinationNotFound describes a response with status code 404, with default header values.
+/*
+DeleteDestinationNotFound describes a response with status code 404, with default header values.
 
 The resource specified does not exist.
 */
@@ -264,9 +358,39 @@ type DeleteDestinationNotFound struct {
 	Payload *notifications_models.DeleteDestinationResponse
 }
 
+// IsSuccess returns true when this delete destination not found response has a 2xx status code
+func (o *DeleteDestinationNotFound) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this delete destination not found response has a 3xx status code
+func (o *DeleteDestinationNotFound) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this delete destination not found response has a 4xx status code
+func (o *DeleteDestinationNotFound) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this delete destination not found response has a 5xx status code
+func (o *DeleteDestinationNotFound) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this delete destination not found response a status code equal to that given
+func (o *DeleteDestinationNotFound) IsCode(code int) bool {
+	return code == 404
+}
+
 func (o *DeleteDestinationNotFound) Error() string {
 	return fmt.Sprintf("[DELETE /notifications/v1/destinations/{destinationId}][%d] deleteDestinationNotFound  %+v", 404, o.Payload)
 }
+
+func (o *DeleteDestinationNotFound) String() string {
+	return fmt.Sprintf("[DELETE /notifications/v1/destinations/{destinationId}][%d] deleteDestinationNotFound  %+v", 404, o.Payload)
+}
+
 func (o *DeleteDestinationNotFound) GetPayload() *notifications_models.DeleteDestinationResponse {
 	return o.Payload
 }
@@ -302,7 +426,8 @@ func NewDeleteDestinationConflict() *DeleteDestinationConflict {
 	return &DeleteDestinationConflict{}
 }
 
-/* DeleteDestinationConflict describes a response with status code 409, with default header values.
+/*
+DeleteDestinationConflict describes a response with status code 409, with default header values.
 
 The resource specified conflicts with the current state.
 */
@@ -320,9 +445,39 @@ type DeleteDestinationConflict struct {
 	Payload *notifications_models.DeleteDestinationResponse
 }
 
+// IsSuccess returns true when this delete destination conflict response has a 2xx status code
+func (o *DeleteDestinationConflict) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this delete destination conflict response has a 3xx status code
+func (o *DeleteDestinationConflict) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this delete destination conflict response has a 4xx status code
+func (o *DeleteDestinationConflict) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this delete destination conflict response has a 5xx status code
+func (o *DeleteDestinationConflict) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this delete destination conflict response a status code equal to that given
+func (o *DeleteDestinationConflict) IsCode(code int) bool {
+	return code == 409
+}
+
 func (o *DeleteDestinationConflict) Error() string {
 	return fmt.Sprintf("[DELETE /notifications/v1/destinations/{destinationId}][%d] deleteDestinationConflict  %+v", 409, o.Payload)
 }
+
+func (o *DeleteDestinationConflict) String() string {
+	return fmt.Sprintf("[DELETE /notifications/v1/destinations/{destinationId}][%d] deleteDestinationConflict  %+v", 409, o.Payload)
+}
+
 func (o *DeleteDestinationConflict) GetPayload() *notifications_models.DeleteDestinationResponse {
 	return o.Payload
 }
@@ -358,7 +513,8 @@ func NewDeleteDestinationRequestEntityTooLarge() *DeleteDestinationRequestEntity
 	return &DeleteDestinationRequestEntityTooLarge{}
 }
 
-/* DeleteDestinationRequestEntityTooLarge describes a response with status code 413, with default header values.
+/*
+DeleteDestinationRequestEntityTooLarge describes a response with status code 413, with default header values.
 
 The request size exceeded the maximum accepted size.
 */
@@ -376,9 +532,39 @@ type DeleteDestinationRequestEntityTooLarge struct {
 	Payload *notifications_models.DeleteDestinationResponse
 }
 
+// IsSuccess returns true when this delete destination request entity too large response has a 2xx status code
+func (o *DeleteDestinationRequestEntityTooLarge) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this delete destination request entity too large response has a 3xx status code
+func (o *DeleteDestinationRequestEntityTooLarge) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this delete destination request entity too large response has a 4xx status code
+func (o *DeleteDestinationRequestEntityTooLarge) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this delete destination request entity too large response has a 5xx status code
+func (o *DeleteDestinationRequestEntityTooLarge) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this delete destination request entity too large response a status code equal to that given
+func (o *DeleteDestinationRequestEntityTooLarge) IsCode(code int) bool {
+	return code == 413
+}
+
 func (o *DeleteDestinationRequestEntityTooLarge) Error() string {
 	return fmt.Sprintf("[DELETE /notifications/v1/destinations/{destinationId}][%d] deleteDestinationRequestEntityTooLarge  %+v", 413, o.Payload)
 }
+
+func (o *DeleteDestinationRequestEntityTooLarge) String() string {
+	return fmt.Sprintf("[DELETE /notifications/v1/destinations/{destinationId}][%d] deleteDestinationRequestEntityTooLarge  %+v", 413, o.Payload)
+}
+
 func (o *DeleteDestinationRequestEntityTooLarge) GetPayload() *notifications_models.DeleteDestinationResponse {
 	return o.Payload
 }
@@ -414,7 +600,8 @@ func NewDeleteDestinationUnsupportedMediaType() *DeleteDestinationUnsupportedMed
 	return &DeleteDestinationUnsupportedMediaType{}
 }
 
-/* DeleteDestinationUnsupportedMediaType describes a response with status code 415, with default header values.
+/*
+DeleteDestinationUnsupportedMediaType describes a response with status code 415, with default header values.
 
 The request payload is in an unsupported format.
 */
@@ -432,9 +619,39 @@ type DeleteDestinationUnsupportedMediaType struct {
 	Payload *notifications_models.DeleteDestinationResponse
 }
 
+// IsSuccess returns true when this delete destination unsupported media type response has a 2xx status code
+func (o *DeleteDestinationUnsupportedMediaType) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this delete destination unsupported media type response has a 3xx status code
+func (o *DeleteDestinationUnsupportedMediaType) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this delete destination unsupported media type response has a 4xx status code
+func (o *DeleteDestinationUnsupportedMediaType) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this delete destination unsupported media type response has a 5xx status code
+func (o *DeleteDestinationUnsupportedMediaType) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this delete destination unsupported media type response a status code equal to that given
+func (o *DeleteDestinationUnsupportedMediaType) IsCode(code int) bool {
+	return code == 415
+}
+
 func (o *DeleteDestinationUnsupportedMediaType) Error() string {
 	return fmt.Sprintf("[DELETE /notifications/v1/destinations/{destinationId}][%d] deleteDestinationUnsupportedMediaType  %+v", 415, o.Payload)
 }
+
+func (o *DeleteDestinationUnsupportedMediaType) String() string {
+	return fmt.Sprintf("[DELETE /notifications/v1/destinations/{destinationId}][%d] deleteDestinationUnsupportedMediaType  %+v", 415, o.Payload)
+}
+
 func (o *DeleteDestinationUnsupportedMediaType) GetPayload() *notifications_models.DeleteDestinationResponse {
 	return o.Payload
 }
@@ -470,7 +687,8 @@ func NewDeleteDestinationTooManyRequests() *DeleteDestinationTooManyRequests {
 	return &DeleteDestinationTooManyRequests{}
 }
 
-/* DeleteDestinationTooManyRequests describes a response with status code 429, with default header values.
+/*
+DeleteDestinationTooManyRequests describes a response with status code 429, with default header values.
 
 The frequency of requests was greater than allowed.
 */
@@ -488,9 +706,39 @@ type DeleteDestinationTooManyRequests struct {
 	Payload *notifications_models.DeleteDestinationResponse
 }
 
+// IsSuccess returns true when this delete destination too many requests response has a 2xx status code
+func (o *DeleteDestinationTooManyRequests) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this delete destination too many requests response has a 3xx status code
+func (o *DeleteDestinationTooManyRequests) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this delete destination too many requests response has a 4xx status code
+func (o *DeleteDestinationTooManyRequests) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this delete destination too many requests response has a 5xx status code
+func (o *DeleteDestinationTooManyRequests) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this delete destination too many requests response a status code equal to that given
+func (o *DeleteDestinationTooManyRequests) IsCode(code int) bool {
+	return code == 429
+}
+
 func (o *DeleteDestinationTooManyRequests) Error() string {
 	return fmt.Sprintf("[DELETE /notifications/v1/destinations/{destinationId}][%d] deleteDestinationTooManyRequests  %+v", 429, o.Payload)
 }
+
+func (o *DeleteDestinationTooManyRequests) String() string {
+	return fmt.Sprintf("[DELETE /notifications/v1/destinations/{destinationId}][%d] deleteDestinationTooManyRequests  %+v", 429, o.Payload)
+}
+
 func (o *DeleteDestinationTooManyRequests) GetPayload() *notifications_models.DeleteDestinationResponse {
 	return o.Payload
 }
@@ -526,7 +774,8 @@ func NewDeleteDestinationInternalServerError() *DeleteDestinationInternalServerE
 	return &DeleteDestinationInternalServerError{}
 }
 
-/* DeleteDestinationInternalServerError describes a response with status code 500, with default header values.
+/*
+DeleteDestinationInternalServerError describes a response with status code 500, with default header values.
 
 An unexpected condition occurred that prevented the server from fulfilling the request.
 */
@@ -544,9 +793,39 @@ type DeleteDestinationInternalServerError struct {
 	Payload *notifications_models.DeleteDestinationResponse
 }
 
+// IsSuccess returns true when this delete destination internal server error response has a 2xx status code
+func (o *DeleteDestinationInternalServerError) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this delete destination internal server error response has a 3xx status code
+func (o *DeleteDestinationInternalServerError) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this delete destination internal server error response has a 4xx status code
+func (o *DeleteDestinationInternalServerError) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this delete destination internal server error response has a 5xx status code
+func (o *DeleteDestinationInternalServerError) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this delete destination internal server error response a status code equal to that given
+func (o *DeleteDestinationInternalServerError) IsCode(code int) bool {
+	return code == 500
+}
+
 func (o *DeleteDestinationInternalServerError) Error() string {
 	return fmt.Sprintf("[DELETE /notifications/v1/destinations/{destinationId}][%d] deleteDestinationInternalServerError  %+v", 500, o.Payload)
 }
+
+func (o *DeleteDestinationInternalServerError) String() string {
+	return fmt.Sprintf("[DELETE /notifications/v1/destinations/{destinationId}][%d] deleteDestinationInternalServerError  %+v", 500, o.Payload)
+}
+
 func (o *DeleteDestinationInternalServerError) GetPayload() *notifications_models.DeleteDestinationResponse {
 	return o.Payload
 }
@@ -582,7 +861,8 @@ func NewDeleteDestinationServiceUnavailable() *DeleteDestinationServiceUnavailab
 	return &DeleteDestinationServiceUnavailable{}
 }
 
-/* DeleteDestinationServiceUnavailable describes a response with status code 503, with default header values.
+/*
+DeleteDestinationServiceUnavailable describes a response with status code 503, with default header values.
 
 Temporary overloading or maintenance of the server.
 */
@@ -600,9 +880,39 @@ type DeleteDestinationServiceUnavailable struct {
 	Payload *notifications_models.DeleteDestinationResponse
 }
 
+// IsSuccess returns true when this delete destination service unavailable response has a 2xx status code
+func (o *DeleteDestinationServiceUnavailable) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this delete destination service unavailable response has a 3xx status code
+func (o *DeleteDestinationServiceUnavailable) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this delete destination service unavailable response has a 4xx status code
+func (o *DeleteDestinationServiceUnavailable) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this delete destination service unavailable response has a 5xx status code
+func (o *DeleteDestinationServiceUnavailable) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this delete destination service unavailable response a status code equal to that given
+func (o *DeleteDestinationServiceUnavailable) IsCode(code int) bool {
+	return code == 503
+}
+
 func (o *DeleteDestinationServiceUnavailable) Error() string {
 	return fmt.Sprintf("[DELETE /notifications/v1/destinations/{destinationId}][%d] deleteDestinationServiceUnavailable  %+v", 503, o.Payload)
 }
+
+func (o *DeleteDestinationServiceUnavailable) String() string {
+	return fmt.Sprintf("[DELETE /notifications/v1/destinations/{destinationId}][%d] deleteDestinationServiceUnavailable  %+v", 503, o.Payload)
+}
+
 func (o *DeleteDestinationServiceUnavailable) GetPayload() *notifications_models.DeleteDestinationResponse {
 	return o.Payload
 }

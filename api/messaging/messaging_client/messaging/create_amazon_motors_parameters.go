@@ -55,10 +55,12 @@ func NewCreateAmazonMotorsParamsWithHTTPClient(client *http.Client) *CreateAmazo
 	}
 }
 
-/* CreateAmazonMotorsParams contains all the parameters to send to the API endpoint
-   for the create amazon motors operation.
+/*
+CreateAmazonMotorsParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the create amazon motors operation.
+
+	Typically these are written to a http.Request.
 */
 type CreateAmazonMotorsParams struct {
 

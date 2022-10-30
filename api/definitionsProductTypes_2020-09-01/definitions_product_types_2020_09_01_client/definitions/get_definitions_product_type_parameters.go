@@ -53,10 +53,12 @@ func NewGetDefinitionsProductTypeParamsWithHTTPClient(client *http.Client) *GetD
 	}
 }
 
-/* GetDefinitionsProductTypeParams contains all the parameters to send to the API endpoint
-   for the get definitions product type operation.
+/*
+GetDefinitionsProductTypeParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the get definitions product type operation.
+
+	Typically these are written to a http.Request.
 */
 type GetDefinitionsProductTypeParams struct {
 

@@ -52,10 +52,12 @@ func NewListCatalogCategoriesParamsWithHTTPClient(client *http.Client) *ListCata
 	}
 }
 
-/* ListCatalogCategoriesParams contains all the parameters to send to the API endpoint
-   for the list catalog categories operation.
+/*
+ListCatalogCategoriesParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the list catalog categories operation.
+
+	Typically these are written to a http.Request.
 */
 type ListCatalogCategoriesParams struct {
 

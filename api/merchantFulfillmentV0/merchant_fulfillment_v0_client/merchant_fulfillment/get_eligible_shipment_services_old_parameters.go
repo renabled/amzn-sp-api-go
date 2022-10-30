@@ -54,10 +54,12 @@ func NewGetEligibleShipmentServicesOldParamsWithHTTPClient(client *http.Client) 
 	}
 }
 
-/* GetEligibleShipmentServicesOldParams contains all the parameters to send to the API endpoint
-   for the get eligible shipment services old operation.
+/*
+GetEligibleShipmentServicesOldParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the get eligible shipment services old operation.
+
+	Typically these are written to a http.Request.
 */
 type GetEligibleShipmentServicesOldParams struct {
 

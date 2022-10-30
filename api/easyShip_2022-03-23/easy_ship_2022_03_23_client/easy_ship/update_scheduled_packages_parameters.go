@@ -54,10 +54,12 @@ func NewUpdateScheduledPackagesParamsWithHTTPClient(client *http.Client) *Update
 	}
 }
 
-/* UpdateScheduledPackagesParams contains all the parameters to send to the API endpoint
-   for the update scheduled packages operation.
+/*
+UpdateScheduledPackagesParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the update scheduled packages operation.
+
+	Typically these are written to a http.Request.
 */
 type UpdateScheduledPackagesParams struct {
 

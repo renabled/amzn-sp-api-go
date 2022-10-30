@@ -55,10 +55,12 @@ func NewCreateConfirmServiceDetailsParamsWithHTTPClient(client *http.Client) *Cr
 	}
 }
 
-/* CreateConfirmServiceDetailsParams contains all the parameters to send to the API endpoint
-   for the create confirm service details operation.
+/*
+CreateConfirmServiceDetailsParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the create confirm service details operation.
+
+	Typically these are written to a http.Request.
 */
 type CreateConfirmServiceDetailsParams struct {
 

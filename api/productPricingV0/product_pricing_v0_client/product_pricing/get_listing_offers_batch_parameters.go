@@ -54,10 +54,12 @@ func NewGetListingOffersBatchParamsWithHTTPClient(client *http.Client) *GetListi
 	}
 }
 
-/* GetListingOffersBatchParams contains all the parameters to send to the API endpoint
-   for the get listing offers batch operation.
+/*
+GetListingOffersBatchParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the get listing offers batch operation.
+
+	Typically these are written to a http.Request.
 */
 type GetListingOffersBatchParams struct {
 

@@ -81,7 +81,8 @@ func NewCancelShipmentOldOK() *CancelShipmentOldOK {
 	return &CancelShipmentOldOK{}
 }
 
-/* CancelShipmentOldOK describes a response with status code 200, with default header values.
+/*
+CancelShipmentOldOK describes a response with status code 200, with default header values.
 
 Success
 */
@@ -98,9 +99,39 @@ type CancelShipmentOldOK struct {
 	Payload *merchant_fulfillment_v0_models.CancelShipmentResponse
 }
 
+// IsSuccess returns true when this cancel shipment old o k response has a 2xx status code
+func (o *CancelShipmentOldOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this cancel shipment old o k response has a 3xx status code
+func (o *CancelShipmentOldOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this cancel shipment old o k response has a 4xx status code
+func (o *CancelShipmentOldOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this cancel shipment old o k response has a 5xx status code
+func (o *CancelShipmentOldOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this cancel shipment old o k response a status code equal to that given
+func (o *CancelShipmentOldOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *CancelShipmentOldOK) Error() string {
 	return fmt.Sprintf("[PUT /mfn/v0/shipments/{shipmentId}/cancel][%d] cancelShipmentOldOK  %+v", 200, o.Payload)
 }
+
+func (o *CancelShipmentOldOK) String() string {
+	return fmt.Sprintf("[PUT /mfn/v0/shipments/{shipmentId}/cancel][%d] cancelShipmentOldOK  %+v", 200, o.Payload)
+}
+
 func (o *CancelShipmentOldOK) GetPayload() *merchant_fulfillment_v0_models.CancelShipmentResponse {
 	return o.Payload
 }
@@ -136,7 +167,8 @@ func NewCancelShipmentOldBadRequest() *CancelShipmentOldBadRequest {
 	return &CancelShipmentOldBadRequest{}
 }
 
-/* CancelShipmentOldBadRequest describes a response with status code 400, with default header values.
+/*
+CancelShipmentOldBadRequest describes a response with status code 400, with default header values.
 
 Request has missing or invalid parameters and cannot be parsed.
 */
@@ -153,9 +185,39 @@ type CancelShipmentOldBadRequest struct {
 	Payload *merchant_fulfillment_v0_models.CancelShipmentResponse
 }
 
+// IsSuccess returns true when this cancel shipment old bad request response has a 2xx status code
+func (o *CancelShipmentOldBadRequest) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this cancel shipment old bad request response has a 3xx status code
+func (o *CancelShipmentOldBadRequest) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this cancel shipment old bad request response has a 4xx status code
+func (o *CancelShipmentOldBadRequest) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this cancel shipment old bad request response has a 5xx status code
+func (o *CancelShipmentOldBadRequest) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this cancel shipment old bad request response a status code equal to that given
+func (o *CancelShipmentOldBadRequest) IsCode(code int) bool {
+	return code == 400
+}
+
 func (o *CancelShipmentOldBadRequest) Error() string {
 	return fmt.Sprintf("[PUT /mfn/v0/shipments/{shipmentId}/cancel][%d] cancelShipmentOldBadRequest  %+v", 400, o.Payload)
 }
+
+func (o *CancelShipmentOldBadRequest) String() string {
+	return fmt.Sprintf("[PUT /mfn/v0/shipments/{shipmentId}/cancel][%d] cancelShipmentOldBadRequest  %+v", 400, o.Payload)
+}
+
 func (o *CancelShipmentOldBadRequest) GetPayload() *merchant_fulfillment_v0_models.CancelShipmentResponse {
 	return o.Payload
 }
@@ -191,7 +253,8 @@ func NewCancelShipmentOldUnauthorized() *CancelShipmentOldUnauthorized {
 	return &CancelShipmentOldUnauthorized{}
 }
 
-/* CancelShipmentOldUnauthorized describes a response with status code 401, with default header values.
+/*
+CancelShipmentOldUnauthorized describes a response with status code 401, with default header values.
 
 The request's Authorization header is not formatted correctly or does not contain a valid token.
 */
@@ -209,9 +272,39 @@ type CancelShipmentOldUnauthorized struct {
 	Payload *merchant_fulfillment_v0_models.CancelShipmentResponse
 }
 
+// IsSuccess returns true when this cancel shipment old unauthorized response has a 2xx status code
+func (o *CancelShipmentOldUnauthorized) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this cancel shipment old unauthorized response has a 3xx status code
+func (o *CancelShipmentOldUnauthorized) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this cancel shipment old unauthorized response has a 4xx status code
+func (o *CancelShipmentOldUnauthorized) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this cancel shipment old unauthorized response has a 5xx status code
+func (o *CancelShipmentOldUnauthorized) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this cancel shipment old unauthorized response a status code equal to that given
+func (o *CancelShipmentOldUnauthorized) IsCode(code int) bool {
+	return code == 401
+}
+
 func (o *CancelShipmentOldUnauthorized) Error() string {
 	return fmt.Sprintf("[PUT /mfn/v0/shipments/{shipmentId}/cancel][%d] cancelShipmentOldUnauthorized  %+v", 401, o.Payload)
 }
+
+func (o *CancelShipmentOldUnauthorized) String() string {
+	return fmt.Sprintf("[PUT /mfn/v0/shipments/{shipmentId}/cancel][%d] cancelShipmentOldUnauthorized  %+v", 401, o.Payload)
+}
+
 func (o *CancelShipmentOldUnauthorized) GetPayload() *merchant_fulfillment_v0_models.CancelShipmentResponse {
 	return o.Payload
 }
@@ -247,7 +340,8 @@ func NewCancelShipmentOldForbidden() *CancelShipmentOldForbidden {
 	return &CancelShipmentOldForbidden{}
 }
 
-/* CancelShipmentOldForbidden describes a response with status code 403, with default header values.
+/*
+CancelShipmentOldForbidden describes a response with status code 403, with default header values.
 
 Indicates that access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.
 */
@@ -260,9 +354,39 @@ type CancelShipmentOldForbidden struct {
 	Payload *merchant_fulfillment_v0_models.CancelShipmentResponse
 }
 
+// IsSuccess returns true when this cancel shipment old forbidden response has a 2xx status code
+func (o *CancelShipmentOldForbidden) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this cancel shipment old forbidden response has a 3xx status code
+func (o *CancelShipmentOldForbidden) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this cancel shipment old forbidden response has a 4xx status code
+func (o *CancelShipmentOldForbidden) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this cancel shipment old forbidden response has a 5xx status code
+func (o *CancelShipmentOldForbidden) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this cancel shipment old forbidden response a status code equal to that given
+func (o *CancelShipmentOldForbidden) IsCode(code int) bool {
+	return code == 403
+}
+
 func (o *CancelShipmentOldForbidden) Error() string {
 	return fmt.Sprintf("[PUT /mfn/v0/shipments/{shipmentId}/cancel][%d] cancelShipmentOldForbidden  %+v", 403, o.Payload)
 }
+
+func (o *CancelShipmentOldForbidden) String() string {
+	return fmt.Sprintf("[PUT /mfn/v0/shipments/{shipmentId}/cancel][%d] cancelShipmentOldForbidden  %+v", 403, o.Payload)
+}
+
 func (o *CancelShipmentOldForbidden) GetPayload() *merchant_fulfillment_v0_models.CancelShipmentResponse {
 	return o.Payload
 }
@@ -291,7 +415,8 @@ func NewCancelShipmentOldNotFound() *CancelShipmentOldNotFound {
 	return &CancelShipmentOldNotFound{}
 }
 
-/* CancelShipmentOldNotFound describes a response with status code 404, with default header values.
+/*
+CancelShipmentOldNotFound describes a response with status code 404, with default header values.
 
 The specified resource does not exist.
 */
@@ -308,9 +433,39 @@ type CancelShipmentOldNotFound struct {
 	Payload *merchant_fulfillment_v0_models.CancelShipmentResponse
 }
 
+// IsSuccess returns true when this cancel shipment old not found response has a 2xx status code
+func (o *CancelShipmentOldNotFound) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this cancel shipment old not found response has a 3xx status code
+func (o *CancelShipmentOldNotFound) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this cancel shipment old not found response has a 4xx status code
+func (o *CancelShipmentOldNotFound) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this cancel shipment old not found response has a 5xx status code
+func (o *CancelShipmentOldNotFound) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this cancel shipment old not found response a status code equal to that given
+func (o *CancelShipmentOldNotFound) IsCode(code int) bool {
+	return code == 404
+}
+
 func (o *CancelShipmentOldNotFound) Error() string {
 	return fmt.Sprintf("[PUT /mfn/v0/shipments/{shipmentId}/cancel][%d] cancelShipmentOldNotFound  %+v", 404, o.Payload)
 }
+
+func (o *CancelShipmentOldNotFound) String() string {
+	return fmt.Sprintf("[PUT /mfn/v0/shipments/{shipmentId}/cancel][%d] cancelShipmentOldNotFound  %+v", 404, o.Payload)
+}
+
 func (o *CancelShipmentOldNotFound) GetPayload() *merchant_fulfillment_v0_models.CancelShipmentResponse {
 	return o.Payload
 }
@@ -346,7 +501,8 @@ func NewCancelShipmentOldTooManyRequests() *CancelShipmentOldTooManyRequests {
 	return &CancelShipmentOldTooManyRequests{}
 }
 
-/* CancelShipmentOldTooManyRequests describes a response with status code 429, with default header values.
+/*
+CancelShipmentOldTooManyRequests describes a response with status code 429, with default header values.
 
 The frequency of requests was greater than allowed.
 */
@@ -364,9 +520,39 @@ type CancelShipmentOldTooManyRequests struct {
 	Payload *merchant_fulfillment_v0_models.CancelShipmentResponse
 }
 
+// IsSuccess returns true when this cancel shipment old too many requests response has a 2xx status code
+func (o *CancelShipmentOldTooManyRequests) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this cancel shipment old too many requests response has a 3xx status code
+func (o *CancelShipmentOldTooManyRequests) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this cancel shipment old too many requests response has a 4xx status code
+func (o *CancelShipmentOldTooManyRequests) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this cancel shipment old too many requests response has a 5xx status code
+func (o *CancelShipmentOldTooManyRequests) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this cancel shipment old too many requests response a status code equal to that given
+func (o *CancelShipmentOldTooManyRequests) IsCode(code int) bool {
+	return code == 429
+}
+
 func (o *CancelShipmentOldTooManyRequests) Error() string {
 	return fmt.Sprintf("[PUT /mfn/v0/shipments/{shipmentId}/cancel][%d] cancelShipmentOldTooManyRequests  %+v", 429, o.Payload)
 }
+
+func (o *CancelShipmentOldTooManyRequests) String() string {
+	return fmt.Sprintf("[PUT /mfn/v0/shipments/{shipmentId}/cancel][%d] cancelShipmentOldTooManyRequests  %+v", 429, o.Payload)
+}
+
 func (o *CancelShipmentOldTooManyRequests) GetPayload() *merchant_fulfillment_v0_models.CancelShipmentResponse {
 	return o.Payload
 }
@@ -402,7 +588,8 @@ func NewCancelShipmentOldInternalServerError() *CancelShipmentOldInternalServerE
 	return &CancelShipmentOldInternalServerError{}
 }
 
-/* CancelShipmentOldInternalServerError describes a response with status code 500, with default header values.
+/*
+CancelShipmentOldInternalServerError describes a response with status code 500, with default header values.
 
 An unexpected condition occurred that prevented the server from fulfilling the request.
 */
@@ -420,9 +607,39 @@ type CancelShipmentOldInternalServerError struct {
 	Payload *merchant_fulfillment_v0_models.CancelShipmentResponse
 }
 
+// IsSuccess returns true when this cancel shipment old internal server error response has a 2xx status code
+func (o *CancelShipmentOldInternalServerError) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this cancel shipment old internal server error response has a 3xx status code
+func (o *CancelShipmentOldInternalServerError) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this cancel shipment old internal server error response has a 4xx status code
+func (o *CancelShipmentOldInternalServerError) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this cancel shipment old internal server error response has a 5xx status code
+func (o *CancelShipmentOldInternalServerError) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this cancel shipment old internal server error response a status code equal to that given
+func (o *CancelShipmentOldInternalServerError) IsCode(code int) bool {
+	return code == 500
+}
+
 func (o *CancelShipmentOldInternalServerError) Error() string {
 	return fmt.Sprintf("[PUT /mfn/v0/shipments/{shipmentId}/cancel][%d] cancelShipmentOldInternalServerError  %+v", 500, o.Payload)
 }
+
+func (o *CancelShipmentOldInternalServerError) String() string {
+	return fmt.Sprintf("[PUT /mfn/v0/shipments/{shipmentId}/cancel][%d] cancelShipmentOldInternalServerError  %+v", 500, o.Payload)
+}
+
 func (o *CancelShipmentOldInternalServerError) GetPayload() *merchant_fulfillment_v0_models.CancelShipmentResponse {
 	return o.Payload
 }
@@ -458,7 +675,8 @@ func NewCancelShipmentOldServiceUnavailable() *CancelShipmentOldServiceUnavailab
 	return &CancelShipmentOldServiceUnavailable{}
 }
 
-/* CancelShipmentOldServiceUnavailable describes a response with status code 503, with default header values.
+/*
+CancelShipmentOldServiceUnavailable describes a response with status code 503, with default header values.
 
 Temporary overloading or maintenance of the server.
 */
@@ -476,9 +694,39 @@ type CancelShipmentOldServiceUnavailable struct {
 	Payload *merchant_fulfillment_v0_models.CancelShipmentResponse
 }
 
+// IsSuccess returns true when this cancel shipment old service unavailable response has a 2xx status code
+func (o *CancelShipmentOldServiceUnavailable) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this cancel shipment old service unavailable response has a 3xx status code
+func (o *CancelShipmentOldServiceUnavailable) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this cancel shipment old service unavailable response has a 4xx status code
+func (o *CancelShipmentOldServiceUnavailable) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this cancel shipment old service unavailable response has a 5xx status code
+func (o *CancelShipmentOldServiceUnavailable) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this cancel shipment old service unavailable response a status code equal to that given
+func (o *CancelShipmentOldServiceUnavailable) IsCode(code int) bool {
+	return code == 503
+}
+
 func (o *CancelShipmentOldServiceUnavailable) Error() string {
 	return fmt.Sprintf("[PUT /mfn/v0/shipments/{shipmentId}/cancel][%d] cancelShipmentOldServiceUnavailable  %+v", 503, o.Payload)
 }
+
+func (o *CancelShipmentOldServiceUnavailable) String() string {
+	return fmt.Sprintf("[PUT /mfn/v0/shipments/{shipmentId}/cancel][%d] cancelShipmentOldServiceUnavailable  %+v", 503, o.Payload)
+}
+
 func (o *CancelShipmentOldServiceUnavailable) GetPayload() *merchant_fulfillment_v0_models.CancelShipmentResponse {
 	return o.Payload
 }

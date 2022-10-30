@@ -55,10 +55,12 @@ func NewCreateReservationParamsWithHTTPClient(client *http.Client) *CreateReserv
 	}
 }
 
-/* CreateReservationParams contains all the parameters to send to the API endpoint
-   for the create reservation operation.
+/*
+CreateReservationParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the create reservation operation.
+
+	Typically these are written to a http.Request.
 */
 type CreateReservationParams struct {
 

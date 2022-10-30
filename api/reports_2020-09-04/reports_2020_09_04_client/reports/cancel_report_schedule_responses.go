@@ -87,7 +87,8 @@ func NewCancelReportScheduleOK() *CancelReportScheduleOK {
 	return &CancelReportScheduleOK{}
 }
 
-/* CancelReportScheduleOK describes a response with status code 200, with default header values.
+/*
+CancelReportScheduleOK describes a response with status code 200, with default header values.
 
 Success.
 */
@@ -104,9 +105,39 @@ type CancelReportScheduleOK struct {
 	Payload *reports_2020_09_04_models.CancelReportScheduleResponse
 }
 
+// IsSuccess returns true when this cancel report schedule o k response has a 2xx status code
+func (o *CancelReportScheduleOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this cancel report schedule o k response has a 3xx status code
+func (o *CancelReportScheduleOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this cancel report schedule o k response has a 4xx status code
+func (o *CancelReportScheduleOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this cancel report schedule o k response has a 5xx status code
+func (o *CancelReportScheduleOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this cancel report schedule o k response a status code equal to that given
+func (o *CancelReportScheduleOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *CancelReportScheduleOK) Error() string {
 	return fmt.Sprintf("[DELETE /reports/2020-09-04/schedules/{reportScheduleId}][%d] cancelReportScheduleOK  %+v", 200, o.Payload)
 }
+
+func (o *CancelReportScheduleOK) String() string {
+	return fmt.Sprintf("[DELETE /reports/2020-09-04/schedules/{reportScheduleId}][%d] cancelReportScheduleOK  %+v", 200, o.Payload)
+}
+
 func (o *CancelReportScheduleOK) GetPayload() *reports_2020_09_04_models.CancelReportScheduleResponse {
 	return o.Payload
 }
@@ -142,7 +173,8 @@ func NewCancelReportScheduleBadRequest() *CancelReportScheduleBadRequest {
 	return &CancelReportScheduleBadRequest{}
 }
 
-/* CancelReportScheduleBadRequest describes a response with status code 400, with default header values.
+/*
+CancelReportScheduleBadRequest describes a response with status code 400, with default header values.
 
 Request has missing or invalid parameters and cannot be parsed.
 */
@@ -159,9 +191,39 @@ type CancelReportScheduleBadRequest struct {
 	Payload *reports_2020_09_04_models.CancelReportScheduleResponse
 }
 
+// IsSuccess returns true when this cancel report schedule bad request response has a 2xx status code
+func (o *CancelReportScheduleBadRequest) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this cancel report schedule bad request response has a 3xx status code
+func (o *CancelReportScheduleBadRequest) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this cancel report schedule bad request response has a 4xx status code
+func (o *CancelReportScheduleBadRequest) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this cancel report schedule bad request response has a 5xx status code
+func (o *CancelReportScheduleBadRequest) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this cancel report schedule bad request response a status code equal to that given
+func (o *CancelReportScheduleBadRequest) IsCode(code int) bool {
+	return code == 400
+}
+
 func (o *CancelReportScheduleBadRequest) Error() string {
 	return fmt.Sprintf("[DELETE /reports/2020-09-04/schedules/{reportScheduleId}][%d] cancelReportScheduleBadRequest  %+v", 400, o.Payload)
 }
+
+func (o *CancelReportScheduleBadRequest) String() string {
+	return fmt.Sprintf("[DELETE /reports/2020-09-04/schedules/{reportScheduleId}][%d] cancelReportScheduleBadRequest  %+v", 400, o.Payload)
+}
+
 func (o *CancelReportScheduleBadRequest) GetPayload() *reports_2020_09_04_models.CancelReportScheduleResponse {
 	return o.Payload
 }
@@ -197,7 +259,8 @@ func NewCancelReportScheduleUnauthorized() *CancelReportScheduleUnauthorized {
 	return &CancelReportScheduleUnauthorized{}
 }
 
-/* CancelReportScheduleUnauthorized describes a response with status code 401, with default header values.
+/*
+CancelReportScheduleUnauthorized describes a response with status code 401, with default header values.
 
 The request's Authorization header is not formatted correctly or does not contain a valid token.
 */
@@ -215,9 +278,39 @@ type CancelReportScheduleUnauthorized struct {
 	Payload *reports_2020_09_04_models.CancelReportScheduleResponse
 }
 
+// IsSuccess returns true when this cancel report schedule unauthorized response has a 2xx status code
+func (o *CancelReportScheduleUnauthorized) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this cancel report schedule unauthorized response has a 3xx status code
+func (o *CancelReportScheduleUnauthorized) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this cancel report schedule unauthorized response has a 4xx status code
+func (o *CancelReportScheduleUnauthorized) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this cancel report schedule unauthorized response has a 5xx status code
+func (o *CancelReportScheduleUnauthorized) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this cancel report schedule unauthorized response a status code equal to that given
+func (o *CancelReportScheduleUnauthorized) IsCode(code int) bool {
+	return code == 401
+}
+
 func (o *CancelReportScheduleUnauthorized) Error() string {
 	return fmt.Sprintf("[DELETE /reports/2020-09-04/schedules/{reportScheduleId}][%d] cancelReportScheduleUnauthorized  %+v", 401, o.Payload)
 }
+
+func (o *CancelReportScheduleUnauthorized) String() string {
+	return fmt.Sprintf("[DELETE /reports/2020-09-04/schedules/{reportScheduleId}][%d] cancelReportScheduleUnauthorized  %+v", 401, o.Payload)
+}
+
 func (o *CancelReportScheduleUnauthorized) GetPayload() *reports_2020_09_04_models.CancelReportScheduleResponse {
 	return o.Payload
 }
@@ -253,7 +346,8 @@ func NewCancelReportScheduleForbidden() *CancelReportScheduleForbidden {
 	return &CancelReportScheduleForbidden{}
 }
 
-/* CancelReportScheduleForbidden describes a response with status code 403, with default header values.
+/*
+CancelReportScheduleForbidden describes a response with status code 403, with default header values.
 
 Indicates that access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.
 */
@@ -266,9 +360,39 @@ type CancelReportScheduleForbidden struct {
 	Payload *reports_2020_09_04_models.CancelReportScheduleResponse
 }
 
+// IsSuccess returns true when this cancel report schedule forbidden response has a 2xx status code
+func (o *CancelReportScheduleForbidden) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this cancel report schedule forbidden response has a 3xx status code
+func (o *CancelReportScheduleForbidden) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this cancel report schedule forbidden response has a 4xx status code
+func (o *CancelReportScheduleForbidden) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this cancel report schedule forbidden response has a 5xx status code
+func (o *CancelReportScheduleForbidden) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this cancel report schedule forbidden response a status code equal to that given
+func (o *CancelReportScheduleForbidden) IsCode(code int) bool {
+	return code == 403
+}
+
 func (o *CancelReportScheduleForbidden) Error() string {
 	return fmt.Sprintf("[DELETE /reports/2020-09-04/schedules/{reportScheduleId}][%d] cancelReportScheduleForbidden  %+v", 403, o.Payload)
 }
+
+func (o *CancelReportScheduleForbidden) String() string {
+	return fmt.Sprintf("[DELETE /reports/2020-09-04/schedules/{reportScheduleId}][%d] cancelReportScheduleForbidden  %+v", 403, o.Payload)
+}
+
 func (o *CancelReportScheduleForbidden) GetPayload() *reports_2020_09_04_models.CancelReportScheduleResponse {
 	return o.Payload
 }
@@ -297,7 +421,8 @@ func NewCancelReportScheduleNotFound() *CancelReportScheduleNotFound {
 	return &CancelReportScheduleNotFound{}
 }
 
-/* CancelReportScheduleNotFound describes a response with status code 404, with default header values.
+/*
+CancelReportScheduleNotFound describes a response with status code 404, with default header values.
 
 The specified resource does not exist.
 */
@@ -314,9 +439,39 @@ type CancelReportScheduleNotFound struct {
 	Payload *reports_2020_09_04_models.CancelReportScheduleResponse
 }
 
+// IsSuccess returns true when this cancel report schedule not found response has a 2xx status code
+func (o *CancelReportScheduleNotFound) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this cancel report schedule not found response has a 3xx status code
+func (o *CancelReportScheduleNotFound) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this cancel report schedule not found response has a 4xx status code
+func (o *CancelReportScheduleNotFound) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this cancel report schedule not found response has a 5xx status code
+func (o *CancelReportScheduleNotFound) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this cancel report schedule not found response a status code equal to that given
+func (o *CancelReportScheduleNotFound) IsCode(code int) bool {
+	return code == 404
+}
+
 func (o *CancelReportScheduleNotFound) Error() string {
 	return fmt.Sprintf("[DELETE /reports/2020-09-04/schedules/{reportScheduleId}][%d] cancelReportScheduleNotFound  %+v", 404, o.Payload)
 }
+
+func (o *CancelReportScheduleNotFound) String() string {
+	return fmt.Sprintf("[DELETE /reports/2020-09-04/schedules/{reportScheduleId}][%d] cancelReportScheduleNotFound  %+v", 404, o.Payload)
+}
+
 func (o *CancelReportScheduleNotFound) GetPayload() *reports_2020_09_04_models.CancelReportScheduleResponse {
 	return o.Payload
 }
@@ -352,7 +507,8 @@ func NewCancelReportScheduleUnsupportedMediaType() *CancelReportScheduleUnsuppor
 	return &CancelReportScheduleUnsupportedMediaType{}
 }
 
-/* CancelReportScheduleUnsupportedMediaType describes a response with status code 415, with default header values.
+/*
+CancelReportScheduleUnsupportedMediaType describes a response with status code 415, with default header values.
 
 The request's Content-Type header is invalid.
 */
@@ -370,9 +526,39 @@ type CancelReportScheduleUnsupportedMediaType struct {
 	Payload *reports_2020_09_04_models.CancelReportScheduleResponse
 }
 
+// IsSuccess returns true when this cancel report schedule unsupported media type response has a 2xx status code
+func (o *CancelReportScheduleUnsupportedMediaType) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this cancel report schedule unsupported media type response has a 3xx status code
+func (o *CancelReportScheduleUnsupportedMediaType) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this cancel report schedule unsupported media type response has a 4xx status code
+func (o *CancelReportScheduleUnsupportedMediaType) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this cancel report schedule unsupported media type response has a 5xx status code
+func (o *CancelReportScheduleUnsupportedMediaType) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this cancel report schedule unsupported media type response a status code equal to that given
+func (o *CancelReportScheduleUnsupportedMediaType) IsCode(code int) bool {
+	return code == 415
+}
+
 func (o *CancelReportScheduleUnsupportedMediaType) Error() string {
 	return fmt.Sprintf("[DELETE /reports/2020-09-04/schedules/{reportScheduleId}][%d] cancelReportScheduleUnsupportedMediaType  %+v", 415, o.Payload)
 }
+
+func (o *CancelReportScheduleUnsupportedMediaType) String() string {
+	return fmt.Sprintf("[DELETE /reports/2020-09-04/schedules/{reportScheduleId}][%d] cancelReportScheduleUnsupportedMediaType  %+v", 415, o.Payload)
+}
+
 func (o *CancelReportScheduleUnsupportedMediaType) GetPayload() *reports_2020_09_04_models.CancelReportScheduleResponse {
 	return o.Payload
 }
@@ -408,7 +594,8 @@ func NewCancelReportScheduleTooManyRequests() *CancelReportScheduleTooManyReques
 	return &CancelReportScheduleTooManyRequests{}
 }
 
-/* CancelReportScheduleTooManyRequests describes a response with status code 429, with default header values.
+/*
+CancelReportScheduleTooManyRequests describes a response with status code 429, with default header values.
 
 The frequency of requests was greater than allowed.
 */
@@ -426,9 +613,39 @@ type CancelReportScheduleTooManyRequests struct {
 	Payload *reports_2020_09_04_models.CancelReportScheduleResponse
 }
 
+// IsSuccess returns true when this cancel report schedule too many requests response has a 2xx status code
+func (o *CancelReportScheduleTooManyRequests) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this cancel report schedule too many requests response has a 3xx status code
+func (o *CancelReportScheduleTooManyRequests) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this cancel report schedule too many requests response has a 4xx status code
+func (o *CancelReportScheduleTooManyRequests) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this cancel report schedule too many requests response has a 5xx status code
+func (o *CancelReportScheduleTooManyRequests) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this cancel report schedule too many requests response a status code equal to that given
+func (o *CancelReportScheduleTooManyRequests) IsCode(code int) bool {
+	return code == 429
+}
+
 func (o *CancelReportScheduleTooManyRequests) Error() string {
 	return fmt.Sprintf("[DELETE /reports/2020-09-04/schedules/{reportScheduleId}][%d] cancelReportScheduleTooManyRequests  %+v", 429, o.Payload)
 }
+
+func (o *CancelReportScheduleTooManyRequests) String() string {
+	return fmt.Sprintf("[DELETE /reports/2020-09-04/schedules/{reportScheduleId}][%d] cancelReportScheduleTooManyRequests  %+v", 429, o.Payload)
+}
+
 func (o *CancelReportScheduleTooManyRequests) GetPayload() *reports_2020_09_04_models.CancelReportScheduleResponse {
 	return o.Payload
 }
@@ -464,7 +681,8 @@ func NewCancelReportScheduleInternalServerError() *CancelReportScheduleInternalS
 	return &CancelReportScheduleInternalServerError{}
 }
 
-/* CancelReportScheduleInternalServerError describes a response with status code 500, with default header values.
+/*
+CancelReportScheduleInternalServerError describes a response with status code 500, with default header values.
 
 An unexpected condition occurred that prevented the server from fulfilling the request.
 */
@@ -482,9 +700,39 @@ type CancelReportScheduleInternalServerError struct {
 	Payload *reports_2020_09_04_models.CancelReportScheduleResponse
 }
 
+// IsSuccess returns true when this cancel report schedule internal server error response has a 2xx status code
+func (o *CancelReportScheduleInternalServerError) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this cancel report schedule internal server error response has a 3xx status code
+func (o *CancelReportScheduleInternalServerError) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this cancel report schedule internal server error response has a 4xx status code
+func (o *CancelReportScheduleInternalServerError) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this cancel report schedule internal server error response has a 5xx status code
+func (o *CancelReportScheduleInternalServerError) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this cancel report schedule internal server error response a status code equal to that given
+func (o *CancelReportScheduleInternalServerError) IsCode(code int) bool {
+	return code == 500
+}
+
 func (o *CancelReportScheduleInternalServerError) Error() string {
 	return fmt.Sprintf("[DELETE /reports/2020-09-04/schedules/{reportScheduleId}][%d] cancelReportScheduleInternalServerError  %+v", 500, o.Payload)
 }
+
+func (o *CancelReportScheduleInternalServerError) String() string {
+	return fmt.Sprintf("[DELETE /reports/2020-09-04/schedules/{reportScheduleId}][%d] cancelReportScheduleInternalServerError  %+v", 500, o.Payload)
+}
+
 func (o *CancelReportScheduleInternalServerError) GetPayload() *reports_2020_09_04_models.CancelReportScheduleResponse {
 	return o.Payload
 }
@@ -520,7 +768,8 @@ func NewCancelReportScheduleServiceUnavailable() *CancelReportScheduleServiceUna
 	return &CancelReportScheduleServiceUnavailable{}
 }
 
-/* CancelReportScheduleServiceUnavailable describes a response with status code 503, with default header values.
+/*
+CancelReportScheduleServiceUnavailable describes a response with status code 503, with default header values.
 
 Temporary overloading or maintenance of the server.
 */
@@ -538,9 +787,39 @@ type CancelReportScheduleServiceUnavailable struct {
 	Payload *reports_2020_09_04_models.CancelReportScheduleResponse
 }
 
+// IsSuccess returns true when this cancel report schedule service unavailable response has a 2xx status code
+func (o *CancelReportScheduleServiceUnavailable) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this cancel report schedule service unavailable response has a 3xx status code
+func (o *CancelReportScheduleServiceUnavailable) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this cancel report schedule service unavailable response has a 4xx status code
+func (o *CancelReportScheduleServiceUnavailable) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this cancel report schedule service unavailable response has a 5xx status code
+func (o *CancelReportScheduleServiceUnavailable) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this cancel report schedule service unavailable response a status code equal to that given
+func (o *CancelReportScheduleServiceUnavailable) IsCode(code int) bool {
+	return code == 503
+}
+
 func (o *CancelReportScheduleServiceUnavailable) Error() string {
 	return fmt.Sprintf("[DELETE /reports/2020-09-04/schedules/{reportScheduleId}][%d] cancelReportScheduleServiceUnavailable  %+v", 503, o.Payload)
 }
+
+func (o *CancelReportScheduleServiceUnavailable) String() string {
+	return fmt.Sprintf("[DELETE /reports/2020-09-04/schedules/{reportScheduleId}][%d] cancelReportScheduleServiceUnavailable  %+v", 503, o.Payload)
+}
+
 func (o *CancelReportScheduleServiceUnavailable) GetPayload() *reports_2020_09_04_models.CancelReportScheduleResponse {
 	return o.Payload
 }

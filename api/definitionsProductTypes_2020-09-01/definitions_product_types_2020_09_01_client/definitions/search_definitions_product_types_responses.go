@@ -87,7 +87,8 @@ func NewSearchDefinitionsProductTypesOK() *SearchDefinitionsProductTypesOK {
 	return &SearchDefinitionsProductTypesOK{}
 }
 
-/* SearchDefinitionsProductTypesOK describes a response with status code 200, with default header values.
+/*
+SearchDefinitionsProductTypesOK describes a response with status code 200, with default header values.
 
 Successfully retrieved a list of Amazon product types that have definitions available.
 */
@@ -104,9 +105,39 @@ type SearchDefinitionsProductTypesOK struct {
 	Payload *definitions_product_types_2020_09_01_models.ProductTypeList
 }
 
+// IsSuccess returns true when this search definitions product types o k response has a 2xx status code
+func (o *SearchDefinitionsProductTypesOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this search definitions product types o k response has a 3xx status code
+func (o *SearchDefinitionsProductTypesOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this search definitions product types o k response has a 4xx status code
+func (o *SearchDefinitionsProductTypesOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this search definitions product types o k response has a 5xx status code
+func (o *SearchDefinitionsProductTypesOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this search definitions product types o k response a status code equal to that given
+func (o *SearchDefinitionsProductTypesOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *SearchDefinitionsProductTypesOK) Error() string {
 	return fmt.Sprintf("[GET /definitions/2020-09-01/productTypes][%d] searchDefinitionsProductTypesOK  %+v", 200, o.Payload)
 }
+
+func (o *SearchDefinitionsProductTypesOK) String() string {
+	return fmt.Sprintf("[GET /definitions/2020-09-01/productTypes][%d] searchDefinitionsProductTypesOK  %+v", 200, o.Payload)
+}
+
 func (o *SearchDefinitionsProductTypesOK) GetPayload() *definitions_product_types_2020_09_01_models.ProductTypeList {
 	return o.Payload
 }
@@ -142,7 +173,8 @@ func NewSearchDefinitionsProductTypesBadRequest() *SearchDefinitionsProductTypes
 	return &SearchDefinitionsProductTypesBadRequest{}
 }
 
-/* SearchDefinitionsProductTypesBadRequest describes a response with status code 400, with default header values.
+/*
+SearchDefinitionsProductTypesBadRequest describes a response with status code 400, with default header values.
 
 Request has missing or invalid parameters and cannot be parsed.
 */
@@ -159,9 +191,39 @@ type SearchDefinitionsProductTypesBadRequest struct {
 	Payload *definitions_product_types_2020_09_01_models.ErrorList
 }
 
+// IsSuccess returns true when this search definitions product types bad request response has a 2xx status code
+func (o *SearchDefinitionsProductTypesBadRequest) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this search definitions product types bad request response has a 3xx status code
+func (o *SearchDefinitionsProductTypesBadRequest) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this search definitions product types bad request response has a 4xx status code
+func (o *SearchDefinitionsProductTypesBadRequest) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this search definitions product types bad request response has a 5xx status code
+func (o *SearchDefinitionsProductTypesBadRequest) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this search definitions product types bad request response a status code equal to that given
+func (o *SearchDefinitionsProductTypesBadRequest) IsCode(code int) bool {
+	return code == 400
+}
+
 func (o *SearchDefinitionsProductTypesBadRequest) Error() string {
 	return fmt.Sprintf("[GET /definitions/2020-09-01/productTypes][%d] searchDefinitionsProductTypesBadRequest  %+v", 400, o.Payload)
 }
+
+func (o *SearchDefinitionsProductTypesBadRequest) String() string {
+	return fmt.Sprintf("[GET /definitions/2020-09-01/productTypes][%d] searchDefinitionsProductTypesBadRequest  %+v", 400, o.Payload)
+}
+
 func (o *SearchDefinitionsProductTypesBadRequest) GetPayload() *definitions_product_types_2020_09_01_models.ErrorList {
 	return o.Payload
 }
@@ -197,7 +259,8 @@ func NewSearchDefinitionsProductTypesForbidden() *SearchDefinitionsProductTypesF
 	return &SearchDefinitionsProductTypesForbidden{}
 }
 
-/* SearchDefinitionsProductTypesForbidden describes a response with status code 403, with default header values.
+/*
+SearchDefinitionsProductTypesForbidden describes a response with status code 403, with default header values.
 
 Indicates that access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.
 */
@@ -210,9 +273,39 @@ type SearchDefinitionsProductTypesForbidden struct {
 	Payload *definitions_product_types_2020_09_01_models.ErrorList
 }
 
+// IsSuccess returns true when this search definitions product types forbidden response has a 2xx status code
+func (o *SearchDefinitionsProductTypesForbidden) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this search definitions product types forbidden response has a 3xx status code
+func (o *SearchDefinitionsProductTypesForbidden) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this search definitions product types forbidden response has a 4xx status code
+func (o *SearchDefinitionsProductTypesForbidden) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this search definitions product types forbidden response has a 5xx status code
+func (o *SearchDefinitionsProductTypesForbidden) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this search definitions product types forbidden response a status code equal to that given
+func (o *SearchDefinitionsProductTypesForbidden) IsCode(code int) bool {
+	return code == 403
+}
+
 func (o *SearchDefinitionsProductTypesForbidden) Error() string {
 	return fmt.Sprintf("[GET /definitions/2020-09-01/productTypes][%d] searchDefinitionsProductTypesForbidden  %+v", 403, o.Payload)
 }
+
+func (o *SearchDefinitionsProductTypesForbidden) String() string {
+	return fmt.Sprintf("[GET /definitions/2020-09-01/productTypes][%d] searchDefinitionsProductTypesForbidden  %+v", 403, o.Payload)
+}
+
 func (o *SearchDefinitionsProductTypesForbidden) GetPayload() *definitions_product_types_2020_09_01_models.ErrorList {
 	return o.Payload
 }
@@ -241,7 +334,8 @@ func NewSearchDefinitionsProductTypesNotFound() *SearchDefinitionsProductTypesNo
 	return &SearchDefinitionsProductTypesNotFound{}
 }
 
-/* SearchDefinitionsProductTypesNotFound describes a response with status code 404, with default header values.
+/*
+SearchDefinitionsProductTypesNotFound describes a response with status code 404, with default header values.
 
 The resource specified does not exist.
 */
@@ -258,9 +352,39 @@ type SearchDefinitionsProductTypesNotFound struct {
 	Payload *definitions_product_types_2020_09_01_models.ErrorList
 }
 
+// IsSuccess returns true when this search definitions product types not found response has a 2xx status code
+func (o *SearchDefinitionsProductTypesNotFound) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this search definitions product types not found response has a 3xx status code
+func (o *SearchDefinitionsProductTypesNotFound) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this search definitions product types not found response has a 4xx status code
+func (o *SearchDefinitionsProductTypesNotFound) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this search definitions product types not found response has a 5xx status code
+func (o *SearchDefinitionsProductTypesNotFound) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this search definitions product types not found response a status code equal to that given
+func (o *SearchDefinitionsProductTypesNotFound) IsCode(code int) bool {
+	return code == 404
+}
+
 func (o *SearchDefinitionsProductTypesNotFound) Error() string {
 	return fmt.Sprintf("[GET /definitions/2020-09-01/productTypes][%d] searchDefinitionsProductTypesNotFound  %+v", 404, o.Payload)
 }
+
+func (o *SearchDefinitionsProductTypesNotFound) String() string {
+	return fmt.Sprintf("[GET /definitions/2020-09-01/productTypes][%d] searchDefinitionsProductTypesNotFound  %+v", 404, o.Payload)
+}
+
 func (o *SearchDefinitionsProductTypesNotFound) GetPayload() *definitions_product_types_2020_09_01_models.ErrorList {
 	return o.Payload
 }
@@ -296,7 +420,8 @@ func NewSearchDefinitionsProductTypesRequestEntityTooLarge() *SearchDefinitionsP
 	return &SearchDefinitionsProductTypesRequestEntityTooLarge{}
 }
 
-/* SearchDefinitionsProductTypesRequestEntityTooLarge describes a response with status code 413, with default header values.
+/*
+SearchDefinitionsProductTypesRequestEntityTooLarge describes a response with status code 413, with default header values.
 
 The request size exceeded the maximum accepted size.
 */
@@ -314,9 +439,39 @@ type SearchDefinitionsProductTypesRequestEntityTooLarge struct {
 	Payload *definitions_product_types_2020_09_01_models.ErrorList
 }
 
+// IsSuccess returns true when this search definitions product types request entity too large response has a 2xx status code
+func (o *SearchDefinitionsProductTypesRequestEntityTooLarge) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this search definitions product types request entity too large response has a 3xx status code
+func (o *SearchDefinitionsProductTypesRequestEntityTooLarge) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this search definitions product types request entity too large response has a 4xx status code
+func (o *SearchDefinitionsProductTypesRequestEntityTooLarge) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this search definitions product types request entity too large response has a 5xx status code
+func (o *SearchDefinitionsProductTypesRequestEntityTooLarge) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this search definitions product types request entity too large response a status code equal to that given
+func (o *SearchDefinitionsProductTypesRequestEntityTooLarge) IsCode(code int) bool {
+	return code == 413
+}
+
 func (o *SearchDefinitionsProductTypesRequestEntityTooLarge) Error() string {
 	return fmt.Sprintf("[GET /definitions/2020-09-01/productTypes][%d] searchDefinitionsProductTypesRequestEntityTooLarge  %+v", 413, o.Payload)
 }
+
+func (o *SearchDefinitionsProductTypesRequestEntityTooLarge) String() string {
+	return fmt.Sprintf("[GET /definitions/2020-09-01/productTypes][%d] searchDefinitionsProductTypesRequestEntityTooLarge  %+v", 413, o.Payload)
+}
+
 func (o *SearchDefinitionsProductTypesRequestEntityTooLarge) GetPayload() *definitions_product_types_2020_09_01_models.ErrorList {
 	return o.Payload
 }
@@ -352,7 +507,8 @@ func NewSearchDefinitionsProductTypesUnsupportedMediaType() *SearchDefinitionsPr
 	return &SearchDefinitionsProductTypesUnsupportedMediaType{}
 }
 
-/* SearchDefinitionsProductTypesUnsupportedMediaType describes a response with status code 415, with default header values.
+/*
+SearchDefinitionsProductTypesUnsupportedMediaType describes a response with status code 415, with default header values.
 
 The request payload is in an unsupported format.
 */
@@ -370,9 +526,39 @@ type SearchDefinitionsProductTypesUnsupportedMediaType struct {
 	Payload *definitions_product_types_2020_09_01_models.ErrorList
 }
 
+// IsSuccess returns true when this search definitions product types unsupported media type response has a 2xx status code
+func (o *SearchDefinitionsProductTypesUnsupportedMediaType) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this search definitions product types unsupported media type response has a 3xx status code
+func (o *SearchDefinitionsProductTypesUnsupportedMediaType) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this search definitions product types unsupported media type response has a 4xx status code
+func (o *SearchDefinitionsProductTypesUnsupportedMediaType) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this search definitions product types unsupported media type response has a 5xx status code
+func (o *SearchDefinitionsProductTypesUnsupportedMediaType) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this search definitions product types unsupported media type response a status code equal to that given
+func (o *SearchDefinitionsProductTypesUnsupportedMediaType) IsCode(code int) bool {
+	return code == 415
+}
+
 func (o *SearchDefinitionsProductTypesUnsupportedMediaType) Error() string {
 	return fmt.Sprintf("[GET /definitions/2020-09-01/productTypes][%d] searchDefinitionsProductTypesUnsupportedMediaType  %+v", 415, o.Payload)
 }
+
+func (o *SearchDefinitionsProductTypesUnsupportedMediaType) String() string {
+	return fmt.Sprintf("[GET /definitions/2020-09-01/productTypes][%d] searchDefinitionsProductTypesUnsupportedMediaType  %+v", 415, o.Payload)
+}
+
 func (o *SearchDefinitionsProductTypesUnsupportedMediaType) GetPayload() *definitions_product_types_2020_09_01_models.ErrorList {
 	return o.Payload
 }
@@ -408,7 +594,8 @@ func NewSearchDefinitionsProductTypesTooManyRequests() *SearchDefinitionsProduct
 	return &SearchDefinitionsProductTypesTooManyRequests{}
 }
 
-/* SearchDefinitionsProductTypesTooManyRequests describes a response with status code 429, with default header values.
+/*
+SearchDefinitionsProductTypesTooManyRequests describes a response with status code 429, with default header values.
 
 The frequency of requests was greater than allowed.
 */
@@ -421,9 +608,39 @@ type SearchDefinitionsProductTypesTooManyRequests struct {
 	Payload *definitions_product_types_2020_09_01_models.ErrorList
 }
 
+// IsSuccess returns true when this search definitions product types too many requests response has a 2xx status code
+func (o *SearchDefinitionsProductTypesTooManyRequests) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this search definitions product types too many requests response has a 3xx status code
+func (o *SearchDefinitionsProductTypesTooManyRequests) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this search definitions product types too many requests response has a 4xx status code
+func (o *SearchDefinitionsProductTypesTooManyRequests) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this search definitions product types too many requests response has a 5xx status code
+func (o *SearchDefinitionsProductTypesTooManyRequests) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this search definitions product types too many requests response a status code equal to that given
+func (o *SearchDefinitionsProductTypesTooManyRequests) IsCode(code int) bool {
+	return code == 429
+}
+
 func (o *SearchDefinitionsProductTypesTooManyRequests) Error() string {
 	return fmt.Sprintf("[GET /definitions/2020-09-01/productTypes][%d] searchDefinitionsProductTypesTooManyRequests  %+v", 429, o.Payload)
 }
+
+func (o *SearchDefinitionsProductTypesTooManyRequests) String() string {
+	return fmt.Sprintf("[GET /definitions/2020-09-01/productTypes][%d] searchDefinitionsProductTypesTooManyRequests  %+v", 429, o.Payload)
+}
+
 func (o *SearchDefinitionsProductTypesTooManyRequests) GetPayload() *definitions_product_types_2020_09_01_models.ErrorList {
 	return o.Payload
 }
@@ -452,7 +669,8 @@ func NewSearchDefinitionsProductTypesInternalServerError() *SearchDefinitionsPro
 	return &SearchDefinitionsProductTypesInternalServerError{}
 }
 
-/* SearchDefinitionsProductTypesInternalServerError describes a response with status code 500, with default header values.
+/*
+SearchDefinitionsProductTypesInternalServerError describes a response with status code 500, with default header values.
 
 An unexpected condition occurred that prevented the server from fulfilling the request.
 */
@@ -470,9 +688,39 @@ type SearchDefinitionsProductTypesInternalServerError struct {
 	Payload *definitions_product_types_2020_09_01_models.ErrorList
 }
 
+// IsSuccess returns true when this search definitions product types internal server error response has a 2xx status code
+func (o *SearchDefinitionsProductTypesInternalServerError) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this search definitions product types internal server error response has a 3xx status code
+func (o *SearchDefinitionsProductTypesInternalServerError) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this search definitions product types internal server error response has a 4xx status code
+func (o *SearchDefinitionsProductTypesInternalServerError) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this search definitions product types internal server error response has a 5xx status code
+func (o *SearchDefinitionsProductTypesInternalServerError) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this search definitions product types internal server error response a status code equal to that given
+func (o *SearchDefinitionsProductTypesInternalServerError) IsCode(code int) bool {
+	return code == 500
+}
+
 func (o *SearchDefinitionsProductTypesInternalServerError) Error() string {
 	return fmt.Sprintf("[GET /definitions/2020-09-01/productTypes][%d] searchDefinitionsProductTypesInternalServerError  %+v", 500, o.Payload)
 }
+
+func (o *SearchDefinitionsProductTypesInternalServerError) String() string {
+	return fmt.Sprintf("[GET /definitions/2020-09-01/productTypes][%d] searchDefinitionsProductTypesInternalServerError  %+v", 500, o.Payload)
+}
+
 func (o *SearchDefinitionsProductTypesInternalServerError) GetPayload() *definitions_product_types_2020_09_01_models.ErrorList {
 	return o.Payload
 }
@@ -508,7 +756,8 @@ func NewSearchDefinitionsProductTypesServiceUnavailable() *SearchDefinitionsProd
 	return &SearchDefinitionsProductTypesServiceUnavailable{}
 }
 
-/* SearchDefinitionsProductTypesServiceUnavailable describes a response with status code 503, with default header values.
+/*
+SearchDefinitionsProductTypesServiceUnavailable describes a response with status code 503, with default header values.
 
 Temporary overloading or maintenance of the server.
 */
@@ -526,9 +775,39 @@ type SearchDefinitionsProductTypesServiceUnavailable struct {
 	Payload *definitions_product_types_2020_09_01_models.ErrorList
 }
 
+// IsSuccess returns true when this search definitions product types service unavailable response has a 2xx status code
+func (o *SearchDefinitionsProductTypesServiceUnavailable) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this search definitions product types service unavailable response has a 3xx status code
+func (o *SearchDefinitionsProductTypesServiceUnavailable) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this search definitions product types service unavailable response has a 4xx status code
+func (o *SearchDefinitionsProductTypesServiceUnavailable) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this search definitions product types service unavailable response has a 5xx status code
+func (o *SearchDefinitionsProductTypesServiceUnavailable) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this search definitions product types service unavailable response a status code equal to that given
+func (o *SearchDefinitionsProductTypesServiceUnavailable) IsCode(code int) bool {
+	return code == 503
+}
+
 func (o *SearchDefinitionsProductTypesServiceUnavailable) Error() string {
 	return fmt.Sprintf("[GET /definitions/2020-09-01/productTypes][%d] searchDefinitionsProductTypesServiceUnavailable  %+v", 503, o.Payload)
 }
+
+func (o *SearchDefinitionsProductTypesServiceUnavailable) String() string {
+	return fmt.Sprintf("[GET /definitions/2020-09-01/productTypes][%d] searchDefinitionsProductTypesServiceUnavailable  %+v", 503, o.Payload)
+}
+
 func (o *SearchDefinitionsProductTypesServiceUnavailable) GetPayload() *definitions_product_types_2020_09_01_models.ErrorList {
 	return o.Payload
 }

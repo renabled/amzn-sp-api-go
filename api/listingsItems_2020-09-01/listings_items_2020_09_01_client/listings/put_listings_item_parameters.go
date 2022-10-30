@@ -55,10 +55,12 @@ func NewPutListingsItemParamsWithHTTPClient(client *http.Client) *PutListingsIte
 	}
 }
 
-/* PutListingsItemParams contains all the parameters to send to the API endpoint
-   for the put listings item operation.
+/*
+PutListingsItemParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the put listings item operation.
+
+	Typically these are written to a http.Request.
 */
 type PutListingsItemParams struct {
 

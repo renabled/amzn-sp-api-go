@@ -81,7 +81,8 @@ func NewGetMyFeesEstimatesOK() *GetMyFeesEstimatesOK {
 	return &GetMyFeesEstimatesOK{}
 }
 
-/* GetMyFeesEstimatesOK describes a response with status code 200, with default header values.
+/*
+GetMyFeesEstimatesOK describes a response with status code 200, with default header values.
 
 Success.
 */
@@ -98,9 +99,39 @@ type GetMyFeesEstimatesOK struct {
 	Payload product_fees_v0_models.GetMyFeesEstimatesResponse
 }
 
+// IsSuccess returns true when this get my fees estimates o k response has a 2xx status code
+func (o *GetMyFeesEstimatesOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this get my fees estimates o k response has a 3xx status code
+func (o *GetMyFeesEstimatesOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get my fees estimates o k response has a 4xx status code
+func (o *GetMyFeesEstimatesOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get my fees estimates o k response has a 5xx status code
+func (o *GetMyFeesEstimatesOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get my fees estimates o k response a status code equal to that given
+func (o *GetMyFeesEstimatesOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *GetMyFeesEstimatesOK) Error() string {
 	return fmt.Sprintf("[POST /products/fees/v0/feesEstimate][%d] getMyFeesEstimatesOK  %+v", 200, o.Payload)
 }
+
+func (o *GetMyFeesEstimatesOK) String() string {
+	return fmt.Sprintf("[POST /products/fees/v0/feesEstimate][%d] getMyFeesEstimatesOK  %+v", 200, o.Payload)
+}
+
 func (o *GetMyFeesEstimatesOK) GetPayload() product_fees_v0_models.GetMyFeesEstimatesResponse {
 	return o.Payload
 }
@@ -134,7 +165,8 @@ func NewGetMyFeesEstimatesBadRequest() *GetMyFeesEstimatesBadRequest {
 	return &GetMyFeesEstimatesBadRequest{}
 }
 
-/* GetMyFeesEstimatesBadRequest describes a response with status code 400, with default header values.
+/*
+GetMyFeesEstimatesBadRequest describes a response with status code 400, with default header values.
 
 Request has missing or invalid parameters and cannot be parsed.
 */
@@ -151,9 +183,39 @@ type GetMyFeesEstimatesBadRequest struct {
 	Payload *product_fees_v0_models.GetMyFeesEstimatesErrorList
 }
 
+// IsSuccess returns true when this get my fees estimates bad request response has a 2xx status code
+func (o *GetMyFeesEstimatesBadRequest) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get my fees estimates bad request response has a 3xx status code
+func (o *GetMyFeesEstimatesBadRequest) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get my fees estimates bad request response has a 4xx status code
+func (o *GetMyFeesEstimatesBadRequest) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get my fees estimates bad request response has a 5xx status code
+func (o *GetMyFeesEstimatesBadRequest) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get my fees estimates bad request response a status code equal to that given
+func (o *GetMyFeesEstimatesBadRequest) IsCode(code int) bool {
+	return code == 400
+}
+
 func (o *GetMyFeesEstimatesBadRequest) Error() string {
 	return fmt.Sprintf("[POST /products/fees/v0/feesEstimate][%d] getMyFeesEstimatesBadRequest  %+v", 400, o.Payload)
 }
+
+func (o *GetMyFeesEstimatesBadRequest) String() string {
+	return fmt.Sprintf("[POST /products/fees/v0/feesEstimate][%d] getMyFeesEstimatesBadRequest  %+v", 400, o.Payload)
+}
+
 func (o *GetMyFeesEstimatesBadRequest) GetPayload() *product_fees_v0_models.GetMyFeesEstimatesErrorList {
 	return o.Payload
 }
@@ -189,7 +251,8 @@ func NewGetMyFeesEstimatesUnauthorized() *GetMyFeesEstimatesUnauthorized {
 	return &GetMyFeesEstimatesUnauthorized{}
 }
 
-/* GetMyFeesEstimatesUnauthorized describes a response with status code 401, with default header values.
+/*
+GetMyFeesEstimatesUnauthorized describes a response with status code 401, with default header values.
 
 The request's Authorization header is not formatted correctly or does not contain a valid token.
 */
@@ -207,9 +270,39 @@ type GetMyFeesEstimatesUnauthorized struct {
 	Payload *product_fees_v0_models.GetMyFeesEstimatesErrorList
 }
 
+// IsSuccess returns true when this get my fees estimates unauthorized response has a 2xx status code
+func (o *GetMyFeesEstimatesUnauthorized) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get my fees estimates unauthorized response has a 3xx status code
+func (o *GetMyFeesEstimatesUnauthorized) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get my fees estimates unauthorized response has a 4xx status code
+func (o *GetMyFeesEstimatesUnauthorized) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get my fees estimates unauthorized response has a 5xx status code
+func (o *GetMyFeesEstimatesUnauthorized) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get my fees estimates unauthorized response a status code equal to that given
+func (o *GetMyFeesEstimatesUnauthorized) IsCode(code int) bool {
+	return code == 401
+}
+
 func (o *GetMyFeesEstimatesUnauthorized) Error() string {
 	return fmt.Sprintf("[POST /products/fees/v0/feesEstimate][%d] getMyFeesEstimatesUnauthorized  %+v", 401, o.Payload)
 }
+
+func (o *GetMyFeesEstimatesUnauthorized) String() string {
+	return fmt.Sprintf("[POST /products/fees/v0/feesEstimate][%d] getMyFeesEstimatesUnauthorized  %+v", 401, o.Payload)
+}
+
 func (o *GetMyFeesEstimatesUnauthorized) GetPayload() *product_fees_v0_models.GetMyFeesEstimatesErrorList {
 	return o.Payload
 }
@@ -245,7 +338,8 @@ func NewGetMyFeesEstimatesForbidden() *GetMyFeesEstimatesForbidden {
 	return &GetMyFeesEstimatesForbidden{}
 }
 
-/* GetMyFeesEstimatesForbidden describes a response with status code 403, with default header values.
+/*
+GetMyFeesEstimatesForbidden describes a response with status code 403, with default header values.
 
 Indicates access to the resource is forbidden. Possible reasons include **Access Denied**, **Unauthorized**, **Expired Token**, or **Invalid Signature**.
 */
@@ -258,9 +352,39 @@ type GetMyFeesEstimatesForbidden struct {
 	Payload *product_fees_v0_models.GetMyFeesEstimatesErrorList
 }
 
+// IsSuccess returns true when this get my fees estimates forbidden response has a 2xx status code
+func (o *GetMyFeesEstimatesForbidden) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get my fees estimates forbidden response has a 3xx status code
+func (o *GetMyFeesEstimatesForbidden) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get my fees estimates forbidden response has a 4xx status code
+func (o *GetMyFeesEstimatesForbidden) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get my fees estimates forbidden response has a 5xx status code
+func (o *GetMyFeesEstimatesForbidden) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get my fees estimates forbidden response a status code equal to that given
+func (o *GetMyFeesEstimatesForbidden) IsCode(code int) bool {
+	return code == 403
+}
+
 func (o *GetMyFeesEstimatesForbidden) Error() string {
 	return fmt.Sprintf("[POST /products/fees/v0/feesEstimate][%d] getMyFeesEstimatesForbidden  %+v", 403, o.Payload)
 }
+
+func (o *GetMyFeesEstimatesForbidden) String() string {
+	return fmt.Sprintf("[POST /products/fees/v0/feesEstimate][%d] getMyFeesEstimatesForbidden  %+v", 403, o.Payload)
+}
+
 func (o *GetMyFeesEstimatesForbidden) GetPayload() *product_fees_v0_models.GetMyFeesEstimatesErrorList {
 	return o.Payload
 }
@@ -289,7 +413,8 @@ func NewGetMyFeesEstimatesNotFound() *GetMyFeesEstimatesNotFound {
 	return &GetMyFeesEstimatesNotFound{}
 }
 
-/* GetMyFeesEstimatesNotFound describes a response with status code 404, with default header values.
+/*
+GetMyFeesEstimatesNotFound describes a response with status code 404, with default header values.
 
 The specified resource does not exist.
 */
@@ -306,9 +431,39 @@ type GetMyFeesEstimatesNotFound struct {
 	Payload *product_fees_v0_models.GetMyFeesEstimatesErrorList
 }
 
+// IsSuccess returns true when this get my fees estimates not found response has a 2xx status code
+func (o *GetMyFeesEstimatesNotFound) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get my fees estimates not found response has a 3xx status code
+func (o *GetMyFeesEstimatesNotFound) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get my fees estimates not found response has a 4xx status code
+func (o *GetMyFeesEstimatesNotFound) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get my fees estimates not found response has a 5xx status code
+func (o *GetMyFeesEstimatesNotFound) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get my fees estimates not found response a status code equal to that given
+func (o *GetMyFeesEstimatesNotFound) IsCode(code int) bool {
+	return code == 404
+}
+
 func (o *GetMyFeesEstimatesNotFound) Error() string {
 	return fmt.Sprintf("[POST /products/fees/v0/feesEstimate][%d] getMyFeesEstimatesNotFound  %+v", 404, o.Payload)
 }
+
+func (o *GetMyFeesEstimatesNotFound) String() string {
+	return fmt.Sprintf("[POST /products/fees/v0/feesEstimate][%d] getMyFeesEstimatesNotFound  %+v", 404, o.Payload)
+}
+
 func (o *GetMyFeesEstimatesNotFound) GetPayload() *product_fees_v0_models.GetMyFeesEstimatesErrorList {
 	return o.Payload
 }
@@ -344,7 +499,8 @@ func NewGetMyFeesEstimatesTooManyRequests() *GetMyFeesEstimatesTooManyRequests {
 	return &GetMyFeesEstimatesTooManyRequests{}
 }
 
-/* GetMyFeesEstimatesTooManyRequests describes a response with status code 429, with default header values.
+/*
+GetMyFeesEstimatesTooManyRequests describes a response with status code 429, with default header values.
 
 The frequency of requests was greater than allowed.
 */
@@ -362,9 +518,39 @@ type GetMyFeesEstimatesTooManyRequests struct {
 	Payload *product_fees_v0_models.GetMyFeesEstimatesErrorList
 }
 
+// IsSuccess returns true when this get my fees estimates too many requests response has a 2xx status code
+func (o *GetMyFeesEstimatesTooManyRequests) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get my fees estimates too many requests response has a 3xx status code
+func (o *GetMyFeesEstimatesTooManyRequests) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get my fees estimates too many requests response has a 4xx status code
+func (o *GetMyFeesEstimatesTooManyRequests) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get my fees estimates too many requests response has a 5xx status code
+func (o *GetMyFeesEstimatesTooManyRequests) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get my fees estimates too many requests response a status code equal to that given
+func (o *GetMyFeesEstimatesTooManyRequests) IsCode(code int) bool {
+	return code == 429
+}
+
 func (o *GetMyFeesEstimatesTooManyRequests) Error() string {
 	return fmt.Sprintf("[POST /products/fees/v0/feesEstimate][%d] getMyFeesEstimatesTooManyRequests  %+v", 429, o.Payload)
 }
+
+func (o *GetMyFeesEstimatesTooManyRequests) String() string {
+	return fmt.Sprintf("[POST /products/fees/v0/feesEstimate][%d] getMyFeesEstimatesTooManyRequests  %+v", 429, o.Payload)
+}
+
 func (o *GetMyFeesEstimatesTooManyRequests) GetPayload() *product_fees_v0_models.GetMyFeesEstimatesErrorList {
 	return o.Payload
 }
@@ -400,7 +586,8 @@ func NewGetMyFeesEstimatesInternalServerError() *GetMyFeesEstimatesInternalServe
 	return &GetMyFeesEstimatesInternalServerError{}
 }
 
-/* GetMyFeesEstimatesInternalServerError describes a response with status code 500, with default header values.
+/*
+GetMyFeesEstimatesInternalServerError describes a response with status code 500, with default header values.
 
 An unexpected condition occurred that prevented the server from fulfilling the request.
 */
@@ -418,9 +605,39 @@ type GetMyFeesEstimatesInternalServerError struct {
 	Payload *product_fees_v0_models.GetMyFeesEstimatesErrorList
 }
 
+// IsSuccess returns true when this get my fees estimates internal server error response has a 2xx status code
+func (o *GetMyFeesEstimatesInternalServerError) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get my fees estimates internal server error response has a 3xx status code
+func (o *GetMyFeesEstimatesInternalServerError) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get my fees estimates internal server error response has a 4xx status code
+func (o *GetMyFeesEstimatesInternalServerError) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get my fees estimates internal server error response has a 5xx status code
+func (o *GetMyFeesEstimatesInternalServerError) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this get my fees estimates internal server error response a status code equal to that given
+func (o *GetMyFeesEstimatesInternalServerError) IsCode(code int) bool {
+	return code == 500
+}
+
 func (o *GetMyFeesEstimatesInternalServerError) Error() string {
 	return fmt.Sprintf("[POST /products/fees/v0/feesEstimate][%d] getMyFeesEstimatesInternalServerError  %+v", 500, o.Payload)
 }
+
+func (o *GetMyFeesEstimatesInternalServerError) String() string {
+	return fmt.Sprintf("[POST /products/fees/v0/feesEstimate][%d] getMyFeesEstimatesInternalServerError  %+v", 500, o.Payload)
+}
+
 func (o *GetMyFeesEstimatesInternalServerError) GetPayload() *product_fees_v0_models.GetMyFeesEstimatesErrorList {
 	return o.Payload
 }
@@ -456,7 +673,8 @@ func NewGetMyFeesEstimatesServiceUnavailable() *GetMyFeesEstimatesServiceUnavail
 	return &GetMyFeesEstimatesServiceUnavailable{}
 }
 
-/* GetMyFeesEstimatesServiceUnavailable describes a response with status code 503, with default header values.
+/*
+GetMyFeesEstimatesServiceUnavailable describes a response with status code 503, with default header values.
 
 Temporary overloading or maintenance of the server.
 */
@@ -474,9 +692,39 @@ type GetMyFeesEstimatesServiceUnavailable struct {
 	Payload *product_fees_v0_models.GetMyFeesEstimatesErrorList
 }
 
+// IsSuccess returns true when this get my fees estimates service unavailable response has a 2xx status code
+func (o *GetMyFeesEstimatesServiceUnavailable) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get my fees estimates service unavailable response has a 3xx status code
+func (o *GetMyFeesEstimatesServiceUnavailable) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get my fees estimates service unavailable response has a 4xx status code
+func (o *GetMyFeesEstimatesServiceUnavailable) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get my fees estimates service unavailable response has a 5xx status code
+func (o *GetMyFeesEstimatesServiceUnavailable) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this get my fees estimates service unavailable response a status code equal to that given
+func (o *GetMyFeesEstimatesServiceUnavailable) IsCode(code int) bool {
+	return code == 503
+}
+
 func (o *GetMyFeesEstimatesServiceUnavailable) Error() string {
 	return fmt.Sprintf("[POST /products/fees/v0/feesEstimate][%d] getMyFeesEstimatesServiceUnavailable  %+v", 503, o.Payload)
 }
+
+func (o *GetMyFeesEstimatesServiceUnavailable) String() string {
+	return fmt.Sprintf("[POST /products/fees/v0/feesEstimate][%d] getMyFeesEstimatesServiceUnavailable  %+v", 503, o.Payload)
+}
+
 func (o *GetMyFeesEstimatesServiceUnavailable) GetPayload() *product_fees_v0_models.GetMyFeesEstimatesErrorList {
 	return o.Payload
 }

@@ -68,7 +68,7 @@ type ClientService interface {
 }
 
 /*
-  AddAppointmentForServiceJobByServiceJobID Adds an appointment to the service job indicated by the service job identifier specified.
+	AddAppointmentForServiceJobByServiceJobID Adds an appointment to the service job indicated by the service job identifier specified.
 
 **Usage Plan:**
 
@@ -114,7 +114,7 @@ func (a *Client) AddAppointmentForServiceJobByServiceJobID(params *AddAppointmen
 }
 
 /*
-  AssignAppointmentResources Assigns new resource(s) or overwrite/update the existing one(s) to a service job appointment.
+	AssignAppointmentResources Assigns new resource(s) or overwrite/update the existing one(s) to a service job appointment.
 
 **Usage Plan:**
 
@@ -160,7 +160,7 @@ func (a *Client) AssignAppointmentResources(params *AssignAppointmentResourcesPa
 }
 
 /*
-  CancelReservation Cancel a reservation.
+	CancelReservation Cancel a reservation.
 
 **Usage Plan:**
 
@@ -206,7 +206,7 @@ func (a *Client) CancelReservation(params *CancelReservationParams, opts ...Clie
 }
 
 /*
-  CancelServiceJobByServiceJobID Cancels the service job indicated by the service job identifier specified.
+	CancelServiceJobByServiceJobID Cancels the service job indicated by the service job identifier specified.
 
 **Usage Plan:**
 
@@ -252,7 +252,7 @@ func (a *Client) CancelServiceJobByServiceJobID(params *CancelServiceJobByServic
 }
 
 /*
-  CompleteServiceJobByServiceJobID Completes the service job indicated by the service job identifier specified.
+	CompleteServiceJobByServiceJobID Completes the service job indicated by the service job identifier specified.
 
 **Usage Plan:**
 
@@ -298,7 +298,7 @@ func (a *Client) CompleteServiceJobByServiceJobID(params *CompleteServiceJobBySe
 }
 
 /*
-  CreateReservation Create a reservation.
+	CreateReservation Create a reservation.
 
 **Usage Plan:**
 
@@ -344,7 +344,7 @@ func (a *Client) CreateReservation(params *CreateReservationParams, opts ...Clie
 }
 
 /*
-  CreateServiceDocumentUploadDestination Creates an upload destination.
+	CreateServiceDocumentUploadDestination Creates an upload destination.
 
 **Usage Plan:**
 
@@ -390,7 +390,7 @@ func (a *Client) CreateServiceDocumentUploadDestination(params *CreateServiceDoc
 }
 
 /*
-  GetAppointmentSlots Gets appointment slots as per the service context specified.
+	GetAppointmentSlots Gets appointment slots as per the service context specified.
 
 **Usage Plan:**
 
@@ -436,7 +436,7 @@ func (a *Client) GetAppointmentSlots(params *GetAppointmentSlotsParams, opts ...
 }
 
 /*
-  GetAppointmmentSlotsByJobID Gets appointment slots for the service associated with the service job id specified.
+	GetAppointmmentSlotsByJobID Gets appointment slots for the service associated with the service job id specified.
 
 **Usage Plan:**
 
@@ -482,7 +482,7 @@ func (a *Client) GetAppointmmentSlotsByJobID(params *GetAppointmmentSlotsByJobID
 }
 
 /*
-  GetFixedSlotCapacity Provides capacity in fixed-size slots.
+	GetFixedSlotCapacity Provides capacity in fixed-size slots.
 
 **Usage Plan:**
 
@@ -528,7 +528,7 @@ func (a *Client) GetFixedSlotCapacity(params *GetFixedSlotCapacityParams, opts .
 }
 
 /*
-  GetRangeSlotCapacity Provides capacity slots in a format similar to availability records.
+	GetRangeSlotCapacity Provides capacity slots in a format similar to availability records.
 
 **Usage Plan:**
 
@@ -574,7 +574,7 @@ func (a *Client) GetRangeSlotCapacity(params *GetRangeSlotCapacityParams, opts .
 }
 
 /*
-  GetServiceJobByServiceJobID Gets details of service job indicated by the provided `serviceJobID`.
+	GetServiceJobByServiceJobID Gets details of service job indicated by the provided `serviceJobID`.
 
 **Usage Plan:**
 
@@ -620,7 +620,7 @@ func (a *Client) GetServiceJobByServiceJobID(params *GetServiceJobByServiceJobID
 }
 
 /*
-  GetServiceJobs Gets service job details for the specified filter query.
+	GetServiceJobs Gets service job details for the specified filter query.
 
 **Usage Plan:**
 
@@ -666,7 +666,7 @@ func (a *Client) GetServiceJobs(params *GetServiceJobsParams, opts ...ClientOpti
 }
 
 /*
-  RescheduleAppointmentForServiceJobByServiceJobID Reschedules an appointment for the service job indicated by the service job identifier specified.
+	RescheduleAppointmentForServiceJobByServiceJobID Reschedules an appointment for the service job indicated by the service job identifier specified.
 
 **Usage Plan:**
 
@@ -712,7 +712,7 @@ func (a *Client) RescheduleAppointmentForServiceJobByServiceJobID(params *Resche
 }
 
 /*
-  SetAppointmentFulfillmentData Updates the appointment fulfillment data related to a given `jobID` and `appointmentID`.
+	SetAppointmentFulfillmentData Updates the appointment fulfillment data related to a given `jobID` and `appointmentID`.
 
 **Usage Plan:**
 
@@ -758,7 +758,7 @@ func (a *Client) SetAppointmentFulfillmentData(params *SetAppointmentFulfillment
 }
 
 /*
-  UpdateReservation Update a reservation.
+	UpdateReservation Update a reservation.
 
 **Usage Plan:**
 
@@ -804,7 +804,7 @@ func (a *Client) UpdateReservation(params *UpdateReservationParams, opts ...Clie
 }
 
 /*
-  UpdateSchedule Update the schedule of the given resource.
+	UpdateSchedule Update the schedule of the given resource.
 
 **Usage Plan:**
 

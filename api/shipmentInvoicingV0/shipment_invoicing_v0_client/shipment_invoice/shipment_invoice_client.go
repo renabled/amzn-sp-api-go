@@ -40,7 +40,7 @@ type ClientService interface {
 }
 
 /*
-  GetInvoiceStatus Returns the invoice status for the shipment you specify.
+	GetInvoiceStatus Returns the invoice status for the shipment you specify.
 
 **Usage Plans:**
 
@@ -87,7 +87,7 @@ func (a *Client) GetInvoiceStatus(params *GetInvoiceStatusParams, opts ...Client
 }
 
 /*
-  GetShipmentDetails Returns the shipment details required to issue an invoice for the specified shipment.
+	GetShipmentDetails Returns the shipment details required to issue an invoice for the specified shipment.
 
 **Usage Plans:**
 
@@ -134,7 +134,7 @@ func (a *Client) GetShipmentDetails(params *GetShipmentDetailsParams, opts ...Cl
 }
 
 /*
-  SubmitInvoice Submits a shipment invoice document for a given shipment.
+	SubmitInvoice Submits a shipment invoice document for a given shipment.
 
 **Usage Plans:**
 

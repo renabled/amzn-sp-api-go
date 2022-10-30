@@ -36,7 +36,7 @@ type ClientService interface {
 }
 
 /*
-  GetTransaction Returns the status of the transaction that you specify.
+	GetTransaction Returns the status of the transaction that you specify.
 
 **Usage Plans:**
 

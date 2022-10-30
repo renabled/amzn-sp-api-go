@@ -81,7 +81,8 @@ func NewGetPricingOK() *GetPricingOK {
 	return &GetPricingOK{}
 }
 
-/* GetPricingOK describes a response with status code 200, with default header values.
+/*
+GetPricingOK describes a response with status code 200, with default header values.
 
 Success.
 */
@@ -98,9 +99,39 @@ type GetPricingOK struct {
 	Payload *product_pricing_v0_models.GetPricingResponse
 }
 
+// IsSuccess returns true when this get pricing o k response has a 2xx status code
+func (o *GetPricingOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this get pricing o k response has a 3xx status code
+func (o *GetPricingOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get pricing o k response has a 4xx status code
+func (o *GetPricingOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get pricing o k response has a 5xx status code
+func (o *GetPricingOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get pricing o k response a status code equal to that given
+func (o *GetPricingOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *GetPricingOK) Error() string {
 	return fmt.Sprintf("[GET /products/pricing/v0/price][%d] getPricingOK  %+v", 200, o.Payload)
 }
+
+func (o *GetPricingOK) String() string {
+	return fmt.Sprintf("[GET /products/pricing/v0/price][%d] getPricingOK  %+v", 200, o.Payload)
+}
+
 func (o *GetPricingOK) GetPayload() *product_pricing_v0_models.GetPricingResponse {
 	return o.Payload
 }
@@ -136,7 +167,8 @@ func NewGetPricingBadRequest() *GetPricingBadRequest {
 	return &GetPricingBadRequest{}
 }
 
-/* GetPricingBadRequest describes a response with status code 400, with default header values.
+/*
+GetPricingBadRequest describes a response with status code 400, with default header values.
 
 Request has missing or invalid parameters and cannot be parsed.
 */
@@ -153,9 +185,39 @@ type GetPricingBadRequest struct {
 	Payload *product_pricing_v0_models.GetPricingResponse
 }
 
+// IsSuccess returns true when this get pricing bad request response has a 2xx status code
+func (o *GetPricingBadRequest) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get pricing bad request response has a 3xx status code
+func (o *GetPricingBadRequest) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get pricing bad request response has a 4xx status code
+func (o *GetPricingBadRequest) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get pricing bad request response has a 5xx status code
+func (o *GetPricingBadRequest) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get pricing bad request response a status code equal to that given
+func (o *GetPricingBadRequest) IsCode(code int) bool {
+	return code == 400
+}
+
 func (o *GetPricingBadRequest) Error() string {
 	return fmt.Sprintf("[GET /products/pricing/v0/price][%d] getPricingBadRequest  %+v", 400, o.Payload)
 }
+
+func (o *GetPricingBadRequest) String() string {
+	return fmt.Sprintf("[GET /products/pricing/v0/price][%d] getPricingBadRequest  %+v", 400, o.Payload)
+}
+
 func (o *GetPricingBadRequest) GetPayload() *product_pricing_v0_models.GetPricingResponse {
 	return o.Payload
 }
@@ -191,7 +253,8 @@ func NewGetPricingUnauthorized() *GetPricingUnauthorized {
 	return &GetPricingUnauthorized{}
 }
 
-/* GetPricingUnauthorized describes a response with status code 401, with default header values.
+/*
+GetPricingUnauthorized describes a response with status code 401, with default header values.
 
 The request's Authorization header is not formatted correctly or does not contain a valid token.
 */
@@ -209,9 +272,39 @@ type GetPricingUnauthorized struct {
 	Payload *product_pricing_v0_models.GetPricingResponse
 }
 
+// IsSuccess returns true when this get pricing unauthorized response has a 2xx status code
+func (o *GetPricingUnauthorized) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get pricing unauthorized response has a 3xx status code
+func (o *GetPricingUnauthorized) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get pricing unauthorized response has a 4xx status code
+func (o *GetPricingUnauthorized) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get pricing unauthorized response has a 5xx status code
+func (o *GetPricingUnauthorized) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get pricing unauthorized response a status code equal to that given
+func (o *GetPricingUnauthorized) IsCode(code int) bool {
+	return code == 401
+}
+
 func (o *GetPricingUnauthorized) Error() string {
 	return fmt.Sprintf("[GET /products/pricing/v0/price][%d] getPricingUnauthorized  %+v", 401, o.Payload)
 }
+
+func (o *GetPricingUnauthorized) String() string {
+	return fmt.Sprintf("[GET /products/pricing/v0/price][%d] getPricingUnauthorized  %+v", 401, o.Payload)
+}
+
 func (o *GetPricingUnauthorized) GetPayload() *product_pricing_v0_models.GetPricingResponse {
 	return o.Payload
 }
@@ -247,7 +340,8 @@ func NewGetPricingForbidden() *GetPricingForbidden {
 	return &GetPricingForbidden{}
 }
 
-/* GetPricingForbidden describes a response with status code 403, with default header values.
+/*
+GetPricingForbidden describes a response with status code 403, with default header values.
 
 Indicates access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.
 */
@@ -260,9 +354,39 @@ type GetPricingForbidden struct {
 	Payload *product_pricing_v0_models.GetPricingResponse
 }
 
+// IsSuccess returns true when this get pricing forbidden response has a 2xx status code
+func (o *GetPricingForbidden) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get pricing forbidden response has a 3xx status code
+func (o *GetPricingForbidden) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get pricing forbidden response has a 4xx status code
+func (o *GetPricingForbidden) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get pricing forbidden response has a 5xx status code
+func (o *GetPricingForbidden) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get pricing forbidden response a status code equal to that given
+func (o *GetPricingForbidden) IsCode(code int) bool {
+	return code == 403
+}
+
 func (o *GetPricingForbidden) Error() string {
 	return fmt.Sprintf("[GET /products/pricing/v0/price][%d] getPricingForbidden  %+v", 403, o.Payload)
 }
+
+func (o *GetPricingForbidden) String() string {
+	return fmt.Sprintf("[GET /products/pricing/v0/price][%d] getPricingForbidden  %+v", 403, o.Payload)
+}
+
 func (o *GetPricingForbidden) GetPayload() *product_pricing_v0_models.GetPricingResponse {
 	return o.Payload
 }
@@ -291,7 +415,8 @@ func NewGetPricingNotFound() *GetPricingNotFound {
 	return &GetPricingNotFound{}
 }
 
-/* GetPricingNotFound describes a response with status code 404, with default header values.
+/*
+GetPricingNotFound describes a response with status code 404, with default header values.
 
 The specified resource does not exist.
 */
@@ -308,9 +433,39 @@ type GetPricingNotFound struct {
 	Payload *product_pricing_v0_models.GetPricingResponse
 }
 
+// IsSuccess returns true when this get pricing not found response has a 2xx status code
+func (o *GetPricingNotFound) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get pricing not found response has a 3xx status code
+func (o *GetPricingNotFound) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get pricing not found response has a 4xx status code
+func (o *GetPricingNotFound) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get pricing not found response has a 5xx status code
+func (o *GetPricingNotFound) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get pricing not found response a status code equal to that given
+func (o *GetPricingNotFound) IsCode(code int) bool {
+	return code == 404
+}
+
 func (o *GetPricingNotFound) Error() string {
 	return fmt.Sprintf("[GET /products/pricing/v0/price][%d] getPricingNotFound  %+v", 404, o.Payload)
 }
+
+func (o *GetPricingNotFound) String() string {
+	return fmt.Sprintf("[GET /products/pricing/v0/price][%d] getPricingNotFound  %+v", 404, o.Payload)
+}
+
 func (o *GetPricingNotFound) GetPayload() *product_pricing_v0_models.GetPricingResponse {
 	return o.Payload
 }
@@ -346,7 +501,8 @@ func NewGetPricingTooManyRequests() *GetPricingTooManyRequests {
 	return &GetPricingTooManyRequests{}
 }
 
-/* GetPricingTooManyRequests describes a response with status code 429, with default header values.
+/*
+GetPricingTooManyRequests describes a response with status code 429, with default header values.
 
 The frequency of requests was greater than allowed.
 */
@@ -364,9 +520,39 @@ type GetPricingTooManyRequests struct {
 	Payload *product_pricing_v0_models.GetPricingResponse
 }
 
+// IsSuccess returns true when this get pricing too many requests response has a 2xx status code
+func (o *GetPricingTooManyRequests) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get pricing too many requests response has a 3xx status code
+func (o *GetPricingTooManyRequests) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get pricing too many requests response has a 4xx status code
+func (o *GetPricingTooManyRequests) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get pricing too many requests response has a 5xx status code
+func (o *GetPricingTooManyRequests) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get pricing too many requests response a status code equal to that given
+func (o *GetPricingTooManyRequests) IsCode(code int) bool {
+	return code == 429
+}
+
 func (o *GetPricingTooManyRequests) Error() string {
 	return fmt.Sprintf("[GET /products/pricing/v0/price][%d] getPricingTooManyRequests  %+v", 429, o.Payload)
 }
+
+func (o *GetPricingTooManyRequests) String() string {
+	return fmt.Sprintf("[GET /products/pricing/v0/price][%d] getPricingTooManyRequests  %+v", 429, o.Payload)
+}
+
 func (o *GetPricingTooManyRequests) GetPayload() *product_pricing_v0_models.GetPricingResponse {
 	return o.Payload
 }
@@ -402,7 +588,8 @@ func NewGetPricingInternalServerError() *GetPricingInternalServerError {
 	return &GetPricingInternalServerError{}
 }
 
-/* GetPricingInternalServerError describes a response with status code 500, with default header values.
+/*
+GetPricingInternalServerError describes a response with status code 500, with default header values.
 
 An unexpected condition occurred that prevented the server from fulfilling the request.
 */
@@ -420,9 +607,39 @@ type GetPricingInternalServerError struct {
 	Payload *product_pricing_v0_models.GetPricingResponse
 }
 
+// IsSuccess returns true when this get pricing internal server error response has a 2xx status code
+func (o *GetPricingInternalServerError) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get pricing internal server error response has a 3xx status code
+func (o *GetPricingInternalServerError) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get pricing internal server error response has a 4xx status code
+func (o *GetPricingInternalServerError) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get pricing internal server error response has a 5xx status code
+func (o *GetPricingInternalServerError) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this get pricing internal server error response a status code equal to that given
+func (o *GetPricingInternalServerError) IsCode(code int) bool {
+	return code == 500
+}
+
 func (o *GetPricingInternalServerError) Error() string {
 	return fmt.Sprintf("[GET /products/pricing/v0/price][%d] getPricingInternalServerError  %+v", 500, o.Payload)
 }
+
+func (o *GetPricingInternalServerError) String() string {
+	return fmt.Sprintf("[GET /products/pricing/v0/price][%d] getPricingInternalServerError  %+v", 500, o.Payload)
+}
+
 func (o *GetPricingInternalServerError) GetPayload() *product_pricing_v0_models.GetPricingResponse {
 	return o.Payload
 }
@@ -458,7 +675,8 @@ func NewGetPricingServiceUnavailable() *GetPricingServiceUnavailable {
 	return &GetPricingServiceUnavailable{}
 }
 
-/* GetPricingServiceUnavailable describes a response with status code 503, with default header values.
+/*
+GetPricingServiceUnavailable describes a response with status code 503, with default header values.
 
 Temporary overloading or maintenance of the server.
 */
@@ -476,9 +694,39 @@ type GetPricingServiceUnavailable struct {
 	Payload *product_pricing_v0_models.GetPricingResponse
 }
 
+// IsSuccess returns true when this get pricing service unavailable response has a 2xx status code
+func (o *GetPricingServiceUnavailable) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get pricing service unavailable response has a 3xx status code
+func (o *GetPricingServiceUnavailable) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get pricing service unavailable response has a 4xx status code
+func (o *GetPricingServiceUnavailable) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get pricing service unavailable response has a 5xx status code
+func (o *GetPricingServiceUnavailable) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this get pricing service unavailable response a status code equal to that given
+func (o *GetPricingServiceUnavailable) IsCode(code int) bool {
+	return code == 503
+}
+
 func (o *GetPricingServiceUnavailable) Error() string {
 	return fmt.Sprintf("[GET /products/pricing/v0/price][%d] getPricingServiceUnavailable  %+v", 503, o.Payload)
 }
+
+func (o *GetPricingServiceUnavailable) String() string {
+	return fmt.Sprintf("[GET /products/pricing/v0/price][%d] getPricingServiceUnavailable  %+v", 503, o.Payload)
+}
+
 func (o *GetPricingServiceUnavailable) GetPayload() *product_pricing_v0_models.GetPricingResponse {
 	return o.Payload
 }

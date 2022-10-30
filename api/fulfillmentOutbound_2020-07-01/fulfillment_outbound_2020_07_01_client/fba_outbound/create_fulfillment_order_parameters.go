@@ -54,10 +54,12 @@ func NewCreateFulfillmentOrderParamsWithHTTPClient(client *http.Client) *CreateF
 	}
 }
 
-/* CreateFulfillmentOrderParams contains all the parameters to send to the API endpoint
-   for the create fulfillment order operation.
+/*
+CreateFulfillmentOrderParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the create fulfillment order operation.
+
+	Typically these are written to a http.Request.
 */
 type CreateFulfillmentOrderParams struct {
 

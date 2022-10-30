@@ -87,7 +87,8 @@ func NewUpdateContentDocumentOK() *UpdateContentDocumentOK {
 	return &UpdateContentDocumentOK{}
 }
 
-/* UpdateContentDocumentOK describes a response with status code 200, with default header values.
+/*
+UpdateContentDocumentOK describes a response with status code 200, with default header values.
 
 Success.
 */
@@ -104,9 +105,39 @@ type UpdateContentDocumentOK struct {
 	Payload *aplus_content_2020_11_01_models.PostContentDocumentResponse
 }
 
+// IsSuccess returns true when this update content document o k response has a 2xx status code
+func (o *UpdateContentDocumentOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this update content document o k response has a 3xx status code
+func (o *UpdateContentDocumentOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this update content document o k response has a 4xx status code
+func (o *UpdateContentDocumentOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this update content document o k response has a 5xx status code
+func (o *UpdateContentDocumentOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this update content document o k response a status code equal to that given
+func (o *UpdateContentDocumentOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *UpdateContentDocumentOK) Error() string {
 	return fmt.Sprintf("[POST /aplus/2020-11-01/contentDocuments/{contentReferenceKey}][%d] updateContentDocumentOK  %+v", 200, o.Payload)
 }
+
+func (o *UpdateContentDocumentOK) String() string {
+	return fmt.Sprintf("[POST /aplus/2020-11-01/contentDocuments/{contentReferenceKey}][%d] updateContentDocumentOK  %+v", 200, o.Payload)
+}
+
 func (o *UpdateContentDocumentOK) GetPayload() *aplus_content_2020_11_01_models.PostContentDocumentResponse {
 	return o.Payload
 }
@@ -142,7 +173,8 @@ func NewUpdateContentDocumentBadRequest() *UpdateContentDocumentBadRequest {
 	return &UpdateContentDocumentBadRequest{}
 }
 
-/* UpdateContentDocumentBadRequest describes a response with status code 400, with default header values.
+/*
+UpdateContentDocumentBadRequest describes a response with status code 400, with default header values.
 
 Request has missing or invalid parameters and cannot be parsed.
 */
@@ -159,9 +191,39 @@ type UpdateContentDocumentBadRequest struct {
 	Payload *aplus_content_2020_11_01_models.ErrorList
 }
 
+// IsSuccess returns true when this update content document bad request response has a 2xx status code
+func (o *UpdateContentDocumentBadRequest) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this update content document bad request response has a 3xx status code
+func (o *UpdateContentDocumentBadRequest) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this update content document bad request response has a 4xx status code
+func (o *UpdateContentDocumentBadRequest) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this update content document bad request response has a 5xx status code
+func (o *UpdateContentDocumentBadRequest) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this update content document bad request response a status code equal to that given
+func (o *UpdateContentDocumentBadRequest) IsCode(code int) bool {
+	return code == 400
+}
+
 func (o *UpdateContentDocumentBadRequest) Error() string {
 	return fmt.Sprintf("[POST /aplus/2020-11-01/contentDocuments/{contentReferenceKey}][%d] updateContentDocumentBadRequest  %+v", 400, o.Payload)
 }
+
+func (o *UpdateContentDocumentBadRequest) String() string {
+	return fmt.Sprintf("[POST /aplus/2020-11-01/contentDocuments/{contentReferenceKey}][%d] updateContentDocumentBadRequest  %+v", 400, o.Payload)
+}
+
 func (o *UpdateContentDocumentBadRequest) GetPayload() *aplus_content_2020_11_01_models.ErrorList {
 	return o.Payload
 }
@@ -197,7 +259,8 @@ func NewUpdateContentDocumentUnauthorized() *UpdateContentDocumentUnauthorized {
 	return &UpdateContentDocumentUnauthorized{}
 }
 
-/* UpdateContentDocumentUnauthorized describes a response with status code 401, with default header values.
+/*
+UpdateContentDocumentUnauthorized describes a response with status code 401, with default header values.
 
 The request's Authorization header is not formatted correctly or does not contain a valid token.
 */
@@ -215,9 +278,39 @@ type UpdateContentDocumentUnauthorized struct {
 	Payload *aplus_content_2020_11_01_models.ErrorList
 }
 
+// IsSuccess returns true when this update content document unauthorized response has a 2xx status code
+func (o *UpdateContentDocumentUnauthorized) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this update content document unauthorized response has a 3xx status code
+func (o *UpdateContentDocumentUnauthorized) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this update content document unauthorized response has a 4xx status code
+func (o *UpdateContentDocumentUnauthorized) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this update content document unauthorized response has a 5xx status code
+func (o *UpdateContentDocumentUnauthorized) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this update content document unauthorized response a status code equal to that given
+func (o *UpdateContentDocumentUnauthorized) IsCode(code int) bool {
+	return code == 401
+}
+
 func (o *UpdateContentDocumentUnauthorized) Error() string {
 	return fmt.Sprintf("[POST /aplus/2020-11-01/contentDocuments/{contentReferenceKey}][%d] updateContentDocumentUnauthorized  %+v", 401, o.Payload)
 }
+
+func (o *UpdateContentDocumentUnauthorized) String() string {
+	return fmt.Sprintf("[POST /aplus/2020-11-01/contentDocuments/{contentReferenceKey}][%d] updateContentDocumentUnauthorized  %+v", 401, o.Payload)
+}
+
 func (o *UpdateContentDocumentUnauthorized) GetPayload() *aplus_content_2020_11_01_models.ErrorList {
 	return o.Payload
 }
@@ -253,7 +346,8 @@ func NewUpdateContentDocumentForbidden() *UpdateContentDocumentForbidden {
 	return &UpdateContentDocumentForbidden{}
 }
 
-/* UpdateContentDocumentForbidden describes a response with status code 403, with default header values.
+/*
+UpdateContentDocumentForbidden describes a response with status code 403, with default header values.
 
 Indicates that access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.
 */
@@ -266,9 +360,39 @@ type UpdateContentDocumentForbidden struct {
 	Payload *aplus_content_2020_11_01_models.ErrorList
 }
 
+// IsSuccess returns true when this update content document forbidden response has a 2xx status code
+func (o *UpdateContentDocumentForbidden) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this update content document forbidden response has a 3xx status code
+func (o *UpdateContentDocumentForbidden) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this update content document forbidden response has a 4xx status code
+func (o *UpdateContentDocumentForbidden) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this update content document forbidden response has a 5xx status code
+func (o *UpdateContentDocumentForbidden) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this update content document forbidden response a status code equal to that given
+func (o *UpdateContentDocumentForbidden) IsCode(code int) bool {
+	return code == 403
+}
+
 func (o *UpdateContentDocumentForbidden) Error() string {
 	return fmt.Sprintf("[POST /aplus/2020-11-01/contentDocuments/{contentReferenceKey}][%d] updateContentDocumentForbidden  %+v", 403, o.Payload)
 }
+
+func (o *UpdateContentDocumentForbidden) String() string {
+	return fmt.Sprintf("[POST /aplus/2020-11-01/contentDocuments/{contentReferenceKey}][%d] updateContentDocumentForbidden  %+v", 403, o.Payload)
+}
+
 func (o *UpdateContentDocumentForbidden) GetPayload() *aplus_content_2020_11_01_models.ErrorList {
 	return o.Payload
 }
@@ -297,7 +421,8 @@ func NewUpdateContentDocumentNotFound() *UpdateContentDocumentNotFound {
 	return &UpdateContentDocumentNotFound{}
 }
 
-/* UpdateContentDocumentNotFound describes a response with status code 404, with default header values.
+/*
+UpdateContentDocumentNotFound describes a response with status code 404, with default header values.
 
 The specified resource does not exist.
 */
@@ -314,9 +439,39 @@ type UpdateContentDocumentNotFound struct {
 	Payload *aplus_content_2020_11_01_models.ErrorList
 }
 
+// IsSuccess returns true when this update content document not found response has a 2xx status code
+func (o *UpdateContentDocumentNotFound) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this update content document not found response has a 3xx status code
+func (o *UpdateContentDocumentNotFound) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this update content document not found response has a 4xx status code
+func (o *UpdateContentDocumentNotFound) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this update content document not found response has a 5xx status code
+func (o *UpdateContentDocumentNotFound) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this update content document not found response a status code equal to that given
+func (o *UpdateContentDocumentNotFound) IsCode(code int) bool {
+	return code == 404
+}
+
 func (o *UpdateContentDocumentNotFound) Error() string {
 	return fmt.Sprintf("[POST /aplus/2020-11-01/contentDocuments/{contentReferenceKey}][%d] updateContentDocumentNotFound  %+v", 404, o.Payload)
 }
+
+func (o *UpdateContentDocumentNotFound) String() string {
+	return fmt.Sprintf("[POST /aplus/2020-11-01/contentDocuments/{contentReferenceKey}][%d] updateContentDocumentNotFound  %+v", 404, o.Payload)
+}
+
 func (o *UpdateContentDocumentNotFound) GetPayload() *aplus_content_2020_11_01_models.ErrorList {
 	return o.Payload
 }
@@ -352,7 +507,8 @@ func NewUpdateContentDocumentGone() *UpdateContentDocumentGone {
 	return &UpdateContentDocumentGone{}
 }
 
-/* UpdateContentDocumentGone describes a response with status code 410, with default header values.
+/*
+UpdateContentDocumentGone describes a response with status code 410, with default header values.
 
 The specified resource no longer exists.
 */
@@ -370,9 +526,39 @@ type UpdateContentDocumentGone struct {
 	Payload *aplus_content_2020_11_01_models.ErrorList
 }
 
+// IsSuccess returns true when this update content document gone response has a 2xx status code
+func (o *UpdateContentDocumentGone) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this update content document gone response has a 3xx status code
+func (o *UpdateContentDocumentGone) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this update content document gone response has a 4xx status code
+func (o *UpdateContentDocumentGone) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this update content document gone response has a 5xx status code
+func (o *UpdateContentDocumentGone) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this update content document gone response a status code equal to that given
+func (o *UpdateContentDocumentGone) IsCode(code int) bool {
+	return code == 410
+}
+
 func (o *UpdateContentDocumentGone) Error() string {
 	return fmt.Sprintf("[POST /aplus/2020-11-01/contentDocuments/{contentReferenceKey}][%d] updateContentDocumentGone  %+v", 410, o.Payload)
 }
+
+func (o *UpdateContentDocumentGone) String() string {
+	return fmt.Sprintf("[POST /aplus/2020-11-01/contentDocuments/{contentReferenceKey}][%d] updateContentDocumentGone  %+v", 410, o.Payload)
+}
+
 func (o *UpdateContentDocumentGone) GetPayload() *aplus_content_2020_11_01_models.ErrorList {
 	return o.Payload
 }
@@ -408,7 +594,8 @@ func NewUpdateContentDocumentTooManyRequests() *UpdateContentDocumentTooManyRequ
 	return &UpdateContentDocumentTooManyRequests{}
 }
 
-/* UpdateContentDocumentTooManyRequests describes a response with status code 429, with default header values.
+/*
+UpdateContentDocumentTooManyRequests describes a response with status code 429, with default header values.
 
 The frequency of requests was greater than allowed.
 */
@@ -426,9 +613,39 @@ type UpdateContentDocumentTooManyRequests struct {
 	Payload *aplus_content_2020_11_01_models.ErrorList
 }
 
+// IsSuccess returns true when this update content document too many requests response has a 2xx status code
+func (o *UpdateContentDocumentTooManyRequests) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this update content document too many requests response has a 3xx status code
+func (o *UpdateContentDocumentTooManyRequests) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this update content document too many requests response has a 4xx status code
+func (o *UpdateContentDocumentTooManyRequests) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this update content document too many requests response has a 5xx status code
+func (o *UpdateContentDocumentTooManyRequests) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this update content document too many requests response a status code equal to that given
+func (o *UpdateContentDocumentTooManyRequests) IsCode(code int) bool {
+	return code == 429
+}
+
 func (o *UpdateContentDocumentTooManyRequests) Error() string {
 	return fmt.Sprintf("[POST /aplus/2020-11-01/contentDocuments/{contentReferenceKey}][%d] updateContentDocumentTooManyRequests  %+v", 429, o.Payload)
 }
+
+func (o *UpdateContentDocumentTooManyRequests) String() string {
+	return fmt.Sprintf("[POST /aplus/2020-11-01/contentDocuments/{contentReferenceKey}][%d] updateContentDocumentTooManyRequests  %+v", 429, o.Payload)
+}
+
 func (o *UpdateContentDocumentTooManyRequests) GetPayload() *aplus_content_2020_11_01_models.ErrorList {
 	return o.Payload
 }
@@ -464,7 +681,8 @@ func NewUpdateContentDocumentInternalServerError() *UpdateContentDocumentInterna
 	return &UpdateContentDocumentInternalServerError{}
 }
 
-/* UpdateContentDocumentInternalServerError describes a response with status code 500, with default header values.
+/*
+UpdateContentDocumentInternalServerError describes a response with status code 500, with default header values.
 
 An unexpected condition occurred that prevented the server from fulfilling the request.
 */
@@ -482,9 +700,39 @@ type UpdateContentDocumentInternalServerError struct {
 	Payload *aplus_content_2020_11_01_models.ErrorList
 }
 
+// IsSuccess returns true when this update content document internal server error response has a 2xx status code
+func (o *UpdateContentDocumentInternalServerError) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this update content document internal server error response has a 3xx status code
+func (o *UpdateContentDocumentInternalServerError) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this update content document internal server error response has a 4xx status code
+func (o *UpdateContentDocumentInternalServerError) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this update content document internal server error response has a 5xx status code
+func (o *UpdateContentDocumentInternalServerError) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this update content document internal server error response a status code equal to that given
+func (o *UpdateContentDocumentInternalServerError) IsCode(code int) bool {
+	return code == 500
+}
+
 func (o *UpdateContentDocumentInternalServerError) Error() string {
 	return fmt.Sprintf("[POST /aplus/2020-11-01/contentDocuments/{contentReferenceKey}][%d] updateContentDocumentInternalServerError  %+v", 500, o.Payload)
 }
+
+func (o *UpdateContentDocumentInternalServerError) String() string {
+	return fmt.Sprintf("[POST /aplus/2020-11-01/contentDocuments/{contentReferenceKey}][%d] updateContentDocumentInternalServerError  %+v", 500, o.Payload)
+}
+
 func (o *UpdateContentDocumentInternalServerError) GetPayload() *aplus_content_2020_11_01_models.ErrorList {
 	return o.Payload
 }
@@ -520,7 +768,8 @@ func NewUpdateContentDocumentServiceUnavailable() *UpdateContentDocumentServiceU
 	return &UpdateContentDocumentServiceUnavailable{}
 }
 
-/* UpdateContentDocumentServiceUnavailable describes a response with status code 503, with default header values.
+/*
+UpdateContentDocumentServiceUnavailable describes a response with status code 503, with default header values.
 
 Temporary overloading or maintenance of the server.
 */
@@ -538,9 +787,39 @@ type UpdateContentDocumentServiceUnavailable struct {
 	Payload *aplus_content_2020_11_01_models.ErrorList
 }
 
+// IsSuccess returns true when this update content document service unavailable response has a 2xx status code
+func (o *UpdateContentDocumentServiceUnavailable) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this update content document service unavailable response has a 3xx status code
+func (o *UpdateContentDocumentServiceUnavailable) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this update content document service unavailable response has a 4xx status code
+func (o *UpdateContentDocumentServiceUnavailable) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this update content document service unavailable response has a 5xx status code
+func (o *UpdateContentDocumentServiceUnavailable) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this update content document service unavailable response a status code equal to that given
+func (o *UpdateContentDocumentServiceUnavailable) IsCode(code int) bool {
+	return code == 503
+}
+
 func (o *UpdateContentDocumentServiceUnavailable) Error() string {
 	return fmt.Sprintf("[POST /aplus/2020-11-01/contentDocuments/{contentReferenceKey}][%d] updateContentDocumentServiceUnavailable  %+v", 503, o.Payload)
 }
+
+func (o *UpdateContentDocumentServiceUnavailable) String() string {
+	return fmt.Sprintf("[POST /aplus/2020-11-01/contentDocuments/{contentReferenceKey}][%d] updateContentDocumentServiceUnavailable  %+v", 503, o.Payload)
+}
+
 func (o *UpdateContentDocumentServiceUnavailable) GetPayload() *aplus_content_2020_11_01_models.ErrorList {
 	return o.Payload
 }

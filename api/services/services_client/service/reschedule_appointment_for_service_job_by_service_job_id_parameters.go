@@ -54,10 +54,12 @@ func NewRescheduleAppointmentForServiceJobByServiceJobIDParamsWithHTTPClient(cli
 	}
 }
 
-/* RescheduleAppointmentForServiceJobByServiceJobIDParams contains all the parameters to send to the API endpoint
-   for the reschedule appointment for service job by service job Id operation.
+/*
+RescheduleAppointmentForServiceJobByServiceJobIDParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the reschedule appointment for service job by service job Id operation.
+
+	Typically these are written to a http.Request.
 */
 type RescheduleAppointmentForServiceJobByServiceJobIDParams struct {
 

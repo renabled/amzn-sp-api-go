@@ -81,7 +81,8 @@ func NewGetEligibleShipmentServicesOldOK() *GetEligibleShipmentServicesOldOK {
 	return &GetEligibleShipmentServicesOldOK{}
 }
 
-/* GetEligibleShipmentServicesOldOK describes a response with status code 200, with default header values.
+/*
+GetEligibleShipmentServicesOldOK describes a response with status code 200, with default header values.
 
 Success
 */
@@ -98,9 +99,39 @@ type GetEligibleShipmentServicesOldOK struct {
 	Payload *merchant_fulfillment_v0_models.GetEligibleShipmentServicesResponse
 }
 
+// IsSuccess returns true when this get eligible shipment services old o k response has a 2xx status code
+func (o *GetEligibleShipmentServicesOldOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this get eligible shipment services old o k response has a 3xx status code
+func (o *GetEligibleShipmentServicesOldOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get eligible shipment services old o k response has a 4xx status code
+func (o *GetEligibleShipmentServicesOldOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get eligible shipment services old o k response has a 5xx status code
+func (o *GetEligibleShipmentServicesOldOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get eligible shipment services old o k response a status code equal to that given
+func (o *GetEligibleShipmentServicesOldOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *GetEligibleShipmentServicesOldOK) Error() string {
 	return fmt.Sprintf("[POST /mfn/v0/eligibleServices][%d] getEligibleShipmentServicesOldOK  %+v", 200, o.Payload)
 }
+
+func (o *GetEligibleShipmentServicesOldOK) String() string {
+	return fmt.Sprintf("[POST /mfn/v0/eligibleServices][%d] getEligibleShipmentServicesOldOK  %+v", 200, o.Payload)
+}
+
 func (o *GetEligibleShipmentServicesOldOK) GetPayload() *merchant_fulfillment_v0_models.GetEligibleShipmentServicesResponse {
 	return o.Payload
 }
@@ -136,7 +167,8 @@ func NewGetEligibleShipmentServicesOldBadRequest() *GetEligibleShipmentServicesO
 	return &GetEligibleShipmentServicesOldBadRequest{}
 }
 
-/* GetEligibleShipmentServicesOldBadRequest describes a response with status code 400, with default header values.
+/*
+GetEligibleShipmentServicesOldBadRequest describes a response with status code 400, with default header values.
 
 Request has missing or invalid parameters and cannot be parsed.
 */
@@ -153,9 +185,39 @@ type GetEligibleShipmentServicesOldBadRequest struct {
 	Payload *merchant_fulfillment_v0_models.GetEligibleShipmentServicesResponse
 }
 
+// IsSuccess returns true when this get eligible shipment services old bad request response has a 2xx status code
+func (o *GetEligibleShipmentServicesOldBadRequest) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get eligible shipment services old bad request response has a 3xx status code
+func (o *GetEligibleShipmentServicesOldBadRequest) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get eligible shipment services old bad request response has a 4xx status code
+func (o *GetEligibleShipmentServicesOldBadRequest) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get eligible shipment services old bad request response has a 5xx status code
+func (o *GetEligibleShipmentServicesOldBadRequest) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get eligible shipment services old bad request response a status code equal to that given
+func (o *GetEligibleShipmentServicesOldBadRequest) IsCode(code int) bool {
+	return code == 400
+}
+
 func (o *GetEligibleShipmentServicesOldBadRequest) Error() string {
 	return fmt.Sprintf("[POST /mfn/v0/eligibleServices][%d] getEligibleShipmentServicesOldBadRequest  %+v", 400, o.Payload)
 }
+
+func (o *GetEligibleShipmentServicesOldBadRequest) String() string {
+	return fmt.Sprintf("[POST /mfn/v0/eligibleServices][%d] getEligibleShipmentServicesOldBadRequest  %+v", 400, o.Payload)
+}
+
 func (o *GetEligibleShipmentServicesOldBadRequest) GetPayload() *merchant_fulfillment_v0_models.GetEligibleShipmentServicesResponse {
 	return o.Payload
 }
@@ -191,7 +253,8 @@ func NewGetEligibleShipmentServicesOldUnauthorized() *GetEligibleShipmentService
 	return &GetEligibleShipmentServicesOldUnauthorized{}
 }
 
-/* GetEligibleShipmentServicesOldUnauthorized describes a response with status code 401, with default header values.
+/*
+GetEligibleShipmentServicesOldUnauthorized describes a response with status code 401, with default header values.
 
 The request's Authorization header is not formatted correctly or does not contain a valid token.
 */
@@ -209,9 +272,39 @@ type GetEligibleShipmentServicesOldUnauthorized struct {
 	Payload *merchant_fulfillment_v0_models.GetEligibleShipmentServicesResponse
 }
 
+// IsSuccess returns true when this get eligible shipment services old unauthorized response has a 2xx status code
+func (o *GetEligibleShipmentServicesOldUnauthorized) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get eligible shipment services old unauthorized response has a 3xx status code
+func (o *GetEligibleShipmentServicesOldUnauthorized) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get eligible shipment services old unauthorized response has a 4xx status code
+func (o *GetEligibleShipmentServicesOldUnauthorized) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get eligible shipment services old unauthorized response has a 5xx status code
+func (o *GetEligibleShipmentServicesOldUnauthorized) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get eligible shipment services old unauthorized response a status code equal to that given
+func (o *GetEligibleShipmentServicesOldUnauthorized) IsCode(code int) bool {
+	return code == 401
+}
+
 func (o *GetEligibleShipmentServicesOldUnauthorized) Error() string {
 	return fmt.Sprintf("[POST /mfn/v0/eligibleServices][%d] getEligibleShipmentServicesOldUnauthorized  %+v", 401, o.Payload)
 }
+
+func (o *GetEligibleShipmentServicesOldUnauthorized) String() string {
+	return fmt.Sprintf("[POST /mfn/v0/eligibleServices][%d] getEligibleShipmentServicesOldUnauthorized  %+v", 401, o.Payload)
+}
+
 func (o *GetEligibleShipmentServicesOldUnauthorized) GetPayload() *merchant_fulfillment_v0_models.GetEligibleShipmentServicesResponse {
 	return o.Payload
 }
@@ -247,7 +340,8 @@ func NewGetEligibleShipmentServicesOldForbidden() *GetEligibleShipmentServicesOl
 	return &GetEligibleShipmentServicesOldForbidden{}
 }
 
-/* GetEligibleShipmentServicesOldForbidden describes a response with status code 403, with default header values.
+/*
+GetEligibleShipmentServicesOldForbidden describes a response with status code 403, with default header values.
 
 Indicates that access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.
 */
@@ -260,9 +354,39 @@ type GetEligibleShipmentServicesOldForbidden struct {
 	Payload *merchant_fulfillment_v0_models.GetEligibleShipmentServicesResponse
 }
 
+// IsSuccess returns true when this get eligible shipment services old forbidden response has a 2xx status code
+func (o *GetEligibleShipmentServicesOldForbidden) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get eligible shipment services old forbidden response has a 3xx status code
+func (o *GetEligibleShipmentServicesOldForbidden) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get eligible shipment services old forbidden response has a 4xx status code
+func (o *GetEligibleShipmentServicesOldForbidden) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get eligible shipment services old forbidden response has a 5xx status code
+func (o *GetEligibleShipmentServicesOldForbidden) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get eligible shipment services old forbidden response a status code equal to that given
+func (o *GetEligibleShipmentServicesOldForbidden) IsCode(code int) bool {
+	return code == 403
+}
+
 func (o *GetEligibleShipmentServicesOldForbidden) Error() string {
 	return fmt.Sprintf("[POST /mfn/v0/eligibleServices][%d] getEligibleShipmentServicesOldForbidden  %+v", 403, o.Payload)
 }
+
+func (o *GetEligibleShipmentServicesOldForbidden) String() string {
+	return fmt.Sprintf("[POST /mfn/v0/eligibleServices][%d] getEligibleShipmentServicesOldForbidden  %+v", 403, o.Payload)
+}
+
 func (o *GetEligibleShipmentServicesOldForbidden) GetPayload() *merchant_fulfillment_v0_models.GetEligibleShipmentServicesResponse {
 	return o.Payload
 }
@@ -291,7 +415,8 @@ func NewGetEligibleShipmentServicesOldNotFound() *GetEligibleShipmentServicesOld
 	return &GetEligibleShipmentServicesOldNotFound{}
 }
 
-/* GetEligibleShipmentServicesOldNotFound describes a response with status code 404, with default header values.
+/*
+GetEligibleShipmentServicesOldNotFound describes a response with status code 404, with default header values.
 
 The specified resource does not exist.
 */
@@ -308,9 +433,39 @@ type GetEligibleShipmentServicesOldNotFound struct {
 	Payload *merchant_fulfillment_v0_models.GetEligibleShipmentServicesResponse
 }
 
+// IsSuccess returns true when this get eligible shipment services old not found response has a 2xx status code
+func (o *GetEligibleShipmentServicesOldNotFound) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get eligible shipment services old not found response has a 3xx status code
+func (o *GetEligibleShipmentServicesOldNotFound) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get eligible shipment services old not found response has a 4xx status code
+func (o *GetEligibleShipmentServicesOldNotFound) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get eligible shipment services old not found response has a 5xx status code
+func (o *GetEligibleShipmentServicesOldNotFound) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get eligible shipment services old not found response a status code equal to that given
+func (o *GetEligibleShipmentServicesOldNotFound) IsCode(code int) bool {
+	return code == 404
+}
+
 func (o *GetEligibleShipmentServicesOldNotFound) Error() string {
 	return fmt.Sprintf("[POST /mfn/v0/eligibleServices][%d] getEligibleShipmentServicesOldNotFound  %+v", 404, o.Payload)
 }
+
+func (o *GetEligibleShipmentServicesOldNotFound) String() string {
+	return fmt.Sprintf("[POST /mfn/v0/eligibleServices][%d] getEligibleShipmentServicesOldNotFound  %+v", 404, o.Payload)
+}
+
 func (o *GetEligibleShipmentServicesOldNotFound) GetPayload() *merchant_fulfillment_v0_models.GetEligibleShipmentServicesResponse {
 	return o.Payload
 }
@@ -346,7 +501,8 @@ func NewGetEligibleShipmentServicesOldTooManyRequests() *GetEligibleShipmentServ
 	return &GetEligibleShipmentServicesOldTooManyRequests{}
 }
 
-/* GetEligibleShipmentServicesOldTooManyRequests describes a response with status code 429, with default header values.
+/*
+GetEligibleShipmentServicesOldTooManyRequests describes a response with status code 429, with default header values.
 
 The frequency of requests was greater than allowed.
 */
@@ -364,9 +520,39 @@ type GetEligibleShipmentServicesOldTooManyRequests struct {
 	Payload *merchant_fulfillment_v0_models.GetEligibleShipmentServicesResponse
 }
 
+// IsSuccess returns true when this get eligible shipment services old too many requests response has a 2xx status code
+func (o *GetEligibleShipmentServicesOldTooManyRequests) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get eligible shipment services old too many requests response has a 3xx status code
+func (o *GetEligibleShipmentServicesOldTooManyRequests) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get eligible shipment services old too many requests response has a 4xx status code
+func (o *GetEligibleShipmentServicesOldTooManyRequests) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get eligible shipment services old too many requests response has a 5xx status code
+func (o *GetEligibleShipmentServicesOldTooManyRequests) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get eligible shipment services old too many requests response a status code equal to that given
+func (o *GetEligibleShipmentServicesOldTooManyRequests) IsCode(code int) bool {
+	return code == 429
+}
+
 func (o *GetEligibleShipmentServicesOldTooManyRequests) Error() string {
 	return fmt.Sprintf("[POST /mfn/v0/eligibleServices][%d] getEligibleShipmentServicesOldTooManyRequests  %+v", 429, o.Payload)
 }
+
+func (o *GetEligibleShipmentServicesOldTooManyRequests) String() string {
+	return fmt.Sprintf("[POST /mfn/v0/eligibleServices][%d] getEligibleShipmentServicesOldTooManyRequests  %+v", 429, o.Payload)
+}
+
 func (o *GetEligibleShipmentServicesOldTooManyRequests) GetPayload() *merchant_fulfillment_v0_models.GetEligibleShipmentServicesResponse {
 	return o.Payload
 }
@@ -402,7 +588,8 @@ func NewGetEligibleShipmentServicesOldInternalServerError() *GetEligibleShipment
 	return &GetEligibleShipmentServicesOldInternalServerError{}
 }
 
-/* GetEligibleShipmentServicesOldInternalServerError describes a response with status code 500, with default header values.
+/*
+GetEligibleShipmentServicesOldInternalServerError describes a response with status code 500, with default header values.
 
 An unexpected condition occurred that prevented the server from fulfilling the request.
 */
@@ -420,9 +607,39 @@ type GetEligibleShipmentServicesOldInternalServerError struct {
 	Payload *merchant_fulfillment_v0_models.GetEligibleShipmentServicesResponse
 }
 
+// IsSuccess returns true when this get eligible shipment services old internal server error response has a 2xx status code
+func (o *GetEligibleShipmentServicesOldInternalServerError) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get eligible shipment services old internal server error response has a 3xx status code
+func (o *GetEligibleShipmentServicesOldInternalServerError) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get eligible shipment services old internal server error response has a 4xx status code
+func (o *GetEligibleShipmentServicesOldInternalServerError) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get eligible shipment services old internal server error response has a 5xx status code
+func (o *GetEligibleShipmentServicesOldInternalServerError) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this get eligible shipment services old internal server error response a status code equal to that given
+func (o *GetEligibleShipmentServicesOldInternalServerError) IsCode(code int) bool {
+	return code == 500
+}
+
 func (o *GetEligibleShipmentServicesOldInternalServerError) Error() string {
 	return fmt.Sprintf("[POST /mfn/v0/eligibleServices][%d] getEligibleShipmentServicesOldInternalServerError  %+v", 500, o.Payload)
 }
+
+func (o *GetEligibleShipmentServicesOldInternalServerError) String() string {
+	return fmt.Sprintf("[POST /mfn/v0/eligibleServices][%d] getEligibleShipmentServicesOldInternalServerError  %+v", 500, o.Payload)
+}
+
 func (o *GetEligibleShipmentServicesOldInternalServerError) GetPayload() *merchant_fulfillment_v0_models.GetEligibleShipmentServicesResponse {
 	return o.Payload
 }
@@ -458,7 +675,8 @@ func NewGetEligibleShipmentServicesOldServiceUnavailable() *GetEligibleShipmentS
 	return &GetEligibleShipmentServicesOldServiceUnavailable{}
 }
 
-/* GetEligibleShipmentServicesOldServiceUnavailable describes a response with status code 503, with default header values.
+/*
+GetEligibleShipmentServicesOldServiceUnavailable describes a response with status code 503, with default header values.
 
 Temporary overloading or maintenance of the server.
 */
@@ -476,9 +694,39 @@ type GetEligibleShipmentServicesOldServiceUnavailable struct {
 	Payload *merchant_fulfillment_v0_models.GetEligibleShipmentServicesResponse
 }
 
+// IsSuccess returns true when this get eligible shipment services old service unavailable response has a 2xx status code
+func (o *GetEligibleShipmentServicesOldServiceUnavailable) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get eligible shipment services old service unavailable response has a 3xx status code
+func (o *GetEligibleShipmentServicesOldServiceUnavailable) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get eligible shipment services old service unavailable response has a 4xx status code
+func (o *GetEligibleShipmentServicesOldServiceUnavailable) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get eligible shipment services old service unavailable response has a 5xx status code
+func (o *GetEligibleShipmentServicesOldServiceUnavailable) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this get eligible shipment services old service unavailable response a status code equal to that given
+func (o *GetEligibleShipmentServicesOldServiceUnavailable) IsCode(code int) bool {
+	return code == 503
+}
+
 func (o *GetEligibleShipmentServicesOldServiceUnavailable) Error() string {
 	return fmt.Sprintf("[POST /mfn/v0/eligibleServices][%d] getEligibleShipmentServicesOldServiceUnavailable  %+v", 503, o.Payload)
 }
+
+func (o *GetEligibleShipmentServicesOldServiceUnavailable) String() string {
+	return fmt.Sprintf("[POST /mfn/v0/eligibleServices][%d] getEligibleShipmentServicesOldServiceUnavailable  %+v", 503, o.Payload)
+}
+
 func (o *GetEligibleShipmentServicesOldServiceUnavailable) GetPayload() *merchant_fulfillment_v0_models.GetEligibleShipmentServicesResponse {
 	return o.Payload
 }

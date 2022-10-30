@@ -52,10 +52,12 @@ func NewGetAuthorizationCodeParamsWithHTTPClient(client *http.Client) *GetAuthor
 	}
 }
 
-/* GetAuthorizationCodeParams contains all the parameters to send to the API endpoint
-   for the get authorization code operation.
+/*
+GetAuthorizationCodeParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the get authorization code operation.
+
+	Typically these are written to a http.Request.
 */
 type GetAuthorizationCodeParams struct {
 

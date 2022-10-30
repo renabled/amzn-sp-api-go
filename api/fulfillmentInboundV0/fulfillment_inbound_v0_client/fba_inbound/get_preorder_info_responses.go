@@ -81,7 +81,8 @@ func NewGetPreorderInfoOK() *GetPreorderInfoOK {
 	return &GetPreorderInfoOK{}
 }
 
-/* GetPreorderInfoOK describes a response with status code 200, with default header values.
+/*
+GetPreorderInfoOK describes a response with status code 200, with default header values.
 
 Success.
 */
@@ -98,9 +99,39 @@ type GetPreorderInfoOK struct {
 	Payload *fulfillment_inbound_v0_models.GetPreorderInfoResponse
 }
 
+// IsSuccess returns true when this get preorder info o k response has a 2xx status code
+func (o *GetPreorderInfoOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this get preorder info o k response has a 3xx status code
+func (o *GetPreorderInfoOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get preorder info o k response has a 4xx status code
+func (o *GetPreorderInfoOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get preorder info o k response has a 5xx status code
+func (o *GetPreorderInfoOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get preorder info o k response a status code equal to that given
+func (o *GetPreorderInfoOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *GetPreorderInfoOK) Error() string {
 	return fmt.Sprintf("[GET /fba/inbound/v0/shipments/{shipmentId}/preorder][%d] getPreorderInfoOK  %+v", 200, o.Payload)
 }
+
+func (o *GetPreorderInfoOK) String() string {
+	return fmt.Sprintf("[GET /fba/inbound/v0/shipments/{shipmentId}/preorder][%d] getPreorderInfoOK  %+v", 200, o.Payload)
+}
+
 func (o *GetPreorderInfoOK) GetPayload() *fulfillment_inbound_v0_models.GetPreorderInfoResponse {
 	return o.Payload
 }
@@ -136,7 +167,8 @@ func NewGetPreorderInfoBadRequest() *GetPreorderInfoBadRequest {
 	return &GetPreorderInfoBadRequest{}
 }
 
-/* GetPreorderInfoBadRequest describes a response with status code 400, with default header values.
+/*
+GetPreorderInfoBadRequest describes a response with status code 400, with default header values.
 
 Request has missing or invalid parameters and cannot be parsed.
 */
@@ -153,9 +185,39 @@ type GetPreorderInfoBadRequest struct {
 	Payload *fulfillment_inbound_v0_models.GetPreorderInfoResponse
 }
 
+// IsSuccess returns true when this get preorder info bad request response has a 2xx status code
+func (o *GetPreorderInfoBadRequest) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get preorder info bad request response has a 3xx status code
+func (o *GetPreorderInfoBadRequest) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get preorder info bad request response has a 4xx status code
+func (o *GetPreorderInfoBadRequest) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get preorder info bad request response has a 5xx status code
+func (o *GetPreorderInfoBadRequest) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get preorder info bad request response a status code equal to that given
+func (o *GetPreorderInfoBadRequest) IsCode(code int) bool {
+	return code == 400
+}
+
 func (o *GetPreorderInfoBadRequest) Error() string {
 	return fmt.Sprintf("[GET /fba/inbound/v0/shipments/{shipmentId}/preorder][%d] getPreorderInfoBadRequest  %+v", 400, o.Payload)
 }
+
+func (o *GetPreorderInfoBadRequest) String() string {
+	return fmt.Sprintf("[GET /fba/inbound/v0/shipments/{shipmentId}/preorder][%d] getPreorderInfoBadRequest  %+v", 400, o.Payload)
+}
+
 func (o *GetPreorderInfoBadRequest) GetPayload() *fulfillment_inbound_v0_models.GetPreorderInfoResponse {
 	return o.Payload
 }
@@ -191,7 +253,8 @@ func NewGetPreorderInfoUnauthorized() *GetPreorderInfoUnauthorized {
 	return &GetPreorderInfoUnauthorized{}
 }
 
-/* GetPreorderInfoUnauthorized describes a response with status code 401, with default header values.
+/*
+GetPreorderInfoUnauthorized describes a response with status code 401, with default header values.
 
 The request's Authorization header is not formatted correctly or does not contain a valid token.
 */
@@ -209,9 +272,39 @@ type GetPreorderInfoUnauthorized struct {
 	Payload *fulfillment_inbound_v0_models.GetPreorderInfoResponse
 }
 
+// IsSuccess returns true when this get preorder info unauthorized response has a 2xx status code
+func (o *GetPreorderInfoUnauthorized) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get preorder info unauthorized response has a 3xx status code
+func (o *GetPreorderInfoUnauthorized) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get preorder info unauthorized response has a 4xx status code
+func (o *GetPreorderInfoUnauthorized) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get preorder info unauthorized response has a 5xx status code
+func (o *GetPreorderInfoUnauthorized) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get preorder info unauthorized response a status code equal to that given
+func (o *GetPreorderInfoUnauthorized) IsCode(code int) bool {
+	return code == 401
+}
+
 func (o *GetPreorderInfoUnauthorized) Error() string {
 	return fmt.Sprintf("[GET /fba/inbound/v0/shipments/{shipmentId}/preorder][%d] getPreorderInfoUnauthorized  %+v", 401, o.Payload)
 }
+
+func (o *GetPreorderInfoUnauthorized) String() string {
+	return fmt.Sprintf("[GET /fba/inbound/v0/shipments/{shipmentId}/preorder][%d] getPreorderInfoUnauthorized  %+v", 401, o.Payload)
+}
+
 func (o *GetPreorderInfoUnauthorized) GetPayload() *fulfillment_inbound_v0_models.GetPreorderInfoResponse {
 	return o.Payload
 }
@@ -247,7 +340,8 @@ func NewGetPreorderInfoForbidden() *GetPreorderInfoForbidden {
 	return &GetPreorderInfoForbidden{}
 }
 
-/* GetPreorderInfoForbidden describes a response with status code 403, with default header values.
+/*
+GetPreorderInfoForbidden describes a response with status code 403, with default header values.
 
 Indicates that access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.
 */
@@ -260,9 +354,39 @@ type GetPreorderInfoForbidden struct {
 	Payload *fulfillment_inbound_v0_models.GetPreorderInfoResponse
 }
 
+// IsSuccess returns true when this get preorder info forbidden response has a 2xx status code
+func (o *GetPreorderInfoForbidden) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get preorder info forbidden response has a 3xx status code
+func (o *GetPreorderInfoForbidden) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get preorder info forbidden response has a 4xx status code
+func (o *GetPreorderInfoForbidden) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get preorder info forbidden response has a 5xx status code
+func (o *GetPreorderInfoForbidden) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get preorder info forbidden response a status code equal to that given
+func (o *GetPreorderInfoForbidden) IsCode(code int) bool {
+	return code == 403
+}
+
 func (o *GetPreorderInfoForbidden) Error() string {
 	return fmt.Sprintf("[GET /fba/inbound/v0/shipments/{shipmentId}/preorder][%d] getPreorderInfoForbidden  %+v", 403, o.Payload)
 }
+
+func (o *GetPreorderInfoForbidden) String() string {
+	return fmt.Sprintf("[GET /fba/inbound/v0/shipments/{shipmentId}/preorder][%d] getPreorderInfoForbidden  %+v", 403, o.Payload)
+}
+
 func (o *GetPreorderInfoForbidden) GetPayload() *fulfillment_inbound_v0_models.GetPreorderInfoResponse {
 	return o.Payload
 }
@@ -291,7 +415,8 @@ func NewGetPreorderInfoNotFound() *GetPreorderInfoNotFound {
 	return &GetPreorderInfoNotFound{}
 }
 
-/* GetPreorderInfoNotFound describes a response with status code 404, with default header values.
+/*
+GetPreorderInfoNotFound describes a response with status code 404, with default header values.
 
 The specified resource does not exist.
 */
@@ -308,9 +433,39 @@ type GetPreorderInfoNotFound struct {
 	Payload *fulfillment_inbound_v0_models.GetPreorderInfoResponse
 }
 
+// IsSuccess returns true when this get preorder info not found response has a 2xx status code
+func (o *GetPreorderInfoNotFound) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get preorder info not found response has a 3xx status code
+func (o *GetPreorderInfoNotFound) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get preorder info not found response has a 4xx status code
+func (o *GetPreorderInfoNotFound) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get preorder info not found response has a 5xx status code
+func (o *GetPreorderInfoNotFound) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get preorder info not found response a status code equal to that given
+func (o *GetPreorderInfoNotFound) IsCode(code int) bool {
+	return code == 404
+}
+
 func (o *GetPreorderInfoNotFound) Error() string {
 	return fmt.Sprintf("[GET /fba/inbound/v0/shipments/{shipmentId}/preorder][%d] getPreorderInfoNotFound  %+v", 404, o.Payload)
 }
+
+func (o *GetPreorderInfoNotFound) String() string {
+	return fmt.Sprintf("[GET /fba/inbound/v0/shipments/{shipmentId}/preorder][%d] getPreorderInfoNotFound  %+v", 404, o.Payload)
+}
+
 func (o *GetPreorderInfoNotFound) GetPayload() *fulfillment_inbound_v0_models.GetPreorderInfoResponse {
 	return o.Payload
 }
@@ -346,7 +501,8 @@ func NewGetPreorderInfoTooManyRequests() *GetPreorderInfoTooManyRequests {
 	return &GetPreorderInfoTooManyRequests{}
 }
 
-/* GetPreorderInfoTooManyRequests describes a response with status code 429, with default header values.
+/*
+GetPreorderInfoTooManyRequests describes a response with status code 429, with default header values.
 
 The frequency of requests was greater than allowed.
 */
@@ -364,9 +520,39 @@ type GetPreorderInfoTooManyRequests struct {
 	Payload *fulfillment_inbound_v0_models.GetPreorderInfoResponse
 }
 
+// IsSuccess returns true when this get preorder info too many requests response has a 2xx status code
+func (o *GetPreorderInfoTooManyRequests) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get preorder info too many requests response has a 3xx status code
+func (o *GetPreorderInfoTooManyRequests) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get preorder info too many requests response has a 4xx status code
+func (o *GetPreorderInfoTooManyRequests) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get preorder info too many requests response has a 5xx status code
+func (o *GetPreorderInfoTooManyRequests) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get preorder info too many requests response a status code equal to that given
+func (o *GetPreorderInfoTooManyRequests) IsCode(code int) bool {
+	return code == 429
+}
+
 func (o *GetPreorderInfoTooManyRequests) Error() string {
 	return fmt.Sprintf("[GET /fba/inbound/v0/shipments/{shipmentId}/preorder][%d] getPreorderInfoTooManyRequests  %+v", 429, o.Payload)
 }
+
+func (o *GetPreorderInfoTooManyRequests) String() string {
+	return fmt.Sprintf("[GET /fba/inbound/v0/shipments/{shipmentId}/preorder][%d] getPreorderInfoTooManyRequests  %+v", 429, o.Payload)
+}
+
 func (o *GetPreorderInfoTooManyRequests) GetPayload() *fulfillment_inbound_v0_models.GetPreorderInfoResponse {
 	return o.Payload
 }
@@ -402,7 +588,8 @@ func NewGetPreorderInfoInternalServerError() *GetPreorderInfoInternalServerError
 	return &GetPreorderInfoInternalServerError{}
 }
 
-/* GetPreorderInfoInternalServerError describes a response with status code 500, with default header values.
+/*
+GetPreorderInfoInternalServerError describes a response with status code 500, with default header values.
 
 An unexpected condition occurred that prevented the server from fulfilling the request.
 */
@@ -420,9 +607,39 @@ type GetPreorderInfoInternalServerError struct {
 	Payload *fulfillment_inbound_v0_models.GetPreorderInfoResponse
 }
 
+// IsSuccess returns true when this get preorder info internal server error response has a 2xx status code
+func (o *GetPreorderInfoInternalServerError) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get preorder info internal server error response has a 3xx status code
+func (o *GetPreorderInfoInternalServerError) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get preorder info internal server error response has a 4xx status code
+func (o *GetPreorderInfoInternalServerError) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get preorder info internal server error response has a 5xx status code
+func (o *GetPreorderInfoInternalServerError) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this get preorder info internal server error response a status code equal to that given
+func (o *GetPreorderInfoInternalServerError) IsCode(code int) bool {
+	return code == 500
+}
+
 func (o *GetPreorderInfoInternalServerError) Error() string {
 	return fmt.Sprintf("[GET /fba/inbound/v0/shipments/{shipmentId}/preorder][%d] getPreorderInfoInternalServerError  %+v", 500, o.Payload)
 }
+
+func (o *GetPreorderInfoInternalServerError) String() string {
+	return fmt.Sprintf("[GET /fba/inbound/v0/shipments/{shipmentId}/preorder][%d] getPreorderInfoInternalServerError  %+v", 500, o.Payload)
+}
+
 func (o *GetPreorderInfoInternalServerError) GetPayload() *fulfillment_inbound_v0_models.GetPreorderInfoResponse {
 	return o.Payload
 }
@@ -458,7 +675,8 @@ func NewGetPreorderInfoServiceUnavailable() *GetPreorderInfoServiceUnavailable {
 	return &GetPreorderInfoServiceUnavailable{}
 }
 
-/* GetPreorderInfoServiceUnavailable describes a response with status code 503, with default header values.
+/*
+GetPreorderInfoServiceUnavailable describes a response with status code 503, with default header values.
 
 Temporary overloading or maintenance of the server.
 */
@@ -476,9 +694,39 @@ type GetPreorderInfoServiceUnavailable struct {
 	Payload *fulfillment_inbound_v0_models.GetPreorderInfoResponse
 }
 
+// IsSuccess returns true when this get preorder info service unavailable response has a 2xx status code
+func (o *GetPreorderInfoServiceUnavailable) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get preorder info service unavailable response has a 3xx status code
+func (o *GetPreorderInfoServiceUnavailable) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get preorder info service unavailable response has a 4xx status code
+func (o *GetPreorderInfoServiceUnavailable) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get preorder info service unavailable response has a 5xx status code
+func (o *GetPreorderInfoServiceUnavailable) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this get preorder info service unavailable response a status code equal to that given
+func (o *GetPreorderInfoServiceUnavailable) IsCode(code int) bool {
+	return code == 503
+}
+
 func (o *GetPreorderInfoServiceUnavailable) Error() string {
 	return fmt.Sprintf("[GET /fba/inbound/v0/shipments/{shipmentId}/preorder][%d] getPreorderInfoServiceUnavailable  %+v", 503, o.Payload)
 }
+
+func (o *GetPreorderInfoServiceUnavailable) String() string {
+	return fmt.Sprintf("[GET /fba/inbound/v0/shipments/{shipmentId}/preorder][%d] getPreorderInfoServiceUnavailable  %+v", 503, o.Payload)
+}
+
 func (o *GetPreorderInfoServiceUnavailable) GetPayload() *fulfillment_inbound_v0_models.GetPreorderInfoResponse {
 	return o.Payload
 }

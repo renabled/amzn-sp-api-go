@@ -87,7 +87,8 @@ func NewUpdateReservationOK() *UpdateReservationOK {
 	return &UpdateReservationOK{}
 }
 
-/* UpdateReservationOK describes a response with status code 200, with default header values.
+/*
+UpdateReservationOK describes a response with status code 200, with default header values.
 
 Success response.
 */
@@ -104,9 +105,39 @@ type UpdateReservationOK struct {
 	Payload *services_models.UpdateReservationResponse
 }
 
+// IsSuccess returns true when this update reservation o k response has a 2xx status code
+func (o *UpdateReservationOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this update reservation o k response has a 3xx status code
+func (o *UpdateReservationOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this update reservation o k response has a 4xx status code
+func (o *UpdateReservationOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this update reservation o k response has a 5xx status code
+func (o *UpdateReservationOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this update reservation o k response a status code equal to that given
+func (o *UpdateReservationOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *UpdateReservationOK) Error() string {
 	return fmt.Sprintf("[PUT /service/v1/reservation/{reservationId}][%d] updateReservationOK  %+v", 200, o.Payload)
 }
+
+func (o *UpdateReservationOK) String() string {
+	return fmt.Sprintf("[PUT /service/v1/reservation/{reservationId}][%d] updateReservationOK  %+v", 200, o.Payload)
+}
+
 func (o *UpdateReservationOK) GetPayload() *services_models.UpdateReservationResponse {
 	return o.Payload
 }
@@ -142,7 +173,8 @@ func NewUpdateReservationBadRequest() *UpdateReservationBadRequest {
 	return &UpdateReservationBadRequest{}
 }
 
-/* UpdateReservationBadRequest describes a response with status code 400, with default header values.
+/*
+UpdateReservationBadRequest describes a response with status code 400, with default header values.
 
 Request has missing or invalid parameters and cannot be parsed.
 */
@@ -159,9 +191,39 @@ type UpdateReservationBadRequest struct {
 	Payload *services_models.UpdateReservationResponse
 }
 
+// IsSuccess returns true when this update reservation bad request response has a 2xx status code
+func (o *UpdateReservationBadRequest) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this update reservation bad request response has a 3xx status code
+func (o *UpdateReservationBadRequest) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this update reservation bad request response has a 4xx status code
+func (o *UpdateReservationBadRequest) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this update reservation bad request response has a 5xx status code
+func (o *UpdateReservationBadRequest) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this update reservation bad request response a status code equal to that given
+func (o *UpdateReservationBadRequest) IsCode(code int) bool {
+	return code == 400
+}
+
 func (o *UpdateReservationBadRequest) Error() string {
 	return fmt.Sprintf("[PUT /service/v1/reservation/{reservationId}][%d] updateReservationBadRequest  %+v", 400, o.Payload)
 }
+
+func (o *UpdateReservationBadRequest) String() string {
+	return fmt.Sprintf("[PUT /service/v1/reservation/{reservationId}][%d] updateReservationBadRequest  %+v", 400, o.Payload)
+}
+
 func (o *UpdateReservationBadRequest) GetPayload() *services_models.UpdateReservationResponse {
 	return o.Payload
 }
@@ -197,7 +259,8 @@ func NewUpdateReservationForbidden() *UpdateReservationForbidden {
 	return &UpdateReservationForbidden{}
 }
 
-/* UpdateReservationForbidden describes a response with status code 403, with default header values.
+/*
+UpdateReservationForbidden describes a response with status code 403, with default header values.
 
 Indicates that access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.
 */
@@ -210,9 +273,39 @@ type UpdateReservationForbidden struct {
 	Payload *services_models.UpdateReservationResponse
 }
 
+// IsSuccess returns true when this update reservation forbidden response has a 2xx status code
+func (o *UpdateReservationForbidden) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this update reservation forbidden response has a 3xx status code
+func (o *UpdateReservationForbidden) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this update reservation forbidden response has a 4xx status code
+func (o *UpdateReservationForbidden) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this update reservation forbidden response has a 5xx status code
+func (o *UpdateReservationForbidden) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this update reservation forbidden response a status code equal to that given
+func (o *UpdateReservationForbidden) IsCode(code int) bool {
+	return code == 403
+}
+
 func (o *UpdateReservationForbidden) Error() string {
 	return fmt.Sprintf("[PUT /service/v1/reservation/{reservationId}][%d] updateReservationForbidden  %+v", 403, o.Payload)
 }
+
+func (o *UpdateReservationForbidden) String() string {
+	return fmt.Sprintf("[PUT /service/v1/reservation/{reservationId}][%d] updateReservationForbidden  %+v", 403, o.Payload)
+}
+
 func (o *UpdateReservationForbidden) GetPayload() *services_models.UpdateReservationResponse {
 	return o.Payload
 }
@@ -241,7 +334,8 @@ func NewUpdateReservationNotFound() *UpdateReservationNotFound {
 	return &UpdateReservationNotFound{}
 }
 
-/* UpdateReservationNotFound describes a response with status code 404, with default header values.
+/*
+UpdateReservationNotFound describes a response with status code 404, with default header values.
 
 The reservation specified does not exist.
 */
@@ -258,9 +352,39 @@ type UpdateReservationNotFound struct {
 	Payload *services_models.UpdateReservationResponse
 }
 
+// IsSuccess returns true when this update reservation not found response has a 2xx status code
+func (o *UpdateReservationNotFound) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this update reservation not found response has a 3xx status code
+func (o *UpdateReservationNotFound) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this update reservation not found response has a 4xx status code
+func (o *UpdateReservationNotFound) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this update reservation not found response has a 5xx status code
+func (o *UpdateReservationNotFound) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this update reservation not found response a status code equal to that given
+func (o *UpdateReservationNotFound) IsCode(code int) bool {
+	return code == 404
+}
+
 func (o *UpdateReservationNotFound) Error() string {
 	return fmt.Sprintf("[PUT /service/v1/reservation/{reservationId}][%d] updateReservationNotFound  %+v", 404, o.Payload)
 }
+
+func (o *UpdateReservationNotFound) String() string {
+	return fmt.Sprintf("[PUT /service/v1/reservation/{reservationId}][%d] updateReservationNotFound  %+v", 404, o.Payload)
+}
+
 func (o *UpdateReservationNotFound) GetPayload() *services_models.UpdateReservationResponse {
 	return o.Payload
 }
@@ -296,7 +420,8 @@ func NewUpdateReservationRequestEntityTooLarge() *UpdateReservationRequestEntity
 	return &UpdateReservationRequestEntityTooLarge{}
 }
 
-/* UpdateReservationRequestEntityTooLarge describes a response with status code 413, with default header values.
+/*
+UpdateReservationRequestEntityTooLarge describes a response with status code 413, with default header values.
 
 The request size exceeded the maximum accepted size.
 */
@@ -314,9 +439,39 @@ type UpdateReservationRequestEntityTooLarge struct {
 	Payload *services_models.UpdateReservationResponse
 }
 
+// IsSuccess returns true when this update reservation request entity too large response has a 2xx status code
+func (o *UpdateReservationRequestEntityTooLarge) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this update reservation request entity too large response has a 3xx status code
+func (o *UpdateReservationRequestEntityTooLarge) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this update reservation request entity too large response has a 4xx status code
+func (o *UpdateReservationRequestEntityTooLarge) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this update reservation request entity too large response has a 5xx status code
+func (o *UpdateReservationRequestEntityTooLarge) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this update reservation request entity too large response a status code equal to that given
+func (o *UpdateReservationRequestEntityTooLarge) IsCode(code int) bool {
+	return code == 413
+}
+
 func (o *UpdateReservationRequestEntityTooLarge) Error() string {
 	return fmt.Sprintf("[PUT /service/v1/reservation/{reservationId}][%d] updateReservationRequestEntityTooLarge  %+v", 413, o.Payload)
 }
+
+func (o *UpdateReservationRequestEntityTooLarge) String() string {
+	return fmt.Sprintf("[PUT /service/v1/reservation/{reservationId}][%d] updateReservationRequestEntityTooLarge  %+v", 413, o.Payload)
+}
+
 func (o *UpdateReservationRequestEntityTooLarge) GetPayload() *services_models.UpdateReservationResponse {
 	return o.Payload
 }
@@ -352,7 +507,8 @@ func NewUpdateReservationUnsupportedMediaType() *UpdateReservationUnsupportedMed
 	return &UpdateReservationUnsupportedMediaType{}
 }
 
-/* UpdateReservationUnsupportedMediaType describes a response with status code 415, with default header values.
+/*
+UpdateReservationUnsupportedMediaType describes a response with status code 415, with default header values.
 
 The request payload is in an unsupported format.
 */
@@ -370,9 +526,39 @@ type UpdateReservationUnsupportedMediaType struct {
 	Payload *services_models.UpdateReservationResponse
 }
 
+// IsSuccess returns true when this update reservation unsupported media type response has a 2xx status code
+func (o *UpdateReservationUnsupportedMediaType) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this update reservation unsupported media type response has a 3xx status code
+func (o *UpdateReservationUnsupportedMediaType) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this update reservation unsupported media type response has a 4xx status code
+func (o *UpdateReservationUnsupportedMediaType) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this update reservation unsupported media type response has a 5xx status code
+func (o *UpdateReservationUnsupportedMediaType) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this update reservation unsupported media type response a status code equal to that given
+func (o *UpdateReservationUnsupportedMediaType) IsCode(code int) bool {
+	return code == 415
+}
+
 func (o *UpdateReservationUnsupportedMediaType) Error() string {
 	return fmt.Sprintf("[PUT /service/v1/reservation/{reservationId}][%d] updateReservationUnsupportedMediaType  %+v", 415, o.Payload)
 }
+
+func (o *UpdateReservationUnsupportedMediaType) String() string {
+	return fmt.Sprintf("[PUT /service/v1/reservation/{reservationId}][%d] updateReservationUnsupportedMediaType  %+v", 415, o.Payload)
+}
+
 func (o *UpdateReservationUnsupportedMediaType) GetPayload() *services_models.UpdateReservationResponse {
 	return o.Payload
 }
@@ -408,7 +594,8 @@ func NewUpdateReservationTooManyRequests() *UpdateReservationTooManyRequests {
 	return &UpdateReservationTooManyRequests{}
 }
 
-/* UpdateReservationTooManyRequests describes a response with status code 429, with default header values.
+/*
+UpdateReservationTooManyRequests describes a response with status code 429, with default header values.
 
 The frequency of requests was greater than allowed.
 */
@@ -426,9 +613,39 @@ type UpdateReservationTooManyRequests struct {
 	Payload *services_models.UpdateReservationResponse
 }
 
+// IsSuccess returns true when this update reservation too many requests response has a 2xx status code
+func (o *UpdateReservationTooManyRequests) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this update reservation too many requests response has a 3xx status code
+func (o *UpdateReservationTooManyRequests) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this update reservation too many requests response has a 4xx status code
+func (o *UpdateReservationTooManyRequests) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this update reservation too many requests response has a 5xx status code
+func (o *UpdateReservationTooManyRequests) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this update reservation too many requests response a status code equal to that given
+func (o *UpdateReservationTooManyRequests) IsCode(code int) bool {
+	return code == 429
+}
+
 func (o *UpdateReservationTooManyRequests) Error() string {
 	return fmt.Sprintf("[PUT /service/v1/reservation/{reservationId}][%d] updateReservationTooManyRequests  %+v", 429, o.Payload)
 }
+
+func (o *UpdateReservationTooManyRequests) String() string {
+	return fmt.Sprintf("[PUT /service/v1/reservation/{reservationId}][%d] updateReservationTooManyRequests  %+v", 429, o.Payload)
+}
+
 func (o *UpdateReservationTooManyRequests) GetPayload() *services_models.UpdateReservationResponse {
 	return o.Payload
 }
@@ -464,7 +681,8 @@ func NewUpdateReservationInternalServerError() *UpdateReservationInternalServerE
 	return &UpdateReservationInternalServerError{}
 }
 
-/* UpdateReservationInternalServerError describes a response with status code 500, with default header values.
+/*
+UpdateReservationInternalServerError describes a response with status code 500, with default header values.
 
 Encountered an unexpected condition which prevented the server from fulfilling the request.
 */
@@ -482,9 +700,39 @@ type UpdateReservationInternalServerError struct {
 	Payload *services_models.UpdateReservationResponse
 }
 
+// IsSuccess returns true when this update reservation internal server error response has a 2xx status code
+func (o *UpdateReservationInternalServerError) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this update reservation internal server error response has a 3xx status code
+func (o *UpdateReservationInternalServerError) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this update reservation internal server error response has a 4xx status code
+func (o *UpdateReservationInternalServerError) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this update reservation internal server error response has a 5xx status code
+func (o *UpdateReservationInternalServerError) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this update reservation internal server error response a status code equal to that given
+func (o *UpdateReservationInternalServerError) IsCode(code int) bool {
+	return code == 500
+}
+
 func (o *UpdateReservationInternalServerError) Error() string {
 	return fmt.Sprintf("[PUT /service/v1/reservation/{reservationId}][%d] updateReservationInternalServerError  %+v", 500, o.Payload)
 }
+
+func (o *UpdateReservationInternalServerError) String() string {
+	return fmt.Sprintf("[PUT /service/v1/reservation/{reservationId}][%d] updateReservationInternalServerError  %+v", 500, o.Payload)
+}
+
 func (o *UpdateReservationInternalServerError) GetPayload() *services_models.UpdateReservationResponse {
 	return o.Payload
 }
@@ -520,7 +768,8 @@ func NewUpdateReservationServiceUnavailable() *UpdateReservationServiceUnavailab
 	return &UpdateReservationServiceUnavailable{}
 }
 
-/* UpdateReservationServiceUnavailable describes a response with status code 503, with default header values.
+/*
+UpdateReservationServiceUnavailable describes a response with status code 503, with default header values.
 
 Temporary overloading or maintenance of the server.
 */
@@ -538,9 +787,39 @@ type UpdateReservationServiceUnavailable struct {
 	Payload *services_models.UpdateReservationResponse
 }
 
+// IsSuccess returns true when this update reservation service unavailable response has a 2xx status code
+func (o *UpdateReservationServiceUnavailable) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this update reservation service unavailable response has a 3xx status code
+func (o *UpdateReservationServiceUnavailable) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this update reservation service unavailable response has a 4xx status code
+func (o *UpdateReservationServiceUnavailable) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this update reservation service unavailable response has a 5xx status code
+func (o *UpdateReservationServiceUnavailable) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this update reservation service unavailable response a status code equal to that given
+func (o *UpdateReservationServiceUnavailable) IsCode(code int) bool {
+	return code == 503
+}
+
 func (o *UpdateReservationServiceUnavailable) Error() string {
 	return fmt.Sprintf("[PUT /service/v1/reservation/{reservationId}][%d] updateReservationServiceUnavailable  %+v", 503, o.Payload)
 }
+
+func (o *UpdateReservationServiceUnavailable) String() string {
+	return fmt.Sprintf("[PUT /service/v1/reservation/{reservationId}][%d] updateReservationServiceUnavailable  %+v", 503, o.Payload)
+}
+
 func (o *UpdateReservationServiceUnavailable) GetPayload() *services_models.UpdateReservationResponse {
 	return o.Payload
 }

@@ -54,10 +54,12 @@ func NewSubmitShippingLabelRequestParamsWithHTTPClient(client *http.Client) *Sub
 	}
 }
 
-/* SubmitShippingLabelRequestParams contains all the parameters to send to the API endpoint
-   for the submit shipping label request operation.
+/*
+SubmitShippingLabelRequestParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the submit shipping label request operation.
+
+	Typically these are written to a http.Request.
 */
 type SubmitShippingLabelRequestParams struct {
 

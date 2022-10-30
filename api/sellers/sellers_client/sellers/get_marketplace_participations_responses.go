@@ -87,7 +87,8 @@ func NewGetMarketplaceParticipationsOK() *GetMarketplaceParticipationsOK {
 	return &GetMarketplaceParticipationsOK{}
 }
 
-/* GetMarketplaceParticipationsOK describes a response with status code 200, with default header values.
+/*
+GetMarketplaceParticipationsOK describes a response with status code 200, with default header values.
 
 Marketplace participations successfully retrieved.
 */
@@ -104,9 +105,39 @@ type GetMarketplaceParticipationsOK struct {
 	Payload *sellers_models.GetMarketplaceParticipationsResponse
 }
 
+// IsSuccess returns true when this get marketplace participations o k response has a 2xx status code
+func (o *GetMarketplaceParticipationsOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this get marketplace participations o k response has a 3xx status code
+func (o *GetMarketplaceParticipationsOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get marketplace participations o k response has a 4xx status code
+func (o *GetMarketplaceParticipationsOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get marketplace participations o k response has a 5xx status code
+func (o *GetMarketplaceParticipationsOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get marketplace participations o k response a status code equal to that given
+func (o *GetMarketplaceParticipationsOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *GetMarketplaceParticipationsOK) Error() string {
 	return fmt.Sprintf("[GET /sellers/v1/marketplaceParticipations][%d] getMarketplaceParticipationsOK  %+v", 200, o.Payload)
 }
+
+func (o *GetMarketplaceParticipationsOK) String() string {
+	return fmt.Sprintf("[GET /sellers/v1/marketplaceParticipations][%d] getMarketplaceParticipationsOK  %+v", 200, o.Payload)
+}
+
 func (o *GetMarketplaceParticipationsOK) GetPayload() *sellers_models.GetMarketplaceParticipationsResponse {
 	return o.Payload
 }
@@ -142,7 +173,8 @@ func NewGetMarketplaceParticipationsBadRequest() *GetMarketplaceParticipationsBa
 	return &GetMarketplaceParticipationsBadRequest{}
 }
 
-/* GetMarketplaceParticipationsBadRequest describes a response with status code 400, with default header values.
+/*
+GetMarketplaceParticipationsBadRequest describes a response with status code 400, with default header values.
 
 Request has missing or invalid parameters and cannot be parsed.
 */
@@ -159,9 +191,39 @@ type GetMarketplaceParticipationsBadRequest struct {
 	Payload *sellers_models.GetMarketplaceParticipationsResponse
 }
 
+// IsSuccess returns true when this get marketplace participations bad request response has a 2xx status code
+func (o *GetMarketplaceParticipationsBadRequest) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get marketplace participations bad request response has a 3xx status code
+func (o *GetMarketplaceParticipationsBadRequest) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get marketplace participations bad request response has a 4xx status code
+func (o *GetMarketplaceParticipationsBadRequest) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get marketplace participations bad request response has a 5xx status code
+func (o *GetMarketplaceParticipationsBadRequest) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get marketplace participations bad request response a status code equal to that given
+func (o *GetMarketplaceParticipationsBadRequest) IsCode(code int) bool {
+	return code == 400
+}
+
 func (o *GetMarketplaceParticipationsBadRequest) Error() string {
 	return fmt.Sprintf("[GET /sellers/v1/marketplaceParticipations][%d] getMarketplaceParticipationsBadRequest  %+v", 400, o.Payload)
 }
+
+func (o *GetMarketplaceParticipationsBadRequest) String() string {
+	return fmt.Sprintf("[GET /sellers/v1/marketplaceParticipations][%d] getMarketplaceParticipationsBadRequest  %+v", 400, o.Payload)
+}
+
 func (o *GetMarketplaceParticipationsBadRequest) GetPayload() *sellers_models.GetMarketplaceParticipationsResponse {
 	return o.Payload
 }
@@ -197,7 +259,8 @@ func NewGetMarketplaceParticipationsForbidden() *GetMarketplaceParticipationsFor
 	return &GetMarketplaceParticipationsForbidden{}
 }
 
-/* GetMarketplaceParticipationsForbidden describes a response with status code 403, with default header values.
+/*
+GetMarketplaceParticipationsForbidden describes a response with status code 403, with default header values.
 
 403 can be caused for reasons like Access Denied, Unauthorized, Expired Token, Invalid Signature or Resource Not Found.
 */
@@ -210,9 +273,39 @@ type GetMarketplaceParticipationsForbidden struct {
 	Payload *sellers_models.GetMarketplaceParticipationsResponse
 }
 
+// IsSuccess returns true when this get marketplace participations forbidden response has a 2xx status code
+func (o *GetMarketplaceParticipationsForbidden) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get marketplace participations forbidden response has a 3xx status code
+func (o *GetMarketplaceParticipationsForbidden) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get marketplace participations forbidden response has a 4xx status code
+func (o *GetMarketplaceParticipationsForbidden) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get marketplace participations forbidden response has a 5xx status code
+func (o *GetMarketplaceParticipationsForbidden) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get marketplace participations forbidden response a status code equal to that given
+func (o *GetMarketplaceParticipationsForbidden) IsCode(code int) bool {
+	return code == 403
+}
+
 func (o *GetMarketplaceParticipationsForbidden) Error() string {
 	return fmt.Sprintf("[GET /sellers/v1/marketplaceParticipations][%d] getMarketplaceParticipationsForbidden  %+v", 403, o.Payload)
 }
+
+func (o *GetMarketplaceParticipationsForbidden) String() string {
+	return fmt.Sprintf("[GET /sellers/v1/marketplaceParticipations][%d] getMarketplaceParticipationsForbidden  %+v", 403, o.Payload)
+}
+
 func (o *GetMarketplaceParticipationsForbidden) GetPayload() *sellers_models.GetMarketplaceParticipationsResponse {
 	return o.Payload
 }
@@ -241,7 +334,8 @@ func NewGetMarketplaceParticipationsNotFound() *GetMarketplaceParticipationsNotF
 	return &GetMarketplaceParticipationsNotFound{}
 }
 
-/* GetMarketplaceParticipationsNotFound describes a response with status code 404, with default header values.
+/*
+GetMarketplaceParticipationsNotFound describes a response with status code 404, with default header values.
 
 The resource specified does not exist.
 */
@@ -258,9 +352,39 @@ type GetMarketplaceParticipationsNotFound struct {
 	Payload *sellers_models.GetMarketplaceParticipationsResponse
 }
 
+// IsSuccess returns true when this get marketplace participations not found response has a 2xx status code
+func (o *GetMarketplaceParticipationsNotFound) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get marketplace participations not found response has a 3xx status code
+func (o *GetMarketplaceParticipationsNotFound) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get marketplace participations not found response has a 4xx status code
+func (o *GetMarketplaceParticipationsNotFound) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get marketplace participations not found response has a 5xx status code
+func (o *GetMarketplaceParticipationsNotFound) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get marketplace participations not found response a status code equal to that given
+func (o *GetMarketplaceParticipationsNotFound) IsCode(code int) bool {
+	return code == 404
+}
+
 func (o *GetMarketplaceParticipationsNotFound) Error() string {
 	return fmt.Sprintf("[GET /sellers/v1/marketplaceParticipations][%d] getMarketplaceParticipationsNotFound  %+v", 404, o.Payload)
 }
+
+func (o *GetMarketplaceParticipationsNotFound) String() string {
+	return fmt.Sprintf("[GET /sellers/v1/marketplaceParticipations][%d] getMarketplaceParticipationsNotFound  %+v", 404, o.Payload)
+}
+
 func (o *GetMarketplaceParticipationsNotFound) GetPayload() *sellers_models.GetMarketplaceParticipationsResponse {
 	return o.Payload
 }
@@ -296,7 +420,8 @@ func NewGetMarketplaceParticipationsRequestEntityTooLarge() *GetMarketplaceParti
 	return &GetMarketplaceParticipationsRequestEntityTooLarge{}
 }
 
-/* GetMarketplaceParticipationsRequestEntityTooLarge describes a response with status code 413, with default header values.
+/*
+GetMarketplaceParticipationsRequestEntityTooLarge describes a response with status code 413, with default header values.
 
 The request size exceeded the maximum accepted size.
 */
@@ -314,9 +439,39 @@ type GetMarketplaceParticipationsRequestEntityTooLarge struct {
 	Payload *sellers_models.GetMarketplaceParticipationsResponse
 }
 
+// IsSuccess returns true when this get marketplace participations request entity too large response has a 2xx status code
+func (o *GetMarketplaceParticipationsRequestEntityTooLarge) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get marketplace participations request entity too large response has a 3xx status code
+func (o *GetMarketplaceParticipationsRequestEntityTooLarge) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get marketplace participations request entity too large response has a 4xx status code
+func (o *GetMarketplaceParticipationsRequestEntityTooLarge) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get marketplace participations request entity too large response has a 5xx status code
+func (o *GetMarketplaceParticipationsRequestEntityTooLarge) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get marketplace participations request entity too large response a status code equal to that given
+func (o *GetMarketplaceParticipationsRequestEntityTooLarge) IsCode(code int) bool {
+	return code == 413
+}
+
 func (o *GetMarketplaceParticipationsRequestEntityTooLarge) Error() string {
 	return fmt.Sprintf("[GET /sellers/v1/marketplaceParticipations][%d] getMarketplaceParticipationsRequestEntityTooLarge  %+v", 413, o.Payload)
 }
+
+func (o *GetMarketplaceParticipationsRequestEntityTooLarge) String() string {
+	return fmt.Sprintf("[GET /sellers/v1/marketplaceParticipations][%d] getMarketplaceParticipationsRequestEntityTooLarge  %+v", 413, o.Payload)
+}
+
 func (o *GetMarketplaceParticipationsRequestEntityTooLarge) GetPayload() *sellers_models.GetMarketplaceParticipationsResponse {
 	return o.Payload
 }
@@ -352,7 +507,8 @@ func NewGetMarketplaceParticipationsUnsupportedMediaType() *GetMarketplacePartic
 	return &GetMarketplaceParticipationsUnsupportedMediaType{}
 }
 
-/* GetMarketplaceParticipationsUnsupportedMediaType describes a response with status code 415, with default header values.
+/*
+GetMarketplaceParticipationsUnsupportedMediaType describes a response with status code 415, with default header values.
 
 The entity of the request is in a format not supported by the requested resource.
 */
@@ -370,9 +526,39 @@ type GetMarketplaceParticipationsUnsupportedMediaType struct {
 	Payload *sellers_models.GetMarketplaceParticipationsResponse
 }
 
+// IsSuccess returns true when this get marketplace participations unsupported media type response has a 2xx status code
+func (o *GetMarketplaceParticipationsUnsupportedMediaType) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get marketplace participations unsupported media type response has a 3xx status code
+func (o *GetMarketplaceParticipationsUnsupportedMediaType) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get marketplace participations unsupported media type response has a 4xx status code
+func (o *GetMarketplaceParticipationsUnsupportedMediaType) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get marketplace participations unsupported media type response has a 5xx status code
+func (o *GetMarketplaceParticipationsUnsupportedMediaType) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get marketplace participations unsupported media type response a status code equal to that given
+func (o *GetMarketplaceParticipationsUnsupportedMediaType) IsCode(code int) bool {
+	return code == 415
+}
+
 func (o *GetMarketplaceParticipationsUnsupportedMediaType) Error() string {
 	return fmt.Sprintf("[GET /sellers/v1/marketplaceParticipations][%d] getMarketplaceParticipationsUnsupportedMediaType  %+v", 415, o.Payload)
 }
+
+func (o *GetMarketplaceParticipationsUnsupportedMediaType) String() string {
+	return fmt.Sprintf("[GET /sellers/v1/marketplaceParticipations][%d] getMarketplaceParticipationsUnsupportedMediaType  %+v", 415, o.Payload)
+}
+
 func (o *GetMarketplaceParticipationsUnsupportedMediaType) GetPayload() *sellers_models.GetMarketplaceParticipationsResponse {
 	return o.Payload
 }
@@ -408,7 +594,8 @@ func NewGetMarketplaceParticipationsTooManyRequests() *GetMarketplaceParticipati
 	return &GetMarketplaceParticipationsTooManyRequests{}
 }
 
-/* GetMarketplaceParticipationsTooManyRequests describes a response with status code 429, with default header values.
+/*
+GetMarketplaceParticipationsTooManyRequests describes a response with status code 429, with default header values.
 
 The frequency of requests was greater than allowed.
 */
@@ -426,9 +613,39 @@ type GetMarketplaceParticipationsTooManyRequests struct {
 	Payload *sellers_models.GetMarketplaceParticipationsResponse
 }
 
+// IsSuccess returns true when this get marketplace participations too many requests response has a 2xx status code
+func (o *GetMarketplaceParticipationsTooManyRequests) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get marketplace participations too many requests response has a 3xx status code
+func (o *GetMarketplaceParticipationsTooManyRequests) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get marketplace participations too many requests response has a 4xx status code
+func (o *GetMarketplaceParticipationsTooManyRequests) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get marketplace participations too many requests response has a 5xx status code
+func (o *GetMarketplaceParticipationsTooManyRequests) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get marketplace participations too many requests response a status code equal to that given
+func (o *GetMarketplaceParticipationsTooManyRequests) IsCode(code int) bool {
+	return code == 429
+}
+
 func (o *GetMarketplaceParticipationsTooManyRequests) Error() string {
 	return fmt.Sprintf("[GET /sellers/v1/marketplaceParticipations][%d] getMarketplaceParticipationsTooManyRequests  %+v", 429, o.Payload)
 }
+
+func (o *GetMarketplaceParticipationsTooManyRequests) String() string {
+	return fmt.Sprintf("[GET /sellers/v1/marketplaceParticipations][%d] getMarketplaceParticipationsTooManyRequests  %+v", 429, o.Payload)
+}
+
 func (o *GetMarketplaceParticipationsTooManyRequests) GetPayload() *sellers_models.GetMarketplaceParticipationsResponse {
 	return o.Payload
 }
@@ -464,7 +681,8 @@ func NewGetMarketplaceParticipationsInternalServerError() *GetMarketplacePartici
 	return &GetMarketplaceParticipationsInternalServerError{}
 }
 
-/* GetMarketplaceParticipationsInternalServerError describes a response with status code 500, with default header values.
+/*
+GetMarketplaceParticipationsInternalServerError describes a response with status code 500, with default header values.
 
 Encountered an unexpected condition which prevented the server from fulfilling the request.
 */
@@ -482,9 +700,39 @@ type GetMarketplaceParticipationsInternalServerError struct {
 	Payload *sellers_models.GetMarketplaceParticipationsResponse
 }
 
+// IsSuccess returns true when this get marketplace participations internal server error response has a 2xx status code
+func (o *GetMarketplaceParticipationsInternalServerError) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get marketplace participations internal server error response has a 3xx status code
+func (o *GetMarketplaceParticipationsInternalServerError) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get marketplace participations internal server error response has a 4xx status code
+func (o *GetMarketplaceParticipationsInternalServerError) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get marketplace participations internal server error response has a 5xx status code
+func (o *GetMarketplaceParticipationsInternalServerError) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this get marketplace participations internal server error response a status code equal to that given
+func (o *GetMarketplaceParticipationsInternalServerError) IsCode(code int) bool {
+	return code == 500
+}
+
 func (o *GetMarketplaceParticipationsInternalServerError) Error() string {
 	return fmt.Sprintf("[GET /sellers/v1/marketplaceParticipations][%d] getMarketplaceParticipationsInternalServerError  %+v", 500, o.Payload)
 }
+
+func (o *GetMarketplaceParticipationsInternalServerError) String() string {
+	return fmt.Sprintf("[GET /sellers/v1/marketplaceParticipations][%d] getMarketplaceParticipationsInternalServerError  %+v", 500, o.Payload)
+}
+
 func (o *GetMarketplaceParticipationsInternalServerError) GetPayload() *sellers_models.GetMarketplaceParticipationsResponse {
 	return o.Payload
 }
@@ -520,7 +768,8 @@ func NewGetMarketplaceParticipationsServiceUnavailable() *GetMarketplaceParticip
 	return &GetMarketplaceParticipationsServiceUnavailable{}
 }
 
-/* GetMarketplaceParticipationsServiceUnavailable describes a response with status code 503, with default header values.
+/*
+GetMarketplaceParticipationsServiceUnavailable describes a response with status code 503, with default header values.
 
 Temporary overloading or maintenance of the server.
 */
@@ -538,9 +787,39 @@ type GetMarketplaceParticipationsServiceUnavailable struct {
 	Payload *sellers_models.GetMarketplaceParticipationsResponse
 }
 
+// IsSuccess returns true when this get marketplace participations service unavailable response has a 2xx status code
+func (o *GetMarketplaceParticipationsServiceUnavailable) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get marketplace participations service unavailable response has a 3xx status code
+func (o *GetMarketplaceParticipationsServiceUnavailable) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get marketplace participations service unavailable response has a 4xx status code
+func (o *GetMarketplaceParticipationsServiceUnavailable) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get marketplace participations service unavailable response has a 5xx status code
+func (o *GetMarketplaceParticipationsServiceUnavailable) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this get marketplace participations service unavailable response a status code equal to that given
+func (o *GetMarketplaceParticipationsServiceUnavailable) IsCode(code int) bool {
+	return code == 503
+}
+
 func (o *GetMarketplaceParticipationsServiceUnavailable) Error() string {
 	return fmt.Sprintf("[GET /sellers/v1/marketplaceParticipations][%d] getMarketplaceParticipationsServiceUnavailable  %+v", 503, o.Payload)
 }
+
+func (o *GetMarketplaceParticipationsServiceUnavailable) String() string {
+	return fmt.Sprintf("[GET /sellers/v1/marketplaceParticipations][%d] getMarketplaceParticipationsServiceUnavailable  %+v", 503, o.Payload)
+}
+
 func (o *GetMarketplaceParticipationsServiceUnavailable) GetPayload() *sellers_models.GetMarketplaceParticipationsResponse {
 	return o.Payload
 }

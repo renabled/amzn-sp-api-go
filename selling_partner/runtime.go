@@ -4,20 +4,51 @@ import (
 	"context"
 	"net/http"
 
+	"github.com/aws/aws-sdk-go/aws"
 	"github.com/go-openapi/runtime/client"
 	"golang.org/x/oauth2"
 	"golang.org/x/oauth2/amazon"
 	"golang.org/x/oauth2/clientcredentials"
 )
 
-func (sp *Client) ClientTransport(ctx context.Context, isGrantless bool) *client.Runtime {
+type option struct {
+	debug       bool
+	isGrantless bool
+}
+
+type Opt = func(*option)
+
+func Debug() Opt {
+	return func(o *option) {
+		o.debug = true
+	}
+}
+
+func Grantless() Opt {
+	return func(o *option) {
+		o.isGrantless = true
+	}
+}
+
+func (sp *Client) ClientTransport(ctx context.Context, opts ...Opt) *client.Runtime {
+	opt := option{}
+
+	for _, m := range opts {
+		m(&opt)
+	}
+
 	aws4Signer, err := sp.signer()
 	if err != nil {
 		return nil
 	}
 
+	if opt.debug {
+		aws4Signer.Debug = *aws.LogLevel(aws.LogDebug | aws.LogDebugWithSigning)
+		aws4Signer.Logger = aws.NewDefaultLogger()
+	}
+
 	src := sp.authTokenSource(ctx)
-	if isGrantless {
+	if opt.isGrantless {
 		src = sp.grantlessTokenSource(ctx)
 	}
 
@@ -32,9 +63,12 @@ func (sp *Client) ClientTransport(ctx context.Context, isGrantless bool) *client
 			},
 		},
 	)
-	cli := oauth2.NewClient(ctx, src)
 
-	return client.NewWithClient(sp.config.endpoint, "/", []string{"https"}, cli)
+	cli := client.NewWithClient(sp.config.endpoint, "/", []string{"https"}, oauth2.NewClient(ctx, src))
+	if opt.debug {
+		cli.SetDebug(true)
+	}
+	return cli
 }
 
 func (sp *Client) grantlessTokenSource(ctx context.Context) oauth2.TokenSource {

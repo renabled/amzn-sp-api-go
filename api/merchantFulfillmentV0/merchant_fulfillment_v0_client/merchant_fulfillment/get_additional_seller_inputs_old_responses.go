@@ -81,7 +81,8 @@ func NewGetAdditionalSellerInputsOldOK() *GetAdditionalSellerInputsOldOK {
 	return &GetAdditionalSellerInputsOldOK{}
 }
 
-/* GetAdditionalSellerInputsOldOK describes a response with status code 200, with default header values.
+/*
+GetAdditionalSellerInputsOldOK describes a response with status code 200, with default header values.
 
 Success
 */
@@ -98,9 +99,39 @@ type GetAdditionalSellerInputsOldOK struct {
 	Payload *merchant_fulfillment_v0_models.GetAdditionalSellerInputsResponse
 }
 
+// IsSuccess returns true when this get additional seller inputs old o k response has a 2xx status code
+func (o *GetAdditionalSellerInputsOldOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this get additional seller inputs old o k response has a 3xx status code
+func (o *GetAdditionalSellerInputsOldOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get additional seller inputs old o k response has a 4xx status code
+func (o *GetAdditionalSellerInputsOldOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get additional seller inputs old o k response has a 5xx status code
+func (o *GetAdditionalSellerInputsOldOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get additional seller inputs old o k response a status code equal to that given
+func (o *GetAdditionalSellerInputsOldOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *GetAdditionalSellerInputsOldOK) Error() string {
 	return fmt.Sprintf("[POST /mfn/v0/sellerInputs][%d] getAdditionalSellerInputsOldOK  %+v", 200, o.Payload)
 }
+
+func (o *GetAdditionalSellerInputsOldOK) String() string {
+	return fmt.Sprintf("[POST /mfn/v0/sellerInputs][%d] getAdditionalSellerInputsOldOK  %+v", 200, o.Payload)
+}
+
 func (o *GetAdditionalSellerInputsOldOK) GetPayload() *merchant_fulfillment_v0_models.GetAdditionalSellerInputsResponse {
 	return o.Payload
 }
@@ -136,7 +167,8 @@ func NewGetAdditionalSellerInputsOldBadRequest() *GetAdditionalSellerInputsOldBa
 	return &GetAdditionalSellerInputsOldBadRequest{}
 }
 
-/* GetAdditionalSellerInputsOldBadRequest describes a response with status code 400, with default header values.
+/*
+GetAdditionalSellerInputsOldBadRequest describes a response with status code 400, with default header values.
 
 Request has missing or invalid parameters and cannot be parsed.
 */
@@ -153,9 +185,39 @@ type GetAdditionalSellerInputsOldBadRequest struct {
 	Payload *merchant_fulfillment_v0_models.GetAdditionalSellerInputsResponse
 }
 
+// IsSuccess returns true when this get additional seller inputs old bad request response has a 2xx status code
+func (o *GetAdditionalSellerInputsOldBadRequest) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get additional seller inputs old bad request response has a 3xx status code
+func (o *GetAdditionalSellerInputsOldBadRequest) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get additional seller inputs old bad request response has a 4xx status code
+func (o *GetAdditionalSellerInputsOldBadRequest) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get additional seller inputs old bad request response has a 5xx status code
+func (o *GetAdditionalSellerInputsOldBadRequest) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get additional seller inputs old bad request response a status code equal to that given
+func (o *GetAdditionalSellerInputsOldBadRequest) IsCode(code int) bool {
+	return code == 400
+}
+
 func (o *GetAdditionalSellerInputsOldBadRequest) Error() string {
 	return fmt.Sprintf("[POST /mfn/v0/sellerInputs][%d] getAdditionalSellerInputsOldBadRequest  %+v", 400, o.Payload)
 }
+
+func (o *GetAdditionalSellerInputsOldBadRequest) String() string {
+	return fmt.Sprintf("[POST /mfn/v0/sellerInputs][%d] getAdditionalSellerInputsOldBadRequest  %+v", 400, o.Payload)
+}
+
 func (o *GetAdditionalSellerInputsOldBadRequest) GetPayload() *merchant_fulfillment_v0_models.GetAdditionalSellerInputsResponse {
 	return o.Payload
 }
@@ -191,7 +253,8 @@ func NewGetAdditionalSellerInputsOldUnauthorized() *GetAdditionalSellerInputsOld
 	return &GetAdditionalSellerInputsOldUnauthorized{}
 }
 
-/* GetAdditionalSellerInputsOldUnauthorized describes a response with status code 401, with default header values.
+/*
+GetAdditionalSellerInputsOldUnauthorized describes a response with status code 401, with default header values.
 
 The request's Authorization header is not formatted correctly or does not contain a valid token.
 */
@@ -209,9 +272,39 @@ type GetAdditionalSellerInputsOldUnauthorized struct {
 	Payload *merchant_fulfillment_v0_models.GetAdditionalSellerInputsResponse
 }
 
+// IsSuccess returns true when this get additional seller inputs old unauthorized response has a 2xx status code
+func (o *GetAdditionalSellerInputsOldUnauthorized) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get additional seller inputs old unauthorized response has a 3xx status code
+func (o *GetAdditionalSellerInputsOldUnauthorized) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get additional seller inputs old unauthorized response has a 4xx status code
+func (o *GetAdditionalSellerInputsOldUnauthorized) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get additional seller inputs old unauthorized response has a 5xx status code
+func (o *GetAdditionalSellerInputsOldUnauthorized) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get additional seller inputs old unauthorized response a status code equal to that given
+func (o *GetAdditionalSellerInputsOldUnauthorized) IsCode(code int) bool {
+	return code == 401
+}
+
 func (o *GetAdditionalSellerInputsOldUnauthorized) Error() string {
 	return fmt.Sprintf("[POST /mfn/v0/sellerInputs][%d] getAdditionalSellerInputsOldUnauthorized  %+v", 401, o.Payload)
 }
+
+func (o *GetAdditionalSellerInputsOldUnauthorized) String() string {
+	return fmt.Sprintf("[POST /mfn/v0/sellerInputs][%d] getAdditionalSellerInputsOldUnauthorized  %+v", 401, o.Payload)
+}
+
 func (o *GetAdditionalSellerInputsOldUnauthorized) GetPayload() *merchant_fulfillment_v0_models.GetAdditionalSellerInputsResponse {
 	return o.Payload
 }
@@ -247,7 +340,8 @@ func NewGetAdditionalSellerInputsOldForbidden() *GetAdditionalSellerInputsOldFor
 	return &GetAdditionalSellerInputsOldForbidden{}
 }
 
-/* GetAdditionalSellerInputsOldForbidden describes a response with status code 403, with default header values.
+/*
+GetAdditionalSellerInputsOldForbidden describes a response with status code 403, with default header values.
 
 Indicates that access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.
 */
@@ -260,9 +354,39 @@ type GetAdditionalSellerInputsOldForbidden struct {
 	Payload *merchant_fulfillment_v0_models.GetAdditionalSellerInputsResponse
 }
 
+// IsSuccess returns true when this get additional seller inputs old forbidden response has a 2xx status code
+func (o *GetAdditionalSellerInputsOldForbidden) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get additional seller inputs old forbidden response has a 3xx status code
+func (o *GetAdditionalSellerInputsOldForbidden) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get additional seller inputs old forbidden response has a 4xx status code
+func (o *GetAdditionalSellerInputsOldForbidden) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get additional seller inputs old forbidden response has a 5xx status code
+func (o *GetAdditionalSellerInputsOldForbidden) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get additional seller inputs old forbidden response a status code equal to that given
+func (o *GetAdditionalSellerInputsOldForbidden) IsCode(code int) bool {
+	return code == 403
+}
+
 func (o *GetAdditionalSellerInputsOldForbidden) Error() string {
 	return fmt.Sprintf("[POST /mfn/v0/sellerInputs][%d] getAdditionalSellerInputsOldForbidden  %+v", 403, o.Payload)
 }
+
+func (o *GetAdditionalSellerInputsOldForbidden) String() string {
+	return fmt.Sprintf("[POST /mfn/v0/sellerInputs][%d] getAdditionalSellerInputsOldForbidden  %+v", 403, o.Payload)
+}
+
 func (o *GetAdditionalSellerInputsOldForbidden) GetPayload() *merchant_fulfillment_v0_models.GetAdditionalSellerInputsResponse {
 	return o.Payload
 }
@@ -291,7 +415,8 @@ func NewGetAdditionalSellerInputsOldNotFound() *GetAdditionalSellerInputsOldNotF
 	return &GetAdditionalSellerInputsOldNotFound{}
 }
 
-/* GetAdditionalSellerInputsOldNotFound describes a response with status code 404, with default header values.
+/*
+GetAdditionalSellerInputsOldNotFound describes a response with status code 404, with default header values.
 
 The specified resource does not exist.
 */
@@ -308,9 +433,39 @@ type GetAdditionalSellerInputsOldNotFound struct {
 	Payload *merchant_fulfillment_v0_models.GetAdditionalSellerInputsResponse
 }
 
+// IsSuccess returns true when this get additional seller inputs old not found response has a 2xx status code
+func (o *GetAdditionalSellerInputsOldNotFound) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get additional seller inputs old not found response has a 3xx status code
+func (o *GetAdditionalSellerInputsOldNotFound) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get additional seller inputs old not found response has a 4xx status code
+func (o *GetAdditionalSellerInputsOldNotFound) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get additional seller inputs old not found response has a 5xx status code
+func (o *GetAdditionalSellerInputsOldNotFound) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get additional seller inputs old not found response a status code equal to that given
+func (o *GetAdditionalSellerInputsOldNotFound) IsCode(code int) bool {
+	return code == 404
+}
+
 func (o *GetAdditionalSellerInputsOldNotFound) Error() string {
 	return fmt.Sprintf("[POST /mfn/v0/sellerInputs][%d] getAdditionalSellerInputsOldNotFound  %+v", 404, o.Payload)
 }
+
+func (o *GetAdditionalSellerInputsOldNotFound) String() string {
+	return fmt.Sprintf("[POST /mfn/v0/sellerInputs][%d] getAdditionalSellerInputsOldNotFound  %+v", 404, o.Payload)
+}
+
 func (o *GetAdditionalSellerInputsOldNotFound) GetPayload() *merchant_fulfillment_v0_models.GetAdditionalSellerInputsResponse {
 	return o.Payload
 }
@@ -346,7 +501,8 @@ func NewGetAdditionalSellerInputsOldTooManyRequests() *GetAdditionalSellerInputs
 	return &GetAdditionalSellerInputsOldTooManyRequests{}
 }
 
-/* GetAdditionalSellerInputsOldTooManyRequests describes a response with status code 429, with default header values.
+/*
+GetAdditionalSellerInputsOldTooManyRequests describes a response with status code 429, with default header values.
 
 The frequency of requests was greater than allowed.
 */
@@ -364,9 +520,39 @@ type GetAdditionalSellerInputsOldTooManyRequests struct {
 	Payload *merchant_fulfillment_v0_models.GetAdditionalSellerInputsResponse
 }
 
+// IsSuccess returns true when this get additional seller inputs old too many requests response has a 2xx status code
+func (o *GetAdditionalSellerInputsOldTooManyRequests) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get additional seller inputs old too many requests response has a 3xx status code
+func (o *GetAdditionalSellerInputsOldTooManyRequests) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get additional seller inputs old too many requests response has a 4xx status code
+func (o *GetAdditionalSellerInputsOldTooManyRequests) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get additional seller inputs old too many requests response has a 5xx status code
+func (o *GetAdditionalSellerInputsOldTooManyRequests) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get additional seller inputs old too many requests response a status code equal to that given
+func (o *GetAdditionalSellerInputsOldTooManyRequests) IsCode(code int) bool {
+	return code == 429
+}
+
 func (o *GetAdditionalSellerInputsOldTooManyRequests) Error() string {
 	return fmt.Sprintf("[POST /mfn/v0/sellerInputs][%d] getAdditionalSellerInputsOldTooManyRequests  %+v", 429, o.Payload)
 }
+
+func (o *GetAdditionalSellerInputsOldTooManyRequests) String() string {
+	return fmt.Sprintf("[POST /mfn/v0/sellerInputs][%d] getAdditionalSellerInputsOldTooManyRequests  %+v", 429, o.Payload)
+}
+
 func (o *GetAdditionalSellerInputsOldTooManyRequests) GetPayload() *merchant_fulfillment_v0_models.GetAdditionalSellerInputsResponse {
 	return o.Payload
 }
@@ -402,7 +588,8 @@ func NewGetAdditionalSellerInputsOldInternalServerError() *GetAdditionalSellerIn
 	return &GetAdditionalSellerInputsOldInternalServerError{}
 }
 
-/* GetAdditionalSellerInputsOldInternalServerError describes a response with status code 500, with default header values.
+/*
+GetAdditionalSellerInputsOldInternalServerError describes a response with status code 500, with default header values.
 
 An unexpected condition occurred that prevented the server from fulfilling the request.
 */
@@ -420,9 +607,39 @@ type GetAdditionalSellerInputsOldInternalServerError struct {
 	Payload *merchant_fulfillment_v0_models.GetAdditionalSellerInputsResponse
 }
 
+// IsSuccess returns true when this get additional seller inputs old internal server error response has a 2xx status code
+func (o *GetAdditionalSellerInputsOldInternalServerError) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get additional seller inputs old internal server error response has a 3xx status code
+func (o *GetAdditionalSellerInputsOldInternalServerError) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get additional seller inputs old internal server error response has a 4xx status code
+func (o *GetAdditionalSellerInputsOldInternalServerError) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get additional seller inputs old internal server error response has a 5xx status code
+func (o *GetAdditionalSellerInputsOldInternalServerError) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this get additional seller inputs old internal server error response a status code equal to that given
+func (o *GetAdditionalSellerInputsOldInternalServerError) IsCode(code int) bool {
+	return code == 500
+}
+
 func (o *GetAdditionalSellerInputsOldInternalServerError) Error() string {
 	return fmt.Sprintf("[POST /mfn/v0/sellerInputs][%d] getAdditionalSellerInputsOldInternalServerError  %+v", 500, o.Payload)
 }
+
+func (o *GetAdditionalSellerInputsOldInternalServerError) String() string {
+	return fmt.Sprintf("[POST /mfn/v0/sellerInputs][%d] getAdditionalSellerInputsOldInternalServerError  %+v", 500, o.Payload)
+}
+
 func (o *GetAdditionalSellerInputsOldInternalServerError) GetPayload() *merchant_fulfillment_v0_models.GetAdditionalSellerInputsResponse {
 	return o.Payload
 }
@@ -458,7 +675,8 @@ func NewGetAdditionalSellerInputsOldServiceUnavailable() *GetAdditionalSellerInp
 	return &GetAdditionalSellerInputsOldServiceUnavailable{}
 }
 
-/* GetAdditionalSellerInputsOldServiceUnavailable describes a response with status code 503, with default header values.
+/*
+GetAdditionalSellerInputsOldServiceUnavailable describes a response with status code 503, with default header values.
 
 Temporary overloading or maintenance of the server.
 */
@@ -476,9 +694,39 @@ type GetAdditionalSellerInputsOldServiceUnavailable struct {
 	Payload *merchant_fulfillment_v0_models.GetAdditionalSellerInputsResponse
 }
 
+// IsSuccess returns true when this get additional seller inputs old service unavailable response has a 2xx status code
+func (o *GetAdditionalSellerInputsOldServiceUnavailable) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get additional seller inputs old service unavailable response has a 3xx status code
+func (o *GetAdditionalSellerInputsOldServiceUnavailable) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get additional seller inputs old service unavailable response has a 4xx status code
+func (o *GetAdditionalSellerInputsOldServiceUnavailable) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get additional seller inputs old service unavailable response has a 5xx status code
+func (o *GetAdditionalSellerInputsOldServiceUnavailable) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this get additional seller inputs old service unavailable response a status code equal to that given
+func (o *GetAdditionalSellerInputsOldServiceUnavailable) IsCode(code int) bool {
+	return code == 503
+}
+
 func (o *GetAdditionalSellerInputsOldServiceUnavailable) Error() string {
 	return fmt.Sprintf("[POST /mfn/v0/sellerInputs][%d] getAdditionalSellerInputsOldServiceUnavailable  %+v", 503, o.Payload)
 }
+
+func (o *GetAdditionalSellerInputsOldServiceUnavailable) String() string {
+	return fmt.Sprintf("[POST /mfn/v0/sellerInputs][%d] getAdditionalSellerInputsOldServiceUnavailable  %+v", 503, o.Payload)
+}
+
 func (o *GetAdditionalSellerInputsOldServiceUnavailable) GetPayload() *merchant_fulfillment_v0_models.GetAdditionalSellerInputsResponse {
 	return o.Payload
 }

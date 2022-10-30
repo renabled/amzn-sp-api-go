@@ -81,7 +81,8 @@ func NewGetTrackingInformationOK() *GetTrackingInformationOK {
 	return &GetTrackingInformationOK{}
 }
 
-/* GetTrackingInformationOK describes a response with status code 200, with default header values.
+/*
+GetTrackingInformationOK describes a response with status code 200, with default header values.
 
 Success.
 */
@@ -98,9 +99,39 @@ type GetTrackingInformationOK struct {
 	Payload *shipping_models.GetTrackingInformationResponse
 }
 
+// IsSuccess returns true when this get tracking information o k response has a 2xx status code
+func (o *GetTrackingInformationOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this get tracking information o k response has a 3xx status code
+func (o *GetTrackingInformationOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get tracking information o k response has a 4xx status code
+func (o *GetTrackingInformationOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get tracking information o k response has a 5xx status code
+func (o *GetTrackingInformationOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get tracking information o k response a status code equal to that given
+func (o *GetTrackingInformationOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *GetTrackingInformationOK) Error() string {
 	return fmt.Sprintf("[GET /shipping/v1/tracking/{trackingId}][%d] getTrackingInformationOK  %+v", 200, o.Payload)
 }
+
+func (o *GetTrackingInformationOK) String() string {
+	return fmt.Sprintf("[GET /shipping/v1/tracking/{trackingId}][%d] getTrackingInformationOK  %+v", 200, o.Payload)
+}
+
 func (o *GetTrackingInformationOK) GetPayload() *shipping_models.GetTrackingInformationResponse {
 	return o.Payload
 }
@@ -136,7 +167,8 @@ func NewGetTrackingInformationBadRequest() *GetTrackingInformationBadRequest {
 	return &GetTrackingInformationBadRequest{}
 }
 
-/* GetTrackingInformationBadRequest describes a response with status code 400, with default header values.
+/*
+GetTrackingInformationBadRequest describes a response with status code 400, with default header values.
 
 Request has missing or invalid parameters and cannot be parsed.
 */
@@ -153,9 +185,39 @@ type GetTrackingInformationBadRequest struct {
 	Payload *shipping_models.GetTrackingInformationResponse
 }
 
+// IsSuccess returns true when this get tracking information bad request response has a 2xx status code
+func (o *GetTrackingInformationBadRequest) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get tracking information bad request response has a 3xx status code
+func (o *GetTrackingInformationBadRequest) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get tracking information bad request response has a 4xx status code
+func (o *GetTrackingInformationBadRequest) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get tracking information bad request response has a 5xx status code
+func (o *GetTrackingInformationBadRequest) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get tracking information bad request response a status code equal to that given
+func (o *GetTrackingInformationBadRequest) IsCode(code int) bool {
+	return code == 400
+}
+
 func (o *GetTrackingInformationBadRequest) Error() string {
 	return fmt.Sprintf("[GET /shipping/v1/tracking/{trackingId}][%d] getTrackingInformationBadRequest  %+v", 400, o.Payload)
 }
+
+func (o *GetTrackingInformationBadRequest) String() string {
+	return fmt.Sprintf("[GET /shipping/v1/tracking/{trackingId}][%d] getTrackingInformationBadRequest  %+v", 400, o.Payload)
+}
+
 func (o *GetTrackingInformationBadRequest) GetPayload() *shipping_models.GetTrackingInformationResponse {
 	return o.Payload
 }
@@ -191,7 +253,8 @@ func NewGetTrackingInformationUnauthorized() *GetTrackingInformationUnauthorized
 	return &GetTrackingInformationUnauthorized{}
 }
 
-/* GetTrackingInformationUnauthorized describes a response with status code 401, with default header values.
+/*
+GetTrackingInformationUnauthorized describes a response with status code 401, with default header values.
 
 The request's Authorization header is not formatted correctly or does not contain a valid token.
 */
@@ -209,9 +272,39 @@ type GetTrackingInformationUnauthorized struct {
 	Payload *shipping_models.GetTrackingInformationResponse
 }
 
+// IsSuccess returns true when this get tracking information unauthorized response has a 2xx status code
+func (o *GetTrackingInformationUnauthorized) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get tracking information unauthorized response has a 3xx status code
+func (o *GetTrackingInformationUnauthorized) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get tracking information unauthorized response has a 4xx status code
+func (o *GetTrackingInformationUnauthorized) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get tracking information unauthorized response has a 5xx status code
+func (o *GetTrackingInformationUnauthorized) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get tracking information unauthorized response a status code equal to that given
+func (o *GetTrackingInformationUnauthorized) IsCode(code int) bool {
+	return code == 401
+}
+
 func (o *GetTrackingInformationUnauthorized) Error() string {
 	return fmt.Sprintf("[GET /shipping/v1/tracking/{trackingId}][%d] getTrackingInformationUnauthorized  %+v", 401, o.Payload)
 }
+
+func (o *GetTrackingInformationUnauthorized) String() string {
+	return fmt.Sprintf("[GET /shipping/v1/tracking/{trackingId}][%d] getTrackingInformationUnauthorized  %+v", 401, o.Payload)
+}
+
 func (o *GetTrackingInformationUnauthorized) GetPayload() *shipping_models.GetTrackingInformationResponse {
 	return o.Payload
 }
@@ -247,7 +340,8 @@ func NewGetTrackingInformationForbidden() *GetTrackingInformationForbidden {
 	return &GetTrackingInformationForbidden{}
 }
 
-/* GetTrackingInformationForbidden describes a response with status code 403, with default header values.
+/*
+GetTrackingInformationForbidden describes a response with status code 403, with default header values.
 
 403 can be caused for reasons like Access Denied, Unauthorized, Expired Token, Invalid Signature or Resource Not Found.
 */
@@ -260,9 +354,39 @@ type GetTrackingInformationForbidden struct {
 	Payload *shipping_models.GetTrackingInformationResponse
 }
 
+// IsSuccess returns true when this get tracking information forbidden response has a 2xx status code
+func (o *GetTrackingInformationForbidden) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get tracking information forbidden response has a 3xx status code
+func (o *GetTrackingInformationForbidden) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get tracking information forbidden response has a 4xx status code
+func (o *GetTrackingInformationForbidden) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get tracking information forbidden response has a 5xx status code
+func (o *GetTrackingInformationForbidden) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get tracking information forbidden response a status code equal to that given
+func (o *GetTrackingInformationForbidden) IsCode(code int) bool {
+	return code == 403
+}
+
 func (o *GetTrackingInformationForbidden) Error() string {
 	return fmt.Sprintf("[GET /shipping/v1/tracking/{trackingId}][%d] getTrackingInformationForbidden  %+v", 403, o.Payload)
 }
+
+func (o *GetTrackingInformationForbidden) String() string {
+	return fmt.Sprintf("[GET /shipping/v1/tracking/{trackingId}][%d] getTrackingInformationForbidden  %+v", 403, o.Payload)
+}
+
 func (o *GetTrackingInformationForbidden) GetPayload() *shipping_models.GetTrackingInformationResponse {
 	return o.Payload
 }
@@ -291,7 +415,8 @@ func NewGetTrackingInformationNotFound() *GetTrackingInformationNotFound {
 	return &GetTrackingInformationNotFound{}
 }
 
-/* GetTrackingInformationNotFound describes a response with status code 404, with default header values.
+/*
+GetTrackingInformationNotFound describes a response with status code 404, with default header values.
 
 The resource specified does not exist.
 */
@@ -308,9 +433,39 @@ type GetTrackingInformationNotFound struct {
 	Payload *shipping_models.GetTrackingInformationResponse
 }
 
+// IsSuccess returns true when this get tracking information not found response has a 2xx status code
+func (o *GetTrackingInformationNotFound) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get tracking information not found response has a 3xx status code
+func (o *GetTrackingInformationNotFound) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get tracking information not found response has a 4xx status code
+func (o *GetTrackingInformationNotFound) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get tracking information not found response has a 5xx status code
+func (o *GetTrackingInformationNotFound) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get tracking information not found response a status code equal to that given
+func (o *GetTrackingInformationNotFound) IsCode(code int) bool {
+	return code == 404
+}
+
 func (o *GetTrackingInformationNotFound) Error() string {
 	return fmt.Sprintf("[GET /shipping/v1/tracking/{trackingId}][%d] getTrackingInformationNotFound  %+v", 404, o.Payload)
 }
+
+func (o *GetTrackingInformationNotFound) String() string {
+	return fmt.Sprintf("[GET /shipping/v1/tracking/{trackingId}][%d] getTrackingInformationNotFound  %+v", 404, o.Payload)
+}
+
 func (o *GetTrackingInformationNotFound) GetPayload() *shipping_models.GetTrackingInformationResponse {
 	return o.Payload
 }
@@ -346,7 +501,8 @@ func NewGetTrackingInformationTooManyRequests() *GetTrackingInformationTooManyRe
 	return &GetTrackingInformationTooManyRequests{}
 }
 
-/* GetTrackingInformationTooManyRequests describes a response with status code 429, with default header values.
+/*
+GetTrackingInformationTooManyRequests describes a response with status code 429, with default header values.
 
 The frequency of requests was greater than allowed.
 */
@@ -364,9 +520,39 @@ type GetTrackingInformationTooManyRequests struct {
 	Payload *shipping_models.GetTrackingInformationResponse
 }
 
+// IsSuccess returns true when this get tracking information too many requests response has a 2xx status code
+func (o *GetTrackingInformationTooManyRequests) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get tracking information too many requests response has a 3xx status code
+func (o *GetTrackingInformationTooManyRequests) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get tracking information too many requests response has a 4xx status code
+func (o *GetTrackingInformationTooManyRequests) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get tracking information too many requests response has a 5xx status code
+func (o *GetTrackingInformationTooManyRequests) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get tracking information too many requests response a status code equal to that given
+func (o *GetTrackingInformationTooManyRequests) IsCode(code int) bool {
+	return code == 429
+}
+
 func (o *GetTrackingInformationTooManyRequests) Error() string {
 	return fmt.Sprintf("[GET /shipping/v1/tracking/{trackingId}][%d] getTrackingInformationTooManyRequests  %+v", 429, o.Payload)
 }
+
+func (o *GetTrackingInformationTooManyRequests) String() string {
+	return fmt.Sprintf("[GET /shipping/v1/tracking/{trackingId}][%d] getTrackingInformationTooManyRequests  %+v", 429, o.Payload)
+}
+
 func (o *GetTrackingInformationTooManyRequests) GetPayload() *shipping_models.GetTrackingInformationResponse {
 	return o.Payload
 }
@@ -402,7 +588,8 @@ func NewGetTrackingInformationInternalServerError() *GetTrackingInformationInter
 	return &GetTrackingInformationInternalServerError{}
 }
 
-/* GetTrackingInformationInternalServerError describes a response with status code 500, with default header values.
+/*
+GetTrackingInformationInternalServerError describes a response with status code 500, with default header values.
 
 Encountered an unexpected condition which prevented the server from fulfilling the request.
 */
@@ -420,9 +607,39 @@ type GetTrackingInformationInternalServerError struct {
 	Payload *shipping_models.GetTrackingInformationResponse
 }
 
+// IsSuccess returns true when this get tracking information internal server error response has a 2xx status code
+func (o *GetTrackingInformationInternalServerError) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get tracking information internal server error response has a 3xx status code
+func (o *GetTrackingInformationInternalServerError) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get tracking information internal server error response has a 4xx status code
+func (o *GetTrackingInformationInternalServerError) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get tracking information internal server error response has a 5xx status code
+func (o *GetTrackingInformationInternalServerError) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this get tracking information internal server error response a status code equal to that given
+func (o *GetTrackingInformationInternalServerError) IsCode(code int) bool {
+	return code == 500
+}
+
 func (o *GetTrackingInformationInternalServerError) Error() string {
 	return fmt.Sprintf("[GET /shipping/v1/tracking/{trackingId}][%d] getTrackingInformationInternalServerError  %+v", 500, o.Payload)
 }
+
+func (o *GetTrackingInformationInternalServerError) String() string {
+	return fmt.Sprintf("[GET /shipping/v1/tracking/{trackingId}][%d] getTrackingInformationInternalServerError  %+v", 500, o.Payload)
+}
+
 func (o *GetTrackingInformationInternalServerError) GetPayload() *shipping_models.GetTrackingInformationResponse {
 	return o.Payload
 }
@@ -458,7 +675,8 @@ func NewGetTrackingInformationServiceUnavailable() *GetTrackingInformationServic
 	return &GetTrackingInformationServiceUnavailable{}
 }
 
-/* GetTrackingInformationServiceUnavailable describes a response with status code 503, with default header values.
+/*
+GetTrackingInformationServiceUnavailable describes a response with status code 503, with default header values.
 
 Temporary overloading or maintenance of the server.
 */
@@ -476,9 +694,39 @@ type GetTrackingInformationServiceUnavailable struct {
 	Payload *shipping_models.GetTrackingInformationResponse
 }
 
+// IsSuccess returns true when this get tracking information service unavailable response has a 2xx status code
+func (o *GetTrackingInformationServiceUnavailable) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get tracking information service unavailable response has a 3xx status code
+func (o *GetTrackingInformationServiceUnavailable) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get tracking information service unavailable response has a 4xx status code
+func (o *GetTrackingInformationServiceUnavailable) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get tracking information service unavailable response has a 5xx status code
+func (o *GetTrackingInformationServiceUnavailable) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this get tracking information service unavailable response a status code equal to that given
+func (o *GetTrackingInformationServiceUnavailable) IsCode(code int) bool {
+	return code == 503
+}
+
 func (o *GetTrackingInformationServiceUnavailable) Error() string {
 	return fmt.Sprintf("[GET /shipping/v1/tracking/{trackingId}][%d] getTrackingInformationServiceUnavailable  %+v", 503, o.Payload)
 }
+
+func (o *GetTrackingInformationServiceUnavailable) String() string {
+	return fmt.Sprintf("[GET /shipping/v1/tracking/{trackingId}][%d] getTrackingInformationServiceUnavailable  %+v", 503, o.Payload)
+}
+
 func (o *GetTrackingInformationServiceUnavailable) GetPayload() *shipping_models.GetTrackingInformationResponse {
 	return o.Payload
 }

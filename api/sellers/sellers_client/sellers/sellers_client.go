@@ -36,7 +36,7 @@ type ClientService interface {
 }
 
 /*
-  GetMarketplaceParticipations Returns a list of marketplaces that the seller submitting the request can sell in and information about the seller's participation in those marketplaces.
+	GetMarketplaceParticipations Returns a list of marketplaces that the seller submitting the request can sell in and information about the seller's participation in those marketplaces.
 
 **Usage Plan:**
 

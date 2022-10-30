@@ -87,7 +87,8 @@ func NewPostContentDocumentSuspendSubmissionOK() *PostContentDocumentSuspendSubm
 	return &PostContentDocumentSuspendSubmissionOK{}
 }
 
-/* PostContentDocumentSuspendSubmissionOK describes a response with status code 200, with default header values.
+/*
+PostContentDocumentSuspendSubmissionOK describes a response with status code 200, with default header values.
 
 Success.
 */
@@ -104,9 +105,39 @@ type PostContentDocumentSuspendSubmissionOK struct {
 	Payload *aplus_content_2020_11_01_models.PostContentDocumentSuspendSubmissionResponse
 }
 
+// IsSuccess returns true when this post content document suspend submission o k response has a 2xx status code
+func (o *PostContentDocumentSuspendSubmissionOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this post content document suspend submission o k response has a 3xx status code
+func (o *PostContentDocumentSuspendSubmissionOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this post content document suspend submission o k response has a 4xx status code
+func (o *PostContentDocumentSuspendSubmissionOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this post content document suspend submission o k response has a 5xx status code
+func (o *PostContentDocumentSuspendSubmissionOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this post content document suspend submission o k response a status code equal to that given
+func (o *PostContentDocumentSuspendSubmissionOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *PostContentDocumentSuspendSubmissionOK) Error() string {
 	return fmt.Sprintf("[POST /aplus/2020-11-01/contentDocuments/{contentReferenceKey}/suspendSubmissions][%d] postContentDocumentSuspendSubmissionOK  %+v", 200, o.Payload)
 }
+
+func (o *PostContentDocumentSuspendSubmissionOK) String() string {
+	return fmt.Sprintf("[POST /aplus/2020-11-01/contentDocuments/{contentReferenceKey}/suspendSubmissions][%d] postContentDocumentSuspendSubmissionOK  %+v", 200, o.Payload)
+}
+
 func (o *PostContentDocumentSuspendSubmissionOK) GetPayload() *aplus_content_2020_11_01_models.PostContentDocumentSuspendSubmissionResponse {
 	return o.Payload
 }
@@ -142,7 +173,8 @@ func NewPostContentDocumentSuspendSubmissionBadRequest() *PostContentDocumentSus
 	return &PostContentDocumentSuspendSubmissionBadRequest{}
 }
 
-/* PostContentDocumentSuspendSubmissionBadRequest describes a response with status code 400, with default header values.
+/*
+PostContentDocumentSuspendSubmissionBadRequest describes a response with status code 400, with default header values.
 
 Request has missing or invalid parameters and cannot be parsed.
 */
@@ -159,9 +191,39 @@ type PostContentDocumentSuspendSubmissionBadRequest struct {
 	Payload *aplus_content_2020_11_01_models.ErrorList
 }
 
+// IsSuccess returns true when this post content document suspend submission bad request response has a 2xx status code
+func (o *PostContentDocumentSuspendSubmissionBadRequest) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this post content document suspend submission bad request response has a 3xx status code
+func (o *PostContentDocumentSuspendSubmissionBadRequest) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this post content document suspend submission bad request response has a 4xx status code
+func (o *PostContentDocumentSuspendSubmissionBadRequest) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this post content document suspend submission bad request response has a 5xx status code
+func (o *PostContentDocumentSuspendSubmissionBadRequest) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this post content document suspend submission bad request response a status code equal to that given
+func (o *PostContentDocumentSuspendSubmissionBadRequest) IsCode(code int) bool {
+	return code == 400
+}
+
 func (o *PostContentDocumentSuspendSubmissionBadRequest) Error() string {
 	return fmt.Sprintf("[POST /aplus/2020-11-01/contentDocuments/{contentReferenceKey}/suspendSubmissions][%d] postContentDocumentSuspendSubmissionBadRequest  %+v", 400, o.Payload)
 }
+
+func (o *PostContentDocumentSuspendSubmissionBadRequest) String() string {
+	return fmt.Sprintf("[POST /aplus/2020-11-01/contentDocuments/{contentReferenceKey}/suspendSubmissions][%d] postContentDocumentSuspendSubmissionBadRequest  %+v", 400, o.Payload)
+}
+
 func (o *PostContentDocumentSuspendSubmissionBadRequest) GetPayload() *aplus_content_2020_11_01_models.ErrorList {
 	return o.Payload
 }
@@ -197,7 +259,8 @@ func NewPostContentDocumentSuspendSubmissionUnauthorized() *PostContentDocumentS
 	return &PostContentDocumentSuspendSubmissionUnauthorized{}
 }
 
-/* PostContentDocumentSuspendSubmissionUnauthorized describes a response with status code 401, with default header values.
+/*
+PostContentDocumentSuspendSubmissionUnauthorized describes a response with status code 401, with default header values.
 
 The request's Authorization header is not formatted correctly or does not contain a valid token.
 */
@@ -215,9 +278,39 @@ type PostContentDocumentSuspendSubmissionUnauthorized struct {
 	Payload *aplus_content_2020_11_01_models.ErrorList
 }
 
+// IsSuccess returns true when this post content document suspend submission unauthorized response has a 2xx status code
+func (o *PostContentDocumentSuspendSubmissionUnauthorized) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this post content document suspend submission unauthorized response has a 3xx status code
+func (o *PostContentDocumentSuspendSubmissionUnauthorized) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this post content document suspend submission unauthorized response has a 4xx status code
+func (o *PostContentDocumentSuspendSubmissionUnauthorized) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this post content document suspend submission unauthorized response has a 5xx status code
+func (o *PostContentDocumentSuspendSubmissionUnauthorized) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this post content document suspend submission unauthorized response a status code equal to that given
+func (o *PostContentDocumentSuspendSubmissionUnauthorized) IsCode(code int) bool {
+	return code == 401
+}
+
 func (o *PostContentDocumentSuspendSubmissionUnauthorized) Error() string {
 	return fmt.Sprintf("[POST /aplus/2020-11-01/contentDocuments/{contentReferenceKey}/suspendSubmissions][%d] postContentDocumentSuspendSubmissionUnauthorized  %+v", 401, o.Payload)
 }
+
+func (o *PostContentDocumentSuspendSubmissionUnauthorized) String() string {
+	return fmt.Sprintf("[POST /aplus/2020-11-01/contentDocuments/{contentReferenceKey}/suspendSubmissions][%d] postContentDocumentSuspendSubmissionUnauthorized  %+v", 401, o.Payload)
+}
+
 func (o *PostContentDocumentSuspendSubmissionUnauthorized) GetPayload() *aplus_content_2020_11_01_models.ErrorList {
 	return o.Payload
 }
@@ -253,7 +346,8 @@ func NewPostContentDocumentSuspendSubmissionForbidden() *PostContentDocumentSusp
 	return &PostContentDocumentSuspendSubmissionForbidden{}
 }
 
-/* PostContentDocumentSuspendSubmissionForbidden describes a response with status code 403, with default header values.
+/*
+PostContentDocumentSuspendSubmissionForbidden describes a response with status code 403, with default header values.
 
 Indicates that access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.
 */
@@ -266,9 +360,39 @@ type PostContentDocumentSuspendSubmissionForbidden struct {
 	Payload *aplus_content_2020_11_01_models.ErrorList
 }
 
+// IsSuccess returns true when this post content document suspend submission forbidden response has a 2xx status code
+func (o *PostContentDocumentSuspendSubmissionForbidden) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this post content document suspend submission forbidden response has a 3xx status code
+func (o *PostContentDocumentSuspendSubmissionForbidden) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this post content document suspend submission forbidden response has a 4xx status code
+func (o *PostContentDocumentSuspendSubmissionForbidden) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this post content document suspend submission forbidden response has a 5xx status code
+func (o *PostContentDocumentSuspendSubmissionForbidden) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this post content document suspend submission forbidden response a status code equal to that given
+func (o *PostContentDocumentSuspendSubmissionForbidden) IsCode(code int) bool {
+	return code == 403
+}
+
 func (o *PostContentDocumentSuspendSubmissionForbidden) Error() string {
 	return fmt.Sprintf("[POST /aplus/2020-11-01/contentDocuments/{contentReferenceKey}/suspendSubmissions][%d] postContentDocumentSuspendSubmissionForbidden  %+v", 403, o.Payload)
 }
+
+func (o *PostContentDocumentSuspendSubmissionForbidden) String() string {
+	return fmt.Sprintf("[POST /aplus/2020-11-01/contentDocuments/{contentReferenceKey}/suspendSubmissions][%d] postContentDocumentSuspendSubmissionForbidden  %+v", 403, o.Payload)
+}
+
 func (o *PostContentDocumentSuspendSubmissionForbidden) GetPayload() *aplus_content_2020_11_01_models.ErrorList {
 	return o.Payload
 }
@@ -297,7 +421,8 @@ func NewPostContentDocumentSuspendSubmissionNotFound() *PostContentDocumentSuspe
 	return &PostContentDocumentSuspendSubmissionNotFound{}
 }
 
-/* PostContentDocumentSuspendSubmissionNotFound describes a response with status code 404, with default header values.
+/*
+PostContentDocumentSuspendSubmissionNotFound describes a response with status code 404, with default header values.
 
 The specified resource does not exist.
 */
@@ -314,9 +439,39 @@ type PostContentDocumentSuspendSubmissionNotFound struct {
 	Payload *aplus_content_2020_11_01_models.ErrorList
 }
 
+// IsSuccess returns true when this post content document suspend submission not found response has a 2xx status code
+func (o *PostContentDocumentSuspendSubmissionNotFound) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this post content document suspend submission not found response has a 3xx status code
+func (o *PostContentDocumentSuspendSubmissionNotFound) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this post content document suspend submission not found response has a 4xx status code
+func (o *PostContentDocumentSuspendSubmissionNotFound) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this post content document suspend submission not found response has a 5xx status code
+func (o *PostContentDocumentSuspendSubmissionNotFound) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this post content document suspend submission not found response a status code equal to that given
+func (o *PostContentDocumentSuspendSubmissionNotFound) IsCode(code int) bool {
+	return code == 404
+}
+
 func (o *PostContentDocumentSuspendSubmissionNotFound) Error() string {
 	return fmt.Sprintf("[POST /aplus/2020-11-01/contentDocuments/{contentReferenceKey}/suspendSubmissions][%d] postContentDocumentSuspendSubmissionNotFound  %+v", 404, o.Payload)
 }
+
+func (o *PostContentDocumentSuspendSubmissionNotFound) String() string {
+	return fmt.Sprintf("[POST /aplus/2020-11-01/contentDocuments/{contentReferenceKey}/suspendSubmissions][%d] postContentDocumentSuspendSubmissionNotFound  %+v", 404, o.Payload)
+}
+
 func (o *PostContentDocumentSuspendSubmissionNotFound) GetPayload() *aplus_content_2020_11_01_models.ErrorList {
 	return o.Payload
 }
@@ -352,7 +507,8 @@ func NewPostContentDocumentSuspendSubmissionGone() *PostContentDocumentSuspendSu
 	return &PostContentDocumentSuspendSubmissionGone{}
 }
 
-/* PostContentDocumentSuspendSubmissionGone describes a response with status code 410, with default header values.
+/*
+PostContentDocumentSuspendSubmissionGone describes a response with status code 410, with default header values.
 
 The specified resource no longer exists.
 */
@@ -370,9 +526,39 @@ type PostContentDocumentSuspendSubmissionGone struct {
 	Payload *aplus_content_2020_11_01_models.ErrorList
 }
 
+// IsSuccess returns true when this post content document suspend submission gone response has a 2xx status code
+func (o *PostContentDocumentSuspendSubmissionGone) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this post content document suspend submission gone response has a 3xx status code
+func (o *PostContentDocumentSuspendSubmissionGone) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this post content document suspend submission gone response has a 4xx status code
+func (o *PostContentDocumentSuspendSubmissionGone) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this post content document suspend submission gone response has a 5xx status code
+func (o *PostContentDocumentSuspendSubmissionGone) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this post content document suspend submission gone response a status code equal to that given
+func (o *PostContentDocumentSuspendSubmissionGone) IsCode(code int) bool {
+	return code == 410
+}
+
 func (o *PostContentDocumentSuspendSubmissionGone) Error() string {
 	return fmt.Sprintf("[POST /aplus/2020-11-01/contentDocuments/{contentReferenceKey}/suspendSubmissions][%d] postContentDocumentSuspendSubmissionGone  %+v", 410, o.Payload)
 }
+
+func (o *PostContentDocumentSuspendSubmissionGone) String() string {
+	return fmt.Sprintf("[POST /aplus/2020-11-01/contentDocuments/{contentReferenceKey}/suspendSubmissions][%d] postContentDocumentSuspendSubmissionGone  %+v", 410, o.Payload)
+}
+
 func (o *PostContentDocumentSuspendSubmissionGone) GetPayload() *aplus_content_2020_11_01_models.ErrorList {
 	return o.Payload
 }
@@ -408,7 +594,8 @@ func NewPostContentDocumentSuspendSubmissionTooManyRequests() *PostContentDocume
 	return &PostContentDocumentSuspendSubmissionTooManyRequests{}
 }
 
-/* PostContentDocumentSuspendSubmissionTooManyRequests describes a response with status code 429, with default header values.
+/*
+PostContentDocumentSuspendSubmissionTooManyRequests describes a response with status code 429, with default header values.
 
 The frequency of requests was greater than allowed.
 */
@@ -426,9 +613,39 @@ type PostContentDocumentSuspendSubmissionTooManyRequests struct {
 	Payload *aplus_content_2020_11_01_models.ErrorList
 }
 
+// IsSuccess returns true when this post content document suspend submission too many requests response has a 2xx status code
+func (o *PostContentDocumentSuspendSubmissionTooManyRequests) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this post content document suspend submission too many requests response has a 3xx status code
+func (o *PostContentDocumentSuspendSubmissionTooManyRequests) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this post content document suspend submission too many requests response has a 4xx status code
+func (o *PostContentDocumentSuspendSubmissionTooManyRequests) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this post content document suspend submission too many requests response has a 5xx status code
+func (o *PostContentDocumentSuspendSubmissionTooManyRequests) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this post content document suspend submission too many requests response a status code equal to that given
+func (o *PostContentDocumentSuspendSubmissionTooManyRequests) IsCode(code int) bool {
+	return code == 429
+}
+
 func (o *PostContentDocumentSuspendSubmissionTooManyRequests) Error() string {
 	return fmt.Sprintf("[POST /aplus/2020-11-01/contentDocuments/{contentReferenceKey}/suspendSubmissions][%d] postContentDocumentSuspendSubmissionTooManyRequests  %+v", 429, o.Payload)
 }
+
+func (o *PostContentDocumentSuspendSubmissionTooManyRequests) String() string {
+	return fmt.Sprintf("[POST /aplus/2020-11-01/contentDocuments/{contentReferenceKey}/suspendSubmissions][%d] postContentDocumentSuspendSubmissionTooManyRequests  %+v", 429, o.Payload)
+}
+
 func (o *PostContentDocumentSuspendSubmissionTooManyRequests) GetPayload() *aplus_content_2020_11_01_models.ErrorList {
 	return o.Payload
 }
@@ -464,7 +681,8 @@ func NewPostContentDocumentSuspendSubmissionInternalServerError() *PostContentDo
 	return &PostContentDocumentSuspendSubmissionInternalServerError{}
 }
 
-/* PostContentDocumentSuspendSubmissionInternalServerError describes a response with status code 500, with default header values.
+/*
+PostContentDocumentSuspendSubmissionInternalServerError describes a response with status code 500, with default header values.
 
 An unexpected condition occurred that prevented the server from fulfilling the request.
 */
@@ -482,9 +700,39 @@ type PostContentDocumentSuspendSubmissionInternalServerError struct {
 	Payload *aplus_content_2020_11_01_models.ErrorList
 }
 
+// IsSuccess returns true when this post content document suspend submission internal server error response has a 2xx status code
+func (o *PostContentDocumentSuspendSubmissionInternalServerError) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this post content document suspend submission internal server error response has a 3xx status code
+func (o *PostContentDocumentSuspendSubmissionInternalServerError) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this post content document suspend submission internal server error response has a 4xx status code
+func (o *PostContentDocumentSuspendSubmissionInternalServerError) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this post content document suspend submission internal server error response has a 5xx status code
+func (o *PostContentDocumentSuspendSubmissionInternalServerError) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this post content document suspend submission internal server error response a status code equal to that given
+func (o *PostContentDocumentSuspendSubmissionInternalServerError) IsCode(code int) bool {
+	return code == 500
+}
+
 func (o *PostContentDocumentSuspendSubmissionInternalServerError) Error() string {
 	return fmt.Sprintf("[POST /aplus/2020-11-01/contentDocuments/{contentReferenceKey}/suspendSubmissions][%d] postContentDocumentSuspendSubmissionInternalServerError  %+v", 500, o.Payload)
 }
+
+func (o *PostContentDocumentSuspendSubmissionInternalServerError) String() string {
+	return fmt.Sprintf("[POST /aplus/2020-11-01/contentDocuments/{contentReferenceKey}/suspendSubmissions][%d] postContentDocumentSuspendSubmissionInternalServerError  %+v", 500, o.Payload)
+}
+
 func (o *PostContentDocumentSuspendSubmissionInternalServerError) GetPayload() *aplus_content_2020_11_01_models.ErrorList {
 	return o.Payload
 }
@@ -520,7 +768,8 @@ func NewPostContentDocumentSuspendSubmissionServiceUnavailable() *PostContentDoc
 	return &PostContentDocumentSuspendSubmissionServiceUnavailable{}
 }
 
-/* PostContentDocumentSuspendSubmissionServiceUnavailable describes a response with status code 503, with default header values.
+/*
+PostContentDocumentSuspendSubmissionServiceUnavailable describes a response with status code 503, with default header values.
 
 Temporary overloading or maintenance of the server.
 */
@@ -538,9 +787,39 @@ type PostContentDocumentSuspendSubmissionServiceUnavailable struct {
 	Payload *aplus_content_2020_11_01_models.ErrorList
 }
 
+// IsSuccess returns true when this post content document suspend submission service unavailable response has a 2xx status code
+func (o *PostContentDocumentSuspendSubmissionServiceUnavailable) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this post content document suspend submission service unavailable response has a 3xx status code
+func (o *PostContentDocumentSuspendSubmissionServiceUnavailable) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this post content document suspend submission service unavailable response has a 4xx status code
+func (o *PostContentDocumentSuspendSubmissionServiceUnavailable) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this post content document suspend submission service unavailable response has a 5xx status code
+func (o *PostContentDocumentSuspendSubmissionServiceUnavailable) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this post content document suspend submission service unavailable response a status code equal to that given
+func (o *PostContentDocumentSuspendSubmissionServiceUnavailable) IsCode(code int) bool {
+	return code == 503
+}
+
 func (o *PostContentDocumentSuspendSubmissionServiceUnavailable) Error() string {
 	return fmt.Sprintf("[POST /aplus/2020-11-01/contentDocuments/{contentReferenceKey}/suspendSubmissions][%d] postContentDocumentSuspendSubmissionServiceUnavailable  %+v", 503, o.Payload)
 }
+
+func (o *PostContentDocumentSuspendSubmissionServiceUnavailable) String() string {
+	return fmt.Sprintf("[POST /aplus/2020-11-01/contentDocuments/{contentReferenceKey}/suspendSubmissions][%d] postContentDocumentSuspendSubmissionServiceUnavailable  %+v", 503, o.Payload)
+}
+
 func (o *PostContentDocumentSuspendSubmissionServiceUnavailable) GetPayload() *aplus_content_2020_11_01_models.ErrorList {
 	return o.Payload
 }

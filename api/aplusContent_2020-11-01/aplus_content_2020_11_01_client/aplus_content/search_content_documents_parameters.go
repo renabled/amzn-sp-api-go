@@ -52,10 +52,12 @@ func NewSearchContentDocumentsParamsWithHTTPClient(client *http.Client) *SearchC
 	}
 }
 
-/* SearchContentDocumentsParams contains all the parameters to send to the API endpoint
-   for the search content documents operation.
+/*
+SearchContentDocumentsParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the search content documents operation.
+
+	Typically these are written to a http.Request.
 */
 type SearchContentDocumentsParams struct {
 

@@ -53,10 +53,12 @@ func NewGetItemEligibilityPreviewParamsWithHTTPClient(client *http.Client) *GetI
 	}
 }
 
-/* GetItemEligibilityPreviewParams contains all the parameters to send to the API endpoint
-   for the get item eligibility preview operation.
+/*
+GetItemEligibilityPreviewParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the get item eligibility preview operation.
+
+	Typically these are written to a http.Request.
 */
 type GetItemEligibilityPreviewParams struct {
 

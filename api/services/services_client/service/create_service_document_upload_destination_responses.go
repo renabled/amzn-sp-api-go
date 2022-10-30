@@ -93,7 +93,8 @@ func NewCreateServiceDocumentUploadDestinationOK() *CreateServiceDocumentUploadD
 	return &CreateServiceDocumentUploadDestinationOK{}
 }
 
-/* CreateServiceDocumentUploadDestinationOK describes a response with status code 200, with default header values.
+/*
+CreateServiceDocumentUploadDestinationOK describes a response with status code 200, with default header values.
 
 Successfully created an upload destination for the given resource.
 */
@@ -110,9 +111,39 @@ type CreateServiceDocumentUploadDestinationOK struct {
 	Payload *services_models.CreateServiceDocumentUploadDestination
 }
 
+// IsSuccess returns true when this create service document upload destination o k response has a 2xx status code
+func (o *CreateServiceDocumentUploadDestinationOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this create service document upload destination o k response has a 3xx status code
+func (o *CreateServiceDocumentUploadDestinationOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create service document upload destination o k response has a 4xx status code
+func (o *CreateServiceDocumentUploadDestinationOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this create service document upload destination o k response has a 5xx status code
+func (o *CreateServiceDocumentUploadDestinationOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this create service document upload destination o k response a status code equal to that given
+func (o *CreateServiceDocumentUploadDestinationOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *CreateServiceDocumentUploadDestinationOK) Error() string {
 	return fmt.Sprintf("[POST /service/v1/documents][%d] createServiceDocumentUploadDestinationOK  %+v", 200, o.Payload)
 }
+
+func (o *CreateServiceDocumentUploadDestinationOK) String() string {
+	return fmt.Sprintf("[POST /service/v1/documents][%d] createServiceDocumentUploadDestinationOK  %+v", 200, o.Payload)
+}
+
 func (o *CreateServiceDocumentUploadDestinationOK) GetPayload() *services_models.CreateServiceDocumentUploadDestination {
 	return o.Payload
 }
@@ -148,7 +179,8 @@ func NewCreateServiceDocumentUploadDestinationBadRequest() *CreateServiceDocumen
 	return &CreateServiceDocumentUploadDestinationBadRequest{}
 }
 
-/* CreateServiceDocumentUploadDestinationBadRequest describes a response with status code 400, with default header values.
+/*
+CreateServiceDocumentUploadDestinationBadRequest describes a response with status code 400, with default header values.
 
 Request has missing or invalid parameters and cannot be parsed.
 */
@@ -165,9 +197,39 @@ type CreateServiceDocumentUploadDestinationBadRequest struct {
 	Payload *services_models.CreateServiceDocumentUploadDestination
 }
 
+// IsSuccess returns true when this create service document upload destination bad request response has a 2xx status code
+func (o *CreateServiceDocumentUploadDestinationBadRequest) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this create service document upload destination bad request response has a 3xx status code
+func (o *CreateServiceDocumentUploadDestinationBadRequest) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create service document upload destination bad request response has a 4xx status code
+func (o *CreateServiceDocumentUploadDestinationBadRequest) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this create service document upload destination bad request response has a 5xx status code
+func (o *CreateServiceDocumentUploadDestinationBadRequest) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this create service document upload destination bad request response a status code equal to that given
+func (o *CreateServiceDocumentUploadDestinationBadRequest) IsCode(code int) bool {
+	return code == 400
+}
+
 func (o *CreateServiceDocumentUploadDestinationBadRequest) Error() string {
 	return fmt.Sprintf("[POST /service/v1/documents][%d] createServiceDocumentUploadDestinationBadRequest  %+v", 400, o.Payload)
 }
+
+func (o *CreateServiceDocumentUploadDestinationBadRequest) String() string {
+	return fmt.Sprintf("[POST /service/v1/documents][%d] createServiceDocumentUploadDestinationBadRequest  %+v", 400, o.Payload)
+}
+
 func (o *CreateServiceDocumentUploadDestinationBadRequest) GetPayload() *services_models.CreateServiceDocumentUploadDestination {
 	return o.Payload
 }
@@ -203,7 +265,8 @@ func NewCreateServiceDocumentUploadDestinationForbidden() *CreateServiceDocument
 	return &CreateServiceDocumentUploadDestinationForbidden{}
 }
 
-/* CreateServiceDocumentUploadDestinationForbidden describes a response with status code 403, with default header values.
+/*
+CreateServiceDocumentUploadDestinationForbidden describes a response with status code 403, with default header values.
 
 Indicates that access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.
 */
@@ -216,9 +279,39 @@ type CreateServiceDocumentUploadDestinationForbidden struct {
 	Payload *services_models.CreateServiceDocumentUploadDestination
 }
 
+// IsSuccess returns true when this create service document upload destination forbidden response has a 2xx status code
+func (o *CreateServiceDocumentUploadDestinationForbidden) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this create service document upload destination forbidden response has a 3xx status code
+func (o *CreateServiceDocumentUploadDestinationForbidden) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create service document upload destination forbidden response has a 4xx status code
+func (o *CreateServiceDocumentUploadDestinationForbidden) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this create service document upload destination forbidden response has a 5xx status code
+func (o *CreateServiceDocumentUploadDestinationForbidden) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this create service document upload destination forbidden response a status code equal to that given
+func (o *CreateServiceDocumentUploadDestinationForbidden) IsCode(code int) bool {
+	return code == 403
+}
+
 func (o *CreateServiceDocumentUploadDestinationForbidden) Error() string {
 	return fmt.Sprintf("[POST /service/v1/documents][%d] createServiceDocumentUploadDestinationForbidden  %+v", 403, o.Payload)
 }
+
+func (o *CreateServiceDocumentUploadDestinationForbidden) String() string {
+	return fmt.Sprintf("[POST /service/v1/documents][%d] createServiceDocumentUploadDestinationForbidden  %+v", 403, o.Payload)
+}
+
 func (o *CreateServiceDocumentUploadDestinationForbidden) GetPayload() *services_models.CreateServiceDocumentUploadDestination {
 	return o.Payload
 }
@@ -247,7 +340,8 @@ func NewCreateServiceDocumentUploadDestinationNotFound() *CreateServiceDocumentU
 	return &CreateServiceDocumentUploadDestinationNotFound{}
 }
 
-/* CreateServiceDocumentUploadDestinationNotFound describes a response with status code 404, with default header values.
+/*
+CreateServiceDocumentUploadDestinationNotFound describes a response with status code 404, with default header values.
 
 The resource specified does not exist.
 */
@@ -264,9 +358,39 @@ type CreateServiceDocumentUploadDestinationNotFound struct {
 	Payload *services_models.CreateServiceDocumentUploadDestination
 }
 
+// IsSuccess returns true when this create service document upload destination not found response has a 2xx status code
+func (o *CreateServiceDocumentUploadDestinationNotFound) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this create service document upload destination not found response has a 3xx status code
+func (o *CreateServiceDocumentUploadDestinationNotFound) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create service document upload destination not found response has a 4xx status code
+func (o *CreateServiceDocumentUploadDestinationNotFound) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this create service document upload destination not found response has a 5xx status code
+func (o *CreateServiceDocumentUploadDestinationNotFound) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this create service document upload destination not found response a status code equal to that given
+func (o *CreateServiceDocumentUploadDestinationNotFound) IsCode(code int) bool {
+	return code == 404
+}
+
 func (o *CreateServiceDocumentUploadDestinationNotFound) Error() string {
 	return fmt.Sprintf("[POST /service/v1/documents][%d] createServiceDocumentUploadDestinationNotFound  %+v", 404, o.Payload)
 }
+
+func (o *CreateServiceDocumentUploadDestinationNotFound) String() string {
+	return fmt.Sprintf("[POST /service/v1/documents][%d] createServiceDocumentUploadDestinationNotFound  %+v", 404, o.Payload)
+}
+
 func (o *CreateServiceDocumentUploadDestinationNotFound) GetPayload() *services_models.CreateServiceDocumentUploadDestination {
 	return o.Payload
 }
@@ -302,7 +426,8 @@ func NewCreateServiceDocumentUploadDestinationRequestEntityTooLarge() *CreateSer
 	return &CreateServiceDocumentUploadDestinationRequestEntityTooLarge{}
 }
 
-/* CreateServiceDocumentUploadDestinationRequestEntityTooLarge describes a response with status code 413, with default header values.
+/*
+CreateServiceDocumentUploadDestinationRequestEntityTooLarge describes a response with status code 413, with default header values.
 
 The request size exceeded the maximum accepted size.
 */
@@ -320,9 +445,39 @@ type CreateServiceDocumentUploadDestinationRequestEntityTooLarge struct {
 	Payload *services_models.CreateServiceDocumentUploadDestination
 }
 
+// IsSuccess returns true when this create service document upload destination request entity too large response has a 2xx status code
+func (o *CreateServiceDocumentUploadDestinationRequestEntityTooLarge) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this create service document upload destination request entity too large response has a 3xx status code
+func (o *CreateServiceDocumentUploadDestinationRequestEntityTooLarge) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create service document upload destination request entity too large response has a 4xx status code
+func (o *CreateServiceDocumentUploadDestinationRequestEntityTooLarge) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this create service document upload destination request entity too large response has a 5xx status code
+func (o *CreateServiceDocumentUploadDestinationRequestEntityTooLarge) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this create service document upload destination request entity too large response a status code equal to that given
+func (o *CreateServiceDocumentUploadDestinationRequestEntityTooLarge) IsCode(code int) bool {
+	return code == 413
+}
+
 func (o *CreateServiceDocumentUploadDestinationRequestEntityTooLarge) Error() string {
 	return fmt.Sprintf("[POST /service/v1/documents][%d] createServiceDocumentUploadDestinationRequestEntityTooLarge  %+v", 413, o.Payload)
 }
+
+func (o *CreateServiceDocumentUploadDestinationRequestEntityTooLarge) String() string {
+	return fmt.Sprintf("[POST /service/v1/documents][%d] createServiceDocumentUploadDestinationRequestEntityTooLarge  %+v", 413, o.Payload)
+}
+
 func (o *CreateServiceDocumentUploadDestinationRequestEntityTooLarge) GetPayload() *services_models.CreateServiceDocumentUploadDestination {
 	return o.Payload
 }
@@ -358,7 +513,8 @@ func NewCreateServiceDocumentUploadDestinationUnsupportedMediaType() *CreateServ
 	return &CreateServiceDocumentUploadDestinationUnsupportedMediaType{}
 }
 
-/* CreateServiceDocumentUploadDestinationUnsupportedMediaType describes a response with status code 415, with default header values.
+/*
+CreateServiceDocumentUploadDestinationUnsupportedMediaType describes a response with status code 415, with default header values.
 
 The request's Content-Type header is invalid.
 */
@@ -376,9 +532,39 @@ type CreateServiceDocumentUploadDestinationUnsupportedMediaType struct {
 	Payload *services_models.CreateServiceDocumentUploadDestination
 }
 
+// IsSuccess returns true when this create service document upload destination unsupported media type response has a 2xx status code
+func (o *CreateServiceDocumentUploadDestinationUnsupportedMediaType) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this create service document upload destination unsupported media type response has a 3xx status code
+func (o *CreateServiceDocumentUploadDestinationUnsupportedMediaType) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create service document upload destination unsupported media type response has a 4xx status code
+func (o *CreateServiceDocumentUploadDestinationUnsupportedMediaType) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this create service document upload destination unsupported media type response has a 5xx status code
+func (o *CreateServiceDocumentUploadDestinationUnsupportedMediaType) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this create service document upload destination unsupported media type response a status code equal to that given
+func (o *CreateServiceDocumentUploadDestinationUnsupportedMediaType) IsCode(code int) bool {
+	return code == 415
+}
+
 func (o *CreateServiceDocumentUploadDestinationUnsupportedMediaType) Error() string {
 	return fmt.Sprintf("[POST /service/v1/documents][%d] createServiceDocumentUploadDestinationUnsupportedMediaType  %+v", 415, o.Payload)
 }
+
+func (o *CreateServiceDocumentUploadDestinationUnsupportedMediaType) String() string {
+	return fmt.Sprintf("[POST /service/v1/documents][%d] createServiceDocumentUploadDestinationUnsupportedMediaType  %+v", 415, o.Payload)
+}
+
 func (o *CreateServiceDocumentUploadDestinationUnsupportedMediaType) GetPayload() *services_models.CreateServiceDocumentUploadDestination {
 	return o.Payload
 }
@@ -414,7 +600,8 @@ func NewCreateServiceDocumentUploadDestinationUnprocessableEntity() *CreateServi
 	return &CreateServiceDocumentUploadDestinationUnprocessableEntity{}
 }
 
-/* CreateServiceDocumentUploadDestinationUnprocessableEntity describes a response with status code 422, with default header values.
+/*
+CreateServiceDocumentUploadDestinationUnprocessableEntity describes a response with status code 422, with default header values.
 
 Unprocessable Entity. Unable to process the contained instructions.
 */
@@ -432,9 +619,39 @@ type CreateServiceDocumentUploadDestinationUnprocessableEntity struct {
 	Payload *services_models.CreateServiceDocumentUploadDestination
 }
 
+// IsSuccess returns true when this create service document upload destination unprocessable entity response has a 2xx status code
+func (o *CreateServiceDocumentUploadDestinationUnprocessableEntity) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this create service document upload destination unprocessable entity response has a 3xx status code
+func (o *CreateServiceDocumentUploadDestinationUnprocessableEntity) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create service document upload destination unprocessable entity response has a 4xx status code
+func (o *CreateServiceDocumentUploadDestinationUnprocessableEntity) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this create service document upload destination unprocessable entity response has a 5xx status code
+func (o *CreateServiceDocumentUploadDestinationUnprocessableEntity) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this create service document upload destination unprocessable entity response a status code equal to that given
+func (o *CreateServiceDocumentUploadDestinationUnprocessableEntity) IsCode(code int) bool {
+	return code == 422
+}
+
 func (o *CreateServiceDocumentUploadDestinationUnprocessableEntity) Error() string {
 	return fmt.Sprintf("[POST /service/v1/documents][%d] createServiceDocumentUploadDestinationUnprocessableEntity  %+v", 422, o.Payload)
 }
+
+func (o *CreateServiceDocumentUploadDestinationUnprocessableEntity) String() string {
+	return fmt.Sprintf("[POST /service/v1/documents][%d] createServiceDocumentUploadDestinationUnprocessableEntity  %+v", 422, o.Payload)
+}
+
 func (o *CreateServiceDocumentUploadDestinationUnprocessableEntity) GetPayload() *services_models.CreateServiceDocumentUploadDestination {
 	return o.Payload
 }
@@ -470,7 +687,8 @@ func NewCreateServiceDocumentUploadDestinationTooManyRequests() *CreateServiceDo
 	return &CreateServiceDocumentUploadDestinationTooManyRequests{}
 }
 
-/* CreateServiceDocumentUploadDestinationTooManyRequests describes a response with status code 429, with default header values.
+/*
+CreateServiceDocumentUploadDestinationTooManyRequests describes a response with status code 429, with default header values.
 
 The frequency of requests was greater than allowed.
 */
@@ -488,9 +706,39 @@ type CreateServiceDocumentUploadDestinationTooManyRequests struct {
 	Payload *services_models.CreateServiceDocumentUploadDestination
 }
 
+// IsSuccess returns true when this create service document upload destination too many requests response has a 2xx status code
+func (o *CreateServiceDocumentUploadDestinationTooManyRequests) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this create service document upload destination too many requests response has a 3xx status code
+func (o *CreateServiceDocumentUploadDestinationTooManyRequests) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create service document upload destination too many requests response has a 4xx status code
+func (o *CreateServiceDocumentUploadDestinationTooManyRequests) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this create service document upload destination too many requests response has a 5xx status code
+func (o *CreateServiceDocumentUploadDestinationTooManyRequests) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this create service document upload destination too many requests response a status code equal to that given
+func (o *CreateServiceDocumentUploadDestinationTooManyRequests) IsCode(code int) bool {
+	return code == 429
+}
+
 func (o *CreateServiceDocumentUploadDestinationTooManyRequests) Error() string {
 	return fmt.Sprintf("[POST /service/v1/documents][%d] createServiceDocumentUploadDestinationTooManyRequests  %+v", 429, o.Payload)
 }
+
+func (o *CreateServiceDocumentUploadDestinationTooManyRequests) String() string {
+	return fmt.Sprintf("[POST /service/v1/documents][%d] createServiceDocumentUploadDestinationTooManyRequests  %+v", 429, o.Payload)
+}
+
 func (o *CreateServiceDocumentUploadDestinationTooManyRequests) GetPayload() *services_models.CreateServiceDocumentUploadDestination {
 	return o.Payload
 }
@@ -526,7 +774,8 @@ func NewCreateServiceDocumentUploadDestinationInternalServerError() *CreateServi
 	return &CreateServiceDocumentUploadDestinationInternalServerError{}
 }
 
-/* CreateServiceDocumentUploadDestinationInternalServerError describes a response with status code 500, with default header values.
+/*
+CreateServiceDocumentUploadDestinationInternalServerError describes a response with status code 500, with default header values.
 
 An unexpected condition occurred that prevented the server from fulfilling the request.
 */
@@ -544,9 +793,39 @@ type CreateServiceDocumentUploadDestinationInternalServerError struct {
 	Payload *services_models.CreateServiceDocumentUploadDestination
 }
 
+// IsSuccess returns true when this create service document upload destination internal server error response has a 2xx status code
+func (o *CreateServiceDocumentUploadDestinationInternalServerError) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this create service document upload destination internal server error response has a 3xx status code
+func (o *CreateServiceDocumentUploadDestinationInternalServerError) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create service document upload destination internal server error response has a 4xx status code
+func (o *CreateServiceDocumentUploadDestinationInternalServerError) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this create service document upload destination internal server error response has a 5xx status code
+func (o *CreateServiceDocumentUploadDestinationInternalServerError) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this create service document upload destination internal server error response a status code equal to that given
+func (o *CreateServiceDocumentUploadDestinationInternalServerError) IsCode(code int) bool {
+	return code == 500
+}
+
 func (o *CreateServiceDocumentUploadDestinationInternalServerError) Error() string {
 	return fmt.Sprintf("[POST /service/v1/documents][%d] createServiceDocumentUploadDestinationInternalServerError  %+v", 500, o.Payload)
 }
+
+func (o *CreateServiceDocumentUploadDestinationInternalServerError) String() string {
+	return fmt.Sprintf("[POST /service/v1/documents][%d] createServiceDocumentUploadDestinationInternalServerError  %+v", 500, o.Payload)
+}
+
 func (o *CreateServiceDocumentUploadDestinationInternalServerError) GetPayload() *services_models.CreateServiceDocumentUploadDestination {
 	return o.Payload
 }
@@ -582,7 +861,8 @@ func NewCreateServiceDocumentUploadDestinationServiceUnavailable() *CreateServic
 	return &CreateServiceDocumentUploadDestinationServiceUnavailable{}
 }
 
-/* CreateServiceDocumentUploadDestinationServiceUnavailable describes a response with status code 503, with default header values.
+/*
+CreateServiceDocumentUploadDestinationServiceUnavailable describes a response with status code 503, with default header values.
 
 Temporary overloading or maintenance of the server.
 */
@@ -600,9 +880,39 @@ type CreateServiceDocumentUploadDestinationServiceUnavailable struct {
 	Payload *services_models.CreateServiceDocumentUploadDestination
 }
 
+// IsSuccess returns true when this create service document upload destination service unavailable response has a 2xx status code
+func (o *CreateServiceDocumentUploadDestinationServiceUnavailable) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this create service document upload destination service unavailable response has a 3xx status code
+func (o *CreateServiceDocumentUploadDestinationServiceUnavailable) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create service document upload destination service unavailable response has a 4xx status code
+func (o *CreateServiceDocumentUploadDestinationServiceUnavailable) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this create service document upload destination service unavailable response has a 5xx status code
+func (o *CreateServiceDocumentUploadDestinationServiceUnavailable) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this create service document upload destination service unavailable response a status code equal to that given
+func (o *CreateServiceDocumentUploadDestinationServiceUnavailable) IsCode(code int) bool {
+	return code == 503
+}
+
 func (o *CreateServiceDocumentUploadDestinationServiceUnavailable) Error() string {
 	return fmt.Sprintf("[POST /service/v1/documents][%d] createServiceDocumentUploadDestinationServiceUnavailable  %+v", 503, o.Payload)
 }
+
+func (o *CreateServiceDocumentUploadDestinationServiceUnavailable) String() string {
+	return fmt.Sprintf("[POST /service/v1/documents][%d] createServiceDocumentUploadDestinationServiceUnavailable  %+v", 503, o.Payload)
+}
+
 func (o *CreateServiceDocumentUploadDestinationServiceUnavailable) GetPayload() *services_models.CreateServiceDocumentUploadDestination {
 	return o.Payload
 }

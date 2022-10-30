@@ -93,7 +93,8 @@ func NewAssignAppointmentResourcesOK() *AssignAppointmentResourcesOK {
 	return &AssignAppointmentResourcesOK{}
 }
 
-/* AssignAppointmentResourcesOK describes a response with status code 200, with default header values.
+/*
+AssignAppointmentResourcesOK describes a response with status code 200, with default header values.
 
 Success response.
 */
@@ -110,9 +111,39 @@ type AssignAppointmentResourcesOK struct {
 	Payload *services_models.AssignAppointmentResourcesResponse
 }
 
+// IsSuccess returns true when this assign appointment resources o k response has a 2xx status code
+func (o *AssignAppointmentResourcesOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this assign appointment resources o k response has a 3xx status code
+func (o *AssignAppointmentResourcesOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this assign appointment resources o k response has a 4xx status code
+func (o *AssignAppointmentResourcesOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this assign appointment resources o k response has a 5xx status code
+func (o *AssignAppointmentResourcesOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this assign appointment resources o k response a status code equal to that given
+func (o *AssignAppointmentResourcesOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *AssignAppointmentResourcesOK) Error() string {
 	return fmt.Sprintf("[PUT /service/v1/serviceJobs/{serviceJobId}/appointments/{appointmentId}/resources][%d] assignAppointmentResourcesOK  %+v", 200, o.Payload)
 }
+
+func (o *AssignAppointmentResourcesOK) String() string {
+	return fmt.Sprintf("[PUT /service/v1/serviceJobs/{serviceJobId}/appointments/{appointmentId}/resources][%d] assignAppointmentResourcesOK  %+v", 200, o.Payload)
+}
+
 func (o *AssignAppointmentResourcesOK) GetPayload() *services_models.AssignAppointmentResourcesResponse {
 	return o.Payload
 }
@@ -148,7 +179,8 @@ func NewAssignAppointmentResourcesBadRequest() *AssignAppointmentResourcesBadReq
 	return &AssignAppointmentResourcesBadRequest{}
 }
 
-/* AssignAppointmentResourcesBadRequest describes a response with status code 400, with default header values.
+/*
+AssignAppointmentResourcesBadRequest describes a response with status code 400, with default header values.
 
 Request has missing or invalid parameters and cannot be parsed.
 */
@@ -165,9 +197,39 @@ type AssignAppointmentResourcesBadRequest struct {
 	Payload *services_models.AssignAppointmentResourcesResponse
 }
 
+// IsSuccess returns true when this assign appointment resources bad request response has a 2xx status code
+func (o *AssignAppointmentResourcesBadRequest) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this assign appointment resources bad request response has a 3xx status code
+func (o *AssignAppointmentResourcesBadRequest) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this assign appointment resources bad request response has a 4xx status code
+func (o *AssignAppointmentResourcesBadRequest) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this assign appointment resources bad request response has a 5xx status code
+func (o *AssignAppointmentResourcesBadRequest) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this assign appointment resources bad request response a status code equal to that given
+func (o *AssignAppointmentResourcesBadRequest) IsCode(code int) bool {
+	return code == 400
+}
+
 func (o *AssignAppointmentResourcesBadRequest) Error() string {
 	return fmt.Sprintf("[PUT /service/v1/serviceJobs/{serviceJobId}/appointments/{appointmentId}/resources][%d] assignAppointmentResourcesBadRequest  %+v", 400, o.Payload)
 }
+
+func (o *AssignAppointmentResourcesBadRequest) String() string {
+	return fmt.Sprintf("[PUT /service/v1/serviceJobs/{serviceJobId}/appointments/{appointmentId}/resources][%d] assignAppointmentResourcesBadRequest  %+v", 400, o.Payload)
+}
+
 func (o *AssignAppointmentResourcesBadRequest) GetPayload() *services_models.AssignAppointmentResourcesResponse {
 	return o.Payload
 }
@@ -203,7 +265,8 @@ func NewAssignAppointmentResourcesForbidden() *AssignAppointmentResourcesForbidd
 	return &AssignAppointmentResourcesForbidden{}
 }
 
-/* AssignAppointmentResourcesForbidden describes a response with status code 403, with default header values.
+/*
+AssignAppointmentResourcesForbidden describes a response with status code 403, with default header values.
 
 Indicates that access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.
 */
@@ -216,9 +279,39 @@ type AssignAppointmentResourcesForbidden struct {
 	Payload *services_models.AssignAppointmentResourcesResponse
 }
 
+// IsSuccess returns true when this assign appointment resources forbidden response has a 2xx status code
+func (o *AssignAppointmentResourcesForbidden) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this assign appointment resources forbidden response has a 3xx status code
+func (o *AssignAppointmentResourcesForbidden) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this assign appointment resources forbidden response has a 4xx status code
+func (o *AssignAppointmentResourcesForbidden) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this assign appointment resources forbidden response has a 5xx status code
+func (o *AssignAppointmentResourcesForbidden) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this assign appointment resources forbidden response a status code equal to that given
+func (o *AssignAppointmentResourcesForbidden) IsCode(code int) bool {
+	return code == 403
+}
+
 func (o *AssignAppointmentResourcesForbidden) Error() string {
 	return fmt.Sprintf("[PUT /service/v1/serviceJobs/{serviceJobId}/appointments/{appointmentId}/resources][%d] assignAppointmentResourcesForbidden  %+v", 403, o.Payload)
 }
+
+func (o *AssignAppointmentResourcesForbidden) String() string {
+	return fmt.Sprintf("[PUT /service/v1/serviceJobs/{serviceJobId}/appointments/{appointmentId}/resources][%d] assignAppointmentResourcesForbidden  %+v", 403, o.Payload)
+}
+
 func (o *AssignAppointmentResourcesForbidden) GetPayload() *services_models.AssignAppointmentResourcesResponse {
 	return o.Payload
 }
@@ -247,7 +340,8 @@ func NewAssignAppointmentResourcesNotFound() *AssignAppointmentResourcesNotFound
 	return &AssignAppointmentResourcesNotFound{}
 }
 
-/* AssignAppointmentResourcesNotFound describes a response with status code 404, with default header values.
+/*
+AssignAppointmentResourcesNotFound describes a response with status code 404, with default header values.
 
 The resource specified does not exist.
 */
@@ -264,9 +358,39 @@ type AssignAppointmentResourcesNotFound struct {
 	Payload *services_models.AssignAppointmentResourcesResponse
 }
 
+// IsSuccess returns true when this assign appointment resources not found response has a 2xx status code
+func (o *AssignAppointmentResourcesNotFound) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this assign appointment resources not found response has a 3xx status code
+func (o *AssignAppointmentResourcesNotFound) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this assign appointment resources not found response has a 4xx status code
+func (o *AssignAppointmentResourcesNotFound) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this assign appointment resources not found response has a 5xx status code
+func (o *AssignAppointmentResourcesNotFound) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this assign appointment resources not found response a status code equal to that given
+func (o *AssignAppointmentResourcesNotFound) IsCode(code int) bool {
+	return code == 404
+}
+
 func (o *AssignAppointmentResourcesNotFound) Error() string {
 	return fmt.Sprintf("[PUT /service/v1/serviceJobs/{serviceJobId}/appointments/{appointmentId}/resources][%d] assignAppointmentResourcesNotFound  %+v", 404, o.Payload)
 }
+
+func (o *AssignAppointmentResourcesNotFound) String() string {
+	return fmt.Sprintf("[PUT /service/v1/serviceJobs/{serviceJobId}/appointments/{appointmentId}/resources][%d] assignAppointmentResourcesNotFound  %+v", 404, o.Payload)
+}
+
 func (o *AssignAppointmentResourcesNotFound) GetPayload() *services_models.AssignAppointmentResourcesResponse {
 	return o.Payload
 }
@@ -302,7 +426,8 @@ func NewAssignAppointmentResourcesRequestEntityTooLarge() *AssignAppointmentReso
 	return &AssignAppointmentResourcesRequestEntityTooLarge{}
 }
 
-/* AssignAppointmentResourcesRequestEntityTooLarge describes a response with status code 413, with default header values.
+/*
+AssignAppointmentResourcesRequestEntityTooLarge describes a response with status code 413, with default header values.
 
 The request size exceeded the maximum accepted size.
 */
@@ -320,9 +445,39 @@ type AssignAppointmentResourcesRequestEntityTooLarge struct {
 	Payload *services_models.AssignAppointmentResourcesResponse
 }
 
+// IsSuccess returns true when this assign appointment resources request entity too large response has a 2xx status code
+func (o *AssignAppointmentResourcesRequestEntityTooLarge) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this assign appointment resources request entity too large response has a 3xx status code
+func (o *AssignAppointmentResourcesRequestEntityTooLarge) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this assign appointment resources request entity too large response has a 4xx status code
+func (o *AssignAppointmentResourcesRequestEntityTooLarge) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this assign appointment resources request entity too large response has a 5xx status code
+func (o *AssignAppointmentResourcesRequestEntityTooLarge) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this assign appointment resources request entity too large response a status code equal to that given
+func (o *AssignAppointmentResourcesRequestEntityTooLarge) IsCode(code int) bool {
+	return code == 413
+}
+
 func (o *AssignAppointmentResourcesRequestEntityTooLarge) Error() string {
 	return fmt.Sprintf("[PUT /service/v1/serviceJobs/{serviceJobId}/appointments/{appointmentId}/resources][%d] assignAppointmentResourcesRequestEntityTooLarge  %+v", 413, o.Payload)
 }
+
+func (o *AssignAppointmentResourcesRequestEntityTooLarge) String() string {
+	return fmt.Sprintf("[PUT /service/v1/serviceJobs/{serviceJobId}/appointments/{appointmentId}/resources][%d] assignAppointmentResourcesRequestEntityTooLarge  %+v", 413, o.Payload)
+}
+
 func (o *AssignAppointmentResourcesRequestEntityTooLarge) GetPayload() *services_models.AssignAppointmentResourcesResponse {
 	return o.Payload
 }
@@ -358,7 +513,8 @@ func NewAssignAppointmentResourcesUnsupportedMediaType() *AssignAppointmentResou
 	return &AssignAppointmentResourcesUnsupportedMediaType{}
 }
 
-/* AssignAppointmentResourcesUnsupportedMediaType describes a response with status code 415, with default header values.
+/*
+AssignAppointmentResourcesUnsupportedMediaType describes a response with status code 415, with default header values.
 
 The request payload is in an unsupported format.
 */
@@ -376,9 +532,39 @@ type AssignAppointmentResourcesUnsupportedMediaType struct {
 	Payload *services_models.AssignAppointmentResourcesResponse
 }
 
+// IsSuccess returns true when this assign appointment resources unsupported media type response has a 2xx status code
+func (o *AssignAppointmentResourcesUnsupportedMediaType) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this assign appointment resources unsupported media type response has a 3xx status code
+func (o *AssignAppointmentResourcesUnsupportedMediaType) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this assign appointment resources unsupported media type response has a 4xx status code
+func (o *AssignAppointmentResourcesUnsupportedMediaType) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this assign appointment resources unsupported media type response has a 5xx status code
+func (o *AssignAppointmentResourcesUnsupportedMediaType) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this assign appointment resources unsupported media type response a status code equal to that given
+func (o *AssignAppointmentResourcesUnsupportedMediaType) IsCode(code int) bool {
+	return code == 415
+}
+
 func (o *AssignAppointmentResourcesUnsupportedMediaType) Error() string {
 	return fmt.Sprintf("[PUT /service/v1/serviceJobs/{serviceJobId}/appointments/{appointmentId}/resources][%d] assignAppointmentResourcesUnsupportedMediaType  %+v", 415, o.Payload)
 }
+
+func (o *AssignAppointmentResourcesUnsupportedMediaType) String() string {
+	return fmt.Sprintf("[PUT /service/v1/serviceJobs/{serviceJobId}/appointments/{appointmentId}/resources][%d] assignAppointmentResourcesUnsupportedMediaType  %+v", 415, o.Payload)
+}
+
 func (o *AssignAppointmentResourcesUnsupportedMediaType) GetPayload() *services_models.AssignAppointmentResourcesResponse {
 	return o.Payload
 }
@@ -414,7 +600,8 @@ func NewAssignAppointmentResourcesUnprocessableEntity() *AssignAppointmentResour
 	return &AssignAppointmentResourcesUnprocessableEntity{}
 }
 
-/* AssignAppointmentResourcesUnprocessableEntity describes a response with status code 422, with default header values.
+/*
+AssignAppointmentResourcesUnprocessableEntity describes a response with status code 422, with default header values.
 
 Unprocessable Entity. Unable to process the contained instructions.
 */
@@ -432,9 +619,39 @@ type AssignAppointmentResourcesUnprocessableEntity struct {
 	Payload *services_models.AssignAppointmentResourcesResponse
 }
 
+// IsSuccess returns true when this assign appointment resources unprocessable entity response has a 2xx status code
+func (o *AssignAppointmentResourcesUnprocessableEntity) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this assign appointment resources unprocessable entity response has a 3xx status code
+func (o *AssignAppointmentResourcesUnprocessableEntity) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this assign appointment resources unprocessable entity response has a 4xx status code
+func (o *AssignAppointmentResourcesUnprocessableEntity) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this assign appointment resources unprocessable entity response has a 5xx status code
+func (o *AssignAppointmentResourcesUnprocessableEntity) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this assign appointment resources unprocessable entity response a status code equal to that given
+func (o *AssignAppointmentResourcesUnprocessableEntity) IsCode(code int) bool {
+	return code == 422
+}
+
 func (o *AssignAppointmentResourcesUnprocessableEntity) Error() string {
 	return fmt.Sprintf("[PUT /service/v1/serviceJobs/{serviceJobId}/appointments/{appointmentId}/resources][%d] assignAppointmentResourcesUnprocessableEntity  %+v", 422, o.Payload)
 }
+
+func (o *AssignAppointmentResourcesUnprocessableEntity) String() string {
+	return fmt.Sprintf("[PUT /service/v1/serviceJobs/{serviceJobId}/appointments/{appointmentId}/resources][%d] assignAppointmentResourcesUnprocessableEntity  %+v", 422, o.Payload)
+}
+
 func (o *AssignAppointmentResourcesUnprocessableEntity) GetPayload() *services_models.AssignAppointmentResourcesResponse {
 	return o.Payload
 }
@@ -470,7 +687,8 @@ func NewAssignAppointmentResourcesTooManyRequests() *AssignAppointmentResourcesT
 	return &AssignAppointmentResourcesTooManyRequests{}
 }
 
-/* AssignAppointmentResourcesTooManyRequests describes a response with status code 429, with default header values.
+/*
+AssignAppointmentResourcesTooManyRequests describes a response with status code 429, with default header values.
 
 The frequency of requests was greater than allowed.
 */
@@ -488,9 +706,39 @@ type AssignAppointmentResourcesTooManyRequests struct {
 	Payload *services_models.AssignAppointmentResourcesResponse
 }
 
+// IsSuccess returns true when this assign appointment resources too many requests response has a 2xx status code
+func (o *AssignAppointmentResourcesTooManyRequests) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this assign appointment resources too many requests response has a 3xx status code
+func (o *AssignAppointmentResourcesTooManyRequests) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this assign appointment resources too many requests response has a 4xx status code
+func (o *AssignAppointmentResourcesTooManyRequests) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this assign appointment resources too many requests response has a 5xx status code
+func (o *AssignAppointmentResourcesTooManyRequests) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this assign appointment resources too many requests response a status code equal to that given
+func (o *AssignAppointmentResourcesTooManyRequests) IsCode(code int) bool {
+	return code == 429
+}
+
 func (o *AssignAppointmentResourcesTooManyRequests) Error() string {
 	return fmt.Sprintf("[PUT /service/v1/serviceJobs/{serviceJobId}/appointments/{appointmentId}/resources][%d] assignAppointmentResourcesTooManyRequests  %+v", 429, o.Payload)
 }
+
+func (o *AssignAppointmentResourcesTooManyRequests) String() string {
+	return fmt.Sprintf("[PUT /service/v1/serviceJobs/{serviceJobId}/appointments/{appointmentId}/resources][%d] assignAppointmentResourcesTooManyRequests  %+v", 429, o.Payload)
+}
+
 func (o *AssignAppointmentResourcesTooManyRequests) GetPayload() *services_models.AssignAppointmentResourcesResponse {
 	return o.Payload
 }
@@ -526,7 +774,8 @@ func NewAssignAppointmentResourcesInternalServerError() *AssignAppointmentResour
 	return &AssignAppointmentResourcesInternalServerError{}
 }
 
-/* AssignAppointmentResourcesInternalServerError describes a response with status code 500, with default header values.
+/*
+AssignAppointmentResourcesInternalServerError describes a response with status code 500, with default header values.
 
 An unexpected condition occurred that prevented the server from fulfilling the request.
 */
@@ -544,9 +793,39 @@ type AssignAppointmentResourcesInternalServerError struct {
 	Payload *services_models.AssignAppointmentResourcesResponse
 }
 
+// IsSuccess returns true when this assign appointment resources internal server error response has a 2xx status code
+func (o *AssignAppointmentResourcesInternalServerError) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this assign appointment resources internal server error response has a 3xx status code
+func (o *AssignAppointmentResourcesInternalServerError) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this assign appointment resources internal server error response has a 4xx status code
+func (o *AssignAppointmentResourcesInternalServerError) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this assign appointment resources internal server error response has a 5xx status code
+func (o *AssignAppointmentResourcesInternalServerError) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this assign appointment resources internal server error response a status code equal to that given
+func (o *AssignAppointmentResourcesInternalServerError) IsCode(code int) bool {
+	return code == 500
+}
+
 func (o *AssignAppointmentResourcesInternalServerError) Error() string {
 	return fmt.Sprintf("[PUT /service/v1/serviceJobs/{serviceJobId}/appointments/{appointmentId}/resources][%d] assignAppointmentResourcesInternalServerError  %+v", 500, o.Payload)
 }
+
+func (o *AssignAppointmentResourcesInternalServerError) String() string {
+	return fmt.Sprintf("[PUT /service/v1/serviceJobs/{serviceJobId}/appointments/{appointmentId}/resources][%d] assignAppointmentResourcesInternalServerError  %+v", 500, o.Payload)
+}
+
 func (o *AssignAppointmentResourcesInternalServerError) GetPayload() *services_models.AssignAppointmentResourcesResponse {
 	return o.Payload
 }
@@ -582,7 +861,8 @@ func NewAssignAppointmentResourcesServiceUnavailable() *AssignAppointmentResourc
 	return &AssignAppointmentResourcesServiceUnavailable{}
 }
 
-/* AssignAppointmentResourcesServiceUnavailable describes a response with status code 503, with default header values.
+/*
+AssignAppointmentResourcesServiceUnavailable describes a response with status code 503, with default header values.
 
 Temporary overloading or maintenance of the server.
 */
@@ -600,9 +880,39 @@ type AssignAppointmentResourcesServiceUnavailable struct {
 	Payload *services_models.AssignAppointmentResourcesResponse
 }
 
+// IsSuccess returns true when this assign appointment resources service unavailable response has a 2xx status code
+func (o *AssignAppointmentResourcesServiceUnavailable) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this assign appointment resources service unavailable response has a 3xx status code
+func (o *AssignAppointmentResourcesServiceUnavailable) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this assign appointment resources service unavailable response has a 4xx status code
+func (o *AssignAppointmentResourcesServiceUnavailable) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this assign appointment resources service unavailable response has a 5xx status code
+func (o *AssignAppointmentResourcesServiceUnavailable) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this assign appointment resources service unavailable response a status code equal to that given
+func (o *AssignAppointmentResourcesServiceUnavailable) IsCode(code int) bool {
+	return code == 503
+}
+
 func (o *AssignAppointmentResourcesServiceUnavailable) Error() string {
 	return fmt.Sprintf("[PUT /service/v1/serviceJobs/{serviceJobId}/appointments/{appointmentId}/resources][%d] assignAppointmentResourcesServiceUnavailable  %+v", 503, o.Payload)
 }
+
+func (o *AssignAppointmentResourcesServiceUnavailable) String() string {
+	return fmt.Sprintf("[PUT /service/v1/serviceJobs/{serviceJobId}/appointments/{appointmentId}/resources][%d] assignAppointmentResourcesServiceUnavailable  %+v", 503, o.Payload)
+}
+
 func (o *AssignAppointmentResourcesServiceUnavailable) GetPayload() *services_models.AssignAppointmentResourcesResponse {
 	return o.Payload
 }

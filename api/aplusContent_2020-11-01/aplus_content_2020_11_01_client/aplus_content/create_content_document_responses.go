@@ -81,7 +81,8 @@ func NewCreateContentDocumentOK() *CreateContentDocumentOK {
 	return &CreateContentDocumentOK{}
 }
 
-/* CreateContentDocumentOK describes a response with status code 200, with default header values.
+/*
+CreateContentDocumentOK describes a response with status code 200, with default header values.
 
 Success.
 */
@@ -98,9 +99,39 @@ type CreateContentDocumentOK struct {
 	Payload *aplus_content_2020_11_01_models.PostContentDocumentResponse
 }
 
+// IsSuccess returns true when this create content document o k response has a 2xx status code
+func (o *CreateContentDocumentOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this create content document o k response has a 3xx status code
+func (o *CreateContentDocumentOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create content document o k response has a 4xx status code
+func (o *CreateContentDocumentOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this create content document o k response has a 5xx status code
+func (o *CreateContentDocumentOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this create content document o k response a status code equal to that given
+func (o *CreateContentDocumentOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *CreateContentDocumentOK) Error() string {
 	return fmt.Sprintf("[POST /aplus/2020-11-01/contentDocuments][%d] createContentDocumentOK  %+v", 200, o.Payload)
 }
+
+func (o *CreateContentDocumentOK) String() string {
+	return fmt.Sprintf("[POST /aplus/2020-11-01/contentDocuments][%d] createContentDocumentOK  %+v", 200, o.Payload)
+}
+
 func (o *CreateContentDocumentOK) GetPayload() *aplus_content_2020_11_01_models.PostContentDocumentResponse {
 	return o.Payload
 }
@@ -136,7 +167,8 @@ func NewCreateContentDocumentBadRequest() *CreateContentDocumentBadRequest {
 	return &CreateContentDocumentBadRequest{}
 }
 
-/* CreateContentDocumentBadRequest describes a response with status code 400, with default header values.
+/*
+CreateContentDocumentBadRequest describes a response with status code 400, with default header values.
 
 Request has missing or invalid parameters and cannot be parsed.
 */
@@ -153,9 +185,39 @@ type CreateContentDocumentBadRequest struct {
 	Payload *aplus_content_2020_11_01_models.ErrorList
 }
 
+// IsSuccess returns true when this create content document bad request response has a 2xx status code
+func (o *CreateContentDocumentBadRequest) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this create content document bad request response has a 3xx status code
+func (o *CreateContentDocumentBadRequest) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create content document bad request response has a 4xx status code
+func (o *CreateContentDocumentBadRequest) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this create content document bad request response has a 5xx status code
+func (o *CreateContentDocumentBadRequest) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this create content document bad request response a status code equal to that given
+func (o *CreateContentDocumentBadRequest) IsCode(code int) bool {
+	return code == 400
+}
+
 func (o *CreateContentDocumentBadRequest) Error() string {
 	return fmt.Sprintf("[POST /aplus/2020-11-01/contentDocuments][%d] createContentDocumentBadRequest  %+v", 400, o.Payload)
 }
+
+func (o *CreateContentDocumentBadRequest) String() string {
+	return fmt.Sprintf("[POST /aplus/2020-11-01/contentDocuments][%d] createContentDocumentBadRequest  %+v", 400, o.Payload)
+}
+
 func (o *CreateContentDocumentBadRequest) GetPayload() *aplus_content_2020_11_01_models.ErrorList {
 	return o.Payload
 }
@@ -191,7 +253,8 @@ func NewCreateContentDocumentUnauthorized() *CreateContentDocumentUnauthorized {
 	return &CreateContentDocumentUnauthorized{}
 }
 
-/* CreateContentDocumentUnauthorized describes a response with status code 401, with default header values.
+/*
+CreateContentDocumentUnauthorized describes a response with status code 401, with default header values.
 
 The request's Authorization header is not formatted correctly or does not contain a valid token.
 */
@@ -209,9 +272,39 @@ type CreateContentDocumentUnauthorized struct {
 	Payload *aplus_content_2020_11_01_models.ErrorList
 }
 
+// IsSuccess returns true when this create content document unauthorized response has a 2xx status code
+func (o *CreateContentDocumentUnauthorized) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this create content document unauthorized response has a 3xx status code
+func (o *CreateContentDocumentUnauthorized) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create content document unauthorized response has a 4xx status code
+func (o *CreateContentDocumentUnauthorized) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this create content document unauthorized response has a 5xx status code
+func (o *CreateContentDocumentUnauthorized) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this create content document unauthorized response a status code equal to that given
+func (o *CreateContentDocumentUnauthorized) IsCode(code int) bool {
+	return code == 401
+}
+
 func (o *CreateContentDocumentUnauthorized) Error() string {
 	return fmt.Sprintf("[POST /aplus/2020-11-01/contentDocuments][%d] createContentDocumentUnauthorized  %+v", 401, o.Payload)
 }
+
+func (o *CreateContentDocumentUnauthorized) String() string {
+	return fmt.Sprintf("[POST /aplus/2020-11-01/contentDocuments][%d] createContentDocumentUnauthorized  %+v", 401, o.Payload)
+}
+
 func (o *CreateContentDocumentUnauthorized) GetPayload() *aplus_content_2020_11_01_models.ErrorList {
 	return o.Payload
 }
@@ -247,7 +340,8 @@ func NewCreateContentDocumentForbidden() *CreateContentDocumentForbidden {
 	return &CreateContentDocumentForbidden{}
 }
 
-/* CreateContentDocumentForbidden describes a response with status code 403, with default header values.
+/*
+CreateContentDocumentForbidden describes a response with status code 403, with default header values.
 
 Indicates that access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.
 */
@@ -260,9 +354,39 @@ type CreateContentDocumentForbidden struct {
 	Payload *aplus_content_2020_11_01_models.ErrorList
 }
 
+// IsSuccess returns true when this create content document forbidden response has a 2xx status code
+func (o *CreateContentDocumentForbidden) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this create content document forbidden response has a 3xx status code
+func (o *CreateContentDocumentForbidden) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create content document forbidden response has a 4xx status code
+func (o *CreateContentDocumentForbidden) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this create content document forbidden response has a 5xx status code
+func (o *CreateContentDocumentForbidden) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this create content document forbidden response a status code equal to that given
+func (o *CreateContentDocumentForbidden) IsCode(code int) bool {
+	return code == 403
+}
+
 func (o *CreateContentDocumentForbidden) Error() string {
 	return fmt.Sprintf("[POST /aplus/2020-11-01/contentDocuments][%d] createContentDocumentForbidden  %+v", 403, o.Payload)
 }
+
+func (o *CreateContentDocumentForbidden) String() string {
+	return fmt.Sprintf("[POST /aplus/2020-11-01/contentDocuments][%d] createContentDocumentForbidden  %+v", 403, o.Payload)
+}
+
 func (o *CreateContentDocumentForbidden) GetPayload() *aplus_content_2020_11_01_models.ErrorList {
 	return o.Payload
 }
@@ -291,7 +415,8 @@ func NewCreateContentDocumentNotFound() *CreateContentDocumentNotFound {
 	return &CreateContentDocumentNotFound{}
 }
 
-/* CreateContentDocumentNotFound describes a response with status code 404, with default header values.
+/*
+CreateContentDocumentNotFound describes a response with status code 404, with default header values.
 
 The specified resource does not exist.
 */
@@ -308,9 +433,39 @@ type CreateContentDocumentNotFound struct {
 	Payload *aplus_content_2020_11_01_models.ErrorList
 }
 
+// IsSuccess returns true when this create content document not found response has a 2xx status code
+func (o *CreateContentDocumentNotFound) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this create content document not found response has a 3xx status code
+func (o *CreateContentDocumentNotFound) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create content document not found response has a 4xx status code
+func (o *CreateContentDocumentNotFound) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this create content document not found response has a 5xx status code
+func (o *CreateContentDocumentNotFound) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this create content document not found response a status code equal to that given
+func (o *CreateContentDocumentNotFound) IsCode(code int) bool {
+	return code == 404
+}
+
 func (o *CreateContentDocumentNotFound) Error() string {
 	return fmt.Sprintf("[POST /aplus/2020-11-01/contentDocuments][%d] createContentDocumentNotFound  %+v", 404, o.Payload)
 }
+
+func (o *CreateContentDocumentNotFound) String() string {
+	return fmt.Sprintf("[POST /aplus/2020-11-01/contentDocuments][%d] createContentDocumentNotFound  %+v", 404, o.Payload)
+}
+
 func (o *CreateContentDocumentNotFound) GetPayload() *aplus_content_2020_11_01_models.ErrorList {
 	return o.Payload
 }
@@ -346,7 +501,8 @@ func NewCreateContentDocumentTooManyRequests() *CreateContentDocumentTooManyRequ
 	return &CreateContentDocumentTooManyRequests{}
 }
 
-/* CreateContentDocumentTooManyRequests describes a response with status code 429, with default header values.
+/*
+CreateContentDocumentTooManyRequests describes a response with status code 429, with default header values.
 
 The frequency of requests was greater than allowed.
 */
@@ -364,9 +520,39 @@ type CreateContentDocumentTooManyRequests struct {
 	Payload *aplus_content_2020_11_01_models.ErrorList
 }
 
+// IsSuccess returns true when this create content document too many requests response has a 2xx status code
+func (o *CreateContentDocumentTooManyRequests) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this create content document too many requests response has a 3xx status code
+func (o *CreateContentDocumentTooManyRequests) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create content document too many requests response has a 4xx status code
+func (o *CreateContentDocumentTooManyRequests) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this create content document too many requests response has a 5xx status code
+func (o *CreateContentDocumentTooManyRequests) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this create content document too many requests response a status code equal to that given
+func (o *CreateContentDocumentTooManyRequests) IsCode(code int) bool {
+	return code == 429
+}
+
 func (o *CreateContentDocumentTooManyRequests) Error() string {
 	return fmt.Sprintf("[POST /aplus/2020-11-01/contentDocuments][%d] createContentDocumentTooManyRequests  %+v", 429, o.Payload)
 }
+
+func (o *CreateContentDocumentTooManyRequests) String() string {
+	return fmt.Sprintf("[POST /aplus/2020-11-01/contentDocuments][%d] createContentDocumentTooManyRequests  %+v", 429, o.Payload)
+}
+
 func (o *CreateContentDocumentTooManyRequests) GetPayload() *aplus_content_2020_11_01_models.ErrorList {
 	return o.Payload
 }
@@ -402,7 +588,8 @@ func NewCreateContentDocumentInternalServerError() *CreateContentDocumentInterna
 	return &CreateContentDocumentInternalServerError{}
 }
 
-/* CreateContentDocumentInternalServerError describes a response with status code 500, with default header values.
+/*
+CreateContentDocumentInternalServerError describes a response with status code 500, with default header values.
 
 An unexpected condition occurred that prevented the server from fulfilling the request.
 */
@@ -420,9 +607,39 @@ type CreateContentDocumentInternalServerError struct {
 	Payload *aplus_content_2020_11_01_models.ErrorList
 }
 
+// IsSuccess returns true when this create content document internal server error response has a 2xx status code
+func (o *CreateContentDocumentInternalServerError) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this create content document internal server error response has a 3xx status code
+func (o *CreateContentDocumentInternalServerError) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create content document internal server error response has a 4xx status code
+func (o *CreateContentDocumentInternalServerError) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this create content document internal server error response has a 5xx status code
+func (o *CreateContentDocumentInternalServerError) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this create content document internal server error response a status code equal to that given
+func (o *CreateContentDocumentInternalServerError) IsCode(code int) bool {
+	return code == 500
+}
+
 func (o *CreateContentDocumentInternalServerError) Error() string {
 	return fmt.Sprintf("[POST /aplus/2020-11-01/contentDocuments][%d] createContentDocumentInternalServerError  %+v", 500, o.Payload)
 }
+
+func (o *CreateContentDocumentInternalServerError) String() string {
+	return fmt.Sprintf("[POST /aplus/2020-11-01/contentDocuments][%d] createContentDocumentInternalServerError  %+v", 500, o.Payload)
+}
+
 func (o *CreateContentDocumentInternalServerError) GetPayload() *aplus_content_2020_11_01_models.ErrorList {
 	return o.Payload
 }
@@ -458,7 +675,8 @@ func NewCreateContentDocumentServiceUnavailable() *CreateContentDocumentServiceU
 	return &CreateContentDocumentServiceUnavailable{}
 }
 
-/* CreateContentDocumentServiceUnavailable describes a response with status code 503, with default header values.
+/*
+CreateContentDocumentServiceUnavailable describes a response with status code 503, with default header values.
 
 Temporary overloading or maintenance of the server.
 */
@@ -476,9 +694,39 @@ type CreateContentDocumentServiceUnavailable struct {
 	Payload *aplus_content_2020_11_01_models.ErrorList
 }
 
+// IsSuccess returns true when this create content document service unavailable response has a 2xx status code
+func (o *CreateContentDocumentServiceUnavailable) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this create content document service unavailable response has a 3xx status code
+func (o *CreateContentDocumentServiceUnavailable) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create content document service unavailable response has a 4xx status code
+func (o *CreateContentDocumentServiceUnavailable) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this create content document service unavailable response has a 5xx status code
+func (o *CreateContentDocumentServiceUnavailable) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this create content document service unavailable response a status code equal to that given
+func (o *CreateContentDocumentServiceUnavailable) IsCode(code int) bool {
+	return code == 503
+}
+
 func (o *CreateContentDocumentServiceUnavailable) Error() string {
 	return fmt.Sprintf("[POST /aplus/2020-11-01/contentDocuments][%d] createContentDocumentServiceUnavailable  %+v", 503, o.Payload)
 }
+
+func (o *CreateContentDocumentServiceUnavailable) String() string {
+	return fmt.Sprintf("[POST /aplus/2020-11-01/contentDocuments][%d] createContentDocumentServiceUnavailable  %+v", 503, o.Payload)
+}
+
 func (o *CreateContentDocumentServiceUnavailable) GetPayload() *aplus_content_2020_11_01_models.ErrorList {
 	return o.Payload
 }

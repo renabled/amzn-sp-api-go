@@ -52,10 +52,12 @@ func NewCancelFulfillmentOrderParamsWithHTTPClient(client *http.Client) *CancelF
 	}
 }
 
-/* CancelFulfillmentOrderParams contains all the parameters to send to the API endpoint
-   for the cancel fulfillment order operation.
+/*
+CancelFulfillmentOrderParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the cancel fulfillment order operation.
+
+	Typically these are written to a http.Request.
 */
 type CancelFulfillmentOrderParams struct {
 

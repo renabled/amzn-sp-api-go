@@ -81,7 +81,8 @@ func NewUpdateInboundShipmentOK() *UpdateInboundShipmentOK {
 	return &UpdateInboundShipmentOK{}
 }
 
-/* UpdateInboundShipmentOK describes a response with status code 200, with default header values.
+/*
+UpdateInboundShipmentOK describes a response with status code 200, with default header values.
 
 Success.
 */
@@ -98,9 +99,39 @@ type UpdateInboundShipmentOK struct {
 	Payload *fulfillment_inbound_v0_models.InboundShipmentResponse
 }
 
+// IsSuccess returns true when this update inbound shipment o k response has a 2xx status code
+func (o *UpdateInboundShipmentOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this update inbound shipment o k response has a 3xx status code
+func (o *UpdateInboundShipmentOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this update inbound shipment o k response has a 4xx status code
+func (o *UpdateInboundShipmentOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this update inbound shipment o k response has a 5xx status code
+func (o *UpdateInboundShipmentOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this update inbound shipment o k response a status code equal to that given
+func (o *UpdateInboundShipmentOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *UpdateInboundShipmentOK) Error() string {
 	return fmt.Sprintf("[PUT /fba/inbound/v0/shipments/{shipmentId}][%d] updateInboundShipmentOK  %+v", 200, o.Payload)
 }
+
+func (o *UpdateInboundShipmentOK) String() string {
+	return fmt.Sprintf("[PUT /fba/inbound/v0/shipments/{shipmentId}][%d] updateInboundShipmentOK  %+v", 200, o.Payload)
+}
+
 func (o *UpdateInboundShipmentOK) GetPayload() *fulfillment_inbound_v0_models.InboundShipmentResponse {
 	return o.Payload
 }
@@ -136,7 +167,8 @@ func NewUpdateInboundShipmentBadRequest() *UpdateInboundShipmentBadRequest {
 	return &UpdateInboundShipmentBadRequest{}
 }
 
-/* UpdateInboundShipmentBadRequest describes a response with status code 400, with default header values.
+/*
+UpdateInboundShipmentBadRequest describes a response with status code 400, with default header values.
 
 Request has missing or invalid parameters and cannot be parsed.
 */
@@ -153,9 +185,39 @@ type UpdateInboundShipmentBadRequest struct {
 	Payload *fulfillment_inbound_v0_models.InboundShipmentResponse
 }
 
+// IsSuccess returns true when this update inbound shipment bad request response has a 2xx status code
+func (o *UpdateInboundShipmentBadRequest) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this update inbound shipment bad request response has a 3xx status code
+func (o *UpdateInboundShipmentBadRequest) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this update inbound shipment bad request response has a 4xx status code
+func (o *UpdateInboundShipmentBadRequest) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this update inbound shipment bad request response has a 5xx status code
+func (o *UpdateInboundShipmentBadRequest) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this update inbound shipment bad request response a status code equal to that given
+func (o *UpdateInboundShipmentBadRequest) IsCode(code int) bool {
+	return code == 400
+}
+
 func (o *UpdateInboundShipmentBadRequest) Error() string {
 	return fmt.Sprintf("[PUT /fba/inbound/v0/shipments/{shipmentId}][%d] updateInboundShipmentBadRequest  %+v", 400, o.Payload)
 }
+
+func (o *UpdateInboundShipmentBadRequest) String() string {
+	return fmt.Sprintf("[PUT /fba/inbound/v0/shipments/{shipmentId}][%d] updateInboundShipmentBadRequest  %+v", 400, o.Payload)
+}
+
 func (o *UpdateInboundShipmentBadRequest) GetPayload() *fulfillment_inbound_v0_models.InboundShipmentResponse {
 	return o.Payload
 }
@@ -191,7 +253,8 @@ func NewUpdateInboundShipmentUnauthorized() *UpdateInboundShipmentUnauthorized {
 	return &UpdateInboundShipmentUnauthorized{}
 }
 
-/* UpdateInboundShipmentUnauthorized describes a response with status code 401, with default header values.
+/*
+UpdateInboundShipmentUnauthorized describes a response with status code 401, with default header values.
 
 The request's Authorization header is not formatted correctly or does not contain a valid token.
 */
@@ -209,9 +272,39 @@ type UpdateInboundShipmentUnauthorized struct {
 	Payload *fulfillment_inbound_v0_models.InboundShipmentResponse
 }
 
+// IsSuccess returns true when this update inbound shipment unauthorized response has a 2xx status code
+func (o *UpdateInboundShipmentUnauthorized) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this update inbound shipment unauthorized response has a 3xx status code
+func (o *UpdateInboundShipmentUnauthorized) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this update inbound shipment unauthorized response has a 4xx status code
+func (o *UpdateInboundShipmentUnauthorized) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this update inbound shipment unauthorized response has a 5xx status code
+func (o *UpdateInboundShipmentUnauthorized) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this update inbound shipment unauthorized response a status code equal to that given
+func (o *UpdateInboundShipmentUnauthorized) IsCode(code int) bool {
+	return code == 401
+}
+
 func (o *UpdateInboundShipmentUnauthorized) Error() string {
 	return fmt.Sprintf("[PUT /fba/inbound/v0/shipments/{shipmentId}][%d] updateInboundShipmentUnauthorized  %+v", 401, o.Payload)
 }
+
+func (o *UpdateInboundShipmentUnauthorized) String() string {
+	return fmt.Sprintf("[PUT /fba/inbound/v0/shipments/{shipmentId}][%d] updateInboundShipmentUnauthorized  %+v", 401, o.Payload)
+}
+
 func (o *UpdateInboundShipmentUnauthorized) GetPayload() *fulfillment_inbound_v0_models.InboundShipmentResponse {
 	return o.Payload
 }
@@ -247,7 +340,8 @@ func NewUpdateInboundShipmentForbidden() *UpdateInboundShipmentForbidden {
 	return &UpdateInboundShipmentForbidden{}
 }
 
-/* UpdateInboundShipmentForbidden describes a response with status code 403, with default header values.
+/*
+UpdateInboundShipmentForbidden describes a response with status code 403, with default header values.
 
 Indicates that access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.
 */
@@ -260,9 +354,39 @@ type UpdateInboundShipmentForbidden struct {
 	Payload *fulfillment_inbound_v0_models.InboundShipmentResponse
 }
 
+// IsSuccess returns true when this update inbound shipment forbidden response has a 2xx status code
+func (o *UpdateInboundShipmentForbidden) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this update inbound shipment forbidden response has a 3xx status code
+func (o *UpdateInboundShipmentForbidden) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this update inbound shipment forbidden response has a 4xx status code
+func (o *UpdateInboundShipmentForbidden) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this update inbound shipment forbidden response has a 5xx status code
+func (o *UpdateInboundShipmentForbidden) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this update inbound shipment forbidden response a status code equal to that given
+func (o *UpdateInboundShipmentForbidden) IsCode(code int) bool {
+	return code == 403
+}
+
 func (o *UpdateInboundShipmentForbidden) Error() string {
 	return fmt.Sprintf("[PUT /fba/inbound/v0/shipments/{shipmentId}][%d] updateInboundShipmentForbidden  %+v", 403, o.Payload)
 }
+
+func (o *UpdateInboundShipmentForbidden) String() string {
+	return fmt.Sprintf("[PUT /fba/inbound/v0/shipments/{shipmentId}][%d] updateInboundShipmentForbidden  %+v", 403, o.Payload)
+}
+
 func (o *UpdateInboundShipmentForbidden) GetPayload() *fulfillment_inbound_v0_models.InboundShipmentResponse {
 	return o.Payload
 }
@@ -291,7 +415,8 @@ func NewUpdateInboundShipmentNotFound() *UpdateInboundShipmentNotFound {
 	return &UpdateInboundShipmentNotFound{}
 }
 
-/* UpdateInboundShipmentNotFound describes a response with status code 404, with default header values.
+/*
+UpdateInboundShipmentNotFound describes a response with status code 404, with default header values.
 
 The specified resource does not exist.
 */
@@ -308,9 +433,39 @@ type UpdateInboundShipmentNotFound struct {
 	Payload *fulfillment_inbound_v0_models.InboundShipmentResponse
 }
 
+// IsSuccess returns true when this update inbound shipment not found response has a 2xx status code
+func (o *UpdateInboundShipmentNotFound) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this update inbound shipment not found response has a 3xx status code
+func (o *UpdateInboundShipmentNotFound) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this update inbound shipment not found response has a 4xx status code
+func (o *UpdateInboundShipmentNotFound) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this update inbound shipment not found response has a 5xx status code
+func (o *UpdateInboundShipmentNotFound) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this update inbound shipment not found response a status code equal to that given
+func (o *UpdateInboundShipmentNotFound) IsCode(code int) bool {
+	return code == 404
+}
+
 func (o *UpdateInboundShipmentNotFound) Error() string {
 	return fmt.Sprintf("[PUT /fba/inbound/v0/shipments/{shipmentId}][%d] updateInboundShipmentNotFound  %+v", 404, o.Payload)
 }
+
+func (o *UpdateInboundShipmentNotFound) String() string {
+	return fmt.Sprintf("[PUT /fba/inbound/v0/shipments/{shipmentId}][%d] updateInboundShipmentNotFound  %+v", 404, o.Payload)
+}
+
 func (o *UpdateInboundShipmentNotFound) GetPayload() *fulfillment_inbound_v0_models.InboundShipmentResponse {
 	return o.Payload
 }
@@ -346,7 +501,8 @@ func NewUpdateInboundShipmentTooManyRequests() *UpdateInboundShipmentTooManyRequ
 	return &UpdateInboundShipmentTooManyRequests{}
 }
 
-/* UpdateInboundShipmentTooManyRequests describes a response with status code 429, with default header values.
+/*
+UpdateInboundShipmentTooManyRequests describes a response with status code 429, with default header values.
 
 The frequency of requests was greater than allowed.
 */
@@ -364,9 +520,39 @@ type UpdateInboundShipmentTooManyRequests struct {
 	Payload *fulfillment_inbound_v0_models.InboundShipmentResponse
 }
 
+// IsSuccess returns true when this update inbound shipment too many requests response has a 2xx status code
+func (o *UpdateInboundShipmentTooManyRequests) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this update inbound shipment too many requests response has a 3xx status code
+func (o *UpdateInboundShipmentTooManyRequests) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this update inbound shipment too many requests response has a 4xx status code
+func (o *UpdateInboundShipmentTooManyRequests) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this update inbound shipment too many requests response has a 5xx status code
+func (o *UpdateInboundShipmentTooManyRequests) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this update inbound shipment too many requests response a status code equal to that given
+func (o *UpdateInboundShipmentTooManyRequests) IsCode(code int) bool {
+	return code == 429
+}
+
 func (o *UpdateInboundShipmentTooManyRequests) Error() string {
 	return fmt.Sprintf("[PUT /fba/inbound/v0/shipments/{shipmentId}][%d] updateInboundShipmentTooManyRequests  %+v", 429, o.Payload)
 }
+
+func (o *UpdateInboundShipmentTooManyRequests) String() string {
+	return fmt.Sprintf("[PUT /fba/inbound/v0/shipments/{shipmentId}][%d] updateInboundShipmentTooManyRequests  %+v", 429, o.Payload)
+}
+
 func (o *UpdateInboundShipmentTooManyRequests) GetPayload() *fulfillment_inbound_v0_models.InboundShipmentResponse {
 	return o.Payload
 }
@@ -402,7 +588,8 @@ func NewUpdateInboundShipmentInternalServerError() *UpdateInboundShipmentInterna
 	return &UpdateInboundShipmentInternalServerError{}
 }
 
-/* UpdateInboundShipmentInternalServerError describes a response with status code 500, with default header values.
+/*
+UpdateInboundShipmentInternalServerError describes a response with status code 500, with default header values.
 
 An unexpected condition occurred that prevented the server from fulfilling the request.
 */
@@ -420,9 +607,39 @@ type UpdateInboundShipmentInternalServerError struct {
 	Payload *fulfillment_inbound_v0_models.InboundShipmentResponse
 }
 
+// IsSuccess returns true when this update inbound shipment internal server error response has a 2xx status code
+func (o *UpdateInboundShipmentInternalServerError) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this update inbound shipment internal server error response has a 3xx status code
+func (o *UpdateInboundShipmentInternalServerError) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this update inbound shipment internal server error response has a 4xx status code
+func (o *UpdateInboundShipmentInternalServerError) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this update inbound shipment internal server error response has a 5xx status code
+func (o *UpdateInboundShipmentInternalServerError) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this update inbound shipment internal server error response a status code equal to that given
+func (o *UpdateInboundShipmentInternalServerError) IsCode(code int) bool {
+	return code == 500
+}
+
 func (o *UpdateInboundShipmentInternalServerError) Error() string {
 	return fmt.Sprintf("[PUT /fba/inbound/v0/shipments/{shipmentId}][%d] updateInboundShipmentInternalServerError  %+v", 500, o.Payload)
 }
+
+func (o *UpdateInboundShipmentInternalServerError) String() string {
+	return fmt.Sprintf("[PUT /fba/inbound/v0/shipments/{shipmentId}][%d] updateInboundShipmentInternalServerError  %+v", 500, o.Payload)
+}
+
 func (o *UpdateInboundShipmentInternalServerError) GetPayload() *fulfillment_inbound_v0_models.InboundShipmentResponse {
 	return o.Payload
 }
@@ -458,7 +675,8 @@ func NewUpdateInboundShipmentServiceUnavailable() *UpdateInboundShipmentServiceU
 	return &UpdateInboundShipmentServiceUnavailable{}
 }
 
-/* UpdateInboundShipmentServiceUnavailable describes a response with status code 503, with default header values.
+/*
+UpdateInboundShipmentServiceUnavailable describes a response with status code 503, with default header values.
 
 Temporary overloading or maintenance of the server.
 */
@@ -476,9 +694,39 @@ type UpdateInboundShipmentServiceUnavailable struct {
 	Payload *fulfillment_inbound_v0_models.InboundShipmentResponse
 }
 
+// IsSuccess returns true when this update inbound shipment service unavailable response has a 2xx status code
+func (o *UpdateInboundShipmentServiceUnavailable) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this update inbound shipment service unavailable response has a 3xx status code
+func (o *UpdateInboundShipmentServiceUnavailable) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this update inbound shipment service unavailable response has a 4xx status code
+func (o *UpdateInboundShipmentServiceUnavailable) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this update inbound shipment service unavailable response has a 5xx status code
+func (o *UpdateInboundShipmentServiceUnavailable) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this update inbound shipment service unavailable response a status code equal to that given
+func (o *UpdateInboundShipmentServiceUnavailable) IsCode(code int) bool {
+	return code == 503
+}
+
 func (o *UpdateInboundShipmentServiceUnavailable) Error() string {
 	return fmt.Sprintf("[PUT /fba/inbound/v0/shipments/{shipmentId}][%d] updateInboundShipmentServiceUnavailable  %+v", 503, o.Payload)
 }
+
+func (o *UpdateInboundShipmentServiceUnavailable) String() string {
+	return fmt.Sprintf("[PUT /fba/inbound/v0/shipments/{shipmentId}][%d] updateInboundShipmentServiceUnavailable  %+v", 503, o.Payload)
+}
+
 func (o *UpdateInboundShipmentServiceUnavailable) GetPayload() *fulfillment_inbound_v0_models.InboundShipmentResponse {
 	return o.Payload
 }

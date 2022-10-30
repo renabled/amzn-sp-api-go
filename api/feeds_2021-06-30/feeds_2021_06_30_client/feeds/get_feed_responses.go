@@ -87,7 +87,8 @@ func NewGetFeedOK() *GetFeedOK {
 	return &GetFeedOK{}
 }
 
-/* GetFeedOK describes a response with status code 200, with default header values.
+/*
+GetFeedOK describes a response with status code 200, with default header values.
 
 Success.
 */
@@ -104,9 +105,39 @@ type GetFeedOK struct {
 	Payload *feeds_2021_06_30_models.Feed
 }
 
+// IsSuccess returns true when this get feed o k response has a 2xx status code
+func (o *GetFeedOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this get feed o k response has a 3xx status code
+func (o *GetFeedOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get feed o k response has a 4xx status code
+func (o *GetFeedOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get feed o k response has a 5xx status code
+func (o *GetFeedOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get feed o k response a status code equal to that given
+func (o *GetFeedOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *GetFeedOK) Error() string {
 	return fmt.Sprintf("[GET /feeds/2021-06-30/feeds/{feedId}][%d] getFeedOK  %+v", 200, o.Payload)
 }
+
+func (o *GetFeedOK) String() string {
+	return fmt.Sprintf("[GET /feeds/2021-06-30/feeds/{feedId}][%d] getFeedOK  %+v", 200, o.Payload)
+}
+
 func (o *GetFeedOK) GetPayload() *feeds_2021_06_30_models.Feed {
 	return o.Payload
 }
@@ -142,7 +173,8 @@ func NewGetFeedBadRequest() *GetFeedBadRequest {
 	return &GetFeedBadRequest{}
 }
 
-/* GetFeedBadRequest describes a response with status code 400, with default header values.
+/*
+GetFeedBadRequest describes a response with status code 400, with default header values.
 
 Request has missing or invalid parameters and cannot be parsed.
 */
@@ -159,9 +191,39 @@ type GetFeedBadRequest struct {
 	Payload *feeds_2021_06_30_models.ErrorList
 }
 
+// IsSuccess returns true when this get feed bad request response has a 2xx status code
+func (o *GetFeedBadRequest) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get feed bad request response has a 3xx status code
+func (o *GetFeedBadRequest) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get feed bad request response has a 4xx status code
+func (o *GetFeedBadRequest) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get feed bad request response has a 5xx status code
+func (o *GetFeedBadRequest) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get feed bad request response a status code equal to that given
+func (o *GetFeedBadRequest) IsCode(code int) bool {
+	return code == 400
+}
+
 func (o *GetFeedBadRequest) Error() string {
 	return fmt.Sprintf("[GET /feeds/2021-06-30/feeds/{feedId}][%d] getFeedBadRequest  %+v", 400, o.Payload)
 }
+
+func (o *GetFeedBadRequest) String() string {
+	return fmt.Sprintf("[GET /feeds/2021-06-30/feeds/{feedId}][%d] getFeedBadRequest  %+v", 400, o.Payload)
+}
+
 func (o *GetFeedBadRequest) GetPayload() *feeds_2021_06_30_models.ErrorList {
 	return o.Payload
 }
@@ -197,7 +259,8 @@ func NewGetFeedUnauthorized() *GetFeedUnauthorized {
 	return &GetFeedUnauthorized{}
 }
 
-/* GetFeedUnauthorized describes a response with status code 401, with default header values.
+/*
+GetFeedUnauthorized describes a response with status code 401, with default header values.
 
 The request's Authorization header is not formatted correctly or does not contain a valid token.
 */
@@ -215,9 +278,39 @@ type GetFeedUnauthorized struct {
 	Payload *feeds_2021_06_30_models.ErrorList
 }
 
+// IsSuccess returns true when this get feed unauthorized response has a 2xx status code
+func (o *GetFeedUnauthorized) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get feed unauthorized response has a 3xx status code
+func (o *GetFeedUnauthorized) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get feed unauthorized response has a 4xx status code
+func (o *GetFeedUnauthorized) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get feed unauthorized response has a 5xx status code
+func (o *GetFeedUnauthorized) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get feed unauthorized response a status code equal to that given
+func (o *GetFeedUnauthorized) IsCode(code int) bool {
+	return code == 401
+}
+
 func (o *GetFeedUnauthorized) Error() string {
 	return fmt.Sprintf("[GET /feeds/2021-06-30/feeds/{feedId}][%d] getFeedUnauthorized  %+v", 401, o.Payload)
 }
+
+func (o *GetFeedUnauthorized) String() string {
+	return fmt.Sprintf("[GET /feeds/2021-06-30/feeds/{feedId}][%d] getFeedUnauthorized  %+v", 401, o.Payload)
+}
+
 func (o *GetFeedUnauthorized) GetPayload() *feeds_2021_06_30_models.ErrorList {
 	return o.Payload
 }
@@ -253,7 +346,8 @@ func NewGetFeedForbidden() *GetFeedForbidden {
 	return &GetFeedForbidden{}
 }
 
-/* GetFeedForbidden describes a response with status code 403, with default header values.
+/*
+GetFeedForbidden describes a response with status code 403, with default header values.
 
 Indicates access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.
 */
@@ -266,9 +360,39 @@ type GetFeedForbidden struct {
 	Payload *feeds_2021_06_30_models.ErrorList
 }
 
+// IsSuccess returns true when this get feed forbidden response has a 2xx status code
+func (o *GetFeedForbidden) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get feed forbidden response has a 3xx status code
+func (o *GetFeedForbidden) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get feed forbidden response has a 4xx status code
+func (o *GetFeedForbidden) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get feed forbidden response has a 5xx status code
+func (o *GetFeedForbidden) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get feed forbidden response a status code equal to that given
+func (o *GetFeedForbidden) IsCode(code int) bool {
+	return code == 403
+}
+
 func (o *GetFeedForbidden) Error() string {
 	return fmt.Sprintf("[GET /feeds/2021-06-30/feeds/{feedId}][%d] getFeedForbidden  %+v", 403, o.Payload)
 }
+
+func (o *GetFeedForbidden) String() string {
+	return fmt.Sprintf("[GET /feeds/2021-06-30/feeds/{feedId}][%d] getFeedForbidden  %+v", 403, o.Payload)
+}
+
 func (o *GetFeedForbidden) GetPayload() *feeds_2021_06_30_models.ErrorList {
 	return o.Payload
 }
@@ -297,7 +421,8 @@ func NewGetFeedNotFound() *GetFeedNotFound {
 	return &GetFeedNotFound{}
 }
 
-/* GetFeedNotFound describes a response with status code 404, with default header values.
+/*
+GetFeedNotFound describes a response with status code 404, with default header values.
 
 The specified resource does not exist.
 */
@@ -314,9 +439,39 @@ type GetFeedNotFound struct {
 	Payload *feeds_2021_06_30_models.ErrorList
 }
 
+// IsSuccess returns true when this get feed not found response has a 2xx status code
+func (o *GetFeedNotFound) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get feed not found response has a 3xx status code
+func (o *GetFeedNotFound) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get feed not found response has a 4xx status code
+func (o *GetFeedNotFound) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get feed not found response has a 5xx status code
+func (o *GetFeedNotFound) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get feed not found response a status code equal to that given
+func (o *GetFeedNotFound) IsCode(code int) bool {
+	return code == 404
+}
+
 func (o *GetFeedNotFound) Error() string {
 	return fmt.Sprintf("[GET /feeds/2021-06-30/feeds/{feedId}][%d] getFeedNotFound  %+v", 404, o.Payload)
 }
+
+func (o *GetFeedNotFound) String() string {
+	return fmt.Sprintf("[GET /feeds/2021-06-30/feeds/{feedId}][%d] getFeedNotFound  %+v", 404, o.Payload)
+}
+
 func (o *GetFeedNotFound) GetPayload() *feeds_2021_06_30_models.ErrorList {
 	return o.Payload
 }
@@ -352,7 +507,8 @@ func NewGetFeedUnsupportedMediaType() *GetFeedUnsupportedMediaType {
 	return &GetFeedUnsupportedMediaType{}
 }
 
-/* GetFeedUnsupportedMediaType describes a response with status code 415, with default header values.
+/*
+GetFeedUnsupportedMediaType describes a response with status code 415, with default header values.
 
 The request's Content-Type header is invalid.
 */
@@ -370,9 +526,39 @@ type GetFeedUnsupportedMediaType struct {
 	Payload *feeds_2021_06_30_models.ErrorList
 }
 
+// IsSuccess returns true when this get feed unsupported media type response has a 2xx status code
+func (o *GetFeedUnsupportedMediaType) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get feed unsupported media type response has a 3xx status code
+func (o *GetFeedUnsupportedMediaType) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get feed unsupported media type response has a 4xx status code
+func (o *GetFeedUnsupportedMediaType) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get feed unsupported media type response has a 5xx status code
+func (o *GetFeedUnsupportedMediaType) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get feed unsupported media type response a status code equal to that given
+func (o *GetFeedUnsupportedMediaType) IsCode(code int) bool {
+	return code == 415
+}
+
 func (o *GetFeedUnsupportedMediaType) Error() string {
 	return fmt.Sprintf("[GET /feeds/2021-06-30/feeds/{feedId}][%d] getFeedUnsupportedMediaType  %+v", 415, o.Payload)
 }
+
+func (o *GetFeedUnsupportedMediaType) String() string {
+	return fmt.Sprintf("[GET /feeds/2021-06-30/feeds/{feedId}][%d] getFeedUnsupportedMediaType  %+v", 415, o.Payload)
+}
+
 func (o *GetFeedUnsupportedMediaType) GetPayload() *feeds_2021_06_30_models.ErrorList {
 	return o.Payload
 }
@@ -408,7 +594,8 @@ func NewGetFeedTooManyRequests() *GetFeedTooManyRequests {
 	return &GetFeedTooManyRequests{}
 }
 
-/* GetFeedTooManyRequests describes a response with status code 429, with default header values.
+/*
+GetFeedTooManyRequests describes a response with status code 429, with default header values.
 
 The frequency of requests was greater than allowed.
 */
@@ -426,9 +613,39 @@ type GetFeedTooManyRequests struct {
 	Payload *feeds_2021_06_30_models.ErrorList
 }
 
+// IsSuccess returns true when this get feed too many requests response has a 2xx status code
+func (o *GetFeedTooManyRequests) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get feed too many requests response has a 3xx status code
+func (o *GetFeedTooManyRequests) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get feed too many requests response has a 4xx status code
+func (o *GetFeedTooManyRequests) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get feed too many requests response has a 5xx status code
+func (o *GetFeedTooManyRequests) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get feed too many requests response a status code equal to that given
+func (o *GetFeedTooManyRequests) IsCode(code int) bool {
+	return code == 429
+}
+
 func (o *GetFeedTooManyRequests) Error() string {
 	return fmt.Sprintf("[GET /feeds/2021-06-30/feeds/{feedId}][%d] getFeedTooManyRequests  %+v", 429, o.Payload)
 }
+
+func (o *GetFeedTooManyRequests) String() string {
+	return fmt.Sprintf("[GET /feeds/2021-06-30/feeds/{feedId}][%d] getFeedTooManyRequests  %+v", 429, o.Payload)
+}
+
 func (o *GetFeedTooManyRequests) GetPayload() *feeds_2021_06_30_models.ErrorList {
 	return o.Payload
 }
@@ -464,7 +681,8 @@ func NewGetFeedInternalServerError() *GetFeedInternalServerError {
 	return &GetFeedInternalServerError{}
 }
 
-/* GetFeedInternalServerError describes a response with status code 500, with default header values.
+/*
+GetFeedInternalServerError describes a response with status code 500, with default header values.
 
 An unexpected condition occurred that prevented the server from fulfilling the request.
 */
@@ -482,9 +700,39 @@ type GetFeedInternalServerError struct {
 	Payload *feeds_2021_06_30_models.ErrorList
 }
 
+// IsSuccess returns true when this get feed internal server error response has a 2xx status code
+func (o *GetFeedInternalServerError) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get feed internal server error response has a 3xx status code
+func (o *GetFeedInternalServerError) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get feed internal server error response has a 4xx status code
+func (o *GetFeedInternalServerError) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get feed internal server error response has a 5xx status code
+func (o *GetFeedInternalServerError) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this get feed internal server error response a status code equal to that given
+func (o *GetFeedInternalServerError) IsCode(code int) bool {
+	return code == 500
+}
+
 func (o *GetFeedInternalServerError) Error() string {
 	return fmt.Sprintf("[GET /feeds/2021-06-30/feeds/{feedId}][%d] getFeedInternalServerError  %+v", 500, o.Payload)
 }
+
+func (o *GetFeedInternalServerError) String() string {
+	return fmt.Sprintf("[GET /feeds/2021-06-30/feeds/{feedId}][%d] getFeedInternalServerError  %+v", 500, o.Payload)
+}
+
 func (o *GetFeedInternalServerError) GetPayload() *feeds_2021_06_30_models.ErrorList {
 	return o.Payload
 }
@@ -520,7 +768,8 @@ func NewGetFeedServiceUnavailable() *GetFeedServiceUnavailable {
 	return &GetFeedServiceUnavailable{}
 }
 
-/* GetFeedServiceUnavailable describes a response with status code 503, with default header values.
+/*
+GetFeedServiceUnavailable describes a response with status code 503, with default header values.
 
 Temporary overloading or maintenance of the server.
 */
@@ -538,9 +787,39 @@ type GetFeedServiceUnavailable struct {
 	Payload *feeds_2021_06_30_models.ErrorList
 }
 
+// IsSuccess returns true when this get feed service unavailable response has a 2xx status code
+func (o *GetFeedServiceUnavailable) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get feed service unavailable response has a 3xx status code
+func (o *GetFeedServiceUnavailable) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get feed service unavailable response has a 4xx status code
+func (o *GetFeedServiceUnavailable) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get feed service unavailable response has a 5xx status code
+func (o *GetFeedServiceUnavailable) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this get feed service unavailable response a status code equal to that given
+func (o *GetFeedServiceUnavailable) IsCode(code int) bool {
+	return code == 503
+}
+
 func (o *GetFeedServiceUnavailable) Error() string {
 	return fmt.Sprintf("[GET /feeds/2021-06-30/feeds/{feedId}][%d] getFeedServiceUnavailable  %+v", 503, o.Payload)
 }
+
+func (o *GetFeedServiceUnavailable) String() string {
+	return fmt.Sprintf("[GET /feeds/2021-06-30/feeds/{feedId}][%d] getFeedServiceUnavailable  %+v", 503, o.Payload)
+}
+
 func (o *GetFeedServiceUnavailable) GetPayload() *feeds_2021_06_30_models.ErrorList {
 	return o.Payload
 }

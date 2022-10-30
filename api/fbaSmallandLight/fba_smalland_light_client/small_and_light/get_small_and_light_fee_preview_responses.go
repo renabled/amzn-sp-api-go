@@ -81,7 +81,8 @@ func NewGetSmallAndLightFeePreviewOK() *GetSmallAndLightFeePreviewOK {
 	return &GetSmallAndLightFeePreviewOK{}
 }
 
-/* GetSmallAndLightFeePreviewOK describes a response with status code 200, with default header values.
+/*
+GetSmallAndLightFeePreviewOK describes a response with status code 200, with default header values.
 
 Success.
 */
@@ -98,9 +99,39 @@ type GetSmallAndLightFeePreviewOK struct {
 	Payload *fba_smalland_light_models.SmallAndLightFeePreviews
 }
 
+// IsSuccess returns true when this get small and light fee preview o k response has a 2xx status code
+func (o *GetSmallAndLightFeePreviewOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this get small and light fee preview o k response has a 3xx status code
+func (o *GetSmallAndLightFeePreviewOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get small and light fee preview o k response has a 4xx status code
+func (o *GetSmallAndLightFeePreviewOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get small and light fee preview o k response has a 5xx status code
+func (o *GetSmallAndLightFeePreviewOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get small and light fee preview o k response a status code equal to that given
+func (o *GetSmallAndLightFeePreviewOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *GetSmallAndLightFeePreviewOK) Error() string {
 	return fmt.Sprintf("[POST /fba/smallAndLight/v1/feePreviews][%d] getSmallAndLightFeePreviewOK  %+v", 200, o.Payload)
 }
+
+func (o *GetSmallAndLightFeePreviewOK) String() string {
+	return fmt.Sprintf("[POST /fba/smallAndLight/v1/feePreviews][%d] getSmallAndLightFeePreviewOK  %+v", 200, o.Payload)
+}
+
 func (o *GetSmallAndLightFeePreviewOK) GetPayload() *fba_smalland_light_models.SmallAndLightFeePreviews {
 	return o.Payload
 }
@@ -136,7 +167,8 @@ func NewGetSmallAndLightFeePreviewBadRequest() *GetSmallAndLightFeePreviewBadReq
 	return &GetSmallAndLightFeePreviewBadRequest{}
 }
 
-/* GetSmallAndLightFeePreviewBadRequest describes a response with status code 400, with default header values.
+/*
+GetSmallAndLightFeePreviewBadRequest describes a response with status code 400, with default header values.
 
 Request has missing or invalid parameters and cannot be parsed.
 */
@@ -153,9 +185,39 @@ type GetSmallAndLightFeePreviewBadRequest struct {
 	Payload *fba_smalland_light_models.ErrorList
 }
 
+// IsSuccess returns true when this get small and light fee preview bad request response has a 2xx status code
+func (o *GetSmallAndLightFeePreviewBadRequest) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get small and light fee preview bad request response has a 3xx status code
+func (o *GetSmallAndLightFeePreviewBadRequest) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get small and light fee preview bad request response has a 4xx status code
+func (o *GetSmallAndLightFeePreviewBadRequest) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get small and light fee preview bad request response has a 5xx status code
+func (o *GetSmallAndLightFeePreviewBadRequest) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get small and light fee preview bad request response a status code equal to that given
+func (o *GetSmallAndLightFeePreviewBadRequest) IsCode(code int) bool {
+	return code == 400
+}
+
 func (o *GetSmallAndLightFeePreviewBadRequest) Error() string {
 	return fmt.Sprintf("[POST /fba/smallAndLight/v1/feePreviews][%d] getSmallAndLightFeePreviewBadRequest  %+v", 400, o.Payload)
 }
+
+func (o *GetSmallAndLightFeePreviewBadRequest) String() string {
+	return fmt.Sprintf("[POST /fba/smallAndLight/v1/feePreviews][%d] getSmallAndLightFeePreviewBadRequest  %+v", 400, o.Payload)
+}
+
 func (o *GetSmallAndLightFeePreviewBadRequest) GetPayload() *fba_smalland_light_models.ErrorList {
 	return o.Payload
 }
@@ -191,7 +253,8 @@ func NewGetSmallAndLightFeePreviewUnauthorized() *GetSmallAndLightFeePreviewUnau
 	return &GetSmallAndLightFeePreviewUnauthorized{}
 }
 
-/* GetSmallAndLightFeePreviewUnauthorized describes a response with status code 401, with default header values.
+/*
+GetSmallAndLightFeePreviewUnauthorized describes a response with status code 401, with default header values.
 
 The request's Authorization header is not formatted correctly or does not contain a valid token.
 */
@@ -209,9 +272,39 @@ type GetSmallAndLightFeePreviewUnauthorized struct {
 	Payload *fba_smalland_light_models.ErrorList
 }
 
+// IsSuccess returns true when this get small and light fee preview unauthorized response has a 2xx status code
+func (o *GetSmallAndLightFeePreviewUnauthorized) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get small and light fee preview unauthorized response has a 3xx status code
+func (o *GetSmallAndLightFeePreviewUnauthorized) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get small and light fee preview unauthorized response has a 4xx status code
+func (o *GetSmallAndLightFeePreviewUnauthorized) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get small and light fee preview unauthorized response has a 5xx status code
+func (o *GetSmallAndLightFeePreviewUnauthorized) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get small and light fee preview unauthorized response a status code equal to that given
+func (o *GetSmallAndLightFeePreviewUnauthorized) IsCode(code int) bool {
+	return code == 401
+}
+
 func (o *GetSmallAndLightFeePreviewUnauthorized) Error() string {
 	return fmt.Sprintf("[POST /fba/smallAndLight/v1/feePreviews][%d] getSmallAndLightFeePreviewUnauthorized  %+v", 401, o.Payload)
 }
+
+func (o *GetSmallAndLightFeePreviewUnauthorized) String() string {
+	return fmt.Sprintf("[POST /fba/smallAndLight/v1/feePreviews][%d] getSmallAndLightFeePreviewUnauthorized  %+v", 401, o.Payload)
+}
+
 func (o *GetSmallAndLightFeePreviewUnauthorized) GetPayload() *fba_smalland_light_models.ErrorList {
 	return o.Payload
 }
@@ -247,7 +340,8 @@ func NewGetSmallAndLightFeePreviewForbidden() *GetSmallAndLightFeePreviewForbidd
 	return &GetSmallAndLightFeePreviewForbidden{}
 }
 
-/* GetSmallAndLightFeePreviewForbidden describes a response with status code 403, with default header values.
+/*
+GetSmallAndLightFeePreviewForbidden describes a response with status code 403, with default header values.
 
 Indicates that access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.
 */
@@ -260,9 +354,39 @@ type GetSmallAndLightFeePreviewForbidden struct {
 	Payload *fba_smalland_light_models.ErrorList
 }
 
+// IsSuccess returns true when this get small and light fee preview forbidden response has a 2xx status code
+func (o *GetSmallAndLightFeePreviewForbidden) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get small and light fee preview forbidden response has a 3xx status code
+func (o *GetSmallAndLightFeePreviewForbidden) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get small and light fee preview forbidden response has a 4xx status code
+func (o *GetSmallAndLightFeePreviewForbidden) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get small and light fee preview forbidden response has a 5xx status code
+func (o *GetSmallAndLightFeePreviewForbidden) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get small and light fee preview forbidden response a status code equal to that given
+func (o *GetSmallAndLightFeePreviewForbidden) IsCode(code int) bool {
+	return code == 403
+}
+
 func (o *GetSmallAndLightFeePreviewForbidden) Error() string {
 	return fmt.Sprintf("[POST /fba/smallAndLight/v1/feePreviews][%d] getSmallAndLightFeePreviewForbidden  %+v", 403, o.Payload)
 }
+
+func (o *GetSmallAndLightFeePreviewForbidden) String() string {
+	return fmt.Sprintf("[POST /fba/smallAndLight/v1/feePreviews][%d] getSmallAndLightFeePreviewForbidden  %+v", 403, o.Payload)
+}
+
 func (o *GetSmallAndLightFeePreviewForbidden) GetPayload() *fba_smalland_light_models.ErrorList {
 	return o.Payload
 }
@@ -291,7 +415,8 @@ func NewGetSmallAndLightFeePreviewNotFound() *GetSmallAndLightFeePreviewNotFound
 	return &GetSmallAndLightFeePreviewNotFound{}
 }
 
-/* GetSmallAndLightFeePreviewNotFound describes a response with status code 404, with default header values.
+/*
+GetSmallAndLightFeePreviewNotFound describes a response with status code 404, with default header values.
 
 The resource specified does not exist.
 */
@@ -308,9 +433,39 @@ type GetSmallAndLightFeePreviewNotFound struct {
 	Payload *fba_smalland_light_models.ErrorList
 }
 
+// IsSuccess returns true when this get small and light fee preview not found response has a 2xx status code
+func (o *GetSmallAndLightFeePreviewNotFound) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get small and light fee preview not found response has a 3xx status code
+func (o *GetSmallAndLightFeePreviewNotFound) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get small and light fee preview not found response has a 4xx status code
+func (o *GetSmallAndLightFeePreviewNotFound) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get small and light fee preview not found response has a 5xx status code
+func (o *GetSmallAndLightFeePreviewNotFound) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get small and light fee preview not found response a status code equal to that given
+func (o *GetSmallAndLightFeePreviewNotFound) IsCode(code int) bool {
+	return code == 404
+}
+
 func (o *GetSmallAndLightFeePreviewNotFound) Error() string {
 	return fmt.Sprintf("[POST /fba/smallAndLight/v1/feePreviews][%d] getSmallAndLightFeePreviewNotFound  %+v", 404, o.Payload)
 }
+
+func (o *GetSmallAndLightFeePreviewNotFound) String() string {
+	return fmt.Sprintf("[POST /fba/smallAndLight/v1/feePreviews][%d] getSmallAndLightFeePreviewNotFound  %+v", 404, o.Payload)
+}
+
 func (o *GetSmallAndLightFeePreviewNotFound) GetPayload() *fba_smalland_light_models.ErrorList {
 	return o.Payload
 }
@@ -346,7 +501,8 @@ func NewGetSmallAndLightFeePreviewTooManyRequests() *GetSmallAndLightFeePreviewT
 	return &GetSmallAndLightFeePreviewTooManyRequests{}
 }
 
-/* GetSmallAndLightFeePreviewTooManyRequests describes a response with status code 429, with default header values.
+/*
+GetSmallAndLightFeePreviewTooManyRequests describes a response with status code 429, with default header values.
 
 The frequency of requests was greater than allowed.
 */
@@ -364,9 +520,39 @@ type GetSmallAndLightFeePreviewTooManyRequests struct {
 	Payload *fba_smalland_light_models.ErrorList
 }
 
+// IsSuccess returns true when this get small and light fee preview too many requests response has a 2xx status code
+func (o *GetSmallAndLightFeePreviewTooManyRequests) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get small and light fee preview too many requests response has a 3xx status code
+func (o *GetSmallAndLightFeePreviewTooManyRequests) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get small and light fee preview too many requests response has a 4xx status code
+func (o *GetSmallAndLightFeePreviewTooManyRequests) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get small and light fee preview too many requests response has a 5xx status code
+func (o *GetSmallAndLightFeePreviewTooManyRequests) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get small and light fee preview too many requests response a status code equal to that given
+func (o *GetSmallAndLightFeePreviewTooManyRequests) IsCode(code int) bool {
+	return code == 429
+}
+
 func (o *GetSmallAndLightFeePreviewTooManyRequests) Error() string {
 	return fmt.Sprintf("[POST /fba/smallAndLight/v1/feePreviews][%d] getSmallAndLightFeePreviewTooManyRequests  %+v", 429, o.Payload)
 }
+
+func (o *GetSmallAndLightFeePreviewTooManyRequests) String() string {
+	return fmt.Sprintf("[POST /fba/smallAndLight/v1/feePreviews][%d] getSmallAndLightFeePreviewTooManyRequests  %+v", 429, o.Payload)
+}
+
 func (o *GetSmallAndLightFeePreviewTooManyRequests) GetPayload() *fba_smalland_light_models.ErrorList {
 	return o.Payload
 }
@@ -402,7 +588,8 @@ func NewGetSmallAndLightFeePreviewInternalServerError() *GetSmallAndLightFeePrev
 	return &GetSmallAndLightFeePreviewInternalServerError{}
 }
 
-/* GetSmallAndLightFeePreviewInternalServerError describes a response with status code 500, with default header values.
+/*
+GetSmallAndLightFeePreviewInternalServerError describes a response with status code 500, with default header values.
 
 An unexpected condition occurred that prevented the server from fulfilling the request.
 */
@@ -420,9 +607,39 @@ type GetSmallAndLightFeePreviewInternalServerError struct {
 	Payload *fba_smalland_light_models.ErrorList
 }
 
+// IsSuccess returns true when this get small and light fee preview internal server error response has a 2xx status code
+func (o *GetSmallAndLightFeePreviewInternalServerError) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get small and light fee preview internal server error response has a 3xx status code
+func (o *GetSmallAndLightFeePreviewInternalServerError) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get small and light fee preview internal server error response has a 4xx status code
+func (o *GetSmallAndLightFeePreviewInternalServerError) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get small and light fee preview internal server error response has a 5xx status code
+func (o *GetSmallAndLightFeePreviewInternalServerError) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this get small and light fee preview internal server error response a status code equal to that given
+func (o *GetSmallAndLightFeePreviewInternalServerError) IsCode(code int) bool {
+	return code == 500
+}
+
 func (o *GetSmallAndLightFeePreviewInternalServerError) Error() string {
 	return fmt.Sprintf("[POST /fba/smallAndLight/v1/feePreviews][%d] getSmallAndLightFeePreviewInternalServerError  %+v", 500, o.Payload)
 }
+
+func (o *GetSmallAndLightFeePreviewInternalServerError) String() string {
+	return fmt.Sprintf("[POST /fba/smallAndLight/v1/feePreviews][%d] getSmallAndLightFeePreviewInternalServerError  %+v", 500, o.Payload)
+}
+
 func (o *GetSmallAndLightFeePreviewInternalServerError) GetPayload() *fba_smalland_light_models.ErrorList {
 	return o.Payload
 }
@@ -458,7 +675,8 @@ func NewGetSmallAndLightFeePreviewServiceUnavailable() *GetSmallAndLightFeePrevi
 	return &GetSmallAndLightFeePreviewServiceUnavailable{}
 }
 
-/* GetSmallAndLightFeePreviewServiceUnavailable describes a response with status code 503, with default header values.
+/*
+GetSmallAndLightFeePreviewServiceUnavailable describes a response with status code 503, with default header values.
 
 Temporary overloading or maintenance of the server.
 */
@@ -476,9 +694,39 @@ type GetSmallAndLightFeePreviewServiceUnavailable struct {
 	Payload *fba_smalland_light_models.ErrorList
 }
 
+// IsSuccess returns true when this get small and light fee preview service unavailable response has a 2xx status code
+func (o *GetSmallAndLightFeePreviewServiceUnavailable) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get small and light fee preview service unavailable response has a 3xx status code
+func (o *GetSmallAndLightFeePreviewServiceUnavailable) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get small and light fee preview service unavailable response has a 4xx status code
+func (o *GetSmallAndLightFeePreviewServiceUnavailable) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get small and light fee preview service unavailable response has a 5xx status code
+func (o *GetSmallAndLightFeePreviewServiceUnavailable) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this get small and light fee preview service unavailable response a status code equal to that given
+func (o *GetSmallAndLightFeePreviewServiceUnavailable) IsCode(code int) bool {
+	return code == 503
+}
+
 func (o *GetSmallAndLightFeePreviewServiceUnavailable) Error() string {
 	return fmt.Sprintf("[POST /fba/smallAndLight/v1/feePreviews][%d] getSmallAndLightFeePreviewServiceUnavailable  %+v", 503, o.Payload)
 }
+
+func (o *GetSmallAndLightFeePreviewServiceUnavailable) String() string {
+	return fmt.Sprintf("[POST /fba/smallAndLight/v1/feePreviews][%d] getSmallAndLightFeePreviewServiceUnavailable  %+v", 503, o.Payload)
+}
+
 func (o *GetSmallAndLightFeePreviewServiceUnavailable) GetPayload() *fba_smalland_light_models.ErrorList {
 	return o.Payload
 }

@@ -55,10 +55,12 @@ func NewUpdateReservationParamsWithHTTPClient(client *http.Client) *UpdateReserv
 	}
 }
 
-/* UpdateReservationParams contains all the parameters to send to the API endpoint
-   for the update reservation operation.
+/*
+UpdateReservationParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the update reservation operation.
+
+	Typically these are written to a http.Request.
 */
 type UpdateReservationParams struct {
 

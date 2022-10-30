@@ -15,7 +15,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// ListingOffersRequestList A list of getItemOffers batched requests to run.
+// ListingOffersRequestList A list of `getListingOffers` batched requests to run.
 //
 // swagger:model ListingOffersRequestList
 type ListingOffersRequestList []*ListingOffersRequest

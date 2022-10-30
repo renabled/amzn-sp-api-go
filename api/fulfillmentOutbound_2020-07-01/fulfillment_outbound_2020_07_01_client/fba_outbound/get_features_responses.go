@@ -81,7 +81,8 @@ func NewGetFeaturesOK() *GetFeaturesOK {
 	return &GetFeaturesOK{}
 }
 
-/* GetFeaturesOK describes a response with status code 200, with default header values.
+/*
+GetFeaturesOK describes a response with status code 200, with default header values.
 
 Success.
 */
@@ -98,9 +99,39 @@ type GetFeaturesOK struct {
 	Payload *fulfillment_outbound_2020_07_01_models.GetFeaturesResponse
 }
 
+// IsSuccess returns true when this get features o k response has a 2xx status code
+func (o *GetFeaturesOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this get features o k response has a 3xx status code
+func (o *GetFeaturesOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get features o k response has a 4xx status code
+func (o *GetFeaturesOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get features o k response has a 5xx status code
+func (o *GetFeaturesOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get features o k response a status code equal to that given
+func (o *GetFeaturesOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *GetFeaturesOK) Error() string {
 	return fmt.Sprintf("[GET /fba/outbound/2020-07-01/features][%d] getFeaturesOK  %+v", 200, o.Payload)
 }
+
+func (o *GetFeaturesOK) String() string {
+	return fmt.Sprintf("[GET /fba/outbound/2020-07-01/features][%d] getFeaturesOK  %+v", 200, o.Payload)
+}
+
 func (o *GetFeaturesOK) GetPayload() *fulfillment_outbound_2020_07_01_models.GetFeaturesResponse {
 	return o.Payload
 }
@@ -136,7 +167,8 @@ func NewGetFeaturesBadRequest() *GetFeaturesBadRequest {
 	return &GetFeaturesBadRequest{}
 }
 
-/* GetFeaturesBadRequest describes a response with status code 400, with default header values.
+/*
+GetFeaturesBadRequest describes a response with status code 400, with default header values.
 
 Request has missing or invalid parameters and cannot be parsed.
 */
@@ -153,9 +185,39 @@ type GetFeaturesBadRequest struct {
 	Payload *fulfillment_outbound_2020_07_01_models.GetFeaturesResponse
 }
 
+// IsSuccess returns true when this get features bad request response has a 2xx status code
+func (o *GetFeaturesBadRequest) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get features bad request response has a 3xx status code
+func (o *GetFeaturesBadRequest) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get features bad request response has a 4xx status code
+func (o *GetFeaturesBadRequest) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get features bad request response has a 5xx status code
+func (o *GetFeaturesBadRequest) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get features bad request response a status code equal to that given
+func (o *GetFeaturesBadRequest) IsCode(code int) bool {
+	return code == 400
+}
+
 func (o *GetFeaturesBadRequest) Error() string {
 	return fmt.Sprintf("[GET /fba/outbound/2020-07-01/features][%d] getFeaturesBadRequest  %+v", 400, o.Payload)
 }
+
+func (o *GetFeaturesBadRequest) String() string {
+	return fmt.Sprintf("[GET /fba/outbound/2020-07-01/features][%d] getFeaturesBadRequest  %+v", 400, o.Payload)
+}
+
 func (o *GetFeaturesBadRequest) GetPayload() *fulfillment_outbound_2020_07_01_models.GetFeaturesResponse {
 	return o.Payload
 }
@@ -191,7 +253,8 @@ func NewGetFeaturesUnauthorized() *GetFeaturesUnauthorized {
 	return &GetFeaturesUnauthorized{}
 }
 
-/* GetFeaturesUnauthorized describes a response with status code 401, with default header values.
+/*
+GetFeaturesUnauthorized describes a response with status code 401, with default header values.
 
 The request's Authorization header is not formatted correctly or does not contain a valid token.
 */
@@ -209,9 +272,39 @@ type GetFeaturesUnauthorized struct {
 	Payload *fulfillment_outbound_2020_07_01_models.GetFeaturesResponse
 }
 
+// IsSuccess returns true when this get features unauthorized response has a 2xx status code
+func (o *GetFeaturesUnauthorized) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get features unauthorized response has a 3xx status code
+func (o *GetFeaturesUnauthorized) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get features unauthorized response has a 4xx status code
+func (o *GetFeaturesUnauthorized) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get features unauthorized response has a 5xx status code
+func (o *GetFeaturesUnauthorized) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get features unauthorized response a status code equal to that given
+func (o *GetFeaturesUnauthorized) IsCode(code int) bool {
+	return code == 401
+}
+
 func (o *GetFeaturesUnauthorized) Error() string {
 	return fmt.Sprintf("[GET /fba/outbound/2020-07-01/features][%d] getFeaturesUnauthorized  %+v", 401, o.Payload)
 }
+
+func (o *GetFeaturesUnauthorized) String() string {
+	return fmt.Sprintf("[GET /fba/outbound/2020-07-01/features][%d] getFeaturesUnauthorized  %+v", 401, o.Payload)
+}
+
 func (o *GetFeaturesUnauthorized) GetPayload() *fulfillment_outbound_2020_07_01_models.GetFeaturesResponse {
 	return o.Payload
 }
@@ -247,7 +340,8 @@ func NewGetFeaturesForbidden() *GetFeaturesForbidden {
 	return &GetFeaturesForbidden{}
 }
 
-/* GetFeaturesForbidden describes a response with status code 403, with default header values.
+/*
+GetFeaturesForbidden describes a response with status code 403, with default header values.
 
 Indicates that access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.
 */
@@ -260,9 +354,39 @@ type GetFeaturesForbidden struct {
 	Payload *fulfillment_outbound_2020_07_01_models.GetFeaturesResponse
 }
 
+// IsSuccess returns true when this get features forbidden response has a 2xx status code
+func (o *GetFeaturesForbidden) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get features forbidden response has a 3xx status code
+func (o *GetFeaturesForbidden) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get features forbidden response has a 4xx status code
+func (o *GetFeaturesForbidden) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get features forbidden response has a 5xx status code
+func (o *GetFeaturesForbidden) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get features forbidden response a status code equal to that given
+func (o *GetFeaturesForbidden) IsCode(code int) bool {
+	return code == 403
+}
+
 func (o *GetFeaturesForbidden) Error() string {
 	return fmt.Sprintf("[GET /fba/outbound/2020-07-01/features][%d] getFeaturesForbidden  %+v", 403, o.Payload)
 }
+
+func (o *GetFeaturesForbidden) String() string {
+	return fmt.Sprintf("[GET /fba/outbound/2020-07-01/features][%d] getFeaturesForbidden  %+v", 403, o.Payload)
+}
+
 func (o *GetFeaturesForbidden) GetPayload() *fulfillment_outbound_2020_07_01_models.GetFeaturesResponse {
 	return o.Payload
 }
@@ -291,7 +415,8 @@ func NewGetFeaturesNotFound() *GetFeaturesNotFound {
 	return &GetFeaturesNotFound{}
 }
 
-/* GetFeaturesNotFound describes a response with status code 404, with default header values.
+/*
+GetFeaturesNotFound describes a response with status code 404, with default header values.
 
 The specified resource does not exist.
 */
@@ -308,9 +433,39 @@ type GetFeaturesNotFound struct {
 	Payload *fulfillment_outbound_2020_07_01_models.GetFeaturesResponse
 }
 
+// IsSuccess returns true when this get features not found response has a 2xx status code
+func (o *GetFeaturesNotFound) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get features not found response has a 3xx status code
+func (o *GetFeaturesNotFound) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get features not found response has a 4xx status code
+func (o *GetFeaturesNotFound) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get features not found response has a 5xx status code
+func (o *GetFeaturesNotFound) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get features not found response a status code equal to that given
+func (o *GetFeaturesNotFound) IsCode(code int) bool {
+	return code == 404
+}
+
 func (o *GetFeaturesNotFound) Error() string {
 	return fmt.Sprintf("[GET /fba/outbound/2020-07-01/features][%d] getFeaturesNotFound  %+v", 404, o.Payload)
 }
+
+func (o *GetFeaturesNotFound) String() string {
+	return fmt.Sprintf("[GET /fba/outbound/2020-07-01/features][%d] getFeaturesNotFound  %+v", 404, o.Payload)
+}
+
 func (o *GetFeaturesNotFound) GetPayload() *fulfillment_outbound_2020_07_01_models.GetFeaturesResponse {
 	return o.Payload
 }
@@ -346,7 +501,8 @@ func NewGetFeaturesTooManyRequests() *GetFeaturesTooManyRequests {
 	return &GetFeaturesTooManyRequests{}
 }
 
-/* GetFeaturesTooManyRequests describes a response with status code 429, with default header values.
+/*
+GetFeaturesTooManyRequests describes a response with status code 429, with default header values.
 
 The frequency of requests was greater than allowed.
 */
@@ -364,9 +520,39 @@ type GetFeaturesTooManyRequests struct {
 	Payload *fulfillment_outbound_2020_07_01_models.GetFeaturesResponse
 }
 
+// IsSuccess returns true when this get features too many requests response has a 2xx status code
+func (o *GetFeaturesTooManyRequests) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get features too many requests response has a 3xx status code
+func (o *GetFeaturesTooManyRequests) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get features too many requests response has a 4xx status code
+func (o *GetFeaturesTooManyRequests) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get features too many requests response has a 5xx status code
+func (o *GetFeaturesTooManyRequests) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get features too many requests response a status code equal to that given
+func (o *GetFeaturesTooManyRequests) IsCode(code int) bool {
+	return code == 429
+}
+
 func (o *GetFeaturesTooManyRequests) Error() string {
 	return fmt.Sprintf("[GET /fba/outbound/2020-07-01/features][%d] getFeaturesTooManyRequests  %+v", 429, o.Payload)
 }
+
+func (o *GetFeaturesTooManyRequests) String() string {
+	return fmt.Sprintf("[GET /fba/outbound/2020-07-01/features][%d] getFeaturesTooManyRequests  %+v", 429, o.Payload)
+}
+
 func (o *GetFeaturesTooManyRequests) GetPayload() *fulfillment_outbound_2020_07_01_models.GetFeaturesResponse {
 	return o.Payload
 }
@@ -402,7 +588,8 @@ func NewGetFeaturesInternalServerError() *GetFeaturesInternalServerError {
 	return &GetFeaturesInternalServerError{}
 }
 
-/* GetFeaturesInternalServerError describes a response with status code 500, with default header values.
+/*
+GetFeaturesInternalServerError describes a response with status code 500, with default header values.
 
 An unexpected condition occurred that prevented the server from fulfilling the request.
 */
@@ -420,9 +607,39 @@ type GetFeaturesInternalServerError struct {
 	Payload *fulfillment_outbound_2020_07_01_models.GetFeaturesResponse
 }
 
+// IsSuccess returns true when this get features internal server error response has a 2xx status code
+func (o *GetFeaturesInternalServerError) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get features internal server error response has a 3xx status code
+func (o *GetFeaturesInternalServerError) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get features internal server error response has a 4xx status code
+func (o *GetFeaturesInternalServerError) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get features internal server error response has a 5xx status code
+func (o *GetFeaturesInternalServerError) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this get features internal server error response a status code equal to that given
+func (o *GetFeaturesInternalServerError) IsCode(code int) bool {
+	return code == 500
+}
+
 func (o *GetFeaturesInternalServerError) Error() string {
 	return fmt.Sprintf("[GET /fba/outbound/2020-07-01/features][%d] getFeaturesInternalServerError  %+v", 500, o.Payload)
 }
+
+func (o *GetFeaturesInternalServerError) String() string {
+	return fmt.Sprintf("[GET /fba/outbound/2020-07-01/features][%d] getFeaturesInternalServerError  %+v", 500, o.Payload)
+}
+
 func (o *GetFeaturesInternalServerError) GetPayload() *fulfillment_outbound_2020_07_01_models.GetFeaturesResponse {
 	return o.Payload
 }
@@ -458,7 +675,8 @@ func NewGetFeaturesServiceUnavailable() *GetFeaturesServiceUnavailable {
 	return &GetFeaturesServiceUnavailable{}
 }
 
-/* GetFeaturesServiceUnavailable describes a response with status code 503, with default header values.
+/*
+GetFeaturesServiceUnavailable describes a response with status code 503, with default header values.
 
 Temporary overloading or maintenance of the server.
 */
@@ -476,9 +694,39 @@ type GetFeaturesServiceUnavailable struct {
 	Payload *fulfillment_outbound_2020_07_01_models.GetFeaturesResponse
 }
 
+// IsSuccess returns true when this get features service unavailable response has a 2xx status code
+func (o *GetFeaturesServiceUnavailable) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get features service unavailable response has a 3xx status code
+func (o *GetFeaturesServiceUnavailable) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get features service unavailable response has a 4xx status code
+func (o *GetFeaturesServiceUnavailable) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get features service unavailable response has a 5xx status code
+func (o *GetFeaturesServiceUnavailable) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this get features service unavailable response a status code equal to that given
+func (o *GetFeaturesServiceUnavailable) IsCode(code int) bool {
+	return code == 503
+}
+
 func (o *GetFeaturesServiceUnavailable) Error() string {
 	return fmt.Sprintf("[GET /fba/outbound/2020-07-01/features][%d] getFeaturesServiceUnavailable  %+v", 503, o.Payload)
 }
+
+func (o *GetFeaturesServiceUnavailable) String() string {
+	return fmt.Sprintf("[GET /fba/outbound/2020-07-01/features][%d] getFeaturesServiceUnavailable  %+v", 503, o.Payload)
+}
+
 func (o *GetFeaturesServiceUnavailable) GetPayload() *fulfillment_outbound_2020_07_01_models.GetFeaturesResponse {
 	return o.Payload
 }

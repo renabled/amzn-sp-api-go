@@ -52,10 +52,12 @@ func NewGetReportScheduleParamsWithHTTPClient(client *http.Client) *GetReportSch
 	}
 }
 
-/* GetReportScheduleParams contains all the parameters to send to the API endpoint
-   for the get report schedule operation.
+/*
+GetReportScheduleParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the get report schedule operation.
+
+	Typically these are written to a http.Request.
 */
 type GetReportScheduleParams struct {
 

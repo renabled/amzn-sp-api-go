@@ -52,10 +52,12 @@ func NewConfirmPreorderParamsWithHTTPClient(client *http.Client) *ConfirmPreorde
 	}
 }
 
-/* ConfirmPreorderParams contains all the parameters to send to the API endpoint
-   for the confirm preorder operation.
+/*
+ConfirmPreorderParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the confirm preorder operation.
+
+	Typically these are written to a http.Request.
 */
 type ConfirmPreorderParams struct {
 

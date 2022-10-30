@@ -53,10 +53,12 @@ func NewGetListingsRestrictionsParamsWithHTTPClient(client *http.Client) *GetLis
 	}
 }
 
-/* GetListingsRestrictionsParams contains all the parameters to send to the API endpoint
-   for the get listings restrictions operation.
+/*
+GetListingsRestrictionsParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the get listings restrictions operation.
+
+	Typically these are written to a http.Request.
 */
 type GetListingsRestrictionsParams struct {
 

@@ -52,10 +52,12 @@ func NewGetFeaturesParamsWithHTTPClient(client *http.Client) *GetFeaturesParams 
 	}
 }
 
-/* GetFeaturesParams contains all the parameters to send to the API endpoint
-   for the get features operation.
+/*
+GetFeaturesParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the get features operation.
+
+	Typically these are written to a http.Request.
 */
 type GetFeaturesParams struct {
 

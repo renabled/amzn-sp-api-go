@@ -87,7 +87,8 @@ func NewUpdateVerificationStatusNoContent() *UpdateVerificationStatusNoContent {
 	return &UpdateVerificationStatusNoContent{}
 }
 
-/* UpdateVerificationStatusNoContent describes a response with status code 204, with default header values.
+/*
+UpdateVerificationStatusNoContent describes a response with status code 204, with default header values.
 
 Success.
 */
@@ -102,7 +103,36 @@ type UpdateVerificationStatusNoContent struct {
 	XAmznRequestID string
 }
 
+// IsSuccess returns true when this update verification status no content response has a 2xx status code
+func (o *UpdateVerificationStatusNoContent) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this update verification status no content response has a 3xx status code
+func (o *UpdateVerificationStatusNoContent) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this update verification status no content response has a 4xx status code
+func (o *UpdateVerificationStatusNoContent) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this update verification status no content response has a 5xx status code
+func (o *UpdateVerificationStatusNoContent) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this update verification status no content response a status code equal to that given
+func (o *UpdateVerificationStatusNoContent) IsCode(code int) bool {
+	return code == 204
+}
+
 func (o *UpdateVerificationStatusNoContent) Error() string {
+	return fmt.Sprintf("[PATCH /orders/v0/orders/{orderId}/regulatedInfo][%d] updateVerificationStatusNoContent ", 204)
+}
+
+func (o *UpdateVerificationStatusNoContent) String() string {
 	return fmt.Sprintf("[PATCH /orders/v0/orders/{orderId}/regulatedInfo][%d] updateVerificationStatusNoContent ", 204)
 }
 
@@ -130,7 +160,8 @@ func NewUpdateVerificationStatusBadRequest() *UpdateVerificationStatusBadRequest
 	return &UpdateVerificationStatusBadRequest{}
 }
 
-/* UpdateVerificationStatusBadRequest describes a response with status code 400, with default header values.
+/*
+UpdateVerificationStatusBadRequest describes a response with status code 400, with default header values.
 
 Request has missing or invalid parameters and cannot be parsed.
 */
@@ -147,9 +178,39 @@ type UpdateVerificationStatusBadRequest struct {
 	Payload *orders_v0_models.UpdateVerificationStatusErrorResponse
 }
 
+// IsSuccess returns true when this update verification status bad request response has a 2xx status code
+func (o *UpdateVerificationStatusBadRequest) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this update verification status bad request response has a 3xx status code
+func (o *UpdateVerificationStatusBadRequest) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this update verification status bad request response has a 4xx status code
+func (o *UpdateVerificationStatusBadRequest) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this update verification status bad request response has a 5xx status code
+func (o *UpdateVerificationStatusBadRequest) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this update verification status bad request response a status code equal to that given
+func (o *UpdateVerificationStatusBadRequest) IsCode(code int) bool {
+	return code == 400
+}
+
 func (o *UpdateVerificationStatusBadRequest) Error() string {
 	return fmt.Sprintf("[PATCH /orders/v0/orders/{orderId}/regulatedInfo][%d] updateVerificationStatusBadRequest  %+v", 400, o.Payload)
 }
+
+func (o *UpdateVerificationStatusBadRequest) String() string {
+	return fmt.Sprintf("[PATCH /orders/v0/orders/{orderId}/regulatedInfo][%d] updateVerificationStatusBadRequest  %+v", 400, o.Payload)
+}
+
 func (o *UpdateVerificationStatusBadRequest) GetPayload() *orders_v0_models.UpdateVerificationStatusErrorResponse {
 	return o.Payload
 }
@@ -185,7 +246,8 @@ func NewUpdateVerificationStatusForbidden() *UpdateVerificationStatusForbidden {
 	return &UpdateVerificationStatusForbidden{}
 }
 
-/* UpdateVerificationStatusForbidden describes a response with status code 403, with default header values.
+/*
+UpdateVerificationStatusForbidden describes a response with status code 403, with default header values.
 
 Indicates that access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.
 */
@@ -198,9 +260,39 @@ type UpdateVerificationStatusForbidden struct {
 	Payload *orders_v0_models.UpdateVerificationStatusErrorResponse
 }
 
+// IsSuccess returns true when this update verification status forbidden response has a 2xx status code
+func (o *UpdateVerificationStatusForbidden) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this update verification status forbidden response has a 3xx status code
+func (o *UpdateVerificationStatusForbidden) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this update verification status forbidden response has a 4xx status code
+func (o *UpdateVerificationStatusForbidden) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this update verification status forbidden response has a 5xx status code
+func (o *UpdateVerificationStatusForbidden) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this update verification status forbidden response a status code equal to that given
+func (o *UpdateVerificationStatusForbidden) IsCode(code int) bool {
+	return code == 403
+}
+
 func (o *UpdateVerificationStatusForbidden) Error() string {
 	return fmt.Sprintf("[PATCH /orders/v0/orders/{orderId}/regulatedInfo][%d] updateVerificationStatusForbidden  %+v", 403, o.Payload)
 }
+
+func (o *UpdateVerificationStatusForbidden) String() string {
+	return fmt.Sprintf("[PATCH /orders/v0/orders/{orderId}/regulatedInfo][%d] updateVerificationStatusForbidden  %+v", 403, o.Payload)
+}
+
 func (o *UpdateVerificationStatusForbidden) GetPayload() *orders_v0_models.UpdateVerificationStatusErrorResponse {
 	return o.Payload
 }
@@ -229,7 +321,8 @@ func NewUpdateVerificationStatusNotFound() *UpdateVerificationStatusNotFound {
 	return &UpdateVerificationStatusNotFound{}
 }
 
-/* UpdateVerificationStatusNotFound describes a response with status code 404, with default header values.
+/*
+UpdateVerificationStatusNotFound describes a response with status code 404, with default header values.
 
 The resource specified does not exist.
 */
@@ -246,9 +339,39 @@ type UpdateVerificationStatusNotFound struct {
 	Payload *orders_v0_models.UpdateVerificationStatusErrorResponse
 }
 
+// IsSuccess returns true when this update verification status not found response has a 2xx status code
+func (o *UpdateVerificationStatusNotFound) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this update verification status not found response has a 3xx status code
+func (o *UpdateVerificationStatusNotFound) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this update verification status not found response has a 4xx status code
+func (o *UpdateVerificationStatusNotFound) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this update verification status not found response has a 5xx status code
+func (o *UpdateVerificationStatusNotFound) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this update verification status not found response a status code equal to that given
+func (o *UpdateVerificationStatusNotFound) IsCode(code int) bool {
+	return code == 404
+}
+
 func (o *UpdateVerificationStatusNotFound) Error() string {
 	return fmt.Sprintf("[PATCH /orders/v0/orders/{orderId}/regulatedInfo][%d] updateVerificationStatusNotFound  %+v", 404, o.Payload)
 }
+
+func (o *UpdateVerificationStatusNotFound) String() string {
+	return fmt.Sprintf("[PATCH /orders/v0/orders/{orderId}/regulatedInfo][%d] updateVerificationStatusNotFound  %+v", 404, o.Payload)
+}
+
 func (o *UpdateVerificationStatusNotFound) GetPayload() *orders_v0_models.UpdateVerificationStatusErrorResponse {
 	return o.Payload
 }
@@ -284,7 +407,8 @@ func NewUpdateVerificationStatusRequestEntityTooLarge() *UpdateVerificationStatu
 	return &UpdateVerificationStatusRequestEntityTooLarge{}
 }
 
-/* UpdateVerificationStatusRequestEntityTooLarge describes a response with status code 413, with default header values.
+/*
+UpdateVerificationStatusRequestEntityTooLarge describes a response with status code 413, with default header values.
 
 The request size exceeded the maximum accepted size.
 */
@@ -297,9 +421,39 @@ type UpdateVerificationStatusRequestEntityTooLarge struct {
 	Payload *orders_v0_models.UpdateVerificationStatusErrorResponse
 }
 
+// IsSuccess returns true when this update verification status request entity too large response has a 2xx status code
+func (o *UpdateVerificationStatusRequestEntityTooLarge) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this update verification status request entity too large response has a 3xx status code
+func (o *UpdateVerificationStatusRequestEntityTooLarge) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this update verification status request entity too large response has a 4xx status code
+func (o *UpdateVerificationStatusRequestEntityTooLarge) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this update verification status request entity too large response has a 5xx status code
+func (o *UpdateVerificationStatusRequestEntityTooLarge) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this update verification status request entity too large response a status code equal to that given
+func (o *UpdateVerificationStatusRequestEntityTooLarge) IsCode(code int) bool {
+	return code == 413
+}
+
 func (o *UpdateVerificationStatusRequestEntityTooLarge) Error() string {
 	return fmt.Sprintf("[PATCH /orders/v0/orders/{orderId}/regulatedInfo][%d] updateVerificationStatusRequestEntityTooLarge  %+v", 413, o.Payload)
 }
+
+func (o *UpdateVerificationStatusRequestEntityTooLarge) String() string {
+	return fmt.Sprintf("[PATCH /orders/v0/orders/{orderId}/regulatedInfo][%d] updateVerificationStatusRequestEntityTooLarge  %+v", 413, o.Payload)
+}
+
 func (o *UpdateVerificationStatusRequestEntityTooLarge) GetPayload() *orders_v0_models.UpdateVerificationStatusErrorResponse {
 	return o.Payload
 }
@@ -328,7 +482,8 @@ func NewUpdateVerificationStatusUnsupportedMediaType() *UpdateVerificationStatus
 	return &UpdateVerificationStatusUnsupportedMediaType{}
 }
 
-/* UpdateVerificationStatusUnsupportedMediaType describes a response with status code 415, with default header values.
+/*
+UpdateVerificationStatusUnsupportedMediaType describes a response with status code 415, with default header values.
 
 The request payload is in an unsupported format.
 */
@@ -341,9 +496,39 @@ type UpdateVerificationStatusUnsupportedMediaType struct {
 	Payload *orders_v0_models.UpdateVerificationStatusErrorResponse
 }
 
+// IsSuccess returns true when this update verification status unsupported media type response has a 2xx status code
+func (o *UpdateVerificationStatusUnsupportedMediaType) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this update verification status unsupported media type response has a 3xx status code
+func (o *UpdateVerificationStatusUnsupportedMediaType) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this update verification status unsupported media type response has a 4xx status code
+func (o *UpdateVerificationStatusUnsupportedMediaType) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this update verification status unsupported media type response has a 5xx status code
+func (o *UpdateVerificationStatusUnsupportedMediaType) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this update verification status unsupported media type response a status code equal to that given
+func (o *UpdateVerificationStatusUnsupportedMediaType) IsCode(code int) bool {
+	return code == 415
+}
+
 func (o *UpdateVerificationStatusUnsupportedMediaType) Error() string {
 	return fmt.Sprintf("[PATCH /orders/v0/orders/{orderId}/regulatedInfo][%d] updateVerificationStatusUnsupportedMediaType  %+v", 415, o.Payload)
 }
+
+func (o *UpdateVerificationStatusUnsupportedMediaType) String() string {
+	return fmt.Sprintf("[PATCH /orders/v0/orders/{orderId}/regulatedInfo][%d] updateVerificationStatusUnsupportedMediaType  %+v", 415, o.Payload)
+}
+
 func (o *UpdateVerificationStatusUnsupportedMediaType) GetPayload() *orders_v0_models.UpdateVerificationStatusErrorResponse {
 	return o.Payload
 }
@@ -372,7 +557,8 @@ func NewUpdateVerificationStatusTooManyRequests() *UpdateVerificationStatusTooMa
 	return &UpdateVerificationStatusTooManyRequests{}
 }
 
-/* UpdateVerificationStatusTooManyRequests describes a response with status code 429, with default header values.
+/*
+UpdateVerificationStatusTooManyRequests describes a response with status code 429, with default header values.
 
 The frequency of requests was greater than allowed.
 */
@@ -385,9 +571,39 @@ type UpdateVerificationStatusTooManyRequests struct {
 	Payload *orders_v0_models.UpdateVerificationStatusErrorResponse
 }
 
+// IsSuccess returns true when this update verification status too many requests response has a 2xx status code
+func (o *UpdateVerificationStatusTooManyRequests) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this update verification status too many requests response has a 3xx status code
+func (o *UpdateVerificationStatusTooManyRequests) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this update verification status too many requests response has a 4xx status code
+func (o *UpdateVerificationStatusTooManyRequests) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this update verification status too many requests response has a 5xx status code
+func (o *UpdateVerificationStatusTooManyRequests) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this update verification status too many requests response a status code equal to that given
+func (o *UpdateVerificationStatusTooManyRequests) IsCode(code int) bool {
+	return code == 429
+}
+
 func (o *UpdateVerificationStatusTooManyRequests) Error() string {
 	return fmt.Sprintf("[PATCH /orders/v0/orders/{orderId}/regulatedInfo][%d] updateVerificationStatusTooManyRequests  %+v", 429, o.Payload)
 }
+
+func (o *UpdateVerificationStatusTooManyRequests) String() string {
+	return fmt.Sprintf("[PATCH /orders/v0/orders/{orderId}/regulatedInfo][%d] updateVerificationStatusTooManyRequests  %+v", 429, o.Payload)
+}
+
 func (o *UpdateVerificationStatusTooManyRequests) GetPayload() *orders_v0_models.UpdateVerificationStatusErrorResponse {
 	return o.Payload
 }
@@ -416,7 +632,8 @@ func NewUpdateVerificationStatusInternalServerError() *UpdateVerificationStatusI
 	return &UpdateVerificationStatusInternalServerError{}
 }
 
-/* UpdateVerificationStatusInternalServerError describes a response with status code 500, with default header values.
+/*
+UpdateVerificationStatusInternalServerError describes a response with status code 500, with default header values.
 
 An unexpected condition occurred that prevented the server from fulfilling the request.
 */
@@ -429,9 +646,39 @@ type UpdateVerificationStatusInternalServerError struct {
 	Payload *orders_v0_models.UpdateVerificationStatusErrorResponse
 }
 
+// IsSuccess returns true when this update verification status internal server error response has a 2xx status code
+func (o *UpdateVerificationStatusInternalServerError) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this update verification status internal server error response has a 3xx status code
+func (o *UpdateVerificationStatusInternalServerError) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this update verification status internal server error response has a 4xx status code
+func (o *UpdateVerificationStatusInternalServerError) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this update verification status internal server error response has a 5xx status code
+func (o *UpdateVerificationStatusInternalServerError) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this update verification status internal server error response a status code equal to that given
+func (o *UpdateVerificationStatusInternalServerError) IsCode(code int) bool {
+	return code == 500
+}
+
 func (o *UpdateVerificationStatusInternalServerError) Error() string {
 	return fmt.Sprintf("[PATCH /orders/v0/orders/{orderId}/regulatedInfo][%d] updateVerificationStatusInternalServerError  %+v", 500, o.Payload)
 }
+
+func (o *UpdateVerificationStatusInternalServerError) String() string {
+	return fmt.Sprintf("[PATCH /orders/v0/orders/{orderId}/regulatedInfo][%d] updateVerificationStatusInternalServerError  %+v", 500, o.Payload)
+}
+
 func (o *UpdateVerificationStatusInternalServerError) GetPayload() *orders_v0_models.UpdateVerificationStatusErrorResponse {
 	return o.Payload
 }
@@ -460,7 +707,8 @@ func NewUpdateVerificationStatusServiceUnavailable() *UpdateVerificationStatusSe
 	return &UpdateVerificationStatusServiceUnavailable{}
 }
 
-/* UpdateVerificationStatusServiceUnavailable describes a response with status code 503, with default header values.
+/*
+UpdateVerificationStatusServiceUnavailable describes a response with status code 503, with default header values.
 
 Temporary overloading or maintenance of the server.
 */
@@ -473,9 +721,39 @@ type UpdateVerificationStatusServiceUnavailable struct {
 	Payload *orders_v0_models.UpdateVerificationStatusErrorResponse
 }
 
+// IsSuccess returns true when this update verification status service unavailable response has a 2xx status code
+func (o *UpdateVerificationStatusServiceUnavailable) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this update verification status service unavailable response has a 3xx status code
+func (o *UpdateVerificationStatusServiceUnavailable) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this update verification status service unavailable response has a 4xx status code
+func (o *UpdateVerificationStatusServiceUnavailable) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this update verification status service unavailable response has a 5xx status code
+func (o *UpdateVerificationStatusServiceUnavailable) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this update verification status service unavailable response a status code equal to that given
+func (o *UpdateVerificationStatusServiceUnavailable) IsCode(code int) bool {
+	return code == 503
+}
+
 func (o *UpdateVerificationStatusServiceUnavailable) Error() string {
 	return fmt.Sprintf("[PATCH /orders/v0/orders/{orderId}/regulatedInfo][%d] updateVerificationStatusServiceUnavailable  %+v", 503, o.Payload)
 }
+
+func (o *UpdateVerificationStatusServiceUnavailable) String() string {
+	return fmt.Sprintf("[PATCH /orders/v0/orders/{orderId}/regulatedInfo][%d] updateVerificationStatusServiceUnavailable  %+v", 503, o.Payload)
+}
+
 func (o *UpdateVerificationStatusServiceUnavailable) GetPayload() *orders_v0_models.UpdateVerificationStatusErrorResponse {
 	return o.Payload
 }

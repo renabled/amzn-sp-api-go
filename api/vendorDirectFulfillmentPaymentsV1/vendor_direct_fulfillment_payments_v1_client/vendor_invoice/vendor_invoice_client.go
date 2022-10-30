@@ -36,7 +36,7 @@ type ClientService interface {
 }
 
 /*
-  SubmitInvoice Submits one or more invoices for a vendor's direct fulfillment orders.
+	SubmitInvoice Submits one or more invoices for a vendor's direct fulfillment orders.
 
 **Usage Plans:**
 

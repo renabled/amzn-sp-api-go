@@ -53,10 +53,12 @@ func NewGetMessagingActionsForOrderParamsWithHTTPClient(client *http.Client) *Ge
 	}
 }
 
-/* GetMessagingActionsForOrderParams contains all the parameters to send to the API endpoint
-   for the get messaging actions for order operation.
+/*
+GetMessagingActionsForOrderParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the get messaging actions for order operation.
+
+	Typically these are written to a http.Request.
 */
 type GetMessagingActionsForOrderParams struct {
 

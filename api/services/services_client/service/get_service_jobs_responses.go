@@ -87,7 +87,8 @@ func NewGetServiceJobsOK() *GetServiceJobsOK {
 	return &GetServiceJobsOK{}
 }
 
-/* GetServiceJobsOK describes a response with status code 200, with default header values.
+/*
+GetServiceJobsOK describes a response with status code 200, with default header values.
 
 Success response.
 */
@@ -104,9 +105,39 @@ type GetServiceJobsOK struct {
 	Payload *services_models.GetServiceJobsResponse
 }
 
+// IsSuccess returns true when this get service jobs o k response has a 2xx status code
+func (o *GetServiceJobsOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this get service jobs o k response has a 3xx status code
+func (o *GetServiceJobsOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get service jobs o k response has a 4xx status code
+func (o *GetServiceJobsOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get service jobs o k response has a 5xx status code
+func (o *GetServiceJobsOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get service jobs o k response a status code equal to that given
+func (o *GetServiceJobsOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *GetServiceJobsOK) Error() string {
 	return fmt.Sprintf("[GET /service/v1/serviceJobs][%d] getServiceJobsOK  %+v", 200, o.Payload)
 }
+
+func (o *GetServiceJobsOK) String() string {
+	return fmt.Sprintf("[GET /service/v1/serviceJobs][%d] getServiceJobsOK  %+v", 200, o.Payload)
+}
+
 func (o *GetServiceJobsOK) GetPayload() *services_models.GetServiceJobsResponse {
 	return o.Payload
 }
@@ -142,7 +173,8 @@ func NewGetServiceJobsBadRequest() *GetServiceJobsBadRequest {
 	return &GetServiceJobsBadRequest{}
 }
 
-/* GetServiceJobsBadRequest describes a response with status code 400, with default header values.
+/*
+GetServiceJobsBadRequest describes a response with status code 400, with default header values.
 
 Request has missing or invalid parameters and cannot be parsed.
 */
@@ -159,9 +191,39 @@ type GetServiceJobsBadRequest struct {
 	Payload *services_models.GetServiceJobsResponse
 }
 
+// IsSuccess returns true when this get service jobs bad request response has a 2xx status code
+func (o *GetServiceJobsBadRequest) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get service jobs bad request response has a 3xx status code
+func (o *GetServiceJobsBadRequest) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get service jobs bad request response has a 4xx status code
+func (o *GetServiceJobsBadRequest) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get service jobs bad request response has a 5xx status code
+func (o *GetServiceJobsBadRequest) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get service jobs bad request response a status code equal to that given
+func (o *GetServiceJobsBadRequest) IsCode(code int) bool {
+	return code == 400
+}
+
 func (o *GetServiceJobsBadRequest) Error() string {
 	return fmt.Sprintf("[GET /service/v1/serviceJobs][%d] getServiceJobsBadRequest  %+v", 400, o.Payload)
 }
+
+func (o *GetServiceJobsBadRequest) String() string {
+	return fmt.Sprintf("[GET /service/v1/serviceJobs][%d] getServiceJobsBadRequest  %+v", 400, o.Payload)
+}
+
 func (o *GetServiceJobsBadRequest) GetPayload() *services_models.GetServiceJobsResponse {
 	return o.Payload
 }
@@ -197,7 +259,8 @@ func NewGetServiceJobsForbidden() *GetServiceJobsForbidden {
 	return &GetServiceJobsForbidden{}
 }
 
-/* GetServiceJobsForbidden describes a response with status code 403, with default header values.
+/*
+GetServiceJobsForbidden describes a response with status code 403, with default header values.
 
 Indicates that access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.
 */
@@ -210,9 +273,39 @@ type GetServiceJobsForbidden struct {
 	Payload *services_models.GetServiceJobsResponse
 }
 
+// IsSuccess returns true when this get service jobs forbidden response has a 2xx status code
+func (o *GetServiceJobsForbidden) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get service jobs forbidden response has a 3xx status code
+func (o *GetServiceJobsForbidden) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get service jobs forbidden response has a 4xx status code
+func (o *GetServiceJobsForbidden) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get service jobs forbidden response has a 5xx status code
+func (o *GetServiceJobsForbidden) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get service jobs forbidden response a status code equal to that given
+func (o *GetServiceJobsForbidden) IsCode(code int) bool {
+	return code == 403
+}
+
 func (o *GetServiceJobsForbidden) Error() string {
 	return fmt.Sprintf("[GET /service/v1/serviceJobs][%d] getServiceJobsForbidden  %+v", 403, o.Payload)
 }
+
+func (o *GetServiceJobsForbidden) String() string {
+	return fmt.Sprintf("[GET /service/v1/serviceJobs][%d] getServiceJobsForbidden  %+v", 403, o.Payload)
+}
+
 func (o *GetServiceJobsForbidden) GetPayload() *services_models.GetServiceJobsResponse {
 	return o.Payload
 }
@@ -241,7 +334,8 @@ func NewGetServiceJobsNotFound() *GetServiceJobsNotFound {
 	return &GetServiceJobsNotFound{}
 }
 
-/* GetServiceJobsNotFound describes a response with status code 404, with default header values.
+/*
+GetServiceJobsNotFound describes a response with status code 404, with default header values.
 
 The resource specified does not exist.
 */
@@ -258,9 +352,39 @@ type GetServiceJobsNotFound struct {
 	Payload *services_models.GetServiceJobsResponse
 }
 
+// IsSuccess returns true when this get service jobs not found response has a 2xx status code
+func (o *GetServiceJobsNotFound) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get service jobs not found response has a 3xx status code
+func (o *GetServiceJobsNotFound) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get service jobs not found response has a 4xx status code
+func (o *GetServiceJobsNotFound) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get service jobs not found response has a 5xx status code
+func (o *GetServiceJobsNotFound) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get service jobs not found response a status code equal to that given
+func (o *GetServiceJobsNotFound) IsCode(code int) bool {
+	return code == 404
+}
+
 func (o *GetServiceJobsNotFound) Error() string {
 	return fmt.Sprintf("[GET /service/v1/serviceJobs][%d] getServiceJobsNotFound  %+v", 404, o.Payload)
 }
+
+func (o *GetServiceJobsNotFound) String() string {
+	return fmt.Sprintf("[GET /service/v1/serviceJobs][%d] getServiceJobsNotFound  %+v", 404, o.Payload)
+}
+
 func (o *GetServiceJobsNotFound) GetPayload() *services_models.GetServiceJobsResponse {
 	return o.Payload
 }
@@ -296,7 +420,8 @@ func NewGetServiceJobsRequestEntityTooLarge() *GetServiceJobsRequestEntityTooLar
 	return &GetServiceJobsRequestEntityTooLarge{}
 }
 
-/* GetServiceJobsRequestEntityTooLarge describes a response with status code 413, with default header values.
+/*
+GetServiceJobsRequestEntityTooLarge describes a response with status code 413, with default header values.
 
 The request size exceeded the maximum accepted size.
 */
@@ -314,9 +439,39 @@ type GetServiceJobsRequestEntityTooLarge struct {
 	Payload *services_models.GetServiceJobsResponse
 }
 
+// IsSuccess returns true when this get service jobs request entity too large response has a 2xx status code
+func (o *GetServiceJobsRequestEntityTooLarge) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get service jobs request entity too large response has a 3xx status code
+func (o *GetServiceJobsRequestEntityTooLarge) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get service jobs request entity too large response has a 4xx status code
+func (o *GetServiceJobsRequestEntityTooLarge) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get service jobs request entity too large response has a 5xx status code
+func (o *GetServiceJobsRequestEntityTooLarge) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get service jobs request entity too large response a status code equal to that given
+func (o *GetServiceJobsRequestEntityTooLarge) IsCode(code int) bool {
+	return code == 413
+}
+
 func (o *GetServiceJobsRequestEntityTooLarge) Error() string {
 	return fmt.Sprintf("[GET /service/v1/serviceJobs][%d] getServiceJobsRequestEntityTooLarge  %+v", 413, o.Payload)
 }
+
+func (o *GetServiceJobsRequestEntityTooLarge) String() string {
+	return fmt.Sprintf("[GET /service/v1/serviceJobs][%d] getServiceJobsRequestEntityTooLarge  %+v", 413, o.Payload)
+}
+
 func (o *GetServiceJobsRequestEntityTooLarge) GetPayload() *services_models.GetServiceJobsResponse {
 	return o.Payload
 }
@@ -352,7 +507,8 @@ func NewGetServiceJobsUnsupportedMediaType() *GetServiceJobsUnsupportedMediaType
 	return &GetServiceJobsUnsupportedMediaType{}
 }
 
-/* GetServiceJobsUnsupportedMediaType describes a response with status code 415, with default header values.
+/*
+GetServiceJobsUnsupportedMediaType describes a response with status code 415, with default header values.
 
 The request payload is in an unsupported format.
 */
@@ -370,9 +526,39 @@ type GetServiceJobsUnsupportedMediaType struct {
 	Payload *services_models.GetServiceJobsResponse
 }
 
+// IsSuccess returns true when this get service jobs unsupported media type response has a 2xx status code
+func (o *GetServiceJobsUnsupportedMediaType) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get service jobs unsupported media type response has a 3xx status code
+func (o *GetServiceJobsUnsupportedMediaType) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get service jobs unsupported media type response has a 4xx status code
+func (o *GetServiceJobsUnsupportedMediaType) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get service jobs unsupported media type response has a 5xx status code
+func (o *GetServiceJobsUnsupportedMediaType) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get service jobs unsupported media type response a status code equal to that given
+func (o *GetServiceJobsUnsupportedMediaType) IsCode(code int) bool {
+	return code == 415
+}
+
 func (o *GetServiceJobsUnsupportedMediaType) Error() string {
 	return fmt.Sprintf("[GET /service/v1/serviceJobs][%d] getServiceJobsUnsupportedMediaType  %+v", 415, o.Payload)
 }
+
+func (o *GetServiceJobsUnsupportedMediaType) String() string {
+	return fmt.Sprintf("[GET /service/v1/serviceJobs][%d] getServiceJobsUnsupportedMediaType  %+v", 415, o.Payload)
+}
+
 func (o *GetServiceJobsUnsupportedMediaType) GetPayload() *services_models.GetServiceJobsResponse {
 	return o.Payload
 }
@@ -408,7 +594,8 @@ func NewGetServiceJobsTooManyRequests() *GetServiceJobsTooManyRequests {
 	return &GetServiceJobsTooManyRequests{}
 }
 
-/* GetServiceJobsTooManyRequests describes a response with status code 429, with default header values.
+/*
+GetServiceJobsTooManyRequests describes a response with status code 429, with default header values.
 
 The frequency of requests was greater than allowed.
 */
@@ -426,9 +613,39 @@ type GetServiceJobsTooManyRequests struct {
 	Payload *services_models.GetServiceJobsResponse
 }
 
+// IsSuccess returns true when this get service jobs too many requests response has a 2xx status code
+func (o *GetServiceJobsTooManyRequests) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get service jobs too many requests response has a 3xx status code
+func (o *GetServiceJobsTooManyRequests) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get service jobs too many requests response has a 4xx status code
+func (o *GetServiceJobsTooManyRequests) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get service jobs too many requests response has a 5xx status code
+func (o *GetServiceJobsTooManyRequests) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get service jobs too many requests response a status code equal to that given
+func (o *GetServiceJobsTooManyRequests) IsCode(code int) bool {
+	return code == 429
+}
+
 func (o *GetServiceJobsTooManyRequests) Error() string {
 	return fmt.Sprintf("[GET /service/v1/serviceJobs][%d] getServiceJobsTooManyRequests  %+v", 429, o.Payload)
 }
+
+func (o *GetServiceJobsTooManyRequests) String() string {
+	return fmt.Sprintf("[GET /service/v1/serviceJobs][%d] getServiceJobsTooManyRequests  %+v", 429, o.Payload)
+}
+
 func (o *GetServiceJobsTooManyRequests) GetPayload() *services_models.GetServiceJobsResponse {
 	return o.Payload
 }
@@ -464,7 +681,8 @@ func NewGetServiceJobsInternalServerError() *GetServiceJobsInternalServerError {
 	return &GetServiceJobsInternalServerError{}
 }
 
-/* GetServiceJobsInternalServerError describes a response with status code 500, with default header values.
+/*
+GetServiceJobsInternalServerError describes a response with status code 500, with default header values.
 
 An unexpected condition occurred that prevented the server from fulfilling the request.
 */
@@ -482,9 +700,39 @@ type GetServiceJobsInternalServerError struct {
 	Payload *services_models.GetServiceJobsResponse
 }
 
+// IsSuccess returns true when this get service jobs internal server error response has a 2xx status code
+func (o *GetServiceJobsInternalServerError) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get service jobs internal server error response has a 3xx status code
+func (o *GetServiceJobsInternalServerError) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get service jobs internal server error response has a 4xx status code
+func (o *GetServiceJobsInternalServerError) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get service jobs internal server error response has a 5xx status code
+func (o *GetServiceJobsInternalServerError) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this get service jobs internal server error response a status code equal to that given
+func (o *GetServiceJobsInternalServerError) IsCode(code int) bool {
+	return code == 500
+}
+
 func (o *GetServiceJobsInternalServerError) Error() string {
 	return fmt.Sprintf("[GET /service/v1/serviceJobs][%d] getServiceJobsInternalServerError  %+v", 500, o.Payload)
 }
+
+func (o *GetServiceJobsInternalServerError) String() string {
+	return fmt.Sprintf("[GET /service/v1/serviceJobs][%d] getServiceJobsInternalServerError  %+v", 500, o.Payload)
+}
+
 func (o *GetServiceJobsInternalServerError) GetPayload() *services_models.GetServiceJobsResponse {
 	return o.Payload
 }
@@ -520,7 +768,8 @@ func NewGetServiceJobsServiceUnavailable() *GetServiceJobsServiceUnavailable {
 	return &GetServiceJobsServiceUnavailable{}
 }
 
-/* GetServiceJobsServiceUnavailable describes a response with status code 503, with default header values.
+/*
+GetServiceJobsServiceUnavailable describes a response with status code 503, with default header values.
 
 Temporary overloading or maintenance of the server.
 */
@@ -538,9 +787,39 @@ type GetServiceJobsServiceUnavailable struct {
 	Payload *services_models.GetServiceJobsResponse
 }
 
+// IsSuccess returns true when this get service jobs service unavailable response has a 2xx status code
+func (o *GetServiceJobsServiceUnavailable) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get service jobs service unavailable response has a 3xx status code
+func (o *GetServiceJobsServiceUnavailable) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get service jobs service unavailable response has a 4xx status code
+func (o *GetServiceJobsServiceUnavailable) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get service jobs service unavailable response has a 5xx status code
+func (o *GetServiceJobsServiceUnavailable) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this get service jobs service unavailable response a status code equal to that given
+func (o *GetServiceJobsServiceUnavailable) IsCode(code int) bool {
+	return code == 503
+}
+
 func (o *GetServiceJobsServiceUnavailable) Error() string {
 	return fmt.Sprintf("[GET /service/v1/serviceJobs][%d] getServiceJobsServiceUnavailable  %+v", 503, o.Payload)
 }
+
+func (o *GetServiceJobsServiceUnavailable) String() string {
+	return fmt.Sprintf("[GET /service/v1/serviceJobs][%d] getServiceJobsServiceUnavailable  %+v", 503, o.Payload)
+}
+
 func (o *GetServiceJobsServiceUnavailable) GetPayload() *services_models.GetServiceJobsResponse {
 	return o.Payload
 }

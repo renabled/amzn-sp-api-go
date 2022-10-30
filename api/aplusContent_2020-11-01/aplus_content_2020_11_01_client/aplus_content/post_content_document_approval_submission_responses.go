@@ -87,7 +87,8 @@ func NewPostContentDocumentApprovalSubmissionOK() *PostContentDocumentApprovalSu
 	return &PostContentDocumentApprovalSubmissionOK{}
 }
 
-/* PostContentDocumentApprovalSubmissionOK describes a response with status code 200, with default header values.
+/*
+PostContentDocumentApprovalSubmissionOK describes a response with status code 200, with default header values.
 
 Success.
 */
@@ -104,9 +105,39 @@ type PostContentDocumentApprovalSubmissionOK struct {
 	Payload *aplus_content_2020_11_01_models.PostContentDocumentApprovalSubmissionResponse
 }
 
+// IsSuccess returns true when this post content document approval submission o k response has a 2xx status code
+func (o *PostContentDocumentApprovalSubmissionOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this post content document approval submission o k response has a 3xx status code
+func (o *PostContentDocumentApprovalSubmissionOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this post content document approval submission o k response has a 4xx status code
+func (o *PostContentDocumentApprovalSubmissionOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this post content document approval submission o k response has a 5xx status code
+func (o *PostContentDocumentApprovalSubmissionOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this post content document approval submission o k response a status code equal to that given
+func (o *PostContentDocumentApprovalSubmissionOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *PostContentDocumentApprovalSubmissionOK) Error() string {
 	return fmt.Sprintf("[POST /aplus/2020-11-01/contentDocuments/{contentReferenceKey}/approvalSubmissions][%d] postContentDocumentApprovalSubmissionOK  %+v", 200, o.Payload)
 }
+
+func (o *PostContentDocumentApprovalSubmissionOK) String() string {
+	return fmt.Sprintf("[POST /aplus/2020-11-01/contentDocuments/{contentReferenceKey}/approvalSubmissions][%d] postContentDocumentApprovalSubmissionOK  %+v", 200, o.Payload)
+}
+
 func (o *PostContentDocumentApprovalSubmissionOK) GetPayload() *aplus_content_2020_11_01_models.PostContentDocumentApprovalSubmissionResponse {
 	return o.Payload
 }
@@ -142,7 +173,8 @@ func NewPostContentDocumentApprovalSubmissionBadRequest() *PostContentDocumentAp
 	return &PostContentDocumentApprovalSubmissionBadRequest{}
 }
 
-/* PostContentDocumentApprovalSubmissionBadRequest describes a response with status code 400, with default header values.
+/*
+PostContentDocumentApprovalSubmissionBadRequest describes a response with status code 400, with default header values.
 
 Request has missing or invalid parameters and cannot be parsed.
 */
@@ -159,9 +191,39 @@ type PostContentDocumentApprovalSubmissionBadRequest struct {
 	Payload *aplus_content_2020_11_01_models.ErrorList
 }
 
+// IsSuccess returns true when this post content document approval submission bad request response has a 2xx status code
+func (o *PostContentDocumentApprovalSubmissionBadRequest) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this post content document approval submission bad request response has a 3xx status code
+func (o *PostContentDocumentApprovalSubmissionBadRequest) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this post content document approval submission bad request response has a 4xx status code
+func (o *PostContentDocumentApprovalSubmissionBadRequest) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this post content document approval submission bad request response has a 5xx status code
+func (o *PostContentDocumentApprovalSubmissionBadRequest) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this post content document approval submission bad request response a status code equal to that given
+func (o *PostContentDocumentApprovalSubmissionBadRequest) IsCode(code int) bool {
+	return code == 400
+}
+
 func (o *PostContentDocumentApprovalSubmissionBadRequest) Error() string {
 	return fmt.Sprintf("[POST /aplus/2020-11-01/contentDocuments/{contentReferenceKey}/approvalSubmissions][%d] postContentDocumentApprovalSubmissionBadRequest  %+v", 400, o.Payload)
 }
+
+func (o *PostContentDocumentApprovalSubmissionBadRequest) String() string {
+	return fmt.Sprintf("[POST /aplus/2020-11-01/contentDocuments/{contentReferenceKey}/approvalSubmissions][%d] postContentDocumentApprovalSubmissionBadRequest  %+v", 400, o.Payload)
+}
+
 func (o *PostContentDocumentApprovalSubmissionBadRequest) GetPayload() *aplus_content_2020_11_01_models.ErrorList {
 	return o.Payload
 }
@@ -197,7 +259,8 @@ func NewPostContentDocumentApprovalSubmissionUnauthorized() *PostContentDocument
 	return &PostContentDocumentApprovalSubmissionUnauthorized{}
 }
 
-/* PostContentDocumentApprovalSubmissionUnauthorized describes a response with status code 401, with default header values.
+/*
+PostContentDocumentApprovalSubmissionUnauthorized describes a response with status code 401, with default header values.
 
 The request's Authorization header is not formatted correctly or does not contain a valid token.
 */
@@ -215,9 +278,39 @@ type PostContentDocumentApprovalSubmissionUnauthorized struct {
 	Payload *aplus_content_2020_11_01_models.ErrorList
 }
 
+// IsSuccess returns true when this post content document approval submission unauthorized response has a 2xx status code
+func (o *PostContentDocumentApprovalSubmissionUnauthorized) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this post content document approval submission unauthorized response has a 3xx status code
+func (o *PostContentDocumentApprovalSubmissionUnauthorized) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this post content document approval submission unauthorized response has a 4xx status code
+func (o *PostContentDocumentApprovalSubmissionUnauthorized) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this post content document approval submission unauthorized response has a 5xx status code
+func (o *PostContentDocumentApprovalSubmissionUnauthorized) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this post content document approval submission unauthorized response a status code equal to that given
+func (o *PostContentDocumentApprovalSubmissionUnauthorized) IsCode(code int) bool {
+	return code == 401
+}
+
 func (o *PostContentDocumentApprovalSubmissionUnauthorized) Error() string {
 	return fmt.Sprintf("[POST /aplus/2020-11-01/contentDocuments/{contentReferenceKey}/approvalSubmissions][%d] postContentDocumentApprovalSubmissionUnauthorized  %+v", 401, o.Payload)
 }
+
+func (o *PostContentDocumentApprovalSubmissionUnauthorized) String() string {
+	return fmt.Sprintf("[POST /aplus/2020-11-01/contentDocuments/{contentReferenceKey}/approvalSubmissions][%d] postContentDocumentApprovalSubmissionUnauthorized  %+v", 401, o.Payload)
+}
+
 func (o *PostContentDocumentApprovalSubmissionUnauthorized) GetPayload() *aplus_content_2020_11_01_models.ErrorList {
 	return o.Payload
 }
@@ -253,7 +346,8 @@ func NewPostContentDocumentApprovalSubmissionForbidden() *PostContentDocumentApp
 	return &PostContentDocumentApprovalSubmissionForbidden{}
 }
 
-/* PostContentDocumentApprovalSubmissionForbidden describes a response with status code 403, with default header values.
+/*
+PostContentDocumentApprovalSubmissionForbidden describes a response with status code 403, with default header values.
 
 Indicates that access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.
 */
@@ -266,9 +360,39 @@ type PostContentDocumentApprovalSubmissionForbidden struct {
 	Payload *aplus_content_2020_11_01_models.ErrorList
 }
 
+// IsSuccess returns true when this post content document approval submission forbidden response has a 2xx status code
+func (o *PostContentDocumentApprovalSubmissionForbidden) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this post content document approval submission forbidden response has a 3xx status code
+func (o *PostContentDocumentApprovalSubmissionForbidden) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this post content document approval submission forbidden response has a 4xx status code
+func (o *PostContentDocumentApprovalSubmissionForbidden) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this post content document approval submission forbidden response has a 5xx status code
+func (o *PostContentDocumentApprovalSubmissionForbidden) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this post content document approval submission forbidden response a status code equal to that given
+func (o *PostContentDocumentApprovalSubmissionForbidden) IsCode(code int) bool {
+	return code == 403
+}
+
 func (o *PostContentDocumentApprovalSubmissionForbidden) Error() string {
 	return fmt.Sprintf("[POST /aplus/2020-11-01/contentDocuments/{contentReferenceKey}/approvalSubmissions][%d] postContentDocumentApprovalSubmissionForbidden  %+v", 403, o.Payload)
 }
+
+func (o *PostContentDocumentApprovalSubmissionForbidden) String() string {
+	return fmt.Sprintf("[POST /aplus/2020-11-01/contentDocuments/{contentReferenceKey}/approvalSubmissions][%d] postContentDocumentApprovalSubmissionForbidden  %+v", 403, o.Payload)
+}
+
 func (o *PostContentDocumentApprovalSubmissionForbidden) GetPayload() *aplus_content_2020_11_01_models.ErrorList {
 	return o.Payload
 }
@@ -297,7 +421,8 @@ func NewPostContentDocumentApprovalSubmissionNotFound() *PostContentDocumentAppr
 	return &PostContentDocumentApprovalSubmissionNotFound{}
 }
 
-/* PostContentDocumentApprovalSubmissionNotFound describes a response with status code 404, with default header values.
+/*
+PostContentDocumentApprovalSubmissionNotFound describes a response with status code 404, with default header values.
 
 The specified resource does not exist.
 */
@@ -314,9 +439,39 @@ type PostContentDocumentApprovalSubmissionNotFound struct {
 	Payload *aplus_content_2020_11_01_models.ErrorList
 }
 
+// IsSuccess returns true when this post content document approval submission not found response has a 2xx status code
+func (o *PostContentDocumentApprovalSubmissionNotFound) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this post content document approval submission not found response has a 3xx status code
+func (o *PostContentDocumentApprovalSubmissionNotFound) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this post content document approval submission not found response has a 4xx status code
+func (o *PostContentDocumentApprovalSubmissionNotFound) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this post content document approval submission not found response has a 5xx status code
+func (o *PostContentDocumentApprovalSubmissionNotFound) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this post content document approval submission not found response a status code equal to that given
+func (o *PostContentDocumentApprovalSubmissionNotFound) IsCode(code int) bool {
+	return code == 404
+}
+
 func (o *PostContentDocumentApprovalSubmissionNotFound) Error() string {
 	return fmt.Sprintf("[POST /aplus/2020-11-01/contentDocuments/{contentReferenceKey}/approvalSubmissions][%d] postContentDocumentApprovalSubmissionNotFound  %+v", 404, o.Payload)
 }
+
+func (o *PostContentDocumentApprovalSubmissionNotFound) String() string {
+	return fmt.Sprintf("[POST /aplus/2020-11-01/contentDocuments/{contentReferenceKey}/approvalSubmissions][%d] postContentDocumentApprovalSubmissionNotFound  %+v", 404, o.Payload)
+}
+
 func (o *PostContentDocumentApprovalSubmissionNotFound) GetPayload() *aplus_content_2020_11_01_models.ErrorList {
 	return o.Payload
 }
@@ -352,7 +507,8 @@ func NewPostContentDocumentApprovalSubmissionGone() *PostContentDocumentApproval
 	return &PostContentDocumentApprovalSubmissionGone{}
 }
 
-/* PostContentDocumentApprovalSubmissionGone describes a response with status code 410, with default header values.
+/*
+PostContentDocumentApprovalSubmissionGone describes a response with status code 410, with default header values.
 
 The specified resource no longer exists.
 */
@@ -370,9 +526,39 @@ type PostContentDocumentApprovalSubmissionGone struct {
 	Payload *aplus_content_2020_11_01_models.ErrorList
 }
 
+// IsSuccess returns true when this post content document approval submission gone response has a 2xx status code
+func (o *PostContentDocumentApprovalSubmissionGone) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this post content document approval submission gone response has a 3xx status code
+func (o *PostContentDocumentApprovalSubmissionGone) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this post content document approval submission gone response has a 4xx status code
+func (o *PostContentDocumentApprovalSubmissionGone) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this post content document approval submission gone response has a 5xx status code
+func (o *PostContentDocumentApprovalSubmissionGone) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this post content document approval submission gone response a status code equal to that given
+func (o *PostContentDocumentApprovalSubmissionGone) IsCode(code int) bool {
+	return code == 410
+}
+
 func (o *PostContentDocumentApprovalSubmissionGone) Error() string {
 	return fmt.Sprintf("[POST /aplus/2020-11-01/contentDocuments/{contentReferenceKey}/approvalSubmissions][%d] postContentDocumentApprovalSubmissionGone  %+v", 410, o.Payload)
 }
+
+func (o *PostContentDocumentApprovalSubmissionGone) String() string {
+	return fmt.Sprintf("[POST /aplus/2020-11-01/contentDocuments/{contentReferenceKey}/approvalSubmissions][%d] postContentDocumentApprovalSubmissionGone  %+v", 410, o.Payload)
+}
+
 func (o *PostContentDocumentApprovalSubmissionGone) GetPayload() *aplus_content_2020_11_01_models.ErrorList {
 	return o.Payload
 }
@@ -408,7 +594,8 @@ func NewPostContentDocumentApprovalSubmissionTooManyRequests() *PostContentDocum
 	return &PostContentDocumentApprovalSubmissionTooManyRequests{}
 }
 
-/* PostContentDocumentApprovalSubmissionTooManyRequests describes a response with status code 429, with default header values.
+/*
+PostContentDocumentApprovalSubmissionTooManyRequests describes a response with status code 429, with default header values.
 
 The frequency of requests was greater than allowed.
 */
@@ -426,9 +613,39 @@ type PostContentDocumentApprovalSubmissionTooManyRequests struct {
 	Payload *aplus_content_2020_11_01_models.ErrorList
 }
 
+// IsSuccess returns true when this post content document approval submission too many requests response has a 2xx status code
+func (o *PostContentDocumentApprovalSubmissionTooManyRequests) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this post content document approval submission too many requests response has a 3xx status code
+func (o *PostContentDocumentApprovalSubmissionTooManyRequests) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this post content document approval submission too many requests response has a 4xx status code
+func (o *PostContentDocumentApprovalSubmissionTooManyRequests) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this post content document approval submission too many requests response has a 5xx status code
+func (o *PostContentDocumentApprovalSubmissionTooManyRequests) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this post content document approval submission too many requests response a status code equal to that given
+func (o *PostContentDocumentApprovalSubmissionTooManyRequests) IsCode(code int) bool {
+	return code == 429
+}
+
 func (o *PostContentDocumentApprovalSubmissionTooManyRequests) Error() string {
 	return fmt.Sprintf("[POST /aplus/2020-11-01/contentDocuments/{contentReferenceKey}/approvalSubmissions][%d] postContentDocumentApprovalSubmissionTooManyRequests  %+v", 429, o.Payload)
 }
+
+func (o *PostContentDocumentApprovalSubmissionTooManyRequests) String() string {
+	return fmt.Sprintf("[POST /aplus/2020-11-01/contentDocuments/{contentReferenceKey}/approvalSubmissions][%d] postContentDocumentApprovalSubmissionTooManyRequests  %+v", 429, o.Payload)
+}
+
 func (o *PostContentDocumentApprovalSubmissionTooManyRequests) GetPayload() *aplus_content_2020_11_01_models.ErrorList {
 	return o.Payload
 }
@@ -464,7 +681,8 @@ func NewPostContentDocumentApprovalSubmissionInternalServerError() *PostContentD
 	return &PostContentDocumentApprovalSubmissionInternalServerError{}
 }
 
-/* PostContentDocumentApprovalSubmissionInternalServerError describes a response with status code 500, with default header values.
+/*
+PostContentDocumentApprovalSubmissionInternalServerError describes a response with status code 500, with default header values.
 
 An unexpected condition occurred that prevented the server from fulfilling the request.
 */
@@ -482,9 +700,39 @@ type PostContentDocumentApprovalSubmissionInternalServerError struct {
 	Payload *aplus_content_2020_11_01_models.ErrorList
 }
 
+// IsSuccess returns true when this post content document approval submission internal server error response has a 2xx status code
+func (o *PostContentDocumentApprovalSubmissionInternalServerError) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this post content document approval submission internal server error response has a 3xx status code
+func (o *PostContentDocumentApprovalSubmissionInternalServerError) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this post content document approval submission internal server error response has a 4xx status code
+func (o *PostContentDocumentApprovalSubmissionInternalServerError) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this post content document approval submission internal server error response has a 5xx status code
+func (o *PostContentDocumentApprovalSubmissionInternalServerError) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this post content document approval submission internal server error response a status code equal to that given
+func (o *PostContentDocumentApprovalSubmissionInternalServerError) IsCode(code int) bool {
+	return code == 500
+}
+
 func (o *PostContentDocumentApprovalSubmissionInternalServerError) Error() string {
 	return fmt.Sprintf("[POST /aplus/2020-11-01/contentDocuments/{contentReferenceKey}/approvalSubmissions][%d] postContentDocumentApprovalSubmissionInternalServerError  %+v", 500, o.Payload)
 }
+
+func (o *PostContentDocumentApprovalSubmissionInternalServerError) String() string {
+	return fmt.Sprintf("[POST /aplus/2020-11-01/contentDocuments/{contentReferenceKey}/approvalSubmissions][%d] postContentDocumentApprovalSubmissionInternalServerError  %+v", 500, o.Payload)
+}
+
 func (o *PostContentDocumentApprovalSubmissionInternalServerError) GetPayload() *aplus_content_2020_11_01_models.ErrorList {
 	return o.Payload
 }
@@ -520,7 +768,8 @@ func NewPostContentDocumentApprovalSubmissionServiceUnavailable() *PostContentDo
 	return &PostContentDocumentApprovalSubmissionServiceUnavailable{}
 }
 
-/* PostContentDocumentApprovalSubmissionServiceUnavailable describes a response with status code 503, with default header values.
+/*
+PostContentDocumentApprovalSubmissionServiceUnavailable describes a response with status code 503, with default header values.
 
 Temporary overloading or maintenance of the server.
 */
@@ -538,9 +787,39 @@ type PostContentDocumentApprovalSubmissionServiceUnavailable struct {
 	Payload *aplus_content_2020_11_01_models.ErrorList
 }
 
+// IsSuccess returns true when this post content document approval submission service unavailable response has a 2xx status code
+func (o *PostContentDocumentApprovalSubmissionServiceUnavailable) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this post content document approval submission service unavailable response has a 3xx status code
+func (o *PostContentDocumentApprovalSubmissionServiceUnavailable) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this post content document approval submission service unavailable response has a 4xx status code
+func (o *PostContentDocumentApprovalSubmissionServiceUnavailable) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this post content document approval submission service unavailable response has a 5xx status code
+func (o *PostContentDocumentApprovalSubmissionServiceUnavailable) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this post content document approval submission service unavailable response a status code equal to that given
+func (o *PostContentDocumentApprovalSubmissionServiceUnavailable) IsCode(code int) bool {
+	return code == 503
+}
+
 func (o *PostContentDocumentApprovalSubmissionServiceUnavailable) Error() string {
 	return fmt.Sprintf("[POST /aplus/2020-11-01/contentDocuments/{contentReferenceKey}/approvalSubmissions][%d] postContentDocumentApprovalSubmissionServiceUnavailable  %+v", 503, o.Payload)
 }
+
+func (o *PostContentDocumentApprovalSubmissionServiceUnavailable) String() string {
+	return fmt.Sprintf("[POST /aplus/2020-11-01/contentDocuments/{contentReferenceKey}/approvalSubmissions][%d] postContentDocumentApprovalSubmissionServiceUnavailable  %+v", 503, o.Payload)
+}
+
 func (o *PostContentDocumentApprovalSubmissionServiceUnavailable) GetPayload() *aplus_content_2020_11_01_models.ErrorList {
 	return o.Payload
 }

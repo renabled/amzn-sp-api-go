@@ -55,10 +55,12 @@ func NewGetRangeSlotCapacityParamsWithHTTPClient(client *http.Client) *GetRangeS
 	}
 }
 
-/* GetRangeSlotCapacityParams contains all the parameters to send to the API endpoint
-   for the get range slot capacity operation.
+/*
+GetRangeSlotCapacityParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the get range slot capacity operation.
+
+	Typically these are written to a http.Request.
 */
 type GetRangeSlotCapacityParams struct {
 

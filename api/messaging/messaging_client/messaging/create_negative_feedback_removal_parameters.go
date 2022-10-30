@@ -53,10 +53,12 @@ func NewCreateNegativeFeedbackRemovalParamsWithHTTPClient(client *http.Client) *
 	}
 }
 
-/* CreateNegativeFeedbackRemovalParams contains all the parameters to send to the API endpoint
-   for the create negative feedback removal operation.
+/*
+CreateNegativeFeedbackRemovalParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the create negative feedback removal operation.
+
+	Typically these are written to a http.Request.
 */
 type CreateNegativeFeedbackRemovalParams struct {
 

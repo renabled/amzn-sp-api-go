@@ -52,10 +52,12 @@ func NewGetItemOffersParamsWithHTTPClient(client *http.Client) *GetItemOffersPar
 	}
 }
 
-/* GetItemOffersParams contains all the parameters to send to the API endpoint
-   for the get item offers operation.
+/*
+GetItemOffersParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the get item offers operation.
+
+	Typically these are written to a http.Request.
 */
 type GetItemOffersParams struct {
 

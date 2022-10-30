@@ -54,10 +54,12 @@ func NewGetRatesParamsWithHTTPClient(client *http.Client) *GetRatesParams {
 	}
 }
 
-/* GetRatesParams contains all the parameters to send to the API endpoint
-   for the get rates operation.
+/*
+GetRatesParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the get rates operation.
+
+	Typically these are written to a http.Request.
 */
 type GetRatesParams struct {
 

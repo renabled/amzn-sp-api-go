@@ -53,10 +53,12 @@ func NewGetListingsItemParamsWithHTTPClient(client *http.Client) *GetListingsIte
 	}
 }
 
-/* GetListingsItemParams contains all the parameters to send to the API endpoint
-   for the get listings item operation.
+/*
+GetListingsItemParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the get listings item operation.
+
+	Typically these are written to a http.Request.
 */
 type GetListingsItemParams struct {
 

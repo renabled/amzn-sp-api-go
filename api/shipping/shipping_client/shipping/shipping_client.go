@@ -52,7 +52,7 @@ type ClientService interface {
 }
 
 /*
-  CancelShipment Cancel a shipment by the given shipmentId.
+	CancelShipment Cancel a shipment by the given shipmentId.
 
 **Usage Plan:**
 
@@ -98,7 +98,7 @@ func (a *Client) CancelShipment(params *CancelShipmentParams, opts ...ClientOpti
 }
 
 /*
-  CreateShipment Create a new shipment.
+	CreateShipment Create a new shipment.
 
 **Usage Plan:**
 
@@ -144,7 +144,7 @@ func (a *Client) CreateShipment(params *CreateShipmentParams, opts ...ClientOpti
 }
 
 /*
-  GetAccount Verify if the current account is valid.
+	GetAccount Verify if the current account is valid.
 
 **Usage Plan:**
 
@@ -190,7 +190,7 @@ func (a *Client) GetAccount(params *GetAccountParams, opts ...ClientOption) (*Ge
 }
 
 /*
-  GetRates Get service rates.
+	GetRates Get service rates.
 
 **Usage Plan:**
 
@@ -236,7 +236,7 @@ func (a *Client) GetRates(params *GetRatesParams, opts ...ClientOption) (*GetRat
 }
 
 /*
-  GetShipment Return the entire shipment object for the shipmentId.
+	GetShipment Return the entire shipment object for the shipmentId.
 
 **Usage Plan:**
 
@@ -282,7 +282,7 @@ func (a *Client) GetShipment(params *GetShipmentParams, opts ...ClientOption) (*
 }
 
 /*
-  GetTrackingInformation Return the tracking information of a shipment.
+	GetTrackingInformation Return the tracking information of a shipment.
 
 **Usage Plan:**
 
@@ -328,7 +328,7 @@ func (a *Client) GetTrackingInformation(params *GetTrackingInformationParams, op
 }
 
 /*
-  PurchaseLabels Purchase shipping labels based on a given rate.
+	PurchaseLabels Purchase shipping labels based on a given rate.
 
 **Usage Plan:**
 
@@ -374,7 +374,7 @@ func (a *Client) PurchaseLabels(params *PurchaseLabelsParams, opts ...ClientOpti
 }
 
 /*
-  PurchaseShipment Purchase shipping labels.
+	PurchaseShipment Purchase shipping labels.
 
 **Usage Plan:**
 
@@ -420,7 +420,7 @@ func (a *Client) PurchaseShipment(params *PurchaseShipmentParams, opts ...Client
 }
 
 /*
-  RetrieveShippingLabel Retrieve shipping label based on the shipment id and tracking id.
+	RetrieveShippingLabel Retrieve shipping label based on the shipment id and tracking id.
 
 **Usage Plan:**
 

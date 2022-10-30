@@ -50,7 +50,7 @@ type ClientService interface {
 }
 
 /*
-  GetOrder Returns the order that you specify.
+	GetOrder Returns the order that you specify.
 
 **Usage Plan:**
 
@@ -96,7 +96,7 @@ func (a *Client) GetOrder(params *GetOrderParams, opts ...ClientOption) (*GetOrd
 }
 
 /*
-  GetOrderAddress Returns the shipping address for the order that you specify.
+	GetOrderAddress Returns the shipping address for the order that you specify.
 
 **Usage Plan:**
 
@@ -142,7 +142,7 @@ func (a *Client) GetOrderAddress(params *GetOrderAddressParams, opts ...ClientOp
 }
 
 /*
-  GetOrderBuyerInfo Returns buyer information for the order that you specify.
+	GetOrderBuyerInfo Returns buyer information for the order that you specify.
 
 **Usage Plan:**
 
@@ -188,7 +188,7 @@ func (a *Client) GetOrderBuyerInfo(params *GetOrderBuyerInfoParams, opts ...Clie
 }
 
 /*
-  GetOrderItems Returns detailed order item information for the order that you specify. If NextToken is provided, it's used to retrieve the next page of order items.
+	GetOrderItems Returns detailed order item information for the order that you specify. If NextToken is provided, it's used to retrieve the next page of order items.
 
 __Note__: When an order is in the Pending state (the order has been placed but payment has not been authorized), the getOrderItems operation does not return information about pricing, taxes, shipping charges, gift status or promotions for the order items in the order. After an order leaves the Pending state (this occurs when payment has been authorized) and enters the Unshipped, Partially Shipped, or Shipped state, the getOrderItems operation returns information about pricing, taxes, shipping charges, gift status and promotions for the order items in the order.
 
@@ -236,7 +236,7 @@ func (a *Client) GetOrderItems(params *GetOrderItemsParams, opts ...ClientOption
 }
 
 /*
-  GetOrderItemsBuyerInfo Returns buyer information for the order items in the order that you specify.
+	GetOrderItemsBuyerInfo Returns buyer information for the order items in the order that you specify.
 
 **Usage Plan:**
 
@@ -282,7 +282,7 @@ func (a *Client) GetOrderItemsBuyerInfo(params *GetOrderItemsBuyerInfoParams, op
 }
 
 /*
-  GetOrderRegulatedInfo Returns regulated information for the order that you specify.
+	GetOrderRegulatedInfo Returns regulated information for the order that you specify.
 
 **Usage Plan:**
 
@@ -328,7 +328,7 @@ func (a *Client) GetOrderRegulatedInfo(params *GetOrderRegulatedInfoParams, opts
 }
 
 /*
-  GetOrders Returns orders created or updated during the time frame indicated by the specified parameters. You can also apply a range of filtering criteria to narrow the list of orders returned. If NextToken is present, that will be used to retrieve the orders instead of other criteria.
+	GetOrders Returns orders created or updated during the time frame indicated by the specified parameters. You can also apply a range of filtering criteria to narrow the list of orders returned. If NextToken is present, that will be used to retrieve the orders instead of other criteria.
 
 **Usage Plan:**
 
@@ -374,7 +374,7 @@ func (a *Client) GetOrders(params *GetOrdersParams, opts ...ClientOption) (*GetO
 }
 
 /*
-  UpdateVerificationStatus Updates (approves or rejects) the verification status of an order containing regulated products.
+	UpdateVerificationStatus Updates (approves or rejects) the verification status of an order containing regulated products.
 
 **Usage Plan:**
 

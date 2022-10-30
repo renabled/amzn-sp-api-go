@@ -81,7 +81,8 @@ func NewGetTransportDetailsOK() *GetTransportDetailsOK {
 	return &GetTransportDetailsOK{}
 }
 
-/* GetTransportDetailsOK describes a response with status code 200, with default header values.
+/*
+GetTransportDetailsOK describes a response with status code 200, with default header values.
 
 Success.
 */
@@ -98,9 +99,39 @@ type GetTransportDetailsOK struct {
 	Payload *fulfillment_inbound_v0_models.GetTransportDetailsResponse
 }
 
+// IsSuccess returns true when this get transport details o k response has a 2xx status code
+func (o *GetTransportDetailsOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this get transport details o k response has a 3xx status code
+func (o *GetTransportDetailsOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get transport details o k response has a 4xx status code
+func (o *GetTransportDetailsOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get transport details o k response has a 5xx status code
+func (o *GetTransportDetailsOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get transport details o k response a status code equal to that given
+func (o *GetTransportDetailsOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *GetTransportDetailsOK) Error() string {
 	return fmt.Sprintf("[GET /fba/inbound/v0/shipments/{shipmentId}/transport][%d] getTransportDetailsOK  %+v", 200, o.Payload)
 }
+
+func (o *GetTransportDetailsOK) String() string {
+	return fmt.Sprintf("[GET /fba/inbound/v0/shipments/{shipmentId}/transport][%d] getTransportDetailsOK  %+v", 200, o.Payload)
+}
+
 func (o *GetTransportDetailsOK) GetPayload() *fulfillment_inbound_v0_models.GetTransportDetailsResponse {
 	return o.Payload
 }
@@ -136,7 +167,8 @@ func NewGetTransportDetailsBadRequest() *GetTransportDetailsBadRequest {
 	return &GetTransportDetailsBadRequest{}
 }
 
-/* GetTransportDetailsBadRequest describes a response with status code 400, with default header values.
+/*
+GetTransportDetailsBadRequest describes a response with status code 400, with default header values.
 
 Request has missing or invalid parameters and cannot be parsed.
 */
@@ -153,9 +185,39 @@ type GetTransportDetailsBadRequest struct {
 	Payload *fulfillment_inbound_v0_models.GetTransportDetailsResponse
 }
 
+// IsSuccess returns true when this get transport details bad request response has a 2xx status code
+func (o *GetTransportDetailsBadRequest) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get transport details bad request response has a 3xx status code
+func (o *GetTransportDetailsBadRequest) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get transport details bad request response has a 4xx status code
+func (o *GetTransportDetailsBadRequest) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get transport details bad request response has a 5xx status code
+func (o *GetTransportDetailsBadRequest) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get transport details bad request response a status code equal to that given
+func (o *GetTransportDetailsBadRequest) IsCode(code int) bool {
+	return code == 400
+}
+
 func (o *GetTransportDetailsBadRequest) Error() string {
 	return fmt.Sprintf("[GET /fba/inbound/v0/shipments/{shipmentId}/transport][%d] getTransportDetailsBadRequest  %+v", 400, o.Payload)
 }
+
+func (o *GetTransportDetailsBadRequest) String() string {
+	return fmt.Sprintf("[GET /fba/inbound/v0/shipments/{shipmentId}/transport][%d] getTransportDetailsBadRequest  %+v", 400, o.Payload)
+}
+
 func (o *GetTransportDetailsBadRequest) GetPayload() *fulfillment_inbound_v0_models.GetTransportDetailsResponse {
 	return o.Payload
 }
@@ -191,7 +253,8 @@ func NewGetTransportDetailsUnauthorized() *GetTransportDetailsUnauthorized {
 	return &GetTransportDetailsUnauthorized{}
 }
 
-/* GetTransportDetailsUnauthorized describes a response with status code 401, with default header values.
+/*
+GetTransportDetailsUnauthorized describes a response with status code 401, with default header values.
 
 The request's Authorization header is not formatted correctly or does not contain a valid token.
 */
@@ -209,9 +272,39 @@ type GetTransportDetailsUnauthorized struct {
 	Payload *fulfillment_inbound_v0_models.GetTransportDetailsResponse
 }
 
+// IsSuccess returns true when this get transport details unauthorized response has a 2xx status code
+func (o *GetTransportDetailsUnauthorized) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get transport details unauthorized response has a 3xx status code
+func (o *GetTransportDetailsUnauthorized) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get transport details unauthorized response has a 4xx status code
+func (o *GetTransportDetailsUnauthorized) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get transport details unauthorized response has a 5xx status code
+func (o *GetTransportDetailsUnauthorized) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get transport details unauthorized response a status code equal to that given
+func (o *GetTransportDetailsUnauthorized) IsCode(code int) bool {
+	return code == 401
+}
+
 func (o *GetTransportDetailsUnauthorized) Error() string {
 	return fmt.Sprintf("[GET /fba/inbound/v0/shipments/{shipmentId}/transport][%d] getTransportDetailsUnauthorized  %+v", 401, o.Payload)
 }
+
+func (o *GetTransportDetailsUnauthorized) String() string {
+	return fmt.Sprintf("[GET /fba/inbound/v0/shipments/{shipmentId}/transport][%d] getTransportDetailsUnauthorized  %+v", 401, o.Payload)
+}
+
 func (o *GetTransportDetailsUnauthorized) GetPayload() *fulfillment_inbound_v0_models.GetTransportDetailsResponse {
 	return o.Payload
 }
@@ -247,7 +340,8 @@ func NewGetTransportDetailsForbidden() *GetTransportDetailsForbidden {
 	return &GetTransportDetailsForbidden{}
 }
 
-/* GetTransportDetailsForbidden describes a response with status code 403, with default header values.
+/*
+GetTransportDetailsForbidden describes a response with status code 403, with default header values.
 
 Indicates that access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.
 */
@@ -260,9 +354,39 @@ type GetTransportDetailsForbidden struct {
 	Payload *fulfillment_inbound_v0_models.GetTransportDetailsResponse
 }
 
+// IsSuccess returns true when this get transport details forbidden response has a 2xx status code
+func (o *GetTransportDetailsForbidden) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get transport details forbidden response has a 3xx status code
+func (o *GetTransportDetailsForbidden) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get transport details forbidden response has a 4xx status code
+func (o *GetTransportDetailsForbidden) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get transport details forbidden response has a 5xx status code
+func (o *GetTransportDetailsForbidden) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get transport details forbidden response a status code equal to that given
+func (o *GetTransportDetailsForbidden) IsCode(code int) bool {
+	return code == 403
+}
+
 func (o *GetTransportDetailsForbidden) Error() string {
 	return fmt.Sprintf("[GET /fba/inbound/v0/shipments/{shipmentId}/transport][%d] getTransportDetailsForbidden  %+v", 403, o.Payload)
 }
+
+func (o *GetTransportDetailsForbidden) String() string {
+	return fmt.Sprintf("[GET /fba/inbound/v0/shipments/{shipmentId}/transport][%d] getTransportDetailsForbidden  %+v", 403, o.Payload)
+}
+
 func (o *GetTransportDetailsForbidden) GetPayload() *fulfillment_inbound_v0_models.GetTransportDetailsResponse {
 	return o.Payload
 }
@@ -291,7 +415,8 @@ func NewGetTransportDetailsNotFound() *GetTransportDetailsNotFound {
 	return &GetTransportDetailsNotFound{}
 }
 
-/* GetTransportDetailsNotFound describes a response with status code 404, with default header values.
+/*
+GetTransportDetailsNotFound describes a response with status code 404, with default header values.
 
 The specified resource does not exist.
 */
@@ -308,9 +433,39 @@ type GetTransportDetailsNotFound struct {
 	Payload *fulfillment_inbound_v0_models.GetTransportDetailsResponse
 }
 
+// IsSuccess returns true when this get transport details not found response has a 2xx status code
+func (o *GetTransportDetailsNotFound) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get transport details not found response has a 3xx status code
+func (o *GetTransportDetailsNotFound) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get transport details not found response has a 4xx status code
+func (o *GetTransportDetailsNotFound) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get transport details not found response has a 5xx status code
+func (o *GetTransportDetailsNotFound) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get transport details not found response a status code equal to that given
+func (o *GetTransportDetailsNotFound) IsCode(code int) bool {
+	return code == 404
+}
+
 func (o *GetTransportDetailsNotFound) Error() string {
 	return fmt.Sprintf("[GET /fba/inbound/v0/shipments/{shipmentId}/transport][%d] getTransportDetailsNotFound  %+v", 404, o.Payload)
 }
+
+func (o *GetTransportDetailsNotFound) String() string {
+	return fmt.Sprintf("[GET /fba/inbound/v0/shipments/{shipmentId}/transport][%d] getTransportDetailsNotFound  %+v", 404, o.Payload)
+}
+
 func (o *GetTransportDetailsNotFound) GetPayload() *fulfillment_inbound_v0_models.GetTransportDetailsResponse {
 	return o.Payload
 }
@@ -346,7 +501,8 @@ func NewGetTransportDetailsTooManyRequests() *GetTransportDetailsTooManyRequests
 	return &GetTransportDetailsTooManyRequests{}
 }
 
-/* GetTransportDetailsTooManyRequests describes a response with status code 429, with default header values.
+/*
+GetTransportDetailsTooManyRequests describes a response with status code 429, with default header values.
 
 The frequency of requests was greater than allowed.
 */
@@ -364,9 +520,39 @@ type GetTransportDetailsTooManyRequests struct {
 	Payload *fulfillment_inbound_v0_models.GetTransportDetailsResponse
 }
 
+// IsSuccess returns true when this get transport details too many requests response has a 2xx status code
+func (o *GetTransportDetailsTooManyRequests) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get transport details too many requests response has a 3xx status code
+func (o *GetTransportDetailsTooManyRequests) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get transport details too many requests response has a 4xx status code
+func (o *GetTransportDetailsTooManyRequests) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get transport details too many requests response has a 5xx status code
+func (o *GetTransportDetailsTooManyRequests) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get transport details too many requests response a status code equal to that given
+func (o *GetTransportDetailsTooManyRequests) IsCode(code int) bool {
+	return code == 429
+}
+
 func (o *GetTransportDetailsTooManyRequests) Error() string {
 	return fmt.Sprintf("[GET /fba/inbound/v0/shipments/{shipmentId}/transport][%d] getTransportDetailsTooManyRequests  %+v", 429, o.Payload)
 }
+
+func (o *GetTransportDetailsTooManyRequests) String() string {
+	return fmt.Sprintf("[GET /fba/inbound/v0/shipments/{shipmentId}/transport][%d] getTransportDetailsTooManyRequests  %+v", 429, o.Payload)
+}
+
 func (o *GetTransportDetailsTooManyRequests) GetPayload() *fulfillment_inbound_v0_models.GetTransportDetailsResponse {
 	return o.Payload
 }
@@ -402,7 +588,8 @@ func NewGetTransportDetailsInternalServerError() *GetTransportDetailsInternalSer
 	return &GetTransportDetailsInternalServerError{}
 }
 
-/* GetTransportDetailsInternalServerError describes a response with status code 500, with default header values.
+/*
+GetTransportDetailsInternalServerError describes a response with status code 500, with default header values.
 
 An unexpected condition occurred that prevented the server from fulfilling the request.
 */
@@ -420,9 +607,39 @@ type GetTransportDetailsInternalServerError struct {
 	Payload *fulfillment_inbound_v0_models.GetTransportDetailsResponse
 }
 
+// IsSuccess returns true when this get transport details internal server error response has a 2xx status code
+func (o *GetTransportDetailsInternalServerError) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get transport details internal server error response has a 3xx status code
+func (o *GetTransportDetailsInternalServerError) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get transport details internal server error response has a 4xx status code
+func (o *GetTransportDetailsInternalServerError) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get transport details internal server error response has a 5xx status code
+func (o *GetTransportDetailsInternalServerError) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this get transport details internal server error response a status code equal to that given
+func (o *GetTransportDetailsInternalServerError) IsCode(code int) bool {
+	return code == 500
+}
+
 func (o *GetTransportDetailsInternalServerError) Error() string {
 	return fmt.Sprintf("[GET /fba/inbound/v0/shipments/{shipmentId}/transport][%d] getTransportDetailsInternalServerError  %+v", 500, o.Payload)
 }
+
+func (o *GetTransportDetailsInternalServerError) String() string {
+	return fmt.Sprintf("[GET /fba/inbound/v0/shipments/{shipmentId}/transport][%d] getTransportDetailsInternalServerError  %+v", 500, o.Payload)
+}
+
 func (o *GetTransportDetailsInternalServerError) GetPayload() *fulfillment_inbound_v0_models.GetTransportDetailsResponse {
 	return o.Payload
 }
@@ -458,7 +675,8 @@ func NewGetTransportDetailsServiceUnavailable() *GetTransportDetailsServiceUnava
 	return &GetTransportDetailsServiceUnavailable{}
 }
 
-/* GetTransportDetailsServiceUnavailable describes a response with status code 503, with default header values.
+/*
+GetTransportDetailsServiceUnavailable describes a response with status code 503, with default header values.
 
 Temporary overloading or maintenance of the server.
 */
@@ -476,9 +694,39 @@ type GetTransportDetailsServiceUnavailable struct {
 	Payload *fulfillment_inbound_v0_models.GetTransportDetailsResponse
 }
 
+// IsSuccess returns true when this get transport details service unavailable response has a 2xx status code
+func (o *GetTransportDetailsServiceUnavailable) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get transport details service unavailable response has a 3xx status code
+func (o *GetTransportDetailsServiceUnavailable) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get transport details service unavailable response has a 4xx status code
+func (o *GetTransportDetailsServiceUnavailable) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get transport details service unavailable response has a 5xx status code
+func (o *GetTransportDetailsServiceUnavailable) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this get transport details service unavailable response a status code equal to that given
+func (o *GetTransportDetailsServiceUnavailable) IsCode(code int) bool {
+	return code == 503
+}
+
 func (o *GetTransportDetailsServiceUnavailable) Error() string {
 	return fmt.Sprintf("[GET /fba/inbound/v0/shipments/{shipmentId}/transport][%d] getTransportDetailsServiceUnavailable  %+v", 503, o.Payload)
 }
+
+func (o *GetTransportDetailsServiceUnavailable) String() string {
+	return fmt.Sprintf("[GET /fba/inbound/v0/shipments/{shipmentId}/transport][%d] getTransportDetailsServiceUnavailable  %+v", 503, o.Payload)
+}
+
 func (o *GetTransportDetailsServiceUnavailable) GetPayload() *fulfillment_inbound_v0_models.GetTransportDetailsResponse {
 	return o.Payload
 }

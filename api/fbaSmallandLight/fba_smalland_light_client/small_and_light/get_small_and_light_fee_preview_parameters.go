@@ -54,10 +54,12 @@ func NewGetSmallAndLightFeePreviewParamsWithHTTPClient(client *http.Client) *Get
 	}
 }
 
-/* GetSmallAndLightFeePreviewParams contains all the parameters to send to the API endpoint
-   for the get small and light fee preview operation.
+/*
+GetSmallAndLightFeePreviewParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the get small and light fee preview operation.
+
+	Typically these are written to a http.Request.
 */
 type GetSmallAndLightFeePreviewParams struct {
 

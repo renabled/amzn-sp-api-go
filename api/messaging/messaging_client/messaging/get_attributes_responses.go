@@ -87,7 +87,8 @@ func NewGetAttributesOK() *GetAttributesOK {
 	return &GetAttributesOK{}
 }
 
-/* GetAttributesOK describes a response with status code 200, with default header values.
+/*
+GetAttributesOK describes a response with status code 200, with default header values.
 
 Response has successfully been returned.
 */
@@ -104,9 +105,39 @@ type GetAttributesOK struct {
 	Payload *messaging_models.GetAttributesResponse
 }
 
+// IsSuccess returns true when this get attributes o k response has a 2xx status code
+func (o *GetAttributesOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this get attributes o k response has a 3xx status code
+func (o *GetAttributesOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get attributes o k response has a 4xx status code
+func (o *GetAttributesOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get attributes o k response has a 5xx status code
+func (o *GetAttributesOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get attributes o k response a status code equal to that given
+func (o *GetAttributesOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *GetAttributesOK) Error() string {
 	return fmt.Sprintf("[GET /messaging/v1/orders/{amazonOrderId}/attributes][%d] getAttributesOK  %+v", 200, o.Payload)
 }
+
+func (o *GetAttributesOK) String() string {
+	return fmt.Sprintf("[GET /messaging/v1/orders/{amazonOrderId}/attributes][%d] getAttributesOK  %+v", 200, o.Payload)
+}
+
 func (o *GetAttributesOK) GetPayload() *messaging_models.GetAttributesResponse {
 	return o.Payload
 }
@@ -142,7 +173,8 @@ func NewGetAttributesBadRequest() *GetAttributesBadRequest {
 	return &GetAttributesBadRequest{}
 }
 
-/* GetAttributesBadRequest describes a response with status code 400, with default header values.
+/*
+GetAttributesBadRequest describes a response with status code 400, with default header values.
 
 Request has missing or invalid parameters and cannot be parsed.
 */
@@ -159,9 +191,39 @@ type GetAttributesBadRequest struct {
 	Payload *messaging_models.GetAttributesResponse
 }
 
+// IsSuccess returns true when this get attributes bad request response has a 2xx status code
+func (o *GetAttributesBadRequest) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get attributes bad request response has a 3xx status code
+func (o *GetAttributesBadRequest) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get attributes bad request response has a 4xx status code
+func (o *GetAttributesBadRequest) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get attributes bad request response has a 5xx status code
+func (o *GetAttributesBadRequest) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get attributes bad request response a status code equal to that given
+func (o *GetAttributesBadRequest) IsCode(code int) bool {
+	return code == 400
+}
+
 func (o *GetAttributesBadRequest) Error() string {
 	return fmt.Sprintf("[GET /messaging/v1/orders/{amazonOrderId}/attributes][%d] getAttributesBadRequest  %+v", 400, o.Payload)
 }
+
+func (o *GetAttributesBadRequest) String() string {
+	return fmt.Sprintf("[GET /messaging/v1/orders/{amazonOrderId}/attributes][%d] getAttributesBadRequest  %+v", 400, o.Payload)
+}
+
 func (o *GetAttributesBadRequest) GetPayload() *messaging_models.GetAttributesResponse {
 	return o.Payload
 }
@@ -197,7 +259,8 @@ func NewGetAttributesForbidden() *GetAttributesForbidden {
 	return &GetAttributesForbidden{}
 }
 
-/* GetAttributesForbidden describes a response with status code 403, with default header values.
+/*
+GetAttributesForbidden describes a response with status code 403, with default header values.
 
 Indicates that access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.
 */
@@ -210,9 +273,39 @@ type GetAttributesForbidden struct {
 	Payload *messaging_models.GetAttributesResponse
 }
 
+// IsSuccess returns true when this get attributes forbidden response has a 2xx status code
+func (o *GetAttributesForbidden) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get attributes forbidden response has a 3xx status code
+func (o *GetAttributesForbidden) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get attributes forbidden response has a 4xx status code
+func (o *GetAttributesForbidden) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get attributes forbidden response has a 5xx status code
+func (o *GetAttributesForbidden) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get attributes forbidden response a status code equal to that given
+func (o *GetAttributesForbidden) IsCode(code int) bool {
+	return code == 403
+}
+
 func (o *GetAttributesForbidden) Error() string {
 	return fmt.Sprintf("[GET /messaging/v1/orders/{amazonOrderId}/attributes][%d] getAttributesForbidden  %+v", 403, o.Payload)
 }
+
+func (o *GetAttributesForbidden) String() string {
+	return fmt.Sprintf("[GET /messaging/v1/orders/{amazonOrderId}/attributes][%d] getAttributesForbidden  %+v", 403, o.Payload)
+}
+
 func (o *GetAttributesForbidden) GetPayload() *messaging_models.GetAttributesResponse {
 	return o.Payload
 }
@@ -241,7 +334,8 @@ func NewGetAttributesNotFound() *GetAttributesNotFound {
 	return &GetAttributesNotFound{}
 }
 
-/* GetAttributesNotFound describes a response with status code 404, with default header values.
+/*
+GetAttributesNotFound describes a response with status code 404, with default header values.
 
 The resource specified does not exist.
 */
@@ -258,9 +352,39 @@ type GetAttributesNotFound struct {
 	Payload *messaging_models.GetAttributesResponse
 }
 
+// IsSuccess returns true when this get attributes not found response has a 2xx status code
+func (o *GetAttributesNotFound) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get attributes not found response has a 3xx status code
+func (o *GetAttributesNotFound) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get attributes not found response has a 4xx status code
+func (o *GetAttributesNotFound) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get attributes not found response has a 5xx status code
+func (o *GetAttributesNotFound) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get attributes not found response a status code equal to that given
+func (o *GetAttributesNotFound) IsCode(code int) bool {
+	return code == 404
+}
+
 func (o *GetAttributesNotFound) Error() string {
 	return fmt.Sprintf("[GET /messaging/v1/orders/{amazonOrderId}/attributes][%d] getAttributesNotFound  %+v", 404, o.Payload)
 }
+
+func (o *GetAttributesNotFound) String() string {
+	return fmt.Sprintf("[GET /messaging/v1/orders/{amazonOrderId}/attributes][%d] getAttributesNotFound  %+v", 404, o.Payload)
+}
+
 func (o *GetAttributesNotFound) GetPayload() *messaging_models.GetAttributesResponse {
 	return o.Payload
 }
@@ -296,7 +420,8 @@ func NewGetAttributesRequestEntityTooLarge() *GetAttributesRequestEntityTooLarge
 	return &GetAttributesRequestEntityTooLarge{}
 }
 
-/* GetAttributesRequestEntityTooLarge describes a response with status code 413, with default header values.
+/*
+GetAttributesRequestEntityTooLarge describes a response with status code 413, with default header values.
 
 The request size exceeded the maximum accepted size.
 */
@@ -314,9 +439,39 @@ type GetAttributesRequestEntityTooLarge struct {
 	Payload *messaging_models.GetAttributesResponse
 }
 
+// IsSuccess returns true when this get attributes request entity too large response has a 2xx status code
+func (o *GetAttributesRequestEntityTooLarge) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get attributes request entity too large response has a 3xx status code
+func (o *GetAttributesRequestEntityTooLarge) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get attributes request entity too large response has a 4xx status code
+func (o *GetAttributesRequestEntityTooLarge) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get attributes request entity too large response has a 5xx status code
+func (o *GetAttributesRequestEntityTooLarge) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get attributes request entity too large response a status code equal to that given
+func (o *GetAttributesRequestEntityTooLarge) IsCode(code int) bool {
+	return code == 413
+}
+
 func (o *GetAttributesRequestEntityTooLarge) Error() string {
 	return fmt.Sprintf("[GET /messaging/v1/orders/{amazonOrderId}/attributes][%d] getAttributesRequestEntityTooLarge  %+v", 413, o.Payload)
 }
+
+func (o *GetAttributesRequestEntityTooLarge) String() string {
+	return fmt.Sprintf("[GET /messaging/v1/orders/{amazonOrderId}/attributes][%d] getAttributesRequestEntityTooLarge  %+v", 413, o.Payload)
+}
+
 func (o *GetAttributesRequestEntityTooLarge) GetPayload() *messaging_models.GetAttributesResponse {
 	return o.Payload
 }
@@ -352,7 +507,8 @@ func NewGetAttributesUnsupportedMediaType() *GetAttributesUnsupportedMediaType {
 	return &GetAttributesUnsupportedMediaType{}
 }
 
-/* GetAttributesUnsupportedMediaType describes a response with status code 415, with default header values.
+/*
+GetAttributesUnsupportedMediaType describes a response with status code 415, with default header values.
 
 The request payload is in an unsupported format.
 */
@@ -370,9 +526,39 @@ type GetAttributesUnsupportedMediaType struct {
 	Payload *messaging_models.GetAttributesResponse
 }
 
+// IsSuccess returns true when this get attributes unsupported media type response has a 2xx status code
+func (o *GetAttributesUnsupportedMediaType) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get attributes unsupported media type response has a 3xx status code
+func (o *GetAttributesUnsupportedMediaType) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get attributes unsupported media type response has a 4xx status code
+func (o *GetAttributesUnsupportedMediaType) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get attributes unsupported media type response has a 5xx status code
+func (o *GetAttributesUnsupportedMediaType) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get attributes unsupported media type response a status code equal to that given
+func (o *GetAttributesUnsupportedMediaType) IsCode(code int) bool {
+	return code == 415
+}
+
 func (o *GetAttributesUnsupportedMediaType) Error() string {
 	return fmt.Sprintf("[GET /messaging/v1/orders/{amazonOrderId}/attributes][%d] getAttributesUnsupportedMediaType  %+v", 415, o.Payload)
 }
+
+func (o *GetAttributesUnsupportedMediaType) String() string {
+	return fmt.Sprintf("[GET /messaging/v1/orders/{amazonOrderId}/attributes][%d] getAttributesUnsupportedMediaType  %+v", 415, o.Payload)
+}
+
 func (o *GetAttributesUnsupportedMediaType) GetPayload() *messaging_models.GetAttributesResponse {
 	return o.Payload
 }
@@ -408,7 +594,8 @@ func NewGetAttributesTooManyRequests() *GetAttributesTooManyRequests {
 	return &GetAttributesTooManyRequests{}
 }
 
-/* GetAttributesTooManyRequests describes a response with status code 429, with default header values.
+/*
+GetAttributesTooManyRequests describes a response with status code 429, with default header values.
 
 The frequency of requests was greater than allowed.
 */
@@ -426,9 +613,39 @@ type GetAttributesTooManyRequests struct {
 	Payload *messaging_models.GetAttributesResponse
 }
 
+// IsSuccess returns true when this get attributes too many requests response has a 2xx status code
+func (o *GetAttributesTooManyRequests) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get attributes too many requests response has a 3xx status code
+func (o *GetAttributesTooManyRequests) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get attributes too many requests response has a 4xx status code
+func (o *GetAttributesTooManyRequests) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get attributes too many requests response has a 5xx status code
+func (o *GetAttributesTooManyRequests) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get attributes too many requests response a status code equal to that given
+func (o *GetAttributesTooManyRequests) IsCode(code int) bool {
+	return code == 429
+}
+
 func (o *GetAttributesTooManyRequests) Error() string {
 	return fmt.Sprintf("[GET /messaging/v1/orders/{amazonOrderId}/attributes][%d] getAttributesTooManyRequests  %+v", 429, o.Payload)
 }
+
+func (o *GetAttributesTooManyRequests) String() string {
+	return fmt.Sprintf("[GET /messaging/v1/orders/{amazonOrderId}/attributes][%d] getAttributesTooManyRequests  %+v", 429, o.Payload)
+}
+
 func (o *GetAttributesTooManyRequests) GetPayload() *messaging_models.GetAttributesResponse {
 	return o.Payload
 }
@@ -464,7 +681,8 @@ func NewGetAttributesInternalServerError() *GetAttributesInternalServerError {
 	return &GetAttributesInternalServerError{}
 }
 
-/* GetAttributesInternalServerError describes a response with status code 500, with default header values.
+/*
+GetAttributesInternalServerError describes a response with status code 500, with default header values.
 
 An unexpected condition occurred that prevented the server from fulfilling the request.
 */
@@ -482,9 +700,39 @@ type GetAttributesInternalServerError struct {
 	Payload *messaging_models.GetAttributesResponse
 }
 
+// IsSuccess returns true when this get attributes internal server error response has a 2xx status code
+func (o *GetAttributesInternalServerError) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get attributes internal server error response has a 3xx status code
+func (o *GetAttributesInternalServerError) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get attributes internal server error response has a 4xx status code
+func (o *GetAttributesInternalServerError) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get attributes internal server error response has a 5xx status code
+func (o *GetAttributesInternalServerError) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this get attributes internal server error response a status code equal to that given
+func (o *GetAttributesInternalServerError) IsCode(code int) bool {
+	return code == 500
+}
+
 func (o *GetAttributesInternalServerError) Error() string {
 	return fmt.Sprintf("[GET /messaging/v1/orders/{amazonOrderId}/attributes][%d] getAttributesInternalServerError  %+v", 500, o.Payload)
 }
+
+func (o *GetAttributesInternalServerError) String() string {
+	return fmt.Sprintf("[GET /messaging/v1/orders/{amazonOrderId}/attributes][%d] getAttributesInternalServerError  %+v", 500, o.Payload)
+}
+
 func (o *GetAttributesInternalServerError) GetPayload() *messaging_models.GetAttributesResponse {
 	return o.Payload
 }
@@ -520,7 +768,8 @@ func NewGetAttributesServiceUnavailable() *GetAttributesServiceUnavailable {
 	return &GetAttributesServiceUnavailable{}
 }
 
-/* GetAttributesServiceUnavailable describes a response with status code 503, with default header values.
+/*
+GetAttributesServiceUnavailable describes a response with status code 503, with default header values.
 
 Temporary overloading or maintenance of the server.
 */
@@ -538,9 +787,39 @@ type GetAttributesServiceUnavailable struct {
 	Payload *messaging_models.GetAttributesResponse
 }
 
+// IsSuccess returns true when this get attributes service unavailable response has a 2xx status code
+func (o *GetAttributesServiceUnavailable) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get attributes service unavailable response has a 3xx status code
+func (o *GetAttributesServiceUnavailable) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get attributes service unavailable response has a 4xx status code
+func (o *GetAttributesServiceUnavailable) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get attributes service unavailable response has a 5xx status code
+func (o *GetAttributesServiceUnavailable) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this get attributes service unavailable response a status code equal to that given
+func (o *GetAttributesServiceUnavailable) IsCode(code int) bool {
+	return code == 503
+}
+
 func (o *GetAttributesServiceUnavailable) Error() string {
 	return fmt.Sprintf("[GET /messaging/v1/orders/{amazonOrderId}/attributes][%d] getAttributesServiceUnavailable  %+v", 503, o.Payload)
 }
+
+func (o *GetAttributesServiceUnavailable) String() string {
+	return fmt.Sprintf("[GET /messaging/v1/orders/{amazonOrderId}/attributes][%d] getAttributesServiceUnavailable  %+v", 503, o.Payload)
+}
+
 func (o *GetAttributesServiceUnavailable) GetPayload() *messaging_models.GetAttributesResponse {
 	return o.Payload
 }

@@ -55,10 +55,12 @@ func NewCreateDigitalAccessKeyParamsWithHTTPClient(client *http.Client) *CreateD
 	}
 }
 
-/* CreateDigitalAccessKeyParams contains all the parameters to send to the API endpoint
-   for the create digital access key operation.
+/*
+CreateDigitalAccessKeyParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the create digital access key operation.
+
+	Typically these are written to a http.Request.
 */
 type CreateDigitalAccessKeyParams struct {
 
