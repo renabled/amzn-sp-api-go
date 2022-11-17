@@ -40,15 +40,9 @@ type ClientService interface {
 }
 
 /*
-	GetCatalogItem Returns a specified item and its attributes.
+	GetCatalogItem Effective September 30, 2022, the `getCatalogItem` operation will no longer be available in the Selling Partner API for Catalog Items v0. This operation is available in the latest version of the [Selling Partner API for Catalog Items v2022-04-01](doc:catalog-items-api-v2022-04-01-reference). Integrations that rely on this operation should migrate to the latest version to avoid service disruption.
 
-**Usage Plan:**
-
-| Rate (requests per second) | Burst |
-| ---- | ---- |
-| deprecated | deprecated |
-
-The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
+_Note:_ The [`listCatalogCategories`](#get-catalogv0categories) operation is not being deprecated and you can continue to make calls to it.
 */
 func (a *Client) GetCatalogItem(params *GetCatalogItemParams, opts ...ClientOption) (*GetCatalogItemOK, error) {
 	// TODO: Validate the params before sending
@@ -132,19 +126,9 @@ func (a *Client) ListCatalogCategories(params *ListCatalogCategoriesParams, opts
 }
 
 /*
-	ListCatalogItems Returns a list of items and their attributes, based on a search query or item identifiers that you specify. When based on a search query, provide the Query parameter and optionally, the QueryContextId parameter. When based on item identifiers, provide a single appropriate parameter based on the identifier type, and specify the associated item value.
+	ListCatalogItems Effective September 30, 2022, the `listCatalogItems` operation will no longer be available in the Selling Partner API for Catalog Items v0. As an alternative, `searchCatalogItems` is available in the latest version of the [Selling Partner API for Catalog Items v2022-04-01](doc:catalog-items-api-v2022-04-01-reference). Integrations that rely on the `listCatalogItems` operation should migrate to the `searchCatalogItems`operation to avoid service disruption.
 
-MarketplaceId is always required. At least one of Query, SellerSKU, UPC, EAN, ISBN, JAN is also required.
-
-This operation returns a maximum of ten products and does not return non-buyable products.
-
-**Usage Plan:**
-
-| Rate (requests per second) | Burst |
-| ---- | ---- |
-| deprecated | deprecated |
-
-The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
+_Note:_ The [`listCatalogCategories`](#get-catalogv0categories) operation is not being deprecated and you can continue to make calls to it.
 */
 func (a *Client) ListCatalogItems(params *ListCatalogItemsParams, opts ...ClientOption) (*ListCatalogItemsOK, error) {
 	// TODO: Validate the params before sending
