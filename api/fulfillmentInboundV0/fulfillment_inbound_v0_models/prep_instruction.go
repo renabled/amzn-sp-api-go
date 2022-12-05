@@ -47,6 +47,33 @@ const (
 
 	// PrepInstructionHangGarment captures enum value "HangGarment"
 	PrepInstructionHangGarment PrepInstruction = "HangGarment"
+
+	// PrepInstructionSetCreation captures enum value "SetCreation"
+	PrepInstructionSetCreation PrepInstruction = "SetCreation"
+
+	// PrepInstructionBoxing captures enum value "Boxing"
+	PrepInstructionBoxing PrepInstruction = "Boxing"
+
+	// PrepInstructionRemoveFromHanger captures enum value "RemoveFromHanger"
+	PrepInstructionRemoveFromHanger PrepInstruction = "RemoveFromHanger"
+
+	// PrepInstructionDebundle captures enum value "Debundle"
+	PrepInstructionDebundle PrepInstruction = "Debundle"
+
+	// PrepInstructionSuffocationStickering captures enum value "SuffocationStickering"
+	PrepInstructionSuffocationStickering PrepInstruction = "SuffocationStickering"
+
+	// PrepInstructionCapSealing captures enum value "CapSealing"
+	PrepInstructionCapSealing PrepInstruction = "CapSealing"
+
+	// PrepInstructionSetStickering captures enum value "SetStickering"
+	PrepInstructionSetStickering PrepInstruction = "SetStickering"
+
+	// PrepInstructionBlankStickering captures enum value "BlankStickering"
+	PrepInstructionBlankStickering PrepInstruction = "BlankStickering"
+
+	// PrepInstructionNoPrep captures enum value "NoPrep"
+	PrepInstructionNoPrep PrepInstruction = "NoPrep"
 )
 
 // for schema
@@ -54,7 +81,7 @@ var prepInstructionEnum []interface{}
 
 func init() {
 	var res []PrepInstruction
-	if err := json.Unmarshal([]byte(`["Polybagging","BubbleWrapping","Taping","BlackShrinkWrapping","Labeling","HangGarment"]`), &res); err != nil {
+	if err := json.Unmarshal([]byte(`["Polybagging","BubbleWrapping","Taping","BlackShrinkWrapping","Labeling","HangGarment","SetCreation","Boxing","RemoveFromHanger","Debundle","SuffocationStickering","CapSealing","SetStickering","BlankStickering","NoPrep"]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
