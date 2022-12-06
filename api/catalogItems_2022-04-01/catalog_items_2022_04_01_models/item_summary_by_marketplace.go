@@ -8,6 +8,7 @@ package catalog_items_2022_04_01_models
 import (
 	"context"
 	"encoding/json"
+	"strconv"
 
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/strfmt"
@@ -20,6 +21,12 @@ import (
 // swagger:model ItemSummaryByMarketplace
 type ItemSummaryByMarketplace struct {
 
+	// Identifies an Amazon catalog item is intended for an adult audience or is sexual in nature.
+	AdultProduct bool `json:"adultProduct,omitempty"`
+
+	// Identifies an Amazon catalog item is autographed by a player or celebrity.
+	Autographed bool `json:"autographed,omitempty"`
+
 	// Name of the brand associated with an Amazon catalog item.
 	Brand string `json:"brand,omitempty"`
 
@@ -28,6 +35,9 @@ type ItemSummaryByMarketplace struct {
 
 	// Name of the color associated with an Amazon catalog item.
 	Color string `json:"color,omitempty"`
+
+	// Individual contributors to the creation of an item, such as the authors or actors.
+	Contributors []*ItemContributor `json:"contributors"`
 
 	// Classification type associated with the Amazon catalog item.
 	// Enum: [BASE_PRODUCT OTHER PRODUCT_BUNDLE VARIATION_PARENT]
@@ -43,6 +53,9 @@ type ItemSummaryByMarketplace struct {
 	// Required: true
 	MarketplaceID *string `json:"marketplaceId"`
 
+	// Identifies an Amazon catalog item is memorabilia valued for its connection with historical events, culture, or entertainment.
+	Memorabilia bool `json:"memorabilia,omitempty"`
+
 	// Model number associated with an Amazon catalog item.
 	ModelNumber string `json:"modelNumber,omitempty"`
 
@@ -52,11 +65,18 @@ type ItemSummaryByMarketplace struct {
 	// Part number associated with an Amazon catalog item.
 	PartNumber string `json:"partNumber,omitempty"`
 
+	// First date on which an Amazon catalog item is shippable to customers.
+	// Format: date
+	ReleaseDate strfmt.Date `json:"releaseDate,omitempty"`
+
 	// Name of the size associated with an Amazon catalog item.
 	Size string `json:"size,omitempty"`
 
 	// Name of the style associated with an Amazon catalog item.
 	Style string `json:"style,omitempty"`
+
+	// Identifies an Amazon catalog item is eligible for trade-in.
+	TradeInEligible bool `json:"tradeInEligible,omitempty"`
 
 	// Identifier of the website display group associated with an Amazon catalog item.
 	WebsiteDisplayGroup string `json:"websiteDisplayGroup,omitempty"`
@@ -73,11 +93,19 @@ func (m *ItemSummaryByMarketplace) Validate(formats strfmt.Registry) error {
 		res = append(res, err)
 	}
 
+	if err := m.validateContributors(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.validateItemClassification(formats); err != nil {
 		res = append(res, err)
 	}
 
 	if err := m.validateMarketplaceID(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateReleaseDate(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -101,6 +129,32 @@ func (m *ItemSummaryByMarketplace) validateBrowseClassification(formats strfmt.R
 			}
 			return err
 		}
+	}
+
+	return nil
+}
+
+func (m *ItemSummaryByMarketplace) validateContributors(formats strfmt.Registry) error {
+	if swag.IsZero(m.Contributors) { // not required
+		return nil
+	}
+
+	for i := 0; i < len(m.Contributors); i++ {
+		if swag.IsZero(m.Contributors[i]) { // not required
+			continue
+		}
+
+		if m.Contributors[i] != nil {
+			if err := m.Contributors[i].Validate(formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("contributors" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("contributors" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
 	}
 
 	return nil
@@ -163,11 +217,27 @@ func (m *ItemSummaryByMarketplace) validateMarketplaceID(formats strfmt.Registry
 	return nil
 }
 
+func (m *ItemSummaryByMarketplace) validateReleaseDate(formats strfmt.Registry) error {
+	if swag.IsZero(m.ReleaseDate) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("releaseDate", "body", "date", m.ReleaseDate.String(), formats); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 // ContextValidate validate this item summary by marketplace based on the context it is used
 func (m *ItemSummaryByMarketplace) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
 	var res []error
 
 	if err := m.contextValidateBrowseClassification(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateContributors(ctx, formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -188,6 +258,26 @@ func (m *ItemSummaryByMarketplace) contextValidateBrowseClassification(ctx conte
 			}
 			return err
 		}
+	}
+
+	return nil
+}
+
+func (m *ItemSummaryByMarketplace) contextValidateContributors(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(m.Contributors); i++ {
+
+		if m.Contributors[i] != nil {
+			if err := m.Contributors[i].ContextValidate(ctx, formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("contributors" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("contributors" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
 	}
 
 	return nil
