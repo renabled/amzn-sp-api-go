@@ -106,7 +106,7 @@ func (a *Client) CancelReport(params *CancelReportParams, opts ...ClientOption) 
 | ---- | ---- |
 | 0.0222 | 10 |
 
-For more information, see "Usage Plans and Rate Limits" in the Selling Partner API documentation.
+For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api) in the Selling Partner API documentation.
 */
 func (a *Client) CancelReportSchedule(params *CancelReportScheduleParams, opts ...ClientOption) (*CancelReportScheduleOK, error) {
 	// TODO: Validate the params before sending
@@ -198,7 +198,7 @@ func (a *Client) CreateReport(params *CreateReportParams, opts ...ClientOption) 
 | ---- | ---- |
 | 0.0222 | 10 |
 
-For more information, see "Usage Plans and Rate Limits" in the Selling Partner API documentation.
+For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api) in the Selling Partner API documentation.
 */
 func (a *Client) CreateReportSchedule(params *CreateReportScheduleParams, opts ...ClientOption) (*CreateReportScheduleCreated, error) {
 	// TODO: Validate the params before sending
@@ -244,7 +244,7 @@ func (a *Client) CreateReportSchedule(params *CreateReportScheduleParams, opts .
 | ---- | ---- |
 | 2.0 | 15 |
 
-For more information, see "Usage Plans and Rate Limits" in the Selling Partner API documentation.
+For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api) in the Selling Partner API documentation.
 */
 func (a *Client) GetReport(params *GetReportParams, opts ...ClientOption) (*GetReportOK, error) {
 	// TODO: Validate the params before sending
@@ -290,7 +290,7 @@ func (a *Client) GetReport(params *GetReportParams, opts ...ClientOption) (*GetR
 | ---- | ---- |
 | 0.0167 | 15 |
 
-For more information, see "Usage Plans and Rate Limits" in the Selling Partner API documentation.
+For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api)in the Selling Partner API documentation.
 */
 func (a *Client) GetReportDocument(params *GetReportDocumentParams, opts ...ClientOption) (*GetReportDocumentOK, error) {
 	// TODO: Validate the params before sending
@@ -336,7 +336,7 @@ func (a *Client) GetReportDocument(params *GetReportDocumentParams, opts ...Clie
 | ---- | ---- |
 | 0.0222 | 10 |
 
-For more information, see "Usage Plans and Rate Limits" in the Selling Partner API documentation.
+For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api) in the Selling Partner API documentation.
 */
 func (a *Client) GetReportSchedule(params *GetReportScheduleParams, opts ...ClientOption) (*GetReportScheduleOK, error) {
 	// TODO: Validate the params before sending
@@ -382,7 +382,7 @@ func (a *Client) GetReportSchedule(params *GetReportScheduleParams, opts ...Clie
 | ---- | ---- |
 | 0.0222 | 10 |
 
-For more information, see "Usage Plans and Rate Limits" in the Selling Partner API documentation.
+For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api) in the Selling Partner API documentation.
 */
 func (a *Client) GetReportSchedules(params *GetReportSchedulesParams, opts ...ClientOption) (*GetReportSchedulesOK, error) {
 	// TODO: Validate the params before sending
