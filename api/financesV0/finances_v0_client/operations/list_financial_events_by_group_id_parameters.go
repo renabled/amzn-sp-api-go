@@ -64,7 +64,7 @@ type ListFinancialEventsByGroupIDParams struct {
 
 	/* MaxResultsPerPage.
 
-	   The maximum number of results to return per page.
+	   The maximum number of results to return per page. If the response exceeds the maximum number of transactions or 10 MB, the API responds with 'InvalidInput'.
 
 	   Format: int32
 	   Default: 100
@@ -76,6 +76,22 @@ type ListFinancialEventsByGroupIDParams struct {
 	   A string token returned in the response of your previous request.
 	*/
 	NextToken *string
+
+	/* PostedAfter.
+
+	   A date used for selecting financial events posted after (or at) a specified time. The date-time **must** be more than two minutes before the time of the request, in ISO 8601 date time format.
+
+	   Format: date-time
+	*/
+	PostedAfter *strfmt.DateTime
+
+	/* PostedBefore.
+
+	   A date used for selecting financial events posted before (but not at) a specified time. The date-time must be later than `PostedAfter` and no later than two minutes before the request was submitted, in ISO 8601 date time format. If `PostedAfter` and `PostedBefore` are more than 180 days apart, no financial events are returned. You must specify the `PostedAfter` parameter if you specify the `PostedBefore` parameter. Default: Now minus two minutes.
+
+	   Format: date-time
+	*/
+	PostedBefore *strfmt.DateTime
 
 	/* EventGroupID.
 
@@ -169,6 +185,28 @@ func (o *ListFinancialEventsByGroupIDParams) SetNextToken(nextToken *string) {
 	o.NextToken = nextToken
 }
 
+// WithPostedAfter adds the postedAfter to the list financial events by group Id params
+func (o *ListFinancialEventsByGroupIDParams) WithPostedAfter(postedAfter *strfmt.DateTime) *ListFinancialEventsByGroupIDParams {
+	o.SetPostedAfter(postedAfter)
+	return o
+}
+
+// SetPostedAfter adds the postedAfter to the list financial events by group Id params
+func (o *ListFinancialEventsByGroupIDParams) SetPostedAfter(postedAfter *strfmt.DateTime) {
+	o.PostedAfter = postedAfter
+}
+
+// WithPostedBefore adds the postedBefore to the list financial events by group Id params
+func (o *ListFinancialEventsByGroupIDParams) WithPostedBefore(postedBefore *strfmt.DateTime) *ListFinancialEventsByGroupIDParams {
+	o.SetPostedBefore(postedBefore)
+	return o
+}
+
+// SetPostedBefore adds the postedBefore to the list financial events by group Id params
+func (o *ListFinancialEventsByGroupIDParams) SetPostedBefore(postedBefore *strfmt.DateTime) {
+	o.PostedBefore = postedBefore
+}
+
 // WithEventGroupID adds the eventGroupID to the list financial events by group Id params
 func (o *ListFinancialEventsByGroupIDParams) WithEventGroupID(eventGroupID string) *ListFinancialEventsByGroupIDParams {
 	o.SetEventGroupID(eventGroupID)
@@ -217,6 +255,40 @@ func (o *ListFinancialEventsByGroupIDParams) WriteToRequest(r runtime.ClientRequ
 		if qNextToken != "" {
 
 			if err := r.SetQueryParam("NextToken", qNextToken); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.PostedAfter != nil {
+
+		// query param PostedAfter
+		var qrPostedAfter strfmt.DateTime
+
+		if o.PostedAfter != nil {
+			qrPostedAfter = *o.PostedAfter
+		}
+		qPostedAfter := qrPostedAfter.String()
+		if qPostedAfter != "" {
+
+			if err := r.SetQueryParam("PostedAfter", qPostedAfter); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.PostedBefore != nil {
+
+		// query param PostedBefore
+		var qrPostedBefore strfmt.DateTime
+
+		if o.PostedBefore != nil {
+			qrPostedBefore = *o.PostedBefore
+		}
+		qPostedBefore := qrPostedBefore.String()
+		if qPostedBefore != "" {
+
+			if err := r.SetQueryParam("PostedBefore", qPostedBefore); err != nil {
 				return err
 			}
 		}

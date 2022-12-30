@@ -14,13 +14,13 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// ShipmentSettleEventList A list of `ShipmentEvent` items.
+// AdhocDisbursementEventList A list of `AdhocDisbursement` events.
 //
-// swagger:model ShipmentSettleEventList
-type ShipmentSettleEventList []*ShipmentEvent
+// swagger:model AdhocDisbursementEventList
+type AdhocDisbursementEventList []*AdhocDisbursementEvent
 
-// Validate validates this shipment settle event list
-func (m ShipmentSettleEventList) Validate(formats strfmt.Registry) error {
+// Validate validates this adhoc disbursement event list
+func (m AdhocDisbursementEventList) Validate(formats strfmt.Registry) error {
 	var res []error
 
 	for i := 0; i < len(m); i++ {
@@ -47,8 +47,8 @@ func (m ShipmentSettleEventList) Validate(formats strfmt.Registry) error {
 	return nil
 }
 
-// ContextValidate validate this shipment settle event list based on the context it is used
-func (m ShipmentSettleEventList) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+// ContextValidate validate this adhoc disbursement event list based on the context it is used
+func (m AdhocDisbursementEventList) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
 	var res []error
 
 	for i := 0; i < len(m); i++ {

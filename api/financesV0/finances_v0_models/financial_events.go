@@ -18,6 +18,9 @@ import (
 // swagger:model FinancialEvents
 type FinancialEvents struct {
 
+	// adhoc disbursement event list
+	AdhocDisbursementEventList AdhocDisbursementEventList `json:"AdhocDisbursementEventList,omitempty"`
+
 	// adjustment event list
 	AdjustmentEventList AdjustmentEventList `json:"AdjustmentEventList,omitempty"`
 
@@ -26,6 +29,12 @@ type FinancialEvents struct {
 
 	// affordability expense reversal event list
 	AffordabilityExpenseReversalEventList AffordabilityExpenseEventList `json:"AffordabilityExpenseReversalEventList,omitempty"`
+
+	// capacity reservation billing event list
+	CapacityReservationBillingEventList CapacityReservationBillingEventList `json:"CapacityReservationBillingEventList,omitempty"`
+
+	// charge refund event list
+	ChargeRefundEventList ChargeRefundEventList `json:"ChargeRefundEventList,omitempty"`
 
 	// A list of chargeback events.
 	ChargebackEventList ShipmentEventList `json:"ChargebackEventList,omitempty"`
@@ -38,6 +47,9 @@ type FinancialEvents struct {
 
 	// f b a liquidation event list
 	FBALiquidationEventList FBALiquidationEventList `json:"FBALiquidationEventList,omitempty"`
+
+	// failed adhoc disbursement event list
+	FailedAdhocDisbursementEventList *FailedAdhocDisbursementEventList `json:"FailedAdhocDisbursementEventList,omitempty"`
 
 	// A list of guarantee claim events.
 	GuaranteeClaimEventList ShipmentEventList `json:"GuaranteeClaimEventList,omitempty"`
@@ -90,19 +102,29 @@ type FinancialEvents struct {
 	// A list of shipment events.
 	ShipmentEventList ShipmentEventList `json:"ShipmentEventList,omitempty"`
 
-	// shipment settle event list
+	// A list of Shipment Settle events.
 	ShipmentSettleEventList ShipmentSettleEventList `json:"ShipmentSettleEventList,omitempty"`
+
+	// t d s reimbursement event list
+	TDSReimbursementEventList TDSReimbursementEventList `json:"TDSReimbursementEventList,omitempty"`
 
 	// tax withholding event list
 	TaxWithholdingEventList TaxWithholdingEventList `json:"TaxWithholdingEventList,omitempty"`
 
 	// trial shipment event list
 	TrialShipmentEventList TrialShipmentEventList `json:"TrialShipmentEventList,omitempty"`
+
+	// value added service charge event list
+	ValueAddedServiceChargeEventList *ValueAddedServiceChargeEventList `json:"ValueAddedServiceChargeEventList,omitempty"`
 }
 
 // Validate validates this financial events
 func (m *FinancialEvents) Validate(formats strfmt.Registry) error {
 	var res []error
+
+	if err := m.validateAdhocDisbursementEventList(formats); err != nil {
+		res = append(res, err)
+	}
 
 	if err := m.validateAdjustmentEventList(formats); err != nil {
 		res = append(res, err)
@@ -113,6 +135,14 @@ func (m *FinancialEvents) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validateAffordabilityExpenseReversalEventList(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateCapacityReservationBillingEventList(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateChargeRefundEventList(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -129,6 +159,10 @@ func (m *FinancialEvents) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validateFBALiquidationEventList(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateFailedAdhocDisbursementEventList(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -204,6 +238,10 @@ func (m *FinancialEvents) Validate(formats strfmt.Registry) error {
 		res = append(res, err)
 	}
 
+	if err := m.validateTDSReimbursementEventList(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.validateTaxWithholdingEventList(formats); err != nil {
 		res = append(res, err)
 	}
@@ -212,9 +250,30 @@ func (m *FinancialEvents) Validate(formats strfmt.Registry) error {
 		res = append(res, err)
 	}
 
+	if err := m.validateValueAddedServiceChargeEventList(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if len(res) > 0 {
 		return errors.CompositeValidationError(res...)
 	}
+	return nil
+}
+
+func (m *FinancialEvents) validateAdhocDisbursementEventList(formats strfmt.Registry) error {
+	if swag.IsZero(m.AdhocDisbursementEventList) { // not required
+		return nil
+	}
+
+	if err := m.AdhocDisbursementEventList.Validate(formats); err != nil {
+		if ve, ok := err.(*errors.Validation); ok {
+			return ve.ValidateName("AdhocDisbursementEventList")
+		} else if ce, ok := err.(*errors.CompositeError); ok {
+			return ce.ValidateName("AdhocDisbursementEventList")
+		}
+		return err
+	}
+
 	return nil
 }
 
@@ -262,6 +321,40 @@ func (m *FinancialEvents) validateAffordabilityExpenseReversalEventList(formats 
 			return ve.ValidateName("AffordabilityExpenseReversalEventList")
 		} else if ce, ok := err.(*errors.CompositeError); ok {
 			return ce.ValidateName("AffordabilityExpenseReversalEventList")
+		}
+		return err
+	}
+
+	return nil
+}
+
+func (m *FinancialEvents) validateCapacityReservationBillingEventList(formats strfmt.Registry) error {
+	if swag.IsZero(m.CapacityReservationBillingEventList) { // not required
+		return nil
+	}
+
+	if err := m.CapacityReservationBillingEventList.Validate(formats); err != nil {
+		if ve, ok := err.(*errors.Validation); ok {
+			return ve.ValidateName("CapacityReservationBillingEventList")
+		} else if ce, ok := err.(*errors.CompositeError); ok {
+			return ce.ValidateName("CapacityReservationBillingEventList")
+		}
+		return err
+	}
+
+	return nil
+}
+
+func (m *FinancialEvents) validateChargeRefundEventList(formats strfmt.Registry) error {
+	if swag.IsZero(m.ChargeRefundEventList) { // not required
+		return nil
+	}
+
+	if err := m.ChargeRefundEventList.Validate(formats); err != nil {
+		if ve, ok := err.(*errors.Validation); ok {
+			return ve.ValidateName("ChargeRefundEventList")
+		} else if ce, ok := err.(*errors.CompositeError); ok {
+			return ce.ValidateName("ChargeRefundEventList")
 		}
 		return err
 	}
@@ -332,6 +425,25 @@ func (m *FinancialEvents) validateFBALiquidationEventList(formats strfmt.Registr
 			return ce.ValidateName("FBALiquidationEventList")
 		}
 		return err
+	}
+
+	return nil
+}
+
+func (m *FinancialEvents) validateFailedAdhocDisbursementEventList(formats strfmt.Registry) error {
+	if swag.IsZero(m.FailedAdhocDisbursementEventList) { // not required
+		return nil
+	}
+
+	if m.FailedAdhocDisbursementEventList != nil {
+		if err := m.FailedAdhocDisbursementEventList.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("FailedAdhocDisbursementEventList")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("FailedAdhocDisbursementEventList")
+			}
+			return err
+		}
 	}
 
 	return nil
@@ -643,6 +755,23 @@ func (m *FinancialEvents) validateShipmentSettleEventList(formats strfmt.Registr
 	return nil
 }
 
+func (m *FinancialEvents) validateTDSReimbursementEventList(formats strfmt.Registry) error {
+	if swag.IsZero(m.TDSReimbursementEventList) { // not required
+		return nil
+	}
+
+	if err := m.TDSReimbursementEventList.Validate(formats); err != nil {
+		if ve, ok := err.(*errors.Validation); ok {
+			return ve.ValidateName("TDSReimbursementEventList")
+		} else if ce, ok := err.(*errors.CompositeError); ok {
+			return ce.ValidateName("TDSReimbursementEventList")
+		}
+		return err
+	}
+
+	return nil
+}
+
 func (m *FinancialEvents) validateTaxWithholdingEventList(formats strfmt.Registry) error {
 	if swag.IsZero(m.TaxWithholdingEventList) { // not required
 		return nil
@@ -677,9 +806,32 @@ func (m *FinancialEvents) validateTrialShipmentEventList(formats strfmt.Registry
 	return nil
 }
 
+func (m *FinancialEvents) validateValueAddedServiceChargeEventList(formats strfmt.Registry) error {
+	if swag.IsZero(m.ValueAddedServiceChargeEventList) { // not required
+		return nil
+	}
+
+	if m.ValueAddedServiceChargeEventList != nil {
+		if err := m.ValueAddedServiceChargeEventList.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("ValueAddedServiceChargeEventList")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("ValueAddedServiceChargeEventList")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
 // ContextValidate validate this financial events based on the context it is used
 func (m *FinancialEvents) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
 	var res []error
+
+	if err := m.contextValidateAdhocDisbursementEventList(ctx, formats); err != nil {
+		res = append(res, err)
+	}
 
 	if err := m.contextValidateAdjustmentEventList(ctx, formats); err != nil {
 		res = append(res, err)
@@ -690,6 +842,14 @@ func (m *FinancialEvents) ContextValidate(ctx context.Context, formats strfmt.Re
 	}
 
 	if err := m.contextValidateAffordabilityExpenseReversalEventList(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateCapacityReservationBillingEventList(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateChargeRefundEventList(ctx, formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -706,6 +866,10 @@ func (m *FinancialEvents) ContextValidate(ctx context.Context, formats strfmt.Re
 	}
 
 	if err := m.contextValidateFBALiquidationEventList(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateFailedAdhocDisbursementEventList(ctx, formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -781,6 +945,10 @@ func (m *FinancialEvents) ContextValidate(ctx context.Context, formats strfmt.Re
 		res = append(res, err)
 	}
 
+	if err := m.contextValidateTDSReimbursementEventList(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.contextValidateTaxWithholdingEventList(ctx, formats); err != nil {
 		res = append(res, err)
 	}
@@ -789,9 +957,27 @@ func (m *FinancialEvents) ContextValidate(ctx context.Context, formats strfmt.Re
 		res = append(res, err)
 	}
 
+	if err := m.contextValidateValueAddedServiceChargeEventList(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
 	if len(res) > 0 {
 		return errors.CompositeValidationError(res...)
 	}
+	return nil
+}
+
+func (m *FinancialEvents) contextValidateAdhocDisbursementEventList(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := m.AdhocDisbursementEventList.ContextValidate(ctx, formats); err != nil {
+		if ve, ok := err.(*errors.Validation); ok {
+			return ve.ValidateName("AdhocDisbursementEventList")
+		} else if ce, ok := err.(*errors.CompositeError); ok {
+			return ce.ValidateName("AdhocDisbursementEventList")
+		}
+		return err
+	}
+
 	return nil
 }
 
@@ -830,6 +1016,34 @@ func (m *FinancialEvents) contextValidateAffordabilityExpenseReversalEventList(c
 			return ve.ValidateName("AffordabilityExpenseReversalEventList")
 		} else if ce, ok := err.(*errors.CompositeError); ok {
 			return ce.ValidateName("AffordabilityExpenseReversalEventList")
+		}
+		return err
+	}
+
+	return nil
+}
+
+func (m *FinancialEvents) contextValidateCapacityReservationBillingEventList(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := m.CapacityReservationBillingEventList.ContextValidate(ctx, formats); err != nil {
+		if ve, ok := err.(*errors.Validation); ok {
+			return ve.ValidateName("CapacityReservationBillingEventList")
+		} else if ce, ok := err.(*errors.CompositeError); ok {
+			return ce.ValidateName("CapacityReservationBillingEventList")
+		}
+		return err
+	}
+
+	return nil
+}
+
+func (m *FinancialEvents) contextValidateChargeRefundEventList(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := m.ChargeRefundEventList.ContextValidate(ctx, formats); err != nil {
+		if ve, ok := err.(*errors.Validation); ok {
+			return ve.ValidateName("ChargeRefundEventList")
+		} else if ce, ok := err.(*errors.CompositeError); ok {
+			return ce.ValidateName("ChargeRefundEventList")
 		}
 		return err
 	}
@@ -888,6 +1102,22 @@ func (m *FinancialEvents) contextValidateFBALiquidationEventList(ctx context.Con
 			return ce.ValidateName("FBALiquidationEventList")
 		}
 		return err
+	}
+
+	return nil
+}
+
+func (m *FinancialEvents) contextValidateFailedAdhocDisbursementEventList(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.FailedAdhocDisbursementEventList != nil {
+		if err := m.FailedAdhocDisbursementEventList.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("FailedAdhocDisbursementEventList")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("FailedAdhocDisbursementEventList")
+			}
+			return err
+		}
 	}
 
 	return nil
@@ -1145,6 +1375,20 @@ func (m *FinancialEvents) contextValidateShipmentSettleEventList(ctx context.Con
 	return nil
 }
 
+func (m *FinancialEvents) contextValidateTDSReimbursementEventList(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := m.TDSReimbursementEventList.ContextValidate(ctx, formats); err != nil {
+		if ve, ok := err.(*errors.Validation); ok {
+			return ve.ValidateName("TDSReimbursementEventList")
+		} else if ce, ok := err.(*errors.CompositeError); ok {
+			return ce.ValidateName("TDSReimbursementEventList")
+		}
+		return err
+	}
+
+	return nil
+}
+
 func (m *FinancialEvents) contextValidateTaxWithholdingEventList(ctx context.Context, formats strfmt.Registry) error {
 
 	if err := m.TaxWithholdingEventList.ContextValidate(ctx, formats); err != nil {
@@ -1168,6 +1412,22 @@ func (m *FinancialEvents) contextValidateTrialShipmentEventList(ctx context.Cont
 			return ce.ValidateName("TrialShipmentEventList")
 		}
 		return err
+	}
+
+	return nil
+}
+
+func (m *FinancialEvents) contextValidateValueAddedServiceChargeEventList(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.ValueAddedServiceChargeEventList != nil {
+		if err := m.ValueAddedServiceChargeEventList.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("ValueAddedServiceChargeEventList")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("ValueAddedServiceChargeEventList")
+			}
+			return err
+		}
 	}
 
 	return nil

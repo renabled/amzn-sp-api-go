@@ -80,7 +80,7 @@ type ListFinancialEventGroupsParams struct {
 
 	/* MaxResultsPerPage.
 
-	   The maximum number of results to return per page.
+	   The maximum number of results to return per page. If the response exceeds the maximum number of transactions or 10 MB, the API responds with 'InvalidInput'.
 
 	   Format: int32
 	   Default: 100

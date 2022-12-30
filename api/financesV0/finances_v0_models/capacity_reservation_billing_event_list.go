@@ -14,13 +14,13 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// ShipmentSettleEventList A list of `ShipmentEvent` items.
+// CapacityReservationBillingEventList A list of `CapacityReservationBillingEvent` events.
 //
-// swagger:model ShipmentSettleEventList
-type ShipmentSettleEventList []*ShipmentEvent
+// swagger:model CapacityReservationBillingEventList
+type CapacityReservationBillingEventList []*CapacityReservationBillingEvent
 
-// Validate validates this shipment settle event list
-func (m ShipmentSettleEventList) Validate(formats strfmt.Registry) error {
+// Validate validates this capacity reservation billing event list
+func (m CapacityReservationBillingEventList) Validate(formats strfmt.Registry) error {
 	var res []error
 
 	for i := 0; i < len(m); i++ {
@@ -47,8 +47,8 @@ func (m ShipmentSettleEventList) Validate(formats strfmt.Registry) error {
 	return nil
 }
 
-// ContextValidate validate this shipment settle event list based on the context it is used
-func (m ShipmentSettleEventList) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+// ContextValidate validate this capacity reservation billing event list based on the context it is used
+func (m CapacityReservationBillingEventList) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
 	var res []error
 
 	for i := 0; i < len(m); i++ {
