@@ -28,9 +28,7 @@ type CapacityReservationBillingEvent struct {
 	// The amount of the capacity reservation billing event.
 	TransactionAmount *Currency `json:"TransactionAmount,omitempty"`
 
-	// Indicates the type of transaction.
-	//
-	// Example: "FBA Inventory Fee"
+	// Indicates the type of transaction. For example, FBA Inventory Fee
 	TransactionType string `json:"TransactionType,omitempty"`
 }
 
