@@ -20,7 +20,7 @@ import (
 // swagger:model Pallet
 type Pallet struct {
 
-	// Number of cartons per layer on the pallet.
+	// Number of cartons per layer on the pallet. Only applicable to container type Pallet.
 	Block int64 `json:"block,omitempty"`
 
 	// Carton reference details.
@@ -36,7 +36,7 @@ type Pallet struct {
 	// Required: true
 	PalletIdentifiers []*ContainerIdentification `json:"palletIdentifiers"`
 
-	// Number of layers per pallet.
+	// Number of layers per pallet. Only applicable to container type Pallet.
 	Tier int64 `json:"tier,omitempty"`
 
 	// weight

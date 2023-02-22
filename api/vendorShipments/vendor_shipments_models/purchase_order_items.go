@@ -14,20 +14,20 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// Item Details of the item being shipped.
+// PurchaseOrderItems Details of the item being shipped.
 //
-// swagger:model Item
-type Item struct {
+// swagger:model PurchaseOrderItems
+type PurchaseOrderItems struct {
 
-	// Buyer Standard Identification Number (ASIN) of an item.
-	AmazonProductIdentifier string `json:"amazonProductIdentifier,omitempty"`
-
-	// item details
-	ItemDetails *ItemDetails `json:"itemDetails,omitempty"`
+	// Amazon Standard Identification Number (ASIN) for a SKU
+	BuyerProductIdentifier string `json:"buyerProductIdentifier,omitempty"`
 
 	// Item sequence number for the item. The first item will be 001, the second 002, and so on. This number is used as a reference to refer to this item from the carton or pallet level.
 	// Required: true
 	ItemSequenceNumber *string `json:"itemSequenceNumber"`
+
+	// maximum retail price
+	MaximumRetailPrice *Money `json:"maximumRetailPrice,omitempty"`
 
 	// Total item quantity shipped in this shipment.
 	// Required: true
@@ -37,15 +37,15 @@ type Item struct {
 	VendorProductIdentifier string `json:"vendorProductIdentifier,omitempty"`
 }
 
-// Validate validates this item
-func (m *Item) Validate(formats strfmt.Registry) error {
+// Validate validates this purchase order items
+func (m *PurchaseOrderItems) Validate(formats strfmt.Registry) error {
 	var res []error
 
-	if err := m.validateItemDetails(formats); err != nil {
+	if err := m.validateItemSequenceNumber(formats); err != nil {
 		res = append(res, err)
 	}
 
-	if err := m.validateItemSequenceNumber(formats); err != nil {
+	if err := m.validateMaximumRetailPrice(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -59,26 +59,7 @@ func (m *Item) Validate(formats strfmt.Registry) error {
 	return nil
 }
 
-func (m *Item) validateItemDetails(formats strfmt.Registry) error {
-	if swag.IsZero(m.ItemDetails) { // not required
-		return nil
-	}
-
-	if m.ItemDetails != nil {
-		if err := m.ItemDetails.Validate(formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
-				return ve.ValidateName("itemDetails")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("itemDetails")
-			}
-			return err
-		}
-	}
-
-	return nil
-}
-
-func (m *Item) validateItemSequenceNumber(formats strfmt.Registry) error {
+func (m *PurchaseOrderItems) validateItemSequenceNumber(formats strfmt.Registry) error {
 
 	if err := validate.Required("itemSequenceNumber", "body", m.ItemSequenceNumber); err != nil {
 		return err
@@ -87,7 +68,26 @@ func (m *Item) validateItemSequenceNumber(formats strfmt.Registry) error {
 	return nil
 }
 
-func (m *Item) validateShippedQuantity(formats strfmt.Registry) error {
+func (m *PurchaseOrderItems) validateMaximumRetailPrice(formats strfmt.Registry) error {
+	if swag.IsZero(m.MaximumRetailPrice) { // not required
+		return nil
+	}
+
+	if m.MaximumRetailPrice != nil {
+		if err := m.MaximumRetailPrice.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("maximumRetailPrice")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("maximumRetailPrice")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *PurchaseOrderItems) validateShippedQuantity(formats strfmt.Registry) error {
 
 	if err := validate.Required("shippedQuantity", "body", m.ShippedQuantity); err != nil {
 		return err
@@ -107,11 +107,11 @@ func (m *Item) validateShippedQuantity(formats strfmt.Registry) error {
 	return nil
 }
 
-// ContextValidate validate this item based on the context it is used
-func (m *Item) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+// ContextValidate validate this purchase order items based on the context it is used
+func (m *PurchaseOrderItems) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
 	var res []error
 
-	if err := m.contextValidateItemDetails(ctx, formats); err != nil {
+	if err := m.contextValidateMaximumRetailPrice(ctx, formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -125,14 +125,14 @@ func (m *Item) ContextValidate(ctx context.Context, formats strfmt.Registry) err
 	return nil
 }
 
-func (m *Item) contextValidateItemDetails(ctx context.Context, formats strfmt.Registry) error {
+func (m *PurchaseOrderItems) contextValidateMaximumRetailPrice(ctx context.Context, formats strfmt.Registry) error {
 
-	if m.ItemDetails != nil {
-		if err := m.ItemDetails.ContextValidate(ctx, formats); err != nil {
+	if m.MaximumRetailPrice != nil {
+		if err := m.MaximumRetailPrice.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
-				return ve.ValidateName("itemDetails")
+				return ve.ValidateName("maximumRetailPrice")
 			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("itemDetails")
+				return ce.ValidateName("maximumRetailPrice")
 			}
 			return err
 		}
@@ -141,7 +141,7 @@ func (m *Item) contextValidateItemDetails(ctx context.Context, formats strfmt.Re
 	return nil
 }
 
-func (m *Item) contextValidateShippedQuantity(ctx context.Context, formats strfmt.Registry) error {
+func (m *PurchaseOrderItems) contextValidateShippedQuantity(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.ShippedQuantity != nil {
 		if err := m.ShippedQuantity.ContextValidate(ctx, formats); err != nil {
@@ -158,7 +158,7 @@ func (m *Item) contextValidateShippedQuantity(ctx context.Context, formats strfm
 }
 
 // MarshalBinary interface implementation
-func (m *Item) MarshalBinary() ([]byte, error) {
+func (m *PurchaseOrderItems) MarshalBinary() ([]byte, error) {
 	if m == nil {
 		return nil, nil
 	}
@@ -166,8 +166,8 @@ func (m *Item) MarshalBinary() ([]byte, error) {
 }
 
 // UnmarshalBinary interface implementation
-func (m *Item) UnmarshalBinary(b []byte) error {
-	var res Item
+func (m *PurchaseOrderItems) UnmarshalBinary(b []byte) error {
+	var res PurchaseOrderItems
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err
 	}

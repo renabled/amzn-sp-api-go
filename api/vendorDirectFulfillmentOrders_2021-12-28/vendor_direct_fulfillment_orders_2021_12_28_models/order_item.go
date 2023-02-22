@@ -19,6 +19,9 @@ import (
 // swagger:model OrderItem
 type OrderItem struct {
 
+	// The buyer information for products the vendor has configured as customizable, specifying the types of customizations or configurations along with types and ranges for their product. This provides the ability for buyers to customize multiple aspects of the products according to what the vendor allows.
+	BuyerCustomizedInfo *BuyerCustomizedInfoDetail `json:"buyerCustomizedInfo,omitempty"`
+
 	// Buyer's standard identification number (ASIN) of an item.
 	BuyerProductIdentifier string `json:"buyerProductIdentifier,omitempty"`
 
@@ -57,6 +60,10 @@ type OrderItem struct {
 func (m *OrderItem) Validate(formats strfmt.Registry) error {
 	var res []error
 
+	if err := m.validateBuyerCustomizedInfo(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.validateGiftDetails(formats); err != nil {
 		res = append(res, err)
 	}
@@ -88,6 +95,25 @@ func (m *OrderItem) Validate(formats strfmt.Registry) error {
 	if len(res) > 0 {
 		return errors.CompositeValidationError(res...)
 	}
+	return nil
+}
+
+func (m *OrderItem) validateBuyerCustomizedInfo(formats strfmt.Registry) error {
+	if swag.IsZero(m.BuyerCustomizedInfo) { // not required
+		return nil
+	}
+
+	if m.BuyerCustomizedInfo != nil {
+		if err := m.BuyerCustomizedInfo.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("buyerCustomizedInfo")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("buyerCustomizedInfo")
+			}
+			return err
+		}
+	}
+
 	return nil
 }
 
@@ -220,6 +246,10 @@ func (m *OrderItem) validateTotalPrice(formats strfmt.Registry) error {
 func (m *OrderItem) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
 	var res []error
 
+	if err := m.contextValidateBuyerCustomizedInfo(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.contextValidateGiftDetails(ctx, formats); err != nil {
 		res = append(res, err)
 	}
@@ -247,6 +277,22 @@ func (m *OrderItem) ContextValidate(ctx context.Context, formats strfmt.Registry
 	if len(res) > 0 {
 		return errors.CompositeValidationError(res...)
 	}
+	return nil
+}
+
+func (m *OrderItem) contextValidateBuyerCustomizedInfo(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.BuyerCustomizedInfo != nil {
+		if err := m.BuyerCustomizedInfo.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("buyerCustomizedInfo")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("buyerCustomizedInfo")
+			}
+			return err
+		}
+	}
+
 	return nil
 }
 

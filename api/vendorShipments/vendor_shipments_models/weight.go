@@ -15,7 +15,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// Weight The weight.
+// Weight The weight of the shipment.
 //
 // swagger:model Weight
 type Weight struct {

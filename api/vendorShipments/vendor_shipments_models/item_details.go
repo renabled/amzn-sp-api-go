@@ -33,7 +33,7 @@ type ItemDetails struct {
 	// Maximum retail price of the item being shipped.
 	MaximumRetailPrice *Money `json:"maximumRetailPrice,omitempty"`
 
-	// The Amazon purchase order number for the shipment being confirmed. If the items in this shipment belong to multiple purchase order numbers that are in particular carton or pallet within the shipment, then provide the purchaseOrderNumber at the appropriate carton or pallet level. Formatting Notes: 8-character alpha-numeric code.
+	// The purchase order number for the shipment being confirmed. If the items in this shipment belong to multiple purchase order numbers that are in particular carton or pallet within the shipment, then provide the purchaseOrderNumber at the appropriate carton or pallet level. Formatting Notes: 8-character alpha-numeric code.
 	PurchaseOrderNumber string `json:"purchaseOrderNumber,omitempty"`
 }
 

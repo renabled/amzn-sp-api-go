@@ -11,45 +11,38 @@ import (
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
-	"github.com/go-openapi/validate"
 )
 
-// Item Details of the item being shipped.
+// PackedItems Details of the item being shipped.
 //
-// swagger:model Item
-type Item struct {
+// swagger:model PackedItems
+type PackedItems struct {
 
 	// Buyer Standard Identification Number (ASIN) of an item.
-	AmazonProductIdentifier string `json:"amazonProductIdentifier,omitempty"`
+	BuyerProductIdentifier string `json:"buyerProductIdentifier,omitempty"`
 
 	// item details
-	ItemDetails *ItemDetails `json:"itemDetails,omitempty"`
+	ItemDetails *PackageItemDetails `json:"itemDetails,omitempty"`
 
 	// Item sequence number for the item. The first item will be 001, the second 002, and so on. This number is used as a reference to refer to this item from the carton or pallet level.
-	// Required: true
-	ItemSequenceNumber *string `json:"itemSequenceNumber"`
+	ItemSequenceNumber string `json:"itemSequenceNumber,omitempty"`
 
 	// Total item quantity shipped in this shipment.
-	// Required: true
-	ShippedQuantity *ItemQuantity `json:"shippedQuantity"`
+	PackedQuantity *ItemQuantity `json:"packedQuantity,omitempty"`
 
 	// The vendor selected product identification of the item. Should be the same as was sent in the purchase order.
 	VendorProductIdentifier string `json:"vendorProductIdentifier,omitempty"`
 }
 
-// Validate validates this item
-func (m *Item) Validate(formats strfmt.Registry) error {
+// Validate validates this packed items
+func (m *PackedItems) Validate(formats strfmt.Registry) error {
 	var res []error
 
 	if err := m.validateItemDetails(formats); err != nil {
 		res = append(res, err)
 	}
 
-	if err := m.validateItemSequenceNumber(formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.validateShippedQuantity(formats); err != nil {
+	if err := m.validatePackedQuantity(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -59,7 +52,7 @@ func (m *Item) Validate(formats strfmt.Registry) error {
 	return nil
 }
 
-func (m *Item) validateItemDetails(formats strfmt.Registry) error {
+func (m *PackedItems) validateItemDetails(formats strfmt.Registry) error {
 	if swag.IsZero(m.ItemDetails) { // not required
 		return nil
 	}
@@ -78,27 +71,17 @@ func (m *Item) validateItemDetails(formats strfmt.Registry) error {
 	return nil
 }
 
-func (m *Item) validateItemSequenceNumber(formats strfmt.Registry) error {
-
-	if err := validate.Required("itemSequenceNumber", "body", m.ItemSequenceNumber); err != nil {
-		return err
+func (m *PackedItems) validatePackedQuantity(formats strfmt.Registry) error {
+	if swag.IsZero(m.PackedQuantity) { // not required
+		return nil
 	}
 
-	return nil
-}
-
-func (m *Item) validateShippedQuantity(formats strfmt.Registry) error {
-
-	if err := validate.Required("shippedQuantity", "body", m.ShippedQuantity); err != nil {
-		return err
-	}
-
-	if m.ShippedQuantity != nil {
-		if err := m.ShippedQuantity.Validate(formats); err != nil {
+	if m.PackedQuantity != nil {
+		if err := m.PackedQuantity.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
-				return ve.ValidateName("shippedQuantity")
+				return ve.ValidateName("packedQuantity")
 			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("shippedQuantity")
+				return ce.ValidateName("packedQuantity")
 			}
 			return err
 		}
@@ -107,15 +90,15 @@ func (m *Item) validateShippedQuantity(formats strfmt.Registry) error {
 	return nil
 }
 
-// ContextValidate validate this item based on the context it is used
-func (m *Item) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+// ContextValidate validate this packed items based on the context it is used
+func (m *PackedItems) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
 	var res []error
 
 	if err := m.contextValidateItemDetails(ctx, formats); err != nil {
 		res = append(res, err)
 	}
 
-	if err := m.contextValidateShippedQuantity(ctx, formats); err != nil {
+	if err := m.contextValidatePackedQuantity(ctx, formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -125,7 +108,7 @@ func (m *Item) ContextValidate(ctx context.Context, formats strfmt.Registry) err
 	return nil
 }
 
-func (m *Item) contextValidateItemDetails(ctx context.Context, formats strfmt.Registry) error {
+func (m *PackedItems) contextValidateItemDetails(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.ItemDetails != nil {
 		if err := m.ItemDetails.ContextValidate(ctx, formats); err != nil {
@@ -141,14 +124,14 @@ func (m *Item) contextValidateItemDetails(ctx context.Context, formats strfmt.Re
 	return nil
 }
 
-func (m *Item) contextValidateShippedQuantity(ctx context.Context, formats strfmt.Registry) error {
+func (m *PackedItems) contextValidatePackedQuantity(ctx context.Context, formats strfmt.Registry) error {
 
-	if m.ShippedQuantity != nil {
-		if err := m.ShippedQuantity.ContextValidate(ctx, formats); err != nil {
+	if m.PackedQuantity != nil {
+		if err := m.PackedQuantity.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
-				return ve.ValidateName("shippedQuantity")
+				return ve.ValidateName("packedQuantity")
 			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("shippedQuantity")
+				return ce.ValidateName("packedQuantity")
 			}
 			return err
 		}
@@ -158,7 +141,7 @@ func (m *Item) contextValidateShippedQuantity(ctx context.Context, formats strfm
 }
 
 // MarshalBinary interface implementation
-func (m *Item) MarshalBinary() ([]byte, error) {
+func (m *PackedItems) MarshalBinary() ([]byte, error) {
 	if m == nil {
 		return nil, nil
 	}
@@ -166,8 +149,8 @@ func (m *Item) MarshalBinary() ([]byte, error) {
 }
 
 // UnmarshalBinary interface implementation
-func (m *Item) UnmarshalBinary(b []byte) error {
-	var res Item
+func (m *PackedItems) UnmarshalBinary(b []byte) error {
+	var res PackedItems
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err
 	}

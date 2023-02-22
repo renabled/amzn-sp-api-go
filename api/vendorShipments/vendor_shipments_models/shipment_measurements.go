@@ -18,7 +18,7 @@ import (
 // swagger:model ShipmentMeasurements
 type ShipmentMeasurements struct {
 
-	// Number of cartons present in the shipment. Provide the cartonCount only for unpalletized shipments.
+	// Number of cartons present in the shipment. Provide the cartonCount only for non-palletized shipments.
 	CartonCount int64 `json:"cartonCount,omitempty"`
 
 	// Gross weight of the shipment.
@@ -27,7 +27,7 @@ type ShipmentMeasurements struct {
 	// Number of pallets present in the shipment. Provide the palletCount only for palletized shipments.
 	PalletCount int64 `json:"palletCount,omitempty"`
 
-	// Volume of the shipment.
+	// Gross Volume of the shipment.
 	ShipmentVolume *Volume `json:"shipmentVolume,omitempty"`
 }
 

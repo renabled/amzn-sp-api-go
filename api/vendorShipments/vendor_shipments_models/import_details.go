@@ -27,6 +27,10 @@ type ImportDetails struct {
 	// Format: date-time
 	EstimatedShipByDate strfmt.DateTime `json:"estimatedShipByDate,omitempty"`
 
+	// Identification of the instructions on how specified item/carton/pallet should be handled.
+	// Enum: [Oversized Fragile Food HandleWithCare]
+	HandlingInstructions string `json:"handlingInstructions,omitempty"`
+
 	// Types and numbers of container(s) for import purchase orders. Can be a comma-separated list if shipment has multiple containers.
 	// Max Length: 64
 	ImportContainers string `json:"importContainers,omitempty"`
@@ -51,6 +55,10 @@ func (m *ImportDetails) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validateEstimatedShipByDate(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateHandlingInstructions(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -97,6 +105,54 @@ func (m *ImportDetails) validateEstimatedShipByDate(formats strfmt.Registry) err
 	}
 
 	if err := validate.FormatOf("estimatedShipByDate", "body", "date-time", m.EstimatedShipByDate.String(), formats); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+var importDetailsTypeHandlingInstructionsPropEnum []interface{}
+
+func init() {
+	var res []string
+	if err := json.Unmarshal([]byte(`["Oversized","Fragile","Food","HandleWithCare"]`), &res); err != nil {
+		panic(err)
+	}
+	for _, v := range res {
+		importDetailsTypeHandlingInstructionsPropEnum = append(importDetailsTypeHandlingInstructionsPropEnum, v)
+	}
+}
+
+const (
+
+	// ImportDetailsHandlingInstructionsOversized captures enum value "Oversized"
+	ImportDetailsHandlingInstructionsOversized string = "Oversized"
+
+	// ImportDetailsHandlingInstructionsFragile captures enum value "Fragile"
+	ImportDetailsHandlingInstructionsFragile string = "Fragile"
+
+	// ImportDetailsHandlingInstructionsFood captures enum value "Food"
+	ImportDetailsHandlingInstructionsFood string = "Food"
+
+	// ImportDetailsHandlingInstructionsHandleWithCare captures enum value "HandleWithCare"
+	ImportDetailsHandlingInstructionsHandleWithCare string = "HandleWithCare"
+)
+
+// prop value enum
+func (m *ImportDetails) validateHandlingInstructionsEnum(path, location string, value string) error {
+	if err := validate.EnumCase(path, location, value, importDetailsTypeHandlingInstructionsPropEnum, true); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (m *ImportDetails) validateHandlingInstructions(formats strfmt.Registry) error {
+	if swag.IsZero(m.HandlingInstructions) { // not required
+		return nil
+	}
+
+	// value enum
+	if err := m.validateHandlingInstructionsEnum("handlingInstructions", "body", m.HandlingInstructions); err != nil {
 		return err
 	}
 

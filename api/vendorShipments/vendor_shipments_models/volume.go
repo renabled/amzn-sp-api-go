@@ -15,7 +15,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// Volume The volume of the container.
+// Volume The volume of the shipment.
 //
 // swagger:model Volume
 type Volume struct {
