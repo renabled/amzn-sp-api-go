@@ -52,7 +52,7 @@ type ClientService interface {
 | ---- | ---- |
 | 2 | 5 |
 
-For more information, see "Usage Plans and Rate Limits" in the Selling Partner API documentation.
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 */
 func (a *Client) DeleteSmallAndLightEnrollmentBySellerSKU(params *DeleteSmallAndLightEnrollmentBySellerSKUParams, opts ...ClientOption) (*DeleteSmallAndLightEnrollmentBySellerSKUNoContent, error) {
 	// TODO: Validate the params before sending
@@ -98,7 +98,7 @@ func (a *Client) DeleteSmallAndLightEnrollmentBySellerSKU(params *DeleteSmallAnd
 | ---- | ---- |
 | 2 | 10 |
 
-For more information, see "Usage Plans and Rate Limits" in the Selling Partner API documentation.
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 */
 func (a *Client) GetSmallAndLightEligibilityBySellerSKU(params *GetSmallAndLightEligibilityBySellerSKUParams, opts ...ClientOption) (*GetSmallAndLightEligibilityBySellerSKUOK, error) {
 	// TODO: Validate the params before sending
@@ -144,7 +144,7 @@ func (a *Client) GetSmallAndLightEligibilityBySellerSKU(params *GetSmallAndLight
 | ---- | ---- |
 | 2 | 10 |
 
-For more information, see "Usage Plans and Rate Limits" in the Selling Partner API documentation.
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 */
 func (a *Client) GetSmallAndLightEnrollmentBySellerSKU(params *GetSmallAndLightEnrollmentBySellerSKUParams, opts ...ClientOption) (*GetSmallAndLightEnrollmentBySellerSKUOK, error) {
 	// TODO: Validate the params before sending
@@ -190,7 +190,7 @@ func (a *Client) GetSmallAndLightEnrollmentBySellerSKU(params *GetSmallAndLightE
 | ---- | ---- |
 | 1 | 3 |
 
-For more information, see "Usage Plans and Rate Limits" in the Selling Partner API documentation.
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 */
 func (a *Client) GetSmallAndLightFeePreview(params *GetSmallAndLightFeePreviewParams, opts ...ClientOption) (*GetSmallAndLightFeePreviewOK, error) {
 	// TODO: Validate the params before sending
@@ -236,7 +236,7 @@ func (a *Client) GetSmallAndLightFeePreview(params *GetSmallAndLightFeePreviewPa
 | ---- | ---- |
 | 2 | 5 |
 
-For more information, see "Usage Plans and Rate Limits" in the Selling Partner API documentation.
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 */
 func (a *Client) PutSmallAndLightEnrollmentBySellerSKU(params *PutSmallAndLightEnrollmentBySellerSKUParams, opts ...ClientOption) (*PutSmallAndLightEnrollmentBySellerSKUOK, error) {
 	// TODO: Validate the params before sending
