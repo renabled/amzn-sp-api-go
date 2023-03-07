@@ -44,14 +44,13 @@ type ClientService interface {
 /*
 	GetPurchaseOrder Returns a purchase order based on the purchaseOrderNumber value that you specify.
 
-**Usage Plans:**
+**Usage Plan:**
 
-| Plan type | Rate (requests per second) | Burst |
-| ---- | ---- | ---- |
-|Default| 10 | 10 |
-|Selling partner specific| Variable | Variable |
+| Rate (requests per second) | Burst |
+| ---- | ---- |
+| 10 | 10 |
 
-The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see "Usage Plans and Rate Limits" in the Selling Partner API documentation.
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 */
 func (a *Client) GetPurchaseOrder(params *GetPurchaseOrderParams, opts ...ClientOption) (*GetPurchaseOrderOK, error) {
 	// TODO: Validate the params before sending
@@ -91,14 +90,13 @@ func (a *Client) GetPurchaseOrder(params *GetPurchaseOrderParams, opts ...Client
 /*
 	GetPurchaseOrders Returns a list of purchase orders created or changed during the time frame that you specify. You define the time frame using the createdAfter, createdBefore, changedAfter and changedBefore parameters. The date range to search must not be more than 7 days. You can choose to get only the purchase order numbers by setting includeDetails to false. You can then use the getPurchaseOrder operation to receive details for a specific purchase order.
 
-**Usage Plans:**
+**Usage Plan:**
 
-| Plan type | Rate (requests per second) | Burst |
-| ---- | ---- | ---- |
-|Default| 10 | 10 |
-|Selling partner specific| Variable | Variable |
+| Rate (requests per second) | Burst |
+| ---- | ---- |
+| 10 | 10 |
 
-The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see "Usage Plans and Rate Limits" in the Selling Partner API documentation.
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 */
 func (a *Client) GetPurchaseOrders(params *GetPurchaseOrdersParams, opts ...ClientOption) (*GetPurchaseOrdersOK, error) {
 	// TODO: Validate the params before sending
@@ -138,14 +136,13 @@ func (a *Client) GetPurchaseOrders(params *GetPurchaseOrdersParams, opts ...Clie
 /*
 	GetPurchaseOrdersStatus Returns purchase order statuses based on the filters that you specify. Date range to search must not be more than 7 days. You can return a list of purchase order statuses using the available filters, or a single purchase order status by providing the purchase order number.
 
-**Usage Plans:**
+**Usage Plan:**
 
-| Plan type | Rate (requests per second) | Burst |
-| ---- | ---- | ---- |
-|Default| 10 | 10 |
-|Selling partner specific| Variable | Variable |
+| Rate (requests per second) | Burst |
+| ---- | ---- |
+| 10 | 10 |
 
-The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see "Usage Plans and Rate Limits" in the Selling Partner API documentation.
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 */
 func (a *Client) GetPurchaseOrdersStatus(params *GetPurchaseOrdersStatusParams, opts ...ClientOption) (*GetPurchaseOrdersStatusOK, error) {
 	// TODO: Validate the params before sending
@@ -185,14 +182,13 @@ func (a *Client) GetPurchaseOrdersStatus(params *GetPurchaseOrdersStatusParams, 
 /*
 	SubmitAcknowledgement Submits acknowledgements for one or more purchase orders.
 
-**Usage Plans:**
+**Usage Plan:**
 
-| Plan type | Rate (requests per second) | Burst |
-| ---- | ---- | ---- |
-|Default| 10 | 10 |
-|Selling partner specific| Variable | Variable |
+| Rate (requests per second) | Burst |
+| ---- | ---- |
+| 10 | 10 |
 
-The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see "Usage Plans and Rate Limits" in the Selling Partner API documentation.
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 */
 func (a *Client) SubmitAcknowledgement(params *SubmitAcknowledgementParams, opts ...ClientOption) (*SubmitAcknowledgementAccepted, error) {
 	// TODO: Validate the params before sending
