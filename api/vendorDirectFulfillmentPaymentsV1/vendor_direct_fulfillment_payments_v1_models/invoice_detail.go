@@ -20,7 +20,7 @@ import (
 // swagger:model InvoiceDetail
 type InvoiceDetail struct {
 
-	// Additional details provided by the selling party, for tax related or other purposes.
+	// Additional details provided by the selling party, for tax-related or other purposes.
 	AdditionalDetails []*AdditionalDetails `json:"additionalDetails"`
 
 	// Name, address and tax details of the party to whom this invoice is issued.

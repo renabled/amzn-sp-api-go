@@ -26,7 +26,7 @@ type InvoiceItem struct {
 	// Individual charge details per line item.
 	ChargeDetails []*ChargeDetails `json:"chargeDetails"`
 
-	// HSN tax code. The HSN number cannot contain alphabets.
+	// Harmonized System of Nomenclature (HSN) tax code. The HSN number cannot contain alphabets.
 	HsnCode string `json:"hsnCode,omitempty"`
 
 	// Item quantity invoiced.

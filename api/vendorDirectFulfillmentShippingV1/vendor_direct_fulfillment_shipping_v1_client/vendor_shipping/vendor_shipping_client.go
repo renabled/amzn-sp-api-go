@@ -44,14 +44,13 @@ type ClientService interface {
 /*
 	GetPackingSlip Returns a packing slip based on the purchaseOrderNumber that you specify.
 
-**Usage Plans:**
+**Usage Plan:**
 
-| Plan type | Rate (requests per second) | Burst |
-| ---- | ---- | ---- |
-|Default| 10 | 10 |
-|Selling partner specific| Variable | Variable |
+| Rate (requests per second) | Burst |
+| ---- | ---- |
+| 10 | 10 |
 
-The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see "Usage Plans and Rate Limits" in the Selling Partner API documentation.
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 */
 func (a *Client) GetPackingSlip(params *GetPackingSlipParams, opts ...ClientOption) (*GetPackingSlipOK, error) {
 	// TODO: Validate the params before sending
@@ -91,14 +90,13 @@ func (a *Client) GetPackingSlip(params *GetPackingSlipParams, opts ...ClientOpti
 /*
 	GetPackingSlips Returns a list of packing slips for the purchase orders that match the criteria specified. Date range to search must not be more than 7 days.
 
-**Usage Plans:**
+**Usage Plan:**
 
-| Plan type | Rate (requests per second) | Burst |
-| ---- | ---- | ---- |
-|Default| 10 | 10 |
-|Selling partner specific| Variable | Variable |
+| Rate (requests per second) | Burst |
+| ---- | ---- |
+| 10 | 10 |
 
-The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see "Usage Plans and Rate Limits" in the Selling Partner API documentation.
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 */
 func (a *Client) GetPackingSlips(params *GetPackingSlipsParams, opts ...ClientOption) (*GetPackingSlipsOK, error) {
 	// TODO: Validate the params before sending
@@ -138,14 +136,13 @@ func (a *Client) GetPackingSlips(params *GetPackingSlipsParams, opts ...ClientOp
 /*
 	SubmitShipmentConfirmations Submits one or more shipment confirmations for vendor orders.
 
-**Usage Plans:**
+**Usage Plan:**
 
-| Plan type | Rate (requests per second) | Burst |
-| ---- | ---- | ---- |
-|Default| 10 | 10 |
-|Selling partner specific| Variable | Variable |
+| Rate (requests per second) | Burst |
+| ---- | ---- |
+| 10 | 10 |
 
-The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see "Usage Plans and Rate Limits" in the Selling Partner API documentation.
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 */
 func (a *Client) SubmitShipmentConfirmations(params *SubmitShipmentConfirmationsParams, opts ...ClientOption) (*SubmitShipmentConfirmationsAccepted, error) {
 	// TODO: Validate the params before sending
@@ -185,14 +182,13 @@ func (a *Client) SubmitShipmentConfirmations(params *SubmitShipmentConfirmations
 /*
 	SubmitShipmentStatusUpdates This API call is only to be used by Vendor-Own-Carrier (VOC) vendors. Calling this API will submit a shipment status update for the package that a vendor has shipped. It will provide the Amazon customer visibility on their order, when the package is outside of Amazon Network visibility.
 
-**Usage Plans:**
+**Usage Plan:**
 
-| Plan type | Rate (requests per second) | Burst |
-| ---- | ---- | ---- |
-|Default| 10 | 10 |
-|Selling partner specific| Variable | Variable |
+| Rate (requests per second) | Burst |
+| ---- | ---- |
+| 10 | 10 |
 
-The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see "Usage Plans and Rate Limits" in the Selling Partner API documentation.
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 */
 func (a *Client) SubmitShipmentStatusUpdates(params *SubmitShipmentStatusUpdatesParams, opts ...ClientOption) (*SubmitShipmentStatusUpdatesAccepted, error) {
 	// TODO: Validate the params before sending

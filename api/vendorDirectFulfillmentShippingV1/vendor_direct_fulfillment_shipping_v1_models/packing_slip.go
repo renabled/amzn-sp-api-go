@@ -28,7 +28,7 @@ type PackingSlip struct {
 	// Enum: [application/pdf]
 	ContentType string `json:"contentType,omitempty"`
 
-	// Purchase order number of the shipment that the packing slip is for.
+	// Purchase order number of the shipment that corresponds to the packing slip.
 	// Required: true
 	// Pattern: ^[a-zA-Z0-9]+$
 	PurchaseOrderNumber *string `json:"purchaseOrderNumber"`

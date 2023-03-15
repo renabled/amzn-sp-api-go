@@ -42,14 +42,13 @@ type ClientService interface {
 /*
 	GetShippingLabel Returns a shipping label for the purchaseOrderNumber that you specify.
 
-**Usage Plans:**
+**Usage Plan:**
 
-| Plan type | Rate (requests per second) | Burst |
-| ---- | ---- | ---- |
-|Default| 10 | 10 |
-|Selling partner specific| Variable | Variable |
+| Rate (requests per second) | Burst |
+| ---- | ---- |
+| 10 | 10 |
 
-The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see "Usage Plans and Rate Limits" in the Selling Partner API documentation.
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 */
 func (a *Client) GetShippingLabel(params *GetShippingLabelParams, opts ...ClientOption) (*GetShippingLabelOK, error) {
 	// TODO: Validate the params before sending
@@ -89,14 +88,13 @@ func (a *Client) GetShippingLabel(params *GetShippingLabelParams, opts ...Client
 /*
 	GetShippingLabels Returns a list of shipping labels created during the time frame that you specify. You define that time frame using the createdAfter and createdBefore parameters. You must use both of these parameters. The date range to search must not be more than 7 days.
 
-**Usage Plans:**
+**Usage Plan:**
 
-| Plan type | Rate (requests per second) | Burst |
-| ---- | ---- | ---- |
-|Default| 10 | 10 |
-|Selling partner specific| Variable | Variable |
+| Rate (requests per second) | Burst |
+| ---- | ---- |
+| 10 | 10 |
 
-The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see "Usage Plans and Rate Limits" in the Selling Partner API documentation.
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 */
 func (a *Client) GetShippingLabels(params *GetShippingLabelsParams, opts ...ClientOption) (*GetShippingLabelsOK, error) {
 	// TODO: Validate the params before sending
@@ -136,14 +134,13 @@ func (a *Client) GetShippingLabels(params *GetShippingLabelsParams, opts ...Clie
 /*
 	SubmitShippingLabelRequest Creates a shipping label for a purchase order and returns a transactionId for reference.
 
-**Usage Plans:**
+**Usage Plan:**
 
-| Plan type | Rate (requests per second) | Burst |
-| ---- | ---- | ---- |
-|Default| 10 | 10 |
-|Selling partner specific| Variable | Variable |
+| Rate (requests per second) | Burst |
+| ---- | ---- |
+| 10 | 10 |
 
-The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see "Usage Plans and Rate Limits" in the Selling Partner API documentation.
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 */
 func (a *Client) SubmitShippingLabelRequest(params *SubmitShippingLabelRequestParams, opts ...ClientOption) (*SubmitShippingLabelRequestAccepted, error) {
 	// TODO: Validate the params before sending
