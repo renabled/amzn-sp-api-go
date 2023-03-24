@@ -90,7 +90,7 @@ func (a *Client) DeleteSmallAndLightEnrollmentBySellerSKU(params *DeleteSmallAnd
 }
 
 /*
-	GetSmallAndLightEligibilityBySellerSKU Returns the Small and Light program eligibility status of the item indicated by the specified seller SKU in the specified marketplace. If the item is not eligible, the ineligibility reasons are returned.
+	GetSmallAndLightEligibilityBySellerSKU Returns the Small and Light program eligibility status of the item indicated by the specified seller SKU in the specified marketplace. If the item is not eligible, the ineligibility reasons are returned. **Note:** The parameters associated with this operation may contain special characters that must be encoded to successfully call the API. To avoid errors with SKUs when encoding URLs, refer to [URL Encoding](https://developer-docs.amazon.com/sp-api/docs/url-encoding).
 
 **Usage Plan:**
 
