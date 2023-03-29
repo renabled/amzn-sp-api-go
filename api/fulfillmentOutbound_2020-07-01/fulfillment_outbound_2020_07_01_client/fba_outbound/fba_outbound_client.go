@@ -52,6 +52,8 @@ type ClientService interface {
 
 	ListReturnReasonCodes(params *ListReturnReasonCodesParams, opts ...ClientOption) (*ListReturnReasonCodesOK, error)
 
+	SubmitFulfillmentOrderStatusUpdate(params *SubmitFulfillmentOrderStatusUpdateParams, opts ...ClientOption) (*SubmitFulfillmentOrderStatusUpdateOK, error)
+
 	UpdateFulfillmentOrder(params *UpdateFulfillmentOrderParams, opts ...ClientOption) (*UpdateFulfillmentOrderOK, error)
 
 	SetTransport(transport runtime.ClientTransport)
@@ -66,7 +68,7 @@ type ClientService interface {
 | ---- | ---- |
 | 2 | 30 |
 
-For more information, see "Usage Plans and Rate Limits" in the Selling Partner API documentation.
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 */
 func (a *Client) CancelFulfillmentOrder(params *CancelFulfillmentOrderParams, opts ...ClientOption) (*CancelFulfillmentOrderOK, error) {
 	// TODO: Validate the params before sending
@@ -112,7 +114,7 @@ func (a *Client) CancelFulfillmentOrder(params *CancelFulfillmentOrderParams, op
 | ---- | ---- |
 | 2 | 30 |
 
-For more information, see "Usage Plans and Rate Limits" in the Selling Partner API documentation.
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api)
 */
 func (a *Client) CreateFulfillmentOrder(params *CreateFulfillmentOrderParams, opts ...ClientOption) (*CreateFulfillmentOrderOK, error) {
 	// TODO: Validate the params before sending
@@ -158,7 +160,7 @@ func (a *Client) CreateFulfillmentOrder(params *CreateFulfillmentOrderParams, op
 | ---- | ---- |
 | 2 | 30 |
 
-For more information, see "Usage Plans and Rate Limits" in the Selling Partner API documentation.
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 */
 func (a *Client) CreateFulfillmentReturn(params *CreateFulfillmentReturnParams, opts ...ClientOption) (*CreateFulfillmentReturnOK, error) {
 	// TODO: Validate the params before sending
@@ -204,7 +206,7 @@ func (a *Client) CreateFulfillmentReturn(params *CreateFulfillmentReturnParams, 
 | ---- | ---- |
 | 2 | 30 |
 
-For more information, see "Usage Plans and Rate Limits" in the Selling Partner API documentation.
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api)..
 */
 func (a *Client) GetFeatureInventory(params *GetFeatureInventoryParams, opts ...ClientOption) (*GetFeatureInventoryOK, error) {
 	// TODO: Validate the params before sending
@@ -242,7 +244,7 @@ func (a *Client) GetFeatureInventory(params *GetFeatureInventoryParams, opts ...
 }
 
 /*
-	GetFeatureSKU Returns the number of items with the sellerSKU you specify that can have orders fulfilled using the specified feature. Note that if the sellerSKU isn't eligible, the response will contain an empty skuInfo object.
+	GetFeatureSKU Returns the number of items with the sellerSKU you specify that can have orders fulfilled using the specified feature. Note that if the sellerSKU isn't eligible, the response will contain an empty skuInfo object. The parameters for this operation may contain special characters that require URL encoding. To avoid errors with SKUs when encoding URLs, refer to [URL Encoding](https://developer-docs.amazon.com/sp-api/docs/url-encoding).
 
 **Usage Plan:**
 
@@ -250,7 +252,7 @@ func (a *Client) GetFeatureInventory(params *GetFeatureInventoryParams, opts ...
 | ---- | ---- |
 | 2 | 30 |
 
-For more information, see "Usage Plans and Rate Limits" in the Selling Partner API documentation.
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 */
 func (a *Client) GetFeatureSKU(params *GetFeatureSKUParams, opts ...ClientOption) (*GetFeatureSKUOK, error) {
 	// TODO: Validate the params before sending
@@ -296,7 +298,7 @@ func (a *Client) GetFeatureSKU(params *GetFeatureSKUParams, opts ...ClientOption
 | ---- | ---- |
 | 2 | 30 |
 
-For more information, see "Usage Plans and Rate Limits" in the Selling Partner API documentation.
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 */
 func (a *Client) GetFeatures(params *GetFeaturesParams, opts ...ClientOption) (*GetFeaturesOK, error) {
 	// TODO: Validate the params before sending
@@ -342,7 +344,7 @@ func (a *Client) GetFeatures(params *GetFeaturesParams, opts ...ClientOption) (*
 | ---- | ---- |
 | 2 | 30 |
 
-For more information, see "Usage Plans and Rate Limits" in the Selling Partner API documentation.
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 */
 func (a *Client) GetFulfillmentOrder(params *GetFulfillmentOrderParams, opts ...ClientOption) (*GetFulfillmentOrderOK, error) {
 	// TODO: Validate the params before sending
@@ -388,7 +390,7 @@ func (a *Client) GetFulfillmentOrder(params *GetFulfillmentOrderParams, opts ...
 | ---- | ---- |
 | 2 | 30 |
 
-For more information, see "Usage Plans and Rate Limits" in the Selling Partner API documentation.
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 */
 func (a *Client) GetFulfillmentPreview(params *GetFulfillmentPreviewParams, opts ...ClientOption) (*GetFulfillmentPreviewOK, error) {
 	// TODO: Validate the params before sending
@@ -434,7 +436,7 @@ func (a *Client) GetFulfillmentPreview(params *GetFulfillmentPreviewParams, opts
 | ---- | ---- |
 | 2 | 30 |
 
-For more information, see "Usage Plans and Rate Limits" in the Selling Partner API documentation.
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 */
 func (a *Client) GetPackageTrackingDetails(params *GetPackageTrackingDetailsParams, opts ...ClientOption) (*GetPackageTrackingDetailsOK, error) {
 	// TODO: Validate the params before sending
@@ -480,7 +482,7 @@ func (a *Client) GetPackageTrackingDetails(params *GetPackageTrackingDetailsPara
 | ---- | ---- |
 | 2 | 30 |
 
-For more information, see "Usage Plans and Rate Limits" in the Selling Partner API documentation.
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api)
 */
 func (a *Client) ListAllFulfillmentOrders(params *ListAllFulfillmentOrdersParams, opts ...ClientOption) (*ListAllFulfillmentOrdersOK, error) {
 	// TODO: Validate the params before sending
@@ -518,7 +520,7 @@ func (a *Client) ListAllFulfillmentOrders(params *ListAllFulfillmentOrdersParams
 }
 
 /*
-	ListReturnReasonCodes Returns a list of return reason codes for a seller SKU in a given marketplace.
+	ListReturnReasonCodes Returns a list of return reason codes for a seller SKU in a given marketplace. The parameters for this operation may contain special characters that require URL encoding. To avoid errors with SKUs when encoding URLs, refer to [URL Encoding](https://developer-docs.amazon.com/sp-api/docs/url-encoding).
 
 **Usage Plan:**
 
@@ -526,7 +528,7 @@ func (a *Client) ListAllFulfillmentOrders(params *ListAllFulfillmentOrdersParams
 | ---- | ---- |
 | 2 | 30 |
 
-For more information, see "Usage Plans and Rate Limits" in the Selling Partner API documentation.
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 */
 func (a *Client) ListReturnReasonCodes(params *ListReturnReasonCodesParams, opts ...ClientOption) (*ListReturnReasonCodesOK, error) {
 	// TODO: Validate the params before sending
@@ -564,6 +566,44 @@ func (a *Client) ListReturnReasonCodes(params *ListReturnReasonCodesParams, opts
 }
 
 /*
+SubmitFulfillmentOrderStatusUpdate Requests that Amazon update the status of an order in the sandbox testing environment. This is a sandbox-only operation and must be directed to a sandbox endpoint. Refer to [Fulfillment Outbound Dynamic Sandbox Guide](https://developer-docs.amazon.com/sp-api/docs/fulfillment-outbound-dynamic-sandbox-guide) and [Selling Partner API sandbox](https://developer-docs.amazon.com/sp-api/docs/the-selling-partner-api-sandbox) for more information.
+*/
+func (a *Client) SubmitFulfillmentOrderStatusUpdate(params *SubmitFulfillmentOrderStatusUpdateParams, opts ...ClientOption) (*SubmitFulfillmentOrderStatusUpdateOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewSubmitFulfillmentOrderStatusUpdateParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "submitFulfillmentOrderStatusUpdate",
+		Method:             "PUT",
+		PathPattern:        "/fba/outbound/2020-07-01/fulfillmentOrders/{sellerFulfillmentOrderId}/status",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &SubmitFulfillmentOrderStatusUpdateReader{formats: a.formats},
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*SubmitFulfillmentOrderStatusUpdateOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for submitFulfillmentOrderStatusUpdate: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
 	UpdateFulfillmentOrder Updates and/or requests shipment for a fulfillment order with an order hold on it.
 
 **Usage Plan:**
@@ -572,7 +612,7 @@ func (a *Client) ListReturnReasonCodes(params *ListReturnReasonCodesParams, opts
 | ---- | ---- |
 | 2 | 30 |
 
-For more information, see "Usage Plans and Rate Limits" in the Selling Partner API documentation.
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 */
 func (a *Client) UpdateFulfillmentOrder(params *UpdateFulfillmentOrderParams, opts ...ClientOption) (*UpdateFulfillmentOrderOK, error) {
 	// TODO: Validate the params before sending

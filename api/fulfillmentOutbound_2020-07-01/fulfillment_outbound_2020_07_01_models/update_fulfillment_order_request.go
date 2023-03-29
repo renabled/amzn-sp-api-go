@@ -15,7 +15,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// UpdateFulfillmentOrderRequest update fulfillment order request
+// UpdateFulfillmentOrderRequest The request body schema for the updateFulfillmentOrder operation.
 //
 // swagger:model UpdateFulfillmentOrderRequest
 type UpdateFulfillmentOrderRequest struct {

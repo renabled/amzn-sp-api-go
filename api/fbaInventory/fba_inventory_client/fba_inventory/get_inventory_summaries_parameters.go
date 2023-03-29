@@ -88,9 +88,15 @@ type GetInventorySummariesParams struct {
 
 	/* NextToken.
 
-	   String token returned in the response of your previous request.
+	   String token returned in the response of your previous request. The string token will expire 30 seconds after being created.
 	*/
 	NextToken *string
+
+	/* SellerSku.
+
+	   A single seller SKU used for querying the specified seller SKU inventory summaries.
+	*/
+	SellerSku *string
 
 	/* SellerSkus.
 
@@ -225,6 +231,17 @@ func (o *GetInventorySummariesParams) SetNextToken(nextToken *string) {
 	o.NextToken = nextToken
 }
 
+// WithSellerSku adds the sellerSku to the get inventory summaries params
+func (o *GetInventorySummariesParams) WithSellerSku(sellerSku *string) *GetInventorySummariesParams {
+	o.SetSellerSku(sellerSku)
+	return o
+}
+
+// SetSellerSku adds the sellerSku to the get inventory summaries params
+func (o *GetInventorySummariesParams) SetSellerSku(sellerSku *string) {
+	o.SellerSku = sellerSku
+}
+
 // WithSellerSkus adds the sellerSkus to the get inventory summaries params
 func (o *GetInventorySummariesParams) WithSellerSkus(sellerSkus []string) *GetInventorySummariesParams {
 	o.SetSellerSkus(sellerSkus)
@@ -315,6 +332,23 @@ func (o *GetInventorySummariesParams) WriteToRequest(r runtime.ClientRequest, re
 		if qNextToken != "" {
 
 			if err := r.SetQueryParam("nextToken", qNextToken); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.SellerSku != nil {
+
+		// query param sellerSku
+		var qrSellerSku string
+
+		if o.SellerSku != nil {
+			qrSellerSku = *o.SellerSku
+		}
+		qSellerSku := qrSellerSku
+		if qSellerSku != "" {
+
+			if err := r.SetQueryParam("sellerSku", qSellerSku); err != nil {
 				return err
 			}
 		}

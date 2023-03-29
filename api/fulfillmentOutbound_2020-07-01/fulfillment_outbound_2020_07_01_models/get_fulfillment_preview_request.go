@@ -27,15 +27,10 @@ type GetFulfillmentPreviewRequest struct {
 	// A list of features and their fulfillment policies to apply to the order.
 	FeatureConstraints []*FeatureSettings `json:"featureConstraints"`
 
-	// Specifies whether to return fulfillment order previews that are for COD (Cash On Delivery).
-	//
-	// Possible values:
-	//
-	// * true - Returns all fulfillment order previews (both for COD and not for COD).
-	// * false - Returns only fulfillment order previews that are not for COD.
+	// When true, returns all fulfillment order previews both for COD and not for COD. Otherwise, returns only fulfillment order previews that are not for COD.
 	IncludeCODFulfillmentPreview bool `json:"includeCODFulfillmentPreview,omitempty"`
 
-	// Specifies whether to return the ScheduledDeliveryInfo response object, which contains the available delivery windows for a Scheduled Delivery. The ScheduledDeliveryInfo response object can only be returned for fulfillment order previews with ShippingSpeedCategories = ScheduledDelivery.
+	// When true, returns the ScheduledDeliveryInfo response object, which contains the available delivery windows for a Scheduled Delivery. The ScheduledDeliveryInfo response object can only be returned for fulfillment order previews with ShippingSpeedCategories = ScheduledDelivery.
 	IncludeDeliveryWindows bool `json:"includeDeliveryWindows,omitempty"`
 
 	// Identifying information and quantity information for the items in the fulfillment order preview.

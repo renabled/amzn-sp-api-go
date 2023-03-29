@@ -36,11 +36,12 @@ type ClientService interface {
 }
 
 /*
-	GetInventorySummaries Returns a list of inventory summaries. The summaries returned depend on the presence or absence of the `startDateTime` and `sellerSkus` parameters:
+	GetInventorySummaries Returns a list of inventory summaries. The summaries returned depend on the presence or absence of the `startDateTime`, `sellerSkus` and `sellerSku` parameters:
 
-- All inventory summaries with available details are returned when the `startDateTime` and `sellerSkus` parameters are omitted.
-- When `startDateTime` is provided, the operation returns inventory summaries that have had changes after the date and time specified. The `sellerSkus` parameter is ignored. **Important:** To avoid errors, use both `startDateTime` and `nextToken` to get the next page of inventory summaries that have changed after the date and time specified.
-- When the `sellerSkus` parameter is provided, the operation returns inventory summaries for only the specified `sellerSkus`.
+- All inventory summaries with available details are returned when the `startDateTime`, `sellerSkus` and `sellerSku` parameters are omitted.
+- When `startDateTime` is provided, the operation returns inventory summaries that have had changes after the date and time specified. The `sellerSkus` and `sellerSku` parameters are ignored. **Important:** To avoid errors, use both `startDateTime` and `nextToken` to get the next page of inventory summaries that have changed after the date and time specified.
+- When the `sellerSkus` parameter is provided, the operation returns inventory summaries for only the specified `sellerSkus`. The `sellerSku` parameter is ignored.
+- When the `sellerSku` parameter is provided, the operation returns inventory summaries for only the specified `sellerSku`.
 
 **Usage Plan:**
 

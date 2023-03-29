@@ -28,7 +28,7 @@ type PackageTrackingDetails struct {
 	// The phone number of the carrier.
 	CarrierPhoneNumber string `json:"carrierPhoneNumber,omitempty"`
 
-	// The URL of the carrier’s website.
+	// The URL of the carrier's website.
 	CarrierURL string `json:"carrierURL,omitempty"`
 
 	// current status

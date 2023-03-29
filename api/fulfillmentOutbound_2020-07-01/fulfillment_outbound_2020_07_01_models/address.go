@@ -30,7 +30,8 @@ type Address struct {
 	AddressLine3 string `json:"addressLine3,omitempty"`
 
 	// The city where the person, business, or institution is located.
-	City string `json:"city,omitempty"`
+	// Required: true
+	City *string `json:"city"`
 
 	// The two digit country code. In ISO 3166-1 alpha-2 format.
 	// Required: true
@@ -47,7 +48,8 @@ type Address struct {
 	Phone string `json:"phone,omitempty"`
 
 	// The postal code of the address.
-	PostalCode string `json:"postalCode,omitempty"`
+	// Required: true
+	PostalCode *string `json:"postalCode"`
 
 	// The state or region where the person, business or institution is located.
 	// Required: true
@@ -62,11 +64,19 @@ func (m *Address) Validate(formats strfmt.Registry) error {
 		res = append(res, err)
 	}
 
+	if err := m.validateCity(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.validateCountryCode(formats); err != nil {
 		res = append(res, err)
 	}
 
 	if err := m.validateName(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validatePostalCode(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -89,6 +99,15 @@ func (m *Address) validateAddressLine1(formats strfmt.Registry) error {
 	return nil
 }
 
+func (m *Address) validateCity(formats strfmt.Registry) error {
+
+	if err := validate.Required("city", "body", m.City); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 func (m *Address) validateCountryCode(formats strfmt.Registry) error {
 
 	if err := validate.Required("countryCode", "body", m.CountryCode); err != nil {
@@ -101,6 +120,15 @@ func (m *Address) validateCountryCode(formats strfmt.Registry) error {
 func (m *Address) validateName(formats strfmt.Registry) error {
 
 	if err := validate.Required("name", "body", m.Name); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *Address) validatePostalCode(formats strfmt.Registry) error {
+
+	if err := validate.Required("postalCode", "body", m.PostalCode); err != nil {
 		return err
 	}
 
