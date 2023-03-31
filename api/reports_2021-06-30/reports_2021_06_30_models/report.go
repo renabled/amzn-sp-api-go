@@ -59,7 +59,7 @@ type Report struct {
 	// The identifier of the report schedule that created this report (if any). This identifier is unique only in combination with a seller ID.
 	ReportScheduleID string `json:"reportScheduleId,omitempty"`
 
-	// The report type.
+	// The report type. Refer to [Report Type Values](https://developer-docs.amazon.com/sp-api/docs/report-type-values) for more information.
 	// Required: true
 	ReportType *string `json:"reportType"`
 }

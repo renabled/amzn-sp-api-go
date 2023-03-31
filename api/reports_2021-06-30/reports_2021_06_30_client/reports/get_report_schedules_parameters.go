@@ -64,7 +64,7 @@ type GetReportSchedulesParams struct {
 
 	/* ReportTypes.
 
-	   A list of report types used to filter report schedules.
+	   A list of report types used to filter report schedules. Refer to [Report Type Values](https://developer-docs.amazon.com/sp-api/docs/report-type-values) for more information.
 	*/
 	ReportTypes []string
 
