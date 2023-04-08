@@ -43,6 +43,8 @@ type ClientService interface {
 - When the `sellerSkus` parameter is provided, the operation returns inventory summaries for only the specified `sellerSkus`. The `sellerSku` parameter is ignored.
 - When the `sellerSku` parameter is provided, the operation returns inventory summaries for only the specified `sellerSku`.
 
+**Note:** The parameters associated with this operation may contain special characters that must be encoded to successfully call the API. To avoid errors with SKUs when encoding URLs, refer to [URL Encoding](https://developer-docs.amazon.com/sp-api/docs/url-encoding).
+
 **Usage Plan:**
 
 | Rate (requests per second) | Burst |
