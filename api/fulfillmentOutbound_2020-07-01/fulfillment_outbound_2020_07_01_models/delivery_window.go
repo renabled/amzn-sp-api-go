@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// DeliveryWindow The time range within which a Scheduled Delivery fulfillment order should be delivered.
+// DeliveryWindow The time range within which a Scheduled Delivery fulfillment order should be delivered. This is only available in the JP marketplace.
 //
 // swagger:model DeliveryWindow
 type DeliveryWindow struct {

@@ -74,7 +74,7 @@ type CreateFulfillmentOrderRequest struct {
 	// The two-character country code for the country from which the fulfillment order ships. Must be in ISO 3166-1 alpha-2 format.
 	ShipFromCountryCode string `json:"shipFromCountryCode,omitempty"`
 
-	// The shipping method for the fulfillment order.
+	// The shipping method for the fulfillment order. When this value is ScheduledDelivery, choose Ship for the fulfillmentAction. Hold is not a valid fulfillmentAction value when the shippingSpeedCategory value is ScheduledDelivery.
 	// Required: true
 	ShippingSpeedCategory *ShippingSpeedCategory `json:"shippingSpeedCategory"`
 }

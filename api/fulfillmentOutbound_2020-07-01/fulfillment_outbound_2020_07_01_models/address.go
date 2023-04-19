@@ -29,9 +29,8 @@ type Address struct {
 	// Additional address information, if required.
 	AddressLine3 string `json:"addressLine3,omitempty"`
 
-	// The city where the person, business, or institution is located.
-	// Required: true
-	City *string `json:"city"`
+	// The city where the person, business, or institution is located. This property is required in all countries except Japan. It should not be used in Japan.
+	City string `json:"city,omitempty"`
 
 	// The two digit country code. In ISO 3166-1 alpha-2 format.
 	// Required: true
@@ -64,10 +63,6 @@ func (m *Address) Validate(formats strfmt.Registry) error {
 		res = append(res, err)
 	}
 
-	if err := m.validateCity(formats); err != nil {
-		res = append(res, err)
-	}
-
 	if err := m.validateCountryCode(formats); err != nil {
 		res = append(res, err)
 	}
@@ -93,15 +88,6 @@ func (m *Address) Validate(formats strfmt.Registry) error {
 func (m *Address) validateAddressLine1(formats strfmt.Registry) error {
 
 	if err := validate.Required("addressLine1", "body", m.AddressLine1); err != nil {
-		return err
-	}
-
-	return nil
-}
-
-func (m *Address) validateCity(formats strfmt.Registry) error {
-
-	if err := validate.Required("city", "body", m.City); err != nil {
 		return err
 	}
 

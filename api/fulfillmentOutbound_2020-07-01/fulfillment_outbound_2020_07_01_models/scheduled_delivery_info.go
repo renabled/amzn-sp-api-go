@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// ScheduledDeliveryInfo Delivery information for a scheduled delivery.
+// ScheduledDeliveryInfo Delivery information for a scheduled delivery. This is only available in the JP marketplace.
 //
 // swagger:model ScheduledDeliveryInfo
 type ScheduledDeliveryInfo struct {

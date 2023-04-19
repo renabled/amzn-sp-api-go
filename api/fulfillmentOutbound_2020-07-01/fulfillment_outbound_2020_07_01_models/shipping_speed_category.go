@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// ShippingSpeedCategory The shipping method used for the fulfillment order.
+// ShippingSpeedCategory The shipping method used for the fulfillment order. When this value is ScheduledDelivery, choose Ship for the fulfillmentAction. Hold is not a valid fulfillmentAction value when the shippingSpeedCategory value is ScheduledDelivery.
 //
 // swagger:model ShippingSpeedCategory
 type ShippingSpeedCategory string
