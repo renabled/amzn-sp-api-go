@@ -52,15 +52,7 @@ type ClientService interface {
 }
 
 /*
-	CancelReport Cancels the report that you specify. Only reports with processingStatus=IN_QUEUE can be cancelled. Cancelled reports are returned in subsequent calls to the getReport and getReports operations.
-
-**Usage Plan:**
-
-| Rate (requests per second) | Burst |
-| ---- | ---- |
-| 0.0222 | 10 |
-
-For more information, see "Usage Plans and Rate Limits" in the Selling Partner API documentation.
+CancelReport Effective **June 27, 2023**, the `cancelReport` operation will no longer be available in the Selling Partner API for Reports v2020-09-04 and all calls to it will fail. Integrations that rely on this operation should migrate to [Reports v2021-06-30](https://developer-docs.amazon.com/sp-api/docs/reports-api-v2021-06-30-reference) to avoid service disruption.
 */
 func (a *Client) CancelReport(params *CancelReportParams, opts ...ClientOption) (*CancelReportOK, error) {
 	// TODO: Validate the params before sending
@@ -98,15 +90,7 @@ func (a *Client) CancelReport(params *CancelReportParams, opts ...ClientOption) 
 }
 
 /*
-	CancelReportSchedule Cancels the report schedule that you specify.
-
-**Usage Plan:**
-
-| Rate (requests per second) | Burst |
-| ---- | ---- |
-| 0.0222 | 10 |
-
-For more information, see "Usage Plans and Rate Limits" in the Selling Partner API documentation.
+CancelReportSchedule Effective **June 27, 2023**, the `cancelReportSchedule` operation will no longer be available in the Selling Partner API for Reports v2020-09-04 and all calls to it will fail. Integrations that rely on this operation should migrate to [Reports v2021-06-30](https://developer-docs.amazon.com/sp-api/docs/reports-api-v2021-06-30-reference) to avoid service disruption.
 */
 func (a *Client) CancelReportSchedule(params *CancelReportScheduleParams, opts ...ClientOption) (*CancelReportScheduleOK, error) {
 	// TODO: Validate the params before sending
@@ -144,15 +128,7 @@ func (a *Client) CancelReportSchedule(params *CancelReportScheduleParams, opts .
 }
 
 /*
-	CreateReport Creates a report.
-
-**Usage Plan:**
-
-| Rate (requests per second) | Burst |
-| ---- | ---- |
-| 0.0167 | 15 |
-
-For more information, see "Usage Plans and Rate Limits" in the Selling Partner API documentation.
+CreateReport Effective **June 27, 2023**, the `createReport` operation will no longer be available in the Selling Partner API for Reports v2020-09-04 and all calls to it will fail. Integrations that rely on this operation should migrate to [Reports v2021-06-30](https://developer-docs.amazon.com/sp-api/docs/reports-api-v2021-06-30-reference) to avoid service disruption.
 */
 func (a *Client) CreateReport(params *CreateReportParams, opts ...ClientOption) (*CreateReportAccepted, error) {
 	// TODO: Validate the params before sending
@@ -190,15 +166,7 @@ func (a *Client) CreateReport(params *CreateReportParams, opts ...ClientOption) 
 }
 
 /*
-	CreateReportSchedule Creates a report schedule. If a report schedule with the same report type and marketplace IDs already exists, it will be cancelled and replaced with this one.
-
-**Usage Plan:**
-
-| Rate (requests per second) | Burst |
-| ---- | ---- |
-| 0.0222 | 10 |
-
-For more information, see "Usage Plans and Rate Limits" in the Selling Partner API documentation.
+CreateReportSchedule Effective **June 27, 2023**, the `createReportSchedule` operation will no longer be available in the Selling Partner API for Reports v2020-09-04 and all calls to it will fail. Integrations that rely on this operation should migrate to [Reports v2021-06-30](https://developer-docs.amazon.com/sp-api/docs/reports-api-v2021-06-30-reference) to avoid service disruption.
 */
 func (a *Client) CreateReportSchedule(params *CreateReportScheduleParams, opts ...ClientOption) (*CreateReportScheduleCreated, error) {
 	// TODO: Validate the params before sending
@@ -236,15 +204,7 @@ func (a *Client) CreateReportSchedule(params *CreateReportScheduleParams, opts .
 }
 
 /*
-	GetReport Returns report details (including the reportDocumentId, if available) for the report that you specify.
-
-**Usage Plan:**
-
-| Rate (requests per second) | Burst |
-| ---- | ---- |
-| 2.0 | 15 |
-
-For more information, see "Usage Plans and Rate Limits" in the Selling Partner API documentation.
+GetReport Effective **June 27, 2023**, the `getReport` operation will no longer be available in the Selling Partner API for Reports v2020-09-04 and all calls to it will fail. Integrations that rely on this operation should migrate to [Reports v2021-06-30](https://developer-docs.amazon.com/sp-api/docs/reports-api-v2021-06-30-reference) to avoid service disruption.
 */
 func (a *Client) GetReport(params *GetReportParams, opts ...ClientOption) (*GetReportOK, error) {
 	// TODO: Validate the params before sending
@@ -282,15 +242,7 @@ func (a *Client) GetReport(params *GetReportParams, opts ...ClientOption) (*GetR
 }
 
 /*
-	GetReportDocument Returns the information required for retrieving a report document's contents. This includes a presigned URL for the report document as well as the information required to decrypt the document's contents.
-
-**Usage Plan:**
-
-| Rate (requests per second) | Burst |
-| ---- | ---- |
-| 0.0167 | 15 |
-
-For more information, see "Usage Plans and Rate Limits" in the Selling Partner API documentation.
+GetReportDocument Effective **June 27, 2023**, the `getReportDocument` operation will no longer be available in the Selling Partner API for Reports v2020-09-04 and all calls to it will fail. Integrations that rely on this operation should migrate to [Reports v2021-06-30](https://developer-docs.amazon.com/sp-api/docs/reports-api-v2021-06-30-reference) to avoid service disruption.
 */
 func (a *Client) GetReportDocument(params *GetReportDocumentParams, opts ...ClientOption) (*GetReportDocumentOK, error) {
 	// TODO: Validate the params before sending
@@ -328,15 +280,7 @@ func (a *Client) GetReportDocument(params *GetReportDocumentParams, opts ...Clie
 }
 
 /*
-	GetReportSchedule Returns report schedule details for the report schedule that you specify.
-
-**Usage Plan:**
-
-| Rate (requests per second) | Burst |
-| ---- | ---- |
-| 0.0222 | 10 |
-
-For more information, see "Usage Plans and Rate Limits" in the Selling Partner API documentation.
+GetReportSchedule Effective **June 27, 2023**, the `getReportSchedule` operation will no longer be available in the Selling Partner API for Reports v2020-09-04 and all calls to it will fail. Integrations that rely on this operation should migrate to [Reports v2021-06-30](https://developer-docs.amazon.com/sp-api/docs/reports-api-v2021-06-30-reference) to avoid service disruption.
 */
 func (a *Client) GetReportSchedule(params *GetReportScheduleParams, opts ...ClientOption) (*GetReportScheduleOK, error) {
 	// TODO: Validate the params before sending
@@ -374,15 +318,7 @@ func (a *Client) GetReportSchedule(params *GetReportScheduleParams, opts ...Clie
 }
 
 /*
-	GetReportSchedules Returns report schedule details that match the filters that you specify.
-
-**Usage Plan:**
-
-| Rate (requests per second) | Burst |
-| ---- | ---- |
-| 0.0222 | 10 |
-
-For more information, see "Usage Plans and Rate Limits" in the Selling Partner API documentation.
+GetReportSchedules Effective **June 27, 2023**, the `getReportSchedules` operation will no longer be available in the Selling Partner API for Reports v2020-09-04 and all calls to it will fail. Integrations that rely on this operation should migrate to [Reports v2021-06-30](https://developer-docs.amazon.com/sp-api/docs/reports-api-v2021-06-30-reference) to avoid service disruption.
 */
 func (a *Client) GetReportSchedules(params *GetReportSchedulesParams, opts ...ClientOption) (*GetReportSchedulesOK, error) {
 	// TODO: Validate the params before sending
@@ -420,15 +356,7 @@ func (a *Client) GetReportSchedules(params *GetReportSchedulesParams, opts ...Cl
 }
 
 /*
-	GetReports Returns report details for the reports that match the filters that you specify.
-
-**Usage Plan:**
-
-| Rate (requests per second) | Burst |
-| ---- | ---- |
-| 0.0222 | 10 |
-
-For more information, see "Usage Plans and Rate Limits" in the Selling Partner API documentation.
+GetReports Effective **June 27, 2023**, the `getReports` operation will no longer be available in the Selling Partner API for Reports v2020-09-04 and all calls to it will fail. Integrations that rely on this operation should migrate to [Reports v2021-06-30](https://developer-docs.amazon.com/sp-api/docs/reports-api-v2021-06-30-reference) to avoid service disruption.
 */
 func (a *Client) GetReports(params *GetReportsParams, opts ...ClientOption) (*GetReportsOK, error) {
 	// TODO: Validate the params before sending
