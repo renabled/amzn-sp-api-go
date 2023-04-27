@@ -46,15 +46,7 @@ type ClientService interface {
 }
 
 /*
-	CancelFeed Cancels the feed that you specify. Only feeds with processingStatus=IN_QUEUE can be cancelled. Cancelled feeds are returned in subsequent calls to the getFeed and getFeeds operations.
-
-**Usage Plan:**
-
-| Rate (requests per second) | Burst |
-| ---- | ---- |
-| 0.0222 | 10 |
-
-For more information, see "Usage Plans and Rate Limits" in the Selling Partner API documentation.
+CancelFeed Effective June 27, 2023, the `cancelFeed` operation will no longer be available in the Selling Partner API for Feeds v2020-09-04 and all calls to it will fail. Integrations that rely on this operation should migrate to [Feeds v2021-06-30](https://developer-docs.amazon.com/sp-api/docs/feeds-api-v2021-06-30-reference) to avoid service disruption.
 */
 func (a *Client) CancelFeed(params *CancelFeedParams, opts ...ClientOption) (*CancelFeedOK, error) {
 	// TODO: Validate the params before sending
@@ -92,15 +84,7 @@ func (a *Client) CancelFeed(params *CancelFeedParams, opts ...ClientOption) (*Ca
 }
 
 /*
-	CreateFeed Creates a feed. Encrypt and upload the contents of the feed document before calling this operation.
-
-**Usage Plan:**
-
-| Rate (requests per second) | Burst |
-| ---- | ---- |
-| 0.0083 | 15 |
-
-For more information, see "Usage Plans and Rate Limits" in the Selling Partner API documentation.
+CreateFeed Effective June 27, 2023, the `createFeed` operation will no longer be available in the Selling Partner API for Feeds v2020-09-04 and all calls to it will fail. Integrations that rely on this operation should migrate to [Feeds v2021-06-30](https://developer-docs.amazon.com/sp-api/docs/feeds-api-v2021-06-30-reference) to avoid service disruption.
 */
 func (a *Client) CreateFeed(params *CreateFeedParams, opts ...ClientOption) (*CreateFeedAccepted, error) {
 	// TODO: Validate the params before sending
@@ -138,15 +122,7 @@ func (a *Client) CreateFeed(params *CreateFeedParams, opts ...ClientOption) (*Cr
 }
 
 /*
-	CreateFeedDocument Creates a feed document for the feed type that you specify. This operation returns encryption details for encrypting the contents of the document, as well as a presigned URL for uploading the encrypted feed document contents. It also returns a feedDocumentId value that you can pass in with a subsequent call to the createFeed operation.
-
-**Usage Plan:**
-
-| Rate (requests per second) | Burst |
-| ---- | ---- |
-| 0.0083 | 15 |
-
-For more information, see "Usage Plans and Rate Limits" in the Selling Partner API documentation.
+CreateFeedDocument Effective June 27, 2023, the `createFeedDocument` operation will no longer be available in the Selling Partner API for Feeds v2020-09-04 and all calls to it will fail. Integrations that rely on this operation should migrate to [Feeds v2021-06-30](https://developer-docs.amazon.com/sp-api/docs/feeds-api-v2021-06-30-reference) to avoid service disruption.
 */
 func (a *Client) CreateFeedDocument(params *CreateFeedDocumentParams, opts ...ClientOption) (*CreateFeedDocumentCreated, error) {
 	// TODO: Validate the params before sending
@@ -184,15 +160,7 @@ func (a *Client) CreateFeedDocument(params *CreateFeedDocumentParams, opts ...Cl
 }
 
 /*
-	GetFeed Returns feed details (including the resultDocumentId, if available) for the feed that you specify.
-
-**Usage Plan:**
-
-| Rate (requests per second) | Burst |
-| ---- | ---- |
-| 2.0 | 15 |
-
-For more information, see "Usage Plans and Rate Limits" in the Selling Partner API documentation.
+GetFeed Effective June 27, 2023, the `getFeed` operation will no longer be available in the Selling Partner API for Feeds v2020-09-04 and all calls to it will fail. Integrations that rely on this operation should migrate to [Feeds v2021-06-30](https://developer-docs.amazon.com/sp-api/docs/feeds-api-v2021-06-30-reference) to avoid service disruption.
 */
 func (a *Client) GetFeed(params *GetFeedParams, opts ...ClientOption) (*GetFeedOK, error) {
 	// TODO: Validate the params before sending
@@ -230,15 +198,7 @@ func (a *Client) GetFeed(params *GetFeedParams, opts ...ClientOption) (*GetFeedO
 }
 
 /*
-	GetFeedDocument Returns the information required for retrieving a feed document's contents. This includes a presigned URL for the feed document as well as the information required to decrypt the document's contents.
-
-**Usage Plan:**
-
-| Rate (requests per second) | Burst |
-| ---- | ---- |
-| 0.0222 | 10 |
-
-For more information, see "Usage Plans and Rate Limits" in the Selling Partner API documentation.
+GetFeedDocument Effective June 27, 2023, the `getFeedDocument` operation will no longer be available in the Selling Partner API for Feeds v2020-09-04 and all calls to it will fail. Integrations that rely on this operation should migrate to [Feeds v2021-06-30](https://developer-docs.amazon.com/sp-api/docs/feeds-api-v2021-06-30-reference) to avoid service disruption.
 */
 func (a *Client) GetFeedDocument(params *GetFeedDocumentParams, opts ...ClientOption) (*GetFeedDocumentOK, error) {
 	// TODO: Validate the params before sending
@@ -276,15 +236,7 @@ func (a *Client) GetFeedDocument(params *GetFeedDocumentParams, opts ...ClientOp
 }
 
 /*
-	GetFeeds Returns feed details for the feeds that match the filters that you specify.
-
-**Usage Plan:**
-
-| Rate (requests per second) | Burst |
-| ---- | ---- |
-| 0.0222 | 10 |
-
-For more information, see "Usage Plans and Rate Limits" in the Selling Partner API documentation.
+GetFeeds Effective June 27, 2023, the `getFeeds` operation will no longer be available in the Selling Partner API for Feeds v2020-09-04 and all calls to it will fail. Integrations that rely on this operation should migrate to [Feeds v2021-06-30](https://developer-docs.amazon.com/sp-api/docs/feeds-api-v2021-06-30-reference) to avoid service disruption.
 */
 func (a *Client) GetFeeds(params *GetFeedsParams, opts ...ClientOption) (*GetFeedsOK, error) {
 	// TODO: Validate the params before sending
