@@ -19,10 +19,10 @@ import (
 // swagger:model BatchOffersRequestParams
 type BatchOffersRequestParams struct {
 
-	// customer type
+	// Indicates whether to request Consumer or Business offers. Default is Consumer.
 	CustomerType CustomerType `json:"CustomerType,omitempty"`
 
-	// item condition
+	// Filters the offer listings to be considered based on item condition. Possible values: New, Used, Collectible, Refurbished, Club.
 	// Required: true
 	ItemCondition *ItemCondition `json:"ItemCondition"`
 

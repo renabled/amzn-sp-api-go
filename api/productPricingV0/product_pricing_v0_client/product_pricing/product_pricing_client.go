@@ -48,6 +48,8 @@ type ClientService interface {
 /*
 	GetCompetitivePricing Returns competitive pricing information for a seller's offer listings based on seller SKU or ASIN.
 
+**Note:** The parameters associated with this operation may contain special characters that require URL encoding to call the API. To avoid errors with SKUs when encoding URLs, refer to [URL Encoding](https://developer-docs.amazon.com/sp-api/docs/url-encoding).
+
 **Usage Plan:**
 
 | Rate (requests per second) | Burst |
@@ -186,6 +188,8 @@ func (a *Client) GetItemOffersBatch(params *GetItemOffersBatchParams, opts ...Cl
 /*
 	GetListingOffers Returns the lowest priced offers for a single SKU listing.
 
+**Note:** The parameters associated with this operation may contain special characters that require URL encoding to call the API. To avoid errors with SKUs when encoding URLs, refer to [URL Encoding](https://developer-docs.amazon.com/sp-api/docs/url-encoding).
+
 **Usage Plan:**
 
 | Rate (requests per second) | Burst |
@@ -277,6 +281,8 @@ func (a *Client) GetListingOffersBatch(params *GetListingOffersBatchParams, opts
 
 /*
 	GetPricing Returns pricing information for a seller's offer listings based on seller SKU or ASIN.
+
+**Note:** The parameters associated with this operation may contain special characters that require URL encoding to call the API. To avoid errors with SKUs when encoding URLs, refer to [URL Encoding](https://developer-docs.amazon.com/sp-api/docs/url-encoding).
 
 **Usage Plan:**
 
