@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// FeesEstimateRequest fees estimate request
+// FeesEstimateRequest A product, marketplace, and proposed price used to request estimated fees.
 //
 // swagger:model FeesEstimateRequest
 type FeesEstimateRequest struct {

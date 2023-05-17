@@ -20,7 +20,7 @@ import (
 // swagger:model TaxRegistrationDetails
 type TaxRegistrationDetails struct {
 
-	// The tax registration number for the entity. For example, VAT ID.
+	// The tax registration number for the entity. For example, VAT ID, Consumption Tax ID.
 	// Required: true
 	TaxRegistrationNumber *string `json:"taxRegistrationNumber"`
 
