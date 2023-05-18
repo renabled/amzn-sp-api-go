@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// IntendedBoxContentsSource How the seller intends to provide box contents information for a shipment.
+// IntendedBoxContentsSource How the seller intends to provide box contents information for a shipment. Leaving this field blank is equivalent to selecting `NONE`, which will incur a fee if the seller does not provide box contents information.
 //
 // swagger:model IntendedBoxContentsSource
 type IntendedBoxContentsSource string
