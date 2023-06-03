@@ -46,7 +46,7 @@ type OrderStatus struct {
 	// Required: true
 	SellingParty *PartyIdentification `json:"sellingParty"`
 
-	// Name/Address and tax details of the ship to party.
+	// Name/Address and tax details of the ship to party. Find a list of fulfillment center addresses for a region on the [Resources page of Amazon Vendor Central](https://vendorcentral.amazon.com/hz/vendor/members/support/help/node/GPZ88XH8HQM97ZV6).
 	// Required: true
 	ShipToParty *PartyIdentification `json:"shipToParty"`
 }

@@ -65,7 +65,7 @@ type OrderDetails struct {
 	// Name/Address and tax details of the selling party.
 	SellingParty *PartyIdentification `json:"sellingParty,omitempty"`
 
-	// Name/Address and tax details of the ship to party.
+	// Name/Address and tax details of the ship to party. Find a list of fulfillment center addresses for a region on the [Resources page of Amazon Vendor Central](https://vendorcentral.amazon.com/hz/vendor/members/support/help/node/GPZ88XH8HQM97ZV6).
 	ShipToParty *PartyIdentification `json:"shipToParty,omitempty"`
 
 	// This indicates the ship window. Format is start and end date separated by double hyphen (--). For example, 2007-03-01T13:00:00Z--2007-03-11T15:30:00Z.
