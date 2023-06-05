@@ -42,7 +42,7 @@ type ClientService interface {
 }
 
 /*
-	ListFinancialEventGroups Returns financial event groups for a given date range.
+	ListFinancialEventGroups Returns financial event groups for a given date range. It may take up to 48 hours for orders to appear in your financial events.
 
 **Usage Plan:**
 
@@ -88,7 +88,7 @@ func (a *Client) ListFinancialEventGroups(params *ListFinancialEventGroupsParams
 }
 
 /*
-	ListFinancialEvents Returns financial events for the specified data range.
+	ListFinancialEvents Returns financial events for the specified data range. It may take up to 48 hours for orders to appear in your financial events.
 
 **Usage Plan:**
 
@@ -134,7 +134,7 @@ func (a *Client) ListFinancialEvents(params *ListFinancialEventsParams, opts ...
 }
 
 /*
-	ListFinancialEventsByGroupID Returns all financial events for the specified financial event group.
+	ListFinancialEventsByGroupID Returns all financial events for the specified financial event group.It may take up to 48 hours for orders to appear in your financial events.
 
 **Usage Plan:**
 
@@ -180,7 +180,7 @@ func (a *Client) ListFinancialEventsByGroupID(params *ListFinancialEventsByGroup
 }
 
 /*
-	ListFinancialEventsByOrderID Returns all financial events for the specified order.
+	ListFinancialEventsByOrderID Returns all financial events for the specified order. It may take up to 48 hours for orders to appear in your financial events.
 
 **Usage Plan:**
 
