@@ -134,7 +134,9 @@ func (a *Client) ListFinancialEvents(params *ListFinancialEventsParams, opts ...
 }
 
 /*
-	ListFinancialEventsByGroupID Returns all financial events for the specified financial event group.It may take up to 48 hours for orders to appear in your financial events.
+	ListFinancialEventsByGroupID Returns all financial events for the specified financial event group. It may take up to 48 hours for orders to appear in your financial events.
+
+**Note:** This operation will only retrieve group's data for the past two years. If a request is submitted for data spanning more than two years, an empty response is returned.
 
 **Usage Plan:**
 
