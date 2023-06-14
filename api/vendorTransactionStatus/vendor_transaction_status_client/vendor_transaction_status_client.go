@@ -10,7 +10,7 @@ import (
 	httptransport "github.com/go-openapi/runtime/client"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/xamandar/amzn-sp-api-go/api/vendorTransactionStatus/vendor_transaction_status_client/vendor_transaction"
+	"github.com/renabled/amzn-sp-api-go/api/vendorTransactionStatus/vendor_transaction_status_client/vendor_transaction"
 )
 
 // Default vendor transaction status HTTP client.

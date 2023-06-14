@@ -12,7 +12,7 @@ import (
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/xamandar/amzn-sp-api-go/api/authorization/authorization_models"
+	"github.com/renabled/amzn-sp-api-go/api/authorization/authorization_models"
 )
 
 // GetAuthorizationCodeReader is a Reader for the GetAuthorizationCode structure.

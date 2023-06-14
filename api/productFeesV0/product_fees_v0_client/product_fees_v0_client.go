@@ -10,7 +10,7 @@ import (
 	httptransport "github.com/go-openapi/runtime/client"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/xamandar/amzn-sp-api-go/api/productFeesV0/product_fees_v0_client/fees"
+	"github.com/renabled/amzn-sp-api-go/api/productFeesV0/product_fees_v0_client/fees"
 )
 
 // Default product fees v0 HTTP client.

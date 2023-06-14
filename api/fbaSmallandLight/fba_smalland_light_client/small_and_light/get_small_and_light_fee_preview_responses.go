@@ -12,7 +12,7 @@ import (
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/xamandar/amzn-sp-api-go/api/fbaSmallandLight/fba_smalland_light_models"
+	"github.com/renabled/amzn-sp-api-go/api/fbaSmallandLight/fba_smalland_light_models"
 )
 
 // GetSmallAndLightFeePreviewReader is a Reader for the GetSmallAndLightFeePreview structure.

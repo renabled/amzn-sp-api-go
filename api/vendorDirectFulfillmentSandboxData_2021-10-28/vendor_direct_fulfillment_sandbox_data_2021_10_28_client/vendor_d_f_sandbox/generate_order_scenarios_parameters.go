@@ -15,7 +15,7 @@ import (
 	cr "github.com/go-openapi/runtime/client"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/xamandar/amzn-sp-api-go/api/vendorDirectFulfillmentSandboxData_2021-10-28/vendor_direct_fulfillment_sandbox_data_2021_10_28_models"
+	"github.com/renabled/amzn-sp-api-go/api/vendorDirectFulfillmentSandboxData_2021-10-28/vendor_direct_fulfillment_sandbox_data_2021_10_28_models"
 )
 
 // NewGenerateOrderScenariosParams creates a new GenerateOrderScenariosParams object,

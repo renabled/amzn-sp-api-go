@@ -10,7 +10,7 @@ import (
 	httptransport "github.com/go-openapi/runtime/client"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/xamandar/amzn-sp-api-go/api/vendorShipments/vendor_shipments_client/vendor_shipping"
+	"github.com/renabled/amzn-sp-api-go/api/vendorShipments/vendor_shipments_client/vendor_shipping"
 )
 
 // Default vendor shipments HTTP client.

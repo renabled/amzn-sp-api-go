@@ -15,7 +15,7 @@ import (
 	cr "github.com/go-openapi/runtime/client"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/xamandar/amzn-sp-api-go/api/vendorDirectFulfillmentOrdersV1/vendor_direct_fulfillment_orders_v1_models"
+	"github.com/renabled/amzn-sp-api-go/api/vendorDirectFulfillmentOrdersV1/vendor_direct_fulfillment_orders_v1_models"
 )
 
 // NewSubmitAcknowledgementParams creates a new SubmitAcknowledgementParams object,

@@ -12,7 +12,7 @@ import (
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/xamandar/amzn-sp-api-go/api/feeds_2021-06-30/feeds_2021_06_30_models"
+	"github.com/renabled/amzn-sp-api-go/api/feeds_2021-06-30/feeds_2021_06_30_models"
 )
 
 // CreateFeedDocumentReader is a Reader for the CreateFeedDocument structure.

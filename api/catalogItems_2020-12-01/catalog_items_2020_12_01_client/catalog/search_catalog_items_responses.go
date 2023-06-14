@@ -12,7 +12,7 @@ import (
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/xamandar/amzn-sp-api-go/api/catalogItems_2020-12-01/catalog_items_2020_12_01_models"
+	"github.com/renabled/amzn-sp-api-go/api/catalogItems_2020-12-01/catalog_items_2020_12_01_models"
 )
 
 // SearchCatalogItemsReader is a Reader for the SearchCatalogItems structure.

@@ -10,7 +10,7 @@ import (
 	httptransport "github.com/go-openapi/runtime/client"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/xamandar/amzn-sp-api-go/api/vendorDirectFulfillmentTransactions_2021-12-28/vendor_direct_fulfillment_transactions_2021_12_28_client/vendor_transaction"
+	"github.com/renabled/amzn-sp-api-go/api/vendorDirectFulfillmentTransactions_2021-12-28/vendor_direct_fulfillment_transactions_2021_12_28_client/vendor_transaction"
 )
 
 // Default vendor direct fulfillment transactions20211228 HTTP client.

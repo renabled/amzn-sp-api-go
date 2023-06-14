@@ -12,7 +12,7 @@ import (
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/xamandar/amzn-sp-api-go/api/definitionsProductTypes_2020-09-01/definitions_product_types_2020_09_01_models"
+	"github.com/renabled/amzn-sp-api-go/api/definitionsProductTypes_2020-09-01/definitions_product_types_2020_09_01_models"
 )
 
 // GetDefinitionsProductTypeReader is a Reader for the GetDefinitionsProductType structure.

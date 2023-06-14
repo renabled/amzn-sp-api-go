@@ -10,7 +10,7 @@ import (
 	httptransport "github.com/go-openapi/runtime/client"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/xamandar/amzn-sp-api-go/api/vendorDirectFulfillmentOrdersV1/vendor_direct_fulfillment_orders_v1_client/vendor_orders"
+	"github.com/renabled/amzn-sp-api-go/api/vendorDirectFulfillmentOrdersV1/vendor_direct_fulfillment_orders_v1_client/vendor_orders"
 )
 
 // Default vendor direct fulfillment orders v1 HTTP client.

@@ -12,7 +12,7 @@ import (
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/xamandar/amzn-sp-api-go/api/listingsRestrictions_2021-08-01/listings_restrictions_2021_08_01_models"
+	"github.com/renabled/amzn-sp-api-go/api/listingsRestrictions_2021-08-01/listings_restrictions_2021_08_01_models"
 )
 
 // GetListingsRestrictionsReader is a Reader for the GetListingsRestrictions structure.

@@ -10,7 +10,7 @@ import (
 	httptransport "github.com/go-openapi/runtime/client"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/xamandar/amzn-sp-api-go/api/merchantFulfillmentV0/merchant_fulfillment_v0_client/merchant_fulfillment"
+	"github.com/renabled/amzn-sp-api-go/api/merchantFulfillmentV0/merchant_fulfillment_v0_client/merchant_fulfillment"
 )
 
 // Default merchant fulfillment v0 HTTP client.

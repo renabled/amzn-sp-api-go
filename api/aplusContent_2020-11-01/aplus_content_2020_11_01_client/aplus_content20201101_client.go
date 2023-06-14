@@ -10,7 +10,7 @@ import (
 	httptransport "github.com/go-openapi/runtime/client"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/xamandar/amzn-sp-api-go/api/aplusContent_2020-11-01/aplus_content_2020_11_01_client/aplus_content"
+	"github.com/renabled/amzn-sp-api-go/api/aplusContent_2020-11-01/aplus_content_2020_11_01_client/aplus_content"
 )
 
 // Default aplus content20201101 HTTP client.

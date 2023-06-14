@@ -12,7 +12,7 @@ import (
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/xamandar/amzn-sp-api-go/api/ordersV0/orders_v0_models"
+	"github.com/renabled/amzn-sp-api-go/api/ordersV0/orders_v0_models"
 )
 
 // ConfirmShipmentReader is a Reader for the ConfirmShipment structure.

@@ -16,7 +16,7 @@ import (
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
 
-	"github.com/xamandar/amzn-sp-api-go/api/messaging/messaging_models"
+	"github.com/renabled/amzn-sp-api-go/api/messaging/messaging_models"
 )
 
 // NewCreateConfirmOrderDetailsParams creates a new CreateConfirmOrderDetailsParams object,

@@ -12,7 +12,7 @@ import (
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/xamandar/amzn-sp-api-go/api/uploads_2020-11-01/uploads_2020_11_01_models"
+	"github.com/renabled/amzn-sp-api-go/api/uploads_2020-11-01/uploads_2020_11_01_models"
 )
 
 // CreateUploadDestinationForResourceReader is a Reader for the CreateUploadDestinationForResource structure.

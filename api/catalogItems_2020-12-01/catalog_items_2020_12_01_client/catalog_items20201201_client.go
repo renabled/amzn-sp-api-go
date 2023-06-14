@@ -10,7 +10,7 @@ import (
 	httptransport "github.com/go-openapi/runtime/client"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/xamandar/amzn-sp-api-go/api/catalogItems_2020-12-01/catalog_items_2020_12_01_client/catalog"
+	"github.com/renabled/amzn-sp-api-go/api/catalogItems_2020-12-01/catalog_items_2020_12_01_client/catalog"
 )
 
 // Default catalog items20201201 HTTP client.

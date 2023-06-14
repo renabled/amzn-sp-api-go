@@ -12,7 +12,7 @@ import (
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/xamandar/amzn-sp-api-go/api/vendorDirectFulfillmentPaymentsV1/vendor_direct_fulfillment_payments_v1_models"
+	"github.com/renabled/amzn-sp-api-go/api/vendorDirectFulfillmentPaymentsV1/vendor_direct_fulfillment_payments_v1_models"
 )
 
 // SubmitInvoiceReader is a Reader for the SubmitInvoice structure.

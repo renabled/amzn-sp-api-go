@@ -10,7 +10,7 @@ import (
 	httptransport "github.com/go-openapi/runtime/client"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/xamandar/amzn-sp-api-go/api/easyShip_2022-03-23/easy_ship_2022_03_23_client/easy_ship"
+	"github.com/renabled/amzn-sp-api-go/api/easyShip_2022-03-23/easy_ship_2022_03_23_client/easy_ship"
 )
 
 // Default easy ship20220323 HTTP client.

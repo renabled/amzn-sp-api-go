@@ -16,7 +16,7 @@ import (
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
 
-	"github.com/xamandar/amzn-sp-api-go/api/listingsItems_2020-09-01/listings_items_2020_09_01_models"
+	"github.com/renabled/amzn-sp-api-go/api/listingsItems_2020-09-01/listings_items_2020_09_01_models"
 )
 
 // NewPutListingsItemParams creates a new PutListingsItemParams object,

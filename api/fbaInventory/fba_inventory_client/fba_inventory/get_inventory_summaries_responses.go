@@ -12,7 +12,7 @@ import (
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/xamandar/amzn-sp-api-go/api/fbaInventory/fba_inventory_models"
+	"github.com/renabled/amzn-sp-api-go/api/fbaInventory/fba_inventory_models"
 )
 
 // GetInventorySummariesReader is a Reader for the GetInventorySummaries structure.

@@ -9,7 +9,7 @@ import (
 	"github.com/go-openapi/runtime"
 	httptransport "github.com/go-openapi/runtime/client"
 	"github.com/go-openapi/strfmt"
-	"github.com/xamandar/amzn-sp-api-go/api/financesV0/finances_v0_client/operations"
+	"github.com/renabled/amzn-sp-api-go/api/financesV0/finances_v0_client/operations"
 )
 
 // Default finances v0 HTTP client.

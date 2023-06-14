@@ -1,4 +1,4 @@
-module github.com/xamandar/amzn-sp-api-go
+module github.com/renabled/amzn-sp-api-go
 
 go 1.18
 

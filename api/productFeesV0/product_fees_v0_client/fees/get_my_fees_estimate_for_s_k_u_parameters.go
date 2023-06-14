@@ -15,7 +15,7 @@ import (
 	cr "github.com/go-openapi/runtime/client"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/xamandar/amzn-sp-api-go/api/productFeesV0/product_fees_v0_models"
+	"github.com/renabled/amzn-sp-api-go/api/productFeesV0/product_fees_v0_models"
 )
 
 // NewGetMyFeesEstimateForSKUParams creates a new GetMyFeesEstimateForSKUParams object,

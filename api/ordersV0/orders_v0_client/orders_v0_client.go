@@ -10,8 +10,8 @@ import (
 	httptransport "github.com/go-openapi/runtime/client"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/xamandar/amzn-sp-api-go/api/ordersV0/orders_v0_client/orders_v0"
-	"github.com/xamandar/amzn-sp-api-go/api/ordersV0/orders_v0_client/shipment"
+	"github.com/renabled/amzn-sp-api-go/api/ordersV0/orders_v0_client/orders_v0"
+	"github.com/renabled/amzn-sp-api-go/api/ordersV0/orders_v0_client/shipment"
 )
 
 // Default orders v0 HTTP client.

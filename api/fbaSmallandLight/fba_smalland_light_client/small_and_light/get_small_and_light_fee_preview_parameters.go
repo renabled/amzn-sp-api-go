@@ -15,7 +15,7 @@ import (
 	cr "github.com/go-openapi/runtime/client"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/xamandar/amzn-sp-api-go/api/fbaSmallandLight/fba_smalland_light_models"
+	"github.com/renabled/amzn-sp-api-go/api/fbaSmallandLight/fba_smalland_light_models"
 )
 
 // NewGetSmallAndLightFeePreviewParams creates a new GetSmallAndLightFeePreviewParams object,

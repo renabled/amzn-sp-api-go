@@ -10,7 +10,7 @@ import (
 	httptransport "github.com/go-openapi/runtime/client"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/xamandar/amzn-sp-api-go/api/authorization/authorization_client/authorization"
+	"github.com/renabled/amzn-sp-api-go/api/authorization/authorization_client/authorization"
 )
 
 // Default authorization HTTP client.

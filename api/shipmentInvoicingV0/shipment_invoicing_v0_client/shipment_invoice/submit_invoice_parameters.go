@@ -15,7 +15,7 @@ import (
 	cr "github.com/go-openapi/runtime/client"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/xamandar/amzn-sp-api-go/api/shipmentInvoicingV0/shipment_invoicing_v0_models"
+	"github.com/renabled/amzn-sp-api-go/api/shipmentInvoicingV0/shipment_invoicing_v0_models"
 )
 
 // NewSubmitInvoiceParams creates a new SubmitInvoiceParams object,

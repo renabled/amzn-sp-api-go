@@ -10,7 +10,7 @@ import (
 	httptransport "github.com/go-openapi/runtime/client"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/xamandar/amzn-sp-api-go/api/sales/sales_client/sales"
+	"github.com/renabled/amzn-sp-api-go/api/sales/sales_client/sales"
 )
 
 // Default sales HTTP client.

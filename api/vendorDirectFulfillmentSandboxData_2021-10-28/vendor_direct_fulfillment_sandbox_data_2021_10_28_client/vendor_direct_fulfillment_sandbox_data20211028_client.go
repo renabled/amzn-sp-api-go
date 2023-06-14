@@ -10,8 +10,8 @@ import (
 	httptransport "github.com/go-openapi/runtime/client"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/xamandar/amzn-sp-api-go/api/vendorDirectFulfillmentSandboxData_2021-10-28/vendor_direct_fulfillment_sandbox_data_2021_10_28_client/vendor_d_f_sandbox"
-	"github.com/xamandar/amzn-sp-api-go/api/vendorDirectFulfillmentSandboxData_2021-10-28/vendor_direct_fulfillment_sandbox_data_2021_10_28_client/vendor_d_f_sandboxtransactionstatus"
+	"github.com/renabled/amzn-sp-api-go/api/vendorDirectFulfillmentSandboxData_2021-10-28/vendor_direct_fulfillment_sandbox_data_2021_10_28_client/vendor_d_f_sandbox"
+	"github.com/renabled/amzn-sp-api-go/api/vendorDirectFulfillmentSandboxData_2021-10-28/vendor_direct_fulfillment_sandbox_data_2021_10_28_client/vendor_d_f_sandboxtransactionstatus"
 )
 
 // Default vendor direct fulfillment sandbox data20211028 HTTP client.

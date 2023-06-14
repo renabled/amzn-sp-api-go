@@ -12,7 +12,7 @@ import (
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/xamandar/amzn-sp-api-go/api/tokens_2021-03-01/tokens_2021_03_01_models"
+	"github.com/renabled/amzn-sp-api-go/api/tokens_2021-03-01/tokens_2021_03_01_models"
 )
 
 // CreateRestrictedDataTokenReader is a Reader for the CreateRestrictedDataToken structure.

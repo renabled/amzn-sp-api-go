@@ -10,7 +10,7 @@ import (
 	httptransport "github.com/go-openapi/runtime/client"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/xamandar/amzn-sp-api-go/api/shipmentInvoicingV0/shipment_invoicing_v0_client/shipment_invoice"
+	"github.com/renabled/amzn-sp-api-go/api/shipmentInvoicingV0/shipment_invoicing_v0_client/shipment_invoice"
 )
 
 // Default shipment invoicing v0 HTTP client.

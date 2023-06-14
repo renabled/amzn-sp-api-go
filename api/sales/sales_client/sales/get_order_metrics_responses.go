@@ -12,7 +12,7 @@ import (
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/xamandar/amzn-sp-api-go/api/sales/sales_models"
+	"github.com/renabled/amzn-sp-api-go/api/sales/sales_models"
 )
 
 // GetOrderMetricsReader is a Reader for the GetOrderMetrics structure.

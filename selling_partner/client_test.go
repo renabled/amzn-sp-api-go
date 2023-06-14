@@ -3,8 +3,8 @@ package selling_partner_test
 import (
 	"testing"
 
+	"github.com/renabled/amzn-sp-api-go/selling_partner"
 	"github.com/stretchr/testify/require"
-	"github.com/xamandar/amzn-sp-api-go/selling_partner"
 )
 
 func Test_Init(t *testing.T) {

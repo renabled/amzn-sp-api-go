@@ -10,7 +10,7 @@ import (
 	httptransport "github.com/go-openapi/runtime/client"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/xamandar/amzn-sp-api-go/api/reports_2020-09-04/reports_2020_09_04_client/reports"
+	"github.com/renabled/amzn-sp-api-go/api/reports_2020-09-04/reports_2020_09_04_client/reports"
 )
 
 // Default reports20200904 HTTP client.

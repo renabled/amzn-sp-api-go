@@ -15,7 +15,7 @@ import (
 	cr "github.com/go-openapi/runtime/client"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/xamandar/amzn-sp-api-go/api/productPricingV0/product_pricing_v0_models"
+	"github.com/renabled/amzn-sp-api-go/api/productPricingV0/product_pricing_v0_models"
 )
 
 // NewGetItemOffersBatchParams creates a new GetItemOffersBatchParams object,

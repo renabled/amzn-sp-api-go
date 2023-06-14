@@ -10,7 +10,7 @@ import (
 	httptransport "github.com/go-openapi/runtime/client"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/xamandar/amzn-sp-api-go/api/fbaInbound/fba_inbound_client/fba_inbound"
+	"github.com/renabled/amzn-sp-api-go/api/fbaInbound/fba_inbound_client/fba_inbound"
 )
 
 // Default fba inbound HTTP client.

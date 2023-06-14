@@ -10,7 +10,7 @@ import (
 	httptransport "github.com/go-openapi/runtime/client"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/xamandar/amzn-sp-api-go/api/tokens_2021-03-01/tokens_2021_03_01_client/tokens"
+	"github.com/renabled/amzn-sp-api-go/api/tokens_2021-03-01/tokens_2021_03_01_client/tokens"
 )
 
 // Default tokens20210301 HTTP client.

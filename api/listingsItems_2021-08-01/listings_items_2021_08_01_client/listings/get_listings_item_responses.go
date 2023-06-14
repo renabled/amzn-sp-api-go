@@ -12,7 +12,7 @@ import (
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/xamandar/amzn-sp-api-go/api/listingsItems_2021-08-01/listings_items_2021_08_01_models"
+	"github.com/renabled/amzn-sp-api-go/api/listingsItems_2021-08-01/listings_items_2021_08_01_models"
 )
 
 // GetListingsItemReader is a Reader for the GetListingsItem structure.

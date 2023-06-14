@@ -15,7 +15,7 @@ import (
 	cr "github.com/go-openapi/runtime/client"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/xamandar/amzn-sp-api-go/api/merchantFulfillmentV0/merchant_fulfillment_v0_models"
+	"github.com/renabled/amzn-sp-api-go/api/merchantFulfillmentV0/merchant_fulfillment_v0_models"
 )
 
 // NewGetAdditionalSellerInputsParams creates a new GetAdditionalSellerInputsParams object,

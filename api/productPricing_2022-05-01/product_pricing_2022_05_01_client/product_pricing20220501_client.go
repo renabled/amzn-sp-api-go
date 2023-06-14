@@ -10,7 +10,7 @@ import (
 	httptransport "github.com/go-openapi/runtime/client"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/xamandar/amzn-sp-api-go/api/productPricing_2022-05-01/product_pricing_2022_05_01_client/product_pricing"
+	"github.com/renabled/amzn-sp-api-go/api/productPricing_2022-05-01/product_pricing_2022_05_01_client/product_pricing"
 )
 
 // Default product pricing20220501 HTTP client.

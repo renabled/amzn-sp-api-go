@@ -12,7 +12,7 @@ import (
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/xamandar/amzn-sp-api-go/api/listingsItems_2020-09-01/listings_items_2020_09_01_models"
+	"github.com/renabled/amzn-sp-api-go/api/listingsItems_2020-09-01/listings_items_2020_09_01_models"
 )
 
 // PatchListingsItemReader is a Reader for the PatchListingsItem structure.

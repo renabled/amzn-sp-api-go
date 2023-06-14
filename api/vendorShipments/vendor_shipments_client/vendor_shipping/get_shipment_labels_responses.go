@@ -12,7 +12,7 @@ import (
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/xamandar/amzn-sp-api-go/api/vendorShipments/vendor_shipments_models"
+	"github.com/renabled/amzn-sp-api-go/api/vendorShipments/vendor_shipments_models"
 )
 
 // GetShipmentLabelsReader is a Reader for the GetShipmentLabels structure.

@@ -10,7 +10,7 @@ import (
 	httptransport "github.com/go-openapi/runtime/client"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/xamandar/amzn-sp-api-go/api/definitionsProductTypes_2020-09-01/definitions_product_types_2020_09_01_client/definitions"
+	"github.com/renabled/amzn-sp-api-go/api/definitionsProductTypes_2020-09-01/definitions_product_types_2020_09_01_client/definitions"
 )
 
 // Default definitions product types20200901 HTTP client.

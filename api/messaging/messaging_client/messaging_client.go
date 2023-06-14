@@ -10,7 +10,7 @@ import (
 	httptransport "github.com/go-openapi/runtime/client"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/xamandar/amzn-sp-api-go/api/messaging/messaging_client/messaging"
+	"github.com/renabled/amzn-sp-api-go/api/messaging/messaging_client/messaging"
 )
 
 // Default messaging HTTP client.

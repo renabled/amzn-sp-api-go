@@ -12,7 +12,7 @@ import (
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/xamandar/amzn-sp-api-go/api/vendorDirectFulfillmentInventoryV1/vendor_direct_fulfillment_inventory_v1_models"
+	"github.com/renabled/amzn-sp-api-go/api/vendorDirectFulfillmentInventoryV1/vendor_direct_fulfillment_inventory_v1_models"
 )
 
 // SubmitInventoryUpdateReader is a Reader for the SubmitInventoryUpdate structure.

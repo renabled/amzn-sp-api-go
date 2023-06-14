@@ -10,7 +10,7 @@ import (
 	httptransport "github.com/go-openapi/runtime/client"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/xamandar/amzn-sp-api-go/api/vendorDirectFulfillmentPaymentsV1/vendor_direct_fulfillment_payments_v1_client/vendor_invoice"
+	"github.com/renabled/amzn-sp-api-go/api/vendorDirectFulfillmentPaymentsV1/vendor_direct_fulfillment_payments_v1_client/vendor_invoice"
 )
 
 // Default vendor direct fulfillment payments v1 HTTP client.

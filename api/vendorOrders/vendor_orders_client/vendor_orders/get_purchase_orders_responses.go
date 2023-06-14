@@ -12,7 +12,7 @@ import (
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/xamandar/amzn-sp-api-go/api/vendorOrders/vendor_orders_models"
+	"github.com/renabled/amzn-sp-api-go/api/vendorOrders/vendor_orders_models"
 )
 
 // GetPurchaseOrdersReader is a Reader for the GetPurchaseOrders structure.
