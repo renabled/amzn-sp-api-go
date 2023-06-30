@@ -7,6 +7,7 @@ package notifications_models
 
 import (
 	"context"
+	"encoding/json"
 
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/strfmt"
@@ -22,8 +23,11 @@ type EventFilter struct {
 
 	MarketplaceFilter
 
+	OrderChangeTypeFilter
+
 	// An eventFilterType value that is supported by the specific notificationType. This is used by the subscription service to determine the type of event filter. Refer to the section of the [Notifications Use Case Guide](doc:notifications-api-v1-use-case-guide) that describes the specific notificationType to determine if an eventFilterType is supported.
 	// Required: true
+	// Enum: [ANY_OFFER_CHANGED ORDER_CHANGE]
 	EventFilterType *string `json:"eventFilterType"`
 }
 
@@ -44,21 +48,28 @@ func (m *EventFilter) UnmarshalJSON(raw []byte) error {
 	m.MarketplaceFilter = aO1
 
 	// AO2
-	var dataAO2 struct {
+	var aO2 OrderChangeTypeFilter
+	if err := swag.ReadJSON(raw, &aO2); err != nil {
+		return err
+	}
+	m.OrderChangeTypeFilter = aO2
+
+	// AO3
+	var dataAO3 struct {
 		EventFilterType *string `json:"eventFilterType"`
 	}
-	if err := swag.ReadJSON(raw, &dataAO2); err != nil {
+	if err := swag.ReadJSON(raw, &dataAO3); err != nil {
 		return err
 	}
 
-	m.EventFilterType = dataAO2.EventFilterType
+	m.EventFilterType = dataAO3.EventFilterType
 
 	return nil
 }
 
 // MarshalJSON marshals this object to a JSON structure
 func (m EventFilter) MarshalJSON() ([]byte, error) {
-	_parts := make([][]byte, 0, 3)
+	_parts := make([][]byte, 0, 4)
 
 	aO0, err := swag.WriteJSON(m.AggregationFilter)
 	if err != nil {
@@ -71,17 +82,23 @@ func (m EventFilter) MarshalJSON() ([]byte, error) {
 		return nil, err
 	}
 	_parts = append(_parts, aO1)
-	var dataAO2 struct {
+
+	aO2, err := swag.WriteJSON(m.OrderChangeTypeFilter)
+	if err != nil {
+		return nil, err
+	}
+	_parts = append(_parts, aO2)
+	var dataAO3 struct {
 		EventFilterType *string `json:"eventFilterType"`
 	}
 
-	dataAO2.EventFilterType = m.EventFilterType
+	dataAO3.EventFilterType = m.EventFilterType
 
-	jsonDataAO2, errAO2 := swag.WriteJSON(dataAO2)
-	if errAO2 != nil {
-		return nil, errAO2
+	jsonDataAO3, errAO3 := swag.WriteJSON(dataAO3)
+	if errAO3 != nil {
+		return nil, errAO3
 	}
-	_parts = append(_parts, jsonDataAO2)
+	_parts = append(_parts, jsonDataAO3)
 	return swag.ConcatJSON(_parts...), nil
 }
 
@@ -97,6 +114,10 @@ func (m *EventFilter) Validate(formats strfmt.Registry) error {
 	if err := m.MarketplaceFilter.Validate(formats); err != nil {
 		res = append(res, err)
 	}
+	// validation for a type composition with OrderChangeTypeFilter
+	if err := m.OrderChangeTypeFilter.Validate(formats); err != nil {
+		res = append(res, err)
+	}
 
 	if err := m.validateEventFilterType(formats); err != nil {
 		res = append(res, err)
@@ -108,9 +129,34 @@ func (m *EventFilter) Validate(formats strfmt.Registry) error {
 	return nil
 }
 
+var eventFilterTypeEventFilterTypePropEnum []interface{}
+
+func init() {
+	var res []string
+	if err := json.Unmarshal([]byte(`["ANY_OFFER_CHANGED","ORDER_CHANGE"]`), &res); err != nil {
+		panic(err)
+	}
+	for _, v := range res {
+		eventFilterTypeEventFilterTypePropEnum = append(eventFilterTypeEventFilterTypePropEnum, v)
+	}
+}
+
+// property enum
+func (m *EventFilter) validateEventFilterTypeEnum(path, location string, value string) error {
+	if err := validate.EnumCase(path, location, value, eventFilterTypeEventFilterTypePropEnum, true); err != nil {
+		return err
+	}
+	return nil
+}
+
 func (m *EventFilter) validateEventFilterType(formats strfmt.Registry) error {
 
 	if err := validate.Required("eventFilterType", "body", m.EventFilterType); err != nil {
+		return err
+	}
+
+	// value enum
+	if err := m.validateEventFilterTypeEnum("eventFilterType", "body", *m.EventFilterType); err != nil {
 		return err
 	}
 
@@ -127,6 +173,10 @@ func (m *EventFilter) ContextValidate(ctx context.Context, formats strfmt.Regist
 	}
 	// validation for a type composition with MarketplaceFilter
 	if err := m.MarketplaceFilter.ContextValidate(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+	// validation for a type composition with OrderChangeTypeFilter
+	if err := m.OrderChangeTypeFilter.ContextValidate(ctx, formats); err != nil {
 		res = append(res, err)
 	}
 
