@@ -26,12 +26,10 @@ type PaymentExecutionDetailItem struct {
 	// A sub-payment method for a COD order.
 	//
 	// Possible values:
-	//
-	// * COD - Cash On Delivery.
-	//
-	// * GC - Gift Card.
-	//
-	// * PointsAccount - Amazon Points.
+	// * `COD`: Cash On Delivery.
+	// * `GC`: Gift Card.
+	// * `PointsAccount`: Amazon Points.
+	// * `Invoice`: Invoice.
 	// Required: true
 	PaymentMethod *string `json:"PaymentMethod"`
 }
