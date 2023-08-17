@@ -174,7 +174,7 @@ type Order struct {
 
 	// The shipment service level category of the order.
 	//
-	// Possible values: Expedited, FreeEconomy, NextDay, SameDay, SecondDay, Scheduled, Standard.
+	// Possible values: Expedited, FreeEconomy, NextDay, Priority, SameDay, SecondDay, Scheduled, Standard.
 	ShipmentServiceLevelCategory string `json:"ShipmentServiceLevelCategory,omitempty"`
 
 	// shipping address
