@@ -59,7 +59,11 @@ type OrderItem struct {
 	// When true, the item is a gift.
 	IsGift bool `json:"IsGift,omitempty"`
 
-	// When true, transparency codes are required.
+	// When true, the ASIN is enrolled in Transparency and the Transparency serial number that needs to be submitted can be determined by the following:
+	//
+	// **1D or 2D Barcode:** This has a **T** logo. Submit either the 29-character alpha-numeric identifier beginning with **AZ** or **ZA**, or the 38-character Serialized Global Trade Item Number (SGTIN).
+	// **2D Barcode SN:** Submit the 7- to 20-character serial number barcode, which likely has the prefix **SN**. The serial number will be applied to the same side of the packaging as the GTIN (UPC/EAN/ISBN) barcode.
+	// **QR code SN:** Submit the URL that the QR code generates.
 	IsTransparency bool `json:"IsTransparency,omitempty"`
 
 	// The selling price of the order item. Note that an order item is an item and a quantity. This means that the value of ItemPrice is equal to the selling price of the item multiplied by the quantity ordered. Note that ItemPrice excludes ShippingPrice and GiftWrapPrice.
