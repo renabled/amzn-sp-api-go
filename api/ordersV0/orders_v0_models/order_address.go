@@ -23,7 +23,7 @@ type OrderAddress struct {
 	// Required: true
 	AmazonOrderID *string `json:"AmazonOrderId"`
 
-	// Company name of the destination address.
+	// Company Name of the Buyer.
 	BuyerCompanyName string `json:"BuyerCompanyName,omitempty"`
 
 	// delivery preferences
