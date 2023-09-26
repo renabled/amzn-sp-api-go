@@ -72,6 +72,9 @@ type OrderItem struct {
 	// The tax on the item price.
 	ItemTax *Money `json:"ItemTax,omitempty"`
 
+	// Measurement information for the order item.
+	Measurement *Measurement `json:"Measurement,omitempty"`
+
 	// An Amazon-defined order item identifier.
 	// Required: true
 	OrderItemID *string `json:"OrderItemId"`
@@ -135,6 +138,9 @@ type OrderItem struct {
 	// The store chain store identifier. Linked to a specific store in a store chain.
 	StoreChainStoreID string `json:"StoreChainStoreId,omitempty"`
 
+	// Substitution preferences for the order item. This is an optional field and will only be present if seller supports substitutions like in case of some grocery sellers.
+	SubstitutionPreferences *SubstitutionPreferences `json:"SubstitutionPreferences,omitempty"`
+
 	// Information about withheld taxes.
 	TaxCollection *TaxCollection `json:"TaxCollection,omitempty"`
 
@@ -175,6 +181,10 @@ func (m *OrderItem) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validateItemTax(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateMeasurement(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -219,6 +229,10 @@ func (m *OrderItem) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validateShippingTax(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateSubstitutionPreferences(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -389,6 +403,25 @@ func (m *OrderItem) validateItemTax(formats strfmt.Registry) error {
 				return ve.ValidateName("ItemTax")
 			} else if ce, ok := err.(*errors.CompositeError); ok {
 				return ce.ValidateName("ItemTax")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *OrderItem) validateMeasurement(formats strfmt.Registry) error {
+	if swag.IsZero(m.Measurement) { // not required
+		return nil
+	}
+
+	if m.Measurement != nil {
+		if err := m.Measurement.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("Measurement")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("Measurement")
 			}
 			return err
 		}
@@ -584,6 +617,25 @@ func (m *OrderItem) validateShippingTax(formats strfmt.Registry) error {
 	return nil
 }
 
+func (m *OrderItem) validateSubstitutionPreferences(formats strfmt.Registry) error {
+	if swag.IsZero(m.SubstitutionPreferences) { // not required
+		return nil
+	}
+
+	if m.SubstitutionPreferences != nil {
+		if err := m.SubstitutionPreferences.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("SubstitutionPreferences")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("SubstitutionPreferences")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
 func (m *OrderItem) validateTaxCollection(formats strfmt.Registry) error {
 	if swag.IsZero(m.TaxCollection) { // not required
 		return nil
@@ -631,6 +683,10 @@ func (m *OrderItem) ContextValidate(ctx context.Context, formats strfmt.Registry
 		res = append(res, err)
 	}
 
+	if err := m.contextValidateMeasurement(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.contextValidatePointsGranted(ctx, formats); err != nil {
 		res = append(res, err)
 	}
@@ -664,6 +720,10 @@ func (m *OrderItem) ContextValidate(ctx context.Context, formats strfmt.Registry
 	}
 
 	if err := m.contextValidateShippingTax(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateSubstitutionPreferences(ctx, formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -765,6 +825,22 @@ func (m *OrderItem) contextValidateItemTax(ctx context.Context, formats strfmt.R
 				return ve.ValidateName("ItemTax")
 			} else if ce, ok := err.(*errors.CompositeError); ok {
 				return ce.ValidateName("ItemTax")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *OrderItem) contextValidateMeasurement(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.Measurement != nil {
+		if err := m.Measurement.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("Measurement")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("Measurement")
 			}
 			return err
 		}
@@ -907,6 +983,22 @@ func (m *OrderItem) contextValidateShippingTax(ctx context.Context, formats strf
 				return ve.ValidateName("ShippingTax")
 			} else if ce, ok := err.(*errors.CompositeError); ok {
 				return ce.ValidateName("ShippingTax")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *OrderItem) contextValidateSubstitutionPreferences(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.SubstitutionPreferences != nil {
+		if err := m.SubstitutionPreferences.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("SubstitutionPreferences")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("SubstitutionPreferences")
 			}
 			return err
 		}

@@ -92,6 +92,18 @@ type GetOrdersParams struct {
 	*/
 	CreatedBefore *string
 
+	/* EarliestDeliveryDateAfter.
+
+	   A date used for selecting orders with a earliest delivery date after (or at) a specified time. The date must be in ISO 8601 format.
+	*/
+	EarliestDeliveryDateAfter *string
+
+	/* EarliestDeliveryDateBefore.
+
+	   A date used for selecting orders with a earliest delivery date before (or at) a specified time. The date must be in ISO 8601 format.
+	*/
+	EarliestDeliveryDateBefore *string
+
 	/* EasyShipShipmentStatuses.
 
 	     A list of `EasyShipShipmentStatus` values. Used to select Easy Ship orders with statuses that match the specified values. If `EasyShipShipmentStatus` is specified, only Amazon Easy Ship orders are returned.
@@ -152,6 +164,18 @@ type GetOrdersParams struct {
 	   A date used for selecting orders that were last updated before (or at) a specified time. An update is defined as any change in order status, including the creation of a new order. Includes updates made by Amazon and by the seller. The date must be in ISO 8601 format.
 	*/
 	LastUpdatedBefore *string
+
+	/* LatestDeliveryDateAfter.
+
+	   A date used for selecting orders with a latest delivery date after (or at) a specified time. The date must be in ISO 8601 format.
+	*/
+	LatestDeliveryDateAfter *string
+
+	/* LatestDeliveryDateBefore.
+
+	   A date used for selecting orders with a latest delivery date before (or at) a specified time. The date must be in ISO 8601 format.
+	*/
+	LatestDeliveryDateBefore *string
 
 	/* MarketplaceIds.
 
@@ -315,6 +339,28 @@ func (o *GetOrdersParams) SetCreatedBefore(createdBefore *string) {
 	o.CreatedBefore = createdBefore
 }
 
+// WithEarliestDeliveryDateAfter adds the earliestDeliveryDateAfter to the get orders params
+func (o *GetOrdersParams) WithEarliestDeliveryDateAfter(earliestDeliveryDateAfter *string) *GetOrdersParams {
+	o.SetEarliestDeliveryDateAfter(earliestDeliveryDateAfter)
+	return o
+}
+
+// SetEarliestDeliveryDateAfter adds the earliestDeliveryDateAfter to the get orders params
+func (o *GetOrdersParams) SetEarliestDeliveryDateAfter(earliestDeliveryDateAfter *string) {
+	o.EarliestDeliveryDateAfter = earliestDeliveryDateAfter
+}
+
+// WithEarliestDeliveryDateBefore adds the earliestDeliveryDateBefore to the get orders params
+func (o *GetOrdersParams) WithEarliestDeliveryDateBefore(earliestDeliveryDateBefore *string) *GetOrdersParams {
+	o.SetEarliestDeliveryDateBefore(earliestDeliveryDateBefore)
+	return o
+}
+
+// SetEarliestDeliveryDateBefore adds the earliestDeliveryDateBefore to the get orders params
+func (o *GetOrdersParams) SetEarliestDeliveryDateBefore(earliestDeliveryDateBefore *string) {
+	o.EarliestDeliveryDateBefore = earliestDeliveryDateBefore
+}
+
 // WithEasyShipShipmentStatuses adds the easyShipShipmentStatuses to the get orders params
 func (o *GetOrdersParams) WithEasyShipShipmentStatuses(easyShipShipmentStatuses []string) *GetOrdersParams {
 	o.SetEasyShipShipmentStatuses(easyShipShipmentStatuses)
@@ -379,6 +425,28 @@ func (o *GetOrdersParams) WithLastUpdatedBefore(lastUpdatedBefore *string) *GetO
 // SetLastUpdatedBefore adds the lastUpdatedBefore to the get orders params
 func (o *GetOrdersParams) SetLastUpdatedBefore(lastUpdatedBefore *string) {
 	o.LastUpdatedBefore = lastUpdatedBefore
+}
+
+// WithLatestDeliveryDateAfter adds the latestDeliveryDateAfter to the get orders params
+func (o *GetOrdersParams) WithLatestDeliveryDateAfter(latestDeliveryDateAfter *string) *GetOrdersParams {
+	o.SetLatestDeliveryDateAfter(latestDeliveryDateAfter)
+	return o
+}
+
+// SetLatestDeliveryDateAfter adds the latestDeliveryDateAfter to the get orders params
+func (o *GetOrdersParams) SetLatestDeliveryDateAfter(latestDeliveryDateAfter *string) {
+	o.LatestDeliveryDateAfter = latestDeliveryDateAfter
+}
+
+// WithLatestDeliveryDateBefore adds the latestDeliveryDateBefore to the get orders params
+func (o *GetOrdersParams) WithLatestDeliveryDateBefore(latestDeliveryDateBefore *string) *GetOrdersParams {
+	o.SetLatestDeliveryDateBefore(latestDeliveryDateBefore)
+	return o
+}
+
+// SetLatestDeliveryDateBefore adds the latestDeliveryDateBefore to the get orders params
+func (o *GetOrdersParams) SetLatestDeliveryDateBefore(latestDeliveryDateBefore *string) {
+	o.LatestDeliveryDateBefore = latestDeliveryDateBefore
 }
 
 // WithMarketplaceIds adds the marketplaceIds to the get orders params
@@ -545,6 +613,40 @@ func (o *GetOrdersParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Reg
 		}
 	}
 
+	if o.EarliestDeliveryDateAfter != nil {
+
+		// query param EarliestDeliveryDateAfter
+		var qrEarliestDeliveryDateAfter string
+
+		if o.EarliestDeliveryDateAfter != nil {
+			qrEarliestDeliveryDateAfter = *o.EarliestDeliveryDateAfter
+		}
+		qEarliestDeliveryDateAfter := qrEarliestDeliveryDateAfter
+		if qEarliestDeliveryDateAfter != "" {
+
+			if err := r.SetQueryParam("EarliestDeliveryDateAfter", qEarliestDeliveryDateAfter); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.EarliestDeliveryDateBefore != nil {
+
+		// query param EarliestDeliveryDateBefore
+		var qrEarliestDeliveryDateBefore string
+
+		if o.EarliestDeliveryDateBefore != nil {
+			qrEarliestDeliveryDateBefore = *o.EarliestDeliveryDateBefore
+		}
+		qEarliestDeliveryDateBefore := qrEarliestDeliveryDateBefore
+		if qEarliestDeliveryDateBefore != "" {
+
+			if err := r.SetQueryParam("EarliestDeliveryDateBefore", qEarliestDeliveryDateBefore); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.EasyShipShipmentStatuses != nil {
 
 		// binding items for EasyShipShipmentStatuses
@@ -624,6 +726,40 @@ func (o *GetOrdersParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Reg
 		if qLastUpdatedBefore != "" {
 
 			if err := r.SetQueryParam("LastUpdatedBefore", qLastUpdatedBefore); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.LatestDeliveryDateAfter != nil {
+
+		// query param LatestDeliveryDateAfter
+		var qrLatestDeliveryDateAfter string
+
+		if o.LatestDeliveryDateAfter != nil {
+			qrLatestDeliveryDateAfter = *o.LatestDeliveryDateAfter
+		}
+		qLatestDeliveryDateAfter := qrLatestDeliveryDateAfter
+		if qLatestDeliveryDateAfter != "" {
+
+			if err := r.SetQueryParam("LatestDeliveryDateAfter", qLatestDeliveryDateAfter); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.LatestDeliveryDateBefore != nil {
+
+		// query param LatestDeliveryDateBefore
+		var qrLatestDeliveryDateBefore string
+
+		if o.LatestDeliveryDateBefore != nil {
+			qrLatestDeliveryDateBefore = *o.LatestDeliveryDateBefore
+		}
+		qLatestDeliveryDateBefore := qrLatestDeliveryDateBefore
+		if qLatestDeliveryDateBefore != "" {
+
+			if err := r.SetQueryParam("LatestDeliveryDateBefore", qLatestDeliveryDateBefore); err != nil {
 				return err
 			}
 		}
