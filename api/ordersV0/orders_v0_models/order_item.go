@@ -8,6 +8,7 @@ package orders_v0_models
 import (
 	"context"
 	"encoding/json"
+	"strconv"
 
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/strfmt"
@@ -23,6 +24,9 @@ type OrderItem struct {
 	// The Amazon Standard Identification Number (ASIN) of the item.
 	// Required: true
 	ASIN *string `json:"ASIN"`
+
+	// A list of associated items that a customer has purchased with a product. For example, a tire installation service purchased with tires.
+	AssociatedItems []*AssociatedItem `json:"AssociatedItems"`
 
 	// buyer info
 	BuyerInfo *ItemBuyerInfo `json:"BuyerInfo,omitempty"`
@@ -156,6 +160,10 @@ func (m *OrderItem) Validate(formats strfmt.Registry) error {
 		res = append(res, err)
 	}
 
+	if err := m.validateAssociatedItems(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.validateBuyerInfo(formats); err != nil {
 		res = append(res, err)
 	}
@@ -250,6 +258,32 @@ func (m *OrderItem) validateASIN(formats strfmt.Registry) error {
 
 	if err := validate.Required("ASIN", "body", m.ASIN); err != nil {
 		return err
+	}
+
+	return nil
+}
+
+func (m *OrderItem) validateAssociatedItems(formats strfmt.Registry) error {
+	if swag.IsZero(m.AssociatedItems) { // not required
+		return nil
+	}
+
+	for i := 0; i < len(m.AssociatedItems); i++ {
+		if swag.IsZero(m.AssociatedItems[i]) { // not required
+			continue
+		}
+
+		if m.AssociatedItems[i] != nil {
+			if err := m.AssociatedItems[i].Validate(formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("AssociatedItems" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("AssociatedItems" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
 	}
 
 	return nil
@@ -659,6 +693,10 @@ func (m *OrderItem) validateTaxCollection(formats strfmt.Registry) error {
 func (m *OrderItem) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
 	var res []error
 
+	if err := m.contextValidateAssociatedItems(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.contextValidateBuyerInfo(ctx, formats); err != nil {
 		res = append(res, err)
 	}
@@ -734,6 +772,26 @@ func (m *OrderItem) ContextValidate(ctx context.Context, formats strfmt.Registry
 	if len(res) > 0 {
 		return errors.CompositeValidationError(res...)
 	}
+	return nil
+}
+
+func (m *OrderItem) contextValidateAssociatedItems(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(m.AssociatedItems); i++ {
+
+		if m.AssociatedItems[i] != nil {
+			if err := m.AssociatedItems[i].ContextValidate(ctx, formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("AssociatedItems" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("AssociatedItems" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
 	return nil
 }
 

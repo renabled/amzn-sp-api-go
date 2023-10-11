@@ -32,8 +32,8 @@ type Item struct {
 	// offers
 	Offers ItemOffers `json:"offers,omitempty"`
 
-	// procurement
-	Procurement *ItemProcurement `json:"procurement,omitempty"`
+	// Vendor procurement information for the listings item.
+	Procurement []*ItemProcurement `json:"procurement"`
 
 	// A selling partner provided identifier for an Amazon listing.
 	// Required: true
@@ -142,15 +142,22 @@ func (m *Item) validateProcurement(formats strfmt.Registry) error {
 		return nil
 	}
 
-	if m.Procurement != nil {
-		if err := m.Procurement.Validate(formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
-				return ve.ValidateName("procurement")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("procurement")
-			}
-			return err
+	for i := 0; i < len(m.Procurement); i++ {
+		if swag.IsZero(m.Procurement[i]) { // not required
+			continue
 		}
+
+		if m.Procurement[i] != nil {
+			if err := m.Procurement[i].Validate(formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("procurement" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("procurement" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
 	}
 
 	return nil
@@ -262,15 +269,19 @@ func (m *Item) contextValidateOffers(ctx context.Context, formats strfmt.Registr
 
 func (m *Item) contextValidateProcurement(ctx context.Context, formats strfmt.Registry) error {
 
-	if m.Procurement != nil {
-		if err := m.Procurement.ContextValidate(ctx, formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
-				return ve.ValidateName("procurement")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("procurement")
+	for i := 0; i < len(m.Procurement); i++ {
+
+		if m.Procurement[i] != nil {
+			if err := m.Procurement[i].ContextValidate(ctx, formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("procurement" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("procurement" + "." + strconv.Itoa(i))
+				}
+				return err
 			}
-			return err
 		}
+
 	}
 
 	return nil

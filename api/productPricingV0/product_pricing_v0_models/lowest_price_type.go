@@ -20,8 +20,7 @@ import (
 type LowestPriceType struct {
 
 	// The value calculated by adding ListingPrice + Shipping - Points.
-	// Required: true
-	LandedPrice *MoneyType `json:"LandedPrice"`
+	LandedPrice *MoneyType `json:"LandedPrice,omitempty"`
 
 	// The price of the item.
 	// Required: true
@@ -31,8 +30,7 @@ type LowestPriceType struct {
 	Points *Points `json:"Points,omitempty"`
 
 	// The shipping cost.
-	// Required: true
-	Shipping *MoneyType `json:"Shipping"`
+	Shipping *MoneyType `json:"Shipping,omitempty"`
 
 	// Indicates the condition of the item. For example: New, Used, Collectible, Refurbished, or Club.
 	// Required: true
@@ -95,9 +93,8 @@ func (m *LowestPriceType) Validate(formats strfmt.Registry) error {
 }
 
 func (m *LowestPriceType) validateLandedPrice(formats strfmt.Registry) error {
-
-	if err := validate.Required("LandedPrice", "body", m.LandedPrice); err != nil {
-		return err
+	if swag.IsZero(m.LandedPrice) { // not required
+		return nil
 	}
 
 	if m.LandedPrice != nil {
@@ -154,9 +151,8 @@ func (m *LowestPriceType) validatePoints(formats strfmt.Registry) error {
 }
 
 func (m *LowestPriceType) validateShipping(formats strfmt.Registry) error {
-
-	if err := validate.Required("Shipping", "body", m.Shipping); err != nil {
-		return err
+	if swag.IsZero(m.Shipping) { // not required
+		return nil
 	}
 
 	if m.Shipping != nil {
