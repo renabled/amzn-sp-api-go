@@ -7,149 +7,67 @@ package finances_v0_models
 
 import (
 	"context"
+	"strconv"
 
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
 )
 
-// ValueAddedServiceChargeEventList An event related to a value added service charge.
+// ValueAddedServiceChargeEventList A list of ValueAddedServiceCharge events.
 //
 // swagger:model ValueAddedServiceChargeEventList
-type ValueAddedServiceChargeEventList struct {
-
-	// A short description of the service charge event.
-	Description string `json:"Description,omitempty"`
-
-	// The date and time when the financial event was posted.
-	// Format: date-time
-	PostedDate Date `json:"PostedDate,omitempty"`
-
-	// The amount of the service charge event.
-	TransactionAmount *Currency `json:"TransactionAmount,omitempty"`
-
-	// Indicates the type of transaction.
-	//
-	// Example: 'Other Support Service fees'
-	TransactionType string `json:"TransactionType,omitempty"`
-}
+type ValueAddedServiceChargeEventList []*ValueAddedServiceChargeEvent
 
 // Validate validates this value added service charge event list
-func (m *ValueAddedServiceChargeEventList) Validate(formats strfmt.Registry) error {
+func (m ValueAddedServiceChargeEventList) Validate(formats strfmt.Registry) error {
 	var res []error
 
-	if err := m.validatePostedDate(formats); err != nil {
-		res = append(res, err)
-	}
+	for i := 0; i < len(m); i++ {
+		if swag.IsZero(m[i]) { // not required
+			continue
+		}
 
-	if err := m.validateTransactionAmount(formats); err != nil {
-		res = append(res, err)
+		if m[i] != nil {
+			if err := m[i].Validate(formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName(strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName(strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
 	}
 
 	if len(res) > 0 {
 		return errors.CompositeValidationError(res...)
 	}
-	return nil
-}
-
-func (m *ValueAddedServiceChargeEventList) validatePostedDate(formats strfmt.Registry) error {
-	if swag.IsZero(m.PostedDate) { // not required
-		return nil
-	}
-
-	if err := m.PostedDate.Validate(formats); err != nil {
-		if ve, ok := err.(*errors.Validation); ok {
-			return ve.ValidateName("PostedDate")
-		} else if ce, ok := err.(*errors.CompositeError); ok {
-			return ce.ValidateName("PostedDate")
-		}
-		return err
-	}
-
-	return nil
-}
-
-func (m *ValueAddedServiceChargeEventList) validateTransactionAmount(formats strfmt.Registry) error {
-	if swag.IsZero(m.TransactionAmount) { // not required
-		return nil
-	}
-
-	if m.TransactionAmount != nil {
-		if err := m.TransactionAmount.Validate(formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
-				return ve.ValidateName("TransactionAmount")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("TransactionAmount")
-			}
-			return err
-		}
-	}
-
 	return nil
 }
 
 // ContextValidate validate this value added service charge event list based on the context it is used
-func (m *ValueAddedServiceChargeEventList) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+func (m ValueAddedServiceChargeEventList) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
 	var res []error
 
-	if err := m.contextValidatePostedDate(ctx, formats); err != nil {
-		res = append(res, err)
-	}
+	for i := 0; i < len(m); i++ {
 
-	if err := m.contextValidateTransactionAmount(ctx, formats); err != nil {
-		res = append(res, err)
+		if m[i] != nil {
+			if err := m[i].ContextValidate(ctx, formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName(strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName(strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
 	}
 
 	if len(res) > 0 {
 		return errors.CompositeValidationError(res...)
 	}
-	return nil
-}
-
-func (m *ValueAddedServiceChargeEventList) contextValidatePostedDate(ctx context.Context, formats strfmt.Registry) error {
-
-	if err := m.PostedDate.ContextValidate(ctx, formats); err != nil {
-		if ve, ok := err.(*errors.Validation); ok {
-			return ve.ValidateName("PostedDate")
-		} else if ce, ok := err.(*errors.CompositeError); ok {
-			return ce.ValidateName("PostedDate")
-		}
-		return err
-	}
-
-	return nil
-}
-
-func (m *ValueAddedServiceChargeEventList) contextValidateTransactionAmount(ctx context.Context, formats strfmt.Registry) error {
-
-	if m.TransactionAmount != nil {
-		if err := m.TransactionAmount.ContextValidate(ctx, formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
-				return ve.ValidateName("TransactionAmount")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("TransactionAmount")
-			}
-			return err
-		}
-	}
-
-	return nil
-}
-
-// MarshalBinary interface implementation
-func (m *ValueAddedServiceChargeEventList) MarshalBinary() ([]byte, error) {
-	if m == nil {
-		return nil, nil
-	}
-	return swag.WriteJSON(m)
-}
-
-// UnmarshalBinary interface implementation
-func (m *ValueAddedServiceChargeEventList) UnmarshalBinary(b []byte) error {
-	var res ValueAddedServiceChargeEventList
-	if err := swag.ReadJSON(b, &res); err != nil {
-		return err
-	}
-	*m = res
 	return nil
 }

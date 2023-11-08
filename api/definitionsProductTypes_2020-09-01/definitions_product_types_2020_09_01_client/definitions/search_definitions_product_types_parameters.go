@@ -62,17 +62,35 @@ SearchDefinitionsProductTypesParams contains all the parameters to send to the A
 */
 type SearchDefinitionsProductTypesParams struct {
 
+	/* ItemName.
+
+	   The title of the ASIN to get the product type recommendation. **Note:** Cannot be used with `keywords`.
+	*/
+	ItemName *string
+
 	/* Keywords.
 
-	   A comma-delimited list of keywords to search product types by.
+	   A comma-delimited list of keywords to search product types. **Note:** Cannot be used with `itemName`.
 	*/
 	Keywords []string
+
+	/* Locale.
+
+	   The locale for the display names in the response. Defaults to the primary locale of the marketplace.
+	*/
+	Locale *string
 
 	/* MarketplaceIds.
 
 	   A comma-delimited list of Amazon marketplace identifiers for the request.
 	*/
 	MarketplaceIds []string
+
+	/* SearchLocale.
+
+	   The locale used for the `keywords` and `itemName` parameters. Defaults to the primary locale of the marketplace.
+	*/
+	SearchLocale *string
 
 	timeout    time.Duration
 	Context    context.Context
@@ -127,6 +145,17 @@ func (o *SearchDefinitionsProductTypesParams) SetHTTPClient(client *http.Client)
 	o.HTTPClient = client
 }
 
+// WithItemName adds the itemName to the search definitions product types params
+func (o *SearchDefinitionsProductTypesParams) WithItemName(itemName *string) *SearchDefinitionsProductTypesParams {
+	o.SetItemName(itemName)
+	return o
+}
+
+// SetItemName adds the itemName to the search definitions product types params
+func (o *SearchDefinitionsProductTypesParams) SetItemName(itemName *string) {
+	o.ItemName = itemName
+}
+
 // WithKeywords adds the keywords to the search definitions product types params
 func (o *SearchDefinitionsProductTypesParams) WithKeywords(keywords []string) *SearchDefinitionsProductTypesParams {
 	o.SetKeywords(keywords)
@@ -136,6 +165,17 @@ func (o *SearchDefinitionsProductTypesParams) WithKeywords(keywords []string) *S
 // SetKeywords adds the keywords to the search definitions product types params
 func (o *SearchDefinitionsProductTypesParams) SetKeywords(keywords []string) {
 	o.Keywords = keywords
+}
+
+// WithLocale adds the locale to the search definitions product types params
+func (o *SearchDefinitionsProductTypesParams) WithLocale(locale *string) *SearchDefinitionsProductTypesParams {
+	o.SetLocale(locale)
+	return o
+}
+
+// SetLocale adds the locale to the search definitions product types params
+func (o *SearchDefinitionsProductTypesParams) SetLocale(locale *string) {
+	o.Locale = locale
 }
 
 // WithMarketplaceIds adds the marketplaceIds to the search definitions product types params
@@ -149,6 +189,17 @@ func (o *SearchDefinitionsProductTypesParams) SetMarketplaceIds(marketplaceIds [
 	o.MarketplaceIds = marketplaceIds
 }
 
+// WithSearchLocale adds the searchLocale to the search definitions product types params
+func (o *SearchDefinitionsProductTypesParams) WithSearchLocale(searchLocale *string) *SearchDefinitionsProductTypesParams {
+	o.SetSearchLocale(searchLocale)
+	return o
+}
+
+// SetSearchLocale adds the searchLocale to the search definitions product types params
+func (o *SearchDefinitionsProductTypesParams) SetSearchLocale(searchLocale *string) {
+	o.SearchLocale = searchLocale
+}
+
 // WriteToRequest writes these params to a swagger request
 func (o *SearchDefinitionsProductTypesParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
 
@@ -156,6 +207,23 @@ func (o *SearchDefinitionsProductTypesParams) WriteToRequest(r runtime.ClientReq
 		return err
 	}
 	var res []error
+
+	if o.ItemName != nil {
+
+		// query param itemName
+		var qrItemName string
+
+		if o.ItemName != nil {
+			qrItemName = *o.ItemName
+		}
+		qItemName := qrItemName
+		if qItemName != "" {
+
+			if err := r.SetQueryParam("itemName", qItemName); err != nil {
+				return err
+			}
+		}
+	}
 
 	if o.Keywords != nil {
 
@@ -168,6 +236,23 @@ func (o *SearchDefinitionsProductTypesParams) WriteToRequest(r runtime.ClientReq
 		}
 	}
 
+	if o.Locale != nil {
+
+		// query param locale
+		var qrLocale string
+
+		if o.Locale != nil {
+			qrLocale = *o.Locale
+		}
+		qLocale := qrLocale
+		if qLocale != "" {
+
+			if err := r.SetQueryParam("locale", qLocale); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.MarketplaceIds != nil {
 
 		// binding items for marketplaceIds
@@ -176,6 +261,23 @@ func (o *SearchDefinitionsProductTypesParams) WriteToRequest(r runtime.ClientReq
 		// query array param marketplaceIds
 		if err := r.SetQueryParam("marketplaceIds", joinedMarketplaceIds...); err != nil {
 			return err
+		}
+	}
+
+	if o.SearchLocale != nil {
+
+		// query param searchLocale
+		var qrSearchLocale string
+
+		if o.SearchLocale != nil {
+			qrSearchLocale = *o.SearchLocale
+		}
+		qSearchLocale := qrSearchLocale
+		if qSearchLocale != "" {
+
+			if err := r.SetQueryParam("searchLocale", qSearchLocale); err != nil {
+				return err
+			}
 		}
 	}
 

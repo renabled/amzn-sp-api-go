@@ -19,7 +19,7 @@ import (
 type ChargeRefundEvent struct {
 
 	// The amount of the charge refund credit.
-	ChargeRefundTransactions *ChargeRefundTransaction `json:"ChargeRefundTransactions,omitempty"`
+	ChargeRefundTransactions ChargeRefundTransactions `json:"ChargeRefundTransactions,omitempty"`
 
 	// The date and time when the financial event was posted.
 	// Format: date-time
@@ -59,15 +59,13 @@ func (m *ChargeRefundEvent) validateChargeRefundTransactions(formats strfmt.Regi
 		return nil
 	}
 
-	if m.ChargeRefundTransactions != nil {
-		if err := m.ChargeRefundTransactions.Validate(formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
-				return ve.ValidateName("ChargeRefundTransactions")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("ChargeRefundTransactions")
-			}
-			return err
+	if err := m.ChargeRefundTransactions.Validate(formats); err != nil {
+		if ve, ok := err.(*errors.Validation); ok {
+			return ve.ValidateName("ChargeRefundTransactions")
+		} else if ce, ok := err.(*errors.CompositeError); ok {
+			return ce.ValidateName("ChargeRefundTransactions")
 		}
+		return err
 	}
 
 	return nil
@@ -110,15 +108,13 @@ func (m *ChargeRefundEvent) ContextValidate(ctx context.Context, formats strfmt.
 
 func (m *ChargeRefundEvent) contextValidateChargeRefundTransactions(ctx context.Context, formats strfmt.Registry) error {
 
-	if m.ChargeRefundTransactions != nil {
-		if err := m.ChargeRefundTransactions.ContextValidate(ctx, formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
-				return ve.ValidateName("ChargeRefundTransactions")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("ChargeRefundTransactions")
-			}
-			return err
+	if err := m.ChargeRefundTransactions.ContextValidate(ctx, formats); err != nil {
+		if ve, ok := err.(*errors.Validation); ok {
+			return ve.ValidateName("ChargeRefundTransactions")
+		} else if ce, ok := err.(*errors.CompositeError); ok {
+			return ce.ValidateName("ChargeRefundTransactions")
 		}
+		return err
 	}
 
 	return nil

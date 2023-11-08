@@ -30,9 +30,49 @@ type ClientOption func(*runtime.ClientOperation)
 
 // ClientService is the interface for Client methods
 type ClientService interface {
+	GetCompetitiveSummary(params *GetCompetitiveSummaryParams, opts ...ClientOption) (*GetCompetitiveSummaryOK, error)
+
 	GetFeaturedOfferExpectedPriceBatch(params *GetFeaturedOfferExpectedPriceBatchParams, opts ...ClientOption) (*GetFeaturedOfferExpectedPriceBatchOK, error)
 
 	SetTransport(transport runtime.ClientTransport)
+}
+
+/*
+GetCompetitiveSummary Returns the competitive summary response including featured buying options for the ASIN and `marketplaceId` combination
+*/
+func (a *Client) GetCompetitiveSummary(params *GetCompetitiveSummaryParams, opts ...ClientOption) (*GetCompetitiveSummaryOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewGetCompetitiveSummaryParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "getCompetitiveSummary",
+		Method:             "POST",
+		PathPattern:        "/batches/products/pricing/2022-05-01/items/competitiveSummary",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &GetCompetitiveSummaryReader{formats: a.formats},
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*GetCompetitiveSummaryOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for getCompetitiveSummary: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
 }
 
 /*
@@ -44,7 +84,7 @@ type ClientService interface {
 | ---- | ---- |
 | 0.033 | 1 |
 
-The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 */
 func (a *Client) GetFeaturedOfferExpectedPriceBatch(params *GetFeaturedOfferExpectedPriceBatchParams, opts ...ClientOption) (*GetFeaturedOfferExpectedPriceBatchOK, error) {
 	// TODO: Validate the params before sending

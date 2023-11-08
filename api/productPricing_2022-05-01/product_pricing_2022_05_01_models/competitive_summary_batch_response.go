@@ -11,19 +11,21 @@ import (
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
+	"github.com/go-openapi/validate"
 )
 
-// GetFeaturedOfferExpectedPriceBatchResponse The response schema for the `getFeaturedOfferExpectedPriceBatch` operation.
+// CompetitiveSummaryBatchResponse The response schema of the `competitiveSummaryBatch` operation.
 //
-// swagger:model GetFeaturedOfferExpectedPriceBatchResponse
-type GetFeaturedOfferExpectedPriceBatchResponse struct {
+// swagger:model CompetitiveSummaryBatchResponse
+type CompetitiveSummaryBatchResponse struct {
 
-	// responses
-	Responses FeaturedOfferExpectedPriceResponseList `json:"responses,omitempty"`
+	// The response list of the `competitiveSummaryBatch` operation.
+	// Required: true
+	Responses CompetitiveSummaryResponseList `json:"responses"`
 }
 
-// Validate validates this get featured offer expected price batch response
-func (m *GetFeaturedOfferExpectedPriceBatchResponse) Validate(formats strfmt.Registry) error {
+// Validate validates this competitive summary batch response
+func (m *CompetitiveSummaryBatchResponse) Validate(formats strfmt.Registry) error {
 	var res []error
 
 	if err := m.validateResponses(formats); err != nil {
@@ -36,9 +38,10 @@ func (m *GetFeaturedOfferExpectedPriceBatchResponse) Validate(formats strfmt.Reg
 	return nil
 }
 
-func (m *GetFeaturedOfferExpectedPriceBatchResponse) validateResponses(formats strfmt.Registry) error {
-	if swag.IsZero(m.Responses) { // not required
-		return nil
+func (m *CompetitiveSummaryBatchResponse) validateResponses(formats strfmt.Registry) error {
+
+	if err := validate.Required("responses", "body", m.Responses); err != nil {
+		return err
 	}
 
 	if err := m.Responses.Validate(formats); err != nil {
@@ -53,8 +56,8 @@ func (m *GetFeaturedOfferExpectedPriceBatchResponse) validateResponses(formats s
 	return nil
 }
 
-// ContextValidate validate this get featured offer expected price batch response based on the context it is used
-func (m *GetFeaturedOfferExpectedPriceBatchResponse) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+// ContextValidate validate this competitive summary batch response based on the context it is used
+func (m *CompetitiveSummaryBatchResponse) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
 	var res []error
 
 	if err := m.contextValidateResponses(ctx, formats); err != nil {
@@ -67,7 +70,7 @@ func (m *GetFeaturedOfferExpectedPriceBatchResponse) ContextValidate(ctx context
 	return nil
 }
 
-func (m *GetFeaturedOfferExpectedPriceBatchResponse) contextValidateResponses(ctx context.Context, formats strfmt.Registry) error {
+func (m *CompetitiveSummaryBatchResponse) contextValidateResponses(ctx context.Context, formats strfmt.Registry) error {
 
 	if err := m.Responses.ContextValidate(ctx, formats); err != nil {
 		if ve, ok := err.(*errors.Validation); ok {
@@ -82,7 +85,7 @@ func (m *GetFeaturedOfferExpectedPriceBatchResponse) contextValidateResponses(ct
 }
 
 // MarshalBinary interface implementation
-func (m *GetFeaturedOfferExpectedPriceBatchResponse) MarshalBinary() ([]byte, error) {
+func (m *CompetitiveSummaryBatchResponse) MarshalBinary() ([]byte, error) {
 	if m == nil {
 		return nil, nil
 	}
@@ -90,8 +93,8 @@ func (m *GetFeaturedOfferExpectedPriceBatchResponse) MarshalBinary() ([]byte, er
 }
 
 // UnmarshalBinary interface implementation
-func (m *GetFeaturedOfferExpectedPriceBatchResponse) UnmarshalBinary(b []byte) error {
-	var res GetFeaturedOfferExpectedPriceBatchResponse
+func (m *CompetitiveSummaryBatchResponse) UnmarshalBinary(b []byte) error {
+	var res CompetitiveSummaryBatchResponse
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err
 	}

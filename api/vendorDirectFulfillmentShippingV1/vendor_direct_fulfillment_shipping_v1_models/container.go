@@ -59,7 +59,8 @@ type Container struct {
 	TrackingNumber string `json:"trackingNumber,omitempty"`
 
 	// weight
-	Weight *Weight `json:"weight,omitempty"`
+	// Required: true
+	Weight *Weight `json:"weight"`
 }
 
 // Validate validates this container
@@ -191,8 +192,9 @@ func (m *Container) validatePackedItems(formats strfmt.Registry) error {
 }
 
 func (m *Container) validateWeight(formats strfmt.Registry) error {
-	if swag.IsZero(m.Weight) { // not required
-		return nil
+
+	if err := validate.Required("weight", "body", m.Weight); err != nil {
+		return err
 	}
 
 	if m.Weight != nil {

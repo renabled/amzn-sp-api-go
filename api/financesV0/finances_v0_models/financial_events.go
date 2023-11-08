@@ -49,7 +49,7 @@ type FinancialEvents struct {
 	FBALiquidationEventList FBALiquidationEventList `json:"FBALiquidationEventList,omitempty"`
 
 	// failed adhoc disbursement event list
-	FailedAdhocDisbursementEventList *FailedAdhocDisbursementEventList `json:"FailedAdhocDisbursementEventList,omitempty"`
+	FailedAdhocDisbursementEventList FailedAdhocDisbursementEventList `json:"FailedAdhocDisbursementEventList,omitempty"`
 
 	// A list of guarantee claim events.
 	GuaranteeClaimEventList ShipmentEventList `json:"GuaranteeClaimEventList,omitempty"`
@@ -115,7 +115,7 @@ type FinancialEvents struct {
 	TrialShipmentEventList TrialShipmentEventList `json:"TrialShipmentEventList,omitempty"`
 
 	// value added service charge event list
-	ValueAddedServiceChargeEventList *ValueAddedServiceChargeEventList `json:"ValueAddedServiceChargeEventList,omitempty"`
+	ValueAddedServiceChargeEventList ValueAddedServiceChargeEventList `json:"ValueAddedServiceChargeEventList,omitempty"`
 }
 
 // Validate validates this financial events
@@ -435,15 +435,13 @@ func (m *FinancialEvents) validateFailedAdhocDisbursementEventList(formats strfm
 		return nil
 	}
 
-	if m.FailedAdhocDisbursementEventList != nil {
-		if err := m.FailedAdhocDisbursementEventList.Validate(formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
-				return ve.ValidateName("FailedAdhocDisbursementEventList")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("FailedAdhocDisbursementEventList")
-			}
-			return err
+	if err := m.FailedAdhocDisbursementEventList.Validate(formats); err != nil {
+		if ve, ok := err.(*errors.Validation); ok {
+			return ve.ValidateName("FailedAdhocDisbursementEventList")
+		} else if ce, ok := err.(*errors.CompositeError); ok {
+			return ce.ValidateName("FailedAdhocDisbursementEventList")
 		}
+		return err
 	}
 
 	return nil
@@ -811,15 +809,13 @@ func (m *FinancialEvents) validateValueAddedServiceChargeEventList(formats strfm
 		return nil
 	}
 
-	if m.ValueAddedServiceChargeEventList != nil {
-		if err := m.ValueAddedServiceChargeEventList.Validate(formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
-				return ve.ValidateName("ValueAddedServiceChargeEventList")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("ValueAddedServiceChargeEventList")
-			}
-			return err
+	if err := m.ValueAddedServiceChargeEventList.Validate(formats); err != nil {
+		if ve, ok := err.(*errors.Validation); ok {
+			return ve.ValidateName("ValueAddedServiceChargeEventList")
+		} else if ce, ok := err.(*errors.CompositeError); ok {
+			return ce.ValidateName("ValueAddedServiceChargeEventList")
 		}
+		return err
 	}
 
 	return nil
@@ -1109,15 +1105,13 @@ func (m *FinancialEvents) contextValidateFBALiquidationEventList(ctx context.Con
 
 func (m *FinancialEvents) contextValidateFailedAdhocDisbursementEventList(ctx context.Context, formats strfmt.Registry) error {
 
-	if m.FailedAdhocDisbursementEventList != nil {
-		if err := m.FailedAdhocDisbursementEventList.ContextValidate(ctx, formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
-				return ve.ValidateName("FailedAdhocDisbursementEventList")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("FailedAdhocDisbursementEventList")
-			}
-			return err
+	if err := m.FailedAdhocDisbursementEventList.ContextValidate(ctx, formats); err != nil {
+		if ve, ok := err.(*errors.Validation); ok {
+			return ve.ValidateName("FailedAdhocDisbursementEventList")
+		} else if ce, ok := err.(*errors.CompositeError); ok {
+			return ce.ValidateName("FailedAdhocDisbursementEventList")
 		}
+		return err
 	}
 
 	return nil
@@ -1419,15 +1413,13 @@ func (m *FinancialEvents) contextValidateTrialShipmentEventList(ctx context.Cont
 
 func (m *FinancialEvents) contextValidateValueAddedServiceChargeEventList(ctx context.Context, formats strfmt.Registry) error {
 
-	if m.ValueAddedServiceChargeEventList != nil {
-		if err := m.ValueAddedServiceChargeEventList.ContextValidate(ctx, formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
-				return ve.ValidateName("ValueAddedServiceChargeEventList")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("ValueAddedServiceChargeEventList")
-			}
-			return err
+	if err := m.ValueAddedServiceChargeEventList.ContextValidate(ctx, formats); err != nil {
+		if ve, ok := err.(*errors.Validation); ok {
+			return ve.ValidateName("ValueAddedServiceChargeEventList")
+		} else if ce, ok := err.(*errors.CompositeError); ok {
+			return ce.ValidateName("ValueAddedServiceChargeEventList")
 		}
+		return err
 	}
 
 	return nil

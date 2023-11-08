@@ -29,7 +29,7 @@ type BatchRequest struct {
 	// Required: true
 	Method *HTTPMethod `json:"method"`
 
-	// The URI associated with an individual request within a batch. For FeaturedOfferExpectedPrice, this should be '/products/pricing/2022-05-01/offer/featuredOfferExpectedPrice'.
+	// The URI associated with an individual request within a batch. For `FeaturedOfferExpectedPrice`, this should be `/products/pricing/2022-05-01/offer/featuredOfferExpectedPrice`.
 	// Required: true
 	URI *string `json:"uri"`
 }

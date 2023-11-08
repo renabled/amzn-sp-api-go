@@ -15,7 +15,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// Weight The weight. This object is mandatory when using the [`submitShipmentConfirmations`](https://developer-docs.amazon.com/sp-api/docs/vendor-direct-fulfillment-shipping-api-v1-reference#submitshipmentconfirmations) operation.
+// Weight The weight.
 //
 // swagger:model Weight
 type Weight struct {

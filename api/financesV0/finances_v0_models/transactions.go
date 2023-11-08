@@ -14,13 +14,13 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// FailedAdhocDisbursementEventList A list of FailedAdhocDisbursementEvents.
+// Transactions Contains transactions within a given time period.
 //
-// swagger:model FailedAdhocDisbursementEventList
-type FailedAdhocDisbursementEventList []*FailedAdhocDisbursementEvent
+// swagger:model Transactions
+type Transactions []*Transaction
 
-// Validate validates this failed adhoc disbursement event list
-func (m FailedAdhocDisbursementEventList) Validate(formats strfmt.Registry) error {
+// Validate validates this transactions
+func (m Transactions) Validate(formats strfmt.Registry) error {
 	var res []error
 
 	for i := 0; i < len(m); i++ {
@@ -47,8 +47,8 @@ func (m FailedAdhocDisbursementEventList) Validate(formats strfmt.Registry) erro
 	return nil
 }
 
-// ContextValidate validate this failed adhoc disbursement event list based on the context it is used
-func (m FailedAdhocDisbursementEventList) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+// ContextValidate validate this transactions based on the context it is used
+func (m Transactions) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
 	var res []error
 
 	for i := 0; i < len(m); i++ {

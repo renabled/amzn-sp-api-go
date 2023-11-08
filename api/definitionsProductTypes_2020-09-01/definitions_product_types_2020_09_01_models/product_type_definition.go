@@ -20,6 +20,10 @@ import (
 // swagger:model ProductTypeDefinition
 type ProductTypeDefinition struct {
 
+	// Human-readable and localized description of the Amazon product type.
+	// Required: true
+	DisplayName *string `json:"displayName"`
+
 	// Locale of the display elements contained in the product type definition.
 	// Required: true
 	Locale *string `json:"locale"`
@@ -62,6 +66,10 @@ type ProductTypeDefinition struct {
 func (m *ProductTypeDefinition) Validate(formats strfmt.Registry) error {
 	var res []error
 
+	if err := m.validateDisplayName(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.validateLocale(formats); err != nil {
 		res = append(res, err)
 	}
@@ -101,6 +109,15 @@ func (m *ProductTypeDefinition) Validate(formats strfmt.Registry) error {
 	if len(res) > 0 {
 		return errors.CompositeValidationError(res...)
 	}
+	return nil
+}
+
+func (m *ProductTypeDefinition) validateDisplayName(formats strfmt.Registry) error {
+
+	if err := validate.Required("displayName", "body", m.DisplayName); err != nil {
+		return err
+	}
+
 	return nil
 }
 

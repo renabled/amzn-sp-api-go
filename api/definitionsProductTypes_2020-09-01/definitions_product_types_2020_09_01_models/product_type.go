@@ -19,6 +19,10 @@ import (
 // swagger:model ProductType
 type ProductType struct {
 
+	// The human-readable and localized description of the Amazon product type.
+	// Required: true
+	DisplayName *string `json:"displayName"`
+
 	// The Amazon marketplace identifiers for which the product type definition is available.
 	// Required: true
 	MarketplaceIds []string `json:"marketplaceIds"`
@@ -32,6 +36,10 @@ type ProductType struct {
 func (m *ProductType) Validate(formats strfmt.Registry) error {
 	var res []error
 
+	if err := m.validateDisplayName(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.validateMarketplaceIds(formats); err != nil {
 		res = append(res, err)
 	}
@@ -43,6 +51,15 @@ func (m *ProductType) Validate(formats strfmt.Registry) error {
 	if len(res) > 0 {
 		return errors.CompositeValidationError(res...)
 	}
+	return nil
+}
+
+func (m *ProductType) validateDisplayName(formats strfmt.Registry) error {
+
+	if err := validate.Required("displayName", "body", m.DisplayName); err != nil {
+		return err
+	}
+
 	return nil
 }
 

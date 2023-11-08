@@ -38,6 +38,8 @@ type ClientService interface {
 
 	ListFinancialEventsByOrderID(params *ListFinancialEventsByOrderIDParams, opts ...ClientOption) (*ListFinancialEventsByOrderIDOK, error)
 
+	ListTransactions(params *ListTransactionsParams, opts ...ClientOption) (*ListTransactionsOK, error)
+
 	SetTransport(transport runtime.ClientTransport)
 }
 
@@ -88,7 +90,7 @@ func (a *Client) ListFinancialEventGroups(params *ListFinancialEventGroupsParams
 }
 
 /*
-	ListFinancialEvents Returns financial events for the specified data range. It may take up to 48 hours for orders to appear in your financial events.
+	ListFinancialEvents Returns financial events for the specified data range. It may take up to 48 hours for orders to appear in your financial events. *note in ListFinancialEvents that deferred events don’t show up in responses until in they are released.
 
 **Usage Plan:**
 
@@ -224,6 +226,52 @@ func (a *Client) ListFinancialEventsByOrderID(params *ListFinancialEventsByOrder
 	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
 	msg := fmt.Sprintf("unexpected success response for listFinancialEventsByOrderId: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+	ListTransactions Returns transactions for the given parameters. It may take up to 48 hours for transactions to appear in your transaction events.
+
+**Usage Plan:**
+
+| Rate (requests per second) | Burst |
+| ---- | ---- |
+| 0.5 | 30 |
+
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+*/
+func (a *Client) ListTransactions(params *ListTransactionsParams, opts ...ClientOption) (*ListTransactionsOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewListTransactionsParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "listTransactions",
+		Method:             "GET",
+		PathPattern:        "/finances/v0/transactions",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &ListTransactionsReader{formats: a.formats},
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*ListTransactionsOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for listTransactions: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 

@@ -20,6 +20,10 @@ import (
 // swagger:model ProductTypeList
 type ProductTypeList struct {
 
+	// The version details for the Amazon product type.
+	// Required: true
+	ProductTypeVersion *ProductTypeVersion `json:"productTypeVersion"`
+
 	// product types
 	// Required: true
 	ProductTypes []*ProductType `json:"productTypes"`
@@ -29,6 +33,10 @@ type ProductTypeList struct {
 func (m *ProductTypeList) Validate(formats strfmt.Registry) error {
 	var res []error
 
+	if err := m.validateProductTypeVersion(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.validateProductTypes(formats); err != nil {
 		res = append(res, err)
 	}
@@ -36,6 +44,26 @@ func (m *ProductTypeList) Validate(formats strfmt.Registry) error {
 	if len(res) > 0 {
 		return errors.CompositeValidationError(res...)
 	}
+	return nil
+}
+
+func (m *ProductTypeList) validateProductTypeVersion(formats strfmt.Registry) error {
+
+	if err := validate.Required("productTypeVersion", "body", m.ProductTypeVersion); err != nil {
+		return err
+	}
+
+	if m.ProductTypeVersion != nil {
+		if err := m.ProductTypeVersion.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("productTypeVersion")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("productTypeVersion")
+			}
+			return err
+		}
+	}
+
 	return nil
 }
 
@@ -70,6 +98,10 @@ func (m *ProductTypeList) validateProductTypes(formats strfmt.Registry) error {
 func (m *ProductTypeList) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
 	var res []error
 
+	if err := m.contextValidateProductTypeVersion(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.contextValidateProductTypes(ctx, formats); err != nil {
 		res = append(res, err)
 	}
@@ -77,6 +109,22 @@ func (m *ProductTypeList) ContextValidate(ctx context.Context, formats strfmt.Re
 	if len(res) > 0 {
 		return errors.CompositeValidationError(res...)
 	}
+	return nil
+}
+
+func (m *ProductTypeList) contextValidateProductTypeVersion(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.ProductTypeVersion != nil {
+		if err := m.ProductTypeVersion.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("productTypeVersion")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("productTypeVersion")
+			}
+			return err
+		}
+	}
+
 	return nil
 }
 
