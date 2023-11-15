@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// FailedAdhocDisbursementEventList A list of FailedAdhocDisbursementEvents.
+// FailedAdhocDisbursementEventList A list of `FailedAdhocDisbursementEvent`s.
 //
 // swagger:model FailedAdhocDisbursementEventList
 type FailedAdhocDisbursementEventList []*FailedAdhocDisbursementEvent

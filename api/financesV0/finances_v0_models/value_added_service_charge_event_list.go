@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// ValueAddedServiceChargeEventList A list of ValueAddedServiceCharge events.
+// ValueAddedServiceChargeEventList A list of `ValueAddedServiceCharge` events.
 //
 // swagger:model ValueAddedServiceChargeEventList
 type ValueAddedServiceChargeEventList []*ValueAddedServiceChargeEvent

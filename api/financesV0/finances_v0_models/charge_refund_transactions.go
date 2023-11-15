@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// ChargeRefundTransactions A list of ChargeRefund Transactions
+// ChargeRefundTransactions A list of `ChargeRefund` transactions.
 //
 // swagger:model ChargeRefundTransactions
 type ChargeRefundTransactions []*ChargeRefundTransaction
