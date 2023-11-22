@@ -86,7 +86,7 @@ type GetCompetitiveSummaryOK struct {
 	 */
 	XAmznRateLimitLimit string
 
-	/* The unique request reference identifier.
+	/* Unique request reference identifier.
 	 */
 	XAmznRequestID string
 

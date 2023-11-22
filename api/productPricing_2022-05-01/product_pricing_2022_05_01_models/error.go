@@ -23,7 +23,7 @@ type Error struct {
 	// Required: true
 	Code *string `json:"code"`
 
-	// Additional information that can help the caller understand or fix the issue.
+	// Additional details that can help the caller understand or fix the issue.
 	Details string `json:"details,omitempty"`
 
 	// A message that describes the error condition.
