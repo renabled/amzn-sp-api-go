@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// EventBridgeResource Represents an Amazon EventBridge destination.
+// EventBridgeResource The Amazon EventBridge destination.
 //
 // swagger:model EventBridgeResource
 type EventBridgeResource struct {
@@ -28,7 +28,7 @@ type EventBridgeResource struct {
 	// Max Length: 256
 	Name *string `json:"name"`
 
-	// The AWS region in which you receive the notifications. For AWS regions that are supported in Amazon EventBridge, see https://docs.aws.amazon.com/general/latest/gr/ev.html.
+	// The AWS region in which you receive the notifications. For AWS regions that are supported in Amazon EventBridge, refer to [Amazon EventBridge endpoints and quotas](https://docs.aws.amazon.com/general/latest/gr/ev.html).
 	// Required: true
 	Region *string `json:"region"`
 }

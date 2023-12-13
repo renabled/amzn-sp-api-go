@@ -13,7 +13,7 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// OrderChangeTypeFilter Use this event filter to customize your subscription to send notifications for only the specified orderChangeType.
+// OrderChangeTypeFilter An event filter to customize your subscription to send notifications for only the specified `orderChangeType`.
 //
 // swagger:model OrderChangeTypeFilter
 type OrderChangeTypeFilter struct {

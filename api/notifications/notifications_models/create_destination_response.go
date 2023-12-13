@@ -18,10 +18,10 @@ import (
 // swagger:model CreateDestinationResponse
 type CreateDestinationResponse struct {
 
-	// One or more unexpected errors occurred during the createDestination operation.
+	// One or more unexpected errors occurred during the `createDestination` operation.
 	Errors ErrorList `json:"errors,omitempty"`
 
-	// The payload for the createDestination operation.
+	// The payload for the `createDestination` operation.
 	Payload *Destination `json:"payload,omitempty"`
 }
 

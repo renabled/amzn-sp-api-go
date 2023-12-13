@@ -13,7 +13,7 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// MarketplaceFilter Use this event filter to customize your subscription to send notifications for only the specified marketplaceId's.
+// MarketplaceFilter An event filter to customize your subscription to send notifications for only the specified `marketplaceId`s.
 //
 // swagger:model MarketplaceFilter
 type MarketplaceFilter struct {

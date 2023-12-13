@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// Destination Represents a destination created when you call the createDestination operation.
+// Destination Information about the destination created when you call the `createDestination` operation.
 //
 // swagger:model Destination
 type Destination struct {

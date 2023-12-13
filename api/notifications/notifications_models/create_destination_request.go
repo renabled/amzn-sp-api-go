@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// CreateDestinationRequest The request schema for the createDestination operation.
+// CreateDestinationRequest The request schema for the `createDestination` operation.
 //
 // swagger:model CreateDestinationRequest
 type CreateDestinationRequest struct {

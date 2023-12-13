@@ -13,7 +13,7 @@ import (
 	"github.com/go-openapi/strfmt"
 )
 
-// OrderChangeTypes A list of order change types to subscribe to (e.g. BuyerRequestedChange). To receive notifications of all change types, do not provide this list.
+// OrderChangeTypes A list of order change types to subscribe to (for example: `BuyerRequestedChange`). To receive notifications of all change types, do not provide this list.
 //
 // swagger:model OrderChangeTypes
 type OrderChangeTypes []OrderChangeTypeEnum

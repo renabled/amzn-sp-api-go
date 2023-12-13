@@ -13,12 +13,12 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// DeleteDestinationResponse The response schema for the deleteDestination operation.
+// DeleteDestinationResponse The response schema for the `deleteDestination` operation.
 //
 // swagger:model DeleteDestinationResponse
 type DeleteDestinationResponse struct {
 
-	// One or more unexpected errors occurred during the deleteDestination operation.
+	// One or more unexpected errors occurred during the `deleteDestination` operation.
 	Errors ErrorList `json:"errors,omitempty"`
 }
 

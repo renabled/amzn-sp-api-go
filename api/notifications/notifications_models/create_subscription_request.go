@@ -11,18 +11,21 @@ import (
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
+	"github.com/go-openapi/validate"
 )
 
-// CreateSubscriptionRequest The request schema for the createSubscription operation.
+// CreateSubscriptionRequest The request schema for the `createSubscription` operation.
 //
 // swagger:model CreateSubscriptionRequest
 type CreateSubscriptionRequest struct {
 
 	// The identifier for the destination where notifications will be delivered.
-	DestinationID string `json:"destinationId,omitempty"`
+	// Required: true
+	DestinationID *string `json:"destinationId"`
 
 	// The version of the payload object to be used in the notification.
-	PayloadVersion string `json:"payloadVersion,omitempty"`
+	// Required: true
+	PayloadVersion *string `json:"payloadVersion"`
 
 	// processing directive
 	ProcessingDirective *ProcessingDirective `json:"processingDirective,omitempty"`
@@ -32,6 +35,14 @@ type CreateSubscriptionRequest struct {
 func (m *CreateSubscriptionRequest) Validate(formats strfmt.Registry) error {
 	var res []error
 
+	if err := m.validateDestinationID(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validatePayloadVersion(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.validateProcessingDirective(formats); err != nil {
 		res = append(res, err)
 	}
@@ -39,6 +50,24 @@ func (m *CreateSubscriptionRequest) Validate(formats strfmt.Registry) error {
 	if len(res) > 0 {
 		return errors.CompositeValidationError(res...)
 	}
+	return nil
+}
+
+func (m *CreateSubscriptionRequest) validateDestinationID(formats strfmt.Registry) error {
+
+	if err := validate.Required("destinationId", "body", m.DestinationID); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *CreateSubscriptionRequest) validatePayloadVersion(formats strfmt.Registry) error {
+
+	if err := validate.Required("payloadVersion", "body", m.PayloadVersion); err != nil {
+		return err
+	}
+
 	return nil
 }
 

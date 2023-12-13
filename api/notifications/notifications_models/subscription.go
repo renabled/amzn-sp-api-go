@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// Subscription Represents a subscription to receive notifications.
+// Subscription Information about the subscription.
 //
 // swagger:model Subscription
 type Subscription struct {

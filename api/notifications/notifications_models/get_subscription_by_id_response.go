@@ -13,15 +13,15 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// GetSubscriptionByIDResponse The response schema for the getSubscriptionById operation.
+// GetSubscriptionByIDResponse The response schema for the `getSubscriptionById` operation.
 //
 // swagger:model GetSubscriptionByIdResponse
 type GetSubscriptionByIDResponse struct {
 
-	// An unexpected condition occurred during the getSubscriptionById operation.
+	// An unexpected condition occurred during the `getSubscriptionById` operation.
 	Errors ErrorList `json:"errors,omitempty"`
 
-	// The payload for the getSubscriptionById operation.
+	// The payload for the `getSubscriptionById` operation.
 	Payload *Subscription `json:"payload,omitempty"`
 }
 

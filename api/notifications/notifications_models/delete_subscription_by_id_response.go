@@ -13,12 +13,12 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// DeleteSubscriptionByIDResponse The response schema for the deleteSubscriptionById operation.
+// DeleteSubscriptionByIDResponse The response schema for the `deleteSubscriptionById` operation.
 //
 // swagger:model DeleteSubscriptionByIdResponse
 type DeleteSubscriptionByIDResponse struct {
 
-	// An unexpected condition occurred during the deleteSubscriptionById operation.
+	// An unexpected condition occurred during the `deleteSubscriptionById` operation.
 	Errors ErrorList `json:"errors,omitempty"`
 }
 

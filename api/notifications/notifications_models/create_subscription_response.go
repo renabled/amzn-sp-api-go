@@ -13,15 +13,15 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// CreateSubscriptionResponse The response schema for the createSubscription operation.
+// CreateSubscriptionResponse The response schema for the `createSubscription` operation.
 //
 // swagger:model CreateSubscriptionResponse
 type CreateSubscriptionResponse struct {
 
-	// One or more unexpected errors occurred during the createSubscription operation.
+	// One or more unexpected errors occurred during the `createSubscription` operation.
 	Errors ErrorList `json:"errors,omitempty"`
 
-	// The payload for the createSubscription operation.
+	// The payload for the `createSubscription` operation.
 	Payload *Subscription `json:"payload,omitempty"`
 }
 

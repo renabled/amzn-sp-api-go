@@ -65,9 +65,15 @@ type GetSubscriptionParams struct {
 
 	    The type of notification.
 
-	For more information about notification types, see [the Notifications API Use Case Guide](doc:notifications-api-v1-use-case-guide).
+	For more information about notification types, refer to [the Notifications API Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/notifications-api-v1-use-case-guide).
 	*/
 	NotificationType string
+
+	/* PayloadVersion.
+
+	   The version of the payload object to be used in the notification.
+	*/
+	PayloadVersion *string
 
 	timeout    time.Duration
 	Context    context.Context
@@ -133,6 +139,17 @@ func (o *GetSubscriptionParams) SetNotificationType(notificationType string) {
 	o.NotificationType = notificationType
 }
 
+// WithPayloadVersion adds the payloadVersion to the get subscription params
+func (o *GetSubscriptionParams) WithPayloadVersion(payloadVersion *string) *GetSubscriptionParams {
+	o.SetPayloadVersion(payloadVersion)
+	return o
+}
+
+// SetPayloadVersion adds the payloadVersion to the get subscription params
+func (o *GetSubscriptionParams) SetPayloadVersion(payloadVersion *string) {
+	o.PayloadVersion = payloadVersion
+}
+
 // WriteToRequest writes these params to a swagger request
 func (o *GetSubscriptionParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
 
@@ -144,6 +161,23 @@ func (o *GetSubscriptionParams) WriteToRequest(r runtime.ClientRequest, reg strf
 	// path param notificationType
 	if err := r.SetPathParam("notificationType", o.NotificationType); err != nil {
 		return err
+	}
+
+	if o.PayloadVersion != nil {
+
+		// query param payloadVersion
+		var qrPayloadVersion string
+
+		if o.PayloadVersion != nil {
+			qrPayloadVersion = *o.PayloadVersion
+		}
+		qPayloadVersion := qrPayloadVersion
+		if qPayloadVersion != "" {
+
+			if err := r.SetQueryParam("payloadVersion", qPayloadVersion); err != nil {
+				return err
+			}
+		}
 	}
 
 	if len(res) > 0 {

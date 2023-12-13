@@ -13,15 +13,15 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// GetDestinationResponse The response schema for the getDestination operation.
+// GetDestinationResponse The response schema for the `getDestination` operation.
 //
 // swagger:model GetDestinationResponse
 type GetDestinationResponse struct {
 
-	// One or more unexpected errors occurred during the getDestination operation.
+	// One or more unexpected errors occurred during the `getDestination` operation.
 	Errors ErrorList `json:"errors,omitempty"`
 
-	// The payload for the getDestination operation.
+	// The payload for the `getDestination` operation.
 	Payload *Destination `json:"payload,omitempty"`
 }
 
