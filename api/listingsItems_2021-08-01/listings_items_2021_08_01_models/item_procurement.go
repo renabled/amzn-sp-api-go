@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// ItemProcurement Vendor procurement information for the listings item.
+// ItemProcurement The vendor procurement information for the listings item.
 //
 // swagger:model ItemProcurement
 type ItemProcurement struct {

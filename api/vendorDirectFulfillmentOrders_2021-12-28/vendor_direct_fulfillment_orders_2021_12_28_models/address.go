@@ -19,37 +19,37 @@ import (
 // swagger:model Address
 type Address struct {
 
-	// First line of the address.
+	// First line of the address. For Amazon label only vendors, this field will have the value `xxxxx` within the object `shipToParty`.
 	// Required: true
 	AddressLine1 *string `json:"addressLine1"`
 
-	// Additional address information, if required.
+	// Additional address information, if required. For Amazon label only vendors, this field will have the value `xxxxx` within the object `shipToParty`.
 	AddressLine2 string `json:"addressLine2,omitempty"`
 
-	// Additional address information, if required.
+	// Additional address information, if required. For Amazon label only vendors, this field will have the value `xxxxx` within the object `shipToParty`.
 	AddressLine3 string `json:"addressLine3,omitempty"`
 
-	// The attention name of the person at that address.
+	// The attention name of the person at that address. For Amazon label only vendors, this field will have the value `xxxxx` within the object `shipToParty`.
 	Attention string `json:"attention,omitempty"`
 
-	// The city where the person, business or institution is located.
+	// The city where the person, business or institution is located. For Amazon label only vendors, this field will have the value `xxxxx` within the object `shipToParty`.
 	City string `json:"city,omitempty"`
 
 	// The two digit country code. In ISO 3166-1 alpha-2 format.
 	// Required: true
 	CountryCode *string `json:"countryCode"`
 
-	// The county where person, business or institution is located.
+	// The county where person, business or institution is located. For Amazon label only vendors, this field will have the value `xxxxx` within the object `shipToParty`.
 	County string `json:"county,omitempty"`
 
-	// The district where person, business or institution is located.
+	// The district where person, business or institution is located. For Amazon label only vendors, this field will have the value `xxxxx` within the object `shipToParty`.
 	District string `json:"district,omitempty"`
 
-	// The name of the person, business or institution at that address.
+	// The name of the person, business or institution at that address. For Amazon label only vendors, this field will have the value `xxxxx` within the object `shipToParty`.
 	// Required: true
 	Name *string `json:"name"`
 
-	// The phone number of the person, business or institution located at that address.
+	// The phone number of the person, business or institution located at that address. For Amazon label only vendors, this field will have the value `xxxxx` within the object `shipToParty`.
 	Phone string `json:"phone,omitempty"`
 
 	// The postal code of that address. It conatins a series of letters or digits or both, sometimes including spaces or punctuation.

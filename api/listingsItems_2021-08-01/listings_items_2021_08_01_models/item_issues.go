@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// ItemIssues Issues associated with the listings item.
+// ItemIssues The issues associated with the listings item.
 //
 // swagger:model ItemIssues
 type ItemIssues []*Issue

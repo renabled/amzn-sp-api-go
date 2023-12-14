@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// Money The currency type and the amount.
+// Money The currency type and amount.
 //
 // swagger:model Money
 type Money struct {
@@ -23,7 +23,7 @@ type Money struct {
 	// Required: true
 	Amount *Decimal `json:"amount"`
 
-	// Three-digit currency code. In ISO 4217 format.
+	// Three-digit currency code in ISO 4217 format.
 	// Required: true
 	CurrencyCode *string `json:"currencyCode"`
 }

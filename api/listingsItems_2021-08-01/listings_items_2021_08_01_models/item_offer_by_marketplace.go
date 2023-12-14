@@ -20,7 +20,7 @@ import (
 // swagger:model ItemOfferByMarketplace
 type ItemOfferByMarketplace struct {
 
-	// Amazon marketplace identifier.
+	// The Amazon marketplace identifier.
 	// Required: true
 	MarketplaceID *string `json:"marketplaceId"`
 
@@ -32,7 +32,7 @@ type ItemOfferByMarketplace struct {
 	// points
 	Points *Points `json:"points,omitempty"`
 
-	// Purchase price of the listings item
+	// The purchase price of the listings item
 	// Required: true
 	Price *Money `json:"price"`
 }

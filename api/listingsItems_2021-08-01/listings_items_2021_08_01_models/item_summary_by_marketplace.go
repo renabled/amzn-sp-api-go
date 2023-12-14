@@ -29,24 +29,24 @@ type ItemSummaryByMarketplace struct {
 	// Enum: [new_new new_open_box new_oem refurbished_refurbished used_like_new used_very_good used_good used_acceptable collectible_like_new collectible_very_good collectible_good collectible_acceptable club_club]
 	ConditionType string `json:"conditionType,omitempty"`
 
-	// Date the listings item was created, in ISO 8601 format.
+	// The date the listings item was created in ISO 8601 format.
 	// Required: true
 	// Format: date-time
 	CreatedDate *strfmt.DateTime `json:"createdDate"`
 
-	// Fulfillment network stock keeping unit is an identifier used by Amazon fulfillment centers to identify each unique item.
+	// The fulfillment network stock keeping unit is an identifier used by Amazon fulfillment centers to identify each unique item.
 	FnSku string `json:"fnSku,omitempty"`
 
-	// Name, or title, associated with an Amazon catalog item.
+	// The name or title associated with an Amazon catalog item.
 	// Required: true
 	ItemName *string `json:"itemName"`
 
-	// Date the listings item was last updated, in ISO 8601 format.
+	// The date the listings item was last updated in ISO 8601 format.
 	// Required: true
 	// Format: date-time
 	LastUpdatedDate *strfmt.DateTime `json:"lastUpdatedDate"`
 
-	// Main image for the listings item.
+	// The main image for the listings item.
 	MainImage *ItemImage `json:"mainImage,omitempty"`
 
 	// A marketplace identifier. Identifies the Amazon marketplace for the listings item.

@@ -14,12 +14,12 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// FulfillmentAvailability Fulfillment availability details for the listings item.
+// FulfillmentAvailability The fulfillment availability details for the listings item.
 //
 // swagger:model FulfillmentAvailability
 type FulfillmentAvailability struct {
 
-	// Designates which fulfillment network will be used.
+	// The code of the fulfillment network that will be used.
 	// Required: true
 	FulfillmentChannelCode *string `json:"fulfillmentChannelCode"`
 

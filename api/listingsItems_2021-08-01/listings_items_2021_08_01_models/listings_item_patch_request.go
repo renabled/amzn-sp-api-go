@@ -15,7 +15,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// ListingsItemPatchRequest The request body schema for the patchListingsItem operation.
+// ListingsItemPatchRequest The request body schema for the `patchListingsItem` operation.
 //
 // swagger:model ListingsItemPatchRequest
 type ListingsItemPatchRequest struct {

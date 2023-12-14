@@ -20,12 +20,12 @@ import (
 // swagger:model PatchOperation
 type PatchOperation struct {
 
-	// Type of JSON Patch operation. Supported JSON Patch operations include add, replace, and delete. See <https://tools.ietf.org/html/rfc6902>.
+	// Type of JSON Patch operation. Supported JSON Patch operations include add, replace, and delete. Refer to [JavaScript Object Notation (JSON) Patch](https://tools.ietf.org/html/rfc6902) for more information.
 	// Required: true
 	// Enum: [add replace delete]
 	Op *string `json:"op"`
 
-	// JSON Pointer path of the element to patch. See <https://tools.ietf.org/html/rfc6902>.
+	// JSON Pointer path of the element to patch. Refer to [JavaScript Object Notation (JSON) Patch](https://tools.ietf.org/html/rfc6902) for more information.
 	// Required: true
 	Path *string `json:"path"`
 

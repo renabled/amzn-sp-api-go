@@ -23,7 +23,7 @@ type Item struct {
 	// attributes
 	Attributes ItemAttributes `json:"attributes,omitempty"`
 
-	// Fulfillment availability for the listings item.
+	// The fulfillment availability for the listings item.
 	FulfillmentAvailability []*FulfillmentAvailability `json:"fulfillmentAvailability"`
 
 	// issues
@@ -32,7 +32,7 @@ type Item struct {
 	// offers
 	Offers ItemOffers `json:"offers,omitempty"`
 
-	// Vendor procurement information for the listings item.
+	// The vendor procurement information for the listings item.
 	Procurement []*ItemProcurement `json:"procurement"`
 
 	// A selling partner provided identifier for an Amazon listing.

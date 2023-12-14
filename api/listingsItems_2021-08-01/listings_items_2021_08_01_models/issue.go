@@ -20,12 +20,38 @@ import (
 // swagger:model Issue
 type Issue struct {
 
-	// Names of the attributes associated with the issue, if applicable.
+	// The names of the attributes associated with the issue, if applicable.
 	AttributeNames []string `json:"attributeNames"`
+
+	// List of issue categories.
+	//
+	// Possible vales:
+	//
+	// * `INVALID_ATTRIBUTE` - Indicating an invalid attribute in the listing.
+	//
+	// * `MISSING_ATTRIBUTE` - Highlighting a missing attribute in the listing.
+	//
+	// * `INVALID_IMAGE` - Signifying an invalid image in the listing.
+	//
+	// * `MISSING_IMAGE` - Noting the absence of an image in the listing.
+	//
+	// * `INVALID_PRICE` - Pertaining to issues with the listing`s price-related attributes.
+	//
+	// * `MISSING_PRICE` - Pointing out the absence of a price attribute in the listing.
+	//
+	// * `DUPLICATE` - Identifying listings with potential duplicate problems, such as this ASIN potentially being a duplicate of another ASIN.
+	//
+	// * `QUALIFICATION_REQUIRED` - Indicating that the listing requires qualification-related approval.
+	// Example: ["INVALID_ATTRIBUTE"]
+	// Required: true
+	Categories []string `json:"categories"`
 
 	// An issue code that identifies the type of issue.
 	// Required: true
 	Code *string `json:"code"`
+
+	// This field provides information about the enforcement actions taken by Amazon that affect the publishing or status of a listing. It also includes details about any associated exemptions.
+	Enforcements *IssueEnforcements `json:"enforcements,omitempty"`
 
 	// A message that describes the issue.
 	// Required: true
@@ -41,7 +67,15 @@ type Issue struct {
 func (m *Issue) Validate(formats strfmt.Registry) error {
 	var res []error
 
+	if err := m.validateCategories(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.validateCode(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateEnforcements(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -59,10 +93,38 @@ func (m *Issue) Validate(formats strfmt.Registry) error {
 	return nil
 }
 
+func (m *Issue) validateCategories(formats strfmt.Registry) error {
+
+	if err := validate.Required("categories", "body", m.Categories); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 func (m *Issue) validateCode(formats strfmt.Registry) error {
 
 	if err := validate.Required("code", "body", m.Code); err != nil {
 		return err
+	}
+
+	return nil
+}
+
+func (m *Issue) validateEnforcements(formats strfmt.Registry) error {
+	if swag.IsZero(m.Enforcements) { // not required
+		return nil
+	}
+
+	if m.Enforcements != nil {
+		if err := m.Enforcements.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("enforcements")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("enforcements")
+			}
+			return err
+		}
 	}
 
 	return nil
@@ -123,8 +185,33 @@ func (m *Issue) validateSeverity(formats strfmt.Registry) error {
 	return nil
 }
 
-// ContextValidate validates this issue based on context it is used
+// ContextValidate validate this issue based on the context it is used
 func (m *Issue) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.contextValidateEnforcements(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *Issue) contextValidateEnforcements(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.Enforcements != nil {
+		if err := m.Enforcements.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("enforcements")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("enforcements")
+			}
+			return err
+		}
+	}
+
 	return nil
 }
 

@@ -14,20 +14,20 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// ItemImage Image for the listings item.
+// ItemImage The image for the listings item.
 //
 // swagger:model ItemImage
 type ItemImage struct {
 
-	// Height of the image in pixels.
+	// The height of the image in pixels.
 	// Required: true
 	Height *int64 `json:"height"`
 
-	// Link, or URL, for the image.
+	// The link, or URL, to the image.
 	// Required: true
 	Link *string `json:"link"`
 
-	// Width of the image in pixels.
+	// The width of the image in pixels.
 	// Required: true
 	Width *int64 `json:"width"`
 }
