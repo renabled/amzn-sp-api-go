@@ -23,9 +23,9 @@ type IssueEnforcementAction struct {
 	//
 	// Possible values:
 	//
-	// * `LISTING_SUPPRESSED` - This enforcement takes down the current listing item`s buyability.
+	// * `LISTING_SUPPRESSED` - This enforcement takes down the current listing item's buyability.
 	//
-	// * `ATTRIBUTE_SUPPRESSED` - An attribute`s value on the listing item is invalid, which causes it to be rejected by Amazon.
+	// * `ATTRIBUTE_SUPPRESSED` - An attribute's value on the listing item is invalid, which causes it to be rejected by Amazon.
 	//
 	// * `CATALOG_ITEM_REMOVED` - This catalog item is inactive on Amazon, and all offers against it in the applicable marketplace are non-buyable.
 	//

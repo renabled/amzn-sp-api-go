@@ -35,7 +35,7 @@ type Issue struct {
 	//
 	// * `MISSING_IMAGE` - Noting the absence of an image in the listing.
 	//
-	// * `INVALID_PRICE` - Pertaining to issues with the listing`s price-related attributes.
+	// * `INVALID_PRICE` - Pertaining to issues with the listing's price-related attributes.
 	//
 	// * `MISSING_PRICE` - Pointing out the absence of a price attribute in the listing.
 	//
