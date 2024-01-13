@@ -92,8 +92,6 @@ func (a *Client) DeleteListingsItem(params *DeleteListingsItemParams, opts ...Cl
 /*
 	GetListingsItem Returns details about a listings item for a selling partner.
 
-**Note:** This operation has a throttling rate of one request per second when `mode` is `VALIDATION_PREVIEW`.
-
 **Note:** The parameters associated with this operation may contain special characters that must be encoded to successfully call the API. To avoid errors with SKUs when encoding URLs, refer to [URL Encoding](https://developer-docs.amazon.com/sp-api/docs/url-encoding).
 
 **Usage Plan:**
