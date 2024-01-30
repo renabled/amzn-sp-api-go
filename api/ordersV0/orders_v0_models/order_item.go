@@ -110,10 +110,10 @@ type OrderItem struct {
 	// The number of items shipped.
 	QuantityShipped int64 `json:"QuantityShipped,omitempty"`
 
-	// The end date of the scheduled delivery window in the time zone of the order destination. In ISO 8601 date time format.
+	// The end date of the scheduled delivery window in the time zone of the order destination. In <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> date time format.
 	ScheduledDeliveryEndDate string `json:"ScheduledDeliveryEndDate,omitempty"`
 
-	// The start date of the scheduled delivery window in the time zone of the order destination. In ISO 8601 date time format.
+	// The start date of the scheduled delivery window in the time zone of the order destination. In <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> date time format.
 	ScheduledDeliveryStartDate string `json:"ScheduledDeliveryStartDate,omitempty"`
 
 	// The seller stock keeping unit (SKU) of the item.

@@ -43,10 +43,10 @@ type Order struct {
 	// The recommended location for the seller to ship the items from. It is calculated at checkout. The seller may or may not choose to ship from this location.
 	DefaultShipFromLocationAddress *Address `json:"DefaultShipFromLocationAddress,omitempty"`
 
-	// The start of the time period within which you have committed to fulfill the order. In ISO 8601 date time format. Returned only for seller-fulfilled orders.
+	// The start of the time period within which you have committed to fulfill the order. In <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> date time format. Returned only for seller-fulfilled orders.
 	EarliestDeliveryDate string `json:"EarliestDeliveryDate,omitempty"`
 
-	// The start of the time period within which you have committed to ship the order. In ISO 8601 date time format. Returned only for seller-fulfilled orders.
+	// The start of the time period within which you have committed to ship the order. In <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> date time format. Returned only for seller-fulfilled orders.
 	//
 	// __Note__: EarliestShipDate might not be returned for orders placed before February 1, 2013.
 	EarliestShipDate string `json:"EarliestShipDate,omitempty"`
@@ -103,10 +103,10 @@ type Order struct {
 	// Required: true
 	LastUpdateDate *string `json:"LastUpdateDate"`
 
-	// The end of the time period within which you have committed to fulfill the order. In ISO 8601 date time format. Returned only for seller-fulfilled orders that do not have a PendingAvailability, Pending, or Canceled status.
+	// The end of the time period within which you have committed to fulfill the order. In <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> date time format. Returned only for seller-fulfilled orders that do not have a PendingAvailability, Pending, or Canceled status.
 	LatestDeliveryDate string `json:"LatestDeliveryDate,omitempty"`
 
-	// The end of the time period within which you have committed to ship the order. In ISO 8601 date time format. Returned only for seller-fulfilled orders.
+	// The end of the time period within which you have committed to ship the order. In <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> date time format. Returned only for seller-fulfilled orders.
 	//
 	// __Note__: LatestShipDate might not be returned for orders placed before February 1, 2013.
 	LatestShipDate string `json:"LatestShipDate,omitempty"`

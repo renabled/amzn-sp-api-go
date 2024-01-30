@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// ElectronicInvoiceStatus The status of the electronic invoice.
+// ElectronicInvoiceStatus The status of the electronic invoice. Only available for Easy Ship orders and orders in the BR marketplace.
 //
 // swagger:model ElectronicInvoiceStatus
 type ElectronicInvoiceStatus string

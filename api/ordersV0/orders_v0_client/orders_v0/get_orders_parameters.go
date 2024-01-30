@@ -82,25 +82,25 @@ type GetOrdersParams struct {
 
 	/* CreatedAfter.
 
-	   A date used for selecting orders created after (or at) a specified time. Only orders placed after the specified time are returned. Either the CreatedAfter parameter or the LastUpdatedAfter parameter is required. Both cannot be empty. The date must be in ISO 8601 format.
+	   A date used for selecting orders created after (or at) a specified time. Only orders placed after the specified time are returned. Either the CreatedAfter parameter or the LastUpdatedAfter parameter is required. Both cannot be empty. The date must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> format.
 	*/
 	CreatedAfter *string
 
 	/* CreatedBefore.
 
-	   A date used for selecting orders created before (or at) a specified time. Only orders placed before the specified time are returned. The date must be in ISO 8601 format.
+	   A date used for selecting orders created before (or at) a specified time. Only orders placed before the specified time are returned. The date must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> format.
 	*/
 	CreatedBefore *string
 
 	/* EarliestDeliveryDateAfter.
 
-	   A date used for selecting orders with a earliest delivery date after (or at) a specified time. The date must be in ISO 8601 format.
+	   A date used for selecting orders with a earliest delivery date after (or at) a specified time. The date must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> format.
 	*/
 	EarliestDeliveryDateAfter *string
 
 	/* EarliestDeliveryDateBefore.
 
-	   A date used for selecting orders with a earliest delivery date before (or at) a specified time. The date must be in ISO 8601 format.
+	   A date used for selecting orders with a earliest delivery date before (or at) a specified time. The date must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> format.
 	*/
 	EarliestDeliveryDateBefore *string
 
@@ -155,25 +155,25 @@ type GetOrdersParams struct {
 
 	/* LastUpdatedAfter.
 
-	   A date used for selecting orders that were last updated after (or at) a specified time. An update is defined as any change in order status, including the creation of a new order. Includes updates made by Amazon and by the seller. The date must be in ISO 8601 format.
+	   A date used for selecting orders that were last updated after (or at) a specified time. An update is defined as any change in order status, including the creation of a new order. Includes updates made by Amazon and by the seller. The date must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> format.
 	*/
 	LastUpdatedAfter *string
 
 	/* LastUpdatedBefore.
 
-	   A date used for selecting orders that were last updated before (or at) a specified time. An update is defined as any change in order status, including the creation of a new order. Includes updates made by Amazon and by the seller. The date must be in ISO 8601 format.
+	   A date used for selecting orders that were last updated before (or at) a specified time. An update is defined as any change in order status, including the creation of a new order. Includes updates made by Amazon and by the seller. The date must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> format.
 	*/
 	LastUpdatedBefore *string
 
 	/* LatestDeliveryDateAfter.
 
-	   A date used for selecting orders with a latest delivery date after (or at) a specified time. The date must be in ISO 8601 format.
+	   A date used for selecting orders with a latest delivery date after (or at) a specified time. The date must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> format.
 	*/
 	LatestDeliveryDateAfter *string
 
 	/* LatestDeliveryDateBefore.
 
-	   A date used for selecting orders with a latest delivery date before (or at) a specified time. The date must be in ISO 8601 format.
+	   A date used for selecting orders with a latest delivery date before (or at) a specified time. The date must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> format.
 	*/
 	LatestDeliveryDateBefore *string
 
