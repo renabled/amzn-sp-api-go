@@ -45,6 +45,9 @@ type Address struct {
 	// The district.
 	District string `json:"District,omitempty"`
 
+	// extended fields
+	ExtendedFields *AddressExtendedFields `json:"ExtendedFields,omitempty"`
+
 	// The municipality.
 	Municipality string `json:"Municipality,omitempty"`
 
@@ -67,6 +70,10 @@ func (m *Address) Validate(formats strfmt.Registry) error {
 	var res []error
 
 	if err := m.validateAddressType(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateExtendedFields(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -122,6 +129,25 @@ func (m *Address) validateAddressType(formats strfmt.Registry) error {
 	return nil
 }
 
+func (m *Address) validateExtendedFields(formats strfmt.Registry) error {
+	if swag.IsZero(m.ExtendedFields) { // not required
+		return nil
+	}
+
+	if m.ExtendedFields != nil {
+		if err := m.ExtendedFields.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("ExtendedFields")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("ExtendedFields")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
 func (m *Address) validateName(formats strfmt.Registry) error {
 
 	if err := validate.Required("Name", "body", m.Name); err != nil {
@@ -131,8 +157,33 @@ func (m *Address) validateName(formats strfmt.Registry) error {
 	return nil
 }
 
-// ContextValidate validates this address based on context it is used
+// ContextValidate validate this address based on the context it is used
 func (m *Address) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.contextValidateExtendedFields(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *Address) contextValidateExtendedFields(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.ExtendedFields != nil {
+		if err := m.ExtendedFields.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("ExtendedFields")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("ExtendedFields")
+			}
+			return err
+		}
+	}
+
 	return nil
 }
 

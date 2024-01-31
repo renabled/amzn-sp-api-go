@@ -50,7 +50,7 @@ type ClientService interface {
 }
 
 /*
-	CreateDestination Creates a destination resource to receive notifications. The `createDestination` operation is grantless. For more information, refer to [Grantless operations](https://developer-docs.amazon.com/sp-api/docs/grantless-operations) in the Selling Partner API Developer Guide.
+	CreateDestination Creates a destination resource to receive notifications. The `createDestination` operation is grantless. For more information, refer to [Grantless operations](https://developer-docs.amazon.com/sp-api/docs/grantless-operations).
 
 **Usage Plan:**
 
@@ -142,7 +142,7 @@ func (a *Client) CreateSubscription(params *CreateSubscriptionParams, opts ...Cl
 }
 
 /*
-	DeleteDestination Deletes the destination that you specify. The `deleteDestination` operation is grantless. For more information, refer to [Grantless operations](https://developer-docs.amazon.com/sp-api/docs/grantless-operations) in the Selling Partner API Developer Guide.
+	DeleteDestination Deletes the destination that you specify. The `deleteDestination` operation is grantless. For more information, refer to [Grantless operations](https://developer-docs.amazon.com/sp-api/docs/grantless-operations).
 
 **Usage Plan:**
 
@@ -188,7 +188,7 @@ func (a *Client) DeleteDestination(params *DeleteDestinationParams, opts ...Clie
 }
 
 /*
-	DeleteSubscriptionByID Deletes the subscription indicated by the subscription identifier and notification type that you specify. The subscription identifier can be for any subscription associated with your application. After you successfully call this operation, notifications will stop being sent for the associated subscription. The `deleteSubscriptionById` operation is grantless. For more information, refer to [Grantless operations](https://developer-docs.amazon.com/sp-api/docs/grantless-operations) in the Selling Partner API Developer Guide.
+	DeleteSubscriptionByID Deletes the subscription indicated by the subscription identifier and notification type that you specify. The subscription identifier can be for any subscription associated with your application. After you successfully call this operation, notifications will stop being sent for the associated subscription. The `deleteSubscriptionById` operation is grantless. For more information, refer to [Grantless operations](https://developer-docs.amazon.com/sp-api/docs/grantless-operations).
 
 **Usage Plan:**
 
@@ -234,7 +234,7 @@ func (a *Client) DeleteSubscriptionByID(params *DeleteSubscriptionByIDParams, op
 }
 
 /*
-	GetDestination Returns information about the destination that you specify. The `getDestination` operation is grantless. For more information, refer to [Grantless operations](https://developer-docs.amazon.com/sp-api/docs/grantless-operations) in the Selling Partner API Developer Guide.
+	GetDestination Returns information about the destination that you specify. The `getDestination` operation is grantless. For more information, refer to [Grantless operations](https://developer-docs.amazon.com/sp-api/docs/grantless-operations).
 
 **Usage Plan:**
 
@@ -280,7 +280,7 @@ func (a *Client) GetDestination(params *GetDestinationParams, opts ...ClientOpti
 }
 
 /*
-	GetDestinations Returns information about all destinations. The `getDestinations` operation is grantless. For more information, refer to [Grantless operations](https://developer-docs.amazon.com/sp-api/docs/grantless-operations) in the Selling Partner API Developer Guide.
+	GetDestinations Returns information about all destinations. The `getDestinations` operation is grantless. For more information, refer to [Grantless operations](https://developer-docs.amazon.com/sp-api/docs/grantless-operations).
 
 **Usage Plan:**
 
@@ -372,7 +372,7 @@ func (a *Client) GetSubscription(params *GetSubscriptionParams, opts ...ClientOp
 }
 
 /*
-	GetSubscriptionByID Returns information about a subscription for the specified notification type. The `getSubscriptionById` operation is grantless. For more information, refer to [Grantless operations](https://developer-docs.amazon.com/sp-api/docs/grantless-operations) in the Selling Partner API Developer Guide.
+	GetSubscriptionByID Returns information about a subscription for the specified notification type. The `getSubscriptionById` operation is grantless. For more information, refer to [Grantless operations](https://developer-docs.amazon.com/sp-api/docs/grantless-operations).
 
 **Usage Plan:**
 

@@ -70,7 +70,7 @@ type CreateSubscriptionParams struct {
 
 	    The type of notification.
 
-	For more information about notification types, refer to [the Notifications API Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/notifications-api-v1-use-case-guide).
+	For more information about notification types, refer to [Notification Type Values](https://developer-docs.amazon.com/sp-api/docs/notification-type-values).
 	*/
 	NotificationType string
 
