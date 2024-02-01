@@ -21,6 +21,9 @@ import (
 // swagger:model ListingsItemSubmissionResponse
 type ListingsItemSubmissionResponse struct {
 
+	// Identity attributes associated with the item in the Amazon catalog, such as the ASIN.
+	Identifiers ItemIdentifiers `json:"identifiers,omitempty"`
+
 	// Listings item issues related to the listings item submission.
 	Issues []*Issue `json:"issues"`
 
@@ -30,7 +33,7 @@ type ListingsItemSubmissionResponse struct {
 
 	// The status of the listings item submission.
 	// Required: true
-	// Enum: [ACCEPTED INVALID]
+	// Enum: [ACCEPTED INVALID VALID]
 	Status *string `json:"status"`
 
 	// The unique identifier of the listings item submission.
@@ -41,6 +44,10 @@ type ListingsItemSubmissionResponse struct {
 // Validate validates this listings item submission response
 func (m *ListingsItemSubmissionResponse) Validate(formats strfmt.Registry) error {
 	var res []error
+
+	if err := m.validateIdentifiers(formats); err != nil {
+		res = append(res, err)
+	}
 
 	if err := m.validateIssues(formats); err != nil {
 		res = append(res, err)
@@ -61,6 +68,23 @@ func (m *ListingsItemSubmissionResponse) Validate(formats strfmt.Registry) error
 	if len(res) > 0 {
 		return errors.CompositeValidationError(res...)
 	}
+	return nil
+}
+
+func (m *ListingsItemSubmissionResponse) validateIdentifiers(formats strfmt.Registry) error {
+	if swag.IsZero(m.Identifiers) { // not required
+		return nil
+	}
+
+	if err := m.Identifiers.Validate(formats); err != nil {
+		if ve, ok := err.(*errors.Validation); ok {
+			return ve.ValidateName("identifiers")
+		} else if ce, ok := err.(*errors.CompositeError); ok {
+			return ce.ValidateName("identifiers")
+		}
+		return err
+	}
+
 	return nil
 }
 
@@ -103,7 +127,7 @@ var listingsItemSubmissionResponseTypeStatusPropEnum []interface{}
 
 func init() {
 	var res []string
-	if err := json.Unmarshal([]byte(`["ACCEPTED","INVALID"]`), &res); err != nil {
+	if err := json.Unmarshal([]byte(`["ACCEPTED","INVALID","VALID"]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -118,6 +142,9 @@ const (
 
 	// ListingsItemSubmissionResponseStatusINVALID captures enum value "INVALID"
 	ListingsItemSubmissionResponseStatusINVALID string = "INVALID"
+
+	// ListingsItemSubmissionResponseStatusVALID captures enum value "VALID"
+	ListingsItemSubmissionResponseStatusVALID string = "VALID"
 )
 
 // prop value enum
@@ -155,6 +182,10 @@ func (m *ListingsItemSubmissionResponse) validateSubmissionID(formats strfmt.Reg
 func (m *ListingsItemSubmissionResponse) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
 	var res []error
 
+	if err := m.contextValidateIdentifiers(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.contextValidateIssues(ctx, formats); err != nil {
 		res = append(res, err)
 	}
@@ -162,6 +193,20 @@ func (m *ListingsItemSubmissionResponse) ContextValidate(ctx context.Context, fo
 	if len(res) > 0 {
 		return errors.CompositeValidationError(res...)
 	}
+	return nil
+}
+
+func (m *ListingsItemSubmissionResponse) contextValidateIdentifiers(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := m.Identifiers.ContextValidate(ctx, formats); err != nil {
+		if ve, ok := err.(*errors.Validation); ok {
+			return ve.ValidateName("identifiers")
+		} else if ce, ok := err.(*errors.CompositeError); ok {
+			return ce.ValidateName("identifiers")
+		}
+		return err
+	}
+
 	return nil
 }
 

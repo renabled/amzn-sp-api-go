@@ -63,7 +63,10 @@ CreateQueryParams contains all the parameters to send to the API endpoint
 */
 type CreateQueryParams struct {
 
-	// Body.
+	/* Body.
+
+	   The body of the request.
+	*/
 	Body *data_kiosk_2023_11_15_models.CreateQuerySpecification
 
 	timeout    time.Duration

@@ -23,20 +23,14 @@ type CancelQueryReader struct {
 // ReadResponse reads a server response into the received o.
 func (o *CancelQueryReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
 	switch response.Code() {
-	case 200:
-		result := NewCancelQueryOK()
+	case 204:
+		result := NewCancelQueryNoContent()
 		if err := result.readResponse(response, consumer, o.formats); err != nil {
 			return nil, err
 		}
 		return result, nil
 	case 400:
 		result := NewCancelQueryBadRequest()
-		if err := result.readResponse(response, consumer, o.formats); err != nil {
-			return nil, err
-		}
-		return nil, result
-	case 401:
-		result := NewCancelQueryUnauthorized()
 		if err := result.readResponse(response, consumer, o.formats); err != nil {
 			return nil, err
 		}
@@ -49,6 +43,12 @@ func (o *CancelQueryReader) ReadResponse(response runtime.ClientResponse, consum
 		return nil, result
 	case 404:
 		result := NewCancelQueryNotFound()
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		return nil, result
+	case 413:
+		result := NewCancelQueryRequestEntityTooLarge()
 		if err := result.readResponse(response, consumer, o.formats); err != nil {
 			return nil, err
 		}
@@ -82,17 +82,17 @@ func (o *CancelQueryReader) ReadResponse(response runtime.ClientResponse, consum
 	}
 }
 
-// NewCancelQueryOK creates a CancelQueryOK with default headers values
-func NewCancelQueryOK() *CancelQueryOK {
-	return &CancelQueryOK{}
+// NewCancelQueryNoContent creates a CancelQueryNoContent with default headers values
+func NewCancelQueryNoContent() *CancelQueryNoContent {
+	return &CancelQueryNoContent{}
 }
 
 /*
-CancelQueryOK describes a response with status code 200, with default header values.
+CancelQueryNoContent describes a response with status code 204, with default header values.
 
 Success.
 */
-type CancelQueryOK struct {
+type CancelQueryNoContent struct {
 
 	/* Your rate limit (requests per second) for this operation.
 	 */
@@ -103,40 +103,40 @@ type CancelQueryOK struct {
 	XAmznRequestID string
 }
 
-// IsSuccess returns true when this cancel query o k response has a 2xx status code
-func (o *CancelQueryOK) IsSuccess() bool {
+// IsSuccess returns true when this cancel query no content response has a 2xx status code
+func (o *CancelQueryNoContent) IsSuccess() bool {
 	return true
 }
 
-// IsRedirect returns true when this cancel query o k response has a 3xx status code
-func (o *CancelQueryOK) IsRedirect() bool {
+// IsRedirect returns true when this cancel query no content response has a 3xx status code
+func (o *CancelQueryNoContent) IsRedirect() bool {
 	return false
 }
 
-// IsClientError returns true when this cancel query o k response has a 4xx status code
-func (o *CancelQueryOK) IsClientError() bool {
+// IsClientError returns true when this cancel query no content response has a 4xx status code
+func (o *CancelQueryNoContent) IsClientError() bool {
 	return false
 }
 
-// IsServerError returns true when this cancel query o k response has a 5xx status code
-func (o *CancelQueryOK) IsServerError() bool {
+// IsServerError returns true when this cancel query no content response has a 5xx status code
+func (o *CancelQueryNoContent) IsServerError() bool {
 	return false
 }
 
-// IsCode returns true when this cancel query o k response a status code equal to that given
-func (o *CancelQueryOK) IsCode(code int) bool {
-	return code == 200
+// IsCode returns true when this cancel query no content response a status code equal to that given
+func (o *CancelQueryNoContent) IsCode(code int) bool {
+	return code == 204
 }
 
-func (o *CancelQueryOK) Error() string {
-	return fmt.Sprintf("[DELETE /dataKiosk/2023-11-15/queries/{queryId}][%d] cancelQueryOK ", 200)
+func (o *CancelQueryNoContent) Error() string {
+	return fmt.Sprintf("[DELETE /dataKiosk/2023-11-15/queries/{queryId}][%d] cancelQueryNoContent ", 204)
 }
 
-func (o *CancelQueryOK) String() string {
-	return fmt.Sprintf("[DELETE /dataKiosk/2023-11-15/queries/{queryId}][%d] cancelQueryOK ", 200)
+func (o *CancelQueryNoContent) String() string {
+	return fmt.Sprintf("[DELETE /dataKiosk/2023-11-15/queries/{queryId}][%d] cancelQueryNoContent ", 204)
 }
 
-func (o *CancelQueryOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+func (o *CancelQueryNoContent) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	// hydrates response header x-amzn-RateLimit-Limit
 	hdrXAmznRateLimitLimit := response.GetHeader("x-amzn-RateLimit-Limit")
@@ -216,93 +216,6 @@ func (o *CancelQueryBadRequest) GetPayload() *data_kiosk_2023_11_15_models.Error
 }
 
 func (o *CancelQueryBadRequest) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
-
-	// hydrates response header x-amzn-RateLimit-Limit
-	hdrXAmznRateLimitLimit := response.GetHeader("x-amzn-RateLimit-Limit")
-
-	if hdrXAmznRateLimitLimit != "" {
-		o.XAmznRateLimitLimit = hdrXAmznRateLimitLimit
-	}
-
-	// hydrates response header x-amzn-RequestId
-	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")
-
-	if hdrXAmznRequestID != "" {
-		o.XAmznRequestID = hdrXAmznRequestID
-	}
-
-	o.Payload = new(data_kiosk_2023_11_15_models.ErrorList)
-
-	// response payload
-	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
-		return err
-	}
-
-	return nil
-}
-
-// NewCancelQueryUnauthorized creates a CancelQueryUnauthorized with default headers values
-func NewCancelQueryUnauthorized() *CancelQueryUnauthorized {
-	return &CancelQueryUnauthorized{}
-}
-
-/*
-CancelQueryUnauthorized describes a response with status code 401, with default header values.
-
-The request's Authorization header is not formatted correctly or does not contain a valid token.
-*/
-type CancelQueryUnauthorized struct {
-
-	/* Your rate limit (requests per second) for this operation.
-	_Note:_ For this status code, the rate limit header is deprecated and no longer returned.
-	*/
-	XAmznRateLimitLimit string
-
-	/* Unique request reference identifier.
-	 */
-	XAmznRequestID string
-
-	Payload *data_kiosk_2023_11_15_models.ErrorList
-}
-
-// IsSuccess returns true when this cancel query unauthorized response has a 2xx status code
-func (o *CancelQueryUnauthorized) IsSuccess() bool {
-	return false
-}
-
-// IsRedirect returns true when this cancel query unauthorized response has a 3xx status code
-func (o *CancelQueryUnauthorized) IsRedirect() bool {
-	return false
-}
-
-// IsClientError returns true when this cancel query unauthorized response has a 4xx status code
-func (o *CancelQueryUnauthorized) IsClientError() bool {
-	return true
-}
-
-// IsServerError returns true when this cancel query unauthorized response has a 5xx status code
-func (o *CancelQueryUnauthorized) IsServerError() bool {
-	return false
-}
-
-// IsCode returns true when this cancel query unauthorized response a status code equal to that given
-func (o *CancelQueryUnauthorized) IsCode(code int) bool {
-	return code == 401
-}
-
-func (o *CancelQueryUnauthorized) Error() string {
-	return fmt.Sprintf("[DELETE /dataKiosk/2023-11-15/queries/{queryId}][%d] cancelQueryUnauthorized  %+v", 401, o.Payload)
-}
-
-func (o *CancelQueryUnauthorized) String() string {
-	return fmt.Sprintf("[DELETE /dataKiosk/2023-11-15/queries/{queryId}][%d] cancelQueryUnauthorized  %+v", 401, o.Payload)
-}
-
-func (o *CancelQueryUnauthorized) GetPayload() *data_kiosk_2023_11_15_models.ErrorList {
-	return o.Payload
-}
-
-func (o *CancelQueryUnauthorized) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	// hydrates response header x-amzn-RateLimit-Limit
 	hdrXAmznRateLimitLimit := response.GetHeader("x-amzn-RateLimit-Limit")
@@ -411,7 +324,7 @@ func NewCancelQueryNotFound() *CancelQueryNotFound {
 /*
 CancelQueryNotFound describes a response with status code 404, with default header values.
 
-The specified resource does not exist.
+The resource specified does not exist.
 */
 type CancelQueryNotFound struct {
 
@@ -489,6 +402,81 @@ func (o *CancelQueryNotFound) readResponse(response runtime.ClientResponse, cons
 	return nil
 }
 
+// NewCancelQueryRequestEntityTooLarge creates a CancelQueryRequestEntityTooLarge with default headers values
+func NewCancelQueryRequestEntityTooLarge() *CancelQueryRequestEntityTooLarge {
+	return &CancelQueryRequestEntityTooLarge{}
+}
+
+/*
+CancelQueryRequestEntityTooLarge describes a response with status code 413, with default header values.
+
+The request size exceeded the maximum accepted size.
+*/
+type CancelQueryRequestEntityTooLarge struct {
+
+	/* Unique request reference identifier.
+	 */
+	XAmznRequestID string
+
+	Payload *data_kiosk_2023_11_15_models.ErrorList
+}
+
+// IsSuccess returns true when this cancel query request entity too large response has a 2xx status code
+func (o *CancelQueryRequestEntityTooLarge) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this cancel query request entity too large response has a 3xx status code
+func (o *CancelQueryRequestEntityTooLarge) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this cancel query request entity too large response has a 4xx status code
+func (o *CancelQueryRequestEntityTooLarge) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this cancel query request entity too large response has a 5xx status code
+func (o *CancelQueryRequestEntityTooLarge) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this cancel query request entity too large response a status code equal to that given
+func (o *CancelQueryRequestEntityTooLarge) IsCode(code int) bool {
+	return code == 413
+}
+
+func (o *CancelQueryRequestEntityTooLarge) Error() string {
+	return fmt.Sprintf("[DELETE /dataKiosk/2023-11-15/queries/{queryId}][%d] cancelQueryRequestEntityTooLarge  %+v", 413, o.Payload)
+}
+
+func (o *CancelQueryRequestEntityTooLarge) String() string {
+	return fmt.Sprintf("[DELETE /dataKiosk/2023-11-15/queries/{queryId}][%d] cancelQueryRequestEntityTooLarge  %+v", 413, o.Payload)
+}
+
+func (o *CancelQueryRequestEntityTooLarge) GetPayload() *data_kiosk_2023_11_15_models.ErrorList {
+	return o.Payload
+}
+
+func (o *CancelQueryRequestEntityTooLarge) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// hydrates response header x-amzn-RequestId
+	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")
+
+	if hdrXAmznRequestID != "" {
+		o.XAmznRequestID = hdrXAmznRequestID
+	}
+
+	o.Payload = new(data_kiosk_2023_11_15_models.ErrorList)
+
+	// response payload
+	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
 // NewCancelQueryUnsupportedMediaType creates a CancelQueryUnsupportedMediaType with default headers values
 func NewCancelQueryUnsupportedMediaType() *CancelQueryUnsupportedMediaType {
 	return &CancelQueryUnsupportedMediaType{}
@@ -497,14 +485,9 @@ func NewCancelQueryUnsupportedMediaType() *CancelQueryUnsupportedMediaType {
 /*
 CancelQueryUnsupportedMediaType describes a response with status code 415, with default header values.
 
-The request's Content-Type header is invalid.
+The request payload is in an unsupported format.
 */
 type CancelQueryUnsupportedMediaType struct {
-
-	/* Your rate limit (requests per second) for this operation.
-	_Note:_ For this status code, the rate limit header is deprecated and no longer returned.
-	*/
-	XAmznRateLimitLimit string
 
 	/* Unique request reference identifier.
 	 */
@@ -552,13 +535,6 @@ func (o *CancelQueryUnsupportedMediaType) GetPayload() *data_kiosk_2023_11_15_mo
 
 func (o *CancelQueryUnsupportedMediaType) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	// hydrates response header x-amzn-RateLimit-Limit
-	hdrXAmznRateLimitLimit := response.GetHeader("x-amzn-RateLimit-Limit")
-
-	if hdrXAmznRateLimitLimit != "" {
-		o.XAmznRateLimitLimit = hdrXAmznRateLimitLimit
-	}
-
 	// hydrates response header x-amzn-RequestId
 	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")
 
@@ -587,11 +563,6 @@ CancelQueryTooManyRequests describes a response with status code 429, with defau
 The frequency of requests was greater than allowed.
 */
 type CancelQueryTooManyRequests struct {
-
-	/* Your rate limit (requests per second) for this operation.
-	_Note:_ For this status code, the rate limit header is deprecated and no longer returned.
-	*/
-	XAmznRateLimitLimit string
 
 	/* Unique request reference identifier.
 	 */
@@ -639,13 +610,6 @@ func (o *CancelQueryTooManyRequests) GetPayload() *data_kiosk_2023_11_15_models.
 
 func (o *CancelQueryTooManyRequests) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	// hydrates response header x-amzn-RateLimit-Limit
-	hdrXAmznRateLimitLimit := response.GetHeader("x-amzn-RateLimit-Limit")
-
-	if hdrXAmznRateLimitLimit != "" {
-		o.XAmznRateLimitLimit = hdrXAmznRateLimitLimit
-	}
-
 	// hydrates response header x-amzn-RequestId
 	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")
 
@@ -674,11 +638,6 @@ CancelQueryInternalServerError describes a response with status code 500, with d
 An unexpected condition occurred that prevented the server from fulfilling the request.
 */
 type CancelQueryInternalServerError struct {
-
-	/* Your rate limit (requests per second) for this operation.
-	_Note:_ For this status code, the rate limit header is deprecated and no longer returned.
-	*/
-	XAmznRateLimitLimit string
 
 	/* Unique request reference identifier.
 	 */
@@ -726,13 +685,6 @@ func (o *CancelQueryInternalServerError) GetPayload() *data_kiosk_2023_11_15_mod
 
 func (o *CancelQueryInternalServerError) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	// hydrates response header x-amzn-RateLimit-Limit
-	hdrXAmznRateLimitLimit := response.GetHeader("x-amzn-RateLimit-Limit")
-
-	if hdrXAmznRateLimitLimit != "" {
-		o.XAmznRateLimitLimit = hdrXAmznRateLimitLimit
-	}
-
 	// hydrates response header x-amzn-RequestId
 	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")
 
@@ -761,11 +713,6 @@ CancelQueryServiceUnavailable describes a response with status code 503, with de
 Temporary overloading or maintenance of the server.
 */
 type CancelQueryServiceUnavailable struct {
-
-	/* Your rate limit (requests per second) for this operation.
-	_Note:_ For this status code, the rate limit header is deprecated and no longer returned.
-	*/
-	XAmznRateLimitLimit string
 
 	/* Unique request reference identifier.
 	 */
@@ -812,13 +759,6 @@ func (o *CancelQueryServiceUnavailable) GetPayload() *data_kiosk_2023_11_15_mode
 }
 
 func (o *CancelQueryServiceUnavailable) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
-
-	// hydrates response header x-amzn-RateLimit-Limit
-	hdrXAmznRateLimitLimit := response.GetHeader("x-amzn-RateLimit-Limit")
-
-	if hdrXAmznRateLimitLimit != "" {
-		o.XAmznRateLimitLimit = hdrXAmznRateLimitLimit
-	}
 
 	// hydrates response header x-amzn-RequestId
 	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")

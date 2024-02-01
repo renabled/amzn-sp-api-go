@@ -35,12 +35,6 @@ func (o *GetQueryReader) ReadResponse(response runtime.ClientResponse, consumer 
 			return nil, err
 		}
 		return nil, result
-	case 401:
-		result := NewGetQueryUnauthorized()
-		if err := result.readResponse(response, consumer, o.formats); err != nil {
-			return nil, err
-		}
-		return nil, result
 	case 403:
 		result := NewGetQueryForbidden()
 		if err := result.readResponse(response, consumer, o.formats); err != nil {
@@ -49,6 +43,12 @@ func (o *GetQueryReader) ReadResponse(response runtime.ClientResponse, consumer 
 		return nil, result
 	case 404:
 		result := NewGetQueryNotFound()
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		return nil, result
+	case 413:
+		result := NewGetQueryRequestEntityTooLarge()
 		if err := result.readResponse(response, consumer, o.formats); err != nil {
 			return nil, err
 		}
@@ -254,93 +254,6 @@ func (o *GetQueryBadRequest) readResponse(response runtime.ClientResponse, consu
 	return nil
 }
 
-// NewGetQueryUnauthorized creates a GetQueryUnauthorized with default headers values
-func NewGetQueryUnauthorized() *GetQueryUnauthorized {
-	return &GetQueryUnauthorized{}
-}
-
-/*
-GetQueryUnauthorized describes a response with status code 401, with default header values.
-
-The request's Authorization header is not formatted correctly or does not contain a valid token.
-*/
-type GetQueryUnauthorized struct {
-
-	/* Your rate limit (requests per second) for this operation.
-	_Note:_ For this status code, the rate limit header is deprecated and no longer returned.
-	*/
-	XAmznRateLimitLimit string
-
-	/* Unique request reference identifier.
-	 */
-	XAmznRequestID string
-
-	Payload *data_kiosk_2023_11_15_models.ErrorList
-}
-
-// IsSuccess returns true when this get query unauthorized response has a 2xx status code
-func (o *GetQueryUnauthorized) IsSuccess() bool {
-	return false
-}
-
-// IsRedirect returns true when this get query unauthorized response has a 3xx status code
-func (o *GetQueryUnauthorized) IsRedirect() bool {
-	return false
-}
-
-// IsClientError returns true when this get query unauthorized response has a 4xx status code
-func (o *GetQueryUnauthorized) IsClientError() bool {
-	return true
-}
-
-// IsServerError returns true when this get query unauthorized response has a 5xx status code
-func (o *GetQueryUnauthorized) IsServerError() bool {
-	return false
-}
-
-// IsCode returns true when this get query unauthorized response a status code equal to that given
-func (o *GetQueryUnauthorized) IsCode(code int) bool {
-	return code == 401
-}
-
-func (o *GetQueryUnauthorized) Error() string {
-	return fmt.Sprintf("[GET /dataKiosk/2023-11-15/queries/{queryId}][%d] getQueryUnauthorized  %+v", 401, o.Payload)
-}
-
-func (o *GetQueryUnauthorized) String() string {
-	return fmt.Sprintf("[GET /dataKiosk/2023-11-15/queries/{queryId}][%d] getQueryUnauthorized  %+v", 401, o.Payload)
-}
-
-func (o *GetQueryUnauthorized) GetPayload() *data_kiosk_2023_11_15_models.ErrorList {
-	return o.Payload
-}
-
-func (o *GetQueryUnauthorized) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
-
-	// hydrates response header x-amzn-RateLimit-Limit
-	hdrXAmznRateLimitLimit := response.GetHeader("x-amzn-RateLimit-Limit")
-
-	if hdrXAmznRateLimitLimit != "" {
-		o.XAmznRateLimitLimit = hdrXAmznRateLimitLimit
-	}
-
-	// hydrates response header x-amzn-RequestId
-	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")
-
-	if hdrXAmznRequestID != "" {
-		o.XAmznRequestID = hdrXAmznRequestID
-	}
-
-	o.Payload = new(data_kiosk_2023_11_15_models.ErrorList)
-
-	// response payload
-	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
-		return err
-	}
-
-	return nil
-}
-
 // NewGetQueryForbidden creates a GetQueryForbidden with default headers values
 func NewGetQueryForbidden() *GetQueryForbidden {
 	return &GetQueryForbidden{}
@@ -424,7 +337,7 @@ func NewGetQueryNotFound() *GetQueryNotFound {
 /*
 GetQueryNotFound describes a response with status code 404, with default header values.
 
-The specified resource does not exist.
+The resource specified does not exist.
 */
 type GetQueryNotFound struct {
 
@@ -502,6 +415,81 @@ func (o *GetQueryNotFound) readResponse(response runtime.ClientResponse, consume
 	return nil
 }
 
+// NewGetQueryRequestEntityTooLarge creates a GetQueryRequestEntityTooLarge with default headers values
+func NewGetQueryRequestEntityTooLarge() *GetQueryRequestEntityTooLarge {
+	return &GetQueryRequestEntityTooLarge{}
+}
+
+/*
+GetQueryRequestEntityTooLarge describes a response with status code 413, with default header values.
+
+The request size exceeded the maximum accepted size.
+*/
+type GetQueryRequestEntityTooLarge struct {
+
+	/* Unique request reference identifier.
+	 */
+	XAmznRequestID string
+
+	Payload *data_kiosk_2023_11_15_models.ErrorList
+}
+
+// IsSuccess returns true when this get query request entity too large response has a 2xx status code
+func (o *GetQueryRequestEntityTooLarge) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get query request entity too large response has a 3xx status code
+func (o *GetQueryRequestEntityTooLarge) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get query request entity too large response has a 4xx status code
+func (o *GetQueryRequestEntityTooLarge) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get query request entity too large response has a 5xx status code
+func (o *GetQueryRequestEntityTooLarge) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get query request entity too large response a status code equal to that given
+func (o *GetQueryRequestEntityTooLarge) IsCode(code int) bool {
+	return code == 413
+}
+
+func (o *GetQueryRequestEntityTooLarge) Error() string {
+	return fmt.Sprintf("[GET /dataKiosk/2023-11-15/queries/{queryId}][%d] getQueryRequestEntityTooLarge  %+v", 413, o.Payload)
+}
+
+func (o *GetQueryRequestEntityTooLarge) String() string {
+	return fmt.Sprintf("[GET /dataKiosk/2023-11-15/queries/{queryId}][%d] getQueryRequestEntityTooLarge  %+v", 413, o.Payload)
+}
+
+func (o *GetQueryRequestEntityTooLarge) GetPayload() *data_kiosk_2023_11_15_models.ErrorList {
+	return o.Payload
+}
+
+func (o *GetQueryRequestEntityTooLarge) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// hydrates response header x-amzn-RequestId
+	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")
+
+	if hdrXAmznRequestID != "" {
+		o.XAmznRequestID = hdrXAmznRequestID
+	}
+
+	o.Payload = new(data_kiosk_2023_11_15_models.ErrorList)
+
+	// response payload
+	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
 // NewGetQueryUnsupportedMediaType creates a GetQueryUnsupportedMediaType with default headers values
 func NewGetQueryUnsupportedMediaType() *GetQueryUnsupportedMediaType {
 	return &GetQueryUnsupportedMediaType{}
@@ -510,14 +498,9 @@ func NewGetQueryUnsupportedMediaType() *GetQueryUnsupportedMediaType {
 /*
 GetQueryUnsupportedMediaType describes a response with status code 415, with default header values.
 
-The request's Content-Type header is invalid.
+The request payload is in an unsupported format.
 */
 type GetQueryUnsupportedMediaType struct {
-
-	/* Your rate limit (requests per second) for this operation.
-	_Note:_ For this status code, the rate limit header is deprecated and no longer returned.
-	*/
-	XAmznRateLimitLimit string
 
 	/* Unique request reference identifier.
 	 */
@@ -565,13 +548,6 @@ func (o *GetQueryUnsupportedMediaType) GetPayload() *data_kiosk_2023_11_15_model
 
 func (o *GetQueryUnsupportedMediaType) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	// hydrates response header x-amzn-RateLimit-Limit
-	hdrXAmznRateLimitLimit := response.GetHeader("x-amzn-RateLimit-Limit")
-
-	if hdrXAmznRateLimitLimit != "" {
-		o.XAmznRateLimitLimit = hdrXAmznRateLimitLimit
-	}
-
 	// hydrates response header x-amzn-RequestId
 	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")
 
@@ -600,11 +576,6 @@ GetQueryTooManyRequests describes a response with status code 429, with default 
 The frequency of requests was greater than allowed.
 */
 type GetQueryTooManyRequests struct {
-
-	/* Your rate limit (requests per second) for this operation.
-	_Note:_ For this status code, the rate limit header is deprecated and no longer returned.
-	*/
-	XAmznRateLimitLimit string
 
 	/* Unique request reference identifier.
 	 */
@@ -652,13 +623,6 @@ func (o *GetQueryTooManyRequests) GetPayload() *data_kiosk_2023_11_15_models.Err
 
 func (o *GetQueryTooManyRequests) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	// hydrates response header x-amzn-RateLimit-Limit
-	hdrXAmznRateLimitLimit := response.GetHeader("x-amzn-RateLimit-Limit")
-
-	if hdrXAmznRateLimitLimit != "" {
-		o.XAmznRateLimitLimit = hdrXAmznRateLimitLimit
-	}
-
 	// hydrates response header x-amzn-RequestId
 	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")
 
@@ -687,11 +651,6 @@ GetQueryInternalServerError describes a response with status code 500, with defa
 An unexpected condition occurred that prevented the server from fulfilling the request.
 */
 type GetQueryInternalServerError struct {
-
-	/* Your rate limit (requests per second) for this operation.
-	_Note:_ For this status code, the rate limit header is deprecated and no longer returned.
-	*/
-	XAmznRateLimitLimit string
 
 	/* Unique request reference identifier.
 	 */
@@ -739,13 +698,6 @@ func (o *GetQueryInternalServerError) GetPayload() *data_kiosk_2023_11_15_models
 
 func (o *GetQueryInternalServerError) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	// hydrates response header x-amzn-RateLimit-Limit
-	hdrXAmznRateLimitLimit := response.GetHeader("x-amzn-RateLimit-Limit")
-
-	if hdrXAmznRateLimitLimit != "" {
-		o.XAmznRateLimitLimit = hdrXAmznRateLimitLimit
-	}
-
 	// hydrates response header x-amzn-RequestId
 	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")
 
@@ -774,11 +726,6 @@ GetQueryServiceUnavailable describes a response with status code 503, with defau
 Temporary overloading or maintenance of the server.
 */
 type GetQueryServiceUnavailable struct {
-
-	/* Your rate limit (requests per second) for this operation.
-	_Note:_ For this status code, the rate limit header is deprecated and no longer returned.
-	*/
-	XAmznRateLimitLimit string
 
 	/* Unique request reference identifier.
 	 */
@@ -825,13 +772,6 @@ func (o *GetQueryServiceUnavailable) GetPayload() *data_kiosk_2023_11_15_models.
 }
 
 func (o *GetQueryServiceUnavailable) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
-
-	// hydrates response header x-amzn-RateLimit-Limit
-	hdrXAmznRateLimitLimit := response.GetHeader("x-amzn-RateLimit-Limit")
-
-	if hdrXAmznRateLimitLimit != "" {
-		o.XAmznRateLimitLimit = hdrXAmznRateLimitLimit
-	}
 
 	// hydrates response header x-amzn-RequestId
 	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")

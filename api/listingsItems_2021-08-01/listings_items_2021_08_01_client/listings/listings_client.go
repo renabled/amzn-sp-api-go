@@ -140,6 +140,8 @@ func (a *Client) GetListingsItem(params *GetListingsItemParams, opts ...ClientOp
 /*
 	PatchListingsItem Partially update (patch) a listings item for a selling partner. Only top-level listings item attributes can be patched. Patching nested attributes is not supported.
 
+**Note:** This operation has a throttling rate of one request per second when `mode` is `VALIDATION_PREVIEW`.
+
 **Note:** The parameters associated with this operation may contain special characters that must be encoded to successfully call the API. To avoid errors with SKUs when encoding URLs, refer to [URL Encoding](https://developer-docs.amazon.com/sp-api/docs/url-encoding).
 
 **Usage Plan:**
@@ -187,6 +189,8 @@ func (a *Client) PatchListingsItem(params *PatchListingsItemParams, opts ...Clie
 
 /*
 	PutListingsItem Creates or fully updates an existing listings item for a selling partner.
+
+**Note:** This operation has a throttling rate of one request per second when `mode` is `VALIDATION_PREVIEW`.
 
 **Note:** The parameters associated with this operation may contain special characters that must be encoded to successfully call the API. To avoid errors with SKUs when encoding URLs, refer to [URL Encoding](https://developer-docs.amazon.com/sp-api/docs/url-encoding).
 

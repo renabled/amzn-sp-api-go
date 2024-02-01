@@ -70,6 +70,14 @@ type PatchListingsItemParams struct {
 	*/
 	Body *listings_items_2021_08_01_models.ListingsItemPatchRequest
 
+	/* IncludedData.
+
+	   A comma-delimited list of data sets to include in the response. Default: `issues`.
+
+	   Default: ["issues"]
+	*/
+	IncludedData []string
+
 	/* IssueLocale.
 
 	   A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: `en_US`, `fr_CA`, `fr_FR`. Localized messages default to `en_US` when a localization is not available in the specified locale.
@@ -81,6 +89,12 @@ type PatchListingsItemParams struct {
 	   A comma-delimited list of Amazon marketplace identifiers for the request.
 	*/
 	MarketplaceIds []string
+
+	/* Mode.
+
+	   The mode of operation for the request.
+	*/
+	Mode *string
 
 	/* SellerID.
 
@@ -111,7 +125,18 @@ func (o *PatchListingsItemParams) WithDefaults() *PatchListingsItemParams {
 //
 // All values with no default are reset to their zero value.
 func (o *PatchListingsItemParams) SetDefaults() {
-	// no default values defined for this parameter
+	var (
+		includedDataDefault = []string{"issues"}
+	)
+
+	val := PatchListingsItemParams{
+		IncludedData: includedDataDefault,
+	}
+
+	val.timeout = o.timeout
+	val.Context = o.Context
+	val.HTTPClient = o.HTTPClient
+	*o = val
 }
 
 // WithTimeout adds the timeout to the patch listings item params
@@ -158,6 +183,17 @@ func (o *PatchListingsItemParams) SetBody(body *listings_items_2021_08_01_models
 	o.Body = body
 }
 
+// WithIncludedData adds the includedData to the patch listings item params
+func (o *PatchListingsItemParams) WithIncludedData(includedData []string) *PatchListingsItemParams {
+	o.SetIncludedData(includedData)
+	return o
+}
+
+// SetIncludedData adds the includedData to the patch listings item params
+func (o *PatchListingsItemParams) SetIncludedData(includedData []string) {
+	o.IncludedData = includedData
+}
+
 // WithIssueLocale adds the issueLocale to the patch listings item params
 func (o *PatchListingsItemParams) WithIssueLocale(issueLocale *string) *PatchListingsItemParams {
 	o.SetIssueLocale(issueLocale)
@@ -178,6 +214,17 @@ func (o *PatchListingsItemParams) WithMarketplaceIds(marketplaceIds []string) *P
 // SetMarketplaceIds adds the marketplaceIds to the patch listings item params
 func (o *PatchListingsItemParams) SetMarketplaceIds(marketplaceIds []string) {
 	o.MarketplaceIds = marketplaceIds
+}
+
+// WithMode adds the mode to the patch listings item params
+func (o *PatchListingsItemParams) WithMode(mode *string) *PatchListingsItemParams {
+	o.SetMode(mode)
+	return o
+}
+
+// SetMode adds the mode to the patch listings item params
+func (o *PatchListingsItemParams) SetMode(mode *string) {
+	o.Mode = mode
 }
 
 // WithSellerID adds the sellerID to the patch listings item params
@@ -215,6 +262,17 @@ func (o *PatchListingsItemParams) WriteToRequest(r runtime.ClientRequest, reg st
 		}
 	}
 
+	if o.IncludedData != nil {
+
+		// binding items for includedData
+		joinedIncludedData := o.bindParamIncludedData(reg)
+
+		// query array param includedData
+		if err := r.SetQueryParam("includedData", joinedIncludedData...); err != nil {
+			return err
+		}
+	}
+
 	if o.IssueLocale != nil {
 
 		// query param issueLocale
@@ -243,6 +301,23 @@ func (o *PatchListingsItemParams) WriteToRequest(r runtime.ClientRequest, reg st
 		}
 	}
 
+	if o.Mode != nil {
+
+		// query param mode
+		var qrMode string
+
+		if o.Mode != nil {
+			qrMode = *o.Mode
+		}
+		qMode := qrMode
+		if qMode != "" {
+
+			if err := r.SetQueryParam("mode", qMode); err != nil {
+				return err
+			}
+		}
+	}
+
 	// path param sellerId
 	if err := r.SetPathParam("sellerId", o.SellerID); err != nil {
 		return err
@@ -257,6 +332,23 @@ func (o *PatchListingsItemParams) WriteToRequest(r runtime.ClientRequest, reg st
 		return errors.CompositeValidationError(res...)
 	}
 	return nil
+}
+
+// bindParamPatchListingsItem binds the parameter includedData
+func (o *PatchListingsItemParams) bindParamIncludedData(formats strfmt.Registry) []string {
+	includedDataIR := o.IncludedData
+
+	var includedDataIC []string
+	for _, includedDataIIR := range includedDataIR { // explode []string
+
+		includedDataIIV := includedDataIIR // string as string
+		includedDataIC = append(includedDataIC, includedDataIIV)
+	}
+
+	// items.CollectionFormat: "csv"
+	includedDataIS := swag.JoinByFormat(includedDataIC, "csv")
+
+	return includedDataIS
 }
 
 // bindParamPatchListingsItem binds the parameter marketplaceIds

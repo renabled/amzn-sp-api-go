@@ -35,12 +35,6 @@ func (o *GetDocumentReader) ReadResponse(response runtime.ClientResponse, consum
 			return nil, err
 		}
 		return nil, result
-	case 401:
-		result := NewGetDocumentUnauthorized()
-		if err := result.readResponse(response, consumer, o.formats); err != nil {
-			return nil, err
-		}
-		return nil, result
 	case 403:
 		result := NewGetDocumentForbidden()
 		if err := result.readResponse(response, consumer, o.formats); err != nil {
@@ -49,6 +43,12 @@ func (o *GetDocumentReader) ReadResponse(response runtime.ClientResponse, consum
 		return nil, result
 	case 404:
 		result := NewGetDocumentNotFound()
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		return nil, result
+	case 413:
+		result := NewGetDocumentRequestEntityTooLarge()
 		if err := result.readResponse(response, consumer, o.formats); err != nil {
 			return nil, err
 		}
@@ -98,7 +98,7 @@ type GetDocumentOK struct {
 	 */
 	XAmznRateLimitLimit string
 
-	/* Unique request reference ID.
+	/* Unique request reference identifier.
 	 */
 	XAmznRequestID string
 
@@ -184,7 +184,7 @@ type GetDocumentBadRequest struct {
 	 */
 	XAmznRateLimitLimit string
 
-	/* Unique request reference ID.
+	/* Unique request reference identifier.
 	 */
 	XAmznRequestID string
 
@@ -254,93 +254,6 @@ func (o *GetDocumentBadRequest) readResponse(response runtime.ClientResponse, co
 	return nil
 }
 
-// NewGetDocumentUnauthorized creates a GetDocumentUnauthorized with default headers values
-func NewGetDocumentUnauthorized() *GetDocumentUnauthorized {
-	return &GetDocumentUnauthorized{}
-}
-
-/*
-GetDocumentUnauthorized describes a response with status code 401, with default header values.
-
-The request's Authorization header is not formatted correctly or does not contain a valid token.
-*/
-type GetDocumentUnauthorized struct {
-
-	/* Your rate limit (requests per second) for this operation.
-	_Note:_ For this status code, the rate limit header is deprecated and no longer returned.
-	*/
-	XAmznRateLimitLimit string
-
-	/* Unique request reference ID.
-	 */
-	XAmznRequestID string
-
-	Payload *data_kiosk_2023_11_15_models.ErrorList
-}
-
-// IsSuccess returns true when this get document unauthorized response has a 2xx status code
-func (o *GetDocumentUnauthorized) IsSuccess() bool {
-	return false
-}
-
-// IsRedirect returns true when this get document unauthorized response has a 3xx status code
-func (o *GetDocumentUnauthorized) IsRedirect() bool {
-	return false
-}
-
-// IsClientError returns true when this get document unauthorized response has a 4xx status code
-func (o *GetDocumentUnauthorized) IsClientError() bool {
-	return true
-}
-
-// IsServerError returns true when this get document unauthorized response has a 5xx status code
-func (o *GetDocumentUnauthorized) IsServerError() bool {
-	return false
-}
-
-// IsCode returns true when this get document unauthorized response a status code equal to that given
-func (o *GetDocumentUnauthorized) IsCode(code int) bool {
-	return code == 401
-}
-
-func (o *GetDocumentUnauthorized) Error() string {
-	return fmt.Sprintf("[GET /dataKiosk/2023-11-15/documents/{documentId}][%d] getDocumentUnauthorized  %+v", 401, o.Payload)
-}
-
-func (o *GetDocumentUnauthorized) String() string {
-	return fmt.Sprintf("[GET /dataKiosk/2023-11-15/documents/{documentId}][%d] getDocumentUnauthorized  %+v", 401, o.Payload)
-}
-
-func (o *GetDocumentUnauthorized) GetPayload() *data_kiosk_2023_11_15_models.ErrorList {
-	return o.Payload
-}
-
-func (o *GetDocumentUnauthorized) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
-
-	// hydrates response header x-amzn-RateLimit-Limit
-	hdrXAmznRateLimitLimit := response.GetHeader("x-amzn-RateLimit-Limit")
-
-	if hdrXAmznRateLimitLimit != "" {
-		o.XAmznRateLimitLimit = hdrXAmznRateLimitLimit
-	}
-
-	// hydrates response header x-amzn-RequestId
-	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")
-
-	if hdrXAmznRequestID != "" {
-		o.XAmznRequestID = hdrXAmznRequestID
-	}
-
-	o.Payload = new(data_kiosk_2023_11_15_models.ErrorList)
-
-	// response payload
-	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
-		return err
-	}
-
-	return nil
-}
-
 // NewGetDocumentForbidden creates a GetDocumentForbidden with default headers values
 func NewGetDocumentForbidden() *GetDocumentForbidden {
 	return &GetDocumentForbidden{}
@@ -349,11 +262,11 @@ func NewGetDocumentForbidden() *GetDocumentForbidden {
 /*
 GetDocumentForbidden describes a response with status code 403, with default header values.
 
-Indicates access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.
+Indicates that access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.
 */
 type GetDocumentForbidden struct {
 
-	/* Unique request reference ID.
+	/* Unique request reference identifier.
 	 */
 	XAmznRequestID string
 
@@ -424,7 +337,7 @@ func NewGetDocumentNotFound() *GetDocumentNotFound {
 /*
 GetDocumentNotFound describes a response with status code 404, with default header values.
 
-The specified resource does not exist.
+The resource specified does not exist.
 */
 type GetDocumentNotFound struct {
 
@@ -432,7 +345,7 @@ type GetDocumentNotFound struct {
 	 */
 	XAmznRateLimitLimit string
 
-	/* Unique request reference ID.
+	/* Unique request reference identifier.
 	 */
 	XAmznRequestID string
 
@@ -502,6 +415,81 @@ func (o *GetDocumentNotFound) readResponse(response runtime.ClientResponse, cons
 	return nil
 }
 
+// NewGetDocumentRequestEntityTooLarge creates a GetDocumentRequestEntityTooLarge with default headers values
+func NewGetDocumentRequestEntityTooLarge() *GetDocumentRequestEntityTooLarge {
+	return &GetDocumentRequestEntityTooLarge{}
+}
+
+/*
+GetDocumentRequestEntityTooLarge describes a response with status code 413, with default header values.
+
+The request size exceeded the maximum accepted size.
+*/
+type GetDocumentRequestEntityTooLarge struct {
+
+	/* Unique request reference identifier.
+	 */
+	XAmznRequestID string
+
+	Payload *data_kiosk_2023_11_15_models.ErrorList
+}
+
+// IsSuccess returns true when this get document request entity too large response has a 2xx status code
+func (o *GetDocumentRequestEntityTooLarge) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this get document request entity too large response has a 3xx status code
+func (o *GetDocumentRequestEntityTooLarge) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get document request entity too large response has a 4xx status code
+func (o *GetDocumentRequestEntityTooLarge) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get document request entity too large response has a 5xx status code
+func (o *GetDocumentRequestEntityTooLarge) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get document request entity too large response a status code equal to that given
+func (o *GetDocumentRequestEntityTooLarge) IsCode(code int) bool {
+	return code == 413
+}
+
+func (o *GetDocumentRequestEntityTooLarge) Error() string {
+	return fmt.Sprintf("[GET /dataKiosk/2023-11-15/documents/{documentId}][%d] getDocumentRequestEntityTooLarge  %+v", 413, o.Payload)
+}
+
+func (o *GetDocumentRequestEntityTooLarge) String() string {
+	return fmt.Sprintf("[GET /dataKiosk/2023-11-15/documents/{documentId}][%d] getDocumentRequestEntityTooLarge  %+v", 413, o.Payload)
+}
+
+func (o *GetDocumentRequestEntityTooLarge) GetPayload() *data_kiosk_2023_11_15_models.ErrorList {
+	return o.Payload
+}
+
+func (o *GetDocumentRequestEntityTooLarge) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// hydrates response header x-amzn-RequestId
+	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")
+
+	if hdrXAmznRequestID != "" {
+		o.XAmznRequestID = hdrXAmznRequestID
+	}
+
+	o.Payload = new(data_kiosk_2023_11_15_models.ErrorList)
+
+	// response payload
+	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
 // NewGetDocumentUnsupportedMediaType creates a GetDocumentUnsupportedMediaType with default headers values
 func NewGetDocumentUnsupportedMediaType() *GetDocumentUnsupportedMediaType {
 	return &GetDocumentUnsupportedMediaType{}
@@ -510,14 +498,9 @@ func NewGetDocumentUnsupportedMediaType() *GetDocumentUnsupportedMediaType {
 /*
 GetDocumentUnsupportedMediaType describes a response with status code 415, with default header values.
 
-The request's Content-Type header is invalid.
+The request payload is in an unsupported format.
 */
 type GetDocumentUnsupportedMediaType struct {
-
-	/* Your rate limit (requests per second) for this operation.
-	_Note:_ For this status code, the rate limit header is deprecated and no longer returned.
-	*/
-	XAmznRateLimitLimit string
 
 	/* Unique request reference identifier.
 	 */
@@ -565,13 +548,6 @@ func (o *GetDocumentUnsupportedMediaType) GetPayload() *data_kiosk_2023_11_15_mo
 
 func (o *GetDocumentUnsupportedMediaType) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	// hydrates response header x-amzn-RateLimit-Limit
-	hdrXAmznRateLimitLimit := response.GetHeader("x-amzn-RateLimit-Limit")
-
-	if hdrXAmznRateLimitLimit != "" {
-		o.XAmznRateLimitLimit = hdrXAmznRateLimitLimit
-	}
-
 	// hydrates response header x-amzn-RequestId
 	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")
 
@@ -601,12 +577,7 @@ The frequency of requests was greater than allowed.
 */
 type GetDocumentTooManyRequests struct {
 
-	/* Your rate limit (requests per second) for this operation.
-	_Note:_ For this status code, the rate limit header is deprecated and no longer returned.
-	*/
-	XAmznRateLimitLimit string
-
-	/* Unique request reference ID.
+	/* Unique request reference identifier.
 	 */
 	XAmznRequestID string
 
@@ -652,13 +623,6 @@ func (o *GetDocumentTooManyRequests) GetPayload() *data_kiosk_2023_11_15_models.
 
 func (o *GetDocumentTooManyRequests) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	// hydrates response header x-amzn-RateLimit-Limit
-	hdrXAmznRateLimitLimit := response.GetHeader("x-amzn-RateLimit-Limit")
-
-	if hdrXAmznRateLimitLimit != "" {
-		o.XAmznRateLimitLimit = hdrXAmznRateLimitLimit
-	}
-
 	// hydrates response header x-amzn-RequestId
 	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")
 
@@ -688,12 +652,7 @@ An unexpected condition occurred that prevented the server from fulfilling the r
 */
 type GetDocumentInternalServerError struct {
 
-	/* Your rate limit (requests per second) for this operation.
-	_Note:_ For this status code, the rate limit header is deprecated and no longer returned.
-	*/
-	XAmznRateLimitLimit string
-
-	/* Unique request reference ID.
+	/* Unique request reference identifier.
 	 */
 	XAmznRequestID string
 
@@ -739,13 +698,6 @@ func (o *GetDocumentInternalServerError) GetPayload() *data_kiosk_2023_11_15_mod
 
 func (o *GetDocumentInternalServerError) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	// hydrates response header x-amzn-RateLimit-Limit
-	hdrXAmznRateLimitLimit := response.GetHeader("x-amzn-RateLimit-Limit")
-
-	if hdrXAmznRateLimitLimit != "" {
-		o.XAmznRateLimitLimit = hdrXAmznRateLimitLimit
-	}
-
 	// hydrates response header x-amzn-RequestId
 	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")
 
@@ -775,12 +727,7 @@ Temporary overloading or maintenance of the server.
 */
 type GetDocumentServiceUnavailable struct {
 
-	/* Your rate limit (requests per second) for this operation.
-	_Note:_ For this status code, the rate limit header is deprecated and no longer returned.
-	*/
-	XAmznRateLimitLimit string
-
-	/* Unique request reference ID.
+	/* Unique request reference identifier.
 	 */
 	XAmznRequestID string
 
@@ -825,13 +772,6 @@ func (o *GetDocumentServiceUnavailable) GetPayload() *data_kiosk_2023_11_15_mode
 }
 
 func (o *GetDocumentServiceUnavailable) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
-
-	// hydrates response header x-amzn-RateLimit-Limit
-	hdrXAmznRateLimitLimit := response.GetHeader("x-amzn-RateLimit-Limit")
-
-	if hdrXAmznRateLimitLimit != "" {
-		o.XAmznRateLimitLimit = hdrXAmznRateLimitLimit
-	}
 
 	// hydrates response header x-amzn-RequestId
 	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")
