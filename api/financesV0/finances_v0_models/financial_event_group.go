@@ -27,25 +27,25 @@ type FinancialEventGroup struct {
 	// The total amount in the currency of the marketplace in which the funds were disbursed.
 	ConvertedTotal *Currency `json:"ConvertedTotal,omitempty"`
 
-	// The date and time at which the financial event group is closed. In ISO 8601 date time format.
+	// The date and time at which the financial event group is closed. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date time format.
 	// Format: date-time
 	FinancialEventGroupEnd Date `json:"FinancialEventGroupEnd,omitempty"`
 
 	// A unique identifier for the financial event group.
 	FinancialEventGroupID string `json:"FinancialEventGroupId,omitempty"`
 
-	// The date and time at which the financial event group is opened. In ISO 8601 date time format.
+	// The date and time at which the financial event group is opened. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date time format.
 	// Format: date-time
 	FinancialEventGroupStart Date `json:"FinancialEventGroupStart,omitempty"`
 
-	// The date and time when the disbursement or charge was initiated. Only present for closed settlements. In ISO 8601 date time format.
+	// The date and time when the disbursement or charge was initiated. Only present for closed settlements. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date time format.
 	// Format: date-time
 	FundTransferDate Date `json:"FundTransferDate,omitempty"`
 
 	// The status of the fund transfer.
 	FundTransferStatus string `json:"FundTransferStatus,omitempty"`
 
-	// The total amount in the currency of the marketplace in which the transactions occurred.
+	// The total amount in the currency of the marketplace in which the transactions occurred. For a closed financial group, this is the total amount of a disbursement or a charge amount. For an open financial event group, this is the current balance.
 	OriginalTotal *Currency `json:"OriginalTotal,omitempty"`
 
 	// The processing status of the financial event group indicates whether the balance of the financial event group is settled.

@@ -55,7 +55,7 @@ type PayWithAmazonEvent struct {
 	// The store name where the event occurred.
 	StoreName string `json:"StoreName,omitempty"`
 
-	// The date and time when the payment transaction is posted. In ISO 8601 date time format.
+	// The date and time when the payment transaction is posted. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date time format.
 	// Format: date-time
 	TransactionPostedDate Date `json:"TransactionPostedDate,omitempty"`
 }
