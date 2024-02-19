@@ -7,6 +7,7 @@ package vendor_direct_fulfillment_orders_v1_models
 
 import (
 	"context"
+	"encoding/json"
 
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/strfmt"
@@ -14,17 +15,17 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// ItemQuantity Details of item quantity.
+// ItemQuantity Details of quantity ordered.
 //
 // swagger:model ItemQuantity
 type ItemQuantity struct {
 
-	// Quantity of units available for a specific item.
+	// Acknowledged quantity. This value should not be zero.
 	Amount int64 `json:"amount,omitempty"`
 
-	// Unit of measure for the available quantity.
-	// Required: true
-	UnitOfMeasure *string `json:"unitOfMeasure"`
+	// Unit of measure for the acknowledged quantity.
+	// Enum: [Each]
+	UnitOfMeasure string `json:"unitOfMeasure,omitempty"`
 }
 
 // Validate validates this item quantity
@@ -41,9 +42,39 @@ func (m *ItemQuantity) Validate(formats strfmt.Registry) error {
 	return nil
 }
 
-func (m *ItemQuantity) validateUnitOfMeasure(formats strfmt.Registry) error {
+var itemQuantityTypeUnitOfMeasurePropEnum []interface{}
 
-	if err := validate.Required("unitOfMeasure", "body", m.UnitOfMeasure); err != nil {
+func init() {
+	var res []string
+	if err := json.Unmarshal([]byte(`["Each"]`), &res); err != nil {
+		panic(err)
+	}
+	for _, v := range res {
+		itemQuantityTypeUnitOfMeasurePropEnum = append(itemQuantityTypeUnitOfMeasurePropEnum, v)
+	}
+}
+
+const (
+
+	// ItemQuantityUnitOfMeasureEach captures enum value "Each"
+	ItemQuantityUnitOfMeasureEach string = "Each"
+)
+
+// prop value enum
+func (m *ItemQuantity) validateUnitOfMeasureEnum(path, location string, value string) error {
+	if err := validate.EnumCase(path, location, value, itemQuantityTypeUnitOfMeasurePropEnum, true); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (m *ItemQuantity) validateUnitOfMeasure(formats strfmt.Registry) error {
+	if swag.IsZero(m.UnitOfMeasure) { // not required
+		return nil
+	}
+
+	// value enum
+	if err := m.validateUnitOfMeasureEnum("unitOfMeasure", "body", m.UnitOfMeasure); err != nil {
 		return err
 	}
 

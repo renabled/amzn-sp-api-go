@@ -19,22 +19,55 @@ import (
 // swagger:model PartyIdentification
 type PartyIdentification struct {
 
-	// Assigned identification for the party.
+	// Address details of the party.
+	Address *Address `json:"address,omitempty"`
+
+	// Assigned identification for the party. For example, warehouse code or vendor code. Please refer to specific party for more details.
 	// Required: true
 	PartyID *string `json:"partyId"`
+
+	// Tax registration details of the entity.
+	TaxInfo *TaxRegistrationDetails `json:"taxInfo,omitempty"`
 }
 
 // Validate validates this party identification
 func (m *PartyIdentification) Validate(formats strfmt.Registry) error {
 	var res []error
 
+	if err := m.validateAddress(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.validatePartyID(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateTaxInfo(formats); err != nil {
 		res = append(res, err)
 	}
 
 	if len(res) > 0 {
 		return errors.CompositeValidationError(res...)
 	}
+	return nil
+}
+
+func (m *PartyIdentification) validateAddress(formats strfmt.Registry) error {
+	if swag.IsZero(m.Address) { // not required
+		return nil
+	}
+
+	if m.Address != nil {
+		if err := m.Address.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("address")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("address")
+			}
+			return err
+		}
+	}
+
 	return nil
 }
 
@@ -47,8 +80,72 @@ func (m *PartyIdentification) validatePartyID(formats strfmt.Registry) error {
 	return nil
 }
 
-// ContextValidate validates this party identification based on context it is used
+func (m *PartyIdentification) validateTaxInfo(formats strfmt.Registry) error {
+	if swag.IsZero(m.TaxInfo) { // not required
+		return nil
+	}
+
+	if m.TaxInfo != nil {
+		if err := m.TaxInfo.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("taxInfo")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("taxInfo")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+// ContextValidate validate this party identification based on the context it is used
 func (m *PartyIdentification) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.contextValidateAddress(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateTaxInfo(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *PartyIdentification) contextValidateAddress(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.Address != nil {
+		if err := m.Address.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("address")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("address")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *PartyIdentification) contextValidateTaxInfo(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.TaxInfo != nil {
+		if err := m.TaxInfo.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("taxInfo")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("taxInfo")
+			}
+			return err
+		}
+	}
+
 	return nil
 }
 

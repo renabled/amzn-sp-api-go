@@ -13,20 +13,20 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// SubmitInventoryUpdateResponse The response schema for the submitInventoryUpdate operation.
+// GetOrdersResponse The response schema for the getOrders operation.
 //
-// swagger:model SubmitInventoryUpdateResponse
-type SubmitInventoryUpdateResponse struct {
+// swagger:model GetOrdersResponse
+type GetOrdersResponse struct {
 
 	// errors
 	Errors ErrorList `json:"errors,omitempty"`
 
-	// The response payload for the submitInventoryUpdate operation.
-	Payload *TransactionReference `json:"payload,omitempty"`
+	// A list of purchase orders.
+	Payload *OrderList `json:"payload,omitempty"`
 }
 
-// Validate validates this submit inventory update response
-func (m *SubmitInventoryUpdateResponse) Validate(formats strfmt.Registry) error {
+// Validate validates this get orders response
+func (m *GetOrdersResponse) Validate(formats strfmt.Registry) error {
 	var res []error
 
 	if err := m.validateErrors(formats); err != nil {
@@ -43,7 +43,7 @@ func (m *SubmitInventoryUpdateResponse) Validate(formats strfmt.Registry) error 
 	return nil
 }
 
-func (m *SubmitInventoryUpdateResponse) validateErrors(formats strfmt.Registry) error {
+func (m *GetOrdersResponse) validateErrors(formats strfmt.Registry) error {
 	if swag.IsZero(m.Errors) { // not required
 		return nil
 	}
@@ -60,7 +60,7 @@ func (m *SubmitInventoryUpdateResponse) validateErrors(formats strfmt.Registry) 
 	return nil
 }
 
-func (m *SubmitInventoryUpdateResponse) validatePayload(formats strfmt.Registry) error {
+func (m *GetOrdersResponse) validatePayload(formats strfmt.Registry) error {
 	if swag.IsZero(m.Payload) { // not required
 		return nil
 	}
@@ -79,8 +79,8 @@ func (m *SubmitInventoryUpdateResponse) validatePayload(formats strfmt.Registry)
 	return nil
 }
 
-// ContextValidate validate this submit inventory update response based on the context it is used
-func (m *SubmitInventoryUpdateResponse) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+// ContextValidate validate this get orders response based on the context it is used
+func (m *GetOrdersResponse) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
 	var res []error
 
 	if err := m.contextValidateErrors(ctx, formats); err != nil {
@@ -97,7 +97,7 @@ func (m *SubmitInventoryUpdateResponse) ContextValidate(ctx context.Context, for
 	return nil
 }
 
-func (m *SubmitInventoryUpdateResponse) contextValidateErrors(ctx context.Context, formats strfmt.Registry) error {
+func (m *GetOrdersResponse) contextValidateErrors(ctx context.Context, formats strfmt.Registry) error {
 
 	if err := m.Errors.ContextValidate(ctx, formats); err != nil {
 		if ve, ok := err.(*errors.Validation); ok {
@@ -111,7 +111,7 @@ func (m *SubmitInventoryUpdateResponse) contextValidateErrors(ctx context.Contex
 	return nil
 }
 
-func (m *SubmitInventoryUpdateResponse) contextValidatePayload(ctx context.Context, formats strfmt.Registry) error {
+func (m *GetOrdersResponse) contextValidatePayload(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.Payload != nil {
 		if err := m.Payload.ContextValidate(ctx, formats); err != nil {
@@ -128,7 +128,7 @@ func (m *SubmitInventoryUpdateResponse) contextValidatePayload(ctx context.Conte
 }
 
 // MarshalBinary interface implementation
-func (m *SubmitInventoryUpdateResponse) MarshalBinary() ([]byte, error) {
+func (m *GetOrdersResponse) MarshalBinary() ([]byte, error) {
 	if m == nil {
 		return nil, nil
 	}
@@ -136,8 +136,8 @@ func (m *SubmitInventoryUpdateResponse) MarshalBinary() ([]byte, error) {
 }
 
 // UnmarshalBinary interface implementation
-func (m *SubmitInventoryUpdateResponse) UnmarshalBinary(b []byte) error {
-	var res SubmitInventoryUpdateResponse
+func (m *GetOrdersResponse) UnmarshalBinary(b []byte) error {
+	var res GetOrdersResponse
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err
 	}

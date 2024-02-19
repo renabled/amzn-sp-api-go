@@ -10,7 +10,7 @@ import (
 	httptransport "github.com/go-openapi/runtime/client"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/renabled/amzn-sp-api-go/api/vendorDirectFulfillmentOrdersV1/vendor_direct_fulfillment_orders_v1_client/update_inventory"
+	"github.com/renabled/amzn-sp-api-go/api/vendorDirectFulfillmentOrdersV1/vendor_direct_fulfillment_orders_v1_client/vendor_orders"
 )
 
 // Default vendor direct fulfillment orders v1 HTTP client.
@@ -55,7 +55,7 @@ func New(transport runtime.ClientTransport, formats strfmt.Registry) *VendorDire
 
 	cli := new(VendorDirectFulfillmentOrdersV1)
 	cli.Transport = transport
-	cli.UpdateInventory = update_inventory.New(transport, formats)
+	cli.VendorOrders = vendor_orders.New(transport, formats)
 	return cli
 }
 
@@ -100,7 +100,7 @@ func (cfg *TransportConfig) WithSchemes(schemes []string) *TransportConfig {
 
 // VendorDirectFulfillmentOrdersV1 is a client for vendor direct fulfillment orders v1
 type VendorDirectFulfillmentOrdersV1 struct {
-	UpdateInventory update_inventory.ClientService
+	VendorOrders vendor_orders.ClientService
 
 	Transport runtime.ClientTransport
 }
@@ -108,5 +108,5 @@ type VendorDirectFulfillmentOrdersV1 struct {
 // SetTransport changes the transport on the client and all its subresources
 func (c *VendorDirectFulfillmentOrdersV1) SetTransport(transport runtime.ClientTransport) {
 	c.Transport = transport
-	c.UpdateInventory.SetTransport(transport)
+	c.VendorOrders.SetTransport(transport)
 }
