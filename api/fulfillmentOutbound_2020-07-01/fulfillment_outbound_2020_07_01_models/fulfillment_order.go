@@ -26,20 +26,20 @@ type FulfillmentOrder struct {
 	// delivery window
 	DeliveryWindow *DeliveryWindow `json:"deliveryWindow,omitempty"`
 
-	// The destination address submitted with the createFulfillmentOrder operation.
+	// The destination address submitted with the `createFulfillmentOrder` operation.
 	// Required: true
 	DestinationAddress *Address `json:"destinationAddress"`
 
-	// A text block submitted with the createFulfillmentOrder operation. Displays in recipient-facing materials such as the packing slip.
+	// A text block submitted with the `createFulfillmentOrder` operation. Displays in recipient-facing materials such as the packing slip.
 	// Required: true
 	DisplayableOrderComment *string `json:"displayableOrderComment"`
 
-	// A date and time submitted with the createFulfillmentOrder operation. Displays as the order date in recipient-facing materials such as the packing slip.
+	// A date and time submitted with the `createFulfillmentOrder` operation. Displays as the order date in recipient-facing materials such as the packing slip.
 	// Required: true
 	// Format: date-time
 	DisplayableOrderDate *Timestamp `json:"displayableOrderDate"`
 
-	// A fulfillment order identifier submitted with the createFulfillmentOrder operation. Displays as the order identifier in recipient-facing materials such as the packing slip.
+	// A fulfillment order identifier submitted with the `createFulfillmentOrder` operation. Displays as the order identifier in recipient-facing materials such as the packing slip.
 	// Required: true
 	DisplayableOrderID *string `json:"displayableOrderId"`
 
@@ -68,7 +68,7 @@ type FulfillmentOrder struct {
 	// Format: date-time
 	ReceivedDate *Timestamp `json:"receivedDate"`
 
-	// The fulfillment order identifier submitted with the createFulfillmentOrder operation.
+	// The fulfillment order identifier submitted with the `createFulfillmentOrder` operation.
 	// Required: true
 	SellerFulfillmentOrderID *string `json:"sellerFulfillmentOrderId"`
 
@@ -76,7 +76,7 @@ type FulfillmentOrder struct {
 	// Required: true
 	ShippingSpeedCategory *ShippingSpeedCategory `json:"shippingSpeedCategory"`
 
-	// The date and time that the status of the fulfillment order last changed, in ISO 8601 date time format.
+	// The date and time that the status of the fulfillment order last changed. Must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> format.
 	// Required: true
 	// Format: date-time
 	StatusUpdatedDate *Timestamp `json:"statusUpdatedDate"`

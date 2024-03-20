@@ -13,15 +13,15 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// ListReturnReasonCodesResponse The response schema for the listReturnReasonCodes operation.
+// ListReturnReasonCodesResponse The response schema for the `listReturnReasonCodes` operation.
 //
 // swagger:model ListReturnReasonCodesResponse
 type ListReturnReasonCodesResponse struct {
 
-	// One or more unexpected errors occurred during the listReturnReasonCodes operation.
+	// One or more unexpected errors occurred during the `listReturnReasonCodes` operation.
 	Errors ErrorList `json:"errors,omitempty"`
 
-	// The payload for the listReturnReasonCodes operation.
+	// The payload for the `listReturnReasonCodes` operation.
 	Payload *ListReturnReasonCodesResult `json:"payload,omitempty"`
 }
 

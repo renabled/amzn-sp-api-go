@@ -13,15 +13,15 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// CreateFulfillmentReturnResponse The response schema for the createFulfillmentReturn operation.
+// CreateFulfillmentReturnResponse The response schema for the `createFulfillmentReturn` operation.
 //
 // swagger:model CreateFulfillmentReturnResponse
 type CreateFulfillmentReturnResponse struct {
 
-	// One or more unexpected errors occurred during the createFulfillmentReturn operation.
+	// One or more unexpected errors occurred during the `createFulfillmentReturn` operation.
 	Errors ErrorList `json:"errors,omitempty"`
 
-	// The payload for the createFulfillmentReturn operation.
+	// The payload for the `createFulfillmentReturn` operation.
 	Payload *CreateFulfillmentReturnResult `json:"payload,omitempty"`
 }
 

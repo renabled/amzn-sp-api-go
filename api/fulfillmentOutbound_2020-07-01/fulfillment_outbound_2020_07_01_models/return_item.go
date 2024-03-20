@@ -29,7 +29,7 @@ type ReturnItem struct {
 	// The identifier for the Amazon fulfillment center that processed the return item.
 	FulfillmentCenterID string `json:"fulfillmentCenterId,omitempty"`
 
-	// Identifies the return authorization used to return this item. See ReturnAuthorization.
+	// Identifies the return authorization used to return this item. Refer to `ReturnAuthorization`.
 	ReturnAuthorizationID string `json:"returnAuthorizationId,omitempty"`
 
 	// An optional comment about the return item.

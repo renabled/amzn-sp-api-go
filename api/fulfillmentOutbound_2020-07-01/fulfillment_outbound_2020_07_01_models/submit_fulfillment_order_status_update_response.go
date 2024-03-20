@@ -13,12 +13,12 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// SubmitFulfillmentOrderStatusUpdateResponse The response schema for the SubmitFulfillmentOrderStatusUpdate operation.
+// SubmitFulfillmentOrderStatusUpdateResponse The response schema for the `SubmitFulfillmentOrderStatusUpdate` operation.
 //
 // swagger:model SubmitFulfillmentOrderStatusUpdateResponse
 type SubmitFulfillmentOrderStatusUpdateResponse struct {
 
-	// One or more unexpected errors occurred during the SubmitFulfillmentOrderStatusUpdate operation.
+	// One or more unexpected errors occurred during the `SubmitFulfillmentOrderStatusUpdate` operation.
 	Errors ErrorList `json:"errors,omitempty"`
 }
 

@@ -23,7 +23,7 @@ type FulfillmentShipmentPackage struct {
 	// Required: true
 	CarrierCode *string `json:"carrierCode"`
 
-	// The estimated arrival date and time of the package, in ISO 8601 date time format.
+	// The estimated arrival date and time of the package. Must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> format.
 	// Format: date-time
 	EstimatedArrivalDate Timestamp `json:"estimatedArrivalDate,omitempty"`
 

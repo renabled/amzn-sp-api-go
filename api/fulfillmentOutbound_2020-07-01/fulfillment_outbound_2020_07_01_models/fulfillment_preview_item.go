@@ -20,14 +20,14 @@ import (
 // swagger:model FulfillmentPreviewItem
 type FulfillmentPreviewItem struct {
 
-	// The estimated shipping weight of the item quantity for a single item, as identified by sellerSku, in a shipment.
+	// The estimated shipping weight of the item quantity for a single item, as identified by `sellerSku`, in a shipment.
 	EstimatedShippingWeight *Weight `json:"estimatedShippingWeight,omitempty"`
 
 	// The item quantity.
 	// Required: true
 	Quantity *Quantity `json:"quantity"`
 
-	// A fulfillment order item identifier that the seller created with a call to the createFulfillmentOrder operation.
+	// A fulfillment order item identifier that the seller created with a call to the `createFulfillmentOrder` operation.
 	// Required: true
 	SellerFulfillmentOrderItemID *string `json:"sellerFulfillmentOrderItemId"`
 

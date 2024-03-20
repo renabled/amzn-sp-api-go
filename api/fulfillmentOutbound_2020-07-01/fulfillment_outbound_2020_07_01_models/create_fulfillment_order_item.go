@@ -30,7 +30,7 @@ type CreateFulfillmentOrderItem struct {
 	// Max Length: 512
 	GiftMessage string `json:"giftMessage,omitempty"`
 
-	// The monetary value assigned by the seller to this item.
+	// The monetary value assigned by the seller to this item. This is a required field for India MCF orders.
 	PerUnitDeclaredValue *Money `json:"perUnitDeclaredValue,omitempty"`
 
 	// The amount to be collected from the recipient for this item in a COD (Cash On Delivery) order.
@@ -43,7 +43,7 @@ type CreateFulfillmentOrderItem struct {
 	// Required: true
 	Quantity *Quantity `json:"quantity"`
 
-	// A fulfillment order item identifier that the seller creates to track fulfillment order items. Used to disambiguate multiple fulfillment items that have the same SellerSKU. For example, the seller might assign different SellerFulfillmentOrderItemId values to two items in a fulfillment order that share the same SellerSKU but have different GiftMessage values.
+	// A fulfillment order item identifier that the seller creates to track fulfillment order items. Used to disambiguate multiple fulfillment items that have the same `SellerSKU`. For example, the seller might assign different `SellerFulfillmentOrderItemId` values to two items in a fulfillment order that share the same `SellerSKU` but have different `GiftMessage` values.
 	// Required: true
 	// Max Length: 50
 	SellerFulfillmentOrderItemID *string `json:"sellerFulfillmentOrderItemId"`

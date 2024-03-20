@@ -30,6 +30,9 @@ type GetFulfillmentOrderResult struct {
 	// fulfillment shipments
 	FulfillmentShipments FulfillmentShipmentList `json:"fulfillmentShipments,omitempty"`
 
+	// payment information
+	PaymentInformation PaymentInformationList `json:"paymentInformation,omitempty"`
+
 	// return authorizations
 	// Required: true
 	ReturnAuthorizations ReturnAuthorizationList `json:"returnAuthorizations"`
@@ -52,6 +55,10 @@ func (m *GetFulfillmentOrderResult) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validateFulfillmentShipments(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validatePaymentInformation(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -124,6 +131,23 @@ func (m *GetFulfillmentOrderResult) validateFulfillmentShipments(formats strfmt.
 	return nil
 }
 
+func (m *GetFulfillmentOrderResult) validatePaymentInformation(formats strfmt.Registry) error {
+	if swag.IsZero(m.PaymentInformation) { // not required
+		return nil
+	}
+
+	if err := m.PaymentInformation.Validate(formats); err != nil {
+		if ve, ok := err.(*errors.Validation); ok {
+			return ve.ValidateName("paymentInformation")
+		} else if ce, ok := err.(*errors.CompositeError); ok {
+			return ce.ValidateName("paymentInformation")
+		}
+		return err
+	}
+
+	return nil
+}
+
 func (m *GetFulfillmentOrderResult) validateReturnAuthorizations(formats strfmt.Registry) error {
 
 	if err := validate.Required("returnAuthorizations", "body", m.ReturnAuthorizations); err != nil {
@@ -173,6 +197,10 @@ func (m *GetFulfillmentOrderResult) ContextValidate(ctx context.Context, formats
 	}
 
 	if err := m.contextValidateFulfillmentShipments(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidatePaymentInformation(ctx, formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -227,6 +255,20 @@ func (m *GetFulfillmentOrderResult) contextValidateFulfillmentShipments(ctx cont
 			return ve.ValidateName("fulfillmentShipments")
 		} else if ce, ok := err.(*errors.CompositeError); ok {
 			return ce.ValidateName("fulfillmentShipments")
+		}
+		return err
+	}
+
+	return nil
+}
+
+func (m *GetFulfillmentOrderResult) contextValidatePaymentInformation(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := m.PaymentInformation.ContextValidate(ctx, formats); err != nil {
+		if ve, ok := err.(*errors.Validation); ok {
+			return ve.ValidateName("paymentInformation")
+		} else if ce, ok := err.(*errors.CompositeError); ok {
+			return ce.ValidateName("paymentInformation")
 		}
 		return err
 	}

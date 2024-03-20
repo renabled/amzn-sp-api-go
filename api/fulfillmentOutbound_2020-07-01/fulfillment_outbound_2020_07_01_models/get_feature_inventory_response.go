@@ -18,7 +18,7 @@ import (
 // swagger:model GetFeatureInventoryResponse
 type GetFeatureInventoryResponse struct {
 
-	// One or more unexpected errors occurred during the getFeatureInventory operation.
+	// One or more unexpected errors occurred during the `getFeatureInventory` operation.
 	Errors ErrorList `json:"errors,omitempty"`
 
 	// payload

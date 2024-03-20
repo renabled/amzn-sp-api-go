@@ -15,7 +15,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// CreateFulfillmentOrderRequest The request body schema for the createFulfillmentOrder operation.
+// CreateFulfillmentOrderRequest The request body schema for the `createFulfillmentOrder` operation.
 //
 // swagger:model CreateFulfillmentOrderRequest
 type CreateFulfillmentOrderRequest struct {
@@ -32,7 +32,7 @@ type CreateFulfillmentOrderRequest struct {
 
 	// Order-specific text that appears in recipient-facing materials such as the outbound shipment packing slip.
 	// Required: true
-	// Max Length: 1000
+	// Max Length: 750
 	DisplayableOrderComment *string `json:"displayableOrderComment"`
 
 	// The date and time of the fulfillment order. Displays as the order date in recipient-facing materials such as the outbound shipment packing slip.
@@ -40,7 +40,7 @@ type CreateFulfillmentOrderRequest struct {
 	// Format: date-time
 	DisplayableOrderDate *Timestamp `json:"displayableOrderDate"`
 
-	// A fulfillment order identifier that the seller creates. This value displays as the order identifier in recipient-facing materials such as the outbound shipment packing slip. The value of DisplayableOrderId should match the order identifier that the seller provides to the recipient. The seller can use the SellerFulfillmentOrderId for this value or they can specify an alternate value if they want the recipient to reference an alternate order identifier.
+	// A fulfillment order identifier that the seller creates. This value displays as the order identifier in recipient-facing materials such as the outbound shipment packing slip. The value of `DisplayableOrderId` should match the order identifier that the seller provides to the recipient. The seller can use the `SellerFulfillmentOrderId` for this value or they can specify an alternate value if they want the recipient to reference an alternate order identifier.
 	//
 	// The value must be an alpha-numeric or ISO 8859-1 compliant string from one to 40 characters in length. Cannot contain two spaces in a row. Leading and trailing white space is removed.
 	// Required: true
@@ -66,7 +66,10 @@ type CreateFulfillmentOrderRequest struct {
 	// notification emails
 	NotificationEmails NotificationEmailList `json:"notificationEmails,omitempty"`
 
-	// A fulfillment order identifier that the seller creates to track their fulfillment order. The SellerFulfillmentOrderId must be unique for each fulfillment order that a seller creates. If the seller's system already creates unique order identifiers, then these might be good values for them to use.
+	// An array of various payment attributes related to this fulfillment order. This property is required if the order is placed against the India marketplace.
+	PaymentInformation PaymentInformationList `json:"paymentInformation,omitempty"`
+
+	// A fulfillment order identifier that the seller creates to track their fulfillment order. The `SellerFulfillmentOrderId` must be unique for each fulfillment order that a seller creates. If the seller's system already creates unique order identifiers, then these might be good values for them to use.
 	// Required: true
 	// Max Length: 40
 	SellerFulfillmentOrderID *string `json:"sellerFulfillmentOrderId"`
@@ -74,7 +77,7 @@ type CreateFulfillmentOrderRequest struct {
 	// The two-character country code for the country from which the fulfillment order ships. Must be in ISO 3166-1 alpha-2 format.
 	ShipFromCountryCode string `json:"shipFromCountryCode,omitempty"`
 
-	// The shipping method for the fulfillment order. When this value is ScheduledDelivery, choose Ship for the fulfillmentAction. Hold is not a valid fulfillmentAction value when the shippingSpeedCategory value is ScheduledDelivery.
+	// The shipping method for the fulfillment order. When this value is ScheduledDelivery, choose Ship for the `fulfillmentAction`. Hold is not a valid `fulfillmentAction` value when the `shippingSpeedCategory` value is `ScheduledDelivery`.
 	// Required: true
 	ShippingSpeedCategory *ShippingSpeedCategory `json:"shippingSpeedCategory"`
 }
@@ -124,6 +127,10 @@ func (m *CreateFulfillmentOrderRequest) Validate(formats strfmt.Registry) error 
 	}
 
 	if err := m.validateNotificationEmails(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validatePaymentInformation(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -205,7 +212,7 @@ func (m *CreateFulfillmentOrderRequest) validateDisplayableOrderComment(formats 
 		return err
 	}
 
-	if err := validate.MaxLength("displayableOrderComment", "body", *m.DisplayableOrderComment, 1000); err != nil {
+	if err := validate.MaxLength("displayableOrderComment", "body", *m.DisplayableOrderComment, 750); err != nil {
 		return err
 	}
 
@@ -344,6 +351,23 @@ func (m *CreateFulfillmentOrderRequest) validateNotificationEmails(formats strfm
 	return nil
 }
 
+func (m *CreateFulfillmentOrderRequest) validatePaymentInformation(formats strfmt.Registry) error {
+	if swag.IsZero(m.PaymentInformation) { // not required
+		return nil
+	}
+
+	if err := m.PaymentInformation.Validate(formats); err != nil {
+		if ve, ok := err.(*errors.Validation); ok {
+			return ve.ValidateName("paymentInformation")
+		} else if ce, ok := err.(*errors.CompositeError); ok {
+			return ce.ValidateName("paymentInformation")
+		}
+		return err
+	}
+
+	return nil
+}
+
 func (m *CreateFulfillmentOrderRequest) validateSellerFulfillmentOrderID(formats strfmt.Registry) error {
 
 	if err := validate.Required("sellerFulfillmentOrderId", "body", m.SellerFulfillmentOrderID); err != nil {
@@ -418,6 +442,10 @@ func (m *CreateFulfillmentOrderRequest) ContextValidate(ctx context.Context, for
 	}
 
 	if err := m.contextValidateNotificationEmails(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidatePaymentInformation(ctx, formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -564,6 +592,20 @@ func (m *CreateFulfillmentOrderRequest) contextValidateNotificationEmails(ctx co
 			return ve.ValidateName("notificationEmails")
 		} else if ce, ok := err.(*errors.CompositeError); ok {
 			return ce.ValidateName("notificationEmails")
+		}
+		return err
+	}
+
+	return nil
+}
+
+func (m *CreateFulfillmentOrderRequest) contextValidatePaymentInformation(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := m.PaymentInformation.ContextValidate(ctx, formats); err != nil {
+		if ve, ok := err.(*errors.Validation); ok {
+			return ve.ValidateName("paymentInformation")
+		} else if ce, ok := err.(*errors.CompositeError); ok {
+			return ce.ValidateName("paymentInformation")
 		}
 		return err
 	}

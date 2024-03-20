@@ -26,7 +26,7 @@ type FeatureSku struct {
 	// Other seller SKUs that are shared across the same inventory.
 	OverlappingSkus []string `json:"overlappingSkus"`
 
-	// Used to identify an item in the given marketplace. SellerSKU is qualified by the seller's SellerId, which is included with every operation that you submit.
+	// Used to identify an item in the given marketplace. `SellerSKU` is qualified by the seller's SellerId, which is included with every operation that you submit.
 	SellerSku string `json:"sellerSku,omitempty"`
 
 	// The number of SKUs available for this service.

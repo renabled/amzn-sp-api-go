@@ -68,7 +68,7 @@ type CreateFulfillmentReturnParams struct {
 
 	/* SellerFulfillmentOrderID.
 
-	   An identifier assigned by the seller to the fulfillment order at the time it was created. The seller uses their own records to find the correct SellerFulfillmentOrderId value based on the buyer's request to return items.
+	   An identifier assigned by the seller to the fulfillment order at the time it was created. The seller uses their own records to find the correct `SellerFulfillmentOrderId` value based on the buyer's request to return items.
 	*/
 	SellerFulfillmentOrderID string
 

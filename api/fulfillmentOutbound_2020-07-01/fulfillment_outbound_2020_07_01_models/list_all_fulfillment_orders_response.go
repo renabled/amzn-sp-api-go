@@ -13,15 +13,15 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// ListAllFulfillmentOrdersResponse The response schema for the listAllFulfillmentOrders operation.
+// ListAllFulfillmentOrdersResponse The response schema for the `listAllFulfillmentOrders` operation.
 //
 // swagger:model ListAllFulfillmentOrdersResponse
 type ListAllFulfillmentOrdersResponse struct {
 
-	// One or more unexpected errors occurred during the listAllFulfillmentOrders operation.
+	// One or more unexpected errors occurred during the `listAllFulfillmentOrders` operation.
 	Errors ErrorList `json:"errors,omitempty"`
 
-	// The payload for the listAllFulfillmentOrders operation.
+	// The payload for the `listAllFulfillmentOrders` operation.
 	Payload *ListAllFulfillmentOrdersResult `json:"payload,omitempty"`
 }
 

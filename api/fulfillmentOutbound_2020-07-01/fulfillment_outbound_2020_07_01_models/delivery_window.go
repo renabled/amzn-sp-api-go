@@ -19,12 +19,12 @@ import (
 // swagger:model DeliveryWindow
 type DeliveryWindow struct {
 
-	// The date and time of the end of the Scheduled Delivery window, in ISO 8601 date time format.
+	// The date and time of the end of the Scheduled Delivery window. Must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> format.
 	// Required: true
 	// Format: date-time
 	EndDate *Timestamp `json:"endDate"`
 
-	// The date and time of the start of the Scheduled Delivery window, in ISO 8601 date time format.
+	// The date and time of the start of the Scheduled Delivery window. Must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> format.
 	// Required: true
 	// Format: date-time
 	StartDate *Timestamp `json:"startDate"`

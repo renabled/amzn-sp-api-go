@@ -26,7 +26,7 @@ type FulfillmentShipmentItem struct {
 	// Required: true
 	Quantity *Quantity `json:"quantity"`
 
-	// The fulfillment order item identifier that the seller created and submitted with a call to the createFulfillmentOrder operation.
+	// The fulfillment order item identifier that the seller created and submitted with a call to the `createFulfillmentOrder` operation.
 	// Required: true
 	SellerFulfillmentOrderItemID *string `json:"sellerFulfillmentOrderItemId"`
 

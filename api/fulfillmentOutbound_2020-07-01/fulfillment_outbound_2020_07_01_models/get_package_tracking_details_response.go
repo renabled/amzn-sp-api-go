@@ -13,15 +13,15 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// GetPackageTrackingDetailsResponse The response schema for the getPackageTrackingDetails operation.
+// GetPackageTrackingDetailsResponse The response schema for the `getPackageTrackingDetails` operation.
 //
 // swagger:model GetPackageTrackingDetailsResponse
 type GetPackageTrackingDetailsResponse struct {
 
-	// One or more unexpected errors occurred during the getPackageTrackingDetails operation.
+	// One or more unexpected errors occurred during the `getPackageTrackingDetails` operation.
 	Errors ErrorList `json:"errors,omitempty"`
 
-	// The payload for the getPackageTrackingDetails operation.
+	// The payload for the `getPackageTrackingDetails` operation.
 	Payload *PackageTrackingDetails `json:"payload,omitempty"`
 }
 

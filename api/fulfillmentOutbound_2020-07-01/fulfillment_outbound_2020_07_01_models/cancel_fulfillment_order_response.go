@@ -13,12 +13,12 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// CancelFulfillmentOrderResponse The response schema for the cancelFulfillmentOrder operation.
+// CancelFulfillmentOrderResponse The response schema for the `cancelFulfillmentOrder` operation.
 //
 // swagger:model CancelFulfillmentOrderResponse
 type CancelFulfillmentOrderResponse struct {
 
-	// One or more unexpected errors occurred during the cancelFulfillmentOrder operation.
+	// One or more unexpected errors occurred during the `cancelFulfillmentOrder` operation.
 	Errors ErrorList `json:"errors,omitempty"`
 }
 

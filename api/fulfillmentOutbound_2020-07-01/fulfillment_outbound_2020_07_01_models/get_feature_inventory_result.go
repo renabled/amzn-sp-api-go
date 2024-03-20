@@ -15,7 +15,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// GetFeatureInventoryResult The payload for the getEligibileInventory operation.
+// GetFeatureInventoryResult The payload for the `getEligibileInventory` operation.
 //
 // swagger:model GetFeatureInventoryResult
 type GetFeatureInventoryResult struct {

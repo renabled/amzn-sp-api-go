@@ -24,7 +24,7 @@ type FulfillmentShipment struct {
 	// Required: true
 	AmazonShipmentID *string `json:"amazonShipmentId"`
 
-	// The estimated arrival date and time of the shipment, in ISO 8601 date time format. Note that this value can change over time. If a shipment includes more than one package, estimatedArrivalDate applies to all of the packages in the shipment. If the shipment has been cancelled, estimatedArrivalDate is not returned.
+	// The estimated arrival date and time of the shipment. Must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> format. Note that this value can change over time. If a shipment includes more than one package, `estimatedArrivalDate` applies to all of the packages in the shipment. If the shipment has been cancelled, `estimatedArrivalDate` is not returned.
 	// Format: date-time
 	EstimatedArrivalDate Timestamp `json:"estimatedArrivalDate,omitempty"`
 
@@ -44,12 +44,12 @@ type FulfillmentShipment struct {
 	// Enum: [PENDING SHIPPED CANCELLED_BY_FULFILLER CANCELLED_BY_SELLER]
 	FulfillmentShipmentStatus *string `json:"fulfillmentShipmentStatus"`
 
-	// The meaning of the shippingDate value depends on the current status of the shipment. If the current value of FulfillmentShipmentStatus is:
+	// The meaning of the `shippingDate` value depends on the current status of the shipment. If the current value of `FulfillmentShipmentStatus` is:
 	//
-	// * Pending - shippingDate represents the estimated time that the shipment will leave the Amazon fulfillment center.
+	// * Pending - `shippingDate` represents the estimated time that the shipment will leave the Amazon fulfillment center.
 	//
-	// * Shipped - shippingDate represents the date that the shipment left the Amazon fulfillment center.
-	// If a shipment includes more than one package, shippingDate applies to all of the packages in the shipment. If the value of FulfillmentShipmentStatus is CancelledByFulfiller or CancelledBySeller, shippingDate is not returned. The value must be in ISO 8601 date time format.
+	// * Shipped - `shippingDate` represents the date that the shipment left the Amazon fulfillment center.
+	// If a shipment includes more than one package, `shippingDate` applies to all of the packages in the shipment. If the value of `FulfillmentShipmentStatus` is `CancelledByFulfiller` or `CancelledBySeller`, `shippingDate` is not returned. The value must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> format.
 	// Format: date-time
 	ShippingDate Timestamp `json:"shippingDate,omitempty"`
 

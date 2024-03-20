@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// GetFeaturesResult The payload for the getFeatures operation.
+// GetFeaturesResult The payload for the `getFeatures` operation.
 //
 // swagger:model GetFeaturesResult
 type GetFeaturesResult struct {

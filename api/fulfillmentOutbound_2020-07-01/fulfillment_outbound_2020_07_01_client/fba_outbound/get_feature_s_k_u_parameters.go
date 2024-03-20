@@ -75,7 +75,7 @@ type GetFeatureSKUParams struct {
 
 	/* SellerSku.
 
-	   Used to identify an item in the given marketplace. SellerSKU is qualified by the seller's SellerId, which is included with every operation that you submit.
+	   Used to identify an item in the given marketplace. `SellerSKU` is qualified by the seller's `SellerId`, which is included with every operation that you submit.
 	*/
 	SellerSku string
 

@@ -26,7 +26,7 @@ type UnfulfillablePreviewItem struct {
 	// Required: true
 	Quantity *Quantity `json:"quantity"`
 
-	// A fulfillment order item identifier created with a call to the getFulfillmentPreview operation.
+	// A fulfillment order item identifier created with a call to the `getFulfillmentPreview` operation.
 	// Required: true
 	// Max Length: 50
 	SellerFulfillmentOrderItemID *string `json:"sellerFulfillmentOrderItemId"`

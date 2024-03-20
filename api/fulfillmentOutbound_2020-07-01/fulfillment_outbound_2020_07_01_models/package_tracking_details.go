@@ -34,7 +34,7 @@ type PackageTrackingDetails struct {
 	// current status
 	CurrentStatus CurrentStatus `json:"currentStatus,omitempty"`
 
-	// Description corresponding to the CurrentStatus value.
+	// Description corresponding to the `CurrentStatus` value.
 	CurrentStatusDescription string `json:"currentStatusDescription,omitempty"`
 
 	// Link on swiship.com that allows customers to track the package.

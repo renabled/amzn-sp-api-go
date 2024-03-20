@@ -63,9 +63,9 @@ type ListReturnReasonCodesParams struct {
 
 	/* Language.
 
-	   The language that the TranslatedDescription property of the ReasonCodeDetails response object should be translated into.
+	   The language that the `TranslatedDescription` property of the `ReasonCodeDetails` response object should be translated into.
 	*/
-	Language string
+	Language *string
 
 	/* MarketplaceID.
 
@@ -139,13 +139,13 @@ func (o *ListReturnReasonCodesParams) SetHTTPClient(client *http.Client) {
 }
 
 // WithLanguage adds the language to the list return reason codes params
-func (o *ListReturnReasonCodesParams) WithLanguage(language string) *ListReturnReasonCodesParams {
+func (o *ListReturnReasonCodesParams) WithLanguage(language *string) *ListReturnReasonCodesParams {
 	o.SetLanguage(language)
 	return o
 }
 
 // SetLanguage adds the language to the list return reason codes params
-func (o *ListReturnReasonCodesParams) SetLanguage(language string) {
+func (o *ListReturnReasonCodesParams) SetLanguage(language *string) {
 	o.Language = language
 }
 
@@ -190,13 +190,20 @@ func (o *ListReturnReasonCodesParams) WriteToRequest(r runtime.ClientRequest, re
 	}
 	var res []error
 
-	// query param language
-	qrLanguage := o.Language
-	qLanguage := qrLanguage
-	if qLanguage != "" {
+	if o.Language != nil {
 
-		if err := r.SetQueryParam("language", qLanguage); err != nil {
-			return err
+		// query param language
+		var qrLanguage string
+
+		if o.Language != nil {
+			qrLanguage = *o.Language
+		}
+		qLanguage := qrLanguage
+		if qLanguage != "" {
+
+			if err := r.SetQueryParam("language", qLanguage); err != nil {
+				return err
+			}
 		}
 	}
 

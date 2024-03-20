@@ -13,7 +13,7 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// SubmitFulfillmentOrderStatusUpdateRequest The request body schema for the submitFulfillmentOrderStatusUpdate operation.
+// SubmitFulfillmentOrderStatusUpdateRequest The request body schema for the `submitFulfillmentOrderStatusUpdate` operation.
 //
 // swagger:model SubmitFulfillmentOrderStatusUpdateRequest
 type SubmitFulfillmentOrderStatusUpdateRequest struct {

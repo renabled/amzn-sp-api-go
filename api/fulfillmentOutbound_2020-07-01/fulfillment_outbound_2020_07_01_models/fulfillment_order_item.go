@@ -26,11 +26,11 @@ type FulfillmentOrderItem struct {
 	// Item-specific text that displays in recipient-facing materials such as the outbound shipment packing slip.
 	DisplayableComment string `json:"displayableComment,omitempty"`
 
-	// The estimated arrival date and time of the item quantity. Note that this value can change over time. If the shipment that contains the item quantity has been cancelled, estimatedArrivalDate is not returned.
+	// The estimated arrival date and time of the item quantity. Note that this value can change over time. If the shipment that contains the item quantity has been cancelled, `estimatedArrivalDate` is not returned.
 	// Format: date-time
 	EstimatedArrivalDate Timestamp `json:"estimatedArrivalDate,omitempty"`
 
-	// The estimated date and time that the item quantity is scheduled to ship from the fulfillment center. Note that this value can change over time. If the shipment that contains the item quantity has been cancelled, estimatedShipDate is not returned.
+	// The estimated date and time that the item quantity is scheduled to ship from the fulfillment center. Note that this value can change over time. If the shipment that contains the item quantity has been cancelled, `estimatedShipDate` is not returned.
 	// Format: date-time
 	EstimatedShipDate Timestamp `json:"estimatedShipDate,omitempty"`
 
@@ -43,7 +43,7 @@ type FulfillmentOrderItem struct {
 	// Indicates whether the item is sellable or unsellable.
 	OrderItemDisposition string `json:"orderItemDisposition,omitempty"`
 
-	// The monetary value assigned by the seller to this item.
+	// The monetary value assigned by the seller to this item. This is a required field for India MCF orders.
 	PerUnitDeclaredValue *Money `json:"perUnitDeclaredValue,omitempty"`
 
 	// The amount to be collected from the recipient for this item in a COD (Cash On Delivery) order.
@@ -56,7 +56,7 @@ type FulfillmentOrderItem struct {
 	// Required: true
 	Quantity *Quantity `json:"quantity"`
 
-	// A fulfillment order item identifier submitted with a call to the createFulfillmentOrder operation.
+	// A fulfillment order item identifier submitted with a call to the `createFulfillmentOrder` operation.
 	// Required: true
 	SellerFulfillmentOrderItemID *string `json:"sellerFulfillmentOrderItemId"`
 

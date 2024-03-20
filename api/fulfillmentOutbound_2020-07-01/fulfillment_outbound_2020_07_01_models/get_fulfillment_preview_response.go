@@ -13,15 +13,15 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// GetFulfillmentPreviewResponse The response schema for the getFulfillmentPreview operation.
+// GetFulfillmentPreviewResponse The response schema for the `getFulfillmentPreview` operation.
 //
 // swagger:model GetFulfillmentPreviewResponse
 type GetFulfillmentPreviewResponse struct {
 
-	// One or more unexpected errors occurred during the getFulfillmentPreview operation.
+	// One or more unexpected errors occurred during the `getFulfillmentPreview` operation.
 	Errors ErrorList `json:"errors,omitempty"`
 
-	// The response payload for the getFulfillmentPreview operation.
+	// The response payload for the `getFulfillmentPreview` operation.
 	Payload *GetFulfillmentPreviewResult `json:"payload,omitempty"`
 }
 

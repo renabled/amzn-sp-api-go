@@ -64,7 +64,7 @@ type GetPackageTrackingDetailsParams struct {
 
 	/* PackageNumber.
 
-	   The unencrypted package identifier returned by the getFulfillmentOrder operation.
+	   The unencrypted package identifier returned by the `getFulfillmentOrder` operation.
 
 	   Format: int32
 	*/

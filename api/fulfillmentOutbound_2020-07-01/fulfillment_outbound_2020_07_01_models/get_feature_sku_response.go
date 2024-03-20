@@ -13,7 +13,7 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// GetFeatureSkuResponse The response schema for the getFeatureSKU operation.
+// GetFeatureSkuResponse The response schema for the `getFeatureSKU` operation.
 //
 // swagger:model GetFeatureSkuResponse
 type GetFeatureSkuResponse struct {

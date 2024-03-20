@@ -33,7 +33,7 @@ type UpdateFulfillmentOrderItem struct {
 	// Indicates whether the item is sellable or unsellable.
 	OrderItemDisposition string `json:"orderItemDisposition,omitempty"`
 
-	// The monetary value assigned by the seller to this item.
+	// The monetary value assigned by the seller to this item. This is a required field for India MCF orders.
 	PerUnitDeclaredValue *Money `json:"perUnitDeclaredValue,omitempty"`
 
 	// The amount to be collected from the recipient for this item in a COD (Cash On Delivery) order.
@@ -46,7 +46,7 @@ type UpdateFulfillmentOrderItem struct {
 	// Required: true
 	Quantity *Quantity `json:"quantity"`
 
-	// Identifies the fulfillment order item to update. Created with a previous call to the createFulfillmentOrder operation.
+	// Identifies the fulfillment order item to update. Created with a previous call to the `createFulfillmentOrder` operation.
 	// Required: true
 	// Max Length: 50
 	SellerFulfillmentOrderItemID *string `json:"sellerFulfillmentOrderItemId"`

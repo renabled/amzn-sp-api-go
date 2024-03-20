@@ -27,7 +27,7 @@ type TrackingEvent struct {
 	// Required: true
 	EventCode *EventCode `json:"eventCode"`
 
-	// The date and time that the delivery event took place, in ISO 8601 date time format.
+	// The date and time that the delivery event took place. Must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> format.
 	// Required: true
 	// Format: date-time
 	EventDate *Timestamp `json:"eventDate"`

@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// FulfillmentPolicy The FulfillmentPolicy value specified when you submitted the createFulfillmentOrder operation.
+// FulfillmentPolicy The `FulfillmentPolicy` value specified when you submitted the `createFulfillmentOrder` operation.
 //
 // swagger:model FulfillmentPolicy
 type FulfillmentPolicy string

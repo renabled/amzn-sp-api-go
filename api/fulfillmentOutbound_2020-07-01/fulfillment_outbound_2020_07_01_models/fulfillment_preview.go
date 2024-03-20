@@ -20,7 +20,7 @@ import (
 // swagger:model FulfillmentPreview
 type FulfillmentPreview struct {
 
-	// The estimated fulfillment fees for this fulfillment order preview, if applicable.
+	// The estimated fulfillment fees for this fulfillment order preview, if applicable. The fees data will not be available for IN marketplace orders.
 	EstimatedFees FeeList `json:"estimatedFees,omitempty"`
 
 	// Estimated shipping weight for this fulfillment order preview.
@@ -48,8 +48,8 @@ type FulfillmentPreview struct {
 	//
 	// Error code examples:
 	//
-	// DeliverySLAUnavailable
-	// InvalidDestinationAddress
+	// `DeliverySLAUnavailable`
+	// `InvalidDestinationAddress`
 	OrderUnfulfillableReasons StringList `json:"orderUnfulfillableReasons,omitempty"`
 
 	// scheduled delivery info

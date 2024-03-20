@@ -23,7 +23,7 @@ type FulfillmentPreviewShipment struct {
 	// Format: date-time
 	EarliestArrivalDate Timestamp `json:"earliestArrivalDate,omitempty"`
 
-	// The earliest date that the shipment is expected to be sent from the fulfillment center, in ISO 8601 date time format.
+	// The earliest date that the shipment is expected to be sent from the fulfillment center. Must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> format.
 	// Format: date-time
 	EarliestShipDate Timestamp `json:"earliestShipDate,omitempty"`
 
@@ -31,11 +31,11 @@ type FulfillmentPreviewShipment struct {
 	// Required: true
 	FulfillmentPreviewItems FulfillmentPreviewItemList `json:"fulfillmentPreviewItems"`
 
-	// The latest date that the shipment is expected to arrive at its destination, in ISO 8601 date time format.
+	// The latest date that the shipment is expected to arrive at its destination. Must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> format.
 	// Format: date-time
 	LatestArrivalDate Timestamp `json:"latestArrivalDate,omitempty"`
 
-	// The latest date that the shipment is expected to be sent from the fulfillment center, in ISO 8601 date time format.
+	// The latest date that the shipment is expected to be sent from the fulfillment center. Must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> format.
 	// Format: date-time
 	LatestShipDate Timestamp `json:"latestShipDate,omitempty"`
 

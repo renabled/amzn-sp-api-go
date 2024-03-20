@@ -15,7 +15,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// UpdateFulfillmentOrderRequest The request body schema for the updateFulfillmentOrder operation.
+// UpdateFulfillmentOrderRequest The request body schema for the `updateFulfillmentOrder` operation.
 //
 // swagger:model UpdateFulfillmentOrderRequest
 type UpdateFulfillmentOrderRequest struct {
@@ -24,14 +24,14 @@ type UpdateFulfillmentOrderRequest struct {
 	DestinationAddress *Address `json:"destinationAddress,omitempty"`
 
 	// Order-specific text that appears in recipient-facing materials such as the outbound shipment packing slip.
-	// Max Length: 1000
+	// Max Length: 750
 	DisplayableOrderComment string `json:"displayableOrderComment,omitempty"`
 
 	// The date and time of the fulfillment order. Displays as the order date in recipient-facing materials such as the outbound shipment packing slip.
 	// Format: date-time
 	DisplayableOrderDate Timestamp `json:"displayableOrderDate,omitempty"`
 
-	// A fulfillment order identifier that the seller creates. This value displays as the order identifier in recipient-facing materials such as the outbound shipment packing slip. The value of DisplayableOrderId should match the order identifier that the seller provides to the recipient. The seller can use the SellerFulfillmentOrderId for this value or they can specify an alternate value if they want the recipient to reference an alternate order identifier.
+	// A fulfillment order identifier that the seller creates. This value displays as the order identifier in recipient-facing materials such as the outbound shipment packing slip. The value of `DisplayableOrderId` should match the order identifier that the seller provides to the recipient. The seller can use the `SellerFulfillmentOrderId` for this value or they can specify an alternate value if they want the recipient to reference an alternate order identifier.
 	// Max Length: 40
 	DisplayableOrderID string `json:"displayableOrderId,omitempty"`
 
@@ -134,7 +134,7 @@ func (m *UpdateFulfillmentOrderRequest) validateDisplayableOrderComment(formats 
 		return nil
 	}
 
-	if err := validate.MaxLength("displayableOrderComment", "body", m.DisplayableOrderComment, 1000); err != nil {
+	if err := validate.MaxLength("displayableOrderComment", "body", m.DisplayableOrderComment, 750); err != nil {
 		return err
 	}
 

@@ -19,7 +19,7 @@ import (
 // swagger:model GetFulfillmentPreviewItem
 type GetFulfillmentPreviewItem struct {
 
-	// The monetary value assigned by the seller to this item. This is a required field if this order is an export order.
+	// The monetary value assigned by the seller to this item. This is a required field if this order is an export order or an India MCF order.
 	PerUnitDeclaredValue *Money `json:"perUnitDeclaredValue,omitempty"`
 
 	// quantity
