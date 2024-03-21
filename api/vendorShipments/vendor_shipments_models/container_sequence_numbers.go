@@ -12,7 +12,7 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// ContainerSequenceNumbers container sequence numbers
+// ContainerSequenceNumbers Container sequence numbers that are involved in this shipment.
 //
 // swagger:model ContainerSequenceNumbers
 type ContainerSequenceNumbers struct {

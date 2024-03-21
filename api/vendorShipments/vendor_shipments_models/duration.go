@@ -15,7 +15,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// Duration duration
+// Duration Duration after manufacturing date during which the product is valid for consumption.
 //
 // swagger:model Duration
 type Duration struct {

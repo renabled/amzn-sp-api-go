@@ -16,7 +16,7 @@ import (
 
 // CollectFreightPickupDetails Transport Request pickup date from Vendor Warehouse by Buyer
 //
-// swagger:model collectFreightPickupDetails
+// swagger:model CollectFreightPickupDetails
 type CollectFreightPickupDetails struct {
 
 	// Date on which the carrier is being scheduled to pickup items from vendor warehouse by Byer used for WePay/Collect vendors.

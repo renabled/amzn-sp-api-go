@@ -19,7 +19,7 @@ import (
 // swagger:model SubmitShipmentConfirmationsRequest
 type SubmitShipmentConfirmationsRequest struct {
 
-	// shipment confirmations
+	// A list of one or more shipment confirmations.
 	ShipmentConfirmations []*ShipmentConfirmation `json:"shipmentConfirmations"`
 }
 

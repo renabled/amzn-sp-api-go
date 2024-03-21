@@ -76,7 +76,7 @@ type GetShipmentDetailsParams struct {
 
 	/* CreatedAfter.
 
-	   Get Shipment Details that became available after this timestamp will be included in the result. Must be in ISO-8601 date/time format.
+	   Get Shipment Details that became available after this timestamp will be included in the result. Must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> format.
 
 	   Format: date-time
 	*/
@@ -84,7 +84,7 @@ type GetShipmentDetailsParams struct {
 
 	/* CreatedBefore.
 
-	   Get Shipment Details that became available before this timestamp will be included in the result. Must be in ISO-8601 date/time format.
+	   Get Shipment Details that became available before this timestamp will be included in the result. Must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> format.
 
 	   Format: date-time
 	*/
@@ -98,7 +98,7 @@ type GetShipmentDetailsParams struct {
 
 	/* EstimatedDeliveryAfter.
 
-	   Get Shipment Details by passing Estimated Delivery Date Before. Must be in ISO-8601 date/time format.
+	   Get Shipment Details by passing Estimated Delivery Date Before. Must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> format.
 
 	   Format: date-time
 	*/
@@ -106,7 +106,7 @@ type GetShipmentDetailsParams struct {
 
 	/* EstimatedDeliveryBefore.
 
-	   Get Shipment Details by passing Estimated Delivery Date Before. Must be in ISO-8601 date/time format.
+	   Get Shipment Details by passing Estimated Delivery Date Before. Must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> format.
 
 	   Format: date-time
 	*/
@@ -128,7 +128,7 @@ type GetShipmentDetailsParams struct {
 
 	/* PackageLabelCreatedAfter.
 
-	   Get Shipment Details by passing Package label create Date After by buyer. Must be in ISO-8601 date/time format.
+	   Get Shipment Details by passing Package label create Date After by buyer. Must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> format.
 
 	   Format: date-time
 	*/
@@ -136,7 +136,7 @@ type GetShipmentDetailsParams struct {
 
 	/* PackageLabelCreatedBefore.
 
-	   Get Shipment Details by passing Package label create Date by buyer. Must be in ISO-8601 date/time format.
+	   Get Shipment Details by passing Package label create Date by buyer. Must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> format.
 
 	   Format: date-time
 	*/
@@ -144,7 +144,7 @@ type GetShipmentDetailsParams struct {
 
 	/* RequestedPickUpAfter.
 
-	   Get Shipment Details by passing After Requested pickup date. Must be in ISO-8601 date/time format.
+	   Get Shipment Details by passing After Requested pickup date. Must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> format.
 
 	   Format: date-time
 	*/
@@ -152,7 +152,7 @@ type GetShipmentDetailsParams struct {
 
 	/* RequestedPickUpBefore.
 
-	   Get Shipment Details by passing Before Requested pickup date. Must be in ISO-8601 date/time format.
+	   Get Shipment Details by passing Before Requested pickup date. Must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> format.
 
 	   Format: date-time
 	*/
@@ -160,7 +160,7 @@ type GetShipmentDetailsParams struct {
 
 	/* ScheduledPickUpAfter.
 
-	   Get Shipment Details by passing After Scheduled pickup date. Must be in ISO-8601 date/time format.
+	   Get Shipment Details by passing After Scheduled pickup date. Must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> format.
 
 	   Format: date-time
 	*/
@@ -168,7 +168,7 @@ type GetShipmentDetailsParams struct {
 
 	/* ScheduledPickUpBefore.
 
-	   Get Shipment Details by passing Before scheduled pickup date. Must be in ISO-8601 date/time format.
+	   Get Shipment Details by passing Before scheduled pickup date. Must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> format.
 
 	   Format: date-time
 	*/
@@ -182,7 +182,7 @@ type GetShipmentDetailsParams struct {
 
 	/* ShipmentConfirmedAfter.
 
-	   Get Shipment Details by passing Shipment confirmed create Date After. Must be in ISO-8601 date/time format.
+	   Get Shipment Details by passing Shipment confirmed create Date After. Must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> format.
 
 	   Format: date-time
 	*/
@@ -190,7 +190,7 @@ type GetShipmentDetailsParams struct {
 
 	/* ShipmentConfirmedBefore.
 
-	   Get Shipment Details by passing Shipment confirmed create Date Before. Must be in ISO-8601 date/time format.
+	   Get Shipment Details by passing Shipment confirmed create Date Before. Must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> format.
 
 	   Format: date-time
 	*/
@@ -198,7 +198,7 @@ type GetShipmentDetailsParams struct {
 
 	/* ShipmentDeliveryAfter.
 
-	   Get Shipment Details by passing Shipment Delivery Date After. Must be in ISO-8601 date/time format.
+	   Get Shipment Details by passing Shipment Delivery Date After. Must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> format.
 
 	   Format: date-time
 	*/
@@ -206,7 +206,7 @@ type GetShipmentDetailsParams struct {
 
 	/* ShipmentDeliveryBefore.
 
-	   Get Shipment Details by passing Shipment Delivery Date Before. Must be in ISO-8601 date/time format.
+	   Get Shipment Details by passing Shipment Delivery Date Before. Must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> format.
 
 	   Format: date-time
 	*/
@@ -214,7 +214,7 @@ type GetShipmentDetailsParams struct {
 
 	/* ShippedAfter.
 
-	   Get Shipment Details by passing Shipped Date After. Must be in ISO-8601 date/time format.
+	   Get Shipment Details by passing Shipped Date After. Must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> format.
 
 	   Format: date-time
 	*/
@@ -222,7 +222,7 @@ type GetShipmentDetailsParams struct {
 
 	/* ShippedBefore.
 
-	   Get Shipment Details by passing Shipped Date Before. Must be in ISO-8601 date/time format.
+	   Get Shipment Details by passing Shipped Date Before. Must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> format.
 
 	   Format: date-time
 	*/

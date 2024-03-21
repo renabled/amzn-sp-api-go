@@ -15,7 +15,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// ImportDetails import details
+// ImportDetails Provide these fields only if this shipment is a direct import.
 //
 // swagger:model ImportDetails
 type ImportDetails struct {

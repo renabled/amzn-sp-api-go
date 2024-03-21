@@ -15,7 +15,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// ContainerIdentification container identification
+// ContainerIdentification A list of carton identifiers.
 //
 // swagger:model ContainerIdentification
 type ContainerIdentification struct {

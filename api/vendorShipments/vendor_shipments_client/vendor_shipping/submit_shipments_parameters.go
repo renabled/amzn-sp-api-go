@@ -63,7 +63,10 @@ SubmitShipmentsParams contains all the parameters to send to the API endpoint
 */
 type SubmitShipmentsParams struct {
 
-	// Body.
+	/* Body.
+
+	   A request to submit shipment request.
+	*/
 	Body *vendor_shipments_models.SubmitShipments
 
 	timeout    time.Duration

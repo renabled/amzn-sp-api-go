@@ -17,7 +17,7 @@ import (
 
 // PurchaseOrders Transport Request pickup date
 //
-// swagger:model purchaseOrders
+// swagger:model PurchaseOrders
 type PurchaseOrders struct {
 
 	// A list of the items that are associated to the PO in this transport and their associated details.

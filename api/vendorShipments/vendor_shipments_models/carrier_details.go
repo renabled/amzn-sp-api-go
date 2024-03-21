@@ -12,7 +12,7 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// CarrierDetails carrier details
+// CarrierDetails Indicates the carrier details and their contact informations
 //
 // swagger:model CarrierDetails
 type CarrierDetails struct {

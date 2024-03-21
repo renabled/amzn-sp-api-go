@@ -20,7 +20,7 @@ import (
 // swagger:model Route
 type Route struct {
 
-	// stops
+	// The port or location involved in transporting the cargo, as specified in transportation contracts or operational plans.
 	// Required: true
 	Stops []*Stop `json:"stops"`
 }

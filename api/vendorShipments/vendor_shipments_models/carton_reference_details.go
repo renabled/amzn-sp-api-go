@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// CartonReferenceDetails carton reference details
+// CartonReferenceDetails Carton reference details.
 //
 // swagger:model CartonReferenceDetails
 type CartonReferenceDetails struct {

@@ -16,7 +16,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// Shipment shipment
+// Shipment A list of one or more shipments with respective details.
 //
 // swagger:model Shipment
 type Shipment struct {

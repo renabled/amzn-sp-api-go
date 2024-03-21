@@ -16,7 +16,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// ShipmentConfirmation shipment confirmation
+// ShipmentConfirmation A list of one or more shipment confirmations.
 //
 // swagger:model ShipmentConfirmation
 type ShipmentConfirmation struct {
@@ -83,7 +83,7 @@ type ShipmentConfirmation struct {
 	ShippedItems []*Item `json:"shippedItems"`
 
 	// Transportation details for this shipment.
-	TransportationDetails *TransportationDetails `json:"transportationDetails,omitempty"`
+	TransportationDetails *TransportationDetailsForShipmentConfirmation `json:"transportationDetails,omitempty"`
 }
 
 // Validate validates this shipment confirmation

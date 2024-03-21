@@ -12,7 +12,7 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// TransactionReference transaction reference
+// TransactionReference The response payload for the SubmitShipmentConfirmations operation.
 //
 // swagger:model TransactionReference
 type TransactionReference struct {

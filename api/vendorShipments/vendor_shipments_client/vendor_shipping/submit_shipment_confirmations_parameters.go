@@ -63,7 +63,10 @@ SubmitShipmentConfirmationsParams contains all the parameters to send to the API
 */
 type SubmitShipmentConfirmationsParams struct {
 
-	// Body.
+	/* Body.
+
+	   A request to submit shipment confirmation.
+	*/
 	Body *vendor_shipments_models.SubmitShipmentConfirmationsRequest
 
 	timeout    time.Duration

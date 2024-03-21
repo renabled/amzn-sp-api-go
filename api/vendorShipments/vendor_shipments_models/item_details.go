@@ -20,7 +20,7 @@ import (
 // swagger:model ItemDetails
 type ItemDetails struct {
 
-	// Either expiryDate or mfgDate and expiryAfterDuration are mandatory for perishable items.
+	// Expiry refers to the collection of dates required  for certain items. These could be either expiryDate or mfgDate and expiryAfterDuration. These are mandatory for perishable items.
 	Expiry *Expiry `json:"expiry,omitempty"`
 
 	// Identification of the instructions on how specified item/carton/pallet should be handled.

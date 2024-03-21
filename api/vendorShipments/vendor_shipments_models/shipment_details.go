@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// ShipmentDetails shipment details
+// ShipmentDetails The request schema for the GetShipmentDetails operation.
 //
 // swagger:model ShipmentDetails
 type ShipmentDetails struct {
@@ -22,7 +22,7 @@ type ShipmentDetails struct {
 	// pagination
 	Pagination *Pagination `json:"pagination,omitempty"`
 
-	// shipments
+	// A list of one or more shipments with underlying details.
 	Shipments []*Shipment `json:"shipments"`
 }
 

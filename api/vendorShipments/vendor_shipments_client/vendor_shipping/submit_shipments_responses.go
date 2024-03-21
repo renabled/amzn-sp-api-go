@@ -427,10 +427,6 @@ The request size exceeded the maximum accepted size.
 */
 type SubmitShipmentsRequestEntityTooLarge struct {
 
-	/* Your rate limit (requests per second) for this operation.
-	 */
-	XAmznRateLimitLimit string
-
 	/* Unique request reference identifier.
 	 */
 	XAmznRequestID string
@@ -477,13 +473,6 @@ func (o *SubmitShipmentsRequestEntityTooLarge) GetPayload() *vendor_shipments_mo
 
 func (o *SubmitShipmentsRequestEntityTooLarge) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	// hydrates response header x-amzn-RateLimit-Limit
-	hdrXAmznRateLimitLimit := response.GetHeader("x-amzn-RateLimit-Limit")
-
-	if hdrXAmznRateLimitLimit != "" {
-		o.XAmznRateLimitLimit = hdrXAmznRateLimitLimit
-	}
-
 	// hydrates response header x-amzn-RequestId
 	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")
 
@@ -512,10 +501,6 @@ SubmitShipmentsUnsupportedMediaType describes a response with status code 415, w
 The request payload is in an unsupported format.
 */
 type SubmitShipmentsUnsupportedMediaType struct {
-
-	/* Your rate limit (requests per second) for this operation.
-	 */
-	XAmznRateLimitLimit string
 
 	/* Unique request reference identifier.
 	 */
@@ -563,13 +548,6 @@ func (o *SubmitShipmentsUnsupportedMediaType) GetPayload() *vendor_shipments_mod
 
 func (o *SubmitShipmentsUnsupportedMediaType) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	// hydrates response header x-amzn-RateLimit-Limit
-	hdrXAmznRateLimitLimit := response.GetHeader("x-amzn-RateLimit-Limit")
-
-	if hdrXAmznRateLimitLimit != "" {
-		o.XAmznRateLimitLimit = hdrXAmznRateLimitLimit
-	}
-
 	// hydrates response header x-amzn-RequestId
 	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")
 
@@ -598,10 +576,6 @@ SubmitShipmentsTooManyRequests describes a response with status code 429, with d
 The frequency of requests was greater than allowed.
 */
 type SubmitShipmentsTooManyRequests struct {
-
-	/* Your rate limit (requests per second) for this operation.
-	 */
-	XAmznRateLimitLimit string
 
 	/* Unique request reference identifier.
 	 */
@@ -649,13 +623,6 @@ func (o *SubmitShipmentsTooManyRequests) GetPayload() *vendor_shipments_models.S
 
 func (o *SubmitShipmentsTooManyRequests) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	// hydrates response header x-amzn-RateLimit-Limit
-	hdrXAmznRateLimitLimit := response.GetHeader("x-amzn-RateLimit-Limit")
-
-	if hdrXAmznRateLimitLimit != "" {
-		o.XAmznRateLimitLimit = hdrXAmznRateLimitLimit
-	}
-
 	// hydrates response header x-amzn-RequestId
 	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")
 
@@ -684,10 +651,6 @@ SubmitShipmentsInternalServerError describes a response with status code 500, wi
 An unexpected condition occurred that prevented the server from fulfilling the request.
 */
 type SubmitShipmentsInternalServerError struct {
-
-	/* Your rate limit (requests per second) for this operation.
-	 */
-	XAmznRateLimitLimit string
 
 	/* Unique request reference identifier.
 	 */
@@ -735,13 +698,6 @@ func (o *SubmitShipmentsInternalServerError) GetPayload() *vendor_shipments_mode
 
 func (o *SubmitShipmentsInternalServerError) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	// hydrates response header x-amzn-RateLimit-Limit
-	hdrXAmznRateLimitLimit := response.GetHeader("x-amzn-RateLimit-Limit")
-
-	if hdrXAmznRateLimitLimit != "" {
-		o.XAmznRateLimitLimit = hdrXAmznRateLimitLimit
-	}
-
 	// hydrates response header x-amzn-RequestId
 	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")
 
@@ -770,10 +726,6 @@ SubmitShipmentsServiceUnavailable describes a response with status code 503, wit
 Temporary overloading or maintenance of the server.
 */
 type SubmitShipmentsServiceUnavailable struct {
-
-	/* Your rate limit (requests per second) for this operation.
-	 */
-	XAmznRateLimitLimit string
 
 	/* Unique request reference identifier.
 	 */
@@ -820,13 +772,6 @@ func (o *SubmitShipmentsServiceUnavailable) GetPayload() *vendor_shipments_model
 }
 
 func (o *SubmitShipmentsServiceUnavailable) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
-
-	// hydrates response header x-amzn-RateLimit-Limit
-	hdrXAmznRateLimitLimit := response.GetHeader("x-amzn-RateLimit-Limit")
-
-	if hdrXAmznRateLimitLimit != "" {
-		o.XAmznRateLimitLimit = hdrXAmznRateLimitLimit
-	}
 
 	// hydrates response header x-amzn-RequestId
 	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")
