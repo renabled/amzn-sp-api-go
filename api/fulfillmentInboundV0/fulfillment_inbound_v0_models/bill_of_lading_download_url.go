@@ -12,7 +12,7 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// BillOfLadingDownloadURL bill of lading download URL
+// BillOfLadingDownloadURL Download URL for the bill of lading.
 //
 // swagger:model BillOfLadingDownloadURL
 type BillOfLadingDownloadURL struct {

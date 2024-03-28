@@ -13,7 +13,7 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// GetPreorderInfoResult get preorder info result
+// GetPreorderInfoResult Result for the get preorder info operation
 //
 // swagger:model GetPreorderInfoResult
 type GetPreorderInfoResult struct {

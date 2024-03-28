@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// InboundShipmentResult inbound shipment result
+// InboundShipmentResult Result of an inbound shipment operation
 //
 // swagger:model InboundShipmentResult
 type InboundShipmentResult struct {

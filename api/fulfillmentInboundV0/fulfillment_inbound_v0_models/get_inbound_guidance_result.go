@@ -13,7 +13,7 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// GetInboundGuidanceResult get inbound guidance result
+// GetInboundGuidanceResult Result for the get inbound guidance operation
 //
 // swagger:model GetInboundGuidanceResult
 type GetInboundGuidanceResult struct {

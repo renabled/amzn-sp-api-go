@@ -12,7 +12,7 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// LabelDownloadURL label download URL
+// LabelDownloadURL Download URL for a label
 //
 // swagger:model LabelDownloadURL
 type LabelDownloadURL struct {

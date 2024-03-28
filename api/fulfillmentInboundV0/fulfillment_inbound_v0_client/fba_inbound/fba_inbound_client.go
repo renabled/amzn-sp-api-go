@@ -42,8 +42,6 @@ type ClientService interface {
 
 	GetBillOfLading(params *GetBillOfLadingParams, opts ...ClientOption) (*GetBillOfLadingOK, error)
 
-	GetInboundGuidance(params *GetInboundGuidanceParams, opts ...ClientOption) (*GetInboundGuidanceOK, error)
-
 	GetLabels(params *GetLabelsParams, opts ...ClientOption) (*GetLabelsOK, error)
 
 	GetPreorderInfo(params *GetPreorderInfoParams, opts ...ClientOption) (*GetPreorderInfoOK, error)
@@ -346,52 +344,6 @@ func (a *Client) GetBillOfLading(params *GetBillOfLadingParams, opts ...ClientOp
 	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
 	msg := fmt.Sprintf("unexpected success response for getBillOfLading: API contract not enforced by server. Client expected to get an error, but got: %T", result)
-	panic(msg)
-}
-
-/*
-	GetInboundGuidance Returns information that lets a seller know if Amazon recommends sending an item to a given marketplace. In some cases, Amazon provides guidance for why a given SellerSKU or ASIN is not recommended for shipment to Amazon's fulfillment network. Sellers may still ship items that are not recommended, at their discretion.
-
-**Usage Plan:**
-
-| Rate (requests per second) | Burst |
-| ---- | ---- |
-| 2 | 30 |
-
-The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-*/
-func (a *Client) GetInboundGuidance(params *GetInboundGuidanceParams, opts ...ClientOption) (*GetInboundGuidanceOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewGetInboundGuidanceParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "getInboundGuidance",
-		Method:             "GET",
-		PathPattern:        "/fba/inbound/v0/itemsGuidance",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"https"},
-		Params:             params,
-		Reader:             &GetInboundGuidanceReader{formats: a.formats},
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*GetInboundGuidanceOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for getInboundGuidance: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 

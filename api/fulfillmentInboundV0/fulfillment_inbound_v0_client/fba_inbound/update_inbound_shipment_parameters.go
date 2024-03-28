@@ -63,7 +63,10 @@ UpdateInboundShipmentParams contains all the parameters to send to the API endpo
 */
 type UpdateInboundShipmentParams struct {
 
-	// Body.
+	/* Body.
+
+	   The request schema for the InboundShipmentRequest operation.
+	*/
 	Body *fulfillment_inbound_v0_models.InboundShipmentRequest
 
 	/* ShipmentID.

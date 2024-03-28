@@ -13,7 +13,7 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// CreateInboundShipmentPlanResult create inbound shipment plan result
+// CreateInboundShipmentPlanResult Result for the create inbound shipment operation
 //
 // swagger:model CreateInboundShipmentPlanResult
 type CreateInboundShipmentPlanResult struct {

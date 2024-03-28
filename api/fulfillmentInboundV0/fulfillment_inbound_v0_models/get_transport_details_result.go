@@ -13,7 +13,7 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// GetTransportDetailsResult get transport details result
+// GetTransportDetailsResult Result for the get transport details operation
 //
 // swagger:model GetTransportDetailsResult
 type GetTransportDetailsResult struct {

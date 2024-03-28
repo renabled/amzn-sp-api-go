@@ -19,6 +19,12 @@ import (
 // swagger:model Item
 type Item struct {
 
+	// dangerous goods details
+	DangerousGoodsDetails *DangerousGoodsDetails `json:"DangerousGoodsDetails,omitempty"`
+
+	// When true, the item qualifies as hazardous materials (hazmat). Defaults to false.
+	IsHazmat bool `json:"IsHazmat,omitempty"`
+
 	// item description
 	ItemDescription ItemDescription `json:"ItemDescription,omitempty"`
 
@@ -27,6 +33,9 @@ type Item struct {
 
 	// item weight
 	ItemWeight *Weight `json:"ItemWeight,omitempty"`
+
+	// liquid volume
+	LiquidVolume *LiquidVolume `json:"LiquidVolume,omitempty"`
 
 	// order item Id
 	// Required: true
@@ -44,6 +53,10 @@ type Item struct {
 func (m *Item) Validate(formats strfmt.Registry) error {
 	var res []error
 
+	if err := m.validateDangerousGoodsDetails(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.validateItemDescription(formats); err != nil {
 		res = append(res, err)
 	}
@@ -53,6 +66,10 @@ func (m *Item) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validateItemWeight(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateLiquidVolume(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -71,6 +88,25 @@ func (m *Item) Validate(formats strfmt.Registry) error {
 	if len(res) > 0 {
 		return errors.CompositeValidationError(res...)
 	}
+	return nil
+}
+
+func (m *Item) validateDangerousGoodsDetails(formats strfmt.Registry) error {
+	if swag.IsZero(m.DangerousGoodsDetails) { // not required
+		return nil
+	}
+
+	if m.DangerousGoodsDetails != nil {
+		if err := m.DangerousGoodsDetails.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("DangerousGoodsDetails")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("DangerousGoodsDetails")
+			}
+			return err
+		}
+	}
+
 	return nil
 }
 
@@ -119,6 +155,25 @@ func (m *Item) validateItemWeight(formats strfmt.Registry) error {
 				return ve.ValidateName("ItemWeight")
 			} else if ce, ok := err.(*errors.CompositeError); ok {
 				return ce.ValidateName("ItemWeight")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *Item) validateLiquidVolume(formats strfmt.Registry) error {
+	if swag.IsZero(m.LiquidVolume) { // not required
+		return nil
+	}
+
+	if m.LiquidVolume != nil {
+		if err := m.LiquidVolume.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("LiquidVolume")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("LiquidVolume")
 			}
 			return err
 		}
@@ -196,6 +251,10 @@ func (m *Item) validateTransparencyCodeList(formats strfmt.Registry) error {
 func (m *Item) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
 	var res []error
 
+	if err := m.contextValidateDangerousGoodsDetails(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.contextValidateItemDescription(ctx, formats); err != nil {
 		res = append(res, err)
 	}
@@ -205,6 +264,10 @@ func (m *Item) ContextValidate(ctx context.Context, formats strfmt.Registry) err
 	}
 
 	if err := m.contextValidateItemWeight(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateLiquidVolume(ctx, formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -223,6 +286,22 @@ func (m *Item) ContextValidate(ctx context.Context, formats strfmt.Registry) err
 	if len(res) > 0 {
 		return errors.CompositeValidationError(res...)
 	}
+	return nil
+}
+
+func (m *Item) contextValidateDangerousGoodsDetails(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.DangerousGoodsDetails != nil {
+		if err := m.DangerousGoodsDetails.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("DangerousGoodsDetails")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("DangerousGoodsDetails")
+			}
+			return err
+		}
+	}
+
 	return nil
 }
 
@@ -262,6 +341,22 @@ func (m *Item) contextValidateItemWeight(ctx context.Context, formats strfmt.Reg
 				return ve.ValidateName("ItemWeight")
 			} else if ce, ok := err.(*errors.CompositeError); ok {
 				return ce.ValidateName("ItemWeight")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *Item) contextValidateLiquidVolume(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.LiquidVolume != nil {
+		if err := m.LiquidVolume.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("LiquidVolume")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("LiquidVolume")
 			}
 			return err
 		}

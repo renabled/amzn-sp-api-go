@@ -13,7 +13,7 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// ConfirmPreorderResult confirm preorder result
+// ConfirmPreorderResult Result for confirm preorder operation
 //
 // swagger:model ConfirmPreorderResult
 type ConfirmPreorderResult struct {

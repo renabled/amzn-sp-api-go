@@ -13,7 +13,7 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// InvalidSKU invalid s k u
+// InvalidSKU Contains detail about an invalid SKU
 //
 // swagger:model InvalidSKU
 type InvalidSKU struct {

@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// TimeStampStringType time stamp string type
+// TimeStampStringType Timestamp in ISO 8601 format.
 //
 // swagger:model TimeStampStringType
 type TimeStampStringType strfmt.DateTime

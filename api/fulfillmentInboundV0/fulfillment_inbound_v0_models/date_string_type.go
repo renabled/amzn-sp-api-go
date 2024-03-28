@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// DateStringType date string type
+// DateStringType Type containing date in string format
 //
 // swagger:model DateStringType
 type DateStringType strfmt.Date

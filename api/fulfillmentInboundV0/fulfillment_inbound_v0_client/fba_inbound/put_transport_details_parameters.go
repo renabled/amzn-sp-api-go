@@ -63,7 +63,10 @@ PutTransportDetailsParams contains all the parameters to send to the API endpoin
 */
 type PutTransportDetailsParams struct {
 
-	// Body.
+	/* Body.
+
+	   The request schema for the PutTransportDetailsRequest operation.
+	*/
 	Body *fulfillment_inbound_v0_models.PutTransportDetailsRequest
 
 	/* ShipmentID.

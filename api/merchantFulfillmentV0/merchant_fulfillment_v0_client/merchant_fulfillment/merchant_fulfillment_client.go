@@ -32,17 +32,11 @@ type ClientOption func(*runtime.ClientOperation)
 type ClientService interface {
 	CancelShipment(params *CancelShipmentParams, opts ...ClientOption) (*CancelShipmentOK, error)
 
-	CancelShipmentOld(params *CancelShipmentOldParams, opts ...ClientOption) (*CancelShipmentOldOK, error)
-
 	CreateShipment(params *CreateShipmentParams, opts ...ClientOption) (*CreateShipmentOK, error)
 
 	GetAdditionalSellerInputs(params *GetAdditionalSellerInputsParams, opts ...ClientOption) (*GetAdditionalSellerInputsOK, error)
 
-	GetAdditionalSellerInputsOld(params *GetAdditionalSellerInputsOldParams, opts ...ClientOption) (*GetAdditionalSellerInputsOldOK, error)
-
 	GetEligibleShipmentServices(params *GetEligibleShipmentServicesParams, opts ...ClientOption) (*GetEligibleShipmentServicesOK, error)
-
-	GetEligibleShipmentServicesOld(params *GetEligibleShipmentServicesOldParams, opts ...ClientOption) (*GetEligibleShipmentServicesOldOK, error)
 
 	GetShipment(params *GetShipmentParams, opts ...ClientOption) (*GetShipmentOK, error)
 
@@ -92,52 +86,6 @@ func (a *Client) CancelShipment(params *CancelShipmentParams, opts ...ClientOpti
 	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
 	msg := fmt.Sprintf("unexpected success response for cancelShipment: API contract not enforced by server. Client expected to get an error, but got: %T", result)
-	panic(msg)
-}
-
-/*
-	CancelShipmentOld Cancel the shipment indicated by the specified shipment identifer.
-
-**Usage Plan:**
-
-| Rate (requests per second) | Burst |
-| ---- | ---- |
-| 1 | 1 |
-
-The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-*/
-func (a *Client) CancelShipmentOld(params *CancelShipmentOldParams, opts ...ClientOption) (*CancelShipmentOldOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewCancelShipmentOldParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "cancelShipmentOld",
-		Method:             "PUT",
-		PathPattern:        "/mfn/v0/shipments/{shipmentId}/cancel",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"https"},
-		Params:             params,
-		Reader:             &CancelShipmentOldReader{formats: a.formats},
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*CancelShipmentOldOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for cancelShipmentOld: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -234,52 +182,6 @@ func (a *Client) GetAdditionalSellerInputs(params *GetAdditionalSellerInputsPara
 }
 
 /*
-	GetAdditionalSellerInputsOld Get a list of additional seller inputs required for a ship method. This is generally used for international shipping.
-
-**Usage Plan:**
-
-| Rate (requests per second) | Burst |
-| ---- | ---- |
-| 1 | 1 |
-
-The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-*/
-func (a *Client) GetAdditionalSellerInputsOld(params *GetAdditionalSellerInputsOldParams, opts ...ClientOption) (*GetAdditionalSellerInputsOldOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewGetAdditionalSellerInputsOldParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "getAdditionalSellerInputsOld",
-		Method:             "POST",
-		PathPattern:        "/mfn/v0/sellerInputs",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"https"},
-		Params:             params,
-		Reader:             &GetAdditionalSellerInputsOldReader{formats: a.formats},
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*GetAdditionalSellerInputsOldOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for getAdditionalSellerInputsOld: API contract not enforced by server. Client expected to get an error, but got: %T", result)
-	panic(msg)
-}
-
-/*
 	GetEligibleShipmentServices Returns a list of shipping service offers that satisfy the specified shipment request details.
 
 **Usage Plan:**
@@ -322,52 +224,6 @@ func (a *Client) GetEligibleShipmentServices(params *GetEligibleShipmentServices
 	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
 	msg := fmt.Sprintf("unexpected success response for getEligibleShipmentServices: API contract not enforced by server. Client expected to get an error, but got: %T", result)
-	panic(msg)
-}
-
-/*
-	GetEligibleShipmentServicesOld Returns a list of shipping service offers that satisfy the specified shipment request details.
-
-**Usage Plan:**
-
-| Rate (requests per second) | Burst |
-| ---- | ---- |
-| 1 | 1 |
-
-The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-*/
-func (a *Client) GetEligibleShipmentServicesOld(params *GetEligibleShipmentServicesOldParams, opts ...ClientOption) (*GetEligibleShipmentServicesOldOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewGetEligibleShipmentServicesOldParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "getEligibleShipmentServicesOld",
-		Method:             "POST",
-		PathPattern:        "/mfn/v0/eligibleServices",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"https"},
-		Params:             params,
-		Reader:             &GetEligibleShipmentServicesOldReader{formats: a.formats},
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*GetEligibleShipmentServicesOldOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for getEligibleShipmentServicesOld: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 

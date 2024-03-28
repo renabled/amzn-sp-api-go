@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// InboundShipmentPlanRequestItemList inbound shipment plan request item list
+// InboundShipmentPlanRequestItemList List of inbound shipment plan requests
 //
 // swagger:model InboundShipmentPlanRequestItemList
 type InboundShipmentPlanRequestItemList []*InboundShipmentPlanRequestItem

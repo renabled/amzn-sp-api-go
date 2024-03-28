@@ -11,7 +11,7 @@ import (
 	"github.com/go-openapi/strfmt"
 )
 
-// UnsignedIntType unsigned int type
+// UnsignedIntType Contains an unsigned integer
 //
 // swagger:model UnsignedIntType
 type UnsignedIntType int64

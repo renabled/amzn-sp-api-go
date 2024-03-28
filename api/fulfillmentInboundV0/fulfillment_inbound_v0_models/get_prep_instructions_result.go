@@ -13,7 +13,7 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// GetPrepInstructionsResult get prep instructions result
+// GetPrepInstructionsResult Result for the get prep instructions operation
 //
 // swagger:model GetPrepInstructionsResult
 type GetPrepInstructionsResult struct {

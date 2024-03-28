@@ -13,7 +13,7 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// InvalidASIN invalid a s i n
+// InvalidASIN Contains details about an invalid ASIN
 //
 // swagger:model InvalidASIN
 type InvalidASIN struct {

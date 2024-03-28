@@ -13,7 +13,7 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// CommonTransportResult common transport result
+// CommonTransportResult Common container for transport result
 //
 // swagger:model CommonTransportResult
 type CommonTransportResult struct {

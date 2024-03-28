@@ -63,7 +63,10 @@ CreateInboundShipmentPlanParams contains all the parameters to send to the API e
 */
 type CreateInboundShipmentPlanParams struct {
 
-	// Body.
+	/* Body.
+
+	   The request schema for the CreateInboundShipmentPlanRequest operation.
+	*/
 	Body *fulfillment_inbound_v0_models.CreateInboundShipmentPlanRequest
 
 	timeout    time.Duration
