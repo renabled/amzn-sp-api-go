@@ -63,7 +63,10 @@ CreateFeedDocumentParams contains all the parameters to send to the API endpoint
 */
 type CreateFeedDocumentParams struct {
 
-	// Body.
+	/* Body.
+
+	   Specifies the content type for the createFeedDocument operation.
+	*/
 	Body *feeds_2021_06_30_models.CreateFeedDocumentSpecification
 
 	timeout    time.Duration

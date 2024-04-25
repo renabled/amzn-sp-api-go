@@ -24,6 +24,8 @@ type OrderBuyerInfo struct {
 	AmazonOrderID *string `json:"AmazonOrderId"`
 
 	// The county of the buyer.
+	//
+	// **Note**: This attribute is only available in the Brazil marketplace.
 	BuyerCounty string `json:"BuyerCounty,omitempty"`
 
 	// The anonymized email address of the buyer.
@@ -32,7 +34,9 @@ type OrderBuyerInfo struct {
 	// The buyer name or the recipient name.
 	BuyerName string `json:"BuyerName,omitempty"`
 
-	// Tax information about the buyer.
+	// Tax information about the buyer. Sellers can use this data to issue electronic invoices for business orders.
+	//
+	// **Note**: This attribute is only available for business orders in the Brazil, Mexico and India marketplaces.
 	BuyerTaxInfo *BuyerTaxInfo `json:"BuyerTaxInfo,omitempty"`
 
 	// The purchase order (PO) number entered by the buyer at checkout. Returned only for orders where the buyer entered a PO number at checkout.

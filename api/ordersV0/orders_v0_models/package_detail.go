@@ -19,7 +19,7 @@ import (
 // swagger:model PackageDetail
 type PackageDetail struct {
 
-	// Identifies the carrier that will deliver the package. This field is required for all marketplaces, see [reference](https://developer-docs.amazon.com/sp-api/changelog/carriercode-value-required-in-shipment-confirmations-for-br-mx-ca-sg-au-in-jp-marketplaces).
+	// Identifies the carrier that will deliver the package. This field is required for all marketplaces. For the acceptable `CarrierCode` value, refer to the list of <a href='https://images-na.ssl-images-amazon.com/images/G/01/rainier/help/xsd/release_1_9/amzn-base._TTH_.xsd'>CarrierCode</a>.
 	// Required: true
 	CarrierCode *string `json:"carrierCode"`
 

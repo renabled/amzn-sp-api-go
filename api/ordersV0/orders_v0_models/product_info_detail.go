@@ -18,7 +18,7 @@ import (
 type ProductInfoDetail struct {
 
 	// The total number of items that are included in the ASIN.
-	NumberOfItems int64 `json:"NumberOfItems,omitempty"`
+	NumberOfItems string `json:"NumberOfItems,omitempty"`
 }
 
 // Validate validates this product info detail

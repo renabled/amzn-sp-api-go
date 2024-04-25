@@ -17,7 +17,7 @@ import (
 // swagger:model FulfillmentInstruction
 type FulfillmentInstruction struct {
 
-	// Denotes the recommended sourceId where the order should be fulfilled from.
+	// Denotes the recommended `sourceId` where the order should be fulfilled from.
 	FulfillmentSupplySourceID string `json:"FulfillmentSupplySourceId,omitempty"`
 }
 

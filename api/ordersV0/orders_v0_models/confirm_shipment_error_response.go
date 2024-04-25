@@ -13,12 +13,12 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// ConfirmShipmentErrorResponse The error response schema for an shipment confirmation.
+// ConfirmShipmentErrorResponse The error response schema for the `confirmShipment` operation.
 //
 // swagger:model ConfirmShipmentErrorResponse
 type ConfirmShipmentErrorResponse struct {
 
-	// One or more unexpected errors occurred during the confirmShipment operation.
+	// One or more unexpected errors occurred during the `confirmShipment` operation.
 	Errors ErrorList `json:"errors,omitempty"`
 }
 

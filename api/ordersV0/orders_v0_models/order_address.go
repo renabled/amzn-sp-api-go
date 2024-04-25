@@ -23,13 +23,15 @@ type OrderAddress struct {
 	// Required: true
 	AmazonOrderID *string `json:"AmazonOrderId"`
 
-	// Company Name of the Buyer.
+	// The company name of the contact buyer. For Invoice By Amazon (IBA) orders, the buyer company should be Amazon entities.
 	BuyerCompanyName string `json:"BuyerCompanyName,omitempty"`
 
 	// delivery preferences
 	DeliveryPreferences *DeliveryPreferences `json:"DeliveryPreferences,omitempty"`
 
-	// shipping address
+	// The shipping address for the order.
+	//
+	// **Note**: `ShippingAddress` is only available for orders with the following status values: `Unshipped`, `PartiallyShipped`, `Shipped` and `InvoiceUnconfirmed`.
 	ShippingAddress *Address `json:"ShippingAddress,omitempty"`
 }
 

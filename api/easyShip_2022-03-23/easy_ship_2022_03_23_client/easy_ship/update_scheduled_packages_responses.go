@@ -53,6 +53,12 @@ func (o *UpdateScheduledPackagesReader) ReadResponse(response runtime.ClientResp
 			return nil, err
 		}
 		return nil, result
+	case 413:
+		result := NewUpdateScheduledPackagesRequestEntityTooLarge()
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		return nil, result
 	case 415:
 		result := NewUpdateScheduledPackagesUnsupportedMediaType()
 		if err := result.readResponse(response, consumer, o.formats); err != nil {
@@ -266,10 +272,6 @@ The request's Authorization header is not formatted correctly or does not contai
 */
 type UpdateScheduledPackagesUnauthorized struct {
 
-	/* Your rate limit (requests per second) for this operation.
-	 */
-	XAmznRateLimitLimit string
-
 	/* Unique request reference identifier.
 	 */
 	XAmznRequestID string
@@ -316,13 +318,6 @@ func (o *UpdateScheduledPackagesUnauthorized) GetPayload() *easy_ship_2022_03_23
 
 func (o *UpdateScheduledPackagesUnauthorized) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	// hydrates response header x-amzn-RateLimit-Limit
-	hdrXAmznRateLimitLimit := response.GetHeader("x-amzn-RateLimit-Limit")
-
-	if hdrXAmznRateLimitLimit != "" {
-		o.XAmznRateLimitLimit = hdrXAmznRateLimitLimit
-	}
-
 	// hydrates response header x-amzn-RequestId
 	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")
 
@@ -348,7 +343,7 @@ func NewUpdateScheduledPackagesForbidden() *UpdateScheduledPackagesForbidden {
 /*
 UpdateScheduledPackagesForbidden describes a response with status code 403, with default header values.
 
-Indicates access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.
+Indicates that access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.
 */
 type UpdateScheduledPackagesForbidden struct {
 
@@ -423,7 +418,7 @@ func NewUpdateScheduledPackagesNotFound() *UpdateScheduledPackagesNotFound {
 /*
 UpdateScheduledPackagesNotFound describes a response with status code 404, with default header values.
 
-The specified resource does not exist.
+The resource specified does not exist.
 */
 type UpdateScheduledPackagesNotFound struct {
 
@@ -483,6 +478,81 @@ func (o *UpdateScheduledPackagesNotFound) readResponse(response runtime.ClientRe
 	if hdrXAmznRateLimitLimit != "" {
 		o.XAmznRateLimitLimit = hdrXAmznRateLimitLimit
 	}
+
+	// hydrates response header x-amzn-RequestId
+	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")
+
+	if hdrXAmznRequestID != "" {
+		o.XAmznRequestID = hdrXAmznRequestID
+	}
+
+	o.Payload = new(easy_ship_2022_03_23_models.ErrorList)
+
+	// response payload
+	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewUpdateScheduledPackagesRequestEntityTooLarge creates a UpdateScheduledPackagesRequestEntityTooLarge with default headers values
+func NewUpdateScheduledPackagesRequestEntityTooLarge() *UpdateScheduledPackagesRequestEntityTooLarge {
+	return &UpdateScheduledPackagesRequestEntityTooLarge{}
+}
+
+/*
+UpdateScheduledPackagesRequestEntityTooLarge describes a response with status code 413, with default header values.
+
+The request size exceeded the maximum accepted size.
+*/
+type UpdateScheduledPackagesRequestEntityTooLarge struct {
+
+	/* Unique request reference identifier.
+	 */
+	XAmznRequestID string
+
+	Payload *easy_ship_2022_03_23_models.ErrorList
+}
+
+// IsSuccess returns true when this update scheduled packages request entity too large response has a 2xx status code
+func (o *UpdateScheduledPackagesRequestEntityTooLarge) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this update scheduled packages request entity too large response has a 3xx status code
+func (o *UpdateScheduledPackagesRequestEntityTooLarge) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this update scheduled packages request entity too large response has a 4xx status code
+func (o *UpdateScheduledPackagesRequestEntityTooLarge) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this update scheduled packages request entity too large response has a 5xx status code
+func (o *UpdateScheduledPackagesRequestEntityTooLarge) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this update scheduled packages request entity too large response a status code equal to that given
+func (o *UpdateScheduledPackagesRequestEntityTooLarge) IsCode(code int) bool {
+	return code == 413
+}
+
+func (o *UpdateScheduledPackagesRequestEntityTooLarge) Error() string {
+	return fmt.Sprintf("[PATCH /easyShip/2022-03-23/package][%d] updateScheduledPackagesRequestEntityTooLarge  %+v", 413, o.Payload)
+}
+
+func (o *UpdateScheduledPackagesRequestEntityTooLarge) String() string {
+	return fmt.Sprintf("[PATCH /easyShip/2022-03-23/package][%d] updateScheduledPackagesRequestEntityTooLarge  %+v", 413, o.Payload)
+}
+
+func (o *UpdateScheduledPackagesRequestEntityTooLarge) GetPayload() *easy_ship_2022_03_23_models.ErrorList {
+	return o.Payload
+}
+
+func (o *UpdateScheduledPackagesRequestEntityTooLarge) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	// hydrates response header x-amzn-RequestId
 	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")

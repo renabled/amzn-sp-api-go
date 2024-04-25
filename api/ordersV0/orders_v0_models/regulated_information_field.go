@@ -33,7 +33,7 @@ type RegulatedInformationField struct {
 	// Enum: [Text FileAttachment]
 	FieldType *string `json:"FieldType"`
 
-	// The content of the field as collected in regulatory form. Note that FileAttachment type fields will contain a URL to download the attachment here.
+	// The content of the field as collected in regulatory form. Note that `FileAttachment` type fields will contain a URL to download the attachment here.
 	// Required: true
 	FieldValue *string `json:"FieldValue"`
 }

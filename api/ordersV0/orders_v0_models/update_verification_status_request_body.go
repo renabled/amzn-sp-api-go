@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// UpdateVerificationStatusRequestBody The updated values of the VerificationStatus field.
+// UpdateVerificationStatusRequestBody The updated values of the `VerificationStatus` field.
 //
 // swagger:model UpdateVerificationStatusRequestBody
 type UpdateVerificationStatusRequestBody struct {

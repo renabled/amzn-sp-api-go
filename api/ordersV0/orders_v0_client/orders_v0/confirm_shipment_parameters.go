@@ -71,7 +71,7 @@ type ConfirmShipmentParams struct {
 
 	/* Payload.
 
-	   Request body of confirmShipment.
+	   The request body of the `confirmShipment` operation.
 	*/
 	Payload *orders_v0_models.ConfirmShipmentRequest
 

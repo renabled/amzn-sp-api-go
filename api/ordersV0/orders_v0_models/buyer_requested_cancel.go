@@ -20,8 +20,10 @@ type BuyerRequestedCancel struct {
 	// The reason that the buyer requested cancellation.
 	BuyerCancelReason string `json:"BuyerCancelReason,omitempty"`
 
-	// When true, the buyer has requested cancellation.
-	IsBuyerRequestedCancel bool `json:"IsBuyerRequestedCancel,omitempty"`
+	// Indicate whether the buyer has requested cancellation.
+	//
+	// **Possible Values**: `true`, `false`.
+	IsBuyerRequestedCancel string `json:"IsBuyerRequestedCancel,omitempty"`
 }
 
 // Validate validates this buyer requested cancel

@@ -63,7 +63,10 @@ CreateReportParams contains all the parameters to send to the API endpoint
 */
 type CreateReportParams struct {
 
-	// Body.
+	/* Body.
+
+	   Information required to create the report.
+	*/
 	Body *reports_2021_06_30_models.CreateReportSpecification
 
 	timeout    time.Duration

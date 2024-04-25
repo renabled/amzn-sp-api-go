@@ -13,15 +13,15 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// GetOrderRegulatedInfoResponse The response schema for the getOrderRegulatedInfo operation.
+// GetOrderRegulatedInfoResponse The response schema for the `getOrderRegulatedInfo` operation.
 //
 // swagger:model GetOrderRegulatedInfoResponse
 type GetOrderRegulatedInfoResponse struct {
 
-	// One or more unexpected errors occurred during the getOrderRegulatedInfo operation.
+	// One or more unexpected errors occurred during the `getOrderRegulatedInfo` operation.
 	Errors ErrorList `json:"errors,omitempty"`
 
-	// The payload for the getOrderRegulatedInfo operation.
+	// The payload for the `getOrderRegulatedInfo` operation.
 	Payload *OrderRegulatedInfo `json:"payload,omitempty"`
 }
 

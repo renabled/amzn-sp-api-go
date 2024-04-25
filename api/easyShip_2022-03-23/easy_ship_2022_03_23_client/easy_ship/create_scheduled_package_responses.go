@@ -53,6 +53,12 @@ func (o *CreateScheduledPackageReader) ReadResponse(response runtime.ClientRespo
 			return nil, err
 		}
 		return nil, result
+	case 413:
+		result := NewCreateScheduledPackageRequestEntityTooLarge()
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		return nil, result
 	case 415:
 		result := NewCreateScheduledPackageUnsupportedMediaType()
 		if err := result.readResponse(response, consumer, o.formats); err != nil {
@@ -266,10 +272,6 @@ The request's Authorization header is not formatted correctly or does not contai
 */
 type CreateScheduledPackageUnauthorized struct {
 
-	/* Your rate limit (requests per second) for this operation.
-	 */
-	XAmznRateLimitLimit string
-
 	/* Unique request reference identifier.
 	 */
 	XAmznRequestID string
@@ -316,13 +318,6 @@ func (o *CreateScheduledPackageUnauthorized) GetPayload() *easy_ship_2022_03_23_
 
 func (o *CreateScheduledPackageUnauthorized) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	// hydrates response header x-amzn-RateLimit-Limit
-	hdrXAmznRateLimitLimit := response.GetHeader("x-amzn-RateLimit-Limit")
-
-	if hdrXAmznRateLimitLimit != "" {
-		o.XAmznRateLimitLimit = hdrXAmznRateLimitLimit
-	}
-
 	// hydrates response header x-amzn-RequestId
 	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")
 
@@ -348,7 +343,7 @@ func NewCreateScheduledPackageForbidden() *CreateScheduledPackageForbidden {
 /*
 CreateScheduledPackageForbidden describes a response with status code 403, with default header values.
 
-Indicates access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.
+Indicates that access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.
 */
 type CreateScheduledPackageForbidden struct {
 
@@ -423,7 +418,7 @@ func NewCreateScheduledPackageNotFound() *CreateScheduledPackageNotFound {
 /*
 CreateScheduledPackageNotFound describes a response with status code 404, with default header values.
 
-The specified resource does not exist.
+The resource specified does not exist.
 */
 type CreateScheduledPackageNotFound struct {
 
@@ -483,6 +478,81 @@ func (o *CreateScheduledPackageNotFound) readResponse(response runtime.ClientRes
 	if hdrXAmznRateLimitLimit != "" {
 		o.XAmznRateLimitLimit = hdrXAmznRateLimitLimit
 	}
+
+	// hydrates response header x-amzn-RequestId
+	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")
+
+	if hdrXAmznRequestID != "" {
+		o.XAmznRequestID = hdrXAmznRequestID
+	}
+
+	o.Payload = new(easy_ship_2022_03_23_models.ErrorList)
+
+	// response payload
+	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewCreateScheduledPackageRequestEntityTooLarge creates a CreateScheduledPackageRequestEntityTooLarge with default headers values
+func NewCreateScheduledPackageRequestEntityTooLarge() *CreateScheduledPackageRequestEntityTooLarge {
+	return &CreateScheduledPackageRequestEntityTooLarge{}
+}
+
+/*
+CreateScheduledPackageRequestEntityTooLarge describes a response with status code 413, with default header values.
+
+The request size exceeded the maximum accepted size.
+*/
+type CreateScheduledPackageRequestEntityTooLarge struct {
+
+	/* Unique request reference identifier.
+	 */
+	XAmznRequestID string
+
+	Payload *easy_ship_2022_03_23_models.ErrorList
+}
+
+// IsSuccess returns true when this create scheduled package request entity too large response has a 2xx status code
+func (o *CreateScheduledPackageRequestEntityTooLarge) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this create scheduled package request entity too large response has a 3xx status code
+func (o *CreateScheduledPackageRequestEntityTooLarge) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create scheduled package request entity too large response has a 4xx status code
+func (o *CreateScheduledPackageRequestEntityTooLarge) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this create scheduled package request entity too large response has a 5xx status code
+func (o *CreateScheduledPackageRequestEntityTooLarge) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this create scheduled package request entity too large response a status code equal to that given
+func (o *CreateScheduledPackageRequestEntityTooLarge) IsCode(code int) bool {
+	return code == 413
+}
+
+func (o *CreateScheduledPackageRequestEntityTooLarge) Error() string {
+	return fmt.Sprintf("[POST /easyShip/2022-03-23/package][%d] createScheduledPackageRequestEntityTooLarge  %+v", 413, o.Payload)
+}
+
+func (o *CreateScheduledPackageRequestEntityTooLarge) String() string {
+	return fmt.Sprintf("[POST /easyShip/2022-03-23/package][%d] createScheduledPackageRequestEntityTooLarge  %+v", 413, o.Payload)
+}
+
+func (o *CreateScheduledPackageRequestEntityTooLarge) GetPayload() *easy_ship_2022_03_23_models.ErrorList {
+	return o.Payload
+}
+
+func (o *CreateScheduledPackageRequestEntityTooLarge) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	// hydrates response header x-amzn-RequestId
 	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")

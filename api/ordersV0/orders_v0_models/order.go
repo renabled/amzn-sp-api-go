@@ -27,14 +27,22 @@ type Order struct {
 	// Contains information regarding the Shipping Settings Automaton program, such as whether the order's shipping settings were generated automatically, and what those settings are.
 	AutomatedShippingSettings *AutomatedShippingSettings `json:"AutomatedShippingSettings,omitempty"`
 
-	// buyer info
+	// Buyer information.
+	//
+	// **Note**: The `BuyerInfo` contains restricted data. Use a Restricted Data Token (RDT) and restricted Selling Partner API roles to access the restricted data in `BuyerInfo`, for example, `BuyerName`, `BuyerTaxInfo`, `PurchaseOrderNumber`.
 	BuyerInfo *BuyerInfo `json:"BuyerInfo,omitempty"`
 
-	// The buyer's invoicing preference. Available only in the TR marketplace.
+	// The buyer's invoicing preference. Sellers can use this data to issue electronic invoices for orders in Turkey.
+	//
+	// **Note**: This attribute is only available in the Turkey marketplace.
 	// Enum: [INDIVIDUAL BUSINESS]
 	BuyerInvoicePreference string `json:"BuyerInvoicePreference,omitempty"`
 
-	// Contains the business invoice tax information.
+	// Contains the business invoice tax information. Sellers can use this data to issue electronic invoices for business orders in Turkey.
+	//
+	// **Note**:
+	// 1. This attribute is only available in the Turkey marketplace for the orders that `BuyerInvoicePreference` is BUSINESS.
+	// 2. The `BuyerTaxInformation` is a restricted data. Use a Restricted Data Token (RDT) and restricted Selling Partner API roles to access this restricted data.
 	BuyerTaxInformation *BuyerTaxInformation `json:"BuyerTaxInformation,omitempty"`
 
 	// Custom ship label for Checkout by Amazon (CBA).
@@ -48,7 +56,7 @@ type Order struct {
 
 	// The start of the time period within which you have committed to ship the order. In <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> date time format. Returned only for seller-fulfilled orders.
 	//
-	// __Note__: EarliestShipDate might not be returned for orders placed before February 1, 2013.
+	// **Note**: `EarliestShipDate` might not be returned for orders placed before February 1, 2013.
 	EarliestShipDate string `json:"EarliestShipDate,omitempty"`
 
 	// The status of the Amazon Easy Ship order. This property is included only for Amazon Easy Ship orders.
@@ -73,7 +81,7 @@ type Order struct {
 	// When true, the order is an Amazon Business order. An Amazon Business order is an order where the buyer is a Verified Business Buyer.
 	IsBusinessOrder bool `json:"IsBusinessOrder,omitempty"`
 
-	// When true, the estimated ship date is set for the order. Returned only for Sourcing on Demand orders.
+	// When true, the estimated ship date is specified for the order. Returned only for Sourcing on Demand orders.
 	IsEstimatedShipDateSet bool `json:"IsEstimatedShipDateSet,omitempty"`
 
 	// When true, the order is a GlobalExpress order.
@@ -99,22 +107,24 @@ type Order struct {
 
 	// The date when the order was last updated.
 	//
-	// __Note__: LastUpdateDate is returned with an incorrect date for orders that were last updated before 2009-04-01.
+	// **Note**: `LastUpdateDate` is returned with an incorrect date for orders that were last updated before 2009-04-01.
 	// Required: true
 	LastUpdateDate *string `json:"LastUpdateDate"`
 
-	// The end of the time period within which you have committed to fulfill the order. In <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> date time format. Returned only for seller-fulfilled orders that do not have a PendingAvailability, Pending, or Canceled status.
+	// The end of the time period within which you have committed to fulfill the order. In <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> date time format. Returned only for seller-fulfilled orders that do not have a `PendingAvailability`, Pending, or Canceled status.
 	LatestDeliveryDate string `json:"LatestDeliveryDate,omitempty"`
 
 	// The end of the time period within which you have committed to ship the order. In <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> date time format. Returned only for seller-fulfilled orders.
 	//
-	// __Note__: LatestShipDate might not be returned for orders placed before February 1, 2013.
+	// **Note**: `LatestShipDate` might not be returned for orders placed before February 1, 2013.
 	LatestShipDate string `json:"LatestShipDate,omitempty"`
 
 	// The identifier for the marketplace where the order was placed.
 	MarketplaceID string `json:"MarketplaceId,omitempty"`
 
-	// Tax information about the marketplace.
+	// Tax information about the marketplace where the sale took place. Sellers can use this data to issue electronic invoices for orders in Brazil.
+	//
+	// **Note**: This attribute is only available in the Brazil marketplace for the orders with `Pending` or `Unshipped` status.
 	MarketplaceTaxInfo *MarketplaceTaxInfo `json:"MarketplaceTaxInfo,omitempty"`
 
 	// The number of items shipped.
@@ -140,10 +150,10 @@ type Order struct {
 
 	// Information about sub-payment methods for a Cash On Delivery (COD) order.
 	//
-	// __Note__: For a COD order that is paid for using one sub-payment method, one PaymentExecutionDetailItem object is returned, with PaymentExecutionDetailItem/PaymentMethod = COD. For a COD order that is paid for using multiple sub-payment methods, two or more PaymentExecutionDetailItem objects are returned.
+	// **Note**: For a COD order that is paid for using one sub-payment method, one `PaymentExecutionDetailItem` object is returned, with `PaymentExecutionDetailItem`/`PaymentMethod` = COD. For a COD order that is paid for using multiple sub-payment methods, two or more `PaymentExecutionDetailItem` objects are returned.
 	PaymentExecutionDetail PaymentExecutionDetailItemList `json:"PaymentExecutionDetail,omitempty"`
 
-	// The payment method for the order. This property is limited to Cash On Delivery (COD) and Convenience Store (CVS) payment methods. Unless you need the specific COD payment information provided by the PaymentExecutionDetailItem object, we recommend using the PaymentMethodDetails property to get payment method information.
+	// The payment method for the order. This property is limited to Cash On Delivery (COD) and Convenience Store (CVS) payment methods. Unless you need the specific COD payment information provided by the `PaymentExecutionDetailItem` object, we recommend using the `PaymentMethodDetails` property to get payment method information.
 	// Enum: [COD CVS Other]
 	PaymentMethod string `json:"PaymentMethod,omitempty"`
 
@@ -157,13 +167,15 @@ type Order struct {
 	// Required: true
 	PurchaseDate *string `json:"PurchaseDate"`
 
-	// The order ID value for the order that is being replaced. Returned only if IsReplacementOrder = true.
+	// The order ID value for the order that is being replaced. Returned only if `IsReplacementOrder` = true.
 	ReplacedOrderID string `json:"ReplacedOrderId,omitempty"`
 
 	// The sales channel of the first item in the order.
 	SalesChannel string `json:"SalesChannel,omitempty"`
 
-	// The seller’s friendly name registered in the marketplace.
+	// The seller’s friendly name registered in the marketplace where the sale took place. Sellers can use this data to issue electronic invoices for orders in Brazil.
+	//
+	// **Note**: This attribute is only available in the Brazil marketplace for the orders with `Pending` or `Unshipped` status.
 	SellerDisplayName string `json:"SellerDisplayName,omitempty"`
 
 	// A seller-defined order identifier.
@@ -174,10 +186,14 @@ type Order struct {
 
 	// The shipment service level category of the order.
 	//
-	// Possible values: Expedited, FreeEconomy, NextDay, Priority, SameDay, SecondDay, Scheduled, Standard.
+	// **Possible values**: `Expedited`, `FreeEconomy`, `NextDay`, `Priority`, `SameDay`, `SecondDay`, `Scheduled`, `Standard`.
 	ShipmentServiceLevelCategory string `json:"ShipmentServiceLevelCategory,omitempty"`
 
-	// shipping address
+	// The shipping address for the order.
+	//
+	// **Note**:
+	// 1. `ShippingAddress` is only available for orders with the following status values: `Unshipped`, `PartiallyShipped`, `Shipped` and `InvoiceUnconfirmed`.
+	// 2. The `ShippingAddress` contains restricted data. Use a Restricted Data Token (RDT) and restricted Selling Partner API roles to access the restricted data in `ShippingAddress`, for example, `Name`, `AddressLine1`, `AddressLine2`, `AddressLine3`, `Phone`, `AddressType` and `ExtendedFields`.
 	ShippingAddress *Address `json:"ShippingAddress,omitempty"`
 }
 

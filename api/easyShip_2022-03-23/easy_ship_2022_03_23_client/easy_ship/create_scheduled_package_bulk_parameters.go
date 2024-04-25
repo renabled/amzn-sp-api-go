@@ -63,7 +63,10 @@ CreateScheduledPackageBulkParams contains all the parameters to send to the API 
 */
 type CreateScheduledPackageBulkParams struct {
 
-	// CreateScheduledPackagesRequest.
+	/* CreateScheduledPackagesRequest.
+
+	   The request schema for the `createScheduledPackageBulk` operation.
+	*/
 	CreateScheduledPackagesRequest *easy_ship_2022_03_23_models.CreateScheduledPackagesRequest
 
 	timeout    time.Duration

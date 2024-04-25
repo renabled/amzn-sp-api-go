@@ -20,7 +20,7 @@ import (
 // swagger:model Packages
 type Packages struct {
 
-	// packages
+	// A list of packages.
 	// Required: true
 	// Max Items: 500
 	// Min Items: 1

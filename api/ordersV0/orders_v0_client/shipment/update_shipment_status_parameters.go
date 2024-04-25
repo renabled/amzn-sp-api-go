@@ -71,7 +71,7 @@ type UpdateShipmentStatusParams struct {
 
 	/* Payload.
 
-	   The request body for the updateShipmentStatus operation.
+	   The request body for the `updateShipmentStatus` operation.
 	*/
 	Payload *orders_v0_models.UpdateShipmentStatusRequest
 

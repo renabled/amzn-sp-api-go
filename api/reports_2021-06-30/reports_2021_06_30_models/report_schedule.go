@@ -22,11 +22,11 @@ type ReportSchedule struct {
 	// A list of marketplace identifiers. The report document's contents will contain data for all of the specified marketplaces, unless the report type indicates otherwise.
 	MarketplaceIds []string `json:"marketplaceIds"`
 
-	// The date and time when the schedule will create its next report, in ISO 8601 date time format.
+	// The date and time when the schedule will create its next report, in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> date time format.
 	// Format: date-time
 	NextReportCreationTime strfmt.DateTime `json:"nextReportCreationTime,omitempty"`
 
-	// An ISO 8601 period value that indicates how often a report should be created.
+	// An <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> period value that indicates how often a report should be created.
 	// Required: true
 	Period *string `json:"period"`
 

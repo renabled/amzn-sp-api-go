@@ -13,12 +13,12 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// UpdateVerificationStatusErrorResponse The error response schema for the UpdateVerificationStatus operation.
+// UpdateVerificationStatusErrorResponse The error response schema for the `UpdateVerificationStatus` operation.
 //
 // swagger:model UpdateVerificationStatusErrorResponse
 type UpdateVerificationStatusErrorResponse struct {
 
-	// One or more unexpected errors occurred during the UpdateVerificationStatus operation.
+	// One or more unexpected errors occurred during the `UpdateVerificationStatus` operation.
 	Errors ErrorList `json:"errors,omitempty"`
 }
 

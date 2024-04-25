@@ -63,7 +63,7 @@ type GetOrderAddressParams struct {
 
 	/* OrderID.
 
-	   An orderId is an Amazon-defined order identifier, in 3-7-7 format.
+	   An `orderId` is an Amazon-defined order identifier, in 3-7-7 format.
 	*/
 	OrderID string
 

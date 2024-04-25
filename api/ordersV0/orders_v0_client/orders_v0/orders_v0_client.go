@@ -38,6 +38,8 @@ type ClientService interface {
 
 	GetOrderBuyerInfo(params *GetOrderBuyerInfoParams, opts ...ClientOption) (*GetOrderBuyerInfoOK, error)
 
+	GetOrderFulfillmentInstructions(params *GetOrderFulfillmentInstructionsParams, opts ...ClientOption) (*GetOrderFulfillmentInstructionsOK, error)
+
 	GetOrderItems(params *GetOrderItemsParams, opts ...ClientOption) (*GetOrderItemsOK, error)
 
 	GetOrderItemsBuyerInfo(params *GetOrderItemsBuyerInfoParams, opts ...ClientOption) (*GetOrderItemsBuyerInfoOK, error)
@@ -60,7 +62,7 @@ type ClientService interface {
 | ---- | ---- |
 | 2 | 10 |
 
-The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 */
 func (a *Client) ConfirmShipment(params *ConfirmShipmentParams, opts ...ClientOption) (*ConfirmShipmentNoContent, error) {
 	// TODO: Validate the params before sending
@@ -104,9 +106,9 @@ func (a *Client) ConfirmShipment(params *ConfirmShipmentParams, opts ...ClientOp
 
 | Rate (requests per second) | Burst |
 | ---- | ---- |
-| 0.0167 | 20 |
+| 0.5 | 30 |
 
-The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 */
 func (a *Client) GetOrder(params *GetOrderParams, opts ...ClientOption) (*GetOrderOK, error) {
 	// TODO: Validate the params before sending
@@ -150,9 +152,9 @@ func (a *Client) GetOrder(params *GetOrderParams, opts ...ClientOption) (*GetOrd
 
 | Rate (requests per second) | Burst |
 | ---- | ---- |
-| 0.0167 | 20 |
+| 0.5 | 30 |
 
-The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 */
 func (a *Client) GetOrderAddress(params *GetOrderAddressParams, opts ...ClientOption) (*GetOrderAddressOK, error) {
 	// TODO: Validate the params before sending
@@ -196,9 +198,9 @@ func (a *Client) GetOrderAddress(params *GetOrderAddressParams, opts ...ClientOp
 
 | Rate (requests per second) | Burst |
 | ---- | ---- |
-| 0.0167 | 20 |
+| 0.5 | 30 |
 
-The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 */
 func (a *Client) GetOrderBuyerInfo(params *GetOrderBuyerInfoParams, opts ...ClientOption) (*GetOrderBuyerInfoOK, error) {
 	// TODO: Validate the params before sending
@@ -236,9 +238,55 @@ func (a *Client) GetOrderBuyerInfo(params *GetOrderBuyerInfoParams, opts ...Clie
 }
 
 /*
-	GetOrderItems Returns detailed order item information for the order that you specify. If NextToken is provided, it's used to retrieve the next page of order items.
+	GetOrderFulfillmentInstructions Returns the fulfillment instructions for the order that you specify.
 
-__Note__: When an order is in the Pending state (the order has been placed but payment has not been authorized), the getOrderItems operation does not return information about pricing, taxes, shipping charges, gift status or promotions for the order items in the order. After an order leaves the Pending state (this occurs when payment has been authorized) and enters the Unshipped, Partially Shipped, or Shipped state, the getOrderItems operation returns information about pricing, taxes, shipping charges, gift status and promotions for the order items in the order.
+**Usage Plan:**
+
+| Rate (requests per second) | Burst |
+| ---- | ---- |
+| 0.5 | 20 |
+
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+*/
+func (a *Client) GetOrderFulfillmentInstructions(params *GetOrderFulfillmentInstructionsParams, opts ...ClientOption) (*GetOrderFulfillmentInstructionsOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewGetOrderFulfillmentInstructionsParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "getOrderFulfillmentInstructions",
+		Method:             "GET",
+		PathPattern:        "/orders/v0/orders/{orderId}/fulfillmentInstructions",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &GetOrderFulfillmentInstructionsReader{formats: a.formats},
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*GetOrderFulfillmentInstructionsOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for getOrderFulfillmentInstructions: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+	GetOrderItems Returns detailed order item information for the order that you specify. If `NextToken` is provided, it's used to retrieve the next page of order items.
+
+**Note**: When an order is in the Pending state (the order has been placed but payment has not been authorized), the `getOrderItems` operation does not return information about pricing, taxes, shipping charges, gift status or promotions for the order items in the order. After an order leaves the Pending state (this occurs when payment has been authorized) and enters the `Unshipped`, `Partially Shipped`, or `Shipped` state, the `getOrderItems` operation returns information about pricing, taxes, shipping charges, gift status and promotions for the order items in the order.
 
 **Usage Plan:**
 
@@ -246,7 +294,7 @@ __Note__: When an order is in the Pending state (the order has been placed but p
 | ---- | ---- |
 | 0.5 | 30 |
 
-The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 */
 func (a *Client) GetOrderItems(params *GetOrderItemsParams, opts ...ClientOption) (*GetOrderItemsOK, error) {
 	// TODO: Validate the params before sending
@@ -292,7 +340,7 @@ func (a *Client) GetOrderItems(params *GetOrderItemsParams, opts ...ClientOption
 | ---- | ---- |
 | 0.5 | 30 |
 
-The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 */
 func (a *Client) GetOrderItemsBuyerInfo(params *GetOrderItemsBuyerInfoParams, opts ...ClientOption) (*GetOrderItemsBuyerInfoOK, error) {
 	// TODO: Validate the params before sending
@@ -338,7 +386,7 @@ func (a *Client) GetOrderItemsBuyerInfo(params *GetOrderItemsBuyerInfoParams, op
 | ---- | ---- |
 | 0.5 | 30 |
 
-The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 */
 func (a *Client) GetOrderRegulatedInfo(params *GetOrderRegulatedInfoParams, opts ...ClientOption) (*GetOrderRegulatedInfoOK, error) {
 	// TODO: Validate the params before sending
@@ -384,7 +432,7 @@ func (a *Client) GetOrderRegulatedInfo(params *GetOrderRegulatedInfoParams, opts
 | ---- | ---- |
 | 0.0167 | 20 |
 
-The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 */
 func (a *Client) GetOrders(params *GetOrdersParams, opts ...ClientOption) (*GetOrdersOK, error) {
 	// TODO: Validate the params before sending
@@ -430,7 +478,7 @@ func (a *Client) GetOrders(params *GetOrdersParams, opts ...ClientOption) (*GetO
 | ---- | ---- |
 | 0.5 | 30 |
 
-The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 */
 func (a *Client) UpdateVerificationStatus(params *UpdateVerificationStatusParams, opts ...ClientOption) (*UpdateVerificationStatusNoContent, error) {
 	// TODO: Validate the params before sending

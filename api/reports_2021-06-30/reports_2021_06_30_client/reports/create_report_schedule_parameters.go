@@ -63,7 +63,10 @@ CreateReportScheduleParams contains all the parameters to send to the API endpoi
 */
 type CreateReportScheduleParams struct {
 
-	// Body.
+	/* Body.
+
+	   Information required to create the report schedule.
+	*/
 	Body *reports_2021_06_30_models.CreateReportScheduleSpecification
 
 	timeout    time.Duration

@@ -15,7 +15,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// Measurement measurement
+// Measurement Measurement information for an order item.
 //
 // swagger:model Measurement
 type Measurement struct {

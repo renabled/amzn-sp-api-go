@@ -63,7 +63,10 @@ CreateScheduledPackageParams contains all the parameters to send to the API endp
 */
 type CreateScheduledPackageParams struct {
 
-	// CreateScheduledPackageRequest.
+	/* CreateScheduledPackageRequest.
+
+	   The request schema for the `createScheduledPackage` operation.
+	*/
 	CreateScheduledPackageRequest *easy_ship_2022_03_23_models.CreateScheduledPackageRequest
 
 	timeout    time.Duration

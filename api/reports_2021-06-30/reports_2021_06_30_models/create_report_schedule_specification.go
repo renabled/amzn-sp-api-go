@@ -15,7 +15,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// CreateReportScheduleSpecification create report schedule specification
+// CreateReportScheduleSpecification Information required to create the report schedule.
 //
 // swagger:model CreateReportScheduleSpecification
 type CreateReportScheduleSpecification struct {
@@ -26,11 +26,11 @@ type CreateReportScheduleSpecification struct {
 	// Min Items: 1
 	MarketplaceIds []string `json:"marketplaceIds"`
 
-	// The date and time when the schedule will create its next report, in ISO 8601 date time format.
+	// The date and time when the schedule will create its next report, in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> date time format.
 	// Format: date-time
 	NextReportCreationTime strfmt.DateTime `json:"nextReportCreationTime,omitempty"`
 
-	// One of a set of predefined ISO 8601 periods that specifies how often a report should be created.
+	// One of a set of predefined <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> periods that specifies how often a report should be created.
 	// Required: true
 	// Enum: [PT5M PT15M PT30M PT1H PT2H PT4H PT8H PT12H P1D P2D P3D PT84H P7D P14D P15D P18D P30D P1M]
 	Period *string `json:"period"`

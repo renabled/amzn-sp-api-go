@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// CreateReportResponse Response schema.
+// CreateReportResponse The response schema.
 //
 // swagger:model CreateReportResponse
 type CreateReportResponse struct {

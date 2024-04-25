@@ -20,7 +20,7 @@ import (
 // swagger:model ReportScheduleList
 type ReportScheduleList struct {
 
-	// report schedules
+	// Detailed information about a report schedule.
 	// Required: true
 	ReportSchedules []*ReportSchedule `json:"reportSchedules"`
 }

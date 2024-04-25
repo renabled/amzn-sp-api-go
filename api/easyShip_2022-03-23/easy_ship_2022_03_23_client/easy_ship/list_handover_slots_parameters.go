@@ -63,7 +63,10 @@ ListHandoverSlotsParams contains all the parameters to send to the API endpoint
 */
 type ListHandoverSlotsParams struct {
 
-	// ListHandoverSlotsRequest.
+	/* ListHandoverSlotsRequest.
+
+	   The request schema for the `listHandoverSlots` operation.
+	*/
 	ListHandoverSlotsRequest *easy_ship_2022_03_23_models.ListHandoverSlotsRequest
 
 	timeout    time.Duration

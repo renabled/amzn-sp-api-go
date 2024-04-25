@@ -28,7 +28,9 @@ type OrderItem struct {
 	// A list of associated items that a customer has purchased with a product. For example, a tire installation service purchased with tires.
 	AssociatedItems []*AssociatedItem `json:"AssociatedItems"`
 
-	// buyer info
+	// A single item's buyer information.
+	//
+	// **Note**: The `BuyerInfo` contains restricted data. Use a Restricted Data Token (RDT) and restricted Selling Partner API roles to access the restricted data in `BuyerInfo`, for example, `BuyerCustomizedInfo` and `GiftMessageText`.
 	BuyerInfo *ItemBuyerInfo `json:"BuyerInfo,omitempty"`
 
 	// Information about whether or not a buyer requested cancellation.
@@ -42,7 +44,7 @@ type OrderItem struct {
 
 	// The condition of the item.
 	//
-	// Possible values: New, Used, Collectible, Refurbished, Preorder, Club.
+	// **Possible values**: `New`, `Used`, `Collectible`, `Refurbished`, `Preorder`, `Club`.
 	ConditionID string `json:"ConditionId,omitempty"`
 
 	// The condition of the item as described by the seller.
@@ -50,7 +52,7 @@ type OrderItem struct {
 
 	// The subcondition of the item.
 	//
-	// Possible values: New, Mint, Very Good, Good, Acceptable, Poor, Club, OEM, Warranty, Refurbished Warranty, Refurbished, Open Box, Any, Other.
+	// **Possible values**: `New`, `Mint`, `Very Good`, `Good`, `Acceptable`, `Poor`, `Club`, `OEM`, `Warranty`, `Refurbished Warranty`, `Refurbished`, `Open Box`, `Any`, `Other`.
 	ConditionSubtypeID string `json:"ConditionSubtypeId,omitempty"`
 
 	// The category of deemed reseller. This applies to selling partners that are not based in the EU and is used to help them meet the VAT Deemed Reseller tax laws in the EU and UK.
@@ -60,8 +62,10 @@ type OrderItem struct {
 	// The IOSS number for the marketplace. Sellers shipping to the European Union (EU) from outside of the EU must provide this IOSS number to their carrier when Amazon has collected the VAT on the sale.
 	IossNumber string `json:"IossNumber,omitempty"`
 
-	// When true, the item is a gift.
-	IsGift bool `json:"IsGift,omitempty"`
+	// Indicates whether the item is a gift.
+	//
+	// **Possible values**: `true`, `false`.
+	IsGift string `json:"IsGift,omitempty"`
 
 	// When true, the ASIN is enrolled in Transparency and the Transparency serial number that needs to be submitted can be determined by the following:
 	//
@@ -70,7 +74,7 @@ type OrderItem struct {
 	// **QR code SN:** Submit the URL that the QR code generates.
 	IsTransparency bool `json:"IsTransparency,omitempty"`
 
-	// The selling price of the order item. Note that an order item is an item and a quantity. This means that the value of ItemPrice is equal to the selling price of the item multiplied by the quantity ordered. Note that ItemPrice excludes ShippingPrice and GiftWrapPrice.
+	// The selling price of the order item. An order item is an item and a quantity. This means that the value of `ItemPrice` is equal to the selling price of the item multiplied by the quantity ordered. Note that `ItemPrice` excludes `ShippingPrice` and `GiftWrapPrice`.
 	ItemPrice *Money `json:"ItemPrice,omitempty"`
 
 	// The tax on the item price.
@@ -86,9 +90,9 @@ type OrderItem struct {
 	// The number and value of Amazon Points granted with the purchase of an item.
 	PointsGranted *PointsGrantedDetail `json:"PointsGranted,omitempty"`
 
-	// Indicates that the selling price is a special price that is available only for Amazon Business orders. For more information about the Amazon Business Seller Program, see the [Amazon Business website](https://www.amazon.com/b2b/info/amazon-business).
+	// Indicates that the selling price is a special price that is available only for Amazon Business orders. For more information about the Amazon Business Seller Program, refer to [Amazon Business](https://business.amazon.com).
 	//
-	// Possible values: BusinessPrice - A special price that is available only for Amazon Business orders.
+	// **Possible values**: `BusinessPrice` - A special price that is available only for Amazon Business orders.
 	PriceDesignation string `json:"PriceDesignation,omitempty"`
 
 	// Product information for the item.
@@ -126,6 +130,9 @@ type OrderItem struct {
 
 	// A list of serial numbers for electronic products that are shipped to customers. Returned for FBA orders only.
 	SerialNumbers []string `json:"SerialNumbers"`
+
+	// Shipping constraints applicable to this order.
+	ShippingConstraints *ShippingConstraints `json:"ShippingConstraints,omitempty"`
 
 	// The discount on the shipping price.
 	ShippingDiscount *Money `json:"ShippingDiscount,omitempty"`
@@ -221,6 +228,10 @@ func (m *OrderItem) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validateQuantityOrdered(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateShippingConstraints(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -575,6 +586,25 @@ func (m *OrderItem) validateQuantityOrdered(formats strfmt.Registry) error {
 	return nil
 }
 
+func (m *OrderItem) validateShippingConstraints(formats strfmt.Registry) error {
+	if swag.IsZero(m.ShippingConstraints) { // not required
+		return nil
+	}
+
+	if m.ShippingConstraints != nil {
+		if err := m.ShippingConstraints.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("ShippingConstraints")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("ShippingConstraints")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
 func (m *OrderItem) validateShippingDiscount(formats strfmt.Registry) error {
 	if swag.IsZero(m.ShippingDiscount) { // not required
 		return nil
@@ -742,6 +772,10 @@ func (m *OrderItem) ContextValidate(ctx context.Context, formats strfmt.Registry
 	}
 
 	if err := m.contextValidatePromotionIds(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateShippingConstraints(ctx, formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -980,6 +1014,22 @@ func (m *OrderItem) contextValidatePromotionIds(ctx context.Context, formats str
 			return ce.ValidateName("PromotionIds")
 		}
 		return err
+	}
+
+	return nil
+}
+
+func (m *OrderItem) contextValidateShippingConstraints(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.ShippingConstraints != nil {
+		if err := m.ShippingConstraints.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("ShippingConstraints")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("ShippingConstraints")
+			}
+			return err
+		}
 	}
 
 	return nil

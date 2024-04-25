@@ -12,7 +12,7 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// AddressExtendedFields The container for address extended fields. For example, street name or street number. Only available for Brazil shipping addresses as of now.
+// AddressExtendedFields The container of extended address fields. For example, street name, street number. Only available with Brazil shipping addresses as of now.
 //
 // swagger:model AddressExtendedFields
 type AddressExtendedFields struct {

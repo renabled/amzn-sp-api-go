@@ -33,8 +33,13 @@ type Address struct {
 	// Enum: [Residential Commercial]
 	AddressType string `json:"AddressType,omitempty"`
 
-	// The city
+	// The city.
 	City string `json:"City,omitempty"`
+
+	// The company name of the recipient.
+	//
+	// **Note**: This attribute is only available for shipping address.
+	CompanyName string `json:"CompanyName,omitempty"`
 
 	// The country code. A two-character country code, in ISO 3166-1 alpha-2 format.
 	CountryCode string `json:"CountryCode,omitempty"`
@@ -45,7 +50,9 @@ type Address struct {
 	// The district.
 	District string `json:"District,omitempty"`
 
-	// extended fields
+	// The container for address extended fields. For example, street name or street number.
+	//
+	// Note: Only available for Brazil shipping addresses.
 	ExtendedFields *AddressExtendedFields `json:"ExtendedFields,omitempty"`
 
 	// The municipality.
@@ -55,7 +62,13 @@ type Address struct {
 	// Required: true
 	Name *string `json:"Name"`
 
-	// The phone number. Not returned for Fulfillment by Amazon (FBA) orders.
+	// The phone number of the buyer.
+	//
+	// **Note**:
+	// 1. This attribute is only available for shipping address.
+	// 2. The buyer `Phone` number is suppressed in some cases, including but not limited to
+	// a. `Phone` is suppressed for all Fulfillment by Amazon (FBA) orders.
+	// b. `Phone` is suppressed for the shipped MFN(Fulfilled by the seller) order when current date is past Latest Delivery Date.
 	Phone string `json:"Phone,omitempty"`
 
 	// The postal code.

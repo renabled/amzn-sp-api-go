@@ -13,12 +13,12 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// UpdateShipmentStatusErrorResponse The error response schema for the UpdateShipmentStatus operation.
+// UpdateShipmentStatusErrorResponse The error response schema for the `UpdateShipmentStatus` operation.
 //
 // swagger:model UpdateShipmentStatusErrorResponse
 type UpdateShipmentStatusErrorResponse struct {
 
-	// One or more unexpected errors occurred during the UpdateShipmentStatus operation.
+	// One or more unexpected errors occurred during the `UpdateShipmentStatus` operation.
 	Errors ErrorList `json:"errors,omitempty"`
 }
 

@@ -64,7 +64,7 @@ type GetReportsParams struct {
 
 	/* CreatedSince.
 
-	   The earliest report creation date and time for reports to include in the response, in ISO 8601 date time format. The default is 90 days ago. Reports are retained for a maximum of 90 days.
+	   The earliest report creation date and time for reports to include in the response, in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> date time format. The default is 90 days ago. Reports are retained for a maximum of 90 days.
 
 	   Format: date-time
 	*/
@@ -72,7 +72,7 @@ type GetReportsParams struct {
 
 	/* CreatedUntil.
 
-	   The latest report creation date and time for reports to include in the response, in ISO 8601 date time format. The default is now.
+	   The latest report creation date and time for reports to include in the response, in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> date time format. The default is now.
 
 	   Format: date-time
 	*/
@@ -86,7 +86,7 @@ type GetReportsParams struct {
 
 	/* NextToken.
 
-	   A string token returned in the response to your previous request. nextToken is returned when the number of results exceeds the specified pageSize value. To get the next page of results, call the getReports operation and include this token as the only parameter. Specifying nextToken with any other parameters will cause the request to fail.
+	   A string token returned in the response to your previous request. `nextToken` is returned when the number of results exceeds the specified `pageSize` value. To get the next page of results, call the `getReports` operation and include this token as the only parameter. Specifying `nextToken` with any other parameters will cause the request to fail.
 	*/
 	NextToken *string
 

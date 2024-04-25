@@ -15,7 +15,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// SubstitutionPreferences substitution preferences
+// SubstitutionPreferences Substitution preferences for an order item.
 //
 // swagger:model SubstitutionPreferences
 type SubstitutionPreferences struct {

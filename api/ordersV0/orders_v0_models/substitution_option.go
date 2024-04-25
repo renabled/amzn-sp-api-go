@@ -13,7 +13,7 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// SubstitutionOption substitution option
+// SubstitutionOption Substitution options for an order item.
 //
 // swagger:model SubstitutionOption
 type SubstitutionOption struct {

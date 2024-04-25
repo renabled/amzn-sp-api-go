@@ -36,11 +36,11 @@ type Report struct {
 	// A list of marketplace identifiers for the report.
 	MarketplaceIds []string `json:"marketplaceIds"`
 
-	// The date and time when the report processing completed, in ISO 8601 date time format.
+	// The date and time when the report processing completed, in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> date time format.
 	// Format: date-time
 	ProcessingEndTime strfmt.DateTime `json:"processingEndTime,omitempty"`
 
-	// The date and time when the report processing started, in ISO 8601 date time format.
+	// The date and time when the report processing started, in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> date time format.
 	// Format: date-time
 	ProcessingStartTime strfmt.DateTime `json:"processingStartTime,omitempty"`
 
@@ -49,7 +49,7 @@ type Report struct {
 	// Enum: [CANCELLED DONE FATAL IN_PROGRESS IN_QUEUE]
 	ProcessingStatus *string `json:"processingStatus"`
 
-	// The identifier for the report document. Pass this into the getReportDocument operation to get the information you will need to retrieve the report document's contents.
+	// The identifier for the report document. Pass this into the `getReportDocument` operation to get the information you will need to retrieve the report document's contents.
 	ReportDocumentID string `json:"reportDocumentId,omitempty"`
 
 	// The identifier for the report. This identifier is unique only in combination with a seller ID.

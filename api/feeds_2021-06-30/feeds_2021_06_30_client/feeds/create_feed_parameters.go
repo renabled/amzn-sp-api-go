@@ -63,7 +63,10 @@ CreateFeedParams contains all the parameters to send to the API endpoint
 */
 type CreateFeedParams struct {
 
-	// Body.
+	/* Body.
+
+	   Information required to create the feed.
+	*/
 	Body *feeds_2021_06_30_models.CreateFeedSpecification
 
 	timeout    time.Duration

@@ -13,15 +13,15 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// GetOrderBuyerInfoResponse The response schema for the getOrderBuyerInfo operation.
+// GetOrderBuyerInfoResponse The response schema for the `getOrderBuyerInfo` operation.
 //
 // swagger:model GetOrderBuyerInfoResponse
 type GetOrderBuyerInfoResponse struct {
 
-	// One or more unexpected errors occurred during the getOrderBuyerInfo operation.
+	// One or more unexpected errors occurred during the `getOrderBuyerInfo` operation.
 	Errors ErrorList `json:"errors,omitempty"`
 
-	// The payload for the getOrderBuyerInfo operation.
+	// The payload for the `getOrderBuyerInfo` operation.
 	Payload *OrderBuyerInfo `json:"payload,omitempty"`
 }
 

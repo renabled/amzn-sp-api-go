@@ -63,7 +63,10 @@ UpdateScheduledPackagesParams contains all the parameters to send to the API end
 */
 type UpdateScheduledPackagesParams struct {
 
-	// UpdateScheduledPackagesRequest.
+	/* UpdateScheduledPackagesRequest.
+
+	   The request schema for the `updateScheduledPackages` operation.
+	*/
 	UpdateScheduledPackagesRequest *easy_ship_2022_03_23_models.UpdateScheduledPackagesRequest
 
 	timeout    time.Duration

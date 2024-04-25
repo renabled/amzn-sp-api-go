@@ -65,13 +65,13 @@ type UpdateVerificationStatusParams struct {
 
 	/* OrderID.
 
-	   An orderId is an Amazon-defined order identifier, in 3-7-7 format.
+	   An Amazon-defined order identifier, in 3-7-7 format.
 	*/
 	OrderID string
 
 	/* Payload.
 
-	   The request body for the updateVerificationStatus operation.
+	   The request body for the `updateVerificationStatus` operation.
 	*/
 	Payload *orders_v0_models.UpdateVerificationStatusRequest
 

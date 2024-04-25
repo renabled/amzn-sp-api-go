@@ -14,12 +14,12 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// UpdateVerificationStatusRequest The request body for the updateVerificationStatus operation.
+// UpdateVerificationStatusRequest The request body for the `updateVerificationStatus` operation.
 //
 // swagger:model UpdateVerificationStatusRequest
 type UpdateVerificationStatusRequest struct {
 
-	// The updated values of the VerificationStatus field.
+	// The updated values of the `VerificationStatus` field.
 	// Required: true
 	RegulatedOrderVerificationStatus *UpdateVerificationStatusRequestBody `json:"regulatedOrderVerificationStatus"`
 }

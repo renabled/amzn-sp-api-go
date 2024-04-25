@@ -14,12 +14,12 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// GetReportsResponse The response for the getReports operation.
+// GetReportsResponse The response for the `getReports` operation.
 //
 // swagger:model GetReportsResponse
 type GetReportsResponse struct {
 
-	// Returned when the number of results exceeds pageSize. To get the next page of results, call getReports with this token as the only parameter.
+	// Returned when the number of results exceeds `pageSize`. To get the next page of results, call `getReports` with this token as the only parameter.
 	NextToken string `json:"nextToken,omitempty"`
 
 	// The reports.

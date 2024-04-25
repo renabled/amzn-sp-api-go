@@ -20,9 +20,13 @@ import (
 type OrderItemBuyerInfo struct {
 
 	// Buyer information for custom orders from the Amazon Custom program.
+	//
+	// **Note**: This attribute is only available for MFN (Fulfilled by the seller) orders.
 	BuyerCustomizedInfo *BuyerCustomizedInfoDetail `json:"BuyerCustomizedInfo,omitempty"`
 
 	// A gift message provided by the buyer.
+	//
+	// **Note**: This attribute is only available for MFN (Fulfilled by the seller) orders.
 	GiftMessageText string `json:"GiftMessageText,omitempty"`
 
 	// The gift wrap level specified by the buyer.
