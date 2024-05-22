@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// FeaturedOffer featured offer
+// FeaturedOffer Schema for `currentFeaturedOffer` or `competingFeaturedOffer`.
 //
 // swagger:model FeaturedOffer
 type FeaturedOffer struct {

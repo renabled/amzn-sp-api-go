@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// FeaturedOfferExpectedPriceResponse featured offer expected price response
+// FeaturedOfferExpectedPriceResponse Schema for an individual featured offer expected price response.
 //
 // swagger:model FeaturedOfferExpectedPriceResponse
 type FeaturedOfferExpectedPriceResponse struct {

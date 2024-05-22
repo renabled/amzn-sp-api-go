@@ -7,6 +7,7 @@ package product_pricing_2022_05_01_models
 
 import (
 	"context"
+	"encoding/json"
 	"strconv"
 
 	"github.com/go-openapi/errors"
@@ -35,12 +36,19 @@ type Offer struct {
 	// The number of Amazon Points offered with the purchase of an item, and their monetary value. Note that the Points element is only returned in Japan (JP).
 	Points *Points `json:"points,omitempty"`
 
+	// Amazon Prime details.
+	PrimeDetails *PrimeDetails `json:"primeDetails,omitempty"`
+
 	// The seller identifier for the offer.
 	// Required: true
 	SellerID *string `json:"sellerId"`
 
 	// A list of shipping options associated with this offer
 	ShippingOptions []*ShippingOption `json:"shippingOptions"`
+
+	// The item subcondition for the offer.
+	// Enum: [New Mint VeryGood Good Acceptable Poor Club OEM Warranty RefurbishedWarranty Refurbished OpenBox Other]
+	SubCondition string `json:"subCondition,omitempty"`
 }
 
 // Validate validates this offer
@@ -63,11 +71,19 @@ func (m *Offer) Validate(formats strfmt.Registry) error {
 		res = append(res, err)
 	}
 
+	if err := m.validatePrimeDetails(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.validateSellerID(formats); err != nil {
 		res = append(res, err)
 	}
 
 	if err := m.validateShippingOptions(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateSubCondition(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -164,6 +180,25 @@ func (m *Offer) validatePoints(formats strfmt.Registry) error {
 	return nil
 }
 
+func (m *Offer) validatePrimeDetails(formats strfmt.Registry) error {
+	if swag.IsZero(m.PrimeDetails) { // not required
+		return nil
+	}
+
+	if m.PrimeDetails != nil {
+		if err := m.PrimeDetails.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("primeDetails")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("primeDetails")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
 func (m *Offer) validateSellerID(formats strfmt.Registry) error {
 
 	if err := validate.Required("sellerId", "body", m.SellerID); err != nil {
@@ -199,6 +234,81 @@ func (m *Offer) validateShippingOptions(formats strfmt.Registry) error {
 	return nil
 }
 
+var offerTypeSubConditionPropEnum []interface{}
+
+func init() {
+	var res []string
+	if err := json.Unmarshal([]byte(`["New","Mint","VeryGood","Good","Acceptable","Poor","Club","OEM","Warranty","RefurbishedWarranty","Refurbished","OpenBox","Other"]`), &res); err != nil {
+		panic(err)
+	}
+	for _, v := range res {
+		offerTypeSubConditionPropEnum = append(offerTypeSubConditionPropEnum, v)
+	}
+}
+
+const (
+
+	// OfferSubConditionNew captures enum value "New"
+	OfferSubConditionNew string = "New"
+
+	// OfferSubConditionMint captures enum value "Mint"
+	OfferSubConditionMint string = "Mint"
+
+	// OfferSubConditionVeryGood captures enum value "VeryGood"
+	OfferSubConditionVeryGood string = "VeryGood"
+
+	// OfferSubConditionGood captures enum value "Good"
+	OfferSubConditionGood string = "Good"
+
+	// OfferSubConditionAcceptable captures enum value "Acceptable"
+	OfferSubConditionAcceptable string = "Acceptable"
+
+	// OfferSubConditionPoor captures enum value "Poor"
+	OfferSubConditionPoor string = "Poor"
+
+	// OfferSubConditionClub captures enum value "Club"
+	OfferSubConditionClub string = "Club"
+
+	// OfferSubConditionOEM captures enum value "OEM"
+	OfferSubConditionOEM string = "OEM"
+
+	// OfferSubConditionWarranty captures enum value "Warranty"
+	OfferSubConditionWarranty string = "Warranty"
+
+	// OfferSubConditionRefurbishedWarranty captures enum value "RefurbishedWarranty"
+	OfferSubConditionRefurbishedWarranty string = "RefurbishedWarranty"
+
+	// OfferSubConditionRefurbished captures enum value "Refurbished"
+	OfferSubConditionRefurbished string = "Refurbished"
+
+	// OfferSubConditionOpenBox captures enum value "OpenBox"
+	OfferSubConditionOpenBox string = "OpenBox"
+
+	// OfferSubConditionOther captures enum value "Other"
+	OfferSubConditionOther string = "Other"
+)
+
+// prop value enum
+func (m *Offer) validateSubConditionEnum(path, location string, value string) error {
+	if err := validate.EnumCase(path, location, value, offerTypeSubConditionPropEnum, true); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (m *Offer) validateSubCondition(formats strfmt.Registry) error {
+	if swag.IsZero(m.SubCondition) { // not required
+		return nil
+	}
+
+	// value enum
+	if err := m.validateSubConditionEnum("subCondition", "body", m.SubCondition); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 // ContextValidate validate this offer based on the context it is used
 func (m *Offer) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
 	var res []error
@@ -216,6 +326,10 @@ func (m *Offer) ContextValidate(ctx context.Context, formats strfmt.Registry) er
 	}
 
 	if err := m.contextValidatePoints(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidatePrimeDetails(ctx, formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -285,6 +399,22 @@ func (m *Offer) contextValidatePoints(ctx context.Context, formats strfmt.Regist
 				return ve.ValidateName("points")
 			} else if ce, ok := err.(*errors.CompositeError); ok {
 				return ce.ValidateName("points")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *Offer) contextValidatePrimeDetails(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.PrimeDetails != nil {
+		if err := m.PrimeDetails.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("primeDetails")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("primeDetails")
 			}
 			return err
 		}

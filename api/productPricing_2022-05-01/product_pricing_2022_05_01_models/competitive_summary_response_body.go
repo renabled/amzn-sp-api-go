@@ -25,14 +25,20 @@ type CompetitiveSummaryResponseBody struct {
 	Asin *Asin `json:"asin"`
 
 	// A list of errors
-	Errors *Errors `json:"errors,omitempty"`
+	Errors ErrorList `json:"errors,omitempty"`
 
 	// A list of featured buying options for the given ASIN `marketplaceId` combination.
 	FeaturedBuyingOptions []*FeaturedBuyingOption `json:"featuredBuyingOptions"`
 
+	// A list of the lowest priced offers for the given ASIN `marketplaceId` combination.
+	LowestPricedOffers []*LowestPricedOffer `json:"lowestPricedOffers"`
+
 	// A marketplace identifier.
 	// Required: true
 	MarketplaceID *MarketplaceID `json:"marketplaceId"`
+
+	// A list of reference prices for the given ASIN `marketplaceId` combination.
+	ReferencePrices []*ReferencePrice `json:"referencePrices"`
 }
 
 // Validate validates this competitive summary response body
@@ -51,7 +57,15 @@ func (m *CompetitiveSummaryResponseBody) Validate(formats strfmt.Registry) error
 		res = append(res, err)
 	}
 
+	if err := m.validateLowestPricedOffers(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.validateMarketplaceID(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateReferencePrices(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -90,15 +104,13 @@ func (m *CompetitiveSummaryResponseBody) validateErrors(formats strfmt.Registry)
 		return nil
 	}
 
-	if m.Errors != nil {
-		if err := m.Errors.Validate(formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
-				return ve.ValidateName("errors")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("errors")
-			}
-			return err
+	if err := m.Errors.Validate(formats); err != nil {
+		if ve, ok := err.(*errors.Validation); ok {
+			return ve.ValidateName("errors")
+		} else if ce, ok := err.(*errors.CompositeError); ok {
+			return ce.ValidateName("errors")
 		}
+		return err
 	}
 
 	return nil
@@ -120,6 +132,32 @@ func (m *CompetitiveSummaryResponseBody) validateFeaturedBuyingOptions(formats s
 					return ve.ValidateName("featuredBuyingOptions" + "." + strconv.Itoa(i))
 				} else if ce, ok := err.(*errors.CompositeError); ok {
 					return ce.ValidateName("featuredBuyingOptions" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
+func (m *CompetitiveSummaryResponseBody) validateLowestPricedOffers(formats strfmt.Registry) error {
+	if swag.IsZero(m.LowestPricedOffers) { // not required
+		return nil
+	}
+
+	for i := 0; i < len(m.LowestPricedOffers); i++ {
+		if swag.IsZero(m.LowestPricedOffers[i]) { // not required
+			continue
+		}
+
+		if m.LowestPricedOffers[i] != nil {
+			if err := m.LowestPricedOffers[i].Validate(formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("lowestPricedOffers" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("lowestPricedOffers" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -154,6 +192,32 @@ func (m *CompetitiveSummaryResponseBody) validateMarketplaceID(formats strfmt.Re
 	return nil
 }
 
+func (m *CompetitiveSummaryResponseBody) validateReferencePrices(formats strfmt.Registry) error {
+	if swag.IsZero(m.ReferencePrices) { // not required
+		return nil
+	}
+
+	for i := 0; i < len(m.ReferencePrices); i++ {
+		if swag.IsZero(m.ReferencePrices[i]) { // not required
+			continue
+		}
+
+		if m.ReferencePrices[i] != nil {
+			if err := m.ReferencePrices[i].Validate(formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("referencePrices" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("referencePrices" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
 // ContextValidate validate this competitive summary response body based on the context it is used
 func (m *CompetitiveSummaryResponseBody) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
 	var res []error
@@ -170,7 +234,15 @@ func (m *CompetitiveSummaryResponseBody) ContextValidate(ctx context.Context, fo
 		res = append(res, err)
 	}
 
+	if err := m.contextValidateLowestPricedOffers(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.contextValidateMarketplaceID(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateReferencePrices(ctx, formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -198,15 +270,13 @@ func (m *CompetitiveSummaryResponseBody) contextValidateAsin(ctx context.Context
 
 func (m *CompetitiveSummaryResponseBody) contextValidateErrors(ctx context.Context, formats strfmt.Registry) error {
 
-	if m.Errors != nil {
-		if err := m.Errors.ContextValidate(ctx, formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
-				return ve.ValidateName("errors")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("errors")
-			}
-			return err
+	if err := m.Errors.ContextValidate(ctx, formats); err != nil {
+		if ve, ok := err.(*errors.Validation); ok {
+			return ve.ValidateName("errors")
+		} else if ce, ok := err.(*errors.CompositeError); ok {
+			return ce.ValidateName("errors")
 		}
+		return err
 	}
 
 	return nil
@@ -232,6 +302,26 @@ func (m *CompetitiveSummaryResponseBody) contextValidateFeaturedBuyingOptions(ct
 	return nil
 }
 
+func (m *CompetitiveSummaryResponseBody) contextValidateLowestPricedOffers(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(m.LowestPricedOffers); i++ {
+
+		if m.LowestPricedOffers[i] != nil {
+			if err := m.LowestPricedOffers[i].ContextValidate(ctx, formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("lowestPricedOffers" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("lowestPricedOffers" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
 func (m *CompetitiveSummaryResponseBody) contextValidateMarketplaceID(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.MarketplaceID != nil {
@@ -243,6 +333,26 @@ func (m *CompetitiveSummaryResponseBody) contextValidateMarketplaceID(ctx contex
 			}
 			return err
 		}
+	}
+
+	return nil
+}
+
+func (m *CompetitiveSummaryResponseBody) contextValidateReferencePrices(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(m.ReferencePrices); i++ {
+
+		if m.ReferencePrices[i] != nil {
+			if err := m.ReferencePrices[i].ContextValidate(ctx, formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("referencePrices" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("referencePrices" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
 	}
 
 	return nil

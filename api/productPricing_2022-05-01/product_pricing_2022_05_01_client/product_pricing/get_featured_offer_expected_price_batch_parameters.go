@@ -63,7 +63,10 @@ GetFeaturedOfferExpectedPriceBatchParams contains all the parameters to send to 
 */
 type GetFeaturedOfferExpectedPriceBatchParams struct {
 
-	// GetFeaturedOfferExpectedPriceBatchRequestBody.
+	/* GetFeaturedOfferExpectedPriceBatchRequestBody.
+
+	   The batch of `getFeaturedOfferExpectedPrice` requests.
+	*/
 	GetFeaturedOfferExpectedPriceBatchRequestBody *product_pricing_2022_05_01_models.GetFeaturedOfferExpectedPriceBatchRequest
 
 	timeout    time.Duration

@@ -12,7 +12,7 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// MoneyType money type
+// MoneyType Currency type and monetary value. Schema for demonstrating pricing info.
 //
 // swagger:model MoneyType
 type MoneyType struct {

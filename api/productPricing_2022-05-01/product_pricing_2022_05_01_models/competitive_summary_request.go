@@ -29,6 +29,11 @@ type CompetitiveSummaryRequest struct {
 	// Min Items: 1
 	IncludedData []CompetitiveSummaryIncludedData `json:"includedData"`
 
+	// The list of `lowestPricedOffersInput` parameters used to build the `lowestPricedOffers` in the response. This attribute is valid only if `lowestPricedOffers` is requested in `includedData`.
+	// Max Items: 5
+	// Min Items: 0
+	LowestPricedOffersInputs []*LowestPricedOffersInput `json:"lowestPricedOffersInputs"`
+
 	// A marketplace identifier.
 	// Required: true
 	MarketplaceID *MarketplaceID `json:"marketplaceId"`
@@ -51,6 +56,10 @@ func (m *CompetitiveSummaryRequest) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validateIncludedData(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateLowestPricedOffersInputs(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -117,6 +126,42 @@ func (m *CompetitiveSummaryRequest) validateIncludedData(formats strfmt.Registry
 				return ce.ValidateName("includedData" + "." + strconv.Itoa(i))
 			}
 			return err
+		}
+
+	}
+
+	return nil
+}
+
+func (m *CompetitiveSummaryRequest) validateLowestPricedOffersInputs(formats strfmt.Registry) error {
+	if swag.IsZero(m.LowestPricedOffersInputs) { // not required
+		return nil
+	}
+
+	iLowestPricedOffersInputsSize := int64(len(m.LowestPricedOffersInputs))
+
+	if err := validate.MinItems("lowestPricedOffersInputs", "body", iLowestPricedOffersInputsSize, 0); err != nil {
+		return err
+	}
+
+	if err := validate.MaxItems("lowestPricedOffersInputs", "body", iLowestPricedOffersInputsSize, 5); err != nil {
+		return err
+	}
+
+	for i := 0; i < len(m.LowestPricedOffersInputs); i++ {
+		if swag.IsZero(m.LowestPricedOffersInputs[i]) { // not required
+			continue
+		}
+
+		if m.LowestPricedOffersInputs[i] != nil {
+			if err := m.LowestPricedOffersInputs[i].Validate(formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("lowestPricedOffersInputs" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("lowestPricedOffersInputs" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
 		}
 
 	}
@@ -208,6 +253,10 @@ func (m *CompetitiveSummaryRequest) ContextValidate(ctx context.Context, formats
 		res = append(res, err)
 	}
 
+	if err := m.contextValidateLowestPricedOffersInputs(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.contextValidateMarketplaceID(ctx, formats); err != nil {
 		res = append(res, err)
 	}
@@ -253,6 +302,26 @@ func (m *CompetitiveSummaryRequest) contextValidateIncludedData(ctx context.Cont
 				return ce.ValidateName("includedData" + "." + strconv.Itoa(i))
 			}
 			return err
+		}
+
+	}
+
+	return nil
+}
+
+func (m *CompetitiveSummaryRequest) contextValidateLowestPricedOffersInputs(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(m.LowestPricedOffersInputs); i++ {
+
+		if m.LowestPricedOffersInputs[i] != nil {
+			if err := m.LowestPricedOffersInputs[i].ContextValidate(ctx, formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("lowestPricedOffersInputs" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("lowestPricedOffersInputs" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
 		}
 
 	}
