@@ -26,6 +26,9 @@ type Item struct {
 	// attributes
 	Attributes ItemAttributes `json:"attributes,omitempty"`
 
+	// classifications
+	Classifications ItemBrowseClassifications `json:"classifications,omitempty"`
+
 	// dimensions
 	Dimensions ItemDimensions `json:"dimensions,omitempty"`
 
@@ -56,6 +59,10 @@ func (m *Item) Validate(formats strfmt.Registry) error {
 	var res []error
 
 	if err := m.validateAsin(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateClassifications(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -116,6 +123,23 @@ func (m *Item) validateAsin(formats strfmt.Registry) error {
 			}
 			return err
 		}
+	}
+
+	return nil
+}
+
+func (m *Item) validateClassifications(formats strfmt.Registry) error {
+	if swag.IsZero(m.Classifications) { // not required
+		return nil
+	}
+
+	if err := m.Classifications.Validate(formats); err != nil {
+		if ve, ok := err.(*errors.Validation); ok {
+			return ve.ValidateName("classifications")
+		} else if ce, ok := err.(*errors.CompositeError); ok {
+			return ce.ValidateName("classifications")
+		}
+		return err
 	}
 
 	return nil
@@ -265,6 +289,10 @@ func (m *Item) ContextValidate(ctx context.Context, formats strfmt.Registry) err
 		res = append(res, err)
 	}
 
+	if err := m.contextValidateClassifications(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.contextValidateDimensions(ctx, formats); err != nil {
 		res = append(res, err)
 	}
@@ -314,6 +342,20 @@ func (m *Item) contextValidateAsin(ctx context.Context, formats strfmt.Registry)
 			}
 			return err
 		}
+	}
+
+	return nil
+}
+
+func (m *Item) contextValidateClassifications(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := m.Classifications.ContextValidate(ctx, formats); err != nil {
+		if ve, ok := err.(*errors.Validation); ok {
+			return ve.ValidateName("classifications")
+		} else if ce, ok := err.(*errors.CompositeError); ok {
+			return ce.ValidateName("classifications")
+		}
+		return err
 	}
 
 	return nil

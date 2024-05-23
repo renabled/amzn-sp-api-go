@@ -21,7 +21,7 @@ type ReferencePrice struct {
 
 	// The name of the reference price like `CompetitivePriceThreshold`.
 	// Required: true
-	Name interface{} `json:"name"`
+	Name *string `json:"name"`
 
 	// The reference price for the ASIN `marketplaceId` combination.
 	// Required: true
@@ -48,8 +48,8 @@ func (m *ReferencePrice) Validate(formats strfmt.Registry) error {
 
 func (m *ReferencePrice) validateName(formats strfmt.Registry) error {
 
-	if m.Name == nil {
-		return errors.Required("name", "body", nil)
+	if err := validate.Required("name", "body", m.Name); err != nil {
+		return err
 	}
 
 	return nil
