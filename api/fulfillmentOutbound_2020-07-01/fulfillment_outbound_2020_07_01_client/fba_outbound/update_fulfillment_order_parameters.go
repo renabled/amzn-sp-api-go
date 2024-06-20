@@ -63,7 +63,10 @@ UpdateFulfillmentOrderParams contains all the parameters to send to the API endp
 */
 type UpdateFulfillmentOrderParams struct {
 
-	// Body.
+	/* Body.
+
+	   UpdateFulfillmentOrderRequest parameter
+	*/
 	Body *fulfillment_outbound_2020_07_01_models.UpdateFulfillmentOrderRequest
 
 	/* SellerFulfillmentOrderID.

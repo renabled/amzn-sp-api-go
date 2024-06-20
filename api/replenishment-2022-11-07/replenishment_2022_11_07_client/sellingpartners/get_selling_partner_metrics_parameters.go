@@ -63,7 +63,10 @@ GetSellingPartnerMetricsParams contains all the parameters to send to the API en
 */
 type GetSellingPartnerMetricsParams struct {
 
-	// Body.
+	/* Body.
+
+	   The request body for the `getSellingPartnerMetrics` operation.
+	*/
 	Body *replenishment_2022_11_07_models.GetSellingPartnerMetricsRequest
 
 	timeout    time.Duration

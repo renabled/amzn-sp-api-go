@@ -84,7 +84,7 @@ func (a *Client) ListOfferMetrics(params *ListOfferMetricsParams, opts ...Client
 }
 
 /*
-	ListOffers Returns the details of a selling partner's replenishment program offers. Note that this operation only supports sellers at this time.
+	ListOffers Returns the details of a selling partner's replenishment program offers.
 
 **Usage Plan:**
 

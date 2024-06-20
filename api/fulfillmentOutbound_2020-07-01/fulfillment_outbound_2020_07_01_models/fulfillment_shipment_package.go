@@ -27,6 +27,9 @@ type FulfillmentShipmentPackage struct {
 	// Format: date-time
 	EstimatedArrivalDate Timestamp `json:"estimatedArrivalDate,omitempty"`
 
+	// The locker details, if provided can be used to access locker delivery box.
+	LockerDetails *LockerDetails `json:"lockerDetails,omitempty"`
+
 	// Identifies a package in a shipment.
 	// Required: true
 	PackageNumber *int32 `json:"packageNumber"`
@@ -44,6 +47,10 @@ func (m *FulfillmentShipmentPackage) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validateEstimatedArrivalDate(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateLockerDetails(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -83,6 +90,25 @@ func (m *FulfillmentShipmentPackage) validateEstimatedArrivalDate(formats strfmt
 	return nil
 }
 
+func (m *FulfillmentShipmentPackage) validateLockerDetails(formats strfmt.Registry) error {
+	if swag.IsZero(m.LockerDetails) { // not required
+		return nil
+	}
+
+	if m.LockerDetails != nil {
+		if err := m.LockerDetails.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("lockerDetails")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("lockerDetails")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
 func (m *FulfillmentShipmentPackage) validatePackageNumber(formats strfmt.Registry) error {
 
 	if err := validate.Required("packageNumber", "body", m.PackageNumber); err != nil {
@@ -97,6 +123,10 @@ func (m *FulfillmentShipmentPackage) ContextValidate(ctx context.Context, format
 	var res []error
 
 	if err := m.contextValidateEstimatedArrivalDate(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateLockerDetails(ctx, formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -115,6 +145,22 @@ func (m *FulfillmentShipmentPackage) contextValidateEstimatedArrivalDate(ctx con
 			return ce.ValidateName("estimatedArrivalDate")
 		}
 		return err
+	}
+
+	return nil
+}
+
+func (m *FulfillmentShipmentPackage) contextValidateLockerDetails(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.LockerDetails != nil {
+		if err := m.LockerDetails.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("lockerDetails")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("lockerDetails")
+			}
+			return err
+		}
 	}
 
 	return nil

@@ -88,10 +88,6 @@ Success.
 */
 type SubmitFulfillmentOrderStatusUpdateOK struct {
 
-	/* Your rate limit (requests per second) for this operation.
-	 */
-	XAmznRateLimitLimit string
-
 	/* Unique request reference identifier.
 	 */
 	XAmznRequestID string
@@ -138,13 +134,6 @@ func (o *SubmitFulfillmentOrderStatusUpdateOK) GetPayload() *fulfillment_outboun
 
 func (o *SubmitFulfillmentOrderStatusUpdateOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	// hydrates response header x-amzn-RateLimit-Limit
-	hdrXAmznRateLimitLimit := response.GetHeader("x-amzn-RateLimit-Limit")
-
-	if hdrXAmznRateLimitLimit != "" {
-		o.XAmznRateLimitLimit = hdrXAmznRateLimitLimit
-	}
-
 	// hydrates response header x-amzn-RequestId
 	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")
 
@@ -173,10 +162,6 @@ SubmitFulfillmentOrderStatusUpdateBadRequest describes a response with status co
 Request has missing or invalid parameters and cannot be parsed.
 */
 type SubmitFulfillmentOrderStatusUpdateBadRequest struct {
-
-	/* Your rate limit (requests per second) for this operation.
-	 */
-	XAmznRateLimitLimit string
 
 	/* Unique request reference identifier.
 	 */
@@ -224,13 +209,6 @@ func (o *SubmitFulfillmentOrderStatusUpdateBadRequest) GetPayload() *fulfillment
 
 func (o *SubmitFulfillmentOrderStatusUpdateBadRequest) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	// hydrates response header x-amzn-RateLimit-Limit
-	hdrXAmznRateLimitLimit := response.GetHeader("x-amzn-RateLimit-Limit")
-
-	if hdrXAmznRateLimitLimit != "" {
-		o.XAmznRateLimitLimit = hdrXAmznRateLimitLimit
-	}
-
 	// hydrates response header x-amzn-RequestId
 	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")
 
@@ -259,11 +237,6 @@ SubmitFulfillmentOrderStatusUpdateUnauthorized describes a response with status 
 The request's Authorization header is not formatted correctly or does not contain a valid token.
 */
 type SubmitFulfillmentOrderStatusUpdateUnauthorized struct {
-
-	/* Your rate limit (requests per second) for this operation.
-	_Note:_ For this status code, the rate limit header is deprecated and no longer returned.
-	*/
-	XAmznRateLimitLimit string
 
 	/* Unique request reference identifier.
 	 */
@@ -310,13 +283,6 @@ func (o *SubmitFulfillmentOrderStatusUpdateUnauthorized) GetPayload() *fulfillme
 }
 
 func (o *SubmitFulfillmentOrderStatusUpdateUnauthorized) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
-
-	// hydrates response header x-amzn-RateLimit-Limit
-	hdrXAmznRateLimitLimit := response.GetHeader("x-amzn-RateLimit-Limit")
-
-	if hdrXAmznRateLimitLimit != "" {
-		o.XAmznRateLimitLimit = hdrXAmznRateLimitLimit
-	}
 
 	// hydrates response header x-amzn-RequestId
 	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")
@@ -422,10 +388,6 @@ The specified resource does not exist.
 */
 type SubmitFulfillmentOrderStatusUpdateNotFound struct {
 
-	/* Your rate limit (requests per second) for this operation.
-	 */
-	XAmznRateLimitLimit string
-
 	/* Unique request reference identifier.
 	 */
 	XAmznRequestID string
@@ -472,13 +434,6 @@ func (o *SubmitFulfillmentOrderStatusUpdateNotFound) GetPayload() *fulfillment_o
 
 func (o *SubmitFulfillmentOrderStatusUpdateNotFound) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	// hydrates response header x-amzn-RateLimit-Limit
-	hdrXAmznRateLimitLimit := response.GetHeader("x-amzn-RateLimit-Limit")
-
-	if hdrXAmznRateLimitLimit != "" {
-		o.XAmznRateLimitLimit = hdrXAmznRateLimitLimit
-	}
-
 	// hydrates response header x-amzn-RequestId
 	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")
 
@@ -507,11 +462,6 @@ SubmitFulfillmentOrderStatusUpdateTooManyRequests describes a response with stat
 The frequency of requests was greater than allowed.
 */
 type SubmitFulfillmentOrderStatusUpdateTooManyRequests struct {
-
-	/* Your rate limit (requests per second) for this operation.
-	_Note:_ For this status code, the rate limit header is deprecated and no longer returned.
-	*/
-	XAmznRateLimitLimit string
 
 	/* Unique request reference identifier.
 	 */
@@ -559,13 +509,6 @@ func (o *SubmitFulfillmentOrderStatusUpdateTooManyRequests) GetPayload() *fulfil
 
 func (o *SubmitFulfillmentOrderStatusUpdateTooManyRequests) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	// hydrates response header x-amzn-RateLimit-Limit
-	hdrXAmznRateLimitLimit := response.GetHeader("x-amzn-RateLimit-Limit")
-
-	if hdrXAmznRateLimitLimit != "" {
-		o.XAmznRateLimitLimit = hdrXAmznRateLimitLimit
-	}
-
 	// hydrates response header x-amzn-RequestId
 	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")
 
@@ -594,11 +537,6 @@ SubmitFulfillmentOrderStatusUpdateInternalServerError describes a response with 
 An unexpected condition occurred that prevented the server from fulfilling the request.
 */
 type SubmitFulfillmentOrderStatusUpdateInternalServerError struct {
-
-	/* Your rate limit (requests per second) for this operation.
-	_Note:_ For this status code, the rate limit header is deprecated and no longer returned.
-	*/
-	XAmznRateLimitLimit string
 
 	/* Unique request reference identifier.
 	 */
@@ -646,13 +584,6 @@ func (o *SubmitFulfillmentOrderStatusUpdateInternalServerError) GetPayload() *fu
 
 func (o *SubmitFulfillmentOrderStatusUpdateInternalServerError) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	// hydrates response header x-amzn-RateLimit-Limit
-	hdrXAmznRateLimitLimit := response.GetHeader("x-amzn-RateLimit-Limit")
-
-	if hdrXAmznRateLimitLimit != "" {
-		o.XAmznRateLimitLimit = hdrXAmznRateLimitLimit
-	}
-
 	// hydrates response header x-amzn-RequestId
 	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")
 
@@ -681,11 +612,6 @@ SubmitFulfillmentOrderStatusUpdateServiceUnavailable describes a response with s
 Temporary overloading or maintenance of the server.
 */
 type SubmitFulfillmentOrderStatusUpdateServiceUnavailable struct {
-
-	/* Your rate limit (requests per second) for this operation.
-	_Note:_ For this status code, the rate limit header is deprecated and no longer returned.
-	*/
-	XAmznRateLimitLimit string
 
 	/* Unique request reference identifier.
 	 */
@@ -732,13 +658,6 @@ func (o *SubmitFulfillmentOrderStatusUpdateServiceUnavailable) GetPayload() *ful
 }
 
 func (o *SubmitFulfillmentOrderStatusUpdateServiceUnavailable) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
-
-	// hydrates response header x-amzn-RateLimit-Limit
-	hdrXAmznRateLimitLimit := response.GetHeader("x-amzn-RateLimit-Limit")
-
-	if hdrXAmznRateLimitLimit != "" {
-		o.XAmznRateLimitLimit = hdrXAmznRateLimitLimit
-	}
 
 	// hydrates response header x-amzn-RequestId
 	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")

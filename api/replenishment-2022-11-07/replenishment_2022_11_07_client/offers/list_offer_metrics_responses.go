@@ -53,6 +53,12 @@ func (o *ListOfferMetricsReader) ReadResponse(response runtime.ClientResponse, c
 			return nil, err
 		}
 		return nil, result
+	case 413:
+		result := NewListOfferMetricsRequestEntityTooLarge()
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		return nil, result
 	case 415:
 		result := NewListOfferMetricsUnsupportedMediaType()
 		if err := result.readResponse(response, consumer, o.formats); err != nil {
@@ -472,6 +478,81 @@ func (o *ListOfferMetricsNotFound) readResponse(response runtime.ClientResponse,
 	if hdrXAmznRateLimitLimit != "" {
 		o.XAmznRateLimitLimit = hdrXAmznRateLimitLimit
 	}
+
+	// hydrates response header x-amzn-RequestId
+	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")
+
+	if hdrXAmznRequestID != "" {
+		o.XAmznRequestID = hdrXAmznRequestID
+	}
+
+	o.Payload = new(replenishment_2022_11_07_models.ErrorList)
+
+	// response payload
+	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewListOfferMetricsRequestEntityTooLarge creates a ListOfferMetricsRequestEntityTooLarge with default headers values
+func NewListOfferMetricsRequestEntityTooLarge() *ListOfferMetricsRequestEntityTooLarge {
+	return &ListOfferMetricsRequestEntityTooLarge{}
+}
+
+/*
+ListOfferMetricsRequestEntityTooLarge describes a response with status code 413, with default header values.
+
+The request size exceeded the maximum accepted size.
+*/
+type ListOfferMetricsRequestEntityTooLarge struct {
+
+	/* Unique request reference identifier.
+	 */
+	XAmznRequestID string
+
+	Payload *replenishment_2022_11_07_models.ErrorList
+}
+
+// IsSuccess returns true when this list offer metrics request entity too large response has a 2xx status code
+func (o *ListOfferMetricsRequestEntityTooLarge) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this list offer metrics request entity too large response has a 3xx status code
+func (o *ListOfferMetricsRequestEntityTooLarge) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this list offer metrics request entity too large response has a 4xx status code
+func (o *ListOfferMetricsRequestEntityTooLarge) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this list offer metrics request entity too large response has a 5xx status code
+func (o *ListOfferMetricsRequestEntityTooLarge) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this list offer metrics request entity too large response a status code equal to that given
+func (o *ListOfferMetricsRequestEntityTooLarge) IsCode(code int) bool {
+	return code == 413
+}
+
+func (o *ListOfferMetricsRequestEntityTooLarge) Error() string {
+	return fmt.Sprintf("[POST /replenishment/2022-11-07/offers/metrics/search][%d] listOfferMetricsRequestEntityTooLarge  %+v", 413, o.Payload)
+}
+
+func (o *ListOfferMetricsRequestEntityTooLarge) String() string {
+	return fmt.Sprintf("[POST /replenishment/2022-11-07/offers/metrics/search][%d] listOfferMetricsRequestEntityTooLarge  %+v", 413, o.Payload)
+}
+
+func (o *ListOfferMetricsRequestEntityTooLarge) GetPayload() *replenishment_2022_11_07_models.ErrorList {
+	return o.Payload
+}
+
+func (o *ListOfferMetricsRequestEntityTooLarge) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	// hydrates response header x-amzn-RequestId
 	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")

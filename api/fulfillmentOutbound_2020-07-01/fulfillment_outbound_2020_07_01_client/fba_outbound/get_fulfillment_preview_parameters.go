@@ -63,7 +63,10 @@ GetFulfillmentPreviewParams contains all the parameters to send to the API endpo
 */
 type GetFulfillmentPreviewParams struct {
 
-	// Body.
+	/* Body.
+
+	   GetFulfillmentPreviewRequest parameter
+	*/
 	Body *fulfillment_outbound_2020_07_01_models.GetFulfillmentPreviewRequest
 
 	timeout    time.Duration

@@ -63,7 +63,10 @@ CreateFulfillmentReturnParams contains all the parameters to send to the API end
 */
 type CreateFulfillmentReturnParams struct {
 
-	// Body.
+	/* Body.
+
+	   CreateFulfillmentReturnRequest parameter
+	*/
 	Body *fulfillment_outbound_2020_07_01_models.CreateFulfillmentReturnRequest
 
 	/* SellerFulfillmentOrderID.

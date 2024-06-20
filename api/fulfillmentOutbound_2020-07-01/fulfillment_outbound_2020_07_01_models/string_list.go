@@ -11,7 +11,7 @@ import (
 	"github.com/go-openapi/strfmt"
 )
 
-// StringList string list
+// StringList String list
 //
 // swagger:model StringList
 type StringList []string

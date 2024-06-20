@@ -63,7 +63,10 @@ ListOffersParams contains all the parameters to send to the API endpoint
 */
 type ListOffersParams struct {
 
-	// Body.
+	/* Body.
+
+	   The request body for the `listOffers` operation.
+	*/
 	Body *replenishment_2022_11_07_models.ListOffersRequest
 
 	timeout    time.Duration

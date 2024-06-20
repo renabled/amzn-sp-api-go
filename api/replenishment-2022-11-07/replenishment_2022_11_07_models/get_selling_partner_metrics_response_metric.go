@@ -19,34 +19,51 @@ import (
 // swagger:model GetSellingPartnerMetricsResponseMetric
 type GetSellingPartnerMetricsResponseMetric struct {
 
-	// The number of active subscriptions present at the end of the period. Applicable only for the PERFORMANCE timePeriodType.
+	// The number of active subscriptions present at the end of the period. Applicable only for the `PERFORMANCE` `timePeriodType`.
 	// Minimum: 0
 	ActiveSubscriptions *int64 `json:"activeSubscriptions,omitempty"`
+
+	// The percentage of revenue from ASINs with coupons out of total revenue from all ASINs. Applicable only for the PERFORMANCE timePeriodType.
+	// Maximum: 100
+	// Minimum: 0
+	CouponsRevenuePenetration *float64 `json:"couponsRevenuePenetration,omitempty"`
 
 	// The currency code in ISO 4217 format.
 	CurrencyCode string `json:"currencyCode,omitempty"`
 
-	// The average revenue per non-subscriber of the program over a period of past 12 months for sellers and 6 months for vendors. Applicable only for the PERFORMANCE timePeriodType.
+	// The revenue that would have been generated had there not been out of stock. Applicable only for the PERFORMANCE timePeriodType.
+	// Minimum: 0
+	LostRevenueDueToOOS *float64 `json:"lostRevenueDueToOOS,omitempty"`
+
+	// The average reorders per non-subscriber of the program over a period of past 12 months. Applicable only for the PERFORMANCE timePeriodType.
+	// Minimum: 0
+	NonSubscriberAverageReorders *float64 `json:"nonSubscriberAverageReorders,omitempty"`
+
+	// The average revenue per non-subscriber of the program over a period of past 12 months for sellers and 6 months for vendors. Applicable only for the `PERFORMANCE` `timePeriodType`.
 	// Minimum: 0
 	NonSubscriberAverageRevenue *float64 `json:"nonSubscriberAverageRevenue,omitempty"`
 
-	// The percentage of items that were not shipped out of the total shipped units over a period of time due to being out of stock. Applicable only for the PERFORMANCE timePeriodType.
+	// The percentage of items that were not shipped out of the total shipped units over a period of time due to being out of stock. Applicable only for the `PERFORMANCE` `timePeriodType`.
 	// Maximum: 100
 	// Minimum: 0
 	NotDeliveredDueToOOS *float64 `json:"notDeliveredDueToOOS,omitempty"`
 
-	// The number of units shipped to the subscribers over a period of time. Applicable for both the PERFORMANCE and FORECAST timePeriodType.
+	// The number of units shipped to the subscribers over a period of time. Applicable for both the `PERFORMANCE` and `FORECAST` `timePeriodType`.
 	// Minimum: 0
 	ShippedSubscriptionUnits *int64 `json:"shippedSubscriptionUnits,omitempty"`
 
-	// The average revenue per subscriber of the program over a period of past 12 months for sellers and 6 months for vendors. Applicable only for the PERFORMANCE timePeriodType.
+	// The average reorders per subscriber of the program over a period of 12 months. Applicable only for the PERFORMANCE timePeriodType.
+	// Minimum: 0
+	SubscriberAverageReorders *float64 `json:"subscriberAverageReorders,omitempty"`
+
+	// The average revenue per subscriber of the program over a period of past 12 months for sellers and 6 months for vendors. Applicable only for the `PERFORMANCE` `timePeriodType`.
 	// Minimum: 0
 	SubscriberAverageRevenue *float64 `json:"subscriberAverageRevenue,omitempty"`
 
 	// A time interval used to compute metrics.
 	TimeInterval *TimeInterval `json:"timeInterval,omitempty"`
 
-	// The revenue generated from subscriptions over a period of time. Applicable for both the PERFORMANCE and FORECAST timePeriodType.
+	// The revenue generated from subscriptions over a period of time. Applicable for both the `PERFORMANCE` and `FORECAST` `timePeriodType`.
 	// Minimum: 0
 	TotalSubscriptionsRevenue *float64 `json:"totalSubscriptionsRevenue,omitempty"`
 }
@@ -59,6 +76,18 @@ func (m *GetSellingPartnerMetricsResponseMetric) Validate(formats strfmt.Registr
 		res = append(res, err)
 	}
 
+	if err := m.validateCouponsRevenuePenetration(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateLostRevenueDueToOOS(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateNonSubscriberAverageReorders(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.validateNonSubscriberAverageRevenue(formats); err != nil {
 		res = append(res, err)
 	}
@@ -68,6 +97,10 @@ func (m *GetSellingPartnerMetricsResponseMetric) Validate(formats strfmt.Registr
 	}
 
 	if err := m.validateShippedSubscriptionUnits(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateSubscriberAverageReorders(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -95,6 +128,46 @@ func (m *GetSellingPartnerMetricsResponseMetric) validateActiveSubscriptions(for
 	}
 
 	if err := validate.MinimumInt("activeSubscriptions", "body", *m.ActiveSubscriptions, 0, false); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *GetSellingPartnerMetricsResponseMetric) validateCouponsRevenuePenetration(formats strfmt.Registry) error {
+	if swag.IsZero(m.CouponsRevenuePenetration) { // not required
+		return nil
+	}
+
+	if err := validate.Minimum("couponsRevenuePenetration", "body", *m.CouponsRevenuePenetration, 0, false); err != nil {
+		return err
+	}
+
+	if err := validate.Maximum("couponsRevenuePenetration", "body", *m.CouponsRevenuePenetration, 100, false); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *GetSellingPartnerMetricsResponseMetric) validateLostRevenueDueToOOS(formats strfmt.Registry) error {
+	if swag.IsZero(m.LostRevenueDueToOOS) { // not required
+		return nil
+	}
+
+	if err := validate.Minimum("lostRevenueDueToOOS", "body", *m.LostRevenueDueToOOS, 0, false); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *GetSellingPartnerMetricsResponseMetric) validateNonSubscriberAverageReorders(formats strfmt.Registry) error {
+	if swag.IsZero(m.NonSubscriberAverageReorders) { // not required
+		return nil
+	}
+
+	if err := validate.Minimum("nonSubscriberAverageReorders", "body", *m.NonSubscriberAverageReorders, 0, false); err != nil {
 		return err
 	}
 
@@ -135,6 +208,18 @@ func (m *GetSellingPartnerMetricsResponseMetric) validateShippedSubscriptionUnit
 	}
 
 	if err := validate.MinimumInt("shippedSubscriptionUnits", "body", *m.ShippedSubscriptionUnits, 0, false); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *GetSellingPartnerMetricsResponseMetric) validateSubscriberAverageReorders(formats strfmt.Registry) error {
+	if swag.IsZero(m.SubscriberAverageReorders) { // not required
+		return nil
+	}
+
+	if err := validate.Minimum("subscriberAverageReorders", "body", *m.SubscriberAverageReorders, 0, false); err != nil {
 		return err
 	}
 

@@ -23,6 +23,10 @@ type CreateFulfillmentOrderRequest struct {
 	// cod settings
 	CodSettings *CODSettings `json:"codSettings,omitempty"`
 
+	// The delivery preferences applied to the destination address. These preferences will be applied when possible and are best effort.
+	// This feature is currently supported only in the JP marketplace and not applicable for other marketplaces.
+	DeliveryPreferences *DeliveryPreferences `json:"deliveryPreferences,omitempty"`
+
 	// delivery window
 	DeliveryWindow *DeliveryWindow `json:"deliveryWindow,omitempty"`
 
@@ -87,6 +91,10 @@ func (m *CreateFulfillmentOrderRequest) Validate(formats strfmt.Registry) error 
 	var res []error
 
 	if err := m.validateCodSettings(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateDeliveryPreferences(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -159,6 +167,25 @@ func (m *CreateFulfillmentOrderRequest) validateCodSettings(formats strfmt.Regis
 				return ve.ValidateName("codSettings")
 			} else if ce, ok := err.(*errors.CompositeError); ok {
 				return ce.ValidateName("codSettings")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *CreateFulfillmentOrderRequest) validateDeliveryPreferences(formats strfmt.Registry) error {
+	if swag.IsZero(m.DeliveryPreferences) { // not required
+		return nil
+	}
+
+	if m.DeliveryPreferences != nil {
+		if err := m.DeliveryPreferences.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("deliveryPreferences")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("deliveryPreferences")
 			}
 			return err
 		}
@@ -413,6 +440,10 @@ func (m *CreateFulfillmentOrderRequest) ContextValidate(ctx context.Context, for
 		res = append(res, err)
 	}
 
+	if err := m.contextValidateDeliveryPreferences(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.contextValidateDeliveryWindow(ctx, formats); err != nil {
 		res = append(res, err)
 	}
@@ -467,6 +498,22 @@ func (m *CreateFulfillmentOrderRequest) contextValidateCodSettings(ctx context.C
 				return ve.ValidateName("codSettings")
 			} else if ce, ok := err.(*errors.CompositeError); ok {
 				return ce.ValidateName("codSettings")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *CreateFulfillmentOrderRequest) contextValidateDeliveryPreferences(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.DeliveryPreferences != nil {
+		if err := m.DeliveryPreferences.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("deliveryPreferences")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("deliveryPreferences")
 			}
 			return err
 		}

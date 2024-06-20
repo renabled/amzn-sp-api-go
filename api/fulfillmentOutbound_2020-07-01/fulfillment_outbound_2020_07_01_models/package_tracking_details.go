@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// PackageTrackingDetails package tracking details
+// PackageTrackingDetails Tracking details of package
 //
 // swagger:model PackageTrackingDetails
 type PackageTrackingDetails struct {

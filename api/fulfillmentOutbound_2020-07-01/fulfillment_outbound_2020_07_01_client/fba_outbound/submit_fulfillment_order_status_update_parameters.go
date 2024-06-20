@@ -63,7 +63,10 @@ SubmitFulfillmentOrderStatusUpdateParams contains all the parameters to send to 
 */
 type SubmitFulfillmentOrderStatusUpdateParams struct {
 
-	// Body.
+	/* Body.
+
+	   The identifier assigned to the item by the seller when the fulfillment order was created.
+	*/
 	Body *fulfillment_outbound_2020_07_01_models.SubmitFulfillmentOrderStatusUpdateRequest
 
 	/* SellerFulfillmentOrderID.

@@ -19,6 +19,9 @@ import (
 // swagger:model FulfillmentShipmentItem
 type FulfillmentShipmentItem struct {
 
+	// The manufacturer lot codes of the shipped items.
+	ManufacturerLotCodes StringList `json:"manufacturerLotCodes,omitempty"`
+
 	// An identifier for the package that contains the item quantity.
 	PackageNumber int32 `json:"packageNumber,omitempty"`
 
@@ -42,6 +45,10 @@ type FulfillmentShipmentItem struct {
 func (m *FulfillmentShipmentItem) Validate(formats strfmt.Registry) error {
 	var res []error
 
+	if err := m.validateManufacturerLotCodes(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.validateQuantity(formats); err != nil {
 		res = append(res, err)
 	}
@@ -57,6 +64,23 @@ func (m *FulfillmentShipmentItem) Validate(formats strfmt.Registry) error {
 	if len(res) > 0 {
 		return errors.CompositeValidationError(res...)
 	}
+	return nil
+}
+
+func (m *FulfillmentShipmentItem) validateManufacturerLotCodes(formats strfmt.Registry) error {
+	if swag.IsZero(m.ManufacturerLotCodes) { // not required
+		return nil
+	}
+
+	if err := m.ManufacturerLotCodes.Validate(formats); err != nil {
+		if ve, ok := err.(*errors.Validation); ok {
+			return ve.ValidateName("manufacturerLotCodes")
+		} else if ce, ok := err.(*errors.CompositeError); ok {
+			return ce.ValidateName("manufacturerLotCodes")
+		}
+		return err
+	}
+
 	return nil
 }
 
@@ -106,6 +130,10 @@ func (m *FulfillmentShipmentItem) validateSellerSku(formats strfmt.Registry) err
 func (m *FulfillmentShipmentItem) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
 	var res []error
 
+	if err := m.contextValidateManufacturerLotCodes(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.contextValidateQuantity(ctx, formats); err != nil {
 		res = append(res, err)
 	}
@@ -113,6 +141,20 @@ func (m *FulfillmentShipmentItem) ContextValidate(ctx context.Context, formats s
 	if len(res) > 0 {
 		return errors.CompositeValidationError(res...)
 	}
+	return nil
+}
+
+func (m *FulfillmentShipmentItem) contextValidateManufacturerLotCodes(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := m.ManufacturerLotCodes.ContextValidate(ctx, formats); err != nil {
+		if ve, ok := err.(*errors.Validation); ok {
+			return ve.ValidateName("manufacturerLotCodes")
+		} else if ce, ok := err.(*errors.CompositeError); ok {
+			return ce.ValidateName("manufacturerLotCodes")
+		}
+		return err
+	}
+
 	return nil
 }
 

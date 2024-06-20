@@ -53,6 +53,12 @@ func (o *ListOffersReader) ReadResponse(response runtime.ClientResponse, consume
 			return nil, err
 		}
 		return nil, result
+	case 413:
+		result := NewListOffersRequestEntityTooLarge()
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		return nil, result
 	case 415:
 		result := NewListOffersUnsupportedMediaType()
 		if err := result.readResponse(response, consumer, o.formats); err != nil {
@@ -472,6 +478,81 @@ func (o *ListOffersNotFound) readResponse(response runtime.ClientResponse, consu
 	if hdrXAmznRateLimitLimit != "" {
 		o.XAmznRateLimitLimit = hdrXAmznRateLimitLimit
 	}
+
+	// hydrates response header x-amzn-RequestId
+	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")
+
+	if hdrXAmznRequestID != "" {
+		o.XAmznRequestID = hdrXAmznRequestID
+	}
+
+	o.Payload = new(replenishment_2022_11_07_models.ErrorList)
+
+	// response payload
+	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewListOffersRequestEntityTooLarge creates a ListOffersRequestEntityTooLarge with default headers values
+func NewListOffersRequestEntityTooLarge() *ListOffersRequestEntityTooLarge {
+	return &ListOffersRequestEntityTooLarge{}
+}
+
+/*
+ListOffersRequestEntityTooLarge describes a response with status code 413, with default header values.
+
+The request size exceeded the maximum accepted size.
+*/
+type ListOffersRequestEntityTooLarge struct {
+
+	/* Unique request reference identifier.
+	 */
+	XAmznRequestID string
+
+	Payload *replenishment_2022_11_07_models.ErrorList
+}
+
+// IsSuccess returns true when this list offers request entity too large response has a 2xx status code
+func (o *ListOffersRequestEntityTooLarge) IsSuccess() bool {
+	return false
+}
+
+// IsRedirect returns true when this list offers request entity too large response has a 3xx status code
+func (o *ListOffersRequestEntityTooLarge) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this list offers request entity too large response has a 4xx status code
+func (o *ListOffersRequestEntityTooLarge) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this list offers request entity too large response has a 5xx status code
+func (o *ListOffersRequestEntityTooLarge) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this list offers request entity too large response a status code equal to that given
+func (o *ListOffersRequestEntityTooLarge) IsCode(code int) bool {
+	return code == 413
+}
+
+func (o *ListOffersRequestEntityTooLarge) Error() string {
+	return fmt.Sprintf("[POST /replenishment/2022-11-07/offers/search][%d] listOffersRequestEntityTooLarge  %+v", 413, o.Payload)
+}
+
+func (o *ListOffersRequestEntityTooLarge) String() string {
+	return fmt.Sprintf("[POST /replenishment/2022-11-07/offers/search][%d] listOffersRequestEntityTooLarge  %+v", 413, o.Payload)
+}
+
+func (o *ListOffersRequestEntityTooLarge) GetPayload() *replenishment_2022_11_07_models.ErrorList {
+	return o.Payload
+}
+
+func (o *ListOffersRequestEntityTooLarge) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	// hydrates response header x-amzn-RequestId
 	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")

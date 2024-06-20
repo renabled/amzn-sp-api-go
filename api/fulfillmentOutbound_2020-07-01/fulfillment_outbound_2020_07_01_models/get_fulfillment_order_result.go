@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// GetFulfillmentOrderResult get fulfillment order result
+// GetFulfillmentOrderResult The request for the getFulfillmentOrder operation.
 //
 // swagger:model GetFulfillmentOrderResult
 type GetFulfillmentOrderResult struct {

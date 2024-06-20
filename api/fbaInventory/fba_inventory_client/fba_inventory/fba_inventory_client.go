@@ -30,28 +30,148 @@ type ClientOption func(*runtime.ClientOperation)
 
 // ClientService is the interface for Client methods
 type ClientService interface {
+	AddInventory(params *AddInventoryParams, opts ...ClientOption) (*AddInventoryOK, error)
+
+	CreateInventoryItem(params *CreateInventoryItemParams, opts ...ClientOption) (*CreateInventoryItemOK, error)
+
+	DeleteInventoryItem(params *DeleteInventoryItemParams, opts ...ClientOption) (*DeleteInventoryItemOK, error)
+
 	GetInventorySummaries(params *GetInventorySummariesParams, opts ...ClientOption) (*GetInventorySummariesOK, error)
 
 	SetTransport(transport runtime.ClientTransport)
 }
 
 /*
-	GetInventorySummaries Returns a list of inventory summaries. The summaries returned depend on the presence or absence of the `startDateTime`, `sellerSkus` and `sellerSku` parameters:
+AddInventory Requests that Amazon add items to the Sandbox Inventory with desired amount of quantity in the sandbox environment. This is a sandbox-only operation and must be directed to a sandbox endpoint. Refer to [Selling Partner API sandbox](https://developer-docs.amazon.com/sp-api/docs/the-selling-partner-api-sandbox) for more information.
+*/
+func (a *Client) AddInventory(params *AddInventoryParams, opts ...ClientOption) (*AddInventoryOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewAddInventoryParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "addInventory",
+		Method:             "POST",
+		PathPattern:        "/fba/inventory/v1/items/inventory",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &AddInventoryReader{formats: a.formats},
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
 
-- All inventory summaries with available details are returned when the `startDateTime`, `sellerSkus` and `sellerSku` parameters are omitted.
-- When `startDateTime` is provided, the operation returns inventory summaries that have had changes after the date and time specified. The `sellerSkus` and `sellerSku` parameters are ignored. **Important:** To avoid errors, use both `startDateTime` and `nextToken` to get the next page of inventory summaries that have changed after the date and time specified.
-- When the `sellerSkus` parameter is provided, the operation returns inventory summaries for only the specified `sellerSkus`. The `sellerSku` parameter is ignored.
-- When the `sellerSku` parameter is provided, the operation returns inventory summaries for only the specified `sellerSku`.
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*AddInventoryOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for addInventory: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
 
-**Note:** The parameters associated with this operation may contain special characters that must be encoded to successfully call the API. To avoid errors with SKUs when encoding URLs, refer to [URL Encoding](https://developer-docs.amazon.com/sp-api/docs/url-encoding).
+/*
+CreateInventoryItem Requests that Amazon create product-details in the Sandbox Inventory in the sandbox environment. This is a sandbox-only operation and must be directed to a sandbox endpoint. Refer to [Selling Partner API sandbox](https://developer-docs.amazon.com/sp-api/docs/the-selling-partner-api-sandbox) for more information.
+*/
+func (a *Client) CreateInventoryItem(params *CreateInventoryItemParams, opts ...ClientOption) (*CreateInventoryItemOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewCreateInventoryItemParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "createInventoryItem",
+		Method:             "POST",
+		PathPattern:        "/fba/inventory/v1/items",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &CreateInventoryItemReader{formats: a.formats},
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
 
-**Usage Plan:**
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*CreateInventoryItemOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for createInventoryItem: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+DeleteInventoryItem Requests that Amazon Deletes an item from the Sandbox Inventory in the sandbox environment. This is a sandbox-only operation and must be directed to a sandbox endpoint. Refer to [Selling Partner API sandbox](https://developer-docs.amazon.com/sp-api/docs/the-selling-partner-api-sandbox) for more information.
+*/
+func (a *Client) DeleteInventoryItem(params *DeleteInventoryItemParams, opts ...ClientOption) (*DeleteInventoryItemOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewDeleteInventoryItemParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "deleteInventoryItem",
+		Method:             "DELETE",
+		PathPattern:        "/fba/inventory/v1/items/{sellerSku}",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &DeleteInventoryItemReader{formats: a.formats},
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*DeleteInventoryItemOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for deleteInventoryItem: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+	GetInventorySummaries Returns a list of inventory summaries. The summaries returned depend on the presence or absence of the startDateTime, sellerSkus and sellerSku parameters:
+
+- All inventory summaries with available details are returned when the startDateTime, sellerSkus and sellerSku parameters are omitted.
+- When startDateTime is provided, the operation returns inventory summaries that have had changes after the date and time specified. The sellerSkus and sellerSku parameters are ignored. Important: To avoid errors, use both startDateTime and nextToken to get the next page of inventory summaries that have changed after the date and time specified.
+- When the sellerSkus parameter is provided, the operation returns inventory summaries for only the specified sellerSkus. The sellerSku parameter is ignored.
+- When the sellerSku parameter is provided, the operation returns inventory summaries for only the specified sellerSku.
+
+Note: The parameters associated with this operation may contain special characters that must be encoded to successfully call the API. To avoid errors with SKUs when encoding URLs, refer to URL Encoding.
+
+Usage Plan:
 
 | Rate (requests per second) | Burst |
 | ---- | ---- |
 | 2 | 2 |
 
-The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
+The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see Usage Plans and Rate Limits in the Selling Partner API.
 */
 func (a *Client) GetInventorySummaries(params *GetInventorySummariesParams, opts ...ClientOption) (*GetInventorySummariesOK, error) {
 	// TODO: Validate the params before sending

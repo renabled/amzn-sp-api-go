@@ -63,7 +63,10 @@ CreateFulfillmentOrderParams contains all the parameters to send to the API endp
 */
 type CreateFulfillmentOrderParams struct {
 
-	// Body.
+	/* Body.
+
+	   CreateFulfillmentOrderRequest parameter
+	*/
 	Body *fulfillment_outbound_2020_07_01_models.CreateFulfillmentOrderRequest
 
 	timeout    time.Duration
