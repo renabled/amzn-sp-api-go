@@ -12,7 +12,7 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// BuyerCustomizedInfoDetail buyer customized info detail
+// BuyerCustomizedInfoDetail The details of the products the vendor has configured as customizable.
 //
 // swagger:model buyerCustomizedInfoDetail
 type BuyerCustomizedInfoDetail struct {

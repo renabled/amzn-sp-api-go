@@ -15,7 +15,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// PartyIdentification party identification
+// PartyIdentification Name, address and tax details of a party.
 //
 // swagger:model PartyIdentification
 type PartyIdentification struct {

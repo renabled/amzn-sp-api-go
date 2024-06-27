@@ -19,10 +19,10 @@ import (
 // swagger:model PackingSlipList
 type PackingSlipList struct {
 
-	// packing slips
+	// An array of packing slip objects.
 	PackingSlips []*PackingSlip `json:"packingSlips"`
 
-	// pagination
+	// The pagination elements required to retrieve the remaining data.
 	Pagination *Pagination `json:"pagination,omitempty"`
 }
 

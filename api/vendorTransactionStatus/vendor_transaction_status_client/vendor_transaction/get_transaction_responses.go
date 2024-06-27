@@ -176,7 +176,7 @@ func NewGetTransactionBadRequest() *GetTransactionBadRequest {
 /*
 GetTransactionBadRequest describes a response with status code 400, with default header values.
 
-Request has missing or invalid parameters and cannot be parsed.
+Request has missing or not valid parameters and cannot be parsed.
 */
 type GetTransactionBadRequest struct {
 
@@ -262,14 +262,9 @@ func NewGetTransactionUnauthorized() *GetTransactionUnauthorized {
 /*
 GetTransactionUnauthorized describes a response with status code 401, with default header values.
 
-The request's Authorization header is not formatted correctly or does not contain a valid token.
+The request's authorization header is not formatted correctly or does not contain a valid token.
 */
 type GetTransactionUnauthorized struct {
-
-	/* Your rate limit (requests per second) for this operation.
-	_Note:_ For this status code, the rate limit header is deprecated and no longer returned.
-	*/
-	XAmznRateLimitLimit string
 
 	/* Unique request reference identifier.
 	 */
@@ -316,13 +311,6 @@ func (o *GetTransactionUnauthorized) GetPayload() *vendor_transaction_status_mod
 }
 
 func (o *GetTransactionUnauthorized) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
-
-	// hydrates response header x-amzn-RateLimit-Limit
-	hdrXAmznRateLimitLimit := response.GetHeader("x-amzn-RateLimit-Limit")
-
-	if hdrXAmznRateLimitLimit != "" {
-		o.XAmznRateLimitLimit = hdrXAmznRateLimitLimit
-	}
 
 	// hydrates response header x-amzn-RequestId
 	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")
@@ -424,9 +412,13 @@ func NewGetTransactionNotFound() *GetTransactionNotFound {
 /*
 GetTransactionNotFound describes a response with status code 404, with default header values.
 
-The resource specified does not exist.
+The specified resource does not exist.
 */
 type GetTransactionNotFound struct {
+
+	/* Your rate limit (requests per second) for this operation.
+	 */
+	XAmznRateLimitLimit string
 
 	/* Unique request reference identifier.
 	 */
@@ -474,6 +466,13 @@ func (o *GetTransactionNotFound) GetPayload() *vendor_transaction_status_models.
 
 func (o *GetTransactionNotFound) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
+	// hydrates response header x-amzn-RateLimit-Limit
+	hdrXAmznRateLimitLimit := response.GetHeader("x-amzn-RateLimit-Limit")
+
+	if hdrXAmznRateLimitLimit != "" {
+		o.XAmznRateLimitLimit = hdrXAmznRateLimitLimit
+	}
+
 	// hydrates response header x-amzn-RequestId
 	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")
 
@@ -502,11 +501,6 @@ GetTransactionUnsupportedMediaType describes a response with status code 415, wi
 The request payload is in an unsupported format.
 */
 type GetTransactionUnsupportedMediaType struct {
-
-	/* Your rate limit (requests per second) for this operation.
-	_Note:_ For this status code, the rate limit header is deprecated and no longer returned.
-	*/
-	XAmznRateLimitLimit string
 
 	/* Unique request reference identifier.
 	 */
@@ -554,13 +548,6 @@ func (o *GetTransactionUnsupportedMediaType) GetPayload() *vendor_transaction_st
 
 func (o *GetTransactionUnsupportedMediaType) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	// hydrates response header x-amzn-RateLimit-Limit
-	hdrXAmznRateLimitLimit := response.GetHeader("x-amzn-RateLimit-Limit")
-
-	if hdrXAmznRateLimitLimit != "" {
-		o.XAmznRateLimitLimit = hdrXAmznRateLimitLimit
-	}
-
 	// hydrates response header x-amzn-RequestId
 	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")
 
@@ -589,11 +576,6 @@ GetTransactionTooManyRequests describes a response with status code 429, with de
 The frequency of requests was greater than allowed.
 */
 type GetTransactionTooManyRequests struct {
-
-	/* Your rate limit (requests per second) for this operation.
-	_Note:_ For this status code, the rate limit header is deprecated and no longer returned.
-	*/
-	XAmznRateLimitLimit string
 
 	/* Unique request reference identifier.
 	 */
@@ -641,13 +623,6 @@ func (o *GetTransactionTooManyRequests) GetPayload() *vendor_transaction_status_
 
 func (o *GetTransactionTooManyRequests) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	// hydrates response header x-amzn-RateLimit-Limit
-	hdrXAmznRateLimitLimit := response.GetHeader("x-amzn-RateLimit-Limit")
-
-	if hdrXAmznRateLimitLimit != "" {
-		o.XAmznRateLimitLimit = hdrXAmznRateLimitLimit
-	}
-
 	// hydrates response header x-amzn-RequestId
 	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")
 
@@ -676,11 +651,6 @@ GetTransactionInternalServerError describes a response with status code 500, wit
 An unexpected condition occurred that prevented the server from fulfilling the request.
 */
 type GetTransactionInternalServerError struct {
-
-	/* Your rate limit (requests per second) for this operation.
-	_Note:_ For this status code, the rate limit header is deprecated and no longer returned.
-	*/
-	XAmznRateLimitLimit string
 
 	/* Unique request reference identifier.
 	 */
@@ -728,13 +698,6 @@ func (o *GetTransactionInternalServerError) GetPayload() *vendor_transaction_sta
 
 func (o *GetTransactionInternalServerError) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	// hydrates response header x-amzn-RateLimit-Limit
-	hdrXAmznRateLimitLimit := response.GetHeader("x-amzn-RateLimit-Limit")
-
-	if hdrXAmznRateLimitLimit != "" {
-		o.XAmznRateLimitLimit = hdrXAmznRateLimitLimit
-	}
-
 	// hydrates response header x-amzn-RequestId
 	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")
 
@@ -763,11 +726,6 @@ GetTransactionServiceUnavailable describes a response with status code 503, with
 Temporary overloading or maintenance of the server.
 */
 type GetTransactionServiceUnavailable struct {
-
-	/* Your rate limit (requests per second) for this operation.
-	_Note:_ For this status code, the rate limit header is deprecated and no longer returned.
-	*/
-	XAmznRateLimitLimit string
 
 	/* Unique request reference identifier.
 	 */
@@ -814,13 +772,6 @@ func (o *GetTransactionServiceUnavailable) GetPayload() *vendor_transaction_stat
 }
 
 func (o *GetTransactionServiceUnavailable) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
-
-	// hydrates response header x-amzn-RateLimit-Limit
-	hdrXAmznRateLimitLimit := response.GetHeader("x-amzn-RateLimit-Limit")
-
-	if hdrXAmznRateLimitLimit != "" {
-		o.XAmznRateLimitLimit = hdrXAmznRateLimitLimit
-	}
 
 	// hydrates response header x-amzn-RequestId
 	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")

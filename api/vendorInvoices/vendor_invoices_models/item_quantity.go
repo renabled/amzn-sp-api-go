@@ -29,7 +29,7 @@ type ItemQuantity struct {
 	// Enum: [Cases Eaches]
 	UnitOfMeasure *string `json:"unitOfMeasure"`
 
-	// The case size, if the unit of measure value is Cases.
+	// The case size, if the unit of measure value is `Cases`.
 	UnitSize int64 `json:"unitSize,omitempty"`
 }
 

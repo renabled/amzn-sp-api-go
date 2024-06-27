@@ -15,7 +15,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// ShippingLabelRequest shipping label request
+// ShippingLabelRequest Represents the request payload for creating a shipping label, containing the purchase order number, selling party, ship from party, and a list of containers or packages in the shipment.
 //
 // swagger:model ShippingLabelRequest
 type ShippingLabelRequest struct {

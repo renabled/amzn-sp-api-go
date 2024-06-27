@@ -50,7 +50,7 @@ type Address struct {
 	// The phone number of the person, business or institution located at that address.
 	Phone string `json:"phone,omitempty"`
 
-	// The postal code of that address. It conatins a series of letters or digits or both, sometimes including spaces or punctuation.
+	// The postal code of that address. It contains a series of letters or digits or both, sometimes including spaces or punctuation.
 	PostalCode string `json:"postalCode,omitempty"`
 
 	// The state or region where person, business or institution is located.

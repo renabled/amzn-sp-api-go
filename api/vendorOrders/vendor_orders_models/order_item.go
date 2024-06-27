@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// OrderItem order item
+// OrderItem Represents an individual item in an order, including item details, quantities, pricing, and backorder information.
 //
 // swagger:model OrderItem
 type OrderItem struct {

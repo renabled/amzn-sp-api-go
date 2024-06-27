@@ -19,18 +19,18 @@ import (
 // swagger:model StatusUpdateDetails
 type StatusUpdateDetails struct {
 
-	// Provides a reason code for the status of the package that will provide additional information about the transportation status. For more information, refer to the [Additional Fields Explanation](https://developer-docs.amazon.com/sp-api/docs/vendor-direct-fulfillment-shipping-api-use-case-guide#additional-fields-explanation).
+	// Provides a reason code for the status for the package that will provide additional information about the transportation status. For more information, refer to the [Additional Fields Explanation](https://developer-docs.amazon.com/sp-api/docs/vendor-direct-fulfillment-shipping-api-use-case-guide#additional-fields-explanation).
 	// Required: true
 	ReasonCode *string `json:"reasonCode"`
 
 	// shipment schedule
 	ShipmentSchedule *StatusUpdateDetailsShipmentSchedule `json:"shipmentSchedule,omitempty"`
 
-	// Indicates the shipment status code of the package that provides transportation information for Amazon tracking systems and ultimately for the final customer. For more information, refer to the [Additional Fields Explanation](https://developer-docs.amazon.com/sp-api/docs/vendor-direct-fulfillment-shipping-api-use-case-guide#additional-fields-explanation).
+	// Indicates the shipment status code for the package that provides transportation information for Amazon tracking systems and ultimately for the final customer. For more information, refer to the [Additional Fields Explanation](https://developer-docs.amazon.com/sp-api/docs/vendor-direct-fulfillment-shipping-api-use-case-guide#additional-fields-explanation).
 	// Required: true
 	StatusCode *string `json:"statusCode"`
 
-	// The date and time when the shipment status was updated. This field is expected to be in ISO-8601 date/time format, with UTC time zone or UTC offset. For example, 2020-07-16T23:00:00Z or 2020-07-16T23:00:00+01:00.
+	// The date and time when the shipment status was updated. This field is expected to be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> date/time format, with UTC time zone or UTC offset. For example, `2020-07-16T23:00:00Z` or `2020-07-16T23:00:00+01:00`.
 	// Required: true
 	// Format: date-time
 	StatusDateTime *strfmt.DateTime `json:"statusDateTime"`
@@ -39,7 +39,7 @@ type StatusUpdateDetails struct {
 	// Required: true
 	StatusLocationAddress *Address `json:"statusLocationAddress"`
 
-	// This is required to be provided for every package and should match with the trackingNumber sent for the shipment confirmation.
+	// This is required to be provided for every package and should match with the `trackingNumber` sent for the shipment confirmation.
 	// Required: true
 	TrackingNumber *string `json:"trackingNumber"`
 }
@@ -225,20 +225,20 @@ func (m *StatusUpdateDetails) UnmarshalBinary(b []byte) error {
 	return nil
 }
 
-// StatusUpdateDetailsShipmentSchedule status update details shipment schedule
+// StatusUpdateDetailsShipmentSchedule Details for the scheduled delivery timeline for a shipment, including the estimated delivery date and time, as well as the start and end times of the appointment window for delivery.
 //
 // swagger:model StatusUpdateDetailsShipmentSchedule
 type StatusUpdateDetailsShipmentSchedule struct {
 
-	// This field indicates the date and time at the end of the appointment window scheduled to deliver the shipment. This field is expected to be in ISO-8601 date/time format, with UTC time zone or UTC offset. For example, 2020-07-16T23:00:00Z or 2020-07-16T23:00:00+01:00.
+	// This field indicates the date and time at the end of the appointment window scheduled to deliver the shipment. This field is expected to be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> date/time format, with UTC time zone or UTC offset. For example, `2020-07-16T23:00:00Z` or `2020-07-16T23:00:00+01:00`.
 	// Format: date-time
 	ApptWindowEndDateTime strfmt.DateTime `json:"apptWindowEndDateTime,omitempty"`
 
-	// This field indicates the date and time at the start of the appointment window scheduled to deliver the shipment. This field is expected to be in ISO-8601 date/time format, with UTC time zone or UTC offset. For example, 2020-07-16T23:00:00Z or 2020-07-16T23:00:00+01:00.
+	// This field indicates the date and time at the start of the appointment window scheduled to deliver the shipment. This field is expected to be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> date/time format, with UTC time zone or UTC offset. For example, `2020-07-16T23:00:00Z` or `2020-07-16T23:00:00+01:00`.
 	// Format: date-time
 	ApptWindowStartDateTime strfmt.DateTime `json:"apptWindowStartDateTime,omitempty"`
 
-	// Date on which the shipment is expected to reach the customer delivery location. This field is expected to be in ISO-8601 date/time format, with UTC time zone or UTC offset. For example, 2020-07-16T23:00:00Z or 2020-07-16T23:00:00+01:00.
+	// Date on which the shipment is expected to reach the customer delivery location. This field is expected to be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> date/time format, with UTC time zone or UTC offset. For example, `2020-07-16T23:00:00Z` or `2020-07-16T23:00:00+01:00`.
 	// Format: date-time
 	EstimatedDeliveryDateTime strfmt.DateTime `json:"estimatedDeliveryDateTime,omitempty"`
 }

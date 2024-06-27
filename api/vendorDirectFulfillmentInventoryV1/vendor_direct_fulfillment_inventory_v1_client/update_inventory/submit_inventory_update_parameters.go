@@ -63,7 +63,10 @@ SubmitInventoryUpdateParams contains all the parameters to send to the API endpo
 */
 type SubmitInventoryUpdateParams struct {
 
-	// Body.
+	/* Body.
+
+	   The request body that contains the inventory update data to submit.
+	*/
 	Body *vendor_direct_fulfillment_inventory_v1_models.SubmitInventoryUpdateRequest
 
 	/* WarehouseID.

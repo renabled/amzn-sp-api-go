@@ -13,7 +13,7 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// GetPackingSlipResponse get packing slip response
+// GetPackingSlipResponse Response payload with packing slip.
 //
 // swagger:model GetPackingSlipResponse
 type GetPackingSlipResponse struct {

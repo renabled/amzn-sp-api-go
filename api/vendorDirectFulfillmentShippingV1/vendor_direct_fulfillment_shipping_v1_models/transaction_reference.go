@@ -12,7 +12,7 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// TransactionReference transaction reference
+// TransactionReference Response containing the transaction ID.
 //
 // swagger:model TransactionReference
 type TransactionReference struct {

@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// OrderItem order item
+// OrderItem An order item.
 //
 // swagger:model OrderItem
 type OrderItem struct {

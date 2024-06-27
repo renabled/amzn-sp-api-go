@@ -262,14 +262,9 @@ func NewSubmitAcknowledgementForbidden() *SubmitAcknowledgementForbidden {
 /*
 SubmitAcknowledgementForbidden describes a response with status code 403, with default header values.
 
-Indicates that access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.
+Indicates that access to the resource is forbidden. Possible reasons include `Access Denied`, `Unauthorized,` `Expired Token`, or `Invalid Signature`.
 */
 type SubmitAcknowledgementForbidden struct {
-
-	/* Your rate limit (requests per second) for this operation.
-	_Note:_ For this status code, the rate limit header is deprecated and no longer returned.
-	*/
-	XAmznRateLimitLimit string
 
 	/* Unique request reference identifier.
 	 */
@@ -316,13 +311,6 @@ func (o *SubmitAcknowledgementForbidden) GetPayload() *vendor_orders_models.Subm
 }
 
 func (o *SubmitAcknowledgementForbidden) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
-
-	// hydrates response header x-amzn-RateLimit-Limit
-	hdrXAmznRateLimitLimit := response.GetHeader("x-amzn-RateLimit-Limit")
-
-	if hdrXAmznRateLimitLimit != "" {
-		o.XAmznRateLimitLimit = hdrXAmznRateLimitLimit
-	}
 
 	// hydrates response header x-amzn-RequestId
 	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")
@@ -439,11 +427,6 @@ The request size exceeded the maximum accepted size.
 */
 type SubmitAcknowledgementRequestEntityTooLarge struct {
 
-	/* Your rate limit (requests per second) for this operation.
-	_Note:_ For this status code, the rate limit header is deprecated and no longer returned.
-	*/
-	XAmznRateLimitLimit string
-
 	/* Unique request reference identifier.
 	 */
 	XAmznRequestID string
@@ -490,13 +473,6 @@ func (o *SubmitAcknowledgementRequestEntityTooLarge) GetPayload() *vendor_orders
 
 func (o *SubmitAcknowledgementRequestEntityTooLarge) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	// hydrates response header x-amzn-RateLimit-Limit
-	hdrXAmznRateLimitLimit := response.GetHeader("x-amzn-RateLimit-Limit")
-
-	if hdrXAmznRateLimitLimit != "" {
-		o.XAmznRateLimitLimit = hdrXAmznRateLimitLimit
-	}
-
 	// hydrates response header x-amzn-RequestId
 	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")
 
@@ -525,11 +501,6 @@ SubmitAcknowledgementUnsupportedMediaType describes a response with status code 
 The request payload is in an unsupported format.
 */
 type SubmitAcknowledgementUnsupportedMediaType struct {
-
-	/* Your rate limit (requests per second) for this operation.
-	_Note:_ For this status code, the rate limit header is deprecated and no longer returned.
-	*/
-	XAmznRateLimitLimit string
 
 	/* Unique request reference identifier.
 	 */
@@ -577,13 +548,6 @@ func (o *SubmitAcknowledgementUnsupportedMediaType) GetPayload() *vendor_orders_
 
 func (o *SubmitAcknowledgementUnsupportedMediaType) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	// hydrates response header x-amzn-RateLimit-Limit
-	hdrXAmznRateLimitLimit := response.GetHeader("x-amzn-RateLimit-Limit")
-
-	if hdrXAmznRateLimitLimit != "" {
-		o.XAmznRateLimitLimit = hdrXAmznRateLimitLimit
-	}
-
 	// hydrates response header x-amzn-RequestId
 	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")
 
@@ -612,11 +576,6 @@ SubmitAcknowledgementTooManyRequests describes a response with status code 429, 
 The frequency of requests was greater than allowed.
 */
 type SubmitAcknowledgementTooManyRequests struct {
-
-	/* Your rate limit (requests per second) for this operation.
-	_Note:_ For this status code, the rate limit header is deprecated and no longer returned.
-	*/
-	XAmznRateLimitLimit string
 
 	/* Unique request reference identifier.
 	 */
@@ -664,13 +623,6 @@ func (o *SubmitAcknowledgementTooManyRequests) GetPayload() *vendor_orders_model
 
 func (o *SubmitAcknowledgementTooManyRequests) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	// hydrates response header x-amzn-RateLimit-Limit
-	hdrXAmznRateLimitLimit := response.GetHeader("x-amzn-RateLimit-Limit")
-
-	if hdrXAmznRateLimitLimit != "" {
-		o.XAmznRateLimitLimit = hdrXAmznRateLimitLimit
-	}
-
 	// hydrates response header x-amzn-RequestId
 	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")
 
@@ -699,11 +651,6 @@ SubmitAcknowledgementInternalServerError describes a response with status code 5
 An unexpected condition occurred that prevented the server from fulfilling the request.
 */
 type SubmitAcknowledgementInternalServerError struct {
-
-	/* Your rate limit (requests per second) for this operation.
-	_Note:_ For this status code, the rate limit header is deprecated and no longer returned.
-	*/
-	XAmznRateLimitLimit string
 
 	/* Unique request reference identifier.
 	 */
@@ -751,13 +698,6 @@ func (o *SubmitAcknowledgementInternalServerError) GetPayload() *vendor_orders_m
 
 func (o *SubmitAcknowledgementInternalServerError) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	// hydrates response header x-amzn-RateLimit-Limit
-	hdrXAmznRateLimitLimit := response.GetHeader("x-amzn-RateLimit-Limit")
-
-	if hdrXAmznRateLimitLimit != "" {
-		o.XAmznRateLimitLimit = hdrXAmznRateLimitLimit
-	}
-
 	// hydrates response header x-amzn-RequestId
 	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")
 
@@ -786,11 +726,6 @@ SubmitAcknowledgementServiceUnavailable describes a response with status code 50
 Temporary overloading or maintenance of the server.
 */
 type SubmitAcknowledgementServiceUnavailable struct {
-
-	/* Your rate limit (requests per second) for this operation.
-	_Note:_ For this status code, the rate limit header is deprecated and no longer returned.
-	*/
-	XAmznRateLimitLimit string
 
 	/* Unique request reference identifier.
 	 */
@@ -837,13 +772,6 @@ func (o *SubmitAcknowledgementServiceUnavailable) GetPayload() *vendor_orders_mo
 }
 
 func (o *SubmitAcknowledgementServiceUnavailable) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
-
-	// hydrates response header x-amzn-RateLimit-Limit
-	hdrXAmznRateLimitLimit := response.GetHeader("x-amzn-RateLimit-Limit")
-
-	if hdrXAmznRateLimitLimit != "" {
-		o.XAmznRateLimitLimit = hdrXAmznRateLimitLimit
-	}
 
 	// hydrates response header x-amzn-RequestId
 	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")

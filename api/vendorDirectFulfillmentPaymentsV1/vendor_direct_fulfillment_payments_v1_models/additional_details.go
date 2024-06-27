@@ -15,7 +15,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// AdditionalDetails A field where the selling party can provide additional information for tax-related or any other purposes.
+// AdditionalDetails A field where the selling party provides additional information.
 //
 // swagger:model AdditionalDetails
 type AdditionalDetails struct {

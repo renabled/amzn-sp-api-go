@@ -16,7 +16,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// OrderItemStatus order item status
+// OrderItemStatus Represents the current status of an order item, including acknowledgement and receiving details.
 //
 // swagger:model OrderItemStatus
 type OrderItemStatus struct {
@@ -714,7 +714,7 @@ func (m *OrderItemStatusOrderedQuantity) UnmarshalBinary(b []byte) error {
 // swagger:model OrderItemStatusReceivingStatus
 type OrderItemStatusReceivingStatus struct {
 
-	// The date when the most recent item was received at the buyer's warehouse. Must be in ISO-8601 date/time format.
+	// The date when the most recent item was received at the buyer's warehouse. Must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> date/time format.
 	// Format: date-time
 	LastReceiveDate strfmt.DateTime `json:"lastReceiveDate,omitempty"`
 

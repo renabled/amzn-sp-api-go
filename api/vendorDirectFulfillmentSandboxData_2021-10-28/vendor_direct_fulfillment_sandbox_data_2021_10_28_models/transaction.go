@@ -15,7 +15,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// Transaction The transaction details including the status. If the transaction was successful, also includes the requested test order data.
+// Transaction The transaction details that include the status. If the transaction is successful, also includes the requested test order data.
 //
 // swagger:model Transaction
 type Transaction struct {
@@ -25,10 +25,10 @@ type Transaction struct {
 	// Enum: [FAILURE PROCESSING SUCCESS]
 	Status *string `json:"status"`
 
-	// Test case data for the transaction. Only available when the transaction status is SUCCESS.
+	// Test case data for the transaction. Only available when the transaction status is `SUCCESS`.
 	TestCaseData *TestCaseData `json:"testCaseData,omitempty"`
 
-	// The unique identifier returned in the response to the generateOrderScenarios request.
+	// The unique identifier returned in the response for the `generateOrderScenarios` request.
 	// Required: true
 	TransactionID *string `json:"transactionId"`
 }

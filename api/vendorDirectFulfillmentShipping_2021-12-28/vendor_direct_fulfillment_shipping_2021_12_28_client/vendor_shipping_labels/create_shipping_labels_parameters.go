@@ -63,7 +63,10 @@ CreateShippingLabelsParams contains all the parameters to send to the API endpoi
 */
 type CreateShippingLabelsParams struct {
 
-	// Body.
+	/* Body.
+
+	   The request payload that contains parameters for creating shipping labels.
+	*/
 	Body *vendor_direct_fulfillment_shipping_2021_12_28_models.CreateShippingLabelsRequest
 
 	/* PurchaseOrderNumber.

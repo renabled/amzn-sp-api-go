@@ -63,7 +63,10 @@ SubmitShippingLabelRequestParams contains all the parameters to send to the API 
 */
 type SubmitShippingLabelRequestParams struct {
 
-	// Body.
+	/* Body.
+
+	   Request body containing one or more shipping labels data.
+	*/
 	Body *vendor_direct_fulfillment_shipping_v1_models.SubmitShippingLabelsRequest
 
 	timeout    time.Duration

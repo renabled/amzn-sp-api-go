@@ -14,15 +14,15 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// CustomerInvoiceList customer invoice list
+// CustomerInvoiceList Represents a list of customer invoices, potentially paginated.
 //
 // swagger:model CustomerInvoiceList
 type CustomerInvoiceList struct {
 
-	// customer invoices
+	// Represents a customer invoice within the `CustomerInvoiceList`.
 	CustomerInvoices []*CustomerInvoice `json:"customerInvoices"`
 
-	// pagination
+	// The pagination elements required to retrieve the remaining data.
 	Pagination *Pagination `json:"pagination,omitempty"`
 }
 

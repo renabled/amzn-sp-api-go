@@ -63,7 +63,10 @@ GenerateOrderScenariosParams contains all the parameters to send to the API endp
 */
 type GenerateOrderScenariosParams struct {
 
-	// Body.
+	/* Body.
+
+	   The request payload that contain parameters to generate test order data scenarios.
+	*/
 	Body *vendor_direct_fulfillment_sandbox_data_2021_10_28_models.GenerateOrderScenarioRequest
 
 	timeout    time.Duration

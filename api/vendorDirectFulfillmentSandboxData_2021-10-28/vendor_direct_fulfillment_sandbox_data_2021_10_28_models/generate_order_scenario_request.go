@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// GenerateOrderScenarioRequest The request body for the generateOrderScenarios operation.
+// GenerateOrderScenarioRequest The `generateOrderScenarios` request body.
 //
 // swagger:model GenerateOrderScenarioRequest
 type GenerateOrderScenarioRequest struct {

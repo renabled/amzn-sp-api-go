@@ -13,7 +13,7 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// GetCustomerInvoiceResponse The response schema for the getCustomerInvoice operation.
+// GetCustomerInvoiceResponse The response schema for the `getCustomerInvoice` operation.
 //
 // swagger:model GetCustomerInvoiceResponse
 type GetCustomerInvoiceResponse struct {
@@ -21,7 +21,7 @@ type GetCustomerInvoiceResponse struct {
 	// errors
 	Errors ErrorList `json:"errors,omitempty"`
 
-	// The payload for the getCustomerInvoice operation.
+	// The payload for the `getCustomerInvoice` operation.
 	Payload *CustomerInvoice `json:"payload,omitempty"`
 }
 

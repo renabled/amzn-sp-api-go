@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// DateTime Defines a date and time according to ISO8601.
+// DateTime Defines a date and time according to <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a>.
 //
 // swagger:model DateTime
 type DateTime strfmt.DateTime

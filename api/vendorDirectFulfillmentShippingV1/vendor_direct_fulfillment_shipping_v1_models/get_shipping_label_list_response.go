@@ -13,7 +13,7 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// GetShippingLabelListResponse The response schema for the getShippingLabels operation.
+// GetShippingLabelListResponse The response schema for the `getShippingLabels` operation.
 //
 // swagger:model GetShippingLabelListResponse
 type GetShippingLabelListResponse struct {

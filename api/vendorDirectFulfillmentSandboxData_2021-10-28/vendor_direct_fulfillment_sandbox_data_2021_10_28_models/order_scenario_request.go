@@ -19,11 +19,11 @@ import (
 // swagger:model OrderScenarioRequest
 type OrderScenarioRequest struct {
 
-	// The identifier of the selling party or vendor.
+	// The identifier for the selling party or vendor.
 	// Required: true
 	SellingParty *PartyIdentification `json:"sellingParty"`
 
-	// The warehouse code of the vendor.
+	// The warehouse code for the vendor.
 	// Required: true
 	ShipFromParty *PartyIdentification `json:"shipFromParty"`
 }

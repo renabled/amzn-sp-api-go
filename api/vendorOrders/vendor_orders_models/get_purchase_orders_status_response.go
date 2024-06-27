@@ -13,7 +13,7 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// GetPurchaseOrdersStatusResponse The response schema for the getPurchaseOrdersStatus operation.
+// GetPurchaseOrdersStatusResponse The response schema for the `getPurchaseOrdersStatus` operation.
 //
 // swagger:model GetPurchaseOrdersStatusResponse
 type GetPurchaseOrdersStatusResponse struct {

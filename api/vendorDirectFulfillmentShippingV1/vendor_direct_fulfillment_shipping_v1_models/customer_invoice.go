@@ -14,12 +14,12 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// CustomerInvoice customer invoice
+// CustomerInvoice Represents a customer invoice associated with a purchase order.
 //
 // swagger:model CustomerInvoice
 type CustomerInvoice struct {
 
-	// The Base64encoded customer invoice.
+	// The `Base64encoded` customer invoice.
 	// Required: true
 	Content *string `json:"content"`
 

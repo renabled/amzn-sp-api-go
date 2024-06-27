@@ -16,7 +16,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// ShippingLabel shipping label
+// ShippingLabel Shipping label information for an order, including the purchase order number, selling party, ship from party, label format, and package details.
 //
 // swagger:model ShippingLabel
 type ShippingLabel struct {

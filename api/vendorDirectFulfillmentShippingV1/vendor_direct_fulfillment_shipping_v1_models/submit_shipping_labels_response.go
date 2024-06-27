@@ -13,7 +13,7 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// SubmitShippingLabelsResponse The response schema for the submitShippingLabelRequest operation.
+// SubmitShippingLabelsResponse The response schema for the `submitShippingLabelRequest` operation.
 //
 // swagger:model SubmitShippingLabelsResponse
 type SubmitShippingLabelsResponse struct {
@@ -21,7 +21,7 @@ type SubmitShippingLabelsResponse struct {
 	// errors
 	Errors ErrorList `json:"errors,omitempty"`
 
-	// The response payload for the submitShippingLabelRequest operation.
+	// The response payload for the `submitShippingLabelRequest` operation.
 	Payload *TransactionReference `json:"payload,omitempty"`
 }
 

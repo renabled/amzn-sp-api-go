@@ -13,7 +13,7 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// TransactionStatus transaction status
+// TransactionStatus Represents the status of a transaction.
 //
 // swagger:model TransactionStatus
 type TransactionStatus struct {

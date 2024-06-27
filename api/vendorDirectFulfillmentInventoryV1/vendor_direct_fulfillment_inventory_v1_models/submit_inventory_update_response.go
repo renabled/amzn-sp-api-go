@@ -13,7 +13,7 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// SubmitInventoryUpdateResponse The response schema for the submitInventoryUpdate operation.
+// SubmitInventoryUpdateResponse The response schema for the `submitInventoryUpdate` operation.
 //
 // swagger:model SubmitInventoryUpdateResponse
 type SubmitInventoryUpdateResponse struct {
@@ -21,7 +21,7 @@ type SubmitInventoryUpdateResponse struct {
 	// errors
 	Errors ErrorList `json:"errors,omitempty"`
 
-	// The response payload for the submitInventoryUpdate operation.
+	// The response payload for the `submitInventoryUpdate` operation.
 	Payload *TransactionReference `json:"payload,omitempty"`
 }
 

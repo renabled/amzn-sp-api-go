@@ -63,7 +63,7 @@ type GetShippingLabelParams struct {
 
 	/* PurchaseOrderNumber.
 
-	   The purchase order number for which you want to return the shipping label. It should be the same purchaseOrderNumber as received in the order.
+	   The purchase order number for which you want to return the shipping label. It should be the same `purchaseOrderNumber` as received in the order.
 	*/
 	PurchaseOrderNumber string
 

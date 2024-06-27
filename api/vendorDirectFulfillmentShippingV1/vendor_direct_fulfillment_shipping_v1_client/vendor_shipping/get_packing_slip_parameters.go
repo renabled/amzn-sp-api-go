@@ -63,7 +63,7 @@ type GetPackingSlipParams struct {
 
 	/* PurchaseOrderNumber.
 
-	   The purchaseOrderNumber for the packing slip you want.
+	   The `purchaseOrderNumber` for the packing slip you want.
 	*/
 	PurchaseOrderNumber string
 

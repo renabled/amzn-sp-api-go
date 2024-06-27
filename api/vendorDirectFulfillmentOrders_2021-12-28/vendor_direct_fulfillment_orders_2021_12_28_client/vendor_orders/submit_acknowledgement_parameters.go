@@ -63,7 +63,10 @@ SubmitAcknowledgementParams contains all the parameters to send to the API endpo
 */
 type SubmitAcknowledgementParams struct {
 
-	// Body.
+	/* Body.
+
+	   The request body containing the acknowledgement to an order
+	*/
 	Body *vendor_direct_fulfillment_orders_2021_12_28_models.SubmitAcknowledgementRequest
 
 	timeout    time.Duration

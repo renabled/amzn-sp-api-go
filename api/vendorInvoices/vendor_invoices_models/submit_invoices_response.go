@@ -13,7 +13,7 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// SubmitInvoicesResponse The response schema for the submitInvoices operation.
+// SubmitInvoicesResponse The response schema for the `submitInvoices` operation.
 //
 // swagger:model SubmitInvoicesResponse
 type SubmitInvoicesResponse struct {
@@ -21,7 +21,7 @@ type SubmitInvoicesResponse struct {
 	// errors
 	Errors ErrorList `json:"errors,omitempty"`
 
-	// The response payload for the submitInvoices operation.
+	// The response payload for the `submitInvoices` operation.
 	Payload *TransactionID `json:"payload,omitempty"`
 }
 

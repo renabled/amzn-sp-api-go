@@ -94,10 +94,6 @@ Success.
 */
 type GenerateOrderScenariosAccepted struct {
 
-	/* Your rate limit (requests per second) for this operation.
-	 */
-	XAmznRateLimitLimit string
-
 	/* Unique request reference identifier.
 	 */
 	XAmznRequestID string
@@ -144,13 +140,6 @@ func (o *GenerateOrderScenariosAccepted) GetPayload() *vendor_direct_fulfillment
 
 func (o *GenerateOrderScenariosAccepted) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	// hydrates response header x-amzn-RateLimit-Limit
-	hdrXAmznRateLimitLimit := response.GetHeader("x-amzn-RateLimit-Limit")
-
-	if hdrXAmznRateLimitLimit != "" {
-		o.XAmznRateLimitLimit = hdrXAmznRateLimitLimit
-	}
-
 	// hydrates response header x-amzn-RequestId
 	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")
 
@@ -179,10 +168,6 @@ GenerateOrderScenariosBadRequest describes a response with status code 400, with
 Request has missing or invalid parameters and cannot be parsed.
 */
 type GenerateOrderScenariosBadRequest struct {
-
-	/* Your rate limit (requests per second) for this operation.
-	 */
-	XAmznRateLimitLimit string
 
 	/* Unique request reference identifier.
 	 */
@@ -229,13 +214,6 @@ func (o *GenerateOrderScenariosBadRequest) GetPayload() *vendor_direct_fulfillme
 }
 
 func (o *GenerateOrderScenariosBadRequest) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
-
-	// hydrates response header x-amzn-RateLimit-Limit
-	hdrXAmznRateLimitLimit := response.GetHeader("x-amzn-RateLimit-Limit")
-
-	if hdrXAmznRateLimitLimit != "" {
-		o.XAmznRateLimitLimit = hdrXAmznRateLimitLimit
-	}
 
 	// hydrates response header x-amzn-RequestId
 	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")
@@ -341,10 +319,6 @@ The resource specified does not exist.
 */
 type GenerateOrderScenariosNotFound struct {
 
-	/* Your rate limit (requests per second) for this operation.
-	 */
-	XAmznRateLimitLimit string
-
 	/* Unique request reference identifier.
 	 */
 	XAmznRequestID string
@@ -390,13 +364,6 @@ func (o *GenerateOrderScenariosNotFound) GetPayload() *vendor_direct_fulfillment
 }
 
 func (o *GenerateOrderScenariosNotFound) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
-
-	// hydrates response header x-amzn-RateLimit-Limit
-	hdrXAmznRateLimitLimit := response.GetHeader("x-amzn-RateLimit-Limit")
-
-	if hdrXAmznRateLimitLimit != "" {
-		o.XAmznRateLimitLimit = hdrXAmznRateLimitLimit
-	}
 
 	// hydrates response header x-amzn-RequestId
 	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")

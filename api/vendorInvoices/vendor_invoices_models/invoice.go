@@ -16,7 +16,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// Invoice invoice
+// Invoice Represents an invoice or credit note document with details about the transaction, parties involved, and line items.
 //
 // swagger:model Invoice
 type Invoice struct {
@@ -27,7 +27,7 @@ type Invoice struct {
 	// Total allowance amount details for all line items.
 	AllowanceDetails []*AllowanceDetails `json:"allowanceDetails"`
 
-	// Name, address and tax details of the party to whom this invoice is issued.
+	// Name, address, and tax details of the party to whom this invoice is issued.
 	BillToParty *PartyIdentification `json:"billToParty,omitempty"`
 
 	// Total charge amount details for all line items.
@@ -60,14 +60,14 @@ type Invoice struct {
 	// An additional unique reference number used for regulatory or other purposes.
 	ReferenceNumber string `json:"referenceNumber,omitempty"`
 
-	// Name, address and tax details of the party receiving the payment of this invoice.
+	// Name, address, and tax details of the party receiving the payment of this invoice.
 	// Required: true
 	RemitToParty *PartyIdentification `json:"remitToParty"`
 
-	// Name, address and tax details of the party sending a shipment of products.
+	// Name, address, and tax details of the party sending a shipment of products.
 	ShipFromParty *PartyIdentification `json:"shipFromParty,omitempty"`
 
-	// Name, address and tax details of the party receiving a shipment of products.
+	// Name, address, and tax details of the party receiving a shipment of products.
 	ShipToParty *PartyIdentification `json:"shipToParty,omitempty"`
 
 	// Total tax amount details for all line items.

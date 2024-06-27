@@ -12,12 +12,12 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// Pagination pagination
+// Pagination The pagination elements required to retrieve the remaining data.
 //
 // swagger:model Pagination
 type Pagination struct {
 
-	// A generated string used to pass information to your next request. If NextToken is returned, pass the value of NextToken to the next request. If NextToken is not returned, there are no more purchase order items to return.
+	// A generated string used to pass information to your next request. If `NextToken` is returned, pass the value of `NextToken` to the next request. If `NextToken` is not returned, there are no more purchase order items to return.
 	NextToken string `json:"nextToken,omitempty"`
 }
 

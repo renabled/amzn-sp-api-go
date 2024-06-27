@@ -14,12 +14,12 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// SubmitShipmentConfirmationsRequest submit shipment confirmations request
+// SubmitShipmentConfirmationsRequest The request schema for the `submitShipmentConfirmations` operation.
 //
 // swagger:model SubmitShipmentConfirmationsRequest
 type SubmitShipmentConfirmationsRequest struct {
 
-	// shipment confirmations
+	// Array of `ShipmentConfirmation` objects, each representing confirmation details for a specific shipment.
 	ShipmentConfirmations []*ShipmentConfirmation `json:"shipmentConfirmations"`
 }
 

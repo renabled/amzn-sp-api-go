@@ -13,7 +13,7 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// GetTransactionResponse The response schema for the getTransaction operation.
+// GetTransactionResponse The response schema for the `getTransaction` operation.
 //
 // swagger:model GetTransactionResponse
 type GetTransactionResponse struct {
@@ -21,7 +21,7 @@ type GetTransactionResponse struct {
 	// errors
 	Errors ErrorList `json:"errors,omitempty"`
 
-	// The response payload for the getTransaction operation.
+	// The response payload for the `getTransaction` operation.
 	Payload *TransactionStatus `json:"payload,omitempty"`
 }
 

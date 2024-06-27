@@ -15,7 +15,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// TaxDetails tax details
+// TaxDetails The order's tax details.
 //
 // swagger:model TaxDetails
 type TaxDetails struct {

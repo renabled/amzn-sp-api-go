@@ -29,10 +29,10 @@ type InvoiceItem struct {
 	// Individual charge details per line item.
 	ChargeDetails []*ChargeDetails `json:"chargeDetails"`
 
-	// Details required in order to process a credit note. This information is required only if invoiceType is CreditNote.
+	// Details required in order to process a credit note. This information is required only if `invoiceType` is `CreditNote`.
 	CreditNoteDetails *CreditNoteDetails `json:"creditNoteDetails,omitempty"`
 
-	// HSN Tax code. The HSN number cannot contain alphabets.
+	// The HSN Tax code. The HSN number cannot contain alphabets.
 	HsnCode string `json:"hsnCode,omitempty"`
 
 	// Invoiced quantity of this item. Quantity must be greater than zero.
@@ -47,7 +47,7 @@ type InvoiceItem struct {
 	// Required: true
 	NetCost *Money `json:"netCost"`
 
-	// The Amazon purchase order number for this invoiced line item. Formatting Notes: 8-character alpha-numeric code. This value is mandatory only when invoiceType is Invoice, and is not required when invoiceType is CreditNote.
+	// The Amazon purchase order number for this invoiced line item. Formatting Notes: 8-character alpha-numeric code. This value is mandatory only when `invoiceType` is `Invoice`, and is not required when `invoiceType` is `CreditNote`.
 	PurchaseOrderNumber string `json:"purchaseOrderNumber,omitempty"`
 
 	// Individual tax details per line item.

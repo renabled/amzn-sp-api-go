@@ -14,12 +14,12 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// PartyIdentification The identification object for the party information. For example, warehouse code or vendor code. Please refer to specific party for more details.
+// PartyIdentification The identification object for the party information. For example, warehouse code or vendor code.
 //
 // swagger:model PartyIdentification
 type PartyIdentification struct {
 
-	// Assigned identification for the party. For example, warehouse code or vendor code. Please refer to specific party for more details.
+	// Assigned identification for the party. For example, warehouse code or vendor code.
 	// Required: true
 	PartyID *string `json:"partyId"`
 }

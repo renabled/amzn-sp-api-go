@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// OrderItemAcknowledgement order item acknowledgement
+// OrderItemAcknowledgement Details of an individual item within the order being acknowledged.
 //
 // swagger:model OrderItemAcknowledgement
 type OrderItemAcknowledgement struct {

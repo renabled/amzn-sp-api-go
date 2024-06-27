@@ -29,7 +29,7 @@ type Address struct {
 	// Additional address information, if required.
 	AddressLine3 string `json:"addressLine3,omitempty"`
 
-	// The city where the person, business or institution is located.
+	// The city where the person, business, or institution is located.
 	City string `json:"city,omitempty"`
 
 	// The two digit country code. In ISO 3166-1 alpha-2 format.
@@ -37,10 +37,10 @@ type Address struct {
 	// Max Length: 2
 	CountryCode *string `json:"countryCode"`
 
-	// The county where person, business or institution is located.
+	// The county where person, business, or institution is located.
 	County string `json:"county,omitempty"`
 
-	// The district where person, business or institution is located.
+	// The district where person, business, or institution is located.
 	District string `json:"district,omitempty"`
 
 	// The name of the person, business or institution at that address.
@@ -50,10 +50,10 @@ type Address struct {
 	// The phone number of the person, business or institution located at that address.
 	Phone string `json:"phone,omitempty"`
 
-	// The postal or zip code of that address. It contains a series of letters or digits or both, sometimes including spaces or punctuation.
+	// The postal or zip code of that address. It contains a series of letters, digits, or both, sometimes including spaces or punctuation.
 	PostalOrZipCode string `json:"postalOrZipCode,omitempty"`
 
-	// The state or region where person, business or institution is located.
+	// The state or region where person, business, or institution is located.
 	StateOrRegion string `json:"stateOrRegion,omitempty"`
 }
 

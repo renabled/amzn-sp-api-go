@@ -14,12 +14,12 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// SubmitInvoicesRequest The request schema for the submitInvoices operation.
+// SubmitInvoicesRequest The request schema for the `submitInvoices` operation.
 //
 // swagger:model SubmitInvoicesRequest
 type SubmitInvoicesRequest struct {
 
-	// invoices
+	// An array of Invoice objects representing the invoices or credit notes to be submitted.
 	Invoices []*Invoice `json:"invoices"`
 }
 

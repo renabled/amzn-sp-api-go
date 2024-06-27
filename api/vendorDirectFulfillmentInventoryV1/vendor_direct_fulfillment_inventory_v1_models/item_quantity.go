@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// ItemQuantity Details of item quantity.
+// ItemQuantity Details about item quantity.
 //
 // swagger:model ItemQuantity
 type ItemQuantity struct {

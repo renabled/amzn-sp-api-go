@@ -20,7 +20,7 @@ import (
 // swagger:model PaymentTerms
 type PaymentTerms struct {
 
-	// The number of calendar days from the Base date (Invoice date) until the discount is no longer valid.
+	// The number of calendar days from the base date (Invoice date) until the discount is no longer valid.
 	DiscountDueDays float64 `json:"discountDueDays,omitempty"`
 
 	// The discount percent value, which is good until the discount due date.

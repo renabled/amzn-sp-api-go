@@ -20,11 +20,11 @@ import (
 // swagger:model TaxDetails
 type TaxDetails struct {
 
-	// Total tax amount applied on invoice total or an item total.
+	// Total tax amount applied on an invoice total or item total.
 	// Required: true
 	TaxAmount *Money `json:"taxAmount"`
 
-	// Tax percentage applied. Percentage must be expressed in decimal.
+	// Tax percentage applied. Percentage must be expressed in decimal format.
 	TaxRate Decimal `json:"taxRate,omitempty"`
 
 	// Type of the tax applied.

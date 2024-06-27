@@ -63,7 +63,10 @@ SubmitInvoiceParams contains all the parameters to send to the API endpoint
 */
 type SubmitInvoiceParams struct {
 
-	// Body.
+	/* Body.
+
+	   The request body that contains one or more invoices for vendor orders.
+	*/
 	Body *vendor_direct_fulfillment_payments_v1_models.SubmitInvoiceRequest
 
 	timeout    time.Duration

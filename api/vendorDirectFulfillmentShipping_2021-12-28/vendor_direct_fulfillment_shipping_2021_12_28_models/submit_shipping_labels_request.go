@@ -14,12 +14,12 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// SubmitShippingLabelsRequest submit shipping labels request
+// SubmitShippingLabelsRequest The request schema for the `submitShippingLabelRequest` operation.
 //
 // swagger:model SubmitShippingLabelsRequest
 type SubmitShippingLabelsRequest struct {
 
-	// shipping label requests
+	// An array of shipping label requests you want to process.
 	ShippingLabelRequests []*ShippingLabelRequest `json:"shippingLabelRequests"`
 }
 

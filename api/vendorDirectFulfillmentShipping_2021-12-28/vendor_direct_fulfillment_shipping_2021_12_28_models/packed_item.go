@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// PackedItem packed item
+// PackedItem Represents an item packed into a container for shipping.
 //
 // swagger:model PackedItem
 type PackedItem struct {

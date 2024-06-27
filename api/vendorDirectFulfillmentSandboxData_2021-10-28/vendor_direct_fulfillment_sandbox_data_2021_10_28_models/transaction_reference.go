@@ -17,7 +17,7 @@ import (
 // swagger:model TransactionReference
 type TransactionReference struct {
 
-	// transaction Id
+	// A GUID (Globally Unique Identifier) assigned by Amazon to uniquely identify the transaction.
 	TransactionID string `json:"transactionId,omitempty"`
 }
 

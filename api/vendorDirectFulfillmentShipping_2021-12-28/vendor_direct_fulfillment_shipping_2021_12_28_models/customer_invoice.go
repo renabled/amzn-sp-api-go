@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// CustomerInvoice customer invoice
+// CustomerInvoice Represents a customer invoice associated with a purchase order.
 //
 // swagger:model CustomerInvoice
 type CustomerInvoice struct {

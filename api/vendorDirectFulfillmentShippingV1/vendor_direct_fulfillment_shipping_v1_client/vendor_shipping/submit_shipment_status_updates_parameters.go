@@ -63,7 +63,10 @@ SubmitShipmentStatusUpdatesParams contains all the parameters to send to the API
 */
 type SubmitShipmentStatusUpdatesParams struct {
 
-	// Body.
+	/* Body.
+
+	   Request body containing the shipment status update data.
+	*/
 	Body *vendor_direct_fulfillment_shipping_v1_models.SubmitShipmentStatusUpdatesRequest
 
 	timeout    time.Duration

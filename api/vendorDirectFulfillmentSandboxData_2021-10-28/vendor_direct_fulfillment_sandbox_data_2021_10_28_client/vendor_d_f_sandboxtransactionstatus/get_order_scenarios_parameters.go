@@ -63,7 +63,7 @@ type GetOrderScenariosParams struct {
 
 	/* TransactionID.
 
-	   The transaction identifier returned in the response to the generateOrderScenarios operation.
+	   The transaction identifier returned in the response for the `generateOrderScenarios` operation.
 	*/
 	TransactionID string
 

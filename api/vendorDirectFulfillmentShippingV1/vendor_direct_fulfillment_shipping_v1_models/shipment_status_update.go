@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// ShipmentStatusUpdate shipment status update
+// ShipmentStatusUpdate Represents an update to the status of a shipment.
 //
 // swagger:model ShipmentStatusUpdate
 type ShipmentStatusUpdate struct {

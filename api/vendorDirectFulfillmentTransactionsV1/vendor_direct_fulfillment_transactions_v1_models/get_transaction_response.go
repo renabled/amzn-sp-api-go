@@ -13,7 +13,7 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// GetTransactionResponse The response schema for the getTransactionStatus operation.
+// GetTransactionResponse The response schema for the `getTransactionStatus` operation.
 //
 // swagger:model GetTransactionResponse
 type GetTransactionResponse struct {

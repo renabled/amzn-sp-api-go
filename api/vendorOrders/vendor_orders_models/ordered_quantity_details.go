@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// OrderedQuantityDetails Details of item quantity ordered
+// OrderedQuantityDetails Details of the item quantity ordered.
 //
 // swagger:model OrderedQuantityDetails
 type OrderedQuantityDetails struct {
@@ -25,7 +25,7 @@ type OrderedQuantityDetails struct {
 	// Item quantity ordered.
 	OrderedQuantity *ItemQuantity `json:"orderedQuantity,omitempty"`
 
-	// The date when the line item quantity was updated by buyer. Must be in ISO-8601 date/time format.
+	// The date when the line item quantity was updated by the buyer. Must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> date/time format.
 	// Format: date-time
 	UpdatedDate strfmt.DateTime `json:"updatedDate,omitempty"`
 }

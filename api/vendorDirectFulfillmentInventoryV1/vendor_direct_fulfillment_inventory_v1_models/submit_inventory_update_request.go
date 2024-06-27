@@ -13,7 +13,7 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// SubmitInventoryUpdateRequest The request body for the submitInventoryUpdate operation.
+// SubmitInventoryUpdateRequest The request body for the `submitInventoryUpdate` operation.
 //
 // swagger:model SubmitInventoryUpdateRequest
 type SubmitInventoryUpdateRequest struct {

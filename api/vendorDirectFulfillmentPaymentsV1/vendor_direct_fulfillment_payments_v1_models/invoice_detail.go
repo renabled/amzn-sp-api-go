@@ -15,7 +15,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// InvoiceDetail invoice detail
+// InvoiceDetail Represents the invoice details, including the invoice number, date, parties involved, payment terms, totals, taxes, charges, and line items.
 //
 // swagger:model InvoiceDetail
 type InvoiceDetail struct {
