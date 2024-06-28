@@ -38,7 +38,7 @@ type PartneredLtlDataOutput struct {
 	// Required: true
 	Contact *Contact `json:"Contact"`
 
-	// The date that the shipment will be ready to be picked up by the carrier. Must be in YYYY-MM-DD format.
+	// The date on which the shipment is ready for carrier pickup. Must be in YYYY-MM-DD format.
 	// Required: true
 	// Format: date
 	FreightReadyDate *DateStringType `json:"FreightReadyDate"`

@@ -18,7 +18,7 @@ import (
 // swagger:model CreateShipmentResponse
 type CreateShipmentResponse struct {
 
-	// One or more unexpected errors occurred during the createShipment operation.
+	// One or more unexpected errors occurred during the `createShipment` operation.
 	Errors ErrorList `json:"errors,omitempty"`
 
 	// Shipment information.

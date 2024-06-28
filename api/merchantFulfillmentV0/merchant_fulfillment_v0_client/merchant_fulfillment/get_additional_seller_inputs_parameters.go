@@ -63,7 +63,10 @@ GetAdditionalSellerInputsParams contains all the parameters to send to the API e
 */
 type GetAdditionalSellerInputsParams struct {
 
-	// Body.
+	/* Body.
+
+	   Request schema for the `GetAdditionalSellerInputs` operation.
+	*/
 	Body *merchant_fulfillment_v0_models.GetAdditionalSellerInputsRequest
 
 	timeout    time.Duration

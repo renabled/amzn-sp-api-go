@@ -84,7 +84,7 @@ func NewCancelShipmentOK() *CancelShipmentOK {
 /*
 CancelShipmentOK describes a response with status code 200, with default header values.
 
-Success
+Success.
 */
 type CancelShipmentOK struct {
 
@@ -256,14 +256,9 @@ func NewCancelShipmentUnauthorized() *CancelShipmentUnauthorized {
 /*
 CancelShipmentUnauthorized describes a response with status code 401, with default header values.
 
-The request's Authorization header is not formatted correctly or does not contain a valid token.
+The request's authorization header is not formatted correctly or does not contain a valid token.
 */
 type CancelShipmentUnauthorized struct {
-
-	/* Your rate limit (requests per second) for this operation.
-	_Note:_ For this status code, the rate limit header is deprecated and no longer returned.
-	*/
-	XAmznRateLimitLimit string
 
 	/* Unique request reference identifier.
 	 */
@@ -310,13 +305,6 @@ func (o *CancelShipmentUnauthorized) GetPayload() *merchant_fulfillment_v0_model
 }
 
 func (o *CancelShipmentUnauthorized) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
-
-	// hydrates response header x-amzn-RateLimit-Limit
-	hdrXAmznRateLimitLimit := response.GetHeader("x-amzn-RateLimit-Limit")
-
-	if hdrXAmznRateLimitLimit != "" {
-		o.XAmznRateLimitLimit = hdrXAmznRateLimitLimit
-	}
 
 	// hydrates response header x-amzn-RequestId
 	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")
@@ -508,11 +496,6 @@ The frequency of requests was greater than allowed.
 */
 type CancelShipmentTooManyRequests struct {
 
-	/* Your rate limit (requests per second) for this operation.
-	_Note:_ For this status code, the rate limit header is deprecated and no longer returned.
-	*/
-	XAmznRateLimitLimit string
-
 	/* Unique request reference identifier.
 	 */
 	XAmznRequestID string
@@ -559,13 +542,6 @@ func (o *CancelShipmentTooManyRequests) GetPayload() *merchant_fulfillment_v0_mo
 
 func (o *CancelShipmentTooManyRequests) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	// hydrates response header x-amzn-RateLimit-Limit
-	hdrXAmznRateLimitLimit := response.GetHeader("x-amzn-RateLimit-Limit")
-
-	if hdrXAmznRateLimitLimit != "" {
-		o.XAmznRateLimitLimit = hdrXAmznRateLimitLimit
-	}
-
 	// hydrates response header x-amzn-RequestId
 	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")
 
@@ -594,11 +570,6 @@ CancelShipmentInternalServerError describes a response with status code 500, wit
 An unexpected condition occurred that prevented the server from fulfilling the request.
 */
 type CancelShipmentInternalServerError struct {
-
-	/* Your rate limit (requests per second) for this operation.
-	_Note:_ For this status code, the rate limit header is deprecated and no longer returned.
-	*/
-	XAmznRateLimitLimit string
 
 	/* Unique request reference identifier.
 	 */
@@ -646,13 +617,6 @@ func (o *CancelShipmentInternalServerError) GetPayload() *merchant_fulfillment_v
 
 func (o *CancelShipmentInternalServerError) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	// hydrates response header x-amzn-RateLimit-Limit
-	hdrXAmznRateLimitLimit := response.GetHeader("x-amzn-RateLimit-Limit")
-
-	if hdrXAmznRateLimitLimit != "" {
-		o.XAmznRateLimitLimit = hdrXAmznRateLimitLimit
-	}
-
 	// hydrates response header x-amzn-RequestId
 	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")
 
@@ -681,11 +645,6 @@ CancelShipmentServiceUnavailable describes a response with status code 503, with
 Temporary overloading or maintenance of the server.
 */
 type CancelShipmentServiceUnavailable struct {
-
-	/* Your rate limit (requests per second) for this operation.
-	_Note:_ For this status code, the rate limit header is deprecated and no longer returned.
-	*/
-	XAmznRateLimitLimit string
 
 	/* Unique request reference identifier.
 	 */
@@ -732,13 +691,6 @@ func (o *CancelShipmentServiceUnavailable) GetPayload() *merchant_fulfillment_v0
 }
 
 func (o *CancelShipmentServiceUnavailable) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
-
-	// hydrates response header x-amzn-RateLimit-Limit
-	hdrXAmznRateLimitLimit := response.GetHeader("x-amzn-RateLimit-Limit")
-
-	if hdrXAmznRateLimitLimit != "" {
-		o.XAmznRateLimitLimit = hdrXAmznRateLimitLimit
-	}
 
 	// hydrates response header x-amzn-RequestId
 	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")

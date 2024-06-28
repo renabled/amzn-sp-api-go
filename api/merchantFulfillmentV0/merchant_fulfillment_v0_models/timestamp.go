@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// Timestamp timestamp
+// Timestamp Date-time formatted timestamp.
 //
 // swagger:model Timestamp
 type Timestamp strfmt.DateTime

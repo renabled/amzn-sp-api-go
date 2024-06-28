@@ -28,6 +28,9 @@ type ShippingService struct {
 	// available shipping service options
 	AvailableShippingServiceOptions *AvailableShippingServiceOptions `json:"AvailableShippingServiceOptions,omitempty"`
 
+	// benefits
+	Benefits *Benefits `json:"Benefits,omitempty"`
+
 	// The name of the carrier.
 	// Required: true
 	CarrierName *string `json:"CarrierName"`
@@ -57,7 +60,7 @@ type ShippingService struct {
 	// Required: true
 	ShippingServiceID *ShippingServiceIdentifier `json:"ShippingServiceId"`
 
-	// A plain text representation of a carrier's shipping service. For example, "UPS Ground" or "FedEx Standard Overnight".
+	// A plain text representation of a carrier's shipping service. For example, UPS Ground or FedEx Standard Overnight.
 	// Required: true
 	ShippingServiceName *string `json:"ShippingServiceName"`
 
@@ -83,6 +86,10 @@ func (m *ShippingService) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validateAvailableShippingServiceOptions(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateBenefits(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -177,6 +184,25 @@ func (m *ShippingService) validateAvailableShippingServiceOptions(formats strfmt
 				return ve.ValidateName("AvailableShippingServiceOptions")
 			} else if ce, ok := err.(*errors.CompositeError); ok {
 				return ce.ValidateName("AvailableShippingServiceOptions")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *ShippingService) validateBenefits(formats strfmt.Registry) error {
+	if swag.IsZero(m.Benefits) { // not required
+		return nil
+	}
+
+	if m.Benefits != nil {
+		if err := m.Benefits.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("Benefits")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("Benefits")
 			}
 			return err
 		}
@@ -359,6 +385,10 @@ func (m *ShippingService) ContextValidate(ctx context.Context, formats strfmt.Re
 		res = append(res, err)
 	}
 
+	if err := m.contextValidateBenefits(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.contextValidateEarliestEstimatedDeliveryDate(ctx, formats); err != nil {
 		res = append(res, err)
 	}
@@ -425,6 +455,22 @@ func (m *ShippingService) contextValidateAvailableShippingServiceOptions(ctx con
 				return ve.ValidateName("AvailableShippingServiceOptions")
 			} else if ce, ok := err.(*errors.CompositeError); ok {
 				return ce.ValidateName("AvailableShippingServiceOptions")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *ShippingService) contextValidateBenefits(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.Benefits != nil {
+		if err := m.Benefits.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("Benefits")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("Benefits")
 			}
 			return err
 		}

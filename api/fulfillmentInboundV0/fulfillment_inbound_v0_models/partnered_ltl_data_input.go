@@ -24,7 +24,7 @@ type PartneredLtlDataInput struct {
 	// Contact information for the person in the seller's organization who is responsible for the shipment. Used by the carrier if they have questions about the shipment.
 	Contact *Contact `json:"Contact,omitempty"`
 
-	// The date that the shipment will be ready to be picked up by the carrier.
+	// The date on which the shipment is ready for carrier pickup. Must be in YYYY-MM-DD format.
 	// Format: date
 	FreightReadyDate DateStringType `json:"FreightReadyDate,omitempty"`
 

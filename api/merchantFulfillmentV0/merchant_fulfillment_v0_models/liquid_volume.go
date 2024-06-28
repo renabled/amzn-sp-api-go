@@ -15,7 +15,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// LiquidVolume Liquid Volume.
+// LiquidVolume Liquid volume.
 //
 // swagger:model LiquidVolume
 type LiquidVolume struct {

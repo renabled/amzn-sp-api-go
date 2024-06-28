@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// ItemLevelFields item level fields
+// ItemLevelFields A list of item level fields.
 //
 // swagger:model ItemLevelFields
 type ItemLevelFields struct {

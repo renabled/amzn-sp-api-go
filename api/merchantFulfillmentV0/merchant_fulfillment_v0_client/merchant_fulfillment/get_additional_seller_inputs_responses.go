@@ -84,7 +84,7 @@ func NewGetAdditionalSellerInputsOK() *GetAdditionalSellerInputsOK {
 /*
 GetAdditionalSellerInputsOK describes a response with status code 200, with default header values.
 
-Success
+Success.
 */
 type GetAdditionalSellerInputsOK struct {
 
@@ -256,14 +256,9 @@ func NewGetAdditionalSellerInputsUnauthorized() *GetAdditionalSellerInputsUnauth
 /*
 GetAdditionalSellerInputsUnauthorized describes a response with status code 401, with default header values.
 
-The request's Authorization header is not formatted correctly or does not contain a valid token.
+The request's authorization header is not formatted correctly or does not contain a valid token.
 */
 type GetAdditionalSellerInputsUnauthorized struct {
-
-	/* Your rate limit (requests per second) for this operation.
-	_Note:_ For this status code, the rate limit header is deprecated and no longer returned.
-	*/
-	XAmznRateLimitLimit string
 
 	/* Unique request reference identifier.
 	 */
@@ -310,13 +305,6 @@ func (o *GetAdditionalSellerInputsUnauthorized) GetPayload() *merchant_fulfillme
 }
 
 func (o *GetAdditionalSellerInputsUnauthorized) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
-
-	// hydrates response header x-amzn-RateLimit-Limit
-	hdrXAmznRateLimitLimit := response.GetHeader("x-amzn-RateLimit-Limit")
-
-	if hdrXAmznRateLimitLimit != "" {
-		o.XAmznRateLimitLimit = hdrXAmznRateLimitLimit
-	}
 
 	// hydrates response header x-amzn-RequestId
 	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")
@@ -508,11 +496,6 @@ The frequency of requests was greater than allowed.
 */
 type GetAdditionalSellerInputsTooManyRequests struct {
 
-	/* Your rate limit (requests per second) for this operation.
-	_Note:_ For this status code, the rate limit header is deprecated and no longer returned.
-	*/
-	XAmznRateLimitLimit string
-
 	/* Unique request reference identifier.
 	 */
 	XAmznRequestID string
@@ -559,13 +542,6 @@ func (o *GetAdditionalSellerInputsTooManyRequests) GetPayload() *merchant_fulfil
 
 func (o *GetAdditionalSellerInputsTooManyRequests) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	// hydrates response header x-amzn-RateLimit-Limit
-	hdrXAmznRateLimitLimit := response.GetHeader("x-amzn-RateLimit-Limit")
-
-	if hdrXAmznRateLimitLimit != "" {
-		o.XAmznRateLimitLimit = hdrXAmznRateLimitLimit
-	}
-
 	// hydrates response header x-amzn-RequestId
 	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")
 
@@ -594,11 +570,6 @@ GetAdditionalSellerInputsInternalServerError describes a response with status co
 An unexpected condition occurred that prevented the server from fulfilling the request.
 */
 type GetAdditionalSellerInputsInternalServerError struct {
-
-	/* Your rate limit (requests per second) for this operation.
-	_Note:_ For this status code, the rate limit header is deprecated and no longer returned.
-	*/
-	XAmznRateLimitLimit string
 
 	/* Unique request reference identifier.
 	 */
@@ -646,13 +617,6 @@ func (o *GetAdditionalSellerInputsInternalServerError) GetPayload() *merchant_fu
 
 func (o *GetAdditionalSellerInputsInternalServerError) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	// hydrates response header x-amzn-RateLimit-Limit
-	hdrXAmznRateLimitLimit := response.GetHeader("x-amzn-RateLimit-Limit")
-
-	if hdrXAmznRateLimitLimit != "" {
-		o.XAmznRateLimitLimit = hdrXAmznRateLimitLimit
-	}
-
 	// hydrates response header x-amzn-RequestId
 	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")
 
@@ -681,11 +645,6 @@ GetAdditionalSellerInputsServiceUnavailable describes a response with status cod
 Temporary overloading or maintenance of the server.
 */
 type GetAdditionalSellerInputsServiceUnavailable struct {
-
-	/* Your rate limit (requests per second) for this operation.
-	_Note:_ For this status code, the rate limit header is deprecated and no longer returned.
-	*/
-	XAmznRateLimitLimit string
 
 	/* Unique request reference identifier.
 	 */
@@ -732,13 +691,6 @@ func (o *GetAdditionalSellerInputsServiceUnavailable) GetPayload() *merchant_ful
 }
 
 func (o *GetAdditionalSellerInputsServiceUnavailable) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
-
-	// hydrates response header x-amzn-RateLimit-Limit
-	hdrXAmznRateLimitLimit := response.GetHeader("x-amzn-RateLimit-Limit")
-
-	if hdrXAmznRateLimitLimit != "" {
-		o.XAmznRateLimitLimit = hdrXAmznRateLimitLimit
-	}
 
 	// hydrates response header x-amzn-RequestId
 	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")

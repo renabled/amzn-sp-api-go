@@ -63,7 +63,10 @@ GetEligibleShipmentServicesParams contains all the parameters to send to the API
 */
 type GetEligibleShipmentServicesParams struct {
 
-	// Body.
+	/* Body.
+
+	   Request schema for GetEligibleShipmentServices operation.
+	*/
 	Body *merchant_fulfillment_v0_models.GetEligibleShipmentServicesRequest
 
 	timeout    time.Duration

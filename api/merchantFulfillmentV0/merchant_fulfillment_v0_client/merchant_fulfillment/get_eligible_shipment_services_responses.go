@@ -84,7 +84,7 @@ func NewGetEligibleShipmentServicesOK() *GetEligibleShipmentServicesOK {
 /*
 GetEligibleShipmentServicesOK describes a response with status code 200, with default header values.
 
-Success
+Success.
 */
 type GetEligibleShipmentServicesOK struct {
 
@@ -256,14 +256,9 @@ func NewGetEligibleShipmentServicesUnauthorized() *GetEligibleShipmentServicesUn
 /*
 GetEligibleShipmentServicesUnauthorized describes a response with status code 401, with default header values.
 
-The request's Authorization header is not formatted correctly or does not contain a valid token.
+The request's authorization header is not formatted correctly or does not contain a valid token.
 */
 type GetEligibleShipmentServicesUnauthorized struct {
-
-	/* Your rate limit (requests per second) for this operation.
-	_Note:_ For this status code, the rate limit header is deprecated and no longer returned.
-	*/
-	XAmznRateLimitLimit string
 
 	/* Unique request reference identifier.
 	 */
@@ -310,13 +305,6 @@ func (o *GetEligibleShipmentServicesUnauthorized) GetPayload() *merchant_fulfill
 }
 
 func (o *GetEligibleShipmentServicesUnauthorized) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
-
-	// hydrates response header x-amzn-RateLimit-Limit
-	hdrXAmznRateLimitLimit := response.GetHeader("x-amzn-RateLimit-Limit")
-
-	if hdrXAmznRateLimitLimit != "" {
-		o.XAmznRateLimitLimit = hdrXAmznRateLimitLimit
-	}
 
 	// hydrates response header x-amzn-RequestId
 	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")
@@ -508,11 +496,6 @@ The frequency of requests was greater than allowed.
 */
 type GetEligibleShipmentServicesTooManyRequests struct {
 
-	/* Your rate limit (requests per second) for this operation.
-	_Note:_ For this status code, the rate limit header is deprecated and no longer returned.
-	*/
-	XAmznRateLimitLimit string
-
 	/* Unique request reference identifier.
 	 */
 	XAmznRequestID string
@@ -559,13 +542,6 @@ func (o *GetEligibleShipmentServicesTooManyRequests) GetPayload() *merchant_fulf
 
 func (o *GetEligibleShipmentServicesTooManyRequests) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	// hydrates response header x-amzn-RateLimit-Limit
-	hdrXAmznRateLimitLimit := response.GetHeader("x-amzn-RateLimit-Limit")
-
-	if hdrXAmznRateLimitLimit != "" {
-		o.XAmznRateLimitLimit = hdrXAmznRateLimitLimit
-	}
-
 	// hydrates response header x-amzn-RequestId
 	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")
 
@@ -594,11 +570,6 @@ GetEligibleShipmentServicesInternalServerError describes a response with status 
 An unexpected condition occurred that prevented the server from fulfilling the request.
 */
 type GetEligibleShipmentServicesInternalServerError struct {
-
-	/* Your rate limit (requests per second) for this operation.
-	_Note:_ For this status code, the rate limit header is deprecated and no longer returned.
-	*/
-	XAmznRateLimitLimit string
 
 	/* Unique request reference identifier.
 	 */
@@ -646,13 +617,6 @@ func (o *GetEligibleShipmentServicesInternalServerError) GetPayload() *merchant_
 
 func (o *GetEligibleShipmentServicesInternalServerError) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	// hydrates response header x-amzn-RateLimit-Limit
-	hdrXAmznRateLimitLimit := response.GetHeader("x-amzn-RateLimit-Limit")
-
-	if hdrXAmznRateLimitLimit != "" {
-		o.XAmznRateLimitLimit = hdrXAmznRateLimitLimit
-	}
-
 	// hydrates response header x-amzn-RequestId
 	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")
 
@@ -681,11 +645,6 @@ GetEligibleShipmentServicesServiceUnavailable describes a response with status c
 Temporary overloading or maintenance of the server.
 */
 type GetEligibleShipmentServicesServiceUnavailable struct {
-
-	/* Your rate limit (requests per second) for this operation.
-	_Note:_ For this status code, the rate limit header is deprecated and no longer returned.
-	*/
-	XAmznRateLimitLimit string
 
 	/* Unique request reference identifier.
 	 */
@@ -732,13 +691,6 @@ func (o *GetEligibleShipmentServicesServiceUnavailable) GetPayload() *merchant_f
 }
 
 func (o *GetEligibleShipmentServicesServiceUnavailable) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
-
-	// hydrates response header x-amzn-RateLimit-Limit
-	hdrXAmznRateLimitLimit := response.GetHeader("x-amzn-RateLimit-Limit")
-
-	if hdrXAmznRateLimitLimit != "" {
-		o.XAmznRateLimitLimit = hdrXAmznRateLimitLimit
-	}
 
 	// hydrates response header x-amzn-RequestId
 	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")

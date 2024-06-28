@@ -14,13 +14,13 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// RejectedShippingServiceList List of services that are for some reason unavailable for this request
+// ExcludedBenefits A list of excluded benefits. Refer to the `ExcludeBenefit` object for further documentation.
 //
-// swagger:model RejectedShippingServiceList
-type RejectedShippingServiceList []*RejectedShippingService
+// swagger:model ExcludedBenefits
+type ExcludedBenefits []*ExcludedBenefit
 
-// Validate validates this rejected shipping service list
-func (m RejectedShippingServiceList) Validate(formats strfmt.Registry) error {
+// Validate validates this excluded benefits
+func (m ExcludedBenefits) Validate(formats strfmt.Registry) error {
 	var res []error
 
 	for i := 0; i < len(m); i++ {
@@ -47,8 +47,8 @@ func (m RejectedShippingServiceList) Validate(formats strfmt.Registry) error {
 	return nil
 }
 
-// ContextValidate validate this rejected shipping service list based on the context it is used
-func (m RejectedShippingServiceList) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+// ContextValidate validate this excluded benefits based on the context it is used
+func (m ExcludedBenefits) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
 	var res []error
 
 	for i := 0; i < len(m); i++ {

@@ -28,7 +28,7 @@ type CreateShipmentRequest struct {
 	// A list of additional seller inputs required to ship this shipment.
 	ShipmentLevelSellerInputsList AdditionalSellerInputsList `json:"ShipmentLevelSellerInputsList,omitempty"`
 
-	// Shipment information required for creating a shipment.
+	// Shipment information required to create a shipment.
 	// Required: true
 	ShipmentRequestDetails *ShipmentRequestDetails `json:"ShipmentRequestDetails"`
 
