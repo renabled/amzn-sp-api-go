@@ -40,7 +40,15 @@ type ClientService interface {
 }
 
 /*
-GetInboundShipment Retrieves an AWD inbound shipment.
+	GetInboundShipment Retrieves an AWD inbound shipment.
+
+**Usage Plan:**
+
+| Rate (requests per second) | Burst |
+| ---- | ---- |
+| 2 | 2 |
+
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api)
 */
 func (a *Client) GetInboundShipment(params *GetInboundShipmentParams, opts ...ClientOption) (*GetInboundShipmentOK, error) {
 	// TODO: Validate the params before sending
@@ -78,7 +86,15 @@ func (a *Client) GetInboundShipment(params *GetInboundShipmentParams, opts ...Cl
 }
 
 /*
-ListInboundShipments Retrieves a summary for all the inbound AWD shipments associated with a merchant, with the ability to apply optional filters.
+	ListInboundShipments Retrieves a summary for all the inbound AWD shipments associated with a merchant, with the ability to apply optional filters.
+
+**Usage Plan:**
+
+| Rate (requests per second) | Burst |
+| ---- | ---- |
+| 1 | 1 |
+
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 */
 func (a *Client) ListInboundShipments(params *ListInboundShipmentsParams, opts ...ClientOption) (*ListInboundShipmentsOK, error) {
 	// TODO: Validate the params before sending
@@ -116,7 +132,15 @@ func (a *Client) ListInboundShipments(params *ListInboundShipmentsParams, opts .
 }
 
 /*
-ListInventory Lists AWD inventory associated with a merchant with the ability to apply optional filters.
+	ListInventory Lists AWD inventory associated with a merchant with the ability to apply optional filters.
+
+**Usage Plan:**
+
+| Rate (requests per second) | Burst |
+| ---- | ---- |
+| 2 | 2 |
+
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 */
 func (a *Client) ListInventory(params *ListInventoryParams, opts ...ClientOption) (*ListInventoryOK, error) {
 	// TODO: Validate the params before sending
