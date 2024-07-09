@@ -65,7 +65,7 @@ type GetAdditionalSellerInputsParams struct {
 
 	/* Body.
 
-	   Request schema for the `GetAdditionalSellerInputs` operation.
+	   Request schema for GetAdditionalSellerInputs operation.
 	*/
 	Body *merchant_fulfillment_v0_models.GetAdditionalSellerInputsRequest
 

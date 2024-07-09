@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// ExcludedBenefits A list of excluded benefits. Refer to the `ExcludeBenefit` object for further documentation.
+// ExcludedBenefits A list of excluded benefit. Refer to the ExcludeBenefit object for further documentation.
 //
 // swagger:model ExcludedBenefits
 type ExcludedBenefits []*ExcludedBenefit

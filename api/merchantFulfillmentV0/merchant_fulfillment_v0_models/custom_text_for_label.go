@@ -13,7 +13,9 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// CustomTextForLabel Custom text to print on the label. Note: Custom text is only included on labels that are in ZPL format (ZPL203). FedEx does not support `CustomTextForLabel`.
+// CustomTextForLabel Custom text to print on the label.
+//
+// Note: Custom text is only included on labels that are in ZPL format (ZPL203). FedEx does not support CustomTextForLabel.
 //
 // swagger:model CustomTextForLabel
 type CustomTextForLabel string

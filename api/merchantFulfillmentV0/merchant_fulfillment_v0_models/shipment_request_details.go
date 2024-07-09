@@ -30,7 +30,7 @@ type ShipmentRequestDetails struct {
 	// Label customization options.
 	LabelCustomization *LabelCustomization `json:"LabelCustomization,omitempty"`
 
-	// The date by which the package must arrive to keep the promise to the customer, in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> date-time format. If `MustArriveByDate` is specified, only shipping service offers that can be delivered by that date are returned.
+	// The date by which the package must arrive to keep the promise to the customer, in ISO 8601 datetime format. If MustArriveByDate is specified, only shipping service offers that can be delivered by that date are returned.
 	// Format: date-time
 	MustArriveByDate Timestamp `json:"MustArriveByDate,omitempty"`
 

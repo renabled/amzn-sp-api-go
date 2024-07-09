@@ -11,7 +11,7 @@ import (
 	"github.com/go-openapi/strfmt"
 )
 
-// PackageDimension Number that represents the given package dimension.
+// PackageDimension Number representing the given package dimension.
 //
 // swagger:model PackageDimension
 type PackageDimension float64

@@ -11,7 +11,7 @@ import (
 	"github.com/go-openapi/strfmt"
 )
 
-// ExcludedBenefitReasonCodes List of reasons (for example, `LATE_DELIVERY_RISK`) why a benefit is excluded for a shipping offer.
+// ExcludedBenefitReasonCodes List of reasons (eg. LATE_DELIVERY_RISK, etc.) indicating why a benefit is excluded for a shipping offer.
 //
 // swagger:model ExcludedBenefitReasonCodes
 type ExcludedBenefitReasonCodes []string

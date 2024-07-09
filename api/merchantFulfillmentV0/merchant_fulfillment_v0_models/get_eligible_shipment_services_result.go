@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// GetEligibleShipmentServicesResult The payload for the `getEligibleShipmentServices` operation.
+// GetEligibleShipmentServicesResult The payload for the getEligibleShipmentServices operation.
 //
 // swagger:model GetEligibleShipmentServicesResult
 type GetEligibleShipmentServicesResult struct {

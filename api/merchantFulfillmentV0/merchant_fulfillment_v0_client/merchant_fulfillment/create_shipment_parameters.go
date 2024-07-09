@@ -65,7 +65,7 @@ type CreateShipmentParams struct {
 
 	/* Body.
 
-	   Request schema for `CreateShipment` operation.
+	   Request schema for CreateShipment operation.
 	*/
 	Body *merchant_fulfillment_v0_models.CreateShipmentRequest
 

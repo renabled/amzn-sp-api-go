@@ -18,19 +18,19 @@ import (
 // swagger:model PackageDimensions
 type PackageDimensions struct {
 
-	// The height dimension. If you don't specify `PredefinedPackageDimensions`, you must specify the height.
+	// The height dimension. If you don't specify PredefinedPackageDimensions, you must specify the Height.
 	Height PackageDimension `json:"Height,omitempty"`
 
-	// The length dimension. If you don't specify `PredefinedPackageDimensions`, you must specify the length.
+	// The length dimension. If you don't specify PredefinedPackageDimensions, you must specify the Length.
 	Length PackageDimension `json:"Length,omitempty"`
 
 	// predefined package dimensions
 	PredefinedPackageDimensions PredefinedPackageDimensions `json:"PredefinedPackageDimensions,omitempty"`
 
-	// The unit of measurement. If you don't specify `PredefinedPackageDimensions`, you must specify the unit.
+	// The unit of measurement. If you don't specify PredefinedPackageDimensions, you must specify the Unit.
 	Unit UnitOfLength `json:"Unit,omitempty"`
 
-	// The width dimension. If you don't specify `PredefinedPackageDimensions`, you must specify the width.
+	// The width dimension. If you don't specify PredefinedPackageDimensions, you must specify the Width.
 	Width PackageDimension `json:"Width,omitempty"`
 }
 

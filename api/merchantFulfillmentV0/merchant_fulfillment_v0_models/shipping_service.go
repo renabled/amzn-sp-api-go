@@ -60,7 +60,7 @@ type ShippingService struct {
 	// Required: true
 	ShippingServiceID *ShippingServiceIdentifier `json:"ShippingServiceId"`
 
-	// A plain text representation of a carrier's shipping service. For example, UPS Ground or FedEx Standard Overnight.
+	// A plain text representation of a carrier's shipping service. For example, "UPS Ground" or "FedEx Standard Overnight".
 	// Required: true
 	ShippingServiceName *string `json:"ShippingServiceName"`
 

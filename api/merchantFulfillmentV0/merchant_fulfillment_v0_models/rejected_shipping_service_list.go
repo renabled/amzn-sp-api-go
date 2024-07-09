@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// RejectedShippingServiceList List of services that are for some reason unavailable for this request
+// RejectedShippingServiceList List of services that were for some reason unavailable for this request
 //
 // swagger:model RejectedShippingServiceList
 type RejectedShippingServiceList []*RejectedShippingService

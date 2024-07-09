@@ -84,7 +84,7 @@ func NewGetAdditionalSellerInputsOK() *GetAdditionalSellerInputsOK {
 /*
 GetAdditionalSellerInputsOK describes a response with status code 200, with default header values.
 
-Success.
+Success
 */
 type GetAdditionalSellerInputsOK struct {
 
@@ -256,7 +256,7 @@ func NewGetAdditionalSellerInputsUnauthorized() *GetAdditionalSellerInputsUnauth
 /*
 GetAdditionalSellerInputsUnauthorized describes a response with status code 401, with default header values.
 
-The request's authorization header is not formatted correctly or does not contain a valid token.
+The request's Authorization header is not formatted correctly or does not contain a valid token.
 */
 type GetAdditionalSellerInputsUnauthorized struct {
 

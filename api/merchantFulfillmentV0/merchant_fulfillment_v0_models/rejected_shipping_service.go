@@ -19,22 +19,22 @@ import (
 // swagger:model RejectedShippingService
 type RejectedShippingService struct {
 
-	// The rejected shipping carrier name. For example, USPS.
+	// The rejected shipping carrier name. e.g. USPS
 	// Required: true
 	CarrierName *string `json:"CarrierName"`
 
-	// A reason code meant to be consumed programatically. For example, `CARRIER_CANNOT_SHIP_TO_POBOX`.
+	// A reason code meant to be consumed programatically. e.g. CARRIER_CANNOT_SHIP_TO_POBOX
 	// Required: true
 	RejectionReasonCode *string `json:"RejectionReasonCode"`
 
 	// A localized human readable description of the rejected reason.
 	RejectionReasonMessage string `json:"RejectionReasonMessage,omitempty"`
 
-	// The rejected shipping service identifier. For example, `FEDEX_PTP_STANDARD_OVERNIGHT`.
+	// The rejected shipping service identifier. e.g. FEDEX_PTP_STANDARD_OVERNIGHT
 	// Required: true
 	ShippingServiceID *ShippingServiceIdentifier `json:"ShippingServiceId"`
 
-	// The rejected shipping service localized name. For example, FedEx Standard Overnight.
+	// The rejected shipping service localized name. e.g. FedEx Standard Overnight
 	// Required: true
 	ShippingServiceName *string `json:"ShippingServiceName"`
 }

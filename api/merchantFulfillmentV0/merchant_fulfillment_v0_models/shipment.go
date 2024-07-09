@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// Shipment The details of a shipment. Includes the shipment status.
+// Shipment The details of a shipment, including the shipment status.
 //
 // swagger:model Shipment
 type Shipment struct {
@@ -23,12 +23,12 @@ type Shipment struct {
 	// Required: true
 	AmazonOrderID *AmazonOrderID `json:"AmazonOrderId"`
 
-	// The date and time the shipment is created.
+	// The date and time the shipment was created.
 	// Required: true
 	// Format: date-time
 	CreatedDate *Timestamp `json:"CreatedDate"`
 
-	// If you specify `DeclaredValue` in a previous call to the `createShipment` operation, then `Insurance` indicates the shipment insurance amount that the carrier uses. If `DeclaredValue` isn't with a previous call to the `createShipment` operation, then the shipment is insured for the carrier's minimum insurance amount, or the combined sale prices that the items are listed for in the shipment.
+	// If DeclaredValue was specified in a previous call to the createShipment operation, then Insurance indicates the amount that the carrier will use to insure the shipment. If DeclaredValue was not specified with a previous call to the createShipment operation, then the shipment will be insured for the carrier's minimum insurance amount, or the combined sale prices that the items are listed for in the shipment, whichever is less.
 	// Required: true
 	Insurance *CurrencyAmount `json:"Insurance"`
 
@@ -36,7 +36,7 @@ type Shipment struct {
 	// Required: true
 	ItemList ItemList `json:"ItemList"`
 
-	// Data for creating a shipping label and dimensions for printing the label. If the shipment is canceled, an empty label is returned.
+	// Data for creating a shipping label and dimensions for printing the label. If the shipment is canceled, an empty Label is returned.
 	// Required: true
 	Label *Label `json:"Label"`
 

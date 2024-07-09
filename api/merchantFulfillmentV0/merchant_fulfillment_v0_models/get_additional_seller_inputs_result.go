@@ -13,7 +13,7 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// GetAdditionalSellerInputsResult The payload for the `getAdditionalSellerInputs` operation.
+// GetAdditionalSellerInputsResult The payload for the getAdditionalSellerInputs operation.
 //
 // swagger:model GetAdditionalSellerInputsResult
 type GetAdditionalSellerInputsResult struct {

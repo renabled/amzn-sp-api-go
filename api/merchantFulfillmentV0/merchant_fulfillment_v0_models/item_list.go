@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// ItemList The list of items you want to include in a shipment.
+// ItemList The list of items to be included in a shipment.
 //
 // swagger:model ItemList
 type ItemList []*Item
