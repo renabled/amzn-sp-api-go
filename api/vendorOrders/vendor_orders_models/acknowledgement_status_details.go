@@ -14,19 +14,19 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// AcknowledgementStatusDetails Details of the item quantity ordered
+// AcknowledgementStatusDetails Details of item quantity ordered
 //
 // swagger:model AcknowledgementStatusDetails
 type AcknowledgementStatusDetails struct {
 
-	// Item quantity accepted by the vendor to be shipped.
+	// Item quantity accepted by vendor to be shipped.
 	AcceptedQuantity *ItemQuantity `json:"acceptedQuantity,omitempty"`
 
-	// The date when the line item was confirmed by the vendor. Must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> date/time format.
+	// The date when the line item was confirmed by vendor. Must be in ISO-8601 date/time format.
 	// Format: date-time
 	AcknowledgementDate strfmt.DateTime `json:"acknowledgementDate,omitempty"`
 
-	// Item quantity rejected by the vendor.
+	// Item quantity rejected by vendor.
 	RejectedQuantity *ItemQuantity `json:"rejectedQuantity,omitempty"`
 }
 

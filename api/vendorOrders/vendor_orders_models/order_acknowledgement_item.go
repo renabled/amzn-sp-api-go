@@ -33,10 +33,10 @@ type OrderAcknowledgementItem struct {
 	// Line item sequence number for the item.
 	ItemSequenceNumber string `json:"itemSequenceNumber,omitempty"`
 
-	// The list price. This is required only if a vendor sells books with a list price.
+	// The list price of an item per each or weight unit. Required only if a vendor sells books at list price.
 	ListPrice *Money `json:"listPrice,omitempty"`
 
-	// The cost to Amazon, which should match the cost on the invoice. This is a required field. If this is left blank the file will reject in Amazon systems. Price information should not be zero or negative. Indicates a net unit price.
+	// The net cost of an item per each or weight unit that must match the cost on the invoice. This is a required field. If left blank, Amazon systems will reject the file. Price information must not be zero or negative.
 	NetCost *Money `json:"netCost,omitempty"`
 
 	// The quantity of this item ordered.

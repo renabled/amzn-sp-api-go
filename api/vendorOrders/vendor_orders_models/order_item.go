@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// OrderItem Represents an individual item in an order, including item details, quantities, pricing, and backorder information.
+// OrderItem order item
 //
 // swagger:model OrderItem
 type OrderItem struct {
@@ -30,10 +30,10 @@ type OrderItem struct {
 	// Required: true
 	ItemSequenceNumber *string `json:"itemSequenceNumber"`
 
-	// The price to Amazon each (list).
+	// The list price of an item per each or weight unit.
 	ListPrice *Money `json:"listPrice,omitempty"`
 
-	// The price to Amazon each (cost).
+	// The net cost of an item per each or weight unit.
 	NetCost *Money `json:"netCost,omitempty"`
 
 	// Item quantity ordered.

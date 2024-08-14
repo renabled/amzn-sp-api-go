@@ -14,12 +14,12 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// SubmitAcknowledgementRequest The request schema for the `submitAcknowledgment` operation.
+// SubmitAcknowledgementRequest The request schema for the submitAcknowledgment operation.
 //
 // swagger:model SubmitAcknowledgementRequest
 type SubmitAcknowledgementRequest struct {
 
-	// An array of order acknowledgements to be submitted.
+	// acknowledgements
 	Acknowledgements []*OrderAcknowledgement `json:"acknowledgements"`
 }
 

@@ -256,9 +256,14 @@ func NewGetPurchaseOrdersStatusForbidden() *GetPurchaseOrdersStatusForbidden {
 /*
 GetPurchaseOrdersStatusForbidden describes a response with status code 403, with default header values.
 
-Indicates that access to the resource is forbidden. Possible reasons include `Access Denied`, `Unauthorized`, `Expired Token`, or `Invalid Signature`.
+Indicates that access to the resource is forbidden. Possible reasons include Access Denied, Unauthorized, Expired Token, or Invalid Signature.
 */
 type GetPurchaseOrdersStatusForbidden struct {
+
+	/* Your rate limit (requests per second) for this operation.
+	_Note:_ For this status code, the rate limit header is deprecated and no longer returned.
+	*/
+	XAmznRateLimitLimit string
 
 	/* Unique request reference identifier.
 	 */
@@ -305,6 +310,13 @@ func (o *GetPurchaseOrdersStatusForbidden) GetPayload() *vendor_orders_models.Ge
 }
 
 func (o *GetPurchaseOrdersStatusForbidden) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// hydrates response header x-amzn-RateLimit-Limit
+	hdrXAmznRateLimitLimit := response.GetHeader("x-amzn-RateLimit-Limit")
+
+	if hdrXAmznRateLimitLimit != "" {
+		o.XAmznRateLimitLimit = hdrXAmznRateLimitLimit
+	}
 
 	// hydrates response header x-amzn-RequestId
 	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")
@@ -421,6 +433,11 @@ The request payload is in an unsupported format.
 */
 type GetPurchaseOrdersStatusUnsupportedMediaType struct {
 
+	/* Your rate limit (requests per second) for this operation.
+	_Note:_ For this status code, the rate limit header is deprecated and no longer returned.
+	*/
+	XAmznRateLimitLimit string
+
 	/* Unique request reference identifier.
 	 */
 	XAmznRequestID string
@@ -467,6 +484,13 @@ func (o *GetPurchaseOrdersStatusUnsupportedMediaType) GetPayload() *vendor_order
 
 func (o *GetPurchaseOrdersStatusUnsupportedMediaType) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
+	// hydrates response header x-amzn-RateLimit-Limit
+	hdrXAmznRateLimitLimit := response.GetHeader("x-amzn-RateLimit-Limit")
+
+	if hdrXAmznRateLimitLimit != "" {
+		o.XAmznRateLimitLimit = hdrXAmznRateLimitLimit
+	}
+
 	// hydrates response header x-amzn-RequestId
 	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")
 
@@ -495,6 +519,11 @@ GetPurchaseOrdersStatusTooManyRequests describes a response with status code 429
 The frequency of requests was greater than allowed.
 */
 type GetPurchaseOrdersStatusTooManyRequests struct {
+
+	/* Your rate limit (requests per second) for this operation.
+	_Note:_ For this status code, the rate limit header is deprecated and no longer returned.
+	*/
+	XAmznRateLimitLimit string
 
 	/* Unique request reference identifier.
 	 */
@@ -542,6 +571,13 @@ func (o *GetPurchaseOrdersStatusTooManyRequests) GetPayload() *vendor_orders_mod
 
 func (o *GetPurchaseOrdersStatusTooManyRequests) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
+	// hydrates response header x-amzn-RateLimit-Limit
+	hdrXAmznRateLimitLimit := response.GetHeader("x-amzn-RateLimit-Limit")
+
+	if hdrXAmznRateLimitLimit != "" {
+		o.XAmznRateLimitLimit = hdrXAmznRateLimitLimit
+	}
+
 	// hydrates response header x-amzn-RequestId
 	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")
 
@@ -570,6 +606,11 @@ GetPurchaseOrdersStatusInternalServerError describes a response with status code
 An unexpected condition occurred that prevented the server from fulfilling the request.
 */
 type GetPurchaseOrdersStatusInternalServerError struct {
+
+	/* Your rate limit (requests per second) for this operation.
+	_Note:_ For this status code, the rate limit header is deprecated and no longer returned.
+	*/
+	XAmznRateLimitLimit string
 
 	/* Unique request reference identifier.
 	 */
@@ -617,6 +658,13 @@ func (o *GetPurchaseOrdersStatusInternalServerError) GetPayload() *vendor_orders
 
 func (o *GetPurchaseOrdersStatusInternalServerError) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
+	// hydrates response header x-amzn-RateLimit-Limit
+	hdrXAmznRateLimitLimit := response.GetHeader("x-amzn-RateLimit-Limit")
+
+	if hdrXAmznRateLimitLimit != "" {
+		o.XAmznRateLimitLimit = hdrXAmznRateLimitLimit
+	}
+
 	// hydrates response header x-amzn-RequestId
 	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")
 
@@ -645,6 +693,11 @@ GetPurchaseOrdersStatusServiceUnavailable describes a response with status code 
 Temporary overloading or maintenance of the server.
 */
 type GetPurchaseOrdersStatusServiceUnavailable struct {
+
+	/* Your rate limit (requests per second) for this operation.
+	_Note:_ For this status code, the rate limit header is deprecated and no longer returned.
+	*/
+	XAmznRateLimitLimit string
 
 	/* Unique request reference identifier.
 	 */
@@ -691,6 +744,13 @@ func (o *GetPurchaseOrdersStatusServiceUnavailable) GetPayload() *vendor_orders_
 }
 
 func (o *GetPurchaseOrdersStatusServiceUnavailable) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// hydrates response header x-amzn-RateLimit-Limit
+	hdrXAmznRateLimitLimit := response.GetHeader("x-amzn-RateLimit-Limit")
+
+	if hdrXAmznRateLimitLimit != "" {
+		o.XAmznRateLimitLimit = hdrXAmznRateLimitLimit
+	}
 
 	// hydrates response header x-amzn-RequestId
 	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")

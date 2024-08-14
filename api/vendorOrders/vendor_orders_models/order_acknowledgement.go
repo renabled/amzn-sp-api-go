@@ -15,12 +15,12 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// OrderAcknowledgement Represents an acknowledgement for an order, including the purchase order number, selling party details, acknowledgement date, and a list of acknowledged items.
+// OrderAcknowledgement order acknowledgement
 //
 // swagger:model OrderAcknowledgement
 type OrderAcknowledgement struct {
 
-	// The date and time when the purchase order is acknowledged, in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> date/time format.
+	// The date and time when the purchase order is acknowledged, in ISO-8601 date/time format.
 	// Required: true
 	// Format: date-time
 	AcknowledgementDate *strfmt.DateTime `json:"acknowledgementDate"`

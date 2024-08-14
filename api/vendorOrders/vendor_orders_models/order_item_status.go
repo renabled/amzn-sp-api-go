@@ -16,7 +16,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// OrderItemStatus Represents the current status of an order item, including acknowledgement and receiving details.
+// OrderItemStatus order item status
 //
 // swagger:model OrderItemStatus
 type OrderItemStatus struct {
@@ -31,10 +31,10 @@ type OrderItemStatus struct {
 	// Required: true
 	ItemSequenceNumber *string `json:"itemSequenceNumber"`
 
-	// The list Price to Amazon each (list).
+	// The list price of an item per each or weight unit.
 	ListPrice *Money `json:"listPrice,omitempty"`
 
-	// The net cost to Amazon each (cost).
+	// The net cost of an item per each or weight unit.
 	NetCost *Money `json:"netCost,omitempty"`
 
 	// ordered quantity
@@ -714,7 +714,7 @@ func (m *OrderItemStatusOrderedQuantity) UnmarshalBinary(b []byte) error {
 // swagger:model OrderItemStatusReceivingStatus
 type OrderItemStatusReceivingStatus struct {
 
-	// The date when the most recent item was received at the buyer's warehouse. Must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> date/time format.
+	// The date when the most recent item was received at the buyer's warehouse. Must be in ISO-8601 date/time format.
 	// Format: date-time
 	LastReceiveDate strfmt.DateTime `json:"lastReceiveDate,omitempty"`
 

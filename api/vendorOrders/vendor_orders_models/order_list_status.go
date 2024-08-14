@@ -14,12 +14,12 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// OrderListStatus A list of order statuses.
+// OrderListStatus order list status
 //
 // swagger:model OrderListStatus
 type OrderListStatus struct {
 
-	// Represents an order status within the `OrderListStatus`.
+	// orders status
 	OrdersStatus []*OrderStatus `json:"ordersStatus"`
 
 	// pagination

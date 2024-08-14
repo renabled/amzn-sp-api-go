@@ -24,11 +24,11 @@ type OrderStatus struct {
 	// Required: true
 	ItemStatus ItemStatus `json:"itemStatus"`
 
-	// The date when the purchase order was last updated. Must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> date/time format.
+	// The date when the purchase order was last updated. Must be in ISO-8601 date/time format.
 	// Format: date-time
 	LastUpdatedDate strfmt.DateTime `json:"lastUpdatedDate,omitempty"`
 
-	// The date the purchase order was placed. Must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> date/time format.
+	// The date the purchase order was placed. Must be in ISO-8601 date/time format.
 	// Required: true
 	// Format: date-time
 	PurchaseOrderDate *strfmt.DateTime `json:"purchaseOrderDate"`

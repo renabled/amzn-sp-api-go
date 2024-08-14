@@ -13,7 +13,7 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// SubmitAcknowledgementResponse The response schema for the `submitAcknowledgement` operation
+// SubmitAcknowledgementResponse The response schema for the submitAcknowledgement operation
 //
 // swagger:model SubmitAcknowledgementResponse
 type SubmitAcknowledgementResponse struct {
@@ -21,7 +21,7 @@ type SubmitAcknowledgementResponse struct {
 	// errors
 	Errors ErrorList `json:"errors,omitempty"`
 
-	// The payload for the `submitAcknowledgement` operation.
+	// The payload for the submitAcknowledgement operation.
 	Payload *TransactionID `json:"payload,omitempty"`
 }
 

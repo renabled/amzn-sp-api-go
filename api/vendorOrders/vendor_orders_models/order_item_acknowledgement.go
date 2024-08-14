@@ -15,7 +15,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// OrderItemAcknowledgement Represents the acknowledgement details for an individual order item, including the acknowledgement code, acknowledged quantity, scheduled ship and delivery dates, and rejection reason (if applicable).
+// OrderItemAcknowledgement order item acknowledgement
 //
 // swagger:model OrderItemAcknowledgement
 type OrderItemAcknowledgement struct {
@@ -33,11 +33,11 @@ type OrderItemAcknowledgement struct {
 	// Enum: [TemporarilyUnavailable InvalidProductIdentifier ObsoleteProduct]
 	RejectionReason string `json:"rejectionReason,omitempty"`
 
-	// Estimated delivery date per line item. Must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> date/time format.
+	// Estimated delivery date per line item. Must be in ISO-8601 date/time format.
 	// Format: date-time
 	ScheduledDeliveryDate strfmt.DateTime `json:"scheduledDeliveryDate,omitempty"`
 
-	// Estimated ship date per line item. Must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> date/time format.
+	// Estimated ship date per line item. Must be in ISO-8601 date/time format.
 	// Format: date-time
 	ScheduledShipDate strfmt.DateTime `json:"scheduledShipDate,omitempty"`
 }

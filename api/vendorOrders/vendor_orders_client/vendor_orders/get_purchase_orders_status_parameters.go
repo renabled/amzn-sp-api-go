@@ -64,7 +64,7 @@ type GetPurchaseOrdersStatusParams struct {
 
 	/* CreatedAfter.
 
-	   Purchase orders that became available after this timestamp will be included in the result. Must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> date/time format.
+	   Purchase orders that became available after this timestamp will be included in the result. Must be in ISO-8601 date/time format.
 
 	   Format: date-time
 	*/
@@ -72,7 +72,7 @@ type GetPurchaseOrdersStatusParams struct {
 
 	/* CreatedBefore.
 
-	   Purchase orders that became available before this timestamp will be included in the result. Must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> date/time format.
+	   Purchase orders that became available before this timestamp will be included in the result. Must be in ISO-8601 date/time format.
 
 	   Format: date-time
 	*/
@@ -136,7 +136,7 @@ type GetPurchaseOrdersStatusParams struct {
 
 	/* UpdatedAfter.
 
-	   Purchase orders for which the last purchase order update happened after this timestamp will be included in the result. Must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> date/time format.
+	   Purchase orders for which the last purchase order update happened after this timestamp will be included in the result. Must be in ISO-8601 date/time format.
 
 	   Format: date-time
 	*/
@@ -144,7 +144,7 @@ type GetPurchaseOrdersStatusParams struct {
 
 	/* UpdatedBefore.
 
-	   Purchase orders for which the last purchase order update happened before this timestamp will be included in the result. Must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> date/time format.
+	   Purchase orders for which the last purchase order update happened before this timestamp will be included in the result. Must be in ISO-8601 date/time format.
 
 	   Format: date-time
 	*/

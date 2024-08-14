@@ -64,7 +64,7 @@ type GetPurchaseOrdersParams struct {
 
 	/* ChangedAfter.
 
-	   Purchase orders that changed after this timestamp will be included in the result. Must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> date/time format.
+	   Purchase orders that changed after this timestamp will be included in the result. Must be in ISO-8601 date/time format.
 
 	   Format: date-time
 	*/
@@ -72,7 +72,7 @@ type GetPurchaseOrdersParams struct {
 
 	/* ChangedBefore.
 
-	   Purchase orders that changed before this timestamp will be included in the result. Must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> date/time format.
+	   Purchase orders that changed before this timestamp will be included in the result. Must be in ISO-8601 date/time format.
 
 	   Format: date-time
 	*/
@@ -80,7 +80,7 @@ type GetPurchaseOrdersParams struct {
 
 	/* CreatedAfter.
 
-	   Purchase orders that became available after this time will be included in the result. Must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> date/time format.
+	   Purchase orders that became available after this time will be included in the result. Must be in ISO-8601 date/time format.
 
 	   Format: date-time
 	*/
@@ -88,7 +88,7 @@ type GetPurchaseOrdersParams struct {
 
 	/* CreatedBefore.
 
-	   Purchase orders that became available before this time will be included in the result. Must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> date/time format.
+	   Purchase orders that became available before this time will be included in the result. Must be in ISO-8601 date/time format.
 
 	   Format: date-time
 	*/
@@ -96,7 +96,7 @@ type GetPurchaseOrdersParams struct {
 
 	/* IncludeDetails.
 
-	   When `true`, returns purchase orders with complete details. Otherwise, only purchase order numbers are returned. Default value is `true`.
+	   When true, returns purchase orders with complete details. Otherwise, only purchase order numbers are returned. Default value is true.
 
 	   Format: boolean
 	*/
@@ -104,7 +104,7 @@ type GetPurchaseOrdersParams struct {
 
 	/* IsPOChanged.
 
-	   When `true`, returns purchase orders which were modified after the order was placed. Vendors are required to pull the changed purchase order and fulfill the updated purchase order and not the original one. Default value is `false`.
+	   When true, returns purchase orders which were modified after the order was placed. Vendors are required to pull the changed purchase order and fulfill the updated purchase order and not the original one. Default value is false.
 
 	   Format: boolean
 	*/
@@ -132,7 +132,7 @@ type GetPurchaseOrdersParams struct {
 
 	/* PoItemState.
 
-	   Current state of the purchase order item. If this value is `Cancelled`, this API will return purchase orders which have one or more items cancelled by Amazon with updated item quantity as zero.
+	   Current state of the purchase order item. If this value is Cancelled, this API will return purchase orders which have one or more items cancelled by Amazon with updated item quantity as zero.
 	*/
 	PoItemState *string
 

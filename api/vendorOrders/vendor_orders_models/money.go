@@ -7,6 +7,7 @@ package vendor_orders_models
 
 import (
 	"context"
+	"encoding/json"
 
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/strfmt"
@@ -14,7 +15,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// Money An amount of money, including units in the form of currency.
+// Money An amount of money. Includes the currency code and an optional unit of measure for items priced by weight.
 //
 // swagger:model Money
 type Money struct {
@@ -25,6 +26,10 @@ type Money struct {
 	// Three digit currency code in ISO 4217 format. String of length 3.
 	// Max Length: 3
 	CurrencyCode string `json:"currencyCode,omitempty"`
+
+	// The unit of measure for prices of items sold by weight. If this field is absent, the item is sold by eaches.
+	// Enum: [POUNDS OUNCES GRAMS KILOGRAMS]
+	UnitOfMeasure string `json:"unitOfMeasure,omitempty"`
 }
 
 // Validate validates this money
@@ -36,6 +41,10 @@ func (m *Money) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validateCurrencyCode(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateUnitOfMeasure(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -68,6 +77,54 @@ func (m *Money) validateCurrencyCode(formats strfmt.Registry) error {
 	}
 
 	if err := validate.MaxLength("currencyCode", "body", m.CurrencyCode, 3); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+var moneyTypeUnitOfMeasurePropEnum []interface{}
+
+func init() {
+	var res []string
+	if err := json.Unmarshal([]byte(`["POUNDS","OUNCES","GRAMS","KILOGRAMS"]`), &res); err != nil {
+		panic(err)
+	}
+	for _, v := range res {
+		moneyTypeUnitOfMeasurePropEnum = append(moneyTypeUnitOfMeasurePropEnum, v)
+	}
+}
+
+const (
+
+	// MoneyUnitOfMeasurePOUNDS captures enum value "POUNDS"
+	MoneyUnitOfMeasurePOUNDS string = "POUNDS"
+
+	// MoneyUnitOfMeasureOUNCES captures enum value "OUNCES"
+	MoneyUnitOfMeasureOUNCES string = "OUNCES"
+
+	// MoneyUnitOfMeasureGRAMS captures enum value "GRAMS"
+	MoneyUnitOfMeasureGRAMS string = "GRAMS"
+
+	// MoneyUnitOfMeasureKILOGRAMS captures enum value "KILOGRAMS"
+	MoneyUnitOfMeasureKILOGRAMS string = "KILOGRAMS"
+)
+
+// prop value enum
+func (m *Money) validateUnitOfMeasureEnum(path, location string, value string) error {
+	if err := validate.EnumCase(path, location, value, moneyTypeUnitOfMeasurePropEnum, true); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (m *Money) validateUnitOfMeasure(formats strfmt.Registry) error {
+	if swag.IsZero(m.UnitOfMeasure) { // not required
+		return nil
+	}
+
+	// value enum
+	if err := m.validateUnitOfMeasureEnum("unitOfMeasure", "body", m.UnitOfMeasure); err != nil {
 		return err
 	}
 

@@ -11,7 +11,7 @@ import (
 	"github.com/go-openapi/strfmt"
 )
 
-// DateTimeInterval Defines a date time interval according to <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a>. Interval is separated by double hyphen (--).
+// DateTimeInterval Defines a date time interval according to ISO8601. Interval is separated by double hyphen (--).
 //
 // swagger:model DateTimeInterval
 type DateTimeInterval string

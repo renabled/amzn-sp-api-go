@@ -44,16 +44,16 @@ type OrderDetails struct {
 	// Enum: [Invoice Consignment CreditCard Prepaid]
 	PaymentMethod string `json:"paymentMethod,omitempty"`
 
-	// The date when purchase order was last changed by Amazon after the order was placed. This date will be greater than 'purchaseOrderDate'. This means the PO data was changed on that date and vendors are required to fulfill the updated PO. The PO changes can be related to Item Quantity, Ship to Location, Ship Window etc. This field will not be present in orders that have not changed after creation. Must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> date/time format.
+	// The date when purchase order was last changed by Amazon after the order was placed. This date will be greater than 'purchaseOrderDate'. This means the PO data was changed on that date and vendors are required to fulfill the  updated PO. The PO changes can be related to Item Quantity, Ship to Location, Ship Window etc. This field will not be present in orders that have not changed after creation. Must be in ISO-8601 date/time format.
 	// Format: date-time
 	PurchaseOrderChangedDate strfmt.DateTime `json:"purchaseOrderChangedDate,omitempty"`
 
-	// The date the purchase order was placed. Must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> date/time format.
+	// The date the purchase order was placed. Must be in ISO-8601 date/time format.
 	// Required: true
 	// Format: date-time
 	PurchaseOrderDate *strfmt.DateTime `json:"purchaseOrderDate"`
 
-	// The date when current purchase order state was changed. Current purchase order state is available in the field 'purchaseOrderState'. Must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> date/time format.
+	// The date when current purchase order state was changed. Current purchase order state is available in the field 'purchaseOrderState'. Must be in ISO-8601 date/time format.
 	// Required: true
 	// Format: date-time
 	PurchaseOrderStateChangedDate *strfmt.DateTime `json:"purchaseOrderStateChangedDate"`
