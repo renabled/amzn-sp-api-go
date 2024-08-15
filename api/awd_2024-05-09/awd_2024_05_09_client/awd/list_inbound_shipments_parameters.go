@@ -85,13 +85,13 @@ type ListInboundShipmentsParams struct {
 
 	/* SortBy.
 
-	   Field to sort results by. Required if `sortOrder` is provided.
+	   Field to sort results by. By default, the response will be sorted by UPDATED_AT.
 	*/
 	SortBy *string
 
 	/* SortOrder.
 
-	   Sort the response in `ASCENDING` or `DESCENDING` order.
+	   Sort the response in ASCENDING or DESCENDING order. By default, the response will be sorted in DESCENDING order.
 	*/
 	SortOrder *string
 

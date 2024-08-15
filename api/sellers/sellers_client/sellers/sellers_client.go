@@ -30,13 +30,15 @@ type ClientOption func(*runtime.ClientOperation)
 
 // ClientService is the interface for Client methods
 type ClientService interface {
+	GetAccount(params *GetAccountParams, opts ...ClientOption) (*GetAccountOK, error)
+
 	GetMarketplaceParticipations(params *GetMarketplaceParticipationsParams, opts ...ClientOption) (*GetMarketplaceParticipationsOK, error)
 
 	SetTransport(transport runtime.ClientTransport)
 }
 
 /*
-	GetMarketplaceParticipations Returns a list of marketplaces that the seller submitting the request can sell in and information about the seller's participation in those marketplaces.
+	GetAccount Returns information about a seller account and its marketplaces.
 
 **Usage Plan:**
 
@@ -44,7 +46,53 @@ type ClientService interface {
 | ---- | ---- |
 | 0.016 | 15 |
 
-The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+*/
+func (a *Client) GetAccount(params *GetAccountParams, opts ...ClientOption) (*GetAccountOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewGetAccountParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "getAccount",
+		Method:             "GET",
+		PathPattern:        "/sellers/v1/account",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &GetAccountReader{formats: a.formats},
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*GetAccountOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for getAccount: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+	GetMarketplaceParticipations Returns a list of marketplaces where the seller can list items and information about the seller's participation in those marketplaces.
+
+**Usage Plan:**
+
+| Rate (requests per second) | Burst |
+| ---- | ---- |
+| 0.016 | 15 |
+
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 */
 func (a *Client) GetMarketplaceParticipations(params *GetMarketplaceParticipationsParams, opts ...ClientOption) (*GetMarketplaceParticipationsOK, error) {
 	// TODO: Validate the params before sending

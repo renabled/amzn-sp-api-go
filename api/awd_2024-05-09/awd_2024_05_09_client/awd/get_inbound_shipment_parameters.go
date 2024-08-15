@@ -67,6 +67,14 @@ type GetInboundShipmentParams struct {
 	*/
 	ShipmentID string
 
+	/* SkuQuantities.
+
+	     If equal to `SHOW`, the response includes the shipment SKU quantity details.
+
+	Defaults to `HIDE`, in which case the response does not contain SKU quantities
+	*/
+	SkuQuantities *string
+
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
@@ -131,6 +139,17 @@ func (o *GetInboundShipmentParams) SetShipmentID(shipmentID string) {
 	o.ShipmentID = shipmentID
 }
 
+// WithSkuQuantities adds the skuQuantities to the get inbound shipment params
+func (o *GetInboundShipmentParams) WithSkuQuantities(skuQuantities *string) *GetInboundShipmentParams {
+	o.SetSkuQuantities(skuQuantities)
+	return o
+}
+
+// SetSkuQuantities adds the skuQuantities to the get inbound shipment params
+func (o *GetInboundShipmentParams) SetSkuQuantities(skuQuantities *string) {
+	o.SkuQuantities = skuQuantities
+}
+
 // WriteToRequest writes these params to a swagger request
 func (o *GetInboundShipmentParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
 
@@ -142,6 +161,23 @@ func (o *GetInboundShipmentParams) WriteToRequest(r runtime.ClientRequest, reg s
 	// path param shipmentId
 	if err := r.SetPathParam("shipmentId", o.ShipmentID); err != nil {
 		return err
+	}
+
+	if o.SkuQuantities != nil {
+
+		// query param skuQuantities
+		var qrSkuQuantities string
+
+		if o.SkuQuantities != nil {
+			qrSkuQuantities = *o.SkuQuantities
+		}
+		qSkuQuantities := qrSkuQuantities
+		if qSkuQuantities != "" {
+
+			if err := r.SetQueryParam("skuQuantities", qSkuQuantities); err != nil {
+				return err
+			}
+		}
 	}
 
 	if len(res) > 0 {

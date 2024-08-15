@@ -26,6 +26,9 @@ type InventorySummary struct {
 	// Required: true
 	Sku *string `json:"sku"`
 
+	// Total quantity that is in-transit from the seller and has not yet been received at an AWD Distribution Center
+	TotalInboundQuantity int64 `json:"totalInboundQuantity,omitempty"`
+
 	// Total quantity that is present in AWD distribution centers.
 	TotalOnhandQuantity int64 `json:"totalOnhandQuantity,omitempty"`
 }

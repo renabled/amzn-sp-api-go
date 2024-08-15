@@ -13,15 +13,15 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// GetMarketplaceParticipationsResponse The response schema for the getMarketplaceParticipations operation.
+// GetMarketplaceParticipationsResponse The response schema for the `getMarketplaceParticipations` operation.
 //
 // swagger:model GetMarketplaceParticipationsResponse
 type GetMarketplaceParticipationsResponse struct {
 
-	// Encountered errors for the getMarketplaceParticipations operation.
+	// The errors encountered by the `getMarketplaceParticipations` operation.
 	Errors ErrorList `json:"errors,omitempty"`
 
-	// The payload for the getMarketplaceParticipations operation.
+	// The payload for the `getMarketplaceParticipations` operation.
 	Payload MarketplaceParticipationList `json:"payload,omitempty"`
 }
 

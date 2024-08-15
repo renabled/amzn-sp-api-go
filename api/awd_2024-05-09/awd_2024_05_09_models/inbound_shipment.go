@@ -60,6 +60,9 @@ type InboundShipment struct {
 	// Min Length: 1
 	ShipmentID *string `json:"shipmentId"`
 
+	// Quantity details at SKU level for the shipment. This attribute will only appear if the skuQuantities parameter in the request is set to SHOW.
+	ShipmentSkuQuantities []*SkuQuantity `json:"shipmentSkuQuantities"`
+
 	// Current status of this shipment.
 	// Required: true
 	ShipmentStatus *InboundShipmentStatus `json:"shipmentStatus"`
@@ -114,6 +117,10 @@ func (m *InboundShipment) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validateShipmentID(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateShipmentSkuQuantities(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -297,6 +304,32 @@ func (m *InboundShipment) validateShipmentID(formats strfmt.Registry) error {
 	return nil
 }
 
+func (m *InboundShipment) validateShipmentSkuQuantities(formats strfmt.Registry) error {
+	if swag.IsZero(m.ShipmentSkuQuantities) { // not required
+		return nil
+	}
+
+	for i := 0; i < len(m.ShipmentSkuQuantities); i++ {
+		if swag.IsZero(m.ShipmentSkuQuantities[i]) { // not required
+			continue
+		}
+
+		if m.ShipmentSkuQuantities[i] != nil {
+			if err := m.ShipmentSkuQuantities[i].Validate(formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("shipmentSkuQuantities" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("shipmentSkuQuantities" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
 func (m *InboundShipment) validateShipmentStatus(formats strfmt.Registry) error {
 
 	if err := validate.Required("shipmentStatus", "body", m.ShipmentStatus); err != nil {
@@ -366,6 +399,10 @@ func (m *InboundShipment) ContextValidate(ctx context.Context, formats strfmt.Re
 	}
 
 	if err := m.contextValidateShipmentContainerQuantities(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateShipmentSkuQuantities(ctx, formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -457,6 +494,26 @@ func (m *InboundShipment) contextValidateShipmentContainerQuantities(ctx context
 					return ve.ValidateName("shipmentContainerQuantities" + "." + strconv.Itoa(i))
 				} else if ce, ok := err.(*errors.CompositeError); ok {
 					return ce.ValidateName("shipmentContainerQuantities" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
+func (m *InboundShipment) contextValidateShipmentSkuQuantities(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(m.ShipmentSkuQuantities); i++ {
+
+		if m.ShipmentSkuQuantities[i] != nil {
+			if err := m.ShipmentSkuQuantities[i].ContextValidate(ctx, formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("shipmentSkuQuantities" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("shipmentSkuQuantities" + "." + strconv.Itoa(i))
 				}
 				return err
 			}

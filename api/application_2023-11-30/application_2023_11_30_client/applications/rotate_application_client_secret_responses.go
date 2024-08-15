@@ -163,7 +163,7 @@ func NewRotateApplicationClientSecretBadRequest() *RotateApplicationClientSecret
 /*
 RotateApplicationClientSecretBadRequest describes a response with status code 400, with default header values.
 
-The application has not enrolled for programmatic rotations. Please visit your developer console to enroll.
+Application is not enrolled for rotation notification. Please update application notification preference in Developer console.
 */
 type RotateApplicationClientSecretBadRequest struct {
 
