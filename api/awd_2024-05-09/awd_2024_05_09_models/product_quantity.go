@@ -21,7 +21,6 @@ import (
 type ProductQuantity struct {
 
 	// Attributes for this instance of the product. For example, already-prepped, or other attributes that distinguish the product beyond the SKU.
-	// Example: {"name":"TestAttribute","value":"TestAttributeValue"}
 	Attributes []*ProductAttribute `json:"attributes"`
 
 	// Product quantity.
