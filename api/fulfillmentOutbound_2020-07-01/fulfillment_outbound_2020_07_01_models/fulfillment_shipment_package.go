@@ -23,6 +23,9 @@ type FulfillmentShipmentPackage struct {
 	// Required: true
 	CarrierCode *string `json:"carrierCode"`
 
+	// The delivery information for the package. This information is available after the package is delivered.
+	DeliveryInformation *DeliveryInformation `json:"deliveryInformation,omitempty"`
+
 	// The estimated arrival date and time of the package. Must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> format.
 	// Format: date-time
 	EstimatedArrivalDate Timestamp `json:"estimatedArrivalDate,omitempty"`
@@ -43,6 +46,10 @@ func (m *FulfillmentShipmentPackage) Validate(formats strfmt.Registry) error {
 	var res []error
 
 	if err := m.validateCarrierCode(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateDeliveryInformation(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -68,6 +75,25 @@ func (m *FulfillmentShipmentPackage) validateCarrierCode(formats strfmt.Registry
 
 	if err := validate.Required("carrierCode", "body", m.CarrierCode); err != nil {
 		return err
+	}
+
+	return nil
+}
+
+func (m *FulfillmentShipmentPackage) validateDeliveryInformation(formats strfmt.Registry) error {
+	if swag.IsZero(m.DeliveryInformation) { // not required
+		return nil
+	}
+
+	if m.DeliveryInformation != nil {
+		if err := m.DeliveryInformation.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("deliveryInformation")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("deliveryInformation")
+			}
+			return err
+		}
 	}
 
 	return nil
@@ -122,6 +148,10 @@ func (m *FulfillmentShipmentPackage) validatePackageNumber(formats strfmt.Regist
 func (m *FulfillmentShipmentPackage) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
 	var res []error
 
+	if err := m.contextValidateDeliveryInformation(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.contextValidateEstimatedArrivalDate(ctx, formats); err != nil {
 		res = append(res, err)
 	}
@@ -133,6 +163,22 @@ func (m *FulfillmentShipmentPackage) ContextValidate(ctx context.Context, format
 	if len(res) > 0 {
 		return errors.CompositeValidationError(res...)
 	}
+	return nil
+}
+
+func (m *FulfillmentShipmentPackage) contextValidateDeliveryInformation(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.DeliveryInformation != nil {
+		if err := m.DeliveryInformation.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("deliveryInformation")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("deliveryInformation")
+			}
+			return err
+		}
+	}
+
 	return nil
 }
 

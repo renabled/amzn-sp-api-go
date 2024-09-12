@@ -19,11 +19,11 @@ import (
 // swagger:model ConfirmShipmentOrderItem
 type ConfirmShipmentOrderItem struct {
 
-	// The unique identifier of the order item.
+	// The order item's unique identifier.
 	// Required: true
 	OrderItemID *string `json:"orderItemId"`
 
-	// The quantity of the item.
+	// The item's quantity.
 	// Required: true
 	Quantity *int64 `json:"quantity"`
 

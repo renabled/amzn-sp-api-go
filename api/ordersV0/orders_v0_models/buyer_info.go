@@ -34,7 +34,7 @@ type BuyerInfo struct {
 	// **Note**: This attribute is only available for business orders in the Brazil, Mexico and India marketplaces.
 	BuyerTaxInfo *BuyerTaxInfo `json:"BuyerTaxInfo,omitempty"`
 
-	// The purchase order (PO) number entered by the buyer at checkout. Returned only for orders where the buyer entered a PO number at checkout.
+	// The purchase order (PO) number entered by the buyer at checkout. Only returned for orders where the buyer entered a PO number at checkout.
 	PurchaseOrderNumber string `json:"PurchaseOrderNumber,omitempty"`
 }
 

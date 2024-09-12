@@ -17,7 +17,7 @@ import (
 // swagger:model BuyerCustomizedInfoDetail
 type BuyerCustomizedInfoDetail struct {
 
-	// The location of a zip file containing Amazon Custom data.
+	// The location of a ZIP file containing Amazon Custom data.
 	CustomizedURL string `json:"CustomizedURL,omitempty"`
 }
 

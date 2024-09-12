@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// RejectionReason The reason for rejecting the order's regulated information. Not present if the order isn't rejected.
+// RejectionReason The reason for rejecting the order's regulated information. This is only present if the order is rejected.
 //
 // swagger:model RejectionReason
 type RejectionReason struct {

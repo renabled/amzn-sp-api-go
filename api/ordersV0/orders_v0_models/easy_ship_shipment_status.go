@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// EasyShipShipmentStatus The status of the Amazon Easy Ship order. This property is included only for Amazon Easy Ship orders.
+// EasyShipShipmentStatus The status of the Amazon Easy Ship order. This property is only included for Amazon Easy Ship orders.
 //
 // swagger:model EasyShipShipmentStatus
 type EasyShipShipmentStatus string

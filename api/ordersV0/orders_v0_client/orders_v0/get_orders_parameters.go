@@ -64,13 +64,13 @@ type GetOrdersParams struct {
 
 	/* ActualFulfillmentSupplySourceID.
 
-	   Denotes the recommended sourceId where the order should be fulfilled from.
+	   The `sourceId` of the location from where you want the order fulfilled.
 	*/
 	ActualFulfillmentSupplySourceID *string
 
 	/* AmazonOrderIds.
 
-	   A list of AmazonOrderId values. An AmazonOrderId is an Amazon-defined order identifier, in 3-7-7 format.
+	   A list of `AmazonOrderId` values. An `AmazonOrderId` is an Amazon-defined order identifier, in 3-7-7 format.
 	*/
 	AmazonOrderIds []string
 
@@ -82,29 +82,29 @@ type GetOrdersParams struct {
 
 	/* CreatedAfter.
 
-	     A date used for selecting orders created after (or at) a specified time. Only orders placed after the specified time are returned. The date must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> format.
+	     Use this date to select orders created after (or at) a specified time. Only orders placed after the specified time are returned. The date must be in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) format.
 
-	**Note**: Either the `CreatedAfter` parameter or the `LastUpdatedAfter` parameter is required. You could specify `CreatedBefore` but not provide `LastUpdatedAfter` or `LastUpdatedBefore` when `CreatedAfter` is specified.
+	**Note**: Either the `CreatedAfter` parameter or the `LastUpdatedAfter` parameter is required. Both cannot be empty. `LastUpdatedAfter` and `LastUpdatedBefore` cannot be set when `CreatedAfter` is set.
 	*/
 	CreatedAfter *string
 
 	/* CreatedBefore.
 
-	     A date used for selecting orders created before (or at) a specified time. Only orders placed before the specified time are returned. The date must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> format.
+	     Use this date to select orders created before (or at) a specified time. Only orders placed before the specified time are returned. The date must be in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) format.
 
-	**Note**: `CreatedBefore` is optional when `CreatedAfter` is specified. But if specified, `CreatedBefore` should be equal to or after the `CreatedAfter` date and at least 2 minutes before the current time.
+	**Note**: `CreatedBefore` is optional when `CreatedAfter` is set. If specified, `CreatedBefore` must be equal to or after the `CreatedAfter` date and at least two minutes before current time.
 	*/
 	CreatedBefore *string
 
 	/* EarliestDeliveryDateAfter.
 
-	   A date used for selecting orders with a earliest delivery date after (or at) a specified time. The date must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> format.
+	   Use this date to select orders with a earliest delivery date after (or at) a specified time. The date must be in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) format.
 	*/
 	EarliestDeliveryDateAfter *string
 
 	/* EarliestDeliveryDateBefore.
 
-	   A date used for selecting orders with a earliest delivery date before (or at) a specified time. The date must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> format.
+	   Use this date to select orders with a earliest delivery date before (or at) a specified time. The date must be in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) format.
 	*/
 	EarliestDeliveryDateBefore *string
 
@@ -149,7 +149,7 @@ type GetOrdersParams struct {
 
 	     A list that indicates how an order was fulfilled. Filters the results by fulfillment channel.
 
-	**Possible values**: `AFN` (Fulfillment by Amazon); `MFN` (Fulfilled by the seller).
+	**Possible values**: `AFN` (fulfilled by Amazon), `MFN` (fulfilled by seller).
 	*/
 	FulfillmentChannels []string
 
@@ -161,29 +161,29 @@ type GetOrdersParams struct {
 
 	/* LastUpdatedAfter.
 
-	     A date used for selecting orders that were last updated before (or at) a specified time. An update is defined as any change in order status, including the creation of a new order. Includes updates made by Amazon and by the seller. The date must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> format.
+	     Use this date to select orders that were last updated after (or at) a specified time. An update is defined as any change in order status, including the creation of a new order. Includes updates made by Amazon and by the seller. The date must be in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) format.
 
-	**Note**: `LastUpdatedBefore` is optional when `LastUpdatedAfter` is specified. But if specified, `LastUpdatedBefore` should be equal to or after the `LastUpdatedAfter` date and at least 2 minutes before current time.
+	**Note**: Either the `CreatedAfter` parameter or the `LastUpdatedAfter` parameter is required. Both cannot be empty. `CreatedAfter` or `CreatedBefore` cannot be set when `LastUpdatedAfter` is set.
 	*/
 	LastUpdatedAfter *string
 
 	/* LastUpdatedBefore.
 
-	     A date used for selecting orders that were last updated before (or at) a specified time. An update is defined as any change in order status, including the creation of a new order. Includes updates made by Amazon and by the seller. The date must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> format.
+	     Use this date to select orders that were last updated before (or at) a specified time. An update is defined as any change in order status, including the creation of a new order. Includes updates made by Amazon and by the seller. The date must be in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) format.
 
-	**Note**: LastUpdatedBefore is optional when LastUpdatedAfter is set. But if specified, LastUpdatedBefore should be equal to or after the LastUpdatedAfter date and at least 2 minutes before current time.
+	**Note**: `LastUpdatedBefore` is optional when `LastUpdatedAfter` is set. But if specified, `LastUpdatedBefore` must be equal to or after the `LastUpdatedAfter` date and at least two minutes before current time.
 	*/
 	LastUpdatedBefore *string
 
 	/* LatestDeliveryDateAfter.
 
-	   A date used for selecting orders with a latest delivery date after (or at) a specified time. The date must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> format.
+	   Use this date to select orders with a latest delivery date after (or at) a specified time. The date must be in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) format.
 	*/
 	LatestDeliveryDateAfter *string
 
 	/* LatestDeliveryDateBefore.
 
-	   A date used for selecting orders with a latest delivery date before (or at) a specified time. The date must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> format.
+	   Use this date to select orders with a latest delivery date before (or at) a specified time. The date must be in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) format.
 	*/
 	LatestDeliveryDateBefore *string
 
@@ -191,7 +191,7 @@ type GetOrdersParams struct {
 
 	     A list of `MarketplaceId` values. Used to select orders that were placed in the specified marketplaces.
 
-	Refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids) for a complete list of `MarketplaceId` values.
+	Refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids) for a complete list of `marketplaceId` values.
 	*/
 	MarketplaceIds []string
 
@@ -225,15 +225,15 @@ type GetOrdersParams struct {
 
 	/* PaymentMethods.
 
-	     A list of payment method values. Used to select orders paid using the specified payment methods.
+	     A list of payment method values. Use this field to select orders that were paid with the specified payment methods.
 
-	**Possible values**: `COD` (Cash on delivery); `CVS` (Convenience store payment); `Other` (Any payment method other than `COD` or `CVS`).
+	**Possible values**: `COD` (cash on delivery), `CVS` (convenience store), `Other` (Any payment method other than COD or CVS).
 	*/
 	PaymentMethods []string
 
 	/* SellerOrderID.
 
-	   An order identifier that is specified by the seller. Used to select only the orders that match the order identifier. If SellerOrderId is specified, then FulfillmentChannels, OrderStatuses, PaymentMethod, LastUpdatedAfter, LastUpdatedBefore, and BuyerEmail cannot be specified.
+	   An order identifier that is specified by the seller. Used to select only the orders that match the order identifier. If `SellerOrderId` is specified, then `FulfillmentChannels`, `OrderStatuses`, `PaymentMethod`, `LastUpdatedAfter`, LastUpdatedBefore, and `BuyerEmail` cannot be specified.
 	*/
 	SellerOrderID *string
 

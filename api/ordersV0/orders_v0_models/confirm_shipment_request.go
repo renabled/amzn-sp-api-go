@@ -20,7 +20,7 @@ import (
 // swagger:model ConfirmShipmentRequest
 type ConfirmShipmentRequest struct {
 
-	// The cod collection method, support in JP only.
+	// The COD collection method (only supported in the JP marketplace).
 	// Enum: [DirectPayment]
 	CodCollectionMethod string `json:"codCollectionMethod,omitempty"`
 

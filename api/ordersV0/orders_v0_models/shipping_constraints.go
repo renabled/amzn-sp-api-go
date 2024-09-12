@@ -18,8 +18,17 @@ import (
 // swagger:model ShippingConstraints
 type ShippingConstraints struct {
 
-	// Indicates if the line item needs to be delivered by pallet
+	// Indicates if the line item needs to be delivered by pallet.
 	PalletDelivery ConstraintType `json:"PalletDelivery,omitempty"`
+
+	// Indicates that the carrier must confirm the recipient is of the legal age to receive the line item upon delivery.
+	RecipientAgeVerification ConstraintType `json:"RecipientAgeVerification,omitempty"`
+
+	// Indicates that the person receiving the line item must be the same as the intended recipient of the order.
+	RecipientIdentityVerification ConstraintType `json:"RecipientIdentityVerification,omitempty"`
+
+	// Indicates that the recipient of the line item must sign to confirm its delivery.
+	SignatureConfirmation ConstraintType `json:"SignatureConfirmation,omitempty"`
 }
 
 // Validate validates this shipping constraints
@@ -27,6 +36,18 @@ func (m *ShippingConstraints) Validate(formats strfmt.Registry) error {
 	var res []error
 
 	if err := m.validatePalletDelivery(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateRecipientAgeVerification(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateRecipientIdentityVerification(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateSignatureConfirmation(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -53,11 +74,74 @@ func (m *ShippingConstraints) validatePalletDelivery(formats strfmt.Registry) er
 	return nil
 }
 
+func (m *ShippingConstraints) validateRecipientAgeVerification(formats strfmt.Registry) error {
+	if swag.IsZero(m.RecipientAgeVerification) { // not required
+		return nil
+	}
+
+	if err := m.RecipientAgeVerification.Validate(formats); err != nil {
+		if ve, ok := err.(*errors.Validation); ok {
+			return ve.ValidateName("RecipientAgeVerification")
+		} else if ce, ok := err.(*errors.CompositeError); ok {
+			return ce.ValidateName("RecipientAgeVerification")
+		}
+		return err
+	}
+
+	return nil
+}
+
+func (m *ShippingConstraints) validateRecipientIdentityVerification(formats strfmt.Registry) error {
+	if swag.IsZero(m.RecipientIdentityVerification) { // not required
+		return nil
+	}
+
+	if err := m.RecipientIdentityVerification.Validate(formats); err != nil {
+		if ve, ok := err.(*errors.Validation); ok {
+			return ve.ValidateName("RecipientIdentityVerification")
+		} else if ce, ok := err.(*errors.CompositeError); ok {
+			return ce.ValidateName("RecipientIdentityVerification")
+		}
+		return err
+	}
+
+	return nil
+}
+
+func (m *ShippingConstraints) validateSignatureConfirmation(formats strfmt.Registry) error {
+	if swag.IsZero(m.SignatureConfirmation) { // not required
+		return nil
+	}
+
+	if err := m.SignatureConfirmation.Validate(formats); err != nil {
+		if ve, ok := err.(*errors.Validation); ok {
+			return ve.ValidateName("SignatureConfirmation")
+		} else if ce, ok := err.(*errors.CompositeError); ok {
+			return ce.ValidateName("SignatureConfirmation")
+		}
+		return err
+	}
+
+	return nil
+}
+
 // ContextValidate validate this shipping constraints based on the context it is used
 func (m *ShippingConstraints) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
 	var res []error
 
 	if err := m.contextValidatePalletDelivery(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateRecipientAgeVerification(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateRecipientIdentityVerification(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateSignatureConfirmation(ctx, formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -74,6 +158,48 @@ func (m *ShippingConstraints) contextValidatePalletDelivery(ctx context.Context,
 			return ve.ValidateName("PalletDelivery")
 		} else if ce, ok := err.(*errors.CompositeError); ok {
 			return ce.ValidateName("PalletDelivery")
+		}
+		return err
+	}
+
+	return nil
+}
+
+func (m *ShippingConstraints) contextValidateRecipientAgeVerification(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := m.RecipientAgeVerification.ContextValidate(ctx, formats); err != nil {
+		if ve, ok := err.(*errors.Validation); ok {
+			return ve.ValidateName("RecipientAgeVerification")
+		} else if ce, ok := err.(*errors.CompositeError); ok {
+			return ce.ValidateName("RecipientAgeVerification")
+		}
+		return err
+	}
+
+	return nil
+}
+
+func (m *ShippingConstraints) contextValidateRecipientIdentityVerification(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := m.RecipientIdentityVerification.ContextValidate(ctx, formats); err != nil {
+		if ve, ok := err.(*errors.Validation); ok {
+			return ve.ValidateName("RecipientIdentityVerification")
+		} else if ce, ok := err.(*errors.CompositeError); ok {
+			return ce.ValidateName("RecipientIdentityVerification")
+		}
+		return err
+	}
+
+	return nil
+}
+
+func (m *ShippingConstraints) contextValidateSignatureConfirmation(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := m.SignatureConfirmation.ContextValidate(ctx, formats); err != nil {
+		if ve, ok := err.(*errors.Validation); ok {
+			return ve.ValidateName("SignatureConfirmation")
+		} else if ce, ok := err.(*errors.CompositeError); ok {
+			return ce.ValidateName("SignatureConfirmation")
 		}
 		return err
 	}

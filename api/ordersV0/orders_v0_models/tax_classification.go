@@ -12,7 +12,7 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// TaxClassification The tax classification for the order.
+// TaxClassification The tax classification of the order.
 //
 // swagger:model TaxClassification
 type TaxClassification struct {

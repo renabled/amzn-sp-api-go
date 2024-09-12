@@ -52,7 +52,7 @@ type Address struct {
 
 	// The container for address extended fields. For example, street name or street number.
 	//
-	// Note: Only available for Brazil shipping addresses.
+	// **Note**: This attribute is currently only available with Brazil shipping addresses.
 	ExtendedFields *AddressExtendedFields `json:"ExtendedFields,omitempty"`
 
 	// The municipality.
@@ -66,9 +66,9 @@ type Address struct {
 	//
 	// **Note**:
 	// 1. This attribute is only available for shipping address.
-	// 2. The buyer `Phone` number is suppressed in some cases, including but not limited to
-	// a. `Phone` is suppressed for all Fulfillment by Amazon (FBA) orders.
-	// b. `Phone` is suppressed for the shipped MFN(Fulfilled by the seller) order when current date is past Latest Delivery Date.
+	// 2. In some cases, the buyer phone number is suppressed:
+	// a. Phone is suppressed for all `AFN` (fulfilled by Amazon) orders.
+	// b. Phone is suppressed for the shipped `MFN` (fulfilled by seller) order when the current date is past the Latest Delivery Date.
 	Phone string `json:"Phone,omitempty"`
 
 	// The postal code.

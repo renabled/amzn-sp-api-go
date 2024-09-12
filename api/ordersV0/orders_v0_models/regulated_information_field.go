@@ -20,11 +20,11 @@ import (
 // swagger:model RegulatedInformationField
 type RegulatedInformationField struct {
 
-	// The unique identifier for the field.
+	// The unique identifier of the field.
 	// Required: true
 	FieldID *string `json:"FieldId"`
 
-	// The name for the field.
+	// The name of the field.
 	// Required: true
 	FieldLabel *string `json:"FieldLabel"`
 
@@ -33,7 +33,7 @@ type RegulatedInformationField struct {
 	// Enum: [Text FileAttachment]
 	FieldType *string `json:"FieldType"`
 
-	// The content of the field as collected in regulatory form. Note that `FileAttachment` type fields will contain a URL to download the attachment here.
+	// The content of the field as collected in regulatory form. Note that `FileAttachment` type fields contain a URL where you can download the attachment.
 	// Required: true
 	FieldValue *string `json:"FieldValue"`
 }

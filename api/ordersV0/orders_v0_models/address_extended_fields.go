@@ -12,7 +12,7 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// AddressExtendedFields The container of extended address fields. For example, street name, street number. Only available with Brazil shipping addresses as of now.
+// AddressExtendedFields The container for address extended fields (such as `street name` and `street number`). Currently only available with Brazil shipping addresses.
 //
 // swagger:model AddressExtendedFields
 type AddressExtendedFields struct {
@@ -20,13 +20,13 @@ type AddressExtendedFields struct {
 	// The floor number/unit number in the building/private house number.
 	Complement string `json:"Complement,omitempty"`
 
-	// The neighborhood. It's smaller than a region and an integral part of an address. It is used in some countries like Brazil.
+	// The neighborhood. This value is only used in some countries (such as Brazil).
 	Neighborhood string `json:"Neighborhood,omitempty"`
 
 	// The street name.
 	StreetName string `json:"StreetName,omitempty"`
 
-	// The house number/building number/property number in the street.
+	// The house, building, or property number associated with the location's street address.
 	StreetNumber string `json:"StreetNumber,omitempty"`
 }
 

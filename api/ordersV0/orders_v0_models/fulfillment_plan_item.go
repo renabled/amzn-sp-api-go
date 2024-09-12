@@ -11,34 +11,32 @@ import (
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
+	"github.com/go-openapi/validate"
 )
 
-// SubstitutionOption Substitution options for an order item.
+// FulfillmentPlanItem The order items associated with this fulfillment plan.
 //
-// swagger:model SubstitutionOption
-type SubstitutionOption struct {
+// swagger:model FulfillmentPlanItem
+type FulfillmentPlanItem struct {
 
-	// The item's Amazon Standard Identification Number (ASIN).
-	ASIN string `json:"ASIN,omitempty"`
+	// Measurement information for the order item.
+	// Required: true
+	Measurement *Measurement `json:"Measurement"`
 
-	// Measurement information for the substitution option.
-	Measurement *Measurement `json:"Measurement,omitempty"`
-
-	// The number of items to be picked for this substitution option.
-	QuantityOrdered int64 `json:"QuantityOrdered,omitempty"`
-
-	// The item's seller stock keeping unit (SKU).
-	SellerSKU string `json:"SellerSKU,omitempty"`
-
-	// The item's title.
-	Title string `json:"Title,omitempty"`
+	// An Amazon-defined associated order item's order item identifier.
+	// Required: true
+	OrderItemID *string `json:"OrderItemId"`
 }
 
-// Validate validates this substitution option
-func (m *SubstitutionOption) Validate(formats strfmt.Registry) error {
+// Validate validates this fulfillment plan item
+func (m *FulfillmentPlanItem) Validate(formats strfmt.Registry) error {
 	var res []error
 
 	if err := m.validateMeasurement(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateOrderItemID(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -48,9 +46,10 @@ func (m *SubstitutionOption) Validate(formats strfmt.Registry) error {
 	return nil
 }
 
-func (m *SubstitutionOption) validateMeasurement(formats strfmt.Registry) error {
-	if swag.IsZero(m.Measurement) { // not required
-		return nil
+func (m *FulfillmentPlanItem) validateMeasurement(formats strfmt.Registry) error {
+
+	if err := validate.Required("Measurement", "body", m.Measurement); err != nil {
+		return err
 	}
 
 	if m.Measurement != nil {
@@ -67,8 +66,17 @@ func (m *SubstitutionOption) validateMeasurement(formats strfmt.Registry) error 
 	return nil
 }
 
-// ContextValidate validate this substitution option based on the context it is used
-func (m *SubstitutionOption) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+func (m *FulfillmentPlanItem) validateOrderItemID(formats strfmt.Registry) error {
+
+	if err := validate.Required("OrderItemId", "body", m.OrderItemID); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+// ContextValidate validate this fulfillment plan item based on the context it is used
+func (m *FulfillmentPlanItem) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
 	var res []error
 
 	if err := m.contextValidateMeasurement(ctx, formats); err != nil {
@@ -81,7 +89,7 @@ func (m *SubstitutionOption) ContextValidate(ctx context.Context, formats strfmt
 	return nil
 }
 
-func (m *SubstitutionOption) contextValidateMeasurement(ctx context.Context, formats strfmt.Registry) error {
+func (m *FulfillmentPlanItem) contextValidateMeasurement(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.Measurement != nil {
 		if err := m.Measurement.ContextValidate(ctx, formats); err != nil {
@@ -98,7 +106,7 @@ func (m *SubstitutionOption) contextValidateMeasurement(ctx context.Context, for
 }
 
 // MarshalBinary interface implementation
-func (m *SubstitutionOption) MarshalBinary() ([]byte, error) {
+func (m *FulfillmentPlanItem) MarshalBinary() ([]byte, error) {
 	if m == nil {
 		return nil, nil
 	}
@@ -106,8 +114,8 @@ func (m *SubstitutionOption) MarshalBinary() ([]byte, error) {
 }
 
 // UnmarshalBinary interface implementation
-func (m *SubstitutionOption) UnmarshalBinary(b []byte) error {
-	var res SubstitutionOption
+func (m *FulfillmentPlanItem) UnmarshalBinary(b []byte) error {
+	var res FulfillmentPlanItem
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err
 	}

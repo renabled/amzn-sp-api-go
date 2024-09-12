@@ -77,7 +77,7 @@ func (m OrderItems) ContextValidate(ctx context.Context, formats strfmt.Registry
 // swagger:model OrderItemsItems0
 type OrderItemsItems0 struct {
 
-	// The unique identifier of the order item.
+	// The order item's unique identifier.
 	OrderItemID string `json:"orderItemId,omitempty"`
 
 	// The quantity for which to update the shipment status.

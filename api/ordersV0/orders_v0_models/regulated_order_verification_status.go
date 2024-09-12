@@ -15,7 +15,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// RegulatedOrderVerificationStatus The verification status of the order along with associated approval or rejection metadata.
+// RegulatedOrderVerificationStatus The verification status of the order, along with associated approval or rejection metadata.
 //
 // swagger:model RegulatedOrderVerificationStatus
 type RegulatedOrderVerificationStatus struct {
@@ -30,7 +30,7 @@ type RegulatedOrderVerificationStatus struct {
 	// Required: true
 	RequiresMerchantAction *bool `json:"RequiresMerchantAction"`
 
-	// The date the order was reviewed. In <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> date time format.
+	// The date the order was reviewed. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date time format.
 	ReviewDate string `json:"ReviewDate,omitempty"`
 
 	// The verification status of the order.
@@ -40,6 +40,9 @@ type RegulatedOrderVerificationStatus struct {
 	// A list of valid rejection reasons that may be used to reject the order's regulated information.
 	// Required: true
 	ValidRejectionReasons []*RejectionReason `json:"ValidRejectionReasons"`
+
+	// A list of valid verification details that may be provided and the criteria required for when the verification detail can be provided.
+	ValidVerificationDetails []*ValidVerificationDetail `json:"ValidVerificationDetails"`
 }
 
 // Validate validates this regulated order verification status
@@ -59,6 +62,10 @@ func (m *RegulatedOrderVerificationStatus) Validate(formats strfmt.Registry) err
 	}
 
 	if err := m.validateValidRejectionReasons(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateValidVerificationDetails(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -147,6 +154,32 @@ func (m *RegulatedOrderVerificationStatus) validateValidRejectionReasons(formats
 	return nil
 }
 
+func (m *RegulatedOrderVerificationStatus) validateValidVerificationDetails(formats strfmt.Registry) error {
+	if swag.IsZero(m.ValidVerificationDetails) { // not required
+		return nil
+	}
+
+	for i := 0; i < len(m.ValidVerificationDetails); i++ {
+		if swag.IsZero(m.ValidVerificationDetails[i]) { // not required
+			continue
+		}
+
+		if m.ValidVerificationDetails[i] != nil {
+			if err := m.ValidVerificationDetails[i].Validate(formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("ValidVerificationDetails" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("ValidVerificationDetails" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
 // ContextValidate validate this regulated order verification status based on the context it is used
 func (m *RegulatedOrderVerificationStatus) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
 	var res []error
@@ -160,6 +193,10 @@ func (m *RegulatedOrderVerificationStatus) ContextValidate(ctx context.Context, 
 	}
 
 	if err := m.contextValidateValidRejectionReasons(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateValidVerificationDetails(ctx, formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -211,6 +248,26 @@ func (m *RegulatedOrderVerificationStatus) contextValidateValidRejectionReasons(
 					return ve.ValidateName("ValidRejectionReasons" + "." + strconv.Itoa(i))
 				} else if ce, ok := err.(*errors.CompositeError); ok {
 					return ce.ValidateName("ValidRejectionReasons" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
+func (m *RegulatedOrderVerificationStatus) contextValidateValidVerificationDetails(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(m.ValidVerificationDetails); i++ {
+
+		if m.ValidVerificationDetails[i] != nil {
+			if err := m.ValidVerificationDetails[i].ContextValidate(ctx, formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("ValidVerificationDetails" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("ValidVerificationDetails" + "." + strconv.Itoa(i))
 				}
 				return err
 			}

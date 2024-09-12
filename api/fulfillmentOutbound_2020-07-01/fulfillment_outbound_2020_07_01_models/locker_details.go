@@ -12,7 +12,7 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// LockerDetails The locker details, if provided can be used to access locker delivery box.
+// LockerDetails The locker details, which you can use to access the locker delivery box.
 //
 // swagger:model LockerDetails
 type LockerDetails struct {

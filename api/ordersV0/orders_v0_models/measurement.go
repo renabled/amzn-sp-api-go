@@ -20,12 +20,12 @@ import (
 // swagger:model Measurement
 type Measurement struct {
 
-	// The unit of measure for this measurement.
+	// The unit of measure.
 	// Required: true
 	// Enum: [OUNCES POUNDS KILOGRAMS GRAMS MILLIGRAMS INCHES FEET METERS CENTIMETERS MILLIMETERS SQUARE_METERS SQUARE_CENTIMETERS SQUARE_FEET SQUARE_INCHES GALLONS PINTS QUARTS FLUID_OUNCES LITERS CUBIC_METERS CUBIC_FEET CUBIC_INCHES CUBIC_CENTIMETERS COUNT]
 	Unit *string `json:"Unit"`
 
-	// The value of the measurement.
+	// The measurement value.
 	// Required: true
 	Value *float64 `json:"Value"`
 }

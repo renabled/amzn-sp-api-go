@@ -13,7 +13,7 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// AssociatedItem An item associated with an order item. For example, a tire installation service purchased with tires.
+// AssociatedItem An item that is associated with an order item. For example, a tire installation service that is purchased with tires.
 //
 // swagger:model AssociatedItem
 type AssociatedItem struct {

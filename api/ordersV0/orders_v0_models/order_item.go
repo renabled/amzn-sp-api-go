@@ -21,7 +21,7 @@ import (
 // swagger:model OrderItem
 type OrderItem struct {
 
-	// The Amazon Standard Identification Number (ASIN) of the item.
+	// The item's Amazon Standard Identification Number (ASIN).
 	// Required: true
 	ASIN *string `json:"ASIN"`
 
@@ -30,7 +30,7 @@ type OrderItem struct {
 
 	// A single item's buyer information.
 	//
-	// **Note**: The `BuyerInfo` contains restricted data. Use a Restricted Data Token (RDT) and restricted Selling Partner API roles to access the restricted data in `BuyerInfo`, for example, `BuyerCustomizedInfo` and `GiftMessageText`.
+	// **Note**: The `BuyerInfo` contains restricted data. Use the Restricted Data Token (RDT) and restricted SPDS roles to access the restricted data in `BuyerInfo`. For example, `BuyerCustomizedInfo` and `GiftMessageText`.
 	BuyerInfo *ItemBuyerInfo `json:"BuyerInfo,omitempty"`
 
 	// Information about whether or not a buyer requested cancellation.
@@ -44,37 +44,37 @@ type OrderItem struct {
 
 	// The condition of the item.
 	//
-	// **Possible values**: `New`, `Used`, `Collectible`, `Refurbished`, `Preorder`, `Club`.
+	// **Possible values**: `New`, `Used`, `Collectible`, `Refurbished`, `Preorder`, and `Club`.
 	ConditionID string `json:"ConditionId,omitempty"`
 
-	// The condition of the item as described by the seller.
+	// The condition of the item, as described by the seller.
 	ConditionNote string `json:"ConditionNote,omitempty"`
 
 	// The subcondition of the item.
 	//
-	// **Possible values**: `New`, `Mint`, `Very Good`, `Good`, `Acceptable`, `Poor`, `Club`, `OEM`, `Warranty`, `Refurbished Warranty`, `Refurbished`, `Open Box`, `Any`, `Other`.
+	// **Possible values**: `New`, `Mint`, `Very Good`, `Good`, `Acceptable`, `Poor`, `Club`, `OEM`, `Warranty`, `Refurbished Warranty`, `Refurbished`, `Open Box`, `Any`, and `Other`.
 	ConditionSubtypeID string `json:"ConditionSubtypeId,omitempty"`
 
 	// The category of deemed reseller. This applies to selling partners that are not based in the EU and is used to help them meet the VAT Deemed Reseller tax laws in the EU and UK.
 	// Enum: [IOSS UOSS]
 	DeemedResellerCategory string `json:"DeemedResellerCategory,omitempty"`
 
-	// The IOSS number for the marketplace. Sellers shipping to the European Union (EU) from outside of the EU must provide this IOSS number to their carrier when Amazon has collected the VAT on the sale.
+	// The IOSS number of the marketplace. Sellers shipping to the EU from outside the EU must provide this IOSS number to their carrier when Amazon has collected the VAT on the sale.
 	IossNumber string `json:"IossNumber,omitempty"`
 
 	// Indicates whether the item is a gift.
 	//
-	// **Possible values**: `true`, `false`.
+	// **Possible values**: `true` and `false`.
 	IsGift string `json:"IsGift,omitempty"`
 
-	// When true, the ASIN is enrolled in Transparency and the Transparency serial number that needs to be submitted can be determined by the following:
+	// When true, the ASIN is enrolled in Transparency. The Transparency serial number that you must submit is determined by:
 	//
 	// **1D or 2D Barcode:** This has a **T** logo. Submit either the 29-character alpha-numeric identifier beginning with **AZ** or **ZA**, or the 38-character Serialized Global Trade Item Number (SGTIN).
-	// **2D Barcode SN:** Submit the 7- to 20-character serial number barcode, which likely has the prefix **SN**. The serial number will be applied to the same side of the packaging as the GTIN (UPC/EAN/ISBN) barcode.
+	// **2D Barcode SN:** Submit the 7- to 20-character serial number barcode, which likely has the prefix **SN**. The serial number is applied to the same side of the packaging as the GTIN (UPC/EAN/ISBN) barcode.
 	// **QR code SN:** Submit the URL that the QR code generates.
 	IsTransparency bool `json:"IsTransparency,omitempty"`
 
-	// The selling price of the order item. An order item is an item and a quantity. This means that the value of `ItemPrice` is equal to the selling price of the item multiplied by the quantity ordered. Note that `ItemPrice` excludes `ShippingPrice` and `GiftWrapPrice`.
+	// The selling price of the order item. Note that an order item is an item and a quantity. This means that the value of `ItemPrice` is equal to the selling price of the item multiplied by the quantity ordered. `ItemPrice` excludes `ShippingPrice` and GiftWrapPrice.
 	ItemPrice *Money `json:"ItemPrice,omitempty"`
 
 	// The tax on the item price.
@@ -90,12 +90,12 @@ type OrderItem struct {
 	// The number and value of Amazon Points granted with the purchase of an item.
 	PointsGranted *PointsGrantedDetail `json:"PointsGranted,omitempty"`
 
-	// Indicates that the selling price is a special price that is available only for Amazon Business orders. For more information about the Amazon Business Seller Program, refer to [Amazon Business](https://business.amazon.com).
+	// Indicates that the selling price is a special price that is only available for Amazon Business orders. For more information about the Amazon Business Seller Program, refer to the [Amazon Business website](https://www.amazon.com/b2b/info/amazon-business).
 	//
-	// **Possible values**: `BusinessPrice` - A special price that is available only for Amazon Business orders.
+	// **Possible values**: `BusinessPrice`
 	PriceDesignation string `json:"PriceDesignation,omitempty"`
 
-	// Product information for the item.
+	// The item's product information.
 	ProductInfo *ProductInfoDetail `json:"ProductInfo,omitempty"`
 
 	// The total of all promotional discounts in the offer.
@@ -114,18 +114,18 @@ type OrderItem struct {
 	// The number of items shipped.
 	QuantityShipped int64 `json:"QuantityShipped,omitempty"`
 
-	// The end date of the scheduled delivery window in the time zone of the order destination. In <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> date time format.
+	// The end date of the scheduled delivery window in the time zone for the order destination. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date time format.
 	ScheduledDeliveryEndDate string `json:"ScheduledDeliveryEndDate,omitempty"`
 
-	// The start date of the scheduled delivery window in the time zone of the order destination. In <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> date time format.
+	// The start date of the scheduled delivery window in the time zone for the order destination. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date time format.
 	ScheduledDeliveryStartDate string `json:"ScheduledDeliveryStartDate,omitempty"`
 
-	// The seller stock keeping unit (SKU) of the item.
+	// The item's seller stock keeping unit (SKU).
 	SellerSKU string `json:"SellerSKU,omitempty"`
 
 	// When true, the product type for this item has a serial number.
 	//
-	// Returned only for Amazon Easy Ship orders.
+	//  Only returned for Amazon Easy Ship orders.
 	SerialNumberRequired bool `json:"SerialNumberRequired,omitempty"`
 
 	// A list of serial numbers for electronic products that are shipped to customers. Returned for FBA orders only.
@@ -140,7 +140,7 @@ type OrderItem struct {
 	// The tax on the discount on the shipping price.
 	ShippingDiscountTax *Money `json:"ShippingDiscountTax,omitempty"`
 
-	// The shipping price of the item.
+	// The item's shipping price.
 	ShippingPrice *Money `json:"ShippingPrice,omitempty"`
 
 	// The tax on the shipping price.
@@ -149,13 +149,13 @@ type OrderItem struct {
 	// The store chain store identifier. Linked to a specific store in a store chain.
 	StoreChainStoreID string `json:"StoreChainStoreId,omitempty"`
 
-	// Substitution preferences for the order item. This is an optional field and will only be present if seller supports substitutions like in case of some grocery sellers.
+	// Substitution preferences for the order item. This is an optional field that is only present if a seller supports substitutions, as is the case with some grocery sellers.
 	SubstitutionPreferences *SubstitutionPreferences `json:"SubstitutionPreferences,omitempty"`
 
 	// Information about withheld taxes.
 	TaxCollection *TaxCollection `json:"TaxCollection,omitempty"`
 
-	// The name of the item.
+	// The item's name.
 	Title string `json:"Title,omitempty"`
 }
 

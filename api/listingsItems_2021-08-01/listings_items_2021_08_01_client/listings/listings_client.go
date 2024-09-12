@@ -38,6 +38,8 @@ type ClientService interface {
 
 	PutListingsItem(params *PutListingsItemParams, opts ...ClientOption) (*PutListingsItemOK, error)
 
+	SearchListingsItems(params *SearchListingsItemsParams, opts ...ClientOption) (*SearchListingsItemsOK, error)
+
 	SetTransport(transport runtime.ClientTransport)
 }
 
@@ -234,6 +236,52 @@ func (a *Client) PutListingsItem(params *PutListingsItemParams, opts ...ClientOp
 	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
 	msg := fmt.Sprintf("unexpected success response for putListingsItem: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+	SearchListingsItems Search for and return list of listings items and respective details for a selling partner.
+
+**Usage Plan:**
+
+| Rate (requests per second) | Burst |
+| ---- | ---- |
+| 5 | 5 |
+
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
+*/
+func (a *Client) SearchListingsItems(params *SearchListingsItemsParams, opts ...ClientOption) (*SearchListingsItemsOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewSearchListingsItemsParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "searchListingsItems",
+		Method:             "GET",
+		PathPattern:        "/listings/2021-08-01/items/{sellerId}",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &SearchListingsItemsReader{formats: a.formats},
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*SearchListingsItemsOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for searchListingsItems: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 

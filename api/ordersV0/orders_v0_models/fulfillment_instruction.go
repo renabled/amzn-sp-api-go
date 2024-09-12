@@ -12,12 +12,12 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// FulfillmentInstruction Contains the instructions about the fulfillment like where should it be fulfilled from.
+// FulfillmentInstruction Contains the instructions about the fulfillment, such as the location from where you want the order filled.
 //
 // swagger:model FulfillmentInstruction
 type FulfillmentInstruction struct {
 
-	// Denotes the recommended `sourceId` where the order should be fulfilled from.
+	// The `sourceId` of the location from where you want the order fulfilled.
 	FulfillmentSupplySourceID string `json:"FulfillmentSupplySourceId,omitempty"`
 }
 

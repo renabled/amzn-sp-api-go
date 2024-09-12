@@ -20,6 +20,9 @@ import (
 // swagger:model ItemOfferByMarketplace
 type ItemOfferByMarketplace struct {
 
+	// Buyer segment or program this offer is applicable to.
+	Audience *Audience `json:"audience,omitempty"`
+
 	// The Amazon marketplace identifier.
 	// Required: true
 	MarketplaceID *string `json:"marketplaceId"`
@@ -41,6 +44,10 @@ type ItemOfferByMarketplace struct {
 func (m *ItemOfferByMarketplace) Validate(formats strfmt.Registry) error {
 	var res []error
 
+	if err := m.validateAudience(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.validateMarketplaceID(formats); err != nil {
 		res = append(res, err)
 	}
@@ -60,6 +67,25 @@ func (m *ItemOfferByMarketplace) Validate(formats strfmt.Registry) error {
 	if len(res) > 0 {
 		return errors.CompositeValidationError(res...)
 	}
+	return nil
+}
+
+func (m *ItemOfferByMarketplace) validateAudience(formats strfmt.Registry) error {
+	if swag.IsZero(m.Audience) { // not required
+		return nil
+	}
+
+	if m.Audience != nil {
+		if err := m.Audience.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("audience")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("audience")
+			}
+			return err
+		}
+	}
+
 	return nil
 }
 
@@ -158,6 +184,10 @@ func (m *ItemOfferByMarketplace) validatePrice(formats strfmt.Registry) error {
 func (m *ItemOfferByMarketplace) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
 	var res []error
 
+	if err := m.contextValidateAudience(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.contextValidatePoints(ctx, formats); err != nil {
 		res = append(res, err)
 	}
@@ -169,6 +199,22 @@ func (m *ItemOfferByMarketplace) ContextValidate(ctx context.Context, formats st
 	if len(res) > 0 {
 		return errors.CompositeValidationError(res...)
 	}
+	return nil
+}
+
+func (m *ItemOfferByMarketplace) contextValidateAudience(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.Audience != nil {
+		if err := m.Audience.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("audience")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("audience")
+			}
+			return err
+		}
+	}
+
 	return nil
 }
 

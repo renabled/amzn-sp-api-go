@@ -19,16 +19,18 @@ import (
 // swagger:model UpdateVerificationStatusRequestBody
 type UpdateVerificationStatusRequestBody struct {
 
-	// The identifier for the order's regulated information reviewer.
+	// The identifier of the order's regulated information reviewer.
 	// Required: true
 	ExternalReviewerID *string `json:"externalReviewerId"`
 
-	// The unique identifier for the rejection reason used for rejecting the order's regulated information. Only required if the new status is rejected.
+	// The unique identifier of the rejection reason used for rejecting the order's regulated information. Only required if the new status is rejected.
 	RejectionReasonID string `json:"rejectionReasonId,omitempty"`
 
 	// The new verification status of the order.
-	// Required: true
-	Status *VerificationStatus `json:"status"`
+	Status VerificationStatus `json:"status,omitempty"`
+
+	// Additional information regarding the verification of the order.
+	VerificationDetails *VerificationDetails `json:"verificationDetails,omitempty"`
 }
 
 // Validate validates this update verification status request body
@@ -40,6 +42,10 @@ func (m *UpdateVerificationStatusRequestBody) Validate(formats strfmt.Registry) 
 	}
 
 	if err := m.validateStatus(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateVerificationDetails(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -59,21 +65,33 @@ func (m *UpdateVerificationStatusRequestBody) validateExternalReviewerID(formats
 }
 
 func (m *UpdateVerificationStatusRequestBody) validateStatus(formats strfmt.Registry) error {
+	if swag.IsZero(m.Status) { // not required
+		return nil
+	}
 
-	if err := validate.Required("status", "body", m.Status); err != nil {
+	if err := m.Status.Validate(formats); err != nil {
+		if ve, ok := err.(*errors.Validation); ok {
+			return ve.ValidateName("status")
+		} else if ce, ok := err.(*errors.CompositeError); ok {
+			return ce.ValidateName("status")
+		}
 		return err
 	}
 
-	if err := validate.Required("status", "body", m.Status); err != nil {
-		return err
+	return nil
+}
+
+func (m *UpdateVerificationStatusRequestBody) validateVerificationDetails(formats strfmt.Registry) error {
+	if swag.IsZero(m.VerificationDetails) { // not required
+		return nil
 	}
 
-	if m.Status != nil {
-		if err := m.Status.Validate(formats); err != nil {
+	if m.VerificationDetails != nil {
+		if err := m.VerificationDetails.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
-				return ve.ValidateName("status")
+				return ve.ValidateName("verificationDetails")
 			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("status")
+				return ce.ValidateName("verificationDetails")
 			}
 			return err
 		}
@@ -90,6 +108,10 @@ func (m *UpdateVerificationStatusRequestBody) ContextValidate(ctx context.Contex
 		res = append(res, err)
 	}
 
+	if err := m.contextValidateVerificationDetails(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
 	if len(res) > 0 {
 		return errors.CompositeValidationError(res...)
 	}
@@ -98,12 +120,26 @@ func (m *UpdateVerificationStatusRequestBody) ContextValidate(ctx context.Contex
 
 func (m *UpdateVerificationStatusRequestBody) contextValidateStatus(ctx context.Context, formats strfmt.Registry) error {
 
-	if m.Status != nil {
-		if err := m.Status.ContextValidate(ctx, formats); err != nil {
+	if err := m.Status.ContextValidate(ctx, formats); err != nil {
+		if ve, ok := err.(*errors.Validation); ok {
+			return ve.ValidateName("status")
+		} else if ce, ok := err.(*errors.CompositeError); ok {
+			return ce.ValidateName("status")
+		}
+		return err
+	}
+
+	return nil
+}
+
+func (m *UpdateVerificationStatusRequestBody) contextValidateVerificationDetails(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.VerificationDetails != nil {
+		if err := m.VerificationDetails.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
-				return ve.ValidateName("status")
+				return ve.ValidateName("verificationDetails")
 			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("status")
+				return ce.ValidateName("verificationDetails")
 			}
 			return err
 		}

@@ -11,7 +11,7 @@ import (
 	"github.com/go-openapi/strfmt"
 )
 
-// TransparencyCode The Transparency code associated with the item.
+// TransparencyCode The transparency code associated with the item.
 //
 // swagger:model TransparencyCode
 type TransparencyCode string

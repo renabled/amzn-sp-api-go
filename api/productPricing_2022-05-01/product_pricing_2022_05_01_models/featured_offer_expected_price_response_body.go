@@ -11,7 +11,6 @@ import (
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
-	"github.com/go-openapi/validate"
 )
 
 // FeaturedOfferExpectedPriceResponseBody The featured offer expected price response data for a requested SKU.
@@ -26,8 +25,7 @@ type FeaturedOfferExpectedPriceResponseBody struct {
 	FeaturedOfferExpectedPriceResults FeaturedOfferExpectedPriceResultList `json:"featuredOfferExpectedPriceResults,omitempty"`
 
 	// Metadata that identifies the target offer for which the featured offer expected price result data was computed.
-	// Required: true
-	OfferIdentifier *OfferIdentifier `json:"offerIdentifier"`
+	OfferIdentifier *OfferIdentifier `json:"offerIdentifier,omitempty"`
 }
 
 // Validate validates this featured offer expected price response body
@@ -87,9 +85,8 @@ func (m *FeaturedOfferExpectedPriceResponseBody) validateFeaturedOfferExpectedPr
 }
 
 func (m *FeaturedOfferExpectedPriceResponseBody) validateOfferIdentifier(formats strfmt.Registry) error {
-
-	if err := validate.Required("offerIdentifier", "body", m.OfferIdentifier); err != nil {
-		return err
+	if swag.IsZero(m.OfferIdentifier) { // not required
+		return nil
 	}
 
 	if m.OfferIdentifier != nil {

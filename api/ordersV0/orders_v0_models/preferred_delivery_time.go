@@ -22,7 +22,7 @@ type PreferredDeliveryTime struct {
 	// Business hours when the business is open for deliveries.
 	BusinessHours []*BusinessHours `json:"BusinessHours"`
 
-	// Dates when the business is closed in the next 30 days.
+	// Dates when the business is closed during the next 30 days.
 	ExceptionDates []*ExceptionDates `json:"ExceptionDates"`
 }
 

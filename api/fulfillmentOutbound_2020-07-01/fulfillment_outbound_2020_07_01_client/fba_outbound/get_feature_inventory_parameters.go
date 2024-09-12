@@ -79,6 +79,14 @@ type GetFeatureInventoryParams struct {
 	*/
 	NextToken *string
 
+	/* QueryStartDate.
+
+	   A date that you can use to select inventory that has been updated since a specified date. An update is defined as any change in feature-enabled inventory availability. The date must be in the format yyyy-MM-ddTHH:mm:ss.sssZ
+
+	   Format: date-time
+	*/
+	QueryStartDate *strfmt.DateTime
+
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
@@ -165,6 +173,17 @@ func (o *GetFeatureInventoryParams) SetNextToken(nextToken *string) {
 	o.NextToken = nextToken
 }
 
+// WithQueryStartDate adds the queryStartDate to the get feature inventory params
+func (o *GetFeatureInventoryParams) WithQueryStartDate(queryStartDate *strfmt.DateTime) *GetFeatureInventoryParams {
+	o.SetQueryStartDate(queryStartDate)
+	return o
+}
+
+// SetQueryStartDate adds the queryStartDate to the get feature inventory params
+func (o *GetFeatureInventoryParams) SetQueryStartDate(queryStartDate *strfmt.DateTime) {
+	o.QueryStartDate = queryStartDate
+}
+
 // WriteToRequest writes these params to a swagger request
 func (o *GetFeatureInventoryParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
 
@@ -200,6 +219,23 @@ func (o *GetFeatureInventoryParams) WriteToRequest(r runtime.ClientRequest, reg 
 		if qNextToken != "" {
 
 			if err := r.SetQueryParam("nextToken", qNextToken); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.QueryStartDate != nil {
+
+		// query param queryStartDate
+		var qrQueryStartDate strfmt.DateTime
+
+		if o.QueryStartDate != nil {
+			qrQueryStartDate = *o.QueryStartDate
+		}
+		qQueryStartDate := qrQueryStartDate.String()
+		if qQueryStartDate != "" {
+
+			if err := r.SetQueryParam("queryStartDate", qQueryStartDate); err != nil {
 				return err
 			}
 		}
