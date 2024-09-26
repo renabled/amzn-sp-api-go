@@ -25,6 +25,9 @@ type OrderItem struct {
 	// Required: true
 	ASIN *string `json:"ASIN"`
 
+	// Contains the list of programs that are associated with an item.
+	AmazonPrograms *AmazonPrograms `json:"AmazonPrograms,omitempty"`
+
 	// A list of associated items that a customer has purchased with a product. For example, a tire installation service purchased with tires.
 	AssociatedItems []*AssociatedItem `json:"AssociatedItems"`
 
@@ -167,6 +170,10 @@ func (m *OrderItem) Validate(formats strfmt.Registry) error {
 		res = append(res, err)
 	}
 
+	if err := m.validateAmazonPrograms(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.validateAssociatedItems(formats); err != nil {
 		res = append(res, err)
 	}
@@ -269,6 +276,25 @@ func (m *OrderItem) validateASIN(formats strfmt.Registry) error {
 
 	if err := validate.Required("ASIN", "body", m.ASIN); err != nil {
 		return err
+	}
+
+	return nil
+}
+
+func (m *OrderItem) validateAmazonPrograms(formats strfmt.Registry) error {
+	if swag.IsZero(m.AmazonPrograms) { // not required
+		return nil
+	}
+
+	if m.AmazonPrograms != nil {
+		if err := m.AmazonPrograms.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("AmazonPrograms")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("AmazonPrograms")
+			}
+			return err
+		}
 	}
 
 	return nil
@@ -723,6 +749,10 @@ func (m *OrderItem) validateTaxCollection(formats strfmt.Registry) error {
 func (m *OrderItem) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
 	var res []error
 
+	if err := m.contextValidateAmazonPrograms(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.contextValidateAssociatedItems(ctx, formats); err != nil {
 		res = append(res, err)
 	}
@@ -806,6 +836,22 @@ func (m *OrderItem) ContextValidate(ctx context.Context, formats strfmt.Registry
 	if len(res) > 0 {
 		return errors.CompositeValidationError(res...)
 	}
+	return nil
+}
+
+func (m *OrderItem) contextValidateAmazonPrograms(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.AmazonPrograms != nil {
+		if err := m.AmazonPrograms.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("AmazonPrograms")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("AmazonPrograms")
+			}
+			return err
+		}
+	}
+
 	return nil
 }
 

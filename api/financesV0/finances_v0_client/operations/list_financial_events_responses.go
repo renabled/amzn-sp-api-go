@@ -81,6 +81,15 @@ ListFinancialEventsOK describes a response with status code 200, with default he
 Success.
 */
 type ListFinancialEventsOK struct {
+
+	/* Your rate limit (requests per second) for this operation.
+	 */
+	XAmznRateLimitLimit string
+
+	/* Unique request reference identifier.
+	 */
+	XAmznRequestID string
+
 	Payload *finances_v0_models.ListFinancialEventsResponse
 }
 
@@ -123,6 +132,20 @@ func (o *ListFinancialEventsOK) GetPayload() *finances_v0_models.ListFinancialEv
 
 func (o *ListFinancialEventsOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
+	// hydrates response header x-amzn-RateLimit-Limit
+	hdrXAmznRateLimitLimit := response.GetHeader("x-amzn-RateLimit-Limit")
+
+	if hdrXAmznRateLimitLimit != "" {
+		o.XAmznRateLimitLimit = hdrXAmznRateLimitLimit
+	}
+
+	// hydrates response header x-amzn-RequestId
+	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")
+
+	if hdrXAmznRequestID != "" {
+		o.XAmznRequestID = hdrXAmznRequestID
+	}
+
 	o.Payload = new(finances_v0_models.ListFinancialEventsResponse)
 
 	// response payload
@@ -144,6 +167,15 @@ ListFinancialEventsBadRequest describes a response with status code 400, with de
 Request has missing or invalid parameters and cannot be parsed.
 */
 type ListFinancialEventsBadRequest struct {
+
+	/* Your rate limit (requests per second) for this operation.
+	 */
+	XAmznRateLimitLimit string
+
+	/* Unique request reference identifier.
+	 */
+	XAmznRequestID string
+
 	Payload *finances_v0_models.ListFinancialEventsResponse
 }
 
@@ -185,6 +217,20 @@ func (o *ListFinancialEventsBadRequest) GetPayload() *finances_v0_models.ListFin
 }
 
 func (o *ListFinancialEventsBadRequest) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// hydrates response header x-amzn-RateLimit-Limit
+	hdrXAmznRateLimitLimit := response.GetHeader("x-amzn-RateLimit-Limit")
+
+	if hdrXAmznRateLimitLimit != "" {
+		o.XAmznRateLimitLimit = hdrXAmznRateLimitLimit
+	}
+
+	// hydrates response header x-amzn-RequestId
+	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")
+
+	if hdrXAmznRequestID != "" {
+		o.XAmznRequestID = hdrXAmznRequestID
+	}
 
 	o.Payload = new(finances_v0_models.ListFinancialEventsResponse)
 
@@ -369,11 +415,6 @@ The frequency of requests was greater than allowed.
 */
 type ListFinancialEventsTooManyRequests struct {
 
-	/* Your rate limit (requests per second) for this operation.
-	_Note:_ For this status code, the rate limit header is deprecated and no longer returned.
-	*/
-	XAmznRateLimitLimit string
-
 	/* Unique request reference identifier.
 	 */
 	XAmznRequestID string
@@ -420,13 +461,6 @@ func (o *ListFinancialEventsTooManyRequests) GetPayload() *finances_v0_models.Li
 
 func (o *ListFinancialEventsTooManyRequests) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	// hydrates response header x-amzn-RateLimit-Limit
-	hdrXAmznRateLimitLimit := response.GetHeader("x-amzn-RateLimit-Limit")
-
-	if hdrXAmznRateLimitLimit != "" {
-		o.XAmznRateLimitLimit = hdrXAmznRateLimitLimit
-	}
-
 	// hydrates response header x-amzn-RequestId
 	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")
 
@@ -455,11 +489,6 @@ ListFinancialEventsInternalServerError describes a response with status code 500
 An unexpected condition occurred that prevented the server from fulfilling the request.
 */
 type ListFinancialEventsInternalServerError struct {
-
-	/* Your rate limit (requests per second) for this operation.
-	_Note:_ For this status code, the rate limit header is deprecated and no longer returned.
-	*/
-	XAmznRateLimitLimit string
 
 	/* Unique request reference identifier.
 	 */
@@ -507,13 +536,6 @@ func (o *ListFinancialEventsInternalServerError) GetPayload() *finances_v0_model
 
 func (o *ListFinancialEventsInternalServerError) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	// hydrates response header x-amzn-RateLimit-Limit
-	hdrXAmznRateLimitLimit := response.GetHeader("x-amzn-RateLimit-Limit")
-
-	if hdrXAmznRateLimitLimit != "" {
-		o.XAmznRateLimitLimit = hdrXAmznRateLimitLimit
-	}
-
 	// hydrates response header x-amzn-RequestId
 	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")
 
@@ -542,11 +564,6 @@ ListFinancialEventsServiceUnavailable describes a response with status code 503,
 Temporary overloading or maintenance of the server.
 */
 type ListFinancialEventsServiceUnavailable struct {
-
-	/* Your rate limit (requests per second) for this operation.
-	_Note:_ For this status code, the rate limit header is deprecated and no longer returned.
-	*/
-	XAmznRateLimitLimit string
 
 	/* Unique request reference identifier.
 	 */
@@ -593,13 +610,6 @@ func (o *ListFinancialEventsServiceUnavailable) GetPayload() *finances_v0_models
 }
 
 func (o *ListFinancialEventsServiceUnavailable) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
-
-	// hydrates response header x-amzn-RateLimit-Limit
-	hdrXAmznRateLimitLimit := response.GetHeader("x-amzn-RateLimit-Limit")
-
-	if hdrXAmznRateLimitLimit != "" {
-		o.XAmznRateLimitLimit = hdrXAmznRateLimitLimit
-	}
 
 	// hydrates response header x-amzn-RequestId
 	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")

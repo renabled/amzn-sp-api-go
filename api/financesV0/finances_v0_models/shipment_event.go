@@ -57,6 +57,9 @@ type ShipmentEvent struct {
 
 	// shipment item list
 	ShipmentItemList ShipmentItemList `json:"ShipmentItemList,omitempty"`
+
+	// The name of the store where the event occurred.
+	StoreName string `json:"StoreName,omitempty"`
 }
 
 // Validate validates this shipment event

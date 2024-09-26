@@ -18,11 +18,11 @@ import (
 // swagger:model DebtRecoveryItem
 type DebtRecoveryItem struct {
 
-	// The beginning date and time of the financial event group that contains the debt. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date time format.
+	// The start date and time of the financial event group that contains the debt. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format.
 	// Format: date-time
 	GroupBeginDate Date `json:"GroupBeginDate,omitempty"`
 
-	// The ending date and time of the financial event group that contains the debt. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date time format.
+	// The end date and time of the financial event group that contains the debt. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format.
 	// Format: date-time
 	GroupEndDate Date `json:"GroupEndDate,omitempty"`
 

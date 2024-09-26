@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// RetrochargeEventList A list of information about Retrocharge or RetrochargeReversal events.
+// RetrochargeEventList A list of information about `Retrocharge` or `RetrochargeReversal` events.
 //
 // swagger:model RetrochargeEventList
 type RetrochargeEventList []*RetrochargeEvent

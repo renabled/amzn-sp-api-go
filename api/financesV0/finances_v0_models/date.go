@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// Date date
+// Date A date in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format.
 //
 // swagger:model Date
 type Date strfmt.DateTime

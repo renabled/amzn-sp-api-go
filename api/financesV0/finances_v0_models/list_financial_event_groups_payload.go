@@ -13,7 +13,7 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// ListFinancialEventGroupsPayload The payload for the listFinancialEventGroups operation.
+// ListFinancialEventGroupsPayload The payload for the `listFinancialEventGroups` operation.
 //
 // swagger:model ListFinancialEventGroupsPayload
 type ListFinancialEventGroupsPayload struct {

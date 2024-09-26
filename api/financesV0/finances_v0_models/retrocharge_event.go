@@ -35,9 +35,9 @@ type RetrochargeEvent struct {
 	//
 	// Possible values:
 	//
-	// * Retrocharge
+	// * `Retrocharge`
 	//
-	// * RetrochargeReversal
+	// * `RetrochargeReversal`
 	RetrochargeEventType string `json:"RetrochargeEventType,omitempty"`
 
 	// A list of information about taxes withheld.

@@ -18,7 +18,7 @@ import (
 // swagger:model RemovalShipmentEvent
 type RemovalShipmentEvent struct {
 
-	// The merchant removal orderId.
+	// The merchant removal `orderId`.
 	MerchantOrderID string `json:"MerchantOrderId,omitempty"`
 
 	// The identifier for the removal shipment order.
@@ -31,11 +31,14 @@ type RemovalShipmentEvent struct {
 	// A list of removal shipment items.
 	RemovalShipmentItemList RemovalShipmentItemList `json:"RemovalShipmentItemList,omitempty"`
 
+	// The name of the store where the event occurred.
+	StoreName string `json:"StoreName,omitempty"`
+
 	// The type of removal order.
 	//
 	// Possible values:
 	//
-	// * WHOLESALE_LIQUIDATION
+	// * `WHOLESALE_LIQUIDATION`
 	TransactionType string `json:"TransactionType,omitempty"`
 }
 

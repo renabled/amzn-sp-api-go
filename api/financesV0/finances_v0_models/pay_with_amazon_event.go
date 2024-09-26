@@ -34,16 +34,16 @@ type PayWithAmazonEvent struct {
 	//
 	// Possible values:
 	//
-	// * AFN - Amazon Fulfillment Network (Fulfillment by Amazon)
+	// * `AFN`: Amazon Fulfillment Network (Fulfillment by Amazon)
 	//
-	// * MFN - Merchant Fulfillment Network (self-fulfilled)
+	// * `MFN`: Merchant Fulfillment Network (self-fulfilled)
 	FulfillmentChannel string `json:"FulfillmentChannel,omitempty"`
 
 	// The type of payment.
 	//
 	// Possible values:
 	//
-	// * Sales
+	// * `Sales`
 	PaymentAmountType string `json:"PaymentAmountType,omitempty"`
 
 	// The sales channel for the transaction.
@@ -52,10 +52,10 @@ type PayWithAmazonEvent struct {
 	// An order identifier that is specified by the seller.
 	SellerOrderID string `json:"SellerOrderId,omitempty"`
 
-	// The store name where the event occurred.
+	// The name of the store where the event occurred.
 	StoreName string `json:"StoreName,omitempty"`
 
-	// The date and time when the payment transaction is posted. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date time format.
+	// The date and time when the payment transaction is posted. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format.
 	// Format: date-time
 	TransactionPostedDate Date `json:"TransactionPostedDate,omitempty"`
 }

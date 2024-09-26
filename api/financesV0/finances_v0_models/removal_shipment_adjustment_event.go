@@ -32,14 +32,14 @@ type RemovalShipmentAdjustmentEvent struct {
 	// Format: date-time
 	PostedDate Date `json:"PostedDate,omitempty"`
 
-	// A comma-delimited list of Removal shipmentItemAdjustment details for FBA inventory.
+	// A comma-delimited list of `RemovalShipmentItemAdjustment` details for FBA inventory.
 	RemovalShipmentItemAdjustmentList []*RemovalShipmentItemAdjustment `json:"RemovalShipmentItemAdjustmentList"`
 
 	// The type of removal order.
 	//
 	// Possible values:
 	//
-	// * WHOLESALE_LIQUIDATION.
+	// * `WHOLESALE_LIQUIDATION`.
 	TransactionType string `json:"TransactionType,omitempty"`
 }
 

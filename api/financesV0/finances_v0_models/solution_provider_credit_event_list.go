@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// SolutionProviderCreditEventList A list of information about solution provider credits.
+// SolutionProviderCreditEventList A list of `SolutionProviderCreditEvent`.
 //
 // swagger:model SolutionProviderCreditEventList
 type SolutionProviderCreditEventList []*SolutionProviderCreditEvent

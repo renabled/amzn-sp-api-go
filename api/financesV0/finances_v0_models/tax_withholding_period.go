@@ -13,7 +13,7 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// TaxWithholdingPeriod Period which taxwithholding on seller's account is calculated.
+// TaxWithholdingPeriod The period during which tax withholding on a seller's account is calculated.
 //
 // swagger:model TaxWithholdingPeriod
 type TaxWithholdingPeriod struct {

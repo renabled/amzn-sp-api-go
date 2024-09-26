@@ -41,6 +41,9 @@ type InventorySummary struct {
 	// The seller SKU of the item.
 	SellerSku string `json:"sellerSku,omitempty"`
 
+	// A list of seller-enrolled stores that apply to this seller SKU.
+	Stores []string `json:"stores"`
+
 	// The total number of units in an inbound shipment or in Amazon fulfillment centers.
 	TotalQuantity int64 `json:"totalQuantity,omitempty"`
 }

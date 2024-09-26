@@ -38,6 +38,9 @@ type ServiceFeeEvent struct {
 
 	// The seller SKU of the item. The seller SKU is qualified by the seller's seller ID, which is included with every call to the Selling Partner API.
 	SellerSKU string `json:"SellerSKU,omitempty"`
+
+	// The name of the store where the event occurred.
+	StoreName string `json:"StoreName,omitempty"`
 }
 
 // Validate validates this service fee event

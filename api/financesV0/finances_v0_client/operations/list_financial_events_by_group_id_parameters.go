@@ -64,7 +64,7 @@ type ListFinancialEventsByGroupIDParams struct {
 
 	/* MaxResultsPerPage.
 
-	   The maximum number of results to return per page. If the response exceeds the maximum number of transactions or 10 MB, the API responds with 'InvalidInput'.
+	   The maximum number of results to return per page. If the response exceeds the maximum number of transactions or 10 MB, the response is `InvalidInput`.
 
 	   Format: int32
 	   Default: 100
@@ -73,13 +73,13 @@ type ListFinancialEventsByGroupIDParams struct {
 
 	/* NextToken.
 
-	   A string token returned in the response of your previous request.
+	   The response includes `nextToken` when the number of results exceeds the specified `pageSize` value. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until `nextToken` is null. Note that this operation can return empty pages.
 	*/
 	NextToken *string
 
 	/* PostedAfter.
 
-	   A date used for selecting financial events posted after (or at) a specified time. The date-time **must** be more than two minutes before the time of the request, in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date time format.
+	   The response includes financial events posted after (or on) this date. This date must be in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format. The date-time must be more than two minutes before the time of the request.
 
 	   Format: date-time
 	*/
@@ -87,9 +87,13 @@ type ListFinancialEventsByGroupIDParams struct {
 
 	/* PostedBefore.
 
-	   A date used for selecting financial events posted before (but not at) a specified time. The date-time must be later than `PostedAfter` and no later than two minutes before the request was submitted, in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date time format. If `PostedAfter` and `PostedBefore` are more than 180 days apart, no financial events are returned. You must specify the `PostedAfter` parameter if you specify the `PostedBefore` parameter. Default: Now minus two minutes.
+	     The response includes financial events posted before (but not on) this date. This date must be in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format.
 
-	   Format: date-time
+	The date-time must be later than `PostedAfter` and more than two minutes before the requestd was submitted. If `PostedAfter` and `PostedBefore` are more than 180 days apart, the response is empty. If you include the `PostedBefore` parameter in your request, you must also specify the `PostedAfter` parameter.
+
+	**Default:** Two minutes before the time of the request.
+
+	     Format: date-time
 	*/
 	PostedBefore *strfmt.DateTime
 

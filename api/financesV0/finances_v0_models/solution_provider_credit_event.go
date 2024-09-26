@@ -45,7 +45,7 @@ type SolutionProviderCreditEvent struct {
 	// The amount of the credit.
 	TransactionAmount *Currency `json:"TransactionAmount,omitempty"`
 
-	// The date and time that the credit transaction was created, in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date time format.
+	// The date and time that the credit transaction was created, in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format.
 	// Format: date-time
 	TransactionCreationDate Date `json:"TransactionCreationDate,omitempty"`
 }

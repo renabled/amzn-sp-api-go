@@ -28,11 +28,9 @@ type DebtRecoveryEvent struct {
 	//
 	// Possible values:
 	//
-	// * DebtPayment
-	//
-	// * DebtPaymentFailure
-	//
-	// *DebtAdjustment
+	// * `DebtPayment`
+	// * `DebtPaymentFailure`
+	// * `DebtAdjustment`
 	DebtRecoveryType string `json:"DebtRecoveryType,omitempty"`
 
 	// The amount returned for overpayment.

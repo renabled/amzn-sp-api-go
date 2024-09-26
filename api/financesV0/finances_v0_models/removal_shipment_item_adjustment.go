@@ -18,7 +18,7 @@ import (
 // swagger:model RemovalShipmentItemAdjustment
 type RemovalShipmentItemAdjustment struct {
 
-	// Adjusted quantity of removal shipmentItemAdjustment items.
+	// Adjusted quantity of `RemovalShipmentItemAdjustment` items.
 	AdjustedQuantity int32 `json:"AdjustedQuantity,omitempty"`
 
 	// The Amazon fulfillment network SKU for the item.
@@ -30,19 +30,18 @@ type RemovalShipmentItemAdjustment struct {
 	// The total amount adjusted for disputed items.
 	RevenueAdjustment *Currency `json:"RevenueAdjustment,omitempty"`
 
-	// Adjustment on the Tax collected amount on the adjusted revenue.
+	// Adjustment on the tax collected amount on the adjusted revenue.
 	TaxAmountAdjustment *Currency `json:"TaxAmountAdjustment,omitempty"`
 
-	// The tax collection model applied to the item.
+	// The tax collection model that is applied to the item.
 	//
 	// Possible values:
 	//
-	// * MarketplaceFacilitator - Tax is withheld and remitted to the taxing authority by Amazon on behalf of the seller.
-	//
-	// * Standard - Tax is paid to the seller and not remitted to the taxing authority by Amazon.
+	// * `MarketplaceFacilitator`: Tax is withheld and remitted to the taxing authority by Amazon on behalf of the seller.
+	// * `Standard`: Tax is paid to the seller and not remitted to the taxing authority by Amazon.
 	TaxCollectionModel string `json:"TaxCollectionModel,omitempty"`
 
-	// Adjustment the tax withheld and remitted to the taxing authority by Amazon on behalf of the seller. If TaxCollectionModel=MarketplaceFacilitator, then TaxWithheld=TaxAmount (except the TaxWithheld amount is a negative number). Otherwise TaxWithheld=0.
+	// Adjustment of the tax that is withheld and remitted to the taxing authority by Amazon on behalf of the seller. If `TaxCollectionModel` = `MarketplaceFacilitator`, then `TaxWithheld` = `TaxAmount` (except when the `TaxWithheld` amount is a negative number). Otherwise, `TaxWithheld` = `0`.
 	TaxWithheldAdjustment *Currency `json:"TaxWithheldAdjustment,omitempty"`
 }
 

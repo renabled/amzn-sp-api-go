@@ -13,15 +13,15 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// ListFinancialEventsResponse The response schema for the listFinancialEvents operation.
+// ListFinancialEventsResponse The response schema for the `listFinancialEvents` operation.
 //
 // swagger:model ListFinancialEventsResponse
 type ListFinancialEventsResponse struct {
 
-	// One or more unexpected errors occurred during the listFinancialEvents operation.
+	// One or more unexpected errors occurred during the `listFinancialEvents` operation.
 	Errors ErrorList `json:"errors,omitempty"`
 
-	// The payload for the listFinancialEvents operation.
+	// The payload for the `listFinancialEvents` operation.
 	Payload *ListFinancialEventsPayload `json:"payload,omitempty"`
 }
 

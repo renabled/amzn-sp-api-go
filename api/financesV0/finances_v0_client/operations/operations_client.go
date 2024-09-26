@@ -42,7 +42,7 @@ type ClientService interface {
 }
 
 /*
-	ListFinancialEventGroups Returns financial event groups for a given date range. It may take up to 48 hours for orders to appear in your financial events.
+	ListFinancialEventGroups Returns financial event groups for a given date range. Orders from the last 48 hours might not be included in financial events.
 
 **Usage Plan:**
 
@@ -50,7 +50,7 @@ type ClientService interface {
 | ---- | ---- |
 | 0.5 | 30 |
 
-The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput can have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits).
 */
 func (a *Client) ListFinancialEventGroups(params *ListFinancialEventGroupsParams, opts ...ClientOption) (*ListFinancialEventGroupsOK, error) {
 	// TODO: Validate the params before sending
@@ -88,7 +88,9 @@ func (a *Client) ListFinancialEventGroups(params *ListFinancialEventGroupsParams
 }
 
 /*
-	ListFinancialEvents Returns financial events for the specified data range. It may take up to 48 hours for orders to appear in your financial events. **Note:** in `ListFinancialEvents`, deferred events don't show up in responses until in they are released.
+	ListFinancialEvents Returns financial events for the specified data range. Orders from the last 48 hours might not be included in financial events.
+
+**Note:** in `ListFinancialEvents`, deferred events don't show up in responses until in they are released.
 
 **Usage Plan:**
 
@@ -96,7 +98,7 @@ func (a *Client) ListFinancialEventGroups(params *ListFinancialEventGroupsParams
 | ---- | ---- |
 | 0.5 | 30 |
 
-The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput can have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits).
 */
 func (a *Client) ListFinancialEvents(params *ListFinancialEventsParams, opts ...ClientOption) (*ListFinancialEventsOK, error) {
 	// TODO: Validate the params before sending
@@ -134,9 +136,9 @@ func (a *Client) ListFinancialEvents(params *ListFinancialEventsParams, opts ...
 }
 
 /*
-	ListFinancialEventsByGroupID Returns all financial events for the specified financial event group. It may take up to 48 hours for orders to appear in your financial events.
+	ListFinancialEventsByGroupID Returns all financial events for the specified financial event group. Orders from the last 48 hours might not be included in financial events.
 
-**Note:** This operation will only retrieve group's data for the past two years. If a request is submitted for data spanning more than two years, an empty response is returned.
+**Note:** This operation only retrieves a group's data for the past two years. A request for data spanning more than two years produces an empty response.
 
 **Usage Plan:**
 
@@ -144,7 +146,7 @@ func (a *Client) ListFinancialEvents(params *ListFinancialEventsParams, opts ...
 | ---- | ---- |
 | 0.5 | 30 |
 
-The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput can have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits).
 */
 func (a *Client) ListFinancialEventsByGroupID(params *ListFinancialEventsByGroupIDParams, opts ...ClientOption) (*ListFinancialEventsByGroupIDOK, error) {
 	// TODO: Validate the params before sending
@@ -182,7 +184,7 @@ func (a *Client) ListFinancialEventsByGroupID(params *ListFinancialEventsByGroup
 }
 
 /*
-	ListFinancialEventsByOrderID Returns all financial events for the specified order. It may take up to 48 hours for orders to appear in your financial events.
+	ListFinancialEventsByOrderID Returns all financial events for the specified order. Orders from the last 48 hours might not be included in financial events.
 
 **Usage Plan:**
 
@@ -190,7 +192,7 @@ func (a *Client) ListFinancialEventsByGroupID(params *ListFinancialEventsByGroup
 | ---- | ---- |
 | 0.5 | 30 |
 
-The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput can have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits).
 */
 func (a *Client) ListFinancialEventsByOrderID(params *ListFinancialEventsByOrderIDParams, opts ...ClientOption) (*ListFinancialEventsByOrderIDOK, error) {
 	// TODO: Validate the params before sending

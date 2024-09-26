@@ -21,23 +21,17 @@ type FailedAdhocDisbursementEvent struct {
 	// The disbursement identifier.
 	DisbursementID string `json:"DisbursementId,omitempty"`
 
-	// The type of fund transfer.
-	//
-	// Example "Refund"
+	// The type of fund transfer. For example, `Refund`.
 	FundsTransfersType string `json:"FundsTransfersType,omitempty"`
 
-	// The type of payment for disbursement.
-	//
-	// Example `CREDIT_CARD`
+	// The type of payment for disbursement. For example, `CREDIT_CARD`.
 	PaymentDisbursementType string `json:"PaymentDisbursementType,omitempty"`
 
 	// The date and time when the financial event was posted.
 	// Format: date-time
 	PostedDate Date `json:"PostedDate,omitempty"`
 
-	// The status of the failed `AdhocDisbursement`.
-	//
-	// Example `HARD_DECLINED`
+	// The status of the failed `AdhocDisbursement`. For example, `HARD_DECLINED`.
 	Status string `json:"Status,omitempty"`
 
 	// The amount of the Adhoc Disbursement.

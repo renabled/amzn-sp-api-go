@@ -11,7 +11,7 @@ import (
 	"github.com/go-openapi/strfmt"
 )
 
-// BigDecimal big decimal
+// BigDecimal A signed decimal number.
 //
 // swagger:model BigDecimal
 type BigDecimal float64

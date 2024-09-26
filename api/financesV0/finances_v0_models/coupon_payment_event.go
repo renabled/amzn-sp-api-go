@@ -40,7 +40,7 @@ type CouponPaymentEvent struct {
 	// The description provided by the seller when they created the coupon.
 	SellerCouponDescription string `json:"SellerCouponDescription,omitempty"`
 
-	// The FeeComponent value plus the ChargeComponent value.
+	// The `FeeComponent` value plus the `ChargeComponent` value.
 	TotalAmount *Currency `json:"TotalAmount,omitempty"`
 }
 
