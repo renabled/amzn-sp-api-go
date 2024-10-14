@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// PrepOwner In some situations, special preparations are required for items and this field reflects the owner of the preparations. Options include `AMAZON`, `SELLER` or `NONE`.
+// PrepOwner The owner of the preparations, if special preparations are required.
 //
 // swagger:model PrepOwner
 type PrepOwner string

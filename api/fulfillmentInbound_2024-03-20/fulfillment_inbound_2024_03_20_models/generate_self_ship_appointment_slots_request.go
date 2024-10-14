@@ -20,11 +20,11 @@ import (
 // swagger:model GenerateSelfShipAppointmentSlotsRequest
 type GenerateSelfShipAppointmentSlotsRequest struct {
 
-	// The ISO 8601 datetime with pattern `yyyy-MM-ddTHH:mm:ss.sssZ`.
+	// The desired end date. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) datetime format.
 	// Format: date-time
 	DesiredEndDate strfmt.DateTime `json:"desiredEndDate,omitempty"`
 
-	// The ISO 8601 datetime with pattern `yyyy-MM-ddTHH:mm:ss.sssZ`.
+	// The desired start date. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) datetime format.
 	// Format: date-time
 	DesiredStartDate strfmt.DateTime `json:"desiredStartDate,omitempty"`
 }

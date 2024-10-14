@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// MskuQuantity Represents an msku and the related quantity.
+// MskuQuantity Represents an MSKU and the related quantity.
 // Example: {"msku":"msku","quantity":5}
 //
 // swagger:model MskuQuantity

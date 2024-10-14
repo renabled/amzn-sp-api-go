@@ -16,12 +16,12 @@ import (
 )
 
 // InboundPlan Inbound plan containing details of the inbound workflow.
-// Example: {"contactInformation":{"email":"email@email.com","name":"name","phoneNumber":"1234567890"},"createdAt":"2024-03-20T12:01:00Z","inboundPlanId":"wf1234abcd-1234-abcd-5678-1234abcd5678","lastUpdatedAt":"2024-03-28T13:15:30Z","marketplaceIds":["A2EUQ1WTGCTBG2"],"name":"FBA (03/20/2024, 12:01 PM)","packingOptions":[],"placementOptions":[],"shipments":[],"sourceAddress":{"addressLine1":"123 example street","addressLine2":"Floor 19","city":"Toronto","companyName":"Acme","countryCode":"CA","email":"email@email.com","name":"name","phoneNumber":"1234567890","postalCode":"M1M1M1","stateOrProvinceCode":"ON"},"status":"ACTIVE"}
+// Example: {"createdAt":"2024-03-20T12:01:00Z","inboundPlanId":"wf1234abcd-1234-abcd-5678-1234abcd5678","lastUpdatedAt":"2024-03-28T13:15:30Z","marketplaceIds":["A2EUQ1WTGCTBG2"],"name":"FBA (03/20/2024, 12:01 PM)","packingOptions":[],"placementOptions":[],"shipments":[],"sourceAddress":{"addressLine1":"123 example street","addressLine2":"Floor 19","city":"Toronto","companyName":"Acme","countryCode":"CA","email":"email@email.com","name":"name","phoneNumber":"1234567890","postalCode":"M1M1M1","stateOrProvinceCode":"ON"},"status":"ACTIVE"}
 //
 // swagger:model InboundPlan
 type InboundPlan struct {
 
-	// The ISO 8601 datetime with pattern `yyyy-MM-ddTHH:mm:ss.sssZ`.
+	// The time at which the inbound plan was created. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) datetime with pattern `yyyy-MM-ddTHH:mm:ssZ`.
 	// Required: true
 	// Format: date-time
 	CreatedAt *strfmt.DateTime `json:"createdAt"`
@@ -33,12 +33,12 @@ type InboundPlan struct {
 	// Pattern: ^[a-zA-Z0-9-]*$
 	InboundPlanID *string `json:"inboundPlanId"`
 
-	// The ISO 8601 datetime with pattern `yyyy-MM-ddTHH:mm:ss.sssZ`.
+	// The time at which the inbound plan was last updated. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) datetime format with pattern `yyyy-MM-ddTHH:mm:ssZ`.
 	// Required: true
 	// Format: date-time
 	LastUpdatedAt *strfmt.DateTime `json:"lastUpdatedAt"`
 
-	// Marketplace IDs.
+	// A list of marketplace IDs.
 	// Required: true
 	MarketplaceIds []string `json:"marketplaceIds"`
 
@@ -52,14 +52,14 @@ type InboundPlan struct {
 	// Placement options for the inbound plan. This property will be populated when it has been generated via the corresponding operation. If there is a chosen placement option, that will be the only returned option. Query the placement option for more details.
 	PlacementOptions []*PlacementOptionSummary `json:"placementOptions"`
 
-	// Shipment IDs for the inbound plan. This property will be populated when it has been generated via the corresponding operation. If there is a chosen placement option, only shipments for that option will be returned. If there are confirmed shipments, only those shipments will be returned. Query the shipment for more details.
+	// A list of shipment IDs for the inbound plan. This property is populated when it has been generated with the `confirmPlacementOptions` operation. Only shipments from the chosen placement option are returned. Query the shipment for more details.
 	Shipments []*ShipmentSummary `json:"shipments"`
 
 	// source address
 	// Required: true
 	SourceAddress *Address `json:"sourceAddress"`
 
-	// Current status of the inbound plan. Can be: `ACTIVE`, `VOIDED`, `SHIPPED`, 'ERRORED'.
+	// Current status of the inbound plan. Possible values: `ACTIVE`, `VOIDED`, `SHIPPED`, `ERRORED`.
 	// Required: true
 	// Max Length: 1024
 	// Min Length: 1
@@ -175,7 +175,7 @@ func (m *InboundPlan) validateMarketplaceIds(formats strfmt.Registry) error {
 			return err
 		}
 
-		if err := validate.MaxLength("marketplaceIds"+"."+strconv.Itoa(i), "body", m.MarketplaceIds[i], 256); err != nil {
+		if err := validate.MaxLength("marketplaceIds"+"."+strconv.Itoa(i), "body", m.MarketplaceIds[i], 20); err != nil {
 			return err
 		}
 

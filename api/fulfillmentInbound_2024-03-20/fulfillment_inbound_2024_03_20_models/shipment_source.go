@@ -22,7 +22,7 @@ type ShipmentSource struct {
 	// address
 	Address *Address `json:"address,omitempty"`
 
-	// The type of source for this shipment. Can be: `SELLER_FACILITY`.
+	// The type of source for this shipment. Possible values: `SELLER_FACILITY`.
 	// Required: true
 	// Max Length: 1024
 	// Min Length: 1

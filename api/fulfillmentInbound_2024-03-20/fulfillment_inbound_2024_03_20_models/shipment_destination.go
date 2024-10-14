@@ -22,7 +22,7 @@ type ShipmentDestination struct {
 	// The address the shipment should be sent to. Empty if the destination type is `AMAZON_OPTIMIZED`.
 	Address *Address `json:"address,omitempty"`
 
-	// The type of destination for this shipment. Can be: `AMAZON_OPTIMIZED`, `AMAZON_WAREHOUSE`.
+	// The type of destination for this shipment. Possible values: `AMAZON_OPTIMIZED`, `AMAZON_WAREHOUSE`.
 	// Required: true
 	// Max Length: 1024
 	// Min Length: 1

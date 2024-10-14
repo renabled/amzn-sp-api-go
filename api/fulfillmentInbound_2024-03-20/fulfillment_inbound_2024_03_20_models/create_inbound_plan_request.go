@@ -16,7 +16,7 @@ import (
 )
 
 // CreateInboundPlanRequest The `createInboundPlan` request.
-// Example: {"contactInformation":{"email":"email@email.com","name":"name","phoneNumber":"1234567890"},"destinationMarketplaces":["ATVPDKIKX0DER"],"items":[{"expiration":"2024-01-01","labelOwner":"AMAZON","manufacturingLotCode":"manufacturingLotCode","msku":"Sunglasses","prepOwner":"AMAZON","quantity":10}],"name":"My inbound plan","sourceAddress":{"addressLine1":"123 example street","addressLine2":"Floor 19","city":"Toronto","companyName":"Acme","countryCode":"CA","email":"email@email.com","name":"name","phoneNumber":"1234567890","postalCode":"M1M1M1","stateOrProvinceCode":"ON"}}
+// Example: {"destinationMarketplaces":["ATVPDKIKX0DER"],"items":[{"expiration":"2024-01-01","labelOwner":"AMAZON","manufacturingLotCode":"manufacturingLotCode","msku":"Sunglasses","prepOwner":"AMAZON","quantity":10}],"name":"My inbound plan","sourceAddress":{"addressLine1":"123 example street","addressLine2":"Floor 19","city":"Toronto","companyName":"Acme","countryCode":"CA","email":"email@email.com","name":"name","phoneNumber":"1234567890","postalCode":"M1M1M1","stateOrProvinceCode":"ON"}}
 //
 // swagger:model CreateInboundPlanRequest
 type CreateInboundPlanRequest struct {
@@ -91,7 +91,7 @@ func (m *CreateInboundPlanRequest) validateDestinationMarketplaces(formats strfm
 			return err
 		}
 
-		if err := validate.MaxLength("destinationMarketplaces"+"."+strconv.Itoa(i), "body", m.DestinationMarketplaces[i], 256); err != nil {
+		if err := validate.MaxLength("destinationMarketplaces"+"."+strconv.Itoa(i), "body", m.DestinationMarketplaces[i], 20); err != nil {
 			return err
 		}
 

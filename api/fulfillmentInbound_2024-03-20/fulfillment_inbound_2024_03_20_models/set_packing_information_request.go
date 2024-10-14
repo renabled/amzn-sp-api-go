@@ -16,7 +16,7 @@ import (
 )
 
 // SetPackingInformationRequest The `setPackingInformation` request.
-// Example: {"packageGroupings":[{"boxes":[{"boxId":"FBA10ABC0YY100001","contentInformationSource":"BOX_CONTENT_PROVIDED","dimensions":{"height":5,"length":3,"unitOfMeasurement":"CM","width":4},"items":[{"expiration":"2024-01-01","labelOwner":"AMAZON","manufacturingLotCode":"manufacturingLotCode","msku":"Sunglasses","prepOwner":"AMAZON","quantity":10}],"quantity":2,"weight":{"unit":"KG","value":5.5}}],"packingGroupId":"pg1234abcd-1234-abcd-5678-1234abcd5678","shipmentId":"sh1234abcd-1234-abcd-5678-1234abcd5678"}]}
+// Example: {"packageGroupings":[{"boxes":[{"contentInformationSource":"BOX_CONTENT_PROVIDED","dimensions":{"height":5,"length":3,"unitOfMeasurement":"CM","width":4},"items":[{"expiration":"2024-01-01","labelOwner":"AMAZON","manufacturingLotCode":"manufacturingLotCode","msku":"Sunglasses","prepOwner":"AMAZON","quantity":10}],"quantity":2,"weight":{"unit":"KG","value":5.5}}],"packingGroupId":"pg1234abcd-1234-abcd-5678-1234abcd5678","shipmentId":"sh1234abcd-1234-abcd-5678-1234abcd5678"}]}
 //
 // swagger:model SetPackingInformationRequest
 type SetPackingInformationRequest struct {

@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// Currency Currency definition.
+// Currency The type and amount of currency.
 //
 // swagger:model Currency
 type Currency struct {

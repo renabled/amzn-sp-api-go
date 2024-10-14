@@ -16,12 +16,12 @@ import (
 )
 
 // InboundPlanSummary A light-weight inbound plan.
-// Example: {"contactInformation":{"email":"email@email.com","name":"name","phoneNumber":"1234567890"},"createdAt":"2023-03-08T13:15:30Z","inboundPlanId":"wf1234abcd-1234-abcd-5678-1234abcd5678","lastUpdatedAt":"2023-03-08T13:15:30Z","marketplaceIds":["A2EUQ1WTGCTBG2"],"name":"FBA (03/08/2023, 01:15 PM)","sourceAddress":{"addressLine1":"123 example street","addressLine2":"Floor 19","city":"Toronto","companyName":"Acme","countryCode":"CA","email":"email@email.com","name":"name","phoneNumber":"1234567890","postalCode":"M1M1M1","stateOrProvinceCode":"ON"},"status":"ACTIVE"}
+// Example: {"createdAt":"2023-03-08T13:15:30Z","inboundPlanId":"wf1234abcd-1234-abcd-5678-1234abcd5678","lastUpdatedAt":"2023-03-08T13:15:30Z","marketplaceIds":["A2EUQ1WTGCTBG2"],"name":"FBA (03/08/2023, 01:15 PM)","sourceAddress":{"addressLine1":"123 example street","addressLine2":"Floor 19","city":"Toronto","companyName":"Acme","countryCode":"CA","email":"email@email.com","name":"name","phoneNumber":"1234567890","postalCode":"M1M1M1","stateOrProvinceCode":"ON"},"status":"ACTIVE"}
 //
 // swagger:model InboundPlanSummary
 type InboundPlanSummary struct {
 
-	// The ISO 8601 datetime with pattern `yyyy-MM-ddTHH:mm:ss.sssZ`.
+	// The time at which the inbound plan was created. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) datetime format with pattern `yyyy-MM-ddTHH:mm:ssZ`.
 	// Required: true
 	// Format: date-time
 	CreatedAt *strfmt.DateTime `json:"createdAt"`
@@ -33,12 +33,12 @@ type InboundPlanSummary struct {
 	// Pattern: ^[a-zA-Z0-9-]*$
 	InboundPlanID *string `json:"inboundPlanId"`
 
-	// The ISO 8601 datetime with pattern `yyyy-MM-ddTHH:mm:ss.sssZ`.
+	// The time at which the inbound plan was last updated. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) datetime format with pattern `yyyy-MM-ddTHH:mm:ssZ`.
 	// Required: true
 	// Format: date-time
 	LastUpdatedAt *strfmt.DateTime `json:"lastUpdatedAt"`
 
-	// Marketplace IDs.
+	// A list of marketplace IDs.
 	// Required: true
 	MarketplaceIds []string `json:"marketplaceIds"`
 
@@ -50,7 +50,7 @@ type InboundPlanSummary struct {
 	// Required: true
 	SourceAddress *Address `json:"sourceAddress"`
 
-	// Current status of the inbound plan. Can be: `ACTIVE`, `VOIDED`, `SHIPPED`, 'ERRORED'.
+	// The current status of the inbound plan. Possible values: `ACTIVE`, `VOIDED`, `SHIPPED`, `ERRORED`.
 	// Required: true
 	// Max Length: 1024
 	// Min Length: 1
@@ -154,7 +154,7 @@ func (m *InboundPlanSummary) validateMarketplaceIds(formats strfmt.Registry) err
 			return err
 		}
 
-		if err := validate.MaxLength("marketplaceIds"+"."+strconv.Itoa(i), "body", m.MarketplaceIds[i], 256); err != nil {
+		if err := validate.MaxLength("marketplaceIds"+"."+strconv.Itoa(i), "body", m.MarketplaceIds[i], 20); err != nil {
 			return err
 		}
 

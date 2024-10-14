@@ -31,17 +31,17 @@ type DeliveryWindowOption struct {
 	// Pattern: ^[a-zA-Z0-9-]*$
 	DeliveryWindowOptionID *string `json:"deliveryWindowOptionId"`
 
-	// The timestamp at which this delivery window option ends. This is based in ISO 8601 datetime with pattern `yyyy-MM-ddTHH:mm:ss.sssZ`.
+	// The time at which this delivery window option ends. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) datetime format with pattern `yyyy-MM-ddTHH:mmZ`.
 	// Required: true
 	// Format: date-time
 	EndDate *strfmt.DateTime `json:"endDate"`
 
-	// The timestamp at which this delivery window option starts. This is based in ISO 8601 datetime with pattern `yyyy-MM-ddTHH:mm:ss.sssZ`.
+	// The time at which this delivery window option starts. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) datetime format with pattern `yyyy-MM-ddTHH:mmZ`.
 	// Required: true
 	// Format: date-time
 	StartDate *strfmt.DateTime `json:"startDate"`
 
-	// The timestamp at which this window delivery option becomes no longer valid. This is based in ISO 8601 datetime with pattern `yyyy-MM-ddTHH:mm:ss.sssZ`.
+	// The time at which this window delivery option is no longer valid. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) datetime format with pattern `yyyy-MM-ddTHH:mmZ`.
 	// Required: true
 	// Format: date-time
 	ValidUntil *strfmt.DateTime `json:"validUntil"`

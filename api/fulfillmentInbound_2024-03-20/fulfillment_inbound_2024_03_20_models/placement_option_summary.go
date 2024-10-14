@@ -27,7 +27,7 @@ type PlacementOptionSummary struct {
 	// Pattern: ^[a-zA-Z0-9-]*$
 	PlacementOptionID *string `json:"placementOptionId"`
 
-	// The status of a placement option. Can be: `OFFERED` or `ACCEPTED`.
+	// The status of a placement option. Possible values: `OFFERED`, `ACCEPTED`.
 	// Required: true
 	// Max Length: 1024
 	// Min Length: 1

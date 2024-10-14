@@ -27,7 +27,7 @@ type PackingOptionSummary struct {
 	// Pattern: ^[a-zA-Z0-9-]*$
 	PackingOptionID *string `json:"packingOptionId"`
 
-	// The status of a packing option. Can be 'OFFERED', 'ACCEPTED', or 'EXPIRED'.
+	// The status of a packing option. Possible values: 'OFFERED', 'ACCEPTED', 'EXPIRED'.
 	// Required: true
 	// Max Length: 1024
 	// Min Length: 1

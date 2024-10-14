@@ -23,7 +23,7 @@ type Quote struct {
 	// Required: true
 	Cost *Currency `json:"cost"`
 
-	// The timestamp at which this transportation option quote becomes no longer valid. This is based in ISO 8601 datetime with pattern `yyyy-MM-ddTHH:mm:ss.sssZ`.
+	// The time at which this transportation option quote expires. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) datetime with pattern `yyyy-MM-ddTHH:mm:ss.sssZ`.
 	// Format: date-time
 	Expiration strfmt.DateTime `json:"expiration,omitempty"`
 

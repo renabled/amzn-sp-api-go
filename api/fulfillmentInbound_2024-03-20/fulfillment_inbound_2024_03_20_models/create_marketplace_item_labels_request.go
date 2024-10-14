@@ -32,15 +32,15 @@ type CreateMarketplaceItemLabelsRequest struct {
 
 	// The locale code constructed from ISO 639 language code and ISO 3166-1 alpha-2 standard of country codes separated by an underscore character.
 	// Pattern: ^[a-z]{2}_[A-Z]{2}$
-	LocaleCode string `json:"localeCode,omitempty"`
+	LocaleCode *string `json:"localeCode,omitempty"`
 
-	// The Marketplace ID. Refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids) for a list of possible values.
+	// The Marketplace ID. For a list of possible values, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
 	// Required: true
-	// Max Length: 256
+	// Max Length: 20
 	// Min Length: 1
 	MarketplaceID *string `json:"marketplaceId"`
 
-	// Represents the quantity of an msku to print item labels for.
+	// Represents the quantity of an MSKU to print item labels for.
 	// Required: true
 	// Max Items: 100
 	// Min Items: 1
@@ -138,7 +138,7 @@ func (m *CreateMarketplaceItemLabelsRequest) validateLocaleCode(formats strfmt.R
 		return nil
 	}
 
-	if err := validate.Pattern("localeCode", "body", m.LocaleCode, `^[a-z]{2}_[A-Z]{2}$`); err != nil {
+	if err := validate.Pattern("localeCode", "body", *m.LocaleCode, `^[a-z]{2}_[A-Z]{2}$`); err != nil {
 		return err
 	}
 
@@ -155,7 +155,7 @@ func (m *CreateMarketplaceItemLabelsRequest) validateMarketplaceID(formats strfm
 		return err
 	}
 
-	if err := validate.MaxLength("marketplaceId", "body", *m.MarketplaceID, 256); err != nil {
+	if err := validate.MaxLength("marketplaceId", "body", *m.MarketplaceID, 20); err != nil {
 		return err
 	}
 

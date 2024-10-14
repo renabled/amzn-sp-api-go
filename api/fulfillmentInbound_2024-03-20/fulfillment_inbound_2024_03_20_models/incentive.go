@@ -25,13 +25,13 @@ type Incentive struct {
 	// Min Length: 1
 	Description *string `json:"description"`
 
-	// Target of the incentive. Can be 'Placement Services' or 'Fulfillment Fee Discount'.
+	// Target of the incentive. Possible values: 'Placement Services', 'Fulfillment Fee Discount'.
 	// Required: true
 	// Max Length: 1024
 	// Min Length: 1
 	Target *string `json:"target"`
 
-	// Type of incentive. Can be: `FEE`, `DISCOUNT`.
+	// Type of incentive. Possible values: `FEE`, `DISCOUNT`.
 	// Required: true
 	// Max Length: 1024
 	// Min Length: 1

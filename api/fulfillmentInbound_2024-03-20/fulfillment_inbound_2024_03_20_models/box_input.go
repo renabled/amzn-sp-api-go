@@ -16,7 +16,7 @@ import (
 )
 
 // BoxInput Input information for a given box.
-// Example: {"boxId":"FBA10ABC0YY100001","contentInformationSource":"BOX_CONTENT_PROVIDED","dimensions":{"height":5,"length":3,"unitOfMeasurement":"CM","width":4},"items":[{"expiration":"2024-01-01","labelOwner":"AMAZON","manufacturingLotCode":"manufacturingLotCode","msku":"Sunglasses","prepOwner":"AMAZON","quantity":10}],"quantity":2,"weight":{"unit":"KG","value":5.5}}
+// Example: {"contentInformationSource":"BOX_CONTENT_PROVIDED","dimensions":{"height":5,"length":3,"unitOfMeasurement":"CM","width":4},"items":[{"expiration":"2024-01-01","labelOwner":"AMAZON","manufacturingLotCode":"manufacturingLotCode","msku":"Sunglasses","prepOwner":"AMAZON","quantity":10}],"quantity":2,"weight":{"unit":"KG","value":5.5}}
 //
 // swagger:model BoxInput
 type BoxInput struct {

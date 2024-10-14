@@ -36,7 +36,7 @@ type OperationProblem struct {
 	// Min Length: 1
 	Message *string `json:"message"`
 
-	// The severity of the problem. Can be: `WARNING`, `ERROR`.
+	// The severity of the problem. Possible values: `WARNING`, `ERROR`.
 	// Required: true
 	// Max Length: 1024
 	// Min Length: 1

@@ -19,12 +19,14 @@ import (
 // swagger:model ShippingConfiguration
 type ShippingConfiguration struct {
 
-	// Mode of shipment transportation that this option will provide. Can be: `GROUND_SMALL_PARCEL`, `FREIGHT_LTL`, `FREIGHT_FTL_PALLET`, `FREIGHT_FTL_NONPALLET`, `OCEAN_LCL`, `OCEAN_FCL`, `AIR_SMALL_PARCEL`, `AIR_SMALL_PARCEL_EXPRESS`.
+	// Mode of shipment transportation that this option will provide.
+	//
+	// Possible values: `GROUND_SMALL_PARCEL`, `FREIGHT_LTL`, `FREIGHT_FTL_PALLET`, `FREIGHT_FTL_NONPALLET`, `OCEAN_LCL`, `OCEAN_FCL`, `AIR_SMALL_PARCEL`, `AIR_SMALL_PARCEL_EXPRESS`.
 	// Max Length: 1024
 	// Min Length: 1
 	ShippingMode string `json:"shippingMode,omitempty"`
 
-	// Shipping program for the option. Can be: `AMAZON_PARTNERED_CARRIER`, `USE_YOUR_OWN_CARRIER`.
+	// Shipping program for the option. Possible values: `AMAZON_PARTNERED_CARRIER`, `USE_YOUR_OWN_CARRIER`.
 	// Max Length: 1024
 	// Min Length: 1
 	ShippingSolution string `json:"shippingSolution,omitempty"`

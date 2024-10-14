@@ -26,10 +26,10 @@ type ContentUpdatePreview struct {
 	// Pattern: ^[a-zA-Z0-9-]*$
 	ContentUpdatePreviewID *string `json:"contentUpdatePreviewId"`
 
-	// The date in ISO 8601 format for when the content update expires.
+	// The time at which the content update expires. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) datetime format with pattern `yyyy-MM-ddTHH:mm:ss.sssZ`.
 	// Required: true
-	// Pattern: ^([0-9]{4})-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$
-	Expiration *string `json:"expiration"`
+	// Format: date-time
+	Expiration *strfmt.DateTime `json:"expiration"`
 
 	// requested updates
 	// Required: true
@@ -93,7 +93,7 @@ func (m *ContentUpdatePreview) validateExpiration(formats strfmt.Registry) error
 		return err
 	}
 
-	if err := validate.Pattern("expiration", "body", *m.Expiration, `^([0-9]{4})-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$`); err != nil {
+	if err := validate.FormatOf("expiration", "body", "date-time", m.Expiration.String(), formats); err != nil {
 		return err
 	}
 

@@ -26,7 +26,7 @@ type Item struct {
 	// Min Length: 1
 	Asin *string `json:"asin"`
 
-	// The expiration date of the MSKU in ISO 8601 format. The same MSKU with different expiration dates cannot go into the same box.
+	// The expiration date of the MSKU. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) datetime format with pattern`YYYY-MM-DD`. The same MSKU with different expiration dates cannot go into the same box.
 	// Pattern: ^([0-9]{4})-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$
 	Expiration string `json:"expiration,omitempty"`
 
@@ -47,7 +47,7 @@ type Item struct {
 	// Min Length: 1
 	ManufacturingLotCode string `json:"manufacturingLotCode,omitempty"`
 
-	// The merchant defined SKU ID.
+	// The merchant SKU, a merchant-supplied identifier of a specific SKU.
 	// Required: true
 	// Max Length: 40
 	// Min Length: 1

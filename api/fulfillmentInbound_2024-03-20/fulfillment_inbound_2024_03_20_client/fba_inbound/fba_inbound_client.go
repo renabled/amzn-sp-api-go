@@ -92,6 +92,8 @@ type ClientService interface {
 
 	ListPlacementOptions(params *ListPlacementOptionsParams, opts ...ClientOption) (*ListPlacementOptionsOK, error)
 
+	ListPrepDetails(params *ListPrepDetailsParams, opts ...ClientOption) (*ListPrepDetailsOK, error)
+
 	ListShipmentBoxes(params *ListShipmentBoxesParams, opts ...ClientOption) (*ListShipmentBoxesOK, error)
 
 	ListShipmentContentUpdatePreviews(params *ListShipmentContentUpdatePreviewsParams, opts ...ClientOption) (*ListShipmentContentUpdatePreviewsOK, error)
@@ -105,6 +107,8 @@ type ClientService interface {
 	ScheduleSelfShipAppointment(params *ScheduleSelfShipAppointmentParams, opts ...ClientOption) (*ScheduleSelfShipAppointmentOK, error)
 
 	SetPackingInformation(params *SetPackingInformationParams, opts ...ClientOption) (*SetPackingInformationAccepted, error)
+
+	SetPrepDetails(params *SetPrepDetailsParams, opts ...ClientOption) (*SetPrepDetailsAccepted, error)
 
 	UpdateInboundPlanName(params *UpdateInboundPlanNameParams, opts ...ClientOption) (*UpdateInboundPlanNameNoContent, error)
 
@@ -128,7 +132,7 @@ type ClientService interface {
 | ---- | ---- |
 | 2 | 2 |
 
-The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 */
 func (a *Client) CancelInboundPlan(params *CancelInboundPlanParams, opts ...ClientOption) (*CancelInboundPlanAccepted, error) {
 	// TODO: Validate the params before sending
@@ -174,7 +178,7 @@ func (a *Client) CancelInboundPlan(params *CancelInboundPlanParams, opts ...Clie
 | ---- | ---- |
 | 2 | 30 |
 
-The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 */
 func (a *Client) CancelSelfShipAppointment(params *CancelSelfShipAppointmentParams, opts ...ClientOption) (*CancelSelfShipAppointmentAccepted, error) {
 	// TODO: Validate the params before sending
@@ -220,7 +224,7 @@ func (a *Client) CancelSelfShipAppointment(params *CancelSelfShipAppointmentPara
 | ---- | ---- |
 | 2 | 30 |
 
-The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 */
 func (a *Client) ConfirmDeliveryWindowOptions(params *ConfirmDeliveryWindowOptionsParams, opts ...ClientOption) (*ConfirmDeliveryWindowOptionsAccepted, error) {
 	// TODO: Validate the params before sending
@@ -266,7 +270,7 @@ func (a *Client) ConfirmDeliveryWindowOptions(params *ConfirmDeliveryWindowOptio
 | ---- | ---- |
 | 2 | 2 |
 
-The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 */
 func (a *Client) ConfirmPackingOption(params *ConfirmPackingOptionParams, opts ...ClientOption) (*ConfirmPackingOptionAccepted, error) {
 	// TODO: Validate the params before sending
@@ -312,7 +316,7 @@ func (a *Client) ConfirmPackingOption(params *ConfirmPackingOptionParams, opts .
 | ---- | ---- |
 | 2 | 2 |
 
-The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 */
 func (a *Client) ConfirmPlacementOption(params *ConfirmPlacementOptionParams, opts ...ClientOption) (*ConfirmPlacementOptionAccepted, error) {
 	// TODO: Validate the params before sending
@@ -358,7 +362,7 @@ func (a *Client) ConfirmPlacementOption(params *ConfirmPlacementOptionParams, op
 | ---- | ---- |
 | 2 | 30 |
 
-The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 */
 func (a *Client) ConfirmShipmentContentUpdatePreview(params *ConfirmShipmentContentUpdatePreviewParams, opts ...ClientOption) (*ConfirmShipmentContentUpdatePreviewAccepted, error) {
 	// TODO: Validate the params before sending
@@ -404,7 +408,7 @@ func (a *Client) ConfirmShipmentContentUpdatePreview(params *ConfirmShipmentCont
 | ---- | ---- |
 | 2 | 2 |
 
-The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 */
 func (a *Client) ConfirmTransportationOptions(params *ConfirmTransportationOptionsParams, opts ...ClientOption) (*ConfirmTransportationOptionsAccepted, error) {
 	// TODO: Validate the params before sending
@@ -450,7 +454,7 @@ func (a *Client) ConfirmTransportationOptions(params *ConfirmTransportationOptio
 | ---- | ---- |
 | 2 | 2 |
 
-The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 */
 func (a *Client) CreateInboundPlan(params *CreateInboundPlanParams, opts ...ClientOption) (*CreateInboundPlanAccepted, error) {
 	// TODO: Validate the params before sending
@@ -488,7 +492,7 @@ func (a *Client) CreateInboundPlan(params *CreateInboundPlanParams, opts ...Clie
 }
 
 /*
-	CreateMarketplaceItemLabels For a given marketplace - creates labels for a list of mskus.
+	CreateMarketplaceItemLabels For a given marketplace - creates labels for a list of MSKUs.
 
 **Usage Plan:**
 
@@ -496,7 +500,7 @@ func (a *Client) CreateInboundPlan(params *CreateInboundPlanParams, opts ...Clie
 | ---- | ---- |
 | 2 | 30 |
 
-The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 */
 func (a *Client) CreateMarketplaceItemLabels(params *CreateMarketplaceItemLabelsParams, opts ...ClientOption) (*CreateMarketplaceItemLabelsOK, error) {
 	// TODO: Validate the params before sending
@@ -542,7 +546,7 @@ func (a *Client) CreateMarketplaceItemLabels(params *CreateMarketplaceItemLabels
 | ---- | ---- |
 | 2 | 30 |
 
-The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 */
 func (a *Client) GenerateDeliveryWindowOptions(params *GenerateDeliveryWindowOptionsParams, opts ...ClientOption) (*GenerateDeliveryWindowOptionsAccepted, error) {
 	// TODO: Validate the params before sending
@@ -588,7 +592,7 @@ func (a *Client) GenerateDeliveryWindowOptions(params *GenerateDeliveryWindowOpt
 | ---- | ---- |
 | 2 | 2 |
 
-The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 */
 func (a *Client) GeneratePackingOptions(params *GeneratePackingOptionsParams, opts ...ClientOption) (*GeneratePackingOptionsAccepted, error) {
 	// TODO: Validate the params before sending
@@ -634,7 +638,7 @@ func (a *Client) GeneratePackingOptions(params *GeneratePackingOptionsParams, op
 | ---- | ---- |
 | 2 | 2 |
 
-The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 */
 func (a *Client) GeneratePlacementOptions(params *GeneratePlacementOptionsParams, opts ...ClientOption) (*GeneratePlacementOptionsAccepted, error) {
 	// TODO: Validate the params before sending
@@ -680,7 +684,7 @@ func (a *Client) GeneratePlacementOptions(params *GeneratePlacementOptionsParams
 | ---- | ---- |
 | 2 | 2 |
 
-The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 */
 func (a *Client) GenerateSelfShipAppointmentSlots(params *GenerateSelfShipAppointmentSlotsParams, opts ...ClientOption) (*GenerateSelfShipAppointmentSlotsCreated, error) {
 	// TODO: Validate the params before sending
@@ -726,7 +730,7 @@ func (a *Client) GenerateSelfShipAppointmentSlots(params *GenerateSelfShipAppoin
 | ---- | ---- |
 | 2 | 30 |
 
-The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 */
 func (a *Client) GenerateShipmentContentUpdatePreviews(params *GenerateShipmentContentUpdatePreviewsParams, opts ...ClientOption) (*GenerateShipmentContentUpdatePreviewsAccepted, error) {
 	// TODO: Validate the params before sending
@@ -772,7 +776,7 @@ func (a *Client) GenerateShipmentContentUpdatePreviews(params *GenerateShipmentC
 | ---- | ---- |
 | 2 | 2 |
 
-The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 */
 func (a *Client) GenerateTransportationOptions(params *GenerateTransportationOptionsParams, opts ...ClientOption) (*GenerateTransportationOptionsAccepted, error) {
 	// TODO: Validate the params before sending
@@ -818,7 +822,7 @@ func (a *Client) GenerateTransportationOptions(params *GenerateTransportationOpt
 | ---- | ---- |
 | 2 | 6 |
 
-The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 */
 func (a *Client) GetDeliveryChallanDocument(params *GetDeliveryChallanDocumentParams, opts ...ClientOption) (*GetDeliveryChallanDocumentOK, error) {
 	// TODO: Validate the params before sending
@@ -864,7 +868,7 @@ func (a *Client) GetDeliveryChallanDocument(params *GetDeliveryChallanDocumentPa
 | ---- | ---- |
 | 2 | 6 |
 
-The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 */
 func (a *Client) GetInboundOperationStatus(params *GetInboundOperationStatusParams, opts ...ClientOption) (*GetInboundOperationStatusOK, error) {
 	// TODO: Validate the params before sending
@@ -910,7 +914,7 @@ func (a *Client) GetInboundOperationStatus(params *GetInboundOperationStatusPara
 | ---- | ---- |
 | 2 | 6 |
 
-The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 */
 func (a *Client) GetInboundPlan(params *GetInboundPlanParams, opts ...ClientOption) (*GetInboundPlanOK, error) {
 	// TODO: Validate the params before sending
@@ -956,7 +960,7 @@ func (a *Client) GetInboundPlan(params *GetInboundPlanParams, opts ...ClientOpti
 | ---- | ---- |
 | 2 | 6 |
 
-The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 */
 func (a *Client) GetSelfShipAppointmentSlots(params *GetSelfShipAppointmentSlotsParams, opts ...ClientOption) (*GetSelfShipAppointmentSlotsOK, error) {
 	// TODO: Validate the params before sending
@@ -1002,7 +1006,7 @@ func (a *Client) GetSelfShipAppointmentSlots(params *GetSelfShipAppointmentSlots
 | ---- | ---- |
 | 2 | 6 |
 
-The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 */
 func (a *Client) GetShipment(params *GetShipmentParams, opts ...ClientOption) (*GetShipmentOK, error) {
 	// TODO: Validate the params before sending
@@ -1048,7 +1052,7 @@ func (a *Client) GetShipment(params *GetShipmentParams, opts ...ClientOption) (*
 | ---- | ---- |
 | 2 | 30 |
 
-The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 */
 func (a *Client) GetShipmentContentUpdatePreview(params *GetShipmentContentUpdatePreviewParams, opts ...ClientOption) (*GetShipmentContentUpdatePreviewOK, error) {
 	// TODO: Validate the params before sending
@@ -1094,7 +1098,7 @@ func (a *Client) GetShipmentContentUpdatePreview(params *GetShipmentContentUpdat
 | ---- | ---- |
 | 2 | 30 |
 
-The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 */
 func (a *Client) ListDeliveryWindowOptions(params *ListDeliveryWindowOptionsParams, opts ...ClientOption) (*ListDeliveryWindowOptionsOK, error) {
 	// TODO: Validate the params before sending
@@ -1140,7 +1144,7 @@ func (a *Client) ListDeliveryWindowOptions(params *ListDeliveryWindowOptionsPara
 | ---- | ---- |
 | 2 | 6 |
 
-The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 */
 func (a *Client) ListInboundPlanBoxes(params *ListInboundPlanBoxesParams, opts ...ClientOption) (*ListInboundPlanBoxesOK, error) {
 	// TODO: Validate the params before sending
@@ -1186,7 +1190,7 @@ func (a *Client) ListInboundPlanBoxes(params *ListInboundPlanBoxesParams, opts .
 | ---- | ---- |
 | 2 | 6 |
 
-The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 */
 func (a *Client) ListInboundPlanItems(params *ListInboundPlanItemsParams, opts ...ClientOption) (*ListInboundPlanItemsOK, error) {
 	// TODO: Validate the params before sending
@@ -1232,7 +1236,7 @@ func (a *Client) ListInboundPlanItems(params *ListInboundPlanItemsParams, opts .
 | ---- | ---- |
 | 2 | 6 |
 
-The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 */
 func (a *Client) ListInboundPlanPallets(params *ListInboundPlanPalletsParams, opts ...ClientOption) (*ListInboundPlanPalletsOK, error) {
 	// TODO: Validate the params before sending
@@ -1278,7 +1282,7 @@ func (a *Client) ListInboundPlanPallets(params *ListInboundPlanPalletsParams, op
 | ---- | ---- |
 | 2 | 6 |
 
-The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 */
 func (a *Client) ListInboundPlans(params *ListInboundPlansParams, opts ...ClientOption) (*ListInboundPlansOK, error) {
 	// TODO: Validate the params before sending
@@ -1324,7 +1328,7 @@ func (a *Client) ListInboundPlans(params *ListInboundPlansParams, opts ...Client
 | ---- | ---- |
 | 2 | 6 |
 
-The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 */
 func (a *Client) ListItemComplianceDetails(params *ListItemComplianceDetailsParams, opts ...ClientOption) (*ListItemComplianceDetailsOK, error) {
 	// TODO: Validate the params before sending
@@ -1370,7 +1374,7 @@ func (a *Client) ListItemComplianceDetails(params *ListItemComplianceDetailsPara
 | ---- | ---- |
 | 2 | 30 |
 
-The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 */
 func (a *Client) ListPackingGroupBoxes(params *ListPackingGroupBoxesParams, opts ...ClientOption) (*ListPackingGroupBoxesOK, error) {
 	// TODO: Validate the params before sending
@@ -1416,7 +1420,7 @@ func (a *Client) ListPackingGroupBoxes(params *ListPackingGroupBoxesParams, opts
 | ---- | ---- |
 | 2 | 30 |
 
-The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 */
 func (a *Client) ListPackingGroupItems(params *ListPackingGroupItemsParams, opts ...ClientOption) (*ListPackingGroupItemsOK, error) {
 	// TODO: Validate the params before sending
@@ -1462,7 +1466,7 @@ func (a *Client) ListPackingGroupItems(params *ListPackingGroupItemsParams, opts
 | ---- | ---- |
 | 2 | 6 |
 
-The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 */
 func (a *Client) ListPackingOptions(params *ListPackingOptionsParams, opts ...ClientOption) (*ListPackingOptionsOK, error) {
 	// TODO: Validate the params before sending
@@ -1508,7 +1512,7 @@ func (a *Client) ListPackingOptions(params *ListPackingOptionsParams, opts ...Cl
 | ---- | ---- |
 | 2 | 6 |
 
-The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 */
 func (a *Client) ListPlacementOptions(params *ListPlacementOptionsParams, opts ...ClientOption) (*ListPlacementOptionsOK, error) {
 	// TODO: Validate the params before sending
@@ -1546,6 +1550,52 @@ func (a *Client) ListPlacementOptions(params *ListPlacementOptionsParams, opts .
 }
 
 /*
+	ListPrepDetails Get preparation details for a list of MSKUs in a specified marketplace.
+
+**Usage Plan:**
+
+| Rate (requests per second) | Burst |
+| ---- | ---- |
+| 2 | 30 |
+
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+*/
+func (a *Client) ListPrepDetails(params *ListPrepDetailsParams, opts ...ClientOption) (*ListPrepDetailsOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewListPrepDetailsParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "listPrepDetails",
+		Method:             "GET",
+		PathPattern:        "/inbound/fba/2024-03-20/items/prepDetails",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &ListPrepDetailsReader{formats: a.formats},
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*ListPrepDetailsOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for listPrepDetails: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
 	ListShipmentBoxes Provides a paginated list of box packages in a shipment.
 
 **Usage Plan:**
@@ -1554,7 +1604,7 @@ func (a *Client) ListPlacementOptions(params *ListPlacementOptionsParams, opts .
 | ---- | ---- |
 | 2 | 30 |
 
-The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 */
 func (a *Client) ListShipmentBoxes(params *ListShipmentBoxesParams, opts ...ClientOption) (*ListShipmentBoxesOK, error) {
 	// TODO: Validate the params before sending
@@ -1600,7 +1650,7 @@ func (a *Client) ListShipmentBoxes(params *ListShipmentBoxesParams, opts ...Clie
 | ---- | ---- |
 | 2 | 30 |
 
-The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 */
 func (a *Client) ListShipmentContentUpdatePreviews(params *ListShipmentContentUpdatePreviewsParams, opts ...ClientOption) (*ListShipmentContentUpdatePreviewsOK, error) {
 	// TODO: Validate the params before sending
@@ -1646,7 +1696,7 @@ func (a *Client) ListShipmentContentUpdatePreviews(params *ListShipmentContentUp
 | ---- | ---- |
 | 2 | 30 |
 
-The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 */
 func (a *Client) ListShipmentItems(params *ListShipmentItemsParams, opts ...ClientOption) (*ListShipmentItemsOK, error) {
 	// TODO: Validate the params before sending
@@ -1692,7 +1742,7 @@ func (a *Client) ListShipmentItems(params *ListShipmentItemsParams, opts ...Clie
 | ---- | ---- |
 | 2 | 30 |
 
-The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 */
 func (a *Client) ListShipmentPallets(params *ListShipmentPalletsParams, opts ...ClientOption) (*ListShipmentPalletsOK, error) {
 	// TODO: Validate the params before sending
@@ -1738,7 +1788,7 @@ func (a *Client) ListShipmentPallets(params *ListShipmentPalletsParams, opts ...
 | ---- | ---- |
 | 2 | 6 |
 
-The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 */
 func (a *Client) ListTransportationOptions(params *ListTransportationOptionsParams, opts ...ClientOption) (*ListTransportationOptionsOK, error) {
 	// TODO: Validate the params before sending
@@ -1784,7 +1834,7 @@ func (a *Client) ListTransportationOptions(params *ListTransportationOptionsPara
 | ---- | ---- |
 | 2 | 2 |
 
-The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 */
 func (a *Client) ScheduleSelfShipAppointment(params *ScheduleSelfShipAppointmentParams, opts ...ClientOption) (*ScheduleSelfShipAppointmentOK, error) {
 	// TODO: Validate the params before sending
@@ -1830,7 +1880,7 @@ func (a *Client) ScheduleSelfShipAppointment(params *ScheduleSelfShipAppointment
 | ---- | ---- |
 | 2 | 2 |
 
-The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 */
 func (a *Client) SetPackingInformation(params *SetPackingInformationParams, opts ...ClientOption) (*SetPackingInformationAccepted, error) {
 	// TODO: Validate the params before sending
@@ -1868,6 +1918,52 @@ func (a *Client) SetPackingInformation(params *SetPackingInformationParams, opts
 }
 
 /*
+	SetPrepDetails Set the preparation details for a list of MSKUs in a specified marketplace.
+
+**Usage Plan:**
+
+| Rate (requests per second) | Burst |
+| ---- | ---- |
+| 2 | 30 |
+
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+*/
+func (a *Client) SetPrepDetails(params *SetPrepDetailsParams, opts ...ClientOption) (*SetPrepDetailsAccepted, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewSetPrepDetailsParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "setPrepDetails",
+		Method:             "POST",
+		PathPattern:        "/inbound/fba/2024-03-20/items/prepDetails",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &SetPrepDetailsReader{formats: a.formats},
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*SetPrepDetailsAccepted)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for setPrepDetails: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
 	UpdateInboundPlanName Updates the name of an existing inbound plan.
 
 **Usage Plan:**
@@ -1876,7 +1972,7 @@ func (a *Client) SetPackingInformation(params *SetPackingInformationParams, opts
 | ---- | ---- |
 | 2 | 30 |
 
-The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 */
 func (a *Client) UpdateInboundPlanName(params *UpdateInboundPlanNameParams, opts ...ClientOption) (*UpdateInboundPlanNameNoContent, error) {
 	// TODO: Validate the params before sending
@@ -1914,15 +2010,15 @@ func (a *Client) UpdateInboundPlanName(params *UpdateInboundPlanNameParams, opts
 }
 
 /*
-	UpdateItemComplianceDetails Update compliance details for list of MSKUs. The details provided here are only used for the IN marketplace compliance validation.
+	UpdateItemComplianceDetails Update compliance details for a list of MSKUs. The details provided here are only used for the India (IN - A21TJRUUN4KGV) marketplace compliance validation.
 
 **Usage Plan:**
 
 | Rate (requests per second) | Burst |
 | ---- | ---- |
-| 2 | 2 |
+| 2 | 6 |
 
-The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 */
 func (a *Client) UpdateItemComplianceDetails(params *UpdateItemComplianceDetailsParams, opts ...ClientOption) (*UpdateItemComplianceDetailsAccepted, error) {
 	// TODO: Validate the params before sending
@@ -1968,7 +2064,7 @@ func (a *Client) UpdateItemComplianceDetails(params *UpdateItemComplianceDetails
 | ---- | ---- |
 | 2 | 30 |
 
-The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 */
 func (a *Client) UpdateShipmentName(params *UpdateShipmentNameParams, opts ...ClientOption) (*UpdateShipmentNameNoContent, error) {
 	// TODO: Validate the params before sending
@@ -2014,7 +2110,7 @@ func (a *Client) UpdateShipmentName(params *UpdateShipmentNameParams, opts ...Cl
 | ---- | ---- |
 | 2 | 30 |
 
-The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 */
 func (a *Client) UpdateShipmentSourceAddress(params *UpdateShipmentSourceAddressParams, opts ...ClientOption) (*UpdateShipmentSourceAddressAccepted, error) {
 	// TODO: Validate the params before sending
@@ -2060,7 +2156,7 @@ func (a *Client) UpdateShipmentSourceAddress(params *UpdateShipmentSourceAddress
 | ---- | ---- |
 | 2 | 2 |
 
-The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 */
 func (a *Client) UpdateShipmentTrackingDetails(params *UpdateShipmentTrackingDetailsParams, opts ...ClientOption) (*UpdateShipmentTrackingDetailsAccepted, error) {
 	// TODO: Validate the params before sending

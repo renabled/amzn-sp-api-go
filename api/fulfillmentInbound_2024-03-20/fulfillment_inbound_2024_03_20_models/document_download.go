@@ -19,11 +19,11 @@ import (
 // swagger:model DocumentDownload
 type DocumentDownload struct {
 
-	// The type of download. Can be `URL`.
+	// The type of download. Possible values: `URL`.
 	// Required: true
 	DownloadType *string `json:"downloadType"`
 
-	// The timestamp of expiration of the URI. This is in ISO 8601 datetime format with pattern `yyyy-MM-ddTHH:mm:ss.sssZ`.
+	// The URI's expiration time. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) datetime format with pattern `yyyy-MM-ddTHH:mm:ss.sssZ`.
 	// Format: date-time
 	Expiration strfmt.DateTime `json:"expiration,omitempty"`
 

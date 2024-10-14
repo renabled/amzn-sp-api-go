@@ -29,7 +29,7 @@ type SpdTrackingItem struct {
 	// Min Length: 1
 	TrackingID string `json:"trackingId,omitempty"`
 
-	// Whether or not Amazon has validated the tracking number. If more than 24 hours have passed and the status is not yet 'VALIDATED', please verify the number and update if necessary. Can be: `VALIDATED`, `NOT_VALIDATED`.
+	// Whether or not Amazon has validated the tracking number. If more than 24 hours have passed and the status is not yet 'VALIDATED', please verify the number and update if necessary. Possible values: `VALIDATED`, `NOT_VALIDATED`.
 	// Max Length: 1024
 	// Min Length: 1
 	TrackingNumberValidationStatus string `json:"trackingNumberValidationStatus,omitempty"`

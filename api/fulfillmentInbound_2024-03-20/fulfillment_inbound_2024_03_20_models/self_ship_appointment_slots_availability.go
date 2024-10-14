@@ -20,11 +20,11 @@ import (
 // swagger:model SelfShipAppointmentSlotsAvailability
 type SelfShipAppointmentSlotsAvailability struct {
 
-	// The ISO 8601 datetime with pattern `yyyy-MM-ddTHH:mm:ss.sssZ`.
+	// The time at which the self ship appointment slot expires. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) datetime format.
 	// Format: date-time
 	ExpiresAt strfmt.DateTime `json:"expiresAt,omitempty"`
 
-	// List of appointment slots.
+	// A list of appointment slots.
 	Slots []*AppointmentSlot `json:"slots"`
 }
 

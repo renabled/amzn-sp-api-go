@@ -24,7 +24,7 @@ type PackingOption struct {
 	// Required: true
 	Discounts []*Incentive `json:"discounts"`
 
-	// The timestamp at which this packing option becomes no longer valid. This is based in ISO 8601 datetime with pattern `yyyy-MM-ddTHH:mm:ss.sssZ`.
+	// The time at which this packing option is no longer valid. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) datetime format with pattern `yyyy-MM-ddTHH:mm:ss.sssZ`.
 	// Format: date-time
 	Expiration strfmt.DateTime `json:"expiration,omitempty"`
 
@@ -43,7 +43,7 @@ type PackingOption struct {
 	// Pattern: ^[a-zA-Z0-9-]*$
 	PackingOptionID *string `json:"packingOptionId"`
 
-	// The status of the packing option. Can be: `OFFERED`, `ACCEPTED`, or `EXPIRED`.
+	// The status of the packing option. Possible values: `OFFERED`, `ACCEPTED`, `EXPIRED`.
 	// Required: true
 	// Max Length: 1024
 	// Min Length: 1

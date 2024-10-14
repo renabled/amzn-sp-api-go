@@ -20,7 +20,7 @@ import (
 // swagger:model ItemInput
 type ItemInput struct {
 
-	// The expiration date of the MSKU in ISO 8601 format. The same MSKU with different expiration dates cannot go into the same box.
+	// The expiration date of the MSKU. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) datetime format with pattern `YYYY-MM-DD`. Items with the same MSKU but different expiration dates cannot go into the same box.
 	// Pattern: ^([0-9]{4})-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$
 	Expiration string `json:"expiration,omitempty"`
 
@@ -33,7 +33,7 @@ type ItemInput struct {
 	// Min Length: 1
 	ManufacturingLotCode string `json:"manufacturingLotCode,omitempty"`
 
-	// Merchant SKU.
+	// The merchant SKU, a merchant-supplied identifier of a specific SKU.
 	// Required: true
 	// Max Length: 40
 	// Min Length: 1
@@ -43,7 +43,7 @@ type ItemInput struct {
 	// Required: true
 	PrepOwner *PrepOwner `json:"prepOwner"`
 
-	// The number of units of the specified msku that will be shipped.
+	// The number of units of the specified MSKU that will be shipped.
 	// Required: true
 	// Maximum: 10000
 	// Minimum: 1

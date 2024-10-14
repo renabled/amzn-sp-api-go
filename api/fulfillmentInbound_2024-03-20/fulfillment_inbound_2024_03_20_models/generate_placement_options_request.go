@@ -20,7 +20,7 @@ import (
 // swagger:model GeneratePlacementOptionsRequest
 type GeneratePlacementOptionsRequest struct {
 
-	// Custom placement options to be added to the plan.
+	// Custom placement options you want to add to the plan. This is only used for the India (IN - A21TJRUUN4KGV) marketplace.
 	CustomPlacement []*CustomPlacementInput `json:"customPlacement"`
 }
 

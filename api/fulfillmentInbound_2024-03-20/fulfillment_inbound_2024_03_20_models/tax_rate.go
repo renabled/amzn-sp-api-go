@@ -25,7 +25,7 @@ type TaxRate struct {
 	// Rate of gst tax.
 	GstRate float64 `json:"gstRate,omitempty"`
 
-	// Type of tax. Can be: `CGST`, `SGST`, `IGST`, `TOTAL_TAX`.
+	// Type of tax. Possible values: `CGST`, `SGST`, `IGST`, `TOTAL_TAX`.
 	// Max Length: 1024
 	// Min Length: 1
 	TaxType string `json:"taxType,omitempty"`
