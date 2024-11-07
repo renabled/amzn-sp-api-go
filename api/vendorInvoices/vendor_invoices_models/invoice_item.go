@@ -29,10 +29,10 @@ type InvoiceItem struct {
 	// Individual charge details per line item.
 	ChargeDetails []*ChargeDetails `json:"chargeDetails"`
 
-	// Details required in order to process a credit note. This information is required only if `invoiceType` is `CreditNote`.
+	// Details required in order to process a credit note. This information is required only if invoiceType is CreditNote.
 	CreditNoteDetails *CreditNoteDetails `json:"creditNoteDetails,omitempty"`
 
-	// The HSN Tax code. The HSN number cannot contain alphabets.
+	// HSN Tax code. The HSN number cannot contain alphabets.
 	HsnCode string `json:"hsnCode,omitempty"`
 
 	// Invoiced quantity of this item. Quantity must be greater than zero.
@@ -43,11 +43,14 @@ type InvoiceItem struct {
 	// Required: true
 	ItemSequenceNumber *int64 `json:"itemSequenceNumber"`
 
-	// The item cost to Amazon, which should match the cost on the order. Price information should not be zero or negative. It indicates net unit price. Net cost means VAT is not included in cost.
+	// The item cost to Amazon, which should match the cost on the order. Price information should not be zero or negative. It indicates net unit price. Net cost means VAT is not included in cost. If items are priced by weight, this cost need to be considered in conjunction with netCostUnitOfMeasure. E.g.: $5/LB
 	// Required: true
 	NetCost *Money `json:"netCost"`
 
-	// The Amazon purchase order number for this invoiced line item. Formatting Notes: 8-character alpha-numeric code. This value is mandatory only when `invoiceType` is `Invoice`, and is not required when `invoiceType` is `CreditNote`.
+	// This field represents weight unit of measure of items that are ordered by cases and supporting priced by weight.
+	NetCostUnitOfMeasure NetCostUnitOfMeasure `json:"netCostUnitOfMeasure,omitempty"`
+
+	// The Amazon purchase order number for this invoiced line item. Formatting Notes: 8-character alpha-numeric code. This value is mandatory only when invoiceType is Invoice, and is not required when invoiceType is CreditNote.
 	PurchaseOrderNumber string `json:"purchaseOrderNumber,omitempty"`
 
 	// Individual tax details per line item.
@@ -82,6 +85,10 @@ func (m *InvoiceItem) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validateNetCost(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateNetCostUnitOfMeasure(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -215,6 +222,23 @@ func (m *InvoiceItem) validateNetCost(formats strfmt.Registry) error {
 	return nil
 }
 
+func (m *InvoiceItem) validateNetCostUnitOfMeasure(formats strfmt.Registry) error {
+	if swag.IsZero(m.NetCostUnitOfMeasure) { // not required
+		return nil
+	}
+
+	if err := m.NetCostUnitOfMeasure.Validate(formats); err != nil {
+		if ve, ok := err.(*errors.Validation); ok {
+			return ve.ValidateName("netCostUnitOfMeasure")
+		} else if ce, ok := err.(*errors.CompositeError); ok {
+			return ce.ValidateName("netCostUnitOfMeasure")
+		}
+		return err
+	}
+
+	return nil
+}
+
 func (m *InvoiceItem) validateTaxDetails(formats strfmt.Registry) error {
 	if swag.IsZero(m.TaxDetails) { // not required
 		return nil
@@ -262,6 +286,10 @@ func (m *InvoiceItem) ContextValidate(ctx context.Context, formats strfmt.Regist
 	}
 
 	if err := m.contextValidateNetCost(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateNetCostUnitOfMeasure(ctx, formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -358,6 +386,20 @@ func (m *InvoiceItem) contextValidateNetCost(ctx context.Context, formats strfmt
 			}
 			return err
 		}
+	}
+
+	return nil
+}
+
+func (m *InvoiceItem) contextValidateNetCostUnitOfMeasure(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := m.NetCostUnitOfMeasure.ContextValidate(ctx, formats); err != nil {
+		if ve, ok := err.(*errors.Validation); ok {
+			return ve.ValidateName("netCostUnitOfMeasure")
+		} else if ce, ok := err.(*errors.CompositeError); ok {
+			return ce.ValidateName("netCostUnitOfMeasure")
+		}
+		return err
 	}
 
 	return nil

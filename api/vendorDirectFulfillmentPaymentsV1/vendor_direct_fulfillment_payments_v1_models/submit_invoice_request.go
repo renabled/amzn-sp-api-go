@@ -19,7 +19,7 @@ import (
 // swagger:model SubmitInvoiceRequest
 type SubmitInvoiceRequest struct {
 
-	// An array of invoice details you want to submit.
+	// An array of invoice details to be submitted.
 	Invoices []*InvoiceDetail `json:"invoices"`
 }
 

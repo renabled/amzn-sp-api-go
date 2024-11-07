@@ -15,7 +15,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// Order order
+// Order Represents an order placed by Amazon, including the purchase order number, current state, and order details.
 //
 // swagger:model Order
 type Order struct {

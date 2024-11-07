@@ -13,7 +13,7 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// TransactionStatus The payload for `getOrderScenarios`.
+// TransactionStatus The payload for the getOrderScenarios operation.
 //
 // swagger:model TransactionStatus
 type TransactionStatus struct {

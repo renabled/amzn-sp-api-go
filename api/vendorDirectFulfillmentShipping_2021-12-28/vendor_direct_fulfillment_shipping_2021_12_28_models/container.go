@@ -16,7 +16,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// Container A container for shipping and packing items.
+// Container A container used for shipping and packing items.
 //
 // swagger:model Container
 type Container struct {

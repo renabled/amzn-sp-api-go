@@ -65,7 +65,7 @@ type SubmitShipmentStatusUpdatesParams struct {
 
 	/* Body.
 
-	   Request body that contains the shipment status update data.
+	   Request body containing the shipment status update data.
 	*/
 	Body *vendor_direct_fulfillment_shipping_2021_12_28_models.SubmitShipmentStatusUpdatesRequest
 

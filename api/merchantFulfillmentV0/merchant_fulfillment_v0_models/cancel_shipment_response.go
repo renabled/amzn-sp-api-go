@@ -18,10 +18,10 @@ import (
 // swagger:model CancelShipmentResponse
 type CancelShipmentResponse struct {
 
-	// One or more unexpected errors occurred during the cancelShipment operation.
+	// One or more unexpected errors occurred during the `cancelShipment` operation.
 	Errors ErrorList `json:"errors,omitempty"`
 
-	// The payload for the cancelShipment operation.
+	// The payload for the `cancelShipment` operation.
 	Payload *Shipment `json:"payload,omitempty"`
 }
 

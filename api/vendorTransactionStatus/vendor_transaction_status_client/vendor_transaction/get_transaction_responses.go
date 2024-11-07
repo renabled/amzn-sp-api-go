@@ -176,7 +176,7 @@ func NewGetTransactionBadRequest() *GetTransactionBadRequest {
 /*
 GetTransactionBadRequest describes a response with status code 400, with default header values.
 
-Request has missing or not valid parameters and cannot be parsed.
+Request has missing or invalid parameters and cannot be parsed.
 */
 type GetTransactionBadRequest struct {
 
@@ -262,7 +262,7 @@ func NewGetTransactionUnauthorized() *GetTransactionUnauthorized {
 /*
 GetTransactionUnauthorized describes a response with status code 401, with default header values.
 
-The request's authorization header is not formatted correctly or does not contain a valid token.
+The request's Authorization header is not formatted correctly or does not contain a valid token.
 */
 type GetTransactionUnauthorized struct {
 
@@ -412,7 +412,7 @@ func NewGetTransactionNotFound() *GetTransactionNotFound {
 /*
 GetTransactionNotFound describes a response with status code 404, with default header values.
 
-The specified resource does not exist.
+The resource specified does not exist.
 */
 type GetTransactionNotFound struct {
 

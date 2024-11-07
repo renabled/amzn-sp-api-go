@@ -500,7 +500,7 @@ func (m *OrderDetails) UnmarshalBinary(b []byte) error {
 	return nil
 }
 
-// OrderDetailsTaxTotal The total tax object within the shipment that relates to the order.
+// OrderDetailsTaxTotal The total Tax object within shipment that relates to the order.
 //
 // swagger:model OrderDetailsTaxTotal
 type OrderDetailsTaxTotal struct {

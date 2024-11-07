@@ -21,7 +21,7 @@ type GetShipmentResponse struct {
 	// One or more unexpected errors occurred during this operation.
 	Errors ErrorList `json:"errors,omitempty"`
 
-	// The payload for the getShipment operation.
+	// The payload for the `getShipment` operation.
 	Payload *Shipment `json:"payload,omitempty"`
 }
 

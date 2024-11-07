@@ -15,7 +15,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// ShipmentConfirmation Represents the confirmation details of a shipment. Includes the purchase order number and other shipment details.
+// ShipmentConfirmation Represents the confirmation details of a shipment, including the purchase order number and other shipment details.
 //
 // swagger:model ShipmentConfirmation
 type ShipmentConfirmation struct {

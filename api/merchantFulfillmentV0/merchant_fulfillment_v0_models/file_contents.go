@@ -19,11 +19,11 @@ import (
 // swagger:model FileContents
 type FileContents struct {
 
-	// An MD5 hash to validate the PDF document data, in the form of a Base64-encoded string.
+	// An MD5 hash to validate the PDF document data, in the form of a Base64 string.
 	// Required: true
 	Checksum *string `json:"Checksum"`
 
-	// Data for printing labels, in the form of a Base64-encoded, GZip-compressed string.
+	// Data for printing labels encoded into a Base64, GZip-compressed string.
 	// Required: true
 	Contents *string `json:"Contents"`
 

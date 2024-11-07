@@ -33,7 +33,7 @@ type GetFulfillmentPreviewRequest struct {
 	// When true, returns the `ScheduledDeliveryInfo` response object, which contains the available delivery windows for a Scheduled Delivery. The `ScheduledDeliveryInfo` response object can only be returned for fulfillment order previews with `ShippingSpeedCategories` = `ScheduledDelivery`.
 	IncludeDeliveryWindows bool `json:"includeDeliveryWindows,omitempty"`
 
-	// Identifying information and quantity information for the items in the fulfillment order preview.
+	// Identifying information and quantity information for the items in the fulfillment order preview. Maximum of 100 line items with a maximum of 250 units per order.
 	// Required: true
 	Items GetFulfillmentPreviewItemList `json:"items"`
 

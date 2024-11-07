@@ -24,12 +24,15 @@ type ItemQuantity struct {
 	// Required: true
 	Amount *int64 `json:"amount"`
 
+	// total weight
+	TotalWeight *TotalWeight `json:"totalWeight,omitempty"`
+
 	// Unit of measure for the quantity.
 	// Required: true
 	// Enum: [Cases Eaches]
 	UnitOfMeasure *string `json:"unitOfMeasure"`
 
-	// The case size, if the unit of measure value is `Cases`.
+	// The case size, if the unit of measure value is Cases.
 	UnitSize int64 `json:"unitSize,omitempty"`
 }
 
@@ -38,6 +41,10 @@ func (m *ItemQuantity) Validate(formats strfmt.Registry) error {
 	var res []error
 
 	if err := m.validateAmount(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateTotalWeight(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -55,6 +62,25 @@ func (m *ItemQuantity) validateAmount(formats strfmt.Registry) error {
 
 	if err := validate.Required("amount", "body", m.Amount); err != nil {
 		return err
+	}
+
+	return nil
+}
+
+func (m *ItemQuantity) validateTotalWeight(formats strfmt.Registry) error {
+	if swag.IsZero(m.TotalWeight) { // not required
+		return nil
+	}
+
+	if m.TotalWeight != nil {
+		if err := m.TotalWeight.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("totalWeight")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("totalWeight")
+			}
+			return err
+		}
 	}
 
 	return nil
@@ -103,8 +129,33 @@ func (m *ItemQuantity) validateUnitOfMeasure(formats strfmt.Registry) error {
 	return nil
 }
 
-// ContextValidate validates this item quantity based on context it is used
+// ContextValidate validate this item quantity based on the context it is used
 func (m *ItemQuantity) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.contextValidateTotalWeight(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *ItemQuantity) contextValidateTotalWeight(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.TotalWeight != nil {
+		if err := m.TotalWeight.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("totalWeight")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("totalWeight")
+			}
+			return err
+		}
+	}
+
 	return nil
 }
 

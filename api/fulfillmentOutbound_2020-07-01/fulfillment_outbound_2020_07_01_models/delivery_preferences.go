@@ -14,8 +14,9 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// DeliveryPreferences The delivery preferences applied to the destination address. These preferences will be applied when possible and are best effort.
+// DeliveryPreferences The delivery preferences applied to the destination address. These preferences are applied when possible and are best effort.
 // This feature is currently supported only in the JP marketplace and not applicable for other marketplaces.
+// For eligible orders, the default delivery preference will be to deliver the package unattended at the front door, unless you specify otherwise.
 //
 // swagger:model DeliveryPreferences
 type DeliveryPreferences struct {

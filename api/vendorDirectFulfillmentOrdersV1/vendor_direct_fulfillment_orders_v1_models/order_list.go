@@ -14,12 +14,12 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// OrderList A purchase orders list returned as a response.
+// OrderList A list of purchase orders returned as response.
 //
 // swagger:model OrderList
 type OrderList struct {
 
-	// Represents a purchase order within the `OrderList`.
+	// Represents a purchase order within the OrderList.
 	Orders []*Order `json:"orders"`
 
 	// The pagination elements required to retrieve the remaining data.

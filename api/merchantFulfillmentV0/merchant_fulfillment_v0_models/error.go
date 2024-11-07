@@ -19,7 +19,7 @@ import (
 // swagger:model Error
 type Error struct {
 
-	// An error code that identifies the type of error that occured.
+	// An error code that identifies the type of error that occurred.
 	// Required: true
 	Code *string `json:"code"`
 

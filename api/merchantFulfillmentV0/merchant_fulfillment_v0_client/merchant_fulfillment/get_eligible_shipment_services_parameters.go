@@ -65,7 +65,7 @@ type GetEligibleShipmentServicesParams struct {
 
 	/* Body.
 
-	   Request schema for GetEligibleShipmentServices operation.
+	   The request schema for the `GetEligibleShipmentServices` operation.
 	*/
 	Body *merchant_fulfillment_v0_models.GetEligibleShipmentServicesRequest
 

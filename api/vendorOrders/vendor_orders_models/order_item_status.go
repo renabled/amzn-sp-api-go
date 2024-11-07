@@ -16,7 +16,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// OrderItemStatus order item status
+// OrderItemStatus Represents the current status of an order item, including acknowledgement and receiving details.
 //
 // swagger:model OrderItemStatus
 type OrderItemStatus struct {

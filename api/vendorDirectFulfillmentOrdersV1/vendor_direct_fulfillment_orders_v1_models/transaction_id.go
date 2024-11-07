@@ -12,7 +12,7 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// TransactionID Response that contains the transaction ID.
+// TransactionID Response containing the transaction ID.
 //
 // swagger:model TransactionId
 type TransactionID struct {

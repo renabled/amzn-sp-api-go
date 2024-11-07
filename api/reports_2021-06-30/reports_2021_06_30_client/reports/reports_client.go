@@ -52,7 +52,9 @@ type ClientService interface {
 }
 
 /*
-	CancelReport Cancels the report that you specify. Only reports with `processingStatus=IN_QUEUE` can be cancelled. Cancelled reports are returned in subsequent calls to the `getReport` and `getReports` operations.
+	CancelReport cancels report
+
+	Cancels the report that you specify. Only reports with `processingStatus=IN_QUEUE` can be cancelled. Cancelled reports are returned in subsequent calls to the `getReport` and `getReports` operations.
 
 **Usage Plan:**
 
@@ -98,7 +100,9 @@ func (a *Client) CancelReport(params *CancelReportParams, opts ...ClientOption) 
 }
 
 /*
-	CancelReportSchedule Cancels the report schedule that you specify.
+	CancelReportSchedule cancels report schedule
+
+	Cancels the report schedule that you specify.
 
 **Usage Plan:**
 
@@ -144,7 +148,9 @@ func (a *Client) CancelReportSchedule(params *CancelReportScheduleParams, opts .
 }
 
 /*
-	CreateReport Creates a report.
+	CreateReport creates report
+
+	Creates a report.
 
 **Usage Plan:**
 
@@ -190,7 +196,9 @@ func (a *Client) CreateReport(params *CreateReportParams, opts ...ClientOption) 
 }
 
 /*
-	CreateReportSchedule Creates a report schedule. If a report schedule with the same report type and marketplace IDs already exists, it will be cancelled and replaced with this one.
+	CreateReportSchedule creates report schedule
+
+	Creates a report schedule. If a report schedule with the same report type and marketplace IDs already exists, it will be cancelled and replaced with this one.
 
 **Usage Plan:**
 
@@ -236,7 +244,9 @@ func (a *Client) CreateReportSchedule(params *CreateReportScheduleParams, opts .
 }
 
 /*
-	GetReport Returns report details (including the `reportDocumentId`, if available) for the report that you specify.
+	GetReport gets report
+
+	Returns report details (including the `reportDocumentId`, if available) for the report that you specify.
 
 **Usage Plan:**
 
@@ -282,7 +292,9 @@ func (a *Client) GetReport(params *GetReportParams, opts ...ClientOption) (*GetR
 }
 
 /*
-	GetReportDocument Returns the information required for retrieving a report document's contents.
+	GetReportDocument gets report document
+
+	Returns the information required for retrieving a report document's contents.
 
 **Usage Plan:**
 
@@ -328,7 +340,9 @@ func (a *Client) GetReportDocument(params *GetReportDocumentParams, opts ...Clie
 }
 
 /*
-	GetReportSchedule Returns report schedule details for the report schedule that you specify.
+	GetReportSchedule gets report schedule
+
+	Returns report schedule details for the report schedule that you specify.
 
 **Usage Plan:**
 
@@ -374,7 +388,9 @@ func (a *Client) GetReportSchedule(params *GetReportScheduleParams, opts ...Clie
 }
 
 /*
-	GetReportSchedules Returns report schedule details that match the filters that you specify.
+	GetReportSchedules gets report schedules
+
+	Returns report schedule details that match the filters that you specify.
 
 **Usage Plan:**
 
@@ -420,7 +436,9 @@ func (a *Client) GetReportSchedules(params *GetReportSchedulesParams, opts ...Cl
 }
 
 /*
-	GetReports Returns report details for the reports that match the filters that you specify.
+	GetReports gets reports
+
+	Returns report details for the reports that match the filters that you specify.
 
 **Usage Plan:**
 

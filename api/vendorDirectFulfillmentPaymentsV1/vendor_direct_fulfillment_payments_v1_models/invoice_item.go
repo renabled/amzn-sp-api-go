@@ -15,7 +15,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// InvoiceItem Details of the invoice items.
+// InvoiceItem Provides the details of the items in this invoice.
 //
 // swagger:model InvoiceItem
 type InvoiceItem struct {

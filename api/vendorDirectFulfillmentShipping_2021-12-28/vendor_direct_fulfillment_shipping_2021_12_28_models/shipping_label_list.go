@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// ShippingLabelList Response payload with the shipping labels list.
+// ShippingLabelList Response payload with the list of shipping labels.
 //
 // swagger:model ShippingLabelList
 type ShippingLabelList struct {
@@ -22,7 +22,7 @@ type ShippingLabelList struct {
 	// pagination
 	Pagination *Pagination `json:"pagination,omitempty"`
 
-	// An array that contains the details of the generated shipping labels.
+	// An array containing the details of the generated shipping labels.
 	ShippingLabels []*ShippingLabel `json:"shippingLabels"`
 }
 

@@ -10,7 +10,7 @@ import (
 	httptransport "github.com/go-openapi/runtime/client"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/renabled/amzn-sp-api-go/api/fulfillmentInbound_2024-03-20/fulfillment_inbound_2024_03_20_client/fba_inbound"
+	"github.com/renabled/amzn-sp-api-go/api/fulfillmentInbound_2024-03-20/fulfillment_inbound_2024_03_20_client/fulfillment_inbound"
 )
 
 // Default fulfillment inbound20240320 HTTP client.
@@ -55,7 +55,7 @@ func New(transport runtime.ClientTransport, formats strfmt.Registry) *Fulfillmen
 
 	cli := new(FulfillmentInbound20240320)
 	cli.Transport = transport
-	cli.FbaInbound = fba_inbound.New(transport, formats)
+	cli.FulfillmentInbound = fulfillment_inbound.New(transport, formats)
 	return cli
 }
 
@@ -100,7 +100,7 @@ func (cfg *TransportConfig) WithSchemes(schemes []string) *TransportConfig {
 
 // FulfillmentInbound20240320 is a client for fulfillment inbound20240320
 type FulfillmentInbound20240320 struct {
-	FbaInbound fba_inbound.ClientService
+	FulfillmentInbound fulfillment_inbound.ClientService
 
 	Transport runtime.ClientTransport
 }
@@ -108,5 +108,5 @@ type FulfillmentInbound20240320 struct {
 // SetTransport changes the transport on the client and all its subresources
 func (c *FulfillmentInbound20240320) SetTransport(transport runtime.ClientTransport) {
 	c.Transport = transport
-	c.FbaInbound.SetTransport(transport)
+	c.FulfillmentInbound.SetTransport(transport)
 }

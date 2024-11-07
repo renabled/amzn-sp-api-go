@@ -19,7 +19,7 @@ import (
 // swagger:model SubmitAcknowledgementRequest
 type SubmitAcknowledgementRequest struct {
 
-	// acknowledgements
+	// An array of order acknowledgements to be submitted.
 	Acknowledgements []*OrderAcknowledgement `json:"acknowledgements"`
 }
 

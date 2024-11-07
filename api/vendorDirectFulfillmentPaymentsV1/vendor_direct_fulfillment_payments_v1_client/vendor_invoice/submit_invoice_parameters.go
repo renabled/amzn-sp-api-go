@@ -65,7 +65,7 @@ type SubmitInvoiceParams struct {
 
 	/* Body.
 
-	   The request body that contains one or more invoices for vendor orders.
+	   The request body containing one or more invoices for vendor orders.
 	*/
 	Body *vendor_direct_fulfillment_payments_v1_models.SubmitInvoiceRequest
 

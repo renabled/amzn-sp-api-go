@@ -65,7 +65,7 @@ type SubmitAcknowledgementParams struct {
 
 	/* Body.
 
-	   The request body that contains the order acknowledgement.
+	   The request body containing the acknowledgement to an order.
 	*/
 	Body *vendor_direct_fulfillment_orders_v1_models.SubmitAcknowledgementRequest
 

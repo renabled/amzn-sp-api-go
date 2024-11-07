@@ -20,7 +20,7 @@ import (
 // swagger:model ErrorList
 type ErrorList struct {
 
-	// An array of error objects that represents individual errors encountered during the request.
+	// An array of Error objects representing individual errors encountered during the request.
 	// Required: true
 	Errors []*Error `json:"errors"`
 }

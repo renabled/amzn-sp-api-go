@@ -65,7 +65,7 @@ type GenerateOrderScenariosParams struct {
 
 	/* Body.
 
-	   The request payload that contain parameters to generate test order data scenarios.
+	   The request payload containing parameters for generating test order data scenarios.
 	*/
 	Body *vendor_direct_fulfillment_sandbox_data_2021_10_28_models.GenerateOrderScenarioRequest
 

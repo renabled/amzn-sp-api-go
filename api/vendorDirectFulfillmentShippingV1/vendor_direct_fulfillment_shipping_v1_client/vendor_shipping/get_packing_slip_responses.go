@@ -262,7 +262,7 @@ func NewGetPackingSlipUnauthorized() *GetPackingSlipUnauthorized {
 /*
 GetPackingSlipUnauthorized describes a response with status code 401, with default header values.
 
-The request's authorization header is not formatted correctly or does not contain a valid token.
+The request's Authorization header is not formatted correctly or does not contain a valid token.
 */
 type GetPackingSlipUnauthorized struct {
 

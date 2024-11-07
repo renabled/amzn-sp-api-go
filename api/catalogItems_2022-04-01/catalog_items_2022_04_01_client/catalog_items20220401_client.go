@@ -10,7 +10,7 @@ import (
 	httptransport "github.com/go-openapi/runtime/client"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/renabled/amzn-sp-api-go/api/catalogItems_2022-04-01/catalog_items_2022_04_01_client/catalog"
+	"github.com/renabled/amzn-sp-api-go/api/catalogItems_2022-04-01/catalog_items_2022_04_01_client/catalog_items"
 )
 
 // Default catalog items20220401 HTTP client.
@@ -55,7 +55,7 @@ func New(transport runtime.ClientTransport, formats strfmt.Registry) *CatalogIte
 
 	cli := new(CatalogItems20220401)
 	cli.Transport = transport
-	cli.Catalog = catalog.New(transport, formats)
+	cli.CatalogItems = catalog_items.New(transport, formats)
 	return cli
 }
 
@@ -100,7 +100,7 @@ func (cfg *TransportConfig) WithSchemes(schemes []string) *TransportConfig {
 
 // CatalogItems20220401 is a client for catalog items20220401
 type CatalogItems20220401 struct {
-	Catalog catalog.ClientService
+	CatalogItems catalog_items.ClientService
 
 	Transport runtime.ClientTransport
 }
@@ -108,5 +108,5 @@ type CatalogItems20220401 struct {
 // SetTransport changes the transport on the client and all its subresources
 func (c *CatalogItems20220401) SetTransport(transport runtime.ClientTransport) {
 	c.Transport = transport
-	c.Catalog.SetTransport(transport)
+	c.CatalogItems.SetTransport(transport)
 }

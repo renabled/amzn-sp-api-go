@@ -65,7 +65,7 @@ type CreateShippingLabelsParams struct {
 
 	/* Body.
 
-	   The request payload that contains parameters for creating shipping labels.
+	   The request payload containing parameters for creating shipping labels.
 	*/
 	Body *vendor_direct_fulfillment_shipping_2021_12_28_models.CreateShippingLabelsRequest
 

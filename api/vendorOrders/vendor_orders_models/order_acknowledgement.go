@@ -15,7 +15,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// OrderAcknowledgement order acknowledgement
+// OrderAcknowledgement Represents an acknowledgement for an order, including the purchase order number, selling party details, acknowledgement date, and a list of acknowledged items.
 //
 // swagger:model OrderAcknowledgement
 type OrderAcknowledgement struct {

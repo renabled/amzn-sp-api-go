@@ -19,7 +19,7 @@ import (
 // swagger:model PackedItem
 type PackedItem struct {
 
-	// Buyer's Standard Identification Number (ASIN) of an item. Either `buyerProductIdentifier` or `vendorProductIdentifier` is required.
+	// Buyer's Standard Identification Number (ASIN) of an item. Either buyerProductIdentifier or vendorProductIdentifier is required.
 	BuyerProductIdentifier string `json:"buyerProductIdentifier,omitempty"`
 
 	// Item Sequence Number for the item. This must be the same value as sent in the order for a given item.

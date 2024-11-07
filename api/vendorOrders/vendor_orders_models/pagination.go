@@ -12,7 +12,7 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// Pagination pagination
+// Pagination The pagination elements required to retrieve the remaining data.
 //
 // swagger:model Pagination
 type Pagination struct {

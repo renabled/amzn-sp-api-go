@@ -46,7 +46,9 @@ type ClientService interface {
 }
 
 /*
-	CancelFeed Cancels the feed that you specify. Only feeds with `processingStatus=IN_QUEUE` can be cancelled. Cancelled feeds are returned in subsequent calls to the [`getFeed`](https://developer-docs.amazon.com/sp-api/docs/feeds-api-v2021-06-30-reference#getfeed) and [`getFeeds`](https://developer-docs.amazon.com/sp-api/docs/feeds-api-v2021-06-30-reference#getfeeds) operations.
+	CancelFeed cancels feed
+
+	Cancels the feed that you specify. Only feeds with `processingStatus=IN_QUEUE` can be cancelled. Cancelled feeds are returned in subsequent calls to the [`getFeed`](https://developer-docs.amazon.com/sp-api/docs/feeds-api-v2021-06-30-reference#getfeed) and [`getFeeds`](https://developer-docs.amazon.com/sp-api/docs/feeds-api-v2021-06-30-reference#getfeeds) operations.
 
 **Usage Plan:**
 
@@ -92,7 +94,9 @@ func (a *Client) CancelFeed(params *CancelFeedParams, opts ...ClientOption) (*Ca
 }
 
 /*
-	CreateFeed Creates a feed. Upload the contents of the feed document before calling this operation.
+	CreateFeed creates feed
+
+	Creates a feed. Upload the contents of the feed document before calling this operation.
 
 **Usage Plan:**
 
@@ -140,7 +144,9 @@ func (a *Client) CreateFeed(params *CreateFeedParams, opts ...ClientOption) (*Cr
 }
 
 /*
-	CreateFeedDocument Creates a feed document for the feed type that you specify. This operation returns a presigned URL for uploading the feed document contents. It also returns a `feedDocumentId` value that you can pass in with a subsequent call to the [`createFeed`](https://developer-docs.amazon.com/sp-api/docs/feeds-api-v2021-06-30-reference#createfeed) operation.
+	CreateFeedDocument creates feed document
+
+	Creates a feed document for the feed type that you specify. This operation returns a presigned URL for uploading the feed document contents. It also returns a `feedDocumentId` value that you can pass in with a subsequent call to the [`createFeed`](https://developer-docs.amazon.com/sp-api/docs/feeds-api-v2021-06-30-reference#createfeed) operation.
 
 **Usage Plan:**
 
@@ -186,7 +192,9 @@ func (a *Client) CreateFeedDocument(params *CreateFeedDocumentParams, opts ...Cl
 }
 
 /*
-	GetFeed Returns feed details (including the `resultDocumentId`, if available) for the feed that you specify.
+	GetFeed gets feed
+
+	Returns feed details (including the `resultDocumentId`, if available) for the feed that you specify.
 
 **Usage Plan:**
 
@@ -232,7 +240,9 @@ func (a *Client) GetFeed(params *GetFeedParams, opts ...ClientOption) (*GetFeedO
 }
 
 /*
-	GetFeedDocument Returns the information required for retrieving a feed document's contents.
+	GetFeedDocument gets feed document
+
+	Returns the information required for retrieving a feed document's contents.
 
 **Usage Plan:**
 
@@ -278,7 +288,9 @@ func (a *Client) GetFeedDocument(params *GetFeedDocumentParams, opts ...ClientOp
 }
 
 /*
-	GetFeeds Returns feed details for the feeds that match the filters that you specify.
+	GetFeeds gets feeds
+
+	Returns feed details for the feeds that match the filters that you specify.
 
 **Usage Plan:**
 

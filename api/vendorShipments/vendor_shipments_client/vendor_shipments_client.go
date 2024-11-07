@@ -10,7 +10,7 @@ import (
 	httptransport "github.com/go-openapi/runtime/client"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/renabled/amzn-sp-api-go/api/vendorShipments/vendor_shipments_client/vendor_shipping"
+	"github.com/renabled/amzn-sp-api-go/api/vendorShipments/vendor_shipments_client/vendor_shipments"
 )
 
 // Default vendor shipments HTTP client.
@@ -55,7 +55,7 @@ func New(transport runtime.ClientTransport, formats strfmt.Registry) *VendorShip
 
 	cli := new(VendorShipments)
 	cli.Transport = transport
-	cli.VendorShipping = vendor_shipping.New(transport, formats)
+	cli.VendorShipments = vendor_shipments.New(transport, formats)
 	return cli
 }
 
@@ -100,7 +100,7 @@ func (cfg *TransportConfig) WithSchemes(schemes []string) *TransportConfig {
 
 // VendorShipments is a client for vendor shipments
 type VendorShipments struct {
-	VendorShipping vendor_shipping.ClientService
+	VendorShipments vendor_shipments.ClientService
 
 	Transport runtime.ClientTransport
 }
@@ -108,5 +108,5 @@ type VendorShipments struct {
 // SetTransport changes the transport on the client and all its subresources
 func (c *VendorShipments) SetTransport(transport runtime.ClientTransport) {
 	c.Transport = transport
-	c.VendorShipping.SetTransport(transport)
+	c.VendorShipments.SetTransport(transport)
 }

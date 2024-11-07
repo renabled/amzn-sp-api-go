@@ -65,7 +65,7 @@ type SubmitInventoryUpdateParams struct {
 
 	/* Body.
 
-	   The request body that contains the inventory update data to submit.
+	   The request body containing the inventory update data to submit.
 	*/
 	Body *vendor_direct_fulfillment_inventory_v1_models.SubmitInventoryUpdateRequest
 

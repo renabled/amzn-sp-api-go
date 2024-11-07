@@ -11,7 +11,7 @@ import (
 	"github.com/go-openapi/strfmt"
 )
 
-// CountryCode The country code. A two-character country code, in ISO 3166-1 alpha-2 format.
+// CountryCode The two-letter country code in [ISO 3166-1 alpha-2](https://www.iban.com/country-codes) format.
 //
 // swagger:model CountryCode
 type CountryCode string

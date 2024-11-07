@@ -15,12 +15,12 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// SubmitShipmentStatusUpdatesRequest Represents the request payload for submitting updates to the status of shipments, containing an array of one or more `ShipmentStatusUpdate` objects.
+// SubmitShipmentStatusUpdatesRequest Represents the request payload for submitting updates to the status of shipments, containing an array of one or more ShipmentStatusUpdate objects.
 //
 // swagger:model SubmitShipmentStatusUpdatesRequest
 type SubmitShipmentStatusUpdatesRequest struct {
 
-	// Contains a list of one or more `ShipmentStatusUpdate` objects, each representing an update to the status of a specific shipment.
+	// Contains a list of one or more ShipmentStatusUpdate objects, each representing an update to the status of a specific shipment.
 	// Min Items: 1
 	ShipmentStatusUpdates []*ShipmentStatusUpdate `json:"shipmentStatusUpdates"`
 }

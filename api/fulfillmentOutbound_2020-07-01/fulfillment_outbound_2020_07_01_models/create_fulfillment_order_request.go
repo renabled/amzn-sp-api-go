@@ -23,8 +23,9 @@ type CreateFulfillmentOrderRequest struct {
 	// cod settings
 	CodSettings *CODSettings `json:"codSettings,omitempty"`
 
-	// The delivery preferences applied to the destination address. These preferences will be applied when possible and are best effort.
+	// The delivery preferences applied to the destination address. These preferences are applied when possible and are best effort. For eligible orders, the default delivery preference is to leave the package unattended at the front door.
 	// This feature is currently supported only in the JP marketplace and not applicable for other marketplaces.
+	// For eligible orders, the default delivery preference will be to deliver the package unattended at the front door, unless you specify otherwise.
 	DeliveryPreferences *DeliveryPreferences `json:"deliveryPreferences,omitempty"`
 
 	// delivery window
@@ -60,7 +61,7 @@ type CreateFulfillmentOrderRequest struct {
 	// fulfillment policy
 	FulfillmentPolicy FulfillmentPolicy `json:"fulfillmentPolicy,omitempty"`
 
-	// A list of items to include in the fulfillment order preview, including quantity.
+	// A list of items to include in the fulfillment order preview, including quantity. Maximum of 100 line items with a maximum of 250 units per order.
 	// Required: true
 	Items CreateFulfillmentOrderItemList `json:"items"`
 
@@ -81,7 +82,8 @@ type CreateFulfillmentOrderRequest struct {
 	// The two-character country code for the country from which the fulfillment order ships. Must be in ISO 3166-1 alpha-2 format.
 	ShipFromCountryCode string `json:"shipFromCountryCode,omitempty"`
 
-	// The shipping method for the fulfillment order. When this value is ScheduledDelivery, choose Ship for the `fulfillmentAction`. Hold is not a valid `fulfillmentAction` value when the `shippingSpeedCategory` value is `ScheduledDelivery`.
+	// The shipping method for the fulfillment order. When this value is `ScheduledDelivery`, choose Ship for the `fulfillmentAction`. Hold is not a valid `fulfillmentAction` value when the `shippingSpeedCategory` value is `ScheduledDelivery`.
+	// Note: Shipping method service level agreements vary by marketplace. Sellers can refer to [Seller Central]( https://developer-docs.amazon.com/sp-api/docs/seller-central-urls) for shipping method service-level agreements and multi-channel fulfillment fees.
 	// Required: true
 	ShippingSpeedCategory *ShippingSpeedCategory `json:"shippingSpeedCategory"`
 }
