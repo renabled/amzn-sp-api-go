@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// OfferIdentifier Identifies an offer from a particular seller on an ASIN.
+// OfferIdentifier Identifies an offer from a particular seller for a specified ASIN.
 //
 // swagger:model OfferIdentifier
 type OfferIdentifier struct {
@@ -33,7 +33,7 @@ type OfferIdentifier struct {
 	// The seller identifier for the offer.
 	SellerID string `json:"sellerId,omitempty"`
 
-	// The seller stock keeping unit (SKU) of the item. This will only be present for the target offer, which belongs to the requesting seller.
+	// The seller SKU of the item. This will only be present for the target offer, which belongs to the requesting seller.
 	Sku string `json:"sku,omitempty"`
 }
 

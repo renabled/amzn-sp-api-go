@@ -13,7 +13,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// HTTPURI The URI associated with the individual APIs being called as part of the batch request.
+// HTTPURI The URI associated with the individual APIs that are called as part of the batch request.
 //
 // swagger:model HttpUri
 type HTTPURI string

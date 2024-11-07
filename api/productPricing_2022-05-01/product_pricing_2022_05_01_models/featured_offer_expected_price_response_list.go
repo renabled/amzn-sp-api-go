@@ -15,7 +15,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// FeaturedOfferExpectedPriceResponseList A batched list of featured offer expected price responses.
+// FeaturedOfferExpectedPriceResponseList A batched list of FOEP responses.
 //
 // swagger:model FeaturedOfferExpectedPriceResponseList
 type FeaturedOfferExpectedPriceResponseList []*FeaturedOfferExpectedPriceResponse

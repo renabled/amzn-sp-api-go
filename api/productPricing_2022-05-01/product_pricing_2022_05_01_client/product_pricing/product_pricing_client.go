@@ -38,7 +38,7 @@ type ClientService interface {
 }
 
 /*
-	GetCompetitiveSummary Returns the competitive summary response including featured buying options for the ASIN and `marketplaceId` combination.
+	GetCompetitiveSummary Returns the competitive summary response, including featured buying options for the ASIN and `marketplaceId` combination.
 
 **Usage Plan:**
 
@@ -46,7 +46,7 @@ type ClientService interface {
 | ---- | ---- |
 | 0.033 | 1 |
 
-The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that are applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may receive higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api) in the Selling Partner API.
 */
 func (a *Client) GetCompetitiveSummary(params *GetCompetitiveSummaryParams, opts ...ClientOption) (*GetCompetitiveSummaryOK, error) {
 	// TODO: Validate the params before sending
@@ -84,7 +84,7 @@ func (a *Client) GetCompetitiveSummary(params *GetCompetitiveSummaryParams, opts
 }
 
 /*
-	GetFeaturedOfferExpectedPriceBatch Returns the set of responses that correspond to the batched list of up to 40 requests defined in the request body. The response for each successful (HTTP status code 200) request in the set includes the computed listing price at or below which a seller can expect to become the featured offer (before applicable promotions). This is called the featured offer expected price (FOEP). Featured offer is not guaranteed, because competing offers may change, and different offers may be featured based on other factors, including fulfillment capabilities to a specific customer. The response to an unsuccessful request includes the available error text.
+	GetFeaturedOfferExpectedPriceBatch Returns the set of responses that correspond to the batched list of up to 40 requests defined in the request body. The response for each successful (HTTP status code 200) request in the set includes the computed listing price at or below which a seller can expect to become the featured offer (before applicable promotions). This is called the featured offer expected price (FOEP). Featured offer is not guaranteed because competing offers might change. Other offers might be featured based on factors such as fulfillment capabilities to a specific customer. The response to an unsuccessful request includes the available error text.
 
 **Usage Plan:**
 
@@ -92,7 +92,7 @@ func (a *Client) GetCompetitiveSummary(params *GetCompetitiveSummaryParams, opts
 | ---- | ---- |
 | 0.033 | 1 |
 
-The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that are applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may receive higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api) in the Selling Partner API.
 */
 func (a *Client) GetFeaturedOfferExpectedPriceBatch(params *GetFeaturedOfferExpectedPriceBatchParams, opts ...ClientOption) (*GetFeaturedOfferExpectedPriceBatchOK, error) {
 	// TODO: Validate the params before sending

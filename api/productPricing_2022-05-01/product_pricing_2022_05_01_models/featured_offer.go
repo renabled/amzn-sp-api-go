@@ -22,7 +22,7 @@ type FeaturedOffer struct {
 	// The item condition.
 	Condition Condition `json:"condition,omitempty"`
 
-	// An offer identifier used to identify the merchant of the featured offer. Since this may not belong to the requester, the SKU field will be omitted.
+	// An offer identifier used to identify the merchant of the featured offer. Since this may not belong to the requester, the SKU field is omitted.
 	// Required: true
 	OfferIdentifier *OfferIdentifier `json:"offerIdentifier"`
 

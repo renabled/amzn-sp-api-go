@@ -28,7 +28,9 @@ type AdhocDisbursementEvent struct {
 	// The identifier for the transaction.
 	TransactionID string `json:"TransactionId,omitempty"`
 
-	// The type of transaction. For example, "Disbursed to Amazon Gift Card balance".
+	// Indicates the type of transaction.
+	//
+	// Example: "Disbursed to Amazon Gift Card balance"
 	TransactionType string `json:"TransactionType,omitempty"`
 }
 

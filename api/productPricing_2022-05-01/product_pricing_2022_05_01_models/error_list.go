@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// ErrorList A list of error responses returned when a request is unsuccessful.
+// ErrorList A list of error responses that are returned when a request is unsuccessful.
 //
 // swagger:model ErrorList
 type ErrorList []*Error

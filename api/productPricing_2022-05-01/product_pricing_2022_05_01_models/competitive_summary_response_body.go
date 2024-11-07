@@ -27,17 +27,17 @@ type CompetitiveSummaryResponseBody struct {
 	// A list of errors
 	Errors ErrorList `json:"errors,omitempty"`
 
-	// A list of featured buying options for the given ASIN `marketplaceId` combination.
+	// A list of featured buying options for the specified ASIN `marketplaceId` combination.
 	FeaturedBuyingOptions []*FeaturedBuyingOption `json:"featuredBuyingOptions"`
 
-	// A list of the lowest priced offers for the given ASIN `marketplaceId` combination.
+	// A list of lowest priced offers for the specified ASIN `marketplaceId` combination.
 	LowestPricedOffers []*LowestPricedOffer `json:"lowestPricedOffers"`
 
 	// A marketplace identifier.
 	// Required: true
 	MarketplaceID *MarketplaceID `json:"marketplaceId"`
 
-	// A list of reference prices for the given ASIN `marketplaceId` combination.
+	// A list of reference prices for the specified ASIN `marketplaceId` combination.
 	ReferencePrices []*ReferencePrice `json:"referencePrices"`
 }
 

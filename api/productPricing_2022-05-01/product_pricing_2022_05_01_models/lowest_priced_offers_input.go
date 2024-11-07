@@ -15,16 +15,16 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// LowestPricedOffersInput The input required for building the `LowestPricedOffers` data in the response.
+// LowestPricedOffersInput The input required for building `LowestPricedOffers` data in the response.
 //
 // swagger:model LowestPricedOffersInput
 type LowestPricedOffersInput struct {
 
-	// The condition of the item offer that was requested for the `LowestPricedOffers`. The default `itemCondition` is `New`.
+	// The input parameter specifies the `itemCondition` of the offer that is requested for `LowestPricedOffers`. `New` is the default value for `itemCondition`.
 	// Required: true
 	ItemCondition *Condition `json:"itemCondition"`
 
-	// The type of offers requested for the `LowestPricedOffers`. The `offerType` options are `Consumer` or `Business`. The default `offerType` is `Consumer`.
+	// The input parameter specifies the type of offers requested for `LowestPricedOffers`. This applies to `Consumer` and `Business` offers. `Consumer` is the default `offerType`.
 	// Required: true
 	// Enum: [CONSUMER]
 	OfferType *string `json:"offerType"`

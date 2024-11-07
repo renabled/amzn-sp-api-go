@@ -14,12 +14,12 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// CompetitiveSummaryBatchResponse The response schema of the `competitiveSummaryBatch` operation.
+// CompetitiveSummaryBatchResponse The response schema for the `competitiveSummaryBatch` operation.
 //
 // swagger:model CompetitiveSummaryBatchResponse
 type CompetitiveSummaryBatchResponse struct {
 
-	// The response list of the `competitiveSummaryBatch` operation.
+	// The response list for the `competitiveSummaryBatch` operation.
 	// Required: true
 	Responses CompetitiveSummaryResponseList `json:"responses"`
 }

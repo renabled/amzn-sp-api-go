@@ -13,18 +13,18 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// FeaturedOfferExpectedPriceResponseBody The featured offer expected price response data for a requested SKU.
+// FeaturedOfferExpectedPriceResponseBody The FOEP response data for a requested SKU.
 //
 // swagger:model FeaturedOfferExpectedPriceResponseBody
 type FeaturedOfferExpectedPriceResponseBody struct {
 
-	// The errors that occurred if the operation was not successful (HTTP status code non-200).
+	// The errors that occurred if the operation wasn't successful (HTTP status code non-200).
 	Errors ErrorList `json:"errors,omitempty"`
 
-	// The featured offer expected price results for the requested target offer.
+	// The FOEP results for the requested target offer.
 	FeaturedOfferExpectedPriceResults FeaturedOfferExpectedPriceResultList `json:"featuredOfferExpectedPriceResults,omitempty"`
 
-	// Metadata that identifies the target offer for which the featured offer expected price result data was computed.
+	// Metadata that identifies the target offer for which the FOEP result data was computed.
 	OfferIdentifier *OfferIdentifier `json:"offerIdentifier,omitempty"`
 }
 

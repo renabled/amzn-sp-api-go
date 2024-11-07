@@ -11,7 +11,7 @@ import (
 	"github.com/go-openapi/strfmt"
 )
 
-// Asin The Amazon Standard Identification Number (ASIN) of the item.
+// Asin The ASIN of the item.
 //
 // swagger:model Asin
 type Asin string

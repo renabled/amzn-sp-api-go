@@ -23,7 +23,7 @@ type FeaturedOfferExpectedPrice struct {
 	// Required: true
 	ListingPrice *MoneyType `json:"listingPrice"`
 
-	// The number of Amazon Points offered with the purchase of an item, and their monetary value.
+	// The number of Amazon Points that are offered with the purchase of an item and the monetary value of these points.
 	Points *Points `json:"points,omitempty"`
 }
 

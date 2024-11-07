@@ -15,16 +15,16 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// LowestPricedOffer The lowest priced offer for the requested item condition and offer type.
+// LowestPricedOffer Describes the lowest priced offers for the specified item condition and offer type.
 //
 // swagger:model LowestPricedOffer
 type LowestPricedOffer struct {
 
-	// The filtering criteria used to retrieve this lowest-priced offers correspond to the `lowestPricedOffersInputs` received in the request.
+	// The filtering criteria that are used to retrieve the lowest priced offers that correspond to the `lowestPricedOffersInputs` request.
 	// Required: true
 	LowestPricedOffersInput *LowestPricedOffersInput `json:"lowestPricedOffersInput"`
 
-	// A list of up to 20 lowest priced offers that match the criteria specified in the `lowestPricedOffersInput` parameter.
+	// A list of up to 20 lowest priced offers that match the criteria specified in `lowestPricedOffersInput`.
 	// Required: true
 	// Max Items: 20
 	// Min Items: 1

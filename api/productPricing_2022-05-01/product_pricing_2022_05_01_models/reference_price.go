@@ -14,12 +14,12 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// ReferencePrice The reference price for the given ASIN `marketplaceId` combination.
+// ReferencePrice The reference price for the specified ASIN `marketplaceId` combination.
 //
 // swagger:model ReferencePrice
 type ReferencePrice struct {
 
-	// The name of the reference price like `CompetitivePriceThreshold`.
+	// The name of the reference price, such as `CompetitivePriceThreshold` and `WasPrice`. For reference price definitions, refer to the [Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/product-pricing-api-v2022-05-01-use-case-guide).
 	// Required: true
 	Name *string `json:"name"`
 

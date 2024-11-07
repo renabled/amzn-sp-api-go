@@ -14,12 +14,12 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// FeaturedOfferExpectedPriceResult The featured offer expected price result data for the requested offer.
+// FeaturedOfferExpectedPriceResult The FOEP result data for the requested offer.
 //
 // swagger:model FeaturedOfferExpectedPriceResult
 type FeaturedOfferExpectedPriceResult struct {
 
-	// The offer that will likely be the featured offer if the target offer is priced above its featured offer expected price. If the target offer is currently the featured offer, this property will be different than `currentFeaturedOffer`.
+	// The offer that will likely be the featured offer if the target offer is priced above its FOEP. If the target offer is currently the featured offer, this property will be different than `currentFeaturedOffer`.
 	CompetingFeaturedOffer *FeaturedOffer `json:"competingFeaturedOffer,omitempty"`
 
 	// The offer that is currently the featured offer. If the target offer is not currently featured, then this property will be equal to `competingFeaturedOffer`.
@@ -28,7 +28,7 @@ type FeaturedOfferExpectedPriceResult struct {
 	// featured offer expected price
 	FeaturedOfferExpectedPrice *FeaturedOfferExpectedPrice `json:"featuredOfferExpectedPrice,omitempty"`
 
-	// The status of the featured offer expected price computation. Possible values include `VALID_FOEP`, `NO_COMPETING_OFFER`, `OFFER_NOT_ELIGIBLE`, `OFFER_NOT_FOUND`, `ASIN_NOT_ELIGIBLE`. Additional values may be added in the future.
+	// The status of the FOEP computation. Possible values include `VALID_FOEP`, `NO_COMPETING_OFFER`, `OFFER_NOT_ELIGIBLE`, `OFFER_NOT_FOUND`, and `ASIN_NOT_ELIGIBLE`. Additional values might be added in the future.
 	// Required: true
 	ResultStatus *string `json:"resultStatus"`
 }

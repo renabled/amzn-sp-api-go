@@ -15,7 +15,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// CompetitiveSummaryResponseList The response list of the `competitiveSummaryBatch` operation.
+// CompetitiveSummaryResponseList The response list for the `competitiveSummaryBatch` operation.
 //
 // swagger:model CompetitiveSummaryResponseList
 type CompetitiveSummaryResponseList []*CompetitiveSummaryResponse

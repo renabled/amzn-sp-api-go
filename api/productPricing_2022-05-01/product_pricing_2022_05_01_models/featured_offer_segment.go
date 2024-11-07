@@ -20,7 +20,7 @@ import (
 // swagger:model FeaturedOfferSegment
 type FeaturedOfferSegment struct {
 
-	// The customer membership type that make up this segment
+	// The customer membership type that makes up this segment
 	// Required: true
 	// Enum: [PRIME NON_PRIME]
 	CustomerMembership *string `json:"customerMembership"`

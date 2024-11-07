@@ -20,7 +20,7 @@ import (
 // swagger:model CompetitiveSummaryRequest
 type CompetitiveSummaryRequest struct {
 
-	// The Amazon identifier for the item.
+	// The Amazon Standard Identification Number for the item.
 	// Required: true
 	Asin *Asin `json:"asin"`
 
@@ -29,7 +29,7 @@ type CompetitiveSummaryRequest struct {
 	// Min Items: 1
 	IncludedData []CompetitiveSummaryIncludedData `json:"includedData"`
 
-	// The list of `lowestPricedOffersInput` parameters used to build the `lowestPricedOffers` in the response. This attribute is valid only if `lowestPricedOffers` is requested in `includedData`.
+	// The list of `lowestPricedOffersInput` parameters that are used to build `lowestPricedOffers` in the response. This attribute is only valid if `lowestPricedOffers` is requested in `includedData`
 	// Max Items: 5
 	// Min Items: 0
 	LowestPricedOffersInputs []*LowestPricedOffersInput `json:"lowestPricedOffersInputs"`
@@ -42,7 +42,7 @@ type CompetitiveSummaryRequest struct {
 	// Required: true
 	Method *HTTPMethod `json:"method"`
 
-	// The URI associated with the individual APIs being called as part of the batch request. For `getCompetitiveSummary`, this should be `/products/pricing/2022-05-01/items/competitiveSummary`.
+	// The URI associated with the individual APIs that are called as part of the batch request. For `getCompetitiveSummary`, this is `/products/pricing/2022-05-01/items/competitiveSummary`.
 	// Required: true
 	URI *HTTPURI `json:"uri"`
 }

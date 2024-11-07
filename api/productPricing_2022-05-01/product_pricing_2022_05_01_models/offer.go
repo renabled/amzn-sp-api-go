@@ -25,15 +25,15 @@ type Offer struct {
 	// Required: true
 	Condition *Condition `json:"condition"`
 
-	// The fulfillment type for the offer. Possible values are AFN (Amazon Fulfillment Network) and MFN (Merchant Fulfillment Network).
+	// The fulfillment type for the offer. Possible values are `AFN` (Amazon Fulfillment Network) and `MFN` (Merchant Fulfillment Network).
 	// Required: true
 	FulfillmentType *FulfillmentType `json:"fulfillmentType"`
 
-	// Offer buying price. Does not include shipping, points, or applicable promotions.
+	// The offer buying price. This doesn't include shipping, points, or applicable promotions.
 	// Required: true
 	ListingPrice *MoneyType `json:"listingPrice"`
 
-	// The number of Amazon Points offered with the purchase of an item, and their monetary value. Note that the Points element is only returned in Japan (JP).
+	// The number of Amazon Points that are offered with the purchase of an item and the monetary value of these points. Note that the Points element is only returned in Japan (JP).
 	Points *Points `json:"points,omitempty"`
 
 	// Amazon Prime details.
@@ -46,7 +46,7 @@ type Offer struct {
 	// A list of shipping options associated with this offer
 	ShippingOptions []*ShippingOption `json:"shippingOptions"`
 
-	// The item subcondition for the offer.
+	// The item subcondition of the offer.
 	// Enum: [New Mint VeryGood Good Acceptable Poor Club OEM Warranty RefurbishedWarranty Refurbished OpenBox Other]
 	SubCondition string `json:"subCondition,omitempty"`
 }

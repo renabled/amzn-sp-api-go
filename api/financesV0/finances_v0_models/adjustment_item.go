@@ -24,13 +24,13 @@ type AdjustmentItem struct {
 	// A unique identifier assigned to products stored in and fulfilled from a fulfillment center.
 	FnSKU string `json:"FnSKU,omitempty"`
 
-	// The per-unit value of the item.
+	// The per unit value of the item.
 	PerUnitAmount *Currency `json:"PerUnitAmount,omitempty"`
 
 	// A short description of the item.
 	ProductDescription string `json:"ProductDescription,omitempty"`
 
-	// Represents the number of units in the seller's inventory when the `AdjustmentType` is `FBAInventoryReimbursement`.
+	// Represents the number of units in the seller's inventory when the AdustmentType is FBAInventoryReimbursement.
 	Quantity string `json:"Quantity,omitempty"`
 
 	// The seller SKU of the item. The seller SKU is qualified by the seller's seller ID, which is included with every call to the Selling Partner API.
@@ -38,6 +38,9 @@ type AdjustmentItem struct {
 
 	// The total value of the item.
 	TotalAmount *Currency `json:"TotalAmount,omitempty"`
+
+	// The transaction number that is related to the adjustment.
+	TransactionNumber string `json:"TransactionNumber,omitempty"`
 }
 
 // Validate validates this adjustment item

@@ -25,7 +25,7 @@ type AffordabilityExpenseEvent struct {
 	// The amount charged for clicks incurred under the Sponsored Products program.
 	BaseExpense *Currency `json:"BaseExpense,omitempty"`
 
-	// The Amazon-defined marketplace identifier.
+	// An encrypted, Amazon-defined marketplace identifier.
 	MarketplaceID string `json:"MarketplaceId,omitempty"`
 
 	// The date and time when the financial event was created.
@@ -44,15 +44,16 @@ type AffordabilityExpenseEvent struct {
 	// Required: true
 	TaxTypeSGST *Currency `json:"TaxTypeSGST"`
 
-	// The total amount charged to the seller. `TotalExpense` = `BaseExpense` + `TaxTypeIGST` + `TaxTypeCGST` + `TaxTypeSGST`.
+	// The total amount charged to the seller. TotalExpense = BaseExpense + TaxTypeIGST + TaxTypeCGST + TaxTypeSGST.
 	TotalExpense *Currency `json:"TotalExpense,omitempty"`
 
-	// The type of transaction.
+	// Indicates the type of transaction.
 	//
 	// Possible values:
 	//
-	// * `Charge`: an affordability promotion expense.
-	// * `Refund`: an affordability promotion expense reversal.
+	// * Charge - For an affordability promotion expense.
+	//
+	// * Refund - For an affordability promotion expense reversal.
 	TransactionType string `json:"TransactionType,omitempty"`
 }
 

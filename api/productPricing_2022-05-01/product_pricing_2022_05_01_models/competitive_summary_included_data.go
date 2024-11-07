@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// CompetitiveSummaryIncludedData The supported types of data in the `getCompetitiveSummary` API.
+// CompetitiveSummaryIncludedData The supported data types in the `getCompetitiveSummary` API.
 //
 // swagger:model CompetitiveSummaryIncludedData
 type CompetitiveSummaryIncludedData string

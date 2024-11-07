@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// FeaturedOfferExpectedPriceResultList A list of featured offer expected price results for the requested offer.
+// FeaturedOfferExpectedPriceResultList A list of FOEP results for the requested offer.
 //
 // swagger:model FeaturedOfferExpectedPriceResultList
 type FeaturedOfferExpectedPriceResultList []*FeaturedOfferExpectedPriceResult

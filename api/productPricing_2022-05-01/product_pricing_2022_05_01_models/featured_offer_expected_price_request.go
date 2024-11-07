@@ -13,7 +13,7 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// FeaturedOfferExpectedPriceRequest An individual featured offer expected price request for a particular SKU.
+// FeaturedOfferExpectedPriceRequest An individual FOEP request for a particular SKU.
 //
 // swagger:model FeaturedOfferExpectedPriceRequest
 type FeaturedOfferExpectedPriceRequest struct {

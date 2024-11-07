@@ -24,7 +24,7 @@ type ShippingOption struct {
 	// Required: true
 	Price *MoneyType `json:"price"`
 
-	// The type of the shipping option.
+	// The type of shipping option.
 	// Required: true
 	// Enum: [DEFAULT]
 	ShippingOptionType interface{} `json:"shippingOptionType"`

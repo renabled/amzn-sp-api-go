@@ -13,7 +13,7 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// TaxWithholdingEvent A tax withholding event on a seller's account.
+// TaxWithholdingEvent A TaxWithholding event on seller's account.
 //
 // swagger:model TaxWithholdingEvent
 type TaxWithholdingEvent struct {

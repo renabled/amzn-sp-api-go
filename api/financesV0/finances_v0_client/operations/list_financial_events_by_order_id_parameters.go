@@ -64,7 +64,7 @@ type ListFinancialEventsByOrderIDParams struct {
 
 	/* MaxResultsPerPage.
 
-	   The maximum number of results to return per page. If the response exceeds the maximum number of transactions or 10 MB, the response is `InvalidInput`.
+	   The maximum number of results to return per page. If the response exceeds the maximum number of transactions or 10 MB, the API responds with 'InvalidInput'.
 
 	   Format: int32
 	   Default: 100
@@ -73,7 +73,7 @@ type ListFinancialEventsByOrderIDParams struct {
 
 	/* NextToken.
 
-	   The response includes `nextToken` when the number of results exceeds the specified `pageSize` value. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until `nextToken` is null. Note that this operation can return empty pages.
+	   A string token returned in the response of your previous request.
 	*/
 	NextToken *string
 

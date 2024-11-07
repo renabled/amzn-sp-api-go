@@ -14,16 +14,16 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// Price Schema for item's price information, including listing price, shipping price, and Amazon points.
+// Price The schema for item's price information, including listing price, shipping price, and Amazon Points.
 //
 // swagger:model Price
 type Price struct {
 
-	// The listing price of the item excluding any promotions.
+	// The listing price for the item, excluding any promotions.
 	// Required: true
 	ListingPrice *MoneyType `json:"listingPrice"`
 
-	// The number of Amazon Points offered with the purchase of an item, and their monetary value.
+	// The number of Amazon Points that are offered with the purchase of an item and the monetary value of these points.
 	Points *Points `json:"points,omitempty"`
 
 	// The shipping cost of the product. Note that the shipping cost is not always available.

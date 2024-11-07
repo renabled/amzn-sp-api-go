@@ -13,7 +13,7 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// FinancialEvents All the information that is related to a financial event.
+// FinancialEvents Contains all information related to a financial event.
 //
 // swagger:model FinancialEvents
 type FinancialEvents struct {

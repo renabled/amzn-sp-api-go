@@ -29,7 +29,7 @@ type BatchRequest struct {
 	// Required: true
 	Method *HTTPMethod `json:"method"`
 
-	// The URI associated with an individual request within a batch. For `FeaturedOfferExpectedPrice`, this should be `/products/pricing/2022-05-01/offer/featuredOfferExpectedPrice`.
+	// The URI associated with an individual request within a batch. For `FeaturedOfferExpectedPrice`, this is `/products/pricing/2022-05-01/offer/featuredOfferExpectedPrice`.
 	// Required: true
 	URI *string `json:"uri"`
 }
@@ -37,10 +37,6 @@ type BatchRequest struct {
 // Validate validates this batch request
 func (m *BatchRequest) Validate(formats strfmt.Registry) error {
 	var res []error
-
-	if err := m.validateBody(formats); err != nil {
-		res = append(res, err)
-	}
 
 	if err := m.validateHeaders(formats); err != nil {
 		res = append(res, err)
@@ -57,25 +53,6 @@ func (m *BatchRequest) Validate(formats strfmt.Registry) error {
 	if len(res) > 0 {
 		return errors.CompositeValidationError(res...)
 	}
-	return nil
-}
-
-func (m *BatchRequest) validateBody(formats strfmt.Registry) error {
-	if swag.IsZero(m.Body) { // not required
-		return nil
-	}
-
-	if m.Body != nil {
-		if err := m.Body.Validate(formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
-				return ve.ValidateName("body")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("body")
-			}
-			return err
-		}
-	}
-
 	return nil
 }
 
@@ -135,10 +112,6 @@ func (m *BatchRequest) validateURI(formats strfmt.Registry) error {
 func (m *BatchRequest) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
 	var res []error
 
-	if err := m.contextValidateBody(ctx, formats); err != nil {
-		res = append(res, err)
-	}
-
 	if err := m.contextValidateHeaders(ctx, formats); err != nil {
 		res = append(res, err)
 	}
@@ -150,20 +123,6 @@ func (m *BatchRequest) ContextValidate(ctx context.Context, formats strfmt.Regis
 	if len(res) > 0 {
 		return errors.CompositeValidationError(res...)
 	}
-	return nil
-}
-
-func (m *BatchRequest) contextValidateBody(ctx context.Context, formats strfmt.Registry) error {
-
-	if err := m.Body.ContextValidate(ctx, formats); err != nil {
-		if ve, ok := err.(*errors.Validation); ok {
-			return ve.ValidateName("body")
-		} else if ce, ok := err.(*errors.CompositeError); ok {
-			return ce.ValidateName("body")
-		}
-		return err
-	}
-
 	return nil
 }
 

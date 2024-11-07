@@ -11,7 +11,7 @@ import (
 	"github.com/go-openapi/strfmt"
 )
 
-// HTTPHeaders A mapping of additional HTTP headers to send/receive for an individual request within a batch.
+// HTTPHeaders A mapping of additional HTTP headers to send or receive for an individual request within a batch.
 //
 // swagger:model HttpHeaders
 type HTTPHeaders map[string]string

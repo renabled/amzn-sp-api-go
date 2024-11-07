@@ -64,7 +64,7 @@ type ListFinancialEventGroupsParams struct {
 
 	/* FinancialEventGroupStartedAfter.
 
-	   A date that selects financial event groups that opened after (or at) a specified date and time, in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) format. The date-time must be more than two minutes before you submit the request.
+	   A date used for selecting financial event groups that opened after (or at) a specified date and time, in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) format. The date-time must be no later than two minutes before the request was submitted.
 
 	   Format: date-time
 	*/
@@ -72,7 +72,7 @@ type ListFinancialEventGroupsParams struct {
 
 	/* FinancialEventGroupStartedBefore.
 
-	   A date that selects financial event groups that opened before (but not at) a specified date and time, in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) format. The date-time must be after `FinancialEventGroupStartedAfter` and more than two minutes before the time of request. If `FinancialEventGroupStartedAfter` and `FinancialEventGroupStartedBefore` are more than 180 days apart, no financial event groups are returned.
+	   A date used for selecting financial event groups that opened before (but not at) a specified date and time, in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) format. The date-time  must be later than FinancialEventGroupStartedAfter and no later than two minutes before the request was submitted. If FinancialEventGroupStartedAfter and FinancialEventGroupStartedBefore are more than 180 days apart, no financial event groups are returned.
 
 	   Format: date-time
 	*/
@@ -80,7 +80,7 @@ type ListFinancialEventGroupsParams struct {
 
 	/* MaxResultsPerPage.
 
-	   The maximum number of results per page. If the response exceeds the maximum number of transactions or 10 MB, the response is `InvalidInput`.
+	   The maximum number of results to return per page. If the response exceeds the maximum number of transactions or 10 MB, the API responds with 'InvalidInput'.
 
 	   Format: int32
 	   Default: 10
@@ -89,7 +89,7 @@ type ListFinancialEventGroupsParams struct {
 
 	/* NextToken.
 
-	   The response includes `nextToken` when the number of results exceeds the specified `pageSize` value. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until `nextToken` is null. Note that this operation can return empty pages.
+	   A string token returned in the response of your previous request.
 	*/
 	NextToken *string
 
