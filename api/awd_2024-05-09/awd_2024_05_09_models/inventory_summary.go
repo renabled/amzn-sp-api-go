@@ -7,6 +7,7 @@ package awd_2024_05_09_models
 
 import (
 	"context"
+	"strconv"
 
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/strfmt"
@@ -18,6 +19,9 @@ import (
 //
 // swagger:model InventorySummary
 type InventorySummary struct {
+
+	// The expiration details of the inventory. This object will only appear if the `details` parameter in the request is set to `SHOW`.
+	ExpirationDetails []*ExpirationDetails `json:"expirationDetails"`
 
 	// inventory details
 	InventoryDetails *InventoryDetails `json:"inventoryDetails,omitempty"`
@@ -37,6 +41,10 @@ type InventorySummary struct {
 func (m *InventorySummary) Validate(formats strfmt.Registry) error {
 	var res []error
 
+	if err := m.validateExpirationDetails(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.validateInventoryDetails(formats); err != nil {
 		res = append(res, err)
 	}
@@ -48,6 +56,32 @@ func (m *InventorySummary) Validate(formats strfmt.Registry) error {
 	if len(res) > 0 {
 		return errors.CompositeValidationError(res...)
 	}
+	return nil
+}
+
+func (m *InventorySummary) validateExpirationDetails(formats strfmt.Registry) error {
+	if swag.IsZero(m.ExpirationDetails) { // not required
+		return nil
+	}
+
+	for i := 0; i < len(m.ExpirationDetails); i++ {
+		if swag.IsZero(m.ExpirationDetails[i]) { // not required
+			continue
+		}
+
+		if m.ExpirationDetails[i] != nil {
+			if err := m.ExpirationDetails[i].Validate(formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("expirationDetails" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("expirationDetails" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
 	return nil
 }
 
@@ -83,6 +117,10 @@ func (m *InventorySummary) validateSku(formats strfmt.Registry) error {
 func (m *InventorySummary) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
 	var res []error
 
+	if err := m.contextValidateExpirationDetails(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.contextValidateInventoryDetails(ctx, formats); err != nil {
 		res = append(res, err)
 	}
@@ -90,6 +128,26 @@ func (m *InventorySummary) ContextValidate(ctx context.Context, formats strfmt.R
 	if len(res) > 0 {
 		return errors.CompositeValidationError(res...)
 	}
+	return nil
+}
+
+func (m *InventorySummary) contextValidateExpirationDetails(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(m.ExpirationDetails); i++ {
+
+		if m.ExpirationDetails[i] != nil {
+			if err := m.ExpirationDetails[i].ContextValidate(ctx, formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("expirationDetails" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("expirationDetails" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
 	return nil
 }
 

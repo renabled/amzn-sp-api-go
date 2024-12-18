@@ -15,7 +15,7 @@ import (
 )
 
 // DistributionPackageQuantity Represents a distribution package with its respective quantity.
-// Example: {"count":1,"distributionPackage":{"contents":{"products":[{"quantity":1,"sku":"testPen"}]},"measurements":{"dimensions":{"height":1,"length":1,"unitOfMeasurement":"INCHES","width":1},"volume":{"unitOfMeasurement":"CUIN","volume":1},"weight":{"unitOfMeasurement":"POUNDS","weight":1}},"type":"CASE"}}
+// Example: {"count":1,"distributionPackage":{"contents":{"products":[{"expiration":"2025-06-07T12:12:09.061Z","prepDetails":{"labelOwner":"SELF","prepCategory":"PERFORATED","prepInstructions":[{"prepOwner":"AMAZON","prepType":"ITEM_POLYBAGGING"}],"prepOwner":"AMAZON"},"quantity":1,"sku":"testPen"}]},"measurements":{"dimensions":{"height":1,"length":1,"unitOfMeasurement":"INCHES","width":1},"volume":{"unitOfMeasurement":"CUIN","volume":1},"weight":{"unitOfMeasurement":"POUNDS","weight":1}},"type":"CASE"}}
 //
 // swagger:model DistributionPackageQuantity
 type DistributionPackageQuantity struct {

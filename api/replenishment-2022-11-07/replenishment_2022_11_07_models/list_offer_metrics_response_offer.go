@@ -19,14 +19,14 @@ import (
 // swagger:model ListOfferMetricsResponseOffer
 type ListOfferMetricsResponseOffer struct {
 
-	// The number of active subscriptions present at the end of the period. Applicable only for the `PERFORMANCE` `timePeriodType`.
+	// The number of active subscriptions present at the end of the period. Applicable to PERFORMANCE timePeriodType.
 	// Minimum: 0
 	ActiveSubscriptions *int64 `json:"activeSubscriptions,omitempty"`
 
 	// The Amazon Standard Identification Number (ASIN).
 	Asin string `json:"asin,omitempty"`
 
-	// The percentage of revenue from ASINs with coupons out of total revenue from all ASINs. Applicable only for the PERFORMANCE timePeriodType.
+	// The percentage of revenue from ASINs with coupons out of total revenue from all ASINs. Applicable to PERFORMANCE timePeriodType.
 	// Maximum: 100
 	// Minimum: 0
 	CouponsRevenuePenetration *float64 `json:"couponsRevenuePenetration,omitempty"`
@@ -34,52 +34,57 @@ type ListOfferMetricsResponseOffer struct {
 	// The currency code in ISO 4217 format.
 	CurrencyCode string `json:"currencyCode,omitempty"`
 
-	// The revenue that would have been generated had there not been out of stock. Applicable only for the PERFORMANCE timePeriodType.
+	// The revenue that would have been generated had there not been out of stock. Applicable to PERFORMANCE timePeriodType.
 	// Minimum: 0
 	LostRevenueDueToOOS *float64 `json:"lostRevenueDueToOOS,omitempty"`
 
-	// The forecasted shipped subscription units for the next 30 days. Applicable only for the `FORECAST` `timePeriodType`.
+	// The forecasted shipped subscription units for the next 30 days. Applicable to FORECAST timePeriodType.
 	// Minimum: 0
 	Next30DayShippedSubscriptionUnits *int64 `json:"next30DayShippedSubscriptionUnits,omitempty"`
 
-	// The forecasted total subscription revenue for the next 30 days. Applicable only for the `FORECAST` `timePeriodType`.
+	// The forecasted total subscription revenue for the next 30 days. Applicable to FORECAST timePeriodType.
 	// Minimum: 0
 	Next30DayTotalSubscriptionsRevenue *float64 `json:"next30DayTotalSubscriptionsRevenue,omitempty"`
 
-	// The forecasted shipped subscription units for the next 60 days. Applicable only for the `FORECAST` `timePeriodType`.
+	// The forecasted shipped subscription units for the next 60 days. Applicable to FORECAST timePeriodType.
 	// Minimum: 0
 	Next60DayShippedSubscriptionUnits *int64 `json:"next60DayShippedSubscriptionUnits,omitempty"`
 
-	// The forecasted total subscription revenue for the next 60 days. Applicable only for the `FORECAST` `timePeriodType`.
+	// The forecasted total subscription revenue for the next 60 days. Applicable to FORECAST timePeriodType.
 	// Minimum: 0
 	Next60DayTotalSubscriptionsRevenue *float64 `json:"next60DayTotalSubscriptionsRevenue,omitempty"`
 
-	// The forecasted shipped subscription units for the next 90 days. Applicable only for the `FORECAST` `timePeriodType`.
+	// The forecasted shipped subscription units for the next 90 days. Applicable to FORECAST timePeriodType.
 	// Minimum: 0
 	Next90DayShippedSubscriptionUnits *int64 `json:"next90DayShippedSubscriptionUnits,omitempty"`
 
-	// The forecasted total subscription revenue for the next 90 days. Applicable only for the `FORECAST` `timePeriodType`.
+	// The forecasted total subscription revenue for the next 90 days. Applicable to FORECAST timePeriodType.
 	// Minimum: 0
 	Next90DayTotalSubscriptionsRevenue *float64 `json:"next90DayTotalSubscriptionsRevenue,omitempty"`
 
-	// The percentage of items that were not shipped out of the total shipped units over a period of time due to being out of stock. Applicable only for the `PERFORMANCE` `timePeriodType`.
+	// The percentage of items that were not shipped out of the total shipped units over a period of time due to being out of stock. Applicable to PERFORMANCE timePeriodType.
 	// Maximum: 100
 	// Minimum: 0
 	NotDeliveredDueToOOS *float64 `json:"notDeliveredDueToOOS,omitempty"`
 
-	// The percentage of total program revenue out of total product revenue. Applicable only for the `PERFORMANCE` `timePeriodType`.
+	// The percentage of total program revenue out of total product revenue. Applicable to PERFORMANCE timePeriodType.
 	// Maximum: 100
 	// Minimum: 0
 	RevenuePenetration *float64 `json:"revenuePenetration,omitempty"`
 
-	// The number of units shipped to the subscribers over a period of time. Applicable only for the `PERFORMANCE` `timePeriodType`.
+	// The percentage of new subscriptions acquired through coupons. Applicable to PERFORMANCE timePeriodType.
+	// Maximum: 100
+	// Minimum: 0
+	ShareOfCouponSubscriptions *float64 `json:"shareOfCouponSubscriptions,omitempty"`
+
+	// The number of units shipped to the subscribers over a period of time. Applicable to PERFORMANCE timePeriodType.
 	// Minimum: 0
 	ShippedSubscriptionUnits *int64 `json:"shippedSubscriptionUnits,omitempty"`
 
 	// A time interval used to compute metrics.
 	TimeInterval *TimeInterval `json:"timeInterval,omitempty"`
 
-	// The revenue generated from subscriptions over a period of time. Applicable only for the `PERFORMANCE` `timePeriodType`.
+	// The revenue generated from subscriptions over a period of time. Applicable to PERFORMANCE timePeriodType.
 	// Minimum: 0
 	TotalSubscriptionsRevenue *float64 `json:"totalSubscriptionsRevenue,omitempty"`
 }
@@ -129,6 +134,10 @@ func (m *ListOfferMetricsResponseOffer) Validate(formats strfmt.Registry) error 
 	}
 
 	if err := m.validateRevenuePenetration(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateShareOfCouponSubscriptions(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -288,6 +297,22 @@ func (m *ListOfferMetricsResponseOffer) validateRevenuePenetration(formats strfm
 	}
 
 	if err := validate.Maximum("revenuePenetration", "body", *m.RevenuePenetration, 100, false); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *ListOfferMetricsResponseOffer) validateShareOfCouponSubscriptions(formats strfmt.Registry) error {
+	if swag.IsZero(m.ShareOfCouponSubscriptions) { // not required
+		return nil
+	}
+
+	if err := validate.Minimum("shareOfCouponSubscriptions", "body", *m.ShareOfCouponSubscriptions, 0, false); err != nil {
+		return err
+	}
+
+	if err := validate.Maximum("shareOfCouponSubscriptions", "body", *m.ShareOfCouponSubscriptions, 100, false); err != nil {
 		return err
 	}
 

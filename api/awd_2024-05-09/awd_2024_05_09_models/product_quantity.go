@@ -21,7 +21,17 @@ import (
 type ProductQuantity struct {
 
 	// Attributes for this instance of the product. For example, already-prepped, or other attributes that distinguish the product beyond the SKU.
+	// Example: {"name":"TestAttribute","value":"TestAttributeValue"}
 	Attributes []*ProductAttribute `json:"attributes"`
+
+	// The expiration date for the SKU. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format.
+	// Format: date-time
+	Expiration strfmt.DateTime `json:"expiration,omitempty"`
+
+	// Preparation details of a product which contains the prep category, prep owner and the label owner.
+	// If not passed while creating an inbound order, NO_PREP will be used on the product by-default.
+	// Prep instructions will be generated based on the category passed
+	PrepDetails *PrepDetails `json:"prepDetails,omitempty"`
 
 	// Product quantity.
 	// Required: true
@@ -37,6 +47,14 @@ func (m *ProductQuantity) Validate(formats strfmt.Registry) error {
 	var res []error
 
 	if err := m.validateAttributes(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateExpiration(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validatePrepDetails(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -80,6 +98,37 @@ func (m *ProductQuantity) validateAttributes(formats strfmt.Registry) error {
 	return nil
 }
 
+func (m *ProductQuantity) validateExpiration(formats strfmt.Registry) error {
+	if swag.IsZero(m.Expiration) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("expiration", "body", "date-time", m.Expiration.String(), formats); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *ProductQuantity) validatePrepDetails(formats strfmt.Registry) error {
+	if swag.IsZero(m.PrepDetails) { // not required
+		return nil
+	}
+
+	if m.PrepDetails != nil {
+		if err := m.PrepDetails.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("prepDetails")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("prepDetails")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
 func (m *ProductQuantity) validateQuantity(formats strfmt.Registry) error {
 
 	if err := validate.Required("quantity", "body", m.Quantity); err != nil {
@@ -106,6 +155,10 @@ func (m *ProductQuantity) ContextValidate(ctx context.Context, formats strfmt.Re
 		res = append(res, err)
 	}
 
+	if err := m.contextValidatePrepDetails(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
 	if len(res) > 0 {
 		return errors.CompositeValidationError(res...)
 	}
@@ -127,6 +180,22 @@ func (m *ProductQuantity) contextValidateAttributes(ctx context.Context, formats
 			}
 		}
 
+	}
+
+	return nil
+}
+
+func (m *ProductQuantity) contextValidatePrepDetails(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.PrepDetails != nil {
+		if err := m.PrepDetails.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("prepDetails")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("prepDetails")
+			}
+			return err
+		}
 	}
 
 	return nil
