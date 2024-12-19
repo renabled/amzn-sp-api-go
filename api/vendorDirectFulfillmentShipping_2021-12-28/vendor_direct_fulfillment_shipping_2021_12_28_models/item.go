@@ -19,18 +19,18 @@ import (
 // swagger:model Item
 type Item struct {
 
-	// Buyer's Standard Identification Number (ASIN) of an item. Either buyerProductIdentifier or vendorProductIdentifier is required.
+	// The buyer's Amazon Standard Identification Number (ASIN) of an item. Either `buyerProductIdentifier` or `vendorProductIdentifier` is required.
 	BuyerProductIdentifier string `json:"buyerProductIdentifier,omitempty"`
 
-	// Item Sequence Number for the item. This must be the same value as sent in order for a given item.
+	// The sequence number of the item. The number must be the same as the order number of the item.
 	// Required: true
 	ItemSequenceNumber *int64 `json:"itemSequenceNumber"`
 
-	// Total item quantity shipped in this shipment.
+	// The total quantity of items that are in this shipment.
 	// Required: true
 	ShippedQuantity *ItemQuantity `json:"shippedQuantity"`
 
-	// The vendor selected product identification of the item. Should be the same as was sent in the purchase order, like SKU Number.
+	// An item's product identifier, which the vendor selects. This identifier should be the same as the identifier, such as a SKU, in the purchase order.
 	VendorProductIdentifier string `json:"vendorProductIdentifier,omitempty"`
 }
 

@@ -70,7 +70,7 @@ type GetMessagingActionsForOrderParams struct {
 
 	/* MarketplaceIds.
 
-	   A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified.
+	   A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace.
 	*/
 	MarketplaceIds []string
 

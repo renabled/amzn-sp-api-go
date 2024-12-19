@@ -18,7 +18,7 @@ import (
 // swagger:model GetMarketplaceParticipationsResponse
 type GetMarketplaceParticipationsResponse struct {
 
-	// The errors encountered by the `getMarketplaceParticipations` operation.
+	// A list of errors that occurred with the `getMarketplaceParticipations` operation.
 	Errors ErrorList `json:"errors,omitempty"`
 
 	// The payload for the `getMarketplaceParticipations` operation.

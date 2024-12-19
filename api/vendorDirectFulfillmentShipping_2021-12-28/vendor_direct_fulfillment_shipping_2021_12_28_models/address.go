@@ -32,7 +32,7 @@ type Address struct {
 	// The city where the person, business or institution is located.
 	City string `json:"city,omitempty"`
 
-	// The two digit country code in ISO 3166-1 alpha-2 format.
+	// The two-letter country code in [ISO 3166-1 alpha-2](https://www.iban.com/country-codes) format.
 	// Required: true
 	CountryCode *string `json:"countryCode"`
 

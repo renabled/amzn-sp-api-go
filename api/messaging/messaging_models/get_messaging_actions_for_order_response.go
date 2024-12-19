@@ -15,7 +15,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// GetMessagingActionsForOrderResponse The response schema for the getMessagingActionsForOrder operation.
+// GetMessagingActionsForOrderResponse The response schema for the `getMessagingActionsForOrder` operation.
 //
 // swagger:model GetMessagingActionsForOrderResponse
 type GetMessagingActionsForOrderResponse struct {
@@ -193,7 +193,7 @@ func (m *GetMessagingActionsForOrderResponse) UnmarshalBinary(b []byte) error {
 	return nil
 }
 
-// GetMessagingActionsForOrderResponseEmbedded get messaging actions for order response embedded
+// GetMessagingActionsForOrderResponseEmbedded The messaging actions response that is associated with the specified `amazonOrderId`.
 //
 // swagger:model GetMessagingActionsForOrderResponseEmbedded
 type GetMessagingActionsForOrderResponseEmbedded struct {
@@ -296,7 +296,7 @@ func (m *GetMessagingActionsForOrderResponseEmbedded) UnmarshalBinary(b []byte) 
 	return nil
 }
 
-// GetMessagingActionsForOrderResponseLinks get messaging actions for order response links
+// GetMessagingActionsForOrderResponseLinks The links response that is associated with the specified `amazonOrderId`.
 //
 // swagger:model GetMessagingActionsForOrderResponseLinks
 type GetMessagingActionsForOrderResponseLinks struct {

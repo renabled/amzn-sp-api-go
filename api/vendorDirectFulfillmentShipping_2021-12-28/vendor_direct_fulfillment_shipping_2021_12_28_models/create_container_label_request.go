@@ -14,28 +14,28 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// CreateContainerLabelRequest The request body schema for the createContainerLabel operation.
+// CreateContainerLabelRequest The request body schema for the `createContainerLabel` operation.
 //
 // swagger:model CreateContainerLabelRequest
 type CreateContainerLabelRequest struct {
 
-	// Carrier for which container (pallet) label requested.
+	// The container (pallet) label's carrier.
 	// Required: true
 	CarrierID *CarrierID `json:"carrierId"`
 
-	// Array of Package object in order to associate shipment packages with container
+	// An array of package objects that associates shipment packages with a container.
 	// Required: true
 	Packages Packages `json:"packages"`
 
-	// ID of the selling party or vendor.
+	// The ID of the selling party or vendor.
 	// Required: true
 	SellingParty *PartyIdentification `json:"sellingParty"`
 
-	// Warehouse code of vendor.
+	// The warehouse code of the vendor.
 	// Required: true
 	ShipFromParty *PartyIdentification `json:"shipFromParty"`
 
-	//  Unique identifier for the container request incoming from vendor side.
+	// The vendor's unique identifier for the container.
 	// Required: true
 	VendorContainerID *VendorContainerID `json:"vendorContainerId"`
 }

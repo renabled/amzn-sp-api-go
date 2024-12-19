@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// GetSchemaResponse get schema response
+// GetSchemaResponse The `GET` request schema response.
 //
 // swagger:model GetSchemaResponse
 type GetSchemaResponse struct {
@@ -149,7 +149,7 @@ func (m *GetSchemaResponse) UnmarshalBinary(b []byte) error {
 	return nil
 }
 
-// GetSchemaResponseLinks get schema response links
+// GetSchemaResponseLinks The links response that is associated with the object.
 //
 // swagger:model GetSchemaResponseLinks
 type GetSchemaResponseLinks struct {

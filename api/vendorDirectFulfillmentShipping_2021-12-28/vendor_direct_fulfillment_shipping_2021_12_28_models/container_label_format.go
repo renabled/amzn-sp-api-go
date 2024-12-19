@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// ContainerLabelFormat Format of the container label.
+// ContainerLabelFormat The format of the container label.
 //
 // swagger:model ContainerLabelFormat
 type ContainerLabelFormat string

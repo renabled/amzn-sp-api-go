@@ -14,12 +14,12 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// CreateContainerLabelResponse The response schema for the createContainerLabel operation.
+// CreateContainerLabelResponse The response schema for the `createContainerLabel` operation.
 //
 // swagger:model CreateContainerLabelResponse
 type CreateContainerLabelResponse struct {
 
-	// Label data for container label.
+	// The label data for the container label.
 	// Required: true
 	ContainerLabel *ContainerLabel `json:"containerLabel"`
 }

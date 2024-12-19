@@ -11,7 +11,7 @@ import (
 	"github.com/go-openapi/strfmt"
 )
 
-// VendorContainerID unique identifier for the container provided by the vendor.
+// VendorContainerID The unique, vendor-provided identifier for the container.
 //
 // swagger:model VendorContainerId
 type VendorContainerID string

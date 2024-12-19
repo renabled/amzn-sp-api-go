@@ -15,15 +15,15 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// CreateDigitalAccessKeyRequest The request schema for the createDigitalAccessKey operation.
+// CreateDigitalAccessKeyRequest The request schema for the `createDigitalAccessKey` operation.
 //
 // swagger:model CreateDigitalAccessKeyRequest
 type CreateDigitalAccessKeyRequest struct {
 
-	// Attachments to include in the message to the buyer.
+	// Attachments that you want to include in the message to the buyer.
 	Attachments []*Attachment `json:"attachments"`
 
-	// The text to be sent to the buyer. Only links related to the digital access key are allowed. Do not include HTML or email addresses. The text must be written in the buyer's language of preference, which can be retrieved from the GetAttributes operation.
+	// The text that is sent to the buyer. Only links that are related to the digital access key are allowed. Do not include HTML or email addresses. The text must be written in the buyer's preferred language, which you can retrieve from the `GetAttributes` operation.
 	// Max Length: 400
 	// Min Length: 1
 	Text string `json:"text,omitempty"`

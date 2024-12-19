@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// InvoiceRequest The request schema for the sendInvoice operation.
+// InvoiceRequest The request schema for the `sendInvoice` operation.
 //
 // swagger:model InvoiceRequest
 type InvoiceRequest struct {

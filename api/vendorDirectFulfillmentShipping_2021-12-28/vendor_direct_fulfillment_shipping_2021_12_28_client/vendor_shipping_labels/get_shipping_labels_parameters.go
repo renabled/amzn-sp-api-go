@@ -64,7 +64,7 @@ type GetShippingLabelsParams struct {
 
 	/* CreatedAfter.
 
-	   Shipping labels that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format.
+	   Shipping labels that became available after this date and time will be included in the result. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format.
 
 	   Format: date-time
 	*/
@@ -72,7 +72,7 @@ type GetShippingLabelsParams struct {
 
 	/* CreatedBefore.
 
-	   Shipping labels that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format.
+	   Shipping labels that became available before this date and time will be included in the result. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format.
 
 	   Format: date-time
 	*/
@@ -92,13 +92,13 @@ type GetShippingLabelsParams struct {
 
 	/* ShipFromPartyID.
 
-	   The vendor warehouseId for order fulfillment. If not specified, the result will contain orders for all warehouses.
+	   The vendor `warehouseId` for order fulfillment. If not specified, the result contains orders for all warehouses.
 	*/
 	ShipFromPartyID *string
 
 	/* SortOrder.
 
-	   Sort ASC or DESC by order creation date.
+	   The sort order creation date. You can choose between ascending (`ASC`) or descending (`DESC`) sort order.
 
 	   Default: "ASC"
 	*/

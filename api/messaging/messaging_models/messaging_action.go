@@ -19,7 +19,7 @@ import (
 // swagger:model MessagingAction
 type MessagingAction struct {
 
-	// name
+	// The name of the template.
 	// Required: true
 	Name *string `json:"name"`
 }

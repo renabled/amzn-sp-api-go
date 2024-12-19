@@ -66,16 +66,19 @@ type CreateLegalDisclosureParams struct {
 
 	/* AmazonOrderID.
 
-	   An Amazon order identifier. This specifies the order for which a message is sent.
+	   An Amazon order identifier. This identifies the order for which a message is sent.
 	*/
 	AmazonOrderID string
 
-	// Body.
+	/* Body.
+
+	   This contains the message body for a message.
+	*/
 	Body *messaging_models.CreateLegalDisclosureRequest
 
 	/* MarketplaceIds.
 
-	   A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified.
+	   A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace.
 	*/
 	MarketplaceIds []string
 

@@ -13,7 +13,7 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// CreateDigitalAccessKeyResponse The response schema for the createDigitalAccessKey operation.
+// CreateDigitalAccessKeyResponse The response schema for the `createDigitalAccessKey` operation.
 //
 // swagger:model CreateDigitalAccessKeyResponse
 type CreateDigitalAccessKeyResponse struct {

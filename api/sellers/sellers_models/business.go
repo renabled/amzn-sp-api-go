@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// Business Information about the seller's business. Certain fields may be omitted depending on the seller's `businessType`.
+// Business Information about the Seller's business. These fields may be omitted if the Seller is registered as an individual.
 //
 // swagger:model Business
 type Business struct {

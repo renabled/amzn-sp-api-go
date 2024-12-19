@@ -22,8 +22,7 @@ import (
 type ItemSummaryByMarketplace struct {
 
 	// Amazon Standard Identification Number (ASIN) of the listings item.
-	// Required: true
-	Asin *string `json:"asin"`
+	Asin string `json:"asin,omitempty"`
 
 	// Identifies the condition of the listings item.
 	// Enum: [new_new new_open_box new_oem refurbished_refurbished used_like_new used_very_good used_good used_acceptable collectible_like_new collectible_very_good collectible_good collectible_acceptable club_club]
@@ -38,8 +37,7 @@ type ItemSummaryByMarketplace struct {
 	FnSku string `json:"fnSku,omitempty"`
 
 	// The name or title associated with an Amazon catalog item.
-	// Required: true
-	ItemName *string `json:"itemName"`
+	ItemName string `json:"itemName,omitempty"`
 
 	// The date the listings item was last updated in ISO 8601 format.
 	// Required: true
@@ -66,19 +64,11 @@ type ItemSummaryByMarketplace struct {
 func (m *ItemSummaryByMarketplace) Validate(formats strfmt.Registry) error {
 	var res []error
 
-	if err := m.validateAsin(formats); err != nil {
-		res = append(res, err)
-	}
-
 	if err := m.validateConditionType(formats); err != nil {
 		res = append(res, err)
 	}
 
 	if err := m.validateCreatedDate(formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.validateItemName(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -105,15 +95,6 @@ func (m *ItemSummaryByMarketplace) Validate(formats strfmt.Registry) error {
 	if len(res) > 0 {
 		return errors.CompositeValidationError(res...)
 	}
-	return nil
-}
-
-func (m *ItemSummaryByMarketplace) validateAsin(formats strfmt.Registry) error {
-
-	if err := validate.Required("asin", "body", m.Asin); err != nil {
-		return err
-	}
-
 	return nil
 }
 
@@ -199,15 +180,6 @@ func (m *ItemSummaryByMarketplace) validateCreatedDate(formats strfmt.Registry) 
 	}
 
 	if err := validate.FormatOf("createdDate", "body", "date-time", m.CreatedDate.String(), formats); err != nil {
-		return err
-	}
-
-	return nil
-}
-
-func (m *ItemSummaryByMarketplace) validateItemName(formats strfmt.Registry) error {
-
-	if err := validate.Required("itemName", "body", m.ItemName); err != nil {
 		return err
 	}
 

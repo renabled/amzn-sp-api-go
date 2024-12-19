@@ -65,13 +65,13 @@ type CreateShippingLabelsParams struct {
 
 	/* Body.
 
-	   The request payload containing parameters for creating shipping labels.
+	   The request payload that contains the parameters for creating shipping labels.
 	*/
 	Body *vendor_direct_fulfillment_shipping_2021_12_28_models.CreateShippingLabelsRequest
 
 	/* PurchaseOrderNumber.
 
-	   The purchase order number for which you want to return the shipping labels. It should be the same purchaseOrderNumber as received in the order.
+	   The purchase order number for which you want to return the shipping labels. It should be the same number as the `purchaseOrderNumber` in the order.
 	*/
 	PurchaseOrderNumber string
 

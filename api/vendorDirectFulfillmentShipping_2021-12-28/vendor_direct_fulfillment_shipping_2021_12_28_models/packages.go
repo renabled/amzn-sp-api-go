@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// Packages Array of package object in order to associate shipments packages with given container.
+// Packages An array of package objects in a container.
 //
 // swagger:model Packages
 type Packages []*Package

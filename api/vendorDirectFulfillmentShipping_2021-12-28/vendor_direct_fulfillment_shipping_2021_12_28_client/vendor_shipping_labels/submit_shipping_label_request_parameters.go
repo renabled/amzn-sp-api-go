@@ -65,7 +65,7 @@ type SubmitShippingLabelRequestParams struct {
 
 	/* Body.
 
-	   Request body containing the shipping labels data.
+	   The request body that contains the shipping labels data.
 	*/
 	Body *vendor_direct_fulfillment_shipping_2021_12_28_models.SubmitShippingLabelsRequest
 

@@ -98,7 +98,7 @@ type SendInvoiceCreated struct {
 	 */
 	XAmznRateLimitLimit string
 
-	/* Unique request reference id.
+	/* Unique request reference identifier.
 	 */
 	XAmznRequestID string
 
@@ -184,7 +184,7 @@ type SendInvoiceBadRequest struct {
 	 */
 	XAmznRateLimitLimit string
 
-	/* Unique request reference id.
+	/* Unique request reference identifier.
 	 */
 	XAmznRequestID string
 
@@ -266,7 +266,7 @@ SendInvoiceForbidden describes a response with status code 403, with default hea
 */
 type SendInvoiceForbidden struct {
 
-	/* Unique request reference id.
+	/* Unique request reference identifier.
 	 */
 	XAmznRequestID string
 
@@ -345,7 +345,7 @@ type SendInvoiceNotFound struct {
 	 */
 	XAmznRateLimitLimit string
 
-	/* Unique request reference id.
+	/* Unique request reference identifier.
 	 */
 	XAmznRequestID string
 
@@ -427,12 +427,7 @@ The request size exceeded the maximum accepted size.
 */
 type SendInvoiceRequestEntityTooLarge struct {
 
-	/* Your rate limit (requests per second) for this operation.
-	_Note:_ For this status code, the rate limit header is deprecated and no longer returned.
-	*/
-	XAmznRateLimitLimit string
-
-	/* Unique request reference id.
+	/* Unique request reference identifier.
 	 */
 	XAmznRequestID string
 
@@ -478,13 +473,6 @@ func (o *SendInvoiceRequestEntityTooLarge) GetPayload() *messaging_models.Invoic
 
 func (o *SendInvoiceRequestEntityTooLarge) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	// hydrates response header x-amzn-RateLimit-Limit
-	hdrXAmznRateLimitLimit := response.GetHeader("x-amzn-RateLimit-Limit")
-
-	if hdrXAmznRateLimitLimit != "" {
-		o.XAmznRateLimitLimit = hdrXAmznRateLimitLimit
-	}
-
 	// hydrates response header x-amzn-RequestId
 	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")
 
@@ -514,12 +502,7 @@ The entity of the request is in a format not supported by the requested resource
 */
 type SendInvoiceUnsupportedMediaType struct {
 
-	/* Your rate limit (requests per second) for this operation.
-	_Note:_ For this status code, the rate limit header is deprecated and no longer returned.
-	*/
-	XAmznRateLimitLimit string
-
-	/* Unique request reference id.
+	/* Unique request reference identifier.
 	 */
 	XAmznRequestID string
 
@@ -565,13 +548,6 @@ func (o *SendInvoiceUnsupportedMediaType) GetPayload() *messaging_models.Invoice
 
 func (o *SendInvoiceUnsupportedMediaType) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	// hydrates response header x-amzn-RateLimit-Limit
-	hdrXAmznRateLimitLimit := response.GetHeader("x-amzn-RateLimit-Limit")
-
-	if hdrXAmznRateLimitLimit != "" {
-		o.XAmznRateLimitLimit = hdrXAmznRateLimitLimit
-	}
-
 	// hydrates response header x-amzn-RequestId
 	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")
 
@@ -601,12 +577,7 @@ The frequency of requests was greater than allowed.
 */
 type SendInvoiceTooManyRequests struct {
 
-	/* Your rate limit (requests per second) for this operation.
-	_Note:_ For this status code, the rate limit header is deprecated and no longer returned.
-	*/
-	XAmznRateLimitLimit string
-
-	/* Unique request reference id.
+	/* Unique request reference identifier.
 	 */
 	XAmznRequestID string
 
@@ -652,13 +623,6 @@ func (o *SendInvoiceTooManyRequests) GetPayload() *messaging_models.InvoiceRespo
 
 func (o *SendInvoiceTooManyRequests) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	// hydrates response header x-amzn-RateLimit-Limit
-	hdrXAmznRateLimitLimit := response.GetHeader("x-amzn-RateLimit-Limit")
-
-	if hdrXAmznRateLimitLimit != "" {
-		o.XAmznRateLimitLimit = hdrXAmznRateLimitLimit
-	}
-
 	// hydrates response header x-amzn-RequestId
 	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")
 
@@ -688,12 +652,7 @@ Encountered an unexpected condition which prevented the server from fulfilling t
 */
 type SendInvoiceInternalServerError struct {
 
-	/* Your rate limit (requests per second) for this operation.
-	_Note:_ For this status code, the rate limit header is deprecated and no longer returned.
-	*/
-	XAmznRateLimitLimit string
-
-	/* Unique request reference id.
+	/* Unique request reference identifier.
 	 */
 	XAmznRequestID string
 
@@ -739,13 +698,6 @@ func (o *SendInvoiceInternalServerError) GetPayload() *messaging_models.InvoiceR
 
 func (o *SendInvoiceInternalServerError) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	// hydrates response header x-amzn-RateLimit-Limit
-	hdrXAmznRateLimitLimit := response.GetHeader("x-amzn-RateLimit-Limit")
-
-	if hdrXAmznRateLimitLimit != "" {
-		o.XAmznRateLimitLimit = hdrXAmznRateLimitLimit
-	}
-
 	// hydrates response header x-amzn-RequestId
 	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")
 
@@ -775,12 +727,7 @@ Temporary overloading or maintenance of the server.
 */
 type SendInvoiceServiceUnavailable struct {
 
-	/* Your rate limit (requests per second) for this operation.
-	_Note:_ For this status code, the rate limit header is deprecated and no longer returned.
-	*/
-	XAmznRateLimitLimit string
-
-	/* Unique request reference id.
+	/* Unique request reference identifier.
 	 */
 	XAmznRequestID string
 
@@ -825,13 +772,6 @@ func (o *SendInvoiceServiceUnavailable) GetPayload() *messaging_models.InvoiceRe
 }
 
 func (o *SendInvoiceServiceUnavailable) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
-
-	// hydrates response header x-amzn-RateLimit-Limit
-	hdrXAmznRateLimitLimit := response.GetHeader("x-amzn-RateLimit-Limit")
-
-	if hdrXAmznRateLimitLimit != "" {
-		o.XAmznRateLimitLimit = hdrXAmznRateLimitLimit
-	}
 
 	// hydrates response header x-amzn-RequestId
 	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")

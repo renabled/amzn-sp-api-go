@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// CarrierID Unique carrier code for the carrier for whom container labels are requested.
+// CarrierID The unique carrier code for the carrier for whom container labels are requested.
 //
 // swagger:model CarrierId
 type CarrierID string

@@ -15,7 +15,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// TotalWeight Amount of units shipped for items sold by weight at a shipment level.
+// TotalWeight The total weight of units that are sold by weight in a shipment.
 //
 // swagger:model TotalWeight
 type TotalWeight struct {
@@ -24,7 +24,7 @@ type TotalWeight struct {
 	// Required: true
 	Amount *Decimal `json:"amount"`
 
-	// This field represents weight unit of measure of items that are ordered by cases and supporting priced by weight.
+	// The unit of measure for the weight of items that are ordered by cases and support pricing by weight.
 	// Required: true
 	// Enum: [POUNDS OUNCES GRAMS KILOGRAMS]
 	UnitOfMeasure *string `json:"unitOfMeasure"`

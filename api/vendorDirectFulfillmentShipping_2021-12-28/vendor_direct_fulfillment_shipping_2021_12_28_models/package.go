@@ -14,12 +14,12 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// Package Object describing Package that is going to be associated with given container.
+// Package The package that is associated with the container.
 //
 // swagger:model Package
 type Package struct {
 
-	// tracking identifier present on label of shipment package. Tracking number can be fetched from fetched from shippingLabels API response. Alternatively bar code on the shipping label can be scanned by the scanner to get the tracking number.
+	// The tracking number on the label of shipment package, that you can fetch from the `shippingLabels` response. You can also scan the bar code on the shipping label to get the tracking number.
 	// Required: true
 	PackageTrackingNumber *string `json:"packageTrackingNumber"`
 }

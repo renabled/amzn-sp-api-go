@@ -10,7 +10,7 @@ import (
 	httptransport "github.com/go-openapi/runtime/client"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/renabled/amzn-sp-api-go/api/listingsItems_2021-08-01/listings_items_2021_08_01_client/listings_items"
+	"github.com/renabled/amzn-sp-api-go/api/listingsItems_2021-08-01/listings_items_2021_08_01_client/listings"
 )
 
 // Default listings items20210801 HTTP client.
@@ -55,7 +55,7 @@ func New(transport runtime.ClientTransport, formats strfmt.Registry) *ListingsIt
 
 	cli := new(ListingsItems20210801)
 	cli.Transport = transport
-	cli.ListingsItems = listings_items.New(transport, formats)
+	cli.Listings = listings.New(transport, formats)
 	return cli
 }
 
@@ -100,7 +100,7 @@ func (cfg *TransportConfig) WithSchemes(schemes []string) *TransportConfig {
 
 // ListingsItems20210801 is a client for listings items20210801
 type ListingsItems20210801 struct {
-	ListingsItems listings_items.ClientService
+	Listings listings.ClientService
 
 	Transport runtime.ClientTransport
 }
@@ -108,5 +108,5 @@ type ListingsItems20210801 struct {
 // SetTransport changes the transport on the client and all its subresources
 func (c *ListingsItems20210801) SetTransport(transport runtime.ClientTransport) {
 	c.Transport = transport
-	c.ListingsItems.SetTransport(transport)
+	c.Listings.SetTransport(transport)
 }

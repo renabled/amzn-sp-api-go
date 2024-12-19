@@ -64,7 +64,7 @@ type GetPackingSlipsParams struct {
 
 	/* CreatedAfter.
 
-	   Packing slips that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format.
+	   Packing slips that become available after this date and time will be included in the result. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format.
 
 	   Format: date-time
 	*/
@@ -72,7 +72,7 @@ type GetPackingSlipsParams struct {
 
 	/* CreatedBefore.
 
-	   Packing slips that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format.
+	   Packing slips that became available before this date and time will be included in the result. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format.
 
 	   Format: date-time
 	*/
@@ -80,7 +80,7 @@ type GetPackingSlipsParams struct {
 
 	/* Limit.
 
-	   The limit to the number of records returned
+	   The maximum number of records to return.
 	*/
 	Limit *int64
 
@@ -92,13 +92,13 @@ type GetPackingSlipsParams struct {
 
 	/* ShipFromPartyID.
 
-	   The vendor warehouseId for order fulfillment. If not specified the result will contain orders for all warehouses.
+	   The vendor `warehouseId` for order fulfillment. If not specified, the result contains orders for all warehouses.
 	*/
 	ShipFromPartyID *string
 
 	/* SortOrder.
 
-	   Sort ASC or DESC by packing slip creation date.
+	   The packing slip creation dates, which are sorted by ascending or descending order.
 
 	   Default: "ASC"
 	*/

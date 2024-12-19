@@ -8,7 +8,6 @@ package sellers_models
 import (
 	"context"
 	"encoding/json"
-	"strconv"
 
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/strfmt"
@@ -29,12 +28,17 @@ type Account struct {
 	// Enum: [CHARITY CRAFTSMAN NATURAL_PERSON_COMPANY PUBLIC_LISTED PRIVATE_LIMITED SOLE_PROPRIETORSHIP STATE_OWNED INDIVIDUAL]
 	BusinessType *string `json:"businessType"`
 
-	// A list of details of the marketplaces where the seller account is active.
+	// marketplace participation list
 	// Required: true
-	MarketplaceLevelAttributes []*MarketplaceLevelAttributes `json:"marketplaceLevelAttributes"`
+	MarketplaceParticipationList MarketplaceParticipationList `json:"marketplaceParticipationList"`
 
 	// primary contact
 	PrimaryContact *PrimaryContact `json:"primaryContact,omitempty"`
+
+	// The selling plan details.
+	// Required: true
+	// Enum: [PROFESSIONAL INDIVIDUAL]
+	SellingPlan *string `json:"sellingPlan"`
 }
 
 // Validate validates this account
@@ -49,11 +53,15 @@ func (m *Account) Validate(formats strfmt.Registry) error {
 		res = append(res, err)
 	}
 
-	if err := m.validateMarketplaceLevelAttributes(formats); err != nil {
+	if err := m.validateMarketplaceParticipationList(formats); err != nil {
 		res = append(res, err)
 	}
 
 	if err := m.validatePrimaryContact(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateSellingPlan(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -143,28 +151,19 @@ func (m *Account) validateBusinessType(formats strfmt.Registry) error {
 	return nil
 }
 
-func (m *Account) validateMarketplaceLevelAttributes(formats strfmt.Registry) error {
+func (m *Account) validateMarketplaceParticipationList(formats strfmt.Registry) error {
 
-	if err := validate.Required("marketplaceLevelAttributes", "body", m.MarketplaceLevelAttributes); err != nil {
+	if err := validate.Required("marketplaceParticipationList", "body", m.MarketplaceParticipationList); err != nil {
 		return err
 	}
 
-	for i := 0; i < len(m.MarketplaceLevelAttributes); i++ {
-		if swag.IsZero(m.MarketplaceLevelAttributes[i]) { // not required
-			continue
+	if err := m.MarketplaceParticipationList.Validate(formats); err != nil {
+		if ve, ok := err.(*errors.Validation); ok {
+			return ve.ValidateName("marketplaceParticipationList")
+		} else if ce, ok := err.(*errors.CompositeError); ok {
+			return ce.ValidateName("marketplaceParticipationList")
 		}
-
-		if m.MarketplaceLevelAttributes[i] != nil {
-			if err := m.MarketplaceLevelAttributes[i].Validate(formats); err != nil {
-				if ve, ok := err.(*errors.Validation); ok {
-					return ve.ValidateName("marketplaceLevelAttributes" + "." + strconv.Itoa(i))
-				} else if ce, ok := err.(*errors.CompositeError); ok {
-					return ce.ValidateName("marketplaceLevelAttributes" + "." + strconv.Itoa(i))
-				}
-				return err
-			}
-		}
-
+		return err
 	}
 
 	return nil
@@ -189,6 +188,49 @@ func (m *Account) validatePrimaryContact(formats strfmt.Registry) error {
 	return nil
 }
 
+var accountTypeSellingPlanPropEnum []interface{}
+
+func init() {
+	var res []string
+	if err := json.Unmarshal([]byte(`["PROFESSIONAL","INDIVIDUAL"]`), &res); err != nil {
+		panic(err)
+	}
+	for _, v := range res {
+		accountTypeSellingPlanPropEnum = append(accountTypeSellingPlanPropEnum, v)
+	}
+}
+
+const (
+
+	// AccountSellingPlanPROFESSIONAL captures enum value "PROFESSIONAL"
+	AccountSellingPlanPROFESSIONAL string = "PROFESSIONAL"
+
+	// AccountSellingPlanINDIVIDUAL captures enum value "INDIVIDUAL"
+	AccountSellingPlanINDIVIDUAL string = "INDIVIDUAL"
+)
+
+// prop value enum
+func (m *Account) validateSellingPlanEnum(path, location string, value string) error {
+	if err := validate.EnumCase(path, location, value, accountTypeSellingPlanPropEnum, true); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (m *Account) validateSellingPlan(formats strfmt.Registry) error {
+
+	if err := validate.Required("sellingPlan", "body", m.SellingPlan); err != nil {
+		return err
+	}
+
+	// value enum
+	if err := m.validateSellingPlanEnum("sellingPlan", "body", *m.SellingPlan); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 // ContextValidate validate this account based on the context it is used
 func (m *Account) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
 	var res []error
@@ -197,7 +239,7 @@ func (m *Account) ContextValidate(ctx context.Context, formats strfmt.Registry) 
 		res = append(res, err)
 	}
 
-	if err := m.contextValidateMarketplaceLevelAttributes(ctx, formats); err != nil {
+	if err := m.contextValidateMarketplaceParticipationList(ctx, formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -227,21 +269,15 @@ func (m *Account) contextValidateBusiness(ctx context.Context, formats strfmt.Re
 	return nil
 }
 
-func (m *Account) contextValidateMarketplaceLevelAttributes(ctx context.Context, formats strfmt.Registry) error {
+func (m *Account) contextValidateMarketplaceParticipationList(ctx context.Context, formats strfmt.Registry) error {
 
-	for i := 0; i < len(m.MarketplaceLevelAttributes); i++ {
-
-		if m.MarketplaceLevelAttributes[i] != nil {
-			if err := m.MarketplaceLevelAttributes[i].ContextValidate(ctx, formats); err != nil {
-				if ve, ok := err.(*errors.Validation); ok {
-					return ve.ValidateName("marketplaceLevelAttributes" + "." + strconv.Itoa(i))
-				} else if ce, ok := err.(*errors.CompositeError); ok {
-					return ce.ValidateName("marketplaceLevelAttributes" + "." + strconv.Itoa(i))
-				}
-				return err
-			}
+	if err := m.MarketplaceParticipationList.ContextValidate(ctx, formats); err != nil {
+		if ve, ok := err.(*errors.Validation); ok {
+			return ve.ValidateName("marketplaceParticipationList")
+		} else if ce, ok := err.(*errors.CompositeError); ok {
+			return ce.ValidateName("marketplaceParticipationList")
 		}
-
+		return err
 	}
 
 	return nil

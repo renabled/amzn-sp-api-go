@@ -19,7 +19,7 @@ import (
 // swagger:model CustomerInvoiceList
 type CustomerInvoiceList struct {
 
-	// Represents a customer invoice within the CustomerInvoiceList.
+	// Represents a customer invoice within the `CustomerInvoiceList`.
 	CustomerInvoices []*CustomerInvoice `json:"customerInvoices"`
 
 	// The pagination elements required to retrieve the remaining data.

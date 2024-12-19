@@ -18,7 +18,7 @@ import (
 // swagger:model GetAccountResponse
 type GetAccountResponse struct {
 
-	// The errors encountered by the `getAccount` operation.
+	// A list of errors that occurred with the `getAccount` operation.
 	Errors ErrorList `json:"errors,omitempty"`
 
 	// payload

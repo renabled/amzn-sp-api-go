@@ -15,12 +15,12 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// SubmitShipmentStatusUpdatesRequest The request schema for the submitShipmentStatusUpdates operation.
+// SubmitShipmentStatusUpdatesRequest The request schema for the `submitShipmentStatusUpdates` operation.
 //
 // swagger:model SubmitShipmentStatusUpdatesRequest
 type SubmitShipmentStatusUpdatesRequest struct {
 
-	// Contains a list of one or more ShipmentStatusUpdate objects, each representing an update to the status of a specific shipment.
+	// Contains a list of one or more `ShipmentStatusUpdate` objects. Each `ShipmentStatusUpdate` object represents an update to the status of a specific shipment.
 	// Min Items: 1
 	ShipmentStatusUpdates []*ShipmentStatusUpdate `json:"shipmentStatusUpdates"`
 }

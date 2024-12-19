@@ -23,16 +23,16 @@ type ShippingLabelRequest struct {
 	// A list of the packages in this shipment.
 	Containers []*Container `json:"containers"`
 
-	// Purchase order number of the order for which to create a shipping label.
+	// The purchase order number of the order for which to create a shipping label.
 	// Required: true
 	// Pattern: ^[a-zA-Z0-9]+$
 	PurchaseOrderNumber *string `json:"purchaseOrderNumber"`
 
-	// ID of the selling party or vendor.
+	// The ID of the selling party or vendor.
 	// Required: true
 	SellingParty *PartyIdentification `json:"sellingParty"`
 
-	// Warehouse code of vendor.
+	// The warehouse code of the vendor.
 	// Required: true
 	ShipFromParty *PartyIdentification `json:"shipFromParty"`
 }

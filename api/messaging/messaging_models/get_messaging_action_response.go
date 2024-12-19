@@ -238,7 +238,7 @@ func (m *GetMessagingActionResponse) UnmarshalBinary(b []byte) error {
 	return nil
 }
 
-// GetMessagingActionResponseEmbedded get messaging action response embedded
+// GetMessagingActionResponseEmbedded The embedded response associated with the messaging action.
 //
 // swagger:model GetMessagingActionResponseEmbedded
 type GetMessagingActionResponseEmbedded struct {
@@ -328,7 +328,7 @@ func (m *GetMessagingActionResponseEmbedded) UnmarshalBinary(b []byte) error {
 	return nil
 }
 
-// GetMessagingActionResponseLinks get messaging action response links
+// GetMessagingActionResponseLinks The links response that is associated with the messaging action.
 //
 // swagger:model GetMessagingActionResponseLinks
 type GetMessagingActionResponseLinks struct {

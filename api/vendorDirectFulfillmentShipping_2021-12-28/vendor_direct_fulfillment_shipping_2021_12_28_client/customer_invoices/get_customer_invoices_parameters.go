@@ -64,7 +64,7 @@ type GetCustomerInvoicesParams struct {
 
 	/* CreatedAfter.
 
-	   Orders that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format.
+	   Orders that became available after this date and time will be included in the result. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format.
 
 	   Format: date-time
 	*/
@@ -72,7 +72,7 @@ type GetCustomerInvoicesParams struct {
 
 	/* CreatedBefore.
 
-	   Orders that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format.
+	   Orders that became available before this date and time will be included in the result. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format.
 
 	   Format: date-time
 	*/

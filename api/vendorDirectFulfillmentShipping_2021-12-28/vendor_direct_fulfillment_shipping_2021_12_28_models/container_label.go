@@ -14,19 +14,19 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// ContainerLabel Details of the container label.
+// ContainerLabel The details of the container label.
 //
 // swagger:model ContainerLabel
 type ContainerLabel struct {
 
-	// Container (pallet) tracking identifier from the shipping carrier.
+	// The container (pallet) tracking identifier from the shipping carrier.
 	ContainerTrackingNumber string `json:"containerTrackingNumber,omitempty"`
 
-	// This field will contain the Base64encoded string of the container label content.
+	// The `Base64encoded` string of the container label content.
 	// Required: true
 	Content *string `json:"content"`
 
-	// Format of the container label.
+	// The format of the container label.
 	// Required: true
 	Format *ContainerLabelFormat `json:"format"`
 }

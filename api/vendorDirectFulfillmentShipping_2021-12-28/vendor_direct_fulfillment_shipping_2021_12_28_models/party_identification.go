@@ -15,19 +15,19 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// PartyIdentification Name, address and tax details of a party.
+// PartyIdentification The name, address, and tax details of a party.
 //
 // swagger:model PartyIdentification
 type PartyIdentification struct {
 
-	// Identification of the party by address.
+	// The address of the party.
 	Address *Address `json:"address,omitempty"`
 
-	// Assigned Identification for the party.
+	// The identifier of the party.
 	// Required: true
 	PartyID *string `json:"partyId"`
 
-	// Tax registration details of the entity.
+	// The tax registration details of the party.
 	TaxRegistrationDetails []*TaxRegistrationDetails `json:"taxRegistrationDetails"`
 }
 

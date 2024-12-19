@@ -26,6 +26,10 @@ type MarketplaceParticipation struct {
 	// participation
 	// Required: true
 	Participation *Participation `json:"participation"`
+
+	// The name of the seller's store as displayed in the marketplace.
+	// Required: true
+	StoreName *string `json:"storeName"`
 }
 
 // Validate validates this marketplace participation
@@ -37,6 +41,10 @@ func (m *MarketplaceParticipation) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validateParticipation(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateStoreName(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -81,6 +89,15 @@ func (m *MarketplaceParticipation) validateParticipation(formats strfmt.Registry
 			}
 			return err
 		}
+	}
+
+	return nil
+}
+
+func (m *MarketplaceParticipation) validateStoreName(formats strfmt.Registry) error {
+
+	if err := validate.Required("storeName", "body", m.StoreName); err != nil {
+		return err
 	}
 
 	return nil

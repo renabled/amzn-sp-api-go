@@ -35,6 +35,12 @@ type Item struct {
 	// The vendor procurement information for the listings item.
 	Procurement []*ItemProcurement `json:"procurement"`
 
+	// product types
+	ProductTypes ItemProductTypes `json:"productTypes,omitempty"`
+
+	// relationships
+	Relationships ItemRelationships `json:"relationships,omitempty"`
+
 	// A selling partner provided identifier for an Amazon listing.
 	// Required: true
 	Sku *string `json:"sku"`
@@ -60,6 +66,14 @@ func (m *Item) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validateProcurement(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateProductTypes(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateRelationships(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -163,6 +177,40 @@ func (m *Item) validateProcurement(formats strfmt.Registry) error {
 	return nil
 }
 
+func (m *Item) validateProductTypes(formats strfmt.Registry) error {
+	if swag.IsZero(m.ProductTypes) { // not required
+		return nil
+	}
+
+	if err := m.ProductTypes.Validate(formats); err != nil {
+		if ve, ok := err.(*errors.Validation); ok {
+			return ve.ValidateName("productTypes")
+		} else if ce, ok := err.(*errors.CompositeError); ok {
+			return ce.ValidateName("productTypes")
+		}
+		return err
+	}
+
+	return nil
+}
+
+func (m *Item) validateRelationships(formats strfmt.Registry) error {
+	if swag.IsZero(m.Relationships) { // not required
+		return nil
+	}
+
+	if err := m.Relationships.Validate(formats); err != nil {
+		if ve, ok := err.(*errors.Validation); ok {
+			return ve.ValidateName("relationships")
+		} else if ce, ok := err.(*errors.CompositeError); ok {
+			return ce.ValidateName("relationships")
+		}
+		return err
+	}
+
+	return nil
+}
+
 func (m *Item) validateSku(formats strfmt.Registry) error {
 
 	if err := validate.Required("sku", "body", m.Sku); err != nil {
@@ -206,6 +254,14 @@ func (m *Item) ContextValidate(ctx context.Context, formats strfmt.Registry) err
 	}
 
 	if err := m.contextValidateProcurement(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateProductTypes(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateRelationships(ctx, formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -282,6 +338,34 @@ func (m *Item) contextValidateProcurement(ctx context.Context, formats strfmt.Re
 			}
 		}
 
+	}
+
+	return nil
+}
+
+func (m *Item) contextValidateProductTypes(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := m.ProductTypes.ContextValidate(ctx, formats); err != nil {
+		if ve, ok := err.(*errors.Validation); ok {
+			return ve.ValidateName("productTypes")
+		} else if ce, ok := err.(*errors.CompositeError); ok {
+			return ce.ValidateName("productTypes")
+		}
+		return err
+	}
+
+	return nil
+}
+
+func (m *Item) contextValidateRelationships(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := m.Relationships.ContextValidate(ctx, formats); err != nil {
+		if ve, ok := err.(*errors.Validation); ok {
+			return ve.ValidateName("relationships")
+		} else if ce, ok := err.(*errors.CompositeError); ok {
+			return ce.ValidateName("relationships")
+		}
+		return err
 	}
 
 	return nil
