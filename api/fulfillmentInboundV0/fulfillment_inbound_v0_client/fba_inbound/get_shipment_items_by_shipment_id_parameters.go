@@ -63,9 +63,9 @@ type GetShipmentItemsByShipmentIDParams struct {
 
 	/* MarketplaceID.
 
-	   A marketplace identifier. Specifies the marketplace where the product would be stored.
+	   Deprecated. Do not use.
 	*/
-	MarketplaceID string
+	MarketplaceID *string
 
 	/* ShipmentID.
 
@@ -127,13 +127,13 @@ func (o *GetShipmentItemsByShipmentIDParams) SetHTTPClient(client *http.Client) 
 }
 
 // WithMarketplaceID adds the marketplaceID to the get shipment items by shipment Id params
-func (o *GetShipmentItemsByShipmentIDParams) WithMarketplaceID(marketplaceID string) *GetShipmentItemsByShipmentIDParams {
+func (o *GetShipmentItemsByShipmentIDParams) WithMarketplaceID(marketplaceID *string) *GetShipmentItemsByShipmentIDParams {
 	o.SetMarketplaceID(marketplaceID)
 	return o
 }
 
 // SetMarketplaceID adds the marketplaceId to the get shipment items by shipment Id params
-func (o *GetShipmentItemsByShipmentIDParams) SetMarketplaceID(marketplaceID string) {
+func (o *GetShipmentItemsByShipmentIDParams) SetMarketplaceID(marketplaceID *string) {
 	o.MarketplaceID = marketplaceID
 }
 
@@ -156,13 +156,20 @@ func (o *GetShipmentItemsByShipmentIDParams) WriteToRequest(r runtime.ClientRequ
 	}
 	var res []error
 
-	// query param MarketplaceId
-	qrMarketplaceID := o.MarketplaceID
-	qMarketplaceID := qrMarketplaceID
-	if qMarketplaceID != "" {
+	if o.MarketplaceID != nil {
 
-		if err := r.SetQueryParam("MarketplaceId", qMarketplaceID); err != nil {
-			return err
+		// query param MarketplaceId
+		var qrMarketplaceID string
+
+		if o.MarketplaceID != nil {
+			qrMarketplaceID = *o.MarketplaceID
+		}
+		qMarketplaceID := qrMarketplaceID
+		if qMarketplaceID != "" {
+
+			if err := r.SetQueryParam("MarketplaceId", qMarketplaceID); err != nil {
+				return err
+			}
 		}
 	}
 
