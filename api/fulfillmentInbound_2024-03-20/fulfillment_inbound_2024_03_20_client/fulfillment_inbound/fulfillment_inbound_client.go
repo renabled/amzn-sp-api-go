@@ -174,7 +174,7 @@ func (a *Client) CancelInboundPlan(params *CancelInboundPlanParams, opts ...Clie
 /*
 	CancelSelfShipAppointment cancels self ship appointment
 
-	Cancels a self-ship appointment slot against a shipment.
+	Cancels a self-ship appointment slot against a shipment. Only available in the following [marketplaces](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids): MX, BR, EG, SA, AE, IN.
 
 **Usage Plan:**
 
@@ -702,7 +702,7 @@ func (a *Client) GeneratePlacementOptions(params *GeneratePlacementOptionsParams
 /*
 	GenerateSelfShipAppointmentSlots generates self ship appointment slots
 
-	Initiates the process of generating the appointment slots list.
+	Initiates the process of generating the appointment slots list. Only available in the following [marketplaces](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids): MX, BR, EG, SA, AE, IN.
 
 **Usage Plan:**
 
@@ -990,7 +990,7 @@ func (a *Client) GetInboundPlan(params *GetInboundPlanParams, opts ...ClientOpti
 /*
 	GetSelfShipAppointmentSlots gets self ship appointment slots
 
-	Retrieves a list of available self-ship appointment slots used to drop off a shipment at a warehouse.
+	Retrieves a list of available self-ship appointment slots used to drop off a shipment at a warehouse. Only available in the following [marketplaces](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids): MX, BR, EG, SA, AE, IN.
 
 **Usage Plan:**
 
@@ -1902,7 +1902,7 @@ func (a *Client) ListTransportationOptions(params *ListTransportationOptionsPara
 /*
 	ScheduleSelfShipAppointment schedules self ship appointment
 
-	Confirms or reschedules a self-ship appointment slot against a shipment.
+	Confirms or reschedules a self-ship appointment slot against a shipment. Only available in the following [marketplaces](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids): MX, BR, EG, SA, AE, IN.
 
 **Usage Plan:**
 
