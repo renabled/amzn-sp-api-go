@@ -19,16 +19,16 @@ import (
 // swagger:model Error
 type Error struct {
 
-	// The code that identifies the type of error condition.
+	// An error code that identifies the type of error that occurred.
 	// Required: true
 	// Min Length: 1
 	Code *string `json:"code"`
 
-	// Additional information, if available, to clarify the error condition.
+	// Additional details that can help the caller understand or fix the issue.
 	// Min Length: 1
 	Details string `json:"details,omitempty"`
 
-	// A human readable description of the error condition.
+	// A message that describes the error condition.
 	// Required: true
 	// Min Length: 1
 	Message *string `json:"message"`
