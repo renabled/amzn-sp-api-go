@@ -48,6 +48,9 @@ type AdjustmentEvent struct {
 	// The date and time when the financial event was posted.
 	// Format: date-time
 	PostedDate Date `json:"PostedDate,omitempty"`
+
+	// The name of the store where the event occurred.
+	StoreName string `json:"StoreName,omitempty"`
 }
 
 // Validate validates this adjustment event

@@ -20,6 +20,9 @@ type InventoryDetails struct {
 	// Quantity that is available for downstream channel replenishment.
 	AvailableDistributableQuantity int64 `json:"availableDistributableQuantity,omitempty"`
 
+	// Quantity that is in transit from AWD and has not yet been received at FBA.
+	ReplenishmentQuantity int64 `json:"replenishmentQuantity,omitempty"`
+
 	// Quantity that is reserved for a downstream channel replenishment order that is being prepared for shipment.
 	ReservedDistributableQuantity int64 `json:"reservedDistributableQuantity,omitempty"`
 }

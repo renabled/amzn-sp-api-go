@@ -23,6 +23,9 @@ type FeaturedOfferExpectedPriceRequestParams struct {
 	// Required: true
 	MarketplaceID *MarketplaceID `json:"marketplaceId"`
 
+	// segment
+	Segment *Segment `json:"segment,omitempty"`
+
 	// sku
 	// Required: true
 	Sku *Sku `json:"sku"`
@@ -33,6 +36,10 @@ func (m *FeaturedOfferExpectedPriceRequestParams) Validate(formats strfmt.Regist
 	var res []error
 
 	if err := m.validateMarketplaceID(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateSegment(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -62,6 +69,25 @@ func (m *FeaturedOfferExpectedPriceRequestParams) validateMarketplaceID(formats 
 				return ve.ValidateName("marketplaceId")
 			} else if ce, ok := err.(*errors.CompositeError); ok {
 				return ce.ValidateName("marketplaceId")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *FeaturedOfferExpectedPriceRequestParams) validateSegment(formats strfmt.Registry) error {
+	if swag.IsZero(m.Segment) { // not required
+		return nil
+	}
+
+	if m.Segment != nil {
+		if err := m.Segment.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("segment")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("segment")
 			}
 			return err
 		}
@@ -102,6 +128,10 @@ func (m *FeaturedOfferExpectedPriceRequestParams) ContextValidate(ctx context.Co
 		res = append(res, err)
 	}
 
+	if err := m.contextValidateSegment(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.contextValidateSku(ctx, formats); err != nil {
 		res = append(res, err)
 	}
@@ -120,6 +150,22 @@ func (m *FeaturedOfferExpectedPriceRequestParams) contextValidateMarketplaceID(c
 				return ve.ValidateName("marketplaceId")
 			} else if ce, ok := err.(*errors.CompositeError); ok {
 				return ce.ValidateName("marketplaceId")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *FeaturedOfferExpectedPriceRequestParams) contextValidateSegment(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.Segment != nil {
+		if err := m.Segment.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("segment")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("segment")
 			}
 			return err
 		}

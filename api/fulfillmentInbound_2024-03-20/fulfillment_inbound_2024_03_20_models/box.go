@@ -34,6 +34,16 @@ type Box struct {
 	// dimensions
 	Dimensions *Dimensions `json:"dimensions,omitempty"`
 
+	// The external identifier for this container / box.
+	// Max Length: 1024
+	// Min Length: 1
+	ExternalContainerIdentifier string `json:"externalContainerIdentifier,omitempty"`
+
+	// Type of the external identifier used. Can be: `AMAZON`, `SSCC`.
+	// Max Length: 1024
+	// Min Length: 1
+	ExternalContainerIdentifierType string `json:"externalContainerIdentifierType,omitempty"`
+
 	// Items contained within the box.
 	Items []*Item `json:"items"`
 
@@ -75,6 +85,14 @@ func (m *Box) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validateDimensions(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateExternalContainerIdentifier(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateExternalContainerIdentifierType(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -170,6 +188,38 @@ func (m *Box) validateDimensions(formats strfmt.Registry) error {
 			}
 			return err
 		}
+	}
+
+	return nil
+}
+
+func (m *Box) validateExternalContainerIdentifier(formats strfmt.Registry) error {
+	if swag.IsZero(m.ExternalContainerIdentifier) { // not required
+		return nil
+	}
+
+	if err := validate.MinLength("externalContainerIdentifier", "body", m.ExternalContainerIdentifier, 1); err != nil {
+		return err
+	}
+
+	if err := validate.MaxLength("externalContainerIdentifier", "body", m.ExternalContainerIdentifier, 1024); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *Box) validateExternalContainerIdentifierType(formats strfmt.Registry) error {
+	if swag.IsZero(m.ExternalContainerIdentifierType) { // not required
+		return nil
+	}
+
+	if err := validate.MinLength("externalContainerIdentifierType", "body", m.ExternalContainerIdentifierType, 1); err != nil {
+		return err
+	}
+
+	if err := validate.MaxLength("externalContainerIdentifierType", "body", m.ExternalContainerIdentifierType, 1024); err != nil {
+		return err
 	}
 
 	return nil

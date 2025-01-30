@@ -49,7 +49,11 @@ type PackingOption struct {
 	// Min Length: 1
 	Status *string `json:"status"`
 
-	// List of supported shipping modes.
+	// A list of possible configurations for this option.
+	// Required: true
+	SupportedConfigurations []*PackingConfiguration `json:"supportedConfigurations"`
+
+	// **This field is deprecated**. Use the `shippingRequirements` property under `supportedConfigurations` instead. List of supported shipping modes.
 	// Required: true
 	SupportedShippingConfigurations []*ShippingConfiguration `json:"supportedShippingConfigurations"`
 }
@@ -79,6 +83,10 @@ func (m *PackingOption) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validateStatus(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateSupportedConfigurations(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -221,6 +229,33 @@ func (m *PackingOption) validateStatus(formats strfmt.Registry) error {
 	return nil
 }
 
+func (m *PackingOption) validateSupportedConfigurations(formats strfmt.Registry) error {
+
+	if err := validate.Required("supportedConfigurations", "body", m.SupportedConfigurations); err != nil {
+		return err
+	}
+
+	for i := 0; i < len(m.SupportedConfigurations); i++ {
+		if swag.IsZero(m.SupportedConfigurations[i]) { // not required
+			continue
+		}
+
+		if m.SupportedConfigurations[i] != nil {
+			if err := m.SupportedConfigurations[i].Validate(formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("supportedConfigurations" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("supportedConfigurations" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
 func (m *PackingOption) validateSupportedShippingConfigurations(formats strfmt.Registry) error {
 
 	if err := validate.Required("supportedShippingConfigurations", "body", m.SupportedShippingConfigurations); err != nil {
@@ -257,6 +292,10 @@ func (m *PackingOption) ContextValidate(ctx context.Context, formats strfmt.Regi
 	}
 
 	if err := m.contextValidateFees(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateSupportedConfigurations(ctx, formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -300,6 +339,26 @@ func (m *PackingOption) contextValidateFees(ctx context.Context, formats strfmt.
 					return ve.ValidateName("fees" + "." + strconv.Itoa(i))
 				} else if ce, ok := err.(*errors.CompositeError); ok {
 					return ce.ValidateName("fees" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
+func (m *PackingOption) contextValidateSupportedConfigurations(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(m.SupportedConfigurations); i++ {
+
+		if m.SupportedConfigurations[i] != nil {
+			if err := m.SupportedConfigurations[i].ContextValidate(ctx, formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("supportedConfigurations" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("supportedConfigurations" + "." + strconv.Itoa(i))
 				}
 				return err
 			}

@@ -8,26 +8,83 @@ package product_pricing_2022_05_01_models
 import (
 	"context"
 
+	"github.com/go-openapi/errors"
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
 )
 
-// SegmentDetails The details about the segment.
+// SegmentDetails The details about the segment. The FeaturedOfferExpectedPrice API uses only the sampleLocation portion as input.
 //
 // swagger:model SegmentDetails
 type SegmentDetails struct {
 
 	// The glance view weighted percentage for this segment, which is the glance views for this segment as a percentage of total glance views across all segments for the ASIN. A higher percentage indicates that more Amazon customers receive this offer as the Featured Offer.
 	GlanceViewWeightPercentage float64 `json:"glanceViewWeightPercentage,omitempty"`
+
+	// The representative location that features the offer for the segment.
+	SampleLocation *SampleLocation `json:"sampleLocation,omitempty"`
 }
 
 // Validate validates this segment details
 func (m *SegmentDetails) Validate(formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.validateSampleLocation(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
 	return nil
 }
 
-// ContextValidate validates this segment details based on context it is used
+func (m *SegmentDetails) validateSampleLocation(formats strfmt.Registry) error {
+	if swag.IsZero(m.SampleLocation) { // not required
+		return nil
+	}
+
+	if m.SampleLocation != nil {
+		if err := m.SampleLocation.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("sampleLocation")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("sampleLocation")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+// ContextValidate validate this segment details based on the context it is used
 func (m *SegmentDetails) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.contextValidateSampleLocation(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *SegmentDetails) contextValidateSampleLocation(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.SampleLocation != nil {
+		if err := m.SampleLocation.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("sampleLocation")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("sampleLocation")
+			}
+			return err
+		}
+	}
+
 	return nil
 }
 
