@@ -176,7 +176,7 @@ func (a *Client) CancelInboundPlan(params *CancelInboundPlanParams, opts ...Clie
 
 | Rate (requests per second) | Burst |
 | ---- | ---- |
-| n | n |
+| 2 | 30 |
 
 The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 */
@@ -682,7 +682,7 @@ func (a *Client) GeneratePlacementOptions(params *GeneratePlacementOptionsParams
 
 | Rate (requests per second) | Burst |
 | ---- | ---- |
-| n | n |
+| 2 | 2 |
 
 The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 */
@@ -958,7 +958,7 @@ func (a *Client) GetInboundPlan(params *GetInboundPlanParams, opts ...ClientOpti
 
 | Rate (requests per second) | Burst |
 | ---- | ---- |
-| n | n |
+| 2 | 6 |
 
 The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 */
@@ -1832,7 +1832,7 @@ func (a *Client) ListTransportationOptions(params *ListTransportationOptionsPara
 
 | Rate (requests per second) | Burst |
 | ---- | ---- |
-| n | n |
+| 2 | 2 |
 
 The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 */
