@@ -13,18 +13,18 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// Breakdown Details about the movement of money in the financial transaction. Breakdowns are further categorized into breakdown types, breakdown amounts, and further breakdowns.
+// Breakdown Breakdown provides details regarding the money movement under the financial transaction. Breakdowns get categorized further into breakdown types, breakdown amounts, and further breakdowns into a hierarchical structure.
 //
 // swagger:model Breakdown
 type Breakdown struct {
 
-	// The monetary amount of the charge.
+	// The amount of the charge.
 	BreakdownAmount *Currency `json:"breakdownAmount,omitempty"`
 
 	// The type of charge.
 	BreakdownType string `json:"breakdownType,omitempty"`
 
-	// Further breakdowns of `BreakdownType`.
+	// Further granular breakdowns of the BreakdownType.
 	Breakdowns *Breakdown `json:"breakdowns,omitempty"`
 }
 

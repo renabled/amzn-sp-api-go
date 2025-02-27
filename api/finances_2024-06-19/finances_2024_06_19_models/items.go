@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// Items A list of items in the transaction.
+// Items List of items in the transaction
 //
 // swagger:model Items
 type Items []*Item

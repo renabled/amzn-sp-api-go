@@ -18,16 +18,16 @@ import (
 // swagger:model ProductContext
 type ProductContext struct {
 
-	// The Amazon Standard Identification Number (ASIN) of the item.
+	// Amazon Standard Identification Number (ASIN) of the item.
 	Asin string `json:"asin,omitempty"`
 
-	// The fulfillment network of the item.
+	// Fulfillment network of the item.
 	FulfillmentNetwork string `json:"fulfillmentNetwork,omitempty"`
 
-	// The quantity of the item shipped.
+	// Quantity of the item shipped.
 	QuantityShipped int32 `json:"quantityShipped,omitempty"`
 
-	// The Stock Keeping Unit (SKU) of the item.
+	// Stock keeping unit (SKU) of the item.
 	Sku string `json:"sku,omitempty"`
 }
 

@@ -104,7 +104,7 @@ type SetAppointmentFulfillmentDataNoContent struct {
 	 */
 	XAmznRateLimitLimit string
 
-	/* Unique request reference id.
+	/* Unique request reference identifier.
 	 */
 	XAmznRequestID string
 
@@ -268,7 +268,7 @@ SetAppointmentFulfillmentDataForbidden describes a response with status code 403
 */
 type SetAppointmentFulfillmentDataForbidden struct {
 
-	/* Unique request reference id.
+	/* Unique request reference identifier.
 	 */
 	XAmznRequestID string
 
@@ -345,7 +345,7 @@ type SetAppointmentFulfillmentDataNotFound struct {
 	 */
 	XAmznRateLimitLimit string
 
-	/* Unique request reference id.
+	/* Unique request reference identifier.
 	 */
 	XAmznRequestID string
 
@@ -430,7 +430,7 @@ type SetAppointmentFulfillmentDataRequestEntityTooLarge struct {
 	 */
 	XAmznRateLimitLimit string
 
-	/* Unique request reference id.
+	/* Unique request reference identifier.
 	 */
 	XAmznRequestID string
 
@@ -515,7 +515,7 @@ type SetAppointmentFulfillmentDataUnsupportedMediaType struct {
 	 */
 	XAmznRateLimitLimit string
 
-	/* Unique request reference id.
+	/* Unique request reference identifier.
 	 */
 	XAmznRequestID string
 
@@ -600,7 +600,7 @@ type SetAppointmentFulfillmentDataUnprocessableEntity struct {
 	 */
 	XAmznRateLimitLimit string
 
-	/* Unique request reference id.
+	/* Unique request reference identifier.
 	 */
 	XAmznRequestID string
 
@@ -685,7 +685,7 @@ type SetAppointmentFulfillmentDataTooManyRequests struct {
 	 */
 	XAmznRateLimitLimit string
 
-	/* Unique request reference id.
+	/* Unique request reference identifier.
 	 */
 	XAmznRequestID string
 
@@ -770,7 +770,7 @@ type SetAppointmentFulfillmentDataInternalServerError struct {
 	 */
 	XAmznRateLimitLimit string
 
-	/* Unique request reference id.
+	/* Unique request reference identifier.
 	 */
 	XAmznRequestID string
 
@@ -855,7 +855,7 @@ type SetAppointmentFulfillmentDataServiceUnavailable struct {
 	 */
 	XAmznRateLimitLimit string
 
-	/* Unique request reference id.
+	/* Unique request reference identifier.
 	 */
 	XAmznRequestID string
 

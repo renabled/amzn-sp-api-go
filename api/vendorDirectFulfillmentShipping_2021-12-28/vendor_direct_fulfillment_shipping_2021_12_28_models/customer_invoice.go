@@ -19,7 +19,7 @@ import (
 // swagger:model CustomerInvoice
 type CustomerInvoice struct {
 
-	// The Base64encoded customer invoice.
+	// The Base64 customer invoice.
 	// Required: true
 	Content *string `json:"content"`
 

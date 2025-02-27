@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// AsinBadge A flag that provides additional information about an ASIN. This is contextual and may change depending on the request that generated it.
+// AsinBadge A flag that provides additional information about an ASIN. This is contextual and can change depending on the request that generated it.
 //
 // swagger:model AsinBadge
 type AsinBadge string

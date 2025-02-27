@@ -63,7 +63,10 @@ CreateShipmentParams contains all the parameters to send to the API endpoint
 */
 type CreateShipmentParams struct {
 
-	// Body.
+	/* Body.
+
+	   CreateShipmentRequest Body
+	*/
 	Body *shipping_models.CreateShipmentRequest
 
 	timeout    time.Duration

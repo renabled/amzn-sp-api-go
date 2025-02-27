@@ -63,7 +63,10 @@ GetListingOffersBatchParams contains all the parameters to send to the API endpo
 */
 type GetListingOffersBatchParams struct {
 
-	// GetListingOffersBatchRequestBody.
+	/* GetListingOffersBatchRequestBody.
+
+	   The request associated with the `getListingOffersBatch` API call.
+	*/
 	GetListingOffersBatchRequestBody *product_pricing_v0_models.GetListingOffersBatchRequest
 
 	timeout    time.Duration

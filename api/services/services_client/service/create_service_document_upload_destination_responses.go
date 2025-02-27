@@ -190,7 +190,7 @@ type CreateServiceDocumentUploadDestinationBadRequest struct {
 	 */
 	XAmznRateLimitLimit string
 
-	/* Unique request reference id.
+	/* Unique request reference identifier.
 	 */
 	XAmznRequestID string
 
@@ -351,7 +351,7 @@ type CreateServiceDocumentUploadDestinationNotFound struct {
 	 */
 	XAmznRateLimitLimit string
 
-	/* Unique request reference id.
+	/* Unique request reference identifier.
 	 */
 	XAmznRequestID string
 
@@ -438,7 +438,7 @@ type CreateServiceDocumentUploadDestinationRequestEntityTooLarge struct {
 	 */
 	XAmznRateLimitLimit string
 
-	/* Unique request reference id.
+	/* Unique request reference identifier.
 	 */
 	XAmznRequestID string
 
@@ -699,7 +699,7 @@ type CreateServiceDocumentUploadDestinationTooManyRequests struct {
 	 */
 	XAmznRateLimitLimit string
 
-	/* Unique request reference ID.
+	/* Unique request reference identifier.
 	 */
 	XAmznRequestid string
 
@@ -873,7 +873,7 @@ type CreateServiceDocumentUploadDestinationServiceUnavailable struct {
 	 */
 	XAmznRateLimitLimit string
 
-	/* Unique request reference id.
+	/* Unique request reference identifier.
 	 */
 	XAmznRequestID string
 

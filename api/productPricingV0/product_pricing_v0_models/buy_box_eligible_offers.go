@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// BuyBoxEligibleOffers buy box eligible offers
+// BuyBoxEligibleOffers A list that contains the total number of offers that are eligible for the Buy Box for the given conditions and fulfillment channels.
 //
 // swagger:model BuyBoxEligibleOffers
 type BuyBoxEligibleOffers []*OfferCountType

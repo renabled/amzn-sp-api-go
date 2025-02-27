@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// ImageCropSpecification The instructions for optionally cropping an image. If no cropping is desired, set the dimensions to the original image size. If the image is cropped and no offset values are provided, then the coordinates of the top left corner of the cropped image, relative to the original image, are defaulted to (0,0).
+// ImageCropSpecification The instructions for optionally cropping an image. If you don't want to crop the image, set the dimensions to the original image size. If the image is cropped and you don't include offset values, the coordinates of the top left corner of the cropped image are set to (0,0) by default.
 //
 // swagger:model ImageCropSpecification
 type ImageCropSpecification struct {

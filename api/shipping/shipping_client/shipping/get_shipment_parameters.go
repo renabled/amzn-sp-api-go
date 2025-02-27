@@ -61,7 +61,10 @@ GetShipmentParams contains all the parameters to send to the API endpoint
 */
 type GetShipmentParams struct {
 
-	// ShipmentID.
+	/* ShipmentID.
+
+	   Shipment id to return the entire shipment object
+	*/
 	ShipmentID string
 
 	timeout    time.Duration

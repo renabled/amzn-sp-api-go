@@ -46,7 +46,7 @@ type UpdateFulfillmentOrderItem struct {
 	// Required: true
 	Quantity *Quantity `json:"quantity"`
 
-	// Identifies the fulfillment order item to update. Created with a previous call to the `createFulfillmentOrder` operation.
+	// Identifies the fulfillment order item to update. Created with a previous call to the createFulfillmentOrder operation.
 	// Required: true
 	// Max Length: 50
 	SellerFulfillmentOrderItemID *string `json:"sellerFulfillmentOrderItemId"`

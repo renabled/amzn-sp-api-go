@@ -63,7 +63,10 @@ GetRatesParams contains all the parameters to send to the API endpoint
 */
 type GetRatesParams struct {
 
-	// Body.
+	/* Body.
+
+	   GetRatesRequest body
+	*/
 	Body *shipping_models.GetRatesRequest
 
 	timeout    time.Duration

@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// BuyBoxPrices buy box prices
+// BuyBoxPrices A list of the Buy Box prices.
 //
 // swagger:model BuyBoxPrices
 type BuyBoxPrices []*BuyBoxPriceType

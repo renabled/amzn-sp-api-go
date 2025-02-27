@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// ListingOffersRequestParams listing offers request params
+// ListingOffersRequestParams List of request parameters that can be accepted by `ListingOffersRequest`
 //
 // swagger:model ListingOffersRequestParams
 type ListingOffersRequestParams struct {

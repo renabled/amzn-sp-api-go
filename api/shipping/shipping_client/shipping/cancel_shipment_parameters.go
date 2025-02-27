@@ -61,7 +61,10 @@ CancelShipmentParams contains all the parameters to send to the API endpoint
 */
 type CancelShipmentParams struct {
 
-	// ShipmentID.
+	/* ShipmentID.
+
+	   Shipment Id to cancel a shipment
+	*/
 	ShipmentID string
 
 	timeout    time.Duration

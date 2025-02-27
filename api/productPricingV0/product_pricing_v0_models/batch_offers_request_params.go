@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// BatchOffersRequestParams batch offers request params
+// BatchOffersRequestParams Common request parameters that can be accepted by `ItemOffersRequest` and `ListingOffersRequest`
 //
 // swagger:model BatchOffersRequestParams
 type BatchOffersRequestParams struct {

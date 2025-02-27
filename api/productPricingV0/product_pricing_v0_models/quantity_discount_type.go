@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// QuantityDiscountType quantity discount type
+// QuantityDiscountType Indicates the type of quantity discount this price applies to.
 //
 // swagger:model QuantityDiscountType
 type QuantityDiscountType string

@@ -13,7 +13,7 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// ListingOffersResponse listing offers response
+// ListingOffersResponse Schema for an individual `ListingOffersResponse`
 //
 // swagger:model ListingOffersResponse
 type ListingOffersResponse struct {

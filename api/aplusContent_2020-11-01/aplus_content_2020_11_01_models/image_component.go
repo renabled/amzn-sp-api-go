@@ -29,7 +29,7 @@ type ImageComponent struct {
 	// Required: true
 	ImageCropSpecification *ImageCropSpecification `json:"imageCropSpecification"`
 
-	// This identifier is provided by the Selling Partner API for Uploads.
+	// This identifier is provided by the [Uploads API](https://developer-docs.amazon.com/sp-api/reference/welcome-to-api-references).
 	// Required: true
 	// Min Length: 1
 	UploadDestinationID *string `json:"uploadDestinationId"`

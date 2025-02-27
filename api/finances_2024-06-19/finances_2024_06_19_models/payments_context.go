@@ -13,23 +13,23 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// PaymentsContext Additional information related to payments-related transactions.
+// PaymentsContext Additional information related to Payments related transactions.
 // Example: {"paymentDate":"2020-07-14T03:35:13.214Z","paymentMethod":"BANK","paymentReference":"XXXXX123","paymentType":"Debit Card"}
 //
 // swagger:model PaymentsContext
 type PaymentsContext struct {
 
-	// The date of the payment.
+	// Date of payment made.
 	// Format: date-time
 	PaymentDate Date `json:"paymentDate,omitempty"`
 
-	// The method of payment.
+	// Method of payment made.
 	PaymentMethod string `json:"paymentMethod,omitempty"`
 
-	// The reference number of the payment.
+	// Reference number of payment made.
 	PaymentReference string `json:"paymentReference,omitempty"`
 
-	// The type of payment.
+	// Type of payment made.
 	PaymentType string `json:"paymentType,omitempty"`
 }
 

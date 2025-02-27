@@ -21,10 +21,10 @@ type AmazonPayContext struct {
 	// Channel details of related transaction.
 	Channel string `json:"channel,omitempty"`
 
-	// The transaction's order type.
+	// Order type of the transaction.
 	OrderType string `json:"orderType,omitempty"`
 
-	// The name of the store that is related to the transaction.
+	// Store name related to transaction.
 	StoreName string `json:"storeName,omitempty"`
 }
 

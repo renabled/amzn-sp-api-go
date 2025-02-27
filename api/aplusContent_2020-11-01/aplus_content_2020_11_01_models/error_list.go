@@ -15,12 +15,12 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// ErrorList The error response for when a request is unsuccessful.
+// ErrorList The error response that is returned when a request is unsuccessful.
 //
 // swagger:model ErrorList
 type ErrorList struct {
 
-	// A list of error responses returned when a request is unsuccessful.
+	// A list of error responses that are returned when a request is unsuccessful.
 	// Required: true
 	Errors []*Error `json:"errors"`
 }

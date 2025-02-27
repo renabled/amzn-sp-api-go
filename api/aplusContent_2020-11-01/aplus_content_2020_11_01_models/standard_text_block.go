@@ -13,7 +13,7 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// StandardTextBlock The A+ Content standard text box block, comprised of a paragraph with a headline.
+// StandardTextBlock The A+ Content standard text box block, which contains a paragraph and a headline.
 //
 // swagger:model StandardTextBlock
 type StandardTextBlock struct {

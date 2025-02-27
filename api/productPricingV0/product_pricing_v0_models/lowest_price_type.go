@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// LowestPriceType lowest price type
+// LowestPriceType Schema for an individual lowest price.
 //
 // swagger:model LowestPriceType
 type LowestPriceType struct {

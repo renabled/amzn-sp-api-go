@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// BuyBoxPriceType buy box price type
+// BuyBoxPriceType Schema for an individual buybox price.
 //
 // swagger:model BuyBoxPriceType
 type BuyBoxPriceType struct {

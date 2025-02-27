@@ -20,7 +20,7 @@ import (
 // swagger:model ProductQuantity
 type ProductQuantity struct {
 
-	// Attributes for this instance of the product. For example, already-prepped, or other attributes that distinguish the product beyond the SKU.
+	// Contains attributes for this instance of the product. For example, item color, or other attributes that distinguish the product beyond the SKU. This is metadata for the product and Amazon does not process this data.
 	// Example: {"name":"TestAttribute","value":"TestAttributeValue"}
 	Attributes []*ProductAttribute `json:"attributes"`
 

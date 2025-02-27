@@ -63,10 +63,16 @@ PurchaseLabelsParams contains all the parameters to send to the API endpoint
 */
 type PurchaseLabelsParams struct {
 
-	// Body.
+	/* Body.
+
+	   PurchaseShippingLabelRequest body
+	*/
 	Body *shipping_models.PurchaseLabelsRequest
 
-	// ShipmentID.
+	/* ShipmentID.
+
+	   Shipment id for purchase shipping label
+	*/
 	ShipmentID string
 
 	timeout    time.Duration

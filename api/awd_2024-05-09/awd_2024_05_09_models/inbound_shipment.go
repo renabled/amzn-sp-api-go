@@ -31,7 +31,7 @@ type InboundShipment struct {
 	// Required: true
 	DestinationAddress *Address `json:"destinationAddress"`
 
-	// Assigned region where the order will be shipped. This can differ from what was passed as preference. AWD currently supports following region IDs: [us-west, us-east]
+	// Assigned region where the order will be shipped. This can differ from what was passed as preference. AWD currently supports following region IDs: [us-west, us-east, us-southcentral, us-southeast]
 	// Example: us-west
 	DestinationRegion string `json:"destinationRegion,omitempty"`
 

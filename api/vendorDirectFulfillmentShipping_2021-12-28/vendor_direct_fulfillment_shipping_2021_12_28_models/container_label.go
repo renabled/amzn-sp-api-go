@@ -22,7 +22,7 @@ type ContainerLabel struct {
 	// The container (pallet) tracking identifier from the shipping carrier.
 	ContainerTrackingNumber string `json:"containerTrackingNumber,omitempty"`
 
-	// The `Base64encoded` string of the container label content.
+	// The container label content encoded into a Base64 string.
 	// Required: true
 	Content *string `json:"content"`
 

@@ -13,7 +13,7 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// DeferredContext Additional information related to deferred transactions.
+// DeferredContext Additional information related to Deferred transactions.
 // Example: {"deferralReason":"B2B","deferralStatus":"HOLD","maturityDate":"2024-07-14T00:00:00Z"}
 //
 // swagger:model DeferredContext
@@ -21,13 +21,15 @@ type DeferredContext struct {
 
 	// Deferral policy applied on the transaction.
 	//
-	// **Examples:** `B2B`,`DD7`
+	// Example: 'B2B','DD7'
 	DeferralReason string `json:"deferralReason,omitempty"`
 
-	// The status of the transaction. For example, `HOLD`,`RELEASE`.
+	// Status of the transaction.
+	//
+	// Example: 'HOLD','RELEASE'
 	DeferralStatus string `json:"deferralStatus,omitempty"`
 
-	// The release date of the transaction.
+	// Release Date of the transaction.
 	// Format: date-time
 	MaturityDate Date `json:"maturityDate,omitempty"`
 }

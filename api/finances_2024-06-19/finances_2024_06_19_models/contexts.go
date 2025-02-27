@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// Contexts A list of additional information about the item.
+// Contexts List of additional Information about the item.
 //
 // swagger:model Contexts
 type Contexts []*Context

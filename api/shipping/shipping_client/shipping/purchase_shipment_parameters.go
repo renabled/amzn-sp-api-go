@@ -63,7 +63,10 @@ PurchaseShipmentParams contains all the parameters to send to the API endpoint
 */
 type PurchaseShipmentParams struct {
 
-	// Body.
+	/* Body.
+
+	   PurchaseShipmentRequest body
+	*/
 	Body *shipping_models.PurchaseShipmentRequest
 
 	timeout    time.Duration

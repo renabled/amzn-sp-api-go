@@ -61,7 +61,10 @@ GetTrackingInformationParams contains all the parameters to send to the API endp
 */
 type GetTrackingInformationParams struct {
 
-	// TrackingID.
+	/* TrackingID.
+
+	   Tracking Id
+	*/
 	TrackingID string
 
 	timeout    time.Duration

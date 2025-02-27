@@ -13,7 +13,7 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// StandardTextPairBlock The A+ Content standard label and description block, comprised of a pair of text components.
+// StandardTextPairBlock The A+ Content standard label and description block, which contains a pair of text components.
 //
 // swagger:model StandardTextPairBlock
 type StandardTextPairBlock struct {

@@ -25,7 +25,7 @@ type ItemRelatedIdentifier struct {
 	// Enum: [ORDER_ADJUSTMENT_ITEM_ID COUPON_ID REMOVAL_SHIPMENT_ITEM_ID TRANSACTION_ID]
 	ItemRelatedIdentifierName string `json:"itemRelatedIdentifierName,omitempty"`
 
-	// Corresponding value to `ItemRelatedIdentifierName`.
+	// Corresponding value of ItemRelatedIdentifierName
 	ItemRelatedIdentifierValue string `json:"itemRelatedIdentifierValue,omitempty"`
 }
 

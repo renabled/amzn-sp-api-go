@@ -98,7 +98,7 @@ type CancelReservationNoContent struct {
 	 */
 	XAmznRateLimitLimit string
 
-	/* Unique request reference id.
+	/* Unique request reference identifier.
 	 */
 	XAmznRequestID string
 
@@ -184,7 +184,7 @@ type CancelReservationBadRequest struct {
 	 */
 	XAmznRateLimitLimit string
 
-	/* Unique request reference id.
+	/* Unique request reference identifier.
 	 */
 	XAmznRequestID string
 
@@ -266,7 +266,7 @@ CancelReservationForbidden describes a response with status code 403, with defau
 */
 type CancelReservationForbidden struct {
 
-	/* Unique request reference id.
+	/* Unique request reference identifier.
 	 */
 	XAmznRequestID string
 
@@ -345,7 +345,7 @@ type CancelReservationNotFound struct {
 	 */
 	XAmznRateLimitLimit string
 
-	/* Unique request reference id.
+	/* Unique request reference identifier.
 	 */
 	XAmznRequestID string
 
@@ -432,7 +432,7 @@ type CancelReservationRequestEntityTooLarge struct {
 	 */
 	XAmznRateLimitLimit string
 
-	/* Unique request reference id.
+	/* Unique request reference identifier.
 	 */
 	XAmznRequestID string
 
@@ -519,7 +519,7 @@ type CancelReservationUnsupportedMediaType struct {
 	 */
 	XAmznRateLimitLimit string
 
-	/* Unique request reference id.
+	/* Unique request reference identifier.
 	 */
 	XAmznRequestID string
 
@@ -606,7 +606,7 @@ type CancelReservationTooManyRequests struct {
 	 */
 	XAmznRateLimitLimit string
 
-	/* Unique request reference id.
+	/* Unique request reference identifier.
 	 */
 	XAmznRequestID string
 
@@ -693,7 +693,7 @@ type CancelReservationInternalServerError struct {
 	 */
 	XAmznRateLimitLimit string
 
-	/* Unique request reference id.
+	/* Unique request reference identifier.
 	 */
 	XAmznRequestID string
 
@@ -780,7 +780,7 @@ type CancelReservationServiceUnavailable struct {
 	 */
 	XAmznRateLimitLimit string
 
-	/* Unique request reference id.
+	/* Unique request reference identifier.
 	 */
 	XAmznRequestID string
 

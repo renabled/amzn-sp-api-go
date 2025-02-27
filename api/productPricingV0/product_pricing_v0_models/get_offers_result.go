@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// GetOffersResult get offers result
+// GetOffersResult The payload for the getListingOffers and getItemOffers operations.
 //
 // swagger:model GetOffersResult
 type GetOffersResult struct {

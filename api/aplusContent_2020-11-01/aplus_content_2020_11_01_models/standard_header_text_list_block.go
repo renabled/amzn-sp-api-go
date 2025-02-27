@@ -13,7 +13,7 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// StandardHeaderTextListBlock The A+ standard fixed-length list of text, with a related headline.
+// StandardHeaderTextListBlock The A+ standard fixed-length list of text and a related headline.
 //
 // swagger:model StandardHeaderTextListBlock
 type StandardHeaderTextListBlock struct {

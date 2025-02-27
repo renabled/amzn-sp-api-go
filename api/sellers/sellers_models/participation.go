@@ -14,16 +14,16 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// Participation Detailed information that is specific to a seller in a marketplace.
+// Participation Information that is specific to a seller in a marketplace.
 //
 // swagger:model Participation
 type Participation struct {
 
-	// If true, the seller has suspended listings.
+	// Specifies if the seller has suspended listings. `true` if the seller Listing Status is set to Inactive, otherwise `false`.
 	// Required: true
 	HasSuspendedListings *bool `json:"hasSuspendedListings"`
 
-	// If true, the seller participates in the marketplace.
+	// If `true`, the seller participates in the marketplace. Otherwise `false`.
 	// Required: true
 	IsParticipating *bool `json:"isParticipating"`
 }

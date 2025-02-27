@@ -12,18 +12,18 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// SellingPartnerMetadata Metadata that describes the seller.
+// SellingPartnerMetadata Metadata describing the seller.
 //
 // swagger:model SellingPartnerMetadata
 type SellingPartnerMetadata struct {
 
-	// The type of account in the transaction.
+	// Account type of transaction.
 	AccountType string `json:"accountType,omitempty"`
 
-	// The identifier of the marketplace where the transaction occurred.
+	// Marketplace identifier of transaction.
 	MarketplaceID string `json:"marketplaceId,omitempty"`
 
-	// A unique seller identifier.
+	// Unique seller identifier.
 	SellingPartnerID string `json:"sellingPartnerId,omitempty"`
 }
 

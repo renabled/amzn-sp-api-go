@@ -46,7 +46,7 @@ type ClientService interface {
 | ---- | ---- |
 | 0.016 | 15 |
 
-The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 */
 func (a *Client) GetAccount(params *GetAccountParams, opts ...ClientOption) (*GetAccountOK, error) {
 	// TODO: Validate the params before sending
@@ -84,7 +84,7 @@ func (a *Client) GetAccount(params *GetAccountParams, opts ...ClientOption) (*Ge
 }
 
 /*
-	GetMarketplaceParticipations Returns a list of marketplaces that the seller submitting the request can sell in and information about the seller's participation in those marketplaces.
+	GetMarketplaceParticipations Returns a list of marketplaces where the seller can list items and information about the seller's participation in those marketplaces.
 
 **Usage Plan:**
 
@@ -92,7 +92,7 @@ func (a *Client) GetAccount(params *GetAccountParams, opts ...ClientOption) (*Ge
 | ---- | ---- |
 | 0.016 | 15 |
 
-The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 */
 func (a *Client) GetMarketplaceParticipations(params *GetMarketplaceParticipationsParams, opts ...ClientOption) (*GetMarketplaceParticipationsOK, error) {
 	// TODO: Validate the params before sending

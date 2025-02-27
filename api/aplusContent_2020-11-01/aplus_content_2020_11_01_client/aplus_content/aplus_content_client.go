@@ -62,7 +62,7 @@ type ClientService interface {
 | ---- | ---- |
 | 10 | 10 |
 
-The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+The `x-amzn-RateLimit-Limit` response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 */
 func (a *Client) CreateContentDocument(params *CreateContentDocumentParams, opts ...ClientOption) (*CreateContentDocumentOK, error) {
 	// TODO: Validate the params before sending
@@ -108,7 +108,7 @@ func (a *Client) CreateContentDocument(params *CreateContentDocumentParams, opts
 | ---- | ---- |
 | 10 | 10 |
 
-The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+The `x-amzn-RateLimit-Limit` response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 */
 func (a *Client) GetContentDocument(params *GetContentDocumentParams, opts ...ClientOption) (*GetContentDocumentOK, error) {
 	// TODO: Validate the params before sending
@@ -146,7 +146,7 @@ func (a *Client) GetContentDocument(params *GetContentDocumentParams, opts ...Cl
 }
 
 /*
-	ListContentDocumentAsinRelations Returns a list of ASINs related to the specified A+ Content document, if available. If you do not include the `asinSet` parameter, the operation returns all ASINs related to the content document.
+	ListContentDocumentAsinRelations Returns a list of ASINs that are related to the specified A+ Content document, if available. If you don't include the `asinSet` parameter, this operation returns all ASINs related to the content document.
 
 **Usage Plan:**
 
@@ -154,7 +154,7 @@ func (a *Client) GetContentDocument(params *GetContentDocumentParams, opts ...Cl
 | ---- | ---- |
 | 10 | 10 |
 
-The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+The `x-amzn-RateLimit-Limit` response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 */
 func (a *Client) ListContentDocumentAsinRelations(params *ListContentDocumentAsinRelationsParams, opts ...ClientOption) (*ListContentDocumentAsinRelationsOK, error) {
 	// TODO: Validate the params before sending
@@ -200,7 +200,7 @@ func (a *Client) ListContentDocumentAsinRelations(params *ListContentDocumentAsi
 | ---- | ---- |
 | 10 | 10 |
 
-The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+The `x-amzn-RateLimit-Limit` response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 */
 func (a *Client) PostContentDocumentApprovalSubmission(params *PostContentDocumentApprovalSubmissionParams, opts ...ClientOption) (*PostContentDocumentApprovalSubmissionOK, error) {
 	// TODO: Validate the params before sending
@@ -238,7 +238,7 @@ func (a *Client) PostContentDocumentApprovalSubmission(params *PostContentDocume
 }
 
 /*
-	PostContentDocumentAsinRelations Replaces all ASINs related to the specified A+ Content document, if available. This may add or remove ASINs, depending on the current set of related ASINs. Removing an ASIN has the side effect of suspending the content document from that ASIN.
+	PostContentDocumentAsinRelations Replaces all ASINs related to the specified A+ Content document, if available. This operation can add or remove ASINs, depending on the current set of related ASINs. Removing an ASIN will suspend the content document from that ASIN.
 
 **Usage Plan:**
 
@@ -246,7 +246,7 @@ func (a *Client) PostContentDocumentApprovalSubmission(params *PostContentDocume
 | ---- | ---- |
 | 10 | 10 |
 
-The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+The `x-amzn-RateLimit-Limit` response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 */
 func (a *Client) PostContentDocumentAsinRelations(params *PostContentDocumentAsinRelationsParams, opts ...ClientOption) (*PostContentDocumentAsinRelationsOK, error) {
 	// TODO: Validate the params before sending
@@ -284,7 +284,7 @@ func (a *Client) PostContentDocumentAsinRelations(params *PostContentDocumentAsi
 }
 
 /*
-	PostContentDocumentSuspendSubmission Submits a request to suspend visible A+ Content. This neither deletes the content document nor the ASIN relations.
+	PostContentDocumentSuspendSubmission Submits a request to suspend visible A+ Content. This doesn't delete the content document or the ASIN relations.
 
 **Usage Plan:**
 
@@ -292,7 +292,7 @@ func (a *Client) PostContentDocumentAsinRelations(params *PostContentDocumentAsi
 | ---- | ---- |
 | 10 | 10 |
 
-The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+The `x-amzn-RateLimit-Limit` response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 */
 func (a *Client) PostContentDocumentSuspendSubmission(params *PostContentDocumentSuspendSubmissionParams, opts ...ClientOption) (*PostContentDocumentSuspendSubmissionOK, error) {
 	// TODO: Validate the params before sending
@@ -330,7 +330,7 @@ func (a *Client) PostContentDocumentSuspendSubmission(params *PostContentDocumen
 }
 
 /*
-	SearchContentDocuments Returns a list of all A+ Content documents assigned to a selling partner. This operation returns only the metadata of the A+ Content documents. Call the getContentDocument operation to get the actual contents of the A+ Content documents.
+	SearchContentDocuments Returns a list of all A+ Content documents, including metadata, that are assigned to a selling partner. To get the actual contents of the A+ Content documents, call the `getContentDocument` operation.
 
 **Usage Plan:**
 
@@ -338,7 +338,7 @@ func (a *Client) PostContentDocumentSuspendSubmission(params *PostContentDocumen
 | ---- | ---- |
 | 10 | 10 |
 
-The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+The `x-amzn-RateLimit-Limit` response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 */
 func (a *Client) SearchContentDocuments(params *SearchContentDocumentsParams, opts ...ClientOption) (*SearchContentDocumentsOK, error) {
 	// TODO: Validate the params before sending
@@ -384,7 +384,7 @@ func (a *Client) SearchContentDocuments(params *SearchContentDocumentsParams, op
 | ---- | ---- |
 | 10 | 10 |
 
-The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+The `x-amzn-RateLimit-Limit` response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 */
 func (a *Client) SearchContentPublishRecords(params *SearchContentPublishRecordsParams, opts ...ClientOption) (*SearchContentPublishRecordsOK, error) {
 	// TODO: Validate the params before sending
@@ -430,7 +430,7 @@ func (a *Client) SearchContentPublishRecords(params *SearchContentPublishRecords
 | ---- | ---- |
 | 10 | 10 |
 
-The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+The `x-amzn-RateLimit-Limit` response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 */
 func (a *Client) UpdateContentDocument(params *UpdateContentDocumentParams, opts ...ClientOption) (*UpdateContentDocumentOK, error) {
 	// TODO: Validate the params before sending
@@ -476,7 +476,7 @@ func (a *Client) UpdateContentDocument(params *UpdateContentDocumentParams, opts
 | ---- | ---- |
 | 10 | 10 |
 
-The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+The `x-amzn-RateLimit-Limit` response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 */
 func (a *Client) ValidateContentDocumentAsinRelations(params *ValidateContentDocumentAsinRelationsParams, opts ...ClientOption) (*ValidateContentDocumentAsinRelationsOK, error) {
 	// TODO: Validate the params before sending

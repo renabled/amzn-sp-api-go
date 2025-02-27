@@ -21,7 +21,7 @@ type HTTPResponseHeaders struct {
 	// The timestamp that the API request was received.  For more information, consult [RFC 2616 Section 14](https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html).
 	Date string `json:"Date,omitempty"`
 
-	// Unique request reference ID.
+	// Unique request reference identifier.
 	XAmznRequestID string `json:"x-amzn-RequestId,omitempty"`
 
 	// Http response headers
@@ -36,7 +36,7 @@ func (m *HTTPResponseHeaders) UnmarshalJSON(data []byte) error {
 		// The timestamp that the API request was received.  For more information, consult [RFC 2616 Section 14](https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html).
 		Date string `json:"Date,omitempty"`
 
-		// Unique request reference ID.
+		// Unique request reference identifier.
 		XAmznRequestID string `json:"x-amzn-RequestId,omitempty"`
 	}
 	if err := json.Unmarshal(data, &stage1); err != nil {
@@ -79,7 +79,7 @@ func (m HTTPResponseHeaders) MarshalJSON() ([]byte, error) {
 		// The timestamp that the API request was received.  For more information, consult [RFC 2616 Section 14](https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html).
 		Date string `json:"Date,omitempty"`
 
-		// Unique request reference ID.
+		// Unique request reference identifier.
 		XAmznRequestID string `json:"x-amzn-RequestId,omitempty"`
 	}
 

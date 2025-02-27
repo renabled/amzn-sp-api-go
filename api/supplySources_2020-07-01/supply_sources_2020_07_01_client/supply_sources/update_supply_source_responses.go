@@ -98,7 +98,7 @@ type UpdateSupplySourceNoContent struct {
 	 */
 	XAmznRateLimitLimit string
 
-	/* The unique request reference ID.
+	/* Unique request reference identifier.
 	 */
 	XAmznRequestID string
 
@@ -184,7 +184,7 @@ type UpdateSupplySourceBadRequest struct {
 	 */
 	XAmznRateLimitLimit string
 
-	/* The unique request reference ID.
+	/* Unique request reference identifier.
 	 */
 	XAmznRequestID string
 
@@ -266,7 +266,7 @@ An error that indicates that access to the resource is forbidden. Possible reaso
 */
 type UpdateSupplySourceForbidden struct {
 
-	/* The unique request reference ID.
+	/* Unique request reference identifier.
 	 */
 	XAmznRequestID string
 
@@ -345,7 +345,7 @@ type UpdateSupplySourceNotFound struct {
 	 */
 	XAmznRateLimitLimit string
 
-	/* The unique request reference ID.
+	/* Unique request reference identifier.
 	 */
 	XAmznRequestID string
 
@@ -432,7 +432,7 @@ type UpdateSupplySourceRequestEntityTooLarge struct {
 	*/
 	XAmznRateLimitLimit string
 
-	/* The unique request reference ID.
+	/* Unique request reference identifier.
 	 */
 	XAmznRequestID string
 
@@ -519,7 +519,7 @@ type UpdateSupplySourceUnsupportedMediaType struct {
 	*/
 	XAmznRateLimitLimit string
 
-	/* The unique request reference ID.
+	/* Unique request reference identifier.
 	 */
 	XAmznRequestID string
 
@@ -606,7 +606,7 @@ type UpdateSupplySourceTooManyRequests struct {
 	*/
 	XAmznRateLimitLimit string
 
-	/* The unique request reference ID.
+	/* Unique request reference identifier.
 	 */
 	XAmznRequestID string
 
@@ -693,7 +693,7 @@ type UpdateSupplySourceInternalServerError struct {
 	*/
 	XAmznRateLimitLimit string
 
-	/* The unique request reference ID.
+	/* Unique request reference identifier.
 	 */
 	XAmznRequestID string
 
@@ -780,7 +780,7 @@ type UpdateSupplySourceServiceUnavailable struct {
 	*/
 	XAmznRateLimitLimit string
 
-	/* The unique request reference ID.
+	/* Unique request reference identifier.
 	 */
 	XAmznRequestID string
 

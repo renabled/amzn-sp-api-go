@@ -13,24 +13,24 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// Item Additional information about the items in a transaction.
+// Item Additional information about the items in Transaction.
 //
 // swagger:model Item
 type Item struct {
 
-	// A list of breakdowns that provide details on how the total amount is calculated for the transaction.
+	// List of breakdowns which will provide the details on how the total amount is calculated for the financial transaction.
 	Breakdowns Breakdowns `json:"breakdowns,omitempty"`
 
 	// Additional Information about the item.
 	Contexts Contexts `json:"contexts,omitempty"`
 
-	// A description of the items in a transaction.
+	// Description of items in the transaction
 	Description string `json:"description,omitempty"`
 
 	// Related business identifiers of the item.
 	RelatedIdentifiers ItemRelatedIdentifiers `json:"relatedIdentifiers,omitempty"`
 
-	// The total monetary amount of the item.
+	// The total amount of the item.
 	TotalAmount *Currency `json:"totalAmount,omitempty"`
 }
 

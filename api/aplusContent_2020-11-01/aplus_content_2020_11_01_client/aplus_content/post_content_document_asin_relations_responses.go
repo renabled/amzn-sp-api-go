@@ -267,8 +267,8 @@ The request's Authorization header is not formatted correctly or does not contai
 type PostContentDocumentAsinRelationsUnauthorized struct {
 
 	/* Your rate limit (requests per second) for this operation.
-	_Note:_ For this status code, the rate limit header is deprecated and no longer returned.
-	*/
+	**Note:** For this status code, the rate limit header is deprecated and no longer returned.
+	 */
 	XAmznRateLimitLimit string
 
 	/* Unique request reference identifier.
@@ -515,8 +515,8 @@ The specified resource no longer exists.
 type PostContentDocumentAsinRelationsGone struct {
 
 	/* Your rate limit (requests per second) for this operation.
-	_Note:_ For this status code, the rate limit header is deprecated and no longer returned.
-	*/
+	**Note:** For this status code, the rate limit header is deprecated and no longer returned.
+	 */
 	XAmznRateLimitLimit string
 
 	/* Unique request reference identifier.
@@ -602,8 +602,8 @@ The frequency of requests was greater than allowed.
 type PostContentDocumentAsinRelationsTooManyRequests struct {
 
 	/* Your rate limit (requests per second) for this operation.
-	_Note:_ For this status code, the rate limit header is deprecated and no longer returned.
-	*/
+	**Note:** For this status code, the rate limit header is deprecated and no longer returned.
+	 */
 	XAmznRateLimitLimit string
 
 	/* Unique request reference identifier.
@@ -689,8 +689,8 @@ An unexpected condition occurred that prevented the server from fulfilling the r
 type PostContentDocumentAsinRelationsInternalServerError struct {
 
 	/* Your rate limit (requests per second) for this operation.
-	_Note:_ For this status code, the rate limit header is deprecated and no longer returned.
-	*/
+	**Note:** For this status code, the rate limit header is deprecated and no longer returned.
+	 */
 	XAmznRateLimitLimit string
 
 	/* Unique request reference identifier.
@@ -776,8 +776,8 @@ Temporary overloading or maintenance of the server.
 type PostContentDocumentAsinRelationsServiceUnavailable struct {
 
 	/* Your rate limit (requests per second) for this operation.
-	_Note:_ For this status code, the rate limit header is deprecated and no longer returned.
-	*/
+	**Note:** For this status code, the rate limit header is deprecated and no longer returned.
+	 */
 	XAmznRateLimitLimit string
 
 	/* Unique request reference identifier.

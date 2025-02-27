@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// PositionType The relative positioning of content.
+// PositionType The content's relative positioning.
 //
 // swagger:model PositionType
 type PositionType string

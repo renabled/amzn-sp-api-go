@@ -23,7 +23,7 @@ type StandardComparisonProductBlock struct {
 	// asin
 	Asin Asin `json:"asin,omitempty"`
 
-	// Determines whether this block of content is visually highlighted.
+	// When true, indicates that this content block is visually highlighted.
 	Highlight bool `json:"highlight,omitempty"`
 
 	// image

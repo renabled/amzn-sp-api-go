@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// CompetitivePriceType competitive price type
+// CompetitivePriceType Schema for competitive pricing information
 //
 // swagger:model CompetitivePriceType
 type CompetitivePriceType struct {

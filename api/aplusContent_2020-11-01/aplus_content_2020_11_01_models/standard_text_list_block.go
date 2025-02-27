@@ -15,7 +15,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// StandardTextListBlock The A+ Content standard fixed length list of text, usually presented as bullet points.
+// StandardTextListBlock The A+ Content standard fixed-length list of text, usually presented as bullet points.
 //
 // swagger:model StandardTextListBlock
 type StandardTextListBlock struct {

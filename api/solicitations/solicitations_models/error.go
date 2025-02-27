@@ -26,7 +26,7 @@ type Error struct {
 	// Additional details that can help the caller understand or fix the issue.
 	Details string `json:"details,omitempty"`
 
-	// A message that describes the error condition in a human-readable form.
+	// A message that describes the error condition.
 	// Required: true
 	Message *string `json:"message"`
 }

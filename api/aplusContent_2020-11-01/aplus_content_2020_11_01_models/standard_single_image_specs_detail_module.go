@@ -13,7 +13,7 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// StandardSingleImageSpecsDetailModule A standard image with paragraphs and a bulleted list, and extra space for technical details.
+// StandardSingleImageSpecsDetailModule A standard image with paragraphs, a bulleted list, and extra space for technical details.
 //
 // swagger:model StandardSingleImageSpecsDetailModule
 type StandardSingleImageSpecsDetailModule struct {

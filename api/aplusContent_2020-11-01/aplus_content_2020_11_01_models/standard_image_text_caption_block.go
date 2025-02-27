@@ -13,7 +13,7 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// StandardImageTextCaptionBlock The A+ Content standard image and text block, with a related caption. The caption may not display on all devices.
+// StandardImageTextCaptionBlock The A+ Content standard image and text block, with a related caption. The caption might not display on all devices.
 //
 // swagger:model StandardImageTextCaptionBlock
 type StandardImageTextCaptionBlock struct {

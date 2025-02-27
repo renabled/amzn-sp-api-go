@@ -63,13 +63,22 @@ RetrieveShippingLabelParams contains all the parameters to send to the API endpo
 */
 type RetrieveShippingLabelParams struct {
 
-	// Body.
+	/* Body.
+
+	   RetrieveShippingLabelRequest body
+	*/
 	Body *shipping_models.RetrieveShippingLabelRequest
 
-	// ShipmentID.
+	/* ShipmentID.
+
+	   Shipment Id to retreive label
+	*/
 	ShipmentID string
 
-	// TrackingID.
+	/* TrackingID.
+
+	   Tracking Id
+	*/
 	TrackingID string
 
 	timeout    time.Duration

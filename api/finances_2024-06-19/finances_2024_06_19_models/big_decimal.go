@@ -11,7 +11,7 @@ import (
 	"github.com/go-openapi/strfmt"
 )
 
-// BigDecimal A signed decimal number.
+// BigDecimal Fields with a schema type of BigDecimal are a signed decimal number (for example CurrencyAmount).
 //
 // swagger:model BigDecimal
 type BigDecimal float64

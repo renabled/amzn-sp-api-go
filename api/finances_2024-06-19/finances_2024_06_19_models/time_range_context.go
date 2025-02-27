@@ -13,17 +13,17 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// TimeRangeContext Additional information that is related to the time range of the transaction.
+// TimeRangeContext Additional information related to time range for transaction.
 // Example: {"endTime":"2020-07-14T03:35:13.214Z","startTime":"2020-07-14T03:35:13.214Z"}
 //
 // swagger:model TimeRangeContext
 type TimeRangeContext struct {
 
-	// The end time of the transaction.
+	// End time of the transaction.
 	// Format: date-time
 	EndTime Date `json:"endTime,omitempty"`
 
-	// The start time of the transaction.
+	// Start time of the transaction.
 	// Format: date-time
 	StartTime Date `json:"startTime,omitempty"`
 }

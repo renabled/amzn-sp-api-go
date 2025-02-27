@@ -63,7 +63,10 @@ GetItemOffersBatchParams contains all the parameters to send to the API endpoint
 */
 type GetItemOffersBatchParams struct {
 
-	// GetItemOffersBatchRequestBody.
+	/* GetItemOffersBatchRequestBody.
+
+	   The request associated with the `getItemOffersBatch` API call.
+	*/
 	GetItemOffersBatchRequestBody *product_pricing_v0_models.GetItemOffersBatchRequest
 
 	timeout    time.Duration

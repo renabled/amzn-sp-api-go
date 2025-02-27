@@ -15,7 +15,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// OfferDetailList offer detail list
+// OfferDetailList A list of offer details. The list is the same length as the TotalOfferCount in the Summary or 20, whichever is less.
 //
 // swagger:model OfferDetailList
 type OfferDetailList []*OfferDetail

@@ -30,13 +30,259 @@ type ClientOption func(*runtime.ClientOperation)
 
 // ClientService is the interface for Client methods
 type ClientService interface {
+	CancelInbound(params *CancelInboundParams, opts ...ClientOption) (*CancelInboundNoContent, error)
+
+	CheckInboundEligibility(params *CheckInboundEligibilityParams, opts ...ClientOption) (*CheckInboundEligibilityOK, error)
+
+	ConfirmInbound(params *ConfirmInboundParams, opts ...ClientOption) (*ConfirmInboundNoContent, error)
+
+	CreateInbound(params *CreateInboundParams, opts ...ClientOption) (*CreateInboundCreated, error)
+
+	GetInbound(params *GetInboundParams, opts ...ClientOption) (*GetInboundOK, error)
+
 	GetInboundShipment(params *GetInboundShipmentParams, opts ...ClientOption) (*GetInboundShipmentOK, error)
+
+	GetInboundShipmentLabels(params *GetInboundShipmentLabelsParams, opts ...ClientOption) (*GetInboundShipmentLabelsOK, error)
 
 	ListInboundShipments(params *ListInboundShipmentsParams, opts ...ClientOption) (*ListInboundShipmentsOK, error)
 
 	ListInventory(params *ListInventoryParams, opts ...ClientOption) (*ListInventoryOK, error)
 
+	UpdateInbound(params *UpdateInboundParams, opts ...ClientOption) (*UpdateInboundNoContent, error)
+
+	UpdateInboundShipmentTransportDetails(params *UpdateInboundShipmentTransportDetailsParams, opts ...ClientOption) (*UpdateInboundShipmentTransportDetailsNoContent, error)
+
 	SetTransport(transport runtime.ClientTransport)
+}
+
+/*
+	CancelInbound Cancels an AWD Inbound order and its associated shipment.
+
+**Usage Plan:**
+
+| Rate (requests per second) | Burst |
+| ---- | ---- |
+| 1 | 1 |
+
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+*/
+func (a *Client) CancelInbound(params *CancelInboundParams, opts ...ClientOption) (*CancelInboundNoContent, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewCancelInboundParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "cancelInbound",
+		Method:             "POST",
+		PathPattern:        "/awd/2024-05-09/inboundOrders/{orderId}/cancellation",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &CancelInboundReader{formats: a.formats},
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*CancelInboundNoContent)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for cancelInbound: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+	CheckInboundEligibility Determines if the packages you specify are eligible for an AWD inbound order and contains error details for ineligible packages.
+
+**Usage Plan:**
+
+| Rate (requests per second) | Burst |
+| ---- | ---- |
+| 1 | 1 |
+
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+*/
+func (a *Client) CheckInboundEligibility(params *CheckInboundEligibilityParams, opts ...ClientOption) (*CheckInboundEligibilityOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewCheckInboundEligibilityParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "checkInboundEligibility",
+		Method:             "POST",
+		PathPattern:        "/awd/2024-05-09/inboundEligibility",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &CheckInboundEligibilityReader{formats: a.formats},
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*CheckInboundEligibilityOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for checkInboundEligibility: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+	ConfirmInbound Confirms an AWD inbound order in `DRAFT` status.
+
+**Usage Plan:**
+
+| Rate (requests per second) | Burst |
+| ---- | ---- |
+| 1 | 1 |
+
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+*/
+func (a *Client) ConfirmInbound(params *ConfirmInboundParams, opts ...ClientOption) (*ConfirmInboundNoContent, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewConfirmInboundParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "confirmInbound",
+		Method:             "POST",
+		PathPattern:        "/awd/2024-05-09/inboundOrders/{orderId}/confirmation",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &ConfirmInboundReader{formats: a.formats},
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*ConfirmInboundNoContent)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for confirmInbound: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+	CreateInbound Creates a draft AWD inbound order with a list of packages for inbound shipment. The operation creates one shipment per order.
+
+**Usage Plan:**
+
+| Rate (requests per second) | Burst |
+| ---- | ---- |
+| 1 | 1 |
+
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+*/
+func (a *Client) CreateInbound(params *CreateInboundParams, opts ...ClientOption) (*CreateInboundCreated, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewCreateInboundParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "createInbound",
+		Method:             "POST",
+		PathPattern:        "/awd/2024-05-09/inboundOrders",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &CreateInboundReader{formats: a.formats},
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*CreateInboundCreated)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for createInbound: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+	GetInbound Retrieves an AWD inbound order.
+
+**Usage Plan:**
+
+| Rate (requests per second) | Burst |
+| ---- | ---- |
+| 2 | 2 |
+
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+*/
+func (a *Client) GetInbound(params *GetInboundParams, opts ...ClientOption) (*GetInboundOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewGetInboundParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "getInbound",
+		Method:             "GET",
+		PathPattern:        "/awd/2024-05-09/inboundOrders/{orderId}",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &GetInboundReader{formats: a.formats},
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*GetInboundOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for getInbound: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
 }
 
 /*
@@ -82,6 +328,52 @@ func (a *Client) GetInboundShipment(params *GetInboundShipmentParams, opts ...Cl
 	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
 	msg := fmt.Sprintf("unexpected success response for getInboundShipment: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+	GetInboundShipmentLabels Retrieves the box labels for a shipment ID that you specify. This is an asynchronous operation. If the label status is `GENERATED`, then the label URL is available.
+
+**Usage Plan:**
+
+| Rate (requests per second) | Burst |
+| ---- | ---- |
+| 1 | 2 |
+
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+*/
+func (a *Client) GetInboundShipmentLabels(params *GetInboundShipmentLabelsParams, opts ...ClientOption) (*GetInboundShipmentLabelsOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewGetInboundShipmentLabelsParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "getInboundShipmentLabels",
+		Method:             "GET",
+		PathPattern:        "/awd/2024-05-09/inboundShipments/{shipmentId}/labels",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &GetInboundShipmentLabelsReader{formats: a.formats},
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*GetInboundShipmentLabelsOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for getInboundShipmentLabels: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -174,6 +466,98 @@ func (a *Client) ListInventory(params *ListInventoryParams, opts ...ClientOption
 	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
 	msg := fmt.Sprintf("unexpected success response for listInventory: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+	UpdateInbound Updates an AWD inbound order that is in `DRAFT` status and not yet confirmed. Use this operation to update the `packagesToInbound`, `originAddress` and `preferences` attributes.
+
+**Usage Plan:**
+
+| Rate (requests per second) | Burst |
+| ---- | ---- |
+| 1 | 1 |
+
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+*/
+func (a *Client) UpdateInbound(params *UpdateInboundParams, opts ...ClientOption) (*UpdateInboundNoContent, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewUpdateInboundParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "updateInbound",
+		Method:             "PUT",
+		PathPattern:        "/awd/2024-05-09/inboundOrders/{orderId}",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &UpdateInboundReader{formats: a.formats},
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*UpdateInboundNoContent)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for updateInbound: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+	UpdateInboundShipmentTransportDetails Updates transport details for an AWD shipment.
+
+**Usage Plan:**
+
+| Rate (requests per second) | Burst |
+| ---- | ---- |
+| 1 | 1 |
+
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+*/
+func (a *Client) UpdateInboundShipmentTransportDetails(params *UpdateInboundShipmentTransportDetailsParams, opts ...ClientOption) (*UpdateInboundShipmentTransportDetailsNoContent, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewUpdateInboundShipmentTransportDetailsParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "updateInboundShipmentTransportDetails",
+		Method:             "PUT",
+		PathPattern:        "/awd/2024-05-09/inboundShipments/{shipmentId}/transport",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &UpdateInboundShipmentTransportDetailsReader{formats: a.formats},
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*UpdateInboundShipmentTransportDetailsNoContent)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for updateInboundShipmentTransportDetails: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 

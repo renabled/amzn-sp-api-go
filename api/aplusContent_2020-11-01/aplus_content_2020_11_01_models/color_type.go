@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// ColorType The relative color scheme of content.
+// ColorType The relative color scheme of your content.
 //
 // swagger:model ColorType
 type ColorType string

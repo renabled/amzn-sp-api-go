@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// PlainTextItem Plain positional text, used in collections of brief labels and descriptors.
+// PlainTextItem Plain positional text that is used in collections of brief labels and descriptors.
 //
 // swagger:model PlainTextItem
 type PlainTextItem struct {

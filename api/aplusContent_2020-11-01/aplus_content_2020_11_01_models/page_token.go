@@ -13,7 +13,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// PageToken A page token that is returned when the results of the call exceed the page size. To get another page of results, call the operation again, passing in this value with the pageToken parameter.
+// PageToken A token that you use to fetch a specific page when there are multiple pages of results.
 //
 // swagger:model PageToken
 type PageToken string

@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// Error Error response returned when the request is unsuccessful.
+// Error The error response that is returned when the request is unsuccessful.
 //
 // swagger:model Error
 type Error struct {

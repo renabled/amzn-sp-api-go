@@ -19,7 +19,7 @@ import (
 // swagger:model LabelData
 type LabelData struct {
 
-	// This field will contain the Base64encoded string of the shipment label content.
+	// This field will contain the Base64 string of the shipment label content.
 	// Required: true
 	Content *string `json:"content"`
 

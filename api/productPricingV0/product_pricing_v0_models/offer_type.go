@@ -15,7 +15,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// OfferType offer type
+// OfferType Schema for an individual offer.
 //
 // swagger:model OfferType
 type OfferType struct {
@@ -53,7 +53,7 @@ type OfferType struct {
 	// Indicates the type of customer that the offer is valid for.
 	OfferType OfferCustomerType `json:"offerType,omitempty"`
 
-	// quantity discount prices
+	// List of `QuantityDiscountPrice` that contains item's pricing information when buy in bulk.
 	QuantityDiscountPrices []*QuantityDiscountPriceType `json:"quantityDiscountPrices"`
 }
 

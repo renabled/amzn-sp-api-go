@@ -10,7 +10,7 @@ import (
 	httptransport "github.com/go-openapi/runtime/client"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/renabled/amzn-sp-api-go/api/vendorInvoices/vendor_invoices_client/vendor_invoices"
+	"github.com/renabled/amzn-sp-api-go/api/vendorInvoices/vendor_invoices_client/vendor_payments"
 )
 
 // Default vendor invoices HTTP client.
@@ -55,7 +55,7 @@ func New(transport runtime.ClientTransport, formats strfmt.Registry) *VendorInvo
 
 	cli := new(VendorInvoices)
 	cli.Transport = transport
-	cli.VendorInvoices = vendor_invoices.New(transport, formats)
+	cli.VendorPayments = vendor_payments.New(transport, formats)
 	return cli
 }
 
@@ -100,7 +100,7 @@ func (cfg *TransportConfig) WithSchemes(schemes []string) *TransportConfig {
 
 // VendorInvoices is a client for vendor invoices
 type VendorInvoices struct {
-	VendorInvoices vendor_invoices.ClientService
+	VendorPayments vendor_payments.ClientService
 
 	Transport runtime.ClientTransport
 }
@@ -108,5 +108,5 @@ type VendorInvoices struct {
 // SetTransport changes the transport on the client and all its subresources
 func (c *VendorInvoices) SetTransport(transport runtime.ClientTransport) {
 	c.Transport = transport
-	c.VendorInvoices.SetTransport(transport)
+	c.VendorPayments.SetTransport(transport)
 }

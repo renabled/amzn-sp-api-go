@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// OfferCustomerType offer customer type
+// OfferCustomerType Indicates whether the offer is a B2B or B2C offer
 //
 // swagger:model OfferCustomerType
 type OfferCustomerType string

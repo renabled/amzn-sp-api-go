@@ -13,7 +13,7 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// ItemOffersRequest item offers request
+// ItemOffersRequest List of request parameters can be accepted by `ItemOffersRequests` operation
 //
 // swagger:model ItemOffersRequest
 type ItemOffersRequest struct {

@@ -28,11 +28,11 @@ type ContainerItem struct {
 	// Max Length: 30
 	Title *string `json:"title"`
 
-	// The unit price of an item of this type (the total value of this item type in the container is unitPrice * quantity).
+	// The unit price of an item of this type (the total value of this item type in the container is unitPrice x quantity).
 	// Required: true
 	UnitPrice *Currency `json:"unitPrice"`
 
-	// The unit weight of an item of this type (the total weight of this item type in the container is unitWeight * quantity).
+	// The unit weight of an item of this type (the total weight of this item type in the container is unitWeight x quantity).
 	// Required: true
 	UnitWeight *Weight `json:"unitWeight"`
 }

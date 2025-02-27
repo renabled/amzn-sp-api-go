@@ -20,7 +20,7 @@ import (
 // swagger:model PackingSlip
 type PackingSlip struct {
 
-	// A Base64encoded string of the packing slip PDF.
+	// A Base64 string of the packing slip PDF.
 	// Required: true
 	Content *string `json:"content"`
 

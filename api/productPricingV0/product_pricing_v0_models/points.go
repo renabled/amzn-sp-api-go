@@ -13,7 +13,7 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// Points points
+// Points The number of Amazon Points offered with the purchase of an item, and their monetary value.
 //
 // swagger:model Points
 type Points struct {

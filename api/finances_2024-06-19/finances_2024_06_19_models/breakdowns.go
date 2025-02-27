@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// Breakdowns A list of breakdowns that provide details on how the total amount is calculated for the transaction.
+// Breakdowns List of breakdowns which will provide the details on how the total amount is calculated for the financial transaction.
 //
 // swagger:model Breakdowns
 type Breakdowns []*Breakdown

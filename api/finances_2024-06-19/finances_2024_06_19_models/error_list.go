@@ -20,7 +20,7 @@ import (
 // swagger:model ErrorList
 type ErrorList struct {
 
-	// The error responses that are returned when the request is unsuccessful.
+	// Error response returned when the request is unsuccessful.
 	// Required: true
 	Errors []*Error `json:"errors"`
 }

@@ -23,7 +23,7 @@ type CreateContainerLabelRequest struct {
 	// Required: true
 	CarrierID *CarrierID `json:"carrierId"`
 
-	// An array of package objects that associates shipment packages with a container.
+	// An array of package objects that associate shipment packages with a container.
 	// Required: true
 	Packages Packages `json:"packages"`
 

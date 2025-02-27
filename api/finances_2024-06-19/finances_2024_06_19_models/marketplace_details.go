@@ -18,10 +18,12 @@ import (
 // swagger:model MarketplaceDetails
 type MarketplaceDetails struct {
 
-	// The identifier of the marketplace where the transaction occured.
+	// The identifier of the marketplace where the transaction was made.
 	MarketplaceID string `json:"marketplaceId,omitempty"`
 
-	// The name of the marketplace where the transaction occurred. For example: `Amazon.com`,`Amazon.in`
+	// The name of the marketplace where the transaction occurred.
+	//
+	// Example: 'Amazon.com','Amazon.in'
 	MarketplaceName string `json:"marketplaceName,omitempty"`
 }
 

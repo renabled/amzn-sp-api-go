@@ -15,7 +15,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// PriceList price list
+// PriceList The payload for the `getPricing` and `getCompetitivePricing` operations.
 //
 // swagger:model PriceList
 type PriceList []*Price

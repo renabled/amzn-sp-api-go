@@ -15,7 +15,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// ParagraphComponent A list of rich text content, usually presented in a text box.
+// ParagraphComponent A list of rich text content that is typically presented in a text box.
 //
 // swagger:model ParagraphComponent
 type ParagraphComponent struct {

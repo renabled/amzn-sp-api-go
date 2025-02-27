@@ -29,7 +29,7 @@ type StandardTechSpecsModule struct {
 	// Min Items: 4
 	SpecificationList []*StandardTextPairBlock `json:"specificationList"`
 
-	// The number of tables to present. Features are evenly divided between the tables.
+	// The number of tables you want present. Features are evenly divided between the tables.
 	// Maximum: 2
 	// Minimum: 1
 	TableCount int64 `json:"tableCount,omitempty"`

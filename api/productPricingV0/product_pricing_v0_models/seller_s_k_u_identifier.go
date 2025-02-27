@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// SellerSKUIdentifier seller s k u identifier
+// SellerSKUIdentifier Schema to identify an item by MarketPlaceId, SellerId, and SellerSKU.
 //
 // swagger:model SellerSKUIdentifier
 type SellerSKUIdentifier struct {

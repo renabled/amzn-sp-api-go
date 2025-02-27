@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// ItemRelatedIdentifiers Related business identifiers of the item in the transaction.
+// ItemRelatedIdentifiers Related Business identifiers of the item in Transaction.
 //
 // swagger:model ItemRelatedIdentifiers
 type ItemRelatedIdentifiers []*ItemRelatedIdentifier

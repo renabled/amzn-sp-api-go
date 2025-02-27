@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// BatchOffersResponse batch offers response
+// BatchOffersResponse Common schema that present in `ItemOffersResponse` and `ListingOffersResponse`
 //
 // swagger:model BatchOffersResponse
 type BatchOffersResponse struct {

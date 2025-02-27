@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// ItemOffersResponse item offers response
+// ItemOffersResponse Schema for an individual `ItemOffersResponse`
 //
 // swagger:model ItemOffersResponse
 type ItemOffersResponse struct {

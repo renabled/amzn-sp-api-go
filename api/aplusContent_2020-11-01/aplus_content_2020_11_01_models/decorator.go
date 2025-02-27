@@ -14,22 +14,22 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// Decorator A decorator applied to a content string value in order to create rich text.
+// Decorator A decorator that is applied to a content string value in order to create rich text.
 //
 // swagger:model Decorator
 type Decorator struct {
 
-	// The relative intensity or variation of this decorator. Decorators such as bullet-points, for example, can have multiple indentation depths.
+	// The relative intensity or variation of this decorator. Decorators, such as bullet-points, can have multiple indentation depths.
 	// Maximum: 100
 	// Minimum: 0
 	Depth *int64 `json:"depth,omitempty"`
 
-	// The number of content characters to alter with this decorator. Decorators such as line breaks can have zero length and fit between characters.
+	// The number of content characters to alter with this decorator. Decorators, such as line breaks, can have zero length and fit between characters.
 	// Maximum: 10000
 	// Minimum: 0
 	Length *int64 `json:"length,omitempty"`
 
-	// The starting character of this decorator within the content string. Use zero for the first character.
+	// The starting value of this decorator within the content string. Use zero (`0`) for the first value.
 	// Maximum: 10000
 	// Minimum: 0
 	Offset *int64 `json:"offset,omitempty"`

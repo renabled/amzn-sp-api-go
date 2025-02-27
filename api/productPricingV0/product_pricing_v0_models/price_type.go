@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// PriceType price type
+// PriceType Schema for item's price information, including listing price, shipping price, and Amazon points.
 //
 // swagger:model PriceType
 type PriceType struct {

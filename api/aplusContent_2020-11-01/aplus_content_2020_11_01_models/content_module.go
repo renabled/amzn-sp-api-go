@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// ContentModule An A+ Content module. An A+ Content document is composed of content modules. The contentModuleType property selects which content module types to use.
+// ContentModule An A+ Content module. An A+ Content document is composed of content modules. The `contentModuleType` property selects which content module types to use.
 //
 // swagger:model ContentModule
 type ContentModule struct {

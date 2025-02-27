@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// SalesRankType sales rank type
+// SalesRankType Sales rank information for the item, by category
 //
 // swagger:model SalesRankType
 type SalesRankType struct {

@@ -13,13 +13,13 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// Transaction All the information related to a transaction.
+// Transaction Contains all information related to the transaction.
 // Example: {"breakdowns":{"breakdowns":[{"breakdownAmount":{"currencyAmount":10,"currencyCode":"USD"},"breakdownType":"Sales","breakdowns":[{"breakdownAmount":{"currencyAmount":10,"currencyCode":"USD"},"breakdownType":"Product Charges","breakdowns":[]}]}]},"contexts":[{"channel":"MFN","contextType":"AmazonPayContext","orderType":"Order Type","storeName":"Store 1"}],"description":"Order Payment","items":[{"breakdowns":[{"breakdownAmount":{"currencyAmount":10,"currencyCode":"USD"},"breakdownType":"Product Charges","breakdowns":[{"breakdownAmount":{"currencyAmount":10,"currencyCode":"USD"},"breakdownType":"Principle","breakdowns":[]}]}],"contexts":[{"asin":"B07FGXZQZ1","contextType":"ProductContext","fulfillmentNetwork":"MFN","quantityShipped":1,"sku":"sku-12"}],"description":"Item title","relatedIdentifiers":[{"itemRelatedIdentifierName":"ORDER_ADJUSTMENT_ITEM_ID","itemRelatedIdentifierValue":"81297625-121-27551"}],"totalAmount":{"currencyAmount":10,"currencyCode":"USD"}}],"marketplaceDetails":{"marketplaceId":"ATVPDKIKX0DER","marketplaceName":"Amazon.com"},"postedDate":"2020-07-14T03:35:13.214Z","relatedIdentifiers":[{"relatedIdentifierName":"ORDER_ID","relatedIdentifierValue":"8129762527551"}],"sellingPartnerMetadata":{"accountType":"PAYABLE","marketplaceId":"ATVPDKIKX0DER","sellingPartnerId":"XXXXXXXXXXXXXX"},"totalAmount":{"currencyAmount":10,"currencyCode":"USD"},"transactionId":"b1qD0oAliFkLiqRyGbmeT0DoS2Z2kHzi7TZ92z-vARI","transactionStatus":"Released","transactionType":"Shipment"}
 //
 // swagger:model Transaction
 type Transaction struct {
 
-	// A list of breakdowns that provide details on how the total amount is calculated for the transaction.
+	// List of breakdowns which will provide the details on how the total amount is calculated for the financial transaction.
 	Breakdowns Breakdowns `json:"breakdowns,omitempty"`
 
 	// Additional Information about the transaction.
@@ -27,10 +27,10 @@ type Transaction struct {
 
 	// Describes the reasons for the transaction.
 	//
-	// **Example:** 'Order Payment', 'Refund Order'
+	// Example: 'Order Payment','Refund Order'
 	Description string `json:"description,omitempty"`
 
-	// Additional information about the items in the transaction.
+	// Additional information about the items in Transaction.
 	Items Items `json:"items,omitempty"`
 
 	// Information about the marketplace where the transaction occurred.
@@ -40,29 +40,30 @@ type Transaction struct {
 	// Format: date-time
 	PostedDate Date `json:"postedDate,omitempty"`
 
-	// Identifiers related to the transaction, such as order and shipment IDs.
+	// Related business identifiers of the transaction.
 	RelatedIdentifiers RelatedIdentifiers `json:"relatedIdentifiers,omitempty"`
 
-	// Metadata that describes the seller.
+	// Metadata describing the seller.
 	SellingPartnerMetadata *SellingPartnerMetadata `json:"sellingPartnerMetadata,omitempty"`
 
-	// The total amount of money in the transaction.
+	// Total amount of transaction.
 	TotalAmount *Currency `json:"totalAmount,omitempty"`
 
-	// The unique identifier of the transaction.
+	// The unique identifier for the transaction.
 	TransactionID string `json:"transactionId,omitempty"`
 
-	// The status of the transaction.
+	// The status for the transaction.
 	//
-	// **Possible values:**
+	// Possible values:
 	//
-	// * `Deferred`
-	// * `Released`
+	// * Deferred *Released
 	TransactionStatus string `json:"transactionStatus,omitempty"`
 
 	// The type of transaction.
 	//
-	// **Possible value:** `Shipment`
+	// Possible values:
+	//
+	// * Shipment
 	TransactionType string `json:"transactionType,omitempty"`
 }
 

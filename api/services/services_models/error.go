@@ -31,7 +31,7 @@ type Error struct {
 	// Enum: [ERROR WARNING]
 	ErrorLevel string `json:"errorLevel,omitempty"`
 
-	// A message that describes the error condition in a human-readable form.
+	// A message that describes the error condition.
 	// Required: true
 	Message *string `json:"message"`
 }

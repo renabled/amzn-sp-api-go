@@ -13,7 +13,7 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// ListingOffersRequest listing offers request
+// ListingOffersRequest List of request parameters that can be accepted by `ListingOffersRequest` operation
 //
 // swagger:model ListingOffersRequest
 type ListingOffersRequest struct {

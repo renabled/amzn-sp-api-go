@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// NumberOfOffers number of offers
+// NumberOfOffers A list that contains the total number of offers information for given conditions and fulfillment channels.
 //
 // swagger:model NumberOfOffers
 type NumberOfOffers []*OfferCountType

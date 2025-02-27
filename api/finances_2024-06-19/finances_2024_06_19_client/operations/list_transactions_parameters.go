@@ -63,19 +63,19 @@ type ListTransactionsParams struct {
 
 	/* MarketplaceID.
 
-	   The ID of the marketplace from which you want to retrieve transactions.
+	   A string token used to select Marketplace ID.
 	*/
 	MarketplaceID *string
 
 	/* NextToken.
 
-	   The response includes `nextToken` when the number of results exceeds the specified `pageSize` value. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until `nextToken` is null. Note that this operation can return empty pages.
+	   A string token returned in the response of your previous request.
 	*/
 	NextToken *string
 
 	/* PostedAfter.
 
-	   The response includes financial events posted after (or on) this date. This date must be in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format. The date-time must be more than two minutes before the time of the request.
+	   A date used for selecting transactions posted after (or at) a specified time. The date-time must be no later than two minutes before the request was submitted, in ISO 8601 date time format.
 
 	   Format: date-time
 	*/
@@ -83,13 +83,9 @@ type ListTransactionsParams struct {
 
 	/* PostedBefore.
 
-	     The response includes financial events posted before (but not on) this date. This date must be in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format.
+	   A date used for selecting transactions posted before (but not at) a specified time. The date-time must be later than PostedAfter and no later than two minutes before the request was submitted, in ISO 8601 date time format. If PostedAfter and PostedBefore are more than 180 days apart, no transactions are returned. You must specify the PostedAfter parameter if you specify the PostedBefore parameter. Default: Now minus two minutes.
 
-	The date-time must be later than `PostedAfter` and more than two minutes before the request was submitted. If `PostedAfter` and `PostedBefore` are more than 180 days apart, the response is empty.
-
-	**Default:** Two minutes before the time of the request.
-
-	     Format: date-time
+	   Format: date-time
 	*/
 	PostedBefore *strfmt.DateTime
 

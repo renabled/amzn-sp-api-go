@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// Transactions A list of transactions within the specified time period.
+// Transactions Contains transactions within a given time period.
 //
 // swagger:model Transactions
 type Transactions []*Transaction

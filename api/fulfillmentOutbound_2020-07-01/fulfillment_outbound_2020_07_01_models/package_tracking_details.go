@@ -34,11 +34,14 @@ type PackageTrackingDetails struct {
 	// current status
 	CurrentStatus CurrentStatus `json:"currentStatus,omitempty"`
 
-	// Description corresponding to the `CurrentStatus` value.
+	// Description corresponding to the CurrentStatus value.
 	CurrentStatusDescription string `json:"currentStatusDescription,omitempty"`
 
 	// Link on swiship.com that allows customers to track the package.
 	CustomerTrackingLink string `json:"customerTrackingLink,omitempty"`
+
+	// The delivery window for the package. This is available after the package reaches its destination delivery station.
+	DeliveryWindow *DateRange `json:"deliveryWindow,omitempty"`
 
 	// The estimated arrival date.
 	// Format: date-time
@@ -74,6 +77,10 @@ func (m *PackageTrackingDetails) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validateCurrentStatus(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateDeliveryWindow(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -132,6 +139,25 @@ func (m *PackageTrackingDetails) validateCurrentStatus(formats strfmt.Registry) 
 			return ce.ValidateName("currentStatus")
 		}
 		return err
+	}
+
+	return nil
+}
+
+func (m *PackageTrackingDetails) validateDeliveryWindow(formats strfmt.Registry) error {
+	if swag.IsZero(m.DeliveryWindow) { // not required
+		return nil
+	}
+
+	if m.DeliveryWindow != nil {
+		if err := m.DeliveryWindow.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("deliveryWindow")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("deliveryWindow")
+			}
+			return err
+		}
 	}
 
 	return nil
@@ -228,6 +254,10 @@ func (m *PackageTrackingDetails) ContextValidate(ctx context.Context, formats st
 		res = append(res, err)
 	}
 
+	if err := m.contextValidateDeliveryWindow(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.contextValidateEstimatedArrivalDate(ctx, formats); err != nil {
 		res = append(res, err)
 	}
@@ -273,6 +303,22 @@ func (m *PackageTrackingDetails) contextValidateCurrentStatus(ctx context.Contex
 			return ce.ValidateName("currentStatus")
 		}
 		return err
+	}
+
+	return nil
+}
+
+func (m *PackageTrackingDetails) contextValidateDeliveryWindow(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.DeliveryWindow != nil {
+		if err := m.DeliveryWindow.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("deliveryWindow")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("deliveryWindow")
+			}
+			return err
+		}
 	}
 
 	return nil

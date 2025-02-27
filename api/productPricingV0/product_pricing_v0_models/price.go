@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// Price price
+// Price Schema for price info in `getPricing` response
 //
 // swagger:model Price
 type Price struct {

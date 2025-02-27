@@ -98,7 +98,7 @@ type ArchiveSupplySourceNoContent struct {
 	 */
 	XAmznRateLimitLimit string
 
-	/* The unique request reference ID.
+	/* Unique request reference identifier.
 	 */
 	XAmznRequestID string
 
@@ -184,7 +184,7 @@ type ArchiveSupplySourceBadRequest struct {
 	 */
 	XAmznRateLimitLimit string
 
-	/* The unique request reference ID.
+	/* Unique request reference identifier.
 	 */
 	XAmznRequestID string
 
@@ -266,7 +266,7 @@ Indicates that access to the resource is forbidden. Possible reasons include Acc
 */
 type ArchiveSupplySourceForbidden struct {
 
-	/* The unique request reference ID.
+	/* Unique request reference identifier.
 	 */
 	XAmznRequestID string
 
@@ -345,7 +345,7 @@ type ArchiveSupplySourceNotFound struct {
 	 */
 	XAmznRateLimitLimit string
 
-	/* The unique request reference ID.
+	/* Unique request reference identifier.
 	 */
 	XAmznRequestID string
 
@@ -432,7 +432,7 @@ type ArchiveSupplySourceRequestEntityTooLarge struct {
 	*/
 	XAmznRateLimitLimit string
 
-	/* The unique request reference ID.
+	/* Unique request reference identifier.
 	 */
 	XAmznRequestID string
 
@@ -519,7 +519,7 @@ type ArchiveSupplySourceUnsupportedMediaType struct {
 	*/
 	XAmznRateLimitLimit string
 
-	/* The unique request reference ID.
+	/* Unique request reference identifier.
 	 */
 	XAmznRequestID string
 
@@ -606,7 +606,7 @@ type ArchiveSupplySourceTooManyRequests struct {
 	*/
 	XAmznRateLimitLimit string
 
-	/* The unique request reference ID.
+	/* Unique request reference identifier.
 	 */
 	XAmznRequestID string
 
@@ -693,7 +693,7 @@ type ArchiveSupplySourceInternalServerError struct {
 	*/
 	XAmznRateLimitLimit string
 
-	/* The unique request reference ID.
+	/* Unique request reference identifier.
 	 */
 	XAmznRequestID string
 
@@ -780,7 +780,7 @@ type ArchiveSupplySourceServiceUnavailable struct {
 	*/
 	XAmznRateLimitLimit string
 
-	/* The unique request reference ID.
+	/* Unique request reference identifier.
 	 */
 	XAmznRequestID string
 

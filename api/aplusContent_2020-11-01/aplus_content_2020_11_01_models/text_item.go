@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// TextItem Rich positional text, usually presented as a collection of bullet points.
+// TextItem Rich positional text that is usually presented as a collection of bullet points.
 //
 // swagger:model TextItem
 type TextItem struct {

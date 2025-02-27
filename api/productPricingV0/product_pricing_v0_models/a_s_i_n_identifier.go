@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// ASINIdentifier a s i n identifier
+// ASINIdentifier Schema to identify an item by MarketPlaceId and ASIN.
 //
 // swagger:model ASINIdentifier
 type ASINIdentifier struct {

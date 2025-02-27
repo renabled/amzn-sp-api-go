@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// ContentMetadata The metadata of an A+ Content document.
+// ContentMetadata The A+ Content document's metadata.
 //
 // swagger:model ContentMetadata
 type ContentMetadata struct {
@@ -27,7 +27,7 @@ type ContentMetadata struct {
 	// Required: true
 	MarketplaceID *MarketplaceID `json:"marketplaceId"`
 
-	// The A+ Content document name.
+	// The A+ Content document's name.
 	// Required: true
 	// Max Length: 100
 	// Min Length: 1

@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// LowestPrices lowest prices
+// LowestPrices A list of the lowest prices.
 //
 // swagger:model LowestPrices
 type LowestPrices []*LowestPriceType

@@ -13,7 +13,7 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// AplusResponse The base response data for all A+ Content operations when a request is successful or partially successful. Individual operations may extend this with additional data.
+// AplusResponse The base response data for all A+ Content operations when a request is successful or partially successful. Individual operations can extend this with additional data.
 //
 // swagger:model AplusResponse
 type AplusResponse struct {

@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// Marketplace Detailed information about an Amazon market where a seller can list items for sale and customers can view and purchase items.
+// Marketplace Information about an Amazon marketplace where a seller can list items and customers can view and purchase items.
 //
 // swagger:model Marketplace
 type Marketplace struct {
@@ -40,7 +40,7 @@ type Marketplace struct {
 	// Required: true
 	ID *string `json:"id"`
 
-	// Marketplace name.
+	// The marketplace name.
 	// Required: true
 	Name *string `json:"name"`
 }

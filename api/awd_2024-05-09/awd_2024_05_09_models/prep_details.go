@@ -24,9 +24,9 @@ type PrepDetails struct {
 	LabelOwner LabelOwner `json:"labelOwner,omitempty"`
 
 	// The preparation category for shipping an item to Amazon's fulfillment network.
-	PrepCategory string `json:"prepCategory,omitempty"`
+	PrepCategory PrepCategory `json:"prepCategory,omitempty"`
 
-	// Information that pertains to the preparation of inbound products. This is generated based on the specified category.
+	// Contains information about the preparation of the inbound products. The system auto-generates this field with the use of the `prepCategory`, and if you attempt to pass a value for this field, the system will ignore it.
 	PrepInstructions []*PrepInstruction `json:"prepInstructions"`
 
 	// prep owner
@@ -38,6 +38,10 @@ func (m *PrepDetails) Validate(formats strfmt.Registry) error {
 	var res []error
 
 	if err := m.validateLabelOwner(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validatePrepCategory(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -65,6 +69,23 @@ func (m *PrepDetails) validateLabelOwner(formats strfmt.Registry) error {
 			return ve.ValidateName("labelOwner")
 		} else if ce, ok := err.(*errors.CompositeError); ok {
 			return ce.ValidateName("labelOwner")
+		}
+		return err
+	}
+
+	return nil
+}
+
+func (m *PrepDetails) validatePrepCategory(formats strfmt.Registry) error {
+	if swag.IsZero(m.PrepCategory) { // not required
+		return nil
+	}
+
+	if err := m.PrepCategory.Validate(formats); err != nil {
+		if ve, ok := err.(*errors.Validation); ok {
+			return ve.ValidateName("prepCategory")
+		} else if ce, ok := err.(*errors.CompositeError); ok {
+			return ce.ValidateName("prepCategory")
 		}
 		return err
 	}
@@ -123,6 +144,10 @@ func (m *PrepDetails) ContextValidate(ctx context.Context, formats strfmt.Regist
 		res = append(res, err)
 	}
 
+	if err := m.contextValidatePrepCategory(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.contextValidatePrepInstructions(ctx, formats); err != nil {
 		res = append(res, err)
 	}
@@ -144,6 +169,20 @@ func (m *PrepDetails) contextValidateLabelOwner(ctx context.Context, formats str
 			return ve.ValidateName("labelOwner")
 		} else if ce, ok := err.(*errors.CompositeError); ok {
 			return ce.ValidateName("labelOwner")
+		}
+		return err
+	}
+
+	return nil
+}
+
+func (m *PrepDetails) contextValidatePrepCategory(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := m.PrepCategory.ContextValidate(ctx, formats); err != nil {
+		if ve, ok := err.(*errors.Validation); ok {
+			return ve.ValidateName("prepCategory")
+		} else if ce, ok := err.(*errors.CompositeError); ok {
+			return ce.ValidateName("prepCategory")
 		}
 		return err
 	}
