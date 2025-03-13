@@ -15,7 +15,8 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// TaxDetails The tax details related to the order.
+// TaxDetails The tax details for the order.
+// _Note:_ Amazon calculates tax on the list price (Amazon retail price).
 //
 // swagger:model TaxDetails
 type TaxDetails struct {
