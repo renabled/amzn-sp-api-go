@@ -14,16 +14,16 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// BrandRefinement Description of a brand that can be used to get more fine-grained search results.
+// BrandRefinement A brand that you can use to refine your search.
 //
 // swagger:model BrandRefinement
 type BrandRefinement struct {
 
-	// Brand name. For display and can be used as a search refinement.
+	// The brand name that you can use to refine your search.
 	// Required: true
 	BrandName *string `json:"brandName"`
 
-	// The estimated number of results that would still be returned if refinement key applied.
+	// The estimated number of results that would be returned if you refine your search by the specified `brandName`.
 	// Required: true
 	NumberOfResults *int64 `json:"numberOfResults"`
 }

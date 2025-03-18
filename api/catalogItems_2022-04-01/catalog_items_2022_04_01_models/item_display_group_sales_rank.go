@@ -14,23 +14,23 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// ItemDisplayGroupSalesRank Sales rank of an Amazon catalog item by website display group.
+// ItemDisplayGroupSalesRank Sales rank of an Amazon catalog item, grouped by website display group.
 //
 // swagger:model ItemDisplayGroupSalesRank
 type ItemDisplayGroupSalesRank struct {
 
-	// Corresponding Amazon retail website link, or URL, for the sales rank.
+	// Corresponding Amazon retail website URL for the sales rank.
 	Link string `json:"link,omitempty"`
 
-	// Sales rank value.
+	// Sales rank.
 	// Required: true
 	Rank *int64 `json:"rank"`
 
-	// Title, or name, of the sales rank.
+	// Name of the sales rank.
 	// Required: true
 	Title *string `json:"title"`
 
-	// Name of the website display group associated with the sales rank
+	// Name of the website display group that is associated with the sales rank
 	// Required: true
 	WebsiteDisplayGroup *string `json:"websiteDisplayGroup"`
 }

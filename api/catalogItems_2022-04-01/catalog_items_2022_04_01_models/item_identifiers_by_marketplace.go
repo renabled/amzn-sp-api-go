@@ -15,16 +15,16 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// ItemIdentifiersByMarketplace Identifiers associated with the item in the Amazon catalog for the indicated Amazon marketplace.
+// ItemIdentifiersByMarketplace Identifiers that are associated with the item in the Amazon catalog, grouped by `marketplaceId`.
 //
 // swagger:model ItemIdentifiersByMarketplace
 type ItemIdentifiersByMarketplace struct {
 
-	// Identifiers associated with the item in the Amazon catalog for the indicated Amazon marketplace.
+	// Identifiers associated with the item in the Amazon catalog for the indicated `marketplaceId`.
 	// Required: true
 	Identifiers []*ItemIdentifier `json:"identifiers"`
 
-	// Amazon marketplace identifier.
+	// Amazon marketplace identifier. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).identifier.
 	// Required: true
 	MarketplaceID *string `json:"marketplaceId"`
 }

@@ -64,31 +64,31 @@ type SearchCatalogItemsParams struct {
 
 	/* BrandNames.
 
-	   A comma-delimited list of brand names to limit the search for `keywords`-based queries. **Note:** Cannot be used with `identifiers`.
+	   A comma-delimited list of brand names that you can use to limit the search in queries based on `keywords`. **Note:** Cannot be used with `identifiers`.
 	*/
 	BrandNames []string
 
 	/* ClassificationIds.
 
-	   A comma-delimited list of classification identifiers to limit the search for `keywords`-based queries. **Note:** Cannot be used with `identifiers`.
+	   A comma-delimited list of classification identifiers that you can use to limit the search in queries based on `keywords`. **Note:** Cannot be used with `identifiers`.
 	*/
 	ClassificationIds []string
 
 	/* Identifiers.
 
-	   A comma-delimited list of product identifiers to search the Amazon catalog for. **Note:** Cannot be used with `keywords`.
+	   A comma-delimited list of product identifiers that you can use to search the Amazon catalog. **Note:** You cannot include `identifiers` and `keywords` in the same request.
 	*/
 	Identifiers []string
 
 	/* IdentifiersType.
 
-	   Type of product identifiers to search the Amazon catalog for. **Note:** Required when `identifiers` are provided.
+	   The type of product identifiers that you can use to search the Amazon catalog. **Note:** `identifiersType` is required when `identifiers` is in the request.
 	*/
 	IdentifiersType *string
 
 	/* IncludedData.
 
-	   A comma-delimited list of data sets to include in the response. Default: `summaries`.
+	   A comma-delimited list of datasets to include in the response.
 
 	   Default: ["summaries"]
 	*/
@@ -96,31 +96,31 @@ type SearchCatalogItemsParams struct {
 
 	/* Keywords.
 
-	   A comma-delimited list of words to search the Amazon catalog for. **Note:** Cannot be used with `identifiers`.
+	   A comma-delimited list of keywords that you can use to search the Amazon catalog. **Note:** You cannot include `keywords` and `identifiers` in the same request.
 	*/
 	Keywords []string
 
 	/* KeywordsLocale.
 
-	   The language of the keywords provided for `keywords`-based queries. Defaults to the primary locale of the marketplace. **Note:** Cannot be used with `identifiers`.
+	   The language of the keywords that are included in queries based on `keywords`. Defaults to the primary locale of the marketplace. **Note:** Cannot be used with `identifiers`.
 	*/
 	KeywordsLocale *string
 
 	/* Locale.
 
-	   Locale for retrieving localized summaries. Defaults to the primary locale of the marketplace.
+	   The locale for which you want to retrieve localized summaries. Defaults to the primary locale of the marketplace.
 	*/
 	Locale *string
 
 	/* MarketplaceIds.
 
-	   A comma-delimited list of Amazon marketplace identifiers for the request.
+	   A comma-delimited list of Amazon marketplace identifiers. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
 	*/
 	MarketplaceIds []string
 
 	/* PageSize.
 
-	   Number of results to be returned per page.
+	   The number of results to include on each page.
 
 	   Default: 10
 	*/
@@ -128,7 +128,7 @@ type SearchCatalogItemsParams struct {
 
 	/* PageToken.
 
-	   A token to fetch a certain page when there are multiple pages worth of results.
+	   A token that you can use to fetch a specific page when there are multiple pages of results.
 	*/
 	PageToken *string
 

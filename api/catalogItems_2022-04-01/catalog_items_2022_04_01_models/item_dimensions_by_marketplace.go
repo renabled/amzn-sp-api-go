@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// ItemDimensionsByMarketplace Dimensions associated with the item in the Amazon catalog for the indicated Amazon marketplace.
+// ItemDimensionsByMarketplace Dimensions that are associated with the item in the Amazon catalog for the indicated `marketplaceId`.
 //
 // swagger:model ItemDimensionsByMarketplace
 type ItemDimensionsByMarketplace struct {
@@ -22,11 +22,11 @@ type ItemDimensionsByMarketplace struct {
 	// Dimensions of an Amazon catalog item.
 	Item *Dimensions `json:"item,omitempty"`
 
-	// Amazon marketplace identifier.
+	// Amazon marketplace identifier. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
 	// Required: true
 	MarketplaceID *string `json:"marketplaceId"`
 
-	// Dimensions of an Amazon catalog item in its packaging.
+	// Dimensions of a package that contains an Amazon catalog item.
 	Package *Dimensions `json:"package,omitempty"`
 }
 

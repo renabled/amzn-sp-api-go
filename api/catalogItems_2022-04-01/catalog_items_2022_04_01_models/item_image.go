@@ -24,7 +24,7 @@ type ItemImage struct {
 	// Required: true
 	Height *int64 `json:"height"`
 
-	// Link, or URL, for the image.
+	// URL for the image.
 	// Required: true
 	Link *string `json:"link"`
 

@@ -12,15 +12,15 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// ItemVendorDetailsCategory Product category or subcategory associated with an Amazon catalog item.
+// ItemVendorDetailsCategory The product category or subcategory that is associated with an Amazon catalog item.
 //
 // swagger:model ItemVendorDetailsCategory
 type ItemVendorDetailsCategory struct {
 
-	// Display name of the product category or subcategory
+	// The display name of the product category or subcategory.
 	DisplayName string `json:"displayName,omitempty"`
 
-	// Value (code) of the product category or subcategory.
+	// The code that identifies the product category or subcategory.
 	Value string `json:"value,omitempty"`
 }
 

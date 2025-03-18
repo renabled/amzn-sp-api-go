@@ -15,15 +15,15 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// ItemBrowseClassificationsByMarketplace Classifications (browse nodes) associated with the item in the Amazon catalog for the indicated Amazon marketplace.
+// ItemBrowseClassificationsByMarketplace Classifications (browse nodes) that are associated with the item in the Amazon catalog for the indicated `marketplaceId`.
 //
 // swagger:model ItemBrowseClassificationsByMarketplace
 type ItemBrowseClassificationsByMarketplace struct {
 
-	// Classifications (browse nodes) associated with the item in the Amazon catalog for the indicated Amazon marketplace.
+	// Classifications (browse nodes) that are associated with the item in the Amazon catalog.
 	Classifications []*ItemBrowseClassification `json:"classifications"`
 
-	// Amazon marketplace identifier.
+	// Amazon marketplace identifier. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
 	// Required: true
 	MarketplaceID *string `json:"marketplaceId"`
 }

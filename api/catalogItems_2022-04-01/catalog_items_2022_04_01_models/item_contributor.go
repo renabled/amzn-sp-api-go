@@ -23,7 +23,7 @@ type ItemContributor struct {
 	// Required: true
 	Role *ItemContributorRole `json:"role"`
 
-	// Name of the contributor, such as Jane Austen.
+	// Name of the contributor, such as `Jane Austen`.
 	// Required: true
 	Value *string `json:"value"`
 }

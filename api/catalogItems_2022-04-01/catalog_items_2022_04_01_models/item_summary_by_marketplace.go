@@ -16,72 +16,72 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// ItemSummaryByMarketplace Summary details of an Amazon catalog item for the indicated Amazon marketplace.
+// ItemSummaryByMarketplace Information about an Amazon catalog item for the indicated `marketplaceId`.
 //
 // swagger:model ItemSummaryByMarketplace
 type ItemSummaryByMarketplace struct {
 
-	// Identifies an Amazon catalog item is intended for an adult audience or is sexual in nature.
+	// When `true`, the Amazon catalog item is intended for an adult audience or is sexual in nature.
 	AdultProduct bool `json:"adultProduct,omitempty"`
 
-	// Identifies an Amazon catalog item is autographed by a player or celebrity.
+	// When `true`, the Amazon catalog item is autographed.
 	Autographed bool `json:"autographed,omitempty"`
 
-	// Name of the brand associated with an Amazon catalog item.
+	// Name of the brand that is associated with the Amazon catalog item.
 	Brand string `json:"brand,omitempty"`
 
-	// Classification (browse node) associated with an Amazon catalog item.
+	// Classification (browse node) that is associated with the Amazon catalog item.
 	BrowseClassification *ItemBrowseClassification `json:"browseClassification,omitempty"`
 
-	// Name of the color associated with an Amazon catalog item.
+	// The color that is associated with the Amazon catalog item.
 	Color string `json:"color,omitempty"`
 
-	// Individual contributors to the creation of an item, such as the authors or actors.
+	// Individual contributors to the creation of the item, such as the authors or actors.
 	Contributors []*ItemContributor `json:"contributors"`
 
-	// Classification type associated with the Amazon catalog item.
+	// Classification type that is associated with the Amazon catalog item.
 	// Enum: [BASE_PRODUCT OTHER PRODUCT_BUNDLE VARIATION_PARENT]
 	ItemClassification string `json:"itemClassification,omitempty"`
 
-	// Name, or title, associated with an Amazon catalog item.
+	// The name that is associated with the Amazon catalog item.
 	ItemName string `json:"itemName,omitempty"`
 
-	// Name of the manufacturer associated with an Amazon catalog item.
+	// The name of the manufacturer that is associated with the Amazon catalog item.
 	Manufacturer string `json:"manufacturer,omitempty"`
 
-	// Amazon marketplace identifier.
+	// Amazon marketplace identifier. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
 	// Required: true
 	MarketplaceID *string `json:"marketplaceId"`
 
-	// Identifies an Amazon catalog item is memorabilia valued for its connection with historical events, culture, or entertainment.
+	// When true, the item is classified as memorabilia.
 	Memorabilia bool `json:"memorabilia,omitempty"`
 
-	// Model number associated with an Amazon catalog item.
+	// The model number that is associated with the Amazon catalog item.
 	ModelNumber string `json:"modelNumber,omitempty"`
 
-	// Quantity of an Amazon catalog item in one package.
+	// The quantity of the Amazon catalog item within one package.
 	PackageQuantity int64 `json:"packageQuantity,omitempty"`
 
-	// Part number associated with an Amazon catalog item.
+	// The part number that is associated with the Amazon catalog item.
 	PartNumber string `json:"partNumber,omitempty"`
 
-	// First date on which an Amazon catalog item is shippable to customers.
+	// The earliest date on which the Amazon catalog item can be shipped to customers.
 	// Format: date
 	ReleaseDate strfmt.Date `json:"releaseDate,omitempty"`
 
-	// Name of the size associated with an Amazon catalog item.
+	// The name of the size of the Amazon catalog item.
 	Size string `json:"size,omitempty"`
 
-	// Name of the style associated with an Amazon catalog item.
+	// The name of the style that is associated with the Amazon catalog item.
 	Style string `json:"style,omitempty"`
 
-	// Identifies an Amazon catalog item is eligible for trade-in.
+	// When true, the Amazon catalog item is eligible for trade-in.
 	TradeInEligible bool `json:"tradeInEligible,omitempty"`
 
-	// Identifier of the website display group associated with an Amazon catalog item.
+	// The identifier of the website display group that is associated with the Amazon catalog item.
 	WebsiteDisplayGroup string `json:"websiteDisplayGroup,omitempty"`
 
-	// Display name of the website display group associated with an Amazon catalog item.
+	// The display name of the website display group that is associated with the Amazon catalog item.
 	WebsiteDisplayGroupName string `json:"websiteDisplayGroupName,omitempty"`
 }
 

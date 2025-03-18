@@ -15,18 +15,18 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// ItemSalesRanksByMarketplace Sales ranks of an Amazon catalog item for the indicated Amazon marketplace.
+// ItemSalesRanksByMarketplace Sales ranks of an Amazon catalog item, grouped by `marketplaceId`.
 //
 // swagger:model ItemSalesRanksByMarketplace
 type ItemSalesRanksByMarketplace struct {
 
-	// Sales ranks of an Amazon catalog item for an Amazon marketplace by classification.
+	// Sales ranks of an Amazon catalog item for a `marketplaceId`, grouped by classification.
 	ClassificationRanks []*ItemClassificationSalesRank `json:"classificationRanks"`
 
-	// Sales ranks of an Amazon catalog item for an Amazon marketplace by website display group.
+	// Sales ranks of an Amazon catalog item for a `marketplaceId`, grouped by website display group.
 	DisplayGroupRanks []*ItemDisplayGroupSalesRank `json:"displayGroupRanks"`
 
-	// Amazon marketplace identifier.
+	// Amazon marketplace identifier. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
 	// Required: true
 	MarketplaceID *string `json:"marketplaceId"`
 }

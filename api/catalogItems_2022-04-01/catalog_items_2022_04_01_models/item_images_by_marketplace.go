@@ -15,16 +15,16 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// ItemImagesByMarketplace Images for an item in the Amazon catalog for the indicated Amazon marketplace.
+// ItemImagesByMarketplace Images for an item in the Amazon catalog, grouped by `marketplaceId`.
 //
 // swagger:model ItemImagesByMarketplace
 type ItemImagesByMarketplace struct {
 
-	// Images for an item in the Amazon catalog for the indicated Amazon marketplace.
+	// Images for an item in the Amazon catalog, grouped by `marketplaceId`.
 	// Required: true
 	Images []*ItemImage `json:"images"`
 
-	// Amazon marketplace identifier.
+	// Amazon marketplace identifier. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
 	// Required: true
 	MarketplaceID *string `json:"marketplaceId"`
 }

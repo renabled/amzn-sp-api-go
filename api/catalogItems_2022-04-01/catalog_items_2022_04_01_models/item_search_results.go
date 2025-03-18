@@ -15,7 +15,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// ItemSearchResults Items in the Amazon catalog and search related metadata.
+// ItemSearchResults Items in the Amazon catalog and search-related metadata.
 //
 // swagger:model ItemSearchResults
 type ItemSearchResults struct {
@@ -24,17 +24,17 @@ type ItemSearchResults struct {
 	// Required: true
 	Items []*Item `json:"items"`
 
-	// For `identifiers`-based searches, the total number of Amazon catalog items found. For `keywords`-based searches, the estimated total number of Amazon catalog items matched by the search query (only results up to the page count limit will be returned per request regardless of the number found).
+	// For searches that are based on `identifiers`, `numberOfResults` is the total number of Amazon catalog items found. For searches that are based on `keywords`, `numberOfResults` is the estimated total number of Amazon catalog items that are matched by the search query. Only results up to the page count limit are returned per request regardless of the number found.
 	//
-	// Note: The maximum number of items (ASINs) that can be returned and paged through is 1000.
+	// **Note:** The maximum number of items (ASINs) that can be returned and paged through is 1,000.
 	// Required: true
 	NumberOfResults *int64 `json:"numberOfResults"`
 
-	// If available, the `nextToken` and/or `previousToken` values required to return paginated results.
+	// The `nextToken` and `previousToken` values that are required to retrieve paginated results.
 	// Required: true
 	Pagination *Pagination `json:"pagination"`
 
-	// Search refinements for `keywords`-based searches.
+	// Search refinements for searches that are based on `keywords`.
 	// Required: true
 	Refinements *Refinements `json:"refinements"`
 }

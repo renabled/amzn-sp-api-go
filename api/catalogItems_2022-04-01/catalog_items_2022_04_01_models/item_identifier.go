@@ -14,12 +14,12 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// ItemIdentifier Identifier associated with the item in the Amazon catalog, such as a UPC or EAN identifier.
+// ItemIdentifier The identifier that is associated with the item in the Amazon catalog, such as a UPC or EAN identifier.
 //
 // swagger:model ItemIdentifier
 type ItemIdentifier struct {
 
-	// Identifier.
+	// Identifier of the item.
 	// Required: true
 	Identifier *string `json:"identifier"`
 

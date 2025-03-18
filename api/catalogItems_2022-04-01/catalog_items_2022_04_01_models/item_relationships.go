@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// ItemRelationships Relationships by marketplace for an Amazon catalog item (for example, variations).
+// ItemRelationships Relationships grouped by `marketplaceId` for an Amazon catalog item (for example, variations).
 //
 // swagger:model ItemRelationships
 type ItemRelationships []*ItemRelationshipsByMarketplace

@@ -15,16 +15,16 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// Refinements Search refinements.
+// Refinements Optional fields that you can use to refine your search results.
 //
 // swagger:model Refinements
 type Refinements struct {
 
-	// Brand search refinements.
+	// A list of brands you can use to refine your search.
 	// Required: true
 	Brands []*BrandRefinement `json:"brands"`
 
-	// Classification search refinements.
+	// A list of classifications you can use to refine your search.
 	// Required: true
 	Classifications []*ClassificationRefinement `json:"classifications"`
 }

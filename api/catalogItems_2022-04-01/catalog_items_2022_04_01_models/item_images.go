@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// ItemImages Images for an item in the Amazon catalog.
+// ItemImages The images for an item in the Amazon catalog.
 //
 // swagger:model ItemImages
 type ItemImages []*ItemImagesByMarketplace

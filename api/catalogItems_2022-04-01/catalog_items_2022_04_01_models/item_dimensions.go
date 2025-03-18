@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// ItemDimensions Array of dimensions associated with the item in the Amazon catalog by Amazon marketplace.
+// ItemDimensions An array of dimensions that are associated with the item in the Amazon catalog, grouped by `marketplaceId`.
 //
 // swagger:model ItemDimensions
 type ItemDimensions []*ItemDimensionsByMarketplace

@@ -14,12 +14,12 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// ClassificationRefinement Description of a classification that can be used to get more fine-grained search results.
+// ClassificationRefinement A classification that you can use to refine your search.
 //
 // swagger:model ClassificationRefinement
 type ClassificationRefinement struct {
 
-	// Identifier for the classification that can be used for search refinement purposes.
+	// The identifier of the classification that you can use to refine your search.
 	// Required: true
 	ClassificationID *string `json:"classificationId"`
 
@@ -27,7 +27,7 @@ type ClassificationRefinement struct {
 	// Required: true
 	DisplayName *string `json:"displayName"`
 
-	// The estimated number of results that would still be returned if refinement key applied.
+	// The estimated number of results that would be returned if you refine your search by the specified `classificationId`.
 	// Required: true
 	NumberOfResults *int64 `json:"numberOfResults"`
 }

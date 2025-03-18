@@ -12,15 +12,15 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// Dimension Individual dimension value of an Amazon catalog item or item package.
+// Dimension The value of an individual dimension for an Amazon catalog item or item package.
 //
 // swagger:model Dimension
 type Dimension struct {
 
-	// Measurement unit of the dimension value.
+	// Unit of measurement for the dimension value.
 	Unit string `json:"unit,omitempty"`
 
-	// Numeric dimension value.
+	// Numeric value of the dimension.
 	Value float64 `json:"value,omitempty"`
 }
 

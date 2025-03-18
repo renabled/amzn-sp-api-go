@@ -14,20 +14,20 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// ItemBrowseClassification Classification (browse node) associated with an Amazon catalog item.
+// ItemBrowseClassification Classification (browse node) for an Amazon catalog item.
 //
 // swagger:model ItemBrowseClassification
 type ItemBrowseClassification struct {
 
-	// Identifier of the classification (browse node identifier).
+	// Identifier of the classification.
 	// Required: true
 	ClassificationID *string `json:"classificationId"`
 
-	// Display name for the classification (browse node).
+	// Display name for the classification.
 	// Required: true
 	DisplayName *string `json:"displayName"`
 
-	// Parent classification (browse node) of the current classification.
+	// Parent classification of the current classification.
 	Parent *ItemBrowseClassification `json:"parent,omitempty"`
 }
 

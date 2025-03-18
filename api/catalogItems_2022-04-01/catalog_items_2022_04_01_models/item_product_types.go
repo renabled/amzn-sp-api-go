@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// ItemProductTypes Product types associated with the Amazon catalog item.
+// ItemProductTypes Product types that are associated with the Amazon catalog item.
 //
 // swagger:model ItemProductTypes
 type ItemProductTypes []*ItemProductTypeByMarketplace

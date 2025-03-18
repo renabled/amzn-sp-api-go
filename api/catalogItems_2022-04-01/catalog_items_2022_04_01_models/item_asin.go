@@ -11,7 +11,7 @@ import (
 	"github.com/go-openapi/strfmt"
 )
 
-// ItemAsin Amazon Standard Identification Number (ASIN) is the unique identifier for an item in the Amazon catalog.
+// ItemAsin The unique identifier of an item in the Amazon catalog.
 //
 // swagger:model ItemAsin
 type ItemAsin string

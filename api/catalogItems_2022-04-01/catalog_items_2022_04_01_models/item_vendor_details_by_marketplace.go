@@ -15,34 +15,34 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// ItemVendorDetailsByMarketplace Vendor details associated with an Amazon catalog item for the indicated Amazon marketplace.
+// ItemVendorDetailsByMarketplace The vendor details that are associated with an Amazon catalog item for the specified `marketplaceId`.
 //
 // swagger:model ItemVendorDetailsByMarketplace
 type ItemVendorDetailsByMarketplace struct {
 
-	// Brand code associated with an Amazon catalog item.
+	// The brand code that is associated with an Amazon catalog item.
 	BrandCode string `json:"brandCode,omitempty"`
 
-	// Manufacturer code associated with an Amazon catalog item.
+	// The manufacturer code that is associated with an Amazon catalog item.
 	ManufacturerCode string `json:"manufacturerCode,omitempty"`
 
-	// Parent vendor code of the manufacturer code.
+	// The parent vendor code of the manufacturer code.
 	ManufacturerCodeParent string `json:"manufacturerCodeParent,omitempty"`
 
-	// Amazon marketplace identifier.
+	// Amazon marketplace identifier. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
 	// Required: true
 	MarketplaceID *string `json:"marketplaceId"`
 
-	// Product category associated with an Amazon catalog item.
+	// The product category that is associated with an Amazon catalog item.
 	ProductCategory *ItemVendorDetailsCategory `json:"productCategory,omitempty"`
 
-	// Product group associated with an Amazon catalog item.
+	// The product group that is associated with an Amazon catalog item.
 	ProductGroup string `json:"productGroup,omitempty"`
 
-	// Product subcategory associated with an Amazon catalog item.
+	// The product subcategory that is associated with an Amazon catalog item.
 	ProductSubcategory *ItemVendorDetailsCategory `json:"productSubcategory,omitempty"`
 
-	// Replenishment category associated with an Amazon catalog item.
+	// The replenishment category that is associated with an Amazon catalog item.
 	// Enum: [ALLOCATED BASIC_REPLENISHMENT IN_SEASON LIMITED_REPLENISHMENT MANUFACTURER_OUT_OF_STOCK NEW_PRODUCT NON_REPLENISHABLE NON_STOCKUPABLE OBSOLETE PLANNED_REPLENISHMENT]
 	ReplenishmentCategory string `json:"replenishmentCategory,omitempty"`
 }

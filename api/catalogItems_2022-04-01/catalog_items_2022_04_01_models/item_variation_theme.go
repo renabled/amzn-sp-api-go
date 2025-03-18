@@ -12,15 +12,15 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// ItemVariationTheme Variation theme indicating the combination of Amazon item catalog attributes that define the variation family.
+// ItemVariationTheme The variation theme is a list of Amazon catalog item attributes that define the variation family.
 //
 // swagger:model ItemVariationTheme
 type ItemVariationTheme struct {
 
-	// Names of the Amazon catalog item attributes associated with the variation theme.
+	// Names of the Amazon catalog item attributes that are associated with the variation theme.
 	Attributes []string `json:"attributes"`
 
-	// Variation theme indicating the combination of Amazon item catalog attributes that define the variation family.
+	// Variation theme that indicates the combination of Amazon catalog item attributes that define the variation family.
 	// Example: COLOR_NAME/STYLE_NAME
 	Theme string `json:"theme,omitempty"`
 }

@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// ItemVendorDetails Vendor details associated with an Amazon catalog item. Vendor details are available to vendors only.
+// ItemVendorDetails The vendor details that are associated with an Amazon catalog item. Vendor details are only available to vendors.
 //
 // swagger:model ItemVendorDetails
 type ItemVendorDetails []*ItemVendorDetailsByMarketplace

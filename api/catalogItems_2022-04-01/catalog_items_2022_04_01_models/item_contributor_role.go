@@ -19,10 +19,10 @@ import (
 // swagger:model ItemContributorRole
 type ItemContributorRole struct {
 
-	// Display name of the role in the requested locale, such as Author or Actor.
+	// Display name of the role in the requested locale, such as `Author` or `Actor`.
 	DisplayName string `json:"displayName,omitempty"`
 
-	// Role value for the Amazon catalog item, such as author or actor.
+	// Role value for the Amazon catalog item, such as `author` or `actor`.
 	// Required: true
 	Value *string `json:"value"`
 }

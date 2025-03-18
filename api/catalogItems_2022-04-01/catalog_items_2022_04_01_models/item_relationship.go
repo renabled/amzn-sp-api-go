@@ -20,10 +20,10 @@ import (
 // swagger:model ItemRelationship
 type ItemRelationship struct {
 
-	// Identifiers (ASINs) of the related items that are children of this item.
+	// ASINs of the related items that are children of this item.
 	ChildAsins []string `json:"childAsins"`
 
-	// Identifiers (ASINs) of the related items that are parents of this item.
+	// ASINs of the related items that are parents of this item.
 	ParentAsins []string `json:"parentAsins"`
 
 	// Type of relationship.
@@ -32,7 +32,7 @@ type ItemRelationship struct {
 	// Enum: [VARIATION PACKAGE_HIERARCHY]
 	Type *string `json:"type"`
 
-	// For "VARIATION" relationships, variation theme indicating the combination of Amazon item catalog attributes that define the variation family.
+	// For `VARIATION` relationships, the variation theme indicates the combination of Amazon catalog item attributes that define the variation family.
 	VariationTheme *ItemVariationTheme `json:"variationTheme,omitempty"`
 }
 

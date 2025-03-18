@@ -70,7 +70,7 @@ type GetCatalogItemParams struct {
 
 	/* IncludedData.
 
-	   A comma-delimited list of data sets to include in the response. Default: `summaries`.
+	   A comma-delimited list of datasets to include in the response.
 
 	   Default: ["summaries"]
 	*/
@@ -78,13 +78,13 @@ type GetCatalogItemParams struct {
 
 	/* Locale.
 
-	   Locale for retrieving localized summaries. Defaults to the primary locale of the marketplace.
+	   The locale for which you want to retrieve localized summaries. Defaults to the primary locale of the marketplace.
 	*/
 	Locale *string
 
 	/* MarketplaceIds.
 
-	   A comma-delimited list of Amazon marketplace identifiers. Data sets in the response contain data only for the specified marketplaces.
+	   A comma-delimited list of Amazon marketplace identifiers. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
 	*/
 	MarketplaceIds []string
 

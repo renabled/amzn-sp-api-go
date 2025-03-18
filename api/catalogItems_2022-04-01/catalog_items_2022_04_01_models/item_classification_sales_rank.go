@@ -14,23 +14,23 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// ItemClassificationSalesRank Sales rank of an Amazon catalog item by classification.
+// ItemClassificationSalesRank Sales rank of an Amazon catalog item.
 //
 // swagger:model ItemClassificationSalesRank
 type ItemClassificationSalesRank struct {
 
-	// Identifier of the classification associated with the sales rank.
+	// Identifier of the classification that is associated with the sales rank.
 	// Required: true
 	ClassificationID *string `json:"classificationId"`
 
-	// Corresponding Amazon retail website link, or URL, for the sales rank.
+	// Corresponding Amazon retail website URL for the sales category.
 	Link string `json:"link,omitempty"`
 
-	// Sales rank value.
+	// Sales rank.
 	// Required: true
 	Rank *int64 `json:"rank"`
 
-	// Title, or name, of the sales rank.
+	// Name of the sales rank.
 	// Required: true
 	Title *string `json:"title"`
 }

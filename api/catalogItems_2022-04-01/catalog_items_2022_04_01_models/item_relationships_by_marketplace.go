@@ -15,12 +15,12 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// ItemRelationshipsByMarketplace Relationship details for the Amazon catalog item for the indicated Amazon marketplace.
+// ItemRelationshipsByMarketplace Relationship details for the Amazon catalog item for the specified Amazon `marketplaceId`.
 //
 // swagger:model ItemRelationshipsByMarketplace
 type ItemRelationshipsByMarketplace struct {
 
-	// Amazon marketplace identifier.
+	// Amazon marketplace identifier. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
 	// Required: true
 	MarketplaceID *string `json:"marketplaceId"`
 

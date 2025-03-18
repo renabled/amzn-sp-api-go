@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// ItemSummaries Summary details of an Amazon catalog item.
+// ItemSummaries Summaries of Amazon catalog items.
 //
 // swagger:model ItemSummaries
 type ItemSummaries []*ItemSummaryByMarketplace

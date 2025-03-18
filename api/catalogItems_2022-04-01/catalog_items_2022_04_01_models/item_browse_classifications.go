@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// ItemBrowseClassifications Array of classifications (browse nodes) associated with the item in the Amazon catalog by Amazon marketplace.
+// ItemBrowseClassifications An array of classifications (browse nodes) that is associated with the item in the Amazon catalog, grouped by `marketplaceId`.
 //
 // swagger:model ItemBrowseClassifications
 type ItemBrowseClassifications []*ItemBrowseClassificationsByMarketplace

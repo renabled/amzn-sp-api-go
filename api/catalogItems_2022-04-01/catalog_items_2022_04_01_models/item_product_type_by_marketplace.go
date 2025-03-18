@@ -12,15 +12,15 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// ItemProductTypeByMarketplace Product type associated with the Amazon catalog item for the indicated Amazon marketplace.
+// ItemProductTypeByMarketplace Product type that is associated with the Amazon catalog item, grouped by `marketplaceId`.
 //
 // swagger:model ItemProductTypeByMarketplace
 type ItemProductTypeByMarketplace struct {
 
-	// Amazon marketplace identifier.
+	// Amazon marketplace identifier. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
 	MarketplaceID string `json:"marketplaceId,omitempty"`
 
-	// Name of the product type associated with the Amazon catalog item.
+	// Name of the product type that is associated with the Amazon catalog item.
 	// Example: LUGGAGE
 	ProductType string `json:"productType,omitempty"`
 }
