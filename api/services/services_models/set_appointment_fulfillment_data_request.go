@@ -21,6 +21,9 @@ type SetAppointmentFulfillmentDataRequest struct {
 	// Resources involved in appointment fulfillment.
 	AppointmentResources AppointmentResources `json:"appointmentResources,omitempty"`
 
+	// The range of time when the technician is expected to arrive at the fulfillment location.
+	EstimatedArrivalTime *DateTimeRange `json:"estimatedArrivalTime,omitempty"`
+
 	// Documents specific to appointment fulfillment.
 	FulfillmentDocuments FulfillmentDocuments `json:"fulfillmentDocuments,omitempty"`
 
@@ -33,6 +36,10 @@ func (m *SetAppointmentFulfillmentDataRequest) Validate(formats strfmt.Registry)
 	var res []error
 
 	if err := m.validateAppointmentResources(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateEstimatedArrivalTime(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -62,6 +69,25 @@ func (m *SetAppointmentFulfillmentDataRequest) validateAppointmentResources(form
 			return ce.ValidateName("appointmentResources")
 		}
 		return err
+	}
+
+	return nil
+}
+
+func (m *SetAppointmentFulfillmentDataRequest) validateEstimatedArrivalTime(formats strfmt.Registry) error {
+	if swag.IsZero(m.EstimatedArrivalTime) { // not required
+		return nil
+	}
+
+	if m.EstimatedArrivalTime != nil {
+		if err := m.EstimatedArrivalTime.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("estimatedArrivalTime")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("estimatedArrivalTime")
+			}
+			return err
+		}
 	}
 
 	return nil
@@ -111,6 +137,10 @@ func (m *SetAppointmentFulfillmentDataRequest) ContextValidate(ctx context.Conte
 		res = append(res, err)
 	}
 
+	if err := m.contextValidateEstimatedArrivalTime(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.contextValidateFulfillmentDocuments(ctx, formats); err != nil {
 		res = append(res, err)
 	}
@@ -134,6 +164,22 @@ func (m *SetAppointmentFulfillmentDataRequest) contextValidateAppointmentResourc
 			return ce.ValidateName("appointmentResources")
 		}
 		return err
+	}
+
+	return nil
+}
+
+func (m *SetAppointmentFulfillmentDataRequest) contextValidateEstimatedArrivalTime(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.EstimatedArrivalTime != nil {
+		if err := m.EstimatedArrivalTime.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("estimatedArrivalTime")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("estimatedArrivalTime")
+			}
+			return err
+		}
 	}
 
 	return nil
