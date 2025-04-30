@@ -21,7 +21,7 @@ import (
 type RelatedIdentifier struct {
 
 	// Enumerated set of related business identifier names.
-	// Enum: [ORDER_ID SHIPMENT_ID EVENT_GROUP_ID REFUND_ID INVOICE_ID DISBURSEMENT_ID TRANSFER_ID]
+	// Enum: [ORDER_ID SHIPMENT_ID EVENT_GROUP_ID REFUND_ID INVOICE_ID DISBURSEMENT_ID TRANSFER_ID DEFERRED_TRANSACTION_ID RELEASE_TRANSACTION_ID]
 	RelatedIdentifierName string `json:"relatedIdentifierName,omitempty"`
 
 	// Corresponding value of RelatedIdentifierName
@@ -46,7 +46,7 @@ var relatedIdentifierTypeRelatedIdentifierNamePropEnum []interface{}
 
 func init() {
 	var res []string
-	if err := json.Unmarshal([]byte(`["ORDER_ID","SHIPMENT_ID","EVENT_GROUP_ID","REFUND_ID","INVOICE_ID","DISBURSEMENT_ID","TRANSFER_ID"]`), &res); err != nil {
+	if err := json.Unmarshal([]byte(`["ORDER_ID","SHIPMENT_ID","EVENT_GROUP_ID","REFUND_ID","INVOICE_ID","DISBURSEMENT_ID","TRANSFER_ID","DEFERRED_TRANSACTION_ID","RELEASE_TRANSACTION_ID"]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -76,6 +76,12 @@ const (
 
 	// RelatedIdentifierRelatedIdentifierNameTRANSFERID captures enum value "TRANSFER_ID"
 	RelatedIdentifierRelatedIdentifierNameTRANSFERID string = "TRANSFER_ID"
+
+	// RelatedIdentifierRelatedIdentifierNameDEFERREDTRANSACTIONID captures enum value "DEFERRED_TRANSACTION_ID"
+	RelatedIdentifierRelatedIdentifierNameDEFERREDTRANSACTIONID string = "DEFERRED_TRANSACTION_ID"
+
+	// RelatedIdentifierRelatedIdentifierNameRELEASETRANSACTIONID captures enum value "RELEASE_TRANSACTION_ID"
+	RelatedIdentifierRelatedIdentifierNameRELEASETRANSACTIONID string = "RELEASE_TRANSACTION_ID"
 )
 
 // prop value enum

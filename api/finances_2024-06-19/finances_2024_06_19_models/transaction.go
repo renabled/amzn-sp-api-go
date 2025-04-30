@@ -52,11 +52,13 @@ type Transaction struct {
 	// The unique identifier for the transaction.
 	TransactionID string `json:"transactionId,omitempty"`
 
-	// The status for the transaction.
+	// The status of the transaction.
 	//
-	// Possible values:
+	// **Possible values:**
 	//
-	// * Deferred *Released
+	// * `DEFERRED`: the transaction is currently deferred.
+	// * `RELEASED`: the transaction is currently released.
+	// * `DEFERRED_RELEASED`: the transaction was deferred in the past, but is now released. Deferred transactions will have their status updated to `DEFERRED_RELEASED` when released.
 	TransactionStatus string `json:"transactionStatus,omitempty"`
 
 	// The type of transaction.

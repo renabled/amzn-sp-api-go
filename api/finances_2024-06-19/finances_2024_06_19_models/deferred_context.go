@@ -14,22 +14,17 @@ import (
 )
 
 // DeferredContext Additional information related to Deferred transactions.
-// Example: {"deferralReason":"B2B","deferralStatus":"HOLD","maturityDate":"2024-07-14T00:00:00Z"}
+// Example: {"deferralReason":"B2B","maturityDate":"2024-07-14T00:00:00Z"}
 //
 // swagger:model DeferredContext
 type DeferredContext struct {
 
-	// Deferral policy applied on the transaction.
+	// The deferral policy applied to the transaction.
 	//
-	// Example: 'B2B','DD7'
+	// **Examples:** `B2B` (invoiced orders), `DD7` (delivery date policy)
 	DeferralReason string `json:"deferralReason,omitempty"`
 
-	// Status of the transaction.
-	//
-	// Example: 'HOLD','RELEASE'
-	DeferralStatus string `json:"deferralStatus,omitempty"`
-
-	// Release Date of the transaction.
+	// The release date of the transaction.
 	// Format: date-time
 	MaturityDate Date `json:"maturityDate,omitempty"`
 }
