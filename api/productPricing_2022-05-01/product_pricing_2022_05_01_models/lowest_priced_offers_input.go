@@ -26,7 +26,7 @@ type LowestPricedOffersInput struct {
 
 	// The input parameter specifies the type of offers requested for `LowestPricedOffers`. This applies to `Consumer` and `Business` offers. `Consumer` is the default `offerType`.
 	// Required: true
-	// Enum: [CONSUMER]
+	// Enum: [Consumer]
 	OfferType *string `json:"offerType"`
 }
 
@@ -76,7 +76,7 @@ var lowestPricedOffersInputTypeOfferTypePropEnum []interface{}
 
 func init() {
 	var res []string
-	if err := json.Unmarshal([]byte(`["CONSUMER"]`), &res); err != nil {
+	if err := json.Unmarshal([]byte(`["Consumer"]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -86,8 +86,8 @@ func init() {
 
 const (
 
-	// LowestPricedOffersInputOfferTypeCONSUMER captures enum value "CONSUMER"
-	LowestPricedOffersInputOfferTypeCONSUMER string = "CONSUMER"
+	// LowestPricedOffersInputOfferTypeConsumer captures enum value "Consumer"
+	LowestPricedOffersInputOfferTypeConsumer string = "Consumer"
 )
 
 // prop value enum

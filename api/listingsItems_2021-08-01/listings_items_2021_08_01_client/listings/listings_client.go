@@ -94,15 +94,13 @@ func (a *Client) DeleteListingsItem(params *DeleteListingsItemParams, opts ...Cl
 /*
 	GetListingsItem Returns details about a listings item for a selling partner.
 
-**Note:** The parameters associated with this operation may contain special characters that must be encoded to successfully call the API. To avoid errors with SKUs when encoding URLs, refer to [URL Encoding](https://developer-docs.amazon.com/sp-api/docs/url-encoding).
-
 **Usage Plan:**
 
 | Rate (requests per second) | Burst |
 | ---- | ---- |
 | 5 | 10 |
 
-The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput can receive higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api) in the Selling Partner API documentation.
 */
 func (a *Client) GetListingsItem(params *GetListingsItemParams, opts ...ClientOption) (*GetListingsItemOK, error) {
 	// TODO: Validate the params before sending
@@ -148,7 +146,7 @@ func (a *Client) GetListingsItem(params *GetListingsItemParams, opts ...ClientOp
 | ---- | ---- |
 | 5 | 5 |
 
-The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput can receive higher rate and burst values then those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api) in the Selling Partner API documentation.
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput can receive higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api) in the Selling Partner API documentation.
 */
 func (a *Client) PatchListingsItem(params *PatchListingsItemParams, opts ...ClientOption) (*PatchListingsItemOK, error) {
 	// TODO: Validate the params before sending
@@ -186,11 +184,7 @@ func (a *Client) PatchListingsItem(params *PatchListingsItemParams, opts ...Clie
 }
 
 /*
-	PutListingsItem Creates or fully updates an existing listings item for a selling partner.
-
-**Note:** This operation has a throttling rate of one request per second when `mode` is `VALIDATION_PREVIEW`.
-
-**Note:** The parameters associated with this operation may contain special characters that must be encoded to successfully call the API. To avoid errors with SKUs when encoding URLs, refer to [URL Encoding](https://developer-docs.amazon.com/sp-api/docs/url-encoding).
+	PutListingsItem Creates a new or fully-updates an existing listings item for a selling partner.
 
 **Usage Plan:**
 
@@ -198,7 +192,7 @@ func (a *Client) PatchListingsItem(params *PatchListingsItemParams, opts ...Clie
 | ---- | ---- |
 | 5 | 10 |
 
-The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput can receive higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api) in the Selling Partner API documentation.
 */
 func (a *Client) PutListingsItem(params *PutListingsItemParams, opts ...ClientOption) (*PutListingsItemOK, error) {
 	// TODO: Validate the params before sending

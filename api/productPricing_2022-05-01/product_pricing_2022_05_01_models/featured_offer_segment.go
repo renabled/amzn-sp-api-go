@@ -22,7 +22,7 @@ type FeaturedOfferSegment struct {
 
 	// The customer membership type that makes up this segment
 	// Required: true
-	// Enum: [PRIME NON_PRIME]
+	// Enum: [PRIME NON_PRIME DEFAULT]
 	CustomerMembership *string `json:"customerMembership"`
 
 	// The details about the segment.
@@ -52,7 +52,7 @@ var featuredOfferSegmentTypeCustomerMembershipPropEnum []interface{}
 
 func init() {
 	var res []string
-	if err := json.Unmarshal([]byte(`["PRIME","NON_PRIME"]`), &res); err != nil {
+	if err := json.Unmarshal([]byte(`["PRIME","NON_PRIME","DEFAULT"]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -67,6 +67,9 @@ const (
 
 	// FeaturedOfferSegmentCustomerMembershipNONPRIME captures enum value "NON_PRIME"
 	FeaturedOfferSegmentCustomerMembershipNONPRIME string = "NON_PRIME"
+
+	// FeaturedOfferSegmentCustomerMembershipDEFAULT captures enum value "DEFAULT"
+	FeaturedOfferSegmentCustomerMembershipDEFAULT string = "DEFAULT"
 )
 
 // prop value enum

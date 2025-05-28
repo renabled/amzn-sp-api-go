@@ -20,16 +20,16 @@ import (
 // swagger:model PatchOperation
 type PatchOperation struct {
 
-	// Type of JSON Patch operation. Supported JSON Patch operations include add, replace, and delete. Refer to [JavaScript Object Notation (JSON) Patch](https://tools.ietf.org/html/rfc6902) for more information.
+	// Type of JSON Patch operation. Supported JSON Patch operations include `add`, `replace`, `merge` and `delete`. Refer to <https://tools.ietf.org/html/rfc6902>.
 	// Required: true
-	// Enum: [add replace delete]
+	// Enum: [add replace merge delete]
 	Op *string `json:"op"`
 
 	// JSON Pointer path of the element to patch. Refer to [JavaScript Object Notation (JSON) Patch](https://tools.ietf.org/html/rfc6902) for more information.
 	// Required: true
 	Path *string `json:"path"`
 
-	// JSON value to add, replace, or delete.
+	// JSON value to `add`, `replace`, `merge` or `delete`.
 	Value []interface{} `json:"value"`
 }
 
@@ -55,7 +55,7 @@ var patchOperationTypeOpPropEnum []interface{}
 
 func init() {
 	var res []string
-	if err := json.Unmarshal([]byte(`["add","replace","delete"]`), &res); err != nil {
+	if err := json.Unmarshal([]byte(`["add","replace","merge","delete"]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -70,6 +70,9 @@ const (
 
 	// PatchOperationOpReplace captures enum value "replace"
 	PatchOperationOpReplace string = "replace"
+
+	// PatchOperationOpMerge captures enum value "merge"
+	PatchOperationOpMerge string = "merge"
 
 	// PatchOperationOpDelete captures enum value "delete"
 	PatchOperationOpDelete string = "delete"

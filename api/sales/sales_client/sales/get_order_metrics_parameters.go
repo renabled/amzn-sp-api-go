@@ -62,6 +62,12 @@ GetOrderMetricsParams contains all the parameters to send to the API endpoint
 */
 type GetOrderMetricsParams struct {
 
+	/* AmazonProgram.
+
+	   Filters the results by the Amazon program that you specify. Do not include this filter if you want the response to include order metrics for all programs. **Example:** `AmazonHaul` returns order metrics for the Amazon Haul program only.
+	*/
+	AmazonProgram *string
+
 	/* Asin.
 
 	   Filters the results by the ASIN that you specify. Specifying both ASIN and SKU returns an error. Do not include this filter if you want the response to include order metrics for all ASINs. Example: B0792R1RSN, if you want the response to include order metrics for only ASIN B0792R1RSN.
@@ -189,6 +195,17 @@ func (o *GetOrderMetricsParams) SetHTTPClient(client *http.Client) {
 	o.HTTPClient = client
 }
 
+// WithAmazonProgram adds the amazonProgram to the get order metrics params
+func (o *GetOrderMetricsParams) WithAmazonProgram(amazonProgram *string) *GetOrderMetricsParams {
+	o.SetAmazonProgram(amazonProgram)
+	return o
+}
+
+// SetAmazonProgram adds the amazonProgram to the get order metrics params
+func (o *GetOrderMetricsParams) SetAmazonProgram(amazonProgram *string) {
+	o.AmazonProgram = amazonProgram
+}
+
 // WithAsin adds the asin to the get order metrics params
 func (o *GetOrderMetricsParams) WithAsin(asin *string) *GetOrderMetricsParams {
 	o.SetAsin(asin)
@@ -295,6 +312,23 @@ func (o *GetOrderMetricsParams) WriteToRequest(r runtime.ClientRequest, reg strf
 		return err
 	}
 	var res []error
+
+	if o.AmazonProgram != nil {
+
+		// query param amazonProgram
+		var qrAmazonProgram string
+
+		if o.AmazonProgram != nil {
+			qrAmazonProgram = *o.AmazonProgram
+		}
+		qAmazonProgram := qrAmazonProgram
+		if qAmazonProgram != "" {
+
+			if err := r.SetQueryParam("amazonProgram", qAmazonProgram); err != nil {
+				return err
+			}
+		}
+	}
 
 	if o.Asin != nil {
 

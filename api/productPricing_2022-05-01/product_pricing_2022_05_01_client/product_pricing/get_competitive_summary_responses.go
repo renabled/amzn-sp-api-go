@@ -411,7 +411,7 @@ func NewGetCompetitiveSummaryTooManyRequests() *GetCompetitiveSummaryTooManyRequ
 /*
 GetCompetitiveSummaryTooManyRequests describes a response with status code 429, with default header values.
 
-The frequency of requests was greater than allowed.
+The request frequency exceeds the allowed rate.
 */
 type GetCompetitiveSummaryTooManyRequests struct {
 

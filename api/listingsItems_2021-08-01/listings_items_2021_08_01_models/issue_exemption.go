@@ -20,7 +20,7 @@ import (
 // swagger:model IssueExemption
 type IssueExemption struct {
 
-	// This field represents the timestamp, following the ISO 8601 format, which specifies the date when temporary exemptions, if applicable, will expire, and Amazon will begin enforcing the listed actions.
+	// Represents the timestamp, in ISO 8601 format, that specifies the date when the temporary exemptions expires, and Amazon begins enforcing the listed actions.
 	// Example: 2023-10-28T00:36:48.914Z
 	// Format: date-time
 	ExpiryDate strfmt.DateTime `json:"expiryDate,omitempty"`

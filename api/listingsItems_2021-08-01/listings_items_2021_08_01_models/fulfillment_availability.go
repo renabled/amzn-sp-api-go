@@ -19,7 +19,7 @@ import (
 // swagger:model FulfillmentAvailability
 type FulfillmentAvailability struct {
 
-	// The code of the fulfillment network that will be used.
+	// Designates which fulfillment network is used.
 	// Required: true
 	FulfillmentChannelCode *string `json:"fulfillmentChannelCode"`
 

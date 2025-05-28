@@ -15,7 +15,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// ItemRelationship the relationship details for a listing item.
+// ItemRelationship The relationship details for a listing item.
 //
 // swagger:model ItemRelationship
 type ItemRelationship struct {
