@@ -68,7 +68,7 @@ type Shipment struct {
 	// Format: date-time
 	ShipmentCreateDate strfmt.DateTime `json:"shipmentCreateDate,omitempty"`
 
-	// Indicates if this transportation request is WePay/Collect or TheyPay/Prepaid. This is a mandatory information.
+	// Specifies if payment is Collect (WePay) or Prepaid (TheyPay). Required.
 	// Enum: [Collect Prepaid]
 	ShipmentFreightTerm string `json:"shipmentFreightTerm,omitempty"`
 
@@ -83,7 +83,7 @@ type Shipment struct {
 	// Format: date-time
 	TransactionDate *strfmt.DateTime `json:"transactionDate"`
 
-	// Indicates the type of  transportation request such as (New,Cancel,Confirm and PackageLabelRequest). Each transactiontype has a unique set of operation and there are corresponding details to be populated for each operation.
+	// Indicates the type of transportation request (for example, `New` or `Cancel`). Each `transactionType` has a unique set of operations and there are corresponding details to be populated for each operation.
 	// Required: true
 	// Enum: [New Cancel]
 	TransactionType *string `json:"transactionType"`
