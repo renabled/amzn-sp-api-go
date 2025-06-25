@@ -23,7 +23,7 @@ type PackageDetail struct {
 	// Required: true
 	CarrierCode *string `json:"carrierCode"`
 
-	// Carrier Name that will deliver the package. Required when `carrierCode` is "Others"
+	// Carrier name that will deliver the package. Required when `carrierCode` is "Other"
 	CarrierName string `json:"carrierName,omitempty"`
 
 	// The list of order items and quantities to be updated.

@@ -63,7 +63,7 @@ type GetOrderRegulatedInfoParams struct {
 
 	/* OrderID.
 
-	   An Amazon-defined order identifier, in 3-7-7 format.
+	   The Amazon order identifier in 3-7-7 format.
 	*/
 	OrderID string
 
