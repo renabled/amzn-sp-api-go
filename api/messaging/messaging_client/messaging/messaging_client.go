@@ -48,8 +48,6 @@ type ClientService interface {
 
 	CreateLegalDisclosure(params *CreateLegalDisclosureParams, opts ...ClientOption) (*CreateLegalDisclosureCreated, error)
 
-	CreateNegativeFeedbackRemoval(params *CreateNegativeFeedbackRemovalParams, opts ...ClientOption) (*CreateNegativeFeedbackRemovalCreated, error)
-
 	CreateUnexpectedProblem(params *CreateUnexpectedProblemParams, opts ...ClientOption) (*CreateUnexpectedProblemCreated, error)
 
 	GetMessagingActionsForOrder(params *GetMessagingActionsForOrderParams, opts ...ClientOption) (*GetMessagingActionsForOrderOK, error)
@@ -468,52 +466,6 @@ func (a *Client) CreateLegalDisclosure(params *CreateLegalDisclosureParams, opts
 	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
 	msg := fmt.Sprintf("unexpected success response for createLegalDisclosure: API contract not enforced by server. Client expected to get an error, but got: %T", result)
-	panic(msg)
-}
-
-/*
-	CreateNegativeFeedbackRemoval Sends a non-critical message that asks a buyer to remove their negative feedback. This message should only be sent after the seller has resolved the buyer's problem.
-
-**Usage Plan:**
-
-| Rate (requests per second) | Burst |
-| ---- | ---- |
-| 1 | 5 |
-
-The `x-amzn-RateLimit-Limit` response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-*/
-func (a *Client) CreateNegativeFeedbackRemoval(params *CreateNegativeFeedbackRemovalParams, opts ...ClientOption) (*CreateNegativeFeedbackRemovalCreated, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewCreateNegativeFeedbackRemovalParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "createNegativeFeedbackRemoval",
-		Method:             "POST",
-		PathPattern:        "/messaging/v1/orders/{amazonOrderId}/messages/negativeFeedbackRemoval",
-		ProducesMediaTypes: []string{"application/hal+json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"https"},
-		Params:             params,
-		Reader:             &CreateNegativeFeedbackRemovalReader{formats: a.formats},
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*CreateNegativeFeedbackRemovalCreated)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for createNegativeFeedbackRemoval: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
