@@ -22,7 +22,7 @@ type UpdateItemComplianceDetailsRequest struct {
 
 	// The merchant SKU, a merchant-supplied identifier for a specific SKU.
 	// Required: true
-	// Max Length: 40
+	// Max Length: 255
 	// Min Length: 1
 	Msku *string `json:"msku"`
 
@@ -59,7 +59,7 @@ func (m *UpdateItemComplianceDetailsRequest) validateMsku(formats strfmt.Registr
 		return err
 	}
 
-	if err := validate.MaxLength("msku", "body", *m.Msku, 40); err != nil {
+	if err := validate.MaxLength("msku", "body", *m.Msku, 255); err != nil {
 		return err
 	}
 

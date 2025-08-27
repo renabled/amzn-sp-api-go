@@ -63,7 +63,10 @@ GetMyFeesEstimatesParams contains all the parameters to send to the API endpoint
 */
 type GetMyFeesEstimatesParams struct {
 
-	// Body.
+	/* Body.
+
+	   The request body schema for the getMyFeesEstimates operation
+	*/
 	Body product_fees_v0_models.GetMyFeesEstimatesRequest
 
 	timeout    time.Duration

@@ -17,7 +17,7 @@ import (
 // swagger:model DeliveryMessage
 type DeliveryMessage struct {
 
-	// The locale for the message (for example, en_US).
+	// The locale for the message (e.g., `en_US`).
 	Locale string `json:"locale,omitempty"`
 
 	// The message content for a delivery offering.

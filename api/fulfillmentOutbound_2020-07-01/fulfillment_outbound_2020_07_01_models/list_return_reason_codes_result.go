@@ -13,7 +13,7 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// ListReturnReasonCodesResult The request for the listReturnReasonCodes operation.
+// ListReturnReasonCodesResult The request for the `listReturnReasonCodes` operation.
 //
 // swagger:model ListReturnReasonCodesResult
 type ListReturnReasonCodesResult struct {

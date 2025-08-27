@@ -27,7 +27,7 @@ type ReasonCodeDetails struct {
 	// Required: true
 	ReturnReasonCode *string `json:"returnReasonCode"`
 
-	// A translation of the description. The translation is in the language specified in the Language request parameter.
+	// A translation of the description. The translation is in the language specified in the `language` request parameter.
 	TranslatedDescription string `json:"translatedDescription,omitempty"`
 }
 

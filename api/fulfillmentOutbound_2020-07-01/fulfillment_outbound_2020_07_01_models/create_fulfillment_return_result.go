@@ -13,7 +13,7 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// CreateFulfillmentReturnResult The result for the createFulfillmentReturn operation.
+// CreateFulfillmentReturnResult The result for the `createFulfillmentReturn` operation.
 //
 // swagger:model CreateFulfillmentReturnResult
 type CreateFulfillmentReturnResult struct {

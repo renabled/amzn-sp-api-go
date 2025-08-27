@@ -69,7 +69,10 @@ type GetMyFeesEstimateForSKUParams struct {
 	*/
 	SellerSKU string
 
-	// Body.
+	/* Body.
+
+	   The request body schema for the getMyFeesEstimates operation
+	*/
 	Body *product_fees_v0_models.GetMyFeesEstimateRequest
 
 	timeout    time.Duration

@@ -19,6 +19,9 @@ import (
 // swagger:model FulfillmentShipmentPackage
 type FulfillmentShipmentPackage struct {
 
+	// The Amazon fulfillment tracking number, if provided, can be used to obtain tracking and delivery information.
+	AmazonFulfillmentTrackingNumber string `json:"amazonFulfillmentTrackingNumber,omitempty"`
+
 	// Identifies the carrier who will deliver the shipment to the recipient.
 	// Required: true
 	CarrierCode *string `json:"carrierCode"`

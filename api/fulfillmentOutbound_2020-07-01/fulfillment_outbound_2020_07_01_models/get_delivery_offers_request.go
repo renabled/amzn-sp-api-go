@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// GetDeliveryOffersRequest The request body schema for the getDeliveryOffers operation.
+// GetDeliveryOffersRequest The request body schema for the `getDeliveryOffers` operation.
 //
 // swagger:model GetDeliveryOffersRequest
 type GetDeliveryOffersRequest struct {

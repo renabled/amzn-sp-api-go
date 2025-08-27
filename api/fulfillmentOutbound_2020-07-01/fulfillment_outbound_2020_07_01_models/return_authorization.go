@@ -23,7 +23,7 @@ type ReturnAuthorization struct {
 	// Required: true
 	AmazonRmaID *string `json:"amazonRmaId"`
 
-	// An identifier for the Amazon fulfillment center that the return items should be sent to.
+	// An identifier for the Amazon fulfillment center to which the return items should be sent.
 	// Required: true
 	FulfillmentCenterID *string `json:"fulfillmentCenterId"`
 

@@ -13,7 +13,7 @@ import (
 	"github.com/go-openapi/strfmt"
 )
 
-// ShippingSpeedCategoryList ShippingSpeedCategory List
+// ShippingSpeedCategoryList List of shipping speed categories.
 //
 // swagger:model ShippingSpeedCategoryList
 type ShippingSpeedCategoryList []ShippingSpeedCategory

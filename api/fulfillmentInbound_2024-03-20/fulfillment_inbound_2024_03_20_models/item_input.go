@@ -35,7 +35,7 @@ type ItemInput struct {
 
 	// The merchant SKU, a merchant-supplied identifier of a specific SKU.
 	// Required: true
-	// Max Length: 40
+	// Max Length: 255
 	// Min Length: 1
 	Msku *string `json:"msku"`
 
@@ -45,7 +45,7 @@ type ItemInput struct {
 
 	// The number of units of the specified MSKU that will be shipped.
 	// Required: true
-	// Maximum: 10000
+	// Maximum: 500000
 	// Minimum: 1
 	Quantity *int64 `json:"quantity"`
 }
@@ -146,7 +146,7 @@ func (m *ItemInput) validateMsku(formats strfmt.Registry) error {
 		return err
 	}
 
-	if err := validate.MaxLength("msku", "body", *m.Msku, 40); err != nil {
+	if err := validate.MaxLength("msku", "body", *m.Msku, 255); err != nil {
 		return err
 	}
 
@@ -187,7 +187,7 @@ func (m *ItemInput) validateQuantity(formats strfmt.Registry) error {
 		return err
 	}
 
-	if err := validate.MaximumInt("quantity", "body", *m.Quantity, 10000, false); err != nil {
+	if err := validate.MaximumInt("quantity", "body", *m.Quantity, 500000, false); err != nil {
 		return err
 	}
 

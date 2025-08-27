@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// FreightInformation Freight information describes the skus being transported. Freight carrier options and quotes will only be returned if the freight information is provided.
+// FreightInformation Freight information describes the SKUs that are in transit. Freight carrier options and quotes will only be returned if the freight information is provided.
 // Example: {"declaredValue":{"amount":5.5,"code":"CAD"},"freightClass":"FC_50"}
 //
 // swagger:model FreightInformation

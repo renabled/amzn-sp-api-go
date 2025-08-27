@@ -65,7 +65,7 @@ type UpdateFulfillmentOrderParams struct {
 
 	/* Body.
 
-	   UpdateFulfillmentOrderRequest parameter
+	   The request body of the `updateFulfillmentOrder` operation.
 	*/
 	Body *fulfillment_outbound_2020_07_01_models.UpdateFulfillmentOrderRequest
 

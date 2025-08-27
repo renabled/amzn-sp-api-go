@@ -89,11 +89,11 @@ func (m *LtlTrackingDetailInput) validateFreightBillNumber(formats strfmt.Regist
 			return err
 		}
 
-		if err := validate.MaxLength("freightBillNumber"+"."+strconv.Itoa(i), "body", m.FreightBillNumber[i], 1024); err != nil {
+		if err := validate.MaxLength("freightBillNumber"+"."+strconv.Itoa(i), "body", m.FreightBillNumber[i], 64); err != nil {
 			return err
 		}
 
-		if err := validate.Pattern("freightBillNumber"+"."+strconv.Itoa(i), "body", m.FreightBillNumber[i], `^[a-zA-Z0-9-._\s]*$`); err != nil {
+		if err := validate.Pattern("freightBillNumber"+"."+strconv.Itoa(i), "body", m.FreightBillNumber[i], `^[a-zA-Z0-9-._ ]*$`); err != nil {
 			return err
 		}
 

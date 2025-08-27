@@ -19,7 +19,7 @@ import (
 // swagger:model ShipmentDestination
 type ShipmentDestination struct {
 
-	// The address the shipment should be sent to. Empty if the destination type is `AMAZON_OPTIMIZED`.
+	// The address the shipment should be sent to. This can be empty if the destination type is `AMAZON_OPTIMIZED`.
 	Address *Address `json:"address,omitempty"`
 
 	// The type of destination for this shipment. Possible values: `AMAZON_OPTIMIZED`, `AMAZON_WAREHOUSE`.
@@ -28,7 +28,7 @@ type ShipmentDestination struct {
 	// Min Length: 1
 	DestinationType *string `json:"destinationType"`
 
-	// The warehouse that the shipment should be sent to. Empty if the destination type is `AMAZON_OPTIMIZED`.
+	// The warehouse that the shipment should be sent to. This can be empty if the destination type is `AMAZON_OPTIMIZED`.
 	// Max Length: 1024
 	// Min Length: 1
 	WarehouseID string `json:"warehouseId,omitempty"`

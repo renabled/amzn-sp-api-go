@@ -62,13 +62,19 @@ GetPackageTrackingDetailsParams contains all the parameters to send to the API e
 */
 type GetPackageTrackingDetailsParams struct {
 
+	/* AmazonFulfillmentTrackingNumber.
+
+	   The Amazon fulfillment tracking number. You can obtain this value from the `getFulfillmentOrder` operation.
+	*/
+	AmazonFulfillmentTrackingNumber *string
+
 	/* PackageNumber.
 
-	   The unencrypted package identifier returned by the `getFulfillmentOrder` operation.
+	   The unencrypted package identifier. You can obtain this value from the `getFulfillmentOrder` operation.
 
 	   Format: int32
 	*/
-	PackageNumber int32
+	PackageNumber *int32
 
 	timeout    time.Duration
 	Context    context.Context
@@ -123,14 +129,25 @@ func (o *GetPackageTrackingDetailsParams) SetHTTPClient(client *http.Client) {
 	o.HTTPClient = client
 }
 
+// WithAmazonFulfillmentTrackingNumber adds the amazonFulfillmentTrackingNumber to the get package tracking details params
+func (o *GetPackageTrackingDetailsParams) WithAmazonFulfillmentTrackingNumber(amazonFulfillmentTrackingNumber *string) *GetPackageTrackingDetailsParams {
+	o.SetAmazonFulfillmentTrackingNumber(amazonFulfillmentTrackingNumber)
+	return o
+}
+
+// SetAmazonFulfillmentTrackingNumber adds the amazonFulfillmentTrackingNumber to the get package tracking details params
+func (o *GetPackageTrackingDetailsParams) SetAmazonFulfillmentTrackingNumber(amazonFulfillmentTrackingNumber *string) {
+	o.AmazonFulfillmentTrackingNumber = amazonFulfillmentTrackingNumber
+}
+
 // WithPackageNumber adds the packageNumber to the get package tracking details params
-func (o *GetPackageTrackingDetailsParams) WithPackageNumber(packageNumber int32) *GetPackageTrackingDetailsParams {
+func (o *GetPackageTrackingDetailsParams) WithPackageNumber(packageNumber *int32) *GetPackageTrackingDetailsParams {
 	o.SetPackageNumber(packageNumber)
 	return o
 }
 
 // SetPackageNumber adds the packageNumber to the get package tracking details params
-func (o *GetPackageTrackingDetailsParams) SetPackageNumber(packageNumber int32) {
+func (o *GetPackageTrackingDetailsParams) SetPackageNumber(packageNumber *int32) {
 	o.PackageNumber = packageNumber
 }
 
@@ -142,13 +159,37 @@ func (o *GetPackageTrackingDetailsParams) WriteToRequest(r runtime.ClientRequest
 	}
 	var res []error
 
-	// query param packageNumber
-	qrPackageNumber := o.PackageNumber
-	qPackageNumber := swag.FormatInt32(qrPackageNumber)
-	if qPackageNumber != "" {
+	if o.AmazonFulfillmentTrackingNumber != nil {
 
-		if err := r.SetQueryParam("packageNumber", qPackageNumber); err != nil {
-			return err
+		// query param amazonFulfillmentTrackingNumber
+		var qrAmazonFulfillmentTrackingNumber string
+
+		if o.AmazonFulfillmentTrackingNumber != nil {
+			qrAmazonFulfillmentTrackingNumber = *o.AmazonFulfillmentTrackingNumber
+		}
+		qAmazonFulfillmentTrackingNumber := qrAmazonFulfillmentTrackingNumber
+		if qAmazonFulfillmentTrackingNumber != "" {
+
+			if err := r.SetQueryParam("amazonFulfillmentTrackingNumber", qAmazonFulfillmentTrackingNumber); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.PackageNumber != nil {
+
+		// query param packageNumber
+		var qrPackageNumber int32
+
+		if o.PackageNumber != nil {
+			qrPackageNumber = *o.PackageNumber
+		}
+		qPackageNumber := swag.FormatInt32(qrPackageNumber)
+		if qPackageNumber != "" {
+
+			if err := r.SetQueryParam("packageNumber", qPackageNumber); err != nil {
+				return err
+			}
 		}
 	}
 

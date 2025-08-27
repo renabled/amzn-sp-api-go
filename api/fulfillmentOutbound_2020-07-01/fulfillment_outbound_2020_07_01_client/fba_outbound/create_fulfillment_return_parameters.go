@@ -65,13 +65,13 @@ type CreateFulfillmentReturnParams struct {
 
 	/* Body.
 
-	   CreateFulfillmentReturnRequest parameter
+	   The request body of the `createFulfillmentReturn` operation.
 	*/
 	Body *fulfillment_outbound_2020_07_01_models.CreateFulfillmentReturnRequest
 
 	/* SellerFulfillmentOrderID.
 
-	   An identifier assigned by the seller to the fulfillment order at the time it was created. The seller uses their own records to find the correct `SellerFulfillmentOrderId` value based on the buyer's request to return items.
+	   An identifier the seller assigns to the fulfillment order at the time it was created. The seller uses their own records to find the correct `sellerFulfillmentOrderId` value based on the buyer's request to return items.
 	*/
 	SellerFulfillmentOrderID string
 

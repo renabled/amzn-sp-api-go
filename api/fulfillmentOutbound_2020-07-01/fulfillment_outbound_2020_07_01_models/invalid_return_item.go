@@ -27,7 +27,7 @@ type InvalidReturnItem struct {
 	// Required: true
 	SellerFulfillmentOrderItemID *string `json:"sellerFulfillmentOrderItemId"`
 
-	// An identifier assigned by the seller to the return item.
+	// An identifier the seller assigns to the return item.
 	// Required: true
 	SellerReturnItemID *string `json:"sellerReturnItemId"`
 }

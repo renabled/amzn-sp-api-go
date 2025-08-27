@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// Error error
+// Error An object representing an error that occurred during the API operation.
 //
 // swagger:model Error
 type Error struct {

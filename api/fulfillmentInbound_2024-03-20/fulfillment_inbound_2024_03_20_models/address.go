@@ -49,6 +49,11 @@ type Address struct {
 	// Pattern: ^[A-Z]{2}$
 	CountryCode *string `json:"countryCode"`
 
+	// The district or county.
+	// Max Length: 50
+	// Min Length: 1
+	DistrictOrCounty string `json:"districtOrCounty,omitempty"`
+
 	// The email address.
 	// Max Length: 1024
 	// Min Length: 1
@@ -98,6 +103,10 @@ func (m *Address) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validateCountryCode(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateDistrictOrCounty(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -208,6 +217,22 @@ func (m *Address) validateCountryCode(formats strfmt.Registry) error {
 	}
 
 	if err := validate.Pattern("countryCode", "body", *m.CountryCode, `^[A-Z]{2}$`); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *Address) validateDistrictOrCounty(formats strfmt.Registry) error {
+	if swag.IsZero(m.DistrictOrCounty) { // not required
+		return nil
+	}
+
+	if err := validate.MinLength("districtOrCounty", "body", m.DistrictOrCounty, 1); err != nil {
+		return err
+	}
+
+	if err := validate.MaxLength("districtOrCounty", "body", m.DistrictOrCounty, 50); err != nil {
 		return err
 	}
 

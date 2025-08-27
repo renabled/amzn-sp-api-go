@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// ListAllFulfillmentOrdersResult The request for the listAllFulfillmentOrders operation.
+// ListAllFulfillmentOrdersResult The request for the `listAllFulfillmentOrders` operation.
 //
 // swagger:model ListAllFulfillmentOrdersResult
 type ListAllFulfillmentOrdersResult struct {

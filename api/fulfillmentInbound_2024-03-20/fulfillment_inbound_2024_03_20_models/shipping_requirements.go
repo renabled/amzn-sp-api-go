@@ -65,7 +65,7 @@ func (m *ShippingRequirements) validateModes(formats strfmt.Registry) error {
 			return err
 		}
 
-		if err := validate.Pattern("modes"+"."+strconv.Itoa(i), "body", m.Modes[i], `^[a-zA-Z0-9-._\s]*$`); err != nil {
+		if err := validate.Pattern("modes"+"."+strconv.Itoa(i), "body", m.Modes[i], `^[a-zA-Z0-9-._ ]*$`); err != nil {
 			return err
 		}
 

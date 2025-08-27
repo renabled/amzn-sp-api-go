@@ -30,7 +30,7 @@ type GetFulfillmentPreviewRequest struct {
 	// When true, returns all fulfillment order previews both for COD and not for COD. Otherwise, returns only fulfillment order previews that are not for COD.
 	IncludeCODFulfillmentPreview bool `json:"includeCODFulfillmentPreview,omitempty"`
 
-	// When true, returns the `ScheduledDeliveryInfo` response object, which contains the available delivery windows for a Scheduled Delivery. The `ScheduledDeliveryInfo` response object can only be returned for fulfillment order previews with `ShippingSpeedCategories` = `ScheduledDelivery`.
+	// When true, returns the `ScheduledDeliveryInfo` response object, which contains the available delivery windows for a Scheduled Delivery. The `ScheduledDeliveryInfo` response object can only be returned for fulfillment order previews with `ShippingSpeedCategories` equal to `ScheduledDelivery`.
 	IncludeDeliveryWindows bool `json:"includeDeliveryWindows,omitempty"`
 
 	// Identifying information and quantity information for the items in the fulfillment order preview. Maximum of 100 line items with a maximum of 250 units per order.
@@ -44,11 +44,11 @@ type GetFulfillmentPreviewRequest struct {
 	//
 	// Possible values:
 	//
-	// * `Standard` - Standard shipping method.
-	// * `Expedited` - Expedited shipping method.
-	// * `Priority` - Priority shipping method.
-	// * `ScheduledDelivery` - Scheduled Delivery shipping method.
-	// Note: Shipping method service level agreements vary by marketplace. Sellers should refer to the Seller Central website in their marketplace for shipping method service level agreements and fulfillment fees.
+	// * `Standard`: Standard shipping method.
+	// * `Expedited`: Expedited shipping method.
+	// * `Priority`: Priority shipping method.
+	// * `ScheduledDelivery`: Scheduled Delivery shipping method.
+	// **Note:** Shipping method service level agreements vary by marketplace. Sellers should see the Seller Central website in their marketplace for shipping method service level agreements and fulfillment fees.
 	ShippingSpeedCategories ShippingSpeedCategoryList `json:"shippingSpeedCategories,omitempty"`
 }
 

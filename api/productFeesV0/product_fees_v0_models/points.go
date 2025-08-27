@@ -13,7 +13,7 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// Points points
+// Points The number of Amazon Points offered with the purchase of an item.The Amazon Points program is only available in Japan.
 //
 // swagger:model Points
 type Points struct {
@@ -21,7 +21,7 @@ type Points struct {
 	// points monetary value
 	PointsMonetaryValue *MoneyType `json:"PointsMonetaryValue,omitempty"`
 
-	// points number
+	// The number of Amazon Points
 	PointsNumber int32 `json:"PointsNumber,omitempty"`
 }
 

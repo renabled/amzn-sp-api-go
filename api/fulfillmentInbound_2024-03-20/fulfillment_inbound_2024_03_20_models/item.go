@@ -47,9 +47,9 @@ type Item struct {
 	// Min Length: 1
 	ManufacturingLotCode string `json:"manufacturingLotCode,omitempty"`
 
-	// The merchant SKU, a merchant-supplied identifier of a specific SKU.
+	// The merchant-defined SKU ID.
 	// Required: true
-	// Max Length: 40
+	// Max Length: 255
 	// Min Length: 1
 	Msku *string `json:"msku"`
 
@@ -59,7 +59,7 @@ type Item struct {
 
 	// The number of the specified MSKU.
 	// Required: true
-	// Maximum: 10000
+	// Maximum: 500000
 	// Minimum: 1
 	Quantity *int64 `json:"quantity"`
 }
@@ -195,7 +195,7 @@ func (m *Item) validateMsku(formats strfmt.Registry) error {
 		return err
 	}
 
-	if err := validate.MaxLength("msku", "body", *m.Msku, 40); err != nil {
+	if err := validate.MaxLength("msku", "body", *m.Msku, 255); err != nil {
 		return err
 	}
 
@@ -239,7 +239,7 @@ func (m *Item) validateQuantity(formats strfmt.Registry) error {
 		return err
 	}
 
-	if err := validate.MaximumInt("quantity", "body", *m.Quantity, 10000, false); err != nil {
+	if err := validate.MaximumInt("quantity", "body", *m.Quantity, 500000, false); err != nil {
 		return err
 	}
 

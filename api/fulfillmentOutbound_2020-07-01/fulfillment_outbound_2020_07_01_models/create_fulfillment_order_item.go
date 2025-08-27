@@ -43,7 +43,7 @@ type CreateFulfillmentOrderItem struct {
 	// Required: true
 	Quantity *Quantity `json:"quantity"`
 
-	// A fulfillment order item identifier that the seller creates to track fulfillment order items. Used to disambiguate multiple fulfillment items that have the same `SellerSKU`. For example, the seller might assign different `SellerFulfillmentOrderItemId` values to two items in a fulfillment order that share the same `SellerSKU` but have different `GiftMessage` values.
+	// A fulfillment order item identifier that the seller creates to track fulfillment order items. Used to disambiguate multiple fulfillment items that have the same `sellerSku` value. For example, the seller might assign different `sellerFulfillmentOrderItemId` values to two items in a fulfillment order that share the same `sellerSku` value but have different `giftMessage` values.
 	// Required: true
 	// Max Length: 50
 	SellerFulfillmentOrderItemID *string `json:"sellerFulfillmentOrderItemId"`

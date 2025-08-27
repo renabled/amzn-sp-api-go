@@ -28,7 +28,7 @@ type SpdTrackingItemInput struct {
 
 	// The tracking Id associated with each box in a non-Amazon partnered Small Parcel Delivery (SPD) shipment. The seller must provide this information.
 	// Required: true
-	// Max Length: 1024
+	// Max Length: 64
 	// Min Length: 1
 	TrackingID *string `json:"trackingId"`
 }
@@ -78,7 +78,7 @@ func (m *SpdTrackingItemInput) validateTrackingID(formats strfmt.Registry) error
 		return err
 	}
 
-	if err := validate.MaxLength("trackingId", "body", *m.TrackingID, 1024); err != nil {
+	if err := validate.MaxLength("trackingId", "body", *m.TrackingID, 64); err != nil {
 		return err
 	}
 

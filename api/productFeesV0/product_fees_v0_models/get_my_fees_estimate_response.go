@@ -13,12 +13,12 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// GetMyFeesEstimateResponse get my fees estimate response
+// GetMyFeesEstimateResponse The response object for the GetMyFeesEstimate operation.
 //
 // swagger:model GetMyFeesEstimateResponse
 type GetMyFeesEstimateResponse struct {
 
-	// errors
+	// A list of errors that may have occurred during the GetMyFeesEstimate operation.
 	Errors ErrorList `json:"errors,omitempty"`
 
 	// The payload for the operation.
