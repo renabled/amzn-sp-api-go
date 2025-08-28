@@ -19,17 +19,35 @@ import (
 // swagger:model PaymentExecutionDetailItem
 type PaymentExecutionDetailItem struct {
 
+	// The Brazilian Taxpayer Identifier (CNPJ) of the payment processor or acquiring bank that authorizes the payment.
+	//
+	// **Note**: This attribute is only available for orders in the Brazil (BR) marketplace when the `PaymentMethod` is `CreditCard` or `Pix`.
+	AcquirerID string `json:"AcquirerId,omitempty"`
+
+	// The unique code that confirms the payment authorization.
+	//
+	// **Note**: This attribute is only available for orders in the Brazil (BR) marketplace when the `PaymentMethod` is `CreditCard` or `Pix`.
+	AuthorizationCode string `json:"AuthorizationCode,omitempty"`
+
+	// The card network or brand used in the payment transaction (for example, Visa or Mastercard).
+	//
+	// **Note**: This attribute is only available for orders in the Brazil (BR) marketplace when the `PaymentMethod` is `CreditCard`.
+	CardBrand string `json:"CardBrand,omitempty"`
+
 	// payment
 	// Required: true
 	Payment *Money `json:"Payment"`
 
-	// A sub-payment method for a COD order.
+	// The sub-payment method for an order.
 	//
 	// **Possible values**:
 	// * `COD`: Cash on delivery
 	// * `GC`: Gift card
 	// * `PointsAccount`: Amazon Points
 	// * `Invoice`: Invoice
+	// * `CreditCard`: Credit card
+	// * `Pix`: Pix
+	// * `Other`: Other.
 	// Required: true
 	PaymentMethod *string `json:"PaymentMethod"`
 }

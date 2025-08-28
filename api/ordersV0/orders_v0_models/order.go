@@ -148,9 +148,7 @@ type Order struct {
 	// Enum: [StandardOrder LongLeadTimeOrder Preorder BackOrder SourcingOnDemandOrder]
 	OrderType string `json:"OrderType,omitempty"`
 
-	// Information about sub-payment methods for a cash-on-delivery (COD) order.
-	//
-	// __Note__: For a COD order that is paid for using one sub-payment method, one `PaymentExecutionDetailItem` object is returned, with `PaymentExecutionDetailItem`/`PaymentMethod = COD`. For a COD order that is paid for using multiple sub-payment methods, two or more `PaymentExecutionDetailItem` objects are returned.
+	// Information about the sub-payment methods for an order.
 	PaymentExecutionDetail PaymentExecutionDetailItemList `json:"PaymentExecutionDetail,omitempty"`
 
 	// The payment method for the order. This property is limited to COD and CVS payment methods. Unless you need the specific COD payment information provided by the `PaymentExecutionDetailItem` object, we recommend using the `PaymentMethodDetails` property to get payment method information.
