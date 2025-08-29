@@ -43,6 +43,9 @@ type ShipmentDetail struct {
 	// payment method details
 	PaymentMethodDetails PaymentMethodDetailItemList `json:"PaymentMethodDetails,omitempty"`
 
+	// payments
+	Payments PaymentInformationList `json:"Payments,omitempty"`
+
 	// The date and time when the order was created.
 	// Format: date-time
 	PurchaseDate strfmt.DateTime `json:"PurchaseDate,omitempty"`
@@ -76,6 +79,10 @@ func (m *ShipmentDetail) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validatePaymentMethodDetails(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validatePayments(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -152,6 +159,23 @@ func (m *ShipmentDetail) validatePaymentMethodDetails(formats strfmt.Registry) e
 	return nil
 }
 
+func (m *ShipmentDetail) validatePayments(formats strfmt.Registry) error {
+	if swag.IsZero(m.Payments) { // not required
+		return nil
+	}
+
+	if err := m.Payments.Validate(formats); err != nil {
+		if ve, ok := err.(*errors.Validation); ok {
+			return ve.ValidateName("Payments")
+		} else if ce, ok := err.(*errors.CompositeError); ok {
+			return ce.ValidateName("Payments")
+		}
+		return err
+	}
+
+	return nil
+}
+
 func (m *ShipmentDetail) validatePurchaseDate(formats strfmt.Registry) error {
 	if swag.IsZero(m.PurchaseDate) { // not required
 		return nil
@@ -216,6 +240,10 @@ func (m *ShipmentDetail) ContextValidate(ctx context.Context, formats strfmt.Reg
 		res = append(res, err)
 	}
 
+	if err := m.contextValidatePayments(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.contextValidateShipmentItems(ctx, formats); err != nil {
 		res = append(res, err)
 	}
@@ -269,6 +297,20 @@ func (m *ShipmentDetail) contextValidatePaymentMethodDetails(ctx context.Context
 			return ve.ValidateName("PaymentMethodDetails")
 		} else if ce, ok := err.(*errors.CompositeError); ok {
 			return ce.ValidateName("PaymentMethodDetails")
+		}
+		return err
+	}
+
+	return nil
+}
+
+func (m *ShipmentDetail) contextValidatePayments(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := m.Payments.ContextValidate(ctx, formats); err != nil {
+		if ve, ok := err.(*errors.Validation); ok {
+			return ve.ValidateName("Payments")
+		} else if ce, ok := err.(*errors.CompositeError); ok {
+			return ce.ValidateName("Payments")
 		}
 		return err
 	}
