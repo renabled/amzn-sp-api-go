@@ -36,8 +36,6 @@ type ClientService interface {
 
 	CreateFulfillmentReturn(params *CreateFulfillmentReturnParams, opts ...ClientOption) (*CreateFulfillmentReturnOK, error)
 
-	DeliveryOfferings(params *DeliveryOfferingsParams, opts ...ClientOption) (*DeliveryOfferingsOK, error)
-
 	DeliveryOffers(params *DeliveryOffersParams, opts ...ClientOption) (*DeliveryOffersOK, error)
 
 	GetFeatureInventory(params *GetFeatureInventoryParams, opts ...ClientOption) (*GetFeatureInventoryOK, error)
@@ -198,52 +196,6 @@ func (a *Client) CreateFulfillmentReturn(params *CreateFulfillmentReturnParams, 
 	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
 	msg := fmt.Sprintf("unexpected success response for createFulfillmentReturn: API contract not enforced by server. Client expected to get an error, but got: %T", result)
-	panic(msg)
-}
-
-/*
-	DeliveryOfferings Returns fast delivery estimates for Product Detail and Collection pages, based on criteria that you specify.
-
-**Usage Plan:**
-
-| Rate (requests per second) | Burst |
-| ---- | ---- |
-| 5 | 30 |
-
-The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-*/
-func (a *Client) DeliveryOfferings(params *DeliveryOfferingsParams, opts ...ClientOption) (*DeliveryOfferingsOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewDeliveryOfferingsParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "deliveryOfferings",
-		Method:             "POST",
-		PathPattern:        "/fba/outbound/2020-07-01/deliveryOfferings",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"https"},
-		Params:             params,
-		Reader:             &DeliveryOfferingsReader{formats: a.formats},
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*DeliveryOfferingsOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for deliveryOfferings: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
