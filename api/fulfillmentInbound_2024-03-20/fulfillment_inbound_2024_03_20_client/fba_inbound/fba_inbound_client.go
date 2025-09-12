@@ -110,8 +110,6 @@ type ClientService interface {
 
 	SetPrepDetails(params *SetPrepDetailsParams, opts ...ClientOption) (*SetPrepDetailsAccepted, error)
 
-	UpdateBoxIdentifiers(params *UpdateBoxIdentifiersParams, opts ...ClientOption) (*UpdateBoxIdentifiersAccepted, error)
-
 	UpdateInboundPlanName(params *UpdateInboundPlanNameParams, opts ...ClientOption) (*UpdateInboundPlanNameNoContent, error)
 
 	UpdateItemComplianceDetails(params *UpdateItemComplianceDetailsParams, opts ...ClientOption) (*UpdateItemComplianceDetailsAccepted, error)
@@ -1946,52 +1944,6 @@ func (a *Client) SetPrepDetails(params *SetPrepDetailsParams, opts ...ClientOpti
 	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
 	msg := fmt.Sprintf("unexpected success response for setPrepDetails: API contract not enforced by server. Client expected to get an error, but got: %T", result)
-	panic(msg)
-}
-
-/*
-	UpdateBoxIdentifiers Update/Add custom identifier to the boxes within a shipment. These custom identifiers are provided by the clients and reflected on the box labels to identify boxes. One example of this custom identifier is the SSCC (Serial Shipping Container Codes) barcodes, with the encoding of GS1-128, which is an industry standard to uniquely identify boxes.
-
-**Usage Plan:**
-
-| Rate (requests per second) | Burst |
-| ---- | ---- |
-| n | n |
-
-The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-*/
-func (a *Client) UpdateBoxIdentifiers(params *UpdateBoxIdentifiersParams, opts ...ClientOption) (*UpdateBoxIdentifiersAccepted, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewUpdateBoxIdentifiersParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "updateBoxIdentifiers",
-		Method:             "PUT",
-		PathPattern:        "/inbound/fba/2024-03-20/inboundPlans/{inboundPlanId}/shipments/{shipmentId}/boxIdentifiers",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"https"},
-		Params:             params,
-		Reader:             &UpdateBoxIdentifiersReader{formats: a.formats},
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*UpdateBoxIdentifiersAccepted)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for updateBoxIdentifiers: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
