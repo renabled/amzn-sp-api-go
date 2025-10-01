@@ -59,8 +59,7 @@ type Address struct {
 	Municipality string `json:"Municipality,omitempty"`
 
 	// The name.
-	// Required: true
-	Name *string `json:"Name"`
+	Name string `json:"Name,omitempty"`
 
 	// The phone number of the buyer.
 	//
@@ -87,10 +86,6 @@ func (m *Address) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validateExtendedFields(formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.validateName(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -156,15 +151,6 @@ func (m *Address) validateExtendedFields(formats strfmt.Registry) error {
 			}
 			return err
 		}
-	}
-
-	return nil
-}
-
-func (m *Address) validateName(formats strfmt.Registry) error {
-
-	if err := validate.Required("Name", "body", m.Name); err != nil {
-		return err
 	}
 
 	return nil

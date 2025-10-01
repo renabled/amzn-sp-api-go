@@ -19,6 +19,9 @@ import (
 // swagger:model ShippingService
 type ShippingService struct {
 
+	// A list of adjustments applied to a shipping service.
+	AdjustmentItemList AdjustmentItemList `json:"AdjustmentItemList,omitempty"`
+
 	// available format options for label
 	AvailableFormatOptionsForLabel AvailableFormatOptionsForLabelList `json:"AvailableFormatOptionsForLabel,omitempty"`
 
@@ -46,6 +49,10 @@ type ShippingService struct {
 	// The amount that the carrier will charge for the shipment.
 	// Required: true
 	Rate *CurrencyAmount `json:"Rate"`
+
+	// The amount that the carrier will charge for the shipment with adjustments.
+	// Required: true
+	RateWithAdjustments *CurrencyAmount `json:"RateWithAdjustments"`
 
 	// When true, additional seller inputs are required.
 	// Required: true
@@ -76,6 +83,10 @@ type ShippingService struct {
 // Validate validates this shipping service
 func (m *ShippingService) Validate(formats strfmt.Registry) error {
 	var res []error
+
+	if err := m.validateAdjustmentItemList(formats); err != nil {
+		res = append(res, err)
+	}
 
 	if err := m.validateAvailableFormatOptionsForLabel(formats); err != nil {
 		res = append(res, err)
@@ -109,6 +120,10 @@ func (m *ShippingService) Validate(formats strfmt.Registry) error {
 		res = append(res, err)
 	}
 
+	if err := m.validateRateWithAdjustments(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.validateRequiresAdditionalSellerInputs(formats); err != nil {
 		res = append(res, err)
 	}
@@ -136,6 +151,23 @@ func (m *ShippingService) Validate(formats strfmt.Registry) error {
 	if len(res) > 0 {
 		return errors.CompositeValidationError(res...)
 	}
+	return nil
+}
+
+func (m *ShippingService) validateAdjustmentItemList(formats strfmt.Registry) error {
+	if swag.IsZero(m.AdjustmentItemList) { // not required
+		return nil
+	}
+
+	if err := m.AdjustmentItemList.Validate(formats); err != nil {
+		if ve, ok := err.(*errors.Validation); ok {
+			return ve.ValidateName("AdjustmentItemList")
+		} else if ce, ok := err.(*errors.CompositeError); ok {
+			return ce.ValidateName("AdjustmentItemList")
+		}
+		return err
+	}
+
 	return nil
 }
 
@@ -274,6 +306,26 @@ func (m *ShippingService) validateRate(formats strfmt.Registry) error {
 	return nil
 }
 
+func (m *ShippingService) validateRateWithAdjustments(formats strfmt.Registry) error {
+
+	if err := validate.Required("RateWithAdjustments", "body", m.RateWithAdjustments); err != nil {
+		return err
+	}
+
+	if m.RateWithAdjustments != nil {
+		if err := m.RateWithAdjustments.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("RateWithAdjustments")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("RateWithAdjustments")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
 func (m *ShippingService) validateRequiresAdditionalSellerInputs(formats strfmt.Registry) error {
 
 	if err := validate.Required("RequiresAdditionalSellerInputs", "body", m.RequiresAdditionalSellerInputs); err != nil {
@@ -373,6 +425,10 @@ func (m *ShippingService) validateShippingServiceOptions(formats strfmt.Registry
 func (m *ShippingService) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
 	var res []error
 
+	if err := m.contextValidateAdjustmentItemList(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.contextValidateAvailableFormatOptionsForLabel(ctx, formats); err != nil {
 		res = append(res, err)
 	}
@@ -401,6 +457,10 @@ func (m *ShippingService) ContextValidate(ctx context.Context, formats strfmt.Re
 		res = append(res, err)
 	}
 
+	if err := m.contextValidateRateWithAdjustments(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.contextValidateShipDate(ctx, formats); err != nil {
 		res = append(res, err)
 	}
@@ -416,6 +476,20 @@ func (m *ShippingService) ContextValidate(ctx context.Context, formats strfmt.Re
 	if len(res) > 0 {
 		return errors.CompositeValidationError(res...)
 	}
+	return nil
+}
+
+func (m *ShippingService) contextValidateAdjustmentItemList(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := m.AdjustmentItemList.ContextValidate(ctx, formats); err != nil {
+		if ve, ok := err.(*errors.Validation); ok {
+			return ve.ValidateName("AdjustmentItemList")
+		} else if ce, ok := err.(*errors.CompositeError); ok {
+			return ce.ValidateName("AdjustmentItemList")
+		}
+		return err
+	}
+
 	return nil
 }
 
@@ -515,6 +589,22 @@ func (m *ShippingService) contextValidateRate(ctx context.Context, formats strfm
 				return ve.ValidateName("Rate")
 			} else if ce, ok := err.(*errors.CompositeError); ok {
 				return ce.ValidateName("Rate")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *ShippingService) contextValidateRateWithAdjustments(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.RateWithAdjustments != nil {
+		if err := m.RateWithAdjustments.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("RateWithAdjustments")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("RateWithAdjustments")
 			}
 			return err
 		}

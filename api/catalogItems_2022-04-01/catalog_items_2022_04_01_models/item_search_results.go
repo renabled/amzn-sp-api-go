@@ -31,12 +31,10 @@ type ItemSearchResults struct {
 	NumberOfResults *int64 `json:"numberOfResults"`
 
 	// The `nextToken` and `previousToken` values that are required to retrieve paginated results.
-	// Required: true
-	Pagination *Pagination `json:"pagination"`
+	Pagination *Pagination `json:"pagination,omitempty"`
 
 	// Search refinements for searches that are based on `keywords`.
-	// Required: true
-	Refinements *Refinements `json:"refinements"`
+	Refinements *Refinements `json:"refinements,omitempty"`
 }
 
 // Validate validates this item search results
@@ -102,9 +100,8 @@ func (m *ItemSearchResults) validateNumberOfResults(formats strfmt.Registry) err
 }
 
 func (m *ItemSearchResults) validatePagination(formats strfmt.Registry) error {
-
-	if err := validate.Required("pagination", "body", m.Pagination); err != nil {
-		return err
+	if swag.IsZero(m.Pagination) { // not required
+		return nil
 	}
 
 	if m.Pagination != nil {
@@ -122,9 +119,8 @@ func (m *ItemSearchResults) validatePagination(formats strfmt.Registry) error {
 }
 
 func (m *ItemSearchResults) validateRefinements(formats strfmt.Registry) error {
-
-	if err := validate.Required("refinements", "body", m.Refinements); err != nil {
-		return err
+	if swag.IsZero(m.Refinements) { // not required
+		return nil
 	}
 
 	if m.Refinements != nil {

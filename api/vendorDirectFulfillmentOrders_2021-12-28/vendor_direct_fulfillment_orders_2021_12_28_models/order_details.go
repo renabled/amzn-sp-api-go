@@ -29,6 +29,9 @@ type OrderDetails struct {
 	// Required: true
 	CustomerOrderNumber *string `json:"customerOrderNumber"`
 
+	// When `true`, the order contains customizable items.
+	HasCustomizableItems bool `json:"hasCustomizableItems,omitempty"`
+
 	// A list of items in this purchase order.
 	// Required: true
 	Items []*OrderItem `json:"items"`
