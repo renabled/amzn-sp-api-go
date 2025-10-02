@@ -51,8 +51,7 @@ type Address struct {
 	PostalCode *string `json:"postalCode"`
 
 	// The state or region where the person, business or institution is located.
-	// Required: true
-	StateOrRegion *string `json:"stateOrRegion"`
+	StateOrRegion string `json:"stateOrRegion,omitempty"`
 }
 
 // Validate validates this address
@@ -72,10 +71,6 @@ func (m *Address) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validatePostalCode(formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.validateStateOrRegion(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -115,15 +110,6 @@ func (m *Address) validateName(formats strfmt.Registry) error {
 func (m *Address) validatePostalCode(formats strfmt.Registry) error {
 
 	if err := validate.Required("postalCode", "body", m.PostalCode); err != nil {
-		return err
-	}
-
-	return nil
-}
-
-func (m *Address) validateStateOrRegion(formats strfmt.Registry) error {
-
-	if err := validate.Required("stateOrRegion", "body", m.StateOrRegion); err != nil {
 		return err
 	}
 

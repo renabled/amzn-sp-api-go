@@ -19,7 +19,7 @@ import (
 // swagger:model DeliveryDocument
 type DeliveryDocument struct {
 
-	// The delivery document type. Values are `SIGNATURE` and `DELIVERY_IMAGE`.
+	// The delivery document type. The only possible value is `DELIVERY_IMAGE`.
 	// Required: true
 	DocumentType *string `json:"documentType"`
 

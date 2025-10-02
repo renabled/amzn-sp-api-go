@@ -30,8 +30,8 @@ func (m UnitOfLength) Pointer() *UnitOfLength {
 
 const (
 
-	// UnitOfLengthCm captures enum value "Cm"
-	UnitOfLengthCm UnitOfLength = "Cm"
+	// UnitOfLengthCm captures enum value "cm"
+	UnitOfLengthCm UnitOfLength = "cm"
 )
 
 // for schema
@@ -39,7 +39,7 @@ var unitOfLengthEnum []interface{}
 
 func init() {
 	var res []UnitOfLength
-	if err := json.Unmarshal([]byte(`["Cm"]`), &res); err != nil {
+	if err := json.Unmarshal([]byte(`["cm"]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {

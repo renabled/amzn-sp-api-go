@@ -30,11 +30,11 @@ func (m UnitOfWeight) Pointer() *UnitOfWeight {
 
 const (
 
-	// UnitOfWeightGrams captures enum value "Grams"
-	UnitOfWeightGrams UnitOfWeight = "Grams"
+	// UnitOfWeightGrams captures enum value "grams"
+	UnitOfWeightGrams UnitOfWeight = "grams"
 
-	// UnitOfWeightG captures enum value "G"
-	UnitOfWeightG UnitOfWeight = "G"
+	// UnitOfWeightG captures enum value "g"
+	UnitOfWeightG UnitOfWeight = "g"
 )
 
 // for schema
@@ -42,7 +42,7 @@ var unitOfWeightEnum []interface{}
 
 func init() {
 	var res []UnitOfWeight
-	if err := json.Unmarshal([]byte(`["Grams","G"]`), &res); err != nil {
+	if err := json.Unmarshal([]byte(`["grams","g"]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {

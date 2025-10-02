@@ -30,11 +30,11 @@ func (m HandoverMethod) Pointer() *HandoverMethod {
 
 const (
 
-	// HandoverMethodPickup captures enum value "Pickup"
-	HandoverMethodPickup HandoverMethod = "Pickup"
+	// HandoverMethodPICKUP captures enum value "PICKUP"
+	HandoverMethodPICKUP HandoverMethod = "PICKUP"
 
-	// HandoverMethodDropoff captures enum value "Dropoff"
-	HandoverMethodDropoff HandoverMethod = "Dropoff"
+	// HandoverMethodDROPOFF captures enum value "DROPOFF"
+	HandoverMethodDROPOFF HandoverMethod = "DROPOFF"
 )
 
 // for schema
@@ -42,7 +42,7 @@ var handoverMethodEnum []interface{}
 
 func init() {
 	var res []HandoverMethod
-	if err := json.Unmarshal([]byte(`["Pickup","Dropoff"]`), &res); err != nil {
+	if err := json.Unmarshal([]byte(`["PICKUP","DROPOFF"]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
