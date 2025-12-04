@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// BankAccount Details of an Amazon SW bank account, used to hold money earned by a SW customer by selling items. NOTE: Not including account_links, short cut links to the account balance and transactions -> since not mandatory
+// BankAccount Details of an Amazon Seller Wallet bank account. This account is used to hold the money that a Seller Wallet customer earns by selling items.
 //
 // swagger:model BankAccount
 type BankAccount struct {
@@ -31,13 +31,11 @@ type BankAccount struct {
 	// Required: true
 	AccountCurrency *string `json:"accountCurrency"`
 
-	// BankAccount holder's name (expected to be Amazon customer)
-	//
+	// The bank account holder's name (expected to be an Amazon customer). There is a 50 character limit.
 	// Example: John Doe
 	AccountHolderName string `json:"accountHolderName,omitempty"`
 
-	// The unique identifier provided by Amazon to identify the account
-	//
+	// The unique bank account identifier provided by Amazon. To initiate a `SELF` transaction with Seller Wallet, you must choose `BANK_ACCOUNT` as the payment method type in the [getPaymentMethod](https://developer-docs.amazon.com/sp-api/reference/getpaymentmethods) request. Your Amazon Seller Wallet bank account identifier should match the `paymentMethodId` in the response. This field is required.
 	// Example: amzn1.account.AGUGL2EM3ZHYSRJWH2UCRPIM5JFQ
 	AccountID string `json:"accountId,omitempty"`
 
@@ -45,10 +43,8 @@ type BankAccount struct {
 	//
 	BankAccountHolderStatus BankAccountHolderStatus `json:"bankAccountHolderStatus,omitempty"`
 
-	// Format in which the Bank BankAccount is provided
-	//
-	// Required: true
-	BankAccountNumberFormat *BankAccountNumberFormat `json:"bankAccountNumberFormat"`
+	// The format in which the bank account number is provided for `THIRD_PARTY` transaction requests.
+	BankAccountNumberFormat BankAccountNumberFormat `json:"bankAccountNumberFormat,omitempty"`
 
 	// Last 3 digit of the bank account number, for all Amazon Seller Wallet account the value will be three consecutive 0's
 	//
@@ -56,26 +52,20 @@ type BankAccount struct {
 	// Required: true
 	BankAccountNumberTail *string `json:"bankAccountNumberTail"`
 
-	// Type of the Bank BankAccount is provided, for all Amazon Seller Wallet account the value will be SELF
-	//
+	// Type of ownership of the bank account. This value is `SELF` for Amazon Seller Wallet accounts.
 	// Required: true
 	BankAccountOwnershipType *BankAccountOwnershipType `json:"bankAccountOwnershipType"`
 
-	// The name of the bank, for all Amazon Seller Wallet account the value will be Amazon Seller Wallet
-	//
-	// Example: Bank Of America
+	// The name of the bank. This value is Amazon Seller Wallet for Amazon Seller Wallet accounts.
+	// Example: DEUTSCHE BANK AG
 	BankName string `json:"bankName,omitempty"`
 
-	// Bank account number format or routing number type.
-	//
-	// Required: true
-	BankNumberFormat *BankNumberFormat `json:"bankNumberFormat"`
+	// The bank number format or routing number type for `THIRD_PARTY` transaction requests.
+	BankNumberFormat BankNumberFormat `json:"bankNumberFormat,omitempty"`
 
-	// Routing number for automated clearing house transfers, for all Amazon Seller Wallet account the value will be denoted by nine cosecutive 0's,
-	//
+	// Routing number for automated clearing house transfers for `THIRD_PARTY` transaction requests. This value is nine consecutive zeros for Amazon Seller Wallet accounts.
 	// Example: 026009593
-	// Required: true
-	RoutingNumber *string `json:"routingNumber"`
+	RoutingNumber string `json:"routingNumber,omitempty"`
 }
 
 // Validate validates this bank account
@@ -107,10 +97,6 @@ func (m *BankAccount) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validateBankNumberFormat(formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.validateRoutingNumber(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -156,24 +142,17 @@ func (m *BankAccount) validateBankAccountHolderStatus(formats strfmt.Registry) e
 }
 
 func (m *BankAccount) validateBankAccountNumberFormat(formats strfmt.Registry) error {
-
-	if err := validate.Required("bankAccountNumberFormat", "body", m.BankAccountNumberFormat); err != nil {
-		return err
+	if swag.IsZero(m.BankAccountNumberFormat) { // not required
+		return nil
 	}
 
-	if err := validate.Required("bankAccountNumberFormat", "body", m.BankAccountNumberFormat); err != nil {
-		return err
-	}
-
-	if m.BankAccountNumberFormat != nil {
-		if err := m.BankAccountNumberFormat.Validate(formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
-				return ve.ValidateName("bankAccountNumberFormat")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("bankAccountNumberFormat")
-			}
-			return err
+	if err := m.BankAccountNumberFormat.Validate(formats); err != nil {
+		if ve, ok := err.(*errors.Validation); ok {
+			return ve.ValidateName("bankAccountNumberFormat")
+		} else if ce, ok := err.(*errors.CompositeError); ok {
+			return ce.ValidateName("bankAccountNumberFormat")
 		}
+		return err
 	}
 
 	return nil
@@ -213,32 +192,16 @@ func (m *BankAccount) validateBankAccountOwnershipType(formats strfmt.Registry) 
 }
 
 func (m *BankAccount) validateBankNumberFormat(formats strfmt.Registry) error {
-
-	if err := validate.Required("bankNumberFormat", "body", m.BankNumberFormat); err != nil {
-		return err
+	if swag.IsZero(m.BankNumberFormat) { // not required
+		return nil
 	}
 
-	if err := validate.Required("bankNumberFormat", "body", m.BankNumberFormat); err != nil {
-		return err
-	}
-
-	if m.BankNumberFormat != nil {
-		if err := m.BankNumberFormat.Validate(formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
-				return ve.ValidateName("bankNumberFormat")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("bankNumberFormat")
-			}
-			return err
+	if err := m.BankNumberFormat.Validate(formats); err != nil {
+		if ve, ok := err.(*errors.Validation); ok {
+			return ve.ValidateName("bankNumberFormat")
+		} else if ce, ok := err.(*errors.CompositeError); ok {
+			return ce.ValidateName("bankNumberFormat")
 		}
-	}
-
-	return nil
-}
-
-func (m *BankAccount) validateRoutingNumber(formats strfmt.Registry) error {
-
-	if err := validate.Required("routingNumber", "body", m.RoutingNumber); err != nil {
 		return err
 	}
 
@@ -287,15 +250,13 @@ func (m *BankAccount) contextValidateBankAccountHolderStatus(ctx context.Context
 
 func (m *BankAccount) contextValidateBankAccountNumberFormat(ctx context.Context, formats strfmt.Registry) error {
 
-	if m.BankAccountNumberFormat != nil {
-		if err := m.BankAccountNumberFormat.ContextValidate(ctx, formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
-				return ve.ValidateName("bankAccountNumberFormat")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("bankAccountNumberFormat")
-			}
-			return err
+	if err := m.BankAccountNumberFormat.ContextValidate(ctx, formats); err != nil {
+		if ve, ok := err.(*errors.Validation); ok {
+			return ve.ValidateName("bankAccountNumberFormat")
+		} else if ce, ok := err.(*errors.CompositeError); ok {
+			return ce.ValidateName("bankAccountNumberFormat")
 		}
+		return err
 	}
 
 	return nil
@@ -319,15 +280,13 @@ func (m *BankAccount) contextValidateBankAccountOwnershipType(ctx context.Contex
 
 func (m *BankAccount) contextValidateBankNumberFormat(ctx context.Context, formats strfmt.Registry) error {
 
-	if m.BankNumberFormat != nil {
-		if err := m.BankNumberFormat.ContextValidate(ctx, formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
-				return ve.ValidateName("bankNumberFormat")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("bankNumberFormat")
-			}
-			return err
+	if err := m.BankNumberFormat.ContextValidate(ctx, formats); err != nil {
+		if ve, ok := err.(*errors.Validation); ok {
+			return ve.ValidateName("bankNumberFormat")
+		} else if ce, ok := err.(*errors.CompositeError); ok {
+			return ce.ValidateName("bankNumberFormat")
 		}
+		return err
 	}
 
 	return nil

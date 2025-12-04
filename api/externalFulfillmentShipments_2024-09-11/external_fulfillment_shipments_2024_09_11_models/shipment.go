@@ -63,6 +63,9 @@ type Shipment struct {
 	// All involved party identification and metadata for vendor, buyer, seller. Applicable for direct-fulfillment sellers.
 	PartyInfoList PartyIdentificationInfoList `json:"partyInfoList,omitempty"`
 
+	// The reason for the sub-status.
+	Reason string `json:"reason,omitempty"`
+
 	// High-level details of the shipment.
 	// Required: true
 	ShipmentInfo *ShipmentInfo `json:"shipmentInfo"`

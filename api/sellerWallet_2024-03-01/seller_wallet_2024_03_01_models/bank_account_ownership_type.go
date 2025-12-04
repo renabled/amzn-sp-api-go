@@ -35,9 +35,6 @@ const (
 
 	// BankAccountOwnershipTypeSELF captures enum value "SELF"
 	BankAccountOwnershipTypeSELF BankAccountOwnershipType = "SELF"
-
-	// BankAccountOwnershipTypeGOVERNMENT captures enum value "GOVERNMENT"
-	BankAccountOwnershipTypeGOVERNMENT BankAccountOwnershipType = "GOVERNMENT"
 )
 
 // for schema
@@ -45,7 +42,7 @@ var bankAccountOwnershipTypeEnum []interface{}
 
 func init() {
 	var res []BankAccountOwnershipType
-	if err := json.Unmarshal([]byte(`["THIRD_PARTY","SELF","GOVERNMENT"]`), &res); err != nil {
+	if err := json.Unmarshal([]byte(`["THIRD_PARTY","SELF"]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {

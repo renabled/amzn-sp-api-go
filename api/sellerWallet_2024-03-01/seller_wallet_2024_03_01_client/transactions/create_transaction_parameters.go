@@ -65,7 +65,7 @@ type CreateTransactionParams struct {
 
 	/* AmountDigitalSignature.
 
-	   Digital signature for the source currency transaction amount.
+	   Digital signature for the source currency transaction amount. Sign in the order of the request definitions. You can omit empty or optional fields. For more information, refer to [Third-Party Provider Signature Guidance](https://developer-docs.amazon.com/sp-api/docs/tpp-registration-signature-guidance).
 	*/
 	AmountDigitalSignature string
 
@@ -77,7 +77,7 @@ type CreateTransactionParams struct {
 
 	/* DestAccountDigitalSignature.
 
-	   Digital signature for the destination bank account details.
+	   Digital signature for the destination bank account details. For more information, refer to [Third-Party Provider Signature Guidance](https://developer-docs.amazon.com/sp-api/docs/tpp-registration-signature-guidance).
 	*/
 	DestAccountDigitalSignature string
 

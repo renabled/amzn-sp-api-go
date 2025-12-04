@@ -19,6 +19,11 @@ import (
 // swagger:model Transaction
 type Transaction struct {
 
+	// The unique identifier of the Amazon Seller Wallet bank account from which the money is debited.
+	// Example: amzn1.account.SMUGN2EN3ZHWSRJKH2KCJPII5JEI
+	// Required: true
+	AccountID *string `json:"accountId"`
+
 	// Expected completion date of a transaction, for existing active Payees (Trusted Beneficiaries) it will be 24 hours but for new destination bank accounts the value could go up to 5 days
 	//
 	// Example: 2023-09-26T02:32:59.787Z
@@ -78,8 +83,7 @@ type Transaction struct {
 
 	// Source bank account details in the transaction
 	//
-	// Required: true
-	TransactionSourceAccount *TransactionAccount `json:"transactionSourceAccount"`
+	TransactionSourceAccount *TransactionAccount `json:"transactionSourceAccount,omitempty"`
 
 	// Execution Status of the transaction
 	//
@@ -99,6 +103,10 @@ type Transaction struct {
 // Validate validates this transaction
 func (m *Transaction) Validate(formats strfmt.Registry) error {
 	var res []error
+
+	if err := m.validateAccountID(formats); err != nil {
+		res = append(res, err)
+	}
 
 	if err := m.validateExpectedCompletionDate(formats); err != nil {
 		res = append(res, err)
@@ -159,6 +167,15 @@ func (m *Transaction) Validate(formats strfmt.Registry) error {
 	if len(res) > 0 {
 		return errors.CompositeValidationError(res...)
 	}
+	return nil
+}
+
+func (m *Transaction) validateAccountID(formats strfmt.Registry) error {
+
+	if err := validate.Required("accountId", "body", m.AccountID); err != nil {
+		return err
+	}
+
 	return nil
 }
 
@@ -299,9 +316,8 @@ func (m *Transaction) validateTransactionRequesterSource(formats strfmt.Registry
 }
 
 func (m *Transaction) validateTransactionSourceAccount(formats strfmt.Registry) error {
-
-	if err := validate.Required("transactionSourceAccount", "body", m.TransactionSourceAccount); err != nil {
-		return err
+	if swag.IsZero(m.TransactionSourceAccount) { // not required
+		return nil
 	}
 
 	if m.TransactionSourceAccount != nil {

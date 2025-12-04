@@ -98,7 +98,7 @@ type GetShipmentDetailsParams struct {
 
 	/* EstimatedDeliveryAfter.
 
-	   Get Shipment Details by passing Estimated Delivery Date Before. Must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> format.
+	   Get Shipment Details by passing Estimated Delivery Date After. Must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> format.
 
 	   Format: date-time
 	*/

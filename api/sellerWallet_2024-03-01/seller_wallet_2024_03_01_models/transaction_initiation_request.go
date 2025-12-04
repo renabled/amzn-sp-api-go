@@ -16,7 +16,7 @@ import (
 
 // TransactionInitiationRequest Request body to initiate a transaction from a SW bank account to another customer defined bank account
 //
-// Example: {"customerPaymentReference":"BG999999999","destinationAccountHolderAddress":{"addressLine1":"333 Boren Ave N","city":"Seattle","countryCode":"US","postalCode":"98109","state":"WA"},"destinationTransactionInstrument":{"accountHolderName":"John Doe","bankAccount":{"accountCountryCode":"CN","accountCurrency":"CNY","bankAccountNumberFormat":"BBAN","bankAccountNumberTail":"819","bankAccountOwnershipType":"SELF","bankNumberFormat":"BASIC","routingNumber":"HBUKGB4B"},"bankAccountNumber":"GB29RBOS60161331926819"},"requestTime":"2024-03-26T02:32:59.787Z","sourceAccountId":"amzn1.account.SMUGN2EN3ZHWSRJKH2KCJPII5JEI","sourceAmount":{"amount":100,"currency":"USD"},"transactionDescription":"This is transaction to partner","transferRateDetails":{"baseAmount":{"currencyAmount":500,"currencyCode":"EUR"},"fees":[{"feeAmount":{"currencyAmount":4.5,"currencyCode":"EUR"},"feeId":"Unique_FeeId_001","feeRateValue":"0.9","feeType":"TRANSACTION_FEE"},{"feeAmount":{"currencyAmount":0.9,"currencyCode":"EUR"},"feeId":"Unique_FeeId_002","feeRateValue":"20.0","feeType":"TAX"}],"fxRateDetails":{"baseRate":7.6915,"effectiveFxRate":7.6084,"fxRateId":"UNIQUE_FX_RATE_ID_1","rateDirection":"BUY"},"transferAmount":{"currencyAmount":3804.2,"currencyCode":"CNY"}}}
+// Example: {"customerPaymentReference":"BG999999999","destinationTransactionInstrument":{"accountHolderName":"John Doe","bankAccount":{"accountCountryCode":"CN","accountCurrency":"CNY","bankAccountNumberFormat":"BBAN","bankAccountNumberTail":"819","bankAccountOwnershipType":"SELF","bankNumberFormat":"BASIC","routingNumber":"HBUKGB4B"},"bankAccountNumber":"GB29RBOS60161331926819"},"payeeContactInformation":{"addressLine1":"Avenue John F. Kennedy 38","city":"Luxembourg","countryCode":"LU","emailAddress":"johndoe@gmail.com","payeeEntityType":"PERSON","payeeFirstName":"John","payeeLastName":"Doe","phoneNumber":"3450987121","postalCode":"1855","state":"LUXEMBOURG"},"requestTime":"2024-03-26T02:32:59.787Z","sourceAccountId":"amzn1.account.SMUGN2EN3ZHWSRJKH2KCJPII5JEI","sourceAmount":{"amount":100,"currency":"USD"},"transactionDescription":"This is transaction to partner","transferRateDetails":{"baseAmount":{"currencyAmount":500,"currencyCode":"EUR"},"fees":[{"feeAmount":{"currencyAmount":4.5,"currencyCode":"EUR"},"feeId":"Unique_FeeId_001","feeRateValue":"0.9","feeType":"TRANSACTION_FEE"},{"feeAmount":{"currencyAmount":0.9,"currencyCode":"EUR"},"feeId":"Unique_FeeId_002","feeRateValue":"20.0","feeType":"TAX"}],"fxRateDetails":{"baseRate":7.6915,"effectiveFxRate":7.6084,"fxRateId":"UNIQUE_FX_RATE_ID_1","rateDirection":"BUY"},"transferAmount":{"currencyAmount":3804.2,"currencyCode":"CNY"}}}
 //
 // swagger:model TransactionInitiationRequest
 type TransactionInitiationRequest struct {
@@ -24,10 +24,6 @@ type TransactionInitiationRequest struct {
 	// If the payment is for VAT (Value-Added-Tax) then enter VAT identification number in this field which will be mandatory. The length constraint is 140 characters and do not allow user to enter any sensitive information other than VAT-ID.
 	// Example: BG999999999
 	CustomerPaymentReference string `json:"customerPaymentReference,omitempty"`
-
-	// Destination bank account details of the transaction request
-	//
-	DestinationAccountHolderAddress *AccountHolderAddress `json:"destinationAccountHolderAddress,omitempty"`
 
 	// Optional field to specify the unique identifier of the destination bank account where the money needs to be deposited
 	//
@@ -38,6 +34,9 @@ type TransactionInitiationRequest struct {
 	//
 	// Required: true
 	DestinationTransactionInstrument *TransactionInstrumentDetails `json:"destinationTransactionInstrument"`
+
+	// The contact information of a payee.
+	PayeeContactInformation *PayeeContactInformation `json:"payeeContactInformation,omitempty"`
 
 	// The transaction initiation request time in date-time format
 	//
@@ -67,11 +66,11 @@ type TransactionInitiationRequest struct {
 func (m *TransactionInitiationRequest) Validate(formats strfmt.Registry) error {
 	var res []error
 
-	if err := m.validateDestinationAccountHolderAddress(formats); err != nil {
+	if err := m.validateDestinationTransactionInstrument(formats); err != nil {
 		res = append(res, err)
 	}
 
-	if err := m.validateDestinationTransactionInstrument(formats); err != nil {
+	if err := m.validatePayeeContactInformation(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -97,25 +96,6 @@ func (m *TransactionInitiationRequest) Validate(formats strfmt.Registry) error {
 	return nil
 }
 
-func (m *TransactionInitiationRequest) validateDestinationAccountHolderAddress(formats strfmt.Registry) error {
-	if swag.IsZero(m.DestinationAccountHolderAddress) { // not required
-		return nil
-	}
-
-	if m.DestinationAccountHolderAddress != nil {
-		if err := m.DestinationAccountHolderAddress.Validate(formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
-				return ve.ValidateName("destinationAccountHolderAddress")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("destinationAccountHolderAddress")
-			}
-			return err
-		}
-	}
-
-	return nil
-}
-
 func (m *TransactionInitiationRequest) validateDestinationTransactionInstrument(formats strfmt.Registry) error {
 
 	if err := validate.Required("destinationTransactionInstrument", "body", m.DestinationTransactionInstrument); err != nil {
@@ -128,6 +108,25 @@ func (m *TransactionInitiationRequest) validateDestinationTransactionInstrument(
 				return ve.ValidateName("destinationTransactionInstrument")
 			} else if ce, ok := err.(*errors.CompositeError); ok {
 				return ce.ValidateName("destinationTransactionInstrument")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *TransactionInitiationRequest) validatePayeeContactInformation(formats strfmt.Registry) error {
+	if swag.IsZero(m.PayeeContactInformation) { // not required
+		return nil
+	}
+
+	if m.PayeeContactInformation != nil {
+		if err := m.PayeeContactInformation.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("payeeContactInformation")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("payeeContactInformation")
 			}
 			return err
 		}
@@ -201,11 +200,11 @@ func (m *TransactionInitiationRequest) validateTransferRateDetails(formats strfm
 func (m *TransactionInitiationRequest) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
 	var res []error
 
-	if err := m.contextValidateDestinationAccountHolderAddress(ctx, formats); err != nil {
+	if err := m.contextValidateDestinationTransactionInstrument(ctx, formats); err != nil {
 		res = append(res, err)
 	}
 
-	if err := m.contextValidateDestinationTransactionInstrument(ctx, formats); err != nil {
+	if err := m.contextValidatePayeeContactInformation(ctx, formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -223,22 +222,6 @@ func (m *TransactionInitiationRequest) ContextValidate(ctx context.Context, form
 	return nil
 }
 
-func (m *TransactionInitiationRequest) contextValidateDestinationAccountHolderAddress(ctx context.Context, formats strfmt.Registry) error {
-
-	if m.DestinationAccountHolderAddress != nil {
-		if err := m.DestinationAccountHolderAddress.ContextValidate(ctx, formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
-				return ve.ValidateName("destinationAccountHolderAddress")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("destinationAccountHolderAddress")
-			}
-			return err
-		}
-	}
-
-	return nil
-}
-
 func (m *TransactionInitiationRequest) contextValidateDestinationTransactionInstrument(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.DestinationTransactionInstrument != nil {
@@ -247,6 +230,22 @@ func (m *TransactionInitiationRequest) contextValidateDestinationTransactionInst
 				return ve.ValidateName("destinationTransactionInstrument")
 			} else if ce, ok := err.(*errors.CompositeError); ok {
 				return ce.ValidateName("destinationTransactionInstrument")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *TransactionInitiationRequest) contextValidatePayeeContactInformation(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.PayeeContactInformation != nil {
+		if err := m.PayeeContactInformation.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("payeeContactInformation")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("payeeContactInformation")
 			}
 			return err
 		}

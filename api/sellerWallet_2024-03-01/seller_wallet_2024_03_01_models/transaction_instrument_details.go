@@ -16,7 +16,7 @@ import (
 
 // TransactionInstrumentDetails Request body to create transaction instrument, Amazon performs validation and screening (anti-money laundering measuers) on all the transaction instruments before executing a transaction thus it requires transaction instrument holder's contact details as well
 //
-// Example: {"accountHolderName":"John Doe","bankAccount":{"accountCountryCode":"EU","accountCurrency":"EUR","bankAccountNumberFormat":"IBAN","bankAccountNumberTail":"819","bankAccountOwnershipType":"SELF","bankNumberFormat":"BASIC","routingNumber":"HBUKGB4B"},"bankAccountNumber":"GB29RBOS60161331926819"}
+// Example: {"accountHolderName":"John Doe","bankAccount":{"accountCountryCode":"EU","accountCurrency":"EUR","bankAccountNumberFormat":"IBAN","bankAccountNumberTail":"819","bankAccountOwnershipType":"THIRD_PARTY","bankNumberFormat":"BASIC","routingNumber":"HBUKGB4B"},"bankAccountNumber":"GB29RBOS60161331926819"}
 //
 // swagger:model TransactionInstrumentDetails
 type TransactionInstrumentDetails struct {
