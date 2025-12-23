@@ -19,11 +19,11 @@ import (
 // swagger:model GetSellingPartnerMetricsResponseMetric
 type GetSellingPartnerMetricsResponseMetric struct {
 
-	// The number of active subscriptions present at the end of the period. Applicable to PERFORMANCE timePeriodType.
+	// The number of active subscriptions present at the end of the period. Applicable to `PERFORMANCE` `timePeriodType`.
 	// Minimum: 0
 	ActiveSubscriptions *int64 `json:"activeSubscriptions,omitempty"`
 
-	// The percentage of revenue from ASINs with coupons out of total revenue from all ASINs. Applicable to PERFORMANCE timePeriodType.
+	// The percentage of revenue from ASINs with coupons out of total revenue from all ASINs. Applicable to `PERFORMANCE` `timePeriodType`.
 	// Maximum: 100
 	// Minimum: 0
 	CouponsRevenuePenetration *float64 `json:"couponsRevenuePenetration,omitempty"`
@@ -31,78 +31,126 @@ type GetSellingPartnerMetricsResponseMetric struct {
 	// The currency code in ISO 4217 format.
 	CurrencyCode string `json:"currencyCode,omitempty"`
 
-	// The revenue that would have been generated had there not been out of stock. Applicable to PERFORMANCE timePeriodType.
+	// Revenue from one-time purchase orders placed by customers who have maintained an active subscription with your catalog for more than 12 months.
+	// Minimum: 0
+	EstablishedSubscriberLifeTimeValueFromOTP *float64 `json:"establishedSubscriberLifeTimeValueFromOTP,omitempty"`
+
+	// Revenue from Subscribe & Save orders placed by customers who have maintained an active subscription with your catalog for more than 12 months.
+	// Minimum: 0
+	EstablishedSubscriberLifeTimeValueFromSNS *float64 `json:"establishedSubscriberLifeTimeValueFromSNS,omitempty"`
+
+	// Revenue from one-time purchase orders placed by customers who started their first subscription with your catalog within the past 12 months.
+	// Minimum: 0
+	GrowingSubscriberLifeTimeValueFromOTP *float64 `json:"growingSubscriberLifeTimeValueFromOTP,omitempty"`
+
+	// Revenue from Subscribe & Save orders placed by customers who started their first subscription with your catalog within the past 12 months.
+	// Minimum: 0
+	GrowingSubscriberLifeTimeValueFromSNS *float64 `json:"growingSubscriberLifeTimeValueFromSNS,omitempty"`
+
+	// The revenue that would have been generated had there not been out of stock. Applicable to `PERFORMANCE` `timePeriodType`.
 	// Minimum: 0
 	LostRevenueDueToOOS *float64 `json:"lostRevenueDueToOOS,omitempty"`
 
-	// The average reorders per non-subscriber of the program over a period of past 12 months. Applicable to PERFORMANCE timePeriodType.
+	// Revenue from one-time purchase orders placed by customers who previously had subscriptions but currently have none active in your catalog.
+	// Minimum: 0
+	LostSubscriberLifeTimeValueFromOTP *float64 `json:"lostSubscriberLifeTimeValueFromOTP,omitempty"`
+
+	// Revenue from Subscribe & Save orders placed by customers who previously had subscriptions but currently have none active in your catalog.
+	// Minimum: 0
+	LostSubscriberLifeTimeValueFromSNS *float64 `json:"lostSubscriberLifeTimeValueFromSNS,omitempty"`
+
+	// The average reorders per non-subscriber of the program over a period of past 12 months. Applicable to `PERFORMANCE` `timePeriodType`.
 	// Minimum: 0
 	NonSubscriberAverageReorders *float64 `json:"nonSubscriberAverageReorders,omitempty"`
 
-	// The average revenue per non-subscriber of the program over a period of past 12 months for sellers and 6 months for vendors. Applicable to PERFORMANCE timePeriodType.
+	// The average revenue per non-subscriber of the program over a period of past 12 months for sellers and 6 months for vendors. Applicable to `PERFORMANCE` `timePeriodType`.
 	// Minimum: 0
 	NonSubscriberAverageRevenue *float64 `json:"nonSubscriberAverageRevenue,omitempty"`
 
-	// The percentage of items that were not shipped out of the total shipped units over a period of time due to being out of stock. Applicable to PERFORMANCE timePeriodType.
+	// Total revenue from customers who have made purchases from your catalog but have never subscribed to any products
+	// Minimum: 0
+	NonSubscriberLifeTimeValueFromOTP *float64 `json:"nonSubscriberLifeTimeValueFromOTP,omitempty"`
+
+	// The percentage of items that were not shipped out of the total shipped units over a period of time due to being out of stock. Applicable to `PERFORMANCE` `timePeriodType`.
 	// Maximum: 100
 	// Minimum: 0
 	NotDeliveredDueToOOS *float64 `json:"notDeliveredDueToOOS,omitempty"`
 
-	// The subscription revenue generated from active subscriptions with one delivery over the past 12 months. Applicable to PERFORMANCE timePeriodType.
+	// The subscription revenue generated from active subscriptions with one delivery over the past 12 months. Applicable to `PERFORMANCE` `timePeriodType`.
 	// Minimum: 0
 	RevenueFromActiveSubscriptionsWithSingleDelivery *float64 `json:"revenueFromActiveSubscriptionsWithSingleDelivery,omitempty"`
 
-	// The subscription revenue generated from subscriptions which are cancelled after one delivery over the past 12 months. Applicable to PERFORMANCE timePeriodType.
+	// The subscription revenue generated from subscriptions which are cancelled after one delivery over the past 12 months. Applicable to `PERFORMANCE` `timePeriodType`.
 	// Minimum: 0
 	RevenueFromCancelledSubscriptionsAfterSingleDelivery *float64 `json:"revenueFromCancelledSubscriptionsAfterSingleDelivery,omitempty"`
 
-	// The subscription revenue generated from subscriptions with over two deliveries over the past 12 months. Applicable to PERFORMANCE timePeriodType.
+	// The subscription revenue generated from subscriptions with over two deliveries over the past 12 months. Applicable to `PERFORMANCE` `timePeriodType`.
 	// Minimum: 0
 	RevenueFromSubscriptionsWithMultipleDeliveries *float64 `json:"revenueFromSubscriptionsWithMultipleDeliveries,omitempty"`
 
-	// The percentage of subscription revenue generated by offers with 0% seller-funded discount over the last 12 months. Applicable to PERFORMANCE timePeriodType.
+	// The percentage of subscription revenue generated by offers with 0% seller-funded discount over the last 12 months. Applicable to `PERFORMANCE` `timePeriodType`.
 	// Maximum: 100
 	// Minimum: 0
 	RevenuePenetrationFor0PercentSellerFunding *float64 `json:"revenuePenetrationFor0PercentSellerFunding,omitempty"`
 
-	// [Applicable only for Sellers] The percentage of subscription revenue generated by offers with 10% seller-funded discount over the last 12 months. Applicable to PERFORMANCE timePeriodType.
+	// [Applicable only for Sellers] The percentage of subscription revenue generated by offers with 10% seller-funded discount over the last 12 months. Applicable to `PERFORMANCE` `timePeriodType`.
 	// Maximum: 100
 	// Minimum: 0
 	RevenuePenetrationFor10PercentSellerFunding *float64 `json:"revenuePenetrationFor10PercentSellerFunding,omitempty"`
 
-	// [Applicable only for Sellers] The percentage of subscription revenue generated by offers with 5% seller-funded discount over the last 12 months. Applicable to PERFORMANCE timePeriodType.
+	// [Applicable only for Sellers] The percentage of subscription revenue generated by offers with 5% seller-funded discount over the last 12 months. Applicable to `PERFORMANCE` `timePeriodType`.
 	// Maximum: 100
 	// Minimum: 0
 	RevenuePenetrationFor5PercentSellerFunding *float64 `json:"revenuePenetrationFor5PercentSellerFunding,omitempty"`
 
-	// [Applicable only for vendors] The percentage of subscription revenue generated by offers with 5% or above seller-funded discount over the last 12 months. Applicable to PERFORMANCE timePeriodType.
+	// [Applicable only for vendors] The percentage of subscription revenue generated by offers with 5% or above seller-funded discount over the last 12 months. Applicable to `PERFORMANCE` `timePeriodType`.
 	// Maximum: 100
 	// Minimum: 0
 	RevenuePenetrationFor5PlusPercentSellerFunding *float64 `json:"revenuePenetrationFor5PlusPercentSellerFunding,omitempty"`
 
-	// The percentage of new subscriptions acquired through coupons. Applicable to PERFORMANCE timePeriodType.
+	// The percentage of new subscriptions acquired through coupons. Applicable to `PERFORMANCE` `timePeriodType`.
 	// Maximum: 100
 	// Minimum: 0
 	ShareOfCouponSubscriptions *float64 `json:"shareOfCouponSubscriptions,omitempty"`
 
-	// The number of units shipped to the subscribers over a period of time. Applicable for both the PERFORMANCE and FORECAST timePeriodType.
+	// The number of units shipped to the subscribers over a period of time. Applicable for both the `PERFORMANCE` and `FORECAST` `timePeriodType`.
 	// Minimum: 0
 	ShippedSubscriptionUnits *int64 `json:"shippedSubscriptionUnits,omitempty"`
 
-	// The average reorders per subscriber of the program over a period of 12 months. Applicable to PERFORMANCE timePeriodType.
+	// Percentage of subscriptions created by offers with 0% seller-funded discount out of the total number of new orders placed over the past 12 months
+	// Maximum: 100
+	// Minimum: 0
+	SignupConversionFor0PercentSellerFunding *float64 `json:"signupConversionFor0PercentSellerFunding,omitempty"`
+
+	// [Applicable only for Sellers] Percentage of subscriptions created by offers with 10% seller-funded discount out of the total number of new orders placed over the past 12 months
+	// Maximum: 100
+	// Minimum: 0
+	SignupConversionFor10PercentSellerFunding *float64 `json:"signupConversionFor10PercentSellerFunding,omitempty"`
+
+	// [Applicable only for Sellers] Percentage of subscriptions created by offers with 5% seller-funded discount out of the total number of new orders placed over the past 12 months
+	// Maximum: 100
+	// Minimum: 0
+	SignupConversionFor5PercentSellerFunding *float64 `json:"signupConversionFor5PercentSellerFunding,omitempty"`
+
+	// [Applicable only for Vendors] Percentage of subscriptions created by offers with 5% or above seller-funded discount out of the total number of new orders placed over the past 12 months
+	// Maximum: 100
+	// Minimum: 0
+	SignupConversionFor5PlusPercentSellerFunding *float64 `json:"signupConversionFor5PlusPercentSellerFunding,omitempty"`
+
+	// The average reorders per subscriber of the program over a period of 12 months. Applicable to `PERFORMANCE` `timePeriodType`.
 	// Minimum: 0
 	SubscriberAverageReorders *float64 `json:"subscriberAverageReorders,omitempty"`
 
-	// The average revenue per subscriber of the program over a period of past 12 months for sellers and 6 months for vendors. Applicable to PERFORMANCE timePeriodType.
+	// The average revenue per subscriber of the program over a period of past 12 months for sellers and 6 months for vendors. Applicable to `PERFORMANCE` `timePeriodType`.
 	// Minimum: 0
 	SubscriberAverageRevenue *float64 `json:"subscriberAverageRevenue,omitempty"`
 
-	// The percentage of subscriptions retained after 30 days of subscription creation. Applicable to PERFORMANCE timePeriodType.
+	// The percentage of subscriptions retained after 30 days of subscription creation. Applicable to `PERFORMANCE` `timePeriodType`.
 	// Maximum: 100
 	// Minimum: 0
 	SubscriberRetentionFor30Days *float64 `json:"subscriberRetentionFor30Days,omitempty"`
 
-	// The percentage of subscriptions retained after 90 days of subscription creation. Applicable to PERFORMANCE timePeriodType.
+	// The percentage of subscriptions retained after 90 days of subscription creation. Applicable to `PERFORMANCE` `timePeriodType`.
 	// Maximum: 100
 	// Minimum: 0
 	SubscriberRetentionFor90Days *float64 `json:"subscriberRetentionFor90Days,omitempty"`
@@ -110,7 +158,7 @@ type GetSellingPartnerMetricsResponseMetric struct {
 	// A time interval used to compute metrics.
 	TimeInterval *TimeInterval `json:"timeInterval,omitempty"`
 
-	// The revenue generated from subscriptions over a period of time. Applicable for both the PERFORMANCE and FORECAST timePeriodType.
+	// The revenue generated from subscriptions over a period of time. Applicable for both the `PERFORMANCE` and `FORECAST` `timePeriodType`.
 	// Minimum: 0
 	TotalSubscriptionsRevenue *float64 `json:"totalSubscriptionsRevenue,omitempty"`
 }
@@ -127,7 +175,31 @@ func (m *GetSellingPartnerMetricsResponseMetric) Validate(formats strfmt.Registr
 		res = append(res, err)
 	}
 
+	if err := m.validateEstablishedSubscriberLifeTimeValueFromOTP(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateEstablishedSubscriberLifeTimeValueFromSNS(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateGrowingSubscriberLifeTimeValueFromOTP(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateGrowingSubscriberLifeTimeValueFromSNS(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.validateLostRevenueDueToOOS(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateLostSubscriberLifeTimeValueFromOTP(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateLostSubscriberLifeTimeValueFromSNS(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -136,6 +208,10 @@ func (m *GetSellingPartnerMetricsResponseMetric) Validate(formats strfmt.Registr
 	}
 
 	if err := m.validateNonSubscriberAverageRevenue(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateNonSubscriberLifeTimeValueFromOTP(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -176,6 +252,22 @@ func (m *GetSellingPartnerMetricsResponseMetric) Validate(formats strfmt.Registr
 	}
 
 	if err := m.validateShippedSubscriptionUnits(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateSignupConversionFor0PercentSellerFunding(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateSignupConversionFor10PercentSellerFunding(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateSignupConversionFor5PercentSellerFunding(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateSignupConversionFor5PlusPercentSellerFunding(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -237,12 +329,84 @@ func (m *GetSellingPartnerMetricsResponseMetric) validateCouponsRevenuePenetrati
 	return nil
 }
 
+func (m *GetSellingPartnerMetricsResponseMetric) validateEstablishedSubscriberLifeTimeValueFromOTP(formats strfmt.Registry) error {
+	if swag.IsZero(m.EstablishedSubscriberLifeTimeValueFromOTP) { // not required
+		return nil
+	}
+
+	if err := validate.Minimum("establishedSubscriberLifeTimeValueFromOTP", "body", *m.EstablishedSubscriberLifeTimeValueFromOTP, 0, false); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *GetSellingPartnerMetricsResponseMetric) validateEstablishedSubscriberLifeTimeValueFromSNS(formats strfmt.Registry) error {
+	if swag.IsZero(m.EstablishedSubscriberLifeTimeValueFromSNS) { // not required
+		return nil
+	}
+
+	if err := validate.Minimum("establishedSubscriberLifeTimeValueFromSNS", "body", *m.EstablishedSubscriberLifeTimeValueFromSNS, 0, false); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *GetSellingPartnerMetricsResponseMetric) validateGrowingSubscriberLifeTimeValueFromOTP(formats strfmt.Registry) error {
+	if swag.IsZero(m.GrowingSubscriberLifeTimeValueFromOTP) { // not required
+		return nil
+	}
+
+	if err := validate.Minimum("growingSubscriberLifeTimeValueFromOTP", "body", *m.GrowingSubscriberLifeTimeValueFromOTP, 0, false); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *GetSellingPartnerMetricsResponseMetric) validateGrowingSubscriberLifeTimeValueFromSNS(formats strfmt.Registry) error {
+	if swag.IsZero(m.GrowingSubscriberLifeTimeValueFromSNS) { // not required
+		return nil
+	}
+
+	if err := validate.Minimum("growingSubscriberLifeTimeValueFromSNS", "body", *m.GrowingSubscriberLifeTimeValueFromSNS, 0, false); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 func (m *GetSellingPartnerMetricsResponseMetric) validateLostRevenueDueToOOS(formats strfmt.Registry) error {
 	if swag.IsZero(m.LostRevenueDueToOOS) { // not required
 		return nil
 	}
 
 	if err := validate.Minimum("lostRevenueDueToOOS", "body", *m.LostRevenueDueToOOS, 0, false); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *GetSellingPartnerMetricsResponseMetric) validateLostSubscriberLifeTimeValueFromOTP(formats strfmt.Registry) error {
+	if swag.IsZero(m.LostSubscriberLifeTimeValueFromOTP) { // not required
+		return nil
+	}
+
+	if err := validate.Minimum("lostSubscriberLifeTimeValueFromOTP", "body", *m.LostSubscriberLifeTimeValueFromOTP, 0, false); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *GetSellingPartnerMetricsResponseMetric) validateLostSubscriberLifeTimeValueFromSNS(formats strfmt.Registry) error {
+	if swag.IsZero(m.LostSubscriberLifeTimeValueFromSNS) { // not required
+		return nil
+	}
+
+	if err := validate.Minimum("lostSubscriberLifeTimeValueFromSNS", "body", *m.LostSubscriberLifeTimeValueFromSNS, 0, false); err != nil {
 		return err
 	}
 
@@ -267,6 +431,18 @@ func (m *GetSellingPartnerMetricsResponseMetric) validateNonSubscriberAverageRev
 	}
 
 	if err := validate.Minimum("nonSubscriberAverageRevenue", "body", *m.NonSubscriberAverageRevenue, 0, false); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *GetSellingPartnerMetricsResponseMetric) validateNonSubscriberLifeTimeValueFromOTP(formats strfmt.Registry) error {
+	if swag.IsZero(m.NonSubscriberLifeTimeValueFromOTP) { // not required
+		return nil
+	}
+
+	if err := validate.Minimum("nonSubscriberLifeTimeValueFromOTP", "body", *m.NonSubscriberLifeTimeValueFromOTP, 0, false); err != nil {
 		return err
 	}
 
@@ -411,6 +587,70 @@ func (m *GetSellingPartnerMetricsResponseMetric) validateShippedSubscriptionUnit
 	}
 
 	if err := validate.MinimumInt("shippedSubscriptionUnits", "body", *m.ShippedSubscriptionUnits, 0, false); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *GetSellingPartnerMetricsResponseMetric) validateSignupConversionFor0PercentSellerFunding(formats strfmt.Registry) error {
+	if swag.IsZero(m.SignupConversionFor0PercentSellerFunding) { // not required
+		return nil
+	}
+
+	if err := validate.Minimum("signupConversionFor0PercentSellerFunding", "body", *m.SignupConversionFor0PercentSellerFunding, 0, false); err != nil {
+		return err
+	}
+
+	if err := validate.Maximum("signupConversionFor0PercentSellerFunding", "body", *m.SignupConversionFor0PercentSellerFunding, 100, false); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *GetSellingPartnerMetricsResponseMetric) validateSignupConversionFor10PercentSellerFunding(formats strfmt.Registry) error {
+	if swag.IsZero(m.SignupConversionFor10PercentSellerFunding) { // not required
+		return nil
+	}
+
+	if err := validate.Minimum("signupConversionFor10PercentSellerFunding", "body", *m.SignupConversionFor10PercentSellerFunding, 0, false); err != nil {
+		return err
+	}
+
+	if err := validate.Maximum("signupConversionFor10PercentSellerFunding", "body", *m.SignupConversionFor10PercentSellerFunding, 100, false); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *GetSellingPartnerMetricsResponseMetric) validateSignupConversionFor5PercentSellerFunding(formats strfmt.Registry) error {
+	if swag.IsZero(m.SignupConversionFor5PercentSellerFunding) { // not required
+		return nil
+	}
+
+	if err := validate.Minimum("signupConversionFor5PercentSellerFunding", "body", *m.SignupConversionFor5PercentSellerFunding, 0, false); err != nil {
+		return err
+	}
+
+	if err := validate.Maximum("signupConversionFor5PercentSellerFunding", "body", *m.SignupConversionFor5PercentSellerFunding, 100, false); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *GetSellingPartnerMetricsResponseMetric) validateSignupConversionFor5PlusPercentSellerFunding(formats strfmt.Registry) error {
+	if swag.IsZero(m.SignupConversionFor5PlusPercentSellerFunding) { // not required
+		return nil
+	}
+
+	if err := validate.Minimum("signupConversionFor5PlusPercentSellerFunding", "body", *m.SignupConversionFor5PlusPercentSellerFunding, 0, false); err != nil {
+		return err
+	}
+
+	if err := validate.Maximum("signupConversionFor5PlusPercentSellerFunding", "body", *m.SignupConversionFor5PlusPercentSellerFunding, 100, false); err != nil {
 		return err
 	}
 
