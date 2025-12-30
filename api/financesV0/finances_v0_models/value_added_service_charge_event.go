@@ -28,9 +28,7 @@ type ValueAddedServiceChargeEvent struct {
 	// The amount of the service charge event.
 	TransactionAmount *Currency `json:"TransactionAmount,omitempty"`
 
-	// Indicates the type of transaction.
-	//
-	// Example: 'Other Support Service fees'
+	// The transaction type. For example, 'Other Support Service fees'
 	TransactionType string `json:"TransactionType,omitempty"`
 }
 

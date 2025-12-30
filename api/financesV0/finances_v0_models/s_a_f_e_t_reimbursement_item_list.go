@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// SAFETReimbursementItemList A list of SAFETReimbursementItems.
+// SAFETReimbursementItemList A list of `SAFETReimbursementItem`.
 //
 // swagger:model SAFETReimbursementItemList
 type SAFETReimbursementItemList []*SAFETReimbursementItem

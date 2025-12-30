@@ -13,7 +13,7 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// FinancialEvents Contains all information related to a financial event.
+// FinancialEvents All the information that is related to a financial event.
 //
 // swagger:model FinancialEvents
 type FinancialEvents struct {
@@ -44,6 +44,9 @@ type FinancialEvents struct {
 
 	// debt recovery event list
 	DebtRecoveryEventList DebtRecoveryEventList `json:"DebtRecoveryEventList,omitempty"`
+
+	// A list of EBT refund reimbursement events.
+	EBTRefundReimbursementOnlyEventList EBTRefundReimbursementOnlyEventList `json:"EBTRefundReimbursementOnlyEventList,omitempty"`
 
 	// f b a liquidation event list
 	FBALiquidationEventList FBALiquidationEventList `json:"FBALiquidationEventList,omitempty"`
@@ -155,6 +158,10 @@ func (m *FinancialEvents) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validateDebtRecoveryEventList(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateEBTRefundReimbursementOnlyEventList(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -406,6 +413,23 @@ func (m *FinancialEvents) validateDebtRecoveryEventList(formats strfmt.Registry)
 			return ve.ValidateName("DebtRecoveryEventList")
 		} else if ce, ok := err.(*errors.CompositeError); ok {
 			return ce.ValidateName("DebtRecoveryEventList")
+		}
+		return err
+	}
+
+	return nil
+}
+
+func (m *FinancialEvents) validateEBTRefundReimbursementOnlyEventList(formats strfmt.Registry) error {
+	if swag.IsZero(m.EBTRefundReimbursementOnlyEventList) { // not required
+		return nil
+	}
+
+	if err := m.EBTRefundReimbursementOnlyEventList.Validate(formats); err != nil {
+		if ve, ok := err.(*errors.Validation); ok {
+			return ve.ValidateName("EBTRefundReimbursementOnlyEventList")
+		} else if ce, ok := err.(*errors.CompositeError); ok {
+			return ce.ValidateName("EBTRefundReimbursementOnlyEventList")
 		}
 		return err
 	}
@@ -861,6 +885,10 @@ func (m *FinancialEvents) ContextValidate(ctx context.Context, formats strfmt.Re
 		res = append(res, err)
 	}
 
+	if err := m.contextValidateEBTRefundReimbursementOnlyEventList(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.contextValidateFBALiquidationEventList(ctx, formats); err != nil {
 		res = append(res, err)
 	}
@@ -1082,6 +1110,20 @@ func (m *FinancialEvents) contextValidateDebtRecoveryEventList(ctx context.Conte
 			return ve.ValidateName("DebtRecoveryEventList")
 		} else if ce, ok := err.(*errors.CompositeError); ok {
 			return ce.ValidateName("DebtRecoveryEventList")
+		}
+		return err
+	}
+
+	return nil
+}
+
+func (m *FinancialEvents) contextValidateEBTRefundReimbursementOnlyEventList(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := m.EBTRefundReimbursementOnlyEventList.ContextValidate(ctx, formats); err != nil {
+		if ve, ok := err.(*errors.Validation); ok {
+			return ve.ValidateName("EBTRefundReimbursementOnlyEventList")
+		} else if ce, ok := err.(*errors.CompositeError); ok {
+			return ce.ValidateName("EBTRefundReimbursementOnlyEventList")
 		}
 		return err
 	}

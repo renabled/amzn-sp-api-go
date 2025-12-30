@@ -14,13 +14,13 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// SolutionProviderCreditEventList A list of `SolutionProviderCreditEvent`.
+// Transactions A list of transactions within a given time period.
 //
-// swagger:model SolutionProviderCreditEventList
-type SolutionProviderCreditEventList []*SolutionProviderCreditEvent
+// swagger:model Transactions
+type Transactions []*Transaction
 
-// Validate validates this solution provider credit event list
-func (m SolutionProviderCreditEventList) Validate(formats strfmt.Registry) error {
+// Validate validates this transactions
+func (m Transactions) Validate(formats strfmt.Registry) error {
 	var res []error
 
 	for i := 0; i < len(m); i++ {
@@ -47,8 +47,8 @@ func (m SolutionProviderCreditEventList) Validate(formats strfmt.Registry) error
 	return nil
 }
 
-// ContextValidate validate this solution provider credit event list based on the context it is used
-func (m SolutionProviderCreditEventList) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+// ContextValidate validate this transactions based on the context it is used
+func (m Transactions) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
 	var res []error
 
 	for i := 0; i < len(m); i++ {

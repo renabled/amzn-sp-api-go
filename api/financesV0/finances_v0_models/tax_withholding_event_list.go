@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// TaxWithholdingEventList A list of `TaxWithholding` events.
+// TaxWithholdingEventList A list of tax withholding events.
 //
 // swagger:model TaxWithholdingEventList
 type TaxWithholdingEventList []*TaxWithholdingEvent

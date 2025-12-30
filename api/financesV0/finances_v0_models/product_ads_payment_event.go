@@ -21,7 +21,7 @@ type ProductAdsPaymentEvent struct {
 	// Base amount of the transaction, before tax.
 	BaseValue *Currency `json:"baseValue,omitempty"`
 
-	// Identifier for the invoice that the transaction appears in.
+	// The identifier for the invoice that includes the transaction.
 	InvoiceID string `json:"invoiceId,omitempty"`
 
 	// The date and time when the financial event was posted.
@@ -35,12 +35,12 @@ type ProductAdsPaymentEvent struct {
 	//
 	// Possible values:
 	//
-	// * charge - Charge
+	// * `charge`
 	//
-	// * refund - Refund
+	// * `refund`
 	TransactionType string `json:"transactionType,omitempty"`
 
-	// The total amount of the transaction. Equal to baseValue + taxValue.
+	// The total amount of the transaction. Equal to `baseValue` + `taxValue`.
 	TransactionValue *Currency `json:"transactionValue,omitempty"`
 }
 

@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// Date Fields with a schema type of date are in ISO 8601 date time format (for example GroupBeginDate).
+// Date A date in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format.
 //
 // swagger:model Date
 type Date strfmt.DateTime

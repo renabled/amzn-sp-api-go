@@ -36,16 +36,15 @@ type RemovalShipmentItem struct {
 	// Tax collected on the revenue.
 	TaxAmount *Currency `json:"TaxAmount,omitempty"`
 
-	// The tax collection model applied to the item.
+	// The tax collection model that is applied to the item.
 	//
 	// Possible values:
 	//
-	// * MarketplaceFacilitator - Tax is withheld and remitted to the taxing authority by Amazon on behalf of the seller.
-	//
-	// * Standard - Tax is paid to the seller and not remitted to the taxing authority by Amazon.
+	// * `MarketplaceFacilitator`: Tax is withheld and remitted to the taxing authority by Amazon on behalf of the seller.
+	// * `Standard`: Tax is paid to the seller and not remitted to the taxing authority by Amazon.
 	TaxCollectionModel string `json:"TaxCollectionModel,omitempty"`
 
-	// The tax withheld and remitted to the taxing authority by Amazon on behalf of the seller. If TaxCollectionModel=MarketplaceFacilitator, then TaxWithheld=TaxAmount (except the TaxWithheld amount is a negative number). Otherwise TaxWithheld=0.
+	// The tax withheld and remitted to the taxing authority by Amazon on behalf of the seller. If `TaxCollectionModel` = `MarketplaceFacilitator`, then `TaxWithheld` = `TaxAmount` (except when the `TaxWithheld` amount is a negative number). Otherwise, `TaxWithheld` = `0`.
 	TaxWithheld *Currency `json:"TaxWithheld,omitempty"`
 }
 

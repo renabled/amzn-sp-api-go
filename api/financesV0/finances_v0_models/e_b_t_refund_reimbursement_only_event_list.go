@@ -14,13 +14,13 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// SolutionProviderCreditEventList A list of `SolutionProviderCreditEvent`.
+// EBTRefundReimbursementOnlyEventList A list of EBT refund reimbursement events.
 //
-// swagger:model SolutionProviderCreditEventList
-type SolutionProviderCreditEventList []*SolutionProviderCreditEvent
+// swagger:model EBTRefundReimbursementOnlyEventList
+type EBTRefundReimbursementOnlyEventList []*EBTRefundReimbursementOnlyEvent
 
-// Validate validates this solution provider credit event list
-func (m SolutionProviderCreditEventList) Validate(formats strfmt.Registry) error {
+// Validate validates this e b t refund reimbursement only event list
+func (m EBTRefundReimbursementOnlyEventList) Validate(formats strfmt.Registry) error {
 	var res []error
 
 	for i := 0; i < len(m); i++ {
@@ -47,8 +47,8 @@ func (m SolutionProviderCreditEventList) Validate(formats strfmt.Registry) error
 	return nil
 }
 
-// ContextValidate validate this solution provider credit event list based on the context it is used
-func (m SolutionProviderCreditEventList) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+// ContextValidate validate this e b t refund reimbursement only event list based on the context it is used
+func (m EBTRefundReimbursementOnlyEventList) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
 	var res []error
 
 	for i := 0; i < len(m); i++ {

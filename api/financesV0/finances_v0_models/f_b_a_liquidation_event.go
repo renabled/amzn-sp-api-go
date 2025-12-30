@@ -21,7 +21,7 @@ type FBALiquidationEvent struct {
 	// The fee charged to the seller by Amazon for liquidating the seller's FBA inventory.
 	LiquidationFeeAmount *Currency `json:"LiquidationFeeAmount,omitempty"`
 
-	// The amount paid by the liquidator for the seller's inventory. The seller receives this amount minus LiquidationFeeAmount.
+	// The amount paid by the liquidator for the seller's inventory. The seller receives this amount minus `LiquidationFeeAmount`.
 	LiquidationProceedsAmount *Currency `json:"LiquidationProceedsAmount,omitempty"`
 
 	// The identifier for the original removal order.

@@ -13,20 +13,20 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// ListFinancialEventGroupsResponse The response schema for the `listFinancialEventGroups` operation.
+// ListTransactionsResponse The response schema for the `listTransactions` operation.
 //
-// swagger:model ListFinancialEventGroupsResponse
-type ListFinancialEventGroupsResponse struct {
+// swagger:model ListTransactionsResponse
+type ListTransactionsResponse struct {
 
-	// One or more unexpected errors occurred during the `listFinancialEventGroups` operation.
+	// One or more unexpected errors occurred during the `listTransactions` operation.
 	Errors ErrorList `json:"errors,omitempty"`
 
-	// The payload for the `listFinancialEventGroups` operation.
-	Payload *ListFinancialEventGroupsPayload `json:"payload,omitempty"`
+	// The payload for the `listTransactions` operation.
+	Payload *ListTransactionsPayload `json:"payload,omitempty"`
 }
 
-// Validate validates this list financial event groups response
-func (m *ListFinancialEventGroupsResponse) Validate(formats strfmt.Registry) error {
+// Validate validates this list transactions response
+func (m *ListTransactionsResponse) Validate(formats strfmt.Registry) error {
 	var res []error
 
 	if err := m.validateErrors(formats); err != nil {
@@ -43,7 +43,7 @@ func (m *ListFinancialEventGroupsResponse) Validate(formats strfmt.Registry) err
 	return nil
 }
 
-func (m *ListFinancialEventGroupsResponse) validateErrors(formats strfmt.Registry) error {
+func (m *ListTransactionsResponse) validateErrors(formats strfmt.Registry) error {
 	if swag.IsZero(m.Errors) { // not required
 		return nil
 	}
@@ -60,7 +60,7 @@ func (m *ListFinancialEventGroupsResponse) validateErrors(formats strfmt.Registr
 	return nil
 }
 
-func (m *ListFinancialEventGroupsResponse) validatePayload(formats strfmt.Registry) error {
+func (m *ListTransactionsResponse) validatePayload(formats strfmt.Registry) error {
 	if swag.IsZero(m.Payload) { // not required
 		return nil
 	}
@@ -79,8 +79,8 @@ func (m *ListFinancialEventGroupsResponse) validatePayload(formats strfmt.Regist
 	return nil
 }
 
-// ContextValidate validate this list financial event groups response based on the context it is used
-func (m *ListFinancialEventGroupsResponse) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+// ContextValidate validate this list transactions response based on the context it is used
+func (m *ListTransactionsResponse) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
 	var res []error
 
 	if err := m.contextValidateErrors(ctx, formats); err != nil {
@@ -97,7 +97,7 @@ func (m *ListFinancialEventGroupsResponse) ContextValidate(ctx context.Context, 
 	return nil
 }
 
-func (m *ListFinancialEventGroupsResponse) contextValidateErrors(ctx context.Context, formats strfmt.Registry) error {
+func (m *ListTransactionsResponse) contextValidateErrors(ctx context.Context, formats strfmt.Registry) error {
 
 	if err := m.Errors.ContextValidate(ctx, formats); err != nil {
 		if ve, ok := err.(*errors.Validation); ok {
@@ -111,7 +111,7 @@ func (m *ListFinancialEventGroupsResponse) contextValidateErrors(ctx context.Con
 	return nil
 }
 
-func (m *ListFinancialEventGroupsResponse) contextValidatePayload(ctx context.Context, formats strfmt.Registry) error {
+func (m *ListTransactionsResponse) contextValidatePayload(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.Payload != nil {
 		if err := m.Payload.ContextValidate(ctx, formats); err != nil {
@@ -128,7 +128,7 @@ func (m *ListFinancialEventGroupsResponse) contextValidatePayload(ctx context.Co
 }
 
 // MarshalBinary interface implementation
-func (m *ListFinancialEventGroupsResponse) MarshalBinary() ([]byte, error) {
+func (m *ListTransactionsResponse) MarshalBinary() ([]byte, error) {
 	if m == nil {
 		return nil, nil
 	}
@@ -136,8 +136,8 @@ func (m *ListFinancialEventGroupsResponse) MarshalBinary() ([]byte, error) {
 }
 
 // UnmarshalBinary interface implementation
-func (m *ListFinancialEventGroupsResponse) UnmarshalBinary(b []byte) error {
-	var res ListFinancialEventGroupsResponse
+func (m *ListTransactionsResponse) UnmarshalBinary(b []byte) error {
+	var res ListTransactionsResponse
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err
 	}

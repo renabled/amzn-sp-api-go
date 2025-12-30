@@ -34,7 +34,7 @@ type SellerReviewEnrollmentPaymentEvent struct {
 	// Format: date-time
 	PostedDate Date `json:"PostedDate,omitempty"`
 
-	// The FeeComponent value plus the ChargeComponent value.
+	// The `FeeComponent` value plus the `ChargeComponent` value.
 	TotalAmount *Currency `json:"TotalAmount,omitempty"`
 }
 

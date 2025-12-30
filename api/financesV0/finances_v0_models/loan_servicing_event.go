@@ -25,11 +25,11 @@ type LoanServicingEvent struct {
 	//
 	// Possible values:
 	//
-	// * LoanAdvance
+	// * `LoanAdvance`
 	//
-	// * LoanPayment
+	// * `LoanPayment`
 	//
-	// * LoanRefund
+	// * `LoanRefund`
 	SourceBusinessEventType string `json:"SourceBusinessEventType,omitempty"`
 }
 

@@ -14,13 +14,13 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// SolutionProviderCreditEventList A list of `SolutionProviderCreditEvent`.
+// RelatedIdentifiers Related business identifiers of the transaction.
 //
-// swagger:model SolutionProviderCreditEventList
-type SolutionProviderCreditEventList []*SolutionProviderCreditEvent
+// swagger:model RelatedIdentifiers
+type RelatedIdentifiers []*RelatedIdentifier
 
-// Validate validates this solution provider credit event list
-func (m SolutionProviderCreditEventList) Validate(formats strfmt.Registry) error {
+// Validate validates this related identifiers
+func (m RelatedIdentifiers) Validate(formats strfmt.Registry) error {
 	var res []error
 
 	for i := 0; i < len(m); i++ {
@@ -47,8 +47,8 @@ func (m SolutionProviderCreditEventList) Validate(formats strfmt.Registry) error
 	return nil
 }
 
-// ContextValidate validate this solution provider credit event list based on the context it is used
-func (m SolutionProviderCreditEventList) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+// ContextValidate validate this related identifiers based on the context it is used
+func (m RelatedIdentifiers) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
 	var res []error
 
 	for i := 0; i < len(m); i++ {

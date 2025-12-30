@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// RemovalShipmentItemList A list of information about removal shipment items.
+// RemovalShipmentItemList A list of `RemovalShipmentItem`.
 //
 // swagger:model RemovalShipmentItemList
 type RemovalShipmentItemList []*RemovalShipmentItem

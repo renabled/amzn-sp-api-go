@@ -25,14 +25,10 @@ type ChargeRefundEvent struct {
 	// Format: date-time
 	PostedDate Date `json:"PostedDate,omitempty"`
 
-	// The reason given for a charge refund.
-	//
-	// Example: `SubscriptionFeeCorrection`
+	// The reason given for a charge refund. For example, `SubscriptionFeeCorrection`.
 	ReasonCode string `json:"ReasonCode,omitempty"`
 
-	// A description of the Reason Code.
-	//
-	// Example: `SubscriptionFeeCorrection`
+	// A description of the Reason Code. For example, `SubscriptionFeeCorrection`.
 	ReasonCodeDescription string `json:"ReasonCodeDescription,omitempty"`
 }
 

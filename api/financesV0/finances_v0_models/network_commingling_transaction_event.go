@@ -37,16 +37,16 @@ type NetworkComminglingTransactionEvent struct {
 	// The tax on the network item swap paid by the seller.
 	TaxAmount *Currency `json:"TaxAmount,omitempty"`
 
-	// The price of the swapped item minus TaxAmount.
+	// The price of the swapped item minus `TaxAmount`.
 	TaxExclusiveAmount *Currency `json:"TaxExclusiveAmount,omitempty"`
 
 	// The type of network item swap.
 	//
 	// Possible values:
 	//
-	// * NetCo - A Fulfillment by Amazon inventory pooling transaction. Available only in the India marketplace.
+	// * `NetCo`: A Fulfillment by Amazon inventory pooling transaction. Available only in the India marketplace.
 	//
-	// * ComminglingVAT - A commingling VAT transaction. Available only in the UK, Spain, France, Germany, and Italy marketplaces.
+	// * `ComminglingVAT`: A commingling VAT transaction. Available only in the Spain, UK, France, Germany, and Italy marketplaces.
 	TransactionType string `json:"TransactionType,omitempty"`
 }
 

@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// RemovalShipmentAdjustmentEventList A comma-delimited list of Removal shipmentAdjustment details for FBA inventory.
+// RemovalShipmentAdjustmentEventList A comma-delimited list of `RemovalShipmentAdjustment` details for FBA inventory.
 //
 // swagger:model RemovalShipmentAdjustmentEventList
 type RemovalShipmentAdjustmentEventList []*RemovalShipmentAdjustmentEvent

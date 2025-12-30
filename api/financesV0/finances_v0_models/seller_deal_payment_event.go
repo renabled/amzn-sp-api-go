@@ -24,13 +24,13 @@ type SellerDealPaymentEvent struct {
 	// The unique identifier of the deal.
 	DealID string `json:"dealId,omitempty"`
 
-	// The type of event: SellerDealComplete.
+	// The type of event: `SellerDealComplete`.
 	EventType string `json:"eventType,omitempty"`
 
 	// The monetary amount of the fee.
 	FeeAmount *Currency `json:"feeAmount,omitempty"`
 
-	// The type of fee: RunLightningDealFee.
+	// The type of fee: `RunLightningDealFee`.
 	FeeType string `json:"feeType,omitempty"`
 
 	// The date and time when the financial event was posted.
