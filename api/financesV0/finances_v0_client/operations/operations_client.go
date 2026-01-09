@@ -38,8 +38,6 @@ type ClientService interface {
 
 	ListFinancialEventsByOrderID(params *ListFinancialEventsByOrderIDParams, opts ...ClientOption) (*ListFinancialEventsByOrderIDOK, error)
 
-	ListTransactions(params *ListTransactionsParams, opts ...ClientOption) (*ListTransactionsOK, error)
-
 	SetTransport(transport runtime.ClientTransport)
 }
 
@@ -228,52 +226,6 @@ func (a *Client) ListFinancialEventsByOrderID(params *ListFinancialEventsByOrder
 	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
 	msg := fmt.Sprintf("unexpected success response for listFinancialEventsByOrderId: API contract not enforced by server. Client expected to get an error, but got: %T", result)
-	panic(msg)
-}
-
-/*
-	ListTransactions Returns transactions for the given parameters. Orders from the last 48 hours might not be included in financial events.
-
-**Usage Plan:**
-
-| Rate (requests per second) | Burst |
-| ---- | ---- |
-| 1 | 10 |
-
-The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput can have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits).
-*/
-func (a *Client) ListTransactions(params *ListTransactionsParams, opts ...ClientOption) (*ListTransactionsOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewListTransactionsParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "listTransactions",
-		Method:             "GET",
-		PathPattern:        "/finances/v0/transactions",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"https"},
-		Params:             params,
-		Reader:             &ListTransactionsReader{formats: a.formats},
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*ListTransactionsOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for listTransactions: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
