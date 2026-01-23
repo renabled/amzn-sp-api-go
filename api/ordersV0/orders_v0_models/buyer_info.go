@@ -23,9 +23,6 @@ type BuyerInfo struct {
 	// **Note**: This attribute is only available in the Brazil marketplace.
 	BuyerCounty string `json:"BuyerCounty,omitempty"`
 
-	// The anonymized email address of the buyer.
-	BuyerEmail string `json:"BuyerEmail,omitempty"`
-
 	// The buyer name or the recipient name.
 	BuyerName string `json:"BuyerName,omitempty"`
 
