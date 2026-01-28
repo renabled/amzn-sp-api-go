@@ -92,13 +92,13 @@ type GetOrdersParams struct {
 
 	/* EarliestDeliveryDateAfter.
 
-	   Use this date to select orders with a earliest delivery date after (or at) a specified time. The date must be in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) format.
+	   Use this date to select orders with an earliest delivery date after (or at) a specified time. The date must be in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) format.
 	*/
 	EarliestDeliveryDateAfter *string
 
 	/* EarliestDeliveryDateBefore.
 
-	   Use this date to select orders with a earliest delivery date before (or at) a specified time. The date must be in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) format.
+	   Use this date to select orders with an earliest delivery date before (or at) a specified time. The date must be in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) format.
 	*/
 	EarliestDeliveryDateBefore *string
 
