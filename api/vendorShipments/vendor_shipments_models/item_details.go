@@ -20,6 +20,10 @@ import (
 // swagger:model ItemDetails
 type ItemDetails struct {
 
+	// The two-character country code for the country where the product was manufactured or originates. Use ISO 3166-1 alpha-2 format.
+	// Pattern: ^[A-Z]{2}$
+	CountryOfOrigin string `json:"countryOfOrigin,omitempty"`
+
 	// Expiry refers to the collection of dates required  for certain items. These could be either expiryDate or mfgDate and expiryAfterDuration. These are mandatory for perishable items.
 	Expiry *Expiry `json:"expiry,omitempty"`
 
@@ -30,16 +34,30 @@ type ItemDetails struct {
 	// The batch or lot number associates an item with information the manufacturer considers relevant for traceability of the trade item to which the Element String is applied. The data may refer to the trade item itself or to items contained. This field is mandatory for all perishable items.
 	LotNumber string `json:"lotNumber,omitempty"`
 
+	// The location identifier where the product receives a traceability lot number. Provide this field for products subject to the FDA Food Safety Modernization Act (FSMA) Section 204. When you provide `lotNumberSourceReference`, you must also specify the corresponding `lotNumberSourceType` field.
+	LotNumberSourceReference string `json:"lotNumberSourceReference,omitempty"`
+
+	// The identifier type used for the lot number source. Provide this field when you specify `lotNumberSourceReference`.
+	// Enum: [GLN FFRN USDA_E URL]
+	LotNumberSourceType string `json:"lotNumberSourceType,omitempty"`
+
 	// Maximum retail price of the item being shipped.
 	MaximumRetailPrice *Money `json:"maximumRetailPrice,omitempty"`
 
 	// The purchase order number for the shipment being confirmed. If the items in this shipment belong to multiple purchase order numbers that are in particular carton or pallet within the shipment, then provide the purchaseOrderNumber at the appropriate carton or pallet level. Formatting Notes: 8-character alpha-numeric code.
 	PurchaseOrderNumber string `json:"purchaseOrderNumber,omitempty"`
+
+	// Regulatory requirements and compliance information for the item.
+	RegulationReferences *RegulationReferences `json:"regulationReferences,omitempty"`
 }
 
 // Validate validates this item details
 func (m *ItemDetails) Validate(formats strfmt.Registry) error {
 	var res []error
+
+	if err := m.validateCountryOfOrigin(formats); err != nil {
+		res = append(res, err)
+	}
 
 	if err := m.validateExpiry(formats); err != nil {
 		res = append(res, err)
@@ -49,13 +67,33 @@ func (m *ItemDetails) Validate(formats strfmt.Registry) error {
 		res = append(res, err)
 	}
 
+	if err := m.validateLotNumberSourceType(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.validateMaximumRetailPrice(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateRegulationReferences(formats); err != nil {
 		res = append(res, err)
 	}
 
 	if len(res) > 0 {
 		return errors.CompositeValidationError(res...)
 	}
+	return nil
+}
+
+func (m *ItemDetails) validateCountryOfOrigin(formats strfmt.Registry) error {
+	if swag.IsZero(m.CountryOfOrigin) { // not required
+		return nil
+	}
+
+	if err := validate.Pattern("countryOfOrigin", "body", m.CountryOfOrigin, `^[A-Z]{2}$`); err != nil {
+		return err
+	}
+
 	return nil
 }
 
@@ -126,6 +164,54 @@ func (m *ItemDetails) validateHandlingCode(formats strfmt.Registry) error {
 	return nil
 }
 
+var itemDetailsTypeLotNumberSourceTypePropEnum []interface{}
+
+func init() {
+	var res []string
+	if err := json.Unmarshal([]byte(`["GLN","FFRN","USDA_E","URL"]`), &res); err != nil {
+		panic(err)
+	}
+	for _, v := range res {
+		itemDetailsTypeLotNumberSourceTypePropEnum = append(itemDetailsTypeLotNumberSourceTypePropEnum, v)
+	}
+}
+
+const (
+
+	// ItemDetailsLotNumberSourceTypeGLN captures enum value "GLN"
+	ItemDetailsLotNumberSourceTypeGLN string = "GLN"
+
+	// ItemDetailsLotNumberSourceTypeFFRN captures enum value "FFRN"
+	ItemDetailsLotNumberSourceTypeFFRN string = "FFRN"
+
+	// ItemDetailsLotNumberSourceTypeUSDAE captures enum value "USDA_E"
+	ItemDetailsLotNumberSourceTypeUSDAE string = "USDA_E"
+
+	// ItemDetailsLotNumberSourceTypeURL captures enum value "URL"
+	ItemDetailsLotNumberSourceTypeURL string = "URL"
+)
+
+// prop value enum
+func (m *ItemDetails) validateLotNumberSourceTypeEnum(path, location string, value string) error {
+	if err := validate.EnumCase(path, location, value, itemDetailsTypeLotNumberSourceTypePropEnum, true); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (m *ItemDetails) validateLotNumberSourceType(formats strfmt.Registry) error {
+	if swag.IsZero(m.LotNumberSourceType) { // not required
+		return nil
+	}
+
+	// value enum
+	if err := m.validateLotNumberSourceTypeEnum("lotNumberSourceType", "body", m.LotNumberSourceType); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 func (m *ItemDetails) validateMaximumRetailPrice(formats strfmt.Registry) error {
 	if swag.IsZero(m.MaximumRetailPrice) { // not required
 		return nil
@@ -145,6 +231,25 @@ func (m *ItemDetails) validateMaximumRetailPrice(formats strfmt.Registry) error 
 	return nil
 }
 
+func (m *ItemDetails) validateRegulationReferences(formats strfmt.Registry) error {
+	if swag.IsZero(m.RegulationReferences) { // not required
+		return nil
+	}
+
+	if m.RegulationReferences != nil {
+		if err := m.RegulationReferences.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("regulationReferences")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("regulationReferences")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
 // ContextValidate validate this item details based on the context it is used
 func (m *ItemDetails) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
 	var res []error
@@ -154,6 +259,10 @@ func (m *ItemDetails) ContextValidate(ctx context.Context, formats strfmt.Regist
 	}
 
 	if err := m.contextValidateMaximumRetailPrice(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateRegulationReferences(ctx, formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -187,6 +296,22 @@ func (m *ItemDetails) contextValidateMaximumRetailPrice(ctx context.Context, for
 				return ve.ValidateName("maximumRetailPrice")
 			} else if ce, ok := err.(*errors.CompositeError); ok {
 				return ce.ValidateName("maximumRetailPrice")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *ItemDetails) contextValidateRegulationReferences(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.RegulationReferences != nil {
+		if err := m.RegulationReferences.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("regulationReferences")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("regulationReferences")
 			}
 			return err
 		}

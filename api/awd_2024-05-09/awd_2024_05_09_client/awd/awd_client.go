@@ -36,7 +36,11 @@ type ClientService interface {
 
 	ConfirmInbound(params *ConfirmInboundParams, opts ...ClientOption) (*ConfirmInboundNoContent, error)
 
+	ConfirmReplenishmentOrder(params *ConfirmReplenishmentOrderParams, opts ...ClientOption) (*ConfirmReplenishmentOrderNoContent, error)
+
 	CreateInbound(params *CreateInboundParams, opts ...ClientOption) (*CreateInboundCreated, error)
+
+	CreateReplenishmentOrder(params *CreateReplenishmentOrderParams, opts ...ClientOption) (*CreateReplenishmentOrderCreated, error)
 
 	GetInbound(params *GetInboundParams, opts ...ClientOption) (*GetInboundOK, error)
 
@@ -44,9 +48,13 @@ type ClientService interface {
 
 	GetInboundShipmentLabels(params *GetInboundShipmentLabelsParams, opts ...ClientOption) (*GetInboundShipmentLabelsOK, error)
 
+	GetReplenishmentOrder(params *GetReplenishmentOrderParams, opts ...ClientOption) (*GetReplenishmentOrderOK, error)
+
 	ListInboundShipments(params *ListInboundShipmentsParams, opts ...ClientOption) (*ListInboundShipmentsOK, error)
 
 	ListInventory(params *ListInventoryParams, opts ...ClientOption) (*ListInventoryOK, error)
+
+	ListReplenishmentOrders(params *ListReplenishmentOrdersParams, opts ...ClientOption) (*ListReplenishmentOrdersOK, error)
 
 	UpdateInbound(params *UpdateInboundParams, opts ...ClientOption) (*UpdateInboundNoContent, error)
 
@@ -194,6 +202,46 @@ func (a *Client) ConfirmInbound(params *ConfirmInboundParams, opts ...ClientOpti
 }
 
 /*
+	ConfirmReplenishmentOrder Confirms an AWD replenishment order in ELIGIBLE state with a set of shipments containing items that are needed to be replenished to an FBA node.
+
+Order can only be confirmed in ELIGIBLE state.
+*/
+func (a *Client) ConfirmReplenishmentOrder(params *ConfirmReplenishmentOrderParams, opts ...ClientOption) (*ConfirmReplenishmentOrderNoContent, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewConfirmReplenishmentOrderParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "confirmReplenishmentOrder",
+		Method:             "POST",
+		PathPattern:        "/awd/2024-05-09/replenishmentOrders/{orderId}/confirmation",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &ConfirmReplenishmentOrderReader{formats: a.formats},
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*ConfirmReplenishmentOrderNoContent)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for confirmReplenishmentOrder: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
 	CreateInbound Creates a draft AWD inbound order with a list of packages for inbound shipment. The operation creates one shipment per order.
 
 **Usage Plan:**
@@ -236,6 +284,47 @@ func (a *Client) CreateInbound(params *CreateInboundParams, opts ...ClientOption
 	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
 	msg := fmt.Sprintf("unexpected success response for createInbound: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+	CreateReplenishmentOrder Creates an AWD replenishment order with given products to replenish.
+
+The API will return the order ID of the newly created order and also start an async validation check on the products to e.
+The order status will transition to ELIGIBLE/INELIGIBLE status from VALIDATING post validation check
+*/
+func (a *Client) CreateReplenishmentOrder(params *CreateReplenishmentOrderParams, opts ...ClientOption) (*CreateReplenishmentOrderCreated, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewCreateReplenishmentOrderParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "createReplenishmentOrder",
+		Method:             "POST",
+		PathPattern:        "/awd/2024-05-09/replenishmentOrders",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &CreateReplenishmentOrderReader{formats: a.formats},
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*CreateReplenishmentOrderCreated)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for createReplenishmentOrder: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -378,6 +467,44 @@ func (a *Client) GetInboundShipmentLabels(params *GetInboundShipmentLabelsParams
 }
 
 /*
+GetReplenishmentOrder Retrieves an AWD Replenishment order with a set of shipments containing items that is/was planned to be replenished into an FBA node.
+*/
+func (a *Client) GetReplenishmentOrder(params *GetReplenishmentOrderParams, opts ...ClientOption) (*GetReplenishmentOrderOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewGetReplenishmentOrderParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "getReplenishmentOrder",
+		Method:             "GET",
+		PathPattern:        "/awd/2024-05-09/replenishmentOrders/{orderId}",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &GetReplenishmentOrderReader{formats: a.formats},
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*GetReplenishmentOrderOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for getReplenishmentOrder: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
 	ListInboundShipments Retrieves a summary of all the inbound AWD shipments associated with a merchant, with the ability to apply optional filters.
 
 **Usage Plan:**
@@ -466,6 +593,46 @@ func (a *Client) ListInventory(params *ListInventoryParams, opts ...ClientOption
 	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
 	msg := fmt.Sprintf("unexpected success response for listInventory: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+	ListReplenishmentOrders Retrieves all the AWD replenishment orders pertaining to a merchant with optional filters.
+
+API by default will sort orders by updatedAt attribute in descending order.
+*/
+func (a *Client) ListReplenishmentOrders(params *ListReplenishmentOrdersParams, opts ...ClientOption) (*ListReplenishmentOrdersOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewListReplenishmentOrdersParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "listReplenishmentOrders",
+		Method:             "GET",
+		PathPattern:        "/awd/2024-05-09/replenishmentOrders",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &ListReplenishmentOrdersReader{formats: a.formats},
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*ListReplenishmentOrdersOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for listReplenishmentOrders: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 

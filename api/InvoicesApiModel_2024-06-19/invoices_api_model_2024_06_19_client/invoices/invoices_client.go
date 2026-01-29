@@ -30,7 +30,13 @@ type ClientOption func(*runtime.ClientOperation)
 
 // ClientService is the interface for Client methods
 type ClientService interface {
+	CreateGovernmentInvoice(params *CreateGovernmentInvoiceParams, opts ...ClientOption) (*CreateGovernmentInvoiceNoContent, error)
+
 	CreateInvoicesExport(params *CreateInvoicesExportParams, opts ...ClientOption) (*CreateInvoicesExportAccepted, error)
+
+	GetGovernmentInvoiceDocument(params *GetGovernmentInvoiceDocumentParams, opts ...ClientOption) (*GetGovernmentInvoiceDocumentOK, error)
+
+	GetGovernmentInvoiceStatus(params *GetGovernmentInvoiceStatusParams, opts ...ClientOption) (*GetGovernmentInvoiceStatusOK, error)
 
 	GetInvoice(params *GetInvoiceParams, opts ...ClientOption) (*GetInvoiceOK, error)
 
@@ -45,6 +51,52 @@ type ClientService interface {
 	GetInvoicesExports(params *GetInvoicesExportsParams, opts ...ClientOption) (*GetInvoicesExportsOK, error)
 
 	SetTransport(transport runtime.ClientTransport)
+}
+
+/*
+	CreateGovernmentInvoice Submits an asynchronous government invoice creation request.
+
+**Usage Plan:**
+
+| Rate (requests per second) | Burst |
+| ---- | ---- |
+| 0.0167 | 1 |
+
+For more information, see "Usage Plans and Rate Limits" in the Selling Partner API documentation.
+*/
+func (a *Client) CreateGovernmentInvoice(params *CreateGovernmentInvoiceParams, opts ...ClientOption) (*CreateGovernmentInvoiceNoContent, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewCreateGovernmentInvoiceParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "createGovernmentInvoice",
+		Method:             "POST",
+		PathPattern:        "/tax/invoices/2024-06-19/governmentInvoiceRequests",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &CreateGovernmentInvoiceReader{formats: a.formats},
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*CreateGovernmentInvoiceNoContent)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for createGovernmentInvoice: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
 }
 
 /*
@@ -90,6 +142,98 @@ func (a *Client) CreateInvoicesExport(params *CreateInvoicesExportParams, opts .
 	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
 	msg := fmt.Sprintf("unexpected success response for createInvoicesExport: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+	GetGovernmentInvoiceDocument Returns an invoiceDocument object containing an invoiceDocumentUrl .
+
+**Usage Plan:**
+
+| Rate (requests per second) | Burst |
+| ---- | ---- |
+| 0.0167 | 1 |
+
+For more information, see "Usage Plans and Rate Limits" in the Selling Partner API documentation.
+*/
+func (a *Client) GetGovernmentInvoiceDocument(params *GetGovernmentInvoiceDocumentParams, opts ...ClientOption) (*GetGovernmentInvoiceDocumentOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewGetGovernmentInvoiceDocumentParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "getGovernmentInvoiceDocument",
+		Method:             "GET",
+		PathPattern:        "/tax/invoices/2024-06-19/governmentInvoiceRequests/{shipmentId}",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &GetGovernmentInvoiceDocumentReader{formats: a.formats},
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*GetGovernmentInvoiceDocumentOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for getGovernmentInvoiceDocument: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+	GetGovernmentInvoiceStatus Returns the status of an invoice generation request.
+
+**Usage Plan:**
+
+| Rate (requests per second) | Burst |
+| ---- | ---- |
+| 0.0167 | 1 |
+
+For more information, see "Usage Plans and Rate Limits" in the Selling Partner API documentation.
+*/
+func (a *Client) GetGovernmentInvoiceStatus(params *GetGovernmentInvoiceStatusParams, opts ...ClientOption) (*GetGovernmentInvoiceStatusOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewGetGovernmentInvoiceStatusParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "getGovernmentInvoiceStatus",
+		Method:             "GET",
+		PathPattern:        "/tax/invoices/2024-06-19/governmentInvoiceRequests",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &GetGovernmentInvoiceStatusReader{formats: a.formats},
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*GetGovernmentInvoiceStatusOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for getGovernmentInvoiceStatus: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 

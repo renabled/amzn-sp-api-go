@@ -7,12 +7,10 @@ package vendor_shipments_models
 
 import (
 	"context"
-	"encoding/json"
 
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
-	"github.com/go-openapi/validate"
 )
 
 // PackageItemDetails Item details for be provided for every item in shipment at either the item or carton or pallet level, whichever is appropriate.
@@ -20,65 +18,27 @@ import (
 // swagger:model PackageItemDetails
 type PackageItemDetails struct {
 
-	// The two digit country code in ISO 3166-1 alpha-2 format representing the country where the product was manufactured or originated.
-	// Pattern: ^[A-Z]{2}$
-	CountryOfOrigin string `json:"countryOfOrigin,omitempty"`
-
 	// Either expiryDate or mfgDate and expiryAfterDuration are mandatory for perishable items.
 	Expiry *Expiry `json:"expiry,omitempty"`
 
 	// The batch or lot number associates an item with information the manufacturer considers relevant for traceability of the trade item to which the Element String is applied. The data may refer to the trade item itself or to items contained. This field is mandatory for all perishable items.
 	LotNumber string `json:"lotNumber,omitempty"`
 
-	// This is a reference to the lot number source location meaning the place where the product was assigned a traceability lot number. This is mandatory for goods in scope of the FDA Food Safety Modernization Act (FSMA 204). If provided, lotNumberSourceType must also be specified.
-	LotNumberSourceReference string `json:"lotNumberSourceReference,omitempty"`
-
-	// The type of reference for the lot number source. Must be provided when lotNumberSourceReference is specified.
-	// Enum: [GLN FFRN USDA_E URL]
-	LotNumberSourceType string `json:"lotNumberSourceType,omitempty"`
-
 	// The purchase order number for the shipment being confirmed. If the items in this shipment belong to multiple purchase order numbers that are in particular carton or pallet within the shipment, then provide the purchaseOrderNumber at the appropriate carton or pallet level. Formatting Notes: 8-character alpha-numeric code.
 	PurchaseOrderNumber string `json:"purchaseOrderNumber,omitempty"`
-
-	// References to regulatory requirements and compliance information for the item.
-	RegulationReferences *RegulationReferences `json:"regulationReferences,omitempty"`
 }
 
 // Validate validates this package item details
 func (m *PackageItemDetails) Validate(formats strfmt.Registry) error {
 	var res []error
 
-	if err := m.validateCountryOfOrigin(formats); err != nil {
-		res = append(res, err)
-	}
-
 	if err := m.validateExpiry(formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.validateLotNumberSourceType(formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.validateRegulationReferences(formats); err != nil {
 		res = append(res, err)
 	}
 
 	if len(res) > 0 {
 		return errors.CompositeValidationError(res...)
 	}
-	return nil
-}
-
-func (m *PackageItemDetails) validateCountryOfOrigin(formats strfmt.Registry) error {
-	if swag.IsZero(m.CountryOfOrigin) { // not required
-		return nil
-	}
-
-	if err := validate.Pattern("countryOfOrigin", "body", m.CountryOfOrigin, `^[A-Z]{2}$`); err != nil {
-		return err
-	}
-
 	return nil
 }
 
@@ -101,82 +61,11 @@ func (m *PackageItemDetails) validateExpiry(formats strfmt.Registry) error {
 	return nil
 }
 
-var packageItemDetailsTypeLotNumberSourceTypePropEnum []interface{}
-
-func init() {
-	var res []string
-	if err := json.Unmarshal([]byte(`["GLN","FFRN","USDA_E","URL"]`), &res); err != nil {
-		panic(err)
-	}
-	for _, v := range res {
-		packageItemDetailsTypeLotNumberSourceTypePropEnum = append(packageItemDetailsTypeLotNumberSourceTypePropEnum, v)
-	}
-}
-
-const (
-
-	// PackageItemDetailsLotNumberSourceTypeGLN captures enum value "GLN"
-	PackageItemDetailsLotNumberSourceTypeGLN string = "GLN"
-
-	// PackageItemDetailsLotNumberSourceTypeFFRN captures enum value "FFRN"
-	PackageItemDetailsLotNumberSourceTypeFFRN string = "FFRN"
-
-	// PackageItemDetailsLotNumberSourceTypeUSDAE captures enum value "USDA_E"
-	PackageItemDetailsLotNumberSourceTypeUSDAE string = "USDA_E"
-
-	// PackageItemDetailsLotNumberSourceTypeURL captures enum value "URL"
-	PackageItemDetailsLotNumberSourceTypeURL string = "URL"
-)
-
-// prop value enum
-func (m *PackageItemDetails) validateLotNumberSourceTypeEnum(path, location string, value string) error {
-	if err := validate.EnumCase(path, location, value, packageItemDetailsTypeLotNumberSourceTypePropEnum, true); err != nil {
-		return err
-	}
-	return nil
-}
-
-func (m *PackageItemDetails) validateLotNumberSourceType(formats strfmt.Registry) error {
-	if swag.IsZero(m.LotNumberSourceType) { // not required
-		return nil
-	}
-
-	// value enum
-	if err := m.validateLotNumberSourceTypeEnum("lotNumberSourceType", "body", m.LotNumberSourceType); err != nil {
-		return err
-	}
-
-	return nil
-}
-
-func (m *PackageItemDetails) validateRegulationReferences(formats strfmt.Registry) error {
-	if swag.IsZero(m.RegulationReferences) { // not required
-		return nil
-	}
-
-	if m.RegulationReferences != nil {
-		if err := m.RegulationReferences.Validate(formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
-				return ve.ValidateName("regulationReferences")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("regulationReferences")
-			}
-			return err
-		}
-	}
-
-	return nil
-}
-
 // ContextValidate validate this package item details based on the context it is used
 func (m *PackageItemDetails) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
 	var res []error
 
 	if err := m.contextValidateExpiry(ctx, formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.contextValidateRegulationReferences(ctx, formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -194,22 +83,6 @@ func (m *PackageItemDetails) contextValidateExpiry(ctx context.Context, formats 
 				return ve.ValidateName("expiry")
 			} else if ce, ok := err.(*errors.CompositeError); ok {
 				return ce.ValidateName("expiry")
-			}
-			return err
-		}
-	}
-
-	return nil
-}
-
-func (m *PackageItemDetails) contextValidateRegulationReferences(ctx context.Context, formats strfmt.Registry) error {
-
-	if m.RegulationReferences != nil {
-		if err := m.RegulationReferences.ContextValidate(ctx, formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
-				return ve.ValidateName("regulationReferences")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("regulationReferences")
 			}
 			return err
 		}
