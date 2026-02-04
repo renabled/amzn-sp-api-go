@@ -62,9 +62,6 @@ type OrderItem struct {
 	// Enum: [IOSS UOSS]
 	DeemedResellerCategory string `json:"DeemedResellerCategory,omitempty"`
 
-	// Contains information that is related to the export of an order item.
-	ExportInfo *ExportInfo `json:"ExportInfo,omitempty"`
-
 	// The IOSS number of the marketplace. Sellers shipping to the EU from outside the EU must provide this IOSS number to their carrier when Amazon has collected the VAT on the sale.
 	IossNumber string `json:"IossNumber,omitempty"`
 
@@ -198,10 +195,6 @@ func (m *OrderItem) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validateDeemedResellerCategory(formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.validateExportInfo(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -446,25 +439,6 @@ func (m *OrderItem) validateDeemedResellerCategory(formats strfmt.Registry) erro
 	// value enum
 	if err := m.validateDeemedResellerCategoryEnum("DeemedResellerCategory", "body", m.DeemedResellerCategory); err != nil {
 		return err
-	}
-
-	return nil
-}
-
-func (m *OrderItem) validateExportInfo(formats strfmt.Registry) error {
-	if swag.IsZero(m.ExportInfo) { // not required
-		return nil
-	}
-
-	if m.ExportInfo != nil {
-		if err := m.ExportInfo.Validate(formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
-				return ve.ValidateName("ExportInfo")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("ExportInfo")
-			}
-			return err
-		}
 	}
 
 	return nil
@@ -799,10 +773,6 @@ func (m *OrderItem) ContextValidate(ctx context.Context, formats strfmt.Registry
 		res = append(res, err)
 	}
 
-	if err := m.contextValidateExportInfo(ctx, formats); err != nil {
-		res = append(res, err)
-	}
-
 	if err := m.contextValidateItemPrice(ctx, formats); err != nil {
 		res = append(res, err)
 	}
@@ -961,22 +931,6 @@ func (m *OrderItem) contextValidateCODFeeDiscount(ctx context.Context, formats s
 				return ve.ValidateName("CODFeeDiscount")
 			} else if ce, ok := err.(*errors.CompositeError); ok {
 				return ce.ValidateName("CODFeeDiscount")
-			}
-			return err
-		}
-	}
-
-	return nil
-}
-
-func (m *OrderItem) contextValidateExportInfo(ctx context.Context, formats strfmt.Registry) error {
-
-	if m.ExportInfo != nil {
-		if err := m.ExportInfo.ContextValidate(ctx, formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
-				return ve.ValidateName("ExportInfo")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("ExportInfo")
 			}
 			return err
 		}
