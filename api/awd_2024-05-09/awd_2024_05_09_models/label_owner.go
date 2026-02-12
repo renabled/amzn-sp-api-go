@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// LabelOwner The entity that labels the products.
+// LabelOwner The entity that labels the products. `AMAZON` is not an accepted value in the US marketplace.
 //
 // swagger:model LabelOwner
 type LabelOwner string
