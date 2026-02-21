@@ -36,7 +36,7 @@ type Item struct {
 	// Min Length: 1
 	Fnsku *string `json:"fnsku"`
 
-	// Specifies who will label the items. Options include `AMAZON`, `SELLER`, and `NONE`.
+	// Specifies who will label the items. Options include `AMAZON`, `SELLER`, and `NONE`. `AMAZON` is not an accepted value in the US marketplace.
 	// Required: true
 	// Max Length: 1024
 	// Min Length: 1
