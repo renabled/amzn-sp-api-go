@@ -30,10 +30,6 @@ type GetOffersResult struct {
 	// Required: true
 	ItemCondition *ConditionType `json:"ItemCondition"`
 
-	// A marketplace identifier.
-	// Required: true
-	MarketplaceID *string `json:"MarketplaceID"`
-
 	// A list of offer details. The list is the same length as the TotalOfferCount in the Summary or 20, whichever is less.
 	// Required: true
 	Offers OfferDetailList `json:"Offers"`
@@ -44,6 +40,10 @@ type GetOffersResult struct {
 	// Pricing information about the item.
 	// Required: true
 	Summary *Summary `json:"Summary"`
+
+	// A marketplace identifier.
+	// Required: true
+	MarketplaceID *string `json:"marketplaceId"`
 
 	// The status of the operation.
 	// Required: true
@@ -62,15 +62,15 @@ func (m *GetOffersResult) Validate(formats strfmt.Registry) error {
 		res = append(res, err)
 	}
 
-	if err := m.validateMarketplaceID(formats); err != nil {
-		res = append(res, err)
-	}
-
 	if err := m.validateOffers(formats); err != nil {
 		res = append(res, err)
 	}
 
 	if err := m.validateSummary(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateMarketplaceID(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -128,15 +128,6 @@ func (m *GetOffersResult) validateItemCondition(formats strfmt.Registry) error {
 	return nil
 }
 
-func (m *GetOffersResult) validateMarketplaceID(formats strfmt.Registry) error {
-
-	if err := validate.Required("MarketplaceID", "body", m.MarketplaceID); err != nil {
-		return err
-	}
-
-	return nil
-}
-
 func (m *GetOffersResult) validateOffers(formats strfmt.Registry) error {
 
 	if err := validate.Required("Offers", "body", m.Offers); err != nil {
@@ -170,6 +161,15 @@ func (m *GetOffersResult) validateSummary(formats strfmt.Registry) error {
 			}
 			return err
 		}
+	}
+
+	return nil
+}
+
+func (m *GetOffersResult) validateMarketplaceID(formats strfmt.Registry) error {
+
+	if err := validate.Required("marketplaceId", "body", m.MarketplaceID); err != nil {
+		return err
 	}
 
 	return nil
