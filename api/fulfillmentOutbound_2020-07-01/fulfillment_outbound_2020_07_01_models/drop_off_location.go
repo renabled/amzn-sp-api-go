@@ -15,19 +15,21 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// DropOffLocation The preferred location to leave packages at the destination address.
+// DropOffLocation The drop-off location at the destination address.
 //
 // swagger:model DropOffLocation
 type DropOffLocation struct {
 
-	// Additional information about the drop-off location that can vary depending on the type of drop-off location specified in the `type` field.
-	// If the `type` is set to `FALLBACK_NEIGHBOR_DELIVERY`, the `attributes` object should include the exact keys `neighborName` and `houseNumber` to provide the name and house number of the designated neighbor.
-	// For `RECEPTIONIST`, `MAIL_ROOM_CLERK`, and `AS_INSTRUCTED` types, the `attributes` object will include a `recipientName` field containing the name of the person who received the package.
+	// Additional information about the drop-off location. This information can vary depending on the type of drop-off location specified in the `type` field.
+	//
+	// If the `type` is set to `FALLBACK_NEIGHBOR_DELIVERY`, the `attributes` object must include the keys `neighborName` and `houseNumber` to provide the name and house number of the designated neighbor.
+	//
+	// For `RECEPTIONIST` type, the `attributes` object may include a `recipientName` field that contains the name of the person who received or will receive the package.
 	Attributes map[string]string `json:"attributes,omitempty"`
 
-	// Specifies the preferred location to leave the package at the destination address.
+	// The drop-off location type at the destination address.
 	// Required: true
-	// Enum: [FRONT_DOOR DELIVERY_BOX GAS_METER_BOX BICYCLE_BASKET GARAGE RECEPTIONIST FALLBACK_NEIGHBOR_DELIVERY DO_NOT_LEAVE_UNATTENDED MAIL_ROOM_CLERK AS_INSTRUCTED]
+	// Enum: [FRONT_DOOR DELIVERY_BOX GAS_METER_BOX BICYCLE_BASKET GARAGE RECEPTIONIST FALLBACK_NEIGHBOR_DELIVERY DO_NOT_LEAVE_UNATTENDED]
 	Type *string `json:"type"`
 }
 
@@ -49,7 +51,7 @@ var dropOffLocationTypeTypePropEnum []interface{}
 
 func init() {
 	var res []string
-	if err := json.Unmarshal([]byte(`["FRONT_DOOR","DELIVERY_BOX","GAS_METER_BOX","BICYCLE_BASKET","GARAGE","RECEPTIONIST","FALLBACK_NEIGHBOR_DELIVERY","DO_NOT_LEAVE_UNATTENDED","MAIL_ROOM_CLERK","AS_INSTRUCTED"]`), &res); err != nil {
+	if err := json.Unmarshal([]byte(`["FRONT_DOOR","DELIVERY_BOX","GAS_METER_BOX","BICYCLE_BASKET","GARAGE","RECEPTIONIST","FALLBACK_NEIGHBOR_DELIVERY","DO_NOT_LEAVE_UNATTENDED"]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -82,12 +84,6 @@ const (
 
 	// DropOffLocationTypeDONOTLEAVEUNATTENDED captures enum value "DO_NOT_LEAVE_UNATTENDED"
 	DropOffLocationTypeDONOTLEAVEUNATTENDED string = "DO_NOT_LEAVE_UNATTENDED"
-
-	// DropOffLocationTypeMAILROOMCLERK captures enum value "MAIL_ROOM_CLERK"
-	DropOffLocationTypeMAILROOMCLERK string = "MAIL_ROOM_CLERK"
-
-	// DropOffLocationTypeASINSTRUCTED captures enum value "AS_INSTRUCTED"
-	DropOffLocationTypeASINSTRUCTED string = "AS_INSTRUCTED"
 )
 
 // prop value enum

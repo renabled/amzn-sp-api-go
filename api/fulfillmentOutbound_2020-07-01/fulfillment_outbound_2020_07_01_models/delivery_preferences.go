@@ -21,7 +21,7 @@ import (
 // swagger:model DeliveryPreferences
 type DeliveryPreferences struct {
 
-	// Additional delivery instructions. For example, this could be instructions on how to enter a building, nearby landmark or navigation instructions, 'Beware of dogs', etc.
+	// Additional delivery instructions. For example, this could be instructions on how to enter a building, nearby landmark or navigation instructions, or `Beware of dogs`.
 	// Max Length: 250
 	DeliveryInstructions string `json:"deliveryInstructions,omitempty"`
 

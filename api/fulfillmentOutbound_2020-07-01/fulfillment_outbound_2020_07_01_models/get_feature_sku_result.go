@@ -19,9 +19,15 @@ import (
 // swagger:model GetFeatureSkuResult
 type GetFeatureSkuResult struct {
 
+	// The Amazon Standard Identification Number (ASIN) of the item.
+	Asin string `json:"asin,omitempty"`
+
 	// The name of the feature.
 	// Required: true
 	FeatureName *string `json:"featureName"`
+
+	// The unique SKU used by Amazon's fulfillment network.
+	FnSku string `json:"fnSku,omitempty"`
 
 	// A list of one or more reasons that the seller SKU is ineligible for the feature.
 	//
@@ -39,8 +45,11 @@ type GetFeatureSkuResult struct {
 	// Required: true
 	MarketplaceID *string `json:"marketplaceId"`
 
-	// Information about the SKU, including the count available, identifiers, and a list of overlapping SKUs that share the same inventory pool.
-	SkuInfo *FeatureSku `json:"skuInfo,omitempty"`
+	// Used to identify an item in the given marketplace. SellerSKU is qualified by the seller's SellerId, which is included with every operation that you submit.
+	SellerSku string `json:"sellerSku,omitempty"`
+
+	// The number of SKUs available for this service.
+	SkuCount float64 `json:"skuCount,omitempty"`
 }
 
 // Validate validates this get feature sku result
@@ -56,10 +65,6 @@ func (m *GetFeatureSkuResult) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validateMarketplaceID(formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.validateSkuInfo(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -96,52 +101,8 @@ func (m *GetFeatureSkuResult) validateMarketplaceID(formats strfmt.Registry) err
 	return nil
 }
 
-func (m *GetFeatureSkuResult) validateSkuInfo(formats strfmt.Registry) error {
-	if swag.IsZero(m.SkuInfo) { // not required
-		return nil
-	}
-
-	if m.SkuInfo != nil {
-		if err := m.SkuInfo.Validate(formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
-				return ve.ValidateName("skuInfo")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("skuInfo")
-			}
-			return err
-		}
-	}
-
-	return nil
-}
-
-// ContextValidate validate this get feature sku result based on the context it is used
+// ContextValidate validates this get feature sku result based on context it is used
 func (m *GetFeatureSkuResult) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
-	var res []error
-
-	if err := m.contextValidateSkuInfo(ctx, formats); err != nil {
-		res = append(res, err)
-	}
-
-	if len(res) > 0 {
-		return errors.CompositeValidationError(res...)
-	}
-	return nil
-}
-
-func (m *GetFeatureSkuResult) contextValidateSkuInfo(ctx context.Context, formats strfmt.Registry) error {
-
-	if m.SkuInfo != nil {
-		if err := m.SkuInfo.ContextValidate(ctx, formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
-				return ve.ValidateName("skuInfo")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("skuInfo")
-			}
-			return err
-		}
-	}
-
 	return nil
 }
 

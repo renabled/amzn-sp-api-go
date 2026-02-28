@@ -11,7 +11,7 @@ import (
 	"github.com/go-openapi/strfmt"
 )
 
-// IPAddress An IP Address.
+// IPAddress An IP address.
 //
 // swagger:model IpAddress
 type IPAddress string

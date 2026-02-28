@@ -26,10 +26,10 @@ type FulfillmentShipmentPackage struct {
 	// Required: true
 	CarrierCode *string `json:"carrierCode"`
 
-	// The delivery information for the package. This information is available after the package is delivered.
+	// The delivery information of the package, this information is only available post package delivery to its intended destination.
 	DeliveryInformation *DeliveryInformation `json:"deliveryInformation,omitempty"`
 
-	// The estimated arrival date and time of the package. Must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> format.
+	// The estimated arrival date and time of the package, in ISO 8601 date time format.
 	// Format: date-time
 	EstimatedArrivalDate Timestamp `json:"estimatedArrivalDate,omitempty"`
 

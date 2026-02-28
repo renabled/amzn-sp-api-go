@@ -13,7 +13,7 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// DeliveryInformation The delivery information for the package. This information is available after the package is delivered.
+// DeliveryInformation The delivery information of the package, this information is only available post package delivery to its intended destination.
 //
 // swagger:model DeliveryInformation
 type DeliveryInformation struct {

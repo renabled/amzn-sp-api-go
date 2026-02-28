@@ -76,7 +76,7 @@ type FulfillmentOrder struct {
 	// Required: true
 	ShippingSpeedCategory *ShippingSpeedCategory `json:"shippingSpeedCategory"`
 
-	// The date and time that the status of the fulfillment order last changed. Must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> format.
+	// The date and time that the status of the fulfillment order last changed, in ISO 8601 date time format.
 	// Required: true
 	// Format: date-time
 	StatusUpdatedDate *Timestamp `json:"statusUpdatedDate"`

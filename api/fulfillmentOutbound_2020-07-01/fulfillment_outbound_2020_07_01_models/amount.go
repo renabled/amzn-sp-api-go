@@ -15,7 +15,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// Amount A quantity based on unit of measure.
+// Amount A quantity based on the specified unit of measurement.
 //
 // swagger:model Amount
 type Amount struct {
@@ -25,7 +25,7 @@ type Amount struct {
 	// Enum: [Eaches]
 	UnitOfMeasure *string `json:"unitOfMeasure"`
 
-	// The amount of a product in the associated unit of measure.
+	// The amount of a product in the associated unit of measurement.
 	// Required: true
 	Value *Decimal `json:"value"`
 }
