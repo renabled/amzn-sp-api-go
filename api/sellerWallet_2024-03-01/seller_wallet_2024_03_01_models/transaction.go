@@ -24,25 +24,21 @@ type Transaction struct {
 	// Required: true
 	AccountID *string `json:"accountId"`
 
-	// Expected completion date of a transaction, for existing active Payees (Trusted Beneficiaries) it will be 24 hours but for new destination bank accounts the value could go up to 5 days
-	//
+	// The expected completion date of the transaction.
 	// Example: 2023-09-26T02:32:59.787Z
 	// Format: date-time
 	ExpectedCompletionDate strfmt.DateTime `json:"expectedCompletionDate,omitempty"`
 
-	// The last update date on the transaction
-	//
+	// The date of the most recent account balance update.
 	// Required: true
 	// Format: date-time
 	LastUpdateDate *strfmt.DateTime `json:"lastUpdateDate"`
 
-	// Amazon SW customer who requested the transaction
-	//
+	// The Amazon Seller Wallet customer who requested the transaction.
 	// Example: TPPOrgId
 	RequesterName string `json:"requesterName,omitempty"`
 
-	// Transaction completion date
-	//
+	// The transaction's completion date.
 	// Format: date-time
 	TransactionActualCompletionDate strfmt.DateTime `json:"transactionActualCompletionDate,omitempty"`
 
@@ -50,25 +46,22 @@ type Transaction struct {
 	// Required: true
 	TransactionDescription *string `json:"transactionDescription"`
 
-	// Destination bank account details in the transaction
-	//
+	// The destination bank account details in the transaction.
 	// Required: true
 	TransactionDestinationAccount *TransactionAccount `json:"transactionDestinationAccount"`
 
-	// Description in case the transaction fails before completion
-	//
+	// The reason the transaction failed, if applicable.
 	// Example: Insufficient Balance
 	TransactionFailureReason string `json:"transactionFailureReason,omitempty"`
 
-	// Specifies the amount of completed transaction in the destination account currency, this will be populated only for international transactions
+	// The amount of completed transaction in the destination account currency. This value is only populated for international transactions
 	TransactionFinalAmount *Currency `json:"transactionFinalAmount,omitempty"`
 
-	// The unique identifier provided by Amazon to the transaction
-	//
+	// The unique identifier provided by Amazon to the transaction.
 	// Required: true
 	TransactionID *string `json:"transactionId"`
 
-	// Specifies the amount for which the transfer was initiated
+	// The amount for which the transfer was initiated.
 	// Required: true
 	TransactionRequestAmount *Currency `json:"transactionRequestAmount"`
 
@@ -81,17 +74,14 @@ type Transaction struct {
 	// Required: true
 	TransactionRequesterSource *string `json:"transactionRequesterSource"`
 
-	// Source bank account details in the transaction
-	//
+	// The source bank account details in the transaction.
 	TransactionSourceAccount *TransactionAccount `json:"transactionSourceAccount,omitempty"`
 
-	// Execution Status of the transaction
-	//
+	// The status of the transaction.
 	// Required: true
 	TransactionStatus *TransactionStatus `json:"transactionStatus"`
 
-	// Type of the transaction
-	//
+	// The type of the transaction.
 	// Required: true
 	TransactionType *TransactionType `json:"transactionType"`
 

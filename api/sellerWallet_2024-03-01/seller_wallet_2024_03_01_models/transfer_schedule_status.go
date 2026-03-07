@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// TransferScheduleStatus Represents the schedule status of the transfer.
+// TransferScheduleStatus The schedule status of the transfer.
 //
 // swagger:model TransferScheduleStatus
 type TransferScheduleStatus string

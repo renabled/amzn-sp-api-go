@@ -21,41 +21,33 @@ import (
 // swagger:model TransferSchedule
 type TransferSchedule struct {
 
-	// Payment preference of the scheduled transfer. This information can be modified when updating a transfer schedule.
-	//
+	// The payment preference of the scheduled transfer. This information can be modified when you update a transfer schedule.
 	PaymentPreference *PaymentPreference `json:"paymentPreference,omitempty"`
 
-	// Destination bank account details in the scheduled transfer. Here bankAccountCountryCode is a MANDATORY field
-	//
+	// Details of the destination bank account in the scheduled transfer. Here `bankAccountCountryCode` is a required field.
 	// Required: true
 	TransactionDestinationAccount *TransactionAccount `json:"transactionDestinationAccount"`
 
-	// Source bank account details in the scheduled transfer
-	//
+	// Details of the source bank account in the scheduled transfer.
 	TransactionSourceAccount *TransactionAccount `json:"transactionSourceAccount,omitempty"`
 
-	// Type of the transfer
-	//
+	// The type of transfer.
 	// Required: true
 	TransactionType *TransactionType `json:"transactionType"`
 
-	// Collection that holds Transfer Schedules that has been cancelled or failed due to certain reasons.
-	//
+	// A list of transfer schedule failures.
 	// Required: true
 	TransferScheduleFailures []*TransferScheduleFailures `json:"transferScheduleFailures"`
 
-	// The unique identifier provided by Amazon to the scheduled transfer
-	//
+	// The unique identifier provided by Amazon to the scheduled transfer.
 	// Required: true
 	TransferScheduleID *string `json:"transferScheduleId"`
 
-	// Fields required for the scheduled transfer. This information can be modified when updating a transfer schedule.
-	//
+	// The fields required for the scheduled transfer. This information can be modified when you update a transfer schedule.
 	// Required: true
 	TransferScheduleInformation *TransferScheduleInformation `json:"transferScheduleInformation"`
 
-	// Type of the transfer schedule. This information can be modified when updating a transfer schedule.
-	//
+	// The type of transfer schedule. This information can be modified when you update a transfer schedule.
 	// Required: true
 	TransferScheduleStatus *TransferScheduleStatus `json:"transferScheduleStatus"`
 }

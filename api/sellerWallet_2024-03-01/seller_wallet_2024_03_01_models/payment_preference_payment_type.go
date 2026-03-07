@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// PaymentPreferencePaymentType Represent a type of payment preference.
+// PaymentPreferencePaymentType The type of payment preference.
 //
 // swagger:model PaymentPreferencePaymentType
 type PaymentPreferencePaymentType string

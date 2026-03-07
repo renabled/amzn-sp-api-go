@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// TransactionStatus Represents current status of the transaction.
+// TransactionStatus The current status of the transaction.
 //
 // swagger:model TransactionStatus
 type TransactionStatus string

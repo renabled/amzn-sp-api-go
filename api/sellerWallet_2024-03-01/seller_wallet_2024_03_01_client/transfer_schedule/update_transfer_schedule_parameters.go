@@ -71,8 +71,7 @@ type UpdateTransferScheduleParams struct {
 
 	/* Body.
 
-	   Defines the actual payload of the scheduled transfer request that is to be updated.
-
+	   The payload of the scheduled transfer request that is to be updated.
 	*/
 	Body *seller_wallet_2024_03_01_models.TransferSchedule
 

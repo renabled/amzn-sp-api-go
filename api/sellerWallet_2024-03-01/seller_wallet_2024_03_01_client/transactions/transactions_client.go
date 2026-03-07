@@ -40,7 +40,7 @@ type ClientService interface {
 }
 
 /*
-CreateTransaction creates a transaction request from amazon s w account to another customer provided account
+CreateTransaction creates a transaction request from amazon seller wallet account to another customer provided account
 
 Create a transaction request from a Seller Wallet account to another customer-provided account.
 */
@@ -80,9 +80,9 @@ func (a *Client) CreateTransaction(params *CreateTransactionParams, opts ...Clie
 }
 
 /*
-GetTransaction finds particular amazon s w account transaction by amazon transaction identifier
+GetTransaction finds particular amazon seller wallet account transaction by amazon transaction identifier
 
-Returns a transaction
+Find a transaction by the Amazon transaction identifier.
 */
 func (a *Client) GetTransaction(params *GetTransactionParams, opts ...ClientOption) (*GetTransactionOK, error) {
 	// TODO: Validate the params before sending
@@ -120,7 +120,7 @@ func (a *Client) GetTransaction(params *GetTransactionParams, opts ...ClientOpti
 }
 
 /*
-ListAccountTransactions thes API will return all the transactions for a given amazon s w account sorted by the transaction request date
+ListAccountTransactions thes API will return all the transactions for a given amazon seller wallet account sorted by the transaction request date
 
 Retrieve a list of transactions for a given Seller Wallet bank account.
 */

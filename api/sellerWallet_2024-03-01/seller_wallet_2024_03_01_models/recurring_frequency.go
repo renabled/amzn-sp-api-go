@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// RecurringFrequency Represent parameters to specify recurrence of the scheduled transfer.
+// RecurringFrequency The frequency at which the transaction is repeated.
 //
 // swagger:model RecurringFrequency
 type RecurringFrequency string

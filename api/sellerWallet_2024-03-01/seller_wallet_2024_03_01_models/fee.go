@@ -14,18 +14,16 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// Fee If the fees is in baseAmount (sourceAccount) currency, effectiveRate =  (baseAmount - sum(fees.feeAmount.currencyAmount)) * baseRate) / baseAmount. If the fees is in transferAmount (destinationAccount) currency, effectiveRate =  (( baseAmount * baseRate ) -  sum(fees.feeAmount.currencyAmount )) / baseAmount
+// Fee Details of the fee.
 //
 // swagger:model Fee
 type Fee struct {
 
-	// Displays actual value of the fee in numeric format.
-	//
+	// The actual value of the fee in numeric format.
 	// Required: true
 	FeeAmount *Currency `json:"feeAmount"`
 
-	// Unique identifier assigned to the Fee.
-	//
+	// The unique identifier assigned to the fee.
 	// Required: true
 	FeeID *string `json:"feeId"`
 
@@ -33,8 +31,7 @@ type Fee struct {
 	// Required: true
 	FeeRateValue *string `json:"feeRateValue"`
 
-	// Displays type of the Fee.
-	//
+	// The type of the fee.
 	// Required: true
 	FeeType *FeeType `json:"feeType"`
 }

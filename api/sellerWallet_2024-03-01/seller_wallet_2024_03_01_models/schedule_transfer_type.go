@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// ScheduleTransferType Defines the type of schedule trigger used for executing transfers. Schedule based on time patterns using EventBridge.
+// ScheduleTransferType The type of schedule the transfer is on. Schedules based on time patterns use EventBridge.
 //
 // swagger:model ScheduleTransferType
 type ScheduleTransferType string

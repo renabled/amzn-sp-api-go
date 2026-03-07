@@ -44,7 +44,7 @@ type ClientService interface {
 }
 
 /*
-CreateTransferSchedule creates a transfer schedule request from amazon s w account to another customer provided account
+CreateTransferSchedule creates a transfer schedule request from amazon seller wallet account to another customer provided account
 
 Create a transfer schedule request from a Seller Wallet account to another customer-provided account.
 */
@@ -164,7 +164,7 @@ func (a *Client) GetTransferSchedule(params *GetTransferScheduleParams, opts ...
 }
 
 /*
-ListTransferSchedules thes API will return all the transfer schedules for a given amazon s w account
+ListTransferSchedules thes API will return all the transfer schedules for a given amazon seller wallet account
 
 Retrieve transfer schedules of a Seller Wallet bank account.
 */
@@ -206,7 +206,7 @@ func (a *Client) ListTransferSchedules(params *ListTransferSchedulesParams, opts
 /*
 UpdateTransferSchedule updates a transfer schedule information only fields i e transfer schedule information payment preference transfer schedule status in the request body can be updated
 
-Returns a transfer belonging to the updated scheduled transfer request
+Update transfer schedule information. Returns a transfer belonging to the updated scheduled transfer request.
 */
 func (a *Client) UpdateTransferSchedule(params *UpdateTransferScheduleParams, opts ...ClientOption) (*UpdateTransferScheduleOK, error) {
 	// TODO: Validate the params before sending

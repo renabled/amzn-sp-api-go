@@ -19,34 +19,27 @@ import (
 // swagger:model TransactionAccount
 type TransactionAccount struct {
 
-	// The unique identifier provided by Amazon to identify the account
-	//
+	// The unique identifier provided by Amazon to identify the account.
 	AccountID string `json:"accountId,omitempty"`
 
-	// The two digit country code, in ISO 3166 format. This field is OPTIONAL for transactionSourceAccount object but is MANDATORY field for transactionDestinationAccount
-	//
+	// The two-digit country code, in ISO 3166 format. This field is optional for `transactionSourceAccount`, but is mandatory for `transactionDestinationAccount`.
 	BankAccountCountryCode string `json:"bankAccountCountryCode,omitempty"`
 
-	// The currency code in ISO 4217 format
-	//
+	// The currency code in ISO 4217 format.
 	// Required: true
 	BankAccountCurrency *string `json:"bankAccountCurrency"`
 
-	// BankAccount holder's name
-	//
+	// The account holder's name.
 	BankAccountHolderName string `json:"bankAccountHolderName,omitempty"`
 
-	// Bank account format
-	//
+	// The format for the bank account number.
 	// Required: true
 	BankAccountNumberFormat *BankAccountNumberFormat `json:"bankAccountNumberFormat"`
 
-	// Last 3 digit of the bank account number
-	//
+	// The last three digits of the bank account number.
 	BankAccountNumberTail string `json:"bankAccountNumberTail,omitempty"`
 
-	// The name of the bank
-	//
+	// The name of the bank.
 	// Required: true
 	BankName *string `json:"bankName"`
 }

@@ -40,7 +40,7 @@ type ClientService interface {
 }
 
 /*
-GetAccount finds particular amazon s w account by amazon account identifier
+GetAccount finds particular amazon seller wallet account by amazon account identifier
 
 Retrieve a Seller Wallet bank account by Amazon account identifier.
 */
@@ -80,7 +80,7 @@ func (a *Client) GetAccount(params *GetAccountParams, opts ...ClientOption) (*Ge
 }
 
 /*
-ListAccountBalances finds balance in particular amazon s w account by amazon account identifier
+ListAccountBalances finds balance in particular amazon seller wallet account by amazon account identifier
 
 Retrieve the balance in a given Seller Wallet bank account.
 */
@@ -120,7 +120,7 @@ func (a *Client) ListAccountBalances(params *ListAccountBalancesParams, opts ...
 }
 
 /*
-ListAccounts gets all amazon s w accounts for the seller
+ListAccounts gets all amazon seller wallet accounts for the seller
 
 Get Seller Wallet accounts for a seller.
 */

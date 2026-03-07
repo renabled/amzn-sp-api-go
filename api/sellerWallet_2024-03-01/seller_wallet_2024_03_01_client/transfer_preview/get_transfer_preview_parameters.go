@@ -64,19 +64,19 @@ type GetTransferPreviewParams struct {
 
 	/* BaseAmount.
 
-	   Represents the base transaction amount without any markup fees, rates that will be used to get the transfer preview.
+	   The base transaction amount without any markup fees.
 	*/
 	BaseAmount float64
 
 	/* DestinationCountryCode.
 
-	   Represents 2 character country code of destination transaction account in ISO 3166 standard format.
+	   Country code of the destination transaction account in ISO 3166 format.
 	*/
 	DestinationCountryCode string
 
 	/* DestinationCurrencyCode.
 
-	   Represents 3 letter currency code in ISO 4217 standard format of the destination transaction country.
+	   Currency code of the destination transaction country in ISO 4217 format.
 	*/
 	DestinationCurrencyCode string
 
@@ -88,13 +88,13 @@ type GetTransferPreviewParams struct {
 
 	/* SourceCountryCode.
 
-	   Represents 2 character country code of source transaction account in ISO 3166 standard format.
+	   Country code of the source transaction account in ISO 3166 format.
 	*/
 	SourceCountryCode string
 
 	/* SourceCurrencyCode.
 
-	   Represents 3 letter currency code in ISO 4217 standard format of the source transaction country.
+	   Currency code of the source transaction country in ISO 4217 format.
 	*/
 	SourceCurrencyCode string
 

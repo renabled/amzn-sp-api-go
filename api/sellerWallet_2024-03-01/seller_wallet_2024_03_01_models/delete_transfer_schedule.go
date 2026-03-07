@@ -14,12 +14,12 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// DeleteTransferSchedule Response returned when the schedule transfer's delete request is successful.
+// DeleteTransferSchedule The response returned when the schedule transfer's delete request is successful.
 //
 // swagger:model DeleteTransferSchedule
 type DeleteTransferSchedule struct {
 
-	// A success code that specifies the delete operation was successful. eg:HTTP 200.
+	// A success code that specifies that the delete operation was successful. For example, HTTP 200.
 	// Required: true
 	Code *string `json:"code"`
 

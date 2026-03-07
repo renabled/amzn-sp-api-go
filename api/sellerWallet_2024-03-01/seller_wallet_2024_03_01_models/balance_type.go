@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// BalanceType Represent a bank account balance type.
+// BalanceType The type of bank account balance.
 //
 // swagger:model BalanceType
 type BalanceType string

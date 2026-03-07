@@ -14,8 +14,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// TransactionInitiationRequest Request body to initiate a transaction from a SW bank account to another customer defined bank account
-//
+// TransactionInitiationRequest Request body to initiate a transaction from a Seller Wallet bank account to another customer-defined bank account.
 // Example: {"customerPaymentReference":"BG999999999","destinationTransactionInstrument":{"accountHolderName":"John Doe","bankAccount":{"accountCountryCode":"CN","accountCurrency":"CNY","bankAccountNumberFormat":"BBAN","bankAccountNumberTail":"819","bankAccountOwnershipType":"SELF","bankNumberFormat":"BASIC","routingNumber":"HBUKGB4B"},"bankAccountNumber":"GB29RBOS60161331926819"},"payeeContactInformation":{"addressLine1":"Avenue John F. Kennedy 38","city":"Luxembourg","countryCode":"LU","emailAddress":"johndoe@gmail.com","payeeEntityType":"PERSON","payeeFirstName":"John","payeeLastName":"Doe","phoneNumber":"3450987121","postalCode":"1855","state":"LUXEMBOURG"},"requestTime":"2024-03-26T02:32:59.787Z","sourceAccountId":"amzn1.account.SMUGN2EN3ZHWSRJKH2KCJPII5JEI","sourceAmount":{"amount":100,"currency":"USD"},"transactionDescription":"This is transaction to partner","transferRateDetails":{"baseAmount":{"currencyAmount":500,"currencyCode":"EUR"},"fees":[{"feeAmount":{"currencyAmount":4.5,"currencyCode":"EUR"},"feeId":"Unique_FeeId_001","feeRateValue":"0.9","feeType":"TRANSACTION_FEE"},{"feeAmount":{"currencyAmount":0.9,"currencyCode":"EUR"},"feeId":"Unique_FeeId_002","feeRateValue":"20.0","feeType":"TAX"}],"fxRateDetails":{"baseRate":7.6915,"effectiveFxRate":7.6084,"fxRateId":"UNIQUE_FX_RATE_ID_1","rateDirection":"BUY"},"transferAmount":{"currencyAmount":3804.2,"currencyCode":"CNY"}}}
 //
 // swagger:model TransactionInitiationRequest
@@ -25,28 +24,24 @@ type TransactionInitiationRequest struct {
 	// Example: BG999999999
 	CustomerPaymentReference string `json:"customerPaymentReference,omitempty"`
 
-	// Optional field to specify the unique identifier of the destination bank account where the money needs to be deposited
-	//
+	// The unique identifier of the destination bank account where the money is deposited.
 	// Example: amzn1.account.AJKBFWEJFBNH2KCJPII5FBN
 	DestinationAccountID string `json:"destinationAccountId,omitempty"`
 
-	// Destination bank account details of the transaction request
-	//
+	// Details of the destination bank account in the transaction request.
 	// Required: true
 	DestinationTransactionInstrument *TransactionInstrumentDetails `json:"destinationTransactionInstrument"`
 
 	// The contact information of a payee.
 	PayeeContactInformation *PayeeContactInformation `json:"payeeContactInformation,omitempty"`
 
-	// The transaction initiation request time in date-time format
-	//
+	// The time at which the transaction was initiated in [ISO 8601 date time format](https://developer-docs.amazon.com/sp-api/docs/iso-8601).
 	// Example: 2024-03-26T02:32:59.787Z
 	// Required: true
 	// Format: date-time
 	RequestTime *strfmt.DateTime `json:"requestTime"`
 
-	// The unique identifier of the source Amazon SW bank account from where the money needs to be debited
-	//
+	// The unique identifier of the source Amazon Seller Wallet bank account from which the money is debited.
 	// Example: amzn1.account.SMUGN2EN3ZHWSRJKH2KCJPII5JEI
 	// Required: true
 	SourceAccountID *string `json:"sourceAccountId"`

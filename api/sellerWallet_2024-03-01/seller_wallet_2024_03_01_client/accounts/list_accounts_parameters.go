@@ -63,7 +63,7 @@ type ListAccountsParams struct {
 
 	/* MarketplaceID.
 
-	   A marketplace identifier. Specifies the marketplace for which items are returned.
+	   The marketplace for which items are returned. The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
 	*/
 	MarketplaceID string
 

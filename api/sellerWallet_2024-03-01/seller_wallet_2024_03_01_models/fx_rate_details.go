@@ -14,30 +14,25 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// FxRateDetails Foreign exchange rate details displayed when transfer preview is requested.
-//
+// FxRateDetails Foreign exchange rate details.
 // Example: {"baseRate":7.2,"effectiveFxRate":7.25,"fxRateId":"UNIQUE_FX_RATE_ID_1","rateDirection":"BUY"}
 //
 // swagger:model FxRateDetails
 type FxRateDetails struct {
 
-	// This is the rate that will be market foreign exchange rate. For example: 1USD -> 86.0 INR.
-	//
+	// The market foreign exchange rate.
 	// Required: true
 	BaseRate *BigDecimal `json:"baseRate"`
 
-	// Displays the foreign exchange rate which will be all rates and fees baked in (i.e; markup fees), example: market fx rate and international transaction fee.
-	//
+	// The total rate applied to the money transfer. This includes all exchange rates, markups, and fees.
 	// Required: true
 	EffectiveFxRate *BigDecimal `json:"effectiveFxRate"`
 
-	// Unique identifier assigned to the fees/foreign exchange Rate of a transaction.
-	//
+	// The unique identifier assigned to the fees / foreign exchange rate of a transaction.
 	// Required: true
 	FxRateID *string `json:"fxRateId"`
 
-	// Rate Direction can refer to the way final amount is calculated.
-	//
+	// Whether the customer is buying or selling the source currency.
 	// Required: true
 	RateDirection *RateDirection `json:"rateDirection"`
 }

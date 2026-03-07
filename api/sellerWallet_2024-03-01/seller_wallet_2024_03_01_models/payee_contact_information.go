@@ -20,30 +20,25 @@ import (
 // swagger:model PayeeContactInformation
 type PayeeContactInformation struct {
 
-	// Address Line 1 of the public address
-	//
+	// Address Line 1 of the public address.
 	// Example: 678 JFK Street
 	// Required: true
 	AddressLine1 *string `json:"addressLine1"`
 
-	// Address Line 2 of the public address
-	//
+	// Address Line 2 of the public address.
 	// Example: Unit 415
 	AddressLine2 string `json:"addressLine2,omitempty"`
 
-	// City name of the public address
-	//
+	// City name of the public address.
 	// Example: Seattle
 	// Required: true
 	City *string `json:"city"`
 
-	// Country name of the public address
-	//
+	// Country name of the public address.
 	// Example: United States
 	Country string `json:"country,omitempty"`
 
 	// The two digit country code, in ISO 3166 format.
-	//
 	// Example: US
 	// Required: true
 	CountryCode *string `json:"countryCode"`
@@ -76,8 +71,7 @@ type PayeeContactInformation struct {
 	// Required: true
 	PhoneNumber *string `json:"phoneNumber"`
 
-	// Postal code of the public address
-	//
+	// Postal code of the public address.
 	// Example: 98109
 	// Required: true
 	PostalCode *string `json:"postalCode"`

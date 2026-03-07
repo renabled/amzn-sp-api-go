@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// FeeType Represents different types of fees that can be applied on a transaction.
+// FeeType The type of fee on the transaction.
 //
 // swagger:model FeeType
 type FeeType string

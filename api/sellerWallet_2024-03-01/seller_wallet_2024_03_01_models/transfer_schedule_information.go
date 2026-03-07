@@ -14,30 +14,26 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// TransferScheduleInformation Parameters containing information required for initiating a schedule transfer
-//
+// TransferScheduleInformation Mandatory information for initiating a schedule transfer.
 // Example: {"scheduleEndDate":"2027-03-01T00:00:00Z","scheduleExpression":{"recurringFrequency":"WEEKLY","scheduleExpressionType":"RECURRING"},"scheduleStartDate":"2024-03-01T00:00:00Z","scheduleType":"TIME_BASED"}
 //
 // swagger:model TransferScheduleInformation
 type TransferScheduleInformation struct {
 
-	// Field to specify end date of the scheduled transfer
-	//
+	// The end date of the scheduled transfer.
 	// Example: 2027-03-01T00:00:00Z
 	// Format: date-time
 	ScheduleEndDate strfmt.DateTime `json:"scheduleEndDate,omitempty"`
 
-	// Field to specify expression for how often the schedule transfer repeats. Refer to this documentation: https://docs.aws.amazon.com/scheduler/latest/APIReference/API_CreateSchedule.html
-	//
+	// How often the scheduled transfer repeats.
 	ScheduleExpression *ScheduleExpression `json:"scheduleExpression,omitempty"`
 
-	// Field to specify start date of the scheduled transfer
-	//
+	// The start date of the scheduled transfer.
 	// Example: 2024-03-01T00:00:00Z
 	// Format: date-time
 	ScheduleStartDate strfmt.DateTime `json:"scheduleStartDate,omitempty"`
 
-	// Field to specify type of the transfer being scheduled
+	// The type of schedule.
 	ScheduleType ScheduleTransferType `json:"scheduleType,omitempty"`
 }
 

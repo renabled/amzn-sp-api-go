@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// BankAccountOwnershipType Represents destination bank account's ownership type.
+// BankAccountOwnershipType The destination bank account's ownership type.
 //
 // swagger:model BankAccountOwnershipType
 type BankAccountOwnershipType string

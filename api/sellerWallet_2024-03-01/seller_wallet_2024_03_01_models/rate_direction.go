@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// RateDirection Represents the rate direction at which the transaction is performed.
+// RateDirection Whether the customer is buying or selling the source currency.
 //
 // swagger:model RateDirection
 type RateDirection string

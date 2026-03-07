@@ -38,7 +38,7 @@ type ClientService interface {
 /*
 GetTransferPreview fetches potential fees that could be applied on a transaction on the basis of the source and destination country currency code
 
-Returns list of potential fees on a transaction based on the source and destination country currency code
+Retrieve a list of potential fees on a transaction.
 */
 func (a *Client) GetTransferPreview(params *GetTransferPreviewParams, opts ...ClientOption) (*GetTransferPreviewOK, error) {
 	// TODO: Validate the params before sending

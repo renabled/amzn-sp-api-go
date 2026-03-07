@@ -63,7 +63,7 @@ type ListAccountBalancesParams struct {
 
 	/* AccountID.
 
-	   ID of the Amazon SW account
+	   The ID of the Amazon Seller Wallet account.
 	*/
 	AccountID string
 

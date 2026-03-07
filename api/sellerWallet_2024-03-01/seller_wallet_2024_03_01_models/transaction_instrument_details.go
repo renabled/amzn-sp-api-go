@@ -14,8 +14,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// TransactionInstrumentDetails Request body to create transaction instrument, Amazon performs validation and screening (anti-money laundering measuers) on all the transaction instruments before executing a transaction thus it requires transaction instrument holder's contact details as well
-//
+// TransactionInstrumentDetails Details of the destination bank account in the transaction request.
 // Example: {"accountHolderName":"John Doe","bankAccount":{"accountCountryCode":"EU","accountCurrency":"EUR","bankAccountNumberFormat":"IBAN","bankAccountNumberTail":"819","bankAccountOwnershipType":"THIRD_PARTY","bankNumberFormat":"BASIC","routingNumber":"HBUKGB4B"},"bankAccountNumber":"GB29RBOS60161331926819"}
 //
 // swagger:model TransactionInstrumentDetails
@@ -28,13 +27,13 @@ type TransactionInstrumentDetails struct {
 	// Required: true
 	AccountHolderName *string `json:"accountHolderName"`
 
-	// Specifies the destination bank account details where the money needs to be deposited
-	//
+	// Details of the destination bank account.
 	// Required: true
 	BankAccount *BankAccount `json:"bankAccount"`
 
-	// This field would be used to populate the bank account number of the destination payment method. The field is intentionally not included in any other Schemas since Amazon internal systems will never receive it in unencrypted format, so field won't be part of the request signature
+	// The bank account number of the destination payment method.
 	//
+	// **Note:** This field is encrypted before Amazon receives it, so should not be used to generate `destAccountDigitalSignature`, and should not be included in the request signature.
 	// Example: GB29RBOS60161331926819
 	// Required: true
 	BankAccountNumber *string `json:"bankAccountNumber"`

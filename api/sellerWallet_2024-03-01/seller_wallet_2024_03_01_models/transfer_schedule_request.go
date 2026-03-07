@@ -14,53 +14,44 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// TransferScheduleRequest Request body to initiate a scheduled transfer from a SW bank account to another customer defined bank account
-//
+// TransferScheduleRequest Request body to initiate a scheduled transfer from a Seller Wallet bank account to another customer-defined bank account.
 // Example: {"destinationAccountId":"amzn1.account.AJKBFWEJFBNH2KCJPII5FBN","destinationTransactionInstrument":{"accountHolderName":"John Doe","bankAccount":{"accountCountryCode":"CN","accountCurrency":"CNY","bankAccountNumberFormat":"BBAN","bankAccountNumberTail":"819","bankAccountOwnershipType":"SELF","bankNumberFormat":"BASIC","routingNumber":"HBUKGB4B"},"bankAccountNumber":"GB29RBOS60161331926819"},"paymentPreference":{"paymentPreferencePaymentType":"PERCENTAGE","value":25.5},"sourceAccountId":"amzn1.account.SMUGN2EN3ZHWSRJKH2KCJPII5JEI","sourceCurrencyCode":"USD","transactionType":"DEBIT","transferScheduleInformation":{"scheduleEndDate":"2027-03-01T00:00:00Z","scheduleExpression":{"recurringFrequency":"WEEKLY","scheduleExpressionType":"RECURRING"},"scheduleStartDate":"2024-03-01T00:00:00Z","scheduleType":"TIME_BASED"},"transferScheduleStatus":"ENABLED"}
 //
 // swagger:model TransferScheduleRequest
 type TransferScheduleRequest struct {
 
-	// Optional field to specify the unique identifier of the destination bank account where the money needs to be deposited
-	//
+	// The unique identifier of the destination bank account where the money is deposited.
 	// Example: amzn1.account.AJKBFWEJFBNH2KCJPII5FBN
 	// Required: true
 	DestinationAccountID *string `json:"destinationAccountId"`
 
-	// Destination bank account details of the transaction request
-	//
+	// Details of the destination bank account in the transaction request.
 	// Required: true
 	DestinationTransactionInstrument *TransactionInstrumentDetails `json:"destinationTransactionInstrument"`
 
-	// Payment preference of the scheduled transfer
-	//
+	// The payment preference of the scheduled transfer.
 	// Required: true
 	PaymentPreference *PaymentPreference `json:"paymentPreference"`
 
-	// The unique identifier of the source Amazon SW bank account from where the money needs to be debited
-	//
+	// The unique identifier of the source Amazon Seller Wallet bank account from which money is debited.
 	// Example: amzn1.account.SMUGN2EN3ZHWSRJKH2KCJPII5JEI
 	// Required: true
 	SourceAccountID *string `json:"sourceAccountId"`
 
-	// Represents 3 letter currency code in ISO 4217 standard format of the source payment method country
-	//
+	// The three-letter currency code of the source payment method country, in ISO 4217 format.
 	// Example: GBP
 	// Required: true
 	SourceCurrencyCode *string `json:"sourceCurrencyCode"`
 
-	// Type of the scheduled transaction
-	//
+	// The type of the scheduled transaction.
 	// Required: true
 	TransactionType *TransactionType `json:"transactionType"`
 
-	// Fields required for the scheduled transfer
-	//
+	// The configuration of the scheduled transfer.
 	// Required: true
 	TransferScheduleInformation *TransferScheduleInformation `json:"transferScheduleInformation"`
 
-	// Type of the transaction schedule which is mandatory field in request body if a transfer schedule needs to be updated
-	//
+	// The type of transaction schedule. This field is required when you update a transfer schedule.
 	TransferScheduleStatus TransferScheduleStatus `json:"transferScheduleStatus,omitempty"`
 }
 

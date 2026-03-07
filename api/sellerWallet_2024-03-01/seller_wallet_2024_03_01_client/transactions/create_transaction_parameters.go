@@ -71,7 +71,7 @@ type CreateTransactionParams struct {
 
 	/* Body.
 
-	   Defines the actual payload of the request
+	   The payload of the request
 	*/
 	Body *seller_wallet_2024_03_01_models.TransactionInitiationRequest
 

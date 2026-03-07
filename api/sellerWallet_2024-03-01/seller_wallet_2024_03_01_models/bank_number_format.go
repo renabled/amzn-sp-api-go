@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// BankNumberFormat Represents a format of a bank number also called routing number type
+// BankNumberFormat The format of the bank number. Also known as the routing number type.
 //
 // swagger:model BankNumberFormat
 type BankNumberFormat string

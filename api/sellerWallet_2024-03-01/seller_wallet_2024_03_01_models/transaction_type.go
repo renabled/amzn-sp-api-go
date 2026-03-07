@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// TransactionType Represent type of transaction.
+// TransactionType The type of transaction.
 //
 // swagger:model TransactionType
 type TransactionType string

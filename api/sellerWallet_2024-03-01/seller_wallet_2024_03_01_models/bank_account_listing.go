@@ -15,13 +15,12 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// BankAccountListing Struct that holds collection of accounts.
+// BankAccountListing A list of bank accounts.
 //
 // swagger:model BankAccountListing
 type BankAccountListing struct {
 
-	// Collection that holds BankAccount
-	//
+	// A list of bank accounts.
 	// Required: true
 	Accounts []*BankAccount `json:"accounts"`
 }

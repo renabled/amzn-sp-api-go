@@ -22,7 +22,7 @@ var Default = NewHTTPClient(nil)
 const (
 	// DefaultHost is the default Host
 	// found in Meta (info) section of spec file
-	DefaultHost string = "sellingpartnerapi-eu.amazon.com"
+	DefaultHost string = "sellingpartnerapi-na.amazon.com"
 	// DefaultBasePath is the default BasePath
 	// found in Meta (info) section of spec file
 	DefaultBasePath string = "/"

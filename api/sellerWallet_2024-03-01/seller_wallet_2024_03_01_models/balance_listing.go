@@ -14,14 +14,13 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// BalanceListing Struct that holds list of balances on the seller account.
+// BalanceListing A list of balances in the seller account.
 // Example: {"balances":[{"accountId":"amzn1.account.AGUGL2EM3ZHYSRJWH2UCRPIM5JFQ","balanceAmount":123.45,"balanceCurrency":"USD","balanceType":"AVAILABLE","lastUpdateDate":"2024-03-01T10:30:00Z"},{"accountId":"amzn1.account.AGUGL2EM3ZHYSRJWH2UCRPIM5JFQ","balanceAmount":500,"balanceCurrency":"USD","balanceType":"LOCKED_IN","lastUpdateDate":"2024-03-01T10:30:00Z"},{"accountId":"amzn1.account.AGUGL2EM3ZHYSRJWH2UCRPIM5JFQ","balanceAmount":623.45,"balanceCurrency":"USD","balanceType":"TOTAL","lastUpdateDate":"2024-03-01T10:30:00Z"}]}
 //
 // swagger:model BalanceListing
 type BalanceListing struct {
 
-	// Collection that holds list of balances on the account
-	//
+	// A list of balances in the seller account.
 	Balances []*Balance `json:"balances"`
 }
 

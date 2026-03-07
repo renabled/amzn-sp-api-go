@@ -14,13 +14,12 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// PaymentPreference Payment preference type in which transfer is being scheduled
+// PaymentPreference The type of payment preference in which the transfer is being scheduled.
 //
 // swagger:model PaymentPreference
 type PaymentPreference struct {
 
-	// Specifies the preferred payment type for the scheduled transaction eg:PERCENTAGE of certain total amount in account
-	//
+	// The preferred payment type for the scheduled transaction. Can be `PERCENTAGE` or `AMOUNT`.
 	// Required: true
 	PaymentPreferencePaymentType *PaymentPreferencePaymentType `json:"paymentPreferencePaymentType"`
 

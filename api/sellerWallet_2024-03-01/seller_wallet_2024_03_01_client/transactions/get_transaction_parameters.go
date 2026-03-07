@@ -69,7 +69,7 @@ type GetTransactionParams struct {
 
 	/* TransactionID.
 
-	   ID of the Amazon SW transaction
+	   The ID of the Amazon Seller Wallet transaction.
 	*/
 	TransactionID string
 

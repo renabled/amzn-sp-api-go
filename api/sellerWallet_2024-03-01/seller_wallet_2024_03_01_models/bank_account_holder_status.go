@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// BankAccountHolderStatus Represents status of the Amazon Seller Wallet accountholder
+// BankAccountHolderStatus The status of the Amazon Seller Wallet account holder.
 //
 // swagger:model BankAccountHolderStatus
 type BankAccountHolderStatus string

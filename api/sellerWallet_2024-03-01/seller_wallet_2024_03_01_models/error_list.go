@@ -21,7 +21,6 @@ import (
 type ErrorList struct {
 
 	// List of errors
-	//
 	// Required: true
 	Errors []*Error `json:"errors"`
 }

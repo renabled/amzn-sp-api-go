@@ -19,14 +19,12 @@ import (
 // swagger:model BankAccount
 type BankAccount struct {
 
-	// The two digit country code, in ISO 3166 format.
-	//
+	// The two-digit country code in ISO 3166 format.
 	// Example: US
 	// Required: true
 	AccountCountryCode *string `json:"accountCountryCode"`
 
-	// BankAccount currency code in ISO 4217 format
-	//
+	// Bank account currency code in ISO 4217 format.
 	// Example: USD
 	// Required: true
 	AccountCurrency *string `json:"accountCurrency"`
@@ -39,16 +37,14 @@ type BankAccount struct {
 	// Example: amzn1.account.AGUGL2EM3ZHYSRJWH2UCRPIM5JFQ
 	AccountID string `json:"accountId,omitempty"`
 
-	// Bank account holder compliance status
-	//
+	// The compliance status of the bank account holder.
 	BankAccountHolderStatus BankAccountHolderStatus `json:"bankAccountHolderStatus,omitempty"`
 
 	// The format in which the bank account number is provided for `THIRD_PARTY` transaction requests.
 	BankAccountNumberFormat BankAccountNumberFormat `json:"bankAccountNumberFormat,omitempty"`
 
-	// Last 3 digit of the bank account number, for all Amazon Seller Wallet account the value will be three consecutive 0's
-	//
-	// Example: 666
+	// The last 3 digit of the bank account number. This value is three consecutive zeros for Amazon Seller Wallet accounts.
+	// Example: 123
 	// Required: true
 	BankAccountNumberTail *string `json:"bankAccountNumberTail"`
 

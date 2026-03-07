@@ -14,17 +14,15 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// ScheduleExpression Parameters containing information of the expression that defines when the schedule runs. The following formats are supported.
+// ScheduleExpression The configuration of the schedule.
 //
 // swagger:model ScheduleExpression
 type ScheduleExpression struct {
 
-	// Field to specify recurrence of the scheduled transfer. Recurring frequency is mandatory if scheduleExpressionType is set as RECURRING otherwise it should be empty field.
-	//
+	// How often the scheduled transfer happens. This field is required if `scheduleExpressionType` is `RECURRING`; otherwise it should be empty.
 	RecurringFrequency RecurringFrequency `json:"recurringFrequency,omitempty"`
 
-	// Field to specify type of the scheduled transfer
-	//
+	// The type of the scheduled transfer.
 	// Required: true
 	ScheduleExpressionType *ScheduleExpressionType `json:"scheduleExpressionType"`
 }

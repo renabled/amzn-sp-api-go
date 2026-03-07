@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// ScheduleExpressionType Represent a type of schedule transfer expression.
+// ScheduleExpressionType The type of scheduled transfer expression.
 //
 // swagger:model ScheduleExpressionType
 type ScheduleExpressionType string

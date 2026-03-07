@@ -14,35 +14,30 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// Balance Specifies the balance amount in the Amazon SW bank account
+// Balance The balance amount in the Amazon Seller Wallet bank account.
 // Example: {"accountId":"amzn1.account.AGUGL2EM3ZHYSRJWH2UCRPIM5JFQ","balanceAmount":123.45,"balanceCurrency":"USD","balanceType":"AVAILABLE","lastUpdateDate":"2024-03-01T10:30:00Z"}
 //
 // swagger:model Balance
 type Balance struct {
 
-	// The unique identifier provided by Amazon to identify the account
-	//
+	// The unique identifier provided by Amazon to identify the account.
 	// Example: amzn1.account.AGUGL2EM3ZHYSRJWH2UCRPIM5JFQ
 	// Required: true
 	AccountID *string `json:"accountId"`
 
-	// The balance amount in number format
-	//
+	// The balance amount in number format.
 	// Required: true
 	BalanceAmount *BigDecimal `json:"balanceAmount"`
 
-	// The Amazon SW bank account currency code in ISO 4217 format
-	//
+	// The Amazon Seller Wallet bank account currency code in ISO 4217 format.
 	// Example: USD
 	// Required: true
 	BalanceCurrency *string `json:"balanceCurrency"`
 
-	// Type of the balance
-	//
+	// The type of balance.
 	BalanceType BalanceType `json:"balanceType,omitempty"`
 
-	// The last update date on the account balance
-	//
+	// The date of the most recent account balance update.
 	// Required: true
 	// Format: date-time
 	LastUpdateDate *strfmt.DateTime `json:"lastUpdateDate"`

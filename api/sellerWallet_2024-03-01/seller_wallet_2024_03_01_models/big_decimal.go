@@ -11,7 +11,7 @@ import (
 	"github.com/go-openapi/strfmt"
 )
 
-// BigDecimal A decimal number such as amount or FX rate.
+// BigDecimal A decimal number, such as an amount or FX rate.
 //
 // swagger:model BigDecimal
 type BigDecimal float64

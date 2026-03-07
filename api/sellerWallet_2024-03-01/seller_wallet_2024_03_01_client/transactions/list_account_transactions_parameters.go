@@ -63,7 +63,7 @@ type ListAccountTransactionsParams struct {
 
 	/* AccountID.
 
-	   ID of the Amazon SW account
+	   The ID of the Amazon Seller Wallet account.
 	*/
 	AccountID string
 
@@ -75,7 +75,7 @@ type ListAccountTransactionsParams struct {
 
 	/* NextPageToken.
 
-	   Pagination token to retrieve a specific page of results.
+	   A token that you use to retrieve the next page of results. The response includes `nextPageToken` when the number of results exceeds 100. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until `nextPageToken` is null. Note that this operation can return empty pages.
 	*/
 	NextPageToken *string
 

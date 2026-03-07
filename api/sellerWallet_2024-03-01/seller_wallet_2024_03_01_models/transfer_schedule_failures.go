@@ -14,20 +14,18 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// TransferScheduleFailures Specifies the balance amount in the Amazon SW bank account
+// TransferScheduleFailures The time of and reason for the transfer schedule failure.
 // Example: {"transferScheduleFailureDate":"2024-03-01T10:30:00Z","transferScheduleFailureReason":"INSUFFICIENT_BALANCE"}
 //
 // swagger:model TransferScheduleFailures
 type TransferScheduleFailures struct {
 
-	// The transfer schedule cancellation date
-	//
+	// The transfer schedule failure date.
 	// Required: true
 	// Format: date-time
 	TransferScheduleFailureDate *strfmt.DateTime `json:"transferScheduleFailureDate"`
 
-	// The statement/reasoning listed for the cancellation of the transfer schedule
-	//
+	// The reason listed for the failure of the transfer schedule.
 	// Example: INSUFFICIENT_BALANCE
 	// Required: true
 	TransferScheduleFailureReason *string `json:"transferScheduleFailureReason"`

@@ -26,23 +26,19 @@ import (
 // swagger:model TransferRatePreview
 type TransferRatePreview struct {
 
-	// Base amount of the transaction.
-	//
+	// The base amount of the transaction.
 	// Required: true
 	BaseAmount *Currency `json:"baseAmount"`
 
-	// List of fees
-	//
+	// A list of fees.
 	// Required: true
 	Fees []*Fee `json:"fees"`
 
 	// The foreign exchange rate value of the transaction.
-	//
 	// Required: true
 	FxRateDetails *FxRateDetails `json:"fxRateDetails"`
 
-	// The final amount reflects both the fee deduction and currency conversion rate exchange
-	//
+	// The final amount transferred, which includes both the fee deduction and currency conversion rate.
 	// Required: true
 	TransferAmount *Currency `json:"transferAmount"`
 }
