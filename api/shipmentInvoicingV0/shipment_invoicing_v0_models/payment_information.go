@@ -13,24 +13,24 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// PaymentInformation Payment transaction information
+// PaymentInformation Information about a payment transaction.
 //
 // swagger:model PaymentInformation
 type PaymentInformation struct {
 
-	// Government ID of acquirer
+	// The government ID of the acquirer.
 	AcquirerID string `json:"AcquirerId,omitempty"`
 
-	// Authorization code for this payment
+	// The authorization code of this payment.
 	AuthorizationCode string `json:"AuthorizationCode,omitempty"`
 
-	// Credit card brand (if payment method is CreditCard)
+	// The credit card brand if the payment method is `CreditCard`.
 	CardBrand string `json:"CardBrand,omitempty"`
 
-	// Payment method name
+	// The name of the payment method.
 	PaymentMethod PaymentMethodEnum `json:"PaymentMethod,omitempty"`
 
-	// Amount paid in this payment
+	// The amount paid in this payment.
 	PaymentValue *Money `json:"PaymentValue,omitempty"`
 }
 

@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// PaymentInformationList List of payment transactions
+// PaymentInformationList A list of payment transactions.
 //
 // swagger:model PaymentInformationList
 type PaymentInformationList []*PaymentInformation
