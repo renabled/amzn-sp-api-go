@@ -14,6 +14,7 @@ import (
 	"github.com/go-openapi/runtime"
 	cr "github.com/go-openapi/runtime/client"
 	"github.com/go-openapi/strfmt"
+	"github.com/go-openapi/swag"
 )
 
 // NewGetReportDocumentParams creates a new GetReportDocumentParams object,
@@ -60,6 +61,12 @@ GetReportDocumentParams contains all the parameters to send to the API endpoint
 	Typically these are written to a http.Request.
 */
 type GetReportDocumentParams struct {
+
+	/* EnableContentEncodingURLHeader.
+
+	   When `true`, the Content-Encoding header on the returned URL is set to `gzip` instead of the default `identity` when `compressionAlgorithm` is `GZIP`. This allows automatic decompression by HTTP clients.
+	*/
+	EnableContentEncodingURLHeader *bool
 
 	/* ReportDocumentID.
 
@@ -120,6 +127,17 @@ func (o *GetReportDocumentParams) SetHTTPClient(client *http.Client) {
 	o.HTTPClient = client
 }
 
+// WithEnableContentEncodingURLHeader adds the enableContentEncodingURLHeader to the get report document params
+func (o *GetReportDocumentParams) WithEnableContentEncodingURLHeader(enableContentEncodingURLHeader *bool) *GetReportDocumentParams {
+	o.SetEnableContentEncodingURLHeader(enableContentEncodingURLHeader)
+	return o
+}
+
+// SetEnableContentEncodingURLHeader adds the enableContentEncodingUrlHeader to the get report document params
+func (o *GetReportDocumentParams) SetEnableContentEncodingURLHeader(enableContentEncodingURLHeader *bool) {
+	o.EnableContentEncodingURLHeader = enableContentEncodingURLHeader
+}
+
 // WithReportDocumentID adds the reportDocumentID to the get report document params
 func (o *GetReportDocumentParams) WithReportDocumentID(reportDocumentID string) *GetReportDocumentParams {
 	o.SetReportDocumentID(reportDocumentID)
@@ -138,6 +156,23 @@ func (o *GetReportDocumentParams) WriteToRequest(r runtime.ClientRequest, reg st
 		return err
 	}
 	var res []error
+
+	if o.EnableContentEncodingURLHeader != nil {
+
+		// query param enableContentEncodingUrlHeader
+		var qrEnableContentEncodingURLHeader bool
+
+		if o.EnableContentEncodingURLHeader != nil {
+			qrEnableContentEncodingURLHeader = *o.EnableContentEncodingURLHeader
+		}
+		qEnableContentEncodingURLHeader := swag.FormatBool(qrEnableContentEncodingURLHeader)
+		if qEnableContentEncodingURLHeader != "" {
+
+			if err := r.SetQueryParam("enableContentEncodingUrlHeader", qEnableContentEncodingURLHeader); err != nil {
+				return err
+			}
+		}
+	}
 
 	// path param reportDocumentId
 	if err := r.SetPathParam("reportDocumentId", o.ReportDocumentID); err != nil {

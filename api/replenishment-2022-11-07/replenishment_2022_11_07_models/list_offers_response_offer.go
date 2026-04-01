@@ -7,10 +7,12 @@ package replenishment_2022_11_07_models
 
 import (
 	"context"
+	"strconv"
 
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
+	"github.com/go-openapi/validate"
 )
 
 // ListOffersResponseOffer An object which contains details about an offer.
@@ -21,20 +23,47 @@ type ListOffersResponseOffer struct {
 	// The Amazon Standard Identification Number (ASIN).
 	Asin string `json:"asin,omitempty"`
 
+	// A list of delivery conditions for the offer, indicating the health of upcoming deliveries. Each condition describes the quantity of upcoming deliveries associated with a particular delivery condition type.
+	DeliveriesConditions []*DeliveriesCondition `json:"deliveriesConditions"`
+
 	// The offer eligibility status.
 	Eligibility EligibilityStatus `json:"eligibility,omitempty"`
 
-	// The marketplace identifier. The supported marketplaces for both sellers and vendors are US, CA, ES, UK, FR, IT, IN, DE and JP. The supported marketplaces for vendors only are BR, AU, MX, AE and NL.  Refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids) to find the identifier for the marketplace.
+	// The projected subscriber demand for the offer over different time horizons.
+	ForecastDeliveries *ForecastDeliveries `json:"forecastDeliveries,omitempty"`
+
+	// The fulfillment network identifier type for the offer, indicating how the offer is fulfilled.
+	FulfillmentNetworkIDType string `json:"fulfillmentNetworkIDType,omitempty"`
+
+	// The available inventory count for the offer.
+	// Minimum: 0
+	Inventory *int64 `json:"inventory,omitempty"`
+
+	// The marketplace identifier. The supported marketplaces for both sellers and vendors are US, CA, ES, UK, FR, IT, IN, DE, and JP. The supported marketplaces for vendors only are BR, AU, MX, AE, and NL. Refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids) to find the identifier for the marketplace.
 	MarketplaceID MarketplaceID `json:"marketplaceId,omitempty"`
 
 	// offer program configuration
 	OfferProgramConfiguration *OfferProgramConfiguration `json:"offerProgramConfiguration,omitempty"`
+
+	// The current price of the offer. This is the listed price amount for the item.
+	// Minimum: 0
+	Price *float64 `json:"price,omitempty"`
+
+	// The currency code in ISO 4217 format for the price. For example, `USD` for US dollars.
+	PriceCurrencyCode string `json:"priceCurrencyCode,omitempty"`
 
 	// The replenishment program for the offer.
 	ProgramType ProgramType `json:"programType,omitempty"`
 
 	// The SKU. This property is only supported for sellers and not for vendors.
 	Sku string `json:"sku,omitempty"`
+
+	// The stock risk level of the offer, indicating the risk of the offer going out of stock.
+	StockRisk string `json:"stockRisk,omitempty"`
+
+	// The number of active subscriptions for the offer.
+	// Minimum: 0
+	Subscriptions *int64 `json:"subscriptions,omitempty"`
 
 	// A list of vendor codes associated with the offer.
 	VendorCodes []string `json:"vendorCodes"`
@@ -44,7 +73,19 @@ type ListOffersResponseOffer struct {
 func (m *ListOffersResponseOffer) Validate(formats strfmt.Registry) error {
 	var res []error
 
+	if err := m.validateDeliveriesConditions(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.validateEligibility(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateForecastDeliveries(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateInventory(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -56,13 +97,47 @@ func (m *ListOffersResponseOffer) Validate(formats strfmt.Registry) error {
 		res = append(res, err)
 	}
 
+	if err := m.validatePrice(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.validateProgramType(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateSubscriptions(formats); err != nil {
 		res = append(res, err)
 	}
 
 	if len(res) > 0 {
 		return errors.CompositeValidationError(res...)
 	}
+	return nil
+}
+
+func (m *ListOffersResponseOffer) validateDeliveriesConditions(formats strfmt.Registry) error {
+	if swag.IsZero(m.DeliveriesConditions) { // not required
+		return nil
+	}
+
+	for i := 0; i < len(m.DeliveriesConditions); i++ {
+		if swag.IsZero(m.DeliveriesConditions[i]) { // not required
+			continue
+		}
+
+		if m.DeliveriesConditions[i] != nil {
+			if err := m.DeliveriesConditions[i].Validate(formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("deliveriesConditions" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("deliveriesConditions" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
 	return nil
 }
 
@@ -77,6 +152,37 @@ func (m *ListOffersResponseOffer) validateEligibility(formats strfmt.Registry) e
 		} else if ce, ok := err.(*errors.CompositeError); ok {
 			return ce.ValidateName("eligibility")
 		}
+		return err
+	}
+
+	return nil
+}
+
+func (m *ListOffersResponseOffer) validateForecastDeliveries(formats strfmt.Registry) error {
+	if swag.IsZero(m.ForecastDeliveries) { // not required
+		return nil
+	}
+
+	if m.ForecastDeliveries != nil {
+		if err := m.ForecastDeliveries.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("forecastDeliveries")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("forecastDeliveries")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *ListOffersResponseOffer) validateInventory(formats strfmt.Registry) error {
+	if swag.IsZero(m.Inventory) { // not required
+		return nil
+	}
+
+	if err := validate.MinimumInt("inventory", "body", *m.Inventory, 0, false); err != nil {
 		return err
 	}
 
@@ -119,6 +225,18 @@ func (m *ListOffersResponseOffer) validateOfferProgramConfiguration(formats strf
 	return nil
 }
 
+func (m *ListOffersResponseOffer) validatePrice(formats strfmt.Registry) error {
+	if swag.IsZero(m.Price) { // not required
+		return nil
+	}
+
+	if err := validate.Minimum("price", "body", *m.Price, 0, false); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 func (m *ListOffersResponseOffer) validateProgramType(formats strfmt.Registry) error {
 	if swag.IsZero(m.ProgramType) { // not required
 		return nil
@@ -136,11 +254,31 @@ func (m *ListOffersResponseOffer) validateProgramType(formats strfmt.Registry) e
 	return nil
 }
 
+func (m *ListOffersResponseOffer) validateSubscriptions(formats strfmt.Registry) error {
+	if swag.IsZero(m.Subscriptions) { // not required
+		return nil
+	}
+
+	if err := validate.MinimumInt("subscriptions", "body", *m.Subscriptions, 0, false); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 // ContextValidate validate this list offers response offer based on the context it is used
 func (m *ListOffersResponseOffer) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
 	var res []error
 
+	if err := m.contextValidateDeliveriesConditions(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.contextValidateEligibility(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateForecastDeliveries(ctx, formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -162,6 +300,26 @@ func (m *ListOffersResponseOffer) ContextValidate(ctx context.Context, formats s
 	return nil
 }
 
+func (m *ListOffersResponseOffer) contextValidateDeliveriesConditions(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(m.DeliveriesConditions); i++ {
+
+		if m.DeliveriesConditions[i] != nil {
+			if err := m.DeliveriesConditions[i].ContextValidate(ctx, formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("deliveriesConditions" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("deliveriesConditions" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
 func (m *ListOffersResponseOffer) contextValidateEligibility(ctx context.Context, formats strfmt.Registry) error {
 
 	if err := m.Eligibility.ContextValidate(ctx, formats); err != nil {
@@ -171,6 +329,22 @@ func (m *ListOffersResponseOffer) contextValidateEligibility(ctx context.Context
 			return ce.ValidateName("eligibility")
 		}
 		return err
+	}
+
+	return nil
+}
+
+func (m *ListOffersResponseOffer) contextValidateForecastDeliveries(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.ForecastDeliveries != nil {
+		if err := m.ForecastDeliveries.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("forecastDeliveries")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("forecastDeliveries")
+			}
+			return err
+		}
 	}
 
 	return nil

@@ -7,6 +7,7 @@ package replenishment_2022_11_07_models
 
 import (
 	"context"
+	"encoding/json"
 	"strconv"
 
 	"github.com/go-openapi/errors"
@@ -26,12 +27,17 @@ type ListOffersRequestFilters struct {
 	// Unique: true
 	Asins []string `json:"asins"`
 
+	// A list of delivery condition types to filter the results by. Results are filtered to only include offers with the specified delivery conditions.
+	// Min Items: 1
+	// Unique: true
+	DeliveriesConditions []string `json:"deliveriesConditions"`
+
 	// A list of eligibilities associated with an offer.
 	// Min Items: 1
 	// Unique: true
 	Eligibilities []EligibilityStatus `json:"eligibilities"`
 
-	// The marketplace identifier. The supported marketplaces for both sellers and vendors are US, CA, ES, UK, FR, IT, IN, DE and JP. The supported marketplaces for vendors only are BR, AU, MX, AE and NL.  Refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids) to find the identifier for the marketplace.
+	// The marketplace identifier. The supported marketplaces for both sellers and vendors are US, CA, ES, UK, FR, IT, IN, DE, and JP. The supported marketplaces for vendors only are BR, AU, MX, AE, and NL.  Refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids) to find the identifier for the marketplace.
 	// Required: true
 	MarketplaceID *MarketplaceID `json:"marketplaceId"`
 
@@ -57,6 +63,10 @@ func (m *ListOffersRequestFilters) Validate(formats strfmt.Registry) error {
 	var res []error
 
 	if err := m.validateAsins(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateDeliveriesConditions(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -107,6 +117,52 @@ func (m *ListOffersRequestFilters) validateAsins(formats strfmt.Registry) error 
 
 	if err := validate.UniqueItems("asins", "body", m.Asins); err != nil {
 		return err
+	}
+
+	return nil
+}
+
+var listOffersRequestFiltersDeliveriesConditionsItemsEnum []interface{}
+
+func init() {
+	var res []string
+	if err := json.Unmarshal([]byte(`["NEXT_30_DAYS_DELIVERIES_PAUSED_PRICING","NEXT_30_DAYS_DELIVERIES_PAUSED_NON_BUYABLE","NEXT_30_DAYS_DELIVERIES_AT_LOW_INVENTORY_RISK_ONLY","NEXT_30_DAYS_DELIVERIES_AT_LOW_INVENTORY_RISK","NO_ISSUES_FOR_NEXT_30_DAYS_DELIVERIES"]`), &res); err != nil {
+		panic(err)
+	}
+	for _, v := range res {
+		listOffersRequestFiltersDeliveriesConditionsItemsEnum = append(listOffersRequestFiltersDeliveriesConditionsItemsEnum, v)
+	}
+}
+
+func (m *ListOffersRequestFilters) validateDeliveriesConditionsItemsEnum(path, location string, value string) error {
+	if err := validate.EnumCase(path, location, value, listOffersRequestFiltersDeliveriesConditionsItemsEnum, true); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (m *ListOffersRequestFilters) validateDeliveriesConditions(formats strfmt.Registry) error {
+	if swag.IsZero(m.DeliveriesConditions) { // not required
+		return nil
+	}
+
+	iDeliveriesConditionsSize := int64(len(m.DeliveriesConditions))
+
+	if err := validate.MinItems("deliveriesConditions", "body", iDeliveriesConditionsSize, 1); err != nil {
+		return err
+	}
+
+	if err := validate.UniqueItems("deliveriesConditions", "body", m.DeliveriesConditions); err != nil {
+		return err
+	}
+
+	for i := 0; i < len(m.DeliveriesConditions); i++ {
+
+		// value enum
+		if err := m.validateDeliveriesConditionsItemsEnum("deliveriesConditions"+"."+strconv.Itoa(i), "body", m.DeliveriesConditions[i]); err != nil {
+			return err
+		}
+
 	}
 
 	return nil

@@ -38,6 +38,9 @@ const (
 
 	// CompetitiveSummaryIncludedDataLowestPricedOffers captures enum value "lowestPricedOffers"
 	CompetitiveSummaryIncludedDataLowestPricedOffers CompetitiveSummaryIncludedData = "lowestPricedOffers"
+
+	// CompetitiveSummaryIncludedDataSimilarItems captures enum value "similarItems"
+	CompetitiveSummaryIncludedDataSimilarItems CompetitiveSummaryIncludedData = "similarItems"
 )
 
 // for schema
@@ -45,7 +48,7 @@ var competitiveSummaryIncludedDataEnum []interface{}
 
 func init() {
 	var res []CompetitiveSummaryIncludedData
-	if err := json.Unmarshal([]byte(`["featuredBuyingOptions","referencePrices","lowestPricedOffers"]`), &res); err != nil {
+	if err := json.Unmarshal([]byte(`["featuredBuyingOptions","referencePrices","lowestPricedOffers","similarItems"]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {

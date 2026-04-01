@@ -23,7 +23,7 @@ type GetSellingPartnerMetricsRequest struct {
 	// aggregation frequency
 	AggregationFrequency AggregationFrequency `json:"aggregationFrequency,omitempty"`
 
-	// The marketplace identifier. The supported marketplaces for both sellers and vendors are US, CA, ES, UK, FR, IT, IN, DE and JP. The supported marketplaces for vendors only are BR, AU, MX, AE and NL.  Refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids) to find the identifier for the marketplace.
+	// The marketplace identifier. The supported marketplaces for both sellers and vendors are US, CA, ES, UK, FR, IT, IN, DE, and JP. The supported marketplaces for vendors only are BR, AU, MX, AE, and NL.  Refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids) to find the identifier for the marketplace.
 	// Required: true
 	MarketplaceID *MarketplaceID `json:"marketplaceId"`
 

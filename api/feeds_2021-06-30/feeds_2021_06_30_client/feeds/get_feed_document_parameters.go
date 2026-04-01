@@ -14,6 +14,7 @@ import (
 	"github.com/go-openapi/runtime"
 	cr "github.com/go-openapi/runtime/client"
 	"github.com/go-openapi/strfmt"
+	"github.com/go-openapi/swag"
 )
 
 // NewGetFeedDocumentParams creates a new GetFeedDocumentParams object,
@@ -60,6 +61,12 @@ GetFeedDocumentParams contains all the parameters to send to the API endpoint
 	Typically these are written to a http.Request.
 */
 type GetFeedDocumentParams struct {
+
+	/* EnableContentEncodingURLHeader.
+
+	   When `true`, the Content-Encoding header on the returned URL is set to `gzip` instead of the default `identity` when `compressionAlgorithm` is `GZIP`. This allows automatic decompression by HTTP clients.
+	*/
+	EnableContentEncodingURLHeader *bool
 
 	/* FeedDocumentID.
 
@@ -120,6 +127,17 @@ func (o *GetFeedDocumentParams) SetHTTPClient(client *http.Client) {
 	o.HTTPClient = client
 }
 
+// WithEnableContentEncodingURLHeader adds the enableContentEncodingURLHeader to the get feed document params
+func (o *GetFeedDocumentParams) WithEnableContentEncodingURLHeader(enableContentEncodingURLHeader *bool) *GetFeedDocumentParams {
+	o.SetEnableContentEncodingURLHeader(enableContentEncodingURLHeader)
+	return o
+}
+
+// SetEnableContentEncodingURLHeader adds the enableContentEncodingUrlHeader to the get feed document params
+func (o *GetFeedDocumentParams) SetEnableContentEncodingURLHeader(enableContentEncodingURLHeader *bool) {
+	o.EnableContentEncodingURLHeader = enableContentEncodingURLHeader
+}
+
 // WithFeedDocumentID adds the feedDocumentID to the get feed document params
 func (o *GetFeedDocumentParams) WithFeedDocumentID(feedDocumentID string) *GetFeedDocumentParams {
 	o.SetFeedDocumentID(feedDocumentID)
@@ -138,6 +156,23 @@ func (o *GetFeedDocumentParams) WriteToRequest(r runtime.ClientRequest, reg strf
 		return err
 	}
 	var res []error
+
+	if o.EnableContentEncodingURLHeader != nil {
+
+		// query param enableContentEncodingUrlHeader
+		var qrEnableContentEncodingURLHeader bool
+
+		if o.EnableContentEncodingURLHeader != nil {
+			qrEnableContentEncodingURLHeader = *o.EnableContentEncodingURLHeader
+		}
+		qEnableContentEncodingURLHeader := swag.FormatBool(qrEnableContentEncodingURLHeader)
+		if qEnableContentEncodingURLHeader != "" {
+
+			if err := r.SetQueryParam("enableContentEncodingUrlHeader", qEnableContentEncodingURLHeader); err != nil {
+				return err
+			}
+		}
+	}
 
 	// path param feedDocumentId
 	if err := r.SetPathParam("feedDocumentId", o.FeedDocumentID); err != nil {

@@ -39,6 +39,9 @@ type CompetitiveSummaryResponseBody struct {
 
 	// A list of reference prices for the specified ASIN `marketplaceId` combination.
 	ReferencePrices []*ReferencePrice `json:"referencePrices"`
+
+	// A list of similar items for the specified ASIN `marketplaceId` combination.
+	SimilarItems []*SimilarItems `json:"similarItems"`
 }
 
 // Validate validates this competitive summary response body
@@ -66,6 +69,10 @@ func (m *CompetitiveSummaryResponseBody) Validate(formats strfmt.Registry) error
 	}
 
 	if err := m.validateReferencePrices(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateSimilarItems(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -218,6 +225,32 @@ func (m *CompetitiveSummaryResponseBody) validateReferencePrices(formats strfmt.
 	return nil
 }
 
+func (m *CompetitiveSummaryResponseBody) validateSimilarItems(formats strfmt.Registry) error {
+	if swag.IsZero(m.SimilarItems) { // not required
+		return nil
+	}
+
+	for i := 0; i < len(m.SimilarItems); i++ {
+		if swag.IsZero(m.SimilarItems[i]) { // not required
+			continue
+		}
+
+		if m.SimilarItems[i] != nil {
+			if err := m.SimilarItems[i].Validate(formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("similarItems" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("similarItems" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
 // ContextValidate validate this competitive summary response body based on the context it is used
 func (m *CompetitiveSummaryResponseBody) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
 	var res []error
@@ -243,6 +276,10 @@ func (m *CompetitiveSummaryResponseBody) ContextValidate(ctx context.Context, fo
 	}
 
 	if err := m.contextValidateReferencePrices(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateSimilarItems(ctx, formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -348,6 +385,26 @@ func (m *CompetitiveSummaryResponseBody) contextValidateReferencePrices(ctx cont
 					return ve.ValidateName("referencePrices" + "." + strconv.Itoa(i))
 				} else if ce, ok := err.(*errors.CompositeError); ok {
 					return ce.ValidateName("referencePrices" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
+func (m *CompetitiveSummaryResponseBody) contextValidateSimilarItems(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(m.SimilarItems); i++ {
+
+		if m.SimilarItems[i] != nil {
+			if err := m.SimilarItems[i].ContextValidate(ctx, formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("similarItems" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("similarItems" + "." + strconv.Itoa(i))
 				}
 				return err
 			}

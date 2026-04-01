@@ -18,7 +18,7 @@ import (
 // swagger:model Points
 type Points struct {
 
-	// The monetary value of the Amazon Points.
+	// The monetary value of Amazon Points.
 	PointsMonetaryValue *MoneyType `json:"pointsMonetaryValue,omitempty"`
 
 	// The number of Amazon Points.
