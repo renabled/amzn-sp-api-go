@@ -427,11 +427,6 @@ The request size exceeded the maximum accepted size.
 */
 type CreateReservationRequestEntityTooLarge struct {
 
-	/* Your rate limit (requests per second) for this operation.
-	**Note:** For this status code, the rate limit header is deprecated and no longer returned.
-	 */
-	XAmznRateLimitLimit string
-
 	/* Unique request reference identifier.
 	 */
 	XAmznRequestID string
@@ -478,13 +473,6 @@ func (o *CreateReservationRequestEntityTooLarge) GetPayload() *services_models.C
 
 func (o *CreateReservationRequestEntityTooLarge) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	// hydrates response header x-amzn-RateLimit-Limit
-	hdrXAmznRateLimitLimit := response.GetHeader("x-amzn-RateLimit-Limit")
-
-	if hdrXAmznRateLimitLimit != "" {
-		o.XAmznRateLimitLimit = hdrXAmznRateLimitLimit
-	}
-
 	// hydrates response header x-amzn-RequestId
 	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")
 
@@ -513,11 +501,6 @@ CreateReservationUnsupportedMediaType describes a response with status code 415,
 The request payload is in an unsupported format.
 */
 type CreateReservationUnsupportedMediaType struct {
-
-	/* Your rate limit (requests per second) for this operation.
-	**Note:** For this status code, the rate limit header is deprecated and no longer returned.
-	 */
-	XAmznRateLimitLimit string
 
 	/* Unique request reference identifier.
 	 */
@@ -565,13 +548,6 @@ func (o *CreateReservationUnsupportedMediaType) GetPayload() *services_models.Cr
 
 func (o *CreateReservationUnsupportedMediaType) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	// hydrates response header x-amzn-RateLimit-Limit
-	hdrXAmznRateLimitLimit := response.GetHeader("x-amzn-RateLimit-Limit")
-
-	if hdrXAmznRateLimitLimit != "" {
-		o.XAmznRateLimitLimit = hdrXAmznRateLimitLimit
-	}
-
 	// hydrates response header x-amzn-RequestId
 	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")
 
@@ -600,11 +576,6 @@ CreateReservationTooManyRequests describes a response with status code 429, with
 The frequency of requests was greater than allowed.
 */
 type CreateReservationTooManyRequests struct {
-
-	/* Your rate limit (requests per second) for this operation.
-	**Note:** For this status code, the rate limit header is deprecated and no longer returned.
-	 */
-	XAmznRateLimitLimit string
 
 	/* Unique request reference identifier.
 	 */
@@ -652,13 +623,6 @@ func (o *CreateReservationTooManyRequests) GetPayload() *services_models.CreateR
 
 func (o *CreateReservationTooManyRequests) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	// hydrates response header x-amzn-RateLimit-Limit
-	hdrXAmznRateLimitLimit := response.GetHeader("x-amzn-RateLimit-Limit")
-
-	if hdrXAmznRateLimitLimit != "" {
-		o.XAmznRateLimitLimit = hdrXAmznRateLimitLimit
-	}
-
 	// hydrates response header x-amzn-RequestId
 	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")
 
@@ -687,11 +651,6 @@ CreateReservationInternalServerError describes a response with status code 500, 
 Encountered an unexpected condition which prevented the server from fulfilling the request.
 */
 type CreateReservationInternalServerError struct {
-
-	/* Your rate limit (requests per second) for this operation.
-	**Note:** For this status code, the rate limit header is deprecated and no longer returned.
-	 */
-	XAmznRateLimitLimit string
 
 	/* Unique request reference identifier.
 	 */
@@ -739,13 +698,6 @@ func (o *CreateReservationInternalServerError) GetPayload() *services_models.Cre
 
 func (o *CreateReservationInternalServerError) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	// hydrates response header x-amzn-RateLimit-Limit
-	hdrXAmznRateLimitLimit := response.GetHeader("x-amzn-RateLimit-Limit")
-
-	if hdrXAmznRateLimitLimit != "" {
-		o.XAmznRateLimitLimit = hdrXAmznRateLimitLimit
-	}
-
 	// hydrates response header x-amzn-RequestId
 	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")
 
@@ -774,11 +726,6 @@ CreateReservationServiceUnavailable describes a response with status code 503, w
 Temporary overloading or maintenance of the server.
 */
 type CreateReservationServiceUnavailable struct {
-
-	/* Your rate limit (requests per second) for this operation.
-	**Note:** For this status code, the rate limit header is deprecated and no longer returned.
-	 */
-	XAmznRateLimitLimit string
 
 	/* Unique request reference identifier.
 	 */
@@ -825,13 +772,6 @@ func (o *CreateReservationServiceUnavailable) GetPayload() *services_models.Crea
 }
 
 func (o *CreateReservationServiceUnavailable) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
-
-	// hydrates response header x-amzn-RateLimit-Limit
-	hdrXAmznRateLimitLimit := response.GetHeader("x-amzn-RateLimit-Limit")
-
-	if hdrXAmznRateLimitLimit != "" {
-		o.XAmznRateLimitLimit = hdrXAmznRateLimitLimit
-	}
 
 	// hydrates response header x-amzn-RequestId
 	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")

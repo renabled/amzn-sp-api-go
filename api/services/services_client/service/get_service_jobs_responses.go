@@ -427,11 +427,6 @@ The request size exceeded the maximum accepted size.
 */
 type GetServiceJobsRequestEntityTooLarge struct {
 
-	/* Your rate limit (requests per second) for this operation.
-	**Note:** For this status code, the rate limit header is deprecated and no longer returned.
-	 */
-	XAmznRateLimitLimit string
-
 	/* Unique request reference identifier.
 	 */
 	XAmznRequestID string
@@ -478,13 +473,6 @@ func (o *GetServiceJobsRequestEntityTooLarge) GetPayload() *services_models.GetS
 
 func (o *GetServiceJobsRequestEntityTooLarge) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	// hydrates response header x-amzn-RateLimit-Limit
-	hdrXAmznRateLimitLimit := response.GetHeader("x-amzn-RateLimit-Limit")
-
-	if hdrXAmznRateLimitLimit != "" {
-		o.XAmznRateLimitLimit = hdrXAmznRateLimitLimit
-	}
-
 	// hydrates response header x-amzn-RequestId
 	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")
 
@@ -513,11 +501,6 @@ GetServiceJobsUnsupportedMediaType describes a response with status code 415, wi
 The request payload is in an unsupported format.
 */
 type GetServiceJobsUnsupportedMediaType struct {
-
-	/* Your rate limit (requests per second) for this operation.
-	**Note:** For this status code, the rate limit header is deprecated and no longer returned.
-	 */
-	XAmznRateLimitLimit string
 
 	/* Unique request reference identifier.
 	 */
@@ -565,13 +548,6 @@ func (o *GetServiceJobsUnsupportedMediaType) GetPayload() *services_models.GetSe
 
 func (o *GetServiceJobsUnsupportedMediaType) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	// hydrates response header x-amzn-RateLimit-Limit
-	hdrXAmznRateLimitLimit := response.GetHeader("x-amzn-RateLimit-Limit")
-
-	if hdrXAmznRateLimitLimit != "" {
-		o.XAmznRateLimitLimit = hdrXAmznRateLimitLimit
-	}
-
 	// hydrates response header x-amzn-RequestId
 	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")
 
@@ -600,11 +576,6 @@ GetServiceJobsTooManyRequests describes a response with status code 429, with de
 The frequency of requests was greater than allowed.
 */
 type GetServiceJobsTooManyRequests struct {
-
-	/* Your rate limit (requests per second) for this operation.
-	**Note:** For this status code, the rate limit header is deprecated and no longer returned.
-	 */
-	XAmznRateLimitLimit string
 
 	/* Unique request reference identifier.
 	 */
@@ -652,13 +623,6 @@ func (o *GetServiceJobsTooManyRequests) GetPayload() *services_models.GetService
 
 func (o *GetServiceJobsTooManyRequests) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	// hydrates response header x-amzn-RateLimit-Limit
-	hdrXAmznRateLimitLimit := response.GetHeader("x-amzn-RateLimit-Limit")
-
-	if hdrXAmznRateLimitLimit != "" {
-		o.XAmznRateLimitLimit = hdrXAmznRateLimitLimit
-	}
-
 	// hydrates response header x-amzn-RequestId
 	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")
 
@@ -687,11 +651,6 @@ GetServiceJobsInternalServerError describes a response with status code 500, wit
 An unexpected condition occurred that prevented the server from fulfilling the request.
 */
 type GetServiceJobsInternalServerError struct {
-
-	/* Your rate limit (requests per second) for this operation.
-	**Note:** For this status code, the rate limit header is deprecated and no longer returned.
-	 */
-	XAmznRateLimitLimit string
 
 	/* Unique request reference identifier.
 	 */
@@ -739,13 +698,6 @@ func (o *GetServiceJobsInternalServerError) GetPayload() *services_models.GetSer
 
 func (o *GetServiceJobsInternalServerError) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	// hydrates response header x-amzn-RateLimit-Limit
-	hdrXAmznRateLimitLimit := response.GetHeader("x-amzn-RateLimit-Limit")
-
-	if hdrXAmznRateLimitLimit != "" {
-		o.XAmznRateLimitLimit = hdrXAmznRateLimitLimit
-	}
-
 	// hydrates response header x-amzn-RequestId
 	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")
 
@@ -774,11 +726,6 @@ GetServiceJobsServiceUnavailable describes a response with status code 503, with
 Temporary overloading or maintenance of the server.
 */
 type GetServiceJobsServiceUnavailable struct {
-
-	/* Your rate limit (requests per second) for this operation.
-	**Note:** For this status code, the rate limit header is deprecated and no longer returned.
-	 */
-	XAmznRateLimitLimit string
 
 	/* Unique request reference identifier.
 	 */
@@ -825,13 +772,6 @@ func (o *GetServiceJobsServiceUnavailable) GetPayload() *services_models.GetServ
 }
 
 func (o *GetServiceJobsServiceUnavailable) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
-
-	// hydrates response header x-amzn-RateLimit-Limit
-	hdrXAmznRateLimitLimit := response.GetHeader("x-amzn-RateLimit-Limit")
-
-	if hdrXAmznRateLimitLimit != "" {
-		o.XAmznRateLimitLimit = hdrXAmznRateLimitLimit
-	}
 
 	// hydrates response header x-amzn-RequestId
 	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")

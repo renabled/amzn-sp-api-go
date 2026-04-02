@@ -425,11 +425,6 @@ The request size exceeded the maximum accepted size.
 */
 type SetAppointmentFulfillmentDataRequestEntityTooLarge struct {
 
-	/* Your rate limit (requests per second) for this operation.
-	**Note:** For this status code, the rate limit header is deprecated and no longer returned.
-	 */
-	XAmznRateLimitLimit string
-
 	/* Unique request reference identifier.
 	 */
 	XAmznRequestID string
@@ -476,13 +471,6 @@ func (o *SetAppointmentFulfillmentDataRequestEntityTooLarge) GetPayload() servic
 
 func (o *SetAppointmentFulfillmentDataRequestEntityTooLarge) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	// hydrates response header x-amzn-RateLimit-Limit
-	hdrXAmznRateLimitLimit := response.GetHeader("x-amzn-RateLimit-Limit")
-
-	if hdrXAmznRateLimitLimit != "" {
-		o.XAmznRateLimitLimit = hdrXAmznRateLimitLimit
-	}
-
 	// hydrates response header x-amzn-RequestId
 	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")
 
@@ -509,11 +497,6 @@ SetAppointmentFulfillmentDataUnsupportedMediaType describes a response with stat
 The entity of the request is in a format not supported by the requested resource.
 */
 type SetAppointmentFulfillmentDataUnsupportedMediaType struct {
-
-	/* Your rate limit (requests per second) for this operation.
-	**Note:** For this status code, the rate limit header is deprecated and no longer returned.
-	 */
-	XAmznRateLimitLimit string
 
 	/* Unique request reference identifier.
 	 */
@@ -561,13 +544,6 @@ func (o *SetAppointmentFulfillmentDataUnsupportedMediaType) GetPayload() service
 
 func (o *SetAppointmentFulfillmentDataUnsupportedMediaType) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	// hydrates response header x-amzn-RateLimit-Limit
-	hdrXAmznRateLimitLimit := response.GetHeader("x-amzn-RateLimit-Limit")
-
-	if hdrXAmznRateLimitLimit != "" {
-		o.XAmznRateLimitLimit = hdrXAmznRateLimitLimit
-	}
-
 	// hydrates response header x-amzn-RequestId
 	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")
 
@@ -594,11 +570,6 @@ SetAppointmentFulfillmentDataUnprocessableEntity describes a response with statu
 Unprocessable Entity. Unable to process the contained instructions.
 */
 type SetAppointmentFulfillmentDataUnprocessableEntity struct {
-
-	/* Your rate limit (requests per second) for this operation.
-	**Note:** For this status code, the rate limit header is deprecated and no longer returned.
-	 */
-	XAmznRateLimitLimit string
 
 	/* Unique request reference identifier.
 	 */
@@ -646,13 +617,6 @@ func (o *SetAppointmentFulfillmentDataUnprocessableEntity) GetPayload() services
 
 func (o *SetAppointmentFulfillmentDataUnprocessableEntity) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	// hydrates response header x-amzn-RateLimit-Limit
-	hdrXAmznRateLimitLimit := response.GetHeader("x-amzn-RateLimit-Limit")
-
-	if hdrXAmznRateLimitLimit != "" {
-		o.XAmznRateLimitLimit = hdrXAmznRateLimitLimit
-	}
-
 	// hydrates response header x-amzn-RequestId
 	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")
 
@@ -679,11 +643,6 @@ SetAppointmentFulfillmentDataTooManyRequests describes a response with status co
 The frequency of requests was greater than allowed.
 */
 type SetAppointmentFulfillmentDataTooManyRequests struct {
-
-	/* Your rate limit (requests per second) for this operation.
-	**Note:** For this status code, the rate limit header is deprecated and no longer returned.
-	 */
-	XAmznRateLimitLimit string
 
 	/* Unique request reference identifier.
 	 */
@@ -731,13 +690,6 @@ func (o *SetAppointmentFulfillmentDataTooManyRequests) GetPayload() services_mod
 
 func (o *SetAppointmentFulfillmentDataTooManyRequests) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	// hydrates response header x-amzn-RateLimit-Limit
-	hdrXAmznRateLimitLimit := response.GetHeader("x-amzn-RateLimit-Limit")
-
-	if hdrXAmznRateLimitLimit != "" {
-		o.XAmznRateLimitLimit = hdrXAmznRateLimitLimit
-	}
-
 	// hydrates response header x-amzn-RequestId
 	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")
 
@@ -764,11 +716,6 @@ SetAppointmentFulfillmentDataInternalServerError describes a response with statu
 Encountered an unexpected condition which prevented the server from fulfilling the request.
 */
 type SetAppointmentFulfillmentDataInternalServerError struct {
-
-	/* Your rate limit (requests per second) for this operation.
-	**Note:** For this status code, the rate limit header is deprecated and no longer returned.
-	 */
-	XAmznRateLimitLimit string
 
 	/* Unique request reference identifier.
 	 */
@@ -816,13 +763,6 @@ func (o *SetAppointmentFulfillmentDataInternalServerError) GetPayload() services
 
 func (o *SetAppointmentFulfillmentDataInternalServerError) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	// hydrates response header x-amzn-RateLimit-Limit
-	hdrXAmznRateLimitLimit := response.GetHeader("x-amzn-RateLimit-Limit")
-
-	if hdrXAmznRateLimitLimit != "" {
-		o.XAmznRateLimitLimit = hdrXAmznRateLimitLimit
-	}
-
 	// hydrates response header x-amzn-RequestId
 	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")
 
@@ -849,11 +789,6 @@ SetAppointmentFulfillmentDataServiceUnavailable describes a response with status
 Temporary overloading or maintenance of the server.
 */
 type SetAppointmentFulfillmentDataServiceUnavailable struct {
-
-	/* Your rate limit (requests per second) for this operation.
-	**Note:** For this status code, the rate limit header is deprecated and no longer returned.
-	 */
-	XAmznRateLimitLimit string
 
 	/* Unique request reference identifier.
 	 */
@@ -900,13 +835,6 @@ func (o *SetAppointmentFulfillmentDataServiceUnavailable) GetPayload() services_
 }
 
 func (o *SetAppointmentFulfillmentDataServiceUnavailable) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
-
-	// hydrates response header x-amzn-RateLimit-Limit
-	hdrXAmznRateLimitLimit := response.GetHeader("x-amzn-RateLimit-Limit")
-
-	if hdrXAmznRateLimitLimit != "" {
-		o.XAmznRateLimitLimit = hdrXAmznRateLimitLimit
-	}
 
 	// hydrates response header x-amzn-RequestId
 	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")

@@ -427,10 +427,6 @@ The request payload is in an unsupported format.
 */
 type GetAppointmmentSlotsByJobIDUnsupportedMediaType struct {
 
-	/* Your rate limit (requests per second) for this operation.
-	 */
-	XAmznRateLimitLimit string
-
 	/* Unique request reference identifier.
 	 */
 	XAmznRequestID string
@@ -477,13 +473,6 @@ func (o *GetAppointmmentSlotsByJobIDUnsupportedMediaType) GetPayload() *services
 
 func (o *GetAppointmmentSlotsByJobIDUnsupportedMediaType) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	// hydrates response header x-amzn-RateLimit-Limit
-	hdrXAmznRateLimitLimit := response.GetHeader("x-amzn-RateLimit-Limit")
-
-	if hdrXAmznRateLimitLimit != "" {
-		o.XAmznRateLimitLimit = hdrXAmznRateLimitLimit
-	}
-
 	// hydrates response header x-amzn-RequestId
 	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")
 
@@ -512,10 +501,6 @@ GetAppointmmentSlotsByJobIDUnprocessableEntity describes a response with status 
 Unprocessable Entity. Unable to process the contained instructions.
 */
 type GetAppointmmentSlotsByJobIDUnprocessableEntity struct {
-
-	/* Your rate limit (requests per second) for this operation.
-	 */
-	XAmznRateLimitLimit string
 
 	/* Unique request reference identifier.
 	 */
@@ -563,13 +548,6 @@ func (o *GetAppointmmentSlotsByJobIDUnprocessableEntity) GetPayload() *services_
 
 func (o *GetAppointmmentSlotsByJobIDUnprocessableEntity) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	// hydrates response header x-amzn-RateLimit-Limit
-	hdrXAmznRateLimitLimit := response.GetHeader("x-amzn-RateLimit-Limit")
-
-	if hdrXAmznRateLimitLimit != "" {
-		o.XAmznRateLimitLimit = hdrXAmznRateLimitLimit
-	}
-
 	// hydrates response header x-amzn-RequestId
 	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")
 
@@ -598,10 +576,6 @@ GetAppointmmentSlotsByJobIDTooManyRequests describes a response with status code
 The frequency of requests was greater than allowed.
 */
 type GetAppointmmentSlotsByJobIDTooManyRequests struct {
-
-	/* Your rate limit (requests per second) for this operation.
-	 */
-	XAmznRateLimitLimit string
 
 	/* Unique request reference identifier.
 	 */
@@ -649,13 +623,6 @@ func (o *GetAppointmmentSlotsByJobIDTooManyRequests) GetPayload() *services_mode
 
 func (o *GetAppointmmentSlotsByJobIDTooManyRequests) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	// hydrates response header x-amzn-RateLimit-Limit
-	hdrXAmznRateLimitLimit := response.GetHeader("x-amzn-RateLimit-Limit")
-
-	if hdrXAmznRateLimitLimit != "" {
-		o.XAmznRateLimitLimit = hdrXAmznRateLimitLimit
-	}
-
 	// hydrates response header x-amzn-RequestId
 	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")
 
@@ -684,10 +651,6 @@ GetAppointmmentSlotsByJobIDInternalServerError describes a response with status 
 An unexpected condition occurred that prevented the server from fulfilling the request.
 */
 type GetAppointmmentSlotsByJobIDInternalServerError struct {
-
-	/* Your rate limit (requests per second) for this operation.
-	 */
-	XAmznRateLimitLimit string
 
 	/* Unique request reference identifier.
 	 */
@@ -735,13 +698,6 @@ func (o *GetAppointmmentSlotsByJobIDInternalServerError) GetPayload() *services_
 
 func (o *GetAppointmmentSlotsByJobIDInternalServerError) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	// hydrates response header x-amzn-RateLimit-Limit
-	hdrXAmznRateLimitLimit := response.GetHeader("x-amzn-RateLimit-Limit")
-
-	if hdrXAmznRateLimitLimit != "" {
-		o.XAmznRateLimitLimit = hdrXAmznRateLimitLimit
-	}
-
 	// hydrates response header x-amzn-RequestId
 	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")
 
@@ -770,10 +726,6 @@ GetAppointmmentSlotsByJobIDServiceUnavailable describes a response with status c
 Temporary overloading or maintenance of the server.
 */
 type GetAppointmmentSlotsByJobIDServiceUnavailable struct {
-
-	/* Your rate limit (requests per second) for this operation.
-	 */
-	XAmznRateLimitLimit string
 
 	/* Unique request reference identifier.
 	 */
@@ -820,13 +772,6 @@ func (o *GetAppointmmentSlotsByJobIDServiceUnavailable) GetPayload() *services_m
 }
 
 func (o *GetAppointmmentSlotsByJobIDServiceUnavailable) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
-
-	// hydrates response header x-amzn-RateLimit-Limit
-	hdrXAmznRateLimitLimit := response.GetHeader("x-amzn-RateLimit-Limit")
-
-	if hdrXAmznRateLimitLimit != "" {
-		o.XAmznRateLimitLimit = hdrXAmznRateLimitLimit
-	}
 
 	// hydrates response header x-amzn-RequestId
 	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")

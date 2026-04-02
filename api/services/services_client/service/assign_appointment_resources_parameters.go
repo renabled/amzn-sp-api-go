@@ -69,7 +69,10 @@ type AssignAppointmentResourcesParams struct {
 	*/
 	AppointmentID string
 
-	// Body.
+	/* Body.
+
+	   Input containing the resource details to be assigned to the appointment.
+	*/
 	Body *services_models.AssignAppointmentResourcesRequest
 
 	/* ServiceJobID.

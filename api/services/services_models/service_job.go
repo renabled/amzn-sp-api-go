@@ -38,6 +38,9 @@ type ServiceJob struct {
 	// Pattern: ^[A-Z0-9]*$
 	MarketplaceID string `json:"marketplaceId,omitempty"`
 
+	// A list that contains payment information for the service job.
+	Payments []*Payment `json:"payments"`
+
 	// A list of appointment windows preferred by the buyer. Included only if the buyer selected appointment windows when creating the order.
 	PreferredAppointmentTimes []*AppointmentTime `json:"preferredAppointmentTimes"`
 
@@ -90,6 +93,10 @@ func (m *ServiceJob) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validateMarketplaceID(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validatePayments(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -225,6 +232,32 @@ func (m *ServiceJob) validateMarketplaceID(formats strfmt.Registry) error {
 
 	if err := validate.Pattern("marketplaceId", "body", m.MarketplaceID, `^[A-Z0-9]*$`); err != nil {
 		return err
+	}
+
+	return nil
+}
+
+func (m *ServiceJob) validatePayments(formats strfmt.Registry) error {
+	if swag.IsZero(m.Payments) { // not required
+		return nil
+	}
+
+	for i := 0; i < len(m.Payments); i++ {
+		if swag.IsZero(m.Payments[i]) { // not required
+			continue
+		}
+
+		if m.Payments[i] != nil {
+			if err := m.Payments[i].Validate(formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("payments" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("payments" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
 	}
 
 	return nil
@@ -455,6 +488,10 @@ func (m *ServiceJob) ContextValidate(ctx context.Context, formats strfmt.Registr
 		res = append(res, err)
 	}
 
+	if err := m.contextValidatePayments(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.contextValidatePreferredAppointmentTimes(ctx, formats); err != nil {
 		res = append(res, err)
 	}
@@ -540,6 +577,26 @@ func (m *ServiceJob) contextValidateBuyer(ctx context.Context, formats strfmt.Re
 			}
 			return err
 		}
+	}
+
+	return nil
+}
+
+func (m *ServiceJob) contextValidatePayments(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(m.Payments); i++ {
+
+		if m.Payments[i] != nil {
+			if err := m.Payments[i].ContextValidate(ctx, formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("payments" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("payments" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
 	}
 
 	return nil
