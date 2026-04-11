@@ -110,7 +110,7 @@ type GetShipmentsParams struct {
 
 	/* Status.
 
-	   The status of shipment you want to include in the response. To retrieve all new shipments, set this value to `ACCEPTED`.
+	   The status of shipment you want to include in the response. To retrieve all new shipments, set this value to `CREATED` or `ACCEPTED`.
 	*/
 	Status string
 
