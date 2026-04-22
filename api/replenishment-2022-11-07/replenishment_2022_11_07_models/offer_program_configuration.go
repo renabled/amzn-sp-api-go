@@ -18,7 +18,7 @@ import (
 // swagger:model OfferProgramConfiguration
 type OfferProgramConfiguration struct {
 
-	// Determines whether the offer was automatically or manually enrolled in the program. This property is only supported for sellers and not vendors.
+	// Determines whether the offer was automatically or manually enrolled in the program. This property is only supported for sellers, not for vendors.
 	EnrollmentMethod EnrollmentMethod `json:"enrollmentMethod,omitempty"`
 
 	// An object which contains the preferences applied to the offer.
