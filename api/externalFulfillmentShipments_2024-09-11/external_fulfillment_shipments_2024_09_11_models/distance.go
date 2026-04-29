@@ -15,26 +15,27 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// Dimension A dimension of a package.
+// Distance A distance measurement.
+// Example: {"distanceUnit":"MI","value":"3.5"}
 //
-// swagger:model Dimension
-type Dimension struct {
+// swagger:model Distance
+type Distance struct {
 
-	// The unit of measurement of the dimension.
+	// The unit of measurement of the distance.
 	// Required: true
-	// Enum: [CM M IN]
-	DimensionUnit *string `json:"dimensionUnit"`
+	// Enum: [MI KM]
+	DistanceUnit *string `json:"distanceUnit"`
 
-	// The numerical value of the dimension. Must be a positive value.
+	// The numerical value of the distance.
 	// Required: true
 	Value *Decimal `json:"value"`
 }
 
-// Validate validates this dimension
-func (m *Dimension) Validate(formats strfmt.Registry) error {
+// Validate validates this distance
+func (m *Distance) Validate(formats strfmt.Registry) error {
 	var res []error
 
-	if err := m.validateDimensionUnit(formats); err != nil {
+	if err := m.validateDistanceUnit(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -48,53 +49,50 @@ func (m *Dimension) Validate(formats strfmt.Registry) error {
 	return nil
 }
 
-var dimensionTypeDimensionUnitPropEnum []interface{}
+var distanceTypeDistanceUnitPropEnum []interface{}
 
 func init() {
 	var res []string
-	if err := json.Unmarshal([]byte(`["CM","M","IN"]`), &res); err != nil {
+	if err := json.Unmarshal([]byte(`["MI","KM"]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
-		dimensionTypeDimensionUnitPropEnum = append(dimensionTypeDimensionUnitPropEnum, v)
+		distanceTypeDistanceUnitPropEnum = append(distanceTypeDistanceUnitPropEnum, v)
 	}
 }
 
 const (
 
-	// DimensionDimensionUnitCM captures enum value "CM"
-	DimensionDimensionUnitCM string = "CM"
+	// DistanceDistanceUnitMI captures enum value "MI"
+	DistanceDistanceUnitMI string = "MI"
 
-	// DimensionDimensionUnitM captures enum value "M"
-	DimensionDimensionUnitM string = "M"
-
-	// DimensionDimensionUnitIN captures enum value "IN"
-	DimensionDimensionUnitIN string = "IN"
+	// DistanceDistanceUnitKM captures enum value "KM"
+	DistanceDistanceUnitKM string = "KM"
 )
 
 // prop value enum
-func (m *Dimension) validateDimensionUnitEnum(path, location string, value string) error {
-	if err := validate.EnumCase(path, location, value, dimensionTypeDimensionUnitPropEnum, true); err != nil {
+func (m *Distance) validateDistanceUnitEnum(path, location string, value string) error {
+	if err := validate.EnumCase(path, location, value, distanceTypeDistanceUnitPropEnum, true); err != nil {
 		return err
 	}
 	return nil
 }
 
-func (m *Dimension) validateDimensionUnit(formats strfmt.Registry) error {
+func (m *Distance) validateDistanceUnit(formats strfmt.Registry) error {
 
-	if err := validate.Required("dimensionUnit", "body", m.DimensionUnit); err != nil {
+	if err := validate.Required("distanceUnit", "body", m.DistanceUnit); err != nil {
 		return err
 	}
 
 	// value enum
-	if err := m.validateDimensionUnitEnum("dimensionUnit", "body", *m.DimensionUnit); err != nil {
+	if err := m.validateDistanceUnitEnum("distanceUnit", "body", *m.DistanceUnit); err != nil {
 		return err
 	}
 
 	return nil
 }
 
-func (m *Dimension) validateValue(formats strfmt.Registry) error {
+func (m *Distance) validateValue(formats strfmt.Registry) error {
 
 	if err := validate.Required("value", "body", m.Value); err != nil {
 		return err
@@ -118,8 +116,8 @@ func (m *Dimension) validateValue(formats strfmt.Registry) error {
 	return nil
 }
 
-// ContextValidate validate this dimension based on the context it is used
-func (m *Dimension) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+// ContextValidate validate this distance based on the context it is used
+func (m *Distance) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
 	var res []error
 
 	if err := m.contextValidateValue(ctx, formats); err != nil {
@@ -132,7 +130,7 @@ func (m *Dimension) ContextValidate(ctx context.Context, formats strfmt.Registry
 	return nil
 }
 
-func (m *Dimension) contextValidateValue(ctx context.Context, formats strfmt.Registry) error {
+func (m *Distance) contextValidateValue(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.Value != nil {
 		if err := m.Value.ContextValidate(ctx, formats); err != nil {
@@ -149,7 +147,7 @@ func (m *Dimension) contextValidateValue(ctx context.Context, formats strfmt.Reg
 }
 
 // MarshalBinary interface implementation
-func (m *Dimension) MarshalBinary() ([]byte, error) {
+func (m *Distance) MarshalBinary() ([]byte, error) {
 	if m == nil {
 		return nil, nil
 	}
@@ -157,8 +155,8 @@ func (m *Dimension) MarshalBinary() ([]byte, error) {
 }
 
 // UnmarshalBinary interface implementation
-func (m *Dimension) UnmarshalBinary(b []byte) error {
-	var res Dimension
+func (m *Distance) UnmarshalBinary(b []byte) error {
+	var res Distance
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err
 	}

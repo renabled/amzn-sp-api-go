@@ -14,12 +14,16 @@ import (
 )
 
 // ItemPacking Information related to the packaging process for an order item.
+// Example: {"giftOption":{"giftMessage":"Happy Holidays! Enjoy your new smart speakers.","giftWrapLevel":"PREMIUM"},"serialNumberRequirement":{"requirementType":"REQUIRED"}}
 //
 // swagger:model ItemPacking
 type ItemPacking struct {
 
 	// Gift wrapping and messaging specified for this item.
 	GiftOption *GiftOption `json:"giftOption,omitempty"`
+
+	// Whether serial numbers must be provided for this line item.
+	SerialNumberRequirement *SerialNumberRequirement `json:"serialNumberRequirement,omitempty"`
 }
 
 // Validate validates this item packing
@@ -27,6 +31,10 @@ func (m *ItemPacking) Validate(formats strfmt.Registry) error {
 	var res []error
 
 	if err := m.validateGiftOption(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateSerialNumberRequirement(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -55,11 +63,34 @@ func (m *ItemPacking) validateGiftOption(formats strfmt.Registry) error {
 	return nil
 }
 
+func (m *ItemPacking) validateSerialNumberRequirement(formats strfmt.Registry) error {
+	if swag.IsZero(m.SerialNumberRequirement) { // not required
+		return nil
+	}
+
+	if m.SerialNumberRequirement != nil {
+		if err := m.SerialNumberRequirement.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("serialNumberRequirement")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("serialNumberRequirement")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
 // ContextValidate validate this item packing based on the context it is used
 func (m *ItemPacking) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
 	var res []error
 
 	if err := m.contextValidateGiftOption(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateSerialNumberRequirement(ctx, formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -77,6 +108,22 @@ func (m *ItemPacking) contextValidateGiftOption(ctx context.Context, formats str
 				return ve.ValidateName("giftOption")
 			} else if ce, ok := err.(*errors.CompositeError); ok {
 				return ce.ValidateName("giftOption")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *ItemPacking) contextValidateSerialNumberRequirement(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.SerialNumberRequirement != nil {
+		if err := m.SerialNumberRequirement.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("serialNumberRequirement")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("serialNumberRequirement")
 			}
 			return err
 		}

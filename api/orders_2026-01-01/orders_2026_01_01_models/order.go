@@ -53,12 +53,15 @@ type Order struct {
 	// Shipping packages created for this order, including tracking information. **Note:** Only available for merchant-fulfilled (FBM) orders.
 	Packages []*OrderPackage `json:"packages"`
 
+	// Payment information for the order.
+	Payment *OrderPayment `json:"payment,omitempty"`
+
 	// Financial information about this order.
 	Proceeds *OrderProceeds `json:"proceeds,omitempty"`
 
 	// Special programs associated with this order that may affect fulfillment or customer experience.
 	//
-	// **Possible values**: `AMAZON_BAZAAR`, `AMAZON_BUSINESS`,  `AMAZON_EASY_SHIP`, `AMAZON_HAUL`, `DELIVERY_BY_AMAZON`, `FBM_SHIP_PLUS`, `IN_STORE_PICK_UP`, `PREMIUM`, `PREORDER`, `PRIME`
+	// **Possible values**: `AMAZON_BAZAAR`, `AMAZON_BUSINESS`, `AMAZON_EASY_SHIP`, `AMAZON_HAUL`, `DELIVERY_BY_AMAZON`, `FBM_SHIP_PLUS`, `INVOICE_BY_AMAZON`, `IN_STORE_PICK_UP`, `PREMIUM`, `PREORDER`, `PRIME`
 	Programs []string `json:"programs"`
 
 	// Information about the person or location where this order should be delivered.
@@ -67,6 +70,9 @@ type Order struct {
 	// Information about where this order was placed.
 	// Required: true
 	SalesChannel *SalesChannel `json:"salesChannel"`
+
+	// Tax-related information for the order.
+	Tax *OrderTax `json:"tax,omitempty"`
 }
 
 // Validate validates this order
@@ -109,6 +115,10 @@ func (m *Order) Validate(formats strfmt.Registry) error {
 		res = append(res, err)
 	}
 
+	if err := m.validatePayment(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.validateProceeds(formats); err != nil {
 		res = append(res, err)
 	}
@@ -118,6 +128,10 @@ func (m *Order) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validateSalesChannel(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateTax(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -305,6 +319,25 @@ func (m *Order) validatePackages(formats strfmt.Registry) error {
 	return nil
 }
 
+func (m *Order) validatePayment(formats strfmt.Registry) error {
+	if swag.IsZero(m.Payment) { // not required
+		return nil
+	}
+
+	if m.Payment != nil {
+		if err := m.Payment.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("payment")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("payment")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
 func (m *Order) validateProceeds(formats strfmt.Registry) error {
 	if swag.IsZero(m.Proceeds) { // not required
 		return nil
@@ -363,6 +396,25 @@ func (m *Order) validateSalesChannel(formats strfmt.Registry) error {
 	return nil
 }
 
+func (m *Order) validateTax(formats strfmt.Registry) error {
+	if swag.IsZero(m.Tax) { // not required
+		return nil
+	}
+
+	if m.Tax != nil {
+		if err := m.Tax.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("tax")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("tax")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
 // ContextValidate validate this order based on the context it is used
 func (m *Order) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
 	var res []error
@@ -391,6 +443,10 @@ func (m *Order) ContextValidate(ctx context.Context, formats strfmt.Registry) er
 		res = append(res, err)
 	}
 
+	if err := m.contextValidatePayment(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.contextValidateProceeds(ctx, formats); err != nil {
 		res = append(res, err)
 	}
@@ -400,6 +456,10 @@ func (m *Order) ContextValidate(ctx context.Context, formats strfmt.Registry) er
 	}
 
 	if err := m.contextValidateSalesChannel(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateTax(ctx, formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -521,6 +581,22 @@ func (m *Order) contextValidatePackages(ctx context.Context, formats strfmt.Regi
 	return nil
 }
 
+func (m *Order) contextValidatePayment(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.Payment != nil {
+		if err := m.Payment.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("payment")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("payment")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
 func (m *Order) contextValidateProceeds(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.Proceeds != nil {
@@ -561,6 +637,22 @@ func (m *Order) contextValidateSalesChannel(ctx context.Context, formats strfmt.
 				return ve.ValidateName("salesChannel")
 			} else if ce, ok := err.(*errors.CompositeError); ok {
 				return ce.ValidateName("salesChannel")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *Order) contextValidateTax(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.Tax != nil {
+		if err := m.Tax.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("tax")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("tax")
 			}
 			return err
 		}

@@ -7,6 +7,7 @@ package orders_2026_01_01_models
 
 import (
 	"context"
+	"strconv"
 
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/strfmt"
@@ -18,6 +19,9 @@ import (
 //
 // swagger:model OrderItem
 type OrderItem struct {
+
+	// A list of order items associated with this item. For example, a value-add service purchased with the product.
+	AssociatedOrderItems []*AssociatedOrderItem `json:"associatedOrderItems"`
 
 	// The cancellation information of the order item.
 	Cancellation *ItemCancellation `json:"cancellation,omitempty"`
@@ -53,11 +57,18 @@ type OrderItem struct {
 	// The number of units of this item that the customer ordered.
 	// Required: true
 	QuantityOrdered *int64 `json:"quantityOrdered"`
+
+	// Tax-related information for this order item.
+	Tax *ItemTax `json:"tax,omitempty"`
 }
 
 // Validate validates this order item
 func (m *OrderItem) Validate(formats strfmt.Registry) error {
 	var res []error
+
+	if err := m.validateAssociatedOrderItems(formats); err != nil {
+		res = append(res, err)
+	}
 
 	if err := m.validateCancellation(formats); err != nil {
 		res = append(res, err)
@@ -95,9 +106,39 @@ func (m *OrderItem) Validate(formats strfmt.Registry) error {
 		res = append(res, err)
 	}
 
+	if err := m.validateTax(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if len(res) > 0 {
 		return errors.CompositeValidationError(res...)
 	}
+	return nil
+}
+
+func (m *OrderItem) validateAssociatedOrderItems(formats strfmt.Registry) error {
+	if swag.IsZero(m.AssociatedOrderItems) { // not required
+		return nil
+	}
+
+	for i := 0; i < len(m.AssociatedOrderItems); i++ {
+		if swag.IsZero(m.AssociatedOrderItems[i]) { // not required
+			continue
+		}
+
+		if m.AssociatedOrderItems[i] != nil {
+			if err := m.AssociatedOrderItems[i].Validate(formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("associatedOrderItems" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("associatedOrderItems" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
 	return nil
 }
 
@@ -253,9 +294,32 @@ func (m *OrderItem) validateQuantityOrdered(formats strfmt.Registry) error {
 	return nil
 }
 
+func (m *OrderItem) validateTax(formats strfmt.Registry) error {
+	if swag.IsZero(m.Tax) { // not required
+		return nil
+	}
+
+	if m.Tax != nil {
+		if err := m.Tax.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("tax")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("tax")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
 // ContextValidate validate this order item based on the context it is used
 func (m *OrderItem) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
 	var res []error
+
+	if err := m.contextValidateAssociatedOrderItems(ctx, formats); err != nil {
+		res = append(res, err)
+	}
 
 	if err := m.contextValidateCancellation(ctx, formats); err != nil {
 		res = append(res, err)
@@ -285,9 +349,33 @@ func (m *OrderItem) ContextValidate(ctx context.Context, formats strfmt.Registry
 		res = append(res, err)
 	}
 
+	if err := m.contextValidateTax(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
 	if len(res) > 0 {
 		return errors.CompositeValidationError(res...)
 	}
+	return nil
+}
+
+func (m *OrderItem) contextValidateAssociatedOrderItems(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(m.AssociatedOrderItems); i++ {
+
+		if m.AssociatedOrderItems[i] != nil {
+			if err := m.AssociatedOrderItems[i].ContextValidate(ctx, formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("associatedOrderItems" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("associatedOrderItems" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
 	return nil
 }
 
@@ -395,6 +483,22 @@ func (m *OrderItem) contextValidatePromotion(ctx context.Context, formats strfmt
 				return ve.ValidateName("promotion")
 			} else if ce, ok := err.(*errors.CompositeError); ok {
 				return ce.ValidateName("promotion")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *OrderItem) contextValidateTax(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.Tax != nil {
+		if err := m.Tax.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("tax")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("tax")
 			}
 			return err
 		}

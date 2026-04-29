@@ -128,6 +128,12 @@ const (
 
 	// EventCodeEVENT419 captures enum value "EVENT_419"
 	EventCodeEVENT419 EventCode = "EVENT_419"
+
+	// EventCodeEVENT801 captures enum value "EVENT_801"
+	EventCodeEVENT801 EventCode = "EVENT_801"
+
+	// EventCodeEVENT804 captures enum value "EVENT_804"
+	EventCodeEVENT804 EventCode = "EVENT_804"
 )
 
 // for schema
@@ -135,7 +141,7 @@ var eventCodeEnum []interface{}
 
 func init() {
 	var res []EventCode
-	if err := json.Unmarshal([]byte(`["EVENT_101","EVENT_102","EVENT_201","EVENT_202","EVENT_203","EVENT_204","EVENT_205","EVENT_206","EVENT_301","EVENT_302","EVENT_304","EVENT_306","EVENT_307","EVENT_308","EVENT_309","EVENT_401","EVENT_402","EVENT_403","EVENT_404","EVENT_405","EVENT_406","EVENT_407","EVENT_408","EVENT_409","EVENT_411","EVENT_412","EVENT_413","EVENT_414","EVENT_415","EVENT_416","EVENT_417","EVENT_418","EVENT_419"]`), &res); err != nil {
+	if err := json.Unmarshal([]byte(`["EVENT_101","EVENT_102","EVENT_201","EVENT_202","EVENT_203","EVENT_204","EVENT_205","EVENT_206","EVENT_301","EVENT_302","EVENT_304","EVENT_306","EVENT_307","EVENT_308","EVENT_309","EVENT_401","EVENT_402","EVENT_403","EVENT_404","EVENT_405","EVENT_406","EVENT_407","EVENT_408","EVENT_409","EVENT_411","EVENT_412","EVENT_413","EVENT_414","EVENT_415","EVENT_416","EVENT_417","EVENT_418","EVENT_419","EVENT_801","EVENT_804"]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {

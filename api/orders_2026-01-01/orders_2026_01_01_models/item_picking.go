@@ -18,7 +18,7 @@ import (
 // swagger:model ItemPicking
 type ItemPicking struct {
 
-	// Substitution preference for an order item when it becomes unavailable during fulfillment
+	// Substitution preference for an order item when it becomes unavailable during fulfillment.
 	SubstitutionPreference *ItemSubstitutionPreference `json:"substitutionPreference,omitempty"`
 }
 

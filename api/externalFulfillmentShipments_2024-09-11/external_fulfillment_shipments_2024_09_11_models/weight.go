@@ -26,7 +26,7 @@ type Weight struct {
 
 	// The unit of measurement of the weight.
 	// Required: true
-	// Enum: [G KG]
+	// Enum: [G KG LB OZ]
 	WeightUnit *string `json:"weightUnit"`
 }
 
@@ -76,7 +76,7 @@ var weightTypeWeightUnitPropEnum []interface{}
 
 func init() {
 	var res []string
-	if err := json.Unmarshal([]byte(`["G","KG"]`), &res); err != nil {
+	if err := json.Unmarshal([]byte(`["G","KG","LB","OZ"]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -91,6 +91,12 @@ const (
 
 	// WeightWeightUnitKG captures enum value "KG"
 	WeightWeightUnitKG string = "KG"
+
+	// WeightWeightUnitLB captures enum value "LB"
+	WeightWeightUnitLB string = "LB"
+
+	// WeightWeightUnitOZ captures enum value "OZ"
+	WeightWeightUnitOZ string = "OZ"
 )
 
 // prop value enum

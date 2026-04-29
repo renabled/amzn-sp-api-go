@@ -16,6 +16,7 @@ import (
 )
 
 // TimeWindow Time duration used to specify the interval of an event, such as pick up and delivery.
+// Example: {"endTime":1612494142,"handoverMethod":"DROPOFF","startTime":1612933142}
 //
 // swagger:model TimeWindow
 type TimeWindow struct {

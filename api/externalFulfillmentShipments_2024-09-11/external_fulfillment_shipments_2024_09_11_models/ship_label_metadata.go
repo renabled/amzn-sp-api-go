@@ -15,7 +15,7 @@ import (
 )
 
 // ShipLabelMetadata Metadata for a ship label document.
-// Example: {"carrierName":"ATSPL","pickupWindow":{"endTime":1612494142,"startTime":1612933142},"shipBy":"MARKETPLACE","shippingOptionId":"TEST_CASE_200_SHIPPING_OPTION_ID","timeSlot":{"endTime":1612494142,"handoverMethod":"PICKUP","startTime":1612933142},"trackingId":"343284200329"}
+// Example: {"carrierName":"ATSPL","handoverLocation":{"address":{"addressLine1":"123 Main St","city":"Seattle","countryCode":"US","geocodes":{"latitude":"47.6062","longitude":"-122.3321"},"postalCode":"98101","stateOrRegion":"WA"},"distance":{"distanceUnit":"MI","value":"3.5"},"mapUrl":"https://maps.example.com/location?lat=47.6062\u0026lng=-122.3321"},"pickupWindow":{"endTime":1612494142,"startTime":1612933142},"shipBy":"MARKETPLACE","shippingOptionId":"TEST_CASE_200_SHIPPING_OPTION_ID","timeSlot":{"endTime":1612494142,"handoverMethod":"DROPOFF","startTime":1612933142},"trackingId":"343284200329"}
 //
 // swagger:model ShipLabelMetadata
 type ShipLabelMetadata struct {
@@ -23,6 +23,9 @@ type ShipLabelMetadata struct {
 	// The name of the carrier.
 	// Required: true
 	CarrierName *string `json:"carrierName"`
+
+	// The drop-off location details. This value is populated when `handoverMethod` is `DROPOFF`.
+	HandoverLocation *HandoverLocation `json:"handoverLocation,omitempty"`
 
 	// The time window during which the package was picked up.
 	PickupWindow *TimeWindow `json:"pickupWindow,omitempty"`
@@ -43,6 +46,10 @@ func (m *ShipLabelMetadata) Validate(formats strfmt.Registry) error {
 	var res []error
 
 	if err := m.validateCarrierName(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateHandoverLocation(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -68,6 +75,25 @@ func (m *ShipLabelMetadata) validateCarrierName(formats strfmt.Registry) error {
 
 	if err := validate.Required("carrierName", "body", m.CarrierName); err != nil {
 		return err
+	}
+
+	return nil
+}
+
+func (m *ShipLabelMetadata) validateHandoverLocation(formats strfmt.Registry) error {
+	if swag.IsZero(m.HandoverLocation) { // not required
+		return nil
+	}
+
+	if m.HandoverLocation != nil {
+		if err := m.HandoverLocation.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("handoverLocation")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("handoverLocation")
+			}
+			return err
+		}
 	}
 
 	return nil
@@ -124,6 +150,10 @@ func (m *ShipLabelMetadata) validateTrackingID(formats strfmt.Registry) error {
 func (m *ShipLabelMetadata) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
 	var res []error
 
+	if err := m.contextValidateHandoverLocation(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.contextValidatePickupWindow(ctx, formats); err != nil {
 		res = append(res, err)
 	}
@@ -135,6 +165,22 @@ func (m *ShipLabelMetadata) ContextValidate(ctx context.Context, formats strfmt.
 	if len(res) > 0 {
 		return errors.CompositeValidationError(res...)
 	}
+	return nil
+}
+
+func (m *ShipLabelMetadata) contextValidateHandoverLocation(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.HandoverLocation != nil {
+		if err := m.HandoverLocation.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("handoverLocation")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("handoverLocation")
+			}
+			return err
+		}
+	}
+
 	return nil
 }
 

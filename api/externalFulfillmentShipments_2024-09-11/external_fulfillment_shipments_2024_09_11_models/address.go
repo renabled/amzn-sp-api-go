@@ -61,7 +61,10 @@ type Address struct {
 	// Max Length: 64
 	Email string `json:"email,omitempty"`
 
-	// The municiplaity where the person, business, or institution is located.
+	// The geographic coordinates of the address.
+	Geocodes *Geocodes `json:"geocodes,omitempty"`
+
+	// The municipality where the person, business, or institution is located.
 	Municipality string `json:"municipality,omitempty"`
 
 	// The name of the person, business or institution at that address.
@@ -117,6 +120,10 @@ func (m *Address) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validateEmail(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateGeocodes(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -268,6 +275,25 @@ func (m *Address) validateEmail(formats strfmt.Registry) error {
 	return nil
 }
 
+func (m *Address) validateGeocodes(formats strfmt.Registry) error {
+	if swag.IsZero(m.Geocodes) { // not required
+		return nil
+	}
+
+	if m.Geocodes != nil {
+		if err := m.Geocodes.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("geocodes")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("geocodes")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
 func (m *Address) validateName(formats strfmt.Registry) error {
 	if swag.IsZero(m.Name) { // not required
 		return nil
@@ -317,8 +343,33 @@ func (m *Address) validatePostalCode(formats strfmt.Registry) error {
 	return nil
 }
 
-// ContextValidate validates this address based on context it is used
+// ContextValidate validate this address based on the context it is used
 func (m *Address) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.contextValidateGeocodes(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *Address) contextValidateGeocodes(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.Geocodes != nil {
+		if err := m.Geocodes.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("geocodes")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("geocodes")
+			}
+			return err
+		}
+	}
+
 	return nil
 }
 

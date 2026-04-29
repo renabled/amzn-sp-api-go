@@ -39,6 +39,11 @@ type ShipmentInfo struct {
 	// This field contains details of the original shipment if `shipmentType` is either `REPLACEMENT` or `EXCHANGE`.
 	OriginalShipmentInfo *ReplacedShipmentInfo `json:"originalShipmentInfo,omitempty"`
 
+	// The payment method for the shipment.
+	// Example: PREPAID
+	// Enum: [CASH_ON_DELIVERY PREPAID]
+	PaymentMethod string `json:"paymentMethod,omitempty"`
+
 	// The priority of the order.
 	// Required: true
 	Priority *Priority `json:"priority"`
@@ -71,6 +76,10 @@ func (m *ShipmentInfo) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validateOriginalShipmentInfo(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validatePaymentMethod(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -142,6 +151,48 @@ func (m *ShipmentInfo) validateOriginalShipmentInfo(formats strfmt.Registry) err
 			}
 			return err
 		}
+	}
+
+	return nil
+}
+
+var shipmentInfoTypePaymentMethodPropEnum []interface{}
+
+func init() {
+	var res []string
+	if err := json.Unmarshal([]byte(`["CASH_ON_DELIVERY","PREPAID"]`), &res); err != nil {
+		panic(err)
+	}
+	for _, v := range res {
+		shipmentInfoTypePaymentMethodPropEnum = append(shipmentInfoTypePaymentMethodPropEnum, v)
+	}
+}
+
+const (
+
+	// ShipmentInfoPaymentMethodCASHONDELIVERY captures enum value "CASH_ON_DELIVERY"
+	ShipmentInfoPaymentMethodCASHONDELIVERY string = "CASH_ON_DELIVERY"
+
+	// ShipmentInfoPaymentMethodPREPAID captures enum value "PREPAID"
+	ShipmentInfoPaymentMethodPREPAID string = "PREPAID"
+)
+
+// prop value enum
+func (m *ShipmentInfo) validatePaymentMethodEnum(path, location string, value string) error {
+	if err := validate.EnumCase(path, location, value, shipmentInfoTypePaymentMethodPropEnum, true); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (m *ShipmentInfo) validatePaymentMethod(formats strfmt.Registry) error {
+	if swag.IsZero(m.PaymentMethod) { // not required
+		return nil
+	}
+
+	// value enum
+	if err := m.validatePaymentMethodEnum("paymentMethod", "body", m.PaymentMethod); err != nil {
+		return err
 	}
 
 	return nil

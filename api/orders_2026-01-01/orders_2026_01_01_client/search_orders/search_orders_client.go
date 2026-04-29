@@ -36,7 +36,15 @@ type ClientService interface {
 }
 
 /*
-SearchOrders Returns orders that are created or updated during the time period that you specify. You can filter the response for specific types of orders.
+	SearchOrders Returns orders created or updated during the time period that you specify. You can filter the response for specific types of orders.
+
+**Usage Plan:**
+
+| Rate (requests per second) | Burst |
+| ---- | ---- |
+| 0.0056 | 20 |
+
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that are applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may receive higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api) in the Selling Partner API documentation.
 */
 func (a *Client) SearchOrders(params *SearchOrdersParams, opts ...ClientOption) (*SearchOrdersOK, error) {
 	// TODO: Validate the params before sending

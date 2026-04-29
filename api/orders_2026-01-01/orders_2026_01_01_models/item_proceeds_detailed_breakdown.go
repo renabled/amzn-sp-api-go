@@ -13,7 +13,7 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// ItemProceedsDetailedBreakdown Further granular breakdown of the subtotal of the proceeds breakdown, only available for TAX and DISCOUNT proceeds type.
+// ItemProceedsDetailedBreakdown Further granular breakdown of the subtotal of the proceeds breakdown, only available for TAX and DISCOUNT proceeds types.
 //
 // swagger:model ItemProceedsDetailedBreakdown
 type ItemProceedsDetailedBreakdown struct {

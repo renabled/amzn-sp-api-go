@@ -13,7 +13,7 @@ import (
 
 // PreferredDeliveryCapability Special delivery capabilities available at the shipping address that may affect delivery options and methods.
 //
-// **Possible values:**
+// **Possible values**:
 // - `HAS_ACCESS_POINT` (Delivery location includes designated pickup or drop-off access points)
 // - `PALLET_ENABLED` (Address is equipped to receive large pallet deliveries)
 // - `PALLET_DISABLED` (Address cannot accommodate pallet delivery methods)
