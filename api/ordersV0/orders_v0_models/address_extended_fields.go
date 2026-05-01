@@ -8,17 +8,25 @@ package orders_v0_models
 import (
 	"context"
 
+	"github.com/go-openapi/errors"
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
 )
 
-// AddressExtendedFields The container for address extended fields (such as `street name` and `street number`). Currently only available with Brazil shipping addresses.
+// AddressExtendedFields Extended address fields for additional address components including the street name or number.
+//
+// Note: Available for grocery sellers and Brazil shipping addresses.
 //
 // swagger:model AddressExtendedFields
 type AddressExtendedFields struct {
 
 	// The floor number/unit number in the building/private house number.
 	Complement string `json:"Complement,omitempty"`
+
+	// Latitude and longitude coordinates for the shipping address using the WGS84 coordinate system.
+	//
+	// Note: Available for sellers that support geographic coordinates.
+	GeoCoordinates *GeoCoordinates `json:"GeoCoordinates,omitempty"`
 
 	// The neighborhood. This value is only used in some countries (such as Brazil).
 	Neighborhood string `json:"Neighborhood,omitempty"`
@@ -32,11 +40,64 @@ type AddressExtendedFields struct {
 
 // Validate validates this address extended fields
 func (m *AddressExtendedFields) Validate(formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.validateGeoCoordinates(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
 	return nil
 }
 
-// ContextValidate validates this address extended fields based on context it is used
+func (m *AddressExtendedFields) validateGeoCoordinates(formats strfmt.Registry) error {
+	if swag.IsZero(m.GeoCoordinates) { // not required
+		return nil
+	}
+
+	if m.GeoCoordinates != nil {
+		if err := m.GeoCoordinates.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("GeoCoordinates")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("GeoCoordinates")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+// ContextValidate validate this address extended fields based on the context it is used
 func (m *AddressExtendedFields) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.contextValidateGeoCoordinates(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *AddressExtendedFields) contextValidateGeoCoordinates(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.GeoCoordinates != nil {
+		if err := m.GeoCoordinates.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("GeoCoordinates")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("GeoCoordinates")
+			}
+			return err
+		}
+	}
+
 	return nil
 }
 

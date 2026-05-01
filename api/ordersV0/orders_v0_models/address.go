@@ -50,9 +50,9 @@ type Address struct {
 	// The district.
 	District string `json:"District,omitempty"`
 
-	// The container for address extended fields. For example, street name or street number.
+	// Extended address fields for additional address components including the street name or number.
 	//
-	// **Note**: This attribute is currently only available with Brazil shipping addresses.
+	// Note: Available for grocery sellers and Brazil shipping addresses.
 	ExtendedFields *AddressExtendedFields `json:"ExtendedFields,omitempty"`
 
 	// The municipality.

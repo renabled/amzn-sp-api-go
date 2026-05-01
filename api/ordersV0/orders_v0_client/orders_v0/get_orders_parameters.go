@@ -74,6 +74,12 @@ type GetOrdersParams struct {
 	*/
 	AmazonOrderIds []string
 
+	/* BuyerEmail.
+
+	   The email address of a buyer. Used to select orders that contain the specified email address.
+	*/
+	BuyerEmail *string
+
 	/* CreatedAfter.
 
 	     Use this date to select orders created after (or at) a specified time. Only orders placed after the specified time are returned. The date must be in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) format.
@@ -227,7 +233,7 @@ type GetOrdersParams struct {
 
 	/* SellerOrderID.
 
-	   An order identifier that is specified by the seller. Used to select only the orders that match the order identifier. If `SellerOrderId` is specified, then `FulfillmentChannels`, `OrderStatuses`, `PaymentMethod`, `LastUpdatedAfter`, and `LastUpdatedBefore` cannot be specified.
+	   An order identifier that is specified by the seller. Used to select only the orders that match the order identifier. If `SellerOrderId` is specified, then `FulfillmentChannels`, `OrderStatuses`, `PaymentMethod`, `LastUpdatedAfter`, `LastUpdatedBefore`, and `BuyerEmail` cannot be specified.
 	*/
 	SellerOrderID *string
 
@@ -310,6 +316,17 @@ func (o *GetOrdersParams) WithAmazonOrderIds(amazonOrderIds []string) *GetOrders
 // SetAmazonOrderIds adds the amazonOrderIds to the get orders params
 func (o *GetOrdersParams) SetAmazonOrderIds(amazonOrderIds []string) {
 	o.AmazonOrderIds = amazonOrderIds
+}
+
+// WithBuyerEmail adds the buyerEmail to the get orders params
+func (o *GetOrdersParams) WithBuyerEmail(buyerEmail *string) *GetOrdersParams {
+	o.SetBuyerEmail(buyerEmail)
+	return o
+}
+
+// SetBuyerEmail adds the buyerEmail to the get orders params
+func (o *GetOrdersParams) SetBuyerEmail(buyerEmail *string) {
+	o.BuyerEmail = buyerEmail
 }
 
 // WithCreatedAfter adds the createdAfter to the get orders params
@@ -554,6 +571,23 @@ func (o *GetOrdersParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Reg
 		// query array param AmazonOrderIds
 		if err := r.SetQueryParam("AmazonOrderIds", joinedAmazonOrderIds...); err != nil {
 			return err
+		}
+	}
+
+	if o.BuyerEmail != nil {
+
+		// query param BuyerEmail
+		var qrBuyerEmail string
+
+		if o.BuyerEmail != nil {
+			qrBuyerEmail = *o.BuyerEmail
+		}
+		qBuyerEmail := qrBuyerEmail
+		if qBuyerEmail != "" {
+
+			if err := r.SetQueryParam("BuyerEmail", qBuyerEmail); err != nil {
+				return err
+			}
 		}
 	}
 
