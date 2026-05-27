@@ -423,14 +423,9 @@ func NewSearchDefinitionsProductTypesRequestEntityTooLarge() *SearchDefinitionsP
 /*
 SearchDefinitionsProductTypesRequestEntityTooLarge describes a response with status code 413, with default header values.
 
-The request size exceeded the maximum accepted size.
+The request exceeds the maximum size.
 */
 type SearchDefinitionsProductTypesRequestEntityTooLarge struct {
-
-	/* Your rate limit (requests per second) for this operation.
-	_Note:_ For this status code, the rate limit header is deprecated and no longer returned.
-	*/
-	XAmznRateLimitLimit string
 
 	/* Unique request reference identifier.
 	 */
@@ -478,13 +473,6 @@ func (o *SearchDefinitionsProductTypesRequestEntityTooLarge) GetPayload() *defin
 
 func (o *SearchDefinitionsProductTypesRequestEntityTooLarge) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	// hydrates response header x-amzn-RateLimit-Limit
-	hdrXAmznRateLimitLimit := response.GetHeader("x-amzn-RateLimit-Limit")
-
-	if hdrXAmznRateLimitLimit != "" {
-		o.XAmznRateLimitLimit = hdrXAmznRateLimitLimit
-	}
-
 	// hydrates response header x-amzn-RequestId
 	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")
 
@@ -513,11 +501,6 @@ SearchDefinitionsProductTypesUnsupportedMediaType describes a response with stat
 The request payload is in an unsupported format.
 */
 type SearchDefinitionsProductTypesUnsupportedMediaType struct {
-
-	/* Your rate limit (requests per second) for this operation.
-	_Note:_ For this status code, the rate limit header is deprecated and no longer returned.
-	*/
-	XAmznRateLimitLimit string
 
 	/* Unique request reference identifier.
 	 */
@@ -564,13 +547,6 @@ func (o *SearchDefinitionsProductTypesUnsupportedMediaType) GetPayload() *defini
 }
 
 func (o *SearchDefinitionsProductTypesUnsupportedMediaType) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
-
-	// hydrates response header x-amzn-RateLimit-Limit
-	hdrXAmznRateLimitLimit := response.GetHeader("x-amzn-RateLimit-Limit")
-
-	if hdrXAmznRateLimitLimit != "" {
-		o.XAmznRateLimitLimit = hdrXAmznRateLimitLimit
-	}
 
 	// hydrates response header x-amzn-RequestId
 	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")
@@ -676,11 +652,6 @@ An unexpected condition occurred that prevented the server from fulfilling the r
 */
 type SearchDefinitionsProductTypesInternalServerError struct {
 
-	/* Your rate limit (requests per second) for this operation.
-	_Note:_ For this status code, the rate limit header is deprecated and no longer returned.
-	*/
-	XAmznRateLimitLimit string
-
 	/* Unique request reference identifier.
 	 */
 	XAmznRequestID string
@@ -727,13 +698,6 @@ func (o *SearchDefinitionsProductTypesInternalServerError) GetPayload() *definit
 
 func (o *SearchDefinitionsProductTypesInternalServerError) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	// hydrates response header x-amzn-RateLimit-Limit
-	hdrXAmznRateLimitLimit := response.GetHeader("x-amzn-RateLimit-Limit")
-
-	if hdrXAmznRateLimitLimit != "" {
-		o.XAmznRateLimitLimit = hdrXAmznRateLimitLimit
-	}
-
 	// hydrates response header x-amzn-RequestId
 	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")
 
@@ -762,11 +726,6 @@ SearchDefinitionsProductTypesServiceUnavailable describes a response with status
 Temporary overloading or maintenance of the server.
 */
 type SearchDefinitionsProductTypesServiceUnavailable struct {
-
-	/* Your rate limit (requests per second) for this operation.
-	_Note:_ For this status code, the rate limit header is deprecated and no longer returned.
-	*/
-	XAmznRateLimitLimit string
 
 	/* Unique request reference identifier.
 	 */
@@ -813,13 +772,6 @@ func (o *SearchDefinitionsProductTypesServiceUnavailable) GetPayload() *definiti
 }
 
 func (o *SearchDefinitionsProductTypesServiceUnavailable) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
-
-	// hydrates response header x-amzn-RateLimit-Limit
-	hdrXAmznRateLimitLimit := response.GetHeader("x-amzn-RateLimit-Limit")
-
-	if hdrXAmznRateLimitLimit != "" {
-		o.XAmznRateLimitLimit = hdrXAmznRateLimitLimit
-	}
 
 	// hydrates response header x-amzn-RequestId
 	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")

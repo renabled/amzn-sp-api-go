@@ -23,6 +23,9 @@ type GetSellingPartnerMetricsRequest struct {
 	// aggregation frequency
 	AggregationFrequency AggregationFrequency `json:"aggregationFrequency,omitempty"`
 
+	// Use these parameters to filter results. Any result must match all provided parameters. For parameters that accept multiple values (arrays), the API returns results that match at least one value in the array.
+	Filters *GetSellingPartnerMetricsRequestFilters `json:"filters,omitempty"`
+
 	// The marketplace identifier. The supported marketplaces for both sellers and vendors are US, CA, ES, UK, FR, IT, IN, DE, and JP. The supported marketplaces for vendors only are BR, AU, MX, AE, and NL. Refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids) to find the identifier for the marketplace.
 	// Required: true
 	MarketplaceID *MarketplaceID `json:"marketplaceId"`
@@ -50,6 +53,10 @@ func (m *GetSellingPartnerMetricsRequest) Validate(formats strfmt.Registry) erro
 	var res []error
 
 	if err := m.validateAggregationFrequency(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateFilters(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -91,6 +98,25 @@ func (m *GetSellingPartnerMetricsRequest) validateAggregationFrequency(formats s
 			return ce.ValidateName("aggregationFrequency")
 		}
 		return err
+	}
+
+	return nil
+}
+
+func (m *GetSellingPartnerMetricsRequest) validateFilters(formats strfmt.Registry) error {
+	if swag.IsZero(m.Filters) { // not required
+		return nil
+	}
+
+	if m.Filters != nil {
+		if err := m.Filters.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("filters")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("filters")
+			}
+			return err
+		}
 	}
 
 	return nil
@@ -221,6 +247,10 @@ func (m *GetSellingPartnerMetricsRequest) ContextValidate(ctx context.Context, f
 		res = append(res, err)
 	}
 
+	if err := m.contextValidateFilters(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.contextValidateMarketplaceID(ctx, formats); err != nil {
 		res = append(res, err)
 	}
@@ -256,6 +286,22 @@ func (m *GetSellingPartnerMetricsRequest) contextValidateAggregationFrequency(ct
 			return ce.ValidateName("aggregationFrequency")
 		}
 		return err
+	}
+
+	return nil
+}
+
+func (m *GetSellingPartnerMetricsRequest) contextValidateFilters(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.Filters != nil {
+		if err := m.Filters.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("filters")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("filters")
+			}
+			return err
+		}
 	}
 
 	return nil

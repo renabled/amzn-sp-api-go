@@ -433,11 +433,6 @@ The resource specified conflicts with the current state.
 */
 type DeleteSubscriptionByIDConflict struct {
 
-	/* Your rate limit (requests per second) for this operation.
-	_Note:_ For this status code, the rate limit header is deprecated and no longer returned.
-	*/
-	XAmznRateLimitLimit string
-
 	/* Unique request reference identifier.
 	 */
 	XAmznRequestID string
@@ -484,13 +479,6 @@ func (o *DeleteSubscriptionByIDConflict) GetPayload() *notifications_models.Dele
 
 func (o *DeleteSubscriptionByIDConflict) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	// hydrates response header x-amzn-RateLimit-Limit
-	hdrXAmznRateLimitLimit := response.GetHeader("x-amzn-RateLimit-Limit")
-
-	if hdrXAmznRateLimitLimit != "" {
-		o.XAmznRateLimitLimit = hdrXAmznRateLimitLimit
-	}
-
 	// hydrates response header x-amzn-RequestId
 	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")
 
@@ -519,11 +507,6 @@ DeleteSubscriptionByIDRequestEntityTooLarge describes a response with status cod
 The request size exceeded the maximum accepted size.
 */
 type DeleteSubscriptionByIDRequestEntityTooLarge struct {
-
-	/* Your rate limit (requests per second) for this operation.
-	_Note:_ For this status code, the rate limit header is deprecated and no longer returned.
-	*/
-	XAmznRateLimitLimit string
 
 	/* Unique request reference identifier.
 	 */
@@ -571,13 +554,6 @@ func (o *DeleteSubscriptionByIDRequestEntityTooLarge) GetPayload() *notification
 
 func (o *DeleteSubscriptionByIDRequestEntityTooLarge) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	// hydrates response header x-amzn-RateLimit-Limit
-	hdrXAmznRateLimitLimit := response.GetHeader("x-amzn-RateLimit-Limit")
-
-	if hdrXAmznRateLimitLimit != "" {
-		o.XAmznRateLimitLimit = hdrXAmznRateLimitLimit
-	}
-
 	// hydrates response header x-amzn-RequestId
 	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")
 
@@ -606,11 +582,6 @@ DeleteSubscriptionByIDUnsupportedMediaType describes a response with status code
 The request payload is in an unsupported format.
 */
 type DeleteSubscriptionByIDUnsupportedMediaType struct {
-
-	/* Your rate limit (requests per second) for this operation.
-	_Note:_ For this status code, the rate limit header is deprecated and no longer returned.
-	*/
-	XAmznRateLimitLimit string
 
 	/* Unique request reference identifier.
 	 */
@@ -658,13 +629,6 @@ func (o *DeleteSubscriptionByIDUnsupportedMediaType) GetPayload() *notifications
 
 func (o *DeleteSubscriptionByIDUnsupportedMediaType) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	// hydrates response header x-amzn-RateLimit-Limit
-	hdrXAmznRateLimitLimit := response.GetHeader("x-amzn-RateLimit-Limit")
-
-	if hdrXAmznRateLimitLimit != "" {
-		o.XAmznRateLimitLimit = hdrXAmznRateLimitLimit
-	}
-
 	// hydrates response header x-amzn-RequestId
 	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")
 
@@ -693,10 +657,6 @@ DeleteSubscriptionByIDTooManyRequests describes a response with status code 429,
 The frequency of requests was greater than allowed.
 */
 type DeleteSubscriptionByIDTooManyRequests struct {
-
-	/* Your rate limit (requests per second) for this operation.
-	 */
-	XAmznRateLimitLimit string
 
 	/* Unique request reference identifier.
 	 */
@@ -744,13 +704,6 @@ func (o *DeleteSubscriptionByIDTooManyRequests) GetPayload() *notifications_mode
 
 func (o *DeleteSubscriptionByIDTooManyRequests) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	// hydrates response header x-amzn-RateLimit-Limit
-	hdrXAmznRateLimitLimit := response.GetHeader("x-amzn-RateLimit-Limit")
-
-	if hdrXAmznRateLimitLimit != "" {
-		o.XAmznRateLimitLimit = hdrXAmznRateLimitLimit
-	}
-
 	// hydrates response header x-amzn-RequestId
 	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")
 
@@ -779,11 +732,6 @@ DeleteSubscriptionByIDInternalServerError describes a response with status code 
 An unexpected condition occurred that prevented the server from fulfilling the request.
 */
 type DeleteSubscriptionByIDInternalServerError struct {
-
-	/* Your rate limit (requests per second) for this operation.
-	_Note:_ For this status code, the rate limit header is deprecated and no longer returned.
-	*/
-	XAmznRateLimitLimit string
 
 	/* Unique request reference identifier.
 	 */
@@ -831,13 +779,6 @@ func (o *DeleteSubscriptionByIDInternalServerError) GetPayload() *notifications_
 
 func (o *DeleteSubscriptionByIDInternalServerError) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	// hydrates response header x-amzn-RateLimit-Limit
-	hdrXAmznRateLimitLimit := response.GetHeader("x-amzn-RateLimit-Limit")
-
-	if hdrXAmznRateLimitLimit != "" {
-		o.XAmznRateLimitLimit = hdrXAmznRateLimitLimit
-	}
-
 	// hydrates response header x-amzn-RequestId
 	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")
 
@@ -866,11 +807,6 @@ DeleteSubscriptionByIDServiceUnavailable describes a response with status code 5
 Temporary overloading or maintenance of the server.
 */
 type DeleteSubscriptionByIDServiceUnavailable struct {
-
-	/* Your rate limit (requests per second) for this operation.
-	_Note:_ For this status code, the rate limit header is deprecated and no longer returned.
-	*/
-	XAmznRateLimitLimit string
 
 	/* Unique request reference identifier.
 	 */
@@ -917,13 +853,6 @@ func (o *DeleteSubscriptionByIDServiceUnavailable) GetPayload() *notifications_m
 }
 
 func (o *DeleteSubscriptionByIDServiceUnavailable) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
-
-	// hydrates response header x-amzn-RateLimit-Limit
-	hdrXAmznRateLimitLimit := response.GetHeader("x-amzn-RateLimit-Limit")
-
-	if hdrXAmznRateLimitLimit != "" {
-		o.XAmznRateLimitLimit = hdrXAmznRateLimitLimit
-	}
 
 	// hydrates response header x-amzn-RequestId
 	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")

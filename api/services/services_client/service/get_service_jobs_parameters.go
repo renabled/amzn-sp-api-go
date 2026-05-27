@@ -112,6 +112,12 @@ type GetServiceJobsParams struct {
 	*/
 	PageToken *string
 
+	/* ProductOrderIds.
+
+	   A list of up to 20 associated product order IDs. You can use these IDs to query service jobs.
+	*/
+	ProductOrderIds []string
+
 	/* RequiredSkills.
 
 	   A defined set of related knowledge, skills, experience, tools, materials, and work processes common to service delivery for a set of products and/or service scenarios. Max values supported is 20.
@@ -159,6 +165,12 @@ type GetServiceJobsParams struct {
 	   List of Amazon-defined identifiers for the region scope. Max values supported is 50.
 	*/
 	StoreIds []string
+
+	/* TrackingIds.
+
+	   A list of up to 20 associated product tracking IDs. You can use these IDs to query service jobs.
+	*/
+	TrackingIds []string
 
 	timeout    time.Duration
 	Context    context.Context
@@ -312,6 +324,17 @@ func (o *GetServiceJobsParams) SetPageToken(pageToken *string) {
 	o.PageToken = pageToken
 }
 
+// WithProductOrderIds adds the productOrderIds to the get service jobs params
+func (o *GetServiceJobsParams) WithProductOrderIds(productOrderIds []string) *GetServiceJobsParams {
+	o.SetProductOrderIds(productOrderIds)
+	return o
+}
+
+// SetProductOrderIds adds the productOrderIds to the get service jobs params
+func (o *GetServiceJobsParams) SetProductOrderIds(productOrderIds []string) {
+	o.ProductOrderIds = productOrderIds
+}
+
 // WithRequiredSkills adds the requiredSkills to the get service jobs params
 func (o *GetServiceJobsParams) WithRequiredSkills(requiredSkills []string) *GetServiceJobsParams {
 	o.SetRequiredSkills(requiredSkills)
@@ -398,6 +421,17 @@ func (o *GetServiceJobsParams) WithStoreIds(storeIds []string) *GetServiceJobsPa
 // SetStoreIds adds the storeIds to the get service jobs params
 func (o *GetServiceJobsParams) SetStoreIds(storeIds []string) {
 	o.StoreIds = storeIds
+}
+
+// WithTrackingIds adds the trackingIds to the get service jobs params
+func (o *GetServiceJobsParams) WithTrackingIds(trackingIds []string) *GetServiceJobsParams {
+	o.SetTrackingIds(trackingIds)
+	return o
+}
+
+// SetTrackingIds adds the trackingIds to the get service jobs params
+func (o *GetServiceJobsParams) SetTrackingIds(trackingIds []string) {
+	o.TrackingIds = trackingIds
 }
 
 // WriteToRequest writes these params to a swagger request
@@ -532,6 +566,17 @@ func (o *GetServiceJobsParams) WriteToRequest(r runtime.ClientRequest, reg strfm
 		}
 	}
 
+	if o.ProductOrderIds != nil {
+
+		// binding items for productOrderIds
+		joinedProductOrderIds := o.bindParamProductOrderIds(reg)
+
+		// query array param productOrderIds
+		if err := r.SetQueryParam("productOrderIds", joinedProductOrderIds...); err != nil {
+			return err
+		}
+	}
+
 	if o.RequiredSkills != nil {
 
 		// binding items for requiredSkills
@@ -644,6 +689,17 @@ func (o *GetServiceJobsParams) WriteToRequest(r runtime.ClientRequest, reg strfm
 		}
 	}
 
+	if o.TrackingIds != nil {
+
+		// binding items for trackingIds
+		joinedTrackingIds := o.bindParamTrackingIds(reg)
+
+		// query array param trackingIds
+		if err := r.SetQueryParam("trackingIds", joinedTrackingIds...); err != nil {
+			return err
+		}
+	}
+
 	if len(res) > 0 {
 		return errors.CompositeValidationError(res...)
 	}
@@ -682,6 +738,23 @@ func (o *GetServiceJobsParams) bindParamMarketplaceIds(formats strfmt.Registry) 
 	marketplaceIdsIS := swag.JoinByFormat(marketplaceIdsIC, "")
 
 	return marketplaceIdsIS
+}
+
+// bindParamGetServiceJobs binds the parameter productOrderIds
+func (o *GetServiceJobsParams) bindParamProductOrderIds(formats strfmt.Registry) []string {
+	productOrderIdsIR := o.ProductOrderIds
+
+	var productOrderIdsIC []string
+	for _, productOrderIdsIIR := range productOrderIdsIR { // explode []string
+
+		productOrderIdsIIV := productOrderIdsIIR // string as string
+		productOrderIdsIC = append(productOrderIdsIC, productOrderIdsIIV)
+	}
+
+	// items.CollectionFormat: ""
+	productOrderIdsIS := swag.JoinByFormat(productOrderIdsIC, "")
+
+	return productOrderIdsIS
 }
 
 // bindParamGetServiceJobs binds the parameter requiredSkills
@@ -750,4 +823,21 @@ func (o *GetServiceJobsParams) bindParamStoreIds(formats strfmt.Registry) []stri
 	storeIdsIS := swag.JoinByFormat(storeIdsIC, "")
 
 	return storeIdsIS
+}
+
+// bindParamGetServiceJobs binds the parameter trackingIds
+func (o *GetServiceJobsParams) bindParamTrackingIds(formats strfmt.Registry) []string {
+	trackingIdsIR := o.TrackingIds
+
+	var trackingIdsIC []string
+	for _, trackingIdsIIR := range trackingIdsIR { // explode []string
+
+		trackingIdsIIV := trackingIdsIIR // string as string
+		trackingIdsIC = append(trackingIdsIC, trackingIdsIIV)
+	}
+
+	// items.CollectionFormat: ""
+	trackingIdsIS := swag.JoinByFormat(trackingIdsIC, "")
+
+	return trackingIdsIS
 }

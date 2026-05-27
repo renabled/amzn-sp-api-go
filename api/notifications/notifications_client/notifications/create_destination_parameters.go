@@ -63,7 +63,10 @@ CreateDestinationParams contains all the parameters to send to the API endpoint
 */
 type CreateDestinationParams struct {
 
-	// Body.
+	/* Body.
+
+	   The request schema for the `createDestination` operation.
+	*/
 	Body *notifications_models.CreateDestinationRequest
 
 	timeout    time.Duration

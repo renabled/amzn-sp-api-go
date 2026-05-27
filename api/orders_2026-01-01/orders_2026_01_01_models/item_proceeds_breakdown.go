@@ -12,6 +12,7 @@ import (
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
+	"github.com/go-openapi/validate"
 )
 
 // ItemProceedsBreakdown Detailed proceeds breakdown for a specific order item.
@@ -23,12 +24,14 @@ type ItemProceedsBreakdown struct {
 	DetailedBreakdowns []*ItemProceedsDetailedBreakdown `json:"detailedBreakdowns"`
 
 	// Monetary amount for the proceeds breakdown.
-	Subtotal *Money `json:"subtotal,omitempty"`
+	// Required: true
+	Subtotal *Money `json:"subtotal"`
 
 	// Category classification of the proceeds breakdown.
 	//
 	// **Possible values**: `ITEM`, `SHIPPING`, `GIFT_WRAP`, `COD_FEE`, `OTHER`, `TAX`, `DISCOUNT`
-	Type string `json:"type,omitempty"`
+	// Required: true
+	Type *string `json:"type"`
 }
 
 // Validate validates this item proceeds breakdown
@@ -40,6 +43,10 @@ func (m *ItemProceedsBreakdown) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validateSubtotal(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateType(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -76,8 +83,9 @@ func (m *ItemProceedsBreakdown) validateDetailedBreakdowns(formats strfmt.Regist
 }
 
 func (m *ItemProceedsBreakdown) validateSubtotal(formats strfmt.Registry) error {
-	if swag.IsZero(m.Subtotal) { // not required
-		return nil
+
+	if err := validate.Required("subtotal", "body", m.Subtotal); err != nil {
+		return err
 	}
 
 	if m.Subtotal != nil {
@@ -89,6 +97,15 @@ func (m *ItemProceedsBreakdown) validateSubtotal(formats strfmt.Registry) error 
 			}
 			return err
 		}
+	}
+
+	return nil
+}
+
+func (m *ItemProceedsBreakdown) validateType(formats strfmt.Registry) error {
+
+	if err := validate.Required("type", "body", m.Type); err != nil {
+		return err
 	}
 
 	return nil

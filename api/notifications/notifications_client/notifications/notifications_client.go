@@ -46,11 +46,13 @@ type ClientService interface {
 
 	GetSubscriptionByID(params *GetSubscriptionByIDParams, opts ...ClientOption) (*GetSubscriptionByIDOK, error)
 
+	SendTestNotification(params *SendTestNotificationParams, opts ...ClientOption) (*SendTestNotificationOK, error)
+
 	SetTransport(transport runtime.ClientTransport)
 }
 
 /*
-	CreateDestination Creates a destination resource to receive notifications. The `createDestination` operation is grantless. For more information, refer to [Grantless operations](https://developer-docs.amazon.com/sp-api/docs/grantless-operations).
+	CreateDestination Creates a destination resource to receive notifications. The `createDestination` operation is grantless. For more information, refer to [Grantless Operations](https://developer-docs.amazon.com/sp-api/docs/grantless-operations) in the Selling Partner API Developer Guide.
 
 **Usage Plan:**
 
@@ -58,7 +60,7 @@ type ClientService interface {
 | ---- | ---- |
 | 1 | 5 |
 
-The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may observe higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+The `x-amzn-RateLimit-Limit` response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 */
 func (a *Client) CreateDestination(params *CreateDestinationParams, opts ...ClientOption) (*CreateDestinationOK, error) {
 	// TODO: Validate the params before sending
@@ -96,7 +98,7 @@ func (a *Client) CreateDestination(params *CreateDestinationParams, opts ...Clie
 }
 
 /*
-	CreateSubscription Creates a subscription for the specified notification type to be delivered to the specified destination. Before you can subscribe, you must first create the destination by calling the `createDestination` operation. In cases where the specified notification type supports multiple payload versions, you can utilize this API to subscribe to a different payload version if you already have an existing subscription for a different payload version.
+	CreateSubscription Creates a subscription for the specified notification type to be delivered to the specified destination. Before you can subscribe, you must first create the destination by calling the `createDestination` operation. If the notification type that you specify supports multiple payload versions, you can use this operation to subscribe to a different payload version if you already have an existing subscription for a different payload version.
 
 **Usage Plan:**
 
@@ -104,7 +106,7 @@ func (a *Client) CreateDestination(params *CreateDestinationParams, opts ...Clie
 | ---- | ---- |
 | 1 | 5 |
 
-The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may observe higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+The `x-amzn-RateLimit-Limit` response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 */
 func (a *Client) CreateSubscription(params *CreateSubscriptionParams, opts ...ClientOption) (*CreateSubscriptionOK, error) {
 	// TODO: Validate the params before sending
@@ -142,7 +144,7 @@ func (a *Client) CreateSubscription(params *CreateSubscriptionParams, opts ...Cl
 }
 
 /*
-	DeleteDestination Deletes the destination that you specify. The `deleteDestination` operation is grantless. For more information, refer to [Grantless operations](https://developer-docs.amazon.com/sp-api/docs/grantless-operations).
+	DeleteDestination Deletes the destination that you specify. The `deleteDestination` operation is grantless. For more information, refer to [Grantless Operations](https://developer-docs.amazon.com/sp-api/docs/grantless-operations) in the Selling Partner API Developer Guide.
 
 **Usage Plan:**
 
@@ -150,7 +152,7 @@ func (a *Client) CreateSubscription(params *CreateSubscriptionParams, opts ...Cl
 | ---- | ---- |
 | 1 | 5 |
 
-The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may observe higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+The `x-amzn-RateLimit-Limit` response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 */
 func (a *Client) DeleteDestination(params *DeleteDestinationParams, opts ...ClientOption) (*DeleteDestinationOK, error) {
 	// TODO: Validate the params before sending
@@ -188,7 +190,7 @@ func (a *Client) DeleteDestination(params *DeleteDestinationParams, opts ...Clie
 }
 
 /*
-	DeleteSubscriptionByID Deletes the subscription indicated by the subscription identifier and notification type that you specify. The subscription identifier can be for any subscription associated with your application. After you successfully call this operation, notifications will stop being sent for the associated subscription. The `deleteSubscriptionById` operation is grantless. For more information, refer to [Grantless operations](https://developer-docs.amazon.com/sp-api/docs/grantless-operations).
+	DeleteSubscriptionByID Deletes the subscription indicated by the subscription identifier and notification type that you specify. The subscription identifier can be for any subscription associated with your application. After you successfully call this operation, notifications will stop being sent for the associated subscription. The `deleteSubscriptionById` operation is grantless. For more information, refer to [Grantless Operations](https://developer-docs.amazon.com/sp-api/docs/grantless-operations) in the Selling Partner API Developer Guide.
 
 **Usage Plan:**
 
@@ -196,7 +198,7 @@ func (a *Client) DeleteDestination(params *DeleteDestinationParams, opts ...Clie
 | ---- | ---- |
 | 1 | 5 |
 
-The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may observe higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+The `x-amzn-RateLimit-Limit` response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 */
 func (a *Client) DeleteSubscriptionByID(params *DeleteSubscriptionByIDParams, opts ...ClientOption) (*DeleteSubscriptionByIDOK, error) {
 	// TODO: Validate the params before sending
@@ -234,7 +236,7 @@ func (a *Client) DeleteSubscriptionByID(params *DeleteSubscriptionByIDParams, op
 }
 
 /*
-	GetDestination Returns information about the destination that you specify. The `getDestination` operation is grantless. For more information, refer to [Grantless operations](https://developer-docs.amazon.com/sp-api/docs/grantless-operations).
+	GetDestination Returns information about the destination that you specify. The `getDestination` operation is grantless. For more information, refer to [Grantless Operations](https://developer-docs.amazon.com/sp-api/docs/grantless-operations) in the Selling Partner API Developer Guide.
 
 **Usage Plan:**
 
@@ -242,7 +244,7 @@ func (a *Client) DeleteSubscriptionByID(params *DeleteSubscriptionByIDParams, op
 | ---- | ---- |
 | 1 | 5 |
 
-The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may observe higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+The `x-amzn-RateLimit-Limit` response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 */
 func (a *Client) GetDestination(params *GetDestinationParams, opts ...ClientOption) (*GetDestinationOK, error) {
 	// TODO: Validate the params before sending
@@ -280,7 +282,7 @@ func (a *Client) GetDestination(params *GetDestinationParams, opts ...ClientOpti
 }
 
 /*
-	GetDestinations Returns information about all destinations. The `getDestinations` operation is grantless. For more information, refer to [Grantless operations](https://developer-docs.amazon.com/sp-api/docs/grantless-operations).
+	GetDestinations Returns information about all destinations. The `getDestinations` operation is grantless. For more information, refer to [Grantless Operations](https://developer-docs.amazon.com/sp-api/docs/grantless-operations) in the Selling Partner API Developer Guide.
 
 **Usage Plan:**
 
@@ -288,7 +290,7 @@ func (a *Client) GetDestination(params *GetDestinationParams, opts ...ClientOpti
 | ---- | ---- |
 | 1 | 5 |
 
-The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may observe higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+The `x-amzn-RateLimit-Limit` response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 */
 func (a *Client) GetDestinations(params *GetDestinationsParams, opts ...ClientOption) (*GetDestinationsOK, error) {
 	// TODO: Validate the params before sending
@@ -326,7 +328,7 @@ func (a *Client) GetDestinations(params *GetDestinationsParams, opts ...ClientOp
 }
 
 /*
-	GetSubscription Returns information about subscription of the specified notification type and payload version. `payloadVersion` is an optional parameter. When `payloadVersion` is not provided, it will return latest payload version subscription's information. You can use this API to get subscription information when you do not have a subscription identifier.
+	GetSubscription Returns information about subscription of the specified notification type and payload version. `payloadVersion` is an optional parameter. When you do not provide `payloadVersion`, the operation returns the latest payload version subscription's information. You can use this API to get subscription information when you do not have a subscription identifier.
 
 **Usage Plan:**
 
@@ -334,7 +336,7 @@ func (a *Client) GetDestinations(params *GetDestinationsParams, opts ...ClientOp
 | ---- | ---- |
 | 1 | 5 |
 
-The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may observe higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+The `x-amzn-RateLimit-Limit` response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 */
 func (a *Client) GetSubscription(params *GetSubscriptionParams, opts ...ClientOption) (*GetSubscriptionOK, error) {
 	// TODO: Validate the params before sending
@@ -372,7 +374,7 @@ func (a *Client) GetSubscription(params *GetSubscriptionParams, opts ...ClientOp
 }
 
 /*
-	GetSubscriptionByID Returns information about a subscription for the specified notification type. The `getSubscriptionById` operation is grantless. For more information, refer to [Grantless operations](https://developer-docs.amazon.com/sp-api/docs/grantless-operations).
+	GetSubscriptionByID Returns information about a subscription for the specified notification type. The `getSubscriptionById` operation is grantless. For more information, refer to [Grantless Operations](https://developer-docs.amazon.com/sp-api/docs/grantless-operations) in the Selling Partner API Developer Guide.
 
 **Usage Plan:**
 
@@ -380,7 +382,7 @@ func (a *Client) GetSubscription(params *GetSubscriptionParams, opts ...ClientOp
 | ---- | ---- |
 | 1 | 5 |
 
-The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may observe higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+The `x-amzn-RateLimit-Limit` response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 */
 func (a *Client) GetSubscriptionByID(params *GetSubscriptionByIDParams, opts ...ClientOption) (*GetSubscriptionByIDOK, error) {
 	// TODO: Validate the params before sending
@@ -414,6 +416,52 @@ func (a *Client) GetSubscriptionByID(params *GetSubscriptionByIDParams, opts ...
 	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
 	msg := fmt.Sprintf("unexpected success response for getSubscriptionById: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+	SendTestNotification Sends a mock notification of the specified type to your SQS. The `sendTestNotification` API is grantless. For more information, see "Grantless operations" in the Selling Partner API Developer Guide.
+
+**Usage Plan:**
+
+| Rate (requests per second) | Burst |
+| ---- | ---- |
+| 1 | 5 |
+
+For more information, see "Usage Plans and Rate Limits" in the Selling Partner API documentation. This is a sandbox-only operation and must be directed to a sandbox endpoint. Refer to [Selling Partner API sandbox](https://developer-docs.amazon.com/sp-api/docs/the-selling-partner-api-sandbox) for more information.
+*/
+func (a *Client) SendTestNotification(params *SendTestNotificationParams, opts ...ClientOption) (*SendTestNotificationOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewSendTestNotificationParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "sendTestNotification",
+		Method:             "POST",
+		PathPattern:        "/notifications/v1/subscriptions/{notificationType}/testNotification",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &SendTestNotificationReader{formats: a.formats},
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*SendTestNotificationOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for sendTestNotification: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 

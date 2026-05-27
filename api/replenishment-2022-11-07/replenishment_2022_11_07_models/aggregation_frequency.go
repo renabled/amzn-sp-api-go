@@ -30,6 +30,9 @@ func (m AggregationFrequency) Pointer() *AggregationFrequency {
 
 const (
 
+	// AggregationFrequencyDAY captures enum value "DAY"
+	AggregationFrequencyDAY AggregationFrequency = "DAY"
+
 	// AggregationFrequencyWEEK captures enum value "WEEK"
 	AggregationFrequencyWEEK AggregationFrequency = "WEEK"
 
@@ -48,7 +51,7 @@ var aggregationFrequencyEnum []interface{}
 
 func init() {
 	var res []AggregationFrequency
-	if err := json.Unmarshal([]byte(`["WEEK","MONTH","QUARTER","YEAR"]`), &res); err != nil {
+	if err := json.Unmarshal([]byte(`["DAY","WEEK","MONTH","QUARTER","YEAR"]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {

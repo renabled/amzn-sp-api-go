@@ -20,7 +20,7 @@ import (
 // swagger:model RestrictionList
 type RestrictionList struct {
 
-	// restrictions
+	// A list of restrictions.
 	// Required: true
 	Restrictions []*Restriction `json:"restrictions"`
 }

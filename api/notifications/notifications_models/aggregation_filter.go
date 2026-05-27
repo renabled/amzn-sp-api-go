@@ -13,7 +13,7 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// AggregationFilter A filter used to select the aggregation time period at which to send notifications (for example: limit to one notification every five minutes for high frequency notifications).
+// AggregationFilter A filter you can use to select the aggregation time period at which to send notifications (for example, limit to one notification every five minutes for high frequency notifications).
 //
 // swagger:model AggregationFilter
 type AggregationFilter struct {

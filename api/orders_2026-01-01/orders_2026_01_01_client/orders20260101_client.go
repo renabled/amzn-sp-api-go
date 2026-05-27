@@ -10,6 +10,7 @@ import (
 	httptransport "github.com/go-openapi/runtime/client"
 	"github.com/go-openapi/strfmt"
 
+	"github.com/renabled/amzn-sp-api-go/api/orders_2026-01-01/orders_2026_01_01_client/cancel_order"
 	"github.com/renabled/amzn-sp-api-go/api/orders_2026-01-01/orders_2026_01_01_client/get_order"
 	"github.com/renabled/amzn-sp-api-go/api/orders_2026-01-01/orders_2026_01_01_client/search_orders"
 )
@@ -56,6 +57,7 @@ func New(transport runtime.ClientTransport, formats strfmt.Registry) *Orders2026
 
 	cli := new(Orders20260101)
 	cli.Transport = transport
+	cli.CancelOrder = cancel_order.New(transport, formats)
 	cli.GetOrder = get_order.New(transport, formats)
 	cli.SearchOrders = search_orders.New(transport, formats)
 	return cli
@@ -102,6 +104,8 @@ func (cfg *TransportConfig) WithSchemes(schemes []string) *TransportConfig {
 
 // Orders20260101 is a client for orders20260101
 type Orders20260101 struct {
+	CancelOrder cancel_order.ClientService
+
 	GetOrder get_order.ClientService
 
 	SearchOrders search_orders.ClientService
@@ -112,6 +116,7 @@ type Orders20260101 struct {
 // SetTransport changes the transport on the client and all its subresources
 func (c *Orders20260101) SetTransport(transport runtime.ClientTransport) {
 	c.Transport = transport
+	c.CancelOrder.SetTransport(transport)
 	c.GetOrder.SetTransport(transport)
 	c.SearchOrders.SetTransport(transport)
 }

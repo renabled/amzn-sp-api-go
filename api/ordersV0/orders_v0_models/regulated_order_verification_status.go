@@ -37,6 +37,9 @@ type RegulatedOrderVerificationStatus struct {
 	// Required: true
 	Status *VerificationStatus `json:"Status"`
 
+	// Valid interim status codes that may be used when populating `InterimStatusDetail`. Each element contains a `StatusCode` identifier and its customer-facing `StatusDescription`.
+	ValidInterimStatusCodes []*ValidInterimStatusCode `json:"ValidInterimStatusCodes"`
+
 	// A list of valid rejection reasons that may be used to reject the order's regulated information.
 	// Required: true
 	ValidRejectionReasons []*RejectionReason `json:"ValidRejectionReasons"`
@@ -58,6 +61,10 @@ func (m *RegulatedOrderVerificationStatus) Validate(formats strfmt.Registry) err
 	}
 
 	if err := m.validateStatus(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateValidInterimStatusCodes(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -122,6 +129,32 @@ func (m *RegulatedOrderVerificationStatus) validateStatus(formats strfmt.Registr
 			}
 			return err
 		}
+	}
+
+	return nil
+}
+
+func (m *RegulatedOrderVerificationStatus) validateValidInterimStatusCodes(formats strfmt.Registry) error {
+	if swag.IsZero(m.ValidInterimStatusCodes) { // not required
+		return nil
+	}
+
+	for i := 0; i < len(m.ValidInterimStatusCodes); i++ {
+		if swag.IsZero(m.ValidInterimStatusCodes[i]) { // not required
+			continue
+		}
+
+		if m.ValidInterimStatusCodes[i] != nil {
+			if err := m.ValidInterimStatusCodes[i].Validate(formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("ValidInterimStatusCodes" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("ValidInterimStatusCodes" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
 	}
 
 	return nil
@@ -192,6 +225,10 @@ func (m *RegulatedOrderVerificationStatus) ContextValidate(ctx context.Context, 
 		res = append(res, err)
 	}
 
+	if err := m.contextValidateValidInterimStatusCodes(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.contextValidateValidRejectionReasons(ctx, formats); err != nil {
 		res = append(res, err)
 	}
@@ -233,6 +270,26 @@ func (m *RegulatedOrderVerificationStatus) contextValidateStatus(ctx context.Con
 			}
 			return err
 		}
+	}
+
+	return nil
+}
+
+func (m *RegulatedOrderVerificationStatus) contextValidateValidInterimStatusCodes(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(m.ValidInterimStatusCodes); i++ {
+
+		if m.ValidInterimStatusCodes[i] != nil {
+			if err := m.ValidInterimStatusCodes[i].ContextValidate(ctx, formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("ValidInterimStatusCodes" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("ValidInterimStatusCodes" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
 	}
 
 	return nil

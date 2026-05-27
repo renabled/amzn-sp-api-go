@@ -18,6 +18,12 @@ import (
 // swagger:model VerificationDetails
 type VerificationDetails struct {
 
+	// Pre-approved alternative product attributes provided when a vet rejects an order but suggests a correction. Only valid when the verification status is `Rejected`.
+	ApprovedAlternativeDetails ApprovedAlternativeDetails `json:"approvedAlternativeDetails,omitempty"`
+
+	// Interim status information provided during the verification process. Only valid when the verification status is `Pending`.
+	InterimStatusDetail *InterimStatusDetail `json:"interimStatusDetail,omitempty"`
+
 	// Information regarding the prescription tied to the order.
 	PrescriptionDetail *PrescriptionDetail `json:"prescriptionDetail,omitempty"`
 }
@@ -26,6 +32,14 @@ type VerificationDetails struct {
 func (m *VerificationDetails) Validate(formats strfmt.Registry) error {
 	var res []error
 
+	if err := m.validateApprovedAlternativeDetails(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateInterimStatusDetail(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.validatePrescriptionDetail(formats); err != nil {
 		res = append(res, err)
 	}
@@ -33,6 +47,42 @@ func (m *VerificationDetails) Validate(formats strfmt.Registry) error {
 	if len(res) > 0 {
 		return errors.CompositeValidationError(res...)
 	}
+	return nil
+}
+
+func (m *VerificationDetails) validateApprovedAlternativeDetails(formats strfmt.Registry) error {
+	if swag.IsZero(m.ApprovedAlternativeDetails) { // not required
+		return nil
+	}
+
+	if err := m.ApprovedAlternativeDetails.Validate(formats); err != nil {
+		if ve, ok := err.(*errors.Validation); ok {
+			return ve.ValidateName("approvedAlternativeDetails")
+		} else if ce, ok := err.(*errors.CompositeError); ok {
+			return ce.ValidateName("approvedAlternativeDetails")
+		}
+		return err
+	}
+
+	return nil
+}
+
+func (m *VerificationDetails) validateInterimStatusDetail(formats strfmt.Registry) error {
+	if swag.IsZero(m.InterimStatusDetail) { // not required
+		return nil
+	}
+
+	if m.InterimStatusDetail != nil {
+		if err := m.InterimStatusDetail.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("interimStatusDetail")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("interimStatusDetail")
+			}
+			return err
+		}
+	}
+
 	return nil
 }
 
@@ -59,6 +109,14 @@ func (m *VerificationDetails) validatePrescriptionDetail(formats strfmt.Registry
 func (m *VerificationDetails) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
 	var res []error
 
+	if err := m.contextValidateApprovedAlternativeDetails(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateInterimStatusDetail(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.contextValidatePrescriptionDetail(ctx, formats); err != nil {
 		res = append(res, err)
 	}
@@ -66,6 +124,36 @@ func (m *VerificationDetails) ContextValidate(ctx context.Context, formats strfm
 	if len(res) > 0 {
 		return errors.CompositeValidationError(res...)
 	}
+	return nil
+}
+
+func (m *VerificationDetails) contextValidateApprovedAlternativeDetails(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := m.ApprovedAlternativeDetails.ContextValidate(ctx, formats); err != nil {
+		if ve, ok := err.(*errors.Validation); ok {
+			return ve.ValidateName("approvedAlternativeDetails")
+		} else if ce, ok := err.(*errors.CompositeError); ok {
+			return ce.ValidateName("approvedAlternativeDetails")
+		}
+		return err
+	}
+
+	return nil
+}
+
+func (m *VerificationDetails) contextValidateInterimStatusDetail(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.InterimStatusDetail != nil {
+		if err := m.InterimStatusDetail.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("interimStatusDetail")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("interimStatusDetail")
+			}
+			return err
+		}
+	}
+
 	return nil
 }
 

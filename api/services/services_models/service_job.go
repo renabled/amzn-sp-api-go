@@ -44,6 +44,9 @@ type ServiceJob struct {
 	// A list of appointment windows preferred by the buyer. Included only if the buyer selected appointment windows when creating the order.
 	PreferredAppointmentTimes []*AppointmentTime `json:"preferredAppointmentTimes"`
 
+	// A list of associated product order IDs for the service job.
+	ProductOrderIds []string `json:"productOrderIds"`
+
 	// The scope of work for the order.
 	ScopeOfWork *ScopeOfWork `json:"scopeOfWork,omitempty"`
 
@@ -70,6 +73,9 @@ type ServiceJob struct {
 	// Max Length: 100
 	// Min Length: 1
 	StoreID string `json:"storeId,omitempty"`
+
+	// A list of associated product tracking IDs for the service job.
+	TrackingIds []string `json:"trackingIds"`
 }
 
 // Validate validates this service job

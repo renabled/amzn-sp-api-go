@@ -8,6 +8,7 @@ package services_models
 import (
 	"context"
 	"encoding/json"
+	"strconv"
 
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/strfmt"
@@ -33,6 +34,9 @@ type AssociatedItem struct {
 	// Enum: [ACTIVE CANCELLED SHIPPED DELIVERED]
 	ItemStatus string `json:"itemStatus,omitempty"`
 
+	// A list of customer-owned assets on which the service must be performed.
+	LinkedAssets []*LinkedAsset `json:"linkedAssets"`
+
 	// The Amazon-defined identifier for an order placed by the buyer in 3-7-7 format.
 	OrderID OrderID `json:"orderId,omitempty"`
 
@@ -52,6 +56,10 @@ func (m *AssociatedItem) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validateItemStatus(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateLinkedAssets(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -132,6 +140,32 @@ func (m *AssociatedItem) validateItemStatus(formats strfmt.Registry) error {
 	return nil
 }
 
+func (m *AssociatedItem) validateLinkedAssets(formats strfmt.Registry) error {
+	if swag.IsZero(m.LinkedAssets) { // not required
+		return nil
+	}
+
+	for i := 0; i < len(m.LinkedAssets); i++ {
+		if swag.IsZero(m.LinkedAssets[i]) { // not required
+			continue
+		}
+
+		if m.LinkedAssets[i] != nil {
+			if err := m.LinkedAssets[i].Validate(formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("linkedAssets" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("linkedAssets" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
 func (m *AssociatedItem) validateOrderID(formats strfmt.Registry) error {
 	if swag.IsZero(m.OrderID) { // not required
 		return nil
@@ -157,6 +191,10 @@ func (m *AssociatedItem) ContextValidate(ctx context.Context, formats strfmt.Reg
 		res = append(res, err)
 	}
 
+	if err := m.contextValidateLinkedAssets(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.contextValidateOrderID(ctx, formats); err != nil {
 		res = append(res, err)
 	}
@@ -178,6 +216,26 @@ func (m *AssociatedItem) contextValidateItemDelivery(ctx context.Context, format
 			}
 			return err
 		}
+	}
+
+	return nil
+}
+
+func (m *AssociatedItem) contextValidateLinkedAssets(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(m.LinkedAssets); i++ {
+
+		if m.LinkedAssets[i] != nil {
+			if err := m.LinkedAssets[i].ContextValidate(ctx, formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("linkedAssets" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("linkedAssets" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
 	}
 
 	return nil

@@ -30,11 +30,14 @@ func (m OrderChangeTypeEnum) Pointer() *OrderChangeTypeEnum {
 
 const (
 
-	// OrderChangeTypeEnumOrderStatusChange captures enum value "OrderStatusChange"
-	OrderChangeTypeEnumOrderStatusChange OrderChangeTypeEnum = "OrderStatusChange"
-
 	// OrderChangeTypeEnumBuyerRequestedChange captures enum value "BuyerRequestedChange"
 	OrderChangeTypeEnumBuyerRequestedChange OrderChangeTypeEnum = "BuyerRequestedChange"
+
+	// OrderChangeTypeEnumDeliveryTipChange captures enum value "DeliveryTipChange"
+	OrderChangeTypeEnumDeliveryTipChange OrderChangeTypeEnum = "DeliveryTipChange"
+
+	// OrderChangeTypeEnumOrderStatusChange captures enum value "OrderStatusChange"
+	OrderChangeTypeEnumOrderStatusChange OrderChangeTypeEnum = "OrderStatusChange"
 )
 
 // for schema
@@ -42,7 +45,7 @@ var orderChangeTypeEnumEnum []interface{}
 
 func init() {
 	var res []OrderChangeTypeEnum
-	if err := json.Unmarshal([]byte(`["OrderStatusChange","BuyerRequestedChange"]`), &res); err != nil {
+	if err := json.Unmarshal([]byte(`["BuyerRequestedChange","DeliveryTipChange","OrderStatusChange"]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {

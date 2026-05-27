@@ -19,7 +19,7 @@ import (
 // swagger:model ProductType
 type ProductType struct {
 
-	// The human-readable and localized description of the Amazon product type.
+	// Human-readable and localized description of the Amazon product type.
 	// Required: true
 	DisplayName *string `json:"displayName"`
 

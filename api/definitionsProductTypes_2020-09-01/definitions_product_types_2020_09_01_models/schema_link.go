@@ -15,12 +15,12 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// SchemaLink schema link
+// SchemaLink A link to metadata schema.
 //
 // swagger:model SchemaLink
 type SchemaLink struct {
 
-	// Checksum hash of the schema (Base64 MD5). Can be used to verify schema contents, identify changes between schema versions, and for caching.
+	// Checksum hash of the schema (Base64 MD5). Use this to verify schema contents, identify changes between schema versions, and for caching.
 	// Required: true
 	Checksum *string `json:"checksum"`
 

@@ -113,7 +113,7 @@ type GetSellingPartnerMetricsResponseMetric struct {
 	// Minimum: 0
 	RevenuePenetrationFor5PlusPercentSellerFunding *float64 `json:"revenuePenetrationFor5PlusPercentSellerFunding,omitempty"`
 
-	// The percentage of new subscriptions acquired through coupons. Applicable to `PERFORMANCE` `timePeriodType`.
+	// The percentage of new subscriptions from coupons. Applicable to `PERFORMANCE` `timePeriodType`.
 	// Maximum: 100
 	// Minimum: 0
 	ShareOfCouponSubscriptions *float64 `json:"shareOfCouponSubscriptions,omitempty"`
@@ -122,22 +122,22 @@ type GetSellingPartnerMetricsResponseMetric struct {
 	// Minimum: 0
 	ShippedSubscriptionUnits *int64 `json:"shippedSubscriptionUnits,omitempty"`
 
-	// Percentage of subscriptions created by offers with 0% seller-funded discount out of the total number of new orders placed over the past 12 months
+	// Percentage of subscriptions from offers with 0% seller-funded discount out of the total number of new orders placed over the past 12 months.
 	// Maximum: 100
 	// Minimum: 0
 	SignupConversionFor0PercentSellerFunding *float64 `json:"signupConversionFor0PercentSellerFunding,omitempty"`
 
-	// [Applicable only for Sellers] Percentage of subscriptions created by offers with 10% seller-funded discount out of the total number of new orders placed over the past 12 months
+	// [Applicable only for Sellers] Percentage of subscriptions from offers with 10% seller-funded discount out of the total number of new orders placed over the past 12 months.
 	// Maximum: 100
 	// Minimum: 0
 	SignupConversionFor10PercentSellerFunding *float64 `json:"signupConversionFor10PercentSellerFunding,omitempty"`
 
-	// [Applicable only for Sellers] Percentage of subscriptions created by offers with 5% seller-funded discount out of the total number of new orders placed over the past 12 months
+	// [Applicable only for Sellers] Percentage of subscriptions from offers with 5% seller-funded discount out of the total number of new orders placed over the past 12 months.
 	// Maximum: 100
 	// Minimum: 0
 	SignupConversionFor5PercentSellerFunding *float64 `json:"signupConversionFor5PercentSellerFunding,omitempty"`
 
-	// [Applicable only for Vendors] Percentage of subscriptions created by offers with 5% or above seller-funded discount out of the total number of new orders placed over the past 12 months
+	// [Applicable only for Vendors] Percentage of subscriptions from offers with 5% or above seller-funded discount out of the total number of new orders placed over the past 12 months.
 	// Maximum: 100
 	// Minimum: 0
 	SignupConversionFor5PlusPercentSellerFunding *float64 `json:"signupConversionFor5PlusPercentSellerFunding,omitempty"`

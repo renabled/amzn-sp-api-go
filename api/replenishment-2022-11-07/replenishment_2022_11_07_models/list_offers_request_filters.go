@@ -16,7 +16,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// ListOffersRequestFilters Use these parameters to filter results. Any result must match all provided parameters. For any parameter that is an array, the result must match at least one element in the provided array.
+// ListOffersRequestFilters Use these parameters to filter results. Any result must match all provided parameters. For parameters that accept multiple values (arrays), the API returns results that match at least one value in the array.
 //
 // swagger:model ListOffersRequestFilters
 type ListOffersRequestFilters struct {

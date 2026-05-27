@@ -24,7 +24,7 @@ type ProductTypeList struct {
 	// Required: true
 	ProductTypeVersion *string `json:"productTypeVersion"`
 
-	// product types
+	// A list of product types.
 	// Required: true
 	ProductTypes []*ProductType `json:"productTypes"`
 }

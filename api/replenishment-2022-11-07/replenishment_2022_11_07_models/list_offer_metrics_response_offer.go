@@ -26,6 +26,9 @@ type ListOfferMetricsResponseOffer struct {
 	// The Amazon Standard Identification Number (ASIN).
 	Asin string `json:"asin,omitempty"`
 
+	// The brand name associated with the offer.
+	BrandName string `json:"brandName,omitempty"`
+
 	// The percentage of revenue from ASINs with coupons out of total revenue from all ASINs. Applicable to `PERFORMANCE` `timePeriodType`.
 	// Maximum: 100
 	// Minimum: 0
@@ -70,12 +73,15 @@ type ListOfferMetricsResponseOffer struct {
 	// Minimum: 0
 	NotDeliveredDueToOOS *float64 `json:"notDeliveredDueToOOS,omitempty"`
 
+	// The product group associated with the offer. This property is only supported for vendors and not for sellers.
+	ProductGroup string `json:"productGroup,omitempty"`
+
 	// The percentage of total program revenue out of total product revenue. Applicable to `PERFORMANCE` `timePeriodType`.
 	// Maximum: 100
 	// Minimum: 0
 	RevenuePenetration *float64 `json:"revenuePenetration,omitempty"`
 
-	// The percentage of new subscriptions acquired through coupons. Applicable to `PERFORMANCE` `timePeriodType`.
+	// The percentage of new subscriptions from coupons. Applicable to `PERFORMANCE` `timePeriodType`.
 	// Maximum: 100
 	// Minimum: 0
 	ShareOfCouponSubscriptions *float64 `json:"shareOfCouponSubscriptions,omitempty"`

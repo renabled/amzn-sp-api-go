@@ -64,7 +64,7 @@ type SearchDefinitionsProductTypesParams struct {
 
 	/* ItemName.
 
-	   The title of the ASIN to get the product type recommendation. **Note:** Cannot be used with `keywords`.
+	   Title of ASIN to get product type recommendation. **Note:** Cannot be used with `keywords`.
 	*/
 	ItemName *string
 
@@ -76,7 +76,7 @@ type SearchDefinitionsProductTypesParams struct {
 
 	/* Locale.
 
-	   The locale for the display names in the response. Defaults to the primary locale of the marketplace.
+	   Locale for display names in response. Defaults to primary locale of the marketplace.
 	*/
 	Locale *string
 
@@ -88,7 +88,7 @@ type SearchDefinitionsProductTypesParams struct {
 
 	/* SearchLocale.
 
-	   The locale used for the `keywords` and `itemName` parameters. Defaults to the primary locale of the marketplace.
+	   Language used for `keywords` or `itemName` parameters. Defaults to primary locale of the marketplace.
 	*/
 	SearchLocale *string
 

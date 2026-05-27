@@ -36,9 +36,13 @@ type ClientService interface {
 
 	ConfirmInbound(params *ConfirmInboundParams, opts ...ClientOption) (*ConfirmInboundNoContent, error)
 
+	ConfirmOutbound(params *ConfirmOutboundParams, opts ...ClientOption) (*ConfirmOutboundNoContent, error)
+
 	ConfirmReplenishmentOrder(params *ConfirmReplenishmentOrderParams, opts ...ClientOption) (*ConfirmReplenishmentOrderNoContent, error)
 
 	CreateInbound(params *CreateInboundParams, opts ...ClientOption) (*CreateInboundCreated, error)
+
+	CreateOutbound(params *CreateOutboundParams, opts ...ClientOption) (*CreateOutboundCreated, error)
 
 	CreateReplenishmentOrder(params *CreateReplenishmentOrderParams, opts ...ClientOption) (*CreateReplenishmentOrderCreated, error)
 
@@ -48,17 +52,25 @@ type ClientService interface {
 
 	GetInboundShipmentLabels(params *GetInboundShipmentLabelsParams, opts ...ClientOption) (*GetInboundShipmentLabelsOK, error)
 
+	GetLabelPageTypes(params *GetLabelPageTypesParams, opts ...ClientOption) (*GetLabelPageTypesOK, error)
+
+	GetOutbound(params *GetOutboundParams, opts ...ClientOption) (*GetOutboundOK, error)
+
 	GetReplenishmentOrder(params *GetReplenishmentOrderParams, opts ...ClientOption) (*GetReplenishmentOrderOK, error)
 
 	ListInboundShipments(params *ListInboundShipmentsParams, opts ...ClientOption) (*ListInboundShipmentsOK, error)
 
 	ListInventory(params *ListInventoryParams, opts ...ClientOption) (*ListInventoryOK, error)
 
+	ListOutbounds(params *ListOutboundsParams, opts ...ClientOption) (*ListOutboundsOK, error)
+
 	ListReplenishmentOrders(params *ListReplenishmentOrdersParams, opts ...ClientOption) (*ListReplenishmentOrdersOK, error)
 
 	UpdateInbound(params *UpdateInboundParams, opts ...ClientOption) (*UpdateInboundNoContent, error)
 
 	UpdateInboundShipmentTransportDetails(params *UpdateInboundShipmentTransportDetailsParams, opts ...ClientOption) (*UpdateInboundShipmentTransportDetailsNoContent, error)
+
+	UpdateOutbound(params *UpdateOutboundParams, opts ...ClientOption) (*UpdateOutboundOK, error)
 
 	SetTransport(transport runtime.ClientTransport)
 }
@@ -202,6 +214,52 @@ func (a *Client) ConfirmInbound(params *ConfirmInboundParams, opts ...ClientOpti
 }
 
 /*
+	ConfirmOutbound Confirms an AWD outbound order for a set of shipments that contain items that must be outbound to a destination node. You can confirm the order only if it's in an`ELIGIBLE` state.
+
+**Usage Plan:**
+
+| Rate (requests per second) | Burst |
+| ---- | ---- |
+| 1 | 1 |
+
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+*/
+func (a *Client) ConfirmOutbound(params *ConfirmOutboundParams, opts ...ClientOption) (*ConfirmOutboundNoContent, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewConfirmOutboundParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "confirmOutbound",
+		Method:             "POST",
+		PathPattern:        "/awd/2024-05-09/outboundOrders/{orderId}/confirmation",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &ConfirmOutboundReader{formats: a.formats},
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*ConfirmOutboundNoContent)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for confirmOutbound: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
 	ConfirmReplenishmentOrder Confirms an AWD replenishment order in ELIGIBLE state with a set of shipments containing items that are needed to be replenished to an FBA node.
 
 Order can only be confirmed in ELIGIBLE state.
@@ -284,6 +342,52 @@ func (a *Client) CreateInbound(params *CreateInboundParams, opts ...ClientOption
 	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
 	msg := fmt.Sprintf("unexpected success response for createInbound: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+	CreateOutbound Creates a draft AWD outbound order with the specified products. The API returns the order ID for the newly created order and starts an async validation check on the outbound products. After the validation check, the order status transitions from `VALIDATING` to `ELIGIBLE/INELIGIBLE`.
+
+**Usage Plan:**
+
+| Rate (requests per second) | Burst |
+| ---- | ---- |
+| 1 | 1 |
+
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+*/
+func (a *Client) CreateOutbound(params *CreateOutboundParams, opts ...ClientOption) (*CreateOutboundCreated, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewCreateOutboundParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "createOutbound",
+		Method:             "POST",
+		PathPattern:        "/awd/2024-05-09/outboundOrders",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &CreateOutboundReader{formats: a.formats},
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*CreateOutboundCreated)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for createOutbound: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -467,6 +571,98 @@ func (a *Client) GetInboundShipmentLabels(params *GetInboundShipmentLabelsParams
 }
 
 /*
+	GetLabelPageTypes Retrieves the available label page types for a shipment ID that you specify. This is an asynchronous operation. If the label status is `GENERATED`, then the pageTypes are available.
+
+**Usage Plan:**
+
+| Rate (requests per second) | Burst |
+| ---- | ---- |
+| 1 | 2 |
+
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+*/
+func (a *Client) GetLabelPageTypes(params *GetLabelPageTypesParams, opts ...ClientOption) (*GetLabelPageTypesOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewGetLabelPageTypesParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "getLabelPageTypes",
+		Method:             "GET",
+		PathPattern:        "/awd/2024-05-09/inboundShipments/{shipmentId}/labelPageTypes",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &GetLabelPageTypesReader{formats: a.formats},
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*GetLabelPageTypesOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for getLabelPageTypes: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+	GetOutbound Retrieves an AWD outbound order with a set of shipments that contain items that are outbound into a destination channel. If the order is not eligible, the validation errors field is included in the order response. The API returns the order ID for the newly created order and starts an async validation check on the outbound products. After the validation check, the order status transitions from `VALIDATING` to `ELIGIBLE/INELIGIBLE`.
+
+**Usage Plan:**
+
+| Rate (requests per second) | Burst |
+| ---- | ---- |
+| 1 | 1 |
+
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+*/
+func (a *Client) GetOutbound(params *GetOutboundParams, opts ...ClientOption) (*GetOutboundOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewGetOutboundParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "getOutbound",
+		Method:             "GET",
+		PathPattern:        "/awd/2024-05-09/outboundOrders/{orderId}",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &GetOutboundReader{formats: a.formats},
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*GetOutboundOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for getOutbound: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
 GetReplenishmentOrder Retrieves an AWD Replenishment order with a set of shipments containing items that is/was planned to be replenished into an FBA node.
 */
 func (a *Client) GetReplenishmentOrder(params *GetReplenishmentOrderParams, opts ...ClientOption) (*GetReplenishmentOrderOK, error) {
@@ -593,6 +789,52 @@ func (a *Client) ListInventory(params *ListInventoryParams, opts ...ClientOption
 	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
 	msg := fmt.Sprintf("unexpected success response for listInventory: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+	ListOutbounds Retrieves all outbound AWD orders (with optional filters) that pertain to a merchant. By default, orders are sorted by the `updatedAt` attribute in descending order.
+
+**Usage Plan:**
+
+| Rate (requests per second) | Burst |
+| ---- | ---- |
+| 1 | 1 |
+
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+*/
+func (a *Client) ListOutbounds(params *ListOutboundsParams, opts ...ClientOption) (*ListOutboundsOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewListOutboundsParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "listOutbounds",
+		Method:             "GET",
+		PathPattern:        "/awd/2024-05-09/outboundOrders",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &ListOutboundsReader{formats: a.formats},
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*ListOutboundsOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for listOutbounds: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -725,6 +967,52 @@ func (a *Client) UpdateInboundShipmentTransportDetails(params *UpdateInboundShip
 	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
 	msg := fmt.Sprintf("unexpected success response for updateInboundShipmentTransportDetails: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+	UpdateOutbound Updates an AWD outbound order that is in `DRAFT`, `ELIGIBLE`, or `INELIGIBLE` status. This API allows updates on `productsToOutbound` and `orderPreferences` attributes only. Any updates will restart the outbound order validation.
+
+**Usage Plan:**
+
+| Rate (requests per second) | Burst |
+| ---- | ---- |
+| 1 | 1 |
+
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+*/
+func (a *Client) UpdateOutbound(params *UpdateOutboundParams, opts ...ClientOption) (*UpdateOutboundOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewUpdateOutboundParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "updateOutbound",
+		Method:             "PUT",
+		PathPattern:        "/awd/2024-05-09/outboundOrders/{orderId}",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &UpdateOutboundReader{formats: a.formats},
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*UpdateOutboundOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for updateOutbound: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 

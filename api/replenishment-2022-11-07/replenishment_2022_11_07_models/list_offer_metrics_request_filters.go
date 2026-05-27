@@ -7,6 +7,7 @@ package replenishment_2022_11_07_models
 
 import (
 	"context"
+	"strconv"
 
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/strfmt"
@@ -14,7 +15,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// ListOfferMetricsRequestFilters Use these parameters to filter results. Any result must match all provided parameters. For any parameter that is an array, the result must match at least one element in the provided array.
+// ListOfferMetricsRequestFilters Use these parameters to filter results. Any result must match all provided parameters. For parameters that accept multiple values (arrays), the API returns results that match at least one value in the array.
 //
 // swagger:model ListOfferMetricsRequestFilters
 type ListOfferMetricsRequestFilters struct {
@@ -22,19 +23,43 @@ type ListOfferMetricsRequestFilters struct {
 	// aggregation frequency
 	AggregationFrequency AggregationFrequency `json:"aggregationFrequency,omitempty"`
 
-	// A list of Amazon Standard Identification Numbers (ASINs).
+	// A list of Amazon Standard Identification Numbers (ASINs) to filter by.
 	// Max Items: 20
 	// Min Items: 1
 	// Unique: true
 	Asins []string `json:"asins"`
 
+	// [Applicable only for US marketplace] A list of brand names to filter by.
+	// Max Items: 20
+	// Min Items: 1
+	// Unique: true
+	BrandNames []string `json:"brandNames"`
+
+	// [Applicable only for Sellers] The fulfillment channel types to filter by.
+	// Max Items: 2
+	// Min Items: 1
+	// Unique: true
+	FulfillmentChannelTypes []FulfillmentChannelType `json:"fulfillmentChannelTypes"`
+
 	// The marketplace identifier. The supported marketplaces for both sellers and vendors are US, CA, ES, UK, FR, IT, IN, DE, and JP. The supported marketplaces for vendors only are BR, AU, MX, AE, and NL. Refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids) to find the identifier for the marketplace.
 	// Required: true
 	MarketplaceID *MarketplaceID `json:"marketplaceId"`
 
+	// [Applicable only for Vendors] A list of product group names to filter by.
+	// Max Items: 20
+	// Min Items: 1
+	// Unique: true
+	ProductGroups []string `json:"productGroups"`
+
 	// program types
 	// Required: true
 	ProgramTypes ProgramTypes `json:"programTypes"`
+
+	// [Applicable only for Sellers] A list of SKUs to filter by.
+	// Max Items: 20
+	// Min Items: 1
+	// Unique: true
+	Skus []string `json:"skus"`
 
 	// A time interval used to compute metrics.
 	// Required: true
@@ -57,11 +82,27 @@ func (m *ListOfferMetricsRequestFilters) Validate(formats strfmt.Registry) error
 		res = append(res, err)
 	}
 
+	if err := m.validateBrandNames(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateFulfillmentChannelTypes(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.validateMarketplaceID(formats); err != nil {
 		res = append(res, err)
 	}
 
+	if err := m.validateProductGroups(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.validateProgramTypes(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateSkus(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -118,6 +159,63 @@ func (m *ListOfferMetricsRequestFilters) validateAsins(formats strfmt.Registry) 
 	return nil
 }
 
+func (m *ListOfferMetricsRequestFilters) validateBrandNames(formats strfmt.Registry) error {
+	if swag.IsZero(m.BrandNames) { // not required
+		return nil
+	}
+
+	iBrandNamesSize := int64(len(m.BrandNames))
+
+	if err := validate.MinItems("brandNames", "body", iBrandNamesSize, 1); err != nil {
+		return err
+	}
+
+	if err := validate.MaxItems("brandNames", "body", iBrandNamesSize, 20); err != nil {
+		return err
+	}
+
+	if err := validate.UniqueItems("brandNames", "body", m.BrandNames); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *ListOfferMetricsRequestFilters) validateFulfillmentChannelTypes(formats strfmt.Registry) error {
+	if swag.IsZero(m.FulfillmentChannelTypes) { // not required
+		return nil
+	}
+
+	iFulfillmentChannelTypesSize := int64(len(m.FulfillmentChannelTypes))
+
+	if err := validate.MinItems("fulfillmentChannelTypes", "body", iFulfillmentChannelTypesSize, 1); err != nil {
+		return err
+	}
+
+	if err := validate.MaxItems("fulfillmentChannelTypes", "body", iFulfillmentChannelTypesSize, 2); err != nil {
+		return err
+	}
+
+	if err := validate.UniqueItems("fulfillmentChannelTypes", "body", m.FulfillmentChannelTypes); err != nil {
+		return err
+	}
+
+	for i := 0; i < len(m.FulfillmentChannelTypes); i++ {
+
+		if err := m.FulfillmentChannelTypes[i].Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("fulfillmentChannelTypes" + "." + strconv.Itoa(i))
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("fulfillmentChannelTypes" + "." + strconv.Itoa(i))
+			}
+			return err
+		}
+
+	}
+
+	return nil
+}
+
 func (m *ListOfferMetricsRequestFilters) validateMarketplaceID(formats strfmt.Registry) error {
 
 	if err := validate.Required("marketplaceId", "body", m.MarketplaceID); err != nil {
@@ -142,6 +240,28 @@ func (m *ListOfferMetricsRequestFilters) validateMarketplaceID(formats strfmt.Re
 	return nil
 }
 
+func (m *ListOfferMetricsRequestFilters) validateProductGroups(formats strfmt.Registry) error {
+	if swag.IsZero(m.ProductGroups) { // not required
+		return nil
+	}
+
+	iProductGroupsSize := int64(len(m.ProductGroups))
+
+	if err := validate.MinItems("productGroups", "body", iProductGroupsSize, 1); err != nil {
+		return err
+	}
+
+	if err := validate.MaxItems("productGroups", "body", iProductGroupsSize, 20); err != nil {
+		return err
+	}
+
+	if err := validate.UniqueItems("productGroups", "body", m.ProductGroups); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 func (m *ListOfferMetricsRequestFilters) validateProgramTypes(formats strfmt.Registry) error {
 
 	if err := validate.Required("programTypes", "body", m.ProgramTypes); err != nil {
@@ -154,6 +274,28 @@ func (m *ListOfferMetricsRequestFilters) validateProgramTypes(formats strfmt.Reg
 		} else if ce, ok := err.(*errors.CompositeError); ok {
 			return ce.ValidateName("programTypes")
 		}
+		return err
+	}
+
+	return nil
+}
+
+func (m *ListOfferMetricsRequestFilters) validateSkus(formats strfmt.Registry) error {
+	if swag.IsZero(m.Skus) { // not required
+		return nil
+	}
+
+	iSkusSize := int64(len(m.Skus))
+
+	if err := validate.MinItems("skus", "body", iSkusSize, 1); err != nil {
+		return err
+	}
+
+	if err := validate.MaxItems("skus", "body", iSkusSize, 20); err != nil {
+		return err
+	}
+
+	if err := validate.UniqueItems("skus", "body", m.Skus); err != nil {
 		return err
 	}
 
@@ -212,6 +354,10 @@ func (m *ListOfferMetricsRequestFilters) ContextValidate(ctx context.Context, fo
 		res = append(res, err)
 	}
 
+	if err := m.contextValidateFulfillmentChannelTypes(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.contextValidateMarketplaceID(ctx, formats); err != nil {
 		res = append(res, err)
 	}
@@ -243,6 +389,24 @@ func (m *ListOfferMetricsRequestFilters) contextValidateAggregationFrequency(ctx
 			return ce.ValidateName("aggregationFrequency")
 		}
 		return err
+	}
+
+	return nil
+}
+
+func (m *ListOfferMetricsRequestFilters) contextValidateFulfillmentChannelTypes(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(m.FulfillmentChannelTypes); i++ {
+
+		if err := m.FulfillmentChannelTypes[i].ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("fulfillmentChannelTypes" + "." + strconv.Itoa(i))
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("fulfillmentChannelTypes" + "." + strconv.Itoa(i))
+			}
+			return err
+		}
+
 	}
 
 	return nil

@@ -34,6 +34,9 @@ type Order struct {
 	// Information about how this order is being processed and shipped.
 	Fulfillment *OrderFulfillment `json:"fulfillment,omitempty"`
 
+	// The list of fulfillment orders associated with this customer order. Each entry corresponds to one fulfillment unit created by Amazon for this order. **Note:** Only available for EasyShip orders at present.
+	FulfillmentOrders []*FulfillmentOrder `json:"fulfillmentOrders"`
+
 	// The most recent time when any aspect of this order was modified by Amazon or the seller. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) format.
 	// Required: true
 	// Format: date-time
@@ -92,6 +95,10 @@ func (m *Order) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validateFulfillment(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateFulfillmentOrders(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -213,6 +220,32 @@ func (m *Order) validateFulfillment(formats strfmt.Registry) error {
 			}
 			return err
 		}
+	}
+
+	return nil
+}
+
+func (m *Order) validateFulfillmentOrders(formats strfmt.Registry) error {
+	if swag.IsZero(m.FulfillmentOrders) { // not required
+		return nil
+	}
+
+	for i := 0; i < len(m.FulfillmentOrders); i++ {
+		if swag.IsZero(m.FulfillmentOrders[i]) { // not required
+			continue
+		}
+
+		if m.FulfillmentOrders[i] != nil {
+			if err := m.FulfillmentOrders[i].Validate(formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("fulfillmentOrders" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("fulfillmentOrders" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
 	}
 
 	return nil
@@ -431,6 +464,10 @@ func (m *Order) ContextValidate(ctx context.Context, formats strfmt.Registry) er
 		res = append(res, err)
 	}
 
+	if err := m.contextValidateFulfillmentOrders(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.contextValidateOrderAliases(ctx, formats); err != nil {
 		res = append(res, err)
 	}
@@ -516,6 +553,26 @@ func (m *Order) contextValidateFulfillment(ctx context.Context, formats strfmt.R
 			}
 			return err
 		}
+	}
+
+	return nil
+}
+
+func (m *Order) contextValidateFulfillmentOrders(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(m.FulfillmentOrders); i++ {
+
+		if m.FulfillmentOrders[i] != nil {
+			if err := m.FulfillmentOrders[i].ContextValidate(ctx, formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("fulfillmentOrders" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("fulfillmentOrders" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
 	}
 
 	return nil

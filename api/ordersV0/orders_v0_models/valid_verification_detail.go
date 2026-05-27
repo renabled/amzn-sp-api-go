@@ -24,7 +24,7 @@ type ValidVerificationDetail struct {
 	// Required: true
 	ValidVerificationStatuses []VerificationStatus `json:"ValidVerificationStatuses"`
 
-	// A supported type of verification detail. The type indicates which verification detail could be shared while updating the regulated order. Valid value: `prescriptionDetail`.
+	// A supported type of verification detail. The type indicates which verification detail could be shared while updating the regulated order. Valid values: `prescriptionDetail`, `approvedAlternativeDetails`, `interimStatusDetail`.
 	// Required: true
 	VerificationDetailType *string `json:"VerificationDetailType"`
 }

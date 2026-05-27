@@ -7,6 +7,7 @@ package orders_2026_01_01_models
 
 import (
 	"context"
+	"strconv"
 
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/strfmt"
@@ -18,6 +19,9 @@ import (
 // swagger:model OrderProceeds
 type OrderProceeds struct {
 
+	// Categorized proceeds for the order. Proceed categories are either aggregated across all order items (such as `ITEM`, `SHIPPING`, and `TAX`) or applied at the order level (such as `DELIVERY_TIP`).
+	Breakdowns []*OrderProceedsBreakdown `json:"breakdowns"`
+
 	// The total amount that the seller receives from the sale of the order.
 	GrandTotal *Money `json:"grandTotal,omitempty"`
 }
@@ -26,6 +30,10 @@ type OrderProceeds struct {
 func (m *OrderProceeds) Validate(formats strfmt.Registry) error {
 	var res []error
 
+	if err := m.validateBreakdowns(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.validateGrandTotal(formats); err != nil {
 		res = append(res, err)
 	}
@@ -33,6 +41,32 @@ func (m *OrderProceeds) Validate(formats strfmt.Registry) error {
 	if len(res) > 0 {
 		return errors.CompositeValidationError(res...)
 	}
+	return nil
+}
+
+func (m *OrderProceeds) validateBreakdowns(formats strfmt.Registry) error {
+	if swag.IsZero(m.Breakdowns) { // not required
+		return nil
+	}
+
+	for i := 0; i < len(m.Breakdowns); i++ {
+		if swag.IsZero(m.Breakdowns[i]) { // not required
+			continue
+		}
+
+		if m.Breakdowns[i] != nil {
+			if err := m.Breakdowns[i].Validate(formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("breakdowns" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("breakdowns" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
 	return nil
 }
 
@@ -59,6 +93,10 @@ func (m *OrderProceeds) validateGrandTotal(formats strfmt.Registry) error {
 func (m *OrderProceeds) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
 	var res []error
 
+	if err := m.contextValidateBreakdowns(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.contextValidateGrandTotal(ctx, formats); err != nil {
 		res = append(res, err)
 	}
@@ -66,6 +104,26 @@ func (m *OrderProceeds) ContextValidate(ctx context.Context, formats strfmt.Regi
 	if len(res) > 0 {
 		return errors.CompositeValidationError(res...)
 	}
+	return nil
+}
+
+func (m *OrderProceeds) contextValidateBreakdowns(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(m.Breakdowns); i++ {
+
+		if m.Breakdowns[i] != nil {
+			if err := m.Breakdowns[i].ContextValidate(ctx, formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("breakdowns" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("breakdowns" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
 	return nil
 }
 

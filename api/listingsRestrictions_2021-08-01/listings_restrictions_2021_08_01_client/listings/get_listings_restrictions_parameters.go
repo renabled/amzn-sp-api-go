@@ -80,6 +80,12 @@ type GetListingsRestrictionsParams struct {
 	*/
 	MarketplaceIds []string
 
+	/* ProductType.
+
+	   The product type of the item. When provided with the brand name, the API evaluates GTIN exemption restrictions in addition to brand restrictions for the specified product type.
+	*/
+	ProductType *string
+
 	/* ReasonLocale.
 
 	   A locale for reason text localization. When not provided, the default language code of the first marketplace is used. Examples: "en_US", "fr_CA", "fr_FR". Localized messages default to "en_US" when a localization is not available in the specified locale.
@@ -178,6 +184,17 @@ func (o *GetListingsRestrictionsParams) SetMarketplaceIds(marketplaceIds []strin
 	o.MarketplaceIds = marketplaceIds
 }
 
+// WithProductType adds the productType to the get listings restrictions params
+func (o *GetListingsRestrictionsParams) WithProductType(productType *string) *GetListingsRestrictionsParams {
+	o.SetProductType(productType)
+	return o
+}
+
+// SetProductType adds the productType to the get listings restrictions params
+func (o *GetListingsRestrictionsParams) SetProductType(productType *string) {
+	o.ProductType = productType
+}
+
 // WithReasonLocale adds the reasonLocale to the get listings restrictions params
 func (o *GetListingsRestrictionsParams) WithReasonLocale(reasonLocale *string) *GetListingsRestrictionsParams {
 	o.SetReasonLocale(reasonLocale)
@@ -243,6 +260,23 @@ func (o *GetListingsRestrictionsParams) WriteToRequest(r runtime.ClientRequest, 
 		// query array param marketplaceIds
 		if err := r.SetQueryParam("marketplaceIds", joinedMarketplaceIds...); err != nil {
 			return err
+		}
+	}
+
+	if o.ProductType != nil {
+
+		// query param productType
+		var qrProductType string
+
+		if o.ProductType != nil {
+			qrProductType = *o.ProductType
+		}
+		qProductType := qrProductType
+		if qProductType != "" {
+
+			if err := r.SetQueryParam("productType", qProductType); err != nil {
+				return err
+			}
 		}
 	}
 

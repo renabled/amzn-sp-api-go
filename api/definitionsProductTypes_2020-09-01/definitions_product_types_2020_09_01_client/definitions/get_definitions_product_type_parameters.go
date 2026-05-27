@@ -77,6 +77,12 @@ type GetDefinitionsProductTypeParams struct {
 	*/
 	MarketplaceIds []string
 
+	/* ParentageLevel.
+
+	   The parentage level of the listing to retrieve a schema for. When provided, the schema is simplified by resolving all conditional logic related to the specified parentage level, resulting in a smaller schema with fewer conditions.
+	*/
+	ParentageLevel *string
+
 	/* ProductType.
 
 	   The Amazon product type name.
@@ -85,7 +91,7 @@ type GetDefinitionsProductTypeParams struct {
 
 	/* ProductTypeVersion.
 
-	   The version of the Amazon product type to retrieve. Defaults to "LATEST",. Prerelease versions of product type definitions may be retrieved with "RELEASE_CANDIDATE". If no prerelease version is currently available, the "LATEST" live version will be provided.
+	   The version of the Amazon product type to retrieve. Defaults to "LATEST". Prerelease versions of product type definitions may be retrieved with "RELEASE_CANDIDATE". If no prerelease version is currently available, the "LATEST" live version will be provided.
 
 	   Default: "LATEST"
 	*/
@@ -208,6 +214,17 @@ func (o *GetDefinitionsProductTypeParams) SetMarketplaceIds(marketplaceIds []str
 	o.MarketplaceIds = marketplaceIds
 }
 
+// WithParentageLevel adds the parentageLevel to the get definitions product type params
+func (o *GetDefinitionsProductTypeParams) WithParentageLevel(parentageLevel *string) *GetDefinitionsProductTypeParams {
+	o.SetParentageLevel(parentageLevel)
+	return o
+}
+
+// SetParentageLevel adds the parentageLevel to the get definitions product type params
+func (o *GetDefinitionsProductTypeParams) SetParentageLevel(parentageLevel *string) {
+	o.ParentageLevel = parentageLevel
+}
+
 // WithProductType adds the productType to the get definitions product type params
 func (o *GetDefinitionsProductTypeParams) WithProductType(productType string) *GetDefinitionsProductTypeParams {
 	o.SetProductType(productType)
@@ -296,6 +313,23 @@ func (o *GetDefinitionsProductTypeParams) WriteToRequest(r runtime.ClientRequest
 		// query array param marketplaceIds
 		if err := r.SetQueryParam("marketplaceIds", joinedMarketplaceIds...); err != nil {
 			return err
+		}
+	}
+
+	if o.ParentageLevel != nil {
+
+		// query param parentageLevel
+		var qrParentageLevel string
+
+		if o.ParentageLevel != nil {
+			qrParentageLevel = *o.ParentageLevel
+		}
+		qParentageLevel := qrParentageLevel
+		if qParentageLevel != "" {
+
+			if err := r.SetQueryParam("parentageLevel", qParentageLevel); err != nil {
+				return err
+			}
 		}
 	}
 

@@ -423,14 +423,9 @@ func NewGetDefinitionsProductTypeRequestEntityTooLarge() *GetDefinitionsProductT
 /*
 GetDefinitionsProductTypeRequestEntityTooLarge describes a response with status code 413, with default header values.
 
-The request size exceeded the maximum accepted size.
+The request exceeds the maximum size.
 */
 type GetDefinitionsProductTypeRequestEntityTooLarge struct {
-
-	/* Your rate limit (requests per second) for this operation.
-	_Note:_ For this status code, the rate limit header is deprecated and no longer returned.
-	*/
-	XAmznRateLimitLimit string
 
 	/* Unique request reference identifier.
 	 */
@@ -478,13 +473,6 @@ func (o *GetDefinitionsProductTypeRequestEntityTooLarge) GetPayload() *definitio
 
 func (o *GetDefinitionsProductTypeRequestEntityTooLarge) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	// hydrates response header x-amzn-RateLimit-Limit
-	hdrXAmznRateLimitLimit := response.GetHeader("x-amzn-RateLimit-Limit")
-
-	if hdrXAmznRateLimitLimit != "" {
-		o.XAmznRateLimitLimit = hdrXAmznRateLimitLimit
-	}
-
 	// hydrates response header x-amzn-RequestId
 	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")
 
@@ -513,11 +501,6 @@ GetDefinitionsProductTypeUnsupportedMediaType describes a response with status c
 The request payload is in an unsupported format.
 */
 type GetDefinitionsProductTypeUnsupportedMediaType struct {
-
-	/* Your rate limit (requests per second) for this operation.
-	_Note:_ For this status code, the rate limit header is deprecated and no longer returned.
-	*/
-	XAmznRateLimitLimit string
 
 	/* Unique request reference identifier.
 	 */
@@ -565,13 +548,6 @@ func (o *GetDefinitionsProductTypeUnsupportedMediaType) GetPayload() *definition
 
 func (o *GetDefinitionsProductTypeUnsupportedMediaType) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	// hydrates response header x-amzn-RateLimit-Limit
-	hdrXAmznRateLimitLimit := response.GetHeader("x-amzn-RateLimit-Limit")
-
-	if hdrXAmznRateLimitLimit != "" {
-		o.XAmznRateLimitLimit = hdrXAmznRateLimitLimit
-	}
-
 	// hydrates response header x-amzn-RequestId
 	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")
 
@@ -600,11 +576,6 @@ GetDefinitionsProductTypeTooManyRequests describes a response with status code 4
 The frequency of requests was greater than allowed.
 */
 type GetDefinitionsProductTypeTooManyRequests struct {
-
-	/* Your rate limit (requests per second) for this operation.
-	_Note:_ For this status code, the rate limit header is deprecated and no longer returned.
-	*/
-	XAmznRateLimitLimit string
 
 	/* Unique request reference identifier.
 	 */
@@ -652,13 +623,6 @@ func (o *GetDefinitionsProductTypeTooManyRequests) GetPayload() *definitions_pro
 
 func (o *GetDefinitionsProductTypeTooManyRequests) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	// hydrates response header x-amzn-RateLimit-Limit
-	hdrXAmznRateLimitLimit := response.GetHeader("x-amzn-RateLimit-Limit")
-
-	if hdrXAmznRateLimitLimit != "" {
-		o.XAmznRateLimitLimit = hdrXAmznRateLimitLimit
-	}
-
 	// hydrates response header x-amzn-RequestId
 	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")
 
@@ -687,11 +651,6 @@ GetDefinitionsProductTypeInternalServerError describes a response with status co
 An unexpected condition occurred that prevented the server from fulfilling the request.
 */
 type GetDefinitionsProductTypeInternalServerError struct {
-
-	/* Your rate limit (requests per second) for this operation.
-	_Note:_ For this status code, the rate limit header is deprecated and no longer returned.
-	*/
-	XAmznRateLimitLimit string
 
 	/* Unique request reference identifier.
 	 */
@@ -739,13 +698,6 @@ func (o *GetDefinitionsProductTypeInternalServerError) GetPayload() *definitions
 
 func (o *GetDefinitionsProductTypeInternalServerError) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	// hydrates response header x-amzn-RateLimit-Limit
-	hdrXAmznRateLimitLimit := response.GetHeader("x-amzn-RateLimit-Limit")
-
-	if hdrXAmznRateLimitLimit != "" {
-		o.XAmznRateLimitLimit = hdrXAmznRateLimitLimit
-	}
-
 	// hydrates response header x-amzn-RequestId
 	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")
 
@@ -774,11 +726,6 @@ GetDefinitionsProductTypeServiceUnavailable describes a response with status cod
 Temporary overloading or maintenance of the server.
 */
 type GetDefinitionsProductTypeServiceUnavailable struct {
-
-	/* Your rate limit (requests per second) for this operation.
-	_Note:_ For this status code, the rate limit header is deprecated and no longer returned.
-	*/
-	XAmznRateLimitLimit string
 
 	/* Unique request reference identifier.
 	 */
@@ -825,13 +772,6 @@ func (o *GetDefinitionsProductTypeServiceUnavailable) GetPayload() *definitions_
 }
 
 func (o *GetDefinitionsProductTypeServiceUnavailable) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
-
-	// hydrates response header x-amzn-RateLimit-Limit
-	hdrXAmznRateLimitLimit := response.GetHeader("x-amzn-RateLimit-Limit")
-
-	if hdrXAmznRateLimitLimit != "" {
-		o.XAmznRateLimitLimit = hdrXAmznRateLimitLimit
-	}
 
 	// hydrates response header x-amzn-RequestId
 	hdrXAmznRequestID := response.GetHeader("x-amzn-RequestId")

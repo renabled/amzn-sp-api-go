@@ -63,14 +63,17 @@ CreateSubscriptionParams contains all the parameters to send to the API endpoint
 */
 type CreateSubscriptionParams struct {
 
-	// Body.
+	/* Body.
+
+	   The request schema for the `createSubscription` operation.
+	*/
 	Body *notifications_models.CreateSubscriptionRequest
 
 	/* NotificationType.
 
 	    The type of notification.
 
-	For more information about notification types, refer to [Notification Type Values](https://developer-docs.amazon.com/sp-api/docs/notification-type-values).
+	For more information about notification types, refer to the [Notifications API v1 Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/notifications-api-v1-use-case-guide).
 	*/
 	NotificationType string
 
