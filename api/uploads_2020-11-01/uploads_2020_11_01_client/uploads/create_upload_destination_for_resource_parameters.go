@@ -70,7 +70,7 @@ type CreateUploadDestinationForResourceParams struct {
 
 	/* ContentType.
 
-	   The content type of the file you upload.
+	   The content type of the file you upload. This parameter is required for A+ content.
 	*/
 	ContentType *string
 
