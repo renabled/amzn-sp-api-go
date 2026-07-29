@@ -34,7 +34,7 @@ type CompetitiveSummaryRequest struct {
 	// Min Items: 0
 	LowestPricedOffersInputs []*LowestPricedOffersInput `json:"lowestPricedOffersInputs"`
 
-	// A marketplace identifier.
+	// An Amazon store identifier.
 	// Required: true
 	MarketplaceID *MarketplaceID `json:"marketplaceId"`
 

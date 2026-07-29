@@ -36,6 +36,11 @@ type OrderFulfillment struct {
 	// Required: true
 	FulfillmentStatus *FulfillmentStatus `json:"fulfillmentStatus"`
 
+	// The earliest time available to print the shipping label for the order. Printing is available any time after the earliestDateTime. Response does not include a latestDateTime.
+	//
+	// Note: If blank, printing is available at any time.
+	LabelPrintingWindow *DateTimeRange `json:"labelPrintingWindow,omitempty"`
+
 	// The promised time period within which the order must be shipped to meet the customer's delivery expectations.
 	ShipByWindow *DateTimeRange `json:"shipByWindow,omitempty"`
 }
@@ -49,6 +54,10 @@ func (m *OrderFulfillment) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validateFulfillmentStatus(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateLabelPrintingWindow(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -105,6 +114,25 @@ func (m *OrderFulfillment) validateFulfillmentStatus(formats strfmt.Registry) er
 	return nil
 }
 
+func (m *OrderFulfillment) validateLabelPrintingWindow(formats strfmt.Registry) error {
+	if swag.IsZero(m.LabelPrintingWindow) { // not required
+		return nil
+	}
+
+	if m.LabelPrintingWindow != nil {
+		if err := m.LabelPrintingWindow.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("labelPrintingWindow")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("labelPrintingWindow")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
 func (m *OrderFulfillment) validateShipByWindow(formats strfmt.Registry) error {
 	if swag.IsZero(m.ShipByWindow) { // not required
 		return nil
@@ -133,6 +161,10 @@ func (m *OrderFulfillment) ContextValidate(ctx context.Context, formats strfmt.R
 	}
 
 	if err := m.contextValidateFulfillmentStatus(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateLabelPrintingWindow(ctx, formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -170,6 +202,22 @@ func (m *OrderFulfillment) contextValidateFulfillmentStatus(ctx context.Context,
 				return ve.ValidateName("fulfillmentStatus")
 			} else if ce, ok := err.(*errors.CompositeError); ok {
 				return ce.ValidateName("fulfillmentStatus")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *OrderFulfillment) contextValidateLabelPrintingWindow(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.LabelPrintingWindow != nil {
+		if err := m.LabelPrintingWindow.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("labelPrintingWindow")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("labelPrintingWindow")
 			}
 			return err
 		}

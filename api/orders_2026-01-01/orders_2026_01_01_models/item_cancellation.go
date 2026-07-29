@@ -18,6 +18,9 @@ import (
 // swagger:model ItemCancellation
 type ItemCancellation struct {
 
+	// Details of how the cancellation was executed for this order item.
+	CancellationExecution *ItemCancellationExecution `json:"cancellationExecution,omitempty"`
+
 	// Details of the cancellation request submitted for this order item.
 	CancellationRequest *ItemCancellationRequest `json:"cancellationRequest,omitempty"`
 }
@@ -26,6 +29,10 @@ type ItemCancellation struct {
 func (m *ItemCancellation) Validate(formats strfmt.Registry) error {
 	var res []error
 
+	if err := m.validateCancellationExecution(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.validateCancellationRequest(formats); err != nil {
 		res = append(res, err)
 	}
@@ -33,6 +40,25 @@ func (m *ItemCancellation) Validate(formats strfmt.Registry) error {
 	if len(res) > 0 {
 		return errors.CompositeValidationError(res...)
 	}
+	return nil
+}
+
+func (m *ItemCancellation) validateCancellationExecution(formats strfmt.Registry) error {
+	if swag.IsZero(m.CancellationExecution) { // not required
+		return nil
+	}
+
+	if m.CancellationExecution != nil {
+		if err := m.CancellationExecution.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("cancellationExecution")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("cancellationExecution")
+			}
+			return err
+		}
+	}
+
 	return nil
 }
 
@@ -59,6 +85,10 @@ func (m *ItemCancellation) validateCancellationRequest(formats strfmt.Registry) 
 func (m *ItemCancellation) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
 	var res []error
 
+	if err := m.contextValidateCancellationExecution(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.contextValidateCancellationRequest(ctx, formats); err != nil {
 		res = append(res, err)
 	}
@@ -66,6 +96,22 @@ func (m *ItemCancellation) ContextValidate(ctx context.Context, formats strfmt.R
 	if len(res) > 0 {
 		return errors.CompositeValidationError(res...)
 	}
+	return nil
+}
+
+func (m *ItemCancellation) contextValidateCancellationExecution(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.CancellationExecution != nil {
+		if err := m.CancellationExecution.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("cancellationExecution")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("cancellationExecution")
+			}
+			return err
+		}
+	}
+
 	return nil
 }
 

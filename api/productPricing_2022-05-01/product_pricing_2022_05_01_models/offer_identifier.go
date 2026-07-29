@@ -26,7 +26,7 @@ type OfferIdentifier struct {
 	// The fulfillment type for the offer.
 	FulfillmentType FulfillmentType `json:"fulfillmentType,omitempty"`
 
-	// A marketplace identifier.
+	// An Amazon store identifier.
 	// Required: true
 	MarketplaceID *MarketplaceID `json:"marketplaceId"`
 

@@ -33,7 +33,7 @@ type CompetitiveSummaryResponseBody struct {
 	// A list of lowest priced offers for the specified ASIN `marketplaceId` combination.
 	LowestPricedOffers []*LowestPricedOffer `json:"lowestPricedOffers"`
 
-	// A marketplace identifier.
+	// An Amazon store identifier.
 	// Required: true
 	MarketplaceID *MarketplaceID `json:"marketplaceId"`
 

@@ -39,6 +39,9 @@ type Offer struct {
 	// Amazon Prime details.
 	PrimeDetails *PrimeDetails `json:"primeDetails,omitempty"`
 
+	// A list of live promotions with this offer
+	Promotions Promotions `json:"promotions,omitempty"`
+
 	// The seller identifier for the offer.
 	// Required: true
 	SellerID *string `json:"sellerId"`
@@ -72,6 +75,10 @@ func (m *Offer) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validatePrimeDetails(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validatePromotions(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -194,6 +201,23 @@ func (m *Offer) validatePrimeDetails(formats strfmt.Registry) error {
 			}
 			return err
 		}
+	}
+
+	return nil
+}
+
+func (m *Offer) validatePromotions(formats strfmt.Registry) error {
+	if swag.IsZero(m.Promotions) { // not required
+		return nil
+	}
+
+	if err := m.Promotions.Validate(formats); err != nil {
+		if ve, ok := err.(*errors.Validation); ok {
+			return ve.ValidateName("promotions")
+		} else if ce, ok := err.(*errors.CompositeError); ok {
+			return ce.ValidateName("promotions")
+		}
+		return err
 	}
 
 	return nil
@@ -333,6 +357,10 @@ func (m *Offer) ContextValidate(ctx context.Context, formats strfmt.Registry) er
 		res = append(res, err)
 	}
 
+	if err := m.contextValidatePromotions(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.contextValidateShippingOptions(ctx, formats); err != nil {
 		res = append(res, err)
 	}
@@ -418,6 +446,20 @@ func (m *Offer) contextValidatePrimeDetails(ctx context.Context, formats strfmt.
 			}
 			return err
 		}
+	}
+
+	return nil
+}
+
+func (m *Offer) contextValidatePromotions(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := m.Promotions.ContextValidate(ctx, formats); err != nil {
+		if ve, ok := err.(*errors.Validation); ok {
+			return ve.ValidateName("promotions")
+		} else if ce, ok := err.(*errors.CompositeError); ok {
+			return ce.ValidateName("promotions")
+		}
+		return err
 	}
 
 	return nil
