@@ -140,7 +140,7 @@ func (a *Client) InitiatePayout(params *InitiatePayoutParams, opts ...ClientOpti
 
 | Rate (requests per second) | Burst |
 | ---- | ---- |
-| 0.5 | 30 |
+| 0.5 | 10 |
 
 The `x-amzn-RateLimit-Limit` response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 */
@@ -186,7 +186,7 @@ func (a *Client) ListExpectedPayouts(params *ListExpectedPayoutsParams, opts ...
 
 | Rate (requests per second) | Burst |
 | ---- | ---- |
-| 0.5 | 30 |
+| 0.5 | 10 |
 
 The `x-amzn-RateLimit-Limit` response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 */
