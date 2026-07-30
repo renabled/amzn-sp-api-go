@@ -12,12 +12,12 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// InvoiceError An invoice creation error occurrence.
+// InvoiceError An invoice creation error occurred.
 //
 // swagger:model InvoiceError
 type InvoiceError struct {
 
-	// A text description of the error.
+	// A description of the error.
 	Description string `json:"description,omitempty"`
 
 	// The code of the error.

@@ -12,12 +12,12 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// InvoiceDocument Object containing the documentId and a S3 pre-signed URL to download the specified document file.
+// InvoiceDocument The `documentId` and an S3 pre-signed URL that you can use to download the specified document file.
 //
 // swagger:model InvoiceDocument
 type InvoiceDocument struct {
 
-	// A pre-signed URL to download the invoice document in its original format. This URL expires after 30 seconds.
+	// A pre-signed URL that you can use to download the invoice document in its original format. This URL expires after 30 seconds.
 	InvoiceDocumentURL string `json:"invoiceDocumentUrl,omitempty"`
 }
 

@@ -34,6 +34,10 @@ type ClientService interface {
 
 	InitiatePayout(params *InitiatePayoutParams, opts ...ClientOption) (*InitiatePayoutOK, error)
 
+	ListExpectedPayouts(params *ListExpectedPayoutsParams, opts ...ClientOption) (*ListExpectedPayoutsOK, error)
+
+	ListPayouts(params *ListPayoutsParams, opts ...ClientOption) (*ListPayoutsOK, error)
+
 	SetTransport(transport runtime.ClientTransport)
 }
 
@@ -126,6 +130,98 @@ func (a *Client) InitiatePayout(params *InitiatePayoutParams, opts ...ClientOpti
 	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
 	msg := fmt.Sprintf("unexpected success response for initiatePayout: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+	ListExpectedPayouts Returns the upcoming expected payouts from Amazon associated with a partner's account for the specified parameters.
+
+**Usage Plan:**
+
+| Rate (requests per second) | Burst |
+| ---- | ---- |
+| 0.5 | 30 |
+
+The `x-amzn-RateLimit-Limit` response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+*/
+func (a *Client) ListExpectedPayouts(params *ListExpectedPayoutsParams, opts ...ClientOption) (*ListExpectedPayoutsOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewListExpectedPayoutsParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "listExpectedPayouts",
+		Method:             "GET",
+		PathPattern:        "/finances/transfers/2024-06-01/payouts/expected",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &ListExpectedPayoutsReader{formats: a.formats},
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*ListExpectedPayoutsOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for listExpectedPayouts: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+	ListPayouts Returns a list of payouts for the selling partner's account. Results can be filtered by `marketplaceIds`, `accountType`, date range (`createdAfter` and `createdBefore`), or a specific `payoutId`. By default, the API returns payouts for all available marketplaces and account types. Results are sorted in descending order of their creation dates.
+
+**Usage Plan:**
+
+| Rate (requests per second) | Burst |
+| ---- | ---- |
+| 0.5 | 30 |
+
+The `x-amzn-RateLimit-Limit` response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+*/
+func (a *Client) ListPayouts(params *ListPayoutsParams, opts ...ClientOption) (*ListPayoutsOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewListPayoutsParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "listPayouts",
+		Method:             "GET",
+		PathPattern:        "/finances/transfers/2024-06-01/payouts",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &ListPayoutsReader{formats: a.formats},
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*ListPayoutsOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for listPayouts: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 

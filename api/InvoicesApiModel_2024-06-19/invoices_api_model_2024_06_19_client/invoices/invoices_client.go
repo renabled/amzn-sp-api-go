@@ -54,15 +54,7 @@ type ClientService interface {
 }
 
 /*
-	CreateGovernmentInvoice Submits an asynchronous government invoice creation request.
-
-**Usage Plan:**
-
-| Rate (requests per second) | Burst |
-| ---- | ---- |
-| 0.0167 | 1 |
-
-For more information, see "Usage Plans and Rate Limits" in the Selling Partner API documentation.
+CreateGovernmentInvoice Submit an asynchronous request to create a government invoice.
 */
 func (a *Client) CreateGovernmentInvoice(params *CreateGovernmentInvoiceParams, opts ...ClientOption) (*CreateGovernmentInvoiceNoContent, error) {
 	// TODO: Validate the params before sending
@@ -100,15 +92,7 @@ func (a *Client) CreateGovernmentInvoice(params *CreateGovernmentInvoiceParams, 
 }
 
 /*
-	CreateInvoicesExport Creates an invoice export request.
-
-**Usage Plan:**
-
-| Rate (requests per second) | Burst |
-| ---- | ---- |
-| 0.167 | 1 |
-
-The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+CreateInvoicesExport Creates an invoice export request.
 */
 func (a *Client) CreateInvoicesExport(params *CreateInvoicesExportParams, opts ...ClientOption) (*CreateInvoicesExportAccepted, error) {
 	// TODO: Validate the params before sending
@@ -146,15 +130,7 @@ func (a *Client) CreateInvoicesExport(params *CreateInvoicesExportParams, opts .
 }
 
 /*
-	GetGovernmentInvoiceDocument Returns an invoiceDocument object containing an invoiceDocumentUrl .
-
-**Usage Plan:**
-
-| Rate (requests per second) | Burst |
-| ---- | ---- |
-| 0.0167 | 1 |
-
-For more information, see "Usage Plans and Rate Limits" in the Selling Partner API documentation.
+GetGovernmentInvoiceDocument Retrieve the URL of an invoice document.
 */
 func (a *Client) GetGovernmentInvoiceDocument(params *GetGovernmentInvoiceDocumentParams, opts ...ClientOption) (*GetGovernmentInvoiceDocumentOK, error) {
 	// TODO: Validate the params before sending
@@ -192,15 +168,7 @@ func (a *Client) GetGovernmentInvoiceDocument(params *GetGovernmentInvoiceDocume
 }
 
 /*
-	GetGovernmentInvoiceStatus Returns the status of an invoice generation request.
-
-**Usage Plan:**
-
-| Rate (requests per second) | Burst |
-| ---- | ---- |
-| 0.0167 | 1 |
-
-For more information, see "Usage Plans and Rate Limits" in the Selling Partner API documentation.
+GetGovernmentInvoiceStatus Retrieve the status of an invoice generation request.
 */
 func (a *Client) GetGovernmentInvoiceStatus(params *GetGovernmentInvoiceStatusParams, opts ...ClientOption) (*GetGovernmentInvoiceStatusOK, error) {
 	// TODO: Validate the params before sending
@@ -241,14 +209,6 @@ func (a *Client) GetGovernmentInvoiceStatus(params *GetGovernmentInvoiceStatusPa
 	GetInvoice Returns invoice data for the specified invoice. This operation returns only a subset of the invoices data; refer to the response definition to get all the possible attributes.
 
 To get the full invoice, use the `createInvoicesExport` operation to start an export request.
-
-**Usage Plan:**
-
-| Rate (requests per second) | Burst |
-| ---- | ---- |
-| 2 | 15 |
-
-The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 */
 func (a *Client) GetInvoice(params *GetInvoiceParams, opts ...ClientOption) (*GetInvoiceOK, error) {
 	// TODO: Validate the params before sending
@@ -286,15 +246,7 @@ func (a *Client) GetInvoice(params *GetInvoiceParams, opts ...ClientOption) (*Ge
 }
 
 /*
-	GetInvoices Returns invoice details for the invoices that match the filters that you specify.
-
-**Usage Plan:**
-
-| Rate (requests per second) | Burst |
-| ---- | ---- |
-| 0.1 | 20 |
-
-The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+GetInvoices Returns invoice details for the invoices that match the filters that you specify.
 */
 func (a *Client) GetInvoices(params *GetInvoicesParams, opts ...ClientOption) (*GetInvoicesOK, error) {
 	// TODO: Validate the params before sending
@@ -332,15 +284,7 @@ func (a *Client) GetInvoices(params *GetInvoicesParams, opts ...ClientOption) (*
 }
 
 /*
-	GetInvoicesAttributes Returns marketplace-dependent schemas and their respective set of possible values.
-
-**Usage Plan:**
-
-| Rate (requests per second) | Burst |
-| ---- | ---- |
-| 1 | 1 |
-
-The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+GetInvoicesAttributes Returns marketplace-dependent schemas and their respective set of possible values.
 */
 func (a *Client) GetInvoicesAttributes(params *GetInvoicesAttributesParams, opts ...ClientOption) (*GetInvoicesAttributesOK, error) {
 	// TODO: Validate the params before sending
@@ -378,15 +322,7 @@ func (a *Client) GetInvoicesAttributes(params *GetInvoicesAttributesParams, opts
 }
 
 /*
-	GetInvoicesDocument Returns the invoice document's ID and URL. Use the URL to download the ZIP file, which contains the invoices from the corresponding `createInvoicesExport` request.
-
-**Usage Plan:**
-
-| Rate (requests per second) | Burst |
-| ---- | ---- |
-| 0.0167 | 1 |
-
-The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+GetInvoicesDocument Returns the invoice document's ID and URL. Use the URL to download the ZIP file, which contains the invoices from the corresponding `createInvoicesExport` request.
 */
 func (a *Client) GetInvoicesDocument(params *GetInvoicesDocumentParams, opts ...ClientOption) (*GetInvoicesDocumentOK, error) {
 	// TODO: Validate the params before sending
@@ -424,15 +360,7 @@ func (a *Client) GetInvoicesDocument(params *GetInvoicesDocumentParams, opts ...
 }
 
 /*
-	GetInvoicesExport Returns invoice export details (including the `exportDocumentId`, if available) for the export that you specify.
-
-**Usage Plan:**
-
-| Rate (requests per second) | Burst |
-| ---- | ---- |
-| 2 | 15 |
-
-The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+GetInvoicesExport Returns invoice export details (including the `exportDocumentId`, if available) for the export that you specify.
 */
 func (a *Client) GetInvoicesExport(params *GetInvoicesExportParams, opts ...ClientOption) (*GetInvoicesExportOK, error) {
 	// TODO: Validate the params before sending
@@ -470,15 +398,7 @@ func (a *Client) GetInvoicesExport(params *GetInvoicesExportParams, opts ...Clie
 }
 
 /*
-	GetInvoicesExports Returns invoice exports details for exports that match the filters that you specify.
-
-**Usage Plan:**
-
-| Rate (requests per second) | Burst |
-| ---- | ---- |
-| 0.1 | 20 |
-
-The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+GetInvoicesExports Returns invoice exports details for exports that match the filters that you specify.
 */
 func (a *Client) GetInvoicesExports(params *GetInvoicesExportsParams, opts ...ClientOption) (*GetInvoicesExportsOK, error) {
 	// TODO: Validate the params before sending

@@ -63,31 +63,31 @@ type GetGovernmentInvoiceStatusParams struct {
 
 	/* InboundPlanID.
 
-	   The unique InboundPlan identifier in which the shipment is contained and for which the invoice will be created.
+	   The unique inbound plan identifier in which the shipment is contained and for which the invoice will be created.
 	*/
 	InboundPlanID *string
 
 	/* InvoiceType.
 
-	   Marketplace specific classification of the invoice type. Check 'invoiceType' options using 'getInvoicesAttributes' operation.
+	   The marketplace-specific classification of the invoice type. Check `invoiceType` options using the `getInvoicesAttributes` operation.
 	*/
 	InvoiceType string
 
 	/* MarketplaceID.
 
-	   The invoices status will match the marketplace that you specify.
+	   The marketplace of the invoice request.
 	*/
 	MarketplaceID string
 
 	/* ShipmentID.
 
-	   The unique shipment identifier to get an invoice for.
+	   The unique shipment identifier for which to get an invoice.
 	*/
 	ShipmentID string
 
 	/* TransactionType.
 
-	   Marketplace specific classification of the transaction type that originated the invoice. Check 'transactionType' options using 'getInvoicesAttributes' operation.
+	   The marketplace-specific classification of the transaction type that originated the invoice. Check `transactionType` options using the `getInvoicesAttributes` operation.
 	*/
 	TransactionType string
 

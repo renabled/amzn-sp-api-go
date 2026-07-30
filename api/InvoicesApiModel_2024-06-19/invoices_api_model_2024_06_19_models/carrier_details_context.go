@@ -17,16 +17,16 @@ import (
 // swagger:model CarrierDetailsContext
 type CarrierDetailsContext struct {
 
-	// The address of the carrier, as registered in state and federal tax authorities.
+	// The address of the carrier, as registered with state and federal tax authorities.
 	Address string `json:"address,omitempty"`
 
-	// Type of additional information.
+	// The type of additional information.
 	ContextType string `json:"contextType,omitempty"`
 
-	// Tax Identification number of the carrier.
+	// The tax identification number of the carrier.
 	FederalTaxID string `json:"federalTaxId,omitempty"`
 
-	// The name of the carrier, as registered in state and federal tax authorities.
+	// The name of the carrier, as registered with state and federal tax authorities.
 	Name string `json:"name,omitempty"`
 
 	// The code of the federal subdivision in which the carrier is registered.
@@ -35,7 +35,7 @@ type CarrierDetailsContext struct {
 	// The regional tax registration number of the carrier.
 	RegionTaxID string `json:"regionTaxId,omitempty"`
 
-	// The identifier for the carrier vehicle as printed in its registration plate.
+	// The identifier for the carrier vehicle, as printed on its registration plate.
 	VehicleLicensePlate string `json:"vehicleLicensePlate,omitempty"`
 
 	// The code of the federal subdivision in which the carrier vehicle is registered.

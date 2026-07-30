@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// LabelOwner Specifies who will label the items. Options include `AMAZON`, `SELLER` or `NONE`.
+// LabelOwner Specifies who will label the items. Options include `AMAZON`, `SELLER` or `NONE`. `AMAZON` is not an accepted value in the US marketplace.
 //
 // swagger:model LabelOwner
 type LabelOwner string

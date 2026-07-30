@@ -22,7 +22,7 @@ type GovernmentInvoiceStatusResponse struct {
 	// The errors that occurred during invoice creation.
 	InvoiceErrors []*InvoiceError `json:"invoiceErrors"`
 
-	// Government Invoice ID of a successfully authorized invoice.
+	// The Government Invoice ID of a successfully authorized invoice.
 	InvoiceExternalDocumentID string `json:"invoiceExternalDocumentId,omitempty"`
 
 	// status

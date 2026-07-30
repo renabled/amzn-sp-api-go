@@ -7,6 +7,7 @@ package fulfillment_inbound_2024_03_20_models
 
 import (
 	"context"
+	"strconv"
 
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/strfmt"
@@ -15,7 +16,7 @@ import (
 )
 
 // DeliveryWindowOption Contains information pertaining to a delivery window option.
-// Example: {"availabilityType":"AVAILABLE","deliveryWindowOptionId":"dw1234abcd-1234-abcd-5678-1234abcd5678","endDate":"2024-01-05T20:00:00.000Z","inboundPlanId":"wf1234abcd-1234-abcd-5678-1234abcd5678","placementOptionId":"pl1234abcd-1234-abcd-5678-1234abcd5678","shipmentId":"sh1234abcd-1234-abcd-5678-1234abcd5678","startDate":"2024-01-05T14:00:00.000Z","validUntil":"2024-01-05T20:00:00.000Z"}
+// Example: {"availabilityType":"DISCOUNTED","deliveryWindowOptionId":"dw1234abcd-1234-abcd-5678-1234abcd5678","discounts":[{"description":"Discounted delivery window option","target":"Placement Services","type":"DISCOUNT","value":{"amount":5,"code":"USD"}}],"endDate":"2024-01-05T20:00:00.000Z","inboundPlanId":"wf1234abcd-1234-abcd-5678-1234abcd5678","placementOptionId":"pl1234abcd-1234-abcd-5678-1234abcd5678","shipmentId":"sh1234abcd-1234-abcd-5678-1234abcd5678","startDate":"2024-01-05T14:00:00.000Z","validUntil":"2024-01-05T20:00:00.000Z"}
 //
 // swagger:model DeliveryWindowOption
 type DeliveryWindowOption struct {
@@ -30,6 +31,10 @@ type DeliveryWindowOption struct {
 	// Min Length: 36
 	// Pattern: ^[a-zA-Z0-9-]*$
 	DeliveryWindowOptionID *string `json:"deliveryWindowOptionId"`
+
+	// Discounts for the offered option.
+	// Min Items: 1
+	Discounts []*Incentive `json:"discounts"`
 
 	// The time at which this delivery window option ends. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) datetime format with pattern `yyyy-MM-ddTHH:mmZ`.
 	// Required: true
@@ -56,6 +61,10 @@ func (m *DeliveryWindowOption) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validateDeliveryWindowOptionID(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateDiscounts(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -107,6 +116,38 @@ func (m *DeliveryWindowOption) validateDeliveryWindowOptionID(formats strfmt.Reg
 	return nil
 }
 
+func (m *DeliveryWindowOption) validateDiscounts(formats strfmt.Registry) error {
+	if swag.IsZero(m.Discounts) { // not required
+		return nil
+	}
+
+	iDiscountsSize := int64(len(m.Discounts))
+
+	if err := validate.MinItems("discounts", "body", iDiscountsSize, 1); err != nil {
+		return err
+	}
+
+	for i := 0; i < len(m.Discounts); i++ {
+		if swag.IsZero(m.Discounts[i]) { // not required
+			continue
+		}
+
+		if m.Discounts[i] != nil {
+			if err := m.Discounts[i].Validate(formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("discounts" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("discounts" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
 func (m *DeliveryWindowOption) validateEndDate(formats strfmt.Registry) error {
 
 	if err := validate.Required("endDate", "body", m.EndDate); err != nil {
@@ -146,8 +187,37 @@ func (m *DeliveryWindowOption) validateValidUntil(formats strfmt.Registry) error
 	return nil
 }
 
-// ContextValidate validates this delivery window option based on context it is used
+// ContextValidate validate this delivery window option based on the context it is used
 func (m *DeliveryWindowOption) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.contextValidateDiscounts(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *DeliveryWindowOption) contextValidateDiscounts(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(m.Discounts); i++ {
+
+		if m.Discounts[i] != nil {
+			if err := m.Discounts[i].ContextValidate(ctx, formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("discounts" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("discounts" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
 	return nil
 }
 
