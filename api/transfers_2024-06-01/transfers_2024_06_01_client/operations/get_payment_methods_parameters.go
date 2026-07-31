@@ -64,7 +64,7 @@ type GetPaymentMethodsParams struct {
 
 	/* MarketplaceID.
 
-	   The identifier of the marketplace from which you want to retrieve payment methods. For the list of possible marketplace identifiers, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
+	   The identifier of the Amazon store from which you want to retrieve payment methods. For the list of store identifiers, refer to [Store Identifiers](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
 	*/
 	MarketplaceID string
 

@@ -23,7 +23,7 @@ type PartnerMetadata struct {
 	// Required: true
 	AccountType *string `json:"accountType"`
 
-	// The identifier of the marketplace associated with the payout. The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
+	// The identifier of the store associated with the payout. To find the ID for your store, refer to [Store Identifiers](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
 	// Required: true
 	MarketplaceID *string `json:"marketplaceId"`
 

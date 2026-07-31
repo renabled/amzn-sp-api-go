@@ -64,13 +64,13 @@ type ListExpectedPayoutsParams struct {
 
 	/* AccountType.
 
-	   An optional query parameter used to filter the response by a specific account type. When provided, only expected payouts associated with the specified account type will be returned.
+	   The response only includes the accounts of the specified account type.
 	*/
 	AccountType *string
 
 	/* MarketplaceIds.
 
-	   An optional query parameter that specifies the marketplaces from which to retrieve expected payouts. The marketplace ID is a globally unique identifier assigned to each Amazon marketplace. When provided, the response will only include expected payouts associated with the specified marketplaces. If omitted, expected payouts from all applicable marketplaces may be returned. To find the marketplace ID for your region, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
+	   The Amazon stores from which to retrieve payouts. The Amazon store ID is a globally unique identifier assigned to each Amazon store. If omitted, the response includes payouts from all applicable stores. To find the Amazon store ID for your region, refer to [Store Identifiers](https://developer-docs.amazon/sp-api/docs/store-identifiers).
 	*/
 	MarketplaceIds []string
 

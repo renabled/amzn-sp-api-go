@@ -64,13 +64,13 @@ type ListPayoutsParams struct {
 
 	/* AccountType.
 
-	   An optional query parameter to filter payouts by a specific account type. When provided, only payouts associated with the specified account type will be returned.
+	   The response only includes payouts associated with the specified account type.
 	*/
 	AccountType *string
 
 	/* CreatedAfter.
 
-	   An optional query parameter to filter payouts created on or after this date-time. When provided, the response will only include payouts with a creation date on or after the specified date-time. The value must be formatted in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format. If omitted, no start date filter is applied.
+	   The response only includes payouts created on or after this date-time. The value must be formatted in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format. If omitted, no start date filter is applied.
 
 	   Format: date-time
 	*/
@@ -78,7 +78,7 @@ type ListPayoutsParams struct {
 
 	/* CreatedBefore.
 
-	   An optional query parameter to filter payouts created before this date-time. When provided, the response will only include payouts with a creation date before the specified date-time (exclusive). The value must be formatted in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format. If omitted, no end date filter is applied.
+	   The response only includes payouts created before this date-time. The value must be formatted in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format. If omitted, no end date filter is applied.
 
 	   Format: date-time
 	*/
@@ -86,19 +86,19 @@ type ListPayoutsParams struct {
 
 	/* MarketplaceIds.
 
-	   An optional query parameter that specifies the marketplaces from which to retrieve payouts. The marketplace ID is a globally unique identifier assigned to each Amazon marketplace. When provided, the response will only include payouts associated with the specified marketplaces. If omitted, payouts from all applicable marketplaces may be returned. To find the marketplace ID for your region, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
+	   The Amazon stores from which to retrieve payouts. The Amazon store ID is a globally unique identifier assigned to each Amazon store. If omitted, the response includes payouts from all applicable stores. To find the Amazon store ID for your region, refer to [Store Identifiers](https://developer-docs.amazon/sp-api/docs/store-identifiers).
 	*/
 	MarketplaceIds []string
 
 	/* NextToken.
 
-	   The response includes `nextToken` when the number of results exceeds the specified page size. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until `nextToken` is null. Note that this operation can return empty pages.
+	   The response includes `nextToken` when the number of results exceeds the page size. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until `nextToken` is null. Note that this operation can return empty pages.
 	*/
 	NextToken *string
 
 	/* PayoutID.
 
-	   An optional query parameter that specifies the payout to retrieve. When provided, the response will only include the payout matching the specified identifier.
+	   The response only includes the payout matching the specified identifier.
 	*/
 	PayoutID *string
 

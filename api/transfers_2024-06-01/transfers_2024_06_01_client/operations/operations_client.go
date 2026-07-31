@@ -180,7 +180,7 @@ func (a *Client) ListExpectedPayouts(params *ListExpectedPayoutsParams, opts ...
 }
 
 /*
-	ListPayouts Returns a list of payouts for the selling partner's account. Results can be filtered by `marketplaceIds`, `accountType`, date range (`createdAfter` and `createdBefore`), or a specific `payoutId`. By default, the API returns payouts for all available marketplaces and account types. Results are sorted in descending order of their creation dates.
+	ListPayouts Retrieve a list of payouts for the selling partner's account. You can filter results by `marketplaceIds`, `accountType`, date range (`createdAfter` and `createdBefore`), or a specific `payoutId`. By default, the response includes payouts for all available marketplaces and account types. Results are grouped by the seller's account groups. Within each account group results are sorted by their creation date, with the most recent appearing first.
 
 **Usage Plan:**
 

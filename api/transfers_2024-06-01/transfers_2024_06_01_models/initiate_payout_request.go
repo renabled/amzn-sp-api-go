@@ -24,7 +24,7 @@ type InitiatePayoutRequest struct {
 	// Required: true
 	AccountType *string `json:"accountType"`
 
-	// The identifier of the Amazon marketplace. This API supports the following marketplaces: DE, FR, IT, ES, SE, NL, PL, and BE. For a list of possible marketplace IDs, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
+	// The identifier of the Amazon store. This API supports the following stores: DE, FR, IT, ES, SE, NL, PL, and BE. For a list of possible store IDs, refer to [Store Identifiers](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
 	// Required: true
 	MarketplaceID *MarketplaceID `json:"marketplaceId"`
 }

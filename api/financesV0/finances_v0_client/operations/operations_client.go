@@ -138,6 +138,8 @@ func (a *Client) ListFinancialEvents(params *ListFinancialEventsParams, opts ...
 /*
 	ListFinancialEventsByGroupID Returns all financial events for the specified financial event group. Orders from the last 48 hours might not be included in financial events.
 
+**Note:** Deferred events don't appear in the `listFinancialEventsByGroupId` response until they are released.
+
 **Note:** This operation only retrieves a group's data for the past two years. A request for data spanning more than two years produces an empty response.
 
 **Usage Plan:**
@@ -185,6 +187,8 @@ func (a *Client) ListFinancialEventsByGroupID(params *ListFinancialEventsByGroup
 
 /*
 	ListFinancialEventsByOrderID Returns all financial events for the specified order. Orders from the last 48 hours might not be included in financial events.
+
+**Note:** Deferred events don't appear in the `listFinancialEventsByOrderId` response until they are released.
 
 **Usage Plan:**
 
