@@ -88,7 +88,7 @@ func (a *Client) GetPurchaseOrder(params *GetPurchaseOrderParams, opts ...Client
 }
 
 /*
-	GetPurchaseOrders Returns a list of purchase orders created or changed during the time frame that you specify. You define the time frame using the `createdAfter`, `createdBefore`, `changedAfter` and `changedBefore` parameters. The date range to search must not be more than 7 days. You can choose to get only the purchase order numbers by setting `includeDetails` to false. You can then use the `getPurchaseOrder` operation to receive details for a specific purchase order.
+	GetPurchaseOrders Returns a list of purchase orders created or changed during the time frame that you specify. You define the time frame using the `createdAfter`, `createdBefore`, `changedAfter` and `changedBefore` parameters. The date range must not exceed 7 days and is available to pull data from the past 6 months. You can choose to get only the purchase order numbers by setting `includeDetails` to false. You can then use the `getPurchaseOrder` operation to receive details for a specific purchase order.
 
 **Usage Plan:**
 
