@@ -46,6 +46,8 @@ type ClientService interface {
 
 	GetSubscriptionByID(params *GetSubscriptionByIDParams, opts ...ClientOption) (*GetSubscriptionByIDOK, error)
 
+	GetSubscriptions(params *GetSubscriptionsParams, opts ...ClientOption) (*GetSubscriptionsOK, error)
+
 	SendTestNotification(params *SendTestNotificationParams, opts ...ClientOption) (*SendTestNotificationOK, error)
 
 	SetTransport(transport runtime.ClientTransport)
@@ -416,6 +418,56 @@ func (a *Client) GetSubscriptionByID(params *GetSubscriptionByIDParams, opts ...
 	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
 	msg := fmt.Sprintf("unexpected success response for getSubscriptionById: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+	GetSubscriptions Returns information about subscriptions of the specified notification type. You can use this API to retrieve all subscriptions when multiple subscriptions exist for a notification type (for example, when using filter expressions).
+
+The operation returns all subscriptions for the caller's party.
+
+`payloadVersion` is an optional parameter. When you do not provide `payloadVersion`, the operation returns subscriptions across all payload versions.
+
+**Usage Plan:**
+
+| Rate (requests per second) | Burst |
+| ---- | ---- |
+| 1 | 5 |
+
+The `x-amzn-RateLimit-Limit` response header contains the usage plan rate limits for the operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput might have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+*/
+func (a *Client) GetSubscriptions(params *GetSubscriptionsParams, opts ...ClientOption) (*GetSubscriptionsOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewGetSubscriptionsParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "getSubscriptions",
+		Method:             "GET",
+		PathPattern:        "/notifications/v1/subscriptions",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &GetSubscriptionsReader{formats: a.formats},
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*GetSubscriptionsOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for getSubscriptions: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 

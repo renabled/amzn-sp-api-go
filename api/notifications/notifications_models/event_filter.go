@@ -25,9 +25,11 @@ type EventFilter struct {
 
 	OrderChangeTypeFilter
 
+	TrackingFilter
+
 	// An `eventFilterType` value that the `notificationType` supports. The subscription service uses the `eventFilterType` to determine the type of event filter. To determine if a specific `notificationType` supports an `eventFilterType`, refer to [Notification Type Values]( https://developer-docs.amazon.com/sp-api/docs/notification-type-values).
 	// Required: true
-	// Enum: [ANY_OFFER_CHANGED ORDER_CHANGE]
+	// Enum: [ANY_OFFER_CHANGED ORDER_CHANGE SHIPMENT_TRACKING_MILESTONE_CHANGED]
 	EventFilterType *string `json:"eventFilterType"`
 }
 
@@ -55,21 +57,28 @@ func (m *EventFilter) UnmarshalJSON(raw []byte) error {
 	m.OrderChangeTypeFilter = aO2
 
 	// AO3
-	var dataAO3 struct {
+	var aO3 TrackingFilter
+	if err := swag.ReadJSON(raw, &aO3); err != nil {
+		return err
+	}
+	m.TrackingFilter = aO3
+
+	// AO4
+	var dataAO4 struct {
 		EventFilterType *string `json:"eventFilterType"`
 	}
-	if err := swag.ReadJSON(raw, &dataAO3); err != nil {
+	if err := swag.ReadJSON(raw, &dataAO4); err != nil {
 		return err
 	}
 
-	m.EventFilterType = dataAO3.EventFilterType
+	m.EventFilterType = dataAO4.EventFilterType
 
 	return nil
 }
 
 // MarshalJSON marshals this object to a JSON structure
 func (m EventFilter) MarshalJSON() ([]byte, error) {
-	_parts := make([][]byte, 0, 4)
+	_parts := make([][]byte, 0, 5)
 
 	aO0, err := swag.WriteJSON(m.AggregationFilter)
 	if err != nil {
@@ -88,17 +97,23 @@ func (m EventFilter) MarshalJSON() ([]byte, error) {
 		return nil, err
 	}
 	_parts = append(_parts, aO2)
-	var dataAO3 struct {
+
+	aO3, err := swag.WriteJSON(m.TrackingFilter)
+	if err != nil {
+		return nil, err
+	}
+	_parts = append(_parts, aO3)
+	var dataAO4 struct {
 		EventFilterType *string `json:"eventFilterType"`
 	}
 
-	dataAO3.EventFilterType = m.EventFilterType
+	dataAO4.EventFilterType = m.EventFilterType
 
-	jsonDataAO3, errAO3 := swag.WriteJSON(dataAO3)
-	if errAO3 != nil {
-		return nil, errAO3
+	jsonDataAO4, errAO4 := swag.WriteJSON(dataAO4)
+	if errAO4 != nil {
+		return nil, errAO4
 	}
-	_parts = append(_parts, jsonDataAO3)
+	_parts = append(_parts, jsonDataAO4)
 	return swag.ConcatJSON(_parts...), nil
 }
 
@@ -118,6 +133,10 @@ func (m *EventFilter) Validate(formats strfmt.Registry) error {
 	if err := m.OrderChangeTypeFilter.Validate(formats); err != nil {
 		res = append(res, err)
 	}
+	// validation for a type composition with TrackingFilter
+	if err := m.TrackingFilter.Validate(formats); err != nil {
+		res = append(res, err)
+	}
 
 	if err := m.validateEventFilterType(formats); err != nil {
 		res = append(res, err)
@@ -133,7 +152,7 @@ var eventFilterTypeEventFilterTypePropEnum []interface{}
 
 func init() {
 	var res []string
-	if err := json.Unmarshal([]byte(`["ANY_OFFER_CHANGED","ORDER_CHANGE"]`), &res); err != nil {
+	if err := json.Unmarshal([]byte(`["ANY_OFFER_CHANGED","ORDER_CHANGE","SHIPMENT_TRACKING_MILESTONE_CHANGED"]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -177,6 +196,10 @@ func (m *EventFilter) ContextValidate(ctx context.Context, formats strfmt.Regist
 	}
 	// validation for a type composition with OrderChangeTypeFilter
 	if err := m.OrderChangeTypeFilter.ContextValidate(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+	// validation for a type composition with TrackingFilter
+	if err := m.TrackingFilter.ContextValidate(ctx, formats); err != nil {
 		res = append(res, err)
 	}
 
