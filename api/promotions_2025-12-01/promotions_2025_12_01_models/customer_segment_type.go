@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// CustomerSegmentType Segment type for targeting specific customer cohorts.
+// CustomerSegmentType The segment type for targeting specific customer cohorts.
 //
 // swagger:model CustomerSegmentType
 type CustomerSegmentType string

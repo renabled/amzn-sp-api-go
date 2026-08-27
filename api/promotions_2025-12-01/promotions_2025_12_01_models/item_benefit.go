@@ -15,16 +15,16 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// ItemBenefit Item-level benefit configuration with pricing options.
+// ItemBenefit Item-level benefit configuration with pricing options. Applicable to `DEAL` and `PRICE_DISCOUNT` promotion types, where each item can have its own distinct benefit. For `COUPON` and `BASKET_BUILDING` promotion types, benefits are configured at the promotion level.
 // Example: {"discount":{"percentOff":15,"type":"PERCENTAGE_OFF"},"perCustomerUses":5,"type":"DISCOUNTED_PRICE"}
 //
 // swagger:model ItemBenefit
 type ItemBenefit struct {
 
-	// Discount configuration when using DISCOUNTED_PRICE type.
+	// The discount configuration when using `DISCOUNTED_PRICE` type.
 	Discount *Discount `json:"discount,omitempty"`
 
-	// Maximum uses per customer for this item benefit.
+	// The maximum number of uses per customer for this item benefit.
 	// Example: 5
 	// Minimum: 1
 	PerCustomerUses int64 `json:"perCustomerUses,omitempty"`
@@ -32,7 +32,7 @@ type ItemBenefit struct {
 	// Fixed price.
 	Price *Currency `json:"price,omitempty"`
 
-	// Benefit type for item-level pricing.
+	// The benefit type for item-level pricing.
 	// Example: DISCOUNTED_PRICE
 	// Required: true
 	// Enum: [FIXED_PRICE DISCOUNTED_PRICE]

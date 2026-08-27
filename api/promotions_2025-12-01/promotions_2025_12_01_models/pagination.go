@@ -12,12 +12,12 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// Pagination When a request produces a response that returns unbounded results, pagination occurs. This means the entire response is divided into individual pages. To retrieve the right page, you must pass the `nextToken` as the `paginationToken` query parameter in the subsequent request. When there are no more pages to fetch, the `Pagination` key will be absent from the response. When a `Pagination` object is present, it should contain `nextToken` as non-null value
+// Pagination When a request produces a list that is larger than the page size, pagination occurs. This divides the response into individual pages. To retrieve the next page, pass the `nextToken` as the `paginationToken` query parameter in the subsequent request. When there are no more pages to retrieve, the `Pagination` key will be absent from the response. When a `Pagination` object is present, it contains `nextToken` as non-null value
 //
 // swagger:model Pagination
 type Pagination struct {
 
-	// A token that can be used to fetch the next page from the current page of result.
+	// A token that can be used to retrieve the next page from the current page of results.
 	NextToken string `json:"nextToken,omitempty"`
 }
 

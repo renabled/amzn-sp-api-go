@@ -13,12 +13,12 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// CustomerSegmentDetails Additional segment type-specific details. Use the appropriate property based on segmentType.
+// CustomerSegmentDetails Additional segment type-specific details. Use the appropriate property based on `segmentType`.
 //
 // swagger:model CustomerSegmentDetails
 type CustomerSegmentDetails struct {
 
-	// Brand segment details (required when segmentType is BRAND).
+	// Brand segment details. This field is required when `segmentType` is `BRAND`.
 	BrandSegmentDetails *BrandSegmentDetails `json:"brandSegmentDetails,omitempty"`
 }
 

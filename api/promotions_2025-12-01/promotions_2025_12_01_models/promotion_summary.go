@@ -8,7 +8,6 @@ package promotions_2025_12_01_models
 import (
 	"context"
 	"encoding/json"
-	"strconv"
 
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/strfmt"
@@ -17,139 +16,87 @@ import (
 )
 
 // PromotionSummary Summary information for a promotion in search results.
-// Example: {"createdDate":"2025-07-01T02:01:08-07:00","lastUpdatedDate":"2025-07-15T14:30:00-07:00","marketplaceId":"ATVPDKIKX0DER","promotionId":"a1b2c3d4-e5f6-7890-abcd-ef1234567890","promotionTitle":"Summer Sale 2025","promotionType":"DEAL","schedule":{"endDate":"2025-08-31T23:59:59-07:00","startDate":"2025-07-01T00:00:00-07:00"},"selection":{"revisionId":1,"selectionId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","type":"ITEMS"},"status":"RUNNING","trackingId":"v2024-a1b2c3d4-e5f6-7890-abcd-ef1234567890"}
 //
 // swagger:model PromotionSummary
 type PromotionSummary struct {
+	PromotionRevisionAttributes
 
-	// Promotion benefit configuration.
-	Benefit *PromotionBenefit `json:"benefit,omitempty"`
-
-	// Promotion budget configuration.
-	Budget *Budget `json:"budget,omitempty"`
-
-	// Promotion creation timestamp. Zoned Datetime in ISO 8601 format (e.g., 1970-01-01T00:00:00-07:00).
-	// Required: true
-	// Format: date-time
-	CreatedDate *strfmt.DateTime `json:"createdDate"`
-
-	// Target customer segments for the promotion.
-	// Example: [{"segmentDetails":{"brandSegmentDetails":{"brandId":"G13V1IB3VIYZZH"}},"segmentId":"c157be82-b0c1-49e1-bf9b-4180da99b66d","segmentType":"BRAND"}]
-	CustomerSegments []*CustomerSegment `json:"customerSegments"`
-
-	// Promotion-level validation issues.
-	// Example: [{"code":"BUDGET_EXCEEDED","message":"The promotion budget has been exceeded.","severity":"WARNING"}]
-	Issues []*PromotionIssue `json:"issues"`
-
-	// Promotion last updated timestamp. Zoned Datetime in ISO 8601 format (e.g., 1970-01-01T00:00:00-07:00).
-	// Format: date-time
-	LastUpdatedDate strfmt.DateTime `json:"lastUpdatedDate,omitempty"`
-
-	// Amazon marketplace identifier.
-	// Required: true
-	MarketplaceID *string `json:"marketplaceId"`
-
-	// Merchandising configuration for controlling promotion display on the retail website.
-	Merchandising *Merchandising `json:"merchandising,omitempty"`
-
-	// Unique promotion identifier.
-	// Required: true
-	PromotionID *string `json:"promotionId"`
-
-	// Name of the promotion for the selling partner.
-	// Required: true
-	PromotionTitle *string `json:"promotionTitle"`
-
-	// Promotion type.
-	// Required: true
-	PromotionType *PromotionType `json:"promotionType"`
-
-	// Purchase requirements for BASKET_BUILDING promotions. Defines what customers must buy to qualify.
-	PurchaseRequirements *PurchaseRequirements `json:"purchaseRequirements,omitempty"`
-
-	// Promotion schedule configuration.
-	// Required: true
-	Schedule *Schedule `json:"schedule"`
-
-	// A selection defining which items in the customer's order qualify for the promotion benefit. The discount or offer is applied to items in this selection. For BASKET_BUILDING promotions, this is the 'Get Y' selection (items receiving the discount after purchase requirements are met). For DEAL, PRICE_DISCOUNT, and COUPON promotions, this represents the eligible items that receive the benefit.
-	// Required: true
-	Selection *Selection `json:"selection"`
+	// The latest revision data, when it diverges from the published revision. Present only when an edit is still processing (`revisionStatus: PROCESSING`) or was rejected (`revisionStatus: FAILED`). Absent when the latest revision matches the published revision (stable state).
+	LatestRevision *LatestRevision `json:"latestRevision,omitempty"`
 
 	// Current promotion status indicating the lifecycle state of the promotion.
 	// Required: true
 	// Enum: [PROCESSING UPCOMING RUNNING EXPIRED FAILED CANCELLING CANCELLED]
 	Status *string `json:"status"`
+}
 
-	// Tracking ID used to uniquely identify a promotion for performance tracking.
-	// Required: true
-	TrackingID *string `json:"trackingId"`
+// UnmarshalJSON unmarshals this object from a JSON structure
+func (m *PromotionSummary) UnmarshalJSON(raw []byte) error {
+	// AO0
+	var aO0 PromotionRevisionAttributes
+	if err := swag.ReadJSON(raw, &aO0); err != nil {
+		return err
+	}
+	m.PromotionRevisionAttributes = aO0
+
+	// AO1
+	var dataAO1 struct {
+		LatestRevision *LatestRevision `json:"latestRevision,omitempty"`
+
+		Status *string `json:"status"`
+	}
+	if err := swag.ReadJSON(raw, &dataAO1); err != nil {
+		return err
+	}
+
+	m.LatestRevision = dataAO1.LatestRevision
+
+	m.Status = dataAO1.Status
+
+	return nil
+}
+
+// MarshalJSON marshals this object to a JSON structure
+func (m PromotionSummary) MarshalJSON() ([]byte, error) {
+	_parts := make([][]byte, 0, 2)
+
+	aO0, err := swag.WriteJSON(m.PromotionRevisionAttributes)
+	if err != nil {
+		return nil, err
+	}
+	_parts = append(_parts, aO0)
+	var dataAO1 struct {
+		LatestRevision *LatestRevision `json:"latestRevision,omitempty"`
+
+		Status *string `json:"status"`
+	}
+
+	dataAO1.LatestRevision = m.LatestRevision
+
+	dataAO1.Status = m.Status
+
+	jsonDataAO1, errAO1 := swag.WriteJSON(dataAO1)
+	if errAO1 != nil {
+		return nil, errAO1
+	}
+	_parts = append(_parts, jsonDataAO1)
+	return swag.ConcatJSON(_parts...), nil
 }
 
 // Validate validates this promotion summary
 func (m *PromotionSummary) Validate(formats strfmt.Registry) error {
 	var res []error
 
-	if err := m.validateBenefit(formats); err != nil {
+	// validation for a type composition with PromotionRevisionAttributes
+	if err := m.PromotionRevisionAttributes.Validate(formats); err != nil {
 		res = append(res, err)
 	}
 
-	if err := m.validateBudget(formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.validateCreatedDate(formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.validateCustomerSegments(formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.validateIssues(formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.validateLastUpdatedDate(formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.validateMarketplaceID(formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.validateMerchandising(formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.validatePromotionID(formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.validatePromotionTitle(formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.validatePromotionType(formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.validatePurchaseRequirements(formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.validateSchedule(formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.validateSelection(formats); err != nil {
+	if err := m.validateLatestRevision(formats); err != nil {
 		res = append(res, err)
 	}
 
 	if err := m.validateStatus(formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.validateTrackingID(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -159,242 +106,18 @@ func (m *PromotionSummary) Validate(formats strfmt.Registry) error {
 	return nil
 }
 
-func (m *PromotionSummary) validateBenefit(formats strfmt.Registry) error {
-	if swag.IsZero(m.Benefit) { // not required
+func (m *PromotionSummary) validateLatestRevision(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.LatestRevision) { // not required
 		return nil
 	}
 
-	if m.Benefit != nil {
-		if err := m.Benefit.Validate(formats); err != nil {
+	if m.LatestRevision != nil {
+		if err := m.LatestRevision.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
-				return ve.ValidateName("benefit")
+				return ve.ValidateName("latestRevision")
 			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("benefit")
-			}
-			return err
-		}
-	}
-
-	return nil
-}
-
-func (m *PromotionSummary) validateBudget(formats strfmt.Registry) error {
-	if swag.IsZero(m.Budget) { // not required
-		return nil
-	}
-
-	if m.Budget != nil {
-		if err := m.Budget.Validate(formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
-				return ve.ValidateName("budget")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("budget")
-			}
-			return err
-		}
-	}
-
-	return nil
-}
-
-func (m *PromotionSummary) validateCreatedDate(formats strfmt.Registry) error {
-
-	if err := validate.Required("createdDate", "body", m.CreatedDate); err != nil {
-		return err
-	}
-
-	if err := validate.FormatOf("createdDate", "body", "date-time", m.CreatedDate.String(), formats); err != nil {
-		return err
-	}
-
-	return nil
-}
-
-func (m *PromotionSummary) validateCustomerSegments(formats strfmt.Registry) error {
-	if swag.IsZero(m.CustomerSegments) { // not required
-		return nil
-	}
-
-	for i := 0; i < len(m.CustomerSegments); i++ {
-		if swag.IsZero(m.CustomerSegments[i]) { // not required
-			continue
-		}
-
-		if m.CustomerSegments[i] != nil {
-			if err := m.CustomerSegments[i].Validate(formats); err != nil {
-				if ve, ok := err.(*errors.Validation); ok {
-					return ve.ValidateName("customerSegments" + "." + strconv.Itoa(i))
-				} else if ce, ok := err.(*errors.CompositeError); ok {
-					return ce.ValidateName("customerSegments" + "." + strconv.Itoa(i))
-				}
-				return err
-			}
-		}
-
-	}
-
-	return nil
-}
-
-func (m *PromotionSummary) validateIssues(formats strfmt.Registry) error {
-	if swag.IsZero(m.Issues) { // not required
-		return nil
-	}
-
-	for i := 0; i < len(m.Issues); i++ {
-		if swag.IsZero(m.Issues[i]) { // not required
-			continue
-		}
-
-		if m.Issues[i] != nil {
-			if err := m.Issues[i].Validate(formats); err != nil {
-				if ve, ok := err.(*errors.Validation); ok {
-					return ve.ValidateName("issues" + "." + strconv.Itoa(i))
-				} else if ce, ok := err.(*errors.CompositeError); ok {
-					return ce.ValidateName("issues" + "." + strconv.Itoa(i))
-				}
-				return err
-			}
-		}
-
-	}
-
-	return nil
-}
-
-func (m *PromotionSummary) validateLastUpdatedDate(formats strfmt.Registry) error {
-	if swag.IsZero(m.LastUpdatedDate) { // not required
-		return nil
-	}
-
-	if err := validate.FormatOf("lastUpdatedDate", "body", "date-time", m.LastUpdatedDate.String(), formats); err != nil {
-		return err
-	}
-
-	return nil
-}
-
-func (m *PromotionSummary) validateMarketplaceID(formats strfmt.Registry) error {
-
-	if err := validate.Required("marketplaceId", "body", m.MarketplaceID); err != nil {
-		return err
-	}
-
-	return nil
-}
-
-func (m *PromotionSummary) validateMerchandising(formats strfmt.Registry) error {
-	if swag.IsZero(m.Merchandising) { // not required
-		return nil
-	}
-
-	if m.Merchandising != nil {
-		if err := m.Merchandising.Validate(formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
-				return ve.ValidateName("merchandising")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("merchandising")
-			}
-			return err
-		}
-	}
-
-	return nil
-}
-
-func (m *PromotionSummary) validatePromotionID(formats strfmt.Registry) error {
-
-	if err := validate.Required("promotionId", "body", m.PromotionID); err != nil {
-		return err
-	}
-
-	return nil
-}
-
-func (m *PromotionSummary) validatePromotionTitle(formats strfmt.Registry) error {
-
-	if err := validate.Required("promotionTitle", "body", m.PromotionTitle); err != nil {
-		return err
-	}
-
-	return nil
-}
-
-func (m *PromotionSummary) validatePromotionType(formats strfmt.Registry) error {
-
-	if err := validate.Required("promotionType", "body", m.PromotionType); err != nil {
-		return err
-	}
-
-	if err := validate.Required("promotionType", "body", m.PromotionType); err != nil {
-		return err
-	}
-
-	if m.PromotionType != nil {
-		if err := m.PromotionType.Validate(formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
-				return ve.ValidateName("promotionType")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("promotionType")
-			}
-			return err
-		}
-	}
-
-	return nil
-}
-
-func (m *PromotionSummary) validatePurchaseRequirements(formats strfmt.Registry) error {
-	if swag.IsZero(m.PurchaseRequirements) { // not required
-		return nil
-	}
-
-	if m.PurchaseRequirements != nil {
-		if err := m.PurchaseRequirements.Validate(formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
-				return ve.ValidateName("purchaseRequirements")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("purchaseRequirements")
-			}
-			return err
-		}
-	}
-
-	return nil
-}
-
-func (m *PromotionSummary) validateSchedule(formats strfmt.Registry) error {
-
-	if err := validate.Required("schedule", "body", m.Schedule); err != nil {
-		return err
-	}
-
-	if m.Schedule != nil {
-		if err := m.Schedule.Validate(formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
-				return ve.ValidateName("schedule")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("schedule")
-			}
-			return err
-		}
-	}
-
-	return nil
-}
-
-func (m *PromotionSummary) validateSelection(formats strfmt.Registry) error {
-
-	if err := validate.Required("selection", "body", m.Selection); err != nil {
-		return err
-	}
-
-	if m.Selection != nil {
-		if err := m.Selection.Validate(formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
-				return ve.ValidateName("selection")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("selection")
+				return ce.ValidateName("latestRevision")
 			}
 			return err
 		}
@@ -415,31 +138,7 @@ func init() {
 	}
 }
 
-const (
-
-	// PromotionSummaryStatusPROCESSING captures enum value "PROCESSING"
-	PromotionSummaryStatusPROCESSING string = "PROCESSING"
-
-	// PromotionSummaryStatusUPCOMING captures enum value "UPCOMING"
-	PromotionSummaryStatusUPCOMING string = "UPCOMING"
-
-	// PromotionSummaryStatusRUNNING captures enum value "RUNNING"
-	PromotionSummaryStatusRUNNING string = "RUNNING"
-
-	// PromotionSummaryStatusEXPIRED captures enum value "EXPIRED"
-	PromotionSummaryStatusEXPIRED string = "EXPIRED"
-
-	// PromotionSummaryStatusFAILED captures enum value "FAILED"
-	PromotionSummaryStatusFAILED string = "FAILED"
-
-	// PromotionSummaryStatusCANCELLING captures enum value "CANCELLING"
-	PromotionSummaryStatusCANCELLING string = "CANCELLING"
-
-	// PromotionSummaryStatusCANCELLED captures enum value "CANCELLED"
-	PromotionSummaryStatusCANCELLED string = "CANCELLED"
-)
-
-// prop value enum
+// property enum
 func (m *PromotionSummary) validateStatusEnum(path, location string, value string) error {
 	if err := validate.EnumCase(path, location, value, promotionSummaryTypeStatusPropEnum, true); err != nil {
 		return err
@@ -461,52 +160,16 @@ func (m *PromotionSummary) validateStatus(formats strfmt.Registry) error {
 	return nil
 }
 
-func (m *PromotionSummary) validateTrackingID(formats strfmt.Registry) error {
-
-	if err := validate.Required("trackingId", "body", m.TrackingID); err != nil {
-		return err
-	}
-
-	return nil
-}
-
 // ContextValidate validate this promotion summary based on the context it is used
 func (m *PromotionSummary) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
 	var res []error
 
-	if err := m.contextValidateBenefit(ctx, formats); err != nil {
+	// validation for a type composition with PromotionRevisionAttributes
+	if err := m.PromotionRevisionAttributes.ContextValidate(ctx, formats); err != nil {
 		res = append(res, err)
 	}
 
-	if err := m.contextValidateBudget(ctx, formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.contextValidateCustomerSegments(ctx, formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.contextValidateIssues(ctx, formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.contextValidateMerchandising(ctx, formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.contextValidatePromotionType(ctx, formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.contextValidatePurchaseRequirements(ctx, formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.contextValidateSchedule(ctx, formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.contextValidateSelection(ctx, formats); err != nil {
+	if err := m.contextValidateLatestRevision(ctx, formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -516,150 +179,14 @@ func (m *PromotionSummary) ContextValidate(ctx context.Context, formats strfmt.R
 	return nil
 }
 
-func (m *PromotionSummary) contextValidateBenefit(ctx context.Context, formats strfmt.Registry) error {
+func (m *PromotionSummary) contextValidateLatestRevision(ctx context.Context, formats strfmt.Registry) error {
 
-	if m.Benefit != nil {
-		if err := m.Benefit.ContextValidate(ctx, formats); err != nil {
+	if m.LatestRevision != nil {
+		if err := m.LatestRevision.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
-				return ve.ValidateName("benefit")
+				return ve.ValidateName("latestRevision")
 			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("benefit")
-			}
-			return err
-		}
-	}
-
-	return nil
-}
-
-func (m *PromotionSummary) contextValidateBudget(ctx context.Context, formats strfmt.Registry) error {
-
-	if m.Budget != nil {
-		if err := m.Budget.ContextValidate(ctx, formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
-				return ve.ValidateName("budget")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("budget")
-			}
-			return err
-		}
-	}
-
-	return nil
-}
-
-func (m *PromotionSummary) contextValidateCustomerSegments(ctx context.Context, formats strfmt.Registry) error {
-
-	for i := 0; i < len(m.CustomerSegments); i++ {
-
-		if m.CustomerSegments[i] != nil {
-			if err := m.CustomerSegments[i].ContextValidate(ctx, formats); err != nil {
-				if ve, ok := err.(*errors.Validation); ok {
-					return ve.ValidateName("customerSegments" + "." + strconv.Itoa(i))
-				} else if ce, ok := err.(*errors.CompositeError); ok {
-					return ce.ValidateName("customerSegments" + "." + strconv.Itoa(i))
-				}
-				return err
-			}
-		}
-
-	}
-
-	return nil
-}
-
-func (m *PromotionSummary) contextValidateIssues(ctx context.Context, formats strfmt.Registry) error {
-
-	for i := 0; i < len(m.Issues); i++ {
-
-		if m.Issues[i] != nil {
-			if err := m.Issues[i].ContextValidate(ctx, formats); err != nil {
-				if ve, ok := err.(*errors.Validation); ok {
-					return ve.ValidateName("issues" + "." + strconv.Itoa(i))
-				} else if ce, ok := err.(*errors.CompositeError); ok {
-					return ce.ValidateName("issues" + "." + strconv.Itoa(i))
-				}
-				return err
-			}
-		}
-
-	}
-
-	return nil
-}
-
-func (m *PromotionSummary) contextValidateMerchandising(ctx context.Context, formats strfmt.Registry) error {
-
-	if m.Merchandising != nil {
-		if err := m.Merchandising.ContextValidate(ctx, formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
-				return ve.ValidateName("merchandising")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("merchandising")
-			}
-			return err
-		}
-	}
-
-	return nil
-}
-
-func (m *PromotionSummary) contextValidatePromotionType(ctx context.Context, formats strfmt.Registry) error {
-
-	if m.PromotionType != nil {
-		if err := m.PromotionType.ContextValidate(ctx, formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
-				return ve.ValidateName("promotionType")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("promotionType")
-			}
-			return err
-		}
-	}
-
-	return nil
-}
-
-func (m *PromotionSummary) contextValidatePurchaseRequirements(ctx context.Context, formats strfmt.Registry) error {
-
-	if m.PurchaseRequirements != nil {
-		if err := m.PurchaseRequirements.ContextValidate(ctx, formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
-				return ve.ValidateName("purchaseRequirements")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("purchaseRequirements")
-			}
-			return err
-		}
-	}
-
-	return nil
-}
-
-func (m *PromotionSummary) contextValidateSchedule(ctx context.Context, formats strfmt.Registry) error {
-
-	if m.Schedule != nil {
-		if err := m.Schedule.ContextValidate(ctx, formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
-				return ve.ValidateName("schedule")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("schedule")
-			}
-			return err
-		}
-	}
-
-	return nil
-}
-
-func (m *PromotionSummary) contextValidateSelection(ctx context.Context, formats strfmt.Registry) error {
-
-	if m.Selection != nil {
-		if err := m.Selection.ContextValidate(ctx, formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
-				return ve.ValidateName("selection")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("selection")
+				return ce.ValidateName("latestRevision")
 			}
 			return err
 		}

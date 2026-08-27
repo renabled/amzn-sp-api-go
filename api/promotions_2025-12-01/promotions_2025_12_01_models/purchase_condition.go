@@ -13,7 +13,7 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// PurchaseCondition Specifies minimum purchase requirements using quantity-based or amount-based conditions for basket building promotions. Used in purchase requirements and multi-tier benefit configurations to specify conditions within those configurations. Exactly one of quantityThreshold or amountThreshold must be specified.
+// PurchaseCondition Minimum purchase requirements using quantity-based or amount-based conditions for basket building promotions. You can specify conditions within purchase requirements and multi-tier benefit configurations. You must specify exactly one of `quantityThreshold` or `amountThreshold`.
 // Example: {"amountThreshold":{"currency":{"amount":50,"currencyCode":"USD"},"type":"AT_LEAST"}}
 //
 // swagger:model PurchaseCondition

@@ -20,11 +20,11 @@ import (
 // swagger:model BenefitTier
 type BenefitTier struct {
 
-	// Discount configuration for this tier.
+	// The discount configuration for this tier.
 	// Required: true
 	Discount *Discount `json:"discount"`
 
-	// Purchase condition that must be met to receive this tier's enhanced discount.
+	// The purchase condition that must be met to receive this tier's enhanced discount.
 	// Required: true
 	PurchaseCondition *PurchaseCondition `json:"purchaseCondition"`
 }

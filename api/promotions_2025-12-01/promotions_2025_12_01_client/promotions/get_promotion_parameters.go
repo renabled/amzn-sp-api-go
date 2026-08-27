@@ -64,13 +64,13 @@ type GetPromotionParams struct {
 
 	/* IncludedData.
 
-	   A comma-delimited list of data sets to include in the response. Use this parameter to optimize response payload by including only the data you need.
+	   A comma-delimited list of datasets to include in the response.
 	*/
 	IncludedData []string
 
 	/* Locale.
 
-	   The locale code constructed from ISO 639 language code and ISO 3166-1 alpha-2 standard of country codes separated by an underscore character.
+	   The locale of the promotion. Formatted as an ISO 639 language code, followed by an underscore, followed by an ISO 3166-1 alpha-2 country code.
 
 	   Default: "en_US"
 	*/
@@ -78,7 +78,7 @@ type GetPromotionParams struct {
 
 	/* PromotionID.
 
-	   The promotion identifier.
+	   The ID of the promotion.
 	*/
 	PromotionID string
 

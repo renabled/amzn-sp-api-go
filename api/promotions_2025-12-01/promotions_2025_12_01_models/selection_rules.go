@@ -15,7 +15,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// SelectionRules Rules configuration for catalog-based selections.
+// SelectionRules Rules for catalog-based selections.
 // Example: {"excludedItems":[{"asin":"B08N5WRWNW"}]}
 //
 // swagger:model SelectionRules

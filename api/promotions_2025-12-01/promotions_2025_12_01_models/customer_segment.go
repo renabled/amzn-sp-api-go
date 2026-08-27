@@ -14,15 +14,15 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// CustomerSegment Segment configuration for targeting specific customer cohorts. When segmentType is BRAND, segmentId contains the segment/audience id and segmentDetails.brandSegmentDetails must be provided. When segmentType is PROGRAM, segmentId contains the program name (e.g., PRIME_EXCLUSIVE, MOM, STUDENT etc).
+// CustomerSegment The customer segment. When `segmentType` is `BRAND`, `segmentId` contains the segment / audience ID and `segmentDetails.brandSegmentDetails` must be provided. When `segmentType` is `PROGRAM`, `segmentId` contains the program name (for example, `PRIME_EXCLUSIVE`, `MOM`, `STUDENT`).
 //
 // swagger:model CustomerSegment
 type CustomerSegment struct {
 
-	// Additional segment-specific details. Required for BRAND segments type.
+	// Additional segment-specific details. Required for `BRAND` segments type.
 	SegmentDetails *CustomerSegmentDetails `json:"segmentDetails,omitempty"`
 
-	// Segment identifier. For BRAND: segment/audience id. For PROGRAM: program name (e.g., PRIME_EXCLUSIVE, MOM, STUDENT etc).
+	// The segment identifier. For `BRAND`: the segment / audience ID. For `PROGRAM`: the program name (for example, `PRIME_EXCLUSIVE`, `MOM`, `STUDENT` etc).
 	// Required: true
 	SegmentID *string `json:"segmentId"`
 

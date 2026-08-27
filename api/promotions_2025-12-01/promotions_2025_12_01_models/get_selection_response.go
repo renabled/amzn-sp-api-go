@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// GetSelectionResponse Response schema for get selection operation. The selectionDetails field will always be present for type ITEMS.
+// GetSelectionResponse The response schema for `getSelection`. The `selectionDetails` field is always present when `type` is `ITEMS`.
 //
 // swagger:model GetSelectionResponse
 type GetSelectionResponse struct {

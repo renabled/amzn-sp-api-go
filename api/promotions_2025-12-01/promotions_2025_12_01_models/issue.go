@@ -15,7 +15,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// Issue Base issue information with code, message, and severity.
+// Issue Issue information with code, message, and severity.
 // Example: {"code":"INVALID_INPUT","message":"The provided input is invalid.","severity":"ERROR"}
 //
 // swagger:model Issue

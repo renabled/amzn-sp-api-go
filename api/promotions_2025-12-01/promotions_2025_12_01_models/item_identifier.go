@@ -12,7 +12,7 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// ItemIdentifier Identifies an item using its key identifiers.
+// ItemIdentifier The key identifiers of an item.
 // Example: {"asin":"B08N5WRWNW"}
 //
 // swagger:model ItemIdentifier
@@ -22,7 +22,7 @@ type ItemIdentifier struct {
 	// Example: B08N5WRWNW
 	Asin string `json:"asin,omitempty"`
 
-	// Stock Keeping Unit identifier.
+	// Stock Keeping Unit (SKU).
 	// Example: MY-SKU-12345
 	Sku string `json:"sku,omitempty"`
 }

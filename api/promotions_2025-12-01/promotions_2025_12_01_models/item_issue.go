@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// ItemIssue Item-level validation issue with item identifier.
+// ItemIssue An item-level validation issue.
 //
 // swagger:model ItemIssue
 type ItemIssue struct {

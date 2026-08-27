@@ -13,7 +13,7 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// PromotionIssue Promotion-level validation issue.
+// PromotionIssue A promotion-level validation issue.
 //
 // swagger:model PromotionIssue
 type PromotionIssue struct {

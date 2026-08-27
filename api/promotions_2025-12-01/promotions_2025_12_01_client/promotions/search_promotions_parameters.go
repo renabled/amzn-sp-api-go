@@ -64,13 +64,13 @@ type SearchPromotionsParams struct {
 
 	/* Asins.
 
-	   A comma-delimited filter by ASINs included in promotions.
+	   The ASINs to which promotions apply, formatted as a comma-delimited list.
 	*/
 	Asins []string
 
 	/* EndDateAfter.
 
-	   Filter promotions with end date after this timestamp. Zoned Datetime in ISO 8601 format (e.g., 1970-01-01T00:00:00-07:00).
+	   Promotions that end after this date are returned. Formatted in ISO 8601 format, including the timezone. For example: `1970-01-01T00:00:00-07:00`.
 
 	   Format: date-time
 	*/
@@ -78,7 +78,7 @@ type SearchPromotionsParams struct {
 
 	/* EndDateBefore.
 
-	   Filter promotions with end date before this timestamp. Zoned Datetime in ISO 8601 format (e.g., 1970-01-01T00:00:00-07:00).
+	   Promotions that end before this date are returned. Formatted in ISO 8601 format, including the timezone. For example: `1970-01-01T00:00:00-07:00`.
 
 	   Format: date-time
 	*/
@@ -86,13 +86,13 @@ type SearchPromotionsParams struct {
 
 	/* IncludedData.
 
-	   A comma-delimited list of data sets to include in the response.
+	   A comma-delimited list of datasets to include in the response.
 	*/
 	IncludedData []string
 
 	/* Limit.
 
-	   Limit value to restrict the maximum number of results returned from the API Pagination limits per page.
+	   The maximum number of response results per page.
 
 	   Format: int64
 	   Default: 20
@@ -101,7 +101,7 @@ type SearchPromotionsParams struct {
 
 	/* Locale.
 
-	   The locale code constructed from ISO 639 language code and ISO 3166-1 alpha-2 standard of country codes separated by an underscore character.
+	   The locale from which to retrieve promotions. Formatted as an ISO 639 language code, followed by an underscore, followed by an ISO 3166-1 alpha-2 country code.
 
 	   Default: "en_US"
 	*/
@@ -109,33 +109,39 @@ type SearchPromotionsParams struct {
 
 	/* MarketplaceIds.
 
-	   A comma-delimited list of Amazon marketplace identifiers for the request. Refer [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids) to find your marketplace.
+	   The Amazon stores from which to retrieve promotions. Refer to [Store Identifiers](https://developer-docs.amazon/sp-api/docs/store-identifiers) for a list of Amazon store values.
 	*/
 	MarketplaceIds []string
 
 	/* PaginationToken.
 
-	   A token to fetch a certain page when there are multiple pages worth of results. The value of this token is fetched from the `pagination` returned in the API response. In the absence of the token value from the query parameter, the API returns the first page of the result
+	   A token that you use to retrieve the next page of results. The response includes `paginationToken` when the number of results exceeds the specified `limit` value. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until `paginationToken` is null. Note that this operation can return empty pages.
 	*/
 	PaginationToken *string
 
 	/* PromotionTypes.
 
-	   A comma-delimited filter by promotion types.
+	   The promotion types to which promotions apply, formatted as a comma-delimited list.
 	*/
 	PromotionTypes []string
 
 	/* Revision.
 
-	   Specifies which promotion revision(s) to include in search results. Controls whether to query published revisions, latest revisions, or both.
+	   Specifies which promotion revision or revisions to match against when filtering. This controls which promotions are included in search results, not the shape of the response. The response always returns the published revision in the main body, with `latestRevision` included when the latest revision diverges.
 
 	   Default: "PUBLISHED"
 	*/
 	Revision *string
 
+	/* Skus.
+
+	   The SKUs to which promotions apply, formatted as a comma-delimited list.
+	*/
+	Skus []string
+
 	/* StartDateAfter.
 
-	   Filter promotions with start date after this timestamp. Zoned Datetime in ISO 8601 format (e.g., 1970-01-01T00:00:00-07:00).
+	   Promotions that start after this date are returned. Formatted in ISO 8601 format, including the timezone. For example: `1970-01-01T00:00:00-07:00`.
 
 	   Format: date-time
 	*/
@@ -143,7 +149,7 @@ type SearchPromotionsParams struct {
 
 	/* StartDateBefore.
 
-	   Filter promotions with start date before this timestamp. Zoned Datetime in ISO 8601 format (e.g., 1970-01-01T00:00:00-07:00).
+	   Promotions that start before this date are returned. Formatted in ISO 8601 format, including the timezone. For example: `1970-01-01T00:00:00-07:00`.
 
 	   Format: date-time
 	*/
@@ -151,9 +157,25 @@ type SearchPromotionsParams struct {
 
 	/* Statuses.
 
-	   A comma-delimited list of promotion status values to filter promotion.
+	   The statuses of promotions to retrieve, formatted as a comma-delimited list.
 	*/
 	Statuses []string
+
+	/* UpdateDateAfter.
+
+	   Filter promotions that were last modified after this timestamp. Zoned Datetime in ISO 8601 format (e.g., 1970-01-01T00:00:00-07:00).
+
+	   Format: date-time
+	*/
+	UpdateDateAfter *strfmt.DateTime
+
+	/* UpdateDateBefore.
+
+	   Filter promotions that were last modified before this timestamp. Zoned Datetime in ISO 8601 format (e.g., 1970-01-01T00:00:00-07:00).
+
+	   Format: date-time
+	*/
+	UpdateDateBefore *strfmt.DateTime
 
 	timeout    time.Duration
 	Context    context.Context
@@ -335,6 +357,17 @@ func (o *SearchPromotionsParams) SetRevision(revision *string) {
 	o.Revision = revision
 }
 
+// WithSkus adds the skus to the search promotions params
+func (o *SearchPromotionsParams) WithSkus(skus []string) *SearchPromotionsParams {
+	o.SetSkus(skus)
+	return o
+}
+
+// SetSkus adds the skus to the search promotions params
+func (o *SearchPromotionsParams) SetSkus(skus []string) {
+	o.Skus = skus
+}
+
 // WithStartDateAfter adds the startDateAfter to the search promotions params
 func (o *SearchPromotionsParams) WithStartDateAfter(startDateAfter *strfmt.DateTime) *SearchPromotionsParams {
 	o.SetStartDateAfter(startDateAfter)
@@ -366,6 +399,28 @@ func (o *SearchPromotionsParams) WithStatuses(statuses []string) *SearchPromotio
 // SetStatuses adds the statuses to the search promotions params
 func (o *SearchPromotionsParams) SetStatuses(statuses []string) {
 	o.Statuses = statuses
+}
+
+// WithUpdateDateAfter adds the updateDateAfter to the search promotions params
+func (o *SearchPromotionsParams) WithUpdateDateAfter(updateDateAfter *strfmt.DateTime) *SearchPromotionsParams {
+	o.SetUpdateDateAfter(updateDateAfter)
+	return o
+}
+
+// SetUpdateDateAfter adds the updateDateAfter to the search promotions params
+func (o *SearchPromotionsParams) SetUpdateDateAfter(updateDateAfter *strfmt.DateTime) {
+	o.UpdateDateAfter = updateDateAfter
+}
+
+// WithUpdateDateBefore adds the updateDateBefore to the search promotions params
+func (o *SearchPromotionsParams) WithUpdateDateBefore(updateDateBefore *strfmt.DateTime) *SearchPromotionsParams {
+	o.SetUpdateDateBefore(updateDateBefore)
+	return o
+}
+
+// SetUpdateDateBefore adds the updateDateBefore to the search promotions params
+func (o *SearchPromotionsParams) SetUpdateDateBefore(updateDateBefore *strfmt.DateTime) {
+	o.UpdateDateBefore = updateDateBefore
 }
 
 // WriteToRequest writes these params to a swagger request
@@ -522,6 +577,17 @@ func (o *SearchPromotionsParams) WriteToRequest(r runtime.ClientRequest, reg str
 		}
 	}
 
+	if o.Skus != nil {
+
+		// binding items for skus
+		joinedSkus := o.bindParamSkus(reg)
+
+		// query array param skus
+		if err := r.SetQueryParam("skus", joinedSkus...); err != nil {
+			return err
+		}
+	}
+
 	if o.StartDateAfter != nil {
 
 		// query param startDateAfter
@@ -564,6 +630,40 @@ func (o *SearchPromotionsParams) WriteToRequest(r runtime.ClientRequest, reg str
 		// query array param statuses
 		if err := r.SetQueryParam("statuses", joinedStatuses...); err != nil {
 			return err
+		}
+	}
+
+	if o.UpdateDateAfter != nil {
+
+		// query param updateDateAfter
+		var qrUpdateDateAfter strfmt.DateTime
+
+		if o.UpdateDateAfter != nil {
+			qrUpdateDateAfter = *o.UpdateDateAfter
+		}
+		qUpdateDateAfter := qrUpdateDateAfter.String()
+		if qUpdateDateAfter != "" {
+
+			if err := r.SetQueryParam("updateDateAfter", qUpdateDateAfter); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.UpdateDateBefore != nil {
+
+		// query param updateDateBefore
+		var qrUpdateDateBefore strfmt.DateTime
+
+		if o.UpdateDateBefore != nil {
+			qrUpdateDateBefore = *o.UpdateDateBefore
+		}
+		qUpdateDateBefore := qrUpdateDateBefore.String()
+		if qUpdateDateBefore != "" {
+
+			if err := r.SetQueryParam("updateDateBefore", qUpdateDateBefore); err != nil {
+				return err
+			}
 		}
 	}
 
@@ -639,6 +739,23 @@ func (o *SearchPromotionsParams) bindParamPromotionTypes(formats strfmt.Registry
 	promotionTypesIS := swag.JoinByFormat(promotionTypesIC, "csv")
 
 	return promotionTypesIS
+}
+
+// bindParamSearchPromotions binds the parameter skus
+func (o *SearchPromotionsParams) bindParamSkus(formats strfmt.Registry) []string {
+	skusIR := o.Skus
+
+	var skusIC []string
+	for _, skusIIR := range skusIR { // explode []string
+
+		skusIIV := skusIIR // string as string
+		skusIC = append(skusIC, skusIIV)
+	}
+
+	// items.CollectionFormat: "csv"
+	skusIS := swag.JoinByFormat(skusIC, "csv")
+
+	return skusIS
 }
 
 // bindParamSearchPromotions binds the parameter statuses

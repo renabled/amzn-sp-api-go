@@ -64,13 +64,13 @@ type GetSelectionParams struct {
 
 	/* IncludedData.
 
-	   A comma-delimited list of data sets to include in the response.
+	   A comma-delimited list of datasets to include in the response.
 	*/
 	IncludedData []string
 
 	/* Limit.
 
-	   Limit value to restrict the maximum number of results returned from the API Pagination limits per page.
+	   The maximum number of response results per page.
 
 	   Format: int64
 	   Default: 20
@@ -79,7 +79,7 @@ type GetSelectionParams struct {
 
 	/* Locale.
 
-	   The locale code constructed from ISO 639 language code and ISO 3166-1 alpha-2 standard of country codes separated by an underscore character.
+	   The locale of the promotion. Formatted as an ISO 639 language code, followed by an underscore, followed by an ISO 3166-1 alpha-2 country code.
 
 	   Default: "en_US"
 	*/
@@ -87,25 +87,25 @@ type GetSelectionParams struct {
 
 	/* PaginationToken.
 
-	   A token to fetch a certain page when there are multiple pages worth of results. The value of this token is fetched from the `pagination` returned in the API response. In the absence of the token value from the query parameter, the API returns the first page of the result
+	   A token that you use to retrieve the next page of results. The response includes `paginationToken` when the number of results exceeds the specified `limit` value. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until `paginationToken` is null. Note that this operation can return empty pages.
 	*/
 	PaginationToken *string
 
 	/* PromotionID.
 
-	   The promotion identifier.
+	   The ID of the promotion.
 	*/
 	PromotionID string
 
 	/* RevisionID.
 
-	   Revision identifier for the selection. Defaults to latest revision when revisionId is not provided in request or response.
+	   The revision identifier for the selection. Use the `revisionId` from the `getPromotion` response. A promotion may have multiple selection revisions when an update is in progress. Passing the correct `revisionId` ensures you retrieve the expected data.
 	*/
-	RevisionID *int64
+	RevisionID int64
 
 	/* SelectionID.
 
-	   The selection identifier.
+	   The ID of the selection.
 	*/
 	SelectionID string
 
@@ -232,13 +232,13 @@ func (o *GetSelectionParams) SetPromotionID(promotionID string) {
 }
 
 // WithRevisionID adds the revisionID to the get selection params
-func (o *GetSelectionParams) WithRevisionID(revisionID *int64) *GetSelectionParams {
+func (o *GetSelectionParams) WithRevisionID(revisionID int64) *GetSelectionParams {
 	o.SetRevisionID(revisionID)
 	return o
 }
 
 // SetRevisionID adds the revisionId to the get selection params
-func (o *GetSelectionParams) SetRevisionID(revisionID *int64) {
+func (o *GetSelectionParams) SetRevisionID(revisionID int64) {
 	o.RevisionID = revisionID
 }
 
@@ -328,20 +328,13 @@ func (o *GetSelectionParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.
 		return err
 	}
 
-	if o.RevisionID != nil {
+	// query param revisionId
+	qrRevisionID := o.RevisionID
+	qRevisionID := swag.FormatInt64(qrRevisionID)
+	if qRevisionID != "" {
 
-		// query param revisionId
-		var qrRevisionID int64
-
-		if o.RevisionID != nil {
-			qrRevisionID = *o.RevisionID
-		}
-		qRevisionID := swag.FormatInt64(qrRevisionID)
-		if qRevisionID != "" {
-
-			if err := r.SetQueryParam("revisionId", qRevisionID); err != nil {
-				return err
-			}
+		if err := r.SetQueryParam("revisionId", qRevisionID); err != nil {
+			return err
 		}
 	}
 

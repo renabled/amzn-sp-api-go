@@ -16,24 +16,24 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// PromotionBenefit Promotion-level benefit configuration.
+// PromotionBenefit Promotion-level benefit configuration. Applicable to `COUPON` and `BASKET_BUILDING` promotion types, where the benefit applies uniformly across all items in the promotion. For `DEAL` and `PRICE_DISCOUNT` promotion types, benefits are configured at the item level within each item in the selection.
 //
 // swagger:model PromotionBenefit
 type PromotionBenefit struct {
 
-	// Progressive discount tiers offering increased benefits as customers purchase more. For example: buy 2 get 10% off, buy 3 get 15% off. For multi-tier BASKET_BUILDING promotions, each tier specifies additional purchase conditions and corresponding discounts beyond the first tier (defined in benefit.discount and purchaseRequirements.condition).
+	// Progressive discount tiers offering increased benefits as customers purchase more. For example: buy 2 get 10% off, buy 3 get 15% off. For multi-tier `BASKET_BUILDING` promotions, each tier specifies additional purchase conditions and corresponding discounts beyond the first tier (defined in `benefit.discount` and `purchaseRequirements.condition`).
 	// Example: [{"discount":{"percentOff":20,"type":"PERCENTAGE_OFF"},"purchaseCondition":{"quantityThreshold":{"quantity":3,"type":"AT_LEAST"}}},{"discount":{"percentOff":25,"type":"PERCENTAGE_OFF"},"purchaseCondition":{"quantityThreshold":{"quantity":5,"type":"AT_LEAST"}}}]
 	// Max Items: 9
 	AdditionalTiers []*BenefitTier `json:"additionalTiers"`
 
-	// Quantity of items from the benefit selection that receive the discount after customer satisfies purchase conditions. This property is specific to BASKET BUILDING promotions.
+	// The quantity of items from the benefit selection that receive the discount after the customer satisfies purchase conditions. This property is specific to `BASKET_BUILDING` promotions.
 	// Example: 1
 	BenefitQuantity int64 `json:"benefitQuantity,omitempty"`
 
-	// Discount configuration for the promotion. For multi-tier BASKET_BUILDING promotions, this represents the first tier discount. Additional tier discounts are defined in additionalTiers.
+	// The discount configuration for the promotion. For multi-tier `BASKET_BUILDING` promotions, this represents the first tier discount. Additional tier discounts are defined in `additionalTiers`.
 	Discount *Discount `json:"discount,omitempty"`
 
-	// Maximum uses per customer for this promotion.
+	// The maximum number of uses per customer for this promotion.
 	// Example: 5
 	// Minimum: 1
 	PerCustomerUses int64 `json:"perCustomerUses,omitempty"`

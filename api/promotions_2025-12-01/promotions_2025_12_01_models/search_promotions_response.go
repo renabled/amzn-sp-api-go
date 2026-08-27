@@ -15,7 +15,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// SearchPromotionsResponse Response schema for search promotions operation. Note: The selectionDetails field will not be present in the selection object within promotion summaries.
+// SearchPromotionsResponse The response schema for the `searchPromotions` operation. **Note:** The `selectionDetails` field is not present in the selection object within promotion summaries.
 // Example: {"pagination":{"nextToken":"sdlkj234lkj234lksjdflkjwdflkjsfdlkj234234234234"},"promotions":[{"createdDate":"2025-07-01T02:01:08.180Z","lastUpdatedDate":"2025-07-15T14:30:00.180Z","marketplaceId":"ATVPDKIKX0DER","promotionId":"a1b2c3d4-e5f6-7890-abcd-ef1234567890","promotionTitle":"Summer Sale 2025","promotionType":"DEAL","schedule":{"endDate":"2025-08-31T23:59:59.999Z","startDate":"2025-07-01T00:00:00.000Z"},"selection":{"revisionId":1,"selectionId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","type":"ITEMS"},"status":"RUNNING","trackingId":"v2024-a1b2c3d4-e5f6-7890-abcd-ef1234567890"}],"totalResults":2}
 //
 // swagger:model SearchPromotionsResponse
@@ -24,11 +24,11 @@ type SearchPromotionsResponse struct {
 	// Pagination information for navigating results.
 	Pagination *Pagination `json:"pagination,omitempty"`
 
-	// List of promotion summaries matching the search criteria.
+	// A list of promotion summaries that matches the search criteria.
 	// Required: true
 	Promotions []*PromotionSummary `json:"promotions"`
 
-	// Total number of promotions matching the search criteria.
+	// The total number of promotions matching the search criteria, across all pages. This count remains consistent across paginated requests. **Note:** In rare cases, individual records cannot be returned and are omitted from the response. When this happens, a page may contain fewer items than expected, and the combined number of items across all pages may be less than `totalResults`. The request itself still completes successfully.
 	// Required: true
 	// Minimum: 0
 	TotalResults *int64 `json:"totalResults"`

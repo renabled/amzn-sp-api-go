@@ -13,22 +13,22 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// Item An item in the Amazon catalog for promotion selection with optional item-level configurations.
+// Item An item in the Amazon catalog for promotion selection.
 //
 // swagger:model Item
 type Item struct {
 
-	// Amazon Standard Identification Number (ASIN) is the unique identifier for an item in the Amazon catalog.
+	// The Amazon Standard Identification Number (ASIN) is the unique identifier for an item in the Amazon catalog.
 	// Example: B08N5WRWNW
 	Asin string `json:"asin,omitempty"`
 
-	// Item-level benefit configuration.
+	// Item-level benefit configuration. This only applies to `DEAL` and `PRICE_DISCOUNT` promotion types.
 	Benefit *ItemBenefit `json:"benefit,omitempty"`
 
-	// Item-level budget configuration.
+	// Item-level budget configuration. This only applies to `DEAL` and `PRICE_DISCOUNT` promotion types.
 	Budget *Budget `json:"budget,omitempty"`
 
-	// Stock Keeping Unit identifier.
+	// The Stock Keeping Unit (SKU).
 	// Example: MY-SKU-12345
 	Sku string `json:"sku,omitempty"`
 }

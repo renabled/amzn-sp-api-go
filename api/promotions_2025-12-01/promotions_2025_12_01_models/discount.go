@@ -15,28 +15,28 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// Discount Discount configuration shared across benefit types.
+// Discount The discount configuration shared across benefit types.
 //
 // swagger:model Discount
 type Discount struct {
 
-	// Amount off value. Only valid when type is AMOUNT_OFF.
+	// The amount off value. Only valid when `type` is `AMOUNT_OFF`.
 	// Example: 5
 	// Minimum: > 0
 	AmountOff float64 `json:"amountOff,omitempty"`
 
-	// ISO 4217 currency code. Required when type is AMOUNT_OFF.
+	// The currency code in ISO 4217 format. Required when `type` is `AMOUNT_OFF`.
 	// Example: USD
 	// Max Length: 3
 	// Min Length: 3
 	CurrencyCode string `json:"currencyCode,omitempty"`
 
-	// Percentage discount value (1-100). Only valid when type is PERCENTAGE_OFF.
+	// The percentage discount value (1-100). Only valid when `type` is `PERCENTAGE_OFF`.
 	// Maximum: 100
 	// Minimum: 1
 	PercentOff float64 `json:"percentOff,omitempty"`
 
-	// Method used to calculate the discount amount.
+	// The method used to calculate the discount amount.
 	// Required: true
 	// Enum: [PERCENTAGE_OFF AMOUNT_OFF FREE_ITEM]
 	Type *string `json:"type"`

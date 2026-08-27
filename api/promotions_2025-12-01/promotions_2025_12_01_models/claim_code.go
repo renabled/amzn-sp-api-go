@@ -21,13 +21,13 @@ import (
 // swagger:model ClaimCode
 type ClaimCode struct {
 
-	// Type of claim code.
+	// The type of claim code.
 	// Example: GROUP
 	// Required: true
 	// Enum: [GROUP INDIVIDUAL]
 	Type *string `json:"type"`
 
-	// The actual claim code (6-12 alphanumeric uppercase). Required when type is GROUP.
+	// The claim code (6-12 alphanumeric uppercase). Required when `type` is `GROUP`.
 	// Example: SAVE20
 	// Max Length: 12
 	// Min Length: 6

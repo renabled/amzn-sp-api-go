@@ -15,19 +15,20 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// Selection Defines which products qualify for the benefit, allowing either specific items to be selected by ASIN or the entire catalog with optional exclusions. Defaults to latest revision when revisionId is not provided.
+// Selection Defines which products qualify for a benefit, allowing either specific items to be selected by ASIN or the entire catalog with optional exclusions.
 // Example: {"revisionId":1,"selectionDetails":{"items":[{"asin":"B08N5WRWNW","benefit":{"discount":{"percentOff":15,"type":"PERCENTAGE_OFF"},"type":"DISCOUNTED_PRICE"}},{"asin":"B07XJ8C8F5"}]},"selectionId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","type":"ITEMS"}
 //
 // swagger:model Selection
 type Selection struct {
 
-	// Revision identifier for the selection. Defaults to latest revision when revisionId is not provided.
+	// The revision identifier for the selection. Pass this value to the `getSelection` operation's `revisionId` query parameter to retrieve the correct version of the selection. A promotion may have multiple selection revisions when an update is in progress. **Note:** This field is absent when `type` is `CATALOG`.
+	// Minimum: 1
 	RevisionID int64 `json:"revisionId,omitempty"`
 
-	// Detailed selection information. Presence varies by endpoint: always included in /promotions/{promotionId}/selections/{selectionId}, conditionally included in /promotions/{promotionId} when 'SELECTION' is in includedData, never included in /promotions. See endpoint documentation for details.
+	// Detailed selection information.
 	SelectionDetails *SelectionDetails `json:"selectionDetails,omitempty"`
 
-	// Unique identifier for this selection configuration. Note: This field is absent when type is CATALOG.
+	// The unique identifier for this selection configuration. **Note:** This field is absent when `type` is `CATALOG`.
 	// Example: 3fa85f64-5717-4562-b3fc-2c963f66afa6
 	SelectionID string `json:"selectionId,omitempty"`
 
@@ -42,6 +43,10 @@ type Selection struct {
 func (m *Selection) Validate(formats strfmt.Registry) error {
 	var res []error
 
+	if err := m.validateRevisionID(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.validateSelectionDetails(formats); err != nil {
 		res = append(res, err)
 	}
@@ -53,6 +58,18 @@ func (m *Selection) Validate(formats strfmt.Registry) error {
 	if len(res) > 0 {
 		return errors.CompositeValidationError(res...)
 	}
+	return nil
+}
+
+func (m *Selection) validateRevisionID(formats strfmt.Registry) error {
+	if swag.IsZero(m.RevisionID) { // not required
+		return nil
+	}
+
+	if err := validate.MinimumInt("revisionId", "body", m.RevisionID, 1, false); err != nil {
+		return err
+	}
+
 	return nil
 }
 

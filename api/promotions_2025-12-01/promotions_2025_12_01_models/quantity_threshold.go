@@ -21,13 +21,13 @@ import (
 // swagger:model QuantityThreshold
 type QuantityThreshold struct {
 
-	// Number of items required to meet this purchase condition.
+	// The number of items required to meet this purchase condition.
 	// Example: 2
 	// Required: true
 	// Minimum: 1
 	Quantity *int64 `json:"quantity"`
 
-	// Determines how the quantity requirement is evaluated: at least a certain number, or for every group of items.
+	// How the quantity requirement is evaluated.
 	// Required: true
 	// Enum: [AT_LEAST FOR_EACH]
 	Type *string `json:"type"`

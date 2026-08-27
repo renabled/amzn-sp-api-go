@@ -40,7 +40,7 @@ type ClientService interface {
 }
 
 /*
-GetPromotion Retrieves details of a specified promotion.
+GetPromotion Retrieve details of a specified promotion.
 */
 func (a *Client) GetPromotion(params *GetPromotionParams, opts ...ClientOption) (*GetPromotionOK, error) {
 	// TODO: Validate the params before sending
@@ -78,7 +78,7 @@ func (a *Client) GetPromotion(params *GetPromotionParams, opts ...ClientOption) 
 }
 
 /*
-GetSelection Retrieves up to a maximum of 100 product items, that are associated with the promotion. This API currently supports SelectionType.ITEMS only. SelectionType.CATALOG is not yet supported but will be available in a future release. Selection objects always include selectionDetails with item information.
+GetSelection Retrieve up to 100 product items that are associated with a specified promotion. This operation only supports items found in `SelectionType.ITEMS`. Items found in `SelectionType.CATALOG` are not supported. Selection objects always include `selectionDetails` with item information.
 */
 func (a *Client) GetSelection(params *GetSelectionParams, opts ...ClientOption) (*GetSelectionOK, error) {
 	// TODO: Validate the params before sending

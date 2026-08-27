@@ -15,13 +15,13 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// Merchandising Merchandising configuration for displaying promotions on the retail website.
+// Merchandising The merchandising configuration for displaying promotions on the retail website.
 // Example: {"displayOnWebsite":"ALLOWED"}
 //
 // swagger:model Merchandising
 type Merchandising struct {
 
-	// Controls whether the promotion badge and details are displayed on the product detail pages as well as search results on the retail website.
+	// Whether the promotion badge and details are displayed on the product detail pages and search results on the retail website.
 	// Enum: [ALLOWED NOT_ALLOWED]
 	DisplayOnWebsite string `json:"displayOnWebsite,omitempty"`
 }

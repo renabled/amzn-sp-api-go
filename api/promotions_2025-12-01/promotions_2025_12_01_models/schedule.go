@@ -14,20 +14,20 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// Schedule Configuration defining a promotion's start and end dates with optional event association.
+// Schedule A promotion's start and end dates with optional event association.
 //
 // swagger:model Schedule
 type Schedule struct {
 
-	// Promotion end date and time. Zoned Datetime in ISO 8601 format (e.g., 1970-01-01T00:00:00-07:00).
+	// The promotion's end date and time. Formatted in ISO 8601 format, including the timezone. For example: `1970-01-01T00:00:00-07:00`.
 	// Format: date-time
 	EndDate strfmt.DateTime `json:"endDate,omitempty"`
 
-	// Optional event identifier to associate the promotion with a specific event. For event promotions, this field contains the event name when available (e.g., "Prime Day"). For historic event promotions, this field may contain "EVENT" as a placeholder until future releases of the API.
+	// An event identifier that associates the promotion with a specific event. For event promotions, this field contains the event name when available (for example, `Prime Day`). For historic event promotions, this field may contain `EVENT` as a placeholder.
 	// Example: Prime Day
 	EventID string `json:"eventId,omitempty"`
 
-	// Promotion start date and time. Zoned Datetime in ISO 8601 format (e.g., 1970-01-01T00:00:00-07:00).
+	// The promotion's start date and time. Formatted in ISO 8601 format, including the timezone. For example: `1970-01-01T00:00:00-07:00`.
 	// Format: date-time
 	StartDate strfmt.DateTime `json:"startDate,omitempty"`
 }

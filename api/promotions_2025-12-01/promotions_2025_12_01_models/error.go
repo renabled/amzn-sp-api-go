@@ -26,6 +26,9 @@ type Error struct {
 	// Additional details that can help the caller understand or fix the issue.
 	Details string `json:"details,omitempty"`
 
+	// Identifier of the item that this error is associated with. Present only if the error is an item-level error.
+	ItemIdentifier *ItemIdentifier `json:"itemIdentifier,omitempty"`
+
 	// A message that describes the error condition.
 	// Required: true
 	// Max Length: 1024
@@ -37,6 +40,10 @@ func (m *Error) Validate(formats strfmt.Registry) error {
 	var res []error
 
 	if err := m.validateCode(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateItemIdentifier(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -59,6 +66,25 @@ func (m *Error) validateCode(formats strfmt.Registry) error {
 	return nil
 }
 
+func (m *Error) validateItemIdentifier(formats strfmt.Registry) error {
+	if swag.IsZero(m.ItemIdentifier) { // not required
+		return nil
+	}
+
+	if m.ItemIdentifier != nil {
+		if err := m.ItemIdentifier.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("itemIdentifier")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("itemIdentifier")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
 func (m *Error) validateMessage(formats strfmt.Registry) error {
 
 	if err := validate.Required("message", "body", m.Message); err != nil {
@@ -72,8 +98,33 @@ func (m *Error) validateMessage(formats strfmt.Registry) error {
 	return nil
 }
 
-// ContextValidate validates this error based on context it is used
+// ContextValidate validate this error based on the context it is used
 func (m *Error) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.contextValidateItemIdentifier(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *Error) contextValidateItemIdentifier(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.ItemIdentifier != nil {
+		if err := m.ItemIdentifier.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("itemIdentifier")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("itemIdentifier")
+			}
+			return err
+		}
+	}
+
 	return nil
 }
 

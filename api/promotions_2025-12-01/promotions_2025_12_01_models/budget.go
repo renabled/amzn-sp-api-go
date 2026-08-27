@@ -15,17 +15,17 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// Budget Budget configuration for promotion or item-level spending limits.
+// Budget Budget configuration for spending limits. For `COUPON` and `BASKET_BUILDING` promotion types, the budget is set at the promotion level and applies to the entire promotion. For `DEAL` and `PRICE_DISCOUNT` promotion types, the budget is set at the item level within each item in the selection.
 //
 // swagger:model Budget
 type Budget struct {
 
-	// The ISO 4217 format currency code. Required when type is AMOUNT.
+	// The currency code in ISO 4217 format. Required when `type` is `AMOUNT`.
 	// Max Length: 3
 	// Min Length: 3
 	CurrencyCode string `json:"currencyCode,omitempty"`
 
-	// Budget type - monetary amount or unit-based.
+	// The budget type, either monetary or unit-based.
 	// Required: true
 	// Enum: [AMOUNT UNITS]
 	Type *string `json:"type"`

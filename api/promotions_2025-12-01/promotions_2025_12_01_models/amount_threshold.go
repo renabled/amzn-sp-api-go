@@ -21,11 +21,11 @@ import (
 // swagger:model AmountThreshold
 type AmountThreshold struct {
 
-	// Minimum spend amount customers must meet.
+	// The minimum spend amount customers must meet.
 	// Required: true
 	Currency *Currency `json:"currency"`
 
-	// Type of amount requirement. Only AT_LEAST is supported for spend-based conditions.
+	// The type of amount requirement. Only `AT_LEAST` is supported for spend-based conditions.
 	// Required: true
 	// Enum: [AT_LEAST]
 	Type *string `json:"type"`

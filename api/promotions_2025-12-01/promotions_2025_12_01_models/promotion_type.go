@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// PromotionType Categorizes promotions by their discount application rules and eligibility criteria.
+// PromotionType The type of promotion, categorized by the discount rules and eligibility criteria.
 //
 // swagger:model PromotionType
 type PromotionType string

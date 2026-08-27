@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// BrandSegmentDetails Additional details specific to BRAND segments type.
+// BrandSegmentDetails Additional details specific to the `BRAND` segments type.
 //
 // swagger:model BrandSegmentDetails
 type BrandSegmentDetails struct {

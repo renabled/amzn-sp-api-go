@@ -20,19 +20,19 @@ import (
 // swagger:model SelectionDetails
 type SelectionDetails struct {
 
-	// Item-level validation issues for items in this selection. Only present when 'ISSUES' are included in includedData query parameter.
+	// Item-level validation issues for items in this selection. Only present when `ISSUES` is included in the `includedData` query parameter.
 	// Example: [{"code":"INVALID_SKU","identifier":{"sku":"MY-SKU-12345"},"message":"The SKU provided is not valid","severity":"ERROR"}]
 	Issues []*ItemIssue `json:"issues"`
 
-	// List of specific items to include. Only valid when type is ITEMS (maximum 100 items).
+	// List of specific items to include. Only valid when `type` is `ITEMS` (maximum 100 items).
 	// Example: [{"asin":"B08N5WRWNW","benefit":{"discount":{"percentOff":15,"type":"PERCENTAGE_OFF"},"perCustomerUses":3,"type":"DISCOUNTED_PRICE"},"budget":{"currencyCode":"USD","type":"AMOUNT","value":500}},{"asin":"B07XJ8C8F5","benefit":{"discount":{"amountOff":10,"currencyCode":"USD","type":"AMOUNT_OFF"},"perCustomerUses":5,"price":{"amount":24.99,"currencyCode":"USD"},"type":"FIXED_PRICE"},"budget":{"type":"UNITS","value":100}}]
 	// Max Items: 100
 	Items []*Item `json:"items"`
 
-	// Pagination metadata for navigating through selection items.
+	// Pagination metadata for navigating through pages of selection items.
 	Pagination *Pagination `json:"pagination,omitempty"`
 
-	// Rule configuration for catalog-based selections. Only valid when type is CATALOG.
+	// Rule configuration for catalog-based selections. Only valid when `type` is `CATALOG`.
 	Rules *SelectionRules `json:"rules,omitempty"`
 }
 
