@@ -14,17 +14,20 @@ import (
 )
 
 // CustomAttribute A custom attribute that is loosely typed, modeled through a key-value pair and its data type.
+// Example: {"key":"color","value":"red"}
 //
 // swagger:model CustomAttribute
 type CustomAttribute struct {
 
-	// The key of the custom attribute. Must be unique.
+	// The attribute key.
+	// Example: color
 	Key string `json:"key,omitempty"`
 
 	// type
 	Type CustomAttributeType `json:"type,omitempty"`
 
-	// The value of the custom attribute.
+	// The attribute value.
+	// Example: red
 	Value string `json:"value,omitempty"`
 }
 

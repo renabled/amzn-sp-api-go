@@ -15,6 +15,7 @@ import (
 )
 
 // CustomAttributeType The data type of the custom attribute value to aid with parsing during deserialization.
+// Example: STRING
 //
 // swagger:model CustomAttributeType
 type CustomAttributeType string

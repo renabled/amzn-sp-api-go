@@ -35,6 +35,7 @@ type ShipmentLineItem struct {
 	CountryOfOrigin CountryCode `json:"countryOfOrigin,omitempty"`
 
 	// A list of custom passthrough attributes. For details on these attributes, reach out to your respective program teams at Amazon.
+	// Example: [{"key":"color","value":"red"}]
 	CustomAttributes []*CustomAttribute `json:"customAttributes"`
 
 	// Information about any gift wrapping that is needed for this line item.

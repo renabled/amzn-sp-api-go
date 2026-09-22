@@ -83,7 +83,7 @@ type UpdatePackageStatusParams struct {
 
 	/* Status.
 
-	 **DEPRECATED**. Do not use. Package status is defined in the body parameter.
+	 **This field is only used for the Seller Flex program**. For the Self Delivery program, package statuses are defined in the body parameter.
 	 */
 	Status *string
 
