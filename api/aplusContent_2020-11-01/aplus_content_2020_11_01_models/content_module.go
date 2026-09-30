@@ -14,14 +14,86 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// ContentModule An A+ Content module. An A+ Content document is composed of content modules. The `contentModuleType` property selects which content module types to use.
+// ContentModule An A+ Content module. An A+ Content document is composed of content modules. The contentModuleType property selects which content module types to use.
 //
 // swagger:model ContentModule
 type ContentModule struct {
 
+	// brand story about
+	BrandStoryAbout *BrandStoryAboutModule `json:"brandStoryAbout,omitempty"`
+
+	// brand story four asin
+	BrandStoryFourAsin *BrandStoryFourAsinModule `json:"brandStoryFourAsin,omitempty"`
+
+	// brand story image with logo
+	BrandStoryImageWithLogo *BrandStoryImageWithLogoModule `json:"brandStoryImageWithLogo,omitempty"`
+
+	// brand story media asset
+	BrandStoryMediaAsset *BrandStoryMediaAssetModule `json:"brandStoryMediaAsset,omitempty"`
+
+	// brand story questions
+	BrandStoryQuestions *BrandStoryQuestionsModule `json:"brandStoryQuestions,omitempty"`
+
 	// content module type
 	// Required: true
 	ContentModuleType *ContentModuleType `json:"contentModuleType"`
+
+	// premium comparison carousel
+	PremiumComparisonCarousel *PremiumComparisonCarouselModule `json:"premiumComparisonCarousel,omitempty"`
+
+	// premium comparison scroller
+	PremiumComparisonScroller *PremiumComparisonScrollerModule `json:"premiumComparisonScroller,omitempty"`
+
+	// premium dual image text
+	PremiumDualImageText *PremiumDualImageTextModule `json:"premiumDualImageText,omitempty"`
+
+	// premium faq
+	PremiumFaq *PremiumFaqModule `json:"premiumFaq,omitempty"`
+
+	// premium four column images
+	PremiumFourColumnImages *PremiumFourColumnImagesModule `json:"premiumFourColumnImages,omitempty"`
+
+	// premium full background image
+	PremiumFullBackgroundImage *PremiumFullBackgroundImageModule `json:"premiumFullBackgroundImage,omitempty"`
+
+	// premium full background text
+	PremiumFullBackgroundText *PremiumFullBackgroundTextModule `json:"premiumFullBackgroundText,omitempty"`
+
+	// premium hero video
+	PremiumHeroVideo *PremiumHeroVideoModule `json:"premiumHeroVideo,omitempty"`
+
+	// premium hotspot image
+	PremiumHotspotImage *PremiumHotspotImageModule `json:"premiumHotspotImage,omitempty"`
+
+	// premium hotspot image text
+	PremiumHotspotImageText *PremiumHotspotImageTextModule `json:"premiumHotspotImageText,omitempty"`
+
+	// premium image carousel
+	PremiumImageCarousel *PremiumImageCarouselModule `json:"premiumImageCarousel,omitempty"`
+
+	// premium image text
+	PremiumImageText *PremiumImageTextModule `json:"premiumImageText,omitempty"`
+
+	// premium navigation carousel
+	PremiumNavigationCarousel *PremiumNavigationCarouselModule `json:"premiumNavigationCarousel,omitempty"`
+
+	// premium regimen carousel
+	PremiumRegimenCarousel *PremiumRegimenCarouselModule `json:"premiumRegimenCarousel,omitempty"`
+
+	// premium tech specs
+	PremiumTechSpecs *PremiumTechSpecsModule `json:"premiumTechSpecs,omitempty"`
+
+	// premium text
+	PremiumText *PremiumTextModule `json:"premiumText,omitempty"`
+
+	// premium three column comparison
+	PremiumThreeColumnComparison *PremiumThreeColumnComparisonModule `json:"premiumThreeColumnComparison,omitempty"`
+
+	// premium video image carousel
+	PremiumVideoImageCarousel *PremiumVideoImageCarouselModule `json:"premiumVideoImageCarousel,omitempty"`
+
+	// premium video text
+	PremiumVideoText *PremiumVideoTextModule `json:"premiumVideoText,omitempty"`
 
 	// standard company logo
 	StandardCompanyLogo *StandardCompanyLogoModule `json:"standardCompanyLogo,omitempty"`
@@ -73,7 +145,103 @@ type ContentModule struct {
 func (m *ContentModule) Validate(formats strfmt.Registry) error {
 	var res []error
 
+	if err := m.validateBrandStoryAbout(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateBrandStoryFourAsin(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateBrandStoryImageWithLogo(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateBrandStoryMediaAsset(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateBrandStoryQuestions(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.validateContentModuleType(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validatePremiumComparisonCarousel(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validatePremiumComparisonScroller(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validatePremiumDualImageText(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validatePremiumFaq(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validatePremiumFourColumnImages(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validatePremiumFullBackgroundImage(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validatePremiumFullBackgroundText(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validatePremiumHeroVideo(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validatePremiumHotspotImage(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validatePremiumHotspotImageText(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validatePremiumImageCarousel(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validatePremiumImageText(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validatePremiumNavigationCarousel(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validatePremiumRegimenCarousel(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validatePremiumTechSpecs(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validatePremiumText(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validatePremiumThreeColumnComparison(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validatePremiumVideoImageCarousel(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validatePremiumVideoText(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -143,6 +311,101 @@ func (m *ContentModule) Validate(formats strfmt.Registry) error {
 	return nil
 }
 
+func (m *ContentModule) validateBrandStoryAbout(formats strfmt.Registry) error {
+	if swag.IsZero(m.BrandStoryAbout) { // not required
+		return nil
+	}
+
+	if m.BrandStoryAbout != nil {
+		if err := m.BrandStoryAbout.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("brandStoryAbout")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("brandStoryAbout")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *ContentModule) validateBrandStoryFourAsin(formats strfmt.Registry) error {
+	if swag.IsZero(m.BrandStoryFourAsin) { // not required
+		return nil
+	}
+
+	if m.BrandStoryFourAsin != nil {
+		if err := m.BrandStoryFourAsin.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("brandStoryFourAsin")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("brandStoryFourAsin")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *ContentModule) validateBrandStoryImageWithLogo(formats strfmt.Registry) error {
+	if swag.IsZero(m.BrandStoryImageWithLogo) { // not required
+		return nil
+	}
+
+	if m.BrandStoryImageWithLogo != nil {
+		if err := m.BrandStoryImageWithLogo.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("brandStoryImageWithLogo")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("brandStoryImageWithLogo")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *ContentModule) validateBrandStoryMediaAsset(formats strfmt.Registry) error {
+	if swag.IsZero(m.BrandStoryMediaAsset) { // not required
+		return nil
+	}
+
+	if m.BrandStoryMediaAsset != nil {
+		if err := m.BrandStoryMediaAsset.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("brandStoryMediaAsset")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("brandStoryMediaAsset")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *ContentModule) validateBrandStoryQuestions(formats strfmt.Registry) error {
+	if swag.IsZero(m.BrandStoryQuestions) { // not required
+		return nil
+	}
+
+	if m.BrandStoryQuestions != nil {
+		if err := m.BrandStoryQuestions.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("brandStoryQuestions")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("brandStoryQuestions")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
 func (m *ContentModule) validateContentModuleType(formats strfmt.Registry) error {
 
 	if err := validate.Required("contentModuleType", "body", m.ContentModuleType); err != nil {
@@ -159,6 +422,367 @@ func (m *ContentModule) validateContentModuleType(formats strfmt.Registry) error
 				return ve.ValidateName("contentModuleType")
 			} else if ce, ok := err.(*errors.CompositeError); ok {
 				return ce.ValidateName("contentModuleType")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *ContentModule) validatePremiumComparisonCarousel(formats strfmt.Registry) error {
+	if swag.IsZero(m.PremiumComparisonCarousel) { // not required
+		return nil
+	}
+
+	if m.PremiumComparisonCarousel != nil {
+		if err := m.PremiumComparisonCarousel.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("premiumComparisonCarousel")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("premiumComparisonCarousel")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *ContentModule) validatePremiumComparisonScroller(formats strfmt.Registry) error {
+	if swag.IsZero(m.PremiumComparisonScroller) { // not required
+		return nil
+	}
+
+	if m.PremiumComparisonScroller != nil {
+		if err := m.PremiumComparisonScroller.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("premiumComparisonScroller")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("premiumComparisonScroller")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *ContentModule) validatePremiumDualImageText(formats strfmt.Registry) error {
+	if swag.IsZero(m.PremiumDualImageText) { // not required
+		return nil
+	}
+
+	if m.PremiumDualImageText != nil {
+		if err := m.PremiumDualImageText.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("premiumDualImageText")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("premiumDualImageText")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *ContentModule) validatePremiumFaq(formats strfmt.Registry) error {
+	if swag.IsZero(m.PremiumFaq) { // not required
+		return nil
+	}
+
+	if m.PremiumFaq != nil {
+		if err := m.PremiumFaq.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("premiumFaq")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("premiumFaq")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *ContentModule) validatePremiumFourColumnImages(formats strfmt.Registry) error {
+	if swag.IsZero(m.PremiumFourColumnImages) { // not required
+		return nil
+	}
+
+	if m.PremiumFourColumnImages != nil {
+		if err := m.PremiumFourColumnImages.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("premiumFourColumnImages")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("premiumFourColumnImages")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *ContentModule) validatePremiumFullBackgroundImage(formats strfmt.Registry) error {
+	if swag.IsZero(m.PremiumFullBackgroundImage) { // not required
+		return nil
+	}
+
+	if m.PremiumFullBackgroundImage != nil {
+		if err := m.PremiumFullBackgroundImage.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("premiumFullBackgroundImage")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("premiumFullBackgroundImage")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *ContentModule) validatePremiumFullBackgroundText(formats strfmt.Registry) error {
+	if swag.IsZero(m.PremiumFullBackgroundText) { // not required
+		return nil
+	}
+
+	if m.PremiumFullBackgroundText != nil {
+		if err := m.PremiumFullBackgroundText.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("premiumFullBackgroundText")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("premiumFullBackgroundText")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *ContentModule) validatePremiumHeroVideo(formats strfmt.Registry) error {
+	if swag.IsZero(m.PremiumHeroVideo) { // not required
+		return nil
+	}
+
+	if m.PremiumHeroVideo != nil {
+		if err := m.PremiumHeroVideo.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("premiumHeroVideo")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("premiumHeroVideo")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *ContentModule) validatePremiumHotspotImage(formats strfmt.Registry) error {
+	if swag.IsZero(m.PremiumHotspotImage) { // not required
+		return nil
+	}
+
+	if m.PremiumHotspotImage != nil {
+		if err := m.PremiumHotspotImage.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("premiumHotspotImage")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("premiumHotspotImage")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *ContentModule) validatePremiumHotspotImageText(formats strfmt.Registry) error {
+	if swag.IsZero(m.PremiumHotspotImageText) { // not required
+		return nil
+	}
+
+	if m.PremiumHotspotImageText != nil {
+		if err := m.PremiumHotspotImageText.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("premiumHotspotImageText")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("premiumHotspotImageText")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *ContentModule) validatePremiumImageCarousel(formats strfmt.Registry) error {
+	if swag.IsZero(m.PremiumImageCarousel) { // not required
+		return nil
+	}
+
+	if m.PremiumImageCarousel != nil {
+		if err := m.PremiumImageCarousel.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("premiumImageCarousel")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("premiumImageCarousel")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *ContentModule) validatePremiumImageText(formats strfmt.Registry) error {
+	if swag.IsZero(m.PremiumImageText) { // not required
+		return nil
+	}
+
+	if m.PremiumImageText != nil {
+		if err := m.PremiumImageText.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("premiumImageText")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("premiumImageText")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *ContentModule) validatePremiumNavigationCarousel(formats strfmt.Registry) error {
+	if swag.IsZero(m.PremiumNavigationCarousel) { // not required
+		return nil
+	}
+
+	if m.PremiumNavigationCarousel != nil {
+		if err := m.PremiumNavigationCarousel.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("premiumNavigationCarousel")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("premiumNavigationCarousel")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *ContentModule) validatePremiumRegimenCarousel(formats strfmt.Registry) error {
+	if swag.IsZero(m.PremiumRegimenCarousel) { // not required
+		return nil
+	}
+
+	if m.PremiumRegimenCarousel != nil {
+		if err := m.PremiumRegimenCarousel.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("premiumRegimenCarousel")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("premiumRegimenCarousel")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *ContentModule) validatePremiumTechSpecs(formats strfmt.Registry) error {
+	if swag.IsZero(m.PremiumTechSpecs) { // not required
+		return nil
+	}
+
+	if m.PremiumTechSpecs != nil {
+		if err := m.PremiumTechSpecs.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("premiumTechSpecs")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("premiumTechSpecs")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *ContentModule) validatePremiumText(formats strfmt.Registry) error {
+	if swag.IsZero(m.PremiumText) { // not required
+		return nil
+	}
+
+	if m.PremiumText != nil {
+		if err := m.PremiumText.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("premiumText")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("premiumText")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *ContentModule) validatePremiumThreeColumnComparison(formats strfmt.Registry) error {
+	if swag.IsZero(m.PremiumThreeColumnComparison) { // not required
+		return nil
+	}
+
+	if m.PremiumThreeColumnComparison != nil {
+		if err := m.PremiumThreeColumnComparison.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("premiumThreeColumnComparison")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("premiumThreeColumnComparison")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *ContentModule) validatePremiumVideoImageCarousel(formats strfmt.Registry) error {
+	if swag.IsZero(m.PremiumVideoImageCarousel) { // not required
+		return nil
+	}
+
+	if m.PremiumVideoImageCarousel != nil {
+		if err := m.PremiumVideoImageCarousel.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("premiumVideoImageCarousel")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("premiumVideoImageCarousel")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *ContentModule) validatePremiumVideoText(formats strfmt.Registry) error {
+	if swag.IsZero(m.PremiumVideoText) { // not required
+		return nil
+	}
+
+	if m.PremiumVideoText != nil {
+		if err := m.PremiumVideoText.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("premiumVideoText")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("premiumVideoText")
 			}
 			return err
 		}
@@ -456,7 +1080,103 @@ func (m *ContentModule) validateStandardThreeImageText(formats strfmt.Registry) 
 func (m *ContentModule) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
 	var res []error
 
+	if err := m.contextValidateBrandStoryAbout(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateBrandStoryFourAsin(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateBrandStoryImageWithLogo(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateBrandStoryMediaAsset(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateBrandStoryQuestions(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.contextValidateContentModuleType(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidatePremiumComparisonCarousel(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidatePremiumComparisonScroller(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidatePremiumDualImageText(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidatePremiumFaq(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidatePremiumFourColumnImages(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidatePremiumFullBackgroundImage(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidatePremiumFullBackgroundText(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidatePremiumHeroVideo(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidatePremiumHotspotImage(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidatePremiumHotspotImageText(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidatePremiumImageCarousel(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidatePremiumImageText(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidatePremiumNavigationCarousel(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidatePremiumRegimenCarousel(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidatePremiumTechSpecs(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidatePremiumText(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidatePremiumThreeColumnComparison(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidatePremiumVideoImageCarousel(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidatePremiumVideoText(ctx, formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -526,6 +1246,86 @@ func (m *ContentModule) ContextValidate(ctx context.Context, formats strfmt.Regi
 	return nil
 }
 
+func (m *ContentModule) contextValidateBrandStoryAbout(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.BrandStoryAbout != nil {
+		if err := m.BrandStoryAbout.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("brandStoryAbout")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("brandStoryAbout")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *ContentModule) contextValidateBrandStoryFourAsin(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.BrandStoryFourAsin != nil {
+		if err := m.BrandStoryFourAsin.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("brandStoryFourAsin")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("brandStoryFourAsin")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *ContentModule) contextValidateBrandStoryImageWithLogo(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.BrandStoryImageWithLogo != nil {
+		if err := m.BrandStoryImageWithLogo.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("brandStoryImageWithLogo")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("brandStoryImageWithLogo")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *ContentModule) contextValidateBrandStoryMediaAsset(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.BrandStoryMediaAsset != nil {
+		if err := m.BrandStoryMediaAsset.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("brandStoryMediaAsset")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("brandStoryMediaAsset")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *ContentModule) contextValidateBrandStoryQuestions(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.BrandStoryQuestions != nil {
+		if err := m.BrandStoryQuestions.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("brandStoryQuestions")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("brandStoryQuestions")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
 func (m *ContentModule) contextValidateContentModuleType(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.ContentModuleType != nil {
@@ -534,6 +1334,310 @@ func (m *ContentModule) contextValidateContentModuleType(ctx context.Context, fo
 				return ve.ValidateName("contentModuleType")
 			} else if ce, ok := err.(*errors.CompositeError); ok {
 				return ce.ValidateName("contentModuleType")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *ContentModule) contextValidatePremiumComparisonCarousel(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.PremiumComparisonCarousel != nil {
+		if err := m.PremiumComparisonCarousel.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("premiumComparisonCarousel")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("premiumComparisonCarousel")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *ContentModule) contextValidatePremiumComparisonScroller(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.PremiumComparisonScroller != nil {
+		if err := m.PremiumComparisonScroller.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("premiumComparisonScroller")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("premiumComparisonScroller")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *ContentModule) contextValidatePremiumDualImageText(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.PremiumDualImageText != nil {
+		if err := m.PremiumDualImageText.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("premiumDualImageText")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("premiumDualImageText")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *ContentModule) contextValidatePremiumFaq(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.PremiumFaq != nil {
+		if err := m.PremiumFaq.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("premiumFaq")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("premiumFaq")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *ContentModule) contextValidatePremiumFourColumnImages(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.PremiumFourColumnImages != nil {
+		if err := m.PremiumFourColumnImages.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("premiumFourColumnImages")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("premiumFourColumnImages")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *ContentModule) contextValidatePremiumFullBackgroundImage(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.PremiumFullBackgroundImage != nil {
+		if err := m.PremiumFullBackgroundImage.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("premiumFullBackgroundImage")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("premiumFullBackgroundImage")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *ContentModule) contextValidatePremiumFullBackgroundText(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.PremiumFullBackgroundText != nil {
+		if err := m.PremiumFullBackgroundText.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("premiumFullBackgroundText")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("premiumFullBackgroundText")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *ContentModule) contextValidatePremiumHeroVideo(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.PremiumHeroVideo != nil {
+		if err := m.PremiumHeroVideo.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("premiumHeroVideo")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("premiumHeroVideo")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *ContentModule) contextValidatePremiumHotspotImage(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.PremiumHotspotImage != nil {
+		if err := m.PremiumHotspotImage.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("premiumHotspotImage")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("premiumHotspotImage")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *ContentModule) contextValidatePremiumHotspotImageText(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.PremiumHotspotImageText != nil {
+		if err := m.PremiumHotspotImageText.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("premiumHotspotImageText")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("premiumHotspotImageText")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *ContentModule) contextValidatePremiumImageCarousel(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.PremiumImageCarousel != nil {
+		if err := m.PremiumImageCarousel.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("premiumImageCarousel")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("premiumImageCarousel")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *ContentModule) contextValidatePremiumImageText(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.PremiumImageText != nil {
+		if err := m.PremiumImageText.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("premiumImageText")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("premiumImageText")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *ContentModule) contextValidatePremiumNavigationCarousel(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.PremiumNavigationCarousel != nil {
+		if err := m.PremiumNavigationCarousel.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("premiumNavigationCarousel")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("premiumNavigationCarousel")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *ContentModule) contextValidatePremiumRegimenCarousel(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.PremiumRegimenCarousel != nil {
+		if err := m.PremiumRegimenCarousel.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("premiumRegimenCarousel")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("premiumRegimenCarousel")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *ContentModule) contextValidatePremiumTechSpecs(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.PremiumTechSpecs != nil {
+		if err := m.PremiumTechSpecs.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("premiumTechSpecs")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("premiumTechSpecs")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *ContentModule) contextValidatePremiumText(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.PremiumText != nil {
+		if err := m.PremiumText.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("premiumText")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("premiumText")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *ContentModule) contextValidatePremiumThreeColumnComparison(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.PremiumThreeColumnComparison != nil {
+		if err := m.PremiumThreeColumnComparison.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("premiumThreeColumnComparison")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("premiumThreeColumnComparison")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *ContentModule) contextValidatePremiumVideoImageCarousel(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.PremiumVideoImageCarousel != nil {
+		if err := m.PremiumVideoImageCarousel.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("premiumVideoImageCarousel")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("premiumVideoImageCarousel")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *ContentModule) contextValidatePremiumVideoText(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.PremiumVideoText != nil {
+		if err := m.PremiumVideoText.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("premiumVideoText")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("premiumVideoText")
 			}
 			return err
 		}

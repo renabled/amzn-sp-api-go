@@ -186,7 +186,7 @@ func (a *Client) CreateFeedDocument(params *CreateFeedDocumentParams, opts ...Cl
 }
 
 /*
-	GetFeed Returns feed details (including the `resultDocumentId`, if available) for the feed that you specify.
+	GetFeed Returns feed details (including the `feedDocumentId`, if available) for the feed that you specify.
 
 **Usage Plan:**
 

@@ -20,7 +20,8 @@ import (
 // swagger:model OrderItem
 type OrderItem struct {
 
-	// A list of order items associated with this item. For example, a value-add service purchased with the product.
+	// A list of order items associated with this item. For example, a value-add service purchased with the product, or a product covered by a warranty protection plan.
+	// Example: [{"associationType":"VALUE_ADD_SERVICE","orderId":"123-4567890-7654321","orderItemId":"12345678904321"},{"asin":"B0BC9Z7PJT","associationType":"WARRANTY","orderId":"903-4153187-3171039","orderItemId":"6248989267365","purchasePrice":{"amount":"139.99","currencyCode":"USD"}}]
 	AssociatedOrderItems []*AssociatedOrderItem `json:"associatedOrderItems"`
 
 	// The cancellation information of the order item.

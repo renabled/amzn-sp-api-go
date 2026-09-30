@@ -38,7 +38,7 @@ type ClientService interface {
 }
 
 /*
-	GetInvoiceStatus Returns the invoice status for the order or shipment you specify. You must specify either an `orderId` or `shipmentId` as query parameter. If both parameters are supplied, `orderId` takes precedence over `shipmentId`.
+	GetInvoiceStatus Returns the invoice status for the order or shipment you specify. You must specify either an `orderId`, `shipmentId`, or `invoiceId` as a query parameter. If multiple parameters are supplied, `orderId` takes precedence over `shipmentId`, which takes precedence over `invoiceId`.
 
 **Usage Plan:**
 
@@ -46,7 +46,7 @@ type ClientService interface {
 | ---- | ---- |
 | 1.133 | 25 |
 
-The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon/sp-api/docs/usage-plans-and-rate-limits).
 */
 func (a *Client) GetInvoiceStatus(params *GetInvoiceStatusParams, opts ...ClientOption) (*GetInvoiceStatusOK, error) {
 	// TODO: Validate the params before sending
@@ -92,7 +92,7 @@ func (a *Client) GetInvoiceStatus(params *GetInvoiceStatusParams, opts ...Client
 | ---- | ---- |
 | 1.133 | 25 |
 
-The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](doc:usage-plans-and-rate-limits-in-the-sp-api).
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon/sp-api/docs/usage-plans-and-rate-limits).
 */
 func (a *Client) SubmitInvoice(params *SubmitInvoiceParams, opts ...ClientOption) (*SubmitInvoiceOK, error) {
 	// TODO: Validate the params before sending

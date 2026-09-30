@@ -63,19 +63,19 @@ type SearchContentPublishRecordsParams struct {
 
 	/* Asin.
 
-	   The Amazon Standard Identification Number (ASIN) is the unique identifier of a product within a marketplace.
+	   The Amazon Standard Identification Number (ASIN).
 	*/
 	Asin string
 
 	/* MarketplaceID.
 
-	   The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
+	   The identifier for the Amazon store where the A+ Content is published.
 	*/
 	MarketplaceID string
 
 	/* PageToken.
 
-	   A token that you use to fetch a specific page when there are multiple pages of results.
+	   A page token from the `nextPageToken` response element returned by your previous call to this operation. `nextPageToken` is returned when the results of a call exceed the page size. To get the next page of results, call the operation and include `pageToken` as the only parameter. Specifying `pageToken` with any other parameter will cause the request to fail. When no `nextPageToken` value is returned there are no more pages to return. A `pageToken` value is not usable across different operations.
 	*/
 	PageToken *string
 

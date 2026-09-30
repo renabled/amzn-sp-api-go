@@ -7,10 +7,13 @@ package delivery_shipment_invoice_v2022_07_01_models
 
 import (
 	"context"
+	"encoding/json"
+	"strconv"
 
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
+	"github.com/go-openapi/validate"
 )
 
 // GetInvoiceStatusResponse The response schema for the getInvoiceStatus operation.
@@ -29,6 +32,13 @@ type GetInvoiceStatusResponse struct {
 
 	// The current processing status of a shipment invoice.
 	InvoiceStatus ShipmentInvoiceStatus `json:"invoiceStatus,omitempty"`
+
+	// List of individual invoice statuses for the order.
+	Invoices []*InvoiceStatus `json:"invoices"`
+
+	// The invoicing status of the order, considering the aggregated results of all invoices sent.
+	// Enum: [Processing Accepted PartiallyAccepted Rejected]
+	OrderInvoicingStatus string `json:"orderInvoicingStatus,omitempty"`
 }
 
 // Validate validates this get invoice status response
@@ -40,6 +50,14 @@ func (m *GetInvoiceStatusResponse) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validateInvoiceStatus(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateInvoices(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateOrderInvoicingStatus(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -83,6 +101,80 @@ func (m *GetInvoiceStatusResponse) validateInvoiceStatus(formats strfmt.Registry
 	return nil
 }
 
+func (m *GetInvoiceStatusResponse) validateInvoices(formats strfmt.Registry) error {
+	if swag.IsZero(m.Invoices) { // not required
+		return nil
+	}
+
+	for i := 0; i < len(m.Invoices); i++ {
+		if swag.IsZero(m.Invoices[i]) { // not required
+			continue
+		}
+
+		if m.Invoices[i] != nil {
+			if err := m.Invoices[i].Validate(formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("invoices" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("invoices" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
+var getInvoiceStatusResponseTypeOrderInvoicingStatusPropEnum []interface{}
+
+func init() {
+	var res []string
+	if err := json.Unmarshal([]byte(`["Processing","Accepted","PartiallyAccepted","Rejected"]`), &res); err != nil {
+		panic(err)
+	}
+	for _, v := range res {
+		getInvoiceStatusResponseTypeOrderInvoicingStatusPropEnum = append(getInvoiceStatusResponseTypeOrderInvoicingStatusPropEnum, v)
+	}
+}
+
+const (
+
+	// GetInvoiceStatusResponseOrderInvoicingStatusProcessing captures enum value "Processing"
+	GetInvoiceStatusResponseOrderInvoicingStatusProcessing string = "Processing"
+
+	// GetInvoiceStatusResponseOrderInvoicingStatusAccepted captures enum value "Accepted"
+	GetInvoiceStatusResponseOrderInvoicingStatusAccepted string = "Accepted"
+
+	// GetInvoiceStatusResponseOrderInvoicingStatusPartiallyAccepted captures enum value "PartiallyAccepted"
+	GetInvoiceStatusResponseOrderInvoicingStatusPartiallyAccepted string = "PartiallyAccepted"
+
+	// GetInvoiceStatusResponseOrderInvoicingStatusRejected captures enum value "Rejected"
+	GetInvoiceStatusResponseOrderInvoicingStatusRejected string = "Rejected"
+)
+
+// prop value enum
+func (m *GetInvoiceStatusResponse) validateOrderInvoicingStatusEnum(path, location string, value string) error {
+	if err := validate.EnumCase(path, location, value, getInvoiceStatusResponseTypeOrderInvoicingStatusPropEnum, true); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (m *GetInvoiceStatusResponse) validateOrderInvoicingStatus(formats strfmt.Registry) error {
+	if swag.IsZero(m.OrderInvoicingStatus) { // not required
+		return nil
+	}
+
+	// value enum
+	if err := m.validateOrderInvoicingStatusEnum("orderInvoicingStatus", "body", m.OrderInvoicingStatus); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 // ContextValidate validate this get invoice status response based on the context it is used
 func (m *GetInvoiceStatusResponse) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
 	var res []error
@@ -92,6 +184,10 @@ func (m *GetInvoiceStatusResponse) ContextValidate(ctx context.Context, formats 
 	}
 
 	if err := m.contextValidateInvoiceStatus(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateInvoices(ctx, formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -124,6 +220,26 @@ func (m *GetInvoiceStatusResponse) contextValidateInvoiceStatus(ctx context.Cont
 			return ce.ValidateName("invoiceStatus")
 		}
 		return err
+	}
+
+	return nil
+}
+
+func (m *GetInvoiceStatusResponse) contextValidateInvoices(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(m.Invoices); i++ {
+
+		if m.Invoices[i] != nil {
+			if err := m.Invoices[i].ContextValidate(ctx, formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("invoices" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("invoices" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
 	}
 
 	return nil

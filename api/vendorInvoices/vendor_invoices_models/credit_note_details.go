@@ -31,6 +31,10 @@ type CreditNoteDetails struct {
 	// Format: date-time
 	GoodsReturnDate DateTime `json:"goodsReturnDate,omitempty"`
 
+	// Date of the original invoice that this credit note references. Pairs with referenceInvoiceNumber.
+	// Format: date-time
+	OriginalInvoiceDate DateTime `json:"originalInvoiceDate,omitempty"`
+
 	// Original Invoice Number when sending a credit note relating to an existing invoice. One Invoice only to be processed per Credit Note. This is mandatory for AP Credit Notes.
 	ReferenceInvoiceNumber string `json:"referenceInvoiceNumber,omitempty"`
 
@@ -46,6 +50,10 @@ func (m *CreditNoteDetails) Validate(formats strfmt.Registry) error {
 	var res []error
 
 	if err := m.validateGoodsReturnDate(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateOriginalInvoiceDate(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -72,11 +80,32 @@ func (m *CreditNoteDetails) validateGoodsReturnDate(formats strfmt.Registry) err
 	return nil
 }
 
+func (m *CreditNoteDetails) validateOriginalInvoiceDate(formats strfmt.Registry) error {
+	if swag.IsZero(m.OriginalInvoiceDate) { // not required
+		return nil
+	}
+
+	if err := m.OriginalInvoiceDate.Validate(formats); err != nil {
+		if ve, ok := err.(*errors.Validation); ok {
+			return ve.ValidateName("originalInvoiceDate")
+		} else if ce, ok := err.(*errors.CompositeError); ok {
+			return ce.ValidateName("originalInvoiceDate")
+		}
+		return err
+	}
+
+	return nil
+}
+
 // ContextValidate validate this credit note details based on the context it is used
 func (m *CreditNoteDetails) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
 	var res []error
 
 	if err := m.contextValidateGoodsReturnDate(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateOriginalInvoiceDate(ctx, formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -93,6 +122,20 @@ func (m *CreditNoteDetails) contextValidateGoodsReturnDate(ctx context.Context, 
 			return ve.ValidateName("goodsReturnDate")
 		} else if ce, ok := err.(*errors.CompositeError); ok {
 			return ce.ValidateName("goodsReturnDate")
+		}
+		return err
+	}
+
+	return nil
+}
+
+func (m *CreditNoteDetails) contextValidateOriginalInvoiceDate(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := m.OriginalInvoiceDate.ContextValidate(ctx, formats); err != nil {
+		if ve, ok := err.(*errors.Validation); ok {
+			return ve.ValidateName("originalInvoiceDate")
+		} else if ce, ok := err.(*errors.CompositeError); ok {
+			return ce.ValidateName("originalInvoiceDate")
 		}
 		return err
 	}

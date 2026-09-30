@@ -12,17 +12,17 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// ItemCancellationExecution Details of how the cancellation was executed for a specific order item, including who performed the cancellation and the reason.
+// ItemCancellationExecution Detailed information about how the cancellation was processed for a specific order item.
 //
 // swagger:model ItemCancellationExecution
 type ItemCancellationExecution struct {
 
-	// Explanation provided for why the cancellation was executed.
+	// The provided explanation for why the cancellation occurred.
 	CancelReason string `json:"cancelReason,omitempty"`
 
-	// Entity that executed the cancellation for this item.
+	// The entity that executed the cancellation for this item.
 	//
-	// **Possible values**: `BUYER`, `MERCHANT`, `AMAZON`
+	// **Possible values**: `BUYER`, `MERCHANT`, `AMAZON`.
 	CancelledBy string `json:"cancelledBy,omitempty"`
 }
 

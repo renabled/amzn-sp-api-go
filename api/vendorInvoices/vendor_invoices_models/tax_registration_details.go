@@ -26,7 +26,7 @@ type TaxRegistrationDetails struct {
 
 	// The tax registration type for the entity.
 	// Required: true
-	// Enum: [VAT GST]
+	// Enum: [VAT GST LocalTaxNumber]
 	TaxRegistrationType *string `json:"taxRegistrationType"`
 }
 
@@ -61,7 +61,7 @@ var taxRegistrationDetailsTypeTaxRegistrationTypePropEnum []interface{}
 
 func init() {
 	var res []string
-	if err := json.Unmarshal([]byte(`["VAT","GST"]`), &res); err != nil {
+	if err := json.Unmarshal([]byte(`["VAT","GST","LocalTaxNumber"]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -76,6 +76,9 @@ const (
 
 	// TaxRegistrationDetailsTaxRegistrationTypeGST captures enum value "GST"
 	TaxRegistrationDetailsTaxRegistrationTypeGST string = "GST"
+
+	// TaxRegistrationDetailsTaxRegistrationTypeLocalTaxNumber captures enum value "LocalTaxNumber"
+	TaxRegistrationDetailsTaxRegistrationTypeLocalTaxNumber string = "LocalTaxNumber"
 )
 
 // prop value enum

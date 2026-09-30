@@ -65,7 +65,7 @@ type SubmitInvoiceParams struct {
 
 	/* Body.
 
-	   The request body that specifies invoice, program and marketplace values.
+	   The request body that specifies invoice, program and `marketplaceId` values.
 	*/
 	Body *delivery_shipment_invoice_v2022_07_01_models.SubmitInvoiceRequest
 

@@ -106,6 +106,12 @@ type GetInvoicesExportsParams struct {
 	*/
 	Status *string
 
+	/* WarehouseCode.
+
+	   The Warehouse code included in the invoice issued on behalf of the vendor. Check the warehouse code under your WarehouseSettings in VendorCentral.
+	*/
+	WarehouseCode *string
+
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
@@ -225,6 +231,17 @@ func (o *GetInvoicesExportsParams) SetStatus(status *string) {
 	o.Status = status
 }
 
+// WithWarehouseCode adds the warehouseCode to the get invoices exports params
+func (o *GetInvoicesExportsParams) WithWarehouseCode(warehouseCode *string) *GetInvoicesExportsParams {
+	o.SetWarehouseCode(warehouseCode)
+	return o
+}
+
+// SetWarehouseCode adds the warehouseCode to the get invoices exports params
+func (o *GetInvoicesExportsParams) SetWarehouseCode(warehouseCode *string) {
+	o.WarehouseCode = warehouseCode
+}
+
 // WriteToRequest writes these params to a swagger request
 func (o *GetInvoicesExportsParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
 
@@ -323,6 +340,23 @@ func (o *GetInvoicesExportsParams) WriteToRequest(r runtime.ClientRequest, reg s
 		if qStatus != "" {
 
 			if err := r.SetQueryParam("status", qStatus); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.WarehouseCode != nil {
+
+		// query param warehouseCode
+		var qrWarehouseCode string
+
+		if o.WarehouseCode != nil {
+			qrWarehouseCode = *o.WarehouseCode
+		}
+		qWarehouseCode := qrWarehouseCode
+		if qWarehouseCode != "" {
+
+			if err := r.SetQueryParam("warehouseCode", qWarehouseCode); err != nil {
 				return err
 			}
 		}

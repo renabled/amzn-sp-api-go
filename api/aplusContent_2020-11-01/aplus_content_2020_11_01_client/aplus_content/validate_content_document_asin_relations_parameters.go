@@ -72,7 +72,7 @@ type ValidateContentDocumentAsinRelationsParams struct {
 
 	/* MarketplaceID.
 
-	   The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
+	   The identifier for the Amazon store where the A+ Content is published.
 	*/
 	MarketplaceID string
 

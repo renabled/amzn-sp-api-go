@@ -23,11 +23,27 @@ type InvoiceDetail struct {
 	// Additional details provided by the selling party, for tax-related or other purposes.
 	AdditionalDetails []*AdditionalDetails `json:"additionalDetails"`
 
+	// Total allowance amount details for all line items.
+	AllowanceDetails []*AllowanceDetails `json:"allowanceDetails"`
+
+	// Name, address and tax details of the party that issues this invoice.
+	BillFromParty *PartyIdentification `json:"billFromParty,omitempty"`
+
 	// Name, address and tax details of the party to whom this invoice is issued.
 	BillToParty *PartyIdentification `json:"billToParty,omitempty"`
 
 	// Total charge amount details for all line items.
 	ChargeDetails []*ChargeDetails `json:"chargeDetails"`
+
+	// Date of delivery of the goods or completion of the service.
+	// Format: date-time
+	DeliveryDate strfmt.DateTime `json:"deliveryDate,omitempty"`
+
+	// Currency exchange rate applied on the invoice, where amounts are shown in a foreign currency.
+	ExchangeRate Decimal `json:"exchangeRate,omitempty"`
+
+	// Sum of all invoice line net amounts, excluding tax, charges and allowances. Provided for EU e-invoice interoperability.
+	InvoiceBaseAmount *Money `json:"invoiceBaseAmount,omitempty"`
 
 	// Invoice date.
 	// Required: true
@@ -63,8 +79,21 @@ type InvoiceDetail struct {
 	// Ship-to country code.
 	ShipToCountryCode string `json:"shipToCountryCode,omitempty"`
 
+	// Name, address and tax details of the party receiving a shipment of products. Provided when the full ship-to address is required in addition to shipToCountryCode.
+	ShipToParty *PartyIdentification `json:"shipToParty,omitempty"`
+
+	// The date on which the tax becomes chargeable, if different from the invoice date. When absent, the invoice date applies.
+	// Format: date-time
+	TaxPointDate strfmt.DateTime `json:"taxPointDate,omitempty"`
+
+	// Name, address and tax registration details of the supplier's fiscal or tax representative, where one is required.
+	TaxRepresentativeParty *PartyIdentification `json:"taxRepresentativeParty,omitempty"`
+
 	// Individual tax details per line item.
 	TaxTotals []*TaxDetail `json:"taxTotals"`
+
+	// Name, address and tax registration details of the VAT group representative member, when the supplier reports VAT as part of a VAT group.
+	VatGroupParty *PartyIdentification `json:"vatGroupParty,omitempty"`
 }
 
 // Validate validates this invoice detail
@@ -75,11 +104,31 @@ func (m *InvoiceDetail) Validate(formats strfmt.Registry) error {
 		res = append(res, err)
 	}
 
+	if err := m.validateAllowanceDetails(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateBillFromParty(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.validateBillToParty(formats); err != nil {
 		res = append(res, err)
 	}
 
 	if err := m.validateChargeDetails(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateDeliveryDate(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateExchangeRate(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateInvoiceBaseAmount(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -107,7 +156,23 @@ func (m *InvoiceDetail) Validate(formats strfmt.Registry) error {
 		res = append(res, err)
 	}
 
+	if err := m.validateShipToParty(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateTaxPointDate(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateTaxRepresentativeParty(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.validateTaxTotals(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateVatGroupParty(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -138,6 +203,51 @@ func (m *InvoiceDetail) validateAdditionalDetails(formats strfmt.Registry) error
 			}
 		}
 
+	}
+
+	return nil
+}
+
+func (m *InvoiceDetail) validateAllowanceDetails(formats strfmt.Registry) error {
+	if swag.IsZero(m.AllowanceDetails) { // not required
+		return nil
+	}
+
+	for i := 0; i < len(m.AllowanceDetails); i++ {
+		if swag.IsZero(m.AllowanceDetails[i]) { // not required
+			continue
+		}
+
+		if m.AllowanceDetails[i] != nil {
+			if err := m.AllowanceDetails[i].Validate(formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("allowanceDetails" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("allowanceDetails" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
+func (m *InvoiceDetail) validateBillFromParty(formats strfmt.Registry) error {
+	if swag.IsZero(m.BillFromParty) { // not required
+		return nil
+	}
+
+	if m.BillFromParty != nil {
+		if err := m.BillFromParty.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("billFromParty")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("billFromParty")
+			}
+			return err
+		}
 	}
 
 	return nil
@@ -183,6 +293,54 @@ func (m *InvoiceDetail) validateChargeDetails(formats strfmt.Registry) error {
 			}
 		}
 
+	}
+
+	return nil
+}
+
+func (m *InvoiceDetail) validateDeliveryDate(formats strfmt.Registry) error {
+	if swag.IsZero(m.DeliveryDate) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("deliveryDate", "body", "date-time", m.DeliveryDate.String(), formats); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *InvoiceDetail) validateExchangeRate(formats strfmt.Registry) error {
+	if swag.IsZero(m.ExchangeRate) { // not required
+		return nil
+	}
+
+	if err := m.ExchangeRate.Validate(formats); err != nil {
+		if ve, ok := err.(*errors.Validation); ok {
+			return ve.ValidateName("exchangeRate")
+		} else if ce, ok := err.(*errors.CompositeError); ok {
+			return ce.ValidateName("exchangeRate")
+		}
+		return err
+	}
+
+	return nil
+}
+
+func (m *InvoiceDetail) validateInvoiceBaseAmount(formats strfmt.Registry) error {
+	if swag.IsZero(m.InvoiceBaseAmount) { // not required
+		return nil
+	}
+
+	if m.InvoiceBaseAmount != nil {
+		if err := m.InvoiceBaseAmount.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("invoiceBaseAmount")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("invoiceBaseAmount")
+			}
+			return err
+		}
 	}
 
 	return nil
@@ -297,6 +455,56 @@ func (m *InvoiceDetail) validateShipFromParty(formats strfmt.Registry) error {
 	return nil
 }
 
+func (m *InvoiceDetail) validateShipToParty(formats strfmt.Registry) error {
+	if swag.IsZero(m.ShipToParty) { // not required
+		return nil
+	}
+
+	if m.ShipToParty != nil {
+		if err := m.ShipToParty.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("shipToParty")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("shipToParty")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *InvoiceDetail) validateTaxPointDate(formats strfmt.Registry) error {
+	if swag.IsZero(m.TaxPointDate) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("taxPointDate", "body", "date-time", m.TaxPointDate.String(), formats); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *InvoiceDetail) validateTaxRepresentativeParty(formats strfmt.Registry) error {
+	if swag.IsZero(m.TaxRepresentativeParty) { // not required
+		return nil
+	}
+
+	if m.TaxRepresentativeParty != nil {
+		if err := m.TaxRepresentativeParty.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("taxRepresentativeParty")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("taxRepresentativeParty")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
 func (m *InvoiceDetail) validateTaxTotals(formats strfmt.Registry) error {
 	if swag.IsZero(m.TaxTotals) { // not required
 		return nil
@@ -323,6 +531,25 @@ func (m *InvoiceDetail) validateTaxTotals(formats strfmt.Registry) error {
 	return nil
 }
 
+func (m *InvoiceDetail) validateVatGroupParty(formats strfmt.Registry) error {
+	if swag.IsZero(m.VatGroupParty) { // not required
+		return nil
+	}
+
+	if m.VatGroupParty != nil {
+		if err := m.VatGroupParty.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("vatGroupParty")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("vatGroupParty")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
 // ContextValidate validate this invoice detail based on the context it is used
 func (m *InvoiceDetail) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
 	var res []error
@@ -331,11 +558,27 @@ func (m *InvoiceDetail) ContextValidate(ctx context.Context, formats strfmt.Regi
 		res = append(res, err)
 	}
 
+	if err := m.contextValidateAllowanceDetails(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateBillFromParty(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.contextValidateBillToParty(ctx, formats); err != nil {
 		res = append(res, err)
 	}
 
 	if err := m.contextValidateChargeDetails(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateExchangeRate(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateInvoiceBaseAmount(ctx, formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -355,7 +598,19 @@ func (m *InvoiceDetail) ContextValidate(ctx context.Context, formats strfmt.Regi
 		res = append(res, err)
 	}
 
+	if err := m.contextValidateShipToParty(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateTaxRepresentativeParty(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.contextValidateTaxTotals(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateVatGroupParty(ctx, formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -380,6 +635,42 @@ func (m *InvoiceDetail) contextValidateAdditionalDetails(ctx context.Context, fo
 			}
 		}
 
+	}
+
+	return nil
+}
+
+func (m *InvoiceDetail) contextValidateAllowanceDetails(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(m.AllowanceDetails); i++ {
+
+		if m.AllowanceDetails[i] != nil {
+			if err := m.AllowanceDetails[i].ContextValidate(ctx, formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("allowanceDetails" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("allowanceDetails" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
+func (m *InvoiceDetail) contextValidateBillFromParty(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.BillFromParty != nil {
+		if err := m.BillFromParty.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("billFromParty")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("billFromParty")
+			}
+			return err
+		}
 	}
 
 	return nil
@@ -416,6 +707,36 @@ func (m *InvoiceDetail) contextValidateChargeDetails(ctx context.Context, format
 			}
 		}
 
+	}
+
+	return nil
+}
+
+func (m *InvoiceDetail) contextValidateExchangeRate(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := m.ExchangeRate.ContextValidate(ctx, formats); err != nil {
+		if ve, ok := err.(*errors.Validation); ok {
+			return ve.ValidateName("exchangeRate")
+		} else if ce, ok := err.(*errors.CompositeError); ok {
+			return ce.ValidateName("exchangeRate")
+		}
+		return err
+	}
+
+	return nil
+}
+
+func (m *InvoiceDetail) contextValidateInvoiceBaseAmount(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.InvoiceBaseAmount != nil {
+		if err := m.InvoiceBaseAmount.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("invoiceBaseAmount")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("invoiceBaseAmount")
+			}
+			return err
+		}
 	}
 
 	return nil
@@ -489,6 +810,38 @@ func (m *InvoiceDetail) contextValidateShipFromParty(ctx context.Context, format
 	return nil
 }
 
+func (m *InvoiceDetail) contextValidateShipToParty(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.ShipToParty != nil {
+		if err := m.ShipToParty.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("shipToParty")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("shipToParty")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *InvoiceDetail) contextValidateTaxRepresentativeParty(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.TaxRepresentativeParty != nil {
+		if err := m.TaxRepresentativeParty.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("taxRepresentativeParty")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("taxRepresentativeParty")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
 func (m *InvoiceDetail) contextValidateTaxTotals(ctx context.Context, formats strfmt.Registry) error {
 
 	for i := 0; i < len(m.TaxTotals); i++ {
@@ -504,6 +857,22 @@ func (m *InvoiceDetail) contextValidateTaxTotals(ctx context.Context, formats st
 			}
 		}
 
+	}
+
+	return nil
+}
+
+func (m *InvoiceDetail) contextValidateVatGroupParty(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.VatGroupParty != nil {
+		if err := m.VatGroupParty.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("vatGroupParty")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("vatGroupParty")
+			}
+			return err
+		}
 	}
 
 	return nil

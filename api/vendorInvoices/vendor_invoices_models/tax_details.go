@@ -24,7 +24,7 @@ type TaxDetails struct {
 	// Required: true
 	TaxAmount *Money `json:"taxAmount"`
 
-	// Tax percentage applied. Percentage must be expressed in decimal.
+	// Tax percentage applied. Expressed as a whole-percent integer string. For example, "20" for 20% VAT.
 	TaxRate Decimal `json:"taxRate,omitempty"`
 
 	// Type of the tax applied.

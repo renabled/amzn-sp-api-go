@@ -109,6 +109,12 @@ type GetShipmentTrackingParams struct {
 	*/
 	ID *string
 
+	/* ProNumber.
+
+	   The PRO number assigned by the freight carrier
+	*/
+	ProNumber *string
+
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
@@ -250,6 +256,17 @@ func (o *GetShipmentTrackingParams) SetID(id *string) {
 	o.ID = id
 }
 
+// WithProNumber adds the proNumber to the get shipment tracking params
+func (o *GetShipmentTrackingParams) WithProNumber(proNumber *string) *GetShipmentTrackingParams {
+	o.SetProNumber(proNumber)
+	return o
+}
+
+// SetProNumber adds the proNumber to the get shipment tracking params
+func (o *GetShipmentTrackingParams) SetProNumber(proNumber *string) {
+	o.ProNumber = proNumber
+}
+
 // WriteToRequest writes these params to a swagger request
 func (o *GetShipmentTrackingParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
 
@@ -380,6 +397,23 @@ func (o *GetShipmentTrackingParams) WriteToRequest(r runtime.ClientRequest, reg 
 		if qID != "" {
 
 			if err := r.SetQueryParam("id", qID); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.ProNumber != nil {
+
+		// query param proNumber
+		var qrProNumber string
+
+		if o.ProNumber != nil {
+			qrProNumber = *o.ProNumber
+		}
+		qProNumber := qrProNumber
+		if qProNumber != "" {
+
+			if err := r.SetQueryParam("proNumber", qProNumber); err != nil {
 				return err
 			}
 		}

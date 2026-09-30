@@ -20,6 +20,9 @@ import (
 // swagger:model PartyIdentification
 type PartyIdentification struct {
 
+	// Additional corporate or fiscal registration identifiers for the party that are not VAT/GST registrations (e.g. FR SIREN, or DE W-IdNr.).
+	AdditionalPartyIdentifications []*AdditionalPartyIdentification `json:"additionalPartyIdentifications"`
+
 	// Identification of the party by address.
 	Address *Address `json:"address,omitempty"`
 
@@ -34,6 +37,10 @@ type PartyIdentification struct {
 // Validate validates this party identification
 func (m *PartyIdentification) Validate(formats strfmt.Registry) error {
 	var res []error
+
+	if err := m.validateAdditionalPartyIdentifications(formats); err != nil {
+		res = append(res, err)
+	}
 
 	if err := m.validateAddress(formats); err != nil {
 		res = append(res, err)
@@ -50,6 +57,32 @@ func (m *PartyIdentification) Validate(formats strfmt.Registry) error {
 	if len(res) > 0 {
 		return errors.CompositeValidationError(res...)
 	}
+	return nil
+}
+
+func (m *PartyIdentification) validateAdditionalPartyIdentifications(formats strfmt.Registry) error {
+	if swag.IsZero(m.AdditionalPartyIdentifications) { // not required
+		return nil
+	}
+
+	for i := 0; i < len(m.AdditionalPartyIdentifications); i++ {
+		if swag.IsZero(m.AdditionalPartyIdentifications[i]) { // not required
+			continue
+		}
+
+		if m.AdditionalPartyIdentifications[i] != nil {
+			if err := m.AdditionalPartyIdentifications[i].Validate(formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("additionalPartyIdentifications" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("additionalPartyIdentifications" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
 	return nil
 }
 
@@ -111,6 +144,10 @@ func (m *PartyIdentification) validateTaxRegistrationDetails(formats strfmt.Regi
 func (m *PartyIdentification) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
 	var res []error
 
+	if err := m.contextValidateAdditionalPartyIdentifications(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.contextValidateAddress(ctx, formats); err != nil {
 		res = append(res, err)
 	}
@@ -122,6 +159,26 @@ func (m *PartyIdentification) ContextValidate(ctx context.Context, formats strfm
 	if len(res) > 0 {
 		return errors.CompositeValidationError(res...)
 	}
+	return nil
+}
+
+func (m *PartyIdentification) contextValidateAdditionalPartyIdentifications(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(m.AdditionalPartyIdentifications); i++ {
+
+		if m.AdditionalPartyIdentifications[i] != nil {
+			if err := m.AdditionalPartyIdentifications[i].ContextValidate(ctx, formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("additionalPartyIdentifications" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("additionalPartyIdentifications" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
 	return nil
 }
 

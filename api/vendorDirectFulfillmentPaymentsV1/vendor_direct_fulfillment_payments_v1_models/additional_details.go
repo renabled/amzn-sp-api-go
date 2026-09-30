@@ -29,7 +29,7 @@ type AdditionalDetails struct {
 
 	// The type of the additional information provided by the selling party.
 	// Required: true
-	// Enum: [SUR OCR]
+	// Enum: [SUR OCR TaxExemptReason LegalTerms RegulatoryNote]
 	Type *string `json:"type"`
 }
 
@@ -64,7 +64,7 @@ var additionalDetailsTypeTypePropEnum []interface{}
 
 func init() {
 	var res []string
-	if err := json.Unmarshal([]byte(`["SUR","OCR"]`), &res); err != nil {
+	if err := json.Unmarshal([]byte(`["SUR","OCR","TaxExemptReason","LegalTerms","RegulatoryNote"]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -79,6 +79,15 @@ const (
 
 	// AdditionalDetailsTypeOCR captures enum value "OCR"
 	AdditionalDetailsTypeOCR string = "OCR"
+
+	// AdditionalDetailsTypeTaxExemptReason captures enum value "TaxExemptReason"
+	AdditionalDetailsTypeTaxExemptReason string = "TaxExemptReason"
+
+	// AdditionalDetailsTypeLegalTerms captures enum value "LegalTerms"
+	AdditionalDetailsTypeLegalTerms string = "LegalTerms"
+
+	// AdditionalDetailsTypeRegulatoryNote captures enum value "RegulatoryNote"
+	AdditionalDetailsTypeRegulatoryNote string = "RegulatoryNote"
 )
 
 // prop value enum

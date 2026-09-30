@@ -20,6 +20,12 @@ import (
 // swagger:model InvoiceItem
 type InvoiceItem struct {
 
+	// Line-level additional details provided by the selling party, e.g. tax exemption reason code and text.
+	AdditionalDetails []*AdditionalDetails `json:"additionalDetails"`
+
+	// Individual allowance details per line item.
+	AllowanceDetails []*AllowanceDetails `json:"allowanceDetails"`
+
 	// Buyer's standard identification number (ASIN) of an item.
 	BuyerProductIdentifier string `json:"buyerProductIdentifier,omitempty"`
 
@@ -32,6 +38,9 @@ type InvoiceItem struct {
 	// Item quantity invoiced.
 	// Required: true
 	InvoicedQuantity *ItemQuantity `json:"invoicedQuantity"`
+
+	// Product or service description for the invoiced line item.
+	ItemDescription string `json:"itemDescription,omitempty"`
 
 	// Numbering of the item on the purchase order. The first item will be 1, the second 2, and so on.
 	// Required: true
@@ -58,6 +67,14 @@ type InvoiceItem struct {
 // Validate validates this invoice item
 func (m *InvoiceItem) Validate(formats strfmt.Registry) error {
 	var res []error
+
+	if err := m.validateAdditionalDetails(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateAllowanceDetails(formats); err != nil {
+		res = append(res, err)
+	}
 
 	if err := m.validateChargeDetails(formats); err != nil {
 		res = append(res, err)
@@ -86,6 +103,58 @@ func (m *InvoiceItem) Validate(formats strfmt.Registry) error {
 	if len(res) > 0 {
 		return errors.CompositeValidationError(res...)
 	}
+	return nil
+}
+
+func (m *InvoiceItem) validateAdditionalDetails(formats strfmt.Registry) error {
+	if swag.IsZero(m.AdditionalDetails) { // not required
+		return nil
+	}
+
+	for i := 0; i < len(m.AdditionalDetails); i++ {
+		if swag.IsZero(m.AdditionalDetails[i]) { // not required
+			continue
+		}
+
+		if m.AdditionalDetails[i] != nil {
+			if err := m.AdditionalDetails[i].Validate(formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("additionalDetails" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("additionalDetails" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
+func (m *InvoiceItem) validateAllowanceDetails(formats strfmt.Registry) error {
+	if swag.IsZero(m.AllowanceDetails) { // not required
+		return nil
+	}
+
+	for i := 0; i < len(m.AllowanceDetails); i++ {
+		if swag.IsZero(m.AllowanceDetails[i]) { // not required
+			continue
+		}
+
+		if m.AllowanceDetails[i] != nil {
+			if err := m.AllowanceDetails[i].Validate(formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("allowanceDetails" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("allowanceDetails" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
 	return nil
 }
 
@@ -203,6 +272,14 @@ func (m *InvoiceItem) validateTaxDetails(formats strfmt.Registry) error {
 func (m *InvoiceItem) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
 	var res []error
 
+	if err := m.contextValidateAdditionalDetails(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateAllowanceDetails(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.contextValidateChargeDetails(ctx, formats); err != nil {
 		res = append(res, err)
 	}
@@ -222,6 +299,46 @@ func (m *InvoiceItem) ContextValidate(ctx context.Context, formats strfmt.Regist
 	if len(res) > 0 {
 		return errors.CompositeValidationError(res...)
 	}
+	return nil
+}
+
+func (m *InvoiceItem) contextValidateAdditionalDetails(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(m.AdditionalDetails); i++ {
+
+		if m.AdditionalDetails[i] != nil {
+			if err := m.AdditionalDetails[i].ContextValidate(ctx, formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("additionalDetails" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("additionalDetails" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
+func (m *InvoiceItem) contextValidateAllowanceDetails(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(m.AllowanceDetails); i++ {
+
+		if m.AllowanceDetails[i] != nil {
+			if err := m.AllowanceDetails[i].ContextValidate(ctx, formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("allowanceDetails" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("allowanceDetails" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
 	return nil
 }
 

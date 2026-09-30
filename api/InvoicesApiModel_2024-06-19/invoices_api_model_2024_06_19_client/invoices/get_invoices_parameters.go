@@ -156,6 +156,12 @@ type GetInvoicesParams struct {
 	*/
 	TransactionType *string
 
+	/* WarehouseCode.
+
+	   The Warehouse code included in the invoice issued on behalf of the vendor. Check the warehouse code under your WarehouseSettings in VendorCentral.
+	*/
+	WarehouseCode *string
+
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
@@ -361,6 +367,17 @@ func (o *GetInvoicesParams) WithTransactionType(transactionType *string) *GetInv
 // SetTransactionType adds the transactionType to the get invoices params
 func (o *GetInvoicesParams) SetTransactionType(transactionType *string) {
 	o.TransactionType = transactionType
+}
+
+// WithWarehouseCode adds the warehouseCode to the get invoices params
+func (o *GetInvoicesParams) WithWarehouseCode(warehouseCode *string) *GetInvoicesParams {
+	o.SetWarehouseCode(warehouseCode)
+	return o
+}
+
+// SetWarehouseCode adds the warehouseCode to the get invoices params
+func (o *GetInvoicesParams) SetWarehouseCode(warehouseCode *string) {
+	o.WarehouseCode = warehouseCode
 }
 
 // WriteToRequest writes these params to a swagger request
@@ -591,6 +608,23 @@ func (o *GetInvoicesParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.R
 		if qTransactionType != "" {
 
 			if err := r.SetQueryParam("transactionType", qTransactionType); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.WarehouseCode != nil {
+
+		// query param warehouseCode
+		var qrWarehouseCode string
+
+		if o.WarehouseCode != nil {
+			qrWarehouseCode = *o.WarehouseCode
+		}
+		qWarehouseCode := qrWarehouseCode
+		if qWarehouseCode != "" {
+
+			if err := r.SetQueryParam("warehouseCode", qWarehouseCode); err != nil {
 				return err
 			}
 		}

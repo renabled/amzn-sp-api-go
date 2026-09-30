@@ -27,6 +27,9 @@ type Invoice struct {
 	// Total allowance amount details for all line items.
 	AllowanceDetails []*AllowanceDetails `json:"allowanceDetails"`
 
+	// Name, address and tax details of the party that issues this invoice.
+	BillFromParty *PartyIdentification `json:"billFromParty,omitempty"`
+
 	// Name, address and tax details of the party to whom this invoice is issued.
 	BillToParty *PartyIdentification `json:"billToParty,omitempty"`
 
@@ -41,6 +44,9 @@ type Invoice struct {
 	// Unique number relating to the charges defined in this document. This will be invoice number if the document type is Invoice or CreditNote number if the document type is Credit Note. Failure to provide this reference will result in a rejection.
 	// Required: true
 	ID *string `json:"id"`
+
+	// Sum of all invoice line net amounts, excluding tax, charges and allowances. Provided for EU e-invoice interoperability.
+	InvoiceBaseAmount *Money `json:"invoiceBaseAmount,omitempty"`
 
 	// Total monetary amount charged in the invoice or full value of credit note to be paid including all relevant taxes. It is the total amount of invoice (including charges, less allowances) before terms discount (if discount is applicable).
 	// Required: true
@@ -72,6 +78,16 @@ type Invoice struct {
 
 	// Total tax amount details for all line items.
 	TaxDetails []*TaxDetails `json:"taxDetails"`
+
+	// The date on which the tax becomes chargeable, if different from the invoice date. When absent, the invoice date applies.
+	// Format: date-time
+	TaxPointDate DateTime `json:"taxPointDate,omitempty"`
+
+	// Name, address and tax registration details of the supplier's fiscal or tax representative, where one is required. Conditionally mandatory for applicable EU e-invoice scenarios.
+	TaxRepresentativeParty *PartyIdentification `json:"taxRepresentativeParty,omitempty"`
+
+	// Name, address and tax registration details of the VAT group representative member, when the supplier reports VAT as part of a VAT group. Conditionally mandatory for applicable EU e-invoice scenarios.
+	VatGroupParty *PartyIdentification `json:"vatGroupParty,omitempty"`
 }
 
 // Validate validates this invoice
@@ -83,6 +99,10 @@ func (m *Invoice) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validateAllowanceDetails(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateBillFromParty(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -99,6 +119,10 @@ func (m *Invoice) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validateID(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateInvoiceBaseAmount(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -131,6 +155,18 @@ func (m *Invoice) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validateTaxDetails(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateTaxPointDate(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateTaxRepresentativeParty(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateVatGroupParty(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -187,6 +223,25 @@ func (m *Invoice) validateAllowanceDetails(formats strfmt.Registry) error {
 			}
 		}
 
+	}
+
+	return nil
+}
+
+func (m *Invoice) validateBillFromParty(formats strfmt.Registry) error {
+	if swag.IsZero(m.BillFromParty) { // not required
+		return nil
+	}
+
+	if m.BillFromParty != nil {
+		if err := m.BillFromParty.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("billFromParty")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("billFromParty")
+			}
+			return err
+		}
 	}
 
 	return nil
@@ -265,6 +320,25 @@ func (m *Invoice) validateID(formats strfmt.Registry) error {
 
 	if err := validate.Required("id", "body", m.ID); err != nil {
 		return err
+	}
+
+	return nil
+}
+
+func (m *Invoice) validateInvoiceBaseAmount(formats strfmt.Registry) error {
+	if swag.IsZero(m.InvoiceBaseAmount) { // not required
+		return nil
+	}
+
+	if m.InvoiceBaseAmount != nil {
+		if err := m.InvoiceBaseAmount.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("invoiceBaseAmount")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("invoiceBaseAmount")
+			}
+			return err
+		}
 	}
 
 	return nil
@@ -462,6 +536,61 @@ func (m *Invoice) validateTaxDetails(formats strfmt.Registry) error {
 	return nil
 }
 
+func (m *Invoice) validateTaxPointDate(formats strfmt.Registry) error {
+	if swag.IsZero(m.TaxPointDate) { // not required
+		return nil
+	}
+
+	if err := m.TaxPointDate.Validate(formats); err != nil {
+		if ve, ok := err.(*errors.Validation); ok {
+			return ve.ValidateName("taxPointDate")
+		} else if ce, ok := err.(*errors.CompositeError); ok {
+			return ce.ValidateName("taxPointDate")
+		}
+		return err
+	}
+
+	return nil
+}
+
+func (m *Invoice) validateTaxRepresentativeParty(formats strfmt.Registry) error {
+	if swag.IsZero(m.TaxRepresentativeParty) { // not required
+		return nil
+	}
+
+	if m.TaxRepresentativeParty != nil {
+		if err := m.TaxRepresentativeParty.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("taxRepresentativeParty")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("taxRepresentativeParty")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *Invoice) validateVatGroupParty(formats strfmt.Registry) error {
+	if swag.IsZero(m.VatGroupParty) { // not required
+		return nil
+	}
+
+	if m.VatGroupParty != nil {
+		if err := m.VatGroupParty.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("vatGroupParty")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("vatGroupParty")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
 // ContextValidate validate this invoice based on the context it is used
 func (m *Invoice) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
 	var res []error
@@ -474,6 +603,10 @@ func (m *Invoice) ContextValidate(ctx context.Context, formats strfmt.Registry) 
 		res = append(res, err)
 	}
 
+	if err := m.contextValidateBillFromParty(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.contextValidateBillToParty(ctx, formats); err != nil {
 		res = append(res, err)
 	}
@@ -483,6 +616,10 @@ func (m *Invoice) ContextValidate(ctx context.Context, formats strfmt.Registry) 
 	}
 
 	if err := m.contextValidateDate(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateInvoiceBaseAmount(ctx, formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -511,6 +648,18 @@ func (m *Invoice) ContextValidate(ctx context.Context, formats strfmt.Registry) 
 	}
 
 	if err := m.contextValidateTaxDetails(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateTaxPointDate(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateTaxRepresentativeParty(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateVatGroupParty(ctx, formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -560,6 +709,22 @@ func (m *Invoice) contextValidateAllowanceDetails(ctx context.Context, formats s
 	return nil
 }
 
+func (m *Invoice) contextValidateBillFromParty(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.BillFromParty != nil {
+		if err := m.BillFromParty.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("billFromParty")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("billFromParty")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
 func (m *Invoice) contextValidateBillToParty(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.BillToParty != nil {
@@ -604,6 +769,22 @@ func (m *Invoice) contextValidateDate(ctx context.Context, formats strfmt.Regist
 				return ve.ValidateName("date")
 			} else if ce, ok := err.(*errors.CompositeError); ok {
 				return ce.ValidateName("date")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *Invoice) contextValidateInvoiceBaseAmount(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.InvoiceBaseAmount != nil {
+		if err := m.InvoiceBaseAmount.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("invoiceBaseAmount")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("invoiceBaseAmount")
 			}
 			return err
 		}
@@ -727,6 +908,52 @@ func (m *Invoice) contextValidateTaxDetails(ctx context.Context, formats strfmt.
 			}
 		}
 
+	}
+
+	return nil
+}
+
+func (m *Invoice) contextValidateTaxPointDate(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := m.TaxPointDate.ContextValidate(ctx, formats); err != nil {
+		if ve, ok := err.(*errors.Validation); ok {
+			return ve.ValidateName("taxPointDate")
+		} else if ce, ok := err.(*errors.CompositeError); ok {
+			return ce.ValidateName("taxPointDate")
+		}
+		return err
+	}
+
+	return nil
+}
+
+func (m *Invoice) contextValidateTaxRepresentativeParty(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.TaxRepresentativeParty != nil {
+		if err := m.TaxRepresentativeParty.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("taxRepresentativeParty")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("taxRepresentativeParty")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *Invoice) contextValidateVatGroupParty(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.VatGroupParty != nil {
+		if err := m.VatGroupParty.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("vatGroupParty")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("vatGroupParty")
+			}
+			return err
+		}
 	}
 
 	return nil

@@ -15,7 +15,7 @@ import (
 )
 
 // ExportInvoicesRequest The information required to create the export request.
-// Example: {"dateEnd":"2024-07-30T23:59:59","dateStart":"2024-07-01T00:00:00","externalInvoiceId":"1283743","fileFormat":"XML","invoiceType":"SYMBOLIC_RETURN","marketplaceId":"A2Q3Y263D00KWC","series":"32","statuses":["AUTHORIZED"],"transactionIdentifier":{"id":"94cd4e1a-5cc5-486d-b592-045a95a168e1","name":"BUSINESS_TRANSACTION_ID"},"transactionType":"CUSTOMER_SALES"}
+// Example: {"dateEnd":"2024-07-30T23:59:59","dateStart":"2024-07-01T00:00:00","externalInvoiceId":"1283743","fileFormat":"XML","invoiceType":"SYMBOLIC_RETURN","marketplaceId":"A2Q3Y263D00KWC","series":"32","statuses":["AUTHORIZED"],"transactionIdentifier":{"id":"94cd4e1a-5cc5-486d-b592-045a95a168e1","name":"BUSINESS_TRANSACTION_ID"},"transactionType":"CUSTOMER_SALES","warehouseCode":"ABCD"}
 //
 // swagger:model ExportInvoicesRequest
 type ExportInvoicesRequest struct {
@@ -55,6 +55,9 @@ type ExportInvoicesRequest struct {
 
 	// The marketplace-specific classification of the transaction type for which the invoice was created. Use the `getInvoicesAttributes` operation to check `transactionType` options
 	TransactionType string `json:"transactionType,omitempty"`
+
+	// The Warehouse code included in the invoice issued on behalf of the vendor. Check the warehouse code under your WarehouseSettings in VendorCentral.
+	WarehouseCode string `json:"warehouseCode,omitempty"`
 }
 
 // Validate validates this export invoices request

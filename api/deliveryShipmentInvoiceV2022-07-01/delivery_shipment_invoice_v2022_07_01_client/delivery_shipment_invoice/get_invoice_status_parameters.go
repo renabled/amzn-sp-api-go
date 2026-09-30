@@ -61,6 +61,12 @@ GetInvoiceStatusParams contains all the parameters to send to the API endpoint
 */
 type GetInvoiceStatusParams struct {
 
+	/* InvoiceID.
+
+	   The invoice access key (NF-e access key for Brazilian invoices). Use this to retrieve the status of a specific invoice.
+	*/
+	InvoiceID *string
+
 	/* InvoiceType.
 
 	   The invoice's type.
@@ -69,7 +75,7 @@ type GetInvoiceStatusParams struct {
 
 	/* MarketplaceID.
 
-	   The marketplace identifier.
+	   The Amazon store identifier.
 	*/
 	MarketplaceID string
 
@@ -144,6 +150,17 @@ func (o *GetInvoiceStatusParams) SetHTTPClient(client *http.Client) {
 	o.HTTPClient = client
 }
 
+// WithInvoiceID adds the invoiceID to the get invoice status params
+func (o *GetInvoiceStatusParams) WithInvoiceID(invoiceID *string) *GetInvoiceStatusParams {
+	o.SetInvoiceID(invoiceID)
+	return o
+}
+
+// SetInvoiceID adds the invoiceId to the get invoice status params
+func (o *GetInvoiceStatusParams) SetInvoiceID(invoiceID *string) {
+	o.InvoiceID = invoiceID
+}
+
 // WithInvoiceType adds the invoiceType to the get invoice status params
 func (o *GetInvoiceStatusParams) WithInvoiceType(invoiceType string) *GetInvoiceStatusParams {
 	o.SetInvoiceType(invoiceType)
@@ -206,6 +223,23 @@ func (o *GetInvoiceStatusParams) WriteToRequest(r runtime.ClientRequest, reg str
 		return err
 	}
 	var res []error
+
+	if o.InvoiceID != nil {
+
+		// query param invoiceId
+		var qrInvoiceID string
+
+		if o.InvoiceID != nil {
+			qrInvoiceID = *o.InvoiceID
+		}
+		qInvoiceID := qrInvoiceID
+		if qInvoiceID != "" {
+
+			if err := r.SetQueryParam("invoiceId", qInvoiceID); err != nil {
+				return err
+			}
+		}
+	}
 
 	// query param invoiceType
 	qrInvoiceType := o.InvoiceType

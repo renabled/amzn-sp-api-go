@@ -13,7 +13,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// MarketplaceID The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
+// MarketplaceID The identifier for the Amazon store where the A+ Content is published.
 //
 // swagger:model MarketplaceId
 type MarketplaceID string

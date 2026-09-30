@@ -32,7 +32,7 @@ type SubmitInvoiceRequest struct {
 	// Required: true
 	InvoiceType *InvoiceType `json:"invoiceType"`
 
-	// An Amazon marketplace identifier.
+	// An Amazon store identifier.
 	// Required: true
 	MarketplaceID *string `json:"marketplaceId"`
 

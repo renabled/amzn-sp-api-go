@@ -40,7 +40,15 @@ type ClientService interface {
 }
 
 /*
-GetPromotion Retrieve details of a specified promotion.
+	GetPromotion Retrieve details of a specified promotion.
+
+**Usage Plan:**
+
+| Rate (requests per second) | Burst |
+| ---- | ---- |
+| 0.1 | 2 |
+
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon/sp-api/docs/usage-plans-and-rate-limits).
 */
 func (a *Client) GetPromotion(params *GetPromotionParams, opts ...ClientOption) (*GetPromotionOK, error) {
 	// TODO: Validate the params before sending
@@ -78,7 +86,15 @@ func (a *Client) GetPromotion(params *GetPromotionParams, opts ...ClientOption) 
 }
 
 /*
-GetSelection Retrieve up to 100 product items that are associated with a specified promotion. This operation only supports items found in `SelectionType.ITEMS`. Items found in `SelectionType.CATALOG` are not supported. Selection objects always include `selectionDetails` with item information.
+	GetSelection Retrieve up to 100 product items that are associated with a specified promotion. This operation only supports items found in `SelectionType.ITEMS`. Items found in `SelectionType.CATALOG` are not supported. Selection objects always include `selectionDetails` with item information.
+
+**Usage Plan:**
+
+| Rate (requests per second) | Burst |
+| ---- | ---- |
+| 0.1 | 2 |
+
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon/sp-api/docs/usage-plans-and-rate-limits).
 */
 func (a *Client) GetSelection(params *GetSelectionParams, opts ...ClientOption) (*GetSelectionOK, error) {
 	// TODO: Validate the params before sending
@@ -116,7 +132,15 @@ func (a *Client) GetSelection(params *GetSelectionParams, opts ...ClientOption) 
 }
 
 /*
-SearchPromotions Search and filter promotions based on various criteria. Returns a paginated list of promotion summaries.
+	SearchPromotions Search and filter promotions based on various criteria. Returns a paginated list of promotion summaries.
+
+**Usage Plan:**
+
+| Rate (requests per second) | Burst |
+| ---- | ---- |
+| 0.1 | 4 |
+
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon/sp-api/docs/usage-plans-and-rate-limits).
 */
 func (a *Client) SearchPromotions(params *SearchPromotionsParams, opts ...ClientOption) (*SearchPromotionsOK, error) {
 	// TODO: Validate the params before sending

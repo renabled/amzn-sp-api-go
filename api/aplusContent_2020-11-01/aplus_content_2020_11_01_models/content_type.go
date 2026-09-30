@@ -35,6 +35,9 @@ const (
 
 	// ContentTypeEMC captures enum value "EMC"
 	ContentTypeEMC ContentType = "EMC"
+
+	// ContentTypeBrandStory captures enum value "BrandStory"
+	ContentTypeBrandStory ContentType = "BrandStory"
 )
 
 // for schema
@@ -42,7 +45,7 @@ var contentTypeEnum []interface{}
 
 func init() {
 	var res []ContentType
-	if err := json.Unmarshal([]byte(`["EBC","EMC"]`), &res); err != nil {
+	if err := json.Unmarshal([]byte(`["EBC","EMC","BrandStory"]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {

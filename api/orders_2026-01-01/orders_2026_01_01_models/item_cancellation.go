@@ -18,7 +18,7 @@ import (
 // swagger:model ItemCancellation
 type ItemCancellation struct {
 
-	// Details of how the cancellation was executed for this order item.
+	// Details about how the cancellation request was processed for this order item.
 	CancellationExecution *ItemCancellationExecution `json:"cancellationExecution,omitempty"`
 
 	// Details of the cancellation request submitted for this order item.

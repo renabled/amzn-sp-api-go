@@ -34,7 +34,7 @@ type Order struct {
 	// Information about how this order is being processed and shipped.
 	Fulfillment *OrderFulfillment `json:"fulfillment,omitempty"`
 
-	// The list of fulfillment orders associated with this customer order. Each entry corresponds to one fulfillment unit created by Amazon for this order. **Note:** Only available for EasyShip orders at present.
+	// The list of fulfillment orders associated with this customer order. Each entry corresponds to one fulfillment unit created by Amazon for this order. **Note:** Only available for Easy Ship and Seller Flex.
 	FulfillmentOrders []*FulfillmentOrder `json:"fulfillmentOrders"`
 
 	// The most recent time when any aspect of this order was modified by Amazon or the seller. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) format.

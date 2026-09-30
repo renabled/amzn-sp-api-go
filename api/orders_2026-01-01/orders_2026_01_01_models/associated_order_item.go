@@ -8,20 +8,25 @@ package orders_2026_01_01_models
 import (
 	"context"
 
+	"github.com/go-openapi/errors"
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
 )
 
-// AssociatedOrderItem An associated order item that a customer has purchased with the product. For example, a tire installation service purchased with tires.
+// AssociatedOrderItem An associated order item that a customer has purchased with the product. For example, a tire installation service purchased with tires, or a warranty protection plan purchased with a product.
 // Example: {"associationType":"VALUE_ADD_SERVICE","orderId":"123-4567890-7654321","orderItemId":"12345678904321"}
 //
 // swagger:model AssociatedOrderItem
 type AssociatedOrderItem struct {
 
+	// The ASIN of the associated order item.
+	Asin string `json:"asin,omitempty"`
+
 	// The type of association between the order items.
 	//
 	// **Possible values**:
 	// - `VALUE_ADD_SERVICE` (The associated item is a service order)
+	// - `WARRANTY` (The associated item is a product covered by a warranty or protection plan)
 	AssociationType string `json:"associationType,omitempty"`
 
 	// The order identifier of the associated order item.
@@ -29,15 +34,71 @@ type AssociatedOrderItem struct {
 
 	// The order item identifier of the associated order item.
 	OrderItemID string `json:"orderItemId,omitempty"`
+
+	// The purchase price of the associated order item (the amount the customer paid, excluding shipping, tax, gift wrap, and promotions).
+	PurchasePrice *Money `json:"purchasePrice,omitempty"`
 }
 
 // Validate validates this associated order item
 func (m *AssociatedOrderItem) Validate(formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.validatePurchasePrice(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
 	return nil
 }
 
-// ContextValidate validates this associated order item based on context it is used
+func (m *AssociatedOrderItem) validatePurchasePrice(formats strfmt.Registry) error {
+	if swag.IsZero(m.PurchasePrice) { // not required
+		return nil
+	}
+
+	if m.PurchasePrice != nil {
+		if err := m.PurchasePrice.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("purchasePrice")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("purchasePrice")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+// ContextValidate validate this associated order item based on the context it is used
 func (m *AssociatedOrderItem) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.contextValidatePurchasePrice(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *AssociatedOrderItem) contextValidatePurchasePrice(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.PurchasePrice != nil {
+		if err := m.PurchasePrice.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("purchasePrice")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("purchasePrice")
+			}
+			return err
+		}
+	}
+
 	return nil
 }
 
