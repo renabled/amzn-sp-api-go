@@ -17,7 +17,7 @@ import (
 )
 
 // CreateSandboxShipmentRequest The request object for creating a sandbox shipment.
-// Example: {"lineItemCount":"MULTIPLE","locationId":"LOC_001","marketplaceChannel":"FBA","marketplaceId":"A21TJRUUN4KGV","orderType":["HAZMAT","MPS"],"quantityCount":"SINGLE","shippingType":"SELF"}
+// Example: {"lineItemCount":"MULTIPLE","locationId":"LOC_001","marketplaceChannel":"FBA","marketplaceId":"A21TJRUUN4KGV","orderType":["HAZMAT","MPS"],"quantityCount":"SINGLE","shippingType":"Self"}
 //
 // swagger:model CreateSandboxShipmentRequest
 type CreateSandboxShipmentRequest struct {
@@ -57,7 +57,7 @@ type CreateSandboxShipmentRequest struct {
 	// The shipping type for the sandbox shipment.
 	// Example: SELF
 	// Required: true
-	// Enum: [SELF MARKETPLACE THIRD_PARTY_CARRIER]
+	// Enum: [Self Marketplace THIRD_PARTY_CARRIER]
 	ShippingType *string `json:"shippingType"`
 }
 
@@ -313,7 +313,7 @@ var createSandboxShipmentRequestTypeShippingTypePropEnum []interface{}
 
 func init() {
 	var res []string
-	if err := json.Unmarshal([]byte(`["SELF","MARKETPLACE","THIRD_PARTY_CARRIER"]`), &res); err != nil {
+	if err := json.Unmarshal([]byte(`["Self","Marketplace","THIRD_PARTY_CARRIER"]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -323,11 +323,11 @@ func init() {
 
 const (
 
-	// CreateSandboxShipmentRequestShippingTypeSELF captures enum value "SELF"
-	CreateSandboxShipmentRequestShippingTypeSELF string = "SELF"
+	// CreateSandboxShipmentRequestShippingTypeSelf captures enum value "Self"
+	CreateSandboxShipmentRequestShippingTypeSelf string = "Self"
 
-	// CreateSandboxShipmentRequestShippingTypeMARKETPLACE captures enum value "MARKETPLACE"
-	CreateSandboxShipmentRequestShippingTypeMARKETPLACE string = "MARKETPLACE"
+	// CreateSandboxShipmentRequestShippingTypeMarketplace captures enum value "Marketplace"
+	CreateSandboxShipmentRequestShippingTypeMarketplace string = "Marketplace"
 
 	// CreateSandboxShipmentRequestShippingTypeTHIRDPARTYCARRIER captures enum value "THIRD_PARTY_CARRIER"
 	CreateSandboxShipmentRequestShippingTypeTHIRDPARTYCARRIER string = "THIRD_PARTY_CARRIER"

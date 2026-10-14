@@ -34,7 +34,7 @@ type ShippingInfo struct {
 	ShipToAddress *Address `json:"shipToAddress,omitempty"`
 
 	// The type of shipping that the seller uses to deliver a customer order.
-	// Enum: [MARKETPLACE SELF]
+	// Enum: [Marketplace Self]
 	ShippingType string `json:"shippingType,omitempty"`
 }
 
@@ -128,7 +128,7 @@ var shippingInfoTypeShippingTypePropEnum []interface{}
 
 func init() {
 	var res []string
-	if err := json.Unmarshal([]byte(`["MARKETPLACE","SELF"]`), &res); err != nil {
+	if err := json.Unmarshal([]byte(`["Marketplace","Self"]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -138,11 +138,11 @@ func init() {
 
 const (
 
-	// ShippingInfoShippingTypeMARKETPLACE captures enum value "MARKETPLACE"
-	ShippingInfoShippingTypeMARKETPLACE string = "MARKETPLACE"
+	// ShippingInfoShippingTypeMarketplace captures enum value "Marketplace"
+	ShippingInfoShippingTypeMarketplace string = "Marketplace"
 
-	// ShippingInfoShippingTypeSELF captures enum value "SELF"
-	ShippingInfoShippingTypeSELF string = "SELF"
+	// ShippingInfoShippingTypeSelf captures enum value "Self"
+	ShippingInfoShippingTypeSelf string = "Self"
 )
 
 // prop value enum
