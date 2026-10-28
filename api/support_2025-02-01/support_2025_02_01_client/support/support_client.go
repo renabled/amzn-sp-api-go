@@ -40,7 +40,15 @@ type ClientService interface {
 }
 
 /*
-GetCase Retrieve a specific support case.
+	GetCase Retrieve a specific support case.
+
+**Usage Plan:**
+
+| Rate (requests per second) | Burst |
+| ---- | ---- |
+| 0.1 | 10 |
+
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon/sp-api/docs/usage-plans-and-rate-limits).
 */
 func (a *Client) GetCase(params *GetCaseParams, opts ...ClientOption) (*GetCaseOK, error) {
 	// TODO: Validate the params before sending
@@ -78,7 +86,15 @@ func (a *Client) GetCase(params *GetCaseParams, opts ...ClientOption) (*GetCaseO
 }
 
 /*
-ListCases Retrieve support cases for a selling partner.
+	ListCases Retrieve support cases for a selling partner.
+
+**Usage Plan:**
+
+| Rate (requests per second) | Burst |
+| ---- | ---- |
+| 0.1 | 10 |
+
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon/sp-api/docs/usage-plans-and-rate-limits).
 */
 func (a *Client) ListCases(params *ListCasesParams, opts ...ClientOption) (*ListCasesOK, error) {
 	// TODO: Validate the params before sending
@@ -116,7 +132,15 @@ func (a *Client) ListCases(params *ListCasesParams, opts ...ClientOption) (*List
 }
 
 /*
-ListContacts Retrieve contacts for a specific support case.
+	ListContacts Retrieve contacts for a specific support case.
+
+**Usage Plan:**
+
+| Rate (requests per second) | Burst |
+| ---- | ---- |
+| 0.1 | 10 |
+
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The preceding table contains the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may have higher rate and burst values than those shown here. For more information, refer to [Usage Plans and Rate Limits](https://developer-docs.amazon/sp-api/docs/usage-plans-and-rate-limits).
 */
 func (a *Client) ListContacts(params *ListContactsParams, opts ...ClientOption) (*ListContactsOK, error) {
 	// TODO: Validate the params before sending
