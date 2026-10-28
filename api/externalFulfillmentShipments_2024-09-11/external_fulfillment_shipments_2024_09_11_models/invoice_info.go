@@ -11,7 +11,6 @@ import (
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
-	"github.com/go-openapi/validate"
 )
 
 // InvoiceInfo Information about the shipment's invoice.
@@ -20,12 +19,11 @@ import (
 type InvoiceInfo struct {
 
 	// When the invoice was created.
-	// Required: true
-	CreationDateTime *DateTime `json:"creationDateTime"`
+	// Format: date-time
+	CreationDateTime DateTime `json:"creationDateTime,omitempty"`
 
 	// The unique ID of the invoice that corresponds to the shipment.
-	// Required: true
-	InvoiceID *string `json:"invoiceId"`
+	InvoiceID string `json:"invoiceId,omitempty"`
 }
 
 // Validate validates this invoice info
@@ -36,10 +34,6 @@ func (m *InvoiceInfo) Validate(formats strfmt.Registry) error {
 		res = append(res, err)
 	}
 
-	if err := m.validateInvoiceID(formats); err != nil {
-		res = append(res, err)
-	}
-
 	if len(res) > 0 {
 		return errors.CompositeValidationError(res...)
 	}
@@ -47,32 +41,16 @@ func (m *InvoiceInfo) Validate(formats strfmt.Registry) error {
 }
 
 func (m *InvoiceInfo) validateCreationDateTime(formats strfmt.Registry) error {
-
-	if err := validate.Required("creationDateTime", "body", m.CreationDateTime); err != nil {
-		return err
+	if swag.IsZero(m.CreationDateTime) { // not required
+		return nil
 	}
 
-	if err := validate.Required("creationDateTime", "body", m.CreationDateTime); err != nil {
-		return err
-	}
-
-	if m.CreationDateTime != nil {
-		if err := m.CreationDateTime.Validate(formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
-				return ve.ValidateName("creationDateTime")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("creationDateTime")
-			}
-			return err
+	if err := m.CreationDateTime.Validate(formats); err != nil {
+		if ve, ok := err.(*errors.Validation); ok {
+			return ve.ValidateName("creationDateTime")
+		} else if ce, ok := err.(*errors.CompositeError); ok {
+			return ce.ValidateName("creationDateTime")
 		}
-	}
-
-	return nil
-}
-
-func (m *InvoiceInfo) validateInvoiceID(formats strfmt.Registry) error {
-
-	if err := validate.Required("invoiceId", "body", m.InvoiceID); err != nil {
 		return err
 	}
 
@@ -95,15 +73,13 @@ func (m *InvoiceInfo) ContextValidate(ctx context.Context, formats strfmt.Regist
 
 func (m *InvoiceInfo) contextValidateCreationDateTime(ctx context.Context, formats strfmt.Registry) error {
 
-	if m.CreationDateTime != nil {
-		if err := m.CreationDateTime.ContextValidate(ctx, formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
-				return ve.ValidateName("creationDateTime")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("creationDateTime")
-			}
-			return err
+	if err := m.CreationDateTime.ContextValidate(ctx, formats); err != nil {
+		if ve, ok := err.(*errors.Validation); ok {
+			return ve.ValidateName("creationDateTime")
+		} else if ce, ok := err.(*errors.CompositeError); ok {
+			return ce.ValidateName("creationDateTime")
 		}
+		return err
 	}
 
 	return nil

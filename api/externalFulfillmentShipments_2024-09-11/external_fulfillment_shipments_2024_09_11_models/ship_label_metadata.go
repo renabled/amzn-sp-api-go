@@ -15,7 +15,7 @@ import (
 )
 
 // ShipLabelMetadata Metadata for a ship label document.
-// Example: {"carrierName":"ATSPL","handoverLocation":{"address":{"addressLine1":"123 Main St","city":"Seattle","countryCode":"US","geocodes":{"latitude":"47.6062","longitude":"-122.3321"},"postalCode":"98101","stateOrRegion":"WA"},"distance":{"distanceUnit":"MI","value":"3.5"},"mapUrl":"https://maps.example.com/location?lat=47.6062\u0026lng=-122.3321"},"pickupWindow":{"endTime":1612494142,"startTime":1612933142},"shipBy":"MARKETPLACE","shippingOptionId":"TEST_CASE_200_SHIPPING_OPTION_ID","timeSlot":{"endTime":1612494142,"handoverMethod":"DROPOFF","startTime":1612933142},"trackingId":"343284200329"}
+// Example: {"carrierName":"ATSPL","handoverLocation":{"address":{"addressLine1":"123 Main St","city":"Seattle","countryCode":"US","geocodes":{"latitude":47.6062,"longitude":-122.3321},"postalCode":"98101","stateOrRegion":"WA"},"distance":{"distanceUnit":"MI","value":3.5},"mapUrl":"https://maps.example.com/location?lat=47.6062\u0026lng=-122.3321"},"pickupWindow":{"endTime":1612494142,"startTime":1612933142},"shipBy":"MARKETPLACE","shippingOptionId":"TEST_CASE_200_SHIPPING_OPTION_ID","timeSlot":{"endTime":1612494142,"handoverMethod":"DROPOFF","startTime":1612933142},"trackingId":"343284200329"}
 //
 // swagger:model ShipLabelMetadata
 type ShipLabelMetadata struct {

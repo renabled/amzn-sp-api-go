@@ -19,7 +19,7 @@ import (
 // swagger:model GetAdditionalSellerInputsRequest
 type GetAdditionalSellerInputsRequest struct {
 
-	// An Amazon defined order identifier
+	// An Amazon-defined order identifier.
 	// Required: true
 	OrderID *AmazonOrderID `json:"OrderId"`
 

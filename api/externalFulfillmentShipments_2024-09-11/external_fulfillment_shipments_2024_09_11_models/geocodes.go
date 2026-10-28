@@ -15,7 +15,7 @@ import (
 )
 
 // Geocodes Geographic coordinates.
-// Example: {"elevation":"56.0","latitude":"47.6062","longitude":"-122.3321"}
+// Example: {"elevation":56,"latitude":47.6062,"longitude":-122.3321}
 //
 // swagger:model Geocodes
 type Geocodes struct {

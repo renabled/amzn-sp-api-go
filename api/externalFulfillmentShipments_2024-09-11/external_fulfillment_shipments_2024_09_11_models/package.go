@@ -28,7 +28,7 @@ type Package struct {
 	// Min Items: 0
 	HazmatLabels []string `json:"hazmatLabels"`
 
-	// An ID that uniquely identifies a package within a shipment.
+	// The ID of the package whose information you want to update.
 	// Required: true
 	ID *string `json:"id"`
 
@@ -44,6 +44,9 @@ type Package struct {
 	// The current status of the package.
 	// Enum: [CREATED PICKUP_SLOT_RETRIEVED INVOICE_GENERATED SHIPLABEL_GENERATED SHIPPED DELIVERED CANCELLED]
 	Status string `json:"status,omitempty"`
+
+	// The carrier and tracking details of the package. This field is returned in responses only, and is ignored if it is provided in a request.
+	TrackingDetails *TrackingDetails `json:"trackingDetails,omitempty"`
 
 	// The weight of the package. The package must weigh at least 5 grams.
 	// Required: true
@@ -75,6 +78,10 @@ func (m *Package) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validateStatus(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateTrackingDetails(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -248,6 +255,25 @@ func (m *Package) validateStatus(formats strfmt.Registry) error {
 	return nil
 }
 
+func (m *Package) validateTrackingDetails(formats strfmt.Registry) error {
+	if swag.IsZero(m.TrackingDetails) { // not required
+		return nil
+	}
+
+	if m.TrackingDetails != nil {
+		if err := m.TrackingDetails.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("trackingDetails")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("trackingDetails")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
 func (m *Package) validateWeight(formats strfmt.Registry) error {
 
 	if err := validate.Required("weight", "body", m.Weight); err != nil {
@@ -277,6 +303,10 @@ func (m *Package) ContextValidate(ctx context.Context, formats strfmt.Registry) 
 	}
 
 	if err := m.contextValidatePackageLineItems(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateTrackingDetails(ctx, formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -315,6 +345,22 @@ func (m *Package) contextValidatePackageLineItems(ctx context.Context, formats s
 			return ce.ValidateName("packageLineItems")
 		}
 		return err
+	}
+
+	return nil
+}
+
+func (m *Package) contextValidateTrackingDetails(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.TrackingDetails != nil {
+		if err := m.TrackingDetails.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("trackingDetails")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("trackingDetails")
+			}
+			return err
+		}
 	}
 
 	return nil

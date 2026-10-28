@@ -20,7 +20,7 @@ import (
 // swagger:model PackageDeliveryStatus
 type PackageDeliveryStatus struct {
 
-	// The reason for the sub-status.
+	// The reason for the sub-status. Refer [table](https://developer-docs.amazon/sp-api/docs/process-shipment#step-6-update-the-package-status) for possible values.
 	// Max Length: 128
 	Reason string `json:"reason,omitempty"`
 

@@ -36,6 +36,7 @@ type Cancellation struct {
 
 	// The UNIX timestamp of when the line item was cancelled.
 	// Required: true
+	// Format: date-time
 	CancelledTimestamp *DateTime `json:"cancelledTimestamp"`
 }
 

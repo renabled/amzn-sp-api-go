@@ -15,7 +15,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// InvoiceRequirement Whether the invoice document is required to be attached to the shipment and its corresponding status.
+// InvoiceRequirement Whether the invoice document is required to be attached to the shipment and its corresponding status. Applicable only for Brazil marketplace.
 //
 // swagger:model InvoiceRequirement
 type InvoiceRequirement struct {

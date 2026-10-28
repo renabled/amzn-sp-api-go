@@ -15,7 +15,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// TaxRegistrationInfo Tax registration details of the entity. Applicable to direct fulfillment shipments.
+// TaxRegistrationInfo Tax registration details of the entity. Applicable only to direct fulfillment shipments.
 //
 // swagger:model TaxRegistrationInfo
 type TaxRegistrationInfo struct {

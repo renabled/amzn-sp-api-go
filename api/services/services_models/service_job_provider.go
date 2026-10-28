@@ -19,6 +19,9 @@ import (
 // swagger:model ServiceJobProvider
 type ServiceJobProvider struct {
 
+	// The reference ID for the service job assigned to the provider.
+	ProviderServiceJobReferenceID string `json:"providerServiceJobReferenceId,omitempty"`
+
 	// The identifier of the service job provider.
 	// Pattern: ^[A-Z0-9]*$
 	ServiceJobProviderID string `json:"serviceJobProviderId,omitempty"`

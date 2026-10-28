@@ -14,7 +14,7 @@ import (
 )
 
 // HandoverLocation The drop-off location details for package handover.
-// Example: {"address":{"addressLine1":"123 Main St","city":"Seattle","countryCode":"US","geocodes":{"latitude":"47.6062","longitude":"-122.3321"},"postalCode":"98101","stateOrRegion":"WA"},"distance":{"distanceUnit":"MI","value":"3.5"},"mapUrl":"https://maps.example.com/location?lat=47.6062\u0026lng=-122.3321"}
+// Example: {"address":{"addressLine1":"123 Main St","city":"Seattle","countryCode":"US","geocodes":{"latitude":47.6062,"longitude":-122.3321},"postalCode":"98101","stateOrRegion":"WA"},"distance":{"distanceUnit":"MI","value":3.5},"mapUrl":"https://maps.example.com/location?lat=47.6062\u0026lng=-122.3321"}
 //
 // swagger:model HandoverLocation
 type HandoverLocation struct {

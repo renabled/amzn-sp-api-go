@@ -24,10 +24,10 @@ type ShippingOfferingFilter struct {
 	// delivery experience
 	DeliveryExperience DeliveryExperienceOption `json:"DeliveryExperience,omitempty"`
 
-	// When true, include complex shipping options.
+	// When `true`, include complex shipping options.
 	IncludeComplexShippingOptions bool `json:"IncludeComplexShippingOptions,omitempty"`
 
-	// When true, include a packing slip with the label.
+	// When `true`, include a packing slip with the label.
 	IncludePackingSlipWithLabel bool `json:"IncludePackingSlipWithLabel,omitempty"`
 }
 

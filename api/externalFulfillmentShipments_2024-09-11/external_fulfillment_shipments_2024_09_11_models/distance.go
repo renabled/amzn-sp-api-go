@@ -16,7 +16,7 @@ import (
 )
 
 // Distance A distance measurement.
-// Example: {"distanceUnit":"MI","value":"3.5"}
+// Example: {"distanceUnit":"MI","value":3.5}
 //
 // swagger:model Distance
 type Distance struct {

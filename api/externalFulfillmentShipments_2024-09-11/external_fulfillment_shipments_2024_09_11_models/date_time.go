@@ -8,20 +8,60 @@ package external_fulfillment_shipments_2024_09_11_models
 import (
 	"context"
 
+	"github.com/go-openapi/errors"
 	"github.com/go-openapi/strfmt"
+	"github.com/go-openapi/swag"
+	"github.com/go-openapi/validate"
 )
 
 // DateTime A date and time in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) format.
 //
 // swagger:model DateTime
-type DateTime string
+type DateTime strfmt.DateTime
+
+// UnmarshalJSON sets a DateTime value from JSON input
+func (m *DateTime) UnmarshalJSON(b []byte) error {
+	return ((*strfmt.DateTime)(m)).UnmarshalJSON(b)
+}
+
+// MarshalJSON retrieves a DateTime value as JSON output
+func (m DateTime) MarshalJSON() ([]byte, error) {
+	return (strfmt.DateTime(m)).MarshalJSON()
+}
 
 // Validate validates this date time
 func (m DateTime) Validate(formats strfmt.Registry) error {
+	var res []error
+
+	if err := validate.FormatOf("", "body", "date-time", strfmt.DateTime(m).String(), formats); err != nil {
+		return err
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
 	return nil
 }
 
 // ContextValidate validates this date time based on context it is used
 func (m DateTime) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	return nil
+}
+
+// MarshalBinary interface implementation
+func (m *DateTime) MarshalBinary() ([]byte, error) {
+	if m == nil {
+		return nil, nil
+	}
+	return swag.WriteJSON(m)
+}
+
+// UnmarshalBinary interface implementation
+func (m *DateTime) UnmarshalBinary(b []byte) error {
+	var res DateTime
+	if err := swag.ReadJSON(b, &res); err != nil {
+		return err
+	}
+	*m = res
 	return nil
 }

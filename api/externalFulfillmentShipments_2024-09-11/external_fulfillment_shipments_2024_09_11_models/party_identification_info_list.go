@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// PartyIdentificationInfoList All involved party identification and metadata for the vendor, buyer, and seller. Applicable for direct-fulfillment sellers.
+// PartyIdentificationInfoList All involved party identification and metadata for vendor, buyer, seller. Applicable only for direct-fulfillment sellers.
 //
 // swagger:model PartyIdentificationInfoList
 type PartyIdentificationInfoList []*PartyIdentificationInfo

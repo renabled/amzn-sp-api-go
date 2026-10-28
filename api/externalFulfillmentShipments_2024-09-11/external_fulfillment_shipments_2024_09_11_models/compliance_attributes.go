@@ -20,16 +20,17 @@ import (
 type ComplianceAttributes struct {
 
 	// Whether the country of origin must be provided for this line item.
-	// Required: true
-	CountryOfOriginRequirement *RequirementLevel `json:"countryOfOriginRequirement"`
+	CountryOfOriginRequirement RequirementLevel `json:"countryOfOriginRequirement,omitempty"`
+
+	// Whether a hazardous material label must be applied on packages containing this line item.
+	HazmatLabelRequirement RequirementLevel `json:"hazmatLabelRequirement,omitempty"`
 
 	// Whether hazardous material labels must be applied on packages containing this line item.
 	// Required: true
 	HazmatLabelsRequirement *RequirementLevel `json:"hazmatLabelsRequirement"`
 
 	// Whether the item value must be provided for this line item.
-	// Required: true
-	ItemValueRequirement *RequirementLevel `json:"itemValueRequirement"`
+	ItemValueRequirement RequirementLevel `json:"itemValueRequirement,omitempty"`
 
 	// Whether serial numbers must be provided for this line item.
 	// Required: true
@@ -41,6 +42,10 @@ func (m *ComplianceAttributes) Validate(formats strfmt.Registry) error {
 	var res []error
 
 	if err := m.validateCountryOfOriginRequirement(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateHazmatLabelRequirement(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -63,24 +68,34 @@ func (m *ComplianceAttributes) Validate(formats strfmt.Registry) error {
 }
 
 func (m *ComplianceAttributes) validateCountryOfOriginRequirement(formats strfmt.Registry) error {
-
-	if err := validate.Required("countryOfOriginRequirement", "body", m.CountryOfOriginRequirement); err != nil {
-		return err
+	if swag.IsZero(m.CountryOfOriginRequirement) { // not required
+		return nil
 	}
 
-	if err := validate.Required("countryOfOriginRequirement", "body", m.CountryOfOriginRequirement); err != nil {
-		return err
-	}
-
-	if m.CountryOfOriginRequirement != nil {
-		if err := m.CountryOfOriginRequirement.Validate(formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
-				return ve.ValidateName("countryOfOriginRequirement")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("countryOfOriginRequirement")
-			}
-			return err
+	if err := m.CountryOfOriginRequirement.Validate(formats); err != nil {
+		if ve, ok := err.(*errors.Validation); ok {
+			return ve.ValidateName("countryOfOriginRequirement")
+		} else if ce, ok := err.(*errors.CompositeError); ok {
+			return ce.ValidateName("countryOfOriginRequirement")
 		}
+		return err
+	}
+
+	return nil
+}
+
+func (m *ComplianceAttributes) validateHazmatLabelRequirement(formats strfmt.Registry) error {
+	if swag.IsZero(m.HazmatLabelRequirement) { // not required
+		return nil
+	}
+
+	if err := m.HazmatLabelRequirement.Validate(formats); err != nil {
+		if ve, ok := err.(*errors.Validation); ok {
+			return ve.ValidateName("hazmatLabelRequirement")
+		} else if ce, ok := err.(*errors.CompositeError); ok {
+			return ce.ValidateName("hazmatLabelRequirement")
+		}
+		return err
 	}
 
 	return nil
@@ -111,24 +126,17 @@ func (m *ComplianceAttributes) validateHazmatLabelsRequirement(formats strfmt.Re
 }
 
 func (m *ComplianceAttributes) validateItemValueRequirement(formats strfmt.Registry) error {
-
-	if err := validate.Required("itemValueRequirement", "body", m.ItemValueRequirement); err != nil {
-		return err
+	if swag.IsZero(m.ItemValueRequirement) { // not required
+		return nil
 	}
 
-	if err := validate.Required("itemValueRequirement", "body", m.ItemValueRequirement); err != nil {
-		return err
-	}
-
-	if m.ItemValueRequirement != nil {
-		if err := m.ItemValueRequirement.Validate(formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
-				return ve.ValidateName("itemValueRequirement")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("itemValueRequirement")
-			}
-			return err
+	if err := m.ItemValueRequirement.Validate(formats); err != nil {
+		if ve, ok := err.(*errors.Validation); ok {
+			return ve.ValidateName("itemValueRequirement")
+		} else if ce, ok := err.(*errors.CompositeError); ok {
+			return ce.ValidateName("itemValueRequirement")
 		}
+		return err
 	}
 
 	return nil
@@ -166,6 +174,10 @@ func (m *ComplianceAttributes) ContextValidate(ctx context.Context, formats strf
 		res = append(res, err)
 	}
 
+	if err := m.contextValidateHazmatLabelRequirement(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.contextValidateHazmatLabelsRequirement(ctx, formats); err != nil {
 		res = append(res, err)
 	}
@@ -186,15 +198,27 @@ func (m *ComplianceAttributes) ContextValidate(ctx context.Context, formats strf
 
 func (m *ComplianceAttributes) contextValidateCountryOfOriginRequirement(ctx context.Context, formats strfmt.Registry) error {
 
-	if m.CountryOfOriginRequirement != nil {
-		if err := m.CountryOfOriginRequirement.ContextValidate(ctx, formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
-				return ve.ValidateName("countryOfOriginRequirement")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("countryOfOriginRequirement")
-			}
-			return err
+	if err := m.CountryOfOriginRequirement.ContextValidate(ctx, formats); err != nil {
+		if ve, ok := err.(*errors.Validation); ok {
+			return ve.ValidateName("countryOfOriginRequirement")
+		} else if ce, ok := err.(*errors.CompositeError); ok {
+			return ce.ValidateName("countryOfOriginRequirement")
 		}
+		return err
+	}
+
+	return nil
+}
+
+func (m *ComplianceAttributes) contextValidateHazmatLabelRequirement(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := m.HazmatLabelRequirement.ContextValidate(ctx, formats); err != nil {
+		if ve, ok := err.(*errors.Validation); ok {
+			return ve.ValidateName("hazmatLabelRequirement")
+		} else if ce, ok := err.(*errors.CompositeError); ok {
+			return ce.ValidateName("hazmatLabelRequirement")
+		}
+		return err
 	}
 
 	return nil
@@ -218,15 +242,13 @@ func (m *ComplianceAttributes) contextValidateHazmatLabelsRequirement(ctx contex
 
 func (m *ComplianceAttributes) contextValidateItemValueRequirement(ctx context.Context, formats strfmt.Registry) error {
 
-	if m.ItemValueRequirement != nil {
-		if err := m.ItemValueRequirement.ContextValidate(ctx, formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
-				return ve.ValidateName("itemValueRequirement")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("itemValueRequirement")
-			}
-			return err
+	if err := m.ItemValueRequirement.ContextValidate(ctx, formats); err != nil {
+		if ve, ok := err.(*errors.Validation); ok {
+			return ve.ValidateName("itemValueRequirement")
+		} else if ce, ok := err.(*errors.CompositeError); ok {
+			return ce.ValidateName("itemValueRequirement")
 		}
+		return err
 	}
 
 	return nil

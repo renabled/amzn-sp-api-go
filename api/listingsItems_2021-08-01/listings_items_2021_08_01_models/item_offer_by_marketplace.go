@@ -35,9 +35,15 @@ type ItemOfferByMarketplace struct {
 	// points
 	Points *Points `json:"points,omitempty"`
 
-	// Purchase price of the listings item
+	// The purchase price of the listings item.
 	// Required: true
 	Price *Money `json:"price"`
+
+	// The quantity discount plan applicable to this offer. A quantity discount plan defines discounts based on the purchase quantity, offered either as fixed prices or as percentage discounts across quantity tiers. Returned only when the offer has an active quantity discount schedule.
+	QuantityDiscountPlan *QuantityDiscountPlan `json:"quantityDiscountPlan,omitempty"`
+
+	// The seller-funded discount configured on this offer for the Subscribe & Save program. Returned only for offers that have a configured Subscribe & Save discount.
+	ReplenishmentDiscount *ReplenishmentDiscount `json:"replenishmentDiscount,omitempty"`
 }
 
 // Validate validates this item offer by marketplace
@@ -61,6 +67,14 @@ func (m *ItemOfferByMarketplace) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validatePrice(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateQuantityDiscountPlan(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateReplenishmentDiscount(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -180,6 +194,44 @@ func (m *ItemOfferByMarketplace) validatePrice(formats strfmt.Registry) error {
 	return nil
 }
 
+func (m *ItemOfferByMarketplace) validateQuantityDiscountPlan(formats strfmt.Registry) error {
+	if swag.IsZero(m.QuantityDiscountPlan) { // not required
+		return nil
+	}
+
+	if m.QuantityDiscountPlan != nil {
+		if err := m.QuantityDiscountPlan.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("quantityDiscountPlan")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("quantityDiscountPlan")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *ItemOfferByMarketplace) validateReplenishmentDiscount(formats strfmt.Registry) error {
+	if swag.IsZero(m.ReplenishmentDiscount) { // not required
+		return nil
+	}
+
+	if m.ReplenishmentDiscount != nil {
+		if err := m.ReplenishmentDiscount.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("replenishmentDiscount")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("replenishmentDiscount")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
 // ContextValidate validate this item offer by marketplace based on the context it is used
 func (m *ItemOfferByMarketplace) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
 	var res []error
@@ -193,6 +245,14 @@ func (m *ItemOfferByMarketplace) ContextValidate(ctx context.Context, formats st
 	}
 
 	if err := m.contextValidatePrice(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateQuantityDiscountPlan(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateReplenishmentDiscount(ctx, formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -242,6 +302,38 @@ func (m *ItemOfferByMarketplace) contextValidatePrice(ctx context.Context, forma
 				return ve.ValidateName("price")
 			} else if ce, ok := err.(*errors.CompositeError); ok {
 				return ce.ValidateName("price")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *ItemOfferByMarketplace) contextValidateQuantityDiscountPlan(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.QuantityDiscountPlan != nil {
+		if err := m.QuantityDiscountPlan.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("quantityDiscountPlan")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("quantityDiscountPlan")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *ItemOfferByMarketplace) contextValidateReplenishmentDiscount(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.ReplenishmentDiscount != nil {
+		if err := m.ReplenishmentDiscount.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("replenishmentDiscount")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("replenishmentDiscount")
 			}
 			return err
 		}

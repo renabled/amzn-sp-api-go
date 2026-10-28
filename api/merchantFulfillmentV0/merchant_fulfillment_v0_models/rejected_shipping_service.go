@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// RejectedShippingService Information about a rejected shipping service
+// RejectedShippingService Information about a rejected shipping service.
 //
 // swagger:model RejectedShippingService
 type RejectedShippingService struct {
@@ -23,11 +23,11 @@ type RejectedShippingService struct {
 	// Required: true
 	CarrierName *string `json:"CarrierName"`
 
-	// A reason code meant to be consumed programatically. For example, `CARRIER_CANNOT_SHIP_TO_POBOX`.
+	// A reason code meant to be consumed programmatically. For example, `CARRIER_CANNOT_SHIP_TO_POBOX`.
 	// Required: true
 	RejectionReasonCode *string `json:"RejectionReasonCode"`
 
-	// A localized human readable description of the rejected reason.
+	// A localized, human-readable description of the rejected reason.
 	RejectionReasonMessage string `json:"RejectionReasonMessage,omitempty"`
 
 	// The rejected shipping service identifier. For example, `FEDEX_PTP_STANDARD_OVERNIGHT`.

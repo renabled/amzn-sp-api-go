@@ -47,7 +47,7 @@ type ItemSummaryByMarketplace struct {
 	// The listings item's main image.
 	MainImage *ItemImage `json:"mainImage,omitempty"`
 
-	// A marketplace identifier. Identifies the listings item's Amazon store.
+	// An Amazon store identifier. Identifies the listings item's Amazon store.
 	// Required: true
 	MarketplaceID *string `json:"marketplaceId"`
 

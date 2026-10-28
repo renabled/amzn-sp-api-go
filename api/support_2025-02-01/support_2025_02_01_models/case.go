@@ -41,11 +41,6 @@ type Case struct {
 	// Format: date-time
 	CreatedDate *strfmt.DateTime `json:"createdDate"`
 
-	// The timestamp of the last outbound contact on the case. The date must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> format.
-	// Example: 2024-01-12T10:30:00.000Z
-	// Format: date-time
-	LastOutboundDate strfmt.DateTime `json:"lastOutboundDate,omitempty"`
-
 	// The time when the case was last updated, which includes updates to the case details and new contacts added to the case. In [ISO 8601](https://developer-docs.amazon/sp-api/docs/iso-8601) format.
 	// Example: 2024-01-12T10:00:00.000Z
 	// Required: true
@@ -90,10 +85,6 @@ func (m *Case) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validateCreatedDate(formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.validateLastOutboundDate(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -174,18 +165,6 @@ func (m *Case) validateCreatedDate(formats strfmt.Registry) error {
 	}
 
 	if err := validate.FormatOf("createdDate", "body", "date-time", m.CreatedDate.String(), formats); err != nil {
-		return err
-	}
-
-	return nil
-}
-
-func (m *Case) validateLastOutboundDate(formats strfmt.Registry) error {
-	if swag.IsZero(m.LastOutboundDate) { // not required
-		return nil
-	}
-
-	if err := validate.FormatOf("lastOutboundDate", "body", "date-time", m.LastOutboundDate.String(), formats); err != nil {
 		return err
 	}
 

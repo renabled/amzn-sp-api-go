@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// IssueEnforcementAction The enforcement action taken by Amazon that affect the publishing or status of a listing
+// IssueEnforcementAction An enforcement action that Amazon takes that affects the publishing or status of a listing.
 //
 // swagger:model IssueEnforcementAction
 type IssueEnforcementAction struct {

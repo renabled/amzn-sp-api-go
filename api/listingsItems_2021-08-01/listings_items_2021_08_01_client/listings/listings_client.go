@@ -44,7 +44,7 @@ type ClientService interface {
 }
 
 /*
-	DeleteListingsItem Delete a listings item for a selling partner.
+	DeleteListingsItem Deletes a listings item for a selling partner.
 
 **Usage Plan:**
 
@@ -182,7 +182,7 @@ func (a *Client) PatchListingsItem(params *PatchListingsItemParams, opts ...Clie
 }
 
 /*
-	PutListingsItem Creates a new or fully-updates an existing listings item for a selling partner.
+	PutListingsItem Creates a new or fully updates an existing listings item for a selling partner.
 
 **Usage Plan:**
 

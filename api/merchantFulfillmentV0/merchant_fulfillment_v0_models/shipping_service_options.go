@@ -19,7 +19,7 @@ import (
 // swagger:model ShippingServiceOptions
 type ShippingServiceOptions struct {
 
-	// When true, the carrier will pick up the package. Note: Scheduled carrier pickup is available only using Dynamex (US), DPD (UK), and Royal Mail (UK).
+	// When `true`, the carrier picks up the package. Note: Scheduled carrier pickup is available only using Dynamex (US), DPD (UK), and Royal Mail (UK).
 	// Required: true
 	CarrierWillPickUp *bool `json:"CarrierWillPickUp"`
 

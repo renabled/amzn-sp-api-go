@@ -21,7 +21,7 @@ import (
 // swagger:model ShipmentAcknowledgementRequest
 type ShipmentAcknowledgementRequest struct {
 
-	// Details about the line items from the shipment that are being confirmed or rejected by the seller.
+	// Details about the line items from the shipment that are being rejected by the seller.
 	// Required: true
 	// Min Items: 0
 	LineItems []*LineItemWithReason `json:"lineItems"`

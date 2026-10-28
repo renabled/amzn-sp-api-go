@@ -23,12 +23,12 @@ type Shipment struct {
 	// Required: true
 	AmazonOrderID *AmazonOrderID `json:"AmazonOrderId"`
 
-	// The date and time the shipment is created.
+	// The date and time when the shipment was created.
 	// Required: true
 	// Format: date-time
 	CreatedDate *Timestamp `json:"CreatedDate"`
 
-	// If you specify `DeclaredValue` in a previous call to the `createShipment` operation, then `Insurance` indicates the shipment insurance amount that the carrier uses. If `DeclaredValue` isn't with a previous call to the `createShipment` operation, then the shipment is insured for the carrier's minimum insurance amount, or the combined sale prices that the items are listed for in the shipment.
+	// If you specify `DeclaredValue` in a previous call to the `createShipment` operation, then `Insurance` indicates the shipment insurance amount that the carrier uses. Without `DeclaredValue`, the shipment uses the carrier's minimum insurance amount, or the combined sale prices that the items are listed for in the shipment.
 	// Required: true
 	Insurance *CurrencyAmount `json:"Insurance"`
 

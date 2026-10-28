@@ -71,7 +71,7 @@ type GenerateShipLabelsParams struct {
 
 	/* Operation.
 
-	   Specify whether you want to generate or regenerate a label.
+	   Specify whether you want to generate or regenerate a label. For retrieving existing labels, set this value to `GENERATE`
 	*/
 	Operation string
 

@@ -24,8 +24,7 @@ type RecommendedPackage struct {
 	Dimensions *PackageDimensions `json:"dimensions"`
 
 	// line items
-	// Required: true
-	LineItems RecommendedPackageLineItems `json:"lineItems"`
+	LineItems RecommendedPackageLineItems `json:"lineItems,omitempty"`
 
 	// weight
 	// Required: true
@@ -75,9 +74,8 @@ func (m *RecommendedPackage) validateDimensions(formats strfmt.Registry) error {
 }
 
 func (m *RecommendedPackage) validateLineItems(formats strfmt.Registry) error {
-
-	if err := validate.Required("lineItems", "body", m.LineItems); err != nil {
-		return err
+	if swag.IsZero(m.LineItems) { // not required
+		return nil
 	}
 
 	if err := m.LineItems.Validate(formats); err != nil {

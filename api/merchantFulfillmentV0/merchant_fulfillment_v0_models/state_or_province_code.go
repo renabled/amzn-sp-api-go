@@ -13,7 +13,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// StateOrProvinceCode The state or province code. This is a required field in Canada, US, and UK marketplaces, and for shipments that originate in China.
+// StateOrProvinceCode The state or province code. This is a required field in Amazon Canada, US, and UK stores, and for shipments that originate in China.
 //
 // swagger:model StateOrProvinceCode
 type StateOrProvinceCode string

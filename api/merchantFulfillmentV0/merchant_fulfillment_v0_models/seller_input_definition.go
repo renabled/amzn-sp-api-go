@@ -34,7 +34,7 @@ type SellerInputDefinition struct {
 	// Whether the seller input applies to the item or the shipment.
 	InputTarget InputTargetType `json:"InputTarget,omitempty"`
 
-	// When true, the additional input field is required.
+	// When `true`, the additional input field is required.
 	// Required: true
 	IsRequired *bool `json:"IsRequired"`
 

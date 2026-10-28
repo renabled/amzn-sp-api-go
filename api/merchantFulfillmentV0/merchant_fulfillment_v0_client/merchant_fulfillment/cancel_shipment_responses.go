@@ -406,7 +406,7 @@ func NewCancelShipmentNotFound() *CancelShipmentNotFound {
 /*
 CancelShipmentNotFound describes a response with status code 404, with default header values.
 
-The resource specified does not exist.
+The specified resource does not exist.
 */
 type CancelShipmentNotFound struct {
 
@@ -492,7 +492,7 @@ func NewCancelShipmentTooManyRequests() *CancelShipmentTooManyRequests {
 /*
 CancelShipmentTooManyRequests describes a response with status code 429, with default header values.
 
-The frequency of requests was greater than allowed.
+The frequency of requests exceeds the allowed rate.
 */
 type CancelShipmentTooManyRequests struct {
 
@@ -567,7 +567,7 @@ func NewCancelShipmentInternalServerError() *CancelShipmentInternalServerError {
 /*
 CancelShipmentInternalServerError describes a response with status code 500, with default header values.
 
-An unexpected condition occurred that prevented the server from fulfilling the request.
+An unexpected condition prevents the server from fulfilling the request.
 */
 type CancelShipmentInternalServerError struct {
 

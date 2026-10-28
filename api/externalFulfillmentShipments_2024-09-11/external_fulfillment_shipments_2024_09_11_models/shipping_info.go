@@ -20,8 +20,13 @@ import (
 // swagger:model ShippingInfo
 type ShippingInfo struct {
 
+	// The date and time when Amazon expects the seller to ship the packages, in the shipment's local time zone.
+	// Format: date-time
+	ExpectedShippingDateTime DateTime `json:"expectedShippingDateTime,omitempty"`
+
 	// The date and time when Amazon expects the seller to ship the packages.
 	// Required: true
+	// Format: date-time
 	ExpectedShippingDateTimeInUTC *DateTime `json:"expectedShippingDateTimeInUTC"`
 
 	// recommended packages
@@ -42,6 +47,10 @@ type ShippingInfo struct {
 func (m *ShippingInfo) Validate(formats strfmt.Registry) error {
 	var res []error
 
+	if err := m.validateExpectedShippingDateTime(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.validateExpectedShippingDateTimeInUTC(formats); err != nil {
 		res = append(res, err)
 	}
@@ -61,6 +70,23 @@ func (m *ShippingInfo) Validate(formats strfmt.Registry) error {
 	if len(res) > 0 {
 		return errors.CompositeValidationError(res...)
 	}
+	return nil
+}
+
+func (m *ShippingInfo) validateExpectedShippingDateTime(formats strfmt.Registry) error {
+	if swag.IsZero(m.ExpectedShippingDateTime) { // not required
+		return nil
+	}
+
+	if err := m.ExpectedShippingDateTime.Validate(formats); err != nil {
+		if ve, ok := err.(*errors.Validation); ok {
+			return ve.ValidateName("expectedShippingDateTime")
+		} else if ce, ok := err.(*errors.CompositeError); ok {
+			return ce.ValidateName("expectedShippingDateTime")
+		}
+		return err
+	}
+
 	return nil
 }
 
@@ -170,6 +196,10 @@ func (m *ShippingInfo) validateShippingType(formats strfmt.Registry) error {
 func (m *ShippingInfo) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
 	var res []error
 
+	if err := m.contextValidateExpectedShippingDateTime(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.contextValidateExpectedShippingDateTimeInUTC(ctx, formats); err != nil {
 		res = append(res, err)
 	}
@@ -185,6 +215,20 @@ func (m *ShippingInfo) ContextValidate(ctx context.Context, formats strfmt.Regis
 	if len(res) > 0 {
 		return errors.CompositeValidationError(res...)
 	}
+	return nil
+}
+
+func (m *ShippingInfo) contextValidateExpectedShippingDateTime(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := m.ExpectedShippingDateTime.ContextValidate(ctx, formats); err != nil {
+		if ve, ok := err.(*errors.Validation); ok {
+			return ve.ValidateName("expectedShippingDateTime")
+		} else if ce, ok := err.(*errors.CompositeError); ok {
+			return ce.ValidateName("expectedShippingDateTime")
+		}
+		return err
+	}
+
 	return nil
 }
 

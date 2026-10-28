@@ -16,7 +16,7 @@ import (
 )
 
 // Packages The request schema of the `createPackages` operation.
-// Example: {"packages":[{"dimensions":{"height":{"dimensionUnit":"CM","value":"10.0"},"length":{"dimensionUnit":"CM","value":"10.0"},"width":{"dimensionUnit":"CM","value":"10.0"}},"hazmatLabels":[],"id":"001","packageLineItems":[{"countryOfOrigin":"IN","itemValue":{"currencyCode":"INR","value":"10"},"packageLineItemId":"1","pieces":1,"quantity":1,"serialNumbers":[]},{"packageLineItemId":"2","quantity":1,"serialNumbers":[]}],"status":"CREATED","weight":{"value":"200.0","weightUnit":"G"}}]}
+// Example: {"packages":[{"dimensions":{"height":{"dimensionUnit":"CM","value":10},"length":{"dimensionUnit":"CM","value":10},"width":{"dimensionUnit":"CM","value":10}},"hazmatLabels":[],"id":"001","packageLineItems":[{"countryOfOrigin":"IN","itemValue":{"currencyCode":"INR","value":10},"packageLineItemId":"1","pieces":1,"quantity":1,"serialNumbers":[]},{"packageLineItemId":"2","quantity":1,"serialNumbers":[]}],"status":"SHIPPED","weight":{"value":200,"weightUnit":"G"}}]}
 //
 // swagger:model Packages
 type Packages struct {

@@ -492,7 +492,7 @@ func NewGetShipmentTooManyRequests() *GetShipmentTooManyRequests {
 /*
 GetShipmentTooManyRequests describes a response with status code 429, with default header values.
 
-The frequency of requests was greater than allowed.
+The frequency of requests exceeds the allowed rate.
 */
 type GetShipmentTooManyRequests struct {
 
@@ -567,7 +567,7 @@ func NewGetShipmentInternalServerError() *GetShipmentInternalServerError {
 /*
 GetShipmentInternalServerError describes a response with status code 500, with default header values.
 
-An unexpected condition occurred that prevented the server from fulfilling the request.
+An unexpected condition prevents the server from fulfilling the request.
 */
 type GetShipmentInternalServerError struct {
 

@@ -17,7 +17,7 @@ import (
 // swagger:model LabelFormatOptionRequest
 type LabelFormatOptionRequest struct {
 
-	// When true, include a packing slip with the label.
+	// When `true`, include a packing slip with the label.
 	IncludePackingSlipWithLabel bool `json:"IncludePackingSlipWithLabel,omitempty"`
 }
 

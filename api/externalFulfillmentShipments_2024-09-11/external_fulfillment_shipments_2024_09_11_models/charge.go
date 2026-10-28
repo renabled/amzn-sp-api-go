@@ -27,7 +27,7 @@ type Charge struct {
 
 	// The type of charge.
 	// Required: true
-	// Enum: [PRODUCT SHIPPING GIFT_WRAP TOTAL OTHER]
+	// Enum: [product shipping gift_wrap total other]
 	ChargeType *string `json:"chargeType"`
 
 	// The tax charge details.
@@ -97,7 +97,7 @@ var chargeTypeChargeTypePropEnum []interface{}
 
 func init() {
 	var res []string
-	if err := json.Unmarshal([]byte(`["PRODUCT","SHIPPING","GIFT_WRAP","TOTAL","OTHER"]`), &res); err != nil {
+	if err := json.Unmarshal([]byte(`["product","shipping","gift_wrap","total","other"]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -107,20 +107,20 @@ func init() {
 
 const (
 
-	// ChargeChargeTypePRODUCT captures enum value "PRODUCT"
-	ChargeChargeTypePRODUCT string = "PRODUCT"
+	// ChargeChargeTypeProduct captures enum value "product"
+	ChargeChargeTypeProduct string = "product"
 
-	// ChargeChargeTypeSHIPPING captures enum value "SHIPPING"
-	ChargeChargeTypeSHIPPING string = "SHIPPING"
+	// ChargeChargeTypeShipping captures enum value "shipping"
+	ChargeChargeTypeShipping string = "shipping"
 
-	// ChargeChargeTypeGIFTWRAP captures enum value "GIFT_WRAP"
-	ChargeChargeTypeGIFTWRAP string = "GIFT_WRAP"
+	// ChargeChargeTypeGiftWrap captures enum value "gift_wrap"
+	ChargeChargeTypeGiftWrap string = "gift_wrap"
 
-	// ChargeChargeTypeTOTAL captures enum value "TOTAL"
-	ChargeChargeTypeTOTAL string = "TOTAL"
+	// ChargeChargeTypeTotal captures enum value "total"
+	ChargeChargeTypeTotal string = "total"
 
-	// ChargeChargeTypeOTHER captures enum value "OTHER"
-	ChargeChargeTypeOTHER string = "OTHER"
+	// ChargeChargeTypeOther captures enum value "other"
+	ChargeChargeTypeOther string = "other"
 )
 
 // prop value enum

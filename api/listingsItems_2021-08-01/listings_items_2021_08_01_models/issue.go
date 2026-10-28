@@ -32,7 +32,7 @@ type Issue struct {
 	// Required: true
 	Code *string `json:"code"`
 
-	// Provides information about the enforcement actions taken by Amazon that affect the publishing or status of a listing. It also includes details about any associated exemptions.
+	// Information about enforcement actions by Amazon that affect the publishing or status of a listing, including any associated exemptions.
 	Enforcements *IssueEnforcements `json:"enforcements,omitempty"`
 
 	// List of Amazon store identifiers.

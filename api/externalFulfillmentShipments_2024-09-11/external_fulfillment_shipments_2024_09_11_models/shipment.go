@@ -27,9 +27,11 @@ type Shipment struct {
 
 	// The date and time when the shipment was created.
 	// Required: true
+	// Format: date-time
 	CreationDateTime *DateTime `json:"creationDateTime"`
 
 	// The time when the shipment becomes eligible for processing.
+	// Format: date-time
 	EarliestPackDateTime DateTime `json:"earliestPackDateTime,omitempty"`
 
 	// The shipment's ID.
@@ -41,6 +43,7 @@ type Shipment struct {
 
 	// The date and time when the shipment was last updated.
 	// Required: true
+	// Format: date-time
 	LastUpdatedDateTime *DateTime `json:"lastUpdatedDateTime"`
 
 	// The line items in the shipment.
@@ -60,7 +63,7 @@ type Shipment struct {
 	// Min Items: 1
 	Packages []*Package `json:"packages"`
 
-	// All involved party identification and metadata for vendor, buyer, seller. Applicable for direct-fulfillment sellers.
+	// All involved party identification and metadata for vendor, buyer, seller. Applicable only for direct-fulfillment sellers.
 	PartyInfoList PartyIdentificationInfoList `json:"partyInfoList,omitempty"`
 
 	// The reason for the sub-status.

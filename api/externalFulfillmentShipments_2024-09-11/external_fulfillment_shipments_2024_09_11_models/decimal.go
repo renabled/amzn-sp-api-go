@@ -11,10 +11,10 @@ import (
 	"github.com/go-openapi/strfmt"
 )
 
-// Decimal A decimal number with no loss of precision. Useful when precision loss is unacceptable, as with currencies.
+// Decimal A decimal number.
 //
 // swagger:model Decimal
-type Decimal string
+type Decimal float64
 
 // Validate validates this decimal
 func (m Decimal) Validate(formats strfmt.Registry) error {

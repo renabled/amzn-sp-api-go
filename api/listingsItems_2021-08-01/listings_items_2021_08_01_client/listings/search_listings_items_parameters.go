@@ -99,7 +99,7 @@ type SearchListingsItemsParams struct {
 
 	/* IncludedData.
 
-	   A comma-delimited list of data sets that you want to include in the response. Default: `summaries`.
+	   A comma-delimited list of data sets to include in the response. Default: `summaries`.
 
 	   Default: ["summaries"]
 	*/
@@ -107,7 +107,7 @@ type SearchListingsItemsParams struct {
 
 	/* IssueLocale.
 
-	   A locale that is used to localize issues. When not provided, the default language code of the first Amazon store is used. Examples: "en_US", "fr_CA", "fr_FR". When a localization is not available in the specified locale, localized messages default to "en_US".
+	   A locale for localization of issues. When not provided, the default language code of the first Amazon store is used. Examples: "en_US", "fr_CA", "fr_FR". When a localization is not available in the specified locale, localized messages default to "en_US".
 	*/
 	IssueLocale *string
 

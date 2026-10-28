@@ -118,6 +118,12 @@ type GetServiceJobsParams struct {
 	*/
 	ProductOrderIds []string
 
+	/* ProviderServiceJobReferenceIds.
+
+	   A list of up to 20 reference IDs for the service jobs assigned to the provider. You can use these IDs to query service jobs.
+	*/
+	ProviderServiceJobReferenceIds []string
+
 	/* RequiredSkills.
 
 	   A defined set of related knowledge, skills, experience, tools, materials, and work processes common to service delivery for a set of products and/or service scenarios. Max values supported is 20.
@@ -333,6 +339,17 @@ func (o *GetServiceJobsParams) WithProductOrderIds(productOrderIds []string) *Ge
 // SetProductOrderIds adds the productOrderIds to the get service jobs params
 func (o *GetServiceJobsParams) SetProductOrderIds(productOrderIds []string) {
 	o.ProductOrderIds = productOrderIds
+}
+
+// WithProviderServiceJobReferenceIds adds the providerServiceJobReferenceIds to the get service jobs params
+func (o *GetServiceJobsParams) WithProviderServiceJobReferenceIds(providerServiceJobReferenceIds []string) *GetServiceJobsParams {
+	o.SetProviderServiceJobReferenceIds(providerServiceJobReferenceIds)
+	return o
+}
+
+// SetProviderServiceJobReferenceIds adds the providerServiceJobReferenceIds to the get service jobs params
+func (o *GetServiceJobsParams) SetProviderServiceJobReferenceIds(providerServiceJobReferenceIds []string) {
+	o.ProviderServiceJobReferenceIds = providerServiceJobReferenceIds
 }
 
 // WithRequiredSkills adds the requiredSkills to the get service jobs params
@@ -577,6 +594,17 @@ func (o *GetServiceJobsParams) WriteToRequest(r runtime.ClientRequest, reg strfm
 		}
 	}
 
+	if o.ProviderServiceJobReferenceIds != nil {
+
+		// binding items for providerServiceJobReferenceIds
+		joinedProviderServiceJobReferenceIds := o.bindParamProviderServiceJobReferenceIds(reg)
+
+		// query array param providerServiceJobReferenceIds
+		if err := r.SetQueryParam("providerServiceJobReferenceIds", joinedProviderServiceJobReferenceIds...); err != nil {
+			return err
+		}
+	}
+
 	if o.RequiredSkills != nil {
 
 		// binding items for requiredSkills
@@ -755,6 +783,23 @@ func (o *GetServiceJobsParams) bindParamProductOrderIds(formats strfmt.Registry)
 	productOrderIdsIS := swag.JoinByFormat(productOrderIdsIC, "")
 
 	return productOrderIdsIS
+}
+
+// bindParamGetServiceJobs binds the parameter providerServiceJobReferenceIds
+func (o *GetServiceJobsParams) bindParamProviderServiceJobReferenceIds(formats strfmt.Registry) []string {
+	providerServiceJobReferenceIdsIR := o.ProviderServiceJobReferenceIds
+
+	var providerServiceJobReferenceIdsIC []string
+	for _, providerServiceJobReferenceIdsIIR := range providerServiceJobReferenceIdsIR { // explode []string
+
+		providerServiceJobReferenceIdsIIV := providerServiceJobReferenceIdsIIR // string as string
+		providerServiceJobReferenceIdsIC = append(providerServiceJobReferenceIdsIC, providerServiceJobReferenceIdsIIV)
+	}
+
+	// items.CollectionFormat: ""
+	providerServiceJobReferenceIdsIS := swag.JoinByFormat(providerServiceJobReferenceIdsIC, "")
+
+	return providerServiceJobReferenceIdsIS
 }
 
 // bindParamGetServiceJobs binds the parameter requiredSkills

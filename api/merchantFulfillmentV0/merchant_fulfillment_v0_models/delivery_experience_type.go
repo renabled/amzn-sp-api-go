@@ -41,6 +41,12 @@ const (
 
 	// DeliveryExperienceTypeNoTracking captures enum value "NoTracking"
 	DeliveryExperienceTypeNoTracking DeliveryExperienceType = "NoTracking"
+
+	// DeliveryExperienceTypeDeliveryConfirmationWithIdentityCheck captures enum value "DeliveryConfirmationWithIdentityCheck"
+	DeliveryExperienceTypeDeliveryConfirmationWithIdentityCheck DeliveryExperienceType = "DeliveryConfirmationWithIdentityCheck"
+
+	// DeliveryExperienceTypeDeliveryConfirmationWithNameVerification captures enum value "DeliveryConfirmationWithNameVerification"
+	DeliveryExperienceTypeDeliveryConfirmationWithNameVerification DeliveryExperienceType = "DeliveryConfirmationWithNameVerification"
 )
 
 // for schema
@@ -48,7 +54,7 @@ var deliveryExperienceTypeEnum []interface{}
 
 func init() {
 	var res []DeliveryExperienceType
-	if err := json.Unmarshal([]byte(`["DeliveryConfirmationWithAdultSignature","DeliveryConfirmationWithSignature","DeliveryConfirmationWithoutSignature","NoTracking"]`), &res); err != nil {
+	if err := json.Unmarshal([]byte(`["DeliveryConfirmationWithAdultSignature","DeliveryConfirmationWithSignature","DeliveryConfirmationWithoutSignature","NoTracking","DeliveryConfirmationWithIdentityCheck","DeliveryConfirmationWithNameVerification"]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {

@@ -38,6 +38,9 @@ const (
 
 	// OrderChangeTypeEnumOrderStatusChange captures enum value "OrderStatusChange"
 	OrderChangeTypeEnumOrderStatusChange OrderChangeTypeEnum = "OrderStatusChange"
+
+	// OrderChangeTypeEnumPreFulfillmentStatusChange captures enum value "PreFulfillmentStatusChange"
+	OrderChangeTypeEnumPreFulfillmentStatusChange OrderChangeTypeEnum = "PreFulfillmentStatusChange"
 )
 
 // for schema
@@ -45,7 +48,7 @@ var orderChangeTypeEnumEnum []interface{}
 
 func init() {
 	var res []OrderChangeTypeEnum
-	if err := json.Unmarshal([]byte(`["BuyerRequestedChange","DeliveryTipChange","OrderStatusChange"]`), &res); err != nil {
+	if err := json.Unmarshal([]byte(`["BuyerRequestedChange","DeliveryTipChange","OrderStatusChange","PreFulfillmentStatusChange"]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {

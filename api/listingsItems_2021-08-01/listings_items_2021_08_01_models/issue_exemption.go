@@ -15,12 +15,12 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// IssueExemption Conveying the status of the listed enforcement actions and, if applicable, provides information about the exemption's expiry date.
+// IssueExemption The status of the listed enforcement actions. If applicable, includes information about the exemption expiry date.
 //
 // swagger:model IssueExemption
 type IssueExemption struct {
 
-	// Represents the timestamp, in ISO 8601 format, that specifies the date when the temporary exemptions expires, and Amazon begins enforcing the listed actions.
+	// The timestamp, in ISO 8601 format, when the temporary exemption expires and Amazon begins enforcing the listed actions.
 	// Example: 2023-10-28T00:36:48.914Z
 	// Format: date-time
 	ExpiryDate strfmt.DateTime `json:"expiryDate,omitempty"`

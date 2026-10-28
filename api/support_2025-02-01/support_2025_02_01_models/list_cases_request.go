@@ -21,13 +21,6 @@ import (
 // swagger:model ListCasesRequest
 type ListCasesRequest struct {
 
-	// Optional filters to narrow the returned collection. When absent, the operation returns all cases for the requesting identity.
-	CaseFilters *CaseFilters `json:"caseFilters,omitempty"`
-
-	// The marketplace identifier used for authorization only. This field does not impact the returned collection. For a list of possible values, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
-	// Example: ATVPDKIKX0DER
-	MarketplaceID string `json:"marketplaceId,omitempty"`
-
 	// Maximum number of results to return.
 	// Example: 25
 	// Maximum: 50
@@ -37,11 +30,6 @@ type ListCasesRequest struct {
 	// A token to retrieve the next page of results. The response includes `nextToken` when the number of results exceeds the specified `maxResults` value. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until `nextToken` is null. Note that this operation can return empty pages.
 	// Example: SampleToken
 	NextToken string `json:"nextToken,omitempty"`
-
-	// The field to sort cases by. Defaults to CREATION_DATE when absent.
-	// Example: CASE_ID
-	// Enum: [CASE_ID STATUS SUBJECT PRIMARY_EMAIL CREATION_DATE LAST_OUTBOUND_DATE RESOLUTION_DATE]
-	SortField *string `json:"sortField,omitempty"`
 
 	// The sort direction. Defaults to DESC when absent.
 	// Example: ASC
@@ -53,15 +41,7 @@ type ListCasesRequest struct {
 func (m *ListCasesRequest) Validate(formats strfmt.Registry) error {
 	var res []error
 
-	if err := m.validateCaseFilters(formats); err != nil {
-		res = append(res, err)
-	}
-
 	if err := m.validateMaxResults(formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.validateSortField(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -75,25 +55,6 @@ func (m *ListCasesRequest) Validate(formats strfmt.Registry) error {
 	return nil
 }
 
-func (m *ListCasesRequest) validateCaseFilters(formats strfmt.Registry) error {
-	if swag.IsZero(m.CaseFilters) { // not required
-		return nil
-	}
-
-	if m.CaseFilters != nil {
-		if err := m.CaseFilters.Validate(formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
-				return ve.ValidateName("caseFilters")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("caseFilters")
-			}
-			return err
-		}
-	}
-
-	return nil
-}
-
 func (m *ListCasesRequest) validateMaxResults(formats strfmt.Registry) error {
 	if swag.IsZero(m.MaxResults) { // not required
 		return nil
@@ -104,63 +65,6 @@ func (m *ListCasesRequest) validateMaxResults(formats strfmt.Registry) error {
 	}
 
 	if err := validate.MaximumInt("maxResults", "body", int64(m.MaxResults), 50, false); err != nil {
-		return err
-	}
-
-	return nil
-}
-
-var listCasesRequestTypeSortFieldPropEnum []interface{}
-
-func init() {
-	var res []string
-	if err := json.Unmarshal([]byte(`["CASE_ID","STATUS","SUBJECT","PRIMARY_EMAIL","CREATION_DATE","LAST_OUTBOUND_DATE","RESOLUTION_DATE"]`), &res); err != nil {
-		panic(err)
-	}
-	for _, v := range res {
-		listCasesRequestTypeSortFieldPropEnum = append(listCasesRequestTypeSortFieldPropEnum, v)
-	}
-}
-
-const (
-
-	// ListCasesRequestSortFieldCASEID captures enum value "CASE_ID"
-	ListCasesRequestSortFieldCASEID string = "CASE_ID"
-
-	// ListCasesRequestSortFieldSTATUS captures enum value "STATUS"
-	ListCasesRequestSortFieldSTATUS string = "STATUS"
-
-	// ListCasesRequestSortFieldSUBJECT captures enum value "SUBJECT"
-	ListCasesRequestSortFieldSUBJECT string = "SUBJECT"
-
-	// ListCasesRequestSortFieldPRIMARYEMAIL captures enum value "PRIMARY_EMAIL"
-	ListCasesRequestSortFieldPRIMARYEMAIL string = "PRIMARY_EMAIL"
-
-	// ListCasesRequestSortFieldCREATIONDATE captures enum value "CREATION_DATE"
-	ListCasesRequestSortFieldCREATIONDATE string = "CREATION_DATE"
-
-	// ListCasesRequestSortFieldLASTOUTBOUNDDATE captures enum value "LAST_OUTBOUND_DATE"
-	ListCasesRequestSortFieldLASTOUTBOUNDDATE string = "LAST_OUTBOUND_DATE"
-
-	// ListCasesRequestSortFieldRESOLUTIONDATE captures enum value "RESOLUTION_DATE"
-	ListCasesRequestSortFieldRESOLUTIONDATE string = "RESOLUTION_DATE"
-)
-
-// prop value enum
-func (m *ListCasesRequest) validateSortFieldEnum(path, location string, value string) error {
-	if err := validate.EnumCase(path, location, value, listCasesRequestTypeSortFieldPropEnum, true); err != nil {
-		return err
-	}
-	return nil
-}
-
-func (m *ListCasesRequest) validateSortField(formats strfmt.Registry) error {
-	if swag.IsZero(m.SortField) { // not required
-		return nil
-	}
-
-	// value enum
-	if err := m.validateSortFieldEnum("sortField", "body", *m.SortField); err != nil {
 		return err
 	}
 
@@ -209,33 +113,8 @@ func (m *ListCasesRequest) validateSortOrder(formats strfmt.Registry) error {
 	return nil
 }
 
-// ContextValidate validate this list cases request based on the context it is used
+// ContextValidate validates this list cases request based on context it is used
 func (m *ListCasesRequest) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
-	var res []error
-
-	if err := m.contextValidateCaseFilters(ctx, formats); err != nil {
-		res = append(res, err)
-	}
-
-	if len(res) > 0 {
-		return errors.CompositeValidationError(res...)
-	}
-	return nil
-}
-
-func (m *ListCasesRequest) contextValidateCaseFilters(ctx context.Context, formats strfmt.Registry) error {
-
-	if m.CaseFilters != nil {
-		if err := m.CaseFilters.ContextValidate(ctx, formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
-				return ve.ValidateName("caseFilters")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("caseFilters")
-			}
-			return err
-		}
-	}
-
 	return nil
 }
 

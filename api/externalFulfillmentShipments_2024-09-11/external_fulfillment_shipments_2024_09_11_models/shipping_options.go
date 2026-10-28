@@ -16,18 +16,18 @@ import (
 )
 
 // ShippingOptions Shipping options for a single package.
-// Example: {"carrierName":"ATSPL","handoverLocation":{"address":{"addressLine1":"123 Main St","city":"Seattle","countryCode":"US","geocodes":{"latitude":"47.6062","longitude":"-122.3321"},"postalCode":"98101","stateOrRegion":"WA"},"distance":{"distanceUnit":"MI","value":"3.5"},"mapUrl":"https://maps.example.com/location?lat=47.6062\u0026lng=-122.3321"},"pickupWindow":{"endTime":1612494142,"startTime":1612933142},"shipBy":"MARKETPLACE","shippingOptionId":"TEST_CASE_200_SHIPPING_OPTION_ID","timeSlot":{"endTime":1612494142,"handoverMethod":"DROPOFF","startTime":1612933142}}
+// Example: {"carrierName":"ATSPL","handoverLocation":{"address":{"addressLine1":"123 Main St","city":"Seattle","countryCode":"US","geocodes":{"latitude":47.6062,"longitude":-122.3321},"postalCode":"98101","stateOrRegion":"WA"},"distance":{"distanceUnit":"MI","value":3.5},"mapUrl":"https://maps.example.com/location?lat=47.6062\u0026lng=-122.3321"},"pickupWindow":{"endTime":1612494142,"startTime":1612933142},"shipBy":"MARKETPLACE","shippingOptionId":"TEST_CASE_200_SHIPPING_OPTION_ID","timeSlot":{"endTime":1612494142,"handoverMethod":"DROPOFF","startTime":1612933142}}
 //
 // swagger:model ShippingOptions
 type ShippingOptions struct {
 
-	// The carrier name for the offering.
+	// The carrier name for the offering. Applicable only for Self Ship program
 	CarrierName string `json:"carrierName,omitempty"`
 
 	// The drop-off location details. This value is populated when `handoverMethod` is `DROPOFF`.
 	HandoverLocation *HandoverLocation `json:"handoverLocation,omitempty"`
 
-	// The time window during which the package will be picked up.
+	// The time window during which the package will be picked up. This object is deprecated, please use `timeSlot` instead.
 	PickupWindow *TimeWindow `json:"pickupWindow,omitempty"`
 
 	// The shipper type.

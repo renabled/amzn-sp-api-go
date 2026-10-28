@@ -22,7 +22,7 @@ type Item struct {
 	// dangerous goods details
 	DangerousGoodsDetails *DangerousGoodsDetails `json:"DangerousGoodsDetails,omitempty"`
 
-	// When true, the item qualifies as hazardous materials (hazmat). Defaults to false.
+	// When `true`, the item qualifies as hazardous materials (hazmat). Defaults to `false`.
 	IsHazmat bool `json:"IsHazmat,omitempty"`
 
 	// item description

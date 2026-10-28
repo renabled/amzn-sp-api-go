@@ -30,18 +30,6 @@ func (m PackageStatus) Pointer() *PackageStatus {
 
 const (
 
-	// PackageStatusCREATED captures enum value "CREATED"
-	PackageStatusCREATED PackageStatus = "CREATED"
-
-	// PackageStatusPICKUPSLOTRETRIEVED captures enum value "PICKUP_SLOT_RETRIEVED"
-	PackageStatusPICKUPSLOTRETRIEVED PackageStatus = "PICKUP_SLOT_RETRIEVED"
-
-	// PackageStatusINVOICEGENERATED captures enum value "INVOICE_GENERATED"
-	PackageStatusINVOICEGENERATED PackageStatus = "INVOICE_GENERATED"
-
-	// PackageStatusSHIPLABELGENERATED captures enum value "SHIPLABEL_GENERATED"
-	PackageStatusSHIPLABELGENERATED PackageStatus = "SHIPLABEL_GENERATED"
-
 	// PackageStatusSHIPPED captures enum value "SHIPPED"
 	PackageStatusSHIPPED PackageStatus = "SHIPPED"
 
@@ -54,7 +42,7 @@ var packageStatusEnum []interface{}
 
 func init() {
 	var res []PackageStatus
-	if err := json.Unmarshal([]byte(`["CREATED","PICKUP_SLOT_RETRIEVED","INVOICE_GENERATED","SHIPLABEL_GENERATED","SHIPPED","DELIVERED"]`), &res); err != nil {
+	if err := json.Unmarshal([]byte(`["SHIPPED","DELIVERED"]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {

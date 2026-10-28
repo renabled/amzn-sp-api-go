@@ -84,7 +84,7 @@ func NewPutListingsItemOK() *PutListingsItemOK {
 /*
 PutListingsItemOK describes a response with status code 200, with default header values.
 
-Successfully understood the request to create or fully-update a listings item. Refer to the response to determine if the submission has been accepted.
+Successfully understood the request to create or fully-update a listings item. Refer to the response to determine whether the submission has been accepted.
 */
 type PutListingsItemOK struct {
 

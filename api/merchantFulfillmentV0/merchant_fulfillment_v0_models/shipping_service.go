@@ -38,11 +38,11 @@ type ShippingService struct {
 	// Required: true
 	CarrierName *string `json:"CarrierName"`
 
-	// The earliest date by which the shipment will be delivered.
+	// The earliest estimated delivery date for the shipment.
 	// Format: date-time
 	EarliestEstimatedDeliveryDate Timestamp `json:"EarliestEstimatedDeliveryDate,omitempty"`
 
-	// The latest date by which the shipment will be delivered.
+	// The latest estimated delivery date for the shipment.
 	// Format: date-time
 	LatestEstimatedDeliveryDate Timestamp `json:"LatestEstimatedDeliveryDate,omitempty"`
 
@@ -54,11 +54,11 @@ type ShippingService struct {
 	// Required: true
 	RateWithAdjustments *CurrencyAmount `json:"RateWithAdjustments"`
 
-	// When true, additional seller inputs are required.
+	// When `true`, additional seller inputs are required.
 	// Required: true
 	RequiresAdditionalSellerInputs *bool `json:"RequiresAdditionalSellerInputs"`
 
-	// The date that the carrier will ship the package.
+	// The date that the carrier ships the package.
 	// Required: true
 	// Format: date-time
 	ShipDate *Timestamp `json:"ShipDate"`
@@ -67,7 +67,7 @@ type ShippingService struct {
 	// Required: true
 	ShippingServiceID *ShippingServiceIdentifier `json:"ShippingServiceId"`
 
-	// A plain text representation of a carrier's shipping service. For example, "UPS Ground" or "FedEx Standard Overnight".
+	// The carrier's shipping service name, such as "UPS Ground" or "FedEx Standard Overnight".
 	// Required: true
 	ShippingServiceName *string `json:"ShippingServiceName"`
 

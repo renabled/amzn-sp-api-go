@@ -29,8 +29,8 @@ type ShipmentInfo struct {
 	// Minimum: 1
 	NumberOfUnits *int64 `json:"numberOfUnits"`
 
-	// The timestamp of when the order was placed, in UTC
-	OrderPlacedTimestamp string `json:"orderPlacedTimestamp,omitempty"`
+	// The epoch timestamp (in milliseconds) of when the order was placed, in UTC.
+	OrderPlacedTimestamp int64 `json:"orderPlacedTimestamp,omitempty"`
 
 	// A list of order statuses for which the marketplace allows order rejection (seller cancellation). If the order has a status that does not belong to this list, then seller cancellation is not possible.
 	// Min Items: 0

@@ -36,6 +36,9 @@ type TrackingIdentifier struct {
 
 	// Amazon unique tracking identifier.
 	ID string `json:"id,omitempty"`
+
+	// The PRO number assigned by the freight carrier
+	ProNumber string `json:"proNumber,omitempty"`
 }
 
 // Validate validates this tracking identifier

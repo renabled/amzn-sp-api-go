@@ -15,7 +15,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// PartyIdentificationInfo Party identification details for the shipment, applicable to direct fulfillment shipments.
+// PartyIdentificationInfo Party identification details for the shipment, applicable only to direct fulfillment shipments.
 //
 // swagger:model PartyIdentificationInfo
 type PartyIdentificationInfo struct {

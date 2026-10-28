@@ -13,12 +13,12 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// ExcludedBenefit An object representing an excluded benefit that is excluded for a shipping offer or rate.
+// ExcludedBenefit A benefit excluded from a shipping offer or rate.
 //
 // swagger:model ExcludedBenefit
 type ExcludedBenefit struct {
 
-	// A benefit that is being excluded from a shipment.
+	// The benefit excluded from a shipment.
 	Benefit string `json:"Benefit,omitempty"`
 
 	// reason codes
