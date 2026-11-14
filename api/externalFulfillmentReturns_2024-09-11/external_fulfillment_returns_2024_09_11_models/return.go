@@ -57,6 +57,7 @@ type Return struct {
 	ReplanningDetails *ReplanningDetails `json:"replanningDetails,omitempty"`
 
 	// The SmartConnect identifier for where the return item was dropped for delivery.
+	// Example: EDD5
 	ReturnLocationID string `json:"returnLocationId,omitempty"`
 
 	// Metadata about the return item.

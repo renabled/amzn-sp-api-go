@@ -15,15 +15,18 @@ import (
 )
 
 // TrackingInfo Information for tracking a return.
+// Example: {"carrierName":"ATS","trackingId":"19124773658"}
 //
 // swagger:model TrackingInfo
 type TrackingInfo struct {
 
 	// The name of the third party courier service used to ship the return package.
+	// Example: ATS
 	// Required: true
 	CarrierName *string `json:"carrierName"`
 
 	// The tracking ID of the return package.
+	// Example: 19124773658
 	// Required: true
 	TrackingID *string `json:"trackingId"`
 }

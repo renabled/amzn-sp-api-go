@@ -15,6 +15,7 @@ import (
 )
 
 // Error Error response returned when the request is unsuccessful.
+// Example: {"code":"InvalidInput","details":"Provided input contains more number of batches than max supported.","message":"Invalid input provided."}
 //
 // swagger:model Error
 type Error struct {

@@ -26,9 +26,8 @@ type MarketplaceAttributes struct {
 	// Enum: [FBA MFN DF]
 	ChannelName string `json:"channelName,omitempty"`
 
-	// The marketplace ID of the marketplace where you want to update inventory.
-	// Example: AXJDDKDFDKDF
-	MarketplaceID string `json:"marketplaceId,omitempty"`
+	// marketplace Id
+	MarketplaceID MarketplaceID `json:"marketplaceId,omitempty"`
 }
 
 // Validate validates this marketplace attributes
@@ -36,6 +35,10 @@ func (m *MarketplaceAttributes) Validate(formats strfmt.Registry) error {
 	var res []error
 
 	if err := m.validateChannelName(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateMarketplaceID(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -90,8 +93,48 @@ func (m *MarketplaceAttributes) validateChannelName(formats strfmt.Registry) err
 	return nil
 }
 
-// ContextValidate validates this marketplace attributes based on context it is used
+func (m *MarketplaceAttributes) validateMarketplaceID(formats strfmt.Registry) error {
+	if swag.IsZero(m.MarketplaceID) { // not required
+		return nil
+	}
+
+	if err := m.MarketplaceID.Validate(formats); err != nil {
+		if ve, ok := err.(*errors.Validation); ok {
+			return ve.ValidateName("marketplaceId")
+		} else if ce, ok := err.(*errors.CompositeError); ok {
+			return ce.ValidateName("marketplaceId")
+		}
+		return err
+	}
+
+	return nil
+}
+
+// ContextValidate validate this marketplace attributes based on the context it is used
 func (m *MarketplaceAttributes) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.contextValidateMarketplaceID(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *MarketplaceAttributes) contextValidateMarketplaceID(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := m.MarketplaceID.ContextValidate(ctx, formats); err != nil {
+		if ve, ok := err.(*errors.Validation); ok {
+			return ve.ValidateName("marketplaceId")
+		} else if ce, ok := err.(*errors.CompositeError); ok {
+			return ce.ValidateName("marketplaceId")
+		}
+		return err
+	}
+
 	return nil
 }
 

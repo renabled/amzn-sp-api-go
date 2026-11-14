@@ -16,6 +16,7 @@ import (
 )
 
 // ErrorList An object containing a list of error responses returned when a request is unsuccessful.
+// Example: {"errors":[{"code":"InvalidInput","details":"Provided input contains more number of batches than max supported.","message":"Invalid input provided."}]}
 //
 // swagger:model ErrorList
 type ErrorList struct {

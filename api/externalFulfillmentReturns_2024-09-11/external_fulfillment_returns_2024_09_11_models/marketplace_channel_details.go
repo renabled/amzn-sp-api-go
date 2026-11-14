@@ -32,6 +32,7 @@ type MarketplaceChannelDetails struct {
 	MarketplaceChannel *MarketplaceChannel `json:"marketplaceChannel,omitempty"`
 
 	// The ID of the merchant or seller to whom this return is created in the marketplace.
+	// Example: A2MERCHANTID
 	MerchantID string `json:"merchantId,omitempty"`
 
 	// The Amazon SmartConnect ID of the location to which this return is created.

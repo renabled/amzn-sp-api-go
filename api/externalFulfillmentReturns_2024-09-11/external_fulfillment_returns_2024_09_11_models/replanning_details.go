@@ -16,11 +16,13 @@ import (
 )
 
 // ReplanningDetails Provides details about the replanned returns.
+// Example: {"previousTrackingInfo":[{"carrierName":"ATS","trackingId":"156121269663"}]}
 //
 // swagger:model ReplanningDetails
 type ReplanningDetails struct {
 
 	// A list of all the previous tracking information for the return.
+	// Example: [{"carrierName":"ATS","trackingId":"156121269663"}]
 	// Min Items: 0
 	PreviousTrackingInfo []*TrackingInfo `json:"previousTrackingInfo"`
 }

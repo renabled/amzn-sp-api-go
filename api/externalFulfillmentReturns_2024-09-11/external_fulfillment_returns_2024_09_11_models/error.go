@@ -15,6 +15,7 @@ import (
 )
 
 // Error Error response returned when the request is unsuccessful.
+// Example: {"code":"InvalidInput","details":"The specified parameter value is invalid.","message":"Invalid request parameter."}
 //
 // swagger:model Error
 type Error struct {
